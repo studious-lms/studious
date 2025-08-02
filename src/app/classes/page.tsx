@@ -23,6 +23,7 @@ import { SkeletonCard } from "@/components/ui/Skeleton";
 import IconFrame from "@/components/ui/IconFrame";
 import { getAssignmentIcon } from "@/lib/assignment";
 import Badge from "@/components/Badge";
+import { useRouter } from "next/navigation";
 
 type Class = RouterOutputs['class']['getAll']['teacherInClass'][number];
 
@@ -117,6 +118,7 @@ const ClassesPageSkeleton = () => (
 export default function Classes() {
     const dispatch = useDispatch();
     const appState = useSelector((state: RootState) => state.app);
+    const router = useRouter();
     const [activeTab, setActiveTab] = useState<Tab>('teaching');
     const [filters, setFilters] = useState<FilterState>({
         search: '',
@@ -165,7 +167,7 @@ export default function Classes() {
                     style={{ 
                         background: `linear-gradient(135deg, ${cls.color ?? '#3B82F6'} 0%, ${cls.color ?? '#3B82F6'}dd 100%)`,
                     }}
-                    onClick={() => window.location.href = `/classes/${cls.id}`}
+                    onClick={() => router.push(`/classes/${cls.id}`)}
                 >
                     {/* Decorative background pattern */}
                     <div className="absolute inset-0 opacity-10 pointer-events-none select-none">

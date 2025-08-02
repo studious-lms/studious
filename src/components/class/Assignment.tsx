@@ -9,7 +9,7 @@ import { trpc } from "@/utils/trpc";
 import { AlertLevel } from "@/lib/alertLevel";
 import Card from "../ui/Card";
 import { assignmentTypes, formatAssignmentType, getAssignmentIcon } from "@/lib/assignment";
-import { useRouter } from "next/navigation";
+import { useNavigation, ROUTES } from "@/lib/navigation";
 
 interface AssignmentProps {
     title: string;
@@ -41,7 +41,7 @@ export default function Assignment({
     inProgress,
 }: AssignmentProps) {
     const dispatch = useDispatch();
-    const router = useRouter();
+    const navigation = useNavigation();
 
     const { mutate: deleteAssignment } = trpc.assignment.delete.useMutation({
         onSuccess: () => {
@@ -65,11 +65,11 @@ export default function Assignment({
     });
 
     const handleViewAssignment = () => {
-        router.push(`/classes/${classId}/assignment/${assignmentId}`);
+        navigation.push(ROUTES.ASSIGNMENT(classId, assignmentId));
     };
 
     const handleEditAssignment = () => {
-        router.push(`/classes/${classId}/assignment/${assignmentId}/edit`);
+        navigation.push(ROUTES.ASSIGNMENT_EDIT(classId, assignmentId));
     };
 
     const handlePublishDraft = () => {

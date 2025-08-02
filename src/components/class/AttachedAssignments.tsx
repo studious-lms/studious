@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 import { RouterOutputs } from "@/utils/trpc";
 import { useState } from "react";
 import Empty from "../ui/Empty";
+import { useNavigation, ROUTES } from "@/lib/navigation";
 
 type AttachedAssignment = RouterOutputs["event"]["get"]["event"]["assignmentsAttached"][number];
 
@@ -27,7 +28,7 @@ export default function AttachedAssignments({
   onAssignmentDetached 
 }: AttachedAssignmentsProps) {
   const dispatch = useDispatch();
-  const router = useRouter();
+  const navigation = useNavigation();
   const [_assignments, _setAssignments] = useState<AttachedAssignment[]>(assignments);
 
   const detachAssignment = trpc.event.detachAssignment.useMutation({
@@ -56,7 +57,7 @@ export default function AttachedAssignments({
   };
 
   const handleViewAssignment = (assignmentId: string) => {
-    router.push(`/classes/${classId}/assignment/${assignmentId}`);
+    navigation.push(ROUTES.ASSIGNMENT(classId, assignmentId));
   };
 
   if (!_assignments || _assignments.length === 0) {

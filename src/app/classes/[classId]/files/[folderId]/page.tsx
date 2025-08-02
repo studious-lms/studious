@@ -1,6 +1,7 @@
 "use client";
 
 import { useParams, useRouter } from "next/navigation";
+import { useNavigation, ROUTES } from "@/lib/navigation";
 import Link from "next/link";
 import { trpc } from "@/utils/trpc";
 import { useDispatch, useSelector } from "react-redux";
@@ -43,11 +44,11 @@ function Breadcrumb({ classId, currentFolder, parentFolder }: {
 
 export default function FolderPage() {
     const params = useParams();
-    const router = useRouter();
-    const dispatch = useDispatch();
-    const appState = useSelector((state: RootState) => state.app);
     const classId = params.classId as string;
     const folderId = params.folderId as string;
+    const navigation = useNavigation();
+    const dispatch = useDispatch();
+    const appState = useSelector((state: RootState) => state.app);
 
     const { data: folder, isLoading, error, refetch } = trpc.folder.get.useQuery({ 
         folderId ,
@@ -56,7 +57,7 @@ export default function FolderPage() {
 
     const deleteFolder = trpc.folder.delete.useMutation({
         onSuccess: () => {
-            router.push(`/classes/${classId}/files`);
+            navigation.push(ROUTES.CLASS_FILES(classId));
         },
     });
 
@@ -90,14 +91,14 @@ export default function FolderPage() {
     };
 
     const handleFolderClick = (subfolder: any) => {
-        router.push(`/classes/${classId}/files/${subfolder.id}`);
+        navigation.push(ROUTES.FILES_FOLDER(classId, subfolder.id));
     };
 
     const handleBackToParent = () => {
         if (folder?.parentFolder) {
-            router.push(`/classes/${classId}/files/${folder.parentFolder.id}`);
+            navigation.push(ROUTES.FILES_FOLDER(classId, folder.parentFolder.id));
         } else {
-            router.push(`/classes/${classId}/files`);
+            navigation.push(ROUTES.CLASS_FILES(classId));
         }
     };
 

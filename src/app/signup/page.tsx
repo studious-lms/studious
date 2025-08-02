@@ -13,8 +13,10 @@ import Card from "@/components/ui/Card";
 import { HiAcademicCap, HiMail, HiArrowLeft, HiCheckCircle } from "react-icons/hi";
 import Link from "next/link";
 import { getErrorMessage, getFieldErrors } from "@/utils/errorHandler";
+import { useRouter } from "next/navigation";
 
 export default function Signup() {
+  const router = useRouter();
   const [formData, setFormData] = useState<RouterInputs['auth']['register']>({
     username: '',
     email: '',
@@ -168,7 +170,7 @@ export default function Signup() {
               {/* Action Buttons */}
               <div className="space-y-3">
                 <Button.Primary
-                  onClick={() => window.location.href = '/login'}
+                  onClick={() => router.push('/login')}
                   className="w-full font-medium"
                 >
                   Go to Sign In

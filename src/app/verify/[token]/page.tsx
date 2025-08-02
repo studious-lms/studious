@@ -1,7 +1,8 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { useParams, useRouter } from 'next/navigation';
+import { useState, useEffect } from 'react';
+import { useParams } from 'next/navigation';
+import { useNavigation, ROUTES } from '@/lib/navigation';
 import { trpc } from '@/utils/trpc';
 import Button from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
@@ -9,7 +10,7 @@ import { HiCheckCircle, HiXCircle, HiArrowLeft } from 'react-icons/hi';
 
 export default function VerifyPage() {
   const params = useParams();
-  const router = useRouter();
+  const navigation = useNavigation();
   const [status, setStatus] = useState<'loading' | 'success' | 'error'>('loading');
   const [message, setMessage] = useState('');
 
@@ -32,7 +33,7 @@ export default function VerifyPage() {
   }, [params.token]);
 
   const handleRedirect = () => {
-    router.push('/login');
+    navigation.push(ROUTES.LOGIN);
   };
 
   return (

@@ -11,6 +11,7 @@ import Image from "next/image";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { useRouter } from "next/navigation";
+import { useNavigation, ROUTES } from "@/lib/navigation";
 
 const features = [
     {
@@ -74,14 +75,14 @@ interface ContactProps {
 
 export default function Home() {
     const appState = useSelector((root: RootState) => root.app);
-    const router = useRouter();
+    const navigation = useNavigation();
 
     useEffect(() => {
         if (appState.user.loggedIn) {
-            router.push('/agenda');
+            navigation.push(ROUTES.AGENDA);
             return;
         }
-    }, [appState.user.id, router]);
+    }, [appState.user.id, navigation]);
 
     const [contact, setContact] = useState<ContactProps>({
         name: "",

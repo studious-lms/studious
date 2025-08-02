@@ -31,6 +31,8 @@ import { MdChecklist, MdSchool } from "react-icons/md";
 import { RubricGrade, RubricCriteria } from "@/components/ui/EditableRubric";
 import { calculateGrade } from "@/lib/gradeCalculator";
 import FileSelector from "@/components/ui/FileSelector";
+import { useParams, useRouter as useNextRouter } from "next/navigation";
+import { useNavigation, ROUTES } from "@/lib/navigation";
 
 type RouterOutput = inferRouterOutputs<AppRouter>;
 type Assignment = RouterOutput["assignment"]["get"];
@@ -57,7 +59,8 @@ export default function AssignmentPage({ params }: { params: { classId: string, 
     const fileInput = useRef<HTMLInputElement | null>(null);
     const assignmentFileInput = useRef<HTMLInputElement | null>(null);
     const appState = useSelector((state: RootState) => state.app);
-    const router = useRouter();
+    const router = useNextRouter();
+    const navigation = useNavigation();
     const [isSavingAssignment, setIsSavingAssignment] = useState(false);
     const [rubricCriteria, setRubricCriteria] = useState<RubricCriteria[]>([]);
     const [rubricGrades, setRubricGrades] = useState<RubricGrade[]>([]);
@@ -274,7 +277,7 @@ export default function AssignmentPage({ params }: { params: { classId: string, 
                             <div className="flex items-center justify-between">
                                 <span className="text-xl font-semibold">{assignmentData.title}</span>
                                 {appState.user.teacher && (
-                                    <Button.SM onClick={() => router.push(`/classes/${params.classId}/assignment/${params.assignmentId}/edit`)}>
+                                    <Button.SM onClick={() => navigation.push(ROUTES.ASSIGNMENT_EDIT(params.classId, params.assignmentId))}>
                                         <HiPencil className="w-4 h-4" />
                                     </Button.SM>
                                 )}
@@ -370,7 +373,7 @@ export default function AssignmentPage({ params }: { params: { classId: string, 
                                         {submissionsData && submissionsData.length > 0 && (
                                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                                 {submissionsData.map((submission: Submission) => (
-                                                    <div key={submission.id} className="border border-border dark:border-border-dark rounded-lg p-6 hover:bg-background-subtle transition-colors" onClick={() => router.push(`/classes/${params.classId}/assignment/${params.assignmentId}/submission/${submission.id}`)}>
+                                                    <div key={submission.id} className="border border-border dark:border-border-dark rounded-lg p-6 hover:bg-background-subtle transition-colors" onClick={() => navigation.push(ROUTES.ASSIGNMENT_SUBMISSION(params.classId, params.assignmentId, submission.id))}>
                                                         <div className="flex flex-col space-y-4">
                                                             <div className="flex items-center space-x-4">
                                                                 <ProfilePicture

@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import { useDispatch } from 'react-redux';
 import { trpc } from '@/utils/trpc';
 import { setAuth } from '@/store/appSlice';
+import { useNavigation, ROUTES } from '@/lib/navigation';
 import Dropdown, { DropdownItem } from './Dropdown';
 import ProfilePicture from './ProfilePicture';
 import Button from './Button';
@@ -15,7 +15,7 @@ interface UserProfileProps {
 }
 
 export default function UserProfile({ username, className = '' }: UserProfileProps) {
-    const router = useRouter();
+    const navigation = useNavigation();
     const dispatch = useDispatch();
     const [isSigningOut, setIsSigningOut] = useState(false);
 
@@ -27,7 +27,7 @@ export default function UserProfile({ username, className = '' }: UserProfilePro
                 student: false,
                 institutionIds: [],
             }));
-            router.push('/login');
+            navigation.push(ROUTES.LOGIN);
         },
         onError: (error) => {
             console.error('Logout error:', error);

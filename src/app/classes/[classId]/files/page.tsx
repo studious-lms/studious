@@ -1,6 +1,7 @@
 "use client";
 
 import { useParams, useRouter } from "next/navigation";
+import { useNavigation, ROUTES } from "@/lib/navigation";
 import Link from "next/link";
 import { trpc } from "@/utils/trpc";
 import { useDispatch, useSelector } from "react-redux";
@@ -30,10 +31,10 @@ function Breadcrumb({ classId }: { classId: string }) {
 
 export default function ClassFilesPage() {
     const params = useParams();
-    const router = useRouter();
+    const classId = params.classId as string;
+    const navigation = useNavigation();
     const dispatch = useDispatch();
     const appState = useSelector((state: RootState) => state.app);
-    const classId = params.classId as string;
 
     // Get assignment folders (readonly)
     const { data: assignmentFiles, isLoading: assignmentLoading, error: assignmentError } = trpc.class.getFiles.useQuery({ classId });
@@ -90,7 +91,7 @@ export default function ClassFilesPage() {
     };
 
     const handleFolderClick = (folder: any) => {
-        router.push(`/classes/${classId}/files/${folder.id}`);
+        navigation.push(ROUTES.FILES_FOLDER(classId, folder.id));
     };
 
     if (assignmentLoading || customLoading) {
@@ -225,7 +226,7 @@ export default function ClassFilesPage() {
                     <DataTable
                         columns={assignmentColumns}
                         data={assignmentTableData}
-                        rowOnClick={(row) => router.push(`/classes/${classId}/files/assignments/${row.id}`)}
+                        rowOnClick={(row) => navigation.push(ROUTES.FILES_ASSIGNMENT(classId, row.id))}
                         emptyTitle="No Assignment Folders"
                         emptyDescription="No assignment folders found."
                     />

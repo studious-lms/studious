@@ -12,8 +12,10 @@ import Input from "@/components/ui/Input";
 import Card from "@/components/ui/Card";
 import Link from "next/link";
 import Checkbox from "@/components/ui/Checkbox";
+import { useRouter } from "next/navigation";
 
 export default function Login() {
+  const router = useRouter();
   const [formData, setFormData] = useState<RouterInputs['auth']['login']>({
     username: '',
     password: '',
@@ -35,7 +37,7 @@ export default function Login() {
         dispatch(addAlert({ remark: 'Successfully logged in', level: AlertLevel.SUCCESS }));
         // set the session cookie
         document.cookie = `token=${data.token}`;
-        window.location.href = '/classes/';
+        router.push('/classes/');
       } else {
         // user not verified
         setUserNotVerified(true);
