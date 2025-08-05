@@ -8,8 +8,25 @@ import { useState, useEffect } from "react";
 import { trpc } from "@/utils/trpc";
 import { HiClipboard } from "react-icons/hi";
 import type { RouterOutputs } from "@/utils/trpc";
+import Skeleton from "../../ui/Skeleton";
 
 type InviteCodeResponse = RouterOutputs['class']['getInviteCode'];
+
+// Skeleton component for the invite code form
+const InviteCodeSkeleton = () => (
+    <div className="flex flex-col w-[30rem] max-w-full">
+        <div className="flex flex-col space-y-3">
+            <Skeleton width="6rem" height="1rem" />
+            <div className="flex flex-row items-center space-x-2">
+                <Skeleton width="12rem" height="2.5rem" />
+                <Skeleton width="1.25rem" height="1.25rem" />
+            </div>
+            <div className="mt-4">
+                <Skeleton width="8rem" height="2.5rem" />
+            </div>
+        </div>
+    </div>
+);
 
 export default function InviteCode({ classId }: { classId: string }) {
     const [inviteCode, setInviteCode] = useState<string>('');
@@ -27,13 +44,18 @@ export default function InviteCode({ classId }: { classId: string }) {
         }
     });
 
-    const { data: inviteCodeData } = trpc.class.getInviteCode.useQuery({ classId });
+    const { data: inviteCodeData, isLoading } = trpc.class.getInviteCode.useQuery({ classId });
 
     useEffect(() => {
         if (inviteCodeData?.code) {
             setInviteCode(inviteCodeData.code);
         }
     }, [inviteCodeData]);
+
+    // Show skeleton loading while fetching invite code
+    if (isLoading) {
+        return <InviteCodeSkeleton />;
+    }
 
     return (
         <div className="flex flex-col w-[30rem] max-w-full">

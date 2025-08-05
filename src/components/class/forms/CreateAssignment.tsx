@@ -87,6 +87,7 @@ export default function CreateAssignment({ classId, sections }: { classId: strin
     const {mutate: createAssignment, isPending} = trpc.assignment.create.useMutation({
         onSuccess: (data) => {
             emitAssignmentCreate(classId, data);
+            dispatch(setRefetch(true));
             dispatch(addAlert({
                 level: AlertLevel.SUCCESS,
                 remark: 'Assignment created successfully',

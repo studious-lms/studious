@@ -4,6 +4,7 @@ import { addAlert, closeModal } from "@/store/appSlice";
 import { AlertLevel } from "@/lib/alertLevel";
 import { trpc } from "@/utils/trpc";
 import Button from "@/components/ui/Button";
+import Skeleton, { SkeletonText } from "@/components/ui/Skeleton";
 import { HiCalendar } from "react-icons/hi";
 import { format, parseISO } from "date-fns";
 
@@ -13,11 +14,51 @@ interface AttachEventToAssignmentProps {
   onEventAttached?: () => void;
 }
 
+// Skeleton component for event items
+const EventSkeleton = () => (
+  <div className="p-3 border rounded-lg">
+    <div className="flex items-start justify-between">
+      <div className="flex items-start space-x-3 flex-1">
+        <Skeleton variant="circular" width="1.25rem" height="1.25rem" />
+        <div className="flex-1 min-w-0">
+          <Skeleton width="60%" height="1rem" className="mb-2" />
+          <Skeleton width="40%" height="0.75rem" className="mb-1" />
+          <Skeleton width="50%" height="0.75rem" />
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+// Skeleton for the entire component
+const AttachEventToAssignmentSkeleton = () => (
+  <div className="w-[40rem] space-y-4">
+    <div className="space-y-3">
+      <Skeleton width="12rem" height="1.5rem" />
+      <SkeletonText lines={2} />
+    </div>
+    
+    <div className="space-y-3">
+      <Skeleton width="8rem" height="1rem" />
+      <div className="max-h-60 overflow-y-auto space-y-2">
+        <EventSkeleton />
+        <EventSkeleton />
+        <EventSkeleton />
+      </div>
+    </div>
+
+    <div className="flex justify-end space-x-2 pt-4">
+      <Skeleton width="4rem" height="2.5rem" />
+      <Skeleton width="7rem" height="2.5rem" />
+    </div>
+  </div>
+);
+
 export default function AttachEventToAssignment({ assignmentId, onEventAttached, classId }: AttachEventToAssignmentProps) {
   const dispatch = useDispatch();
   const [selectedEventId, setSelectedEventId] = useState<string>("");
 
-  const { data: availableEvents, refetch: refetchEvents } = trpc.assignment.getAvailableEvents.useQuery({
+  const { data: availableEvents, refetch: refetchEvents, isLoading } = trpc.assignment.getAvailableEvents.useQuery({
     classId,
     assignmentId
   });
@@ -55,6 +96,11 @@ export default function AttachEventToAssignment({ assignmentId, onEventAttached,
       eventId: selectedEventId,
     });
   };
+
+  // Show skeleton loading while data is being fetched
+  if (isLoading || !availableEvents) {
+    return <AttachEventToAssignmentSkeleton />;
+  }
 
   return (
     <div className="w-[40rem] space-y-4">

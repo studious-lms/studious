@@ -18,6 +18,7 @@ import CreateFolder from "@/components/class/forms/CreateFolder";
 import UploadFilesToFolder from "@/components/class/forms/UploadFilesToFolder";
 import FileDisplay from "@/components/class/FileDisplay";
 import FolderDisplay from "@/components/class/FolderDisplay";
+import Skeleton, { SkeletonText } from "@/components/ui/Skeleton";
 
 function Breadcrumb({ classId }: { classId: string }) {
     return (
@@ -28,6 +29,85 @@ function Breadcrumb({ classId }: { classId: string }) {
         </Card>
     );
 }
+
+// Skeleton component for breadcrumb
+const BreadcrumbSkeleton = () => (
+    <Card className="flex items-center text-sm text-muted-foreground mb-6 space-x-1">
+        <Skeleton width="4rem" height="1rem" />
+        <Skeleton width="1rem" height="1rem" />
+        <Skeleton width="4rem" height="1rem" />
+    </Card>
+);
+
+// Skeleton component for file/folder item
+const FileFolderSkeleton = () => (
+    <div className="flex items-center justify-between p-4 border-b border-border hover:bg-background-muted transition-colors">
+        <div className="flex items-center space-x-3">
+            <Skeleton width="2.5rem" height="2.5rem" className="rounded" />
+            <div className="flex flex-col space-y-1">
+                <Skeleton width="8rem" height="1rem" />
+                <Skeleton width="6rem" height="0.75rem" />
+            </div>
+        </div>
+        <div className="flex items-center space-x-2">
+            <Skeleton width="4rem" height="1rem" />
+            <Skeleton width="2rem" height="2rem" />
+            <Skeleton width="2rem" height="2rem" />
+        </div>
+    </div>
+);
+
+// Skeleton component for file browser
+const FileBrowserSkeleton = () => (
+    <Card className="overflow-hidden">
+        <div className="flex items-center justify-between p-4 border-b border-border">
+            <div className="flex items-center space-x-2">
+                <Skeleton width="1.5rem" height="1.5rem" />
+                <Skeleton width="8rem" height="1.25rem" />
+            </div>
+            <div className="flex items-center space-x-2">
+                <Skeleton width="6rem" height="2.5rem" />
+                <Skeleton width="6rem" height="2.5rem" />
+            </div>
+        </div>
+        <div className="divide-y divide-border">
+            {Array.from({ length: 6 }).map((_, index) => (
+                <FileFolderSkeleton key={index} />
+            ))}
+        </div>
+    </Card>
+);
+
+// Skeleton component for folder structure
+const FolderStructureSkeleton = () => (
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Assignment files skeleton */}
+        <div className="space-y-4">
+            <div className="flex items-center space-x-2">
+                <Skeleton width="1.5rem" height="1.5rem" />
+                <Skeleton width="10rem" height="1.25rem" />
+            </div>
+            <FileBrowserSkeleton />
+        </div>
+
+        {/* Custom files skeleton */}
+        <div className="space-y-4">
+            <div className="flex items-center space-x-2">
+                <Skeleton width="1.5rem" height="1.5rem" />
+                <Skeleton width="8rem" height="1.25rem" />
+            </div>
+            <FileBrowserSkeleton />
+        </div>
+    </div>
+);
+
+// Skeleton for the entire files page
+const FilesPageSkeleton = () => (
+    <div className="flex flex-col space-y-6 p-6">
+        <BreadcrumbSkeleton />
+        <FolderStructureSkeleton />
+    </div>
+);
 
 export default function ClassFilesPage() {
     const params = useParams();
@@ -94,8 +174,9 @@ export default function ClassFilesPage() {
         navigation.push(ROUTES.FILES_FOLDER(classId, folder.id));
     };
 
+    // Show skeleton loading if any data is loading
     if (assignmentLoading || customLoading) {
-        return <Loading />;
+        return <FilesPageSkeleton />;
     }
 
     if (assignmentError || customError) {

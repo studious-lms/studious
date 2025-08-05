@@ -120,7 +120,15 @@ export default function AssignmentListPage({ params }: { params: { classId: stri
     const [showFilters, setShowFilters] = useState(false);
     const [activeTab, setActiveTab] = useState(0);
 
-    const { data: classData, isLoading } = trpc.class.get.useQuery({ classId });
+    const { data: classData, isLoading, refetch } = trpc.class.get.useQuery({ classId });
+
+    // Handle Redux refetch requests
+    useEffect(() => {
+        if (appState.refetch) {
+            refetch();
+            dispatch(setRefetch(false));
+        }
+    }, [appState.refetch, refetch, dispatch]);
 
     // Fetch initial data
     useEffect(() => {

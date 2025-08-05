@@ -19,9 +19,99 @@ import { getContrastingTextColor } from "@/utils/color";
 import IconFrame from "@/components/ui/IconFrame";
 import Link from "next/link";
 import Announcement from "@/components/class/Announcement";
+import Skeleton, { SkeletonText, SkeletonAvatar } from "@/components/ui/Skeleton";
 
 type ClassData = RouterOutputs['class']['get']['class'];
 type Announcement = ClassData['announcements'][number];
+
+// Skeleton component for class header
+const ClassHeaderSkeleton = () => (
+    <div className="flex flex-col space-y-4">
+        {/* Breadcrumb skeleton */}
+        <div className="flex items-center space-x-2">
+            <Skeleton width="4rem" height="1rem" />
+            <Skeleton width="1rem" height="1rem" />
+            <Skeleton width="6rem" height="1rem" />
+        </div>
+        
+        {/* Class info skeleton */}
+        <div className="flex items-center space-x-4">
+            <SkeletonAvatar size="lg" />
+            <div className="flex-1">
+                <Skeleton width="12rem" height="2rem" className="mb-2" />
+                <Skeleton width="8rem" height="1rem" />
+            </div>
+            <div className="flex space-x-2">
+                <Skeleton width="6rem" height="2.5rem" />
+                <Skeleton width="6rem" height="2.5rem" />
+            </div>
+        </div>
+    </div>
+);
+
+// Skeleton component for announcement card
+const AnnouncementSkeleton = () => (
+    <Card className="p-6">
+        <div className="flex items-start space-x-4">
+            <SkeletonAvatar size="md" />
+            <div className="flex-1">
+                <div className="flex items-center justify-between mb-3">
+                    <Skeleton width="8rem" height="1.25rem" />
+                    <div className="flex items-center space-x-2">
+                        <Skeleton width="4rem" height="1rem" />
+                        <Skeleton width="2rem" height="2rem" />
+                        <Skeleton width="2rem" height="2rem" />
+                    </div>
+                </div>
+                <SkeletonText lines={3} className="mb-4" />
+                <div className="flex items-center space-x-4">
+                    <Skeleton width="6rem" height="1rem" />
+                    <Skeleton width="4rem" height="1rem" />
+                </div>
+            </div>
+        </div>
+    </Card>
+);
+
+// Skeleton component for quick stats
+const QuickStatsSkeleton = () => (
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        {Array.from({ length: 3 }).map((_, index) => (
+            <Card key={index} className="p-4">
+                <div className="flex items-center space-x-3">
+                    <Skeleton width="3rem" height="3rem" className="rounded-lg" />
+                    <div className="flex-1">
+                        <Skeleton width="6rem" height="1.25rem" className="mb-1" />
+                        <Skeleton width="4rem" height="1rem" />
+                    </div>
+                </div>
+            </Card>
+        ))}
+    </div>
+);
+
+// Skeleton for the entire class home page
+const ClassHomeSkeleton = () => (
+    <div className="flex flex-col space-y-6 p-6">
+        <ClassHeaderSkeleton />
+        <QuickStatsSkeleton />
+        
+        {/* Announcements section skeleton */}
+        <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-2">
+                <Skeleton width="1.5rem" height="1.5rem" />
+                <Skeleton width="8rem" height="1.5rem" />
+            </div>
+            <Skeleton width="6rem" height="2.5rem" />
+        </div>
+        
+        <div className="space-y-4">
+            {Array.from({ length: 3 }).map((_, index) => (
+                <AnnouncementSkeleton key={index} />
+            ))}
+        </div>
+    </div>
+);
 
 export default function ClassHome({ params }: { params: { classId: string } }) {
     const { classId } = params;
@@ -63,6 +153,11 @@ export default function ClassHome({ params }: { params: { classId: string } }) {
     }, [classId]);
 
     const { data: classData, isLoading } = trpc.class.get.useQuery({ classId });
+
+    // Show skeleton loading if data is loading
+    if (isLoading || !classData?.class) {
+        return <ClassHomeSkeleton />;
+    }
 
     useEffect(() => {
         if (classData?.class) {

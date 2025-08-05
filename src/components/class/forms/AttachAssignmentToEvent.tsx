@@ -8,6 +8,7 @@ import { HiPaperClip, HiSearch, HiX, HiDocumentText, HiAcademicCap } from "react
 import { assignmentTypes, formatAssignmentType, getAssignmentIcon } from "@/lib/assignment";
 import IconFrame from "@/components/ui/IconFrame";
 import Input from "@/components/ui/Input";
+import Skeleton from "@/components/ui/Skeleton";
 
 interface AttachAssignmentToEventProps {
   eventId: string;
@@ -148,9 +149,7 @@ export default function AttachAssignmentToEvent({ eventId, onAssignmentAttached 
         </h3>
         
         {isLoading ? (
-          <div className="flex items-center justify-center py-8">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-500"></div>
-          </div>
+          <AttachAssignmentToEventSkeleton />
         ) : filteredAssignments.length === 0 ? (
           <div className="text-center py-8">
             <HiDocumentText className="w-12 h-12 text-foreground-muted mx-auto mb-3" />
@@ -243,3 +242,73 @@ export default function AttachAssignmentToEvent({ eventId, onAssignmentAttached 
     </div>
   );
 } 
+
+// Skeleton component for assignment items
+const AssignmentItemSkeleton = () => (
+  <div className="border rounded-lg p-3">
+    <div className="flex items-start space-x-3">
+      <div className="flex-shrink-0">
+        <Skeleton variant="circular" width={32} height={32} />
+      </div>
+      
+      <div className="flex-1 min-w-0">
+        <div className="flex items-center justify-between mb-1">
+          <Skeleton variant="text" width="60%" height="1rem" />
+          <div className="flex items-center space-x-2">
+            <Skeleton variant="text" width="4rem" height="1.25rem" />
+            <Skeleton variant="text" width="3rem" height="1.25rem" />
+          </div>
+        </div>
+        
+        <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-1">
+            <Skeleton variant="circular" width={12} height={12} />
+            <Skeleton variant="text" width="4rem" height="0.75rem" />
+          </div>
+          <div className="flex items-center space-x-1">
+            <Skeleton variant="circular" width={12} height={12} />
+            <Skeleton variant="text" width="6rem" height="0.75rem" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+// Skeleton component for the entire modal
+const AttachAssignmentToEventSkeleton = () => (
+  <div className="w-[40rem] max-h-[80vh] flex flex-col">
+    {/* Header skeleton */}
+    <div className="flex items-center justify-between mb-6 pb-4 border-b border-border">
+      <div className="flex items-center space-x-3">
+        <Skeleton variant="circular" width={40} height={40} />
+        <div>
+          <Skeleton variant="text" width="8rem" height="1.5rem" className="mb-1" />
+          <Skeleton variant="text" width="12rem" height="1rem" />
+        </div>
+      </div>
+    </div>
+
+    {/* Search skeleton */}
+    <div className="relative mb-6">
+      <Skeleton variant="rectangular" width="100%" height="3rem" />
+    </div>
+
+    {/* Available Assignments skeleton */}
+    <div className="flex-1 overflow-hidden">
+      <Skeleton variant="text" width="6rem" height="1rem" className="mb-3" />
+      
+      <div className="space-y-2 max-h-64 overflow-y-auto">
+        {Array.from({ length: 5 }).map((_, index) => (
+          <AssignmentItemSkeleton key={index} />
+        ))}
+      </div>
+    </div>
+
+    {/* Actions skeleton */}
+    <div className="flex items-center justify-end space-x-3 pt-6 border-t border-border">
+      <Skeleton variant="rectangular" width="5rem" height="2.5rem" />
+      <Skeleton variant="rectangular" width="8rem" height="2.5rem" />
+    </div>
+  </div>
+); 

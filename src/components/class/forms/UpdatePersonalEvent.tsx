@@ -6,12 +6,60 @@ import { RouterOutputs, trpc } from "@/utils/trpc";
 import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
 import ColorPicker from "@/components/ui/ColorPicker";
+import Skeleton from "@/components/ui/Skeleton";
 import { format, parseISO } from "date-fns";
 
 interface UpdatePersonalEventProps {
   id: string;
   onUpdate?: (event: RouterOutputs['agenda']['get']['events']['personal'][number]) => void;
 }
+
+// Skeleton component for the form fields
+const UpdatePersonalEventSkeleton = () => (
+  <div className="space-y-4 w-[24rem] max-w-full">
+    {/* Name field skeleton */}
+    <div className="space-y-2">
+      <Skeleton width="3rem" height="1rem" />
+      <Skeleton width="100%" height="2.5rem" />
+    </div>
+    
+    {/* Location field skeleton */}
+    <div className="space-y-2">
+      <Skeleton width="4rem" height="1rem" />
+      <Skeleton width="100%" height="2.5rem" />
+    </div>
+    
+    {/* Remarks field skeleton */}
+    <div className="space-y-2">
+      <Skeleton width="4rem" height="1rem" />
+      <Skeleton width="100%" height="4rem" />
+    </div>
+    
+    {/* Color picker skeleton */}
+    <div className="space-y-2">
+      <Skeleton width="6rem" height="1rem" />
+      <Skeleton width="100%" height="2.5rem" />
+    </div>
+    
+    {/* Start Time field skeleton */}
+    <div className="space-y-2">
+      <Skeleton width="5rem" height="1rem" />
+      <Skeleton width="100%" height="2.5rem" />
+    </div>
+    
+    {/* End Time field skeleton */}
+    <div className="space-y-2">
+      <Skeleton width="5rem" height="1rem" />
+      <Skeleton width="100%" height="2.5rem" />
+    </div>
+    
+    {/* Buttons skeleton */}
+    <div className="flex justify-end space-x-2">
+      <Skeleton width="4rem" height="2.5rem" />
+      <Skeleton width="6rem" height="2.5rem" />
+    </div>
+  </div>
+);
 
 export default function UpdatePersonalEvent({ id, onUpdate }: UpdatePersonalEventProps) {
   const [eventData, setEventData] = useState({
@@ -63,6 +111,11 @@ export default function UpdatePersonalEvent({ id, onUpdate }: UpdatePersonalEven
     dispatch(closeModal());
   };
 
+  // Show skeleton loading while event data is being fetched
+  if (isPending) {
+    return <UpdatePersonalEventSkeleton />;
+  }
+
   return (
     <form onSubmit={handleSubmit} className="space-y-4 w-[24rem] max-w-full">
       <Input.Text
@@ -105,7 +158,7 @@ export default function UpdatePersonalEvent({ id, onUpdate }: UpdatePersonalEven
       />
       <div className="flex justify-end space-x-2">
         <Button.Light>Cancel</Button.Light>
-        <Button.Primary isLoading={isPending} type="submit">{isPending ? 'Updating event' : 'Update event'}</Button.Primary>
+        <Button.Primary isLoading={updateEvent.isPending} type="submit">{updateEvent.isPending ? 'Updating event' : 'Update event'}</Button.Primary>
       </div>
     </form>
   );

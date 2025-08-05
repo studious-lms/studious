@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addAlert } from "@/store/appSlice";
+import { addAlert, setRefetch } from "@/store/appSlice";
 import { AlertLevel } from "@/lib/alertLevel";
 import { HiSave, HiX, HiDocumentText, HiClipboardList, HiAcademicCap } from "react-icons/hi";
 import { MdAssignment, MdSchool } from "react-icons/md";
@@ -89,6 +89,7 @@ export default function CreateLabDraft({ classId, type, onSuccess }: CreateLabDr
                 difficulty: formData.difficulty,
             });
 
+            dispatch(setRefetch(true));
             dispatch(addAlert({
                 level: AlertLevel.SUCCESS,
                 message: `${getTypeLabel(type)} draft saved successfully!`

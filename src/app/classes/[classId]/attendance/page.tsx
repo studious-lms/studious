@@ -20,6 +20,7 @@ import type { RouterOutputs } from "@/utils/trpc";
 import Card from "@/components/ui/Card";
 import { DataTable } from "@/components/ui/DataTable";
 import { fmtTime } from "@/lib/time";
+import Skeleton, { SkeletonText, SkeletonTable } from "@/components/ui/Skeleton";
 
 interface AttendanceStatus {
     eventId: string;
@@ -29,6 +30,20 @@ interface AttendanceStatus {
 type RouterOutput = inferRouterOutputs<AppRouter>;
 type AttendanceRecord = RouterOutput["attendance"]["get"][number];
 type AttendanceQueryResult = RouterOutput["attendance"]["get"];
+
+// Skeleton component for attendance page
+const AttendancePageSkeleton = () => (
+    <div className="flex flex-col space-y-6 max-w-7xl mx-auto">
+        {/* Header skeleton */}
+        <div className="flex items-center justify-between">
+            <Skeleton width="12rem" height="1.5rem" />
+            <Skeleton width="7rem" height="2.5rem" />
+        </div>
+
+        {/* Table skeleton */}
+        <SkeletonTable rows={5} columns={5} />
+    </div>
+);
 
 export default function AttendancePage({ params }: { params: { classId: string } }) {
     const [attendanceStatuses, setAttendanceStatuses] = useState<Record<string, AttendanceStatus>>({});
@@ -189,9 +204,7 @@ export default function AttendancePage({ params }: { params: { classId: string }
     ];
 
     if (attendanceLoading) {
-        return <div className="w-full h-full flex items-center justify-center">
-            <Loading />
-        </div>;
+        return <AttendancePageSkeleton />;
     }
 
     return (

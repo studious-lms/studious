@@ -14,6 +14,49 @@ import { RouterOutputs } from "@/utils/trpc";
 import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
 import { HiUpload, HiTrash, HiColorSwatch } from "react-icons/hi";
+import Skeleton from "@/components/ui/Skeleton";
+
+// Skeleton component for input fields
+const InputSkeleton = () => (
+    <div className="flex flex-col space-y-2">
+        <Skeleton width="6rem" height="1rem" />
+        <Skeleton width="100%" height="2.5rem" />
+    </div>
+);
+
+// Skeleton component for color picker
+const ColorPickerSkeleton = () => (
+    <div className="flex flex-col space-y-2">
+        <Skeleton width="8rem" height="1rem" />
+        <div className="flex flex-col space-y-2">
+            <Skeleton width="100%" height="2.5rem" />
+            <Skeleton width="12rem" height="1rem" />
+        </div>
+    </div>
+);
+
+// Skeleton for the entire settings page
+const SettingsPageSkeleton = () => (
+    <div className="flex flex-col space-y-6 w-full">
+        {/* Basic Information Card Skeleton */}
+        <Card>
+            <div className="flex flex-col space-y-4">
+                <Skeleton width="8rem" height="1.5rem" />
+                <InputSkeleton />
+                <InputSkeleton />
+                <InputSkeleton />
+            </div>
+        </Card>
+
+        {/* Classroom Theme Card Skeleton */}
+        <Card>
+            <div className="flex flex-col space-y-4">
+                <Skeleton width="8rem" height="1.5rem" />
+                <ColorPickerSkeleton />
+            </div>
+        </Card>
+    </div>
+);
 
 export default function Settings({ params }: { params: { classId: string } }) {
     const classId = params.classId;
@@ -74,9 +117,7 @@ export default function Settings({ params }: { params: { classId: string } }) {
     };
 
     if (isLoading || !classProps) {
-        return <div className="flex justify-center items-center h-screen w-full">
-            <Loading />
-        </div>;
+        return <SettingsPageSkeleton />;
     }
 
     return (
