@@ -33,6 +33,7 @@ import { calculateGrade } from "@/lib/gradeCalculator";
 import FileSelector from "@/components/ui/FileSelector";
 import { useParams, useRouter as useNextRouter } from "next/navigation";
 import { useNavigation, ROUTES } from "@/lib/navigation";
+import Skeleton, { SkeletonText } from "@/components/ui/Skeleton";
 
 type RouterOutput = inferRouterOutputs<AppRouter>;
 type Assignment = RouterOutput["assignment"]["get"];
@@ -53,6 +54,127 @@ type FileData = {
     size: number;
     data: string;
 };
+
+// Skeleton component for submission card (teacher view)
+const SubmissionCardSkeleton = () => (
+    <div className="border border-border dark:border-border-dark rounded-lg p-6">
+        <div className="flex flex-col space-y-4">
+            <div className="flex items-center space-x-4">
+                <Skeleton width="2.5rem" height="2.5rem" variant="circular" />
+                <div className="flex flex-col flex-1">
+                    <Skeleton width="8rem" height="1rem" className="mb-1" />
+                    <Skeleton width="6rem" height="0.75rem" />
+                </div>
+            </div>
+            <div className="flex flex-wrap gap-2">
+                <Skeleton width="3rem" height="1.5rem" />
+                <Skeleton width="4rem" height="1.5rem" />
+                <Skeleton width="3.5rem" height="1.5rem" />
+            </div>
+        </div>
+    </div>
+);
+
+// Skeleton component for file attachment
+const FileAttachmentSkeleton = () => (
+    <div className="flex flex-col rounded-md border border-border-secondary">
+        <div className="bg-gray-200 dark:bg-gray-700 h-20 rounded-t-md"></div>
+        <div className="py-2 px-3 flex flex-col space-y-2">
+            <div className="flex flex-row space-x-2 items-center">
+                <Skeleton width="8rem" height="1rem" />
+                <Skeleton width="2rem" height="2rem" />
+            </div>
+            <Skeleton width="6rem" height="0.75rem" />
+        </div>
+    </div>
+);
+
+// Skeleton component for the entire assignment page
+const AssignmentPageSkeleton = () => (
+    <div>
+        <div className="flex flex-col space-y-9 w-full">
+            <div className="rounded-lg flex flex-col space-y-4 lg:flex-row lg:space-x-4 lg:space-y-0 justify-between">
+                <div className="flex flex-col space-y-4 w-full">
+                    <Card className="flex flex-col space-y-4 w-full">
+                        {/* Assignment header skeleton */}
+                        <div className="flex items-center justify-between">
+                            <Skeleton width="12rem" height="1.5rem" />
+                            <Skeleton width="2.5rem" height="2.5rem" />
+                        </div>
+                        
+                        {/* Assignment details skeleton */}
+                        <div className="flex flex-col justify-center space-y-2">
+                            <Skeleton width="8rem" height="1rem" />
+                            <Skeleton width="6rem" height="1rem" />
+                        </div>
+
+                        {/* Instructions skeleton */}
+                        <div className="flex flex-row justify-between space-x-5">
+                            <SkeletonText lines={3} />
+                        </div>
+
+                        {/* Attachments skeleton */}
+                        <div className="flex flex-col space-y-4 w-full">
+                            <div className="flex flex-row border-t border-border-secondary pt-4">
+                                <FileAttachmentSkeleton />
+                                <FileAttachmentSkeleton />
+                            </div>
+                            
+                            {/* Grading tools skeleton */}
+                            <div className="border-t border-border-secondary pt-4 w-full">
+                                <div className="flex items-center justify-between mb-3">
+                                    <Skeleton width="6rem" height="1rem" />
+                                    <Skeleton width="5rem" height="2rem" />
+                                </div>
+                                <div className="space-y-3">
+                                    <Skeleton width="100%" height="4rem" />
+                                    <Skeleton width="100%" height="4rem" />
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Submissions skeleton (teacher view) */}
+                        <div className="flex flex-col space-y-3">
+                            <Skeleton width="6rem" height="1rem" />
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <SubmissionCardSkeleton />
+                                <SubmissionCardSkeleton />
+                                <SubmissionCardSkeleton />
+                            </div>
+                        </div>
+                    </Card>
+                </div>
+
+                {/* Sidebar skeleton */}
+                <div className="min-w-[18rem] flex flex-col space-y-4">
+                    <Card className="shrink-0 grow-0 flex flex-col justify-between">
+                        <div className="flex flex-col space-y-2">
+                            <Skeleton width="6rem" height="1.5rem" className="mb-2" />
+                            <div className="space-y-3">
+                                <FileAttachmentSkeleton />
+                                <FileAttachmentSkeleton />
+                            </div>
+                        </div>
+                        <div className="mt-4">
+                            <Skeleton width="100%" height="8rem" />
+                        </div>
+                    </Card>
+                    
+                    <Card>
+                        <div className="flex items-center justify-between mb-3">
+                            <Skeleton width="6rem" height="1rem" />
+                            <Skeleton width="5rem" height="2rem" />
+                        </div>
+                        <div className="space-y-3">
+                            <Skeleton width="100%" height="4rem" />
+                            <Skeleton width="100%" height="4rem" />
+                        </div>
+                    </Card>
+                </div>
+            </div>
+        </div>
+    </div>
+);
 
 export default function AssignmentPage({ params }: { params: { classId: string, assignmentId: string } }) {
     const dispatch = useDispatch();
@@ -175,7 +297,7 @@ export default function AssignmentPage({ params }: { params: { classId: string, 
         }
     }, [submissionData?.rubricState]);
 
-    if (!assignmentData || (!submissionsData && !submissionData)) return <Loading />;
+    if (!assignmentData || (!submissionsData && !submissionData)) return <AssignmentPageSkeleton />;
 
     const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
         if (!e.target.files || !e.target.files[0] || !submissionData?.id) return;

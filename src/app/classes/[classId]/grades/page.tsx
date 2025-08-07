@@ -21,72 +21,67 @@ import GradingBoundaries, { GradeBoundary } from "@/components/ui/GradingBoundar
 import CreateMarkscheme from "@/components/class/forms/CreateMarkscheme";
 import CreateGradingBoundary from "@/components/class/forms/CreateGradingBoundary";
 import { HiClipboardCheck, HiClipboardList } from "react-icons/hi";
-import Skeleton, { SkeletonText, SkeletonAvatar } from "@/components/ui/Skeleton";
+import Skeleton, { SkeletonAvatar } from "@/components/ui/Skeleton";
 
 type Assignment = RouterOutputs['class']['get']['class']['assignments'][number];
 type User = RouterOutputs['class']['get']['class']['students'][number];
 
 // Skeleton component for data table header
 const DataTableHeaderSkeleton = () => (
-    <div className="flex items-center justify-between p-4 border-b border-border">
-        <div className="flex items-center space-x-4">
-            <Skeleton width="8rem" height="1.5rem" />
-            <Skeleton width="6rem" height="2rem" />
-        </div>
-        <div className="flex items-center space-x-2">
-            <Skeleton width="6rem" height="2.5rem" />
-            <Skeleton width="6rem" height="2.5rem" />
-        </div>
-    </div>
+    <thead className="bg-muted/50">
+        <tr>
+            {Array.from({ length: 5 }).map((_, index) => (
+                <th key={index} className="px-6 py-3.5 text-left">
+                    <Skeleton width="6rem" height="1rem" />
+                </th>
+            ))}
+        </tr>
+    </thead>
 );
 
 // Skeleton component for data table row
 const DataTableRowSkeleton = () => (
-    <div className="flex items-center p-4 border-b border-border">
-        <div className="flex items-center space-x-3 flex-1">
-            <SkeletonAvatar size="sm" />
-            <Skeleton width="8rem" height="1rem" />
-        </div>
-        <div className="flex items-center space-x-4 flex-1">
-            {Array.from({ length: 4 }).map((_, index) => (
-                <Skeleton key={index} width="4rem" height="2rem" />
-            ))}
-        </div>
-        <div className="flex items-center space-x-2">
-            <Skeleton width="3rem" height="2rem" />
-            <Skeleton width="2rem" height="2rem" />
-        </div>
-    </div>
+    <tr className="border-b border-border">
+        {Array.from({ length: 5 }).map((_, index) => (
+            <td key={index} className="px-6 py-4">
+                <Skeleton width="8rem" height="1rem" />
+            </td>
+        ))}
+    </tr>
 );
 
 // Skeleton component for data table
 const DataTableSkeleton = () => (
-    <Card className="overflow-hidden">
-        <DataTableHeaderSkeleton />
-        <div className="divide-y divide-border">
-            {Array.from({ length: 8 }).map((_, index) => (
-                <DataTableRowSkeleton key={index} />
-            ))}
+    <div className="overflow-hidden rounded-lg border border-border bg-base shadow-sm">
+        <div className="overflow-x-auto">
+            <table className="min-w-full divide-y divide-border">
+                <DataTableHeaderSkeleton />
+                <tbody className="divide-y divide-border bg-base">
+                    {Array.from({ length: 8 }).map((_, index) => (
+                        <DataTableRowSkeleton key={index} />
+                    ))}
+                </tbody>
+            </table>
         </div>
-    </Card>
+    </div>
 );
 
 // Skeleton component for grading tools
 const GradingToolsSkeleton = () => (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+    <div className="space-y-6 mb-6">
         {/* Markschemes skeleton */}
-        <Card className="p-6">
-            <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center space-x-2">
-                    <Skeleton width="1.5rem" height="1.5rem" />
-                    <Skeleton width="8rem" height="1.25rem" />
-                </div>
-                <Skeleton width="6rem" height="2.5rem" />
+        <Card className="flex flex-col space-y-4 p-6">
+            <div className="flex items-center justify-between">
+                <Skeleton width="8rem" height="1.25rem" />
+                <Skeleton width="8rem" height="2.5rem" />
             </div>
             <div className="space-y-3">
                 {Array.from({ length: 3 }).map((_, index) => (
                     <div key={index} className="flex items-center justify-between p-3 border border-border rounded">
-                        <Skeleton width="60%" height="1rem" />
+                        <div className="flex items-center space-x-4">
+                            <Skeleton width="1.25rem" height="1.25rem" />
+                            <Skeleton width="12rem" height="1rem" />
+                        </div>
                         <div className="flex items-center space-x-2">
                             <Skeleton width="2rem" height="2rem" />
                             <Skeleton width="2rem" height="2rem" />
@@ -97,20 +92,17 @@ const GradingToolsSkeleton = () => (
         </Card>
 
         {/* Grading boundaries skeleton */}
-        <Card className="p-6">
-            <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center space-x-2">
-                    <Skeleton width="1.5rem" height="1.5rem" />
-                    <Skeleton width="10rem" height="1.25rem" />
-                </div>
-                <Skeleton width="6rem" height="2.5rem" />
+        <Card className="flex flex-col space-y-4 p-6">
+            <div className="flex items-center justify-between">
+                <Skeleton width="10rem" height="1.25rem" />
+                <Skeleton width="8rem" height="2.5rem" />
             </div>
             <div className="space-y-3">
                 {Array.from({ length: 3 }).map((_, index) => (
                     <div key={index} className="flex items-center justify-between p-3 border border-border rounded">
-                        <div className="flex items-center space-x-3">
-                            <Skeleton width="3rem" height="1rem" />
-                            <Skeleton width="4rem" height="1rem" />
+                        <div className="flex items-center space-x-4">
+                            <Skeleton width="1.25rem" height="1.25rem" />
+                            <Skeleton width="12rem" height="1rem" />
                         </div>
                         <div className="flex items-center space-x-2">
                             <Skeleton width="2rem" height="2rem" />
@@ -125,27 +117,36 @@ const GradingToolsSkeleton = () => (
 
 // Skeleton component for page header
 const PageHeaderSkeleton = () => (
-    <div className="flex flex-col space-y-4 mb-6">
-        <div className="flex items-center justify-between">
-            <Skeleton width="8rem" height="2rem" />
-            <div className="flex items-center space-x-2">
-                <Skeleton width="6rem" height="2.5rem" />
-                <Skeleton width="6rem" height="2.5rem" />
-            </div>
-        </div>
-        <div className="flex items-center space-x-4">
-            <Skeleton width="12rem" height="2.5rem" />
-            <Skeleton width="8rem" height="2.5rem" />
-        </div>
+    <div className="flex items-center justify-between mb-6">
+        <Skeleton width="6rem" height="1.5rem" />
     </div>
+);
+
+// Skeleton component for students section
+const StudentsSkeleton = () => (
+    <Card className="flex flex-col space-y-4 p-6">
+        <Skeleton width="6rem" height="1.25rem" />
+        <div className="space-y-3">
+            {Array.from({ length: 5 }).map((_, index) => (
+                <div key={index} className="flex items-center justify-between p-3 border border-border rounded">
+                    <div className="flex items-center space-x-4">
+                        <SkeletonAvatar size="md" />
+                        <Skeleton width="8rem" height="1rem" />
+                    </div>
+                    <Skeleton width="6rem" height="1rem" />
+                </div>
+            ))}
+        </div>
+    </Card>
 );
 
 // Skeleton for the entire grades page
 const GradesPageSkeleton = () => (
-    <div className="flex flex-col space-y-6 p-6">
+    <div className="flex flex-col space-y-6">
         <PageHeaderSkeleton />
-        <GradingToolsSkeleton />
         <DataTableSkeleton />
+        <GradingToolsSkeleton />
+        <StudentsSkeleton />
     </div>
 );
 

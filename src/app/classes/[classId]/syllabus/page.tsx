@@ -20,10 +20,137 @@ import GradingBoundaries from "@/components/ui/GradingBoundaries";
 import Loading from "@/components/Loading";
 import Empty from "@/components/ui/Empty";
 import Shelf from "@/components/ui/Shelf";
+import Skeleton, { SkeletonText } from "@/components/ui/Skeleton";
 
 type Assignment = RouterOutputs['class']['get']['class']['assignments'][number];
 type MarkScheme = RouterOutputs['class']['listMarkSchemes'][number];
 type GradingBoundary = RouterOutputs['class']['listGradingBoundaries'][number];
+
+// Skeleton component for statistics cards
+const StatisticsCardSkeleton = () => (
+    <Card className="p-4">
+        <div className="flex items-center justify-between">
+            <div>
+                <Skeleton width="8rem" height="1rem" className="mb-2" />
+                <Skeleton width="3rem" height="2rem" />
+            </div>
+            <Skeleton width="2.5rem" height="2.5rem" variant="circular" />
+        </div>
+    </Card>
+);
+
+// Skeleton component for the entire syllabus page
+const SyllabusPageSkeleton = () => (
+    <div className="flex flex-col space-y-6">
+        {/* Header skeleton */}
+        <div className="flex items-center justify-between">
+            <div>
+                <Skeleton width="8rem" height="1.5rem" className="mb-2" />
+                <Skeleton width="16rem" height="1rem" />
+            </div>
+            <div className="flex items-center space-x-3">
+                <Skeleton width="7rem" height="2.5rem" />
+            </div>
+        </div>
+
+        {/* Statistics Cards skeleton */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+            <StatisticsCardSkeleton />
+            <StatisticsCardSkeleton />
+            <StatisticsCardSkeleton />
+            <StatisticsCardSkeleton />
+        </div>
+
+        {/* Course Overview skeleton */}
+        <Card>
+            <Skeleton width="10rem" height="1.5rem" className="mb-6" />
+            <div className="space-y-4">
+                <SkeletonText lines={4} />
+                <Skeleton width="100%" height="2rem" />
+                <SkeletonText lines={3} />
+            </div>
+        </Card>
+
+        {/* Grading Tools skeleton */}
+        <Card>
+            <div className="flex items-center space-x-2 mb-6">
+                <Skeleton width="1.25rem" height="1.25rem" variant="circular" />
+                <Skeleton width="12rem" height="1.5rem" />
+            </div>
+            <div className="space-y-6">
+                <div>
+                    <div className="flex items-center space-x-2 mb-3">
+                        <Skeleton width="1rem" height="1rem" variant="circular" />
+                        <Skeleton width="8rem" height="1.25rem" />
+                    </div>
+                    <div className="space-y-3">
+                        <Skeleton width="100%" height="4rem" />
+                        <Skeleton width="100%" height="4rem" />
+                    </div>
+                </div>
+            </div>
+        </Card>
+
+        {/* Course Information skeleton */}
+        <Card>
+            <div className="flex items-center space-x-2 mb-6">
+                <Skeleton width="1.25rem" height="1.25rem" variant="circular" />
+                <Skeleton width="10rem" height="1.5rem" />
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div className="space-y-4">
+                    <Skeleton width="8rem" height="1.25rem" className="mb-4" />
+                    <div className="space-y-3">
+                        <div className="bg-background-muted p-3 rounded-lg">
+                            <Skeleton width="6rem" height="1rem" className="mb-2" />
+                            <Skeleton width="10rem" height="1.25rem" />
+                        </div>
+                        <div className="bg-background-muted p-3 rounded-lg">
+                            <Skeleton width="5rem" height="1rem" className="mb-2" />
+                            <Skeleton width="8rem" height="1.25rem" />
+                        </div>
+                        <div className="bg-background-muted p-3 rounded-lg">
+                            <Skeleton width="6rem" height="1rem" className="mb-2" />
+                            <Skeleton width="8rem" height="1.25rem" />
+                        </div>
+                    </div>
+                </div>
+                <div className="space-y-4">
+                    <Skeleton width="10rem" height="1.25rem" className="mb-4" />
+                    <div className="space-y-3">
+                        <div className="bg-background-muted p-3 rounded-lg">
+                            <div className="flex items-center justify-between">
+                                <div>
+                                    <Skeleton width="8rem" height="1rem" className="mb-2" />
+                                    <Skeleton width="3rem" height="1.5rem" />
+                                </div>
+                                <Skeleton width="1.5rem" height="1.5rem" variant="circular" />
+                            </div>
+                        </div>
+                        <div className="bg-background-muted p-3 rounded-lg">
+                            <div className="flex items-center justify-between">
+                                <div>
+                                    <Skeleton width="10rem" height="1rem" className="mb-2" />
+                                    <Skeleton width="3rem" height="1.5rem" />
+                                </div>
+                                <Skeleton width="1.5rem" height="1.5rem" variant="circular" />
+                            </div>
+                        </div>
+                        <div className="bg-background-muted p-3 rounded-lg">
+                            <div className="flex items-center justify-between">
+                                <div>
+                                    <Skeleton width="7rem" height="1rem" className="mb-2" />
+                                    <Skeleton width="3rem" height="1.5rem" />
+                                </div>
+                                <Skeleton width="1.5rem" height="1.5rem" variant="circular" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </Card>
+    </div>
+);
 
 export default function SyllabusPage({ params }: { params: { classId: string } }) {
     const dispatch = useDispatch();
@@ -163,8 +290,9 @@ export default function SyllabusPage({ params }: { params: { classId: string } }
         }
     ];
 
+    // Show skeleton loading instead of spinner
     if (classLoading || syllabusLoading) {
-        return <Loading />;
+        return <SyllabusPageSkeleton />;
     }
 
     if (!classData?.class) {
@@ -179,14 +307,14 @@ export default function SyllabusPage({ params }: { params: { classId: string } }
         );
     }
 
-    const assignments = classData.class.assignments || [];
-    const markschemes = markschemesData || [];
-    const gradingBoundaries = gradingBoundariesData || [];
+    const assignments: Assignment[] = classData.class.assignments || [];
+    const markschemes: MarkScheme[] = markschemesData || [];
+    const gradingBoundaries: GradingBoundary[] = gradingBoundariesData || [];
 
     // Calculate statistics
-    const totalPoints = assignments.reduce((sum, a) => sum + (a.maxGrade || 0), 0);
-    const completionRate = assignments.length > 0 ? Math.round((assignments.filter(a => a.graded).length / assignments.length) * 100) : 0;
-    const upcomingAssignments = assignments.filter(a => a.dueDate && new Date(a.dueDate) > new Date()).length;
+    const totalPoints = assignments.reduce((sum, a: Assignment) => sum + (a.maxGrade || 0), 0);
+    const completionRate = assignments.length > 0 ? Math.round((assignments.filter((a: Assignment) => a.graded).length / assignments.length) * 100) : 0;
+    const upcomingAssignments = assignments.filter((a: Assignment) => a.dueDate && new Date(a.dueDate) > new Date()).length;
 
     return (
         <div className="flex flex-col space-y-6">
@@ -371,7 +499,7 @@ export default function SyllabusPage({ params }: { params: { classId: string } }
                                     <span>Marking Schemes</span>
                                 </h3>
                                 <div className="space-y-3">
-                                    {markschemes.map((markscheme) => {
+                                    {markschemes.map((markscheme: MarkScheme) => {
                                         let markschemeName = "Untitled Markscheme";
                                         try {
                                             const parsed = JSON.parse(markscheme.structured);
@@ -428,7 +556,7 @@ export default function SyllabusPage({ params }: { params: { classId: string } }
                                     <span>Grading Boundaries</span>
                                 </h3>
                                 <div className="space-y-3">
-                                    {gradingBoundaries.map((boundary) => {
+                                    {gradingBoundaries.map((boundary: GradingBoundary) => {
                                         let boundaryName = "Untitled Grading Boundary";
                                         try {
                                             const parsed = JSON.parse(boundary.structured);

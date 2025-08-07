@@ -17,8 +17,64 @@ import type { TRPCClientErrorLike } from "@trpc/client";
 import type { AppRouter } from "@studious-lms/server";
 import { getSocket, joinClass, leaveClass, emitGradeUpdate } from "@/lib/socket";
 import Card from "@/components/ui/Card";
+import Skeleton, { SkeletonText, SkeletonTable } from "@/components/ui/Skeleton";
 
 type Grade = RouterOutputs['class']['getGrades']['grades'][number];
+
+// Skeleton component for the grades table
+const GradesTableSkeleton = () => (
+    <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+        {/* Header */}
+        <div className="bg-gray-50 dark:bg-gray-800 px-4 py-3 border-b border-gray-200 dark:border-gray-700">
+            <div className="flex space-x-4">
+                <Skeleton width="25%" height="1rem" />
+                <Skeleton width="20%" height="1rem" />
+                <Skeleton width="15%" height="1rem" />
+                <Skeleton width="15%" height="1rem" />
+                <Skeleton width="15%" height="1rem" />
+            </div>
+        </div>
+        
+        {/* Rows */}
+        <div className="divide-y divide-gray-200 dark:divide-gray-700">
+            {Array.from({ length: 5 }).map((_, index) => (
+                <div key={index} className="px-4 py-3">
+                    <div className="flex space-x-4">
+                        <Skeleton width="25%" height="1rem" />
+                        <Skeleton width="20%" height="2rem" />
+                        <Skeleton width="15%" height="1rem" />
+                        <Skeleton width="15%" height="1rem" />
+                        <Skeleton width="15%" height="1rem" />
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+);
+
+// Skeleton component for the average grade card
+const AverageGradeCardSkeleton = () => (
+    <Card className="grid grid-cols-[2fr_1fr] gap-4 p-4">
+        <Skeleton width="8rem" height="1rem" />
+        <Skeleton width="4rem" height="1rem" />
+    </Card>
+);
+
+// Skeleton for the entire grades page
+const GradesPageSkeleton = () => (
+    <div className="flex flex-col space-y-6">
+        {/* Header skeleton */}
+        <div className="flex items-center justify-between">
+            <Skeleton width="6rem" height="2rem" />
+        </div>
+
+        {/* Grades table skeleton */}
+        <GradesTableSkeleton />
+
+        {/* Average grade card skeleton */}
+        <AverageGradeCardSkeleton />
+    </div>
+);
 
 export default function AllGradesPage({ params }: { params: { classId: string, userId: string } }) {
     const appState = useSelector((state: RootState) => state.app);
@@ -195,17 +251,18 @@ export default function AllGradesPage({ params }: { params: { classId: string, u
         }
     ];
 
+    // Show skeleton loading instead of spinner
+    if (isLoading) {
+        return <GradesPageSkeleton />;
+    }
+
     return (
         <div className="flex flex-col space-y-6">
             <div className="flex items-center justify-between">
                 <h1 className="font-semibold text-4xl text-foreground-primary">Grades</h1>
             </div>
 
-            {isLoading ? (
-                <div className="flex justify-center items-center min-h-[200px]">
-                    <Loading />
-                </div>
-            ) : grades.length > 0 ? (
+            {grades.length > 0 ? (
                 <>
                     <DataTable 
                         columns={columns}

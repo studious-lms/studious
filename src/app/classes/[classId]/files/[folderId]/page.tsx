@@ -17,6 +17,96 @@ import CreateFolder from "@/components/class/forms/CreateFolder";
 import UploadFilesToFolder from "@/components/class/forms/UploadFilesToFolder";
 import FileDisplay from "@/components/class/FileDisplay";
 import FolderDisplay from "@/components/class/FolderDisplay";
+import Skeleton, { SkeletonText } from "@/components/ui/Skeleton";
+
+// Skeleton component for breadcrumb
+const BreadcrumbSkeleton = () => (
+    <Card className="flex items-center text-sm text-muted-foreground mb-6 space-x-1">
+        <Skeleton width="3rem" height="1rem" />
+        <HiChevronRight className="inline w-4 h-4 mx-1" />
+        <Skeleton width="3rem" height="1rem" />
+        <HiChevronRight className="inline w-4 h-4 mx-1" />
+        <Skeleton width="6rem" height="1rem" />
+        <HiChevronRight className="inline w-4 h-4 mx-1" />
+        <Skeleton width="8rem" height="1rem" />
+    </Card>
+);
+
+// Skeleton component for folder item
+const FolderItemSkeleton = () => (
+    <Card className="p-4 hover:bg-background-muted transition-colors">
+        <div className="flex items-center space-x-3">
+            <Skeleton width="2.5rem" height="2.5rem" className="rounded" />
+            <div className="flex-1">
+                <Skeleton width="8rem" height="1rem" className="mb-1" />
+                <Skeleton width="6rem" height="0.75rem" />
+            </div>
+            <div className="flex items-center space-x-2">
+                <Skeleton width="2rem" height="2rem" />
+                <Skeleton width="2rem" height="2rem" />
+            </div>
+        </div>
+    </Card>
+);
+
+// Skeleton component for file item
+const FileItemSkeleton = () => (
+    <div className="flex items-center justify-between p-4 border border-border rounded-lg hover:bg-background-muted transition-colors">
+        <div className="flex items-center space-x-3">
+            <Skeleton width="2.5rem" height="2.5rem" className="rounded" />
+            <div className="flex flex-col space-y-1">
+                <Skeleton width="10rem" height="1rem" />
+                <Skeleton width="6rem" height="0.75rem" />
+            </div>
+        </div>
+        <div className="flex items-center space-x-2">
+            <Skeleton width="4rem" height="1rem" />
+            <Skeleton width="2rem" height="2rem" />
+        </div>
+    </div>
+);
+
+// Skeleton for the entire folder page
+const FolderPageSkeleton = () => (
+    <div className="flex flex-col space-y-6">
+        {/* Header skeleton */}
+        <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-4">
+                <div>
+                    <Skeleton width="12rem" height="1.5rem" className="mb-2" />
+                    <Skeleton width="16rem" height="1rem" />
+                </div>
+            </div>
+            <div className="flex items-center space-x-2">
+                <Skeleton width="7rem" height="2.5rem" />
+                <Skeleton width="7rem" height="2.5rem" />
+                <Skeleton width="2.5rem" height="2.5rem" />
+            </div>
+        </div>
+
+        <BreadcrumbSkeleton />
+
+        {/* Folders section skeleton */}
+        <div className="space-y-4">
+            <Skeleton width="5rem" height="1.5rem" />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {Array.from({ length: 3 }).map((_, index) => (
+                    <FolderItemSkeleton key={index} />
+                ))}
+            </div>
+        </div>
+
+        {/* Files section skeleton */}
+        <div className="space-y-4">
+            <Skeleton width="4rem" height="1.5rem" />
+            <div className="space-y-3">
+                {Array.from({ length: 4 }).map((_, index) => (
+                    <FileItemSkeleton key={index} />
+                ))}
+            </div>
+        </div>
+    </div>
+);
 
 function Breadcrumb({ classId, currentFolder, parentFolder }: { 
     classId: string; 
@@ -103,7 +193,7 @@ export default function FolderPage() {
     };
 
     if (isLoading) {
-        return <Loading />;
+        return <FolderPageSkeleton />;
     }
 
     if (error) {
