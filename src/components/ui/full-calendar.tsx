@@ -32,40 +32,35 @@ import {
   forwardRef,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
   useState,
 } from 'react';
 import { useHotkeys } from 'react-hotkeys-hook';
 
-const monthEventVariants = cva('size-2 rounded-full', {
-  variants: {
-    variant: {
-      default: 'bg-primary',
-      blue: 'bg-blue-500',
-      green: 'bg-green-500',
-      pink: 'bg-pink-500',
-      purple: 'bg-purple-500',
-    },
-  },
-  defaultVariants: {
-    variant: 'default',
-  },
-});
+// Base classes for month event dots - subtle with solid border
+const monthEventBaseClasses = 'size-2 rounded-full';
 
-const dayEventVariants = cva('font-bold border-l-4 rounded p-2 text-xs', {
-  variants: {
-    variant: {
-      default: 'bg-muted/30 text-muted-foreground border-muted',
-      blue: 'bg-blue-500/30 text-blue-600 border-blue-500',
-      green: 'bg-green-500/30 text-green-600 border-green-500',
-      pink: 'bg-pink-500/30 text-pink-600 border-pink-500',
-      purple: 'bg-purple-500/30 text-purple-600 border-purple-500',
-    },
-  },
-  defaultVariants: {
-    variant: 'default',
-  },
-});
+// Base classes for day events - transparent with solid border and hover effects
+const dayEventBaseClasses = 'font-medium border-l-4 rounded p-2 text-xs backdrop-blur-sm cursor-pointer transition-all duration-200 hover:shadow-md';
+
+// Helper function to determine if a color is light or dark for text contrast
+const isLightColor = (hexColor: string): boolean => {
+  const hex = hexColor.replace('#', '');
+  const r = parseInt(hex.substr(0, 2), 16);
+  const g = parseInt(hex.substr(2, 2), 16);
+  const b = parseInt(hex.substr(4, 2), 16);
+  const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+  return brightness > 128;
+};
+
+// Helper function to convert hex to rgba
+const hexToRgba = (hex: string, alpha: number): string => {
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+};
 
 type View = 'day' | 'week' | 'month' | 'year';
 
@@ -90,7 +85,9 @@ export type CalendarEvent = {
   start: Date;
   end: Date;
   title: string;
-  color?: VariantProps<typeof monthEventVariants>['variant'];
+  color?: string;
+  onClick?: () => void;
+  location?: string;
 };
 
 type CalendarProps = {
@@ -117,6 +114,11 @@ const Calendar = ({
   const [view, setView] = useState<View>(_defaultMode);
   const [date, setDate] = useState(defaultDate);
   const [events, setEvents] = useState<CalendarEvent[]>(defaultEvents);
+
+  // Sync events prop with internal state
+  useEffect(() => {
+    setEvents(defaultEvents);
+  }, [defaultEvents]);
 
   const changeView = (view: View) => {
     setView(view);
@@ -167,11 +169,12 @@ const CalendarViewTrigger = forwardRef<
   React.HTMLAttributes<HTMLButtonElement> & {
     view: View;
   }
->(({ children, view, ...props }) => {
+>(({ children, view, ...props }, ref) => {
   const { view: currentView, setView, onChangeView } = useCalendar();
 
   return (
     <Button
+      ref={ref}
       aria-current={currentView === view}
       size="sm"
       variant="ghost"
@@ -203,19 +206,42 @@ const EventGroup = ({
             differenceInMinutes(event.end, event.start) / 60;
           const startPosition = event.start.getMinutes() / 60;
 
+          const eventColor = event.color || '#3B82F6';
+          const bgColor = hexToRgba(eventColor, 0.08); // Much more transparent
+          const hoverBgColor = hexToRgba(eventColor, 0.15); // Slightly more opaque on hover
+          const borderColor = eventColor;
+          const textColor = eventColor; // Use event color for text
+
           return (
             <div
               key={event.id}
-              className={cn(
-                'relative',
-                dayEventVariants({ variant: event.color })
-              )}
+              className={cn('relative group', dayEventBaseClasses)}
               style={{
                 top: `${startPosition * 100}%`,
                 height: `${hoursDifference * 100}%`,
+                backgroundColor: bgColor,
+                borderLeftColor: borderColor,
+                borderLeftWidth: '3px',
+                color: textColor,
+                border: `1px solid ${hexToRgba(eventColor, 0.2)}`,
+                '--hover-bg': hoverBgColor,
+              } as React.CSSProperties}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = hoverBgColor;
+                e.currentTarget.style.borderColor = eventColor;
               }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = bgColor;
+                e.currentTarget.style.borderColor = hexToRgba(eventColor, 0.2);
+              }}
+              onClick={() => event.onClick?.()}
             >
-              {event.title}
+              <div className="flex flex-col gap-1">
+
+              <span className="font-bold">{event.title}</span>
+              <span>{format(event.start, 'HH:mm')} – {format(event.end, 'HH:mm')}</span>
+              <span>{event.location}</span>
+              </div>
             </div>
           );
         })}
@@ -371,16 +397,19 @@ const CalendarMonthView = () => {
               </span>
 
               {currentEvents.map((event) => {
+                const eventColor = event.color || '#3B82F6';
+
                 return (
                   <div
                     key={event.id}
-                    className="px-1 rounded text-sm flex items-center gap-1"
+                    className="px-1 rounded text-sm flex items-center gap-1 hover:bg-muted/50 cursor-pointer duration-200"
+                    onClick={() => event.onClick?.()}
                   >
                     <div
-                      className={cn(
-                        'shrink-0',
-                        monthEventVariants({ variant: event.color })
-                      )}
+                      className={cn('shrink-0', monthEventBaseClasses)}
+                      style={{
+                        backgroundColor: eventColor,
+                      }}
                     ></div>
                     <span className="flex-1 truncate">{event.title}</span>
                     <time className="tabular-nums text-muted-foreground/50 text-xs">

@@ -122,7 +122,7 @@ export * from './calendar';
 
 // tRPC client and types
 export { trpcClient, setAuthToken, clearAuthToken, isAuthenticated } from '../trpc-client';
-export { trpc, RouterOutputs, RouterInputs } from '../trpc';
+export { trpc, type RouterOutputs, type RouterInputs } from '../trpc';
 
 // ===== CONVENIENCE EXPORTS =====
 // Re-export commonly used types for convenience

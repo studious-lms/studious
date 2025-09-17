@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
-import { DndProvider, useDrop } from "react-dnd";
+import { DndProvider, DropTargetMonitor, useDrop } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { PageLayout } from "@/components/ui/page-layout";
 import { Card, CardContent } from "@/components/ui/card";
@@ -18,10 +18,20 @@ import {
 } from "lucide-react";
 import { AssignmentFolder } from "@/components/AssignmentFolder";
 import { DraggableAssignment } from "@/components/DraggableAssignment";
-import { CreateAssignmentModal } from "@/components/modals";
+import { CreateAssignmentModal, CreateSectionModal } from "@/components/modals";
 import { Skeleton } from "@/components/ui/skeleton";
 import { AssignmentCardSkeleton } from "@/components/ui/class-card-skeleton";
+import { RouterOutputs, trpc } from "@/lib/trpc";
 
+type Assignment = RouterOutputs['assignment']['get'];
+
+type Folder = {
+  id: string;
+  name: string;
+  isOpen: boolean;
+  color: string;
+  assignments: Assignment[];
+};
 // Unified droppable slot component for both assignments and folders
 function DroppableItemSlot({ 
   children, 
@@ -34,18 +44,18 @@ function DroppableItemSlot({
 }) {
   const [{ isOver }, drop] = useDrop({
     accept: ["assignment", "folder"],
-    drop: (item: { id: string; type?: string }, monitor: any) => {
+    drop: (item: { id: string; type?: string }, monitor: DropTargetMonitor) => {
       if (monitor.didDrop()) return;
       const itemType = item.type || "assignment";
       onMoveItem(item.id, itemType, index);
     },
-    collect: (monitor: any) => ({
+    collect: (monitor: DropTargetMonitor) => ({
       isOver: monitor.isOver({ shallow: true }),
     }),
   });
 
   return (
-    <div ref={drop} className="relative">
+    <div ref={drop as unknown as React.Ref<HTMLDivElement>} className="relative">
       {isOver && (
         <div className="absolute -top-1 left-0 right-0 h-0.5 bg-primary rounded-full z-10" />
       )}
@@ -64,20 +74,20 @@ function MainDropZone({
 }) {
   const [{ isOver }, drop] = useDrop({
     accept: "assignment",
-    drop: (item: { id: string }, monitor) => {
+    drop: (item: { id: string }, monitor: DropTargetMonitor) => {
       if (monitor.isOver({ shallow: true })) {
         console.log('Dropping assignment to top level:', item.id);
         onMoveAssignment(item.id, null); // Move to top-level
       }
     },
-    collect: (monitor: any) => ({
+    collect: (monitor: DropTargetMonitor) => ({
       isOver: monitor.isOver({ shallow: true }),
     }),
   });
 
   return (
     <div 
-      ref={drop} 
+      ref={drop as unknown as React.Ref<HTMLDivElement>} 
       className={`relative min-h-[400px] py-4 transition-all duration-200 ${
         isOver ? 'bg-muted/20 border-2 border-dashed border-primary rounded-lg' : ''
       }`}
@@ -94,140 +104,87 @@ function MainDropZone({
   );
 }
 
-const mockAssignmentFolders = [
-  {
-    id: "term1",
-    title: "Term 1",
-    isOpen: true,
-    color: "blue",
-    assignments: [
-      {
-        id: "1",
-        title: "Physics Lab Report #3",
-        description: "Complete analysis of pendulum motion experiments",
-        type: "Lab Report",
-        dueDate: "2024-01-15",
-        dueTime: "11:59 PM",
-        status: "open",
-        submissions: 18,
-        totalStudents: 24,
-        points: 100,
-        hasAttachments: true
-      },
-      {
-        id: "3",
-        title: "Homework Set 5",
-        description: "Problems 1-15 from Chapter 8",
-        type: "Homework",
-        dueDate: "2024-01-20",
-        dueTime: "11:59 PM", 
-        status: "open",
-        submissions: 12,
-        totalStudents: 24,
-        points: 75,
-        hasAttachments: false
-      }
-    ]
-  },
-  {
-    id: "term2",
-    title: "Term 2",
-    isOpen: true,
-    color: "green",
-    assignments: [
-      {
-        id: "4",
-        title: "Midterm Exam Review",
-        description: "Study guide for upcoming midterm examination",
-        type: "Study Guide",
-        dueDate: "2024-01-25",
-        dueTime: "2:30 PM",
-        status: "open",
-        submissions: 8,
-        totalStudents: 24,
-        points: 25,
-        hasAttachments: true
-      }
-    ]
-  },
-  {
-    id: "term3",
-    title: "Term 3",
-    isOpen: false,
-    color: "purple",
-    assignments: [
-      {
-        id: "2", 
-        title: "Chapter 8 Quiz",
-        description: "Quiz covering electromagnetic waves and optics",
-        type: "Quiz",
-        dueDate: "2024-01-12",
-        dueTime: "2:30 PM",
-        status: "closed",
-        submissions: 24,
-        totalStudents: 24,
-        points: 50,
-        hasAttachments: false
-      }
-    ]
-  }
-];
-
-const mockTopLevelAssignments = [
-  {
-    id: "standalone1",
-    title: "Final Project Proposal",
-    description: "Submit your final project proposal for review",
-    type: "Project",
-    dueDate: "2024-02-01",
-    dueTime: "11:59 PM",
-    status: "open",
-    submissions: 5,
-    totalStudents: 24,
-    points: 150,
-    hasAttachments: true
-  }
-];
-
 export default function Assignments() {
   const params = useParams();
   const classId = params.id as string;
   const [searchQuery, setSearchQuery] = useState("");
   const [activeTab, setActiveTab] = useState("all");
-  const [loading, setLoading] = useState(true);
-  const [topLevelItems, setTopLevelItems] = useState<Array<{type: 'assignment' | 'folder', data: any}>>([]);
-  const [openSections, setOpenSections] = useState<Record<string, boolean>>({
-    term1: true,
-    term2: true,
-    term3: false,
-  });
+  const [topLevelItems, setTopLevelItems] = useState<Array<{type: 'assignment' | 'folder', data: Assignment | Folder}>>([]);
+  const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
 
-  // Initialize topLevelItems with folders and standalone assignments
+  // API queries
+  const { data: classData, isLoading, refetch } = trpc.class.get.useQuery({ classId });
+  
+  // Initialize topLevelItems with real data from API
   useEffect(() => {
-    // Simulate loading delay
-    const timer = setTimeout(() => {
-      const folderItems = mockAssignmentFolders.map(folder => ({ type: 'folder' as const, data: folder }));
-      const assignmentItems = mockTopLevelAssignments.map(assignment => ({ type: 'assignment' as const, data: assignment }));
-      setTopLevelItems([...assignmentItems, ...folderItems]);
-      setLoading(false);
-    }, 1000);
+    if (classData?.class) {
+      const assignments = classData.class.assignments || [];
+      const sections = classData.class.sections || [];
+      
+      // Create folder items from sections with their assignments
+      const folderItems = sections.map(section => {
+        const sectionAssignments = assignments
+          .filter(assignment => assignment.section && assignment.section.id === section.id)
+          .map(assignment => ({
+            id: assignment.id,
+            title: assignment.title,
+            type: assignment.type?.toLowerCase() || 'homework',
+            dueDate: assignment.dueDate ? new Date(assignment.dueDate).toLocaleDateString() : null,
+            status: assignment.graded ? 'graded' : 'pending',
+            submissions: assignment.submissions?.length || 0,
+            totalStudents: classData.class.students?.length || 0,
+            hasAttachments: (assignment.attachments?.length || 0) > 0,
+            points: assignment.maxGrade || 0,
+            description: assignment.instructions || ''
+          }));
 
-    return () => clearTimeout(timer);
-  }, []);
+        return { 
+          type: 'folder' as const, 
+          data: {
+            id: section.id,
+            name: section.name,
+            isOpen: openSections[section.id] ?? true,
+            color: "blue",
+            assignments: sectionAssignments
+          }
+        };
+      });
+      
+      // Get assignments not in any section (top-level)
+      const topLevelAssignments = assignments.filter(assignment => !assignment.section);
+      const assignmentItems = topLevelAssignments.map(assignment => ({ 
+        type: 'assignment' as const, 
+        data: {
+          id: assignment.id,
+          title: assignment.title,
+          type: assignment.type?.toLowerCase() || 'homework',
+          dueDate: assignment.dueDate ? new Date(assignment.dueDate).toLocaleDateString() : null,
+          status: assignment.graded ? 'graded' : 'pending',
+          submissions: assignment.submissions?.length || 0,
+          totalStudents: classData.class.students?.length || 0,
+          hasAttachments: (assignment.attachments?.length || 0) > 0,
+          points: assignment.maxGrade || 0,
+          description: assignment.instructions || ''
+        }
+      }));
+      
+      setTopLevelItems([...assignmentItems, ...folderItems]);
+    }
+  }, [classData, openSections]);
 
   const filteredTopLevelItems = topLevelItems.filter(item => {
     if (item.type === 'folder') {
       const folder = item.data;
-      return folder.assignments.some((assignment: any) =>
+      return folder.assignments.some((assignment: Assignment) =>
         assignment.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         assignment.type.toLowerCase().includes(searchQuery.toLowerCase()) ||
         assignment.description.toLowerCase().includes(searchQuery.toLowerCase())
-      ) || folder.title.toLowerCase().includes(searchQuery.toLowerCase());
+      ) || folder.name.toLowerCase().includes(searchQuery.toLowerCase());
     } else {
-      const assignment = item.data;
+      const assignment = item.data as Assignment;
       return assignment.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         assignment.type.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        assignment.description.toLowerCase().includes(searchQuery.toLowerCase());
+        assignment.instructions.toLowerCase().includes(searchQuery.toLowerCase());
     }
   });
 
@@ -254,36 +211,10 @@ export default function Assignments() {
     });
   };
 
-  if (loading) {
+  if (isLoading) {
     return (
       <PageLayout>
         <div className="space-y-6">
-          {/* Header skeleton */}
-          <div className="flex items-center justify-between">
-            <div className="space-y-2">
-              <Skeleton className="h-8 w-48" />
-              <Skeleton className="h-4 w-64" />
-            </div>
-            <Skeleton className="h-10 w-32" />
-          </div>
-
-          {/* Search and filters skeleton */}
-          <div className="flex items-center space-x-4">
-            <div className="relative flex-1 max-w-md">
-              <Skeleton className="h-10 w-full" />
-            </div>
-            <Skeleton className="h-10 w-20" />
-          </div>
-
-          {/* Tabs skeleton */}
-          <div className="flex space-x-1">
-            <Skeleton className="h-10 w-16" />
-            <Skeleton className="h-10 w-20" />
-            <Skeleton className="h-10 w-24" />
-            <Skeleton className="h-10 w-18" />
-          </div>
-
-          {/* Assignments grid skeleton */}
           <AssignmentCardSkeleton count={6} />
         </div>
       </PageLayout>
@@ -309,7 +240,7 @@ export default function Assignments() {
     if (!assignment) {
       for (const item of topLevelItems) {
         if (item.type === 'folder') {
-          const found = item.data.assignments.find((a: any) => a.id === assignmentId);
+          const found = item.data.assignments.find((a: Assignment) => a.id === assignmentId);
           if (found) {
             assignment = found;
             sourceLocation = 'folder';
@@ -352,7 +283,7 @@ export default function Assignments() {
                   ...item, 
                   data: { 
                     ...item.data, 
-                    assignments: item.data.assignments.filter((a: any) => a.id !== assignmentId) 
+                    assignments: item.data.assignments.filter((a: Assignment) => a.id !== assignmentId) 
                   }
                 }
               : item
@@ -389,7 +320,7 @@ export default function Assignments() {
                 ...item, 
                 data: { 
                   ...item.data, 
-                  assignments: item.data.assignments.filter((a: any) => a.id !== assignmentId) 
+                  assignments: item.data.assignments.filter((a: Assignment) => a.id !== assignmentId) 
                 }
               }
             : item
@@ -415,38 +346,12 @@ export default function Assignments() {
     );
   };
 
-  const createFolder = () => {
-    const termNumber = topLevelItems.filter(item => item.type === 'folder').length + 1;
-    const newFolder = {
-      id: `term${termNumber}`,
-      title: `Term ${termNumber}`,
-      isOpen: true,
-      color: "purple",
-      assignments: []
-    };
-    const newItem = { type: 'folder' as const, data: newFolder };
-    setTopLevelItems(prev => [...prev, newItem]);
+  const handleSectionCreated = () => {
+    refetch(); // Refresh class data to get new section
   };
 
-  const handleAssignmentCreated = (assignment: any) => {
-    const due = new Date(assignment.dueDate);
-    const display = {
-      id: assignment.id,
-      title: assignment.title,
-      description: assignment.description,
-      type: assignment.type?.toString()?.replace('_', ' ') || 'Assignment',
-      dueDate: due.toISOString().slice(0,10),
-      dueTime: due.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }),
-      status: 'open',
-      submissions: 0,
-      totalStudents: 0,
-      points: assignment.maxGrade ?? 100,
-      hasAttachments: false,
-    };
-    
-    // Add as top-level assignment
-    const newItem = { type: 'assignment' as const, data: display };
-    setTopLevelItems(prev => [newItem, ...prev]);
+  const handleAssignmentCreated = () => {
+    refetch();
   };
 
   return (
@@ -463,10 +368,12 @@ export default function Assignments() {
               <Filter className="h-4 w-4 mr-2" />
               Filters
             </Button>
-            <Button variant="outline" size="sm" onClick={createFolder}>
-              <Folder className="h-4 w-4 mr-2" />
-              New Folder
-            </Button>
+            <CreateSectionModal classId={classId} onSectionCreated={handleSectionCreated}>
+              <Button variant="outline" size="sm">
+                <Folder className="h-4 w-4 mr-2" />
+                New Section
+              </Button>
+            </CreateSectionModal>
             <CreateAssignmentModal onAssignmentCreated={handleAssignmentCreated}>
               <Button size="sm">
                 <Plus className="h-4 w-4 mr-2" />
@@ -509,12 +416,12 @@ export default function Assignments() {
                     >
                       {item.type === 'assignment' ? (
                         <DraggableAssignment
-                          assignment={item.data}
+                          assignment={item.data as Assignment}
                           classId={classId!}
                         />
                       ) : (
                         <AssignmentFolder
-                          folder={item.data}
+                          folder={item.data as Folder}
                           classId={classId!}
                           isOpen={openSections[item.data.id]}
                           onToggle={() => toggleSection(item.data.id)}

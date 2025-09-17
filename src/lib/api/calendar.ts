@@ -239,40 +239,40 @@ export const useCalendarManagement = () => {
  * React Query query for getting class events
  */
 export const useGetClassEventsQuery = (classId: string) => {
-  return trpc.calendar.getClassEvents.useQuery({ classId });
+  return trpc.event.getClassEvents.useQuery({ classId });
 };
 
 /**
  * React Query mutation for creating event
  */
 export const useCreateEventMutation = () => {
-  return trpc.calendar.createEvent.useMutation();
+  return trpc.event.create.useMutation();
 };
 
 /**
  * React Query mutation for updating event
  */
 export const useUpdateEventMutation = () => {
-  return trpc.calendar.updateEvent.useMutation();
+  return trpc.agenda.updateEvent.useMutation();
 };
 
 /**
  * React Query mutation for deleting event
  */
 export const useDeleteEventMutation = () => {
-  return trpc.calendar.deleteEvent.useMutation();
+  return trpc.agenda.deleteEvent.useMutation();
 };
 
 /**
  * React Query query for getting calendar
  */
 export const useGetCalendarQuery = (classId: string) => {
-  return trpc.calendar.getCalendar.useQuery({ classId });
+  return trpc.agenda.getCalendar.useQuery({ classId });
 };
 
 /**
  * React Query mutation for updating calendar
  */
 export const useUpdateCalendarMutation = () => {
-  return trpc.calendar.updateCalendar.useMutation();
+  return trpc.agenda.updateCalendar.useMutation();
 };

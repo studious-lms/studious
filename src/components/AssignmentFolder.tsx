@@ -1,30 +1,17 @@
 import { useDrop, useDrag } from "react-dnd";
-import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ChevronDown, ChevronRight, Folder, FolderOpen } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { DraggableAssignment } from "./DraggableAssignment";
 import { DroppableAssignmentSlot } from "./DroppableAssignmentSlot";
+import { RouterOutputs } from "@/lib/trpc";
 
-interface Assignment {
-  id: string;
-  title: string;
-  description: string;
-  type: string;
-  dueDate: string;
-  dueTime: string;
-  status: string;
-  submissions: number;
-  totalStudents: number;
-  points: number;
-  hasAttachments: boolean;
-}
-
+type Assignment = RouterOutputs['assignment']['get'];
 interface AssignmentFolderProps {
   folder: {
     id: string;
-    title: string;
+    name: string;
     color: string;
     assignments: Assignment[];
   };
@@ -80,7 +67,7 @@ export function AssignmentFolder({
                 <div className="flex items-center space-x-3">
                   <div className={`w-2 h-2 rounded-full ${getDotColor(folder.color)}`} />
                   <CardTitle className="text-sm font-bold">
-                    {folder.title}
+                    {folder.name}
                   </CardTitle>
                 </div>
                 <div className="flex items-center space-x-2">

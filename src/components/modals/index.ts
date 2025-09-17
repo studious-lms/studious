@@ -1,5 +1,7 @@
 export { CreateClassModal } from './CreateClassModal';
-export { CreateEventModal } from './CreateEventModal';
+export { ClassEventModal, CreateClassEventButton } from './EventModal';
+export { UniversalEventModal, CreateEventButton } from './UniversalEventModal';
+export { EventPreviewModal } from './EventPreviewModal';
 export { JoinClassModal } from './JoinClassModal';
 export { CreateAnnouncementModal } from './CreateAnnouncementModal';
 export { UploadFileModal } from './UploadFileModal';
@@ -8,3 +10,5 @@ export { FilePreviewModal } from './FilePreviewModal';
 export { RenameModal } from './RenameModal';
 export { GradingBoundariesModal } from './GradingBoundariesModal';
 export { RubricModal } from './RubricModal';
+export { CreateFolderModal } from './CreateFolderModal';
+export { CreateSectionModal } from './CreateSectionModal';

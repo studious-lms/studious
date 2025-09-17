@@ -39,8 +39,10 @@ interface DraggableTableRowProps {
   formatDate: (dateString: string) => string;
   onFolderClick: (folderName: string) => void;
   onItemAction: (action: string, item: FileItem) => void;
-  onMoveItem: (itemId: string, targetFolderId: string | null) => void;
   onFileClick?: (file: FileItem) => void;
+  classId: string;
+  onRefetch?: () => void;
+  readonly?: boolean;
 }
 
 export function DraggableTableRow({ 
@@ -50,8 +52,10 @@ export function DraggableTableRow({
   formatDate,
   onFolderClick, 
   onItemAction,
-  onMoveItem,
-  onFileClick
+  onFileClick,
+  classId,
+  onRefetch,
+  readonly = false
 }: DraggableTableRowProps) {
   const [{ isDragging }, drag] = useDrag({
     type: "file",
@@ -85,7 +89,7 @@ export function DraggableTableRow({
           ? 'bg-primary/5' 
           : 'hover:bg-muted/50'
       }`}
-      onClick={() => {
+      onDoubleClick={() => {
         if (item.type === "folder") {
           onFolderClick(item.name);
         } else if (item.type === "file" && onFileClick) {

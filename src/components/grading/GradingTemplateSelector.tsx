@@ -31,7 +31,7 @@ export function GradingTemplateSelector({
         </Button>
       </div>
       
-      <div className="grid grid-cols-1 gap-3 max-h-64 overflow-y-auto">
+      <div className="grid grid-cols-1 gap-3 overflow-y-auto">
         {Object.entries(gradingTemplates).map(([key, template]) => (
           <Card
             key={key}

@@ -7,7 +7,7 @@ interface PageLayoutProps {
 
 export function PageLayout({ children, className = "" }: PageLayoutProps) {
   return (
-    <div className={`container mx-auto px-4 py-4 max-w-7xl ${className}`}>
+    <div className={`container mx-auto py-4 px-4 max-w-7xl ${className}`}>
       {children}
     </div>
   );

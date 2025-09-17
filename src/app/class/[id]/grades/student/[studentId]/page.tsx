@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Avatar } from "@/components/ui/avatar";
+import { EmptyState } from "@/components/ui/empty-state";
+import { DataTable } from "@/components/ui/data-table";
 import { 
   ArrowLeft,
   Download,
@@ -16,9 +18,11 @@ import {
   X,
   TrendingUp,
   TrendingDown,
-  Minus
+  Minus,
+  ClipboardList
 } from "lucide-react";
-import { trpc } from "@/lib/trpc";
+import type { ColumnDef } from "@tanstack/react-table";
+import { RouterOutputs, trpc } from "@/lib/trpc";
 
 export default function StudentGrades() {
   const params = useParams();
@@ -32,6 +36,144 @@ export default function StudentGrades() {
 
   const student = classData?.class?.students.find(s => s.id === studentId);
   const grades = studentGrades?.grades ?? [];
+
+  // Grade table columns
+  const gradeColumns: ColumnDef<RouterOutputs["class"]["getGrades"]["grades"][number]>[] = [
+    {
+      accessorKey: "assignment.title",
+      header: "Assignment",
+      cell: ({ row }) => {
+        const grade = row.original;
+        return (
+          <div className="font-medium">
+            {grade.assignment.title}
+          </div>
+        );
+      },
+    },
+    {
+      accessorKey: "grade",
+      header: "Grade",
+      cell: ({ row }) => {
+        const grade = row.original;
+        const isEditing = editingGrades[grade.assignment.id] !== undefined;
+        
+        if (isEditing) {
+          return (
+            <div className="flex items-center justify-center space-x-1">
+              <Input
+                type="number"
+                value={editingGrades[grade.assignment.id]}
+                onChange={(e) => handleGradeChange(grade.assignment.id, e.target.value)}
+                className="w-16 text-center"
+                max={grade.assignment.maxGrade || undefined}
+                min={0}
+                autoFocus
+              />
+              <Button
+                size="sm"
+                variant="ghost"
+                onClick={() => saveGrade(grade.assignment.id, grade.id)}
+                disabled={updateGrade.isPending}
+              >
+                <CheckCircle className="h-4 w-4 text-green-600" />
+              </Button>
+              <Button
+                size="sm"
+                variant="ghost"
+                onClick={() => cancelEditing(grade.assignment.id)}
+              >
+                <X className="h-4 w-4 text-red-600" />
+              </Button>
+            </div>
+          );
+        }
+
+        return (
+          <div className="group relative">
+            {grade.gradeReceived ? (
+              <div 
+                className="cursor-pointer hover:bg-muted/50 p-1 rounded border border-transparent hover:border-border" 
+                onClick={() => startEditing(grade.assignment.id, grade.gradeReceived?.toString() || '')}
+              >
+                <div className={`font-medium ${getGradeColor(grade.gradeReceived, "graded")}`}>
+                  {grade.gradeReceived}
+                </div>
+                <Edit className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity absolute -top-1 -right-1" />
+              </div>
+            ) : (
+              <div 
+                className="cursor-pointer hover:bg-muted/50 p-1 rounded border border-transparent hover:border-border" 
+                onClick={() => startEditing(grade.assignment.id, '')}
+              >
+                <span className="text-muted-foreground">-</span>
+                <Edit className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity absolute -top-1 -right-1" />
+              </div>
+            )}
+          </div>
+        );
+      },
+    },
+    {
+      accessorKey: "assignment.maxGrade",
+      header: "Total",
+      cell: ({ row }) => {
+        const grade = row.original;
+        return (
+          <div className="text-center text-muted-foreground">
+            {grade.assignment.maxGrade || "—"}
+          </div>
+        );
+      },
+    },
+    {
+      accessorKey: "percentage",
+      header: "%",
+      cell: ({ row }) => {
+        const grade = row.original;
+        const percentage = grade.gradeReceived ? 
+          (grade.gradeReceived / (grade.assignment.maxGrade || 1) * 100).toFixed(1) : null;
+        
+        return (
+          <div className="text-center">
+            {percentage ? `${percentage}%` : (
+              <span className="text-muted-foreground">-</span>
+            )}
+          </div>
+        );
+      },
+    },
+    {
+      accessorKey: "status",
+      header: "Status",
+      cell: ({ row }) => {
+        const grade = row.original;
+        return (
+          <div className="flex justify-center">
+            <Badge variant={
+              grade.gradeReceived !== null ? "default" : "secondary"
+            }>
+              {grade.gradeReceived !== null ? "Graded" : "Pending"}
+            </Badge>
+          </div>
+        );
+      },
+    },
+    {
+      accessorKey: "submitted",
+      header: "Submitted",
+      cell: ({ row }) => {
+        const grade = row.original;
+        return (
+          <div className="text-center">
+            <span className="text-sm text-muted-foreground">
+              {grade.submittedAt ? new Date(grade.submittedAt).toLocaleDateString() : '—'}
+            </span>
+          </div>
+        );
+      },
+    },
+  ];
 
   if (classLoading || gradesLoading) {
     return (
@@ -178,7 +320,6 @@ export default function StudentGrades() {
             </Avatar>
             <div className="flex-1">
               <h2 className="text-2xl font-bold">{student.username}</h2>
-              {student.email && <p className="text-muted-foreground">{student.email}</p>}
             </div>
             <div className="grid grid-cols-3 gap-6 text-center">
               <div>
@@ -210,105 +351,20 @@ export default function StudentGrades() {
           <CardTitle>Assignments</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b">
-                  <th className="text-left p-3 font-medium">Assignment</th>
-                  <th className="text-center p-3 font-medium w-[100px]">Grade</th>
-                  <th className="text-center p-3 font-medium w-[100px]">Total</th>
-                  <th className="text-center p-3 font-medium w-[100px]">%</th>
-                  <th className="text-center p-3 font-medium w-[120px]">Status</th>
-                  <th className="text-center p-3 font-medium w-[120px]">Submitted</th>
-                </tr>
-              </thead>
-              <tbody>
-                {grades.map((g) => {
-                  const isEditing = editingGrades[g.assignment.id] !== undefined;
-                  const percentage = g.gradeReceived ? 
-                    (g.gradeReceived / (g.assignment.maxGrade || 1) * 100).toFixed(1) : null;
-                  
-                  return (
-                    <tr key={g.id} className="border-b hover:bg-muted/50">
-                      <td className="p-3 font-medium">{g.assignment.title}</td>
-                      <td className="text-center p-3">
-                        {isEditing ? (
-                          <div className="flex items-center justify-center space-x-1">
-                            <Input
-                              type="number"
-                              value={editingGrades[g.assignment.id]}
-                              onChange={(e) => handleGradeChange(g.assignment.id, e.target.value)}
-                              className="w-16 text-center"
-                              max={g.assignment.maxGrade || undefined}
-                              min={0}
-                              autoFocus
-                            />
-                            <Button
-                              size="sm"
-                              variant="ghost"
-                              onClick={() => saveGrade(g.assignment.id, g.id)}
-                            >
-                              <CheckCircle className="h-4 w-4 text-green-600" />
-                            </Button>
-                            <Button
-                              size="sm"
-                              variant="ghost"
-                              onClick={() => cancelEditing(g.assignment.id)}
-                            >
-                              <X className="h-4 w-4 text-red-600" />
-                            </Button>
-                          </div>
-                        ) : (
-                          <div className="group relative">
-                            {g.gradeReceived ? (
-                              <div 
-                                className="cursor-pointer hover:bg-muted/50 p-1 rounded border border-transparent hover:border-border" 
-                                onClick={() => startEditing(g.assignment.id, g.gradeReceived?.toString() || '')}
-                              >
-                                <div className={`font-medium ${getGradeColor(g.gradeReceived, "graded")}`}>
-                                  {g.gradeReceived}
-                                </div>
-                                <Edit className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity absolute -top-1 -right-1" />
-                              </div>
-                            ) : (
-                              <div 
-                                className="cursor-pointer hover:bg-muted/50 p-1 rounded border border-transparent hover:border-border" 
-                                onClick={() => startEditing(g.assignment.id, '')}
-                              >
-                                <span className="text-muted-foreground">-</span>
-                                <Edit className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity absolute -top-1 -right-1" />
-                              </div>
-                            )}
-                          </div>
-                        )}
-                      </td>
-                      <td className="text-center p-3 text-muted-foreground">
-                        {g.assignment.maxGrade || "-"}
-                      </td>
-                      <td className="text-center p-3">
-                        {percentage ? `${percentage}%` : (
-                          <span className="text-muted-foreground">-</span>
-                        )}
-                      </td>
-                      <td className="text-center p-3">
-                        <Badge variant={
-                          g.gradeReceived ? "default" : "secondary"
-                        }>
-                          {g.gradeReceived ? "graded" : "pending"}
-                        </Badge>
-                      </td>
-                      <td className="text-center p-3 text-sm text-muted-foreground">
-                        {g.submittedAt ? 
-                          new Date(g.submittedAt).toLocaleDateString() : 
-                          "-"
-                        }
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
+          {grades.length === 0 ? (
+            <EmptyState
+              icon={ClipboardList}
+              title="No assignments found"
+              description="This student has no assignments to display"
+            />
+          ) : (
+            <DataTable
+              columns={gradeColumns}
+              data={grades}
+              searchKey="assignment.title"
+              searchPlaceholder="Search assignments..."
+            />
+          )}
         </CardContent>
       </Card>
     </PageLayout>

@@ -17,14 +17,16 @@ import {
   FolderOpen, 
   Users, 
   UserCheck, 
-  FlaskConical, 
+  // FlaskConical, 
   FileCheck, 
   Settings,
-  ChevronLeft
+  Copy,
+  RefreshCcw
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useGetAllClassesQuery, useGetClassQuery } from "@/lib/api";
+import { trpc, useGetAllClassesQuery, useGetClassQuery, useGetInviteCodeQuery } from "@/lib/api";
 import { Skeleton } from "./skeleton";
+import { toast } from "sonner";
 
 const classNavigationItems = [
   { href: "", label: "Overview", icon: BookOpen },
@@ -32,18 +34,10 @@ const classNavigationItems = [
   { href: "/grades", label: "Grades", icon: BarChart3 },
   { href: "/files", label: "Files", icon: FolderOpen },
   { href: "/attendance", label: "Attendance", icon: UserCheck },
-  { href: "/labs", label: "Labs", icon: FlaskConical },
+  // { href: "/labs", label: "Labs", icon: FlaskConical },
   { href: "/members", label: "Members", icon: Users },
   { href: "/syllabus", label: "Syllabus", icon: FileCheck },
   { href: "/settings", label: "Settings", icon: Settings },
-];
-
-// Mock classes data - in real app this would come from props or API
-const mockClasses = [
-  { id: "1", title: "Mathematics 101", section: "Section A", subject: "Mathematics", color: "#3B82F6" },
-  { id: "2", title: "Physics 201", section: "Section B", subject: "Physics", color: "#10B981" },
-  { id: "3", title: "Chemistry 101", section: "Section C", subject: "Chemistry", color: "#F59E0B" },
-  { id: "4", title: "Biology 301", section: "Section A", subject: "Biology", color: "#EF4444" },
 ];
 
 interface ClassSidebarProps {
@@ -56,9 +50,19 @@ export function ClassSidebar({ classId }: ClassSidebarProps) {
 
   const { data: allClasses, isLoading, error } = useGetAllClassesQuery();
   const classes = allClasses?.teacherInClass.concat(allClasses?.studentInClass);
-
+  const {data: inviteCodeData, isLoading: isInviteCodeLoading, error: isInviteCodeError, refetch: refetchInviteCode } = useGetInviteCodeQuery(classId!);
+  const inviteCode = inviteCodeData?.code;
   const { data: classData, isLoading: isClassLoading, error: isClassError } = useGetClassQuery(classId!);
   const className = classData?.class;
+  const regenerateInviteCodeMutation = trpc.class.createInviteCode.useMutation({
+    onSuccess: () => {
+      toast.success("Invite code regenerated successfully");
+      refetchInviteCode();
+    },
+    onError: () => {
+      toast.error("Failed to regenerate invite code");
+    }
+  });
 
   if (!classId) {
     console.log("❌ No classId - returning null");
@@ -71,9 +75,20 @@ export function ClassSidebar({ classId }: ClassSidebarProps) {
     router.push(`/class/${newClassId}`);
   };
 
+  const handleRegenerateInviteCode = () => {
+    regenerateInviteCodeMutation.mutate({
+      classId: classId!
+    });
+  };
+
   const isActive = (path: string) => {
     const fullPath = `/class/${classId}${path}`;
     return pathname === fullPath;
+  };
+
+  const handleCopyInviteCode = () => {
+    navigator.clipboard.writeText(inviteCode!);
+    toast.success("Invite code copied to clipboard");
   };
 
   return (
@@ -155,21 +170,13 @@ export function ClassSidebar({ classId }: ClassSidebarProps) {
         <div className="space-y-2">
           <label className="text-xs font-medium text-muted-foreground">Class Invite Code</label>
           <div className="flex items-center justify-between p-2 bg-muted rounded-md hover:bg-muted/60 transition-colors duration-200">
-            <code className="text-sm font-mono">PHY101-2024</code>
+            <code className="text-sm font-mono">{inviteCode}</code>
             <div className="flex space-x-1">
-              <Button variant="ghost" size="sm" className="h-6 w-6 p-0 hover:scale-110 transition-transform duration-200" title="Copy code">
-                <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                </svg>
+              <Button onClick={handleCopyInviteCode} variant="ghost" size="sm" className="h-6 w-6 p-0 hover:scale-110 transition-transform duration-200" title="Copy code">
+                <Copy className="h-3 w-3" />
               </Button>
-              <Button variant="ghost" size="sm" className="h-6 w-6 p-0 hover:scale-110 transition-transform duration-200" title="Regenerate code">
-                <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path>
-                  <path d="M21 3v5h-5"></path>
-                  <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path>
-                  <path d="M3 21v-5h5"></path>
-                </svg>
+              <Button onClick={handleRegenerateInviteCode} variant="ghost" size="sm" className="h-6 w-6 p-0 hover:scale-110 transition-transform duration-200" title="Regenerate code">
+                <RefreshCcw className="h-3 w-3" />
               </Button>
             </div>
           </div>

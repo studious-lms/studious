@@ -4,12 +4,12 @@ import { useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-import { PageLayout, PageHeader } from "@/components/ui/page-layout";
+import { PageLayout } from "@/components/ui/page-layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Skeleton } from "@/components/ui/skeleton";
 import { EmptyState } from "@/components/ui/empty-state";
@@ -26,26 +26,19 @@ import {
   FileVideo,
   Grid3X3,
   List,
-  SortAsc,
   Filter,
   Share,
   Trash2,
   Edit,
-  Copy,
-  Star,
-  Home,
-  ChevronRight,
   ArrowUpDown,
-  Calendar,
-  User,
   HardDrive,
-  Eye,
   Music,
   Archive,
   FileSpreadsheet,
   Presentation,
   AlertCircle,
-  Loader2
+  Loader2,
+  ChevronRight,
 } from "lucide-react";
 import {
   DropdownMenu,
@@ -68,7 +61,6 @@ import { useToast } from "@/hooks/use-toast";
 import { UploadFileModal, FilePreviewModal, RenameModal, CreateFolderModal } from "@/components/modals";
 import { DraggableFileItem } from "@/components/DraggableFileItem";
 import { DroppableFolderItem } from "@/components/DroppableFolderItem";
-import { DroppableBreadcrumb } from "@/components/DroppableBreadcrumb";
 import { DraggableTableRow } from "@/components/DraggableTableRow";
 import {  trpc } from "@/lib/trpc";
 import { useSession } from "@/hooks/use-session";
@@ -86,10 +78,9 @@ type ApiFolder = {
   id: string;
   name: string;
   parentFolderId?: string;
-  children?: ApiFolder[];
+  childFolders?: ApiFolder[];
   files?: ApiFile[];
 };
-
 
 type FileItem = {
   id: string;
@@ -101,15 +92,14 @@ type FileItem = {
   uploadedAt?: string;
   itemCount?: number;
   lastModified?: string;
-  children?: FileItem[];
   parentFolderId?: string;
-  readonly?: boolean;
 };
 
-export default function Files() {
+export default function FolderPage() {
   const params = useParams();
   const router = useRouter();
   const classId = params.id as string;
+  const folderId = params.folderId as string;
   const { user } = useSession();
   const { toast } = useToast();
   
@@ -124,16 +114,13 @@ export default function Files() {
   const [renameItem, setRenameItem] = useState<FileItem | null>(null);
   const [isRenameOpen, setIsRenameOpen] = useState(false);
   const [createFolderModalOpen, setCreateFolderModalOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState<"assignments" | "files">("files");
   
   // API calls
-  // Get root folder with its files and subfolders
-  const { data: rootFolder, isLoading: customLoading, error: customError, refetch } = trpc.folder.getRootFolder.useQuery(
-    { classId },
-    { enabled: !!classId }
+  // Get current folder details
+  const { data: currentFolder, isLoading: folderLoading, error: folderError, refetch } = trpc.folder.get.useQuery(
+    { classId, folderId },
+    { enabled: !!classId && !!folderId }
   );
-
-  
   
   // Mutations
   const createFolderMutation = trpc.folder.create.useMutation({
@@ -159,16 +146,6 @@ export default function Files() {
   const renameFolderMutation = trpc.folder.rename.useMutation({
     onSuccess: () => {
       toast({ title: "Success", description: "Folder renamed successfully" });
-      refetch();
-    },
-    onError: (error) => {
-      toast({ title: "Error", description: error.message, variant: "destructive" });
-    }
-  });
-  
-  const moveFolderMutation = trpc.folder.move.useMutation({
-    onSuccess: () => {
-      toast({ title: "Success", description: "Folder moved successfully" });
       refetch();
     },
     onError: (error) => {
@@ -206,16 +183,6 @@ export default function Files() {
     }
   });
   
-  const moveFileMutation = trpc.file.move.useMutation({
-    onSuccess: () => {
-      toast({ title: "Success", description: "File moved successfully" });
-      refetch();
-    },
-    onError: (error) => {
-      toast({ title: "Error", description: error.message, variant: "destructive" });
-    }
-  });
-  
   const getSignedUrlMutation = trpc.file.getSignedUrl.useMutation();
   
   // Check if user is teacher
@@ -227,8 +194,8 @@ export default function Files() {
     name: folder.name,
     type: "folder" as const,
     parentFolderId: folder.parentFolderId,
-    itemCount: (folder.children?.length || 0) + (folder.files?.length || 0),
-    lastModified: new Date().toISOString(), // API doesn't provide this, using current date
+    itemCount: (folder.childFolders?.length || 0) + (folder.files?.length || 0),
+    lastModified: new Date().toISOString(),
   });
   
   const transformFileToFileItem = (file: ApiFile): FileItem => ({
@@ -237,16 +204,14 @@ export default function Files() {
     type: "file" as const,
     fileType: file.type.split('/')[1] || file.name.split('.').pop(),
     size: formatFileSize(file.size),
-    uploadedBy: "Unknown", // API doesn't provide this in folder context
-    uploadedAt: new Date().toISOString(), // API doesn't provide this
+    uploadedBy: "Unknown",
+    uploadedAt: new Date().toISOString(),
   });
-  
   
   // Get current folder content
   const getCurrentFolderContent = (): FileItem[] => {
-    // Root folder only
-    const folders = rootFolder?.childFolders?.map(transformFolderToFileItem) || [];
-    const files = rootFolder?.files?.map(transformFileToFileItem) || [];
+    const folders = currentFolder?.childFolders?.map(transformFolderToFileItem) || [];
+    const files = currentFolder?.files?.map(transformFileToFileItem) || [];
     return [...folders, ...files];
   };
 
@@ -255,7 +220,7 @@ export default function Files() {
   const filteredItems = currentItems.filter(item =>
     item.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
-
+  
   // Helper function to format file size
   function formatFileSize(bytes: number): string {
     if (bytes === 0) return '0 Bytes';
@@ -264,7 +229,6 @@ export default function Files() {
     const i = Math.floor(Math.log(bytes) / Math.log(k));
     return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
   }
-
 
   const getFileIcon = (fileType: string, size: "sm" | "lg" = "sm") => {
     const iconSize = size === "sm" ? "h-4 w-4" : "h-8 w-8";
@@ -301,13 +265,6 @@ export default function Files() {
     });
   };
 
-  const formatTime = (dateString: string) => {
-    return new Date(dateString).toLocaleTimeString('en-US', {
-      hour: 'numeric',
-      minute: '2-digit'
-    });
-  };
-
   const getFolderColor = (folderId: string) => {
     const colors = [
       "text-blue-500",
@@ -324,33 +281,15 @@ export default function Files() {
   };
 
   const handleFolderClick = (folderName: string) => {
-    if (activeTab === "assignments") {
-      // Assignment folders are readonly, just show toast
-      toast({
-        title: "Read-only",
-        description: "Assignment files are read-only. Use the assignments page to manage them.",
-      });
-      return;
-    }
-    
     // Find the folder by name to get its ID
     const folder = currentItems.find(item => item.name === folderName && item.type === "folder");
     if (folder) {
-      // Navigate to the folder page using Next.js routing
       router.push(`/class/${classId}/files/${folder.id}`);
     }
   };
 
+
   const handleItemAction = async (action: string, item: FileItem) => {
-    if (item.readonly && action !== "download") {
-      toast({
-        title: "Read-only",
-        description: "Assignment files are read-only.",
-        variant: "destructive"
-      });
-      return;
-    }
-    
     if (!isTeacher && ["rename", "delete", "move"].includes(action)) {
       toast({
         title: "Permission denied",
@@ -365,10 +304,10 @@ export default function Files() {
         try {
           const result = await getSignedUrlMutation.mutateAsync({ fileId: item.id });
           window.open(result.url, '_blank');
-        toast({
-          title: "Download started",
-          description: `Downloading ${item.name}...`,
-        });
+          toast({
+            title: "Download started",
+            description: `Downloading ${item.name}...`,
+          });
         } catch (error) {
           toast({
             title: "Download failed",
@@ -381,10 +320,10 @@ export default function Files() {
         try {
           const result = await getSignedUrlMutation.mutateAsync({ fileId: item.id });
           await navigator.clipboard.writeText(result.url);
-        toast({
+          toast({
             title: "Share link copied",
-          description: `Share link for ${item.name} copied to clipboard.`,
-        });
+            description: `Share link for ${item.name} copied to clipboard.`,
+          });
         } catch (error) {
           toast({
             title: "Share failed",
@@ -427,7 +366,7 @@ export default function Files() {
       await createFolderMutation.mutateAsync({
         classId,
         name: folderData.name,
-        parentFolderId: undefined // Root folder only
+        parentFolderId: folderId
       });
     } catch (error) {
       // Error handling is done by the mutation hook
@@ -436,17 +375,16 @@ export default function Files() {
   };
 
   const handleUploadFiles = (files: any[]) => {
-    // Transform the files from UploadFileModal format to API format
     const apiFiles = files.map(file => ({
       name: file.name,
       type: file.type,
       size: file.size,
-      data: file.data || '' // base64 data should be included
+      data: file.data || ''
     }));
     
     uploadFilesMutation.mutate({
       classId,
-      folderId: rootFolder?.id || '',
+      folderId: folderId,
       files: apiFiles
     });
   };
@@ -455,29 +393,43 @@ export default function Files() {
     const item = currentItems.find(i => i.id === itemId);
     if (!item) return;
     
-    if (item.type === "folder") {
-      moveFolderMutation.mutate({ classId, folderId: itemId, newParentFolderId: targetFolderId });
-    } else {
-      moveFileMutation.mutate({ classId, fileId: itemId, targetFolderId });
-    }
+    // For now, just show a toast since we don't have move mutations set up
+    toast({
+      title: "Move not implemented",
+      description: "File moving functionality will be available soon.",
+    });
   };
 
   const selectedCount = selectedItems.length;
-  const isLoading = customLoading;
-  const hasError = customError;
+  const isLoading = folderLoading;
+  const hasError = folderError;
+
+  if (!currentFolder && !isLoading) {
+    return (
+      <PageLayout>
+        <div className="text-center py-16">
+          <h1 className="text-2xl font-bold mb-4">Folder Not Found</h1>
+          <p className="text-muted-foreground mb-6">The requested folder could not be found.</p>
+          <Button onClick={() => router.push(`/class/${classId}/files`)}>
+            Back to Files
+          </Button>
+        </div>
+      </PageLayout>
+    );
+  }
 
   return (
     <DndProvider backend={HTML5Backend}>
       <PageLayout>
         {/* Header */}
-      <div className="flex items-center justify-between mb-6">
-        <div>
-          <h1 className="text-2xl font-bold">Files</h1>
-          <p className="text-muted-foreground">Manage class files and resources</p>
-        </div>
-        
-          {activeTab === "files" && isTeacher && (
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center justify-between mb-6">
+          <div>
+            <h1 className="text-2xl font-bold">{currentFolder?.name || "Loading..."}</h1>
+            <p className="text-muted-foreground">Folder contents</p>
+          </div>
+          
+          {isTeacher && (
+            <div className="flex items-center space-x-2">
               <Button 
                 variant="outline" 
                 size="sm" 
@@ -492,135 +444,142 @@ export default function Files() {
                 New Folder
               </Button>
               <UploadFileModal 
-                currentFolder="root"
+                currentFolder={folderId}
                 onFilesUploaded={handleUploadFiles}
               >
                 <Button size="sm" disabled={uploadFilesMutation.isLoading}>
                   {uploadFilesMutation.isLoading ? (
                     <Loader2 className="h-4 w-4 mr-2 animate-spin" />
                   ) : (
-              <Upload className="h-4 w-4 mr-2" />
+                    <Upload className="h-4 w-4 mr-2" />
                   )}
-              Upload
-            </Button>
-          </UploadFileModal>
-        </div>
+                  Upload
+                </Button>
+              </UploadFileModal>
+            </div>
           )}
-      </div>
+        </div>
 
         {/* Error Alert */}
         {hasError && (
           <Alert variant="destructive" className="mb-4">
             <AlertCircle className="h-4 w-4" />
             <AlertDescription>
-              Failed to load files. Please try again later.
+              Failed to load folder contents. Please try again later.
             </AlertDescription>
           </Alert>
         )}
 
-      {/* Breadcrumbs */}
-      <div className="flex items-center space-x-1 mb-4 text-sm">
-          <div className="flex items-center space-x-1">
-            <Button
-              variant="ghost"
-              size="sm"
-              className="h-auto p-1 font-medium hover:bg-muted cursor-default"
-              disabled
-            >
-              Class Files
-            </Button>
-          </div>
-      </div>
+        {/* Breadcrumbs */}
+        <div className="flex items-center space-x-1 mb-4 text-sm">
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => router.push(`/class/${classId}/files`)}
+            className="h-auto p-1 font-medium hover:bg-muted"
+          >
+            Class Files
+          </Button>
+          <ChevronRight className="h-4 w-4 text-muted-foreground" />
+          <Button
+            variant="ghost"
+            size="sm"
+            className="h-auto p-1 font-medium hover:bg-muted cursor-default"
+            disabled
+          >
+            {currentFolder?.name || "Loading..."}
+          </Button>
+        </div>
 
-      {/* Toolbar */}
-      <div className="flex items-center justify-between mb-6">
-        <div className="flex items-center space-x-4">
-          <div className="relative max-w-md">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            <Input
-              placeholder="Search in files"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 w-80"
-            />
+        {/* Toolbar */}
+        <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center space-x-4">
+            <div className="relative max-w-md">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Input
+                placeholder="Search in folder"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="pl-10 w-80"
+              />
+            </div>
+            
+            {selectedCount > 0 && (
+              <div className="flex items-center space-x-2">
+                <Badge variant="secondary">{selectedCount} selected</Badge>
+                <Button variant="outline" size="sm">
+                  <Download className="h-4 w-4 mr-2" />
+                  Download
+                </Button>
+                <Button variant="outline" size="sm">
+                  <Share className="h-4 w-4 mr-2" />
+                  Share
+                </Button>
+                <Button variant="outline" size="sm">
+                  <Trash2 className="h-4 w-4 mr-2" />
+                  Delete
+                </Button>
+              </div>
+            )}
           </div>
-          
-          {selectedCount > 0 && (
-            <div className="flex items-center space-x-2">
-              <Badge variant="secondary">{selectedCount} selected</Badge>
-              <Button variant="outline" size="sm">
-                <Download className="h-4 w-4 mr-2" />
-                Download
+
+          <div className="flex items-center space-x-2">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="sm">
+                  <Filter className="h-4 w-4 mr-2" />
+                  Filter
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuLabel>File Type</DropdownMenuLabel>
+                <DropdownMenuCheckboxItem>Documents</DropdownMenuCheckboxItem>
+                <DropdownMenuCheckboxItem>Images</DropdownMenuCheckboxItem>
+                <DropdownMenuCheckboxItem>Videos</DropdownMenuCheckboxItem>
+                <DropdownMenuCheckboxItem>Presentations</DropdownMenuCheckboxItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="sm">
+                  <ArrowUpDown className="h-4 w-4 mr-2" />
+                  Sort
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem onClick={() => setSortBy("name")}>
+                  Name
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setSortBy("modified")}>
+                  Last modified
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setSortBy("size")}>
+                  File size
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            <div className="flex items-center border rounded-md">
+              <Button
+                variant={viewMode === "grid" ? "default" : "ghost"}
+                size="sm"
+                onClick={() => setViewMode("grid")}
+              >
+                <Grid3X3 className="h-4 w-4" />
               </Button>
-              <Button variant="outline" size="sm">
-                <Share className="h-4 w-4 mr-2" />
-                Share
-              </Button>
-              <Button variant="outline" size="sm">
-                <Trash2 className="h-4 w-4 mr-2" />
-                Delete
+              <Button
+                variant={viewMode === "list" ? "default" : "ghost"}
+                size="sm"
+                onClick={() => setViewMode("list")}
+              >
+                <List className="h-4 w-4" />
               </Button>
             </div>
-          )}
-        </div>
-
-        <div className="flex items-center space-x-2">
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="sm">
-                <Filter className="h-4 w-4 mr-2" />
-                Filter
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuLabel>File Type</DropdownMenuLabel>
-              <DropdownMenuCheckboxItem>Documents</DropdownMenuCheckboxItem>
-              <DropdownMenuCheckboxItem>Images</DropdownMenuCheckboxItem>
-              <DropdownMenuCheckboxItem>Videos</DropdownMenuCheckboxItem>
-              <DropdownMenuCheckboxItem>Presentations</DropdownMenuCheckboxItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="sm">
-                <ArrowUpDown className="h-4 w-4 mr-2" />
-                Sort
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuItem onClick={() => setSortBy("name")}>
-                Name
-              </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => setSortBy("modified")}>
-                Last modified
-              </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => setSortBy("size")}>
-                File size
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-
-          <div className="flex items-center border rounded-md">
-            <Button
-              variant={viewMode === "grid" ? "default" : "ghost"}
-              size="sm"
-              onClick={() => setViewMode("grid")}
-            >
-              <Grid3X3 className="h-4 w-4" />
-            </Button>
-            <Button
-              variant={viewMode === "list" ? "default" : "ghost"}
-              size="sm"
-              onClick={() => setViewMode("list")}
-            >
-              <List className="h-4 w-4" />
-            </Button>
           </div>
         </div>
-      </div>
 
-      {/* Content */}
+        {/* Content */}
         {isLoading ? (
           /* Loading State */
           <div className="space-y-4">
@@ -635,52 +594,50 @@ export default function Files() {
             </div>
           </div>
         ) : filteredItems.length > 0 ? (
-        viewMode === "grid" ? (
-          /* Grid View */
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-3">
-            {filteredItems.map((item) => (
-              item.type === "folder" ? (
-                <DroppableFolderItem
-                  key={item.id}
-                  item={item}
-                  getFolderColor={getFolderColor}
-                  onFolderClick={handleFolderClick}
-                  onItemAction={handleItemAction}
+          viewMode === "grid" ? (
+            /* Grid View */
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-3">
+              {filteredItems.map((item) => (
+                item.type === "folder" ? (
+                  <DroppableFolderItem
+                    key={item.id}
+                    item={item}
+                    getFolderColor={getFolderColor}
+                    onFolderClick={handleFolderClick}
+                    onItemAction={handleItemAction}
                     classId={classId}
-                    readonly={item.readonly}
                     onRefetch={refetch}
-                />
-              ) : (
-                <DraggableFileItem
-                  key={item.id}
-                  item={item}
-                  getFileIcon={getFileIcon}
-                  getFolderColor={getFolderColor}
-                  onFolderClick={handleFolderClick}
-                  onItemAction={handleItemAction}
-                  onFileClick={handleFileClick}
+                  />
+                ) : (
+                  <DraggableFileItem
+                    key={item.id}
+                    item={item}
+                    getFileIcon={getFileIcon}
+                    getFolderColor={getFolderColor}
+                    onFolderClick={handleFolderClick}
+                    onItemAction={handleItemAction}
+                    onFileClick={handleFileClick}
                     classId={classId}
-                    readonly={item.readonly}
                     onRefetch={refetch}
-                />
-              )
-            ))}
-          </div>
-        ) : (
-          /* List View */
-          <Card>
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Name</TableHead>
-                  <TableHead>Owner</TableHead>
-                  <TableHead>Last modified</TableHead>
-                  <TableHead>File size</TableHead>
-                  <TableHead className="w-12"></TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                 {filteredItems.map((item) => (
+                  />
+                )
+              ))}
+            </div>
+          ) : (
+            /* List View */
+            <Card>
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Name</TableHead>
+                    <TableHead>Owner</TableHead>
+                    <TableHead>Last modified</TableHead>
+                    <TableHead>File size</TableHead>
+                    <TableHead className="w-12"></TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {filteredItems.map((item) => (
                     <DraggableTableRow
                       key={item.id}
                       item={item}
@@ -692,53 +649,53 @@ export default function Files() {
                       onMoveItem={handleMoveItem}
                       onFileClick={handleFileClick}
                     />
-                 ))}
-              </TableBody>
-            </Table>
-          </Card>
-        )
-      ) : (
-        /* Empty State */
-        <div className="space-y-6">
-          <EmptyState
-            icon={HardDrive}
-            title={searchQuery ? "No files found" : "This folder is empty"}
-            description={searchQuery 
-              ? `No files match "${searchQuery}". Try a different search term.`
-              : "Upload files or create folders to get started organizing your class materials."
-            }
-          />
-          {isTeacher && (
-            <div className="flex justify-center space-x-3">
-              <UploadFileModal 
-                currentFolder="root"
-                onFilesUploaded={handleUploadFiles}
-              >
-                <Button disabled={uploadFilesMutation.isLoading}>
-                  {uploadFilesMutation.isLoading ? (
+                  ))}
+                </TableBody>
+              </Table>
+            </Card>
+          )
+        ) : (
+          /* Empty State */
+          <div className="space-y-6">
+            <EmptyState
+              icon={HardDrive}
+              title={searchQuery ? "No files found" : "This folder is empty"}
+              description={searchQuery 
+                ? `No files match "${searchQuery}". Try a different search term.`
+                : "Upload files or create folders to organize your materials."
+              }
+            />
+            {isTeacher && (
+              <div className="flex justify-center space-x-3">
+                <UploadFileModal 
+                  currentFolder={folderId}
+                  onFilesUploaded={handleUploadFiles}
+                >
+                  <Button disabled={uploadFilesMutation.isLoading}>
+                    {uploadFilesMutation.isLoading ? (
+                      <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                    ) : (
+                      <Upload className="h-4 w-4 mr-2" />
+                    )}
+                    Upload Files
+                  </Button>
+                </UploadFileModal>
+                <Button 
+                  variant="outline"
+                  onClick={() => setCreateFolderModalOpen(true)}
+                  disabled={createFolderMutation.isLoading}
+                >
+                  {createFolderMutation.isLoading ? (
                     <Loader2 className="h-4 w-4 mr-2 animate-spin" />
                   ) : (
-                    <Upload className="h-4 w-4 mr-2" />
+                    <FolderPlus className="h-4 w-4 mr-2" />
                   )}
-                  Upload Files
+                  Create Folder
                 </Button>
-              </UploadFileModal>
-              <Button 
-                variant="outline"
-                onClick={() => setCreateFolderModalOpen(true)}
-                disabled={createFolderMutation.isLoading}
-              >
-                {createFolderMutation.isLoading ? (
-                  <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                ) : (
-                  <FolderPlus className="h-4 w-4 mr-2" />
-                )}
-                Create Folder
-              </Button>
-            </div>
-          )}
-        </div>
-      )}
+              </div>
+            )}
+          </div>
+        )}
 
         {/* File Preview Modal */}
         <FilePreviewModal

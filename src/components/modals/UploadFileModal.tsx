@@ -12,9 +12,17 @@ import { useSession } from "@/hooks/use-session";
 import { Upload as UploadIcon, X as XIcon, File as FileIcon, Image as ImageIcon, FileVideo, FileText } from "lucide-react";
 
 
+interface ApiFile {
+  id: string;
+  name: string;
+  type: string;
+  size: number;
+  data: string;
+}
+
 interface UploadFileModalProps {
   children?: React.ReactNode;
-  onFilesUploaded?: (files: any[]) => void;
+  onFilesUploaded?: (files: ApiFile[]) => void;
   currentFolder?: string;
 }
 
@@ -28,13 +36,25 @@ interface FileUpload {
   status: 'pending' | 'uploading' | 'completed' | 'error';
 }
 
+async function fileToBase64(file: File): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      const base64 = reader.result as string;
+      resolve(base64.split(',')[1]);
+    };
+    reader.onerror = (error) => reject(error);
+  });
+}
+
 export function UploadFileModal({ children, onFilesUploaded, currentFolder = "/" }: UploadFileModalProps) {
   const [open, setOpen] = useState(false);
   const [files, setFiles] = useState<FileUpload[]>([]);
   const [uploading, setUploading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
-const { toast } = useToast();
-const { user } = useSession();
+  const { toast } = useToast();
+  const { user } = useSession();
 
 
   const categories = [
@@ -81,12 +101,12 @@ const { user } = useSession();
       progress: 0,
       status: 'pending'
     }));
-    
+
     setFiles(prev => [...prev, ...newFiles]);
   };
 
   const updateFile = (id: string, updates: Partial<FileUpload>) => {
-    setFiles(prev => prev.map(file => 
+    setFiles(prev => prev.map(file =>
       file.id === id ? { ...file, ...updates } : file
     ));
   };
@@ -98,19 +118,19 @@ const { user } = useSession();
   const simulateUpload = (file: FileUpload): Promise<void> => {
     return new Promise((resolve, reject) => {
       updateFile(file.id, { status: 'uploading', progress: 0 });
-      
+
       const interval = setInterval(() => {
         setFiles(prev => prev.map(f => {
           if (f.id === file.id) {
             const newProgress = f.progress + Math.random() * 30;
-            
+
             if (newProgress >= 100) {
               clearInterval(interval);
               updateFile(file.id, { status: 'completed', progress: 100 });
               resolve();
               return { ...f, progress: 100 };
             }
-            
+
             return { ...f, progress: newProgress };
           }
           return f;
@@ -142,8 +162,14 @@ const { user } = useSession();
 
     try {
       await Promise.all(files.map(file => simulateUpload(file)));
-      
-      const uploadedFiles = files.map(file => ({
+
+      // get base64
+
+      const uploadedFiles = await Promise.all(files.map(async file => {
+
+        const base64Data = await fileToBase64(file.file);
+
+        return {
         id: file.id,
         name: file.name,
         description: file.description,
@@ -152,13 +178,15 @@ const { user } = useSession();
         type: file.file.type,
         uploadedAt: new Date().toISOString(),
         folder: currentFolder,
+        data: base64Data,
         // Prisma-aligned fields
         path: `${currentFolder}/${file.name}`,
         userId: user.id
+        }
       }));
 
       onFilesUploaded?.(uploadedFiles);
-      
+
       toast({
         title: "Upload Complete",
         description: `Successfully uploaded ${files.length} file(s).`
@@ -191,10 +219,10 @@ const { user } = useSession();
         <DialogHeader>
           <DialogTitle>Upload Files</DialogTitle>
         </DialogHeader>
-        
+
         <div className="space-y-4">
           {/* File Selection */}
-          <div 
+          <div
             className="border-2 border-dashed border-muted-foreground/25 rounded-lg p-8 text-center cursor-pointer hover:border-muted-foreground/50 transition-colors"
             onClick={() => fileInputRef.current?.click()}
           >
@@ -252,8 +280,8 @@ const { user } = useSession();
                       </div>
                       <div className="space-y-1">
                         <Label className="text-xs">Category</Label>
-                        <Select 
-                          value={file.category} 
+                        <Select
+                          value={file.category}
                           onValueChange={(value) => updateFile(file.id, { category: value })}
                           disabled={uploading}
                         >
@@ -286,11 +314,10 @@ const { user } = useSession();
                     {file.status !== 'pending' && (
                       <div className="space-y-2">
                         <div className="flex justify-between text-sm">
-                          <span className={`capitalize ${
-                            file.status === 'completed' ? 'text-green-600' :
-                            file.status === 'error' ? 'text-red-600' :
-                            'text-blue-600'
-                          }`}>
+                          <span className={`capitalize ${file.status === 'completed' ? 'text-green-600' :
+                              file.status === 'error' ? 'text-red-600' :
+                                'text-blue-600'
+                            }`}>
                             {file.status}
                           </span>
                           <span>{Math.round(file.progress)}%</span>

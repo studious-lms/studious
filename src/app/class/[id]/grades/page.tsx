@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { useParams } from "next/navigation";
-import { PageLayout, PageHeader } from "@/components/ui/page-layout";
+import { PageLayout } from "@/components/ui/page-layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -13,11 +13,12 @@ import { GradingBoundariesModal, RubricModal } from "@/components/modals";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Label } from "@/components/ui/label";
+import { EmptyState } from "@/components/ui/empty-state";
+import { DataTable } from "@/components/ui/data-table";
 import { Rubric } from "@/components/rubric";
 
 import {
   BarChart3,
-  Filter,
   TrendingUp,
   TrendingDown,
   Minus,
@@ -28,9 +29,10 @@ import {
   ClipboardCheck,
   ClipboardList,
   Eye,
-  Edit3
+  Edit3,
+  Users
 } from "lucide-react";
-import { trpc } from "@/lib/trpc";
+import { trpc, type RouterOutputs } from "@/lib/trpc";
 import {
   useListMarkSchemesQuery,
   useDeleteMarkSchemeMutation,
@@ -44,6 +46,7 @@ import type {
   GradeBoundary,
   ParsedMarkScheme,
 } from "@/lib/types";
+import type { ColumnDef } from "@tanstack/react-table";
 
 
 
@@ -76,7 +79,7 @@ export default function Grades() {
   const assignments = classData?.class?.assignments || [];
   const markschemes: MarkScheme[] = markschemesData ?? [];
   const gradingBoundaries: GradingBoundary[] = gradingBoundariesData ?? [];
-
+  const submissionRate = assignments.length > 0 ? (classData?.class.assignments.reduce((sum, assignment) => sum + assignment.submissions.length, 0) || 0) / assignments.length : 0;
   // Get grades for each student
   const studentGradesQueries = students.map(student =>
     trpc.class.getGrades.useQuery({
@@ -203,14 +206,14 @@ export default function Grades() {
     return totalStudents > 0 ? totalGrade / totalStudents : 0;
   }, [studentGradesQueries, students, assignments]);
 
-  const getEffective = (id: string, field: "maxGrade" | "weight" | "graded", original: any) => {
+  const getEffective = (id: string, field: "maxGrade" | "weight" | "graded", original: number | boolean) => {
     const edit = rowEdits[id];
-    if (edit && edit[field] !== undefined) return edit[field] as any;
+    if (edit && edit[field] !== undefined) return edit[field] as number | boolean;
     return original;
   };
 
   const setEdit = (id: string, field: "maxGrade" | "weight" | "graded", value: number | boolean) => {
-    setRowEdits(prev => ({ ...prev, [id]: { ...prev[id], [field]: value as any } }));
+    setRowEdits(prev => ({ ...prev, [id]: { ...prev[id], [field]: value as number | boolean } }));
   };
 
   // Determine if there are modifications relative to originals
@@ -251,6 +254,186 @@ export default function Grades() {
     }
   };
 
+  // Assignment table columns
+  const assignmentColumns: ColumnDef<RouterOutputs["assignment"]["get"]>[] = [
+    {
+      accessorKey: "title",
+      header: "Assignment",
+      cell: ({ row }) => {
+        const assignment = row.original;
+        return (
+          <div className="font-medium">
+            {assignment.title}
+          </div>
+        );
+      },
+    },
+    {
+      accessorKey: "maxGrade",
+      header: "Max Points",
+      cell: ({ row }) => {
+        const assignment = row.original;
+        const effectiveMax = Number(getEffective(assignment.id, "maxGrade", assignment.maxGrade ?? 0));
+        const effectiveGraded = Boolean(getEffective(assignment.id, "graded", assignment.graded ?? false));
+        
+        return (
+          <Input
+            type="number"
+            value={effectiveMax}
+            onChange={(e) => setEdit(assignment.id, "maxGrade", parseInt(e.target.value) || 0)}
+            className="w-20 text-center border-0 bg-transparent hover:bg-muted/50 focus:bg-background focus:border-input"
+            disabled={!effectiveGraded}
+          />
+        );
+      },
+    },
+    {
+      accessorKey: "weight",
+      header: "Weight",
+      cell: ({ row }) => {
+        const assignment = row.original;
+        const effectiveWeight = Number(getEffective(assignment.id, "weight", assignment.weight ?? 0));
+        const effectiveGraded = Boolean(getEffective(assignment.id, "graded", assignment.graded ?? false));
+        
+        return (
+          <Input
+            type="number"
+            value={effectiveWeight}
+            onChange={(e) => setEdit(assignment.id, "weight", parseInt(e.target.value) || 0)}
+            className="w-16 text-center border-0 bg-transparent hover:bg-muted/50 focus:bg-background focus:border-input"
+            min="0"
+            step="0.1"
+            disabled={!effectiveGraded}
+          />
+        );
+      },
+    },
+    {
+      accessorKey: "graded",
+      header: "Graded",
+      cell: ({ row }) => {
+        const assignment = row.original;
+        const effectiveGraded = Boolean(getEffective(assignment.id, "graded", assignment.graded ?? false));
+        
+        return (
+          <div className="flex justify-center">
+            <Switch
+              checked={effectiveGraded}
+              onCheckedChange={(checked) => setEdit(assignment.id, "graded", checked)}
+            />
+          </div>
+        );
+      },
+    },
+    {
+      accessorKey: "dueDate",
+      header: "Due Date",
+      cell: ({ row }) => {
+        const assignment = row.original;
+        return (
+          <span className="text-sm text-muted-foreground">
+            {assignment.dueDate ? new Date(assignment.dueDate).toLocaleDateString() : '—'}
+          </span>
+        );
+      },
+    },
+  ];
+
+  // Students table columns
+  const studentColumns: ColumnDef<RouterOutputs["class"]["get"]["class"]["students"][number]>[] = [
+    {
+      accessorKey: "username",
+      header: "Student",
+      cell: ({ row }) => {
+        const student = row.original;
+        return (
+          <div className="flex items-center space-x-3">
+            <Avatar className="h-8 w-8">
+              <img src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${student.username}`} alt={student.username} />
+            </Avatar>
+            <span className="font-medium">{student.username}</span>
+          </div>
+        );
+      },
+    },
+    {
+      accessorKey: "overallGrade",
+      header: "Overall Grade",
+      cell: ({ row }) => {
+        const student = row.original;
+        const index = students.findIndex(s => s.id === student.id);
+        const studentGradesQuery = studentGradesQueries[index];
+        const studentGrades = studentGradesQuery?.data?.grades || [];
+
+        let overallGrade = 0;
+        if (studentGrades.length > 0) {
+          const validGrades = studentGrades.filter(grade => grade.gradeReceived !== null);
+          if (validGrades.length > 0) {
+            const totalPoints = validGrades.reduce((sum, grade) => sum + grade.gradeReceived!, 0);
+            const maxPoints = validGrades.reduce((sum, grade) => sum + grade.assignment.maxGrade!, 0);
+            overallGrade = maxPoints > 0 ? Math.round((totalPoints / maxPoints) * 100) : 0;
+          }
+        }
+
+        return (
+          <div className={`text-lg font-bold text-center ${getGradeColor(overallGrade, "graded")}`}>
+            {overallGrade}%
+          </div>
+        );
+      },
+    },
+    {
+      accessorKey: "completedAssignments",
+      header: "Assignments Completed",
+      cell: ({ row }) => {
+        const student = row.original;
+        const index = students.findIndex(s => s.id === student.id);
+        const studentGradesQuery = studentGradesQueries[index];
+        const studentGrades = studentGradesQuery?.data?.grades || [];
+
+        const completedAssignments = studentGrades.filter(grade => grade.gradeReceived !== null).length;
+        const totalAssignments = assignments.filter(assignment => assignment.graded).length;
+
+        return (
+          <div className="text-center">
+            <span className="text-muted-foreground">
+              {completedAssignments}/{totalAssignments}
+            </span>
+          </div>
+        );
+      },
+    },
+    {
+      accessorKey: "trend",
+      header: "Trend",
+      cell: ({ row }) => {
+        return (
+          <div className="flex justify-center">
+            {getTrendIcon("up")}
+          </div>
+        );
+      },
+    },
+    {
+      accessorKey: "actions",
+      header: "Actions",
+      cell: ({ row }) => {
+        const student = row.original;
+        return (
+          <div className="flex justify-center">
+            <Button
+              size="sm"
+              variant="outline"
+              onClick={() => window.location.href = `/class/${classId}/grades/student/${student.id}`}
+            >
+              View Grades
+            </Button>
+          </div>
+        );
+      },
+    },
+  ];
+
   if (classLoading || markschemesLoading || gradingBoundariesLoading) {
     return (
       <PageLayout>
@@ -285,12 +468,6 @@ export default function Grades() {
           <p className="text-muted-foreground">View and manage student grades</p>
         </div>
 
-        <div className="flex items-center space-x-2">
-          <Button variant="outline" size="sm">
-            <Filter className="h-4 w-4 mr-2" />
-            Filter
-          </Button>
-        </div>
       </div>
 
       {/* Class Stats */}
@@ -316,7 +493,7 @@ export default function Grades() {
               <p className="text-sm text-muted-foreground">Assignments</p>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold">92%</div>
+              <div className="text-2xl font-bold">{submissionRate}%</div>
               <p className="text-sm text-muted-foreground">Submission Rate</p>
             </div>
           </div>
@@ -329,70 +506,28 @@ export default function Grades() {
           <CardTitle>Assignment Management</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b">
-                  <th className="text-left p-3 font-medium">Assignment</th>
-                  <th className="text-center p-3 font-medium w-[100px]">Max Points</th>
-                  <th className="text-center p-3 font-medium w-[100px]">Weight</th>
-                  <th className="text-center p-3 font-medium w-[80px]">Graded</th>
-                  <th className="text-center p-3 font-medium w-[100px]">Due Date</th>
-                </tr>
-              </thead>
-              <tbody>
-                {assignments.map((assignment) => {
-                  const effectiveGraded = Boolean(getEffective(assignment.id, "graded", assignment.graded ?? false));
-                  const effectiveMax = Number(getEffective(assignment.id, "maxGrade", assignment.maxGrade ?? 0));
-                  const effectiveWeight = Number(getEffective(assignment.id, "weight", assignment.weight ?? 0));
-
-                  return (
-                    <tr key={assignment.id} className="border-b hover:bg-muted/50">
-                      <td className="p-3 font-medium">{assignment.title}</td>
-                      <td className="text-center p-3">
-                        <Input
-                          type="number"
-                          value={effectiveMax}
-                          onChange={(e) => setEdit(assignment.id, "maxGrade", parseInt(e.target.value) || 0)}
-                          className="w-20 text-center border-0 bg-transparent hover:bg-muted/50 focus:bg-background focus:border-input"
-                          disabled={!effectiveGraded}
-                        />
-                      </td>
-                      <td className="text-center p-3">
-                        <Input
-                          type="number"
-                          value={effectiveWeight}
-                          onChange={(e) => setEdit(assignment.id, "weight", parseInt(e.target.value) || 0)}
-                          className="w-16 text-center border-0 bg-transparent hover:bg-muted/50 focus:bg-background focus:border-input"
-                          min="0"
-                          step="0.1"
-                          disabled={!effectiveGraded}
-                        />
-                      </td>
-                      <td className="text-center p-3">
-                        <Switch
-                          checked={effectiveGraded}
-                          onCheckedChange={(checked) => setEdit(assignment.id, "graded", checked)}
-                        />
-                      </td>
-                      <td className="text-center p-3">
-                        <span className="text-sm text-muted-foreground">
-                          {assignment.dueDate ? new Date(assignment.dueDate).toLocaleDateString() : '-'}
-                        </span>
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
-
-          {hasChanges && (
-            <div className="mt-4 flex justify-end">
-              <Button onClick={saveAllChanges} disabled={isSaving}>
-                {isSaving ? "Saving..." : "Save Changes"}
-              </Button>
-            </div>
+          {assignments.length === 0 ? (
+            <EmptyState
+              icon={ClipboardList}
+              title="No assignments found"
+              description="Create assignments to manage grades and settings"
+            />
+          ) : (
+            <>
+              <DataTable
+                columns={assignmentColumns}
+                data={assignments}
+                searchKey="title"
+                searchPlaceholder="Search assignments..."
+              />
+              {hasChanges && (
+                <div className="mt-4 flex justify-end">
+                  <Button onClick={saveAllChanges} disabled={isSaving}>
+                    {isSaving ? "Saving..." : "Save Changes"}
+                  </Button>
+                </div>
+              )}
+            </>
           )}
         </CardContent>
       </Card>
@@ -408,75 +543,20 @@ export default function Grades() {
           </div>
         </CardHeader>
         <CardContent>
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b">
-                  <th className="text-left p-3 font-medium">Student</th>
-                  <th className="text-center p-3 font-medium">Overall Grade</th>
-                  <th className="text-center p-3 font-medium">Assignments Completed</th>
-                  <th className="text-center p-3 font-medium">Trend</th>
-                  <th className="text-center p-3 font-medium">Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                {students.map((student, index) => {
-                  const studentGradesQuery = studentGradesQueries[index];
-                  const studentGrades = studentGradesQuery?.data?.grades || [];
-
-                  // Calculate real completed assignments and overall grade
-                  const completedAssignments = studentGrades.filter(grade => grade.gradeReceived !== null).length;
-                  const totalAssignments = assignments.filter(assignment => assignment.graded).length;
-
-                  // Calculate overall grade percentage
-                  let overallGrade = 0;
-                  if (studentGrades.length > 0) {
-                    const validGrades = studentGrades.filter(grade => grade.gradeReceived !== null);
-                    if (validGrades.length > 0) {
-                      const totalPoints = validGrades.reduce((sum, grade) => sum + grade.gradeReceived!, 0);
-                      const maxPoints = validGrades.reduce((sum, grade) => sum + grade.assignment.maxGrade!, 0);
-                      overallGrade = maxPoints > 0 ? Math.round((totalPoints / maxPoints) * 100) : 0;
-                    }
-                  }
-
-                  return (
-                    <tr key={student.id} className="border-b hover:bg-muted/50">
-                      <td className="p-3 font-medium">
-                        <div className="flex items-center space-x-3">
-                          <Avatar className="h-8 w-8">
-                            <img src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${student.username}`} alt={student.username} />
-                          </Avatar>
-                          <span>{student.username}</span>
-                        </div>
-                      </td>
-                      <td className="text-center p-3">
-                        <div className={`text-lg font-bold ${getGradeColor(overallGrade, "graded")}`}>
-                          {overallGrade}%
-                        </div>
-                      </td>
-                      <td className="text-center p-3">
-                        <span className="text-muted-foreground">
-                          {completedAssignments}/{totalAssignments}
-                        </span>
-                      </td>
-                      <td className="text-center p-3">
-                        {getTrendIcon("up")}
-                      </td>
-                      <td className="text-center p-3">
-                        <Button
-                          size="sm"
-                          variant="outline"
-                          onClick={() => window.location.href = `/class/${classId}/grades/student/${student.id}`}
-                        >
-                          View Grades
-                        </Button>
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
+          {students.length === 0 ? (
+            <EmptyState
+              icon={Users}
+              title="No students enrolled"
+              description="Students will appear here once they join the class"
+            />
+          ) : (
+            <DataTable
+              columns={studentColumns}
+              data={students}
+              searchKey="username"
+              searchPlaceholder="Search students..."
+            />
+          )}
         </CardContent>
       </Card>
 
@@ -491,42 +571,50 @@ export default function Grades() {
             </Button>
           </CardHeader>
           <CardContent className="space-y-4">
-            {gradingBoundaries.map((boundary) => {
-              let name = "Untitled Grading Boundary";
-              try {
-                const parsed = JSON.parse(boundary.structured);
-                name = parsed.name || name;
-              } catch { }
-              return (
-                <div key={boundary.id} className="flex flex-row justify-between items-center p-3 rounded-md hover:bg-background-muted dark:hover:bg-background-subtle transition-colors">
-                  <div className="flex flex-row items-center space-x-4">
-                    <ClipboardList className="w-5 h-5 text-primary-500" />
-                    <span className="font-medium text-foreground cursor-pointer hover:text-primary-500 transition-colors" onClick={() => handlePreviewGradingBoundary(boundary)}>
-                      {name}
-                    </span>
+            {gradingBoundaries.length === 0 ? (
+              <EmptyState
+                icon={ClipboardList}
+                title="No grade boundaries created"
+                description="Create grading boundaries to define grade ranges"
+              />
+            ) : (
+              gradingBoundaries.map((boundary) => {
+                let name = "Untitled Grading Boundary";
+                try {
+                  const parsed = JSON.parse(boundary.structured);
+                  name = parsed.name || name;
+                } catch { }
+                return (
+                  <div key={boundary.id} className="flex flex-row justify-between items-center p-3 rounded-md hover:bg-background-muted dark:hover:bg-background-subtle transition-colors">
+                    <div className="flex flex-row items-center space-x-4">
+                      <ClipboardList className="w-5 h-5 text-primary-500" />
+                      <span className="font-medium text-foreground cursor-pointer hover:text-primary-500 transition-colors" onClick={() => handlePreviewGradingBoundary(boundary)}>
+                        {name}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Button size="sm" variant="ghost" onClick={() => handlePreviewGradingBoundary(boundary)} title="Preview">
+                        <Eye className="h-4 w-4" />
+                      </Button>
+                      <Button size="sm" variant="ghost" onClick={() => {
+                        setEditingGradingBoundary(boundary);
+                        setGradingBoundariesOpen(true);
+                      }} title="Edit">
+                        <Edit className="h-4 w-4" />
+                      </Button>
+                      <Button size="sm" variant="ghost" onClick={() => {
+                        if (confirm('Are you sure you want to delete this grading boundary?')) {
+                          deleteGradingBoundary.mutate({ classId: classId as string, gradingBoundaryId: boundary.id });
+                          refetchGrading();
+                        }
+                      }} disabled={deleteGradingBoundary.isPending} title="Delete">
+                        <Trash2 className="h-4 w-4" />
+                      </Button>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Button size="sm" variant="ghost" onClick={() => handlePreviewGradingBoundary(boundary)} title="Preview">
-                      <Eye className="h-4 w-4" />
-                    </Button>
-                    <Button size="sm" variant="ghost" onClick={() => {
-                      setEditingGradingBoundary(boundary);
-                      setGradingBoundariesOpen(true);
-                    }} title="Edit">
-                      <Edit className="h-4 w-4" />
-                    </Button>
-                    <Button size="sm" variant="ghost" onClick={() => {
-                      if (confirm('Are you sure you want to delete this grading boundary?')) {
-                        deleteGradingBoundary.mutate({ classId: classId as string, gradingBoundaryId: boundary.id });
-                        refetchGrading();
-                      }
-                    }} disabled={deleteGradingBoundary.isPending} title="Delete">
-                      <Trash2 className="h-4 w-4" />
-                    </Button>
-                  </div>
-                </div>
-              );
-            })}
+                );
+              })
+            )}
           </CardContent>
         </Card>
 
@@ -540,39 +628,47 @@ export default function Grades() {
             </Button>
           </CardHeader>
           <CardContent className="space-y-3">
-            {markschemes.map((markscheme) => {
-              let markschemeName = "Untitled Markscheme";
-              try {
-                const parsed = JSON.parse(markscheme.structured);
-                markschemeName = parsed.name || markschemeName;
-              } catch { }
-              return (
-                <div key={markscheme.id} className="flex flex-row justify-between items-center p-3 rounded-md hover:bg-background-muted dark:hover:bg-background-subtle transition-colors">
-                  <div className="flex flex-row items-center space-x-4">
-                    <ClipboardCheck className="w-5 h-5 text-primary-500" />
-                    <span className="font-medium text-foreground cursor-pointer hover:text-primary-500 transition-colors" onClick={() => handlePreviewMarkscheme(markscheme)}>
-                      {markschemeName}
-                    </span>
+            {markschemes.length === 0 ? (
+              <EmptyState
+                icon={ClipboardCheck}
+                title="No rubrics created"
+                description="Create rubrics to define assessment criteria"
+              />
+            ) : (
+              markschemes.map((markscheme) => {
+                let markschemeName = "Untitled Markscheme";
+                try {
+                  const parsed = JSON.parse(markscheme.structured);
+                  markschemeName = parsed.name || markschemeName;
+                } catch { }
+                return (
+                  <div key={markscheme.id} className="flex flex-row justify-between items-center p-3 rounded-md hover:bg-background-muted dark:hover:bg-background-subtle transition-colors">
+                    <div className="flex flex-row items-center space-x-4">
+                      <ClipboardCheck className="w-5 h-5 text-primary-500" />
+                      <span className="font-medium text-foreground cursor-pointer hover:text-primary-500 transition-colors" onClick={() => handlePreviewMarkscheme(markscheme)}>
+                        {markschemeName}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Button size="sm" variant="ghost" onClick={() => handlePreviewMarkscheme(markscheme)} title="Preview">
+                        <Eye className="h-4 w-4" />
+                      </Button>
+                      <Button size="sm" variant="ghost" onClick={() => handleEditRubric(markscheme)} title="Edit">
+                        <Edit className="h-4 w-4" />
+                      </Button>
+                      <Button size="sm" variant="ghost" onClick={() => {
+                        if (confirm('Are you sure you want to delete this markscheme?')) {
+                          deleteMarkscheme.mutate({ classId: classId as string, markSchemeId: markscheme.id });
+                          refetchMarkschemes();
+                        }
+                      }} disabled={deleteMarkscheme.isPending} title="Delete">
+                        <Trash2 className="h-4 w-4" />
+                      </Button>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Button size="sm" variant="ghost" onClick={() => handlePreviewMarkscheme(markscheme)} title="Preview">
-                      <Eye className="h-4 w-4" />
-                    </Button>
-                    <Button size="sm" variant="ghost" onClick={() => handleEditRubric(markscheme)} title="Edit">
-                      <Edit className="h-4 w-4" />
-                    </Button>
-                    <Button size="sm" variant="ghost" onClick={() => {
-                      if (confirm('Are you sure you want to delete this markscheme?')) {
-                        deleteMarkscheme.mutate({ classId: classId as string, markSchemeId: markscheme.id });
-                        refetchMarkschemes();
-                      }
-                    }} disabled={deleteMarkscheme.isPending} title="Delete">
-                      <Trash2 className="h-4 w-4" />
-                    </Button>
-                  </div>
-                </div>
-              );
-            })}
+                );
+              })
+            )}
           </CardContent>
         </Card>
       </div>
@@ -581,15 +677,13 @@ export default function Grades() {
       <Dialog open={previewModalOpen} onOpenChange={setPreviewModalOpen}>
         <DialogContent className="max-w-4xl h-[80vh] flex flex-col">
           <DialogHeader className="flex-shrink-0">
-            <DialogTitle className="flex items-center gap-2">
+            <DialogTitle>
               {previewMarkscheme ? (
                 <>
-                  <ClipboardCheck className="w-5 h-5 text-primary-500" />
                   Rubric Preview
                 </>
               ) : (
                 <>
-                  <ClipboardList className="w-5 h-5 text-primary-500" />
                   Grading Boundaries Preview
                 </>
               )}
@@ -605,7 +699,6 @@ export default function Grades() {
                     <Card>
                       <CardHeader className="pb-3">
                         <div className="flex items-center gap-2">
-                          <Edit3 className="h-4 w-4" />
                           <CardTitle className="text-base">Rubric Details</CardTitle>
                           <Badge variant="outline" className="ml-auto">
                             {previewMarkscheme.structured ? (() => {
@@ -686,7 +779,6 @@ export default function Grades() {
                     <Card>
                       <CardHeader className="pb-3">
                         <div className="flex items-center gap-2">
-                          <ClipboardList className="h-4 w-4" />
                           <CardTitle className="text-base">Grading Boundary Details</CardTitle>
                         </div>
                       </CardHeader>

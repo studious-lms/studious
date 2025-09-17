@@ -6,7 +6,8 @@ import {
   MoreHorizontal, 
   BookOpen, 
   Users, 
-  Trash2
+  Trash2,
+  Settings
 } from "lucide-react";
 import {
   DropdownMenu,
@@ -73,12 +74,12 @@ export function ClassCard({
           <p className="text-xs text-muted-foreground">{subject}</p>
         </div>
       </Link>
-
+      <div className="relative">
       {/* Menu - always visible */}
       <div className="absolute bottom-2 right-2 z-10">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" size="sm" className="h-6 w-6 p-0 bg-white/80 hover:bg-white rounded-full shadow-sm">
+            <Button variant="ghost" size="sm" className="h-6 w-3">
               <MoreHorizontal className="h-3 w-3 text-gray-600" />
             </Button>
           </DropdownMenuTrigger>
@@ -87,6 +88,7 @@ export function ClassCard({
               <>
                 <DropdownMenuItem asChild>
                   <Link href={`/class/${id}/settings`} className="cursor-pointer">
+                    <Settings className="mr-2 h-4 w-4" />
                     Settings
                   </Link>
                 </DropdownMenuItem>
@@ -113,6 +115,7 @@ export function ClassCard({
             )}
           </DropdownMenuContent>
         </DropdownMenu>
+        </div>
       </div>
     </Card>
   );

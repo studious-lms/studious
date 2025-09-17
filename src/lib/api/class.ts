@@ -302,6 +302,20 @@ export const useDeleteGradingBoundaryMutation = () => {
 };
 
 /**
+ * React Query query for getting class syllabus
+ */
+export const useGetSyllabusQuery = (classId: string) => {
+  return trpc.class.getSyllabus.useQuery({ classId });
+};
+
+/**
+ * React Query mutation for updating syllabus
+ */
+export const useUpdateSyllabusMutation = () => {
+  return trpc.class.updateSyllabus.useMutation();
+};
+
+/**
  * Hook for getting specific class
  */
 export const useGetClass = () => {

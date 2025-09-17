@@ -1,246 +1,560 @@
 "use client";
 
-import { useState } from "react";
-import { PageLayout, PageHeader } from "@/components/ui/page-layout";
+import { useState, useMemo, useEffect } from "react";
+import { useParams } from "next/navigation";
+import { PageLayout } from "@/components/ui/page-layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
+import { Badge } from "@/components/ui/badge";
+import { Spinner } from "@/components/ui/spinner";
+import { Skeleton } from "@/components/ui/skeleton";
+import { 
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import { 
   Save, 
   Edit, 
   FileText,
-  Eye,
-  Download
+  Download,
+  BookOpen,
+  Target,
+  Calendar,
+  GraduationCap,
+  CheckCircle,
+  AlertCircle,
+  Clock,
+  BarChart3,
+  TrendingUp,
+  X,
+  School,
+  ClipboardCheck,
+  ClipboardList
 } from "lucide-react";
+import { 
+  useGetSyllabusQuery, 
+  useUpdateSyllabusMutation,
+  useGetClassQuery,
+  useListGradingBoundariesQuery,
+  useListMarkSchemesQuery
+} from "@/lib/api/class";
 
-const mockSyllabus = {
-  courseTitle: "Advanced Physics",
-  courseCode: "PHYS-101",
-  instructor: "Dr. John Smith",
-  semester: "Spring 2024",
-  credits: 3,
-  description: "This course provides an in-depth study of advanced physics concepts including thermodynamics, electromagnetism, and modern physics theories. Students will engage in both theoretical analysis and practical laboratory work.",
-  objectives: [
-    "Understand fundamental principles of thermodynamics and their applications",
-    "Analyze electromagnetic phenomena and wave properties", 
-    "Explore concepts in modern physics including quantum mechanics",
-    "Develop problem-solving skills through practical applications",
-    "Conduct laboratory experiments and interpret scientific data"
-  ],
-  schedule: [
-    { week: 1, topic: "Introduction to Thermodynamics", readings: "Chapter 1-2" },
-    { week: 2, topic: "Laws of Thermodynamics", readings: "Chapter 3-4" },
-    { week: 3, topic: "Heat Engines and Refrigerators", readings: "Chapter 5" },
-    { week: 4, topic: "Electromagnetic Fields", readings: "Chapter 6-7" },
-    { week: 5, topic: "Electromagnetic Waves", readings: "Chapter 8" },
-    { week: 6, topic: "Optics and Wave Properties", readings: "Chapter 9-10" },
-    { week: 7, topic: "Midterm Exam", readings: "Review Chapters 1-10" },
-    { week: 8, topic: "Introduction to Quantum Mechanics", readings: "Chapter 11" }
-  ],
-  grading: [
-    { component: "Midterm Exam", percentage: 25 },
-    { component: "Final Exam", percentage: 35 },
-    { component: "Laboratory Reports", percentage: 20 },
-    { component: "Assignments", percentage: 15 },
-    { component: "Participation", percentage: 5 }
-  ],
-  policies: "Late assignments will be penalized 10% per day. Make-up exams are only available with prior approval and valid documentation. All laboratory safety protocols must be followed.",
-  resources: [
-    "Physics: Principles with Applications by Douglas Giancoli",
-    "University Physics with Modern Physics by Young & Freedman",
-    "Online physics simulations and interactive tools",
-    "Laboratory equipment and safety guidelines"
-  ]
+// Types
+type Assignment = {
+  id: string;
+  title: string;
+  type: string;
+  dueDate: string;
+  maxGrade: number;
+  weight: number;
+  graded: boolean;
 };
 
+// Skeleton components
+const StatisticsCardSkeleton = () => (
+  <Card className="p-4">
+    <div className="flex items-center justify-between">
+      <div>
+        <Skeleton className="h-4 w-24 mb-2" />
+        <Skeleton className="h-8 w-12" />
+      </div>
+      <Skeleton className="h-10 w-10 rounded-full" />
+    </div>
+  </Card>
+);
+
+const SyllabusPageSkeleton = () => (
+  <div className="flex flex-col space-y-6">
+    {/* Header skeleton */}
+    <div className="flex items-center justify-between">
+      <div>
+        <Skeleton className="h-6 w-32 mb-2" />
+        <Skeleton className="h-4 w-64" />
+      </div>
+      <Skeleton className="h-10 w-32" />
+    </div>
+
+    {/* Statistics Cards skeleton */}
+    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+      <StatisticsCardSkeleton />
+      <StatisticsCardSkeleton />
+      <StatisticsCardSkeleton />
+      <StatisticsCardSkeleton />
+    </div>
+
+    {/* Course Overview skeleton */}
+    <Card>
+      <CardHeader>
+        <Skeleton className="h-6 w-40" />
+      </CardHeader>
+      <CardContent>
+        <div className="space-y-4">
+          <Skeleton className="h-4 w-full" />
+          <Skeleton className="h-4 w-3/4" />
+          <Skeleton className="h-4 w-1/2" />
+        </div>
+      </CardContent>
+    </Card>
+  </div>
+);
+
 export default function Syllabus() {
+  const params = useParams();
+  const classId = params.id as string;
+  
   const [isEditing, setIsEditing] = useState(false);
-  const [editedContent, setEditedContent] = useState("");
+  const [syllabusContent, setSyllabusContent] = useState("");
+  const [originalContent, setOriginalContent] = useState("");
+
+  // API queries
+  const { data: syllabusData, isLoading: syllabusLoading, error: syllabusError } = useGetSyllabusQuery(classId);
+  const { data: classData, isLoading: classLoading } = useGetClassQuery(classId);
+  const { data: gradingBoundaries } = useListGradingBoundariesQuery(classId);
+  const { data: markSchemes } = useListMarkSchemesQuery(classId);
+  
+  // Mutations
+  const updateSyllabusMutation = useUpdateSyllabusMutation();
+
+  // Initialize syllabus content
+  useEffect(() => {
+    if (syllabusData?.syllabus) {
+      setSyllabusContent(syllabusData.syllabus);
+      setOriginalContent(syllabusData.syllabus);
+    }
+  }, [syllabusData]);
 
   const handleEdit = () => {
+    setOriginalContent(syllabusContent);
     setIsEditing(true);
-    // In a real app, this would load the current syllabus content for editing
-    setEditedContent(JSON.stringify(mockSyllabus, null, 2));
   };
 
-  const handleSave = () => {
+  const handleSave = async () => {
+    try {
+      await updateSyllabusMutation.mutateAsync({
+        classId,
+        contents: syllabusContent
+      });
     setIsEditing(false);
-    // In a real app, this would save the edited content
+    } catch (error) {
+      console.error('Failed to update syllabus:', error);
+    }
   };
 
   const handleCancel = () => {
+    setSyllabusContent(originalContent);
     setIsEditing(false);
-    setEditedContent("");
   };
+
+  // Loading state
+  if (syllabusLoading || classLoading) {
+    return (
+      <PageLayout>
+        <SyllabusPageSkeleton />
+      </PageLayout>
+    );
+  }
+
+  // Error state
+  if (syllabusError || !classData?.class) {
+    return (
+      <PageLayout>
+        <div className="flex items-center justify-center h-64">
+          <div className="text-center">
+            <AlertCircle className="h-12 w-12 text-destructive mx-auto mb-4" />
+            <h3 className="text-lg font-semibold mb-2">Failed to load syllabus</h3>
+            <p className="text-muted-foreground">Please try again later.</p>
+          </div>
+        </div>
+      </PageLayout>
+    );
+  }
+
+  const assignments: Assignment[] = (classData.class.assignments || []).map(a => ({
+    id: a.id,
+    title: a.title,
+    type: a.type || 'OTHER',
+    dueDate: a.dueDate,
+    maxGrade: a.maxGrade || 0,
+    weight: a.weight || 0,
+    graded: a.graded
+  }));
+
+  // Calculate statistics
+  const totalPoints = assignments.reduce((sum, a) => sum + (a.maxGrade || 0), 0);
+  const completionRate = assignments.length > 0 ? Math.round((assignments.filter(a => a.graded).length / assignments.length) * 100) : 0;
+  const upcomingAssignments = assignments.filter(a => a.dueDate && new Date(a.dueDate) > new Date()).length;
 
   return (
     <PageLayout>
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex flex-col space-y-6">
+        {/* Header */}
+        <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold">Course Syllabus</h1>
-          <p className="text-muted-foreground">Course information, schedule, and policies</p>
+            <h1 className="font-semibold text-xl">Syllabus</h1>
+            <p className="text-sm text-muted-foreground mt-1">
+              {classData.class.name} • Course overview and academic information
+            </p>
         </div>
-        
-        <div className="flex items-center space-x-2">
-          {!isEditing && (
-            <>
-              <Button variant="outline" size="sm">
-                <Download className="h-4 w-4 mr-2" />
-                Export PDF
+          <div className="flex items-center space-x-3">
+            {isEditing ? (
+              <>
+                <Button
+                  onClick={handleSave}
+                  className="flex items-center space-x-2"
+                  disabled={updateSyllabusMutation.isPending}
+                >
+                  <Save className="w-4 h-4" />
+                  <span>Save Changes</span>
               </Button>
-              <Button size="sm" onClick={handleEdit}>
-                <Edit className="h-4 w-4 mr-2" />
-                Edit Syllabus
-              </Button>
-            </>
-          )}
-          {isEditing && (
-            <>
-              <Button variant="outline" size="sm" onClick={handleCancel}>
-                Cancel
-              </Button>
-              <Button size="sm" onClick={handleSave}>
-                <Save className="h-4 w-4 mr-2" />
-                Save Changes
+                <Button
+                  variant="outline"
+                  onClick={handleCancel}
+                  className="flex items-center space-x-2"
+                >
+                  <X className="w-4 h-4" />
+                  <span>Cancel</span>
               </Button>
             </>
+            ) : (
+              <Button
+                onClick={handleEdit}
+                className="flex items-center space-x-2"
+              >
+                <Edit className="w-4 h-4" />
+                <span>Edit Syllabus</span>
+              </Button>
           )}
         </div>
       </div>
 
-      {isEditing ? (
+        {/* Statistics Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+          <Card className="p-4">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm font-medium text-muted-foreground">Total Assignments</p>
+                <p className="text-2xl font-bold mt-1">{assignments.length}</p>
+              </div>
+              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                <Target className="w-5 h-5 text-primary" />
+              </div>
+            </div>
+          </Card>
+
+          <Card className="p-4">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm font-medium text-muted-foreground">Completion Rate</p>
+                <p className="text-2xl font-bold mt-1">{completionRate}%</p>
+              </div>
+              <div className="w-10 h-10 bg-green-500/10 rounded-lg flex items-center justify-center">
+                <BarChart3 className="w-5 h-5 text-green-500" />
+              </div>
+            </div>
+          </Card>
+
+          <Card className="p-4">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm font-medium text-muted-foreground">Total Points</p>
+                <p className="text-2xl font-bold mt-1">{totalPoints}</p>
+              </div>
+              <div className="w-10 h-10 bg-purple-500/10 rounded-lg flex items-center justify-center">
+                <TrendingUp className="w-5 h-5 text-purple-500" />
+              </div>
+            </div>
+          </Card>
+
+          <Card className="p-4">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm font-medium text-muted-foreground">Upcoming</p>
+                <p className="text-2xl font-bold mt-1">{upcomingAssignments}</p>
+              </div>
+              <div className="w-10 h-10 bg-orange-500/10 rounded-lg flex items-center justify-center">
+                <Clock className="w-5 h-5 text-orange-500" />
+              </div>
+            </div>
+          </Card>
+        </div>
+
+        {/* Course Overview */}
         <Card>
           <CardHeader>
-            <CardTitle>Edit Syllabus</CardTitle>
-            <p className="text-sm text-muted-foreground">
-              Modify the course syllabus content below
-            </p>
+            <CardTitle className="text-lg font-semibold">Course Overview</CardTitle>
           </CardHeader>
           <CardContent>
-            <Textarea
-              value={editedContent}
-              onChange={(e) => setEditedContent(e.target.value)}
-              className="min-h-[600px] font-mono text-sm"
-              placeholder="Enter syllabus content..."
-            />
-          </CardContent>
-        </Card>
-      ) : (
-        <div className="space-y-6">
-          {/* Course Header */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-2xl">{mockSyllabus.courseTitle}</CardTitle>
-              <div className="flex items-center space-x-4 text-muted-foreground">
-                <span>{mockSyllabus.courseCode}</span>
-                <span>•</span>
-                <span>{mockSyllabus.semester}</span>
-                <span>•</span>
-                <span>{mockSyllabus.credits} Credits</span>
-              </div>
-              <p className="text-sm">Instructor: {mockSyllabus.instructor}</p>
-            </CardHeader>
-            <CardContent>
+            {isEditing ? (
               <div className="space-y-4">
+            <Textarea
+                  value={syllabusContent}
+                  onChange={(e) => setSyllabusContent(e.target.value)}
+                  placeholder="Enter course overview, objectives, and other important information..."
+                  className="min-h-[300px]"
+                />
+                <p className="text-sm text-muted-foreground">
+                  Enter your course information, learning objectives, policies, and other important details.
+                </p>
+              </div>
+            ) : (
+              <div className="space-y-6">
                 <div>
-                  <h4 className="font-semibold mb-2">Course Description</h4>
-                  <p className="text-muted-foreground">{mockSyllabus.description}</p>
+                  {syllabusContent ? (
+                    <div className="whitespace-pre-wrap text-muted-foreground">
+                      {syllabusContent}
+                    </div>
+                  ) : (
+                    <div className="text-center py-8 text-muted-foreground">
+                      <FileText className="h-12 w-12 mx-auto mb-4 opacity-50" />
+                      <p>No syllabus content yet</p>
+                      <p className="text-sm">Click 'Edit Syllabus' to add course information, learning objectives, policies, and more.</p>
+                    </div>
+                  )}
+                </div>
+
+                {/* Course Assignments Table */}
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-lg font-semibold">Course Assignments</h3>
+                    {assignments.length > 0 && (
+                      <div className="flex items-center space-x-4">
+                        <div className="text-sm text-muted-foreground">
+                          {assignments.filter(a => a.graded).length} of {assignments.length} graded
+                        </div>
+                        <div className="text-sm text-muted-foreground">
+                          {totalPoints} total points
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {assignments.length > 0 ? (
+                    <Table>
+                      <TableHeader>
+                        <TableRow>
+                          <TableHead>Assignment</TableHead>
+                          <TableHead>Due Date</TableHead>
+                          <TableHead className="text-right">Points</TableHead>
+                          <TableHead>Weight</TableHead>
+                          <TableHead>Status</TableHead>
+                        </TableRow>
+                      </TableHeader>
+                      <TableBody>
+                        {assignments
+                          .sort((a, b) => new Date(a.dueDate).getTime() - new Date(b.dueDate).getTime())
+                          .map((assignment) => (
+                          <TableRow key={assignment.id}>
+                            <TableCell>
+                              <div className="flex items-center space-x-3">
+                                <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
+                                  <Target className="w-4 h-4 text-primary" />
+                                </div>
+                                <div>
+                                  <span className="font-medium block">
+                                    {assignment.title}
+                                  </span>
+                                  <span className="text-xs text-muted-foreground capitalize">
+                                    {assignment.type.toLowerCase().replace('_', ' ')}
+                                  </span>
+                                </div>
+                              </div>
+                            </TableCell>
+                            <TableCell>
+                              <div className="flex items-center space-x-2">
+                                <Calendar className="w-4 h-4 text-muted-foreground" />
+                                <span className="text-sm text-muted-foreground">
+                                  {assignment.dueDate ? new Date(assignment.dueDate).toLocaleDateString('en-US', {
+                                    month: 'short',
+                                    day: 'numeric',
+                                    year: 'numeric'
+                                  }) : 'No due date'}
+                                </span>
+                              </div>
+                            </TableCell>
+                            <TableCell className="text-right">
+                              <span className="font-semibold">
+                                {assignment.maxGrade ? `${assignment.maxGrade}` : '—'}
+                              </span>
+                              {assignment.maxGrade && <span className="text-xs text-muted-foreground ml-1">pts</span>}
+                            </TableCell>
+                            <TableCell>
+                              <span className="text-sm text-muted-foreground font-medium">
+                                {assignment.weight ? `${assignment.weight}%` : '—'}
+                              </span>
+                            </TableCell>
+                            <TableCell>
+                              {assignment.graded ? (
+                                <Badge variant="default" className="bg-green-500/10 text-green-700 hover:bg-green-500/20">
+                                  Graded
+                                </Badge>
+                              ) : (
+                                <Badge variant="secondary" className="bg-yellow-500/10 text-yellow-700 hover:bg-yellow-500/20">
+                                  Pending
+                                </Badge>
+                              )}
+                            </TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  ) : (
+                    <div className="text-center py-8 text-muted-foreground">
+                      <Target className="h-12 w-12 mx-auto mb-4 opacity-50" />
+                      <p>No assignments yet</p>
+                      <p className="text-sm">Assignments will appear here once they're created.</p>
+                    </div>
+                  )}
                 </div>
               </div>
+            )}
             </CardContent>
           </Card>
 
-          {/* Learning Objectives */}
+        {/* Grading Tools */}
+        {(markSchemes && markSchemes.length > 0) || (gradingBoundaries && gradingBoundaries.length > 0) && (
           <Card>
             <CardHeader>
-              <CardTitle>Learning Objectives</CardTitle>
+              <CardTitle className="flex items-center gap-2">
+                <ClipboardCheck className="h-5 w-5" />
+                Grading Tools & Standards
+              </CardTitle>
             </CardHeader>
-            <CardContent>
-              <ul className="space-y-2">
-                {mockSyllabus.objectives.map((objective, index) => (
-                  <li key={index} className="flex items-start space-x-2">
-                    <div className="w-2 h-2 rounded-full bg-primary mt-2" />
-                    <span className="text-muted-foreground">{objective}</span>
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
-
-          {/* Course Schedule */}
-          <Card>
-            <CardHeader>
-              <CardTitle>Course Schedule</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="overflow-x-auto">
-                <table className="w-full">
-                  <thead>
-                    <tr className="border-b">
-                      <th className="text-left p-3 font-medium">Week</th>
-                      <th className="text-left p-3 font-medium">Topic</th>
-                      <th className="text-left p-3 font-medium">Readings</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {mockSyllabus.schedule.map((item) => (
-                      <tr key={item.week} className="border-b">
-                        <td className="p-3 font-medium">{item.week}</td>
-                        <td className="p-3">{item.topic}</td>
-                        <td className="p-3 text-muted-foreground">{item.readings}</td>
-                      </tr>
+            <CardContent className="space-y-6">
+              {/* Grading Boundaries */}
+              {gradingBoundaries && gradingBoundaries.length > 0 && (
+                <div>
+                  <h3 className="text-md font-medium mb-3 flex items-center gap-2">
+                    <ClipboardList className="h-4 w-4 text-muted-foreground" />
+                    Grading Boundaries
+                  </h3>
+                  <div className="space-y-3">
+                    {gradingBoundaries.map((boundary, index) => (
+                      <div key={index} className="p-4 rounded-lg bg-muted">
+                        <div className="flex items-center justify-between mb-2">
+                          <h4 className="font-semibold">{boundary.name || 'Grading Boundary'}</h4>
+                          {boundary.isDefault && (
+                            <Badge variant="default">Default</Badge>
+                          )}
+                        </div>
+                        {boundary.boundaries && boundary.boundaries.length > 0 && (
+                          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+                            {boundary.boundaries.map((grade, gradeIndex) => (
+                              <div key={gradeIndex} className="flex items-center justify-between text-sm p-2 rounded bg-background">
+                                <span className="font-medium">{grade.grade}</span>
+                                <span className="text-muted-foreground">{grade.minPercentage}%+</span>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                      </div>
                     ))}
-                  </tbody>
-                </table>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Grading Breakdown */}
-          <Card>
-            <CardHeader>
-              <CardTitle>Grading Breakdown</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-3">
-                {mockSyllabus.grading.map((item, index) => (
-                  <div key={index} className="flex items-center justify-between p-3 rounded-lg bg-muted">
-                    <span className="font-medium">{item.component}</span>
-                    <span className="text-lg font-bold">{item.percentage}%</span>
                   </div>
-                ))}
+                </div>
+              )}
+
+              {/* Mark Schemes */}
+              {markSchemes && markSchemes.length > 0 && (
+                <div>
+                  <h3 className="text-md font-medium mb-3 flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-muted-foreground" />
+                    Mark Schemes
+                  </h3>
+                  <div className="space-y-3">
+                    {markSchemes.map((scheme, index) => (
+                      <div key={index} className="p-4 rounded-lg bg-muted">
+                        <div className="flex items-center justify-between mb-2">
+                          <h4 className="font-semibold">{scheme.name || 'Mark Scheme'}</h4>
+                          {scheme.isDefault && (
+                            <Badge variant="default">Default</Badge>
+                          )}
+                        </div>
+                        {scheme.description && (
+                          <p className="text-sm text-muted-foreground mb-2">{scheme.description}</p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
               </div>
+              )}
             </CardContent>
           </Card>
+        )}
 
-          {/* Policies */}
+        {/* Course Information */}
           <Card>
             <CardHeader>
-              <CardTitle>Course Policies</CardTitle>
+            <CardTitle className="flex items-center gap-2">
+              <School className="h-5 w-5" />
+              Course Information
+            </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground">{mockSyllabus.policies}</p>
-            </CardContent>
-          </Card>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {/* Basic Information */}
+              <div className="space-y-4">
+                <h3 className="text-md font-medium border-b border-border pb-2">
+                  Basic Information
+                </h3>
+              <div className="space-y-3">
+                  <div className="bg-muted p-3 rounded-lg">
+                    <label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Class Name</label>
+                    <p className="font-medium mt-1">{classData.class.name}</p>
+                  </div>
+                  <div className="bg-muted p-3 rounded-lg">
+                    <label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Section</label>
+                    <p className="mt-1">{classData.class.section || 'Not specified'}</p>
+                  </div>
+                  <div className="bg-muted p-3 rounded-lg">
+                    <label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Subject</label>
+                    <p className="mt-1">{classData.class.subject || 'Not specified'}</p>
+                  </div>
+                </div>
+              </div>
 
-          {/* Required Resources */}
-          <Card>
-            <CardHeader>
-              <CardTitle>Required Resources</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-2">
-                {mockSyllabus.resources.map((resource, index) => (
-                  <li key={index} className="flex items-start space-x-2">
-                    <FileText className="h-4 w-4 mt-1 text-muted-foreground" />
-                    <span className="text-muted-foreground">{resource}</span>
-                  </li>
-                ))}
-              </ul>
+              {/* Statistics */}
+              <div className="space-y-4">
+                <h3 className="text-md font-medium border-b border-border pb-2">
+                  Course Statistics
+                </h3>
+                <div className="space-y-3">
+                  <div className="bg-muted p-3 rounded-lg">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Total Assignments</label>
+                        <p className="text-xl font-bold mt-1">{assignments.length}</p>
+                      </div>
+                      <Target className="w-6 h-6 text-muted-foreground" />
+                    </div>
+                  </div>
+                  <div className="bg-muted p-3 rounded-lg">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Graded Assignments</label>
+                        <p className="text-xl font-bold mt-1">{assignments.filter(a => a.graded).length}</p>
+                      </div>
+                      <CheckCircle className="w-6 h-6 text-muted-foreground" />
+                    </div>
+                  </div>
+                  <div className="bg-muted p-3 rounded-lg">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Total Points</label>
+                        <p className="text-xl font-bold mt-1">{totalPoints}</p>
+                      </div>
+                      <TrendingUp className="w-6 h-6 text-muted-foreground" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             </CardContent>
           </Card>
         </div>
-      )}
     </PageLayout>
   );
 }

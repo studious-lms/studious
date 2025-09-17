@@ -182,7 +182,6 @@ export default function Login() {
                 <div className="border-t border-gray-200 pt-6">
                   <form onSubmit={handleResendVerification} className="space-y-4">
                     <Input
-                      label="Email Address"
                       value={resendEmailFormData.email}
                       onChange={handleResendEmailChange}
                       placeholder="Enter your email address"
@@ -240,7 +239,6 @@ export default function Login() {
                 {/* Remember Me */}
                 <div className="flex items-center justify-between w-full">
                   <Checkbox
-                    label="Remember me"
                     checked={true}
                     onChange={() => {}}
                   />

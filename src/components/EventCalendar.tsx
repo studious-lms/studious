@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { CalendarIcon, Plus, Clock, MapPin, Users } from "lucide-react";
-import { CreateEventModal } from "@/components/modals";
+import { CreateClassEventButton } from "@/components/modals";
 
 // Mock events data
 const mockEvents = [
@@ -131,7 +131,11 @@ const mockEvents = [
   }
 ];
 
-export default function EventCalendar() {
+interface EventCalendarProps {
+  classId: string;
+}
+
+export default function EventCalendar({ classId }: EventCalendarProps) {
   const [selectedDateRange, setSelectedDateRange] = useState<DateRange>({
     from: new Date(),
     to: new Date()
@@ -199,12 +203,12 @@ export default function EventCalendar() {
           </Button>
         </div>
         
-        <CreateEventModal>
+        <CreateClassEventButton classId={classId}>
           <Button size="sm">
             <Plus className="h-4 w-4 mr-2" />
-            Add Event
+            Add Class Event
           </Button>
-        </CreateEventModal>
+        </CreateClassEventButton>
       </div>
 
       {/* Events List */}
@@ -267,12 +271,12 @@ export default function EventCalendar() {
               <p className="text-muted-foreground mb-4">
                 No events scheduled for the selected date range.
               </p>
-              <CreateEventModal>
+              <CreateClassEventButton classId={classId}>
                 <Button>
                   <Plus className="h-4 w-4 mr-2" />
-                  Add Event
+                  Add Class Event
                 </Button>
-              </CreateEventModal>
+              </CreateClassEventButton>
             </CardContent>
           </Card>
         )}

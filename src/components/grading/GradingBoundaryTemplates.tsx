@@ -63,15 +63,4 @@ export const gradingTemplates: Record<string, GradingTemplate> = {
       { grade: "1", minPercentage: 0, maxPercentage: 19, color: "#dc2626", description: "Minimal achievement similar to F grade" }
     ]
   },
-  percentage: {
-    name: "Percentage Only",
-    description: "Simple percentage-based grading",
-    boundaries: [
-      { grade: "90-100%", minPercentage: 90, maxPercentage: 100, color: "#059669", description: "Outstanding achievement" },
-      { grade: "80-89%", minPercentage: 80, maxPercentage: 89, color: "#2563eb", description: "Very good achievement" },
-      { grade: "70-79%", minPercentage: 70, maxPercentage: 79, color: "#16a34a", description: "Good achievement" },
-      { grade: "60-69%", minPercentage: 60, maxPercentage: 69, color: "#ca8a04", description: "Satisfactory achievement" },
-      { grade: "Below 60%", minPercentage: 0, maxPercentage: 59, color: "#dc2626", description: "Needs improvement" }
-    ]
-  }
 };

@@ -6,9 +6,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { PageLayout, PageHeader } from "@/components/ui/page-layout";
 import { ClassCard } from "@/components/ui/class-card";
-import { 
-  Plus, 
-  UserPlus, 
+import {
+  Plus,
+  UserPlus,
   Building,
   Search,
 } from "lucide-react";
@@ -47,7 +47,7 @@ export default function Classes() {
     try {
       await deleteClassMutation.mutateAsync({ classId, id: classId });
       toast.success("Class deleted successfully");
-      
+
       // Update local state
       // setClasses(prev: { teacherInClass: any[]; studentInClass: any[]; }) => ({
       //   ...prev,
@@ -59,7 +59,7 @@ export default function Classes() {
     }
   };
 
-  const handleClassCreated =  () => {
+  const handleClassCreated = () => {
     refetch();
   };
 
@@ -139,13 +139,13 @@ export default function Classes() {
         <TabsList className="grid w-full max-w-md grid-cols-2">
           <TabsTrigger value="teaching">
             <span>Teaching</span>
-            <span className="bg-muted text-muted-foreground px-2 py-1 rounded-full text-xs ml-2">
+            <span className="bg-muted text-muted-foreground px-2 rounded-full text-xs ml-2">
               {filteredTeaching.length}
             </span>
           </TabsTrigger>
           <TabsTrigger value="enrolled">
             <span>Enrolled</span>
-            <span className="bg-muted text-muted-foreground px-2 py-1 rounded-full text-xs ml-2">
+            <span className="bg-muted text-muted-foreground px-2 rounded-full text-xs ml-2">
               {filteredEnrolled.length}
             </span>
           </TabsTrigger>
@@ -237,22 +237,24 @@ export default function Classes() {
             </Card>
           ) : (
             <Card className="text-center py-12">
-              <CardContent className="space-y-4">
-                <div className="h-12 w-12 mx-auto rounded-lg bg-secondary-light flex items-center justify-center">
-                  <UserPlus className="h-6 w-6 text-secondary" />
+              <CardContent className="space-y-4 flex justify-center">
+                <div className="flex flex-col items-center space-y-4">
+                  <div className="h-12 w-12 mx-auto rounded-lg bg-secondary-light flex items-center justify-center">
+                    <UserPlus className="h-6 w-6 text-secondary" />
+                  </div>
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-semibold">No enrolled classes</h3>
+                    <p className="text-muted-foreground max-w-md mx-auto">
+                      Join a class using an invite code or link provided by your teacher.
+                    </p>
+                  </div>
+                  <JoinClassModal onClassJoined={handleClassJoined}>
+                    <Button className="flex items-center space-x-2">
+                      <UserPlus className="h-4 w-4" />
+                      <span>Join Class</span>
+                    </Button>
+                  </JoinClassModal>
                 </div>
-                <div className="space-y-2">
-                  <h3 className="text-lg font-semibold">No enrolled classes</h3>
-                  <p className="text-muted-foreground max-w-md mx-auto">
-                    Join a class using an invite code or link provided by your teacher.
-                  </p>
-                </div>
-                <JoinClassModal onClassJoined={handleClassJoined}>
-                  <Button className="flex items-center space-x-2">
-                    <UserPlus className="h-4 w-4" />
-                    <span>Join Class</span>
-                  </Button>
-                </JoinClassModal>
               </CardContent>
             </Card>
           )}

@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
-import { PageLayout, PageHeader } from "@/components/ui/page-layout";
+import { useState, useMemo } from "react";
+import { PageLayout } from "@/components/ui/page-layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Skeleton } from "@/components/ui/skeleton";
+import { EmptyState } from "@/components/ui/empty-state";
 import { 
   UserPlus, 
   Search, 
@@ -17,8 +18,8 @@ import {
   Mail,
   UserX,
   Shield,
-  User,
-  Users
+  User, 
+  RefreshCcw
 } from "lucide-react";
 import {
   DropdownMenu,
@@ -27,10 +28,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useGetClassQuery, useChangeRoleMutation, useRemoveMemberMutation, useGetInviteCodeQuery } from "@/lib/api";
-import { AlertLevel } from "@/lib/alertLevel";
-import { addAlert } from "@/store/appSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useGetClassQuery, useChangeRoleMutation, useRemoveMemberMutation, useGetInviteCodeQuery, trpc } from "@/lib/api";
+import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { toast } from "sonner";
 import { useParams } from "next/navigation";
@@ -115,14 +114,22 @@ export default function Members() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeTab, setActiveTab] = useState("students");
   
-  const dispatch = useDispatch();
   const appState = useSelector((state: RootState) => state.app);
 
   // API hooks
   const { data: classData, isLoading, error, refetch } = useGetClassQuery(classId as string);
-  const { data: inviteCodeData, isLoading: inviteCodeLoading } = useGetInviteCodeQuery(classId as string);
+  const { data: inviteCodeData, isLoading: inviteCodeLoading, refetch: refetchInviteCode } = useGetInviteCodeQuery(classId as string);
   const changeRoleMutation = useChangeRoleMutation();
   const removeMemberMutation = useRemoveMemberMutation();
+  const regenerateInviteCodeMutation = trpc.class.createInviteCode.useMutation({
+    onSuccess: () => {
+      toast.success('Invite code regenerated successfully');
+      refetchInviteCode();
+    },
+    onError: () => {
+      toast.error('Failed to regenerate invite code');
+    }
+  });
   // Process members data
   const members = useMemo(() => {
     if (!classData?.class) return { teachers: [], students: [] };
@@ -174,8 +181,8 @@ export default function Members() {
       });
       toast.success(`Role changed to ${newType}`);
       refetch();
-    } catch (error: any) {
-      dispatch(addAlert({ level: AlertLevel.ERROR, remark: error.message || 'Failed to change role' }));
+    } catch {
+      toast.error('Failed to change role');
     }
   };
 
@@ -187,11 +194,18 @@ export default function Members() {
       });
       toast.success("Member removed successfully");
       refetch();
-    } catch (error: any) {
-      dispatch(addAlert({ level: AlertLevel.ERROR, remark: error.message || 'Failed to remove member' }));
+    } catch {
+      toast.error('Failed to remove member');
     }
   };
 
+
+  const regenerateInviteCode = async () => {
+    await regenerateInviteCodeMutation.mutateAsync({
+      classId: classId as string,
+    });
+    toast.success('Invite code regenerated successfully');
+  };
   const getRoleBadge = (type: string) => {
     switch (type) {
       case "teacher":
@@ -267,7 +281,8 @@ export default function Members() {
                 <Copy className="h-4 w-4 mr-2" />
                 Copy
               </Button>
-              <Button variant="outline">
+              <Button variant="outline" onClick={regenerateInviteCode}>
+                <RefreshCcw className="h-4 w-4 mr-2" />
                 Regenerate
               </Button>
             </div>
@@ -384,15 +399,11 @@ export default function Members() {
               ))}
             </div>
           ) : (
-            <Card className="text-center py-12">
-              <CardContent>
-                <User className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
-                <h3 className="text-lg font-semibold mb-2">No students found</h3>
-                <p className="text-muted-foreground">
-                  {searchQuery ? `No students match "${searchQuery}"` : "No students have joined this class yet"}
-                </p>
-              </CardContent>
-            </Card>
+            <EmptyState
+              icon={User}
+              title="No students found"
+              description={searchQuery ? `No students match "${searchQuery}"` : "No students have joined this class yet"}
+            />
           )}
         </TabsContent>
 
@@ -474,15 +485,11 @@ export default function Members() {
               ))}
             </div>
           ) : (
-            <Card className="text-center py-12">
-              <CardContent>
-                <Shield className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
-                <h3 className="text-lg font-semibold mb-2">No teachers found</h3>
-                <p className="text-muted-foreground">
-                  {searchQuery ? `No teachers match "${searchQuery}"` : "No additional teachers have been added"}
-                </p>
-              </CardContent>
-            </Card>
+            <EmptyState
+              icon={Shield}
+              title="No teachers found"
+              description={searchQuery ? `No teachers match "${searchQuery}"` : "No additional teachers have been added"}
+            />
           )}
         </TabsContent>
       </Tabs>

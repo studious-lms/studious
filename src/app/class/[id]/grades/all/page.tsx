@@ -8,16 +8,19 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Avatar } from "@/components/ui/avatar";
+import { EmptyState } from "@/components/ui/empty-state";
 import { 
   ArrowLeft,
   Search,
   Download,
-  Filter,
   Edit,
   CheckCircle,
-  X
+  X,
+  Users
 } from "lucide-react";
-import { trpc } from "@/lib/trpc";
+import { DataTable } from "@/components/ui/data-table";
+import type { ColumnDef } from "@tanstack/react-table";
+import { trpc, type RouterOutputs } from "@/lib/trpc";
 import Link from "next/link";
 
 export default function AllStudentsGrades() {
@@ -32,6 +35,41 @@ export default function AllStudentsGrades() {
     if (!term) return students;
     return students.filter(s => s.username.toLowerCase().includes(term));
   }, [students, searchTerm]);
+
+  // Students table columns
+  const studentColumns: ColumnDef<RouterOutputs["class"]["get"]["class"]["students"][number]>[] = [
+    {
+      accessorKey: "username",
+      header: "Student",
+      cell: ({ row }) => {
+        const student = row.original;
+        return (
+          <div className="flex items-center space-x-3">
+            <Avatar className="h-8 w-8">
+              <img src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${student.username}`} alt={student.username} />
+            </Avatar>
+            <span className="font-medium">{student.username}</span>
+          </div>
+        );
+      },
+    },
+    {
+      accessorKey: "actions",
+      header: "Actions",
+      cell: ({ row }) => {
+        const student = row.original;
+        return (
+          <div className="">
+            <Link href={`/class/${classId}/grades/student/${student.id}`}>
+              <Button size="sm" variant="outline">
+                View Grades
+              </Button>
+            </Link>
+          </div>
+        );
+      },
+    },
+  ];
 
   if (isLoading) {
     return (
@@ -69,10 +107,6 @@ export default function AllStudentsGrades() {
               <Input placeholder="Search students..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className="pl-10" />
             </div>
             <Button variant="outline" size="sm">
-              <Filter className="h-4 w-4 mr-2" />
-              Filter
-            </Button>
-            <Button variant="outline" size="sm">
               <Download className="h-4 w-4 mr-2" />
               Export
             </Button>
@@ -86,35 +120,24 @@ export default function AllStudentsGrades() {
           <CardTitle>Students</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b">
-                  <th className="text-left p-3 font-medium w-[240px]">Student</th>
-                  <th className="text-center p-3 font-medium w-[160px]">Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                {filtered.map((s) => (
-                  <tr key={s.id} className="border-b hover:bg-muted/50">
-                    <td className="p-3 font-medium">
-                      <div className="flex items-center space-x-3">
-                        <Avatar className="h-8 w-8">
-                          <img src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${s.username}`} alt={s.username} />
-                        </Avatar>
-                        <span>{s.username}</span>
-                      </div>
-                    </td>
-                    <td className="text-center p-3">
-                      <Link href={`/class/${classId}/grades/student/${s.id}`}>
-                        <Button size="sm" variant="outline">View Grades</Button>
-                      </Link>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          {filtered.length === 0 ? (
+            <EmptyState
+              icon={Users}
+              title={searchTerm.trim() ? "No students found" : "No students enrolled"}
+              description={
+                searchTerm.trim() 
+                  ? "Try adjusting your search terms" 
+                  : "Students will appear here once they join the class"
+              }
+            />
+          ) : (
+            <DataTable
+              columns={studentColumns}
+              data={filtered}
+              searchKey="username"
+              searchPlaceholder="Search students..."
+            />
+          )}
         </CardContent>
       </Card>
     </PageLayout>

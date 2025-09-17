@@ -20,23 +20,9 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-
-interface Assignment {
-  id: string;
-  title: string;
-  description: string;
-  type: string;
-  dueDate: string;
-  dueTime: string;
-  status: string;
-  submissions: number;
-  totalStudents: number;
-  points: number;
-  hasAttachments: boolean;
-}
-
+import { RouterOutputs } from "@/lib/trpc";
 interface DraggableAssignmentProps {
-  assignment: Assignment;
+  assignment: RouterOutputs['assignment']['get'];
   classId: string;
 }
 
