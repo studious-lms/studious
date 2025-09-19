@@ -27,7 +27,6 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { trpc } from "@/lib/trpc";
-import { useUpdateClassMutation, useDeleteClassMutation } from "@/lib/api";
 import { toast } from "sonner";
 
 export default function ClassSettings() {
@@ -40,12 +39,12 @@ export default function ClassSettings() {
     name: "",
     section: "",
     subject: "",
-    description: "",
+    // description: "",
     color: "#3b82f6",
-    semester: "",
-    credits: "",
-    meetingTime: "",
-    location: ""
+    // semester: "",
+    // credits: "",
+    // meetingTime: "",
+    // location: ""
   });
 
   // Get class data
@@ -54,8 +53,8 @@ export default function ClassSettings() {
   });
 
   // Mutations
-  const updateClassMutation = useUpdateClassMutation();
-  const deleteClassMutation = useDeleteClassMutation();
+  const updateClassMutation = trpc.class.update.useMutation();
+  const deleteClassMutation = trpc.class.delete.useMutation();
 
   // Initialize form data when class data loads
   useEffect(() => {
@@ -65,12 +64,12 @@ export default function ClassSettings() {
         name: classInfo.name || "",
         section: classInfo.section || "",
         subject: classInfo.subject || "",
-        description: classInfo.description || "",
+        // description: classInfo.description || "",
         color: classInfo.color || "#3b82f6",
-        semester: classInfo.semester || "",
-        credits: classInfo.credits?.toString() || "",
-        meetingTime: classInfo.meetingTime || "",
-        location: classInfo.location || ""
+        // semester: classInfo.semester || "",
+        // credits: classInfo.credits?.toString() || "",
+        // meetingTime: classInfo.meetingTime || "",
+        // location: classInfo.location || ""
       });
     }
   }, [classData]);
@@ -91,12 +90,12 @@ export default function ClassSettings() {
         name: formData.name,
         section: formData.section,
         subject: formData.subject,
-        description: formData.description || undefined,
+        // description: formData.description || undefined,
         color: formData.color,
-        semester: formData.semester || undefined,
-        credits: formData.credits ? parseInt(formData.credits) : undefined,
-        meetingTime: formData.meetingTime || undefined,
-        location: formData.location || undefined
+        // semester: formData.semester || undefined,
+        // credits: formData.credits ? parseInt(formData.credits) : undefined,
+        // meetingTime: formData.meetingTime || undefined,
+        // location: formData.location || undefined
       });
 
       await refetch();
@@ -230,18 +229,18 @@ export default function ClassSettings() {
                   required
                 />
               </div>
-              <div className="space-y-2">
+              {/* <div className="space-y-2">
                 <Label htmlFor="semester" className="text-sm">Semester</Label>
                 <Input 
                   id="semester" 
-                  value={formData.semester}
+                  value={formData.semester || ""}
                   onChange={(e) => handleInputChange("semester", e.target.value)}
                   placeholder="e.g., Spring 2025"
                   className="text-sm"
                 />
-              </div>
+              </div> */}
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            {/* <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="credits" className="text-sm">Credits</Label>
                 <Input 
@@ -284,7 +283,7 @@ export default function ClassSettings() {
                 rows={3}
                 className="text-sm"
               />
-            </div>
+            </div> */}
           </CardContent>
         </Card>
 

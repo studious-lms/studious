@@ -1,165 +1,359 @@
 "use client";
 
-import { useParams } from "next/navigation";
-import { PageLayout, PageHeader } from "@/components/ui/page-layout";
+import { useParams, useRouter } from "next/navigation";
+import { useState } from "react";
+import { PageLayout } from "@/components/ui/page-layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Textarea } from "@/components/ui/textarea";
+import { Separator } from "@/components/ui/separator";
 import { 
-  Clock, 
-  Users, 
+  MessageSquare, 
+  Send, 
   FileText, 
-  BarChart3,
-  Plus,
-  Bell
+  Calendar,
+  Clock,
+  Users,
+  MoreVertical,
+  BookOpen,
+  Paperclip
 } from "lucide-react";
-import { CreateAnnouncementModal } from "@/components/modals";
+import { trpc, type RouterOutputs } from "@/lib/trpc";
+import { toast } from "sonner";
+import { format } from "date-fns";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
 
-export default function ClassOverview() {
-  // const params = useParams();
-  // const classId = params.id as string;
+type Class = RouterOutputs['class']['get']['class'];
+type Announcement = RouterOutputs['class']['get']['class']['announcements'][number];
+type Assignment = RouterOutputs['class']['get']['class']['assignments'][number];
 
-  // Mock data
-  const classData = {
-    title: "Advanced Physics",
-    section: "AP-101", 
-    subject: "Physics",
-    students: 24,
-    assignments: 8,
-    averageGrade: 87,
-    announcements: [
-      { id: "1", title: "Lab report due Friday", date: "2 days ago", urgent: true },
-      { id: "2", title: "Quiz next week on Chapter 8", date: "1 week ago", urgent: false }
-    ],
-    recentActivity: [
-      { type: "assignment", title: "Lab Report #3 submitted", student: "Alex Johnson", time: "2 hours ago" },
-      { type: "grade", title: "Quiz #5 graded", average: 85, time: "1 day ago" },
-      { type: "attendance", title: "Attendance recorded", present: 22, total: 24, time: "2 days ago" }
-    ]
+export default function ClassFeed() {
+  const params = useParams();
+  const router = useRouter();
+
+  const appState = useSelector((state: RootState) => state.app);
+  const classId = params.id as string;
+  
+  const [newPost, setNewPost] = useState("");
+  const [isPosting, setIsPosting] = useState(false);
+
+  // Get class data
+  const { data: classData, isLoading, refetch } = trpc.class.get.useQuery({ 
+    classId 
+  });
+
+  // Create announcement mutation
+  const createAnnouncementMutation = trpc.announcement.create.useMutation({
+    onSuccess: () => {
+      toast.success("Your announcement has been shared with the class.");
+      setNewPost("");
+      setIsPosting(false);
+      // Refetch class data to show new announcement
+      refetch();
+    },
+    onError: (error) => {
+      toast.error(error.message);
+      setIsPosting(false);
+    },
+  });
+
+  const handlePost = async () => {
+    if (!newPost.trim()) return;
+    
+    setIsPosting(true);
+    createAnnouncementMutation.mutate({
+      classId,
+      remarks: newPost.trim(),
+    });
   };
+
+  const isTeacher = appState.user.teacher;
+  const classInfo = classData?.class;
+
+  // Combine announcements and assignments into a unified feed
+  const feedItems = [];
+  
+  // Add announcements
+  if (classInfo?.announcements) {
+    feedItems.push(...classInfo.announcements.map(announcement => ({
+      id: announcement.id,
+      type: 'announcement' as const,
+      data: announcement,
+      createdAt: announcement.createdAt,
+    })));
+  }
+
+  // Add assignments as feed items
+  if (classInfo?.assignments) {
+    feedItems.push(...classInfo.assignments.map(assignment => ({
+      id: assignment.id,
+      type: 'assignment' as const,
+      data: assignment,
+      createdAt: assignment.createdAt,
+    })));
+  }
+
+  // Sort by creation date (newest first)
+  feedItems.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+
+  if (isLoading) {
+    return (
+      <PageLayout>
+        <div className="max-w-4xl mx-auto space-y-6">
+          <div className="animate-pulse">
+            <div className="h-8 bg-muted rounded mb-4"></div>
+            <div className="h-24 bg-muted rounded mb-6"></div>
+            <div className="space-y-4">
+              <div className="h-32 bg-muted rounded"></div>
+              <div className="h-32 bg-muted rounded"></div>
+            </div>
+          </div>
+        </div>
+      </PageLayout>
+    );
+  }
 
   return (
     <PageLayout>
-      <PageHeader
-        title={classData.title}
-        description={`${classData.section} • ${classData.subject}`}
-      >
-        <div className="flex items-center space-x-2">
-          <CreateAnnouncementModal>
-            <Button variant="outline" size="sm">
-              <Bell className="h-4 w-4 mr-2" />
-              Post Announcement
-            </Button>
-          </CreateAnnouncementModal>
-          <Button size="sm">
-            <Plus className="h-4 w-4 mr-2" />
-            Quick Add
-          </Button>
-        </div>
-      </PageHeader>
-
-      {/* Quick Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Students</CardTitle>
-            <Users className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">{classData.students}</div>
-            <p className="text-xs text-muted-foreground">Enrolled this semester</p>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Assignments</CardTitle>
-            <FileText className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">{classData.assignments}</div>
-            <p className="text-xs text-muted-foreground">Active assignments</p>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Class Average</CardTitle>
-            <BarChart3 className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">{classData.averageGrade}%</div>
-            <p className="text-xs text-muted-foreground">Current semester</p>
-          </CardContent>
-        </Card>
-      </div>
-
-      <div className="grid lg:grid-cols-2 gap-6">
-        {/* Teaching Announcements */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center justify-between">
-              Teaching Announcements
-              <CreateAnnouncementModal>
-                <Button variant="outline" size="sm">
-                  <Bell className="h-4 w-4 mr-2" />
-                  New Post
-                </Button>
-              </CreateAnnouncementModal>
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            {classData.announcements.map((announcement) => (
-              <div key={announcement.id} className="flex items-start justify-between p-3 rounded-lg bg-muted">
-                <div className="space-y-1">
-                  <div className="flex items-center space-x-2">
-                    <p className="font-medium">{announcement.title}</p>
-                    {announcement.urgent && (
-                      <Badge variant="destructive" className="text-xs">Urgent</Badge>
-                    )}
-                  </div>
-                  <p className="text-sm text-muted-foreground flex items-center">
-                    <Clock className="h-3 w-3 mr-1" />
-                    {announcement.date}
-                  </p>
-                </div>
+      <div className="max-w-4xl mx-auto space-y-6">
+        {/* Class Header */}
+        <Card className="relative overflow-hidden border-0">
+          <div className="h-32 relative">
+            <div 
+              className="absolute inset-0 bg-gradient-to-br opacity-90 rounded-lg"
+              style={{ 
+                backgroundImage: `linear-gradient(135deg, #3b82f6dd, #8b5cf6aa), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>')` 
+              }}
+            />
+            <div className="absolute bottom-0 left-0 right-0 p-6">
+              <h1 className="text-2xl font-bold text-white mb-1">
+                {classInfo?.name || 'Loading...'}
+              </h1>
+              <div className="flex items-center gap-4 text-white/90 text-sm">
+                <span className="flex items-center gap-1">
+                  <BookOpen className="h-4 w-4" />
+                  {classInfo?.subject || 'Subject'}
+                </span>
+                <span className="flex items-center gap-1">
+                  <Users className="h-4 w-4" />
+                  {classInfo?.students?.length || 0} students
+                </span>
               </div>
-            ))}
-            <div className="border-t pt-4">
-              <p className="text-sm text-muted-foreground text-center">
-                Post announcements to communicate with your students
-              </p>
             </div>
-          </CardContent>
+          </div>
         </Card>
 
-        {/* Recent Activity */}
-        <Card>
-          <CardHeader>
-            <CardTitle>Recent Activity</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            {classData.recentActivity.map((activity, index) => (
-              <div key={index} className="flex items-start space-x-3 p-3 rounded-lg bg-muted">
-                <div className="h-2 w-2 rounded-full bg-primary mt-2"></div>
-                <div className="space-y-1 flex-1">
-                  <p className="font-medium text-sm">{activity.title}</p>
-                  {activity.type === "assignment" && (
-                    <p className="text-xs text-muted-foreground">by {activity.student}</p>
-                  )}
-                  {activity.type === "grade" && (
-                    <p className="text-xs text-muted-foreground">Average: {activity.average}%</p>
-                  )}
-                  {activity.type === "attendance" && (
-                    <p className="text-xs text-muted-foreground">{activity.present}/{activity.total} present</p>
-                  )}
-                  <p className="text-xs text-muted-foreground">{activity.time}</p>
+        {/* New Post Card - Teachers Only */}
+        {isTeacher && (
+          <Card className="border-border/50 shadow-sm">
+            <CardContent className="p-6">
+              <div className="flex items-start space-x-4">
+                <Avatar className="h-10 w-10 flex-shrink-0">
+                  <AvatarImage src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${appState.user.username}`} />
+                  <AvatarFallback className="bg-primary/10 text-primary font-medium">
+                    {appState.user.username?.substring(0, 2).toUpperCase()}
+                  </AvatarFallback>
+                </Avatar>
+                <div className="flex-1 space-y-4">
+                  <Textarea
+                    placeholder="Share something with your class..."
+                    value={newPost}
+                    onChange={(e) => setNewPost(e.target.value)}
+                    className="min-h-[80px] resize-none border-border/50 bg-background focus-visible:ring-2 focus-visible:ring-primary/20 focus-visible:border-primary transition-all duration-200 placeholder:text-muted-foreground/60"
+                  />
+                  <div className="flex items-center justify-between pt-1">
+                    <div className="flex items-center space-x-2">
+                      <Button variant="ghost" size="sm" className="h-9 px-3 text-muted-foreground hover:text-foreground hover:bg-muted/50">
+                        <Paperclip className="h-4 w-4 mr-2" />
+                        Attach file
+                      </Button>
+                    </div>
+                    <Button 
+                      onClick={handlePost}
+                      disabled={!newPost.trim() || isPosting}
+                      size="sm"
+                      className="h-9 px-4 font-medium"
+                    >
+                      {isPosting ? (
+                        <>
+                          <div className="animate-spin h-3 w-3 border border-white border-t-transparent rounded-full mr-2" />
+                          Posting...
+                        </>
+                      ) : (
+                        <>
+                          <Send className="h-4 w-4 mr-2" />
+                          Post
+                        </>
+                      )}
+                    </Button>
+                  </div>
                 </div>
               </div>
-            ))}
+            </CardContent>
+          </Card>
+        )}
+
+        {/* Feed Items */}
+        <div className="space-y-6">
+          {feedItems.length === 0 ? (
+        <Card>
+              <CardContent className="py-12 text-center">
+                <MessageSquare className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+                <h3 className="text-lg font-semibold mb-2">No posts yet</h3>
+                <p className="text-muted-foreground mb-4">
+                  {isTeacher 
+                    ? "Share announcements, assignments, and updates with your class."
+                    : "Your teacher hasn't posted anything yet."
+                  }
+                </p>
+                {isTeacher && (
+                  <Button onClick={() => setNewPost("Share something with your class...")}>
+                    <MessageSquare className="h-4 w-4 mr-2" />
+                    Create first post
+                  </Button>
+                )}
+              </CardContent>
+            </Card>
+          ) : (
+            feedItems.map((item) => (
+              <Card key={`${item.type}-${item.id}`} className="hover:shadow-sm transition-shadow">
+                <CardContent className="p-4">
+                  {item.type === 'announcement' ? (
+                    <AnnouncementItem announcement={item.data as Announcement} />
+                  ) : (
+                    <AssignmentItem assignment={item.data as Assignment} />
+                  )}
           </CardContent>
         </Card>
+            ))
+          )}
+        </div>
       </div>
     </PageLayout>
+  );
+}
+
+// Announcement Item Component
+function AnnouncementItem({ announcement }: { announcement: Announcement }) {
+  return (
+    <div className="space-y-3">
+      {/* Header */}
+      <div className="flex items-start justify-between">
+        <div className="flex items-start space-x-3">
+          <Avatar className="h-8 w-8 flex-shrink-0">
+            <AvatarImage src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${announcement.teacher.username}`} />
+            <AvatarFallback>
+              {announcement.teacher.username.substring(0, 2).toUpperCase()}
+            </AvatarFallback>
+          </Avatar>
+          <div className="min-w-0">
+            <p className="font-medium text-sm">{announcement.teacher.username}</p>
+            <p className="text-xs text-muted-foreground flex items-center">
+              <Clock className="h-3 w-3 mr-1" />
+              {format(new Date(announcement.createdAt), 'MMM d, yyyy \'at\' h:mm a')}
+            </p>
+          </div>
+        </div>
+        <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
+          <MoreVertical className="h-4 w-4" />
+        </Button>
+      </div>
+
+      {/* Content */}
+      <div className="ml-11">
+        <div className="text-sm text-foreground whitespace-pre-wrap leading-relaxed">
+          {announcement.remarks}
+        </div>
+      </div>
+
+    </div>
+  );
+}
+
+// Assignment Item Component  
+function AssignmentItem({ assignment }: { assignment: Assignment }) {
+  const router = useRouter();
+  const isOverdue = assignment.dueDate && new Date(assignment.dueDate) < new Date();
+  const dueDate = assignment.dueDate ? new Date(assignment.dueDate) : null;
+
+  return (
+    <div className="space-y-3">
+      {/* Header */}
+      <div className="flex items-start justify-between">
+        <div className="flex items-start space-x-3">
+          <div className="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+            <FileText className="h-4 w-4 text-blue-600" />
+          </div>
+          <div className="min-w-0">
+            <p className="font-medium text-sm">New Assignment</p>
+            <p className="text-xs text-muted-foreground flex items-center">
+              <Clock className="h-3 w-3 mr-1" />
+              {format(new Date(assignment.createdAt), 'MMM d, yyyy \'at\' h:mm a')}
+            </p>
+          </div>
+        </div>
+        <div className="flex items-center space-x-2">
+          {assignment.graded && (
+            <Badge variant="secondary" className="text-xs">
+              {assignment.maxGrade} pts
+            </Badge>
+          )}
+          <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
+            <MoreVertical className="h-4 w-4" />
+          </Button>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="ml-11">
+        <div className="space-y-2">
+          <h3 className="text-base font-semibold">{assignment.title}</h3>
+          {assignment.instructions && (
+            <div className="text-sm text-muted-foreground whitespace-pre-wrap leading-relaxed">
+              {assignment.instructions.length > 200 
+                ? `${assignment.instructions.substring(0, 200)}...` 
+                : assignment.instructions
+              }
+            </div>
+          )}
+          
+          {/* Due Date */}
+          {dueDate && (
+            <div className="flex items-center space-x-2">
+              <Calendar className="h-4 w-4 text-muted-foreground" />
+              <span className={`text-sm ${isOverdue ? 'text-red-600 font-medium' : 'text-muted-foreground'}`}>
+                Due {format(dueDate, 'EEE, MMM d \'at\' h:mm a')}
+                {isOverdue && ' (Overdue)'}
+              </span>
+            </div>
+          )}
+
+          {/* Attachments */}
+          {assignment.attachments && assignment.attachments.length > 0 && (
+            <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+              <Paperclip className="h-4 w-4" />
+              <span>{assignment.attachments.length} attachment{assignment.attachments.length !== 1 ? 's' : ''}</span>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Actions */}
+      <div className="ml-11 pt-2">
+        <Separator className="mb-3" />
+        <div className="flex items-center justify-end">
+          <Button 
+            size="sm" 
+            className="h-8"
+            onClick={() => router.push(`/class/${assignment.classId}/assignment/${assignment.id}`)}
+          >
+            View Assignment
+          </Button>
+        </div>
+      </div>
+    </div>
   );
 }

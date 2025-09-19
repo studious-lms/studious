@@ -23,7 +23,7 @@ import { format } from "date-fns";
 import { trpc, type RouterOutputs, type RouterInputs } from "@/lib/trpc";
 import { Skeleton } from "@/components/ui/skeleton";
 import { EmptyState } from "@/components/ui/empty-state";
-import { useToast } from "@/hooks/use-toast";
+import { toast } from "sonner";
 import {
   ClipboardCheck,
   ClipboardList,
@@ -33,6 +33,7 @@ import { DraggableFileItem } from "@/components/DraggableFileItem";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { FilePreviewModal } from "@/components/modals";
+import { FileItem } from "@/components/DraggableFileItem";
 import {
   FileText,
   Image,
@@ -46,15 +47,6 @@ import {
 
 type Assignment = RouterOutputs['assignment']['get'];
 type AssignmentUpdateInput = RouterInputs['assignment']['update'];
-
-type FileItem = {
-  id: string;
-  name: string;
-  type: "file" | "folder";
-  fileType?: string;
-  size?: string;
-  uploadedAt?: string;
-};
 
 const assignmentTypes = [
   { value: "HOMEWORK", label: "Homework" },
@@ -104,7 +96,6 @@ function AssignmentEditSkeleton() {
 export default function AssignmentEditPage() {
   const params = useParams();
   const router = useRouter();
-  const { toast } = useToast();
   const classId = params.id as string;
   const assignmentId = params.assignmentId as string;
 
@@ -121,109 +112,73 @@ export default function AssignmentEditPage() {
   // Specific mutations for grading tools and events
   const attachMarkSchemeMutation = trpc.assignment.attachMarkScheme.useMutation({
     onSuccess: () => {
-      toast({
-        title: "Success",
-        description: "Rubric attached successfully.",
-      });
+      toast.success("Rubric attached successfully.");
       refetchAssignment();
     },
     onError: (error) => {
-      toast({
-        title: "Error",
-        description: error.message || "Failed to attach rubric.",
-        variant: "destructive",
-      });
+      toast.error(error.message || "Failed to attach rubric.");
     },
   });
 
   const detachMarkSchemeMutation = trpc.assignment.detachMarkScheme.useMutation({
     onSuccess: () => {
-      toast({
-        title: "Success",
-        description: "Rubric detached successfully.",
-      });
+      toast.success("Rubric detached successfully.");
+      toast.success("Rubric detached successfully.");
       refetchAssignment();
     },
     onError: (error) => {
-      toast({
-        title: "Error",
-        description: error.message || "Failed to detach rubric.",
-        variant: "destructive",
-      });
+      toast.error(error.message || "Failed to detach rubric.");
     },
   });
 
   const attachGradingBoundaryMutation = trpc.assignment.attachGradingBoundary.useMutation({
     onSuccess: () => {
-      toast({
-        title: "Success",
-        description: "Grading boundary attached successfully.",
-      });
+      toast.success("Grading boundary attached successfully.");
+      handleSave();
       refetchAssignment();
     },
     onError: (error) => {
-      toast({
-        title: "Error",
-        description: error.message || "Failed to attach grading boundary.",
-        variant: "destructive",
-      });
+      toast.error(error.message || "Failed to attach grading boundary.");
     },
   });
 
   const detachGradingBoundaryMutation = trpc.assignment.detachGradingBoundary.useMutation({
     onSuccess: () => {
-      toast({
-        title: "Success",
-        description: "Grading boundary detached successfully.",
-      });
+      toast.success("Grading boundary detached successfully.");
+      handleSave();
       refetchAssignment();
     },
     onError: (error) => {
-      toast({
-        title: "Error",
-        description: error.message || "Failed to detach grading boundary.",
-        variant: "destructive",
-      });
+      toast.error(error.message || "Failed to detach grading boundary.");
     },
   });
 
   const attachToEventMutation = trpc.assignment.attachToEvent.useMutation({
     onSuccess: () => {
-      toast({
-        title: "Success",
-        description: "Event attached successfully.",
-      });
+      toast.success("Event attached successfully.");
+      handleSave();
       refetchAssignment();
     },
     onError: (error) => {
-      toast({
-        title: "Error",
-        description: error.message || "Failed to attach event.",
-        variant: "destructive",
-      });
+      toast.error(error.message || "Failed to attach event.");
     },
   });
 
   const detachEventMutation = trpc.assignment.detachEvent.useMutation({
     onSuccess: () => {
-      toast({
-        title: "Success",
-        description: "Event detached successfully.",
-      });
+      toast.success("Event detached successfully.");
+      handleSave();
       refetchAssignment();
     },
     onError: (error) => {
-      toast({
-        title: "Error",
-        description: error.message || "Failed to detach event.",
-        variant: "destructive",
-      });
+      toast.error(error.message || "Failed to detach event.");
     },
   });
 
   // Get available events for attachment
   const { data: availableEvents } = trpc.assignment.getAvailableEvents.useQuery({
     assignmentId,
+    classId,
   });
 
   // Get assignment data
@@ -242,19 +197,12 @@ export default function AssignmentEditPage() {
   // Update assignment mutation
   const updateAssignmentMutation = trpc.assignment.update.useMutation({
     onSuccess: () => {
-      toast({
-        title: "Assignment saved",
-        description: "Your changes have been saved successfully.",
-      });
+      toast.success("Assignment saved");
       setHasChanges(false);
       refetchAssignment();
     },
     onError: (error) => {
-      toast({
-        title: "Error saving assignment",
-        description: error.message || "There was a problem saving your changes. Please try again.",
-        variant: "destructive",
-      });
+      toast.error(error.message || "There was a problem saving your changes. Please try again.");
     },
   });
 
@@ -297,8 +245,6 @@ export default function AssignmentEditPage() {
       weight: formData.weight,
       inProgress: formData.inProgress,
       sectionId: formData.sectionId || null,
-      markSchemeId: (formData as any).markSchemeId === "none" || (formData as any).markSchemeId === null ? undefined : (formData as any).markSchemeId,
-      gradingBoundaryId: (formData as any).gradingBoundaryId === "none" || (formData as any).gradingBoundaryId === null ? undefined : (formData as any).gradingBoundaryId,
     };
     
     updateAssignmentMutation.mutate(updateData);
@@ -379,23 +325,8 @@ export default function AssignmentEditPage() {
     }
   };
 
-  const getFolderColor = (folderId: string) => {
-    const colors = [
-      "text-blue-500",
-      "text-green-500", 
-      "text-purple-500",
-      "text-orange-500",
-      "text-pink-500",
-      "text-indigo-500",
-      "text-teal-500",
-      "text-red-500"
-    ];
-    const index = parseInt(folderId) % colors.length;
-    return colors[index];
-  };
-
   const convertAttachmentsToFileItems = (attachments: Assignment['attachments']) => {
-    return attachments.map((attachment: any) => ({
+    return attachments.map((attachment: Assignment['attachments'][number]) => ({
       id: attachment.id,
       name: attachment.name,
       type: "file" as const,
@@ -606,10 +537,10 @@ export default function AssignmentEditPage() {
                     <div className="space-y-2">
                       <Label className="text-sm font-medium">Rubric</Label>
                       <Select
-                        value={(formData as any).markSchemeId || 'none'}
+                        value={formData.markSchemeId || 'none'}
                         onValueChange={(value) => {
                           if (value === 'none') {
-                            if ((formData as any).markSchemeId) {
+                            if (formData.markSchemeId) {
                               detachMarkSchemeMutation.mutate({ classId, assignmentId });
                             }
                           } else {
@@ -647,10 +578,10 @@ export default function AssignmentEditPage() {
                     <div className="space-y-2">
                       <Label className="text-sm font-medium">Grade Scale</Label>
                       <Select
-                        value={(formData as any).gradingBoundaryId || 'none'}
+                        value={formData.gradingBoundaryId || 'none'}
                         onValueChange={(value) => {
                           if (value === 'none') {
-                            if ((formData as any).gradingBoundaryId) {
+                            if (formData.gradingBoundaryId) {
                               detachGradingBoundaryMutation.mutate({ classId, assignmentId });
                             }
                           } else {
@@ -689,17 +620,17 @@ export default function AssignmentEditPage() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="maxGrade" className="text-sm font-medium">
-                        {(formData as any).markSchemeId ? "Computed Max Score" : "Max Points"}
+                        {formData.markSchemeId ? "Computed Max Score" : "Max Points"}
                       </Label>
                       <Input
                         id="maxGrade"
                         type="number"
                         value={formData.maxGrade || 0}
                         onChange={(e) => updateFormData({ maxGrade: parseInt(e.target.value) })}
-                        disabled={!!(formData as any).markSchemeId}
+                        disabled={!!formData.markSchemeId}
                         min="0"
                         placeholder="100"
-                        className={(formData as any).markSchemeId ? "bg-muted" : ""}
+                        className={formData.markSchemeId ? "bg-muted" : ""}
                       />
                     </div>
 
@@ -717,7 +648,7 @@ export default function AssignmentEditPage() {
                     </div>
                   </div>
 
-                  {(formData as any).markSchemeId && (
+                  {formData.markSchemeId && (
                     <div className="flex items-center gap-2 p-3 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
                       <ClipboardCheck className="h-4 w-4 text-blue-600" />
                       <span className="text-sm text-blue-700 dark:text-blue-300">
@@ -741,13 +672,11 @@ export default function AssignmentEditPage() {
                 {assignment.attachments.length > 0 ? (
                   <DndProvider backend={HTML5Backend}>
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                      {convertAttachmentsToFileItems(assignment.attachments).map((fileItem: any) => (
+                      {convertAttachmentsToFileItems(assignment.attachments).map((fileItem: FileItem) => (
                         <DraggableFileItem
                           key={fileItem.id}
                           item={fileItem}
                           getFileIcon={getFileIcon}
-                          getFolderColor={getFolderColor}
-                          onFolderClick={() => {}}
                           onItemAction={handleFileAction}
                           onFileClick={handleFileClick}
                           classId={classId}
@@ -836,7 +765,7 @@ export default function AssignmentEditPage() {
                         </SelectTrigger>
                         <SelectContent>
                           <SelectItem value="none">No event</SelectItem>
-                          {availableEvents?.map((event: any) => (
+                          {availableEvents?.events.map((event) => (
                             <SelectItem key={event.id} value={event.id}>
                               <div className="flex items-center gap-2">
                                 <Calendar className="h-3 w-3" />

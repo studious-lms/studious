@@ -114,6 +114,7 @@ export const CalendarDatePicker = React.forwardRef<
       closeOnSelect && setIsPopoverOpen(false);
     };
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const handleDateSelect = (range: any) => {
       if (range) {
         let from = startOfDay(toZonedTime(range.from as Date, timeZone));

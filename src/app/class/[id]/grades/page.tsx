@@ -33,19 +33,13 @@ import {
   Users
 } from "lucide-react";
 import { trpc, type RouterOutputs } from "@/lib/trpc";
-import {
-  useListMarkSchemesQuery,
-  useDeleteMarkSchemeMutation,
-  useListGradingBoundariesQuery,
-  useDeleteGradingBoundaryMutation,
-} from "@/lib/api";
+
 import type {
   MarkScheme,
   GradingBoundary,
   RubricCriteria,
   GradeBoundary,
-  ParsedMarkScheme,
-} from "@/lib/types";
+} from "@/lib/types/rubric";
 import type { ColumnDef } from "@tanstack/react-table";
 
 
@@ -70,8 +64,8 @@ export default function Grades() {
   const [editingRubric, setEditingRubric] = useState<MarkScheme | null>(null);
 
   const { data: classData, isLoading: classLoading, refetch } = trpc.class.get.useQuery({ classId: classId as string });
-  const { data: markschemesData, isLoading: markschemesLoading, refetch: refetchMarkschemes } = useListMarkSchemesQuery(classId as string);
-  const { data: gradingBoundariesData, isLoading: gradingBoundariesLoading, refetch: refetchGrading } = useListGradingBoundariesQuery(classId as string);
+  const { data: markschemesData, isLoading: markschemesLoading, refetch: refetchMarkschemes } = trpc.class.listMarkSchemes.useQuery({ classId: classId as string });
+  const { data: gradingBoundariesData, isLoading: gradingBoundariesLoading, refetch: refetchGrading } = trpc.class.listGradingBoundaries.useQuery({ classId: classId as string });
   const updateAssignment = trpc.assignment.update.useMutation();
 
   // Get grades for all students to calculate real averages
@@ -88,8 +82,8 @@ export default function Grades() {
     }, { enabled: !!student.id })
   );
 
-  const deleteMarkscheme = useDeleteMarkSchemeMutation();
-  const deleteGradingBoundary = useDeleteGradingBoundaryMutation();
+  const deleteMarkscheme = trpc.class.deleteMarkScheme.useMutation();
+  const deleteGradingBoundary = trpc.class.deleteGradingBoundary.useMutation();
 
   // Preview handlers
   const handlePreviewMarkscheme = (markscheme: MarkScheme) => {
@@ -841,14 +835,14 @@ export default function Grades() {
         open={gradingBoundariesOpen}
         onOpenChange={(o) => { setGradingBoundariesOpen(o); if (!o) { refetchGrading(); setEditingGradingBoundary(null); } }}
         classId={classId as string}
-        existingGradingBoundary={editingGradingBoundary}
+        existingGradingBoundary={editingGradingBoundary as GradingBoundary}
       />
 
       <RubricModal
         open={rubricModalOpen}
         onOpenChange={(o) => { setRubricModalOpen(o); if (!o) { refetchMarkschemes(); setEditingRubric(null); } }}
         classId={classId as string}
-        existingRubric={editingRubric}
+        existingRubric={editingRubric as MarkScheme}
       />
     </PageLayout>
   );

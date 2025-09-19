@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { CreateClassModal, JoinClassModal } from "@/components/modals";
-import { useDeleteClass, useGetAllClassesQuery, useDeleteClassMutation, useCreateClassMutation } from "@/lib/api";
+import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ClassCardSkeleton } from "@/components/ui/class-card-skeleton";
@@ -25,9 +25,9 @@ export default function Classes() {
   const [activeTab, setActiveTab] = useState("teaching");
 
   // Use React Query hooks for automatic loading, error, and data management
-  const { data: classes, isLoading, error, refetch } = useGetAllClassesQuery();
-  const deleteClassMutation = useDeleteClassMutation();
-  const createClassMutation = useCreateClassMutation();
+  const { data: classes, isLoading, error, refetch } = trpc.class.getAll.useQuery();
+  const deleteClassMutation = trpc.class.delete.useMutation();
+  const createClassMutation = trpc.class.create.useMutation();
 
   // React Query handles loading automatically, no useEffect needed!
 

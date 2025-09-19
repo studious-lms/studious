@@ -6,13 +6,7 @@ import { Input } from "../ui/input";
 import { Card } from "../ui/card";
 import { Textarea } from "../ui/textarea";
 import { Plus, Trash2, Edit } from "lucide-react";
-
-export interface RubricCriteria {
-	id: string;
-	title: string;
-	description: string;
-	levels: RubricLevel[];
-}
+import { type RubricCriteria } from "@/lib/types/rubric";
 
 export interface RubricLevel {
 	id: string;
@@ -111,7 +105,7 @@ export function Rubric({ criteria, onChange }: RubricProps) {
 
 		updateCriteria(criteriaId, {
 			levels: [...criteria.find(c => c.id === criteriaId)!.levels, newLevel]
-		});
+		} as RubricCriteria);
 		
 		setNewLevelName("");
 		setNewLevelDescription("");
@@ -128,7 +122,7 @@ export function Rubric({ criteria, onChange }: RubricProps) {
 	};
 
 	const totalPoints = criteria.reduce((sum, criterion) => {
-		const maxPoints = Math.max(...criterion.levels.map(level => level.points));
+		const maxPoints = Math.max(...criterion.levels.map(level => level.points as number));
 		return sum + maxPoints;
 	}, 0);
 

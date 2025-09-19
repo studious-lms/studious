@@ -1,13 +1,13 @@
 "use client";
 
-import { useAuthCheckQuery } from "@/lib/api";
+import { trpc } from "@/lib/trpc";
 import { setAuth } from "@/store/appSlice";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Spinner } from "../ui/spinner";
 export function AuthProvider({ children }: { children: React.ReactNode }) {
     const [loading, setLoading] = useState(true);
-    const { data: user, isLoading } = useAuthCheckQuery();
+    const { data: user, isLoading } = trpc.auth.check.useQuery();
     const dispatch = useDispatch();
     if (isLoading) {
         return <div className="flex h-[calc(100vh)] w-screen items-center justify-center">

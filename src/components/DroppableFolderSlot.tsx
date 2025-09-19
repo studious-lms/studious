@@ -23,7 +23,7 @@ export function DroppableFolderSlot({
   });
 
   return (
-    <div ref={drop} className="relative">
+    <div ref={drop as unknown as React.Ref<HTMLDivElement>} className="relative">
       {isOver && (
         <div className="absolute -top-1 left-0 right-0 h-0.5 bg-primary rounded-full z-10" />
       )}

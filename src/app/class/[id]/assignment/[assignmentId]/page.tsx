@@ -13,13 +13,17 @@ import {
   Edit, 
   FileText, 
   Users,
-  CheckCircle
+  CheckCircle,
+  Upload
 } from "lucide-react";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
 import { format } from "date-fns";
 import { trpc, type RouterOutputs } from "@/lib/trpc";
 import { Skeleton } from "@/components/ui/skeleton";
 import { EmptyState } from "@/components/ui/empty-state";
 import { DataTable } from "@/components/ui/data-table";
+import { toast } from "sonner";
 import { DraggableFileItem } from "@/components/DraggableFileItem";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
@@ -32,10 +36,21 @@ import {
   FileSpreadsheet,
   Presentation,
   File
-} from "lucide-react";
+  } from "lucide-react";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
+import type { 
+  ParsedMarkScheme, 
+  ParsedGradingBoundary,
+  StoredRubricItem,
+} from "@/lib/types/assignment";
+import {  parseMarkScheme,
+  parseGradingBoundary} from "@/lib/types/assignment";
 
+type Assignment = RouterOutputs['assignment']['get'];
 type Submissions = RouterOutputs['assignment']['getSubmissions'];
 type Submission = Submissions[number];
+type StudentSubmission = RouterOutputs['assignment']['getSubmission'];
 
 type FileItem = {
   id: string;
@@ -83,8 +98,12 @@ function AssignmentDetailSkeleton() {
 export default function AssignmentDetailPage() {
   const params = useParams();
   const router = useRouter();
+
+  const appState = useSelector((state: RootState) => state.app);
   const classId = params.id as string;
   const assignmentId = params.assignmentId as string;
+  const isTeacher = appState.user.teacher;
+  const isStudent = !isTeacher; // If not a teacher, assume student role
 
   // Get assignment data
   const { data: assignment, isLoading: assignmentLoading } = trpc.assignment.get.useQuery({
@@ -96,9 +115,32 @@ export default function AssignmentDetailPage() {
   const { data: submissions, isLoading: submissionsLoading } = trpc.assignment.getSubmissions.useQuery({
     assignmentId: assignmentId,
     classId: classId,
+  }, {
+    enabled: isTeacher,
   });
 
-  const isLoading = assignmentLoading || submissionsLoading;
+  // Get student submission (for students)
+  const { data: studentSubmission, isLoading: studentSubmissionLoading, refetch: refetchStudentSubmission } = trpc.assignment.getSubmission.useQuery({
+    assignmentId: assignmentId,
+    classId: classId,
+  }, {
+    enabled: isStudent,
+  });
+
+  // Student submission upload mutation
+  const updateStudentSubmissionMutation = trpc.assignment.updateSubmission.useMutation({
+    onSuccess: () => {
+      toast.success("Submission updated");
+      refetchStudentSubmission();
+    },
+    onError: (error) => {
+      toast.error(error.message || "There was a problem updating your submission. Please try again.");
+    },
+  });
+
+  const isLoading = assignmentLoading || submissionsLoading || studentSubmissionLoading;
+
+  // Import toast for notifications
 
   // File preview state
   const [previewFile, setPreviewFile] = useState<FileItem | null>(null);
@@ -190,7 +232,7 @@ export default function AssignmentDetailPage() {
     return colors[index];
   };
 
-  const convertAttachmentsToFileItems = (attachments: Submission['attachments']) => {
+  const convertAttachmentsToFileItems = (attachments: RouterOutputs['assignment']['getSubmission']['attachments']) => {
     return attachments.map(attachment => ({
       id: attachment.id,
       name: attachment.name,
@@ -216,6 +258,57 @@ export default function AssignmentDetailPage() {
     // Handle file click - open preview
     setPreviewFile(file);
     setIsPreviewOpen(true);
+  };
+
+  // Handle student submission file upload
+  const handleStudentFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const files = event.target.files;
+    if (!files || !studentSubmission) return;
+
+    try {
+      // Convert files to base64
+      const filePromises = Array.from(files).map(async (file) => {
+        const base64 = await new Promise<string>((resolve) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(reader.result as string);
+          reader.readAsDataURL(file);
+        });
+        
+        return {
+          name: file.name,
+          type: file.type,
+          size: file.size,
+          data: base64.split(',')[1], // Remove data:type;base64, prefix
+        };
+      });
+
+      const newFiles = await Promise.all(filePromises);
+      
+      // Update student submission
+      updateStudentSubmissionMutation.mutate({
+        assignmentId,
+        classId,
+        submissionId: studentSubmission.id,
+        newAttachments: newFiles,
+      });
+
+      // Clear the input
+      event.target.value = '';
+    } catch {
+      toast.error("There was a problem uploading your files. Please try again.");
+    }
+  };
+
+  // Handle student submission toggle
+  const handleSubmitToggle = () => {
+    if (!studentSubmission) return;
+    
+    updateStudentSubmissionMutation.mutate({
+      assignmentId,
+      classId,
+      submissionId: studentSubmission.id,
+      submit: !studentSubmission.submitted,
+    });
   };
 
   const submissionColumns = [
@@ -296,7 +389,7 @@ export default function AssignmentDetailPage() {
 
         {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Left Column - Instructions and Submissions */}
+          {/* Left Column - Instructions and Submissions/Student Work */}
           <div className="lg:col-span-2 space-y-6">
             {/* Instructions */}
             <Card>
@@ -310,35 +403,251 @@ export default function AssignmentDetailPage() {
               </CardContent>
             </Card>
 
-            {/* Submissions */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center space-x-2">
-                  <Users className="h-5 w-5" />
-                  <span>Submissions</span>
-                  <Badge variant="outline">
-                    {submissions?.filter(s => s.submitted).length || 0} / {submissions?.length || 0}
-                  </Badge>
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                {submissions && submissions.length > 0 ? (
-                  <DataTable
-                    columns={submissionColumns}
-                    data={submissions}
-                    onRowClick={(row) => 
-                      router.push(`/class/${classId}/assignment/${assignmentId}/submission/${row.id}`)
-                    }
-                  />
-                ) : (
-                  <EmptyState
-                    icon={Users}
-                    title="No submissions yet"
-                    description="Students haven't submitted their work for this assignment."
-                  />
-                )}
-              </CardContent>
-            </Card>
+            {/* Teacher View - Submissions */}
+            {isTeacher && (
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center space-x-2">
+                    <Users className="h-5 w-5" />
+                    <span>Submissions</span>
+                    <Badge variant="outline">
+                      {submissions?.filter(s => s.submitted).length || 0} / {submissions?.length || 0}
+                    </Badge>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  {submissions && submissions.length > 0 ? (
+                    <DataTable
+                      columns={submissionColumns}
+                      data={submissions}
+                      onRowClick={(row) => 
+                        router.push(`/class/${classId}/assignment/${assignmentId}/submission/${row.id}`)
+                      }
+                    />
+                  ) : (
+                    <EmptyState
+                      icon={Users}
+                      title="No submissions yet"
+                      description="Students haven't submitted their work for this assignment."
+                    />
+                  )}
+                </CardContent>
+              </Card>
+            )}
+
+            {/* Student View - My Submission */}
+            {isStudent && studentSubmission && (
+              <Card>
+                <CardHeader>
+                  <CardTitle>My Submission</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-medium">Status</span>
+                    <Badge variant={studentSubmission.submitted ? "default" : "outline"}>
+                      {studentSubmission.submitted ? "Submitted" : "Not Submitted"}
+                    </Badge>
+                  </div>
+                  
+                  {studentSubmission.attachments.length > 0 ? (
+                    <div className="space-y-3">
+                      <span className="text-sm font-medium">Attached Files</span>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        {convertAttachmentsToFileItems(studentSubmission.attachments).map((fileItem) => (
+                          <DraggableFileItem
+                            key={fileItem.id}
+                            item={fileItem}
+                            getFileIcon={getFileIcon}
+                            onItemAction={handleFileAction}
+                            onFileClick={handleFileClick}
+                            classId={classId}
+                            readonly={studentSubmission.submitted || false}
+                            onRefetch={refetchStudentSubmission}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  ) : (
+                    <EmptyState
+                      icon={FileText}
+                      title="No files attached"
+                      description="Upload files for your submission."
+                    />
+                  )}
+                  
+                  {!studentSubmission.submitted && (
+                    <div className="space-y-3">
+                      <Label htmlFor="student-file-upload" className="cursor-pointer">
+                        <div className="flex items-center justify-center w-full p-4 border-2 border-dashed border-muted-foreground/25 rounded-lg hover:border-muted-foreground/50 transition-colors">
+                          <div className="text-center">
+                            <Upload className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
+                            <p className="text-sm font-medium">Upload files</p>
+                            <p className="text-xs text-muted-foreground">Click to select files or drag and drop</p>
+                          </div>
+                        </div>
+                      </Label>
+                      <Input
+                        id="student-file-upload"
+                        type="file"
+                        multiple
+                        onChange={handleStudentFileUpload}
+                        className="hidden"
+                        accept="*/*"
+                      />
+                    </div>
+                  )}
+                  
+                  <div className="flex justify-end">
+                    <Button
+                      onClick={handleSubmitToggle}
+                      disabled={updateStudentSubmissionMutation.isPending}
+                      variant={studentSubmission.submitted ? "outline" : "default"}
+                    >
+                      {updateStudentSubmissionMutation.isPending 
+                        ? "Updating..." 
+                        : studentSubmission.submitted 
+                          ? "Unsubmit" 
+                          : "Submit Assignment"
+                      }
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            )}
+
+            {/* Student View - Feedback (when submission is returned) */}
+            {isStudent && studentSubmission && studentSubmission.returned && (
+              <Card>
+                <CardHeader>
+                  <CardTitle>Teacher Feedback</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  {/* Grade Display */}
+                  {assignment.graded && studentSubmission.gradeReceived !== undefined && (
+                    <div className="p-4 bg-muted rounded-lg">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-sm font-medium">Grade</span>
+                        <span className="text-lg font-bold">
+                          {studentSubmission.gradeReceived ?? 0} / {assignment.maxGrade}
+                        </span>
+                      </div>
+                      {assignment.gradingBoundary && (
+                        <div className="text-sm text-muted-foreground">
+                          {(() => {
+                            try {
+                              const parsedBoundary = parseGradingBoundary(assignment.gradingBoundary.structured);
+                              if (parsedBoundary?.boundaries) {
+                                const percentage = ((studentSubmission.gradeReceived ?? 0) / assignment.maxGrade) * 100;
+                                const letterGrade = parsedBoundary.boundaries.find(b => 
+                                  percentage >= b.minPercentage && percentage <= b.maxPercentage
+                                )?.grade || 'F';
+                                return `${percentage.toFixed(1)}% (${letterGrade})`;
+                              }
+                              return `${(((studentSubmission.gradeReceived ?? 0) / assignment.maxGrade) * 100).toFixed(1)}%`;
+                            } catch {
+                              return `${(((studentSubmission.gradeReceived ?? 0) / assignment.maxGrade) * 100).toFixed(1)}%`;
+                            }
+                          })()}
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Rubric Feedback Display */}
+                  {studentSubmission.rubricState?.trim() && (
+                    <div className="space-y-4">
+                      <div className="text-sm font-medium">Rubric Feedback</div>
+                      {(() => {
+                        try {
+                          const rubricGrades = JSON.parse(studentSubmission.rubricState) as StoredRubricItem[];
+                          // Get actual rubric criteria from assignment's mark scheme
+                          let rubricCriteria: ParsedMarkScheme['criteria'] = [];
+                          
+                          if (assignment?.markScheme?.structured) {
+                            const parsedMarkScheme = parseMarkScheme(assignment.markScheme.structured);
+                            rubricCriteria = parsedMarkScheme?.criteria || [];
+                          }
+                          
+
+                          return rubricCriteria.map((criterion) => {
+                            const grade = rubricGrades.find((g) => g.criteriaId === criterion.id);
+
+                            if (!grade) return null;
+
+                            
+                            const selectedLevel = criterion.levels.find(l => l.id === grade.selectedLevelId);
+                            
+                            return (
+                              <div key={criterion.id} className="p-3 border rounded-lg">
+                                <div className="flex items-start justify-between mb-2">
+                                  <div className="flex-1">
+                                    <h4 className="font-medium">{criterion.title}</h4>
+                                    {criterion.description && (
+                                      <p className="text-sm text-muted-foreground">{criterion.description}</p>
+                                    )}
+                                  </div>
+                                  <div className="flex items-center gap-2">
+                                    <span className="text-sm font-medium">{grade.points} pts</span>
+                                    {selectedLevel && (
+                                      <Badge 
+                                        style={{
+                                          backgroundColor: selectedLevel.color,
+                                          color: 'white'
+                                        }}
+                                      >
+                                        {selectedLevel.name}
+                                      </Badge>
+                                    )}
+                                  </div>
+                                </div>
+                                
+                                {grade.comments && (
+                                  <div className="mt-2 p-2 bg-muted rounded text-sm">
+                                    <strong>Comments:</strong> {grade.comments}
+                                  </div>
+                                )}
+                              </div>
+                            );
+                          });
+                        } catch {
+                          return <p className="text-sm text-muted-foreground">Error loading rubric feedback</p>;
+                        }
+                      })()}
+                    </div>
+                  )}
+
+                  {/* General Feedback */}
+                  {(studentSubmission).teacherComments && (
+                    <div className="space-y-2">
+                      <div className="text-sm font-medium">Teacher Comments</div>
+                      <div className="p-3 bg-muted rounded-lg">
+                        <p className="text-sm">{(studentSubmission).teacherComments}</p>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Annotations/Teacher Files */}
+                  {studentSubmission.annotations && studentSubmission.annotations.length > 0 && (
+                    <div className="space-y-2">
+                      <div className="text-sm font-medium">Teacher Annotations</div>
+                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                        {convertAttachmentsToFileItems(studentSubmission.annotations).map((fileItem) => (
+                          <DraggableFileItem
+                            key={fileItem.id}
+                            item={fileItem}
+                            getFileIcon={getFileIcon}
+                            onItemAction={handleFileAction}
+                            onFileClick={handleFileClick}
+                            classId={classId}
+                            readonly={true}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            )}
           </div>
 
           {/* Right Column - Sidebar */}
@@ -416,8 +725,6 @@ export default function AssignmentDetailPage() {
                           key={fileItem.id}
                           item={fileItem}
                           getFileIcon={getFileIcon}
-                          getFolderColor={getFolderColor}
-                          onFolderClick={() => {}}
                           onItemAction={handleFileAction}
                           onFileClick={handleFileClick}
                           classId={classId}

@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Progress } from "@/components/ui/progress";
-import { useToast } from "@/hooks/use-toast";
+import { toast } from "sonner";
 import { useSession } from "@/hooks/use-session";
 import { Upload as UploadIcon, X as XIcon, File as FileIcon, Image as ImageIcon, FileVideo, FileText } from "lucide-react";
 
@@ -53,7 +53,6 @@ export function UploadFileModal({ children, onFilesUploaded, currentFolder = "/"
   const [files, setFiles] = useState<FileUpload[]>([]);
   const [uploading, setUploading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const { toast } = useToast();
   const { user } = useSession();
 
 
@@ -150,11 +149,7 @@ export function UploadFileModal({ children, onFilesUploaded, currentFolder = "/"
 
   const handleUpload = async () => {
     if (files.length === 0) {
-      toast({
-        title: "No Files Selected",
-        description: "Please select files to upload.",
-        variant: "destructive"
-      });
+      toast.error("No Files Selected");
       return;
     }
 
@@ -187,19 +182,12 @@ export function UploadFileModal({ children, onFilesUploaded, currentFolder = "/"
 
       onFilesUploaded?.(uploadedFiles);
 
-      toast({
-        title: "Upload Complete",
-        description: `Successfully uploaded ${files.length} file(s).`
-      });
+      toast.success(`Successfully uploaded ${files.length} file(s).`);
 
       setFiles([]);
       setOpen(false);
     } catch (error) {
-      toast({
-        title: "Upload Failed",
-        description: "Some files failed to upload. Please try again.",
-        variant: "destructive"
-      });
+      toast.error("Upload Failed");
     } finally {
       setUploading(false);
     }

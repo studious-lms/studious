@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Dialog,
   DialogContent,
@@ -10,42 +10,51 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import ColorPicker from "@/components/ui/color-picker";
 
 interface FileItem {
   id: string;
   name: string;
   type: "file" | "folder";
   fileType?: string;
+  color?: string;
 }
 
 interface RenameModalProps {
   item: FileItem | null;
   isOpen: boolean;
   onClose: () => void;
-  onRename: (item: FileItem, newName: string) => void;
+  onRename: (item: FileItem, newName: string, color?: string) => void;
 }
 
 export function RenameModal({ item, isOpen, onClose, onRename }: RenameModalProps) {
   const [newName, setNewName] = useState("");
+  const [folderColor, setFolderColor] = useState("#3b82f6");
 
-  const handleOpen = (open: boolean) => {
-    if (open && item) {
+  // Update fields when item changes
+  useEffect(() => {
+    if (item) {
       // Remove file extension for files to make editing easier
       const nameWithoutExt = item.type === "file" && item.name.includes(".")
         ? item.name.substring(0, item.name.lastIndexOf("."))
         : item.name;
       setNewName(nameWithoutExt);
-    } else {
-      setNewName("");
+      setFolderColor(item.color || "#3b82f6");
+    }
+  }, [item]);
+
+  const handleOpen = (open: boolean) => {
+    if (!open) {
       onClose();
     }
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!item || !newName.trim()) return;
 
-    let finalName = newName.trim();
+    if (!item) return;
+
+    let finalName = newName.trim() || item.name;
     
     // Add back file extension for files
     if (item.type === "file" && item.name.includes(".")) {
@@ -55,7 +64,7 @@ export function RenameModal({ item, isOpen, onClose, onRename }: RenameModalProp
       }
     }
 
-    onRename(item, finalName);
+    onRename(item, finalName, item.type === "folder" ? folderColor : undefined);
     onClose();
   };
 
@@ -71,7 +80,7 @@ export function RenameModal({ item, isOpen, onClose, onRename }: RenameModalProp
         <form onSubmit={handleSubmit}>
           <DialogHeader>
             <DialogTitle>
-              Rename {item.type === "folder" ? "folder" : "file"}
+              {item.type === "folder" ? "Edit folder" : "Rename file"}
             </DialogTitle>
           </DialogHeader>
 
@@ -94,14 +103,26 @@ export function RenameModal({ item, isOpen, onClose, onRename }: RenameModalProp
                 )}
               </div>
             </div>
+
+            {/* Folder Color - Only show for folders */}
+            {item.type === "folder" && (
+              <div className="space-y-2">
+                <ColorPicker
+                  value={folderColor}
+                  onChange={setFolderColor}
+                  label="Folder Color"
+                  description="Choose a color for this folder"
+                />
+              </div>
+            )}
           </div>
 
           <DialogFooter>
             <Button type="button" variant="outline" onClick={onClose}>
               Cancel
             </Button>
-            <Button type="submit" disabled={!newName.trim()}>
-              Rename
+            <Button type="submit">
+              {item.type === "folder" ? "Save Changes" : "Rename"}
             </Button>
           </DialogFooter>
         </form>

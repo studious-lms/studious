@@ -45,14 +45,14 @@ export function UnassignedDropZone({
   });
 
   return (
-    <div ref={drop}>
+    <div ref={drop as unknown as React.Ref<HTMLDivElement>}>
       <Collapsible open={isOpen} onOpenChange={onToggle}>
-        <Card className={`transition-all duration-200 bg-white dark:bg-card ${isOver ? 'ring-2 ring-primary shadow-lg' : ''}`}>
+        <Card className={`transition-all duration-200 bg-card ${isOver ? 'ring-2 ring-primary shadow-lg' : ''}`}>
           <CollapsibleTrigger asChild>
             <CardHeader className="cursor-pointer hover:bg-muted/50 transition-colors py-3 px-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 rounded-full bg-gray-500" />
+                  <div className="w-2 h-2 rounded-full bg-muted-foreground" />
                   <CardTitle className="text-sm font-bold">
                     Unassigned
                   </CardTitle>

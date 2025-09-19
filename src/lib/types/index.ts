@@ -1,3 +1,3 @@
 // Export all types from the types directory
-export * from './rubric';
+export * from './assignment';
 export * from '../trpc';

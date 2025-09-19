@@ -25,7 +25,7 @@ export function Providers({ children }: ProvidersProps) {
   return (
     <Provider store={store}>
       <TRPCProvider>
-        <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+        <ThemeProvider defaultDarkMode="system" defaultColorTheme="default" storageKey="vite-ui-theme">
           <TooltipProvider>
             <AuthProvider>
             <Sonner />

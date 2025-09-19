@@ -1,8 +1,6 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useDrop, useDrag } from "react-dnd";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -20,15 +18,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogFooter,
-} from "@/components/ui/dialog";
 import { trpc } from "@/lib/trpc";
-import { useToast } from "@/hooks/use-toast";
 import {
   MoreHorizontal,
   Share,
@@ -38,9 +28,11 @@ import {
   Folder,
   GripVertical,
   Check,
-  X
+  X,
+  Move
 } from "lucide-react";
-
+import { MoveItemDropdown } from "@/components/MoveItemDropdown";
+import { toast } from "sonner";
 interface FileItem {
   id: string;
   name: string;
@@ -50,6 +42,7 @@ interface FileItem {
   uploadedBy?: string;
   uploadedAt?: string;
   itemCount?: number;
+  color?: string;
   lastModified?: string;
   starred?: boolean;
   children?: FileItem[];
@@ -61,6 +54,7 @@ interface DroppableFolderItemProps {
   onFolderClick: (folderName: string) => void;
   onItemAction: (action: string, item: FileItem) => void;
   classId: string;
+  currentFolderId?: string;
   readonly?: boolean;
   onRefetch?: () => void;
 }
@@ -71,68 +65,48 @@ export function DroppableFolderItem({
   onFolderClick, 
   onItemAction,
   classId,
+  currentFolderId,
   readonly = false,
   onRefetch
 }: DroppableFolderItemProps) {
-  const { toast } = useToast();
   
   // Local state for dialogs
-  const [showRenameDialog, setShowRenameDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
-  const [newName, setNewName] = useState(item.name);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   // tRPC mutations
-  const renameFolderMutation = trpc.folder.rename.useMutation({
-    onSuccess: () => {
-      toast({ title: "Success", description: "Folder renamed successfully" });
-      setShowRenameDialog(false);
-      onRefetch?.();
-    },
-    onError: (error) => {
-      toast({ title: "Error", description: error.message, variant: "destructive" });
-    }
-  });
 
   const deleteFolderMutation = trpc.folder.delete.useMutation({
     onSuccess: () => {
-      toast({ title: "Success", description: "Folder deleted successfully" });
+      toast.success("Folder deleted successfully");
       setShowDeleteDialog(false);
       onRefetch?.();
     },
     onError: (error) => {
-      toast({ title: "Error", description: error.message, variant: "destructive" });
+      toast.error(error.message);
     }
   });
 
   const moveFolderMutation = trpc.folder.move.useMutation({
     onSuccess: () => {
-      toast({ title: "Success", description: "Folder moved successfully" });
+      toast.success("Folder moved successfully");
       onRefetch?.();
     },
     onError: (error) => {
-      toast({ title: "Error", description: error.message, variant: "destructive" });
+      toast.error(error.message);
     }
   });
 
   const moveFileMutation = trpc.file.move.useMutation({
     onSuccess: () => {
-      toast({ title: "Success", description: "File moved successfully" });
+      toast.success("File moved successfully");
       onRefetch?.();
     },
     onError: (error) => {
-      toast({ title: "Error", description: error.message, variant: "destructive" });
+      toast.error(error.message);
     }
   });
 
-  const handleRename = () => {
-    if (!newName.trim() || newName.trim() === item.name) {
-      setShowRenameDialog(false);
-      setNewName(item.name);
-      return;
-    }
-
-    renameFolderMutation.mutate({ classId, folderId: item.id, newName: newName.trim() });
-  };
 
   const handleDelete = () => {
     deleteFolderMutation.mutate({ classId, folderId: item.id });
@@ -154,8 +128,8 @@ export function DroppableFolderItem({
     }
   };
 
-  const isLoading = renameFolderMutation.isLoading || deleteFolderMutation.isLoading ||
-                   moveFolderMutation.isLoading || moveFileMutation.isLoading;
+  const isLoading = deleteFolderMutation.isPending ||
+                   moveFolderMutation.isPending || moveFileMutation.isPending;
 
   const [{ isOver, canDrop }, drop] = useDrop({
     accept: "file",
@@ -179,9 +153,12 @@ export function DroppableFolderItem({
     }),
   });
 
+  const ref = useRef<HTMLDivElement>(null);
+  drag(drop(ref));
+
   return (
     <div 
-      ref={(node) => drag(drop(node))}
+      ref={ref}
       className={`group relative rounded-lg border transition-all duration-200 bg-background ${
         isDragging ? 'opacity-50' : ''
       } ${
@@ -194,7 +171,7 @@ export function DroppableFolderItem({
       <div className="p-3 flex flex-col items-center">
         {/* Drag Handle */}
         <div 
-          ref={drag}
+          ref={drag as unknown as React.Ref<HTMLDivElement>}
           className="absolute top-1 left-1 opacity-0 group-hover:opacity-100 transition-opacity cursor-move"
           onClick={(e) => e.stopPropagation()}
         >
@@ -211,7 +188,7 @@ export function DroppableFolderItem({
         {/* Icon and Star */}
         <div className="relative mb-2 flex justify-center">
           <div className="relative">
-            <Folder className={`h-8 w-8 ${getFolderColor(item.id)} fill-current drop-shadow-sm`} />
+            <Folder className={`h-8 w-8  fill-current drop-shadow-sm`} style={{ color: item.color }} />
             {item.starred && (
               <Star className="h-3 w-3 text-yellow-500 fill-current absolute -top-0.5 -right-0.5" />
             )}
@@ -231,7 +208,7 @@ export function DroppableFolderItem({
 
       {/* Actions Menu */}
       <div className="absolute top-1 right-1 opacity-0 group-hover:opacity-100 transition-opacity">
-        <DropdownMenu>
+        <DropdownMenu open={dropdownOpen} onOpenChange={setDropdownOpen}>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" size="sm" className="h-6 w-6 p-0 bg-background/80 backdrop-blur-sm" onClick={(e) => e.stopPropagation()}>
               <MoreHorizontal className="h-3 w-3" />
@@ -246,19 +223,31 @@ export function DroppableFolderItem({
               <>
                 <DropdownMenuItem 
                   onClick={() => {
-                    setNewName(item.name);
-                    setShowRenameDialog(true);
+                    onItemAction("modify", item);
                   }}
                   disabled={isLoading}
                 >
                   <Edit className="mr-2 h-4 w-4" />
-                  Rename
+                  Modify
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => onItemAction("star", item)}>
-                  <Star className="mr-2 h-4 w-4" />
-                  {item.starred ? "Remove star" : "Add star"}
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
+                 <DropdownMenuItem onClick={() => onItemAction("star", item)}>
+                   <Star className="mr-2 h-4 w-4" />
+                   {item.starred ? "Remove star" : "Add star"}
+                 </DropdownMenuItem>
+                 <MoveItemDropdown
+                   itemId={item.id}
+                   itemName={item.name}
+                   itemType={item.type}
+                   classId={classId}
+                   currentFolderId={currentFolderId}
+                   onSuccess={onRefetch}
+                   onOpenChange={(open) => {
+                     if (open) {
+                       setDropdownOpen(false);
+                     }
+                   }}
+                 />
+                 <DropdownMenuSeparator />
                 <DropdownMenuItem 
                   onClick={() => setShowDeleteDialog(true)}
                   disabled={isLoading}
@@ -272,50 +261,6 @@ export function DroppableFolderItem({
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-
-      {/* Rename Dialog */}
-      <Dialog open={showRenameDialog} onOpenChange={setShowRenameDialog}>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Rename Folder</DialogTitle>
-          </DialogHeader>
-          <div className="space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="name">Folder Name</Label>
-              <Input
-                id="name"
-                value={newName}
-                onChange={(e) => setNewName(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter') {
-                    handleRename();
-                  }
-                }}
-                disabled={isLoading}
-                placeholder="Enter folder name"
-              />
-            </div>
-          </div>
-          <DialogFooter>
-            <Button 
-              variant="outline" 
-              onClick={() => {
-                setShowRenameDialog(false);
-                setNewName(item.name);
-              }}
-              disabled={isLoading}
-            >
-              Cancel
-            </Button>
-            <Button 
-              onClick={handleRename}
-              disabled={isLoading || !newName.trim()}
-            >
-              {isLoading ? "Renaming..." : "Rename"}
-            </Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
 
       {/* Delete Confirmation Dialog */}
       <AlertDialog open={showDeleteDialog} onOpenChange={setShowDeleteDialog}>
@@ -341,3 +286,4 @@ export function DroppableFolderItem({
     </div>
   );
 }
+

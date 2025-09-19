@@ -28,7 +28,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useGetClassQuery, useChangeRoleMutation, useRemoveMemberMutation, useGetInviteCodeQuery, trpc } from "@/lib/api";
+import { RouterOutputs, trpc } from "@/lib/trpc";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { toast } from "sonner";
@@ -117,10 +117,10 @@ export default function Members() {
   const appState = useSelector((state: RootState) => state.app);
 
   // API hooks
-  const { data: classData, isLoading, error, refetch } = useGetClassQuery(classId as string);
-  const { data: inviteCodeData, isLoading: inviteCodeLoading, refetch: refetchInviteCode } = useGetInviteCodeQuery(classId as string);
-  const changeRoleMutation = useChangeRoleMutation();
-  const removeMemberMutation = useRemoveMemberMutation();
+  const { data: classData, isLoading, error, refetch } = trpc.class.get.useQuery({ classId: classId as string });
+  const { data: inviteCodeData, isLoading: inviteCodeLoading, refetch: refetchInviteCode } = trpc.class.getInviteCode.useQuery({ classId: classId as string });
+  const changeRoleMutation = trpc.class.changeRole.useMutation();
+  const removeMemberMutation = trpc.class.removeMember.useMutation();
   const regenerateInviteCodeMutation = trpc.class.createInviteCode.useMutation({
     onSuccess: () => {
       toast.success('Invite code regenerated successfully');
@@ -135,11 +135,11 @@ export default function Members() {
     if (!classData?.class) return { teachers: [], students: [] };
 
     return {
-      teachers: classData.class.teachers.map((t: { id: string; username: string; email?: string }) => ({ 
+      teachers: classData.class.teachers.map((t: RouterOutputs["class"]["get"]['class']['teachers'][number]) => ({ 
         ...t, 
         type: 'teacher' as const 
       })),
-      students: classData.class.students.map((s: { id: string; username: string; email?: string }) => ({ 
+      students: classData.class.students.map((s: RouterOutputs["class"]["get"]['class']['students'][number]) => ({ 
         ...s, 
         type: 'student' as const 
       })),

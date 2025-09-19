@@ -14,18 +14,20 @@ import {
 } from "@/components/ui/dialog";
 import { FolderPlus, Folder, Edit3 } from "lucide-react";
 import { toast } from "sonner";
+import ColorPicker from "@/components/ui/color-picker";
 
 interface FolderData {
   id?: string;
   name: string;
   description?: string;
+  color?: string;
 }
 
 interface CreateFolderModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  onFolderCreated: (folderData: { name: string; description?: string }) => void;
-  onFolderUpdated?: (folderData: { id: string; name: string; description?: string }) => void;
+  onFolderCreated: (folderData: { name: string; description?: string; color?: string }) => void;
+  onFolderUpdated?: (folderData: { id: string; name: string; description?: string; color?: string }) => void;
   existingFolder?: FolderData | null;
   isLoading?: boolean;
 }
@@ -41,6 +43,7 @@ export function CreateFolderModal({
   const [formData, setFormData] = useState({
     name: existingFolder?.name || "",
     description: existingFolder?.description || "",
+    color: existingFolder?.color || "#3b82f6",
   });
 
   const isEditing = !!existingFolder;
@@ -51,9 +54,10 @@ export function CreateFolderModal({
       setFormData({
         name: existingFolder?.name || "",
         description: existingFolder?.description || "",
+        color: existingFolder?.color || "#3b82f6",
       });
     } else {
-      setFormData({ name: "", description: "" });
+      setFormData({ name: "", description: "", color: "#3b82f6" });
     }
   }, [open, existingFolder]);
 
@@ -83,16 +87,18 @@ export function CreateFolderModal({
           id: existingFolder.id!,
           name: formData.name.trim(),
           description: formData.description.trim() || undefined,
+          color: formData.color,
         });
       } else {
         await onFolderCreated({
           name: formData.name.trim(),
           description: formData.description.trim() || undefined,
+          color: formData.color,
         });
       }
 
       // Reset form and close modal
-      setFormData({ name: "", description: "" });
+      setFormData({ name: "", description: "", color: "#3b82f6" });
       onOpenChange(false);
     } catch (error) {
       console.error("Failed to save folder:", error);
@@ -105,7 +111,7 @@ export function CreateFolderModal({
   };
 
   const handleClose = () => {
-    setFormData({ name: "", description: "" });
+    setFormData({ name: "", description: "", color: "#3b82f6" });
     onOpenChange(false);
   };
 
@@ -167,6 +173,15 @@ export function CreateFolderModal({
               <p className="text-xs text-muted-foreground">
                 {formData.description.length}/500 characters
               </p>
+            </div>
+
+            {/* Folder Color */}
+            <div className="space-y-2">
+              <ColorPicker
+                value={formData.color}
+                onChange={(color) => handleInputChange("color", color)}
+                label="Folder Color"
+              />
             </div>
           </div>
 

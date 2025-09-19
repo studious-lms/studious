@@ -4,32 +4,26 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { useToast } from "@/hooks/use-toast";
 import { UserPlus, Loader2 } from "lucide-react";
-import { useJoinClass } from "@/lib/api";
-import { toast as sonnerToast } from "sonner";
+import { RouterOutputs, trpc } from "@/lib/trpc";
+import { toast } from "sonner";
 
 interface JoinClassModalProps {
   children?: React.ReactNode;
-  onClassJoined?: (classData: any) => void;
+  onClassJoined?: (classData: RouterOutputs["class"]["join"]) => void;
 }
 
 export function JoinClassModal({ children, onClassJoined }: JoinClassModalProps) {
   const [open, setOpen] = useState(false);
   const [inviteCode, setInviteCode] = useState("");
   const [loading, setLoading] = useState(false);
-  const { toast } = useToast();
-  const { joinClass } = useJoinClass();
+  const joinClassMutation = trpc.class.join.useMutation();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!inviteCode.trim()) {
-      toast({
-        title: "Error",
-        description: "Please enter a valid invite code.",
-        variant: "destructive"
-      });
+      toast.error("Please enter a valid invite code.");
       return;
     }
 
@@ -37,23 +31,23 @@ export function JoinClassModal({ children, onClassJoined }: JoinClassModalProps)
       setLoading(true);
       
       // Join class using API
-      const joinedClass = await joinClass({
+      const joinedClass = await joinClassMutation.mutateAsync({
         classCode: inviteCode.trim()
       });
 
       onClassJoined?.(joinedClass);
       
-      sonnerToast.success("Successfully Joined!", {
-        description: `You've joined the class successfully.`
-      });
+      toast.success(
+        `You've joined the class successfully.`
+      );
 
       setInviteCode("");
       setOpen(false);
     } catch (error) {
       console.error("Failed to join class:", error);
-      sonnerToast.error("Join Failed", {
-        description: "Invalid invite code or class not found."
-      });
+      toast.error(
+        "Invalid invite code or class not found."
+      );
     } finally {
       setLoading(false);
     }

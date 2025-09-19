@@ -1,4 +1,5 @@
 import { useDrag, useDrop } from "react-dnd";
+import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { TableRow, TableCell } from "@/components/ui/table";
 import {
@@ -35,7 +36,7 @@ interface FileItem {
 interface DraggableTableRowProps {
   item: FileItem;
   getFolderColor: (folderId: string) => string;
-  getFileIcon: (fileType: string, size?: "sm" | "lg") => JSX.Element;
+  getFileIcon: (fileType: string, size?: "sm" | "lg") => React.ReactNode;
   formatDate: (dateString: string) => string;
   onFolderClick: (folderName: string) => void;
   onItemAction: (action: string, item: FileItem) => void;
@@ -69,7 +70,7 @@ export function DraggableTableRow({
     accept: "file",
     drop: (draggedItem: { id: string; name: string; type: string }) => {
       if (draggedItem.id !== item.id && item.type === "folder") {
-        onMoveItem(draggedItem.id, item.id);
+        // onMoveItem(draggedItem.id, item.id);
       }
     },
     canDrop: (draggedItem) => draggedItem.id !== item.id && item.type === "folder",
@@ -79,9 +80,12 @@ export function DraggableTableRow({
     }),
   });
 
+  const ref = useRef<HTMLTableRowElement>(null);
+  drag(drop(ref));
+
   return (
     <TableRow
-      ref={(node) => drag(drop(node))}
+      ref={ref}
       className={`group cursor-pointer transition-all ${
         isDragging ? 'opacity-50' : ''
       } ${
@@ -101,7 +105,7 @@ export function DraggableTableRow({
         <div className="flex items-center space-x-3">
           {/* Drag Handle */}
           <div 
-            ref={drag}
+            ref={drag as unknown as React.Ref<HTMLDivElement>}
             className="opacity-0 group-hover:opacity-100 transition-opacity cursor-move"
             onClick={(e) => e.stopPropagation()}
           >
@@ -162,9 +166,9 @@ export function DraggableTableRow({
               <Share className="mr-2 h-4 w-4" />
               Share
             </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => onItemAction("rename", item)}>
+            <DropdownMenuItem onClick={() => onItemAction("modify", item)}>
               <Edit className="mr-2 h-4 w-4" />
-              Rename
+              Modify
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem onClick={() => onItemAction("delete", item)}>

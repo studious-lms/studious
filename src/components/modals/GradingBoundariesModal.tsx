@@ -4,7 +4,6 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
-import { useToast } from "@/hooks/use-toast";
 import { 
   GradingBoundaryEditor, 
   GradingTemplateSelector, 
@@ -12,13 +11,14 @@ import {
   GradingBoundarySet,
   GradingTemplate 
 } from "@/components/grading";
-import { useCreateGradingBoundaryMutation, useUpdateGradingBoundaryMutation } from "@/lib/api";
+import { RouterOutputs, trpc } from "@/lib/trpc";
+import { toast } from "sonner";
 
 interface GradingBoundariesModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   classId: string;
-  existingGradingBoundary?: any;
+  existingGradingBoundary?: RouterOutputs["class"]["listGradingBoundaries"][number];
 }
 
 export function GradingBoundariesModal({ open, onOpenChange, classId, existingGradingBoundary }: GradingBoundariesModalProps) {
@@ -26,9 +26,8 @@ export function GradingBoundariesModal({ open, onOpenChange, classId, existingGr
   const [isCreatingCustom, setIsCreatingCustom] = useState(false);
   const [newSetName, setNewSetName] = useState("");
   const [customBoundaries, setCustomBoundaries] = useState<GradingBoundary[]>([]);
-  const { toast } = useToast();
-  const createGradingBoundary = useCreateGradingBoundaryMutation();
-  const updateGradingBoundary = useUpdateGradingBoundaryMutation();
+  const createGradingBoundary = trpc.class.createGradingBoundary.useMutation();
+  const updateGradingBoundary = trpc.class.updateGradingBoundary.useMutation();
 
   // Populate form when editing existing grading boundary
   useEffect(() => {
@@ -93,10 +92,7 @@ export function GradingBoundariesModal({ open, onOpenChange, classId, existingGr
             structure: JSON.stringify(structured)
           });
           
-          toast({
-            title: "Success",
-            description: "Grading boundary updated successfully",
-          });
+          toast.success("Grading boundary updated successfully");
         } else {
           // Create new grading boundary
           await createGradingBoundary.mutateAsync({
@@ -105,19 +101,12 @@ export function GradingBoundariesModal({ open, onOpenChange, classId, existingGr
             structure: JSON.stringify(structured)
           });
           
-          toast({
-            title: "Success",
-            description: "Grading boundary created successfully",
-          });
+          toast.success("Grading boundary created successfully");
         }
         
         onOpenChange(false);
       } catch (error) {
-        toast({
-          title: "Error",
-          description: existingGradingBoundary ? "Failed to update grading boundary" : "Failed to create grading boundary",
-          variant: "destructive",
-        });
+        toast.error(existingGradingBoundary ? "Failed to update grading boundary" : "Failed to create grading boundary");
       }
     }
   };

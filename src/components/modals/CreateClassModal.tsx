@@ -7,10 +7,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import ColorPicker from "@/components/ui/color-picker";
-import { useToast } from "@/hooks/use-toast";
 import { Plus, Loader2 } from "lucide-react";
-import { useCreateClassMutation } from "@/lib/api";
-import { toast as sonnerToast } from "sonner";
+import { trpc } from "@/lib/trpc";
+import { toast } from "sonner";
 
 interface CreateClassModalProps {
   children?: React.ReactNode;
@@ -31,8 +30,7 @@ export function CreateClassModal({ children, onClassCreated }: CreateClassModalP
     meetingTime: "",
     location: ""
   });
-  const { toast } = useToast();
-  const createClassMutation = useCreateClassMutation();
+  const createClassMutation = trpc.class.create.useMutation();
 
 
   console.log(formData);
@@ -41,11 +39,7 @@ export function CreateClassModal({ children, onClassCreated }: CreateClassModalP
     
     // Validate required fields
     if (!formData.title || !formData.section || !formData.subject) {
-      toast({
-        title: "Error",
-        description: "Please fill in all required fields.",
-        variant: "destructive"
-      });
+      toast.error("Please fill in all required fields.");
       return;
     }
 
@@ -62,9 +56,7 @@ export function CreateClassModal({ children, onClassCreated }: CreateClassModalP
 
       onClassCreated?.(newClass);
       
-      sonnerToast.success("Class Created", {
-        description: `${formData.title} has been created successfully.`
-      });
+      toast.success(`Class ${formData.title} has been created successfully.`);
 
       // Reset form
       setFormData({
@@ -81,9 +73,7 @@ export function CreateClassModal({ children, onClassCreated }: CreateClassModalP
       setOpen(false);
     } catch (error) {
       console.error("Failed to create class:", error);
-      sonnerToast.error("Failed to create class", {
-        description: "Please try again later."
-      });
+      toast.error("Failed to create class. Please try again later.");
     } finally {
       setLoading(false);
     }

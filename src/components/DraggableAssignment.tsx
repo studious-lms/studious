@@ -24,12 +24,14 @@ import { RouterOutputs } from "@/lib/trpc";
 interface DraggableAssignmentProps {
   assignment: RouterOutputs['assignment']['get'];
   classId: string;
+  index?: number;
+  onDelete?: (assignmentId: string) => void;
 }
 
-export function DraggableAssignment({ assignment, classId }: DraggableAssignmentProps) {
+export function DraggableAssignment({ assignment, classId, index, onDelete }: DraggableAssignmentProps) {
   const [{ isDragging }, drag] = useDrag({
     type: "assignment",
-    item: { id: assignment.id, type: "assignment" },
+    item: { id: assignment.id, type: "assignment", index },
     collect: (monitor) => ({
       isDragging: monitor.isDragging(),
     }),
@@ -48,7 +50,7 @@ export function DraggableAssignment({ assignment, classId }: DraggableAssignment
   };
 
   return (
-    <div ref={drag} className={`transition-opacity ${isDragging ? 'opacity-50' : 'opacity-100'}`}>
+    <div ref={drag as unknown as React.Ref<HTMLDivElement>} className={`transition-opacity ${isDragging ? 'opacity-50' : 'opacity-100'}`}>
       <Card className="hover:shadow-md transition-all duration-200 border-l-4 border-l-primary group cursor-move">
         <CardContent className="p-4">
           <div className="flex items-start justify-between">
@@ -131,7 +133,10 @@ export function DraggableAssignment({ assignment, classId }: DraggableAssignment
                     Export Grades
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem className="text-destructive">
+                  <DropdownMenuItem 
+                    className="text-destructive"
+                    onClick={() => onDelete?.(assignment.id)}
+                  >
                     <Trash2 className="mr-2 h-4 w-4" />
                     Delete
                   </DropdownMenuItem>

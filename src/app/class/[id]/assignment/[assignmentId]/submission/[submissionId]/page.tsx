@@ -14,16 +14,19 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { 
   ArrowLeft,
   Save,
-  MessageSquare,
-  Star,
   Upload
 } from "lucide-react";
 import { format } from "date-fns";
 import { trpc, type RouterOutputs, type RouterInputs } from "@/lib/trpc";
+import type { 
+  RubricGrade,
+} from "@/lib/types/assignment";
+import {  parseMarkScheme,
+  parseGradingBoundary} from "@/lib/types/assignment";
 import { Skeleton } from "@/components/ui/skeleton";
 import { EmptyState } from "@/components/ui/empty-state";
-import { useToast } from "@/hooks/use-toast";
-import { DraggableFileItem } from "@/components/DraggableFileItem";
+import { toast } from "sonner";
+import { DraggableFileItem, FileItem } from "@/components/DraggableFileItem";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { FilePreviewModal } from "@/components/modals";
@@ -37,17 +40,12 @@ import {
   Presentation,
   File
 } from "lucide-react";
+import { RootState } from "@/store/store";
+import { useSelector } from "react-redux";
 
+type Submission = RouterOutputs['assignment']['getSubmissionById'];
+type Assignment = RouterOutputs['assignment']['get'];
 type AssignmentUpdateSubmissionAsTeacherInput = RouterInputs['assignment']['updateSubmissionAsTeacher'];
-
-type FileItem = {
-  id: string;
-  name: string;
-  type: "file" | "folder";
-  fileType?: string;
-  size?: string;
-  uploadedAt?: string;
-};
 
 type RubricCriterion = {
   id: string;
@@ -62,12 +60,7 @@ type RubricCriterion = {
   }>;
 };
 
-type RubricGrade = {
-  criteriaId: string;
-  selectedLevelId: string;
-  points: number;
-  comments?: string;
-};
+// RubricGrade type is now imported from @/lib/types/assignment
 
 function SubmissionDetailSkeleton() {
   return (
@@ -101,10 +94,11 @@ function SubmissionDetailSkeleton() {
 export default function SubmissionDetailPage() {
   const params = useParams();
   const router = useRouter();
-  const { toast } = useToast();
+  const appState = useSelector((state: RootState) => state.app);
   const classId = params.id as string;
   const assignmentId = params.assignmentId as string;
   const submissionId = params.submissionId as string;
+  const isTeacher = appState.user.teacher;
 
   const [feedback, setFeedback] = useState("");
   const [grade, setGrade] = useState<number | undefined>(undefined);
@@ -114,16 +108,17 @@ export default function SubmissionDetailPage() {
   const [isUploading, setIsUploading] = useState(false);
 
   // File preview state
-  const [previewFile, setPreviewFile] = useState<any>(null);
+  const [previewFile, setPreviewFile] = useState<FileItem | null>(null);
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
 
   // Get signed URL mutation for file preview
   const getSignedUrlMutation = trpc.file.getSignedUrl.useMutation();
 
   // Get submission data
-  const { data: submission, isLoading, refetch: refetchSubmission } = trpc.assignment.getSubmission.useQuery({
+  const { data: submission, isLoading, refetch: refetchSubmission } = trpc.assignment.getSubmissionById.useQuery({
     assignmentId: assignmentId,
     classId: classId,
+    submissionId: submissionId,
   });
 
   // Get assignment data for rubric info
@@ -135,37 +130,23 @@ export default function SubmissionDetailPage() {
   // Update submission as teacher mutation
   const updateSubmissionMutation = trpc.assignment.updateSubmissionAsTeacher.useMutation({
     onSuccess: () => {
-      toast({
-        title: "Grade saved",
-        description: "The grade and feedback have been saved successfully.",
-      });
+        toast.success("Grade saved");
       refetchSubmission();
     },
     onError: (error) => {
-      toast({
-        title: "Error saving grade",
-        description: error.message || "There was a problem saving the grade. Please try again.",
-        variant: "destructive",
-      });
+      toast.error(error.message || "There was a problem saving the grade. Please try again.");
     },
   });
 
   // File upload mutation for annotations
   const uploadAnnotationMutation = trpc.assignment.updateSubmissionAsTeacher.useMutation({
     onSuccess: () => {
-      toast({
-        title: "Files uploaded",
-        description: "Annotation files have been uploaded successfully.",
-      });
+      toast.success("Files uploaded");
       refetchSubmission();
       setIsUploading(false);
     },
     onError: (error) => {
-      toast({
-        title: "Error uploading files",
-        description: error.message || "There was a problem uploading the files. Please try again.",
-        variant: "destructive",
-      });
+      toast.error(error.message || "There was a problem uploading the files. Please try again.");
       setIsUploading(false);
     },
   });
@@ -175,71 +156,94 @@ export default function SubmissionDetailPage() {
 
   // Parse rubric data when assignment loads
   useEffect(() => {
-    if (assignment?.markScheme) {
-      try {
-        const parsed = JSON.parse(assignment.markScheme.structured);
-        if (parsed.criteria) {
-          setRubricCriteria(parsed.criteria);
-        }
-      } catch (error) {
-        console.error("Error parsing rubric:", error);
+    if (assignment?.markScheme?.structured) {
+      const parsedMarkScheme = parseMarkScheme(assignment.markScheme.structured);
+      console.log("Parsed mark scheme:", parsedMarkScheme);
+      
+      if (parsedMarkScheme?.criteria && parsedMarkScheme.criteria.length > 0) {
+        console.log("Setting rubric criteria from assignment:", parsedMarkScheme.criteria.length, "criteria");
+        setRubricCriteria(parsedMarkScheme.criteria);
       }
     }
   }, [assignment?.markScheme]);
 
-  // Mock fallback data for when no rubric is attached
-  const mockRubricCriteria: RubricCriterion[] = [
-    {
-      id: "1",
-      title: "Content Quality",
-      description: "Demonstrates understanding of the topic",
-      levels: [
-        { id: "1a", name: "Excellent", points: 25, color: "#22c55e", description: "Exceptional understanding" },
-        { id: "1b", name: "Good", points: 20, color: "#3b82f6", description: "Good understanding" },
-        { id: "1c", name: "Fair", points: 15, color: "#f59e0b", description: "Basic understanding" },
-        { id: "1d", name: "Poor", points: 10, color: "#ef4444", description: "Limited understanding" }
-      ]
-    },
-    {
-      id: "2", 
-      title: "Writing Style",
-      description: "Grammar, clarity, and organization",
-      levels: [
-        { id: "2a", name: "Excellent", points: 25, color: "#22c55e" },
-        { id: "2b", name: "Good", points: 20, color: "#3b82f6" },
-        { id: "2c", name: "Fair", points: 15, color: "#f59e0b" },
-        { id: "2d", name: "Poor", points: 10, color: "#ef4444" }
-      ]
-    }
-  ];
 
   // Initialize form data from submission
   useEffect(() => {
     if (submission) {
-      setFeedback((submission as any).feedback || "");
+      setFeedback((submission).teacherComments || "");
       
       // Parse rubric grades if they exist
       if (submission.rubricState) {
         try {
           const existingGrades = JSON.parse(submission.rubricState);
-          setRubricGrades(existingGrades);
-          // If rubric grades exist, don't set manual grade
-          if (existingGrades.length === 0) {
-            setGrade(submission.gradeReceived || undefined);
+          if (Array.isArray(existingGrades) && existingGrades.length > 0) {
+            // Check if existing grades are compatible with current rubric criteria
+            const isCompatible = existingGrades.every(grade => 
+              rubricCriteria.some(criterion => 
+                criterion.id === grade.criteriaId &&
+                criterion.levels.some(level => level.id === grade.selectedLevelId)
+              )
+            );
+
+            if (isCompatible && existingGrades.length === rubricCriteria.length) {
+              // Rubric state is compatible, use existing grades
+              setRubricGrades(existingGrades);
+            } else {
+              // Rubric state is incompatible, reset and initialize new grades
+              console.log("Rubric state incompatible with current criteria, resetting...");
+              if (rubricCriteria.length > 0) {
+                const initialGrades = rubricCriteria.map(criterion => ({
+                  criteriaId: criterion.id,
+                  selectedLevelId: '',
+                  points: 0,
+                  comments: ''
+                }));
+                setRubricGrades(initialGrades);
+              } else {
+                setGrade(submission.gradeReceived || undefined);
+              }
+            }
+          } else {
+            // Empty rubric state, initialize with default grades if rubric exists
+            if (rubricCriteria.length > 0) {
+              const initialGrades = rubricCriteria.map(criterion => ({
+                criteriaId: criterion.id,
+                selectedLevelId: '',
+                points: 0,
+                comments: ''
+              }));
+              setRubricGrades(initialGrades);
+            } else {
+              setGrade(submission.gradeReceived || undefined);
+            }
           }
         } catch (error) {
           console.error("Error parsing rubric grades:", error);
+          // Reset to manual grading on parse error
           setGrade(submission.gradeReceived || undefined);
+          setRubricGrades([]);
         }
       } else {
-        // No rubric state, use manual grade
-        setGrade(submission.gradeReceived || undefined);
+        // No rubric state, check if we need to initialize rubric or use manual grade
+        if (rubricCriteria.length > 0) {
+          const initialGrades = rubricCriteria.map(criterion => ({
+            criteriaId: criterion.id,
+            selectedLevelId: '',
+            points: 0,
+            comments: ''
+          }));
+          setRubricGrades(initialGrades);
+        } else {
+          setGrade(submission.gradeReceived || undefined);
+        }
       }
     }
-  }, [submission]);
+  }, [submission, rubricCriteria]);
 
   // Calculate rubric totals
   const totalRubricPoints = rubricGrades.reduce((sum, grade) => sum + grade.points, 0);
+
   const maxRubricPoints = rubricCriteria.reduce((sum, criterion) => {
     const maxPoints = Math.max(...criterion.levels.map(level => level.points));
     return sum + maxPoints;
@@ -256,8 +260,15 @@ export default function SubmissionDetailPage() {
   const handleSaveGrade = async () => {
     if (!submission) return;
 
+    // Check if rubric has any data (either selected levels or comments)
+    const hasRubricData = rubricGrades.length > 0 && rubricGrades.some(g => 
+      g.selectedLevelId || (g.comments)
+    );
+
     // Calculate final grade based on rubric or manual input
-    const finalGrade = rubricGrades.length > 0 ? totalRubricPoints : grade;
+    const finalGrade = hasRubricData && rubricGrades.some(g => g.selectedLevelId)
+      ? totalRubricPoints 
+      : grade;
 
     const updateData: AssignmentUpdateSubmissionAsTeacherInput = {
       assignmentId,
@@ -265,7 +276,7 @@ export default function SubmissionDetailPage() {
       submissionId,
       gradeReceived: finalGrade,
       feedback: feedback,
-      rubricState: rubricGrades.length > 0 ? JSON.stringify(rubricGrades) : undefined,
+      rubricGrades: hasRubricData ? rubricGrades : [],
     };
 
     updateSubmissionMutation.mutate(updateData);
@@ -278,7 +289,7 @@ export default function SubmissionDetailPage() {
       assignmentId,
       classId,
       submissionId,
-      returned: true,
+      'return': true, // Toggle the returned status
     };
 
     updateSubmissionMutation.mutate(updateData);
@@ -319,29 +330,14 @@ export default function SubmissionDetailPage() {
     }
   };
 
-  const getFolderColor = (folderId: string) => {
-    const colors = [
-      "text-blue-500",
-      "text-green-500", 
-      "text-purple-500",
-      "text-orange-500",
-      "text-pink-500",
-      "text-indigo-500",
-      "text-teal-500",
-      "text-red-500"
-    ];
-    const index = parseInt(folderId) % colors.length;
-    return colors[index];
-  };
-
-  const convertAttachmentsToFileItems = (attachments: any[]) => {
+  const convertAttachmentsToFileItems = (attachments: RouterOutputs['assignment']['getSubmission']['attachments']) => {
     return attachments.map(attachment => ({
       id: attachment.id,
       name: attachment.name,
       type: "file" as const,
       fileType: attachment.type.split('/')[1] || attachment.type,
-      size: formatFileSize(attachment.size),
-      uploadedAt: attachment.uploadedAt,
+      size: formatFileSize(attachment.size || 0),
+      uploadedAt: attachment.uploadedAt || undefined,
     }));
   };
 
@@ -353,6 +349,14 @@ export default function SubmissionDetailPage() {
       // Handle preview
       setPreviewFile(item);
       setIsPreviewOpen(true);
+    } else if (action === "delete" && isTeacher) {
+      // Handle annotation deletion for teachers
+      uploadAnnotationMutation.mutate({
+        assignmentId,
+        classId,
+        submissionId,
+        removedAttachments: [item.id],
+      });
     }
   };
 
@@ -398,12 +402,8 @@ export default function SubmissionDetailPage() {
 
       // Clear the input
       event.target.value = '';
-    } catch (error) {
-      toast({
-        title: "Error processing files",
-        description: "There was a problem processing the files. Please try again.",
-        variant: "destructive",
-      });
+    } catch {
+      toast.error("There was a problem processing the files. Please try again.");
       setIsUploading(false);
     }
   };
@@ -414,7 +414,7 @@ export default function SubmissionDetailPage() {
     if (submission.returned) {
       return <Badge variant="default">Returned</Badge>;
     }
-    if (submission.submitted && submission.late) {
+    if (submission.submitted && (submission).late) {
       return <Badge variant="destructive">Late Submission</Badge>;
     }
     if (submission.submitted) {
@@ -429,11 +429,11 @@ export default function SubmissionDetailPage() {
       if (existing) {
         return prev.map(g => 
           g.criteriaId === criteriaId 
-            ? { ...g, selectedLevelId: levelId, points, comments }
+            ? { ...g, selectedLevelId: levelId, points, comments: comments || "" }
             : g
         );
       } else {
-        return [...prev, { criteriaId, selectedLevelId: levelId, points, comments }];
+        return [...prev, { criteriaId, selectedLevelId: levelId, points, comments: comments || "" }];
       }
     });
   };
@@ -449,16 +449,17 @@ export default function SubmissionDetailPage() {
   if (!submission) {
     return (
       <PageLayout>
-        <EmptyState
-          icon={FileText}
-          title="Submission not found"
-          description="The submission you're looking for doesn't exist or has been removed."
-          action={
-            <Button onClick={() => router.back()}>
-              Go Back
-            </Button>
-          }
-        />
+        <div className="flex flex-col items-center justify-center min-h-[400px] space-y-4">
+          <EmptyState
+            icon={FileText}
+            title="Submission not found"
+            description="The submission you're looking for doesn't exist or has been removed."
+          />
+          <Button onClick={() => router.back()}>
+            <ArrowLeft className="h-4 w-4 mr-2" />
+            Go Back
+          </Button>
+        </div>
       </PageLayout>
     );
   }
@@ -506,8 +507,6 @@ export default function SubmissionDetailPage() {
                           key={fileItem.id}
                           item={fileItem}
                           getFileIcon={getFileIcon}
-                          getFolderColor={getFolderColor}
-                          onFolderClick={() => {}}
                           onItemAction={handleFileAction}
                           onFileClick={handleFileClick}
                           classId={classId}
@@ -521,25 +520,31 @@ export default function SubmissionDetailPage() {
                     icon={FileText}
                     title="No files submitted"
                     description="The student hasn't submitted any files for this assignment."
-                    compact
                   />
                 )}
               </CardContent>
             </Card>
 
-            {/* Grade & Feedback */}
-            <Card>
-              <CardHeader>
-                <CardTitle>{rubricCriteria.length > 0 ? 'Rubric Grading & Feedback' : 'Grade & Feedback'}</CardTitle>
-              </CardHeader>
+            {/* Grade & Feedback - Teacher Only */}
+            {isTeacher && (
+              <Card>
+                <CardHeader>
+                  <CardTitle>
+                    {rubricCriteria.length > 0 ? 'Rubric Grading & Feedback' : 'Grade & Feedback'}
+                    {submission.returned && (
+                      <Badge variant="secondary" className="ml-2">Returned - Read Only</Badge>
+                    )}
+                  </CardTitle>
+                </CardHeader>
               <CardContent className="space-y-6">
                 {/* Rubric Grading Section */}
                 {rubricCriteria.length > 0 && (
                   <div className="space-y-6">
-                    <div className="text-sm font-medium text-muted-foreground">Rubric Assessment</div>
+                    <div className="text-sm font-medium text-muted-foreground">
+                      Rubric Assessment ({rubricCriteria.length} criteria)
+                    </div>
                     {rubricCriteria.map((criterion) => {
                       const grade = rubricGrades.find(g => g.criteriaId === criterion.id);
-                      
                       return (
                         <div key={criterion.id} className="space-y-4">
                           <div>
@@ -553,11 +558,14 @@ export default function SubmissionDetailPage() {
                             {criterion.levels.map((level) => (
                               <button
                                 key={level.id}
-                                onClick={() => updateRubricGrade(criterion.id, level.id, level.points)}
+                                onClick={() => !submission.returned && updateRubricGrade(criterion.id, level.id, level.points)}
+                                disabled={submission.returned || false}
                                 className={`p-3 rounded-lg border text-left transition-all ${
                                   grade?.selectedLevelId === level.id
                                     ? 'border-primary bg-primary/10'
-                                    : 'border-border hover:border-primary/50'
+                                    : submission.returned 
+                                      ? 'border-border bg-muted cursor-not-allowed opacity-60'
+                                      : 'border-border hover:border-primary/50'
                                 }`}
                               >
                                 <div className="flex items-center justify-between mb-1">
@@ -573,15 +581,17 @@ export default function SubmissionDetailPage() {
                           
                           {grade && (
                             <Textarea
-                              placeholder="Add comments for this criterion..."
-                              value={grade.comments || ""}
-                              onChange={(e) => updateRubricGrade(
+                              placeholder={submission.returned ? "Comments (read-only)" : "Add comments for this criterion..."}
+                              value={grade.comments}
+                              onChange={(e) => !submission.returned && updateRubricGrade(
                                 criterion.id, 
                                 grade.selectedLevelId, 
                                 grade.points, 
                                 e.target.value
                               )}
+                              readOnly={submission.returned || false}
                               rows={2}
+                              className={submission.returned ? "bg-muted cursor-not-allowed" : ""}
                             />
                           )}
                           
@@ -619,9 +629,14 @@ export default function SubmissionDetailPage() {
                                   const percentage = (finalGrade / maxGrade) * 100;
                                   
                                   try {
-                                    const boundaries = JSON.parse(assignment.gradingBoundary.structured).boundaries;
-                                    const letterGrade = boundaries.find((b: any) => percentage >= b.min)?.grade || 'F';
-                                    return `${percentage.toFixed(1)}% (${letterGrade})`;
+                                    const parsedBoundary = parseGradingBoundary(assignment.gradingBoundary.structured);
+                                    if (parsedBoundary?.boundaries) {
+                                      const letterGrade = parsedBoundary.boundaries.find(b => 
+                                        percentage >= b.minPercentage && percentage <= b.maxPercentage
+                                      )?.grade || 'F';
+                                      return `${percentage.toFixed(1)}% (${letterGrade})`;
+                                    }
+                                    return `${percentage.toFixed(1)}%`;
                                   } catch {
                                     return `${percentage.toFixed(1)}%`;
                                   }
@@ -648,10 +663,12 @@ export default function SubmissionDetailPage() {
                           id="grade"
                           type="number"
                           value={grade || ""}
-                          onChange={(e) => setGrade(e.target.value ? parseInt(e.target.value) : undefined)}
-                          placeholder="Enter grade"
+                          onChange={(e) => !submission.returned && setGrade(e.target.value ? parseInt(e.target.value) : undefined)}
+                          placeholder={submission.returned ? "Grade (read-only)" : "Enter grade"}
                           max={submission.assignment.maxGrade}
                           min="0"
+                          readOnly={submission.returned || false}
+                          className={submission.returned ? "bg-muted cursor-not-allowed" : ""}
                         />
                       </div>
                       <div className="space-y-2">
@@ -675,35 +692,45 @@ export default function SubmissionDetailPage() {
                   <Textarea
                     id="feedback"
                     value={feedback}
-                    onChange={(e) => setFeedback(e.target.value)}
-                    placeholder="Provide feedback for the student..."
+                    onChange={(e) => !submission.returned && setFeedback(e.target.value)}
+                    placeholder={submission.returned ? "Feedback (read-only)" : "Provide feedback for the student..."}
                     rows={4}
+                    readOnly={submission.returned || false}
+                    className={submission.returned ? "bg-muted cursor-not-allowed" : ""}
                   />
                 </div>
 
                 <div className="flex items-center space-x-2">
-                  <Button 
-                    onClick={handleSaveGrade}
-                    disabled={updateSubmissionMutation.isPending}
-                    className="flex items-center space-x-2"
-                  >
-                    <Save className="h-4 w-4" />
-                    <span>{updateSubmissionMutation.isPending ? "Saving..." : "Save Grade"}</span>
-                  </Button>
-                  
                   {!submission.returned && (
                     <Button 
-                      variant="outline"
-                      onClick={handleReturnSubmission}
+                      onClick={handleSaveGrade}
                       disabled={updateSubmissionMutation.isPending}
+                      className="flex items-center space-x-2"
                     >
-                      Return to Student
+                      <Save className="h-4 w-4" />
+                      <span>{updateSubmissionMutation.isPending ? "Saving..." : "Save Grade"}</span>
                     </Button>
+                  )}
+                  
+                  <Button 
+                    variant={submission.returned ? "default" : "outline"}
+                    onClick={handleReturnSubmission}
+                    disabled={updateSubmissionMutation.isPending}
+                    className={submission.returned ? "bg-orange-600 hover:bg-orange-700" : ""}
+                  >
+                    {submission.returned ? "Unreturn Submission" : "Return to Student"}
+                  </Button>
+                  
+                  {submission.returned && (
+                    <div className="text-sm text-muted-foreground">
+                      Grade and feedback have been returned to the student
+                    </div>
                   )}
                 </div>
                 </div>
               </CardContent>
-            </Card>
+              </Card>
+            )}
 
           </div>
 
@@ -717,7 +744,7 @@ export default function SubmissionDetailPage() {
               <CardContent>
                 <div className="flex items-center space-x-3">
                   <Avatar className="h-12 w-12">
-                    <AvatarImage src={submission.student.avatar} />
+                    <AvatarImage src="https://api.dicebear.com/7.x/avataaars/svg?seed=${submission.student.username}" />
                     <AvatarFallback>
                       {submission.student.username.substring(0, 2).toUpperCase()}
                     </AvatarFallback>
@@ -789,8 +816,6 @@ export default function SubmissionDetailPage() {
                           key={fileItem.id}
                           item={fileItem}
                           getFileIcon={getFileIcon}
-                          getFolderColor={getFolderColor}
-                          onFolderClick={() => {}}
                           onItemAction={handleFileAction}
                           onFileClick={handleFileClick}
                           classId={classId}
@@ -808,26 +833,28 @@ export default function SubmissionDetailPage() {
                   </div>
                 )}
 
-                <div className="space-y-2">
-                  <Label htmlFor="annotation-upload" className="cursor-pointer">
-                    <div className="flex items-center justify-center w-full p-4 border-2 border-dashed border-muted-foreground/25 rounded-lg hover:border-muted-foreground/50 transition-colors">
-                      <div className="text-center">
-                        <Upload className="h-6 w-6 mx-auto mb-2 text-muted-foreground" />
-                        <p className="text-sm font-medium">{isUploading ? 'Uploading...' : 'Upload Annotations'}</p>
-                        <p className="text-xs text-muted-foreground">Click to select files or drag and drop</p>
+                {isTeacher && (
+                  <div className="space-y-2">
+                    <Label htmlFor="annotation-upload" className="cursor-pointer">
+                      <div className="flex items-center justify-center w-full p-4 border-2 border-dashed border-muted-foreground/25 rounded-lg hover:border-muted-foreground/50 transition-colors">
+                        <div className="text-center">
+                          <Upload className="h-6 w-6 mx-auto mb-2 text-muted-foreground" />
+                          <p className="text-sm font-medium">{isUploading ? 'Uploading...' : 'Upload Annotations'}</p>
+                          <p className="text-xs text-muted-foreground">Click to select files or drag and drop</p>
+                        </div>
                       </div>
-                    </div>
-                  </Label>
-                  <Input
-                    id="annotation-upload"
-                    type="file"
-                    multiple
-                    onChange={handleAnnotationUpload}
-                    className="hidden"
-                    accept="*/*"
-                    disabled={isUploading}
-                  />
-                </div>
+                    </Label>
+                    <Input
+                      id="annotation-upload"
+                      type="file"
+                      multiple
+                      onChange={handleAnnotationUpload}
+                      className="hidden"
+                      accept="*/*"
+                      disabled={isUploading}
+                    />
+                  </div>
+                )}
               </CardContent>
             </Card>
           </div>

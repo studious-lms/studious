@@ -57,33 +57,22 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { useToast } from "@/hooks/use-toast";
+import { toast } from "sonner";
 import { UploadFileModal, FilePreviewModal, RenameModal, CreateFolderModal } from "@/components/modals";
 import { DraggableFileItem } from "@/components/DraggableFileItem";
 import { DroppableFolderItem } from "@/components/DroppableFolderItem";
 import { DraggableTableRow } from "@/components/DraggableTableRow";
-import {  trpc } from "@/lib/trpc";
+import {  RouterInputs, RouterOutputs, trpc } from "@/lib/trpc";
 import { useSession } from "@/hooks/use-session";
 
 // Types for our file system
-type ApiFile = {
-  id: string;
-  name: string;
-  type: string;
-  size: number;
-  data?: string;
-};
+type ApiFile = NonNullable<RouterOutputs["folder"]["get"]>['files'][number];
 
-type ApiFolder = {
-  id: string;
-  name: string;
-  parentFolderId?: string;
-  childFolders?: ApiFolder[];
-  files?: ApiFile[];
-};
+type ApiFolder = NonNullable<RouterOutputs["folder"]["get"]>['childFolders'][number];
 
 type FileItem = {
   id: string;
+  color?: string;
   name: string;
   type: "file" | "folder";
   fileType?: string;
@@ -92,7 +81,6 @@ type FileItem = {
   uploadedAt?: string;
   itemCount?: number;
   lastModified?: string;
-  parentFolderId?: string;
 };
 
 export default function FolderPage() {
@@ -101,7 +89,6 @@ export default function FolderPage() {
   const classId = params.id as string;
   const folderId = params.folderId as string;
   const { user } = useSession();
-  const { toast } = useToast();
   
   // State management
   const [searchQuery, setSearchQuery] = useState("");
@@ -125,61 +112,61 @@ export default function FolderPage() {
   // Mutations
   const createFolderMutation = trpc.folder.create.useMutation({
     onSuccess: () => {
-      toast({ title: "Success", description: "Folder created successfully" });
+      toast.success("Folder created successfully");
       refetch();
     },
     onError: (error) => {
-      toast({ title: "Error", description: error.message, variant: "destructive" });
+      toast.error(error.message);
     }
   });
   
   const deleteFolderMutation = trpc.folder.delete.useMutation({
     onSuccess: () => {
-      toast({ title: "Success", description: "Folder deleted successfully" });
+      toast.success("Folder deleted successfully");
       refetch();
     },
     onError: (error) => {
-      toast({ title: "Error", description: error.message, variant: "destructive" });
+      toast.error(error.message);
     }
   });
   
-  const renameFolderMutation = trpc.folder.rename.useMutation({
+  const renameFolderMutation = trpc.folder.update.useMutation({
     onSuccess: () => {
-      toast({ title: "Success", description: "Folder renamed successfully" });
+      toast.success("Folder renamed successfully");
       refetch();
     },
     onError: (error) => {
-      toast({ title: "Error", description: error.message, variant: "destructive" });
+      toast.error(error.message);
     }
   });
   
   const uploadFilesMutation = trpc.folder.uploadFiles.useMutation({
     onSuccess: () => {
-      toast({ title: "Success", description: "Files uploaded successfully" });
+      toast.success("Files uploaded successfully");
       refetch();
     },
     onError: (error) => {
-      toast({ title: "Error", description: error.message, variant: "destructive" });
+      toast.error(error.message);
     }
   });
   
   const deleteFileMutation = trpc.file.delete.useMutation({
     onSuccess: () => {
-      toast({ title: "Success", description: "File deleted successfully" });
+      toast.success("File deleted successfully");
       refetch();
     },
     onError: (error) => {
-      toast({ title: "Error", description: error.message, variant: "destructive" });
+      toast.error(error.message);
     }
   });
   
   const renameFileMutation = trpc.file.rename.useMutation({
     onSuccess: () => {
-      toast({ title: "Success", description: "File renamed successfully" });
+      toast.success("File renamed successfully");
       refetch();
     },
     onError: (error) => {
-      toast({ title: "Error", description: error.message, variant: "destructive" });
+      toast.error(error.message);
     }
   });
   
@@ -193,9 +180,9 @@ export default function FolderPage() {
     id: folder.id,
     name: folder.name,
     type: "folder" as const,
-    parentFolderId: folder.parentFolderId,
-    itemCount: (folder.childFolders?.length || 0) + (folder.files?.length || 0),
+    itemCount: (folder._count.childFolders || 0) + (folder._count.files || 0),
     lastModified: new Date().toISOString(),
+    color: folder.color || "#3b82f6",
   });
   
   const transformFileToFileItem = (file: ApiFile): FileItem => ({
@@ -203,7 +190,7 @@ export default function FolderPage() {
     name: file.name,
     type: "file" as const,
     fileType: file.type.split('/')[1] || file.name.split('.').pop(),
-    size: formatFileSize(file.size),
+    size: formatFileSize(file.size || 0),
     uploadedBy: "Unknown",
     uploadedAt: new Date().toISOString(),
   });
@@ -290,12 +277,8 @@ export default function FolderPage() {
 
 
   const handleItemAction = async (action: string, item: FileItem) => {
-    if (!isTeacher && ["rename", "delete", "move"].includes(action)) {
-      toast({
-        title: "Permission denied",
-        description: "Only teachers can modify files.",
-        variant: "destructive"
-      });
+    if (!isTeacher && ["modify", "delete", "move"].includes(action)) {
+      toast.error("Permission denied");
       return;
     }
     
@@ -304,35 +287,23 @@ export default function FolderPage() {
         try {
           const result = await getSignedUrlMutation.mutateAsync({ fileId: item.id });
           window.open(result.url, '_blank');
-          toast({
-            title: "Download started",
-            description: `Downloading ${item.name}...`,
-          });
+          toast.success("Download started");
+          toast.success(`Downloading ${item.name}...`);
         } catch (error) {
-          toast({
-            title: "Download failed",
-            description: "Unable to download file.",
-            variant: "destructive"
-          });
+          toast.error("Download failed");
+          toast.error("Unable to download file.");
         }
         break;
       case "share":
         try {
           const result = await getSignedUrlMutation.mutateAsync({ fileId: item.id });
           await navigator.clipboard.writeText(result.url);
-          toast({
-            title: "Share link copied",
-            description: `Share link for ${item.name} copied to clipboard.`,
-          });
+          toast.success("Share link copied");
         } catch (error) {
-          toast({
-            title: "Share failed",
-            description: "Unable to create share link.",
-            variant: "destructive"
-          });
+          toast.error("Share failed");
         }
         break;
-      case "rename":
+      case "modify":
         setRenameItem(item);
         setIsRenameOpen(true);
         break;
@@ -353,20 +324,26 @@ export default function FolderPage() {
     }
   };
 
-  const handleRename = (item: FileItem, newName: string) => {
+  const handleModify = (item: FileItem, newName: string, color?: string) => {
     if (item.type === "folder") {
-      renameFolderMutation.mutate({ classId, folderId: item.id, newName });
+      renameFolderMutation.mutate({ 
+        classId, 
+        folderId: item.id, 
+        name: newName,
+        color: color || getFolderColor(item.id) // Keep existing color if not provided
+      });
     } else {
       renameFileMutation.mutate({ classId, fileId: item.id, newName });
     }
   };
 
-  const handleCreateFolder = async (folderData: { name: string; description?: string }) => {
+  const handleCreateFolder = async (folderData: { name: string; description?: string; color?: string }) => {
     try {
       await createFolderMutation.mutateAsync({
         classId,
         name: folderData.name,
-        parentFolderId: folderId
+        parentFolderId: folderId,
+        color: folderData.color || "#3b82f6" // Default blue color
       });
     } catch (error) {
       // Error handling is done by the mutation hook
@@ -374,7 +351,7 @@ export default function FolderPage() {
     }
   };
 
-  const handleUploadFiles = (files: any[]) => {
+  const handleUploadFiles = (files: RouterInputs['folder']['uploadFiles']['files']) => {
     const apiFiles = files.map(file => ({
       name: file.name,
       type: file.type,
@@ -394,10 +371,7 @@ export default function FolderPage() {
     if (!item) return;
     
     // For now, just show a toast since we don't have move mutations set up
-    toast({
-      title: "Move not implemented",
-      description: "File moving functionality will be available soon.",
-    });
+    toast.error("File moving functionality will be available soon.");
   };
 
   const selectedCount = selectedItems.length;
@@ -434,9 +408,9 @@ export default function FolderPage() {
                 variant="outline" 
                 size="sm" 
                 onClick={() => setCreateFolderModalOpen(true)}
-                disabled={createFolderMutation.isLoading}
+                disabled={createFolderMutation.isPending}
               >
-                {createFolderMutation.isLoading ? (
+                {createFolderMutation.isPending ? (
                   <Loader2 className="h-4 w-4 mr-2 animate-spin" />
                 ) : (
                   <FolderPlus className="h-4 w-4 mr-2" />
@@ -447,8 +421,8 @@ export default function FolderPage() {
                 currentFolder={folderId}
                 onFilesUploaded={handleUploadFiles}
               >
-                <Button size="sm" disabled={uploadFilesMutation.isLoading}>
-                  {uploadFilesMutation.isLoading ? (
+                <Button size="sm" disabled={uploadFilesMutation.isPending}>
+                  {uploadFilesMutation.isPending ? (
                     <Loader2 className="h-4 w-4 mr-2 animate-spin" />
                   ) : (
                     <Upload className="h-4 w-4 mr-2" />
@@ -613,8 +587,6 @@ export default function FolderPage() {
                     key={item.id}
                     item={item}
                     getFileIcon={getFileIcon}
-                    getFolderColor={getFolderColor}
-                    onFolderClick={handleFolderClick}
                     onItemAction={handleItemAction}
                     onFileClick={handleFileClick}
                     classId={classId}
@@ -639,6 +611,7 @@ export default function FolderPage() {
                 <TableBody>
                   {filteredItems.map((item) => (
                     <DraggableTableRow
+                      classId={classId}
                       key={item.id}
                       item={item}
                       getFolderColor={getFolderColor}
@@ -646,7 +619,6 @@ export default function FolderPage() {
                       formatDate={formatDate}
                       onFolderClick={handleFolderClick}
                       onItemAction={handleItemAction}
-                      onMoveItem={handleMoveItem}
                       onFileClick={handleFileClick}
                     />
                   ))}
@@ -671,8 +643,8 @@ export default function FolderPage() {
                   currentFolder={folderId}
                   onFilesUploaded={handleUploadFiles}
                 >
-                  <Button disabled={uploadFilesMutation.isLoading}>
-                    {uploadFilesMutation.isLoading ? (
+                  <Button disabled={uploadFilesMutation.isPending}>
+                    {uploadFilesMutation.isPending ? (
                       <Loader2 className="h-4 w-4 mr-2 animate-spin" />
                     ) : (
                       <Upload className="h-4 w-4 mr-2" />
@@ -683,9 +655,9 @@ export default function FolderPage() {
                 <Button 
                   variant="outline"
                   onClick={() => setCreateFolderModalOpen(true)}
-                  disabled={createFolderMutation.isLoading}
+                  disabled={createFolderMutation.isPending}
                 >
-                  {createFolderMutation.isLoading ? (
+                  {createFolderMutation.isPending ? (
                     <Loader2 className="h-4 w-4 mr-2 animate-spin" />
                   ) : (
                     <FolderPlus className="h-4 w-4 mr-2" />
@@ -714,7 +686,7 @@ export default function FolderPage() {
           item={renameItem}
           isOpen={isRenameOpen}
           onClose={() => setIsRenameOpen(false)}
-          onRename={handleRename}
+          onRename={handleModify}
         />
 
         {/* Create Folder Modal */}
@@ -722,7 +694,7 @@ export default function FolderPage() {
           open={createFolderModalOpen}
           onOpenChange={setCreateFolderModalOpen}
           onFolderCreated={handleCreateFolder}
-          isLoading={createFolderMutation.isLoading}
+          isLoading={createFolderMutation.isPending}
         />
       </PageLayout>
     </DndProvider>

@@ -3,11 +3,10 @@
 import { useEffect } from "react";
 import { PageLayout } from "@/components/ui/page-layout";
 import { Skeleton } from "@/components/ui/skeleton";
-import { useGetAllClassesQuery } from "@/lib/api";
-import { useAuthCheckQuery } from "@/lib/api/auth";
 import { setTeacher } from "@/store/appSlice";
 import { useParams } from "next/navigation";
 import { useDispatch } from "react-redux";
+import { trpc } from "@/lib/trpc";
 
 export default function ClassLayout({
   children,
@@ -17,10 +16,10 @@ export default function ClassLayout({
   const { id } = useParams();
 
   const dispatch = useDispatch();
-  const { data: userData, isLoading: isUserLoading, error: isUserError} = useAuthCheckQuery();
+  const { data: userData, isLoading: isUserLoading, error: isUserError} = trpc.auth.check.useQuery();
   
   // add computed flags
-  const {data: classData, isLoading: isClassLoading, error: isClassError} = useGetAllClassesQuery();
+  const {data: classData, isLoading: isClassLoading, error: isClassError} = trpc.class.getAll.useQuery();
 
   // Set teacher status based on class data
   useEffect(() => {

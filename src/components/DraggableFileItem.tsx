@@ -27,8 +27,8 @@ import {
   DialogTitle,
   DialogFooter,
 } from "@/components/ui/dialog";
-import { trpc } from "@/lib/trpc";
-import { useToast } from "@/hooks/use-toast";
+import { RouterOutputs, trpc } from "@/lib/trpc";
+import { toast } from "sonner";
 import {
   Download,
   MoreHorizontal,
@@ -39,10 +39,15 @@ import {
   Folder,
   GripVertical,
   Check,
-  X
+  X,
+  Move
 } from "lucide-react";
+import ColorPicker from "@/components/ui/color-picker";
+import { MoveItemDropdown } from "@/components/MoveItemDropdown";
 
-interface FileItem {
+type ApiFile = NonNullable<RouterOutputs["folder"]["getRootFolder"]>["files"][number];
+
+export interface FileItem {
   id: string;
   name: string;
   type: "file" | "folder";
@@ -58,11 +63,10 @@ interface FileItem {
 interface DraggableFileItemProps {
   item: FileItem;
   getFileIcon: (fileType: string, size?: "sm" | "lg") => React.ReactNode;
-  getFolderColor: (folderId: string) => string;
-  onFolderClick: (folderName: string) => void;
   onItemAction: (action: string, item: FileItem) => void;
   onFileClick?: (file: FileItem) => void;
   classId: string;
+  currentFolderId?: string;
   readonly?: boolean;
   onRefetch?: () => void;
 }
@@ -70,15 +74,13 @@ interface DraggableFileItemProps {
 export function DraggableFileItem({ 
   item, 
   getFileIcon, 
-  getFolderColor, 
-  onFolderClick, 
   onItemAction,
   onFileClick,
   classId,
+  currentFolderId,
   readonly = false,
   onRefetch
 }: DraggableFileItemProps) {
-  const { toast } = useToast();
   const [{ isDragging }, drag] = useDrag({
     type: "file",
     item: { id: item.id, name: item.name, type: item.type },
@@ -90,50 +92,51 @@ export function DraggableFileItem({
   // Local state for dialogs
   const [showRenameDialog, setShowRenameDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const [newName, setNewName] = useState(item.name);
 
   // tRPC mutations
   const renameFileMutation = trpc.file.rename.useMutation({
     onSuccess: () => {
-      toast({ title: "Success", description: "File renamed successfully" });
+      toast.success("File renamed successfully");
       setShowRenameDialog(false);
       onRefetch?.();
     },
     onError: (error) => {
-      toast({ title: "Error", description: error.message, variant: "destructive" });
+      toast.error(error.message);
     }
   });
 
-  const renameFolderMutation = trpc.folder.rename.useMutation({
+  const renameFolderMutation = trpc.folder.update.useMutation({
     onSuccess: () => {
-      toast({ title: "Success", description: "Folder renamed successfully" });
+      toast.success("Folder renamed successfully");
       setShowRenameDialog(false);
       onRefetch?.();
     },
     onError: (error) => {
-      toast({ title: "Error", description: error.message, variant: "destructive" });
+      toast.error(error.message);
     }
   });
 
   const deleteFileMutation = trpc.file.delete.useMutation({
     onSuccess: () => {
-      toast({ title: "Success", description: "File deleted successfully" });
+      toast.success("File deleted successfully");
       setShowDeleteDialog(false);
       onRefetch?.();
     },
     onError: (error) => {
-      toast({ title: "Error", description: error.message, variant: "destructive" });
+      toast.error(error.message);
     }
   });
 
   const deleteFolderMutation = trpc.folder.delete.useMutation({
     onSuccess: () => {
-      toast({ title: "Success", description: "Folder deleted successfully" });
+      toast.success("Folder deleted successfully");
       setShowDeleteDialog(false);
       onRefetch?.();
     },
     onError: (error) => {
-      toast({ title: "Error", description: error.message, variant: "destructive" });
+      toast.error(error.message);
     }
   });
 
@@ -146,8 +149,6 @@ export function DraggableFileItem({
 
     if (item.type === "file") {
       renameFileMutation.mutate({ classId, fileId: item.id, newName: newName.trim() });
-    } else if (item.type === "folder") {
-      renameFolderMutation.mutate({ classId, folderId: item.id, newName: newName.trim() });
     }
   };
 
@@ -159,12 +160,12 @@ export function DraggableFileItem({
     }
   };
 
-  const isLoading = renameFileMutation.isLoading || renameFolderMutation.isLoading || 
-                   deleteFileMutation.isLoading || deleteFolderMutation.isLoading;
+  const isLoading = renameFileMutation.isPending || renameFolderMutation.isPending || 
+                   deleteFileMutation.isPending || deleteFolderMutation.isPending;
 
   return (
     <div 
-      ref={drag} 
+      ref={drag as unknown as React.Ref<HTMLDivElement>} 
       className={`group relative rounded-lg border border-transparent hover:border-border hover:shadow-sm transition-all duration-200 bg-background ${
         isDragging ? 'opacity-50' : 'opacity-100'
       }`}
@@ -182,17 +183,11 @@ export function DraggableFileItem({
 
         {/* Icon and Star */}
         <div className="relative mb-2 flex justify-center">
-          {item.type === "folder" ? (
-            <div className="relative">
-              <Folder className={`h-8 w-8 ${getFolderColor(item.id)} fill-current drop-shadow-sm`} />
-            </div>
-          ) : (
             <div className="relative">
               <div className="mb-2">
                 {getFileIcon(item.fileType!, "lg")}
               </div>
             </div>
-          )}
         </div>
         
         {/* File Name */}
@@ -211,7 +206,7 @@ export function DraggableFileItem({
 
       {/* Actions Menu */}
       <div className="absolute top-1 right-1 opacity-0 group-hover:opacity-100 transition-opacity">
-        <DropdownMenu>
+        <DropdownMenu open={dropdownOpen} onOpenChange={setDropdownOpen}>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" size="sm" className="h-6 w-6 p-0 bg-background/80 backdrop-blur-sm" onClick={(e) => e.stopPropagation()}>
               <MoreHorizontal className="h-3 w-3" />
@@ -246,6 +241,19 @@ export function DraggableFileItem({
                   <Edit className="mr-2 h-4 w-4" />
                   Rename
                 </DropdownMenuItem>
+                <MoveItemDropdown
+                  itemId={item.id}
+                  itemName={item.name}
+                  itemType={item.type}
+                  classId={classId}
+                  currentFolderId={currentFolderId}
+                  onSuccess={onRefetch}
+                  onOpenChange={(open) => {
+                    if (open) {
+                      setDropdownOpen(false);
+                    }
+                  }}
+                />
                 <DropdownMenuSeparator />
                 <DropdownMenuItem 
                   onClick={() => setShowDeleteDialog(true)}
@@ -265,7 +273,7 @@ export function DraggableFileItem({
       <Dialog open={showRenameDialog} onOpenChange={setShowRenameDialog}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Rename {item.type}</DialogTitle>
+            <DialogTitle>{item.type === "folder" ? "Edit folder" : "Rename file"}</DialogTitle>
           </DialogHeader>
           <div className="space-y-4">
             <div className="space-y-2">
@@ -283,6 +291,7 @@ export function DraggableFileItem({
                 placeholder="Enter new name"
               />
             </div>
+
           </div>
           <DialogFooter>
             <Button 
@@ -299,7 +308,7 @@ export function DraggableFileItem({
               onClick={handleRename}
               disabled={isLoading || !newName.trim()}
             >
-              {isLoading ? "Renaming..." : "Rename"}
+              {isLoading ? (item.type === "folder" ? "Saving..." : "Renaming...") : (item.type === "folder" ? "Save Changes" : "Rename")}
             </Button>
           </DialogFooter>
         </DialogContent>

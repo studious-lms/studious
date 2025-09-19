@@ -189,19 +189,6 @@ export default function Attendance() {
       },
     },
     {
-      accessorKey: "status",
-      header: "Status",
-      cell: ({ row }) => {
-        const status = row.getValue("status") as string;
-        const variant = status === "completed" ? "default" : status === "ongoing" ? "secondary" : "outline";
-        return (
-          <Badge variant={variant}>
-            {status === "completed" ? "Completed" : status === "ongoing" ? "Ongoing" : "Upcoming"}
-          </Badge>
-        );
-      },
-    },
-    {
       id: "attendance",
       header: "Attendance",
       cell: ({ row }) => (
@@ -530,6 +517,41 @@ export default function Attendance() {
           </Button>}
         </div>
       </div>
+      <div className="flex flex-col lg:flex-row gap-6">
+      {/* All Events Table */}
+      <Card className="mb-6">
+        <CardHeader>
+          <CardTitle>All Events</CardTitle>
+          <p className="text-sm text-muted-foreground">
+            Complete history of class events and attendance records
+          </p>
+        </CardHeader>
+        <CardContent>
+          {tableData.length === 0 ? (
+            <EmptyState
+              icon={CalendarIcon}
+              title="No events found"
+              description="Create your first event to start tracking attendance"
+            />
+          ) : (
+            <DataTable
+              columns={columns}
+              data={tableData}
+              searchKey="name"
+              searchPlaceholder="Search events..."
+              onRowClick={(row) => {
+                // Set the selected event and date when row is clicked
+                setSelectedEvent(row.id);
+                const event = allEvents.find(e => e.id === row.id);
+                if (event) {
+                  setSelectedDate(new Date(event.startTime));
+                }
+              }}
+              pageSize={10}
+            />
+          )}
+        </CardContent>
+      </Card>
       {/* Events List with inline date picker */}
       <Card className="mb-6">
         <CardHeader>
@@ -634,41 +656,7 @@ export default function Attendance() {
             )}
           </CardContent>
         </Card>
-
-      {/* All Events Table */}
-      <Card className="mb-6">
-        <CardHeader>
-          <CardTitle>All Events</CardTitle>
-          <p className="text-sm text-muted-foreground">
-            Complete history of class events and attendance records
-          </p>
-        </CardHeader>
-        <CardContent>
-          {tableData.length === 0 ? (
-            <EmptyState
-              icon={CalendarIcon}
-              title="No events found"
-              description="Create your first event to start tracking attendance"
-            />
-          ) : (
-            <DataTable
-              columns={columns}
-              data={tableData}
-              searchKey="name"
-              searchPlaceholder="Search events..."
-              onRowClick={(row) => {
-                // Set the selected event and date when row is clicked
-                setSelectedEvent(row.id);
-                const event = allEvents.find(e => e.id === row.id);
-                if (event) {
-                  setSelectedDate(new Date(event.startTime));
-                }
-              }}
-              pageSize={10}
-            />
-          )}
-        </CardContent>
-      </Card>
+      </div>
 
       {/* Event Summary and Student Roster */}
       {showStudentRoster && (
@@ -794,9 +782,9 @@ export default function Attendance() {
                           Present
                         </Button>
                         <Button
-                          variant={attendance[student.id] === "late" ? "default" : "outline"}
+                          variant={attendance[student.id] === "late" ? "destructive" : "outline"}
                           size="sm"
-                          className="text-xs py-1 h-7"
+                          className={`text-xs py-1 h-7 ${attendance[student.id] === "late" &&"bg-yellow-500 text-yellow-500-foreground hover:bg-yellow-600 hover:text-yellow-600-foreground"}`}
                           onClick={() => updateAttendance(student.id, "late")}
                         >
                           Late

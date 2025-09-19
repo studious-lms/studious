@@ -9,7 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { useToast } from "@/hooks/use-toast";
+import { toast } from "sonner";
 import { Bell, Plus } from "lucide-react";
 import { useParams } from "next/navigation";
 import { useSession } from "@/hooks/use-session";
@@ -34,7 +34,6 @@ export function CreateAnnouncementModal({ children, onAnnouncementCreated }: Cre
     scheduledTime: "",
     expiryDate: ""
   });
-const { toast } = useToast();
 const { user } = useSession();
 const params = useParams();
 const classId = params.id as string;
@@ -51,11 +50,7 @@ const classId = params.id as string;
     e.preventDefault();
     
     if (!formData.title || !formData.content) {
-      toast({
-        title: "Error",
-        description: "Please fill in all required fields.",
-        variant: "destructive"
-      });
+      toast.error("Please fill in all required fields.");
       return;
     }
 
@@ -87,12 +82,7 @@ const classId = params.id as string;
 
     onAnnouncementCreated?.(newAnnouncement);
     
-    toast({
-      title: "Announcement Created",
-      description: formData.scheduledDate 
-        ? `Announcement scheduled for ${publishDate.toLocaleDateString()}`
-        : "Announcement published successfully."
-    });
+    toast.success("Announcement Created");
 
     setFormData({
       title: "",

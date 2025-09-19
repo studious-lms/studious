@@ -30,13 +30,12 @@ import {
 import { cn } from "@/lib/utils";
 import { CalendarIcon, Clock, MapPin, Plus, School, User } from "lucide-react";
 import ColorPicker from "@/components/ui/color-picker";
-import { useCreateEventMutation, useUpdateEventMutation } from "@/lib/api/calendar";
-import { useGetAllClassesQuery } from "@/lib/api/class";
+import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import type { RouterOutputs } from "@/lib/trpc";
 
 type AttendanceRecord = RouterOutputs["attendance"]["get"][number];
-type Event = NonNullable<AttendanceRecord["event"]>;
+type Event = NonNullable<AttendanceRecord["event"]> & { remarks: string }; // @WARNING: this should be double checked
 
 interface EventFormData {
   name: string;
@@ -56,7 +55,7 @@ interface UniversalEventModalProps {
   onOpenChange: (open: boolean) => void;
   event?: Event | null; // Optional - if provided, we're editing; if not, we're creating
   defaultClassId?: string; // If provided, defaults to class event for this class
-  onEventCreated?: (event: any) => void;
+  onEventCreated?: (event: RouterOutputs["event"]["create"]) => void;
   onEventUpdated?: () => void;
   children?: React.ReactNode; // For trigger button when creating
 }
@@ -85,9 +84,9 @@ export function UniversalEventModal({
 }: UniversalEventModalProps) {
   const [formData, setFormData] = useState<EventFormData>(defaultFormData);
 
-  const createEventMutation = useCreateEventMutation();
-  const updateEventMutation = useUpdateEventMutation();
-  const { data: classesData } = useGetAllClassesQuery();
+  const createEventMutation = trpc.event.create.useMutation();
+  const updateEventMutation = trpc.event.update.useMutation();
+  const { data: classesData } = trpc.class.getAll.useQuery();
 
   const isEditing = !!event;
   const isLoading = createEventMutation.isPending || updateEventMutation.isPending;
@@ -103,14 +102,14 @@ export function UniversalEventModal({
       const endDate = new Date(event.endTime);
       
       setFormData({
-        name: event.name,
+        name: event.name || "",
         startDate: startDate,
         startTime: format(startDate, "HH:mm"),
         endDate: endDate,
         endTime: format(endDate, "HH:mm"),
         location: event.location || "",
         remarks: event.remarks || "",
-        color: event.color,
+        color: event.color || "#3B82F6",
         isClassEvent: true, // Assume existing events are class events
         selectedClassId: defaultClassId || ""
       });
@@ -158,13 +157,15 @@ export function UniversalEventModal({
       if (isEditing && event) {
         // Update existing event
         await updateEventMutation.mutateAsync({
-          eventId: event.id,
-          name: formData.name,
+          id: event.id,
+          data: {
+            name: formData.name,
           startTime: startDateTime.toISOString(),
           endTime: endDateTime.toISOString(),
           location: formData.location || undefined,
           remarks: formData.remarks || undefined,
           color: formData.color
+          }
         });
 
         toast.success("Event updated successfully");
@@ -206,7 +207,7 @@ export function UniversalEventModal({
     }
   };
 
-  const selectedClass = teacherClasses.find(c => c.id === formData.selectedClassId);
+  const selectedClass = teacherClasses.find((c: RouterOutputs["class"]["getAll"]['teacherInClass'][number]) => c.id === formData.selectedClassId);
 
   return (
     <>
@@ -272,7 +273,7 @@ export function UniversalEventModal({
                     <SelectValue placeholder="Choose a class" />
                   </SelectTrigger>
                   <SelectContent>
-                    {teacherClasses.map((classItem) => (
+                    {teacherClasses.map((classItem: RouterOutputs["class"]["getAll"]['teacherInClass'][number]) => (
                       <SelectItem key={classItem.id} value={classItem.id}>
                         <div className="flex items-center gap-2">
                           <div 
@@ -454,7 +455,7 @@ export function UniversalEventModal({
 // Convenience wrapper for creating events with a default trigger button
 interface CreateEventButtonProps {
   defaultClassId?: string; // If provided, defaults to class event
-  onEventCreated?: (event: any) => void;
+  onEventCreated?: (event: RouterOutputs["event"]["create"]) => void;
   children?: React.ReactNode;
 }
 

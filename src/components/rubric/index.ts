@@ -3,4 +3,4 @@ export { PerformanceLevelEditor } from './PerformanceLevelEditor';
 export { RubricPreview } from './RubricPreview';
 export { Rubric } from './Rubric';
 export type { RubricCriterion, PerformanceLevel } from './RubricCriterionEditor';
-export type { RubricCriteria, RubricLevel, RubricProps } from './Rubric';
+export type { RubricLevel, RubricProps } from './Rubric';

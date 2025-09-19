@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -9,9 +9,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { PlusCircle, BookOpen, Beaker, Presentation, FileText, CheckSquare, School, Edit3 } from "lucide-react";
-import { Rubric, type RubricCriteria } from "../rubric";
+import { type RubricCriteria, type MarkScheme } from "@/lib/types/rubric";
 import { trpc } from "@/lib/trpc";
-import { useToast } from "@/hooks/use-toast";
+import { Rubric } from "@/components/rubric";
+import { toast } from "sonner";
 
 interface RubricTemplate {
   id: string;
@@ -26,25 +27,58 @@ interface RubricModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   classId: string;
-  existingRubric?: any; // For editing existing rubrics
+  existingRubric?: MarkScheme; // For editing existing rubrics
 }
 
 const rubricTemplates = {
-  ib_knowledge: {
-    name: "IB Knowledge",
-    description: "International Baccalaureate assessment criteria",
+  ib_complete: {
+    name: "IB Complete Assessment",
+    description: "International Baccalaureate assessment with four criteria",
     category: "IB",
-    totalPoints: 8,
+    totalPoints: 32,
     criteria: [
       {
-        id: "1",
-        title: "Knowledge and Understanding",
-        description: "Assessment of subject-specific content knowledge",
+        id: "a",
+        title: "Criterion A - Knowledge and Understanding",
+        description: "Demonstrate knowledge and understanding of subject-specific content and concepts",
         levels: [
-          { id: "1", name: "Level 7-8", description: "Excellent knowledge and understanding", points: 8, color: "#059669" },
-          { id: "2", name: "Level 5-6", description: "Substantial knowledge and understanding", points: 6, color: "#2563eb" },
-          { id: "3", name: "Level 3-4", description: "Adequate knowledge and understanding", points: 4, color: "#ca8a04" },
-          { id: "4", name: "Level 1-2", description: "Limited knowledge and understanding", points: 2, color: "#dc2626" }
+          { id: "a4", name: "Level 7-8", description: "Excellent knowledge and understanding", points: 8, color: "#4CAF50" },
+          { id: "a3", name: "Level 5-6", description: "Substantial knowledge and understanding", points: 6, color: "#8BC34A" },
+          { id: "a2", name: "Level 3-4", description: "Adequate knowledge and understanding", points: 4, color: "#FFEB3B" },
+          { id: "a1", name: "Level 1-2", description: "Limited knowledge and understanding", points: 2, color: "#FF9800" }
+        ]
+      },
+      {
+        id: "b",
+        title: "Criterion B - Application and Analysis",
+        description: "Apply knowledge and understanding to analyze and evaluate information",
+        levels: [
+          { id: "b4", name: "Level 7-8", description: "Excellent application and analysis", points: 8, color: "#4CAF50" },
+          { id: "b3", name: "Level 5-6", description: "Substantial application and analysis", points: 6, color: "#8BC34A" },
+          { id: "b2", name: "Level 3-4", description: "Adequate application and analysis", points: 4, color: "#FFEB3B" },
+          { id: "b1", name: "Level 1-2", description: "Limited application and analysis", points: 2, color: "#FF9800" }
+        ]
+      },
+      {
+        id: "c",
+        title: "Criterion C - Synthesis and Evaluation",
+        description: "Synthesize information from multiple sources and evaluate different perspectives",
+        levels: [
+          { id: "c4", name: "Level 7-8", description: "Excellent synthesis and evaluation", points: 8, color: "#4CAF50" },
+          { id: "c3", name: "Level 5-6", description: "Substantial synthesis and evaluation", points: 6, color: "#8BC34A" },
+          { id: "c2", name: "Level 3-4", description: "Adequate synthesis and evaluation", points: 4, color: "#FFEB3B" },
+          { id: "c1", name: "Level 1-2", description: "Limited synthesis and evaluation", points: 2, color: "#FF9800" }
+        ]
+      },
+      {
+        id: "d",
+        title: "Criterion D - Communication and Organization",
+        description: "Communicate ideas clearly and organize work effectively",
+        levels: [
+          { id: "d4", name: "Level 7-8", description: "Excellent communication and organization", points: 8, color: "#4CAF50" },
+          { id: "d3", name: "Level 5-6", description: "Substantial communication and organization", points: 6, color: "#8BC34A" },
+          { id: "d2", name: "Level 3-4", description: "Adequate communication and organization", points: 4, color: "#FFEB3B" },
+          { id: "d1", name: "Level 1-2", description: "Limited communication and organization", points: 2, color: "#FF9800" }
         ]
       }
     ]
@@ -73,17 +107,50 @@ const rubricTemplates = {
     name: "Essay Writing",
     description: "Comprehensive essay evaluation rubric",
     category: "Essay",
-    totalPoints: 20,
+    totalPoints: 100,
     criteria: [
       {
         id: "1",
         title: "Content and Ideas",
-        description: "Quality of content and depth of ideas",
+        description: "Quality of content, depth of ideas, and relevance to topic",
         levels: [
-          { id: "1", name: "Excellent", description: "Sophisticated and insightful ideas", points: 20, color: "#059669" },
-          { id: "2", name: "Proficient", description: "Clear and well-developed ideas", points: 15, color: "#2563eb" },
-          { id: "3", name: "Developing", description: "Ideas present but lack depth", points: 10, color: "#ca8a04" },
-          { id: "4", name: "Beginning", description: "Unclear or underdeveloped ideas", points: 5, color: "#dc2626" }
+          { id: "1a", name: "Excellent", description: "Sophisticated, insightful ideas with exceptional depth", points: 25, color: "#059669" },
+          { id: "1b", name: "Proficient", description: "Clear, well-developed ideas with good depth", points: 20, color: "#2563eb" },
+          { id: "1c", name: "Developing", description: "Ideas present but lack depth or clarity", points: 15, color: "#ca8a04" },
+          { id: "1d", name: "Beginning", description: "Unclear or underdeveloped ideas", points: 10, color: "#dc2626" }
+        ]
+      },
+      {
+        id: "2",
+        title: "Organization and Structure",
+        description: "Logical flow, transitions, and overall essay structure",
+        levels: [
+          { id: "2a", name: "Excellent", description: "Clear, logical structure with smooth transitions", points: 25, color: "#059669" },
+          { id: "2b", name: "Proficient", description: "Generally well-organized with adequate transitions", points: 20, color: "#2563eb" },
+          { id: "2c", name: "Developing", description: "Some organizational issues, unclear transitions", points: 15, color: "#ca8a04" },
+          { id: "2d", name: "Beginning", description: "Poor organization, confusing structure", points: 10, color: "#dc2626" }
+        ]
+      },
+      {
+        id: "3",
+        title: "Language and Style",
+        description: "Grammar, vocabulary, sentence structure, and writing style",
+        levels: [
+          { id: "3a", name: "Excellent", description: "Sophisticated language with varied sentence structure", points: 25, color: "#059669" },
+          { id: "3b", name: "Proficient", description: "Clear language with good sentence variety", points: 20, color: "#2563eb" },
+          { id: "3c", name: "Developing", description: "Generally clear with some errors or repetition", points: 15, color: "#ca8a04" },
+          { id: "3d", name: "Beginning", description: "Frequent errors that interfere with meaning", points: 10, color: "#dc2626" }
+        ]
+      },
+      {
+        id: "4",
+        title: "Evidence and Support",
+        description: "Use of examples, citations, and supporting evidence",
+        levels: [
+          { id: "4a", name: "Excellent", description: "Strong, relevant evidence with proper citations", points: 25, color: "#059669" },
+          { id: "4b", name: "Proficient", description: "Good use of evidence with adequate support", points: 20, color: "#2563eb" },
+          { id: "4c", name: "Developing", description: "Some evidence provided but may lack relevance", points: 15, color: "#ca8a04" },
+          { id: "4d", name: "Beginning", description: "Little or no supporting evidence", points: 10, color: "#dc2626" }
         ]
       }
     ]
@@ -92,17 +159,50 @@ const rubricTemplates = {
     name: "Presentation",
     description: "Oral presentation evaluation rubric",
     category: "Presentation",
-    totalPoints: 25,
+    totalPoints: 100,
     criteria: [
       {
         id: "1",
         title: "Content Knowledge",
-        description: "Understanding of subject matter",
+        description: "Understanding and accuracy of subject matter",
         levels: [
-          { id: "1", name: "Exceptional", description: "Comprehensive understanding", points: 25, color: "#059669" },
-          { id: "2", name: "Proficient", description: "Solid understanding", points: 20, color: "#2563eb" },
-          { id: "3", name: "Developing", description: "Basic understanding", points: 15, color: "#ca8a04" },
-          { id: "4", name: "Beginning", description: "Minimal understanding", points: 10, color: "#dc2626" }
+          { id: "1a", name: "Exceptional", description: "Comprehensive, accurate understanding with depth", points: 25, color: "#059669" },
+          { id: "1b", name: "Proficient", description: "Solid understanding with minor gaps", points: 20, color: "#2563eb" },
+          { id: "1c", name: "Developing", description: "Basic understanding with some inaccuracies", points: 15, color: "#ca8a04" },
+          { id: "1d", name: "Beginning", description: "Minimal or inaccurate understanding", points: 10, color: "#dc2626" }
+        ]
+      },
+      {
+        id: "2",
+        title: "Organization and Structure",
+        description: "Logical flow and clear structure of presentation",
+        levels: [
+          { id: "2a", name: "Exceptional", description: "Clear, logical structure with smooth transitions", points: 25, color: "#059669" },
+          { id: "2b", name: "Proficient", description: "Generally well-organized with adequate flow", points: 20, color: "#2563eb" },
+          { id: "2c", name: "Developing", description: "Some organizational issues, unclear transitions", points: 15, color: "#ca8a04" },
+          { id: "2d", name: "Beginning", description: "Poor organization, confusing structure", points: 10, color: "#dc2626" }
+        ]
+      },
+      {
+        id: "3",
+        title: "Delivery and Communication",
+        description: "Speaking skills, eye contact, and audience engagement",
+        levels: [
+          { id: "3a", name: "Exceptional", description: "Confident, engaging delivery with excellent communication", points: 25, color: "#059669" },
+          { id: "3b", name: "Proficient", description: "Clear delivery with good audience connection", points: 20, color: "#2563eb" },
+          { id: "3c", name: "Developing", description: "Adequate delivery with some hesitation", points: 15, color: "#ca8a04" },
+          { id: "3d", name: "Beginning", description: "Poor delivery, difficult to understand", points: 10, color: "#dc2626" }
+        ]
+      },
+      {
+        id: "4",
+        title: "Visual Aids and Materials",
+        description: "Quality and effectiveness of supporting materials",
+        levels: [
+          { id: "4a", name: "Exceptional", description: "Excellent visual aids that enhance presentation", points: 25, color: "#059669" },
+          { id: "4b", name: "Proficient", description: "Good visual aids that support content", points: 20, color: "#2563eb" },
+          { id: "4c", name: "Developing", description: "Basic visual aids with some issues", points: 15, color: "#ca8a04" },
+          { id: "4d", name: "Beginning", description: "Poor or distracting visual aids", points: 10, color: "#dc2626" }
         ]
       }
     ]
@@ -125,14 +225,10 @@ export function RubricModal({ open, onOpenChange, classId, existingRubric }: Rub
   const [rubricName, setRubricName] = useState("");
   const [rubricDescription, setRubricDescription] = useState("");
   const [rubricCategory, setRubricCategory] = useState("");
-  const { toast } = useToast();
 
   const createMarkScheme = trpc.class.createMarkScheme.useMutation({
     onSuccess: () => {
-      toast({
-        title: "Success",
-        description: "Rubric created successfully",
-      });
+      toast.success("Rubric created successfully");
       onOpenChange(false);
       // Reset form
       setSelectedTemplate("");
@@ -142,20 +238,13 @@ export function RubricModal({ open, onOpenChange, classId, existingRubric }: Rub
       setRubricCategory("");
     },
     onError: (error) => {
-      toast({
-        title: "Error",
-        description: error.message || "Failed to create rubric",
-        variant: "destructive",
-      });
+      toast.error(error.message || "Failed to create rubric");
     },
   });
 
   const updateMarkScheme = trpc.class.updateMarkScheme.useMutation({
     onSuccess: () => {
-      toast({
-        title: "Success",
-        description: "Rubric updated successfully",
-      });
+        toast.success("Rubric updated successfully");
       onOpenChange(false);
       // Reset form
       setSelectedTemplate("");
@@ -165,16 +254,12 @@ export function RubricModal({ open, onOpenChange, classId, existingRubric }: Rub
       setRubricCategory("");
     },
     onError: (error) => {
-      toast({
-        title: "Error",
-        description: error.message || "Failed to update rubric",
-        variant: "destructive",
-      });
+      toast.error(error.message || "Failed to update rubric");
     },
   });
 
   // Load existing rubric data when editing
-  React.useEffect(() => {
+  useEffect(() => {
     if (existingRubric && open) {
       try {
         const parsed = JSON.parse(existingRubric.structured);
@@ -215,16 +300,12 @@ export function RubricModal({ open, onOpenChange, classId, existingRubric }: Rub
 
   const handleCreate = () => {
     if (!rubricName.trim() || rubricCriteria.length === 0) {
-      toast({
-        title: "Error",
-        description: "Please provide a name and at least one criterion",
-        variant: "destructive",
-      });
+      toast.error("Please provide a name and at least one criterion");
       return;
     }
 
     const totalPoints = rubricCriteria.reduce((sum, criterion) => 
-      sum + Math.max(...criterion.levels.map(level => level.points), 0), 0);
+      sum + Math.max(...criterion.levels.map(level => level.points as number), 0), 0);
     
     const structuredData = {
       name: rubricName,
@@ -386,7 +467,7 @@ export function RubricModal({ open, onOpenChange, classId, existingRubric }: Rub
               <span>
                 Total Points: <span className="font-medium">
                   {rubricCriteria.reduce((sum, criterion) => 
-                    sum + Math.max(...criterion.levels.map(level => level.points), 0), 0
+                    sum + Math.max(...criterion.levels.map(level => level.points as number), 0), 0
                   )}
                 </span>
               </span>

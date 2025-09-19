@@ -120,11 +120,16 @@ export default function Agenda() {
         </Calendar>
 
         {/* Event Preview Modal */}
-        <EventPreviewModal
-          open={previewModalOpen}
-          onOpenChange={setPreviewModalOpen}
-          event={events?.events?.class?.find(event => event.id === selectedEvent) || events?.events?.personal?.find(event => event.id === selectedEvent) || null}
-        />
+        {selectedEvent && (
+          <EventPreviewModal
+            open={previewModalOpen}
+            onOpenChange={setPreviewModalOpen}
+            event={
+              (events?.events?.class?.find(event => event.id === selectedEvent) || 
+               events?.events?.personal?.find(event => event.id === selectedEvent)) as any
+            }
+          />
+        )}
       </PageLayout>
     );
   }

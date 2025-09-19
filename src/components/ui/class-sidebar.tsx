@@ -21,12 +21,15 @@ import {
   FileCheck, 
   Settings,
   Copy,
-  RefreshCcw
+  RefreshCcw,
+  Sparkles
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { trpc, useGetAllClassesQuery, useGetClassQuery, useGetInviteCodeQuery } from "@/lib/api";
 import { Skeleton } from "./skeleton";
 import { toast } from "sonner";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
+import { RouterOutputs, trpc } from "@/lib/trpc";
 
 const classNavigationItems = [
   { href: "", label: "Overview", icon: BookOpen },
@@ -34,7 +37,7 @@ const classNavigationItems = [
   { href: "/grades", label: "Grades", icon: BarChart3 },
   { href: "/files", label: "Files", icon: FolderOpen },
   { href: "/attendance", label: "Attendance", icon: UserCheck },
-  // { href: "/labs", label: "Labs", icon: FlaskConical },
+  { href: "/ai-labs", label: "AI Labs", icon: Sparkles },
   { href: "/members", label: "Members", icon: Users },
   { href: "/syllabus", label: "Syllabus", icon: FileCheck },
   { href: "/settings", label: "Settings", icon: Settings },
@@ -48,11 +51,13 @@ export function ClassSidebar({ classId }: ClassSidebarProps) {
   const pathname = usePathname();
   const router = useRouter();
 
-  const { data: allClasses, isLoading, error } = useGetAllClassesQuery();
+  const appState = useSelector((state: RootState) => state.app);
+
+  const { data: allClasses, isLoading, error } = trpc.class.getAll.useQuery();
   const classes = allClasses?.teacherInClass.concat(allClasses?.studentInClass);
-  const {data: inviteCodeData, isLoading: isInviteCodeLoading, error: isInviteCodeError, refetch: refetchInviteCode } = useGetInviteCodeQuery(classId!);
+  const {data: inviteCodeData, isLoading: isInviteCodeLoading, error: isInviteCodeError, refetch: refetchInviteCode } = trpc.class.getInviteCode.useQuery({ classId: classId! });
   const inviteCode = inviteCodeData?.code;
-  const { data: classData, isLoading: isClassLoading, error: isClassError } = useGetClassQuery(classId!);
+  const { data: classData, isLoading: isClassLoading, error: isClassError } = trpc.class.get.useQuery({ classId: classId! });
   const className = classData?.class;
   const regenerateInviteCodeMutation = trpc.class.createInviteCode.useMutation({
     onSuccess: () => {
@@ -119,7 +124,7 @@ export function ClassSidebar({ classId }: ClassSidebarProps) {
               </SelectValue>
             </SelectTrigger>
             <SelectContent className="w-64 bg-popover border shadow-md">
-               {classes?.map((cls) => (
+               {classes?.map((cls: RouterOutputs["class"]["getAll"]['teacherInClass'][number] | RouterOutputs["class"]["getAll"]['studentInClass'][number]) => (
                 <SelectItem key={cls.id} value={cls.id} className="cursor-pointer">
                   <div className="flex items-center space-x-3 min-w-0 flex-1">
                     <div 
@@ -166,7 +171,7 @@ export function ClassSidebar({ classId }: ClassSidebarProps) {
       </nav>
       
       {/* Class Invite Code */}
-      <div className="p-4 border-t mt-auto">
+      {appState.user.teacher && <div className="p-4 border-t mt-auto">
         <div className="space-y-2">
           <label className="text-xs font-medium text-muted-foreground">Class Invite Code</label>
           <div className="flex items-center justify-between p-2 bg-muted rounded-md hover:bg-muted/60 transition-colors duration-200">
@@ -181,7 +186,7 @@ export function ClassSidebar({ classId }: ClassSidebarProps) {
             </div>
           </div>
         </div>
-      </div>
+      </div>}
     </div>
   );
 }

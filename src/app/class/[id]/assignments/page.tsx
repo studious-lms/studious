@@ -18,19 +18,20 @@ import {
 } from "lucide-react";
 import { AssignmentFolder } from "@/components/AssignmentFolder";
 import { DraggableAssignment } from "@/components/DraggableAssignment";
-import { CreateAssignmentModal, CreateSectionModal } from "@/components/modals";
-import { Skeleton } from "@/components/ui/skeleton";
+import { CreateAssignmentModal, CreateSectionModal, SectionModal } from "@/components/modals";
 import { AssignmentCardSkeleton } from "@/components/ui/class-card-skeleton";
 import { RouterOutputs, trpc } from "@/lib/trpc";
+import { EmptyState } from "@/components/ui/empty-state";
 
 type Assignment = RouterOutputs['assignment']['get'];
-
+type Section = RouterOutputs['class']['get']['class']['sections'][number];
 type Folder = {
   id: string;
   name: string;
   isOpen: boolean;
   color: string;
   assignments: Assignment[];
+  order: number;
 };
 // Unified droppable slot component for both assignments and folders
 function DroppableItemSlot({ 
@@ -38,27 +39,38 @@ function DroppableItemSlot({
   index, 
   onMoveItem 
 }: { 
-  children: React.ReactNode;
+  children?: React.ReactNode;
   index: number;
   onMoveItem: (draggedId: string, draggedType: string, targetIndex: number) => void;
 }) {
-  const [{ isOver }, drop] = useDrop({
+
+  const [{ isOver, draggedItem }, drop] = useDrop({
     accept: ["assignment", "folder"],
-    drop: (item: { id: string; type?: string }, monitor: DropTargetMonitor) => {
+    canDrop: (item: { id: string; type?: string, index?: number }) => {
+      // Don't allow dropping on the same position
+      return item.index !== index;
+    },
+    drop: (item: { id: string; type?: string, index?: number }, monitor: DropTargetMonitor) => {
       if (monitor.didDrop()) return;
       const itemType = item.type || "assignment";
       onMoveItem(item.id, itemType, index);
     },
     collect: (monitor: DropTargetMonitor) => ({
       isOver: monitor.isOver({ shallow: true }),
+      draggedItem: monitor.getItem() as { id: string; type?: string; index?: number } | null,
     }),
   });
 
+  // Determine drop indicator position based on dragged item's current index
+  const shouldShowTopIndicator = draggedItem && draggedItem.index !== undefined 
+    ? draggedItem.index > index 
+    : true; // Default to top if no index info
   return (
     <div ref={drop as unknown as React.Ref<HTMLDivElement>} className="relative">
       {isOver && (
-        <div className="absolute -top-1 left-0 right-0 h-0.5 bg-primary rounded-full z-10" />
+        <div className={`absolute ${shouldShowTopIndicator ? '-top-1' : 'bottom-1'} left-0 right-0 h-0.5 bg-primary rounded-full z-10`} />
       )}
+      
       {children}
     </div>
   );
@@ -111,9 +123,44 @@ export default function Assignments() {
   const [activeTab, setActiveTab] = useState("all");
   const [topLevelItems, setTopLevelItems] = useState<Array<{type: 'assignment' | 'folder', data: Assignment | Folder}>>([]);
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
+  const [editingSection, setEditingSection] = useState<{ id: string; name: string; color: string } | null>(null);
 
   // API queries
   const { data: classData, isLoading, refetch } = trpc.class.get.useQuery({ classId });
+    const mutateAssignmentOrder = trpc.assignment.order.useMutation({
+      onError: (error) => {
+        console.error('Assignment order mutation failed:', error);
+      }
+    });
+    const mutateSectionOrder = trpc.section.reOrder.useMutation({
+      onError: (error) => {
+        console.error('Section order mutation failed:', error);
+      }
+    });
+    const deleteAssignmentMutation = trpc.assignment.delete.useMutation({
+      onSuccess: () => {
+        refetch();
+      },
+      onError: (error) => {
+        console.error('Assignment deletion failed:', error);
+      }
+    });
+    const moveAssignmentMutation = trpc.assignment.move.useMutation({
+      onSuccess: () => {
+        refetch();
+      },
+      onError: (error) => {
+        console.error('Assignment move failed:', error);
+      }
+    });
+    const deleteSectionMutation = trpc.section.delete.useMutation({
+      onSuccess: () => {
+        refetch();
+      },
+      onError: (error) => {
+        console.error('Section deletion failed:', error);
+      }
+    });
   
   // Initialize topLevelItems with real data from API
   useEffect(() => {
@@ -125,6 +172,7 @@ export default function Assignments() {
       const folderItems = sections.map(section => {
         const sectionAssignments = assignments
           .filter(assignment => assignment.section && assignment.section.id === section.id)
+          .sort((a, b) => a.order - b.order)
           .map(assignment => ({
             id: assignment.id,
             title: assignment.title,
@@ -143,9 +191,9 @@ export default function Assignments() {
           data: {
             id: section.id,
             name: section.name,
-            isOpen: openSections[section.id] ?? true,
-            color: "blue",
-            assignments: sectionAssignments
+            color: section.color,
+            assignments: sectionAssignments,
+            order: section.order
           }
         };
       });
@@ -164,13 +212,18 @@ export default function Assignments() {
           totalStudents: classData.class.students?.length || 0,
           hasAttachments: (assignment.attachments?.length || 0) > 0,
           points: assignment.maxGrade || 0,
-          description: assignment.instructions || ''
+          description: assignment.instructions || '',
+          order: assignment.order
         }
       }));
       
-      setTopLevelItems([...assignmentItems, ...folderItems]);
+      // Combine and sort by order
+      const allItems = [...assignmentItems, ...folderItems];
+      allItems.sort((a, b) => (a.data.order || 0) - (b.data.order || 0));
+      
+      setTopLevelItems(allItems);
     }
-  }, [classData, openSections]);
+  }, [classData]);
 
   const filteredTopLevelItems = topLevelItems.filter(item => {
     if (item.type === 'folder') {
@@ -195,20 +248,167 @@ export default function Assignments() {
     }));
   };
 
-  const moveItem = (draggedId: string, draggedType: string, targetIndex: number) => {
-    setTopLevelItems(prev => {
-      const items = [...prev];
-      const currentIndex = items.findIndex(item => 
-        item.data.id === draggedId && item.type === draggedType
-      );
+  const moveItem = async (draggedId: string, draggedType: string, targetIndex: number) => {
+    // Find current position
+    const currentIndex = topLevelItems.findIndex(item => 
+      item.data.id === draggedId && item.type === draggedType
+    );
+    
+    if (currentIndex === -1 || currentIndex === targetIndex) {
+      return; // Nothing to move
+    }
+
+    // Store original state for rollback
+    const originalItems = [...topLevelItems];
+
+    // Optimistically update UI
+    const newItems = [...topLevelItems];
+    const [movedItem] = newItems.splice(currentIndex, 1);
+    newItems.splice(targetIndex, 0, movedItem);
+    
+    // Update the order field in the data to match new positions
+    newItems.forEach((item, index) => {
+      item.data.order = index;
+    });
+    
+    setTopLevelItems(newItems);
+
+    try {
+      // Only update the items that actually changed order
+      const updates = [];
       
-      if (currentIndex !== -1 && currentIndex !== targetIndex) {
-        const [movedItem] = items.splice(currentIndex, 1);
-        items.splice(targetIndex, 0, movedItem);
+      // Determine the range of items that need order updates
+      const minIndex = Math.min(currentIndex, targetIndex);
+      const maxIndex = Math.max(currentIndex, targetIndex);
+      
+      for (let i = minIndex; i <= maxIndex; i++) {
+        const item = newItems[i];
+        const newOrder = i;
+        
+        if (item.type === 'assignment') {
+          updates.push(mutateAssignmentOrder.mutateAsync({ 
+            classId, 
+            id: item.data.id, 
+            order: newOrder 
+          }));
+        } else {
+          updates.push(mutateSectionOrder.mutateAsync({ 
+            classId, 
+            id: item.data.id, 
+            order: newOrder 
+          }));
+        }
       }
       
-      return items;
-    });
+      // Wait for all updates to complete
+      const results = await Promise.allSettled(updates);
+      
+      // Check if any mutations failed
+      const failures = results.filter(result => result.status === 'rejected');
+      
+      if (failures.length > 0) {
+        console.error('Some mutations failed:', failures);
+        // Rollback to original state
+        setTopLevelItems(originalItems);
+        // Refetch to get correct server state
+        refetch();
+        return;
+      }
+      
+      // All mutations succeeded - optimistic update was correct
+      
+    } catch (error) {
+      console.error('Failed to update order:', error);
+      // Rollback to original state
+      setTopLevelItems(originalItems);
+      refetch();
+    }
+  };
+
+  const handleEditSection = (section: { id: string; name: string; color: string }) => {
+    setEditingSection(section);
+  };
+
+  const handleDeleteSection = async (sectionId: string) => {
+    if (!confirm('Are you sure you want to delete this section? All assignments will be moved to the top level.')) {
+      return;
+    }
+    
+    try {
+      await deleteSectionMutation.mutateAsync({
+        classId,
+        id: sectionId
+      });
+    } catch (error) {
+      console.error('Failed to delete section:', error);
+    }
+  };
+
+  const handleSectionUpdated = () => {
+    setEditingSection(null);
+    refetch();
+  };
+
+  const handleDeleteAssignment = async (assignmentId: string) => {
+    if (!confirm('Are you sure you want to delete this assignment? This action cannot be undone.')) {
+      return;
+    }
+    
+    try {
+      await deleteAssignmentMutation.mutateAsync({
+        classId,
+        id: assignmentId
+      });
+    } catch (error) {
+      console.error('Failed to delete assignment:', error);
+    }
+  };
+
+  const reorderAssignmentInSection = async (assignmentId: string, sectionId: string, targetIndex: number) => {
+    // Find the current assignment and its current index within the section
+    const sectionItem = topLevelItems.find(item => 
+      item.type === 'folder' && item.data.id === sectionId
+    );
+    
+    if (!sectionItem || sectionItem.type !== 'folder') return;
+    
+    const currentIndex = sectionItem.data.assignments.findIndex(
+      (assignment: Assignment) => assignment.id === assignmentId
+    );
+    
+    if (currentIndex === -1 || currentIndex === targetIndex) return;
+
+    // Optimistically update UI
+    setTopLevelItems(prev => 
+      prev.map(item => {
+        if (item.type === 'folder' && item.data.id === sectionId) {
+          const newAssignments = [...item.data.assignments];
+          const [movedAssignment] = newAssignments.splice(currentIndex, 1);
+          newAssignments.splice(targetIndex, 0, movedAssignment);
+          
+          return {
+            ...item,
+            data: {
+              ...item.data,
+              assignments: newAssignments
+            }
+          };
+        }
+        return item;
+      })
+    );
+
+    // Save the reorder to server
+    try {
+      await mutateAssignmentOrder.mutateAsync({
+        classId,
+        id: assignmentId,
+        order: targetIndex
+      });
+    } catch (error) {
+      console.error('Failed to reorder assignment in section:', error);
+      refetch(); // Rollback on error
+    }
   };
 
   if (isLoading) {
@@ -221,7 +421,7 @@ export default function Assignments() {
     );
   }
 
-  const moveAssignment = (assignmentId: string, targetFolderId: string | null, targetIndex?: number) => {
+  const moveAssignment = async (assignmentId: string, targetFolderId: string | null, targetIndex?: number) => {
     // Find the assignment in top-level items or folders
     let assignment = null;
     let sourceLocation: 'toplevel' | 'folder' | null = null;
@@ -344,6 +544,19 @@ export default function Assignments() {
           : item
       )
     );
+
+    // Save the move to the server
+    try {
+      await moveAssignmentMutation.mutateAsync({
+        classId,
+        id: assignmentId,
+        targetSectionId: targetFolderId,
+      });
+    } catch (error) {
+      console.error('Failed to save assignment move:', error);
+      // Revert the optimistic update by refetching
+      refetch();
+    }
   };
 
   const handleSectionCreated = () => {
@@ -418,6 +631,8 @@ export default function Assignments() {
                         <DraggableAssignment
                           assignment={item.data as Assignment}
                           classId={classId!}
+                          index={index}
+                          onDelete={handleDeleteAssignment}
                         />
                       ) : (
                         <AssignmentFolder
@@ -426,32 +641,39 @@ export default function Assignments() {
                           isOpen={openSections[item.data.id]}
                           onToggle={() => toggleSection(item.data.id)}
                           onMoveAssignment={moveAssignment}
+                          onReorderAssignmentInSection={reorderAssignmentInSection}
+                          onEditSection={handleEditSection}
+                          onDeleteSection={handleDeleteSection}
+                          onDeleteAssignment={handleDeleteAssignment}
+                          index={index}
                         />
                       )}
                     </DroppableItemSlot>
                   ))}
+                  <DroppableItemSlot index={0} onMoveItem={moveItem}>
+                    {/* bottommost item */}
+                  </DroppableItemSlot>
                 </div>
               </MainDropZone>
             ) : (
-              <Card className="text-center py-12">
-                <CardContent>
-                  <FileText className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
-                  <h3 className="text-lg font-semibold mb-2">No assignments found</h3>
-                  <p className="text-muted-foreground mb-4">
-                    {searchQuery ? `No assignments match "${searchQuery}"` : "Create your first assignment to get started"}
-                  </p>
-                  <CreateAssignmentModal onAssignmentCreated={handleAssignmentCreated}>
-                    <Button>
-                      <Plus className="h-4 w-4 mr-2" />
-                      Create Assignment
-                    </Button>
-                  </CreateAssignmentModal>
-                </CardContent>
-              </Card>
+              <EmptyState
+                icon={FileText}
+                title="No assignments found"
+                description="Create your first assignment to get started"
+              />
             )}
           </TabsContent>
         </Tabs>
       </PageLayout>
+      
+      {/* Edit Section Modal */}
+      <SectionModal
+        classId={classId}
+        section={editingSection || undefined}
+        open={!!editingSection}
+        onOpenChange={(open) => !open && setEditingSection(null)}
+        onSectionUpdated={handleSectionUpdated}
+      />
     </DndProvider>
   );
 }

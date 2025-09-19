@@ -11,4 +11,4 @@ export { RenameModal } from './RenameModal';
 export { GradingBoundariesModal } from './GradingBoundariesModal';
 export { RubricModal } from './RubricModal';
 export { CreateFolderModal } from './CreateFolderModal';
-export { CreateSectionModal } from './CreateSectionModal';
+export { CreateSectionModal, SectionModal } from './CreateSectionModal';

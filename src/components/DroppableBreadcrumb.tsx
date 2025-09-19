@@ -28,7 +28,7 @@ export function DroppableBreadcrumb({
   });
 
   return (
-    <div ref={drop} className="flex items-center space-x-1">
+    <div ref={drop as unknown as React.Ref<HTMLDivElement>} className="flex items-center space-x-1">
       {index === 0 && <Home className="h-4 w-4" />}
       <button
         onClick={() => onBreadcrumbClick(crumb.path)}

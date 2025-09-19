@@ -12,7 +12,8 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { useToast } from "@/hooks/use-toast";
+import { toast } from "sonner";
+import ColorPicker from "@/components/ui/color-picker";
 import {
   Plus,
   FileText,
@@ -27,12 +28,8 @@ import {
 } from "lucide-react";
 import { useParams } from "next/navigation";
 import {
-  useCreateAssignmentMutation,
-  useListMarkSchemesQuery,
-  useListGradingBoundariesQuery,
-  useGetClassQuery
-} from "@/lib/api";
-import { trpc } from "@/lib/trpc";
+  trpc,
+} from "@/lib/trpc";
 
 type FileData = {
   id?: string;
@@ -59,7 +56,7 @@ interface AssignmentFormData {
 
 interface CreateAssignmentModalProps {
   children?: React.ReactNode;
-  onAssignmentCreated?: (assignmentData: any) => void;
+  onAssignmentCreated?: (assignmentData: AssignmentFormData) => void;
 }
 
 const defaultFormData: AssignmentFormData = {
@@ -94,34 +91,28 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
   const [formData, setFormData] = useState<AssignmentFormData>(defaultFormData);
   const [showNewSection, setShowNewSection] = useState(false);
   const [newSectionName, setNewSectionName] = useState('');
+  const [newSectionColor, setNewSectionColor] = useState('#3b82f6');
 
-  const { toast } = useToast();
   const { id: classId } = useParams();
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   // API queries
-  const { data: classData } = useGetClassQuery(classId as string);
-  const { data: markSchemes } = useListMarkSchemesQuery(classId as string);
-  const { data: gradingBoundaries } = useListGradingBoundariesQuery(classId as string);
+  const { data: classData } = trpc.class.get.useQuery({ classId: classId as string });
+  const { data: markSchemes } = trpc.class.listMarkSchemes.useQuery({ classId: classId as string });
+  const { data: gradingBoundaries } = trpc.class.listGradingBoundaries.useQuery({ classId: classId as string });
 
   // Mutations
-  const createAssignmentMutation = useCreateAssignmentMutation();
+  const createAssignmentMutation = trpc.assignment.create.useMutation();
   const createSectionMutation = trpc.section.create.useMutation({
     onSuccess: (data) => {
       setFormData(prev => ({ ...prev, sectionId: data.id }));
       setShowNewSection(false);
       setNewSectionName('');
-      toast({
-        title: "Success",
-        description: `Section "${data.name}" created successfully.`
-      });
+      setNewSectionColor('#3b82f6');
+      toast.success(`Section "${data.name}" created successfully.`);
     },
     onError: (error) => {
-      toast({
-        title: "Error",
-        description: error.message || "Failed to create section",
-        variant: "destructive"
-      });
+      toast.error(error.message);
     }
   });
 
@@ -131,6 +122,7 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
     setFormData(defaultFormData);
     setShowNewSection(false);
     setNewSectionName('');
+    setNewSectionColor('#3b82f6');
   };
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -151,11 +143,7 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
           files: [...prev.files, newFile]
         }));
       } catch (error) {
-        toast({
-          title: "Error",
-          description: `Failed to process file: ${file.name}`,
-          variant: "destructive"
-        });
+        toast.error(`Failed to process file: ${file.name}`);
       }
     });
   };
@@ -171,11 +159,7 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
     e.preventDefault();
 
     if (!formData.title.trim() || !formData.instructions.trim()) {
-      toast({
-        title: "Error",
-        description: "Please fill in all required fields.",
-        variant: "destructive"
-      });
+      toast.error("Please fill in all required fields.");
       return;
     }
 
@@ -203,21 +187,14 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
 
       await createAssignmentMutation.mutateAsync(assignmentData);
 
-      toast({
-        title: "Success",
-        description: `Assignment ${formData.inProgress ? 'saved as draft' : 'created'} successfully.`
-      });
+      toast.success(`Assignment ${formData.inProgress ? 'saved as draft' : 'created'} successfully.`);
 
-      onAssignmentCreated?.(assignmentData);
+      onAssignmentCreated?.(assignmentData as AssignmentFormData);
       setOpen(false);
       resetForm();
     } catch (error) {
       console.error('Failed to create assignment:', error);
-      toast({
-        title: "Error",
-        description: "Failed to create assignment. Please try again.",
-        variant: "destructive"
-      });
+      toast.error("Failed to create assignment. Please try again.");
     }
   };
 
@@ -249,7 +226,6 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-hidden">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
-            <Target className="h-5 w-5" />
             Create New Assignment
           </DialogTitle>
         </DialogHeader>
@@ -387,7 +363,8 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
                               if (newSectionName.trim()) {
                                 createSectionMutation.mutate({
                                   classId: classId as string,
-                                  name: newSectionName.trim()
+                                  name: newSectionName.trim(),
+                                  color: newSectionColor
                                 });
                               }
                             }}
@@ -402,10 +379,18 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
                             onClick={() => {
                               setShowNewSection(false);
                               setNewSectionName('');
+                              setNewSectionColor('#3b82f6');
                             }}
                           >
                             <X className="h-4 w-4" />
                           </Button>
+                        </div>
+                        <div className="space-y-2">
+                          <ColorPicker
+                            value={newSectionColor}
+                            onChange={setNewSectionColor}
+                            label="Section Color"
+                          />
                         </div>
                       </div>
                     )}
@@ -666,12 +651,10 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
                     </div>
                   ) : formData.inProgress ? (
                     <div className="flex items-center gap-2">
-                      <FileText className="h-4 w-4" />
                       Save Draft
                     </div>
                   ) : (
                     <div className="flex items-center gap-2">
-                      <Target className="h-4 w-4" />
                       Create Assignment
                     </div>
                   )}

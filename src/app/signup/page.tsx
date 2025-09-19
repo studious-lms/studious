@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { PageLayout } from "@/components/ui/page-layout";
-import { useToast } from "@/hooks/use-toast";
+import { toast } from "sonner";
 import { Eye, EyeOff, Mail, Lock, User } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
 
@@ -23,7 +23,6 @@ export default function Signup() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const { toast } = useToast();
   const router = useRouter();
 
   const handleInputChange = (field: string, value: string | boolean) => {
@@ -36,21 +35,15 @@ export default function Signup() {
 
     // Basic validation
     if (formData.password !== formData.confirmPassword) {
-      toast({
-        title: "Password mismatch",
-        description: "Please make sure your passwords match.",
-        variant: "destructive",
-      });
+      toast.error("Password mismatch");
+
       setIsLoading(false);
       return;
     }
 
     if (!formData.agreeToTerms) {
-      toast({
-        title: "Terms required",
-        description: "Please agree to the terms and conditions.",
-        variant: "destructive",
-      });
+      toast.error("Terms required");
+
       setIsLoading(false);
       return;
     }
@@ -59,17 +52,12 @@ export default function Signup() {
     try {
       await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API call
       
-      toast({
-        title: "Account created!",
-        description: "Please check your email to verify your account.",
-      });
+      toast.success("Account created!");
+
       router.push("/verify/mock-token");
     } catch {
-      toast({
-        title: "Sign up failed",
-        description: "Something went wrong. Please try again.",
-        variant: "destructive",
-      });
+      toast.error("Sign up failed");
+
     } finally {
       setIsLoading(false);
     }

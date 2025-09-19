@@ -21,12 +21,9 @@ import {
 import { cn } from "@/lib/utils";
 import { CalendarIcon, Clock, MapPin, Plus } from "lucide-react";
 import ColorPicker from "@/components/ui/color-picker";
-import { useCreateEventMutation, useUpdateEventMutation } from "@/lib/api/calendar";
-import { useGetClassQuery } from "@/lib/api/class";
-import { toast } from "sonner";
 import { trpc, type RouterOutputs } from "@/lib/trpc";
+import { toast } from "sonner";
 
-type AttendanceRecord = RouterOutputs["attendance"]["get"][number];
 type Event = RouterOutputs["event"]["get"]["event"];
 
 interface EventFormData {
@@ -45,7 +42,7 @@ interface ClassEventModalProps {
   onOpenChange: (open: boolean) => void;
   event?: Event | null; // Optional - if provided, we're editing; if not, we're creating
   classId: string;
-  onEventCreated?: (event: any) => void;
+  onEventCreated?: (event: RouterOutputs["event"]["create"]) => void;
   onEventUpdated?: () => void;
   children?: React.ReactNode; // For trigger button when creating
 }
@@ -72,9 +69,9 @@ export function ClassEventModal({
 }: ClassEventModalProps) {
   const [formData, setFormData] = useState<EventFormData>(defaultFormData);
 
-  const createEventMutation = useCreateEventMutation();
-  const updateEventMutation = useUpdateEventMutation();
-  const { data: classData } = useGetClassQuery(classId);
+  const createEventMutation = trpc.event.create.useMutation();
+  const updateEventMutation = trpc.event.update.useMutation();
+  const { data: classData } = trpc.class.get.useQuery({ classId });
 
   const isEditing = !!event;
   const isLoading = createEventMutation.isPending || updateEventMutation.isPending;
@@ -142,7 +139,7 @@ export function ClassEventModal({
       } else {
         // Create new event
         const newEvent = await createEventMutation.mutateAsync({
-          classId,
+          classId: classId,
           name: formData.name,
           startTime: startDateTime.toISOString(),
           endTime: endDateTime.toISOString(),
@@ -365,7 +362,7 @@ export function ClassEventModal({
 // Convenience wrapper for creating class events with a default trigger button
 interface CreateClassEventButtonProps {
   classId: string;
-  onEventCreated?: (event: any) => void;
+  onEventCreated?: (event: RouterOutputs["event"]["create"]) => void;
   children?: React.ReactNode;
 }
 

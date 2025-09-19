@@ -64,31 +64,19 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { useToast } from "@/hooks/use-toast";
 import { UploadFileModal, FilePreviewModal, RenameModal, CreateFolderModal } from "@/components/modals";
 import { DraggableFileItem } from "@/components/DraggableFileItem";
 import { DroppableFolderItem } from "@/components/DroppableFolderItem";
 import { DroppableBreadcrumb } from "@/components/DroppableBreadcrumb";
 import { DraggableTableRow } from "@/components/DraggableTableRow";
-import {  trpc } from "@/lib/trpc";
+import {  RouterInputs, RouterOutputs, trpc } from "@/lib/trpc";
 import { useSession } from "@/hooks/use-session";
+import { toast } from "sonner";
 
 // Types for our file system
-type ApiFile = {
-  id: string;
-  name: string;
-  type: string;
-  size: number;
-  data?: string;
-};
+type ApiFile = NonNullable<RouterOutputs["folder"]["getRootFolder"]>["files"][number];
 
-type ApiFolder = {
-  id: string;
-  name: string;
-  parentFolderId?: string;
-  children?: ApiFolder[];
-  files?: ApiFile[];
-};
+type ApiFolder = NonNullable<RouterOutputs["folder"]["getRootFolder"]>["childFolders"][number];
 
 
 type FileItem = {
@@ -97,12 +85,12 @@ type FileItem = {
   type: "file" | "folder";
   fileType?: string;
   size?: string;
+  color?: string;
   uploadedBy?: string;
   uploadedAt?: string;
   itemCount?: number;
   lastModified?: string;
   children?: FileItem[];
-  parentFolderId?: string;
   readonly?: boolean;
 };
 
@@ -111,7 +99,6 @@ export default function Files() {
   const router = useRouter();
   const classId = params.id as string;
   const { user } = useSession();
-  const { toast } = useToast();
   
   // State management
   const [searchQuery, setSearchQuery] = useState("");
@@ -124,7 +111,6 @@ export default function Files() {
   const [renameItem, setRenameItem] = useState<FileItem | null>(null);
   const [isRenameOpen, setIsRenameOpen] = useState(false);
   const [createFolderModalOpen, setCreateFolderModalOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState<"assignments" | "files">("files");
   
   // API calls
   // Get root folder with its files and subfolders
@@ -138,81 +124,81 @@ export default function Files() {
   // Mutations
   const createFolderMutation = trpc.folder.create.useMutation({
     onSuccess: () => {
-      toast({ title: "Success", description: "Folder created successfully" });
+      toast.success("Folder created successfully");
       refetch();
     },
     onError: (error) => {
-      toast({ title: "Error", description: error.message, variant: "destructive" });
+      toast.error(error.message);
     }
   });
   
   const deleteFolderMutation = trpc.folder.delete.useMutation({
     onSuccess: () => {
-      toast({ title: "Success", description: "Folder deleted successfully" });
+      toast.success("Folder deleted successfully");
       refetch();
     },
     onError: (error) => {
-      toast({ title: "Error", description: error.message, variant: "destructive" });
+      toast.error(error.message);
     }
   });
   
-  const renameFolderMutation = trpc.folder.rename.useMutation({
+  const renameFolderMutation = trpc.folder.update.useMutation({
     onSuccess: () => {
-      toast({ title: "Success", description: "Folder renamed successfully" });
+      toast.success("Folder renamed successfully");
       refetch();
     },
     onError: (error) => {
-      toast({ title: "Error", description: error.message, variant: "destructive" });
+      toast.error(error.message);
     }
   });
   
   const moveFolderMutation = trpc.folder.move.useMutation({
     onSuccess: () => {
-      toast({ title: "Success", description: "Folder moved successfully" });
+      toast.success("Folder moved successfully");
       refetch();
     },
     onError: (error) => {
-      toast({ title: "Error", description: error.message, variant: "destructive" });
+      toast.error(error.message);
     }
   });
   
   const uploadFilesMutation = trpc.folder.uploadFiles.useMutation({
     onSuccess: () => {
-      toast({ title: "Success", description: "Files uploaded successfully" });
+      toast.success("Files uploaded successfully");
       refetch();
     },
     onError: (error) => {
-      toast({ title: "Error", description: error.message, variant: "destructive" });
+      toast.error(error.message);
     }
   });
   
   const deleteFileMutation = trpc.file.delete.useMutation({
     onSuccess: () => {
-      toast({ title: "Success", description: "File deleted successfully" });
+      toast.success("File deleted successfully");
       refetch();
     },
     onError: (error) => {
-      toast({ title: "Error", description: error.message, variant: "destructive" });
+      toast.error(error.message);
     }
   });
   
   const renameFileMutation = trpc.file.rename.useMutation({
     onSuccess: () => {
-      toast({ title: "Success", description: "File renamed successfully" });
+      toast.success("File renamed successfully");
       refetch();
     },
     onError: (error) => {
-      toast({ title: "Error", description: error.message, variant: "destructive" });
+      toast.error(error.message);
     }
   });
   
   const moveFileMutation = trpc.file.move.useMutation({
     onSuccess: () => {
-      toast({ title: "Success", description: "File moved successfully" });
+      toast.success("File moved successfully");
       refetch();
     },
     onError: (error) => {
-      toast({ title: "Error", description: error.message, variant: "destructive" });
+      toast.error(error.message);
     }
   });
   
@@ -226,8 +212,8 @@ export default function Files() {
     id: folder.id,
     name: folder.name,
     type: "folder" as const,
-    parentFolderId: folder.parentFolderId,
-    itemCount: (folder.children?.length || 0) + (folder.files?.length || 0),
+    itemCount: (folder.childFolders?.length || 0) + (folder.files?.length || 0),
+    color: folder?.color || "#3b82f6",
     lastModified: new Date().toISOString(), // API doesn't provide this, using current date
   });
   
@@ -236,7 +222,7 @@ export default function Files() {
     name: file.name,
     type: "file" as const,
     fileType: file.type.split('/')[1] || file.name.split('.').pop(),
-    size: formatFileSize(file.size),
+    size: formatFileSize(file.size || 0),
     uploadedBy: "Unknown", // API doesn't provide this in folder context
     uploadedAt: new Date().toISOString(), // API doesn't provide this
   });
@@ -324,15 +310,6 @@ export default function Files() {
   };
 
   const handleFolderClick = (folderName: string) => {
-    if (activeTab === "assignments") {
-      // Assignment folders are readonly, just show toast
-      toast({
-        title: "Read-only",
-        description: "Assignment files are read-only. Use the assignments page to manage them.",
-      });
-      return;
-    }
-    
     // Find the folder by name to get its ID
     const folder = currentItems.find(item => item.name === folderName && item.type === "folder");
     if (folder) {
@@ -342,21 +319,10 @@ export default function Files() {
   };
 
   const handleItemAction = async (action: string, item: FileItem) => {
-    if (item.readonly && action !== "download") {
-      toast({
-        title: "Read-only",
-        description: "Assignment files are read-only.",
-        variant: "destructive"
-      });
-      return;
-    }
     
-    if (!isTeacher && ["rename", "delete", "move"].includes(action)) {
-      toast({
-        title: "Permission denied",
-        description: "Only teachers can modify files.",
-        variant: "destructive"
-      });
+    if (!isTeacher && ["modify", "delete", "move"].includes(action)) {
+      toast.error("Only teachers can modify files.");
+
       return;
     }
     
@@ -365,35 +331,21 @@ export default function Files() {
         try {
           const result = await getSignedUrlMutation.mutateAsync({ fileId: item.id });
           window.open(result.url, '_blank');
-        toast({
-          title: "Download started",
-          description: `Downloading ${item.name}...`,
-        });
+          toast.success("Download started");
         } catch (error) {
-          toast({
-            title: "Download failed",
-            description: "Unable to download file.",
-            variant: "destructive"
-          });
+          toast.error("Download failed");
         }
         break;
       case "share":
         try {
           const result = await getSignedUrlMutation.mutateAsync({ fileId: item.id });
           await navigator.clipboard.writeText(result.url);
-        toast({
-            title: "Share link copied",
-          description: `Share link for ${item.name} copied to clipboard.`,
-        });
+          toast.success("Share link copied");
         } catch (error) {
-          toast({
-            title: "Share failed",
-            description: "Unable to create share link.",
-            variant: "destructive"
-          });
+          toast.error("Share failed");
         }
         break;
-      case "rename":
+      case "modify":
         setRenameItem(item);
         setIsRenameOpen(true);
         break;
@@ -414,20 +366,26 @@ export default function Files() {
     }
   };
 
-  const handleRename = (item: FileItem, newName: string) => {
+  const handleModify = (item: FileItem, newName: string, color?: string) => {
     if (item.type === "folder") {
-      renameFolderMutation.mutate({ classId, folderId: item.id, newName });
+      renameFolderMutation.mutate({ 
+        classId, 
+        folderId: item.id, 
+        name: newName,
+        color: color || getFolderColor(item.id) // Keep existing color if not provided
+      });
     } else {
       renameFileMutation.mutate({ classId, fileId: item.id, newName });
     }
   };
 
-  const handleCreateFolder = async (folderData: { name: string; description?: string }) => {
+  const handleCreateFolder = async (folderData: { name: string; description?: string; color?: string }) => {
     try {
       await createFolderMutation.mutateAsync({
         classId,
         name: folderData.name,
-        parentFolderId: undefined // Root folder only
+        parentFolderId: undefined, // Root folder only
+        color: folderData.color || "#3b82f6" // Default blue color
       });
     } catch (error) {
       // Error handling is done by the mutation hook
@@ -435,7 +393,7 @@ export default function Files() {
     }
   };
 
-  const handleUploadFiles = (files: any[]) => {
+  const handleUploadFiles = (files: RouterInputs['folder']['uploadFiles']['files']) => {
     // Transform the files from UploadFileModal format to API format
     const apiFiles = files.map(file => ({
       name: file.name,
@@ -445,21 +403,10 @@ export default function Files() {
     }));
     
     uploadFilesMutation.mutate({
-      classId,
+      classId,  
       folderId: rootFolder?.id || '',
       files: apiFiles
     });
-  };
-
-  const handleMoveItem = (itemId: string, targetFolderId: string) => {
-    const item = currentItems.find(i => i.id === itemId);
-    if (!item) return;
-    
-    if (item.type === "folder") {
-      moveFolderMutation.mutate({ classId, folderId: itemId, newParentFolderId: targetFolderId });
-    } else {
-      moveFileMutation.mutate({ classId, fileId: itemId, targetFolderId });
-    }
   };
 
   const selectedCount = selectedItems.length;
@@ -476,15 +423,14 @@ export default function Files() {
           <p className="text-muted-foreground">Manage class files and resources</p>
         </div>
         
-          {activeTab === "files" && isTeacher && (
         <div className="flex items-center space-x-2">
               <Button 
                 variant="outline" 
                 size="sm" 
                 onClick={() => setCreateFolderModalOpen(true)}
-                disabled={createFolderMutation.isLoading}
+                disabled={createFolderMutation.isPending}
               >
-                {createFolderMutation.isLoading ? (
+                {createFolderMutation.isPending ? (
                   <Loader2 className="h-4 w-4 mr-2 animate-spin" />
                 ) : (
                   <FolderPlus className="h-4 w-4 mr-2" />
@@ -495,8 +441,8 @@ export default function Files() {
                 currentFolder="root"
                 onFilesUploaded={handleUploadFiles}
               >
-                <Button size="sm" disabled={uploadFilesMutation.isLoading}>
-                  {uploadFilesMutation.isLoading ? (
+                <Button size="sm" disabled={uploadFilesMutation.isPending}>
+                  {uploadFilesMutation.isPending ? (
                     <Loader2 className="h-4 w-4 mr-2 animate-spin" />
                   ) : (
               <Upload className="h-4 w-4 mr-2" />
@@ -505,7 +451,6 @@ export default function Files() {
             </Button>
           </UploadFileModal>
         </div>
-          )}
       </div>
 
         {/* Error Alert */}
@@ -655,8 +600,6 @@ export default function Files() {
                   key={item.id}
                   item={item}
                   getFileIcon={getFileIcon}
-                  getFolderColor={getFolderColor}
-                  onFolderClick={handleFolderClick}
                   onItemAction={handleItemAction}
                   onFileClick={handleFileClick}
                     classId={classId}
@@ -689,7 +632,8 @@ export default function Files() {
                       formatDate={formatDate}
                       onFolderClick={handleFolderClick}
                       onItemAction={handleItemAction}
-                      onMoveItem={handleMoveItem}
+                      classId={classId}
+                      onRefetch={refetch}
                       onFileClick={handleFileClick}
                     />
                  ))}
@@ -714,8 +658,8 @@ export default function Files() {
                 currentFolder="root"
                 onFilesUploaded={handleUploadFiles}
               >
-                <Button disabled={uploadFilesMutation.isLoading}>
-                  {uploadFilesMutation.isLoading ? (
+                <Button disabled={uploadFilesMutation.isPending}>
+                  {uploadFilesMutation.isPending ? (
                     <Loader2 className="h-4 w-4 mr-2 animate-spin" />
                   ) : (
                     <Upload className="h-4 w-4 mr-2" />
@@ -726,9 +670,9 @@ export default function Files() {
               <Button 
                 variant="outline"
                 onClick={() => setCreateFolderModalOpen(true)}
-                disabled={createFolderMutation.isLoading}
+                disabled={createFolderMutation.isPending}
               >
-                {createFolderMutation.isLoading ? (
+                {createFolderMutation.isPending ? (
                   <Loader2 className="h-4 w-4 mr-2 animate-spin" />
                 ) : (
                   <FolderPlus className="h-4 w-4 mr-2" />
@@ -757,7 +701,7 @@ export default function Files() {
           item={renameItem}
           isOpen={isRenameOpen}
           onClose={() => setIsRenameOpen(false)}
-          onRename={handleRename}
+          onRename={handleModify}
         />
 
         {/* Create Folder Modal */}
@@ -765,7 +709,7 @@ export default function Files() {
           open={createFolderModalOpen}
           onOpenChange={setCreateFolderModalOpen}
           onFolderCreated={handleCreateFolder}
-          isLoading={createFolderMutation.isLoading}
+          isLoading={createFolderMutation.isPending}
         />
       </PageLayout>
     </DndProvider>

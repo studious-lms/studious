@@ -37,12 +37,10 @@ import {
   ClipboardList
 } from "lucide-react";
 import { 
-  useGetSyllabusQuery, 
-  useUpdateSyllabusMutation,
-  useGetClassQuery,
-  useListGradingBoundariesQuery,
-  useListMarkSchemesQuery
-} from "@/lib/api/class";
+  trpc, 
+} from "@/lib/trpc";
+import { RouterOutputs } from "@/lib/trpc";
+import { GradingBoundary, RubricCriteria } from "@/lib/types/rubric";
 
 // Types
 type Assignment = {
@@ -112,13 +110,13 @@ export default function Syllabus() {
   const [originalContent, setOriginalContent] = useState("");
 
   // API queries
-  const { data: syllabusData, isLoading: syllabusLoading, error: syllabusError } = useGetSyllabusQuery(classId);
-  const { data: classData, isLoading: classLoading } = useGetClassQuery(classId);
-  const { data: gradingBoundaries } = useListGradingBoundariesQuery(classId);
-  const { data: markSchemes } = useListMarkSchemesQuery(classId);
+  const { data: syllabusData, isLoading: syllabusLoading, error: syllabusError } = trpc.class.getSyllabus.useQuery({ classId: classId });
+  const { data: classData, isLoading: classLoading } = trpc.class.get.useQuery({ classId: classId });
+  const { data: gradingBoundaries } = trpc.class.listGradingBoundaries.useQuery({ classId: classId });
+  const { data: markSchemes } = trpc.class.listMarkSchemes.useQuery({ classId: classId });
   
   // Mutations
-  const updateSyllabusMutation = useUpdateSyllabusMutation();
+  const updateSyllabusMutation = trpc.class.updateSyllabus.useMutation();
 
   // Initialize syllabus content
   useEffect(() => {
@@ -174,7 +172,7 @@ export default function Syllabus() {
     );
   }
 
-  const assignments: Assignment[] = (classData.class.assignments || []).map(a => ({
+  const assignments: Assignment[] = (classData.class.assignments || []).map((a: RouterOutputs["class"]["get"]['class']['assignments'][number]) => ({
     id: a.id,
     title: a.title,
     type: a.type || 'OTHER',
@@ -414,76 +412,6 @@ export default function Syllabus() {
             )}
             </CardContent>
           </Card>
-
-        {/* Grading Tools */}
-        {(markSchemes && markSchemes.length > 0) || (gradingBoundaries && gradingBoundaries.length > 0) && (
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <ClipboardCheck className="h-5 w-5" />
-                Grading Tools & Standards
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              {/* Grading Boundaries */}
-              {gradingBoundaries && gradingBoundaries.length > 0 && (
-                <div>
-                  <h3 className="text-md font-medium mb-3 flex items-center gap-2">
-                    <ClipboardList className="h-4 w-4 text-muted-foreground" />
-                    Grading Boundaries
-                  </h3>
-                  <div className="space-y-3">
-                    {gradingBoundaries.map((boundary, index) => (
-                      <div key={index} className="p-4 rounded-lg bg-muted">
-                        <div className="flex items-center justify-between mb-2">
-                          <h4 className="font-semibold">{boundary.name || 'Grading Boundary'}</h4>
-                          {boundary.isDefault && (
-                            <Badge variant="default">Default</Badge>
-                          )}
-                        </div>
-                        {boundary.boundaries && boundary.boundaries.length > 0 && (
-                          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
-                            {boundary.boundaries.map((grade, gradeIndex) => (
-                              <div key={gradeIndex} className="flex items-center justify-between text-sm p-2 rounded bg-background">
-                                <span className="font-medium">{grade.grade}</span>
-                                <span className="text-muted-foreground">{grade.minPercentage}%+</span>
-                              </div>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Mark Schemes */}
-              {markSchemes && markSchemes.length > 0 && (
-                <div>
-                  <h3 className="text-md font-medium mb-3 flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-muted-foreground" />
-                    Mark Schemes
-                  </h3>
-                  <div className="space-y-3">
-                    {markSchemes.map((scheme, index) => (
-                      <div key={index} className="p-4 rounded-lg bg-muted">
-                        <div className="flex items-center justify-between mb-2">
-                          <h4 className="font-semibold">{scheme.name || 'Mark Scheme'}</h4>
-                          {scheme.isDefault && (
-                            <Badge variant="default">Default</Badge>
-                          )}
-                        </div>
-                        {scheme.description && (
-                          <p className="text-sm text-muted-foreground mb-2">{scheme.description}</p>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-              </div>
-              )}
-            </CardContent>
-          </Card>
-        )}
 
         {/* Course Information */}
           <Card>
