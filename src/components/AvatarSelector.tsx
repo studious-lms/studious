@@ -28,7 +28,7 @@ import { cn } from "@/lib/utils";
 
 interface AvatarSelectorProps {
   currentAvatar?: string;
-  onAvatarSelect: (avatarUrl: string, isCustom: boolean) => void;
+  onAvatarSelect: (avatarUrl: string, isCustom: boolean, fileName?: string, fileType?: string, file?: File) => void;
   disabled?: boolean;
   size?: "sm" | "md" | "lg";
 }
@@ -70,6 +70,7 @@ export function AvatarSelector({
   const [selectedSeed, setSelectedSeed] = useState(generateRandomSeed());
   const [isUploading, setIsUploading] = useState(false);
   const [previewImage, setPreviewImage] = useState<string | null>(null);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const sizeClasses = {
@@ -101,10 +102,20 @@ export function AvatarSelector({
     const file = event.target.files?.[0];
     if (!file) return;
 
+    // Validate file type
+    const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
+    if (!allowedTypes.includes(file.type)) {
+      alert("Please upload a valid image file (JPEG, PNG, GIF, or WebP)");
+      return;
+    }
+
     if (file.size > 5 * 1024 * 1024) {
       alert("Profile picture must be less than 5MB");
       return;
     }
+
+    // Store the file for later use
+    setSelectedFile(file);
 
     // Show preview first
     const reader = new FileReader();
@@ -116,11 +127,11 @@ export function AvatarSelector({
   };
 
   const handleConfirmUpload = async () => {
-    if (!previewImage) return;
+    if (!previewImage || !selectedFile) return;
 
     setIsUploading(true);
     try {
-      onAvatarSelect(previewImage, true);
+      onAvatarSelect(previewImage, true, selectedFile.name, selectedFile.type, selectedFile);
       setIsOpen(false);
     } catch (error) {
       console.error("Failed to upload image:", error);
@@ -137,6 +148,7 @@ export function AvatarSelector({
   React.useEffect(() => {
     if (isOpen) {
       setPreviewImage(null);
+      setSelectedFile(null);
     }
   }, [isOpen]);
 
@@ -289,7 +301,7 @@ export function AvatarSelector({
                   <input
                     ref={fileInputRef}
                     type="file"
-                    accept="image/*"
+                    accept="image/jpeg,image/jpg,image/png,image/gif,image/webp"
                     onChange={handleCustomUpload}
                     className="hidden"
                   />
@@ -311,7 +323,10 @@ export function AvatarSelector({
                   <div className="flex justify-center space-x-2">
                     <Button 
                       variant="outline" 
-                      onClick={() => setPreviewImage(null)}
+                      onClick={() => {
+                        setPreviewImage(null);
+                        setSelectedFile(null);
+                      }}
                       className="flex items-center space-x-2"
                     >
                       <X className="h-4 w-4" />
