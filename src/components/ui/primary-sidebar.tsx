@@ -200,10 +200,12 @@ export function PrimarySidebar({ isAuthenticated = false, user }: PrimarySidebar
                 </p>
               </div>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link href="/profile" className="flex items-center">
                 <User className="mr-2 h-4 w-4" />
                 Profile
-              </DropdownMenuItem>
+              </Link>
+            </DropdownMenuItem>
               <DropdownMenuItem>
                 <Settings className="mr-2 h-4 w-4" />
                 Account Settings
