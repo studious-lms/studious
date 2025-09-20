@@ -49,10 +49,18 @@ type ProfileFormValues = z.infer<typeof profileFormSchema>;
 
 export default function Profile() {
   const [isEditing, setIsEditing] = useState(false);
+  const [pendingProfilePicture, setPendingProfilePicture] = useState<{
+    name: string;
+    type: string;
+    size: number;
+    file: File;
+  } | null>(null);
+  const [pendingDicebearAvatar, setPendingDicebearAvatar] = useState<string | null>(null);
 
   // API hooks
   const { data: profile, isLoading, error } = trpc.user.getProfile.useQuery();
   const updateProfileMutation = trpc.user.updateProfile.useMutation();
+  const getUploadUrlMutation = trpc.user.getUploadUrl.useMutation();
 
   // Form setup
   const form = useForm<ProfileFormValues>({
@@ -79,11 +87,56 @@ export default function Profile() {
 
   const handleSave = async (values: ProfileFormValues) => {
     try {
-      await updateProfileMutation.mutateAsync({
+      const updateData: any = {
         profile: values,
-      });
+      };
+
+      if (pendingProfilePicture) {
+        // Handle custom uploaded image - upload to GCS first
+        try {
+          // 1. Get signed URL for direct upload
+          const uploadData = await getUploadUrlMutation.mutateAsync({
+            fileName: pendingProfilePicture.name,
+            fileType: pendingProfilePicture.type,
+          });
+
+          // 2. Upload file directly to GCS
+          const uploadResponse = await fetch(uploadData.uploadUrl, {
+            method: 'PUT',
+            body: pendingProfilePicture.file,
+            headers: {
+              'Content-Type': pendingProfilePicture.type,
+            },
+          });
+
+          if (!uploadResponse.ok) {
+            throw new Error('Failed to upload file to storage');
+          }
+
+          // 3. Update profile with file path
+          updateData.profilePicture = {
+            filePath: uploadData.filePath,
+            fileName: uploadData.fileName,
+            fileType: pendingProfilePicture.type,
+            fileSize: pendingProfilePicture.size,
+          };
+        } catch (uploadError) {
+          console.error("Failed to upload profile picture:", uploadError);
+          toast.error("Failed to upload profile picture");
+          return;
+        }
+      } else if (pendingDicebearAvatar) {
+        // Handle DiceBear avatar - use dicebearAvatar field
+        updateData.dicebearAvatar = {
+          url: pendingDicebearAvatar,
+        };
+      }
+
+      await updateProfileMutation.mutateAsync(updateData);
       toast.success("Profile updated successfully");
       setIsEditing(false);
+      setPendingProfilePicture(null);
+      setPendingDicebearAvatar(null);
     } catch (error) {
       console.error("Failed to update profile:", error);
       toast.error("Failed to update profile");
@@ -93,35 +146,31 @@ export default function Profile() {
   const handleCancel = () => {
     form.reset();
     setIsEditing(false);
+    setPendingProfilePicture(null);
+    setPendingDicebearAvatar(null);
   };
 
-  const handleAvatarSelect = async (avatarUrl: string, isCustom: boolean) => {
+  const handleAvatarSelect = async (avatarUrl: string, isCustom: boolean, fileName?: string, fileType?: string, file?: File) => {
     try {
-      if (isCustom) {
-        // Handle custom uploaded image
-        const base64Data = avatarUrl.split(',')[1];
-        await updateProfileMutation.mutateAsync({
-          profile: profile?.profile || {},
-          profilePicture: {
-            name: "custom-avatar",
-            type: "image/png",
-            size: base64Data.length,
-            data: base64Data,
-          },
+      if (isCustom && file) {
+        // Store file object for direct upload (no base64)
+        setPendingProfilePicture({
+          name: fileName || "custom-avatar",
+          type: fileType || "image/png",
+          size: file.size,
+          file: file,
         });
-      } else {
-        // Handle DiceBear avatar
-        await updateProfileMutation.mutateAsync({
-          profile: {
-            ...profile?.profile,
-            profilePicture: avatarUrl,
-          },
-        });
+        setPendingDicebearAvatar(null); // Clear any pending DiceBear avatar
+        toast.success("Profile picture selected. Click 'Save Changes' to update.");
+      } else if (!isCustom) {
+        // Handle DiceBear avatar - store URL
+        setPendingDicebearAvatar(avatarUrl);
+        setPendingProfilePicture(null); // Clear any pending file upload
+        toast.success("Avatar selected. Click 'Save Changes' to update.");
       }
-      toast.success("Profile picture updated successfully");
-    } catch (error) {
-      console.error("Failed to update profile picture:", error);
-      toast.error("Failed to update profile picture");
+    } catch (error: any) {
+      console.error("Failed to select profile picture:", error);
+      toast.error("Failed to select profile picture");
     }
   };
 
@@ -211,12 +260,25 @@ export default function Profile() {
         <Card>
           <CardHeader>
             <div className="flex items-center space-x-4">
-              <AvatarSelector
-                currentAvatar={(profile?.profile as any)?.profilePicture}
-                onAvatarSelect={handleAvatarSelect}
-                disabled={!isEditing}
-                size="lg"
-              />
+              <div className="relative">
+                <AvatarSelector
+                  currentAvatar={
+                    pendingProfilePicture 
+                      ? URL.createObjectURL(pendingProfilePicture.file)
+                      : pendingDicebearAvatar 
+                        ? pendingDicebearAvatar
+                        : (profile?.profile as any)?.profilePicture
+                  }
+                  onAvatarSelect={handleAvatarSelect}
+                  disabled={!isEditing}
+                  size="lg"
+                />
+                {(pendingProfilePicture || pendingDicebearAvatar) && (
+                  <div className="absolute -top-1 -right-1 bg-primary text-primary-foreground rounded-full w-6 h-6 flex items-center justify-center text-xs">
+                    ✓
+                  </div>
+                )}
+              </div>
               <div className="space-y-2">
                 <div className="flex items-center space-x-2">
                   <h2 className="text-2xl font-bold">
