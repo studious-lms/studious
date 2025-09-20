@@ -1,11 +1,9 @@
 "use client";
-import { AlertLevel } from "@/lib/alertLevel";
-import { addAlert } from "@/store/appSlice";
 import { RootState } from "@/store/store";
 import { trpc } from "@/lib/trpc";
 import { redirect } from "next/navigation";
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { RouterInputs, RouterOutputs } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -14,6 +12,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { setCookie } from "cookies-next";
+import { toast } from "sonner";
 
 export default function Login() {
   const router = useRouter();
@@ -30,12 +29,10 @@ export default function Login() {
   const [showResendForm, setShowResendForm] = useState(false);
   const [resendSuccess, setResendSuccess] = useState(false);
 
-  const dispatch = useDispatch();
-
   const loginMutation = trpc.auth.login.useMutation({
     onSuccess: (data: RouterOutputs['auth']['login']) => {
       if ('token' in data) {
-        dispatch(addAlert({ remark: 'Successfully logged in', level: AlertLevel.SUCCESS }));
+        toast.success('Successfully logged in');
         // set the session cookie
         setCookie('token', data.token);
         router.push('/classes/');
@@ -46,17 +43,17 @@ export default function Login() {
       }
     },
     onError: (error) => {
-      dispatch(addAlert({ remark: 'Invalid credentials', level: AlertLevel.ERROR }));
+      toast.error(error.message);
     }
   });
 
   const resendVerificationMutation = trpc.auth.resendVerificationEmail.useMutation({
     onSuccess: () => {
       setResendSuccess(true);
-      dispatch(addAlert({ remark: 'Verification email sent successfully!', level: AlertLevel.SUCCESS }));
+      toast.success('Verification email sent successfully!');
     },
     onError: (error) => {
-      dispatch(addAlert({ remark: error.message || 'Failed to send verification email', level: AlertLevel.ERROR }));
+      toast.error(error.message || 'Failed to send verification email');
     }
   });
   

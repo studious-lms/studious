@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "GradeHub",
-  description: "Modern grade management system",
+  title: "Studious",
+  description: "Modern learning management system",
 };
 
 export default function RootLayout({

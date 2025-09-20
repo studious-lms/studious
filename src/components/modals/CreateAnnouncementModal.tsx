@@ -12,7 +12,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { toast } from "sonner";
 import { Bell, Plus } from "lucide-react";
 import { useParams } from "next/navigation";
-import { useSession } from "@/hooks/use-session";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
 
 
 interface CreateAnnouncementModalProps {
@@ -34,7 +35,7 @@ export function CreateAnnouncementModal({ children, onAnnouncementCreated }: Cre
     scheduledTime: "",
     expiryDate: ""
   });
-const { user } = useSession();
+const appState = useSelector((state: RootState) => state.app);
 const params = useParams();
 const classId = params.id as string;
 
@@ -76,7 +77,7 @@ const classId = params.id as string;
       totalRecipients: 24,
       // Prisma-aligned fields
       remarks: formData.content,
-      teacherId: user.id,
+      teacherId: appState.user.id,
       classId: classId ?? undefined
     };
 

@@ -8,7 +8,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Progress } from "@/components/ui/progress";
 import { toast } from "sonner";
-import { useSession } from "@/hooks/use-session";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
 import { Upload as UploadIcon, X as XIcon, File as FileIcon, Image as ImageIcon, FileVideo, FileText } from "lucide-react";
 
 
@@ -53,7 +54,7 @@ export function UploadFileModal({ children, onFilesUploaded, currentFolder = "/"
   const [files, setFiles] = useState<FileUpload[]>([]);
   const [uploading, setUploading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const { user } = useSession();
+  const appState = useSelector((state: RootState) => state.app);
 
 
   const categories = [
@@ -176,7 +177,7 @@ export function UploadFileModal({ children, onFilesUploaded, currentFolder = "/"
         data: base64Data,
         // Prisma-aligned fields
         path: `${currentFolder}/${file.name}`,
-        userId: user.id
+        userId: appState.user.id
         }
       }));
 

@@ -70,7 +70,8 @@ import { DroppableFolderItem } from "@/components/DroppableFolderItem";
 import { DroppableBreadcrumb } from "@/components/DroppableBreadcrumb";
 import { DraggableTableRow } from "@/components/DraggableTableRow";
 import {  RouterInputs, RouterOutputs, trpc } from "@/lib/trpc";
-import { useSession } from "@/hooks/use-session";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
 import { toast } from "sonner";
 
 // Types for our file system
@@ -98,7 +99,7 @@ export default function Files() {
   const params = useParams();
   const router = useRouter();
   const classId = params.id as string;
-  const { user } = useSession();
+  const appState = useSelector((state: RootState) => state.app);
   
   // State management
   const [searchQuery, setSearchQuery] = useState("");
@@ -205,7 +206,7 @@ export default function Files() {
   const getSignedUrlMutation = trpc.file.getSignedUrl.useMutation();
   
   // Check if user is teacher
-  const isTeacher = user?.role === 'TEACHER';
+  const isTeacher = appState.user.teacher;
 
   // Transform API data to FileItem format
   const transformFolderToFileItem = (folder: ApiFolder): FileItem => ({

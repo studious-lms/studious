@@ -132,7 +132,7 @@ export function FloatingThemeToggle() {
               {/* Main View */}
               {currentView === "main" && (
                 <div className="p-2 space-y-1">
-                  <div className="p-3 rounded-md bg-muted/30">
+                  <div>
                     <div className="flex items-center justify-between mb-2 p-3">
                       <div className="flex items-center gap-2 w-full">
                         {darkMode === "dark" ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}

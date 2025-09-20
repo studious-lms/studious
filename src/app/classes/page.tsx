@@ -18,6 +18,7 @@ import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ClassCardSkeleton } from "@/components/ui/class-card-skeleton";
+import { EmptyState } from "@/components/ui/empty-state";
 import { ClassCreateInput } from "@/lib/trpc";
 
 export default function Classes() {
@@ -176,33 +177,17 @@ export default function Classes() {
               ))}
             </div>
           ) : searchQuery ? (
-            <Card className="text-center py-12">
-              <CardContent>
-                <p className="text-muted-foreground">No teaching classes found matching {searchQuery}</p>
-              </CardContent>
-            </Card>
+            <EmptyState
+              icon={Search}
+              title="No classes found"
+              description={`No teaching classes found matching "${searchQuery}"`}
+            />
           ) : (
-            <Card className="text-center py-12">
-              <CardContent className="space-y-4">
-                <div className="h-12 w-12 mx-auto rounded-lg bg-primary-light flex items-center justify-center">
-                  <Plus className="h-6 w-6 text-primary" />
-                </div>
-                <div className="space-y-2">
-                  <h3 className="text-lg font-semibold">No classes yet</h3>
-                  <p className="text-muted-foreground max-w-md mx-auto">
-                    Create your first class to start managing assignments, grades, and student interactions.
-                  </p>
-                </div>
-                <div className="flex flex-col sm:flex-row gap-2 justify-center">
-                  <CreateClassModal onClassCreated={handleClassCreated}>
-                    <Button className="flex items-center space-x-2">
-                      <Plus className="h-4 w-4" />
-                      <span>Create Class</span>
-                    </Button>
-                  </CreateClassModal>
-                </div>
-              </CardContent>
-            </Card>
+            <EmptyState
+              icon={Building}
+              title="No classes yet"
+              description="Create your first class to start managing assignments, grades, and student interactions." 
+            />
           )}
         </TabsContent>
 
@@ -230,33 +215,17 @@ export default function Classes() {
               ))}
             </div>
           ) : searchQuery ? (
-            <Card className="text-center py-12">
-              <CardContent>
-                <p className="text-muted-foreground">No enrolled classes found matching {searchQuery}</p>
-              </CardContent>
-            </Card>
+            <EmptyState
+              icon={Search}
+              title="No classes found"
+              description={`No enrolled classes found matching "${searchQuery}"`}
+            />
           ) : (
-            <Card className="text-center py-12">
-              <CardContent className="space-y-4 flex justify-center">
-                <div className="flex flex-col items-center space-y-4">
-                  <div className="h-12 w-12 mx-auto rounded-lg bg-secondary-light flex items-center justify-center">
-                    <UserPlus className="h-6 w-6 text-secondary" />
-                  </div>
-                  <div className="space-y-2">
-                    <h3 className="text-lg font-semibold">No enrolled classes</h3>
-                    <p className="text-muted-foreground max-w-md mx-auto">
-                      Join a class using an invite code or link provided by your teacher.
-                    </p>
-                  </div>
-                  <JoinClassModal onClassJoined={handleClassJoined}>
-                    <Button className="flex items-center space-x-2">
-                      <UserPlus className="h-4 w-4" />
-                      <span>Join Class</span>
-                    </Button>
-                  </JoinClassModal>
-                </div>
-              </CardContent>
-            </Card>
+            <EmptyState
+              icon={UserPlus}
+              title="No enrolled classes"
+              description="Join a class using an invite code or link provided by your teacher."
+            />
           )}
         </TabsContent>
       </Tabs>
