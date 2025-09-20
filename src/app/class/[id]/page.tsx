@@ -74,7 +74,12 @@ export default function ClassFeed() {
   const classInfo = classData?.class;
 
   // Combine announcements and assignments into a unified feed
-  const feedItems = [];
+  const feedItems: Array<{
+    id: string;
+    type: 'announcement' | 'assignment';
+    data: Announcement | Assignment;
+    createdAt: string;
+  }> = [];
   
   // Add announcements
   if (classInfo?.announcements) {

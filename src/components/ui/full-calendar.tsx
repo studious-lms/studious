@@ -273,7 +273,7 @@ const CalendarWeekView = () => {
 
   const weekDates = useMemo(() => {
     const start = startOfWeek(date, { weekStartsOn: 0 });
-    const weekDates = [];
+    const weekDates: Date[][] = [];
 
     for (let i = 0; i < 7; i++) {
       const day = addDays(start, i);
@@ -285,7 +285,7 @@ const CalendarWeekView = () => {
   }, [date]);
 
   const headerDays = useMemo(() => {
-    const daysOfWeek = [];
+    const daysOfWeek: Date[] = [];
     for (let i = 0; i < 7; i++) {
       const result = addDays(startOfWeek(date, { weekStartsOn: 0 }), i);
       daysOfWeek.push(result);
@@ -645,7 +645,7 @@ const getDaysInMonth = (date: Date) => {
   });
 
   let currentDate = startOfWeekForMonth;
-  const calendar = [];
+  const calendar: Date[] = [];
 
   while (calendar.length < 42) {
     calendar.push(new Date(currentDate));
@@ -656,7 +656,7 @@ const getDaysInMonth = (date: Date) => {
 };
 
 const generateWeekdays = (locale: Locale) => {
-  const daysOfWeek = [];
+  const daysOfWeek: string[] = [];
   for (let i = 0; i < 7; i++) {
     const date = addDays(startOfWeek(new Date(), { weekStartsOn: 0 }), i);
     daysOfWeek.push(format(date, 'EEEEEE', { locale }));

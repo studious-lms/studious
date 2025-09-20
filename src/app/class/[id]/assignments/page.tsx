@@ -20,7 +20,7 @@ import { AssignmentFolder } from "@/components/AssignmentFolder";
 import { DraggableAssignment } from "@/components/DraggableAssignment";
 import { CreateAssignmentModal, CreateSectionModal, SectionModal } from "@/components/modals";
 import { AssignmentCardSkeleton } from "@/components/ui/class-card-skeleton";
-import { RouterOutputs, trpc } from "@/lib/trpc";
+import { RouterInputs, RouterOutputs, trpc } from "@/lib/trpc";
 import { EmptyState } from "@/components/ui/empty-state";
 
 type Assignment = RouterOutputs['assignment']['get'];
@@ -275,7 +275,7 @@ export default function Assignments() {
 
     try {
       // Only update the items that actually changed order
-      const updates = [];
+      const updates: Promise<RouterOutputs['assignment']['order']>[] = [];
       
       // Determine the range of items that need order updates
       const minIndex = Math.min(currentIndex, targetIndex);
@@ -423,7 +423,7 @@ export default function Assignments() {
 
   const moveAssignment = async (assignmentId: string, targetFolderId: string | null, targetIndex?: number) => {
     // Find the assignment in top-level items or folders
-    let assignment = null;
+    let assignment: Assignment | null = null;
     let sourceLocation: 'toplevel' | 'folder' | null = null;
     let sourceFolderId = null;
     
