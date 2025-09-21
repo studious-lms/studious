@@ -16,6 +16,8 @@ export type AuthCheckOutput = RouterOutputs['auth']['check'];
 // ===== USER TYPES =====
 export type UserGetProfileOutput = RouterOutputs['user']['getProfile'];
 export type UserUpdateProfileInput = RouterInputs['user']['updateProfile'];
+export type UserGetUploadUrlInput = RouterInputs['user']['getUploadUrl'];
+export type UserGetUploadUrlOutput = RouterOutputs['user']['getUploadUrl'];
 
 // ===== CLASS TYPES =====
 export type ClassGetAllOutput = RouterOutputs['class']['getAll'];
