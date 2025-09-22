@@ -13,7 +13,6 @@ import {
   Calendar, 
   Clock, 
   BookOpen, 
-  FileText, 
   CheckCircle, 
   AlertCircle,
   TrendingUp,
@@ -26,7 +25,8 @@ import Link from "next/link";
 import { format, isToday, isTomorrow, parseISO } from "date-fns";
 
 type ClassData = RouterOutputs['class']['getAll'];
-type NotificationData = RouterOutputs['notification']['list'];
+type Assignment = NonNullable<ClassData['teacherInClass']>[0]['assignments'][0];
+type ClassWithAssignments = NonNullable<ClassData['teacherInClass']>[0];
 
 function DashboardSkeleton() {
   return (
@@ -120,7 +120,7 @@ function StatsCard({
 }
 
 function UpcomingAssignments({ classes }: { classes: ClassData }) {
-  const allAssignments = [
+  const allAssignments: Array<Assignment & { class: ClassWithAssignments; role: 'teacher' | 'student' }> = [
     ...(classes?.teacherInClass || []).flatMap(cls => 
       cls.assignments.map(assignment => ({ ...assignment, class: cls, role: 'teacher' as const }))
     ),
@@ -371,7 +371,7 @@ export default function HomePage() {
   const enrolledClasses = classes?.studentInClass || [];
   const totalClasses = teachingClasses.length + enrolledClasses.length;
   
-  const allAssignments = [
+  const allAssignments: Assignment[] = [
     ...teachingClasses.flatMap(cls => cls.assignments),
     ...enrolledClasses.flatMap(cls => cls.assignments)
   ];
@@ -424,12 +424,12 @@ export default function HomePage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Left Column - Assignments */}
           <div className="lg:col-span-2">
-            <UpcomingAssignments classes={classes} />
+            <UpcomingAssignments classes={classes || { teacherInClass: [], studentInClass: [] }} />
           </div>
           
           {/* Right Column - Sidebar */}
           <div className="space-y-6">
-            <ClassOverview classes={classes} />
+            <ClassOverview classes={classes || { teacherInClass: [], studentInClass: [] }} />
             <RecentNotifications />
           </div>
         </div>
