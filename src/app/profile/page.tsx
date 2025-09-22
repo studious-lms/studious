@@ -32,7 +32,7 @@ import {
   Check,
   X,
 } from "lucide-react";
-import { trpc } from "@/lib/trpc";
+import { trpc, type RouterInputs } from "@/lib/trpc";
 import { toast } from "sonner";
 import { Skeleton } from "@/components/ui/skeleton";
 import { AvatarSelector } from "@/components/AvatarSelector";
@@ -57,10 +57,22 @@ export default function Profile() {
   } | null>(null);
   const [pendingDicebearAvatar, setPendingDicebearAvatar] = useState<string | null>(null);
 
+  // Memoized preview URL for pending file & cleanup on change
+  const profilePicturePreviewUrl = React.useMemo(() => {
+    return pendingProfilePicture ? URL.createObjectURL(pendingProfilePicture.file) : null;
+  }, [pendingProfilePicture]);
+
+  React.useEffect(() => {
+    return () => {
+      if (profilePicturePreviewUrl) URL.revokeObjectURL(profilePicturePreviewUrl);
+    };
+  }, [profilePicturePreviewUrl]);
+
   // API hooks
   const { data: profile, isLoading, error } = trpc.user.getProfile.useQuery();
   const updateProfileMutation = trpc.user.updateProfile.useMutation();
   const getUploadUrlMutation = trpc.user.getUploadUrl.useMutation();
+  const utils = trpc.useUtils();
 
   // Form setup
   const form = useForm<ProfileFormValues>({
@@ -87,7 +99,7 @@ export default function Profile() {
 
   const handleSave = async (values: ProfileFormValues) => {
     try {
-      const updateData: any = {
+      const updateData: RouterInputs['user']['updateProfile'] = {
         profile: values,
       };
 
@@ -101,13 +113,19 @@ export default function Profile() {
           });
 
           // 2. Upload file directly to GCS
-          const uploadResponse = await fetch(uploadData.uploadUrl, {
-            method: 'PUT',
-            body: pendingProfilePicture.file,
-            headers: {
-              'Content-Type': pendingProfilePicture.type,
-            },
-          });
+          const ac = new AbortController();
+          const t = setTimeout(() => ac.abort(), 15000);
+          let uploadResponse: Response;
+          try {
+            uploadResponse = await fetch(uploadData.uploadUrl, {
+              method: 'PUT',
+              body: pendingProfilePicture.file,
+              headers: { 'Content-Type': pendingProfilePicture.type },
+              signal: ac.signal,
+            });
+          } finally {
+            clearTimeout(t);
+          }
 
           if (!uploadResponse.ok) {
             throw new Error('Failed to upload file to storage');
@@ -133,6 +151,10 @@ export default function Profile() {
       }
 
       await updateProfileMutation.mutateAsync(updateData);
+      
+      // Invalidate and refetch the profile query to update the UI immediately
+      await utils.user.getProfile.invalidate();
+      
       toast.success("Profile updated successfully");
       setIsEditing(false);
       setPendingProfilePicture(null);
@@ -144,7 +166,12 @@ export default function Profile() {
   };
 
   const handleCancel = () => {
-    form.reset();
+    form.reset({
+      displayName: (profile?.profile as any)?.displayName || "",
+      bio: (profile?.profile as any)?.bio || "",
+      location: (profile?.profile as any)?.location || "",
+      website: (profile?.profile as any)?.website || "",
+    });
     setIsEditing(false);
     setPendingProfilePicture(null);
     setPendingDicebearAvatar(null);
@@ -245,7 +272,11 @@ export default function Profile() {
             </Button>
             <Button
               onClick={form.handleSubmit(handleSave)}
-              disabled={updateProfileMutation.isPending}
+              disabled={
+                form.formState.isSubmitting ||
+                updateProfileMutation.isPending ||
+                getUploadUrlMutation.isPending
+              }
               className="flex items-center space-x-2"
             >
               <Save className="h-4 w-4" />
@@ -264,7 +295,7 @@ export default function Profile() {
                 <AvatarSelector
                   currentAvatar={
                     pendingProfilePicture 
-                      ? URL.createObjectURL(pendingProfilePicture.file)
+                      ? (profilePicturePreviewUrl ?? undefined)
                       : pendingDicebearAvatar 
                         ? pendingDicebearAvatar
                         : (profile?.profile as any)?.profilePicture
@@ -311,7 +342,7 @@ export default function Profile() {
           </CardHeader>
           <CardContent>
             <Form {...form}>
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={form.handleSubmit(handleSave)}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <FormField
                     control={form.control}
@@ -398,6 +429,9 @@ export default function Profile() {
                     </FormItem>
                   )}
                 />
+                
+                {/* Hidden submit to allow Enter key to submit from inputs */}
+                <button type="submit" className="hidden" aria-hidden />
               </form>
             </Form>
           </CardContent>

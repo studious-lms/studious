@@ -25,6 +25,7 @@ import {
   X,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { toast } from "sonner";
 
 interface AvatarSelectorProps {
   currentAvatar?: string;
@@ -68,7 +69,7 @@ export function AvatarSelector({
   const [isOpen, setIsOpen] = useState(false);
   const [selectedStyle, setSelectedStyle] = useState("avataaars");
   const [selectedSeed, setSelectedSeed] = useState(generateRandomSeed());
-  const [isUploading, setIsUploading] = useState(false);
+  const [isProcessing, setIsProcessing] = useState(false);
   const [previewImage, setPreviewImage] = useState<string | null>(null);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -99,18 +100,21 @@ export function AvatarSelector({
   };
 
   const handleCustomUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
+    const input = event.currentTarget;
+    const file = input.files?.[0];
     if (!file) return;
 
     // Validate file type
     const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
     if (!allowedTypes.includes(file.type)) {
-      alert("Please upload a valid image file (JPEG, PNG, GIF, or WebP)");
+      toast.error("Please upload a valid image (JPEG, PNG, GIF, or WebP)");
+      input.value = "";
       return;
     }
 
     if (file.size > 5 * 1024 * 1024) {
-      alert("Profile picture must be less than 5MB");
+      toast.error("Profile picture must be less than 5MB");
+      input.value = "";
       return;
     }
 
@@ -129,14 +133,15 @@ export function AvatarSelector({
   const handleConfirmUpload = async () => {
     if (!previewImage || !selectedFile) return;
 
-    setIsUploading(true);
+    setIsProcessing(true);
     try {
       onAvatarSelect(previewImage, true, selectedFile.name, selectedFile.type, selectedFile);
       setIsOpen(false);
     } catch (error) {
       console.error("Failed to upload image:", error);
+      toast.error("Failed to process the image. Please try again.");
     } finally {
-      setIsUploading(false);
+      setIsProcessing(false);
     }
   };
 
@@ -164,6 +169,7 @@ export function AvatarSelector({
             disabled && "opacity-50 cursor-not-allowed"
           )}
           disabled={disabled}
+          aria-label="Change profile picture"
         >
           <Avatar className={cn("h-full w-full", sizeClasses[size])}>
             <AvatarImage src={currentAvatar} alt="Profile" />
@@ -292,7 +298,7 @@ export function AvatarSelector({
                   </div>
                   <h4 className="text-sm font-medium mb-2">Upload Custom Picture</h4>
                   <p className="text-xs text-muted-foreground mb-4">
-                    Upload a JPG, PNG, or GIF file. Maximum size 5MB.
+                    Upload a JPG, PNG, GIF, or WebP file. Maximum size 5MB.
                   </p>
                   <p className="text-xs text-muted-foreground">
                     Click here to choose a file
@@ -326,21 +332,23 @@ export function AvatarSelector({
                       onClick={() => {
                         setPreviewImage(null);
                         setSelectedFile(null);
+                        if (fileInputRef.current) fileInputRef.current.value = "";
                       }}
                       className="flex items-center space-x-2"
                     >
                       <X className="h-4 w-4" />
                       <span>Choose Different</span>
                     </Button>
-                    <Button 
+                    <Button
                       onClick={handleConfirmUpload}
-                      disabled={isUploading}
+                      disabled={isProcessing}
+                      aria-busy={isProcessing}
                       className="flex items-center space-x-2"
                     >
-                      {isUploading ? (
+                      {isProcessing ? (
                         <>
                           <RefreshCw className="h-4 w-4 animate-spin" />
-                          <span>Uploading...</span>
+                          <span>Processing...</span>
                         </>
                       ) : (
                         <>
