@@ -25,6 +25,7 @@ import {
   X,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { toast } from "sonner";
 
 interface AvatarSelectorProps {
   currentAvatar?: string;
@@ -68,7 +69,7 @@ export function AvatarSelector({
   const [isOpen, setIsOpen] = useState(false);
   const [selectedStyle, setSelectedStyle] = useState("avataaars");
   const [selectedSeed, setSelectedSeed] = useState(generateRandomSeed());
-  const [isUploading, setIsUploading] = useState(false);
+  const [isProcessing, setIsProcessing] = useState(false);
   const [previewImage, setPreviewImage] = useState<string | null>(null);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -105,12 +106,12 @@ export function AvatarSelector({
     // Validate file type
     const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
     if (!allowedTypes.includes(file.type)) {
-      alert("Please upload a valid image file (JPEG, PNG, GIF, or WebP)");
+      toast.error("Please upload a valid image (JPEG, PNG, GIF, or WebP)");
       return;
     }
 
     if (file.size > 5 * 1024 * 1024) {
-      alert("Profile picture must be less than 5MB");
+      toast.error("Profile picture must be less than 5MB");
       return;
     }
 
@@ -129,14 +130,14 @@ export function AvatarSelector({
   const handleConfirmUpload = async () => {
     if (!previewImage || !selectedFile) return;
 
-    setIsUploading(true);
+    setIsProcessing(true);
     try {
       onAvatarSelect(previewImage, true, selectedFile.name, selectedFile.type, selectedFile);
       setIsOpen(false);
     } catch (error) {
       console.error("Failed to upload image:", error);
     } finally {
-      setIsUploading(false);
+      setIsProcessing(false);
     }
   };
 
@@ -164,6 +165,7 @@ export function AvatarSelector({
             disabled && "opacity-50 cursor-not-allowed"
           )}
           disabled={disabled}
+          aria-label="Change profile picture"
         >
           <Avatar className={cn("h-full w-full", sizeClasses[size])}>
             <AvatarImage src={currentAvatar} alt="Profile" />
@@ -292,7 +294,7 @@ export function AvatarSelector({
                   </div>
                   <h4 className="text-sm font-medium mb-2">Upload Custom Picture</h4>
                   <p className="text-xs text-muted-foreground mb-4">
-                    Upload a JPG, PNG, or GIF file. Maximum size 5MB.
+                    Upload a JPG, PNG, GIF, or WebP file. Maximum size 5MB.
                   </p>
                   <p className="text-xs text-muted-foreground">
                     Click here to choose a file
@@ -334,13 +336,13 @@ export function AvatarSelector({
                     </Button>
                     <Button 
                       onClick={handleConfirmUpload}
-                      disabled={isUploading}
+                      disabled={isProcessing}
                       className="flex items-center space-x-2"
                     >
-                      {isUploading ? (
+                      {isProcessing ? (
                         <>
                           <RefreshCw className="h-4 w-4 animate-spin" />
-                          <span>Uploading...</span>
+                          <span>Processing...</span>
                         </>
                       ) : (
                         <>
