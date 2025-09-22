@@ -21,10 +21,14 @@ interface AppState {
         loggedIn: boolean;
         teacher: boolean;
         student: boolean;
-        schoolId: string;
         role: UserRole;
         username: string;
+        displayName: string;
+        location: string;
+        website: string;
         id: string;
+        bio: string;    
+        profilePicture: string;
     };
     alerts: Alert[];
     modal: ModalState;
@@ -36,10 +40,14 @@ const initialState: AppState = {
         loggedIn: false,
         teacher: false,
         student: false,
-        schoolId: '',
+        displayName: '',
         role: 'NONE',
         username: '',
         id: '',
+        profilePicture: '',
+        location: '',
+        website: '',
+        bio: '',
     },
     alerts: [],
     modal: {

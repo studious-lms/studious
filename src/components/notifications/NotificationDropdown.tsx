@@ -68,10 +68,10 @@ export function NotificationDropdown({ notifications, isLoading, onClose }: Noti
   const getNotificationColor = (notification: Notification) => {
     const title = notification.title.toLowerCase();
     
-    if (title.includes('urgent') || title.includes('overdue')) return 'text-red-500';
-    if (title.includes('grade') || title.includes('completed')) return 'text-green-500';
-    if (title.includes('assignment') || title.includes('due')) return 'text-blue-500';
-    if (title.includes('reminder')) return 'text-orange-500';
+    if (title.includes('urgent') || title.includes('overdue')) return 'text-destructive';
+    if (title.includes('grade') || title.includes('completed')) return 'text-primary';
+    if (title.includes('assignment') || title.includes('due')) return 'text-primary';
+    if (title.includes('reminder')) return 'text-primary';
     
     return 'text-muted-foreground';
   };
@@ -94,7 +94,6 @@ export function NotificationDropdown({ notifications, isLoading, onClose }: Noti
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b">
         <div className="flex items-center space-x-2">
-          <Bell className="h-4 w-4" />
           <h3 className="font-semibold">Notifications</h3>
           {unreadNotifications.length > 0 && (
             <Badge variant="secondary" className="text-xs">
@@ -178,7 +177,7 @@ function NotificationItem({
     <div 
       className={cn(
         "p-3 hover:bg-muted/50 transition-colors",
-        !notification.read && "bg-blue-50/50 dark:bg-blue-950/20"
+        !notification.read && "bg-primary/5"
       )}
     >
       <div className="flex items-start space-x-3">
@@ -249,10 +248,10 @@ function getNotificationIcon(notification: Notification) {
 function getNotificationColor(notification: Notification) {
   const title = notification.title.toLowerCase();
   
-  if (title.includes('urgent') || title.includes('overdue')) return 'text-red-500';
-  if (title.includes('grade') || title.includes('completed')) return 'text-green-500';
-  if (title.includes('assignment') || title.includes('due')) return 'text-blue-500';
-  if (title.includes('reminder')) return 'text-orange-500';
+  if (title.includes('urgent') || title.includes('overdue')) return 'text-destructive';
+  if (title.includes('grade') || title.includes('completed')) return 'text-primary';
+  if (title.includes('assignment') || title.includes('due')) return 'text-primary';
+  if (title.includes('reminder')) return 'text-primary';
   
   return 'text-muted-foreground';
 }

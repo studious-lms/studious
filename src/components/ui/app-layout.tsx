@@ -4,6 +4,8 @@ import { ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import { PrimarySidebar } from "./primary-sidebar";
 import { ClassSidebar } from "./class-sidebar";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
 
 interface AppLayoutProps {
   children: ReactNode;
@@ -26,7 +28,7 @@ const mockClasses = {
 
 export function AppLayout({ children, isAuthenticated = false, user }: AppLayoutProps) {
   const pathname = usePathname();
-  
+  const appState = useSelector((state: RootState) => state.app);
   console.log("🔍 AppLayout Debug:");
   console.log("  Current pathname:", pathname);
   
@@ -38,20 +40,20 @@ export function AppLayout({ children, isAuthenticated = false, user }: AppLayout
 
   // Don't show sidebars for auth pages
   if (!isAuthenticated || ["/login", "/signup", "/pricing"].includes(pathname)) {
-    return <div className="min-h-screen bg-gradient-surface">{children}</div>;
+    return <div className="min-h-screen bg-background">{children}</div>;
   }
 
   return (
-    <div className="min-h-screen bg-gradient-surface">
+    <div className="min-h-screen bg-background">
       {/* Primary Sidebar */}
-      <PrimarySidebar isAuthenticated={isAuthenticated} user={user} />
+      {appState.user.loggedIn && <PrimarySidebar isAuthenticated={isAuthenticated} user={user} />}
       
       {/* Class Sidebar (only show if in a class route) */}
-      {isInClass && <ClassSidebar classId={classId!} />}
+      {isInClass && appState.user.loggedIn && <ClassSidebar classId={classId!} />}
       
       {/* Main Content */}
       <main className={`min-h-screen overflow-auto transition-all duration-200 ${
-        isInClass ? 'ml-80' : 'ml-16'
+        isInClass ? 'ml-80' : (appState.user.loggedIn ? 'ml-16' : 'ml-0')
       }`}>
         {children}
       </main>

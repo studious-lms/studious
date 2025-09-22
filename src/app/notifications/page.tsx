@@ -173,7 +173,7 @@ function NotificationCard({
   return (
     <Card className={cn(
       "transition-all hover:shadow-sm",
-      !notification.read && "ring-1 ring-blue-200 bg-blue-50/30 dark:ring-blue-800 dark:bg-blue-950/20"
+      !notification.read && "ring-1 ring-primary/20 bg-primary/5"
     )}>
       <CardContent className="p-6">
         <div className="flex items-start space-x-4">
@@ -262,10 +262,10 @@ function getNotificationIcon(notification: Notification) {
 function getNotificationColor(notification: Notification) {
   const title = notification.title.toLowerCase();
   
-  if (title.includes('urgent') || title.includes('overdue')) return 'text-red-500';
-  if (title.includes('grade') || title.includes('completed')) return 'text-green-500';
-  if (title.includes('assignment') || title.includes('due')) return 'text-blue-500';
-  if (title.includes('reminder')) return 'text-orange-500';
+  if (title.includes('urgent') || title.includes('overdue')) return 'text-destructive';
+  if (title.includes('grade') || title.includes('completed')) return 'text-primary';
+  if (title.includes('assignment') || title.includes('due')) return 'text-primary';
+  if (title.includes('reminder')) return 'text-primary';
   
   return 'text-muted-foreground';
 }
