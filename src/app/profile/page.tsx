@@ -61,6 +61,7 @@ export default function Profile() {
   const { data: profile, isLoading, error } = trpc.user.getProfile.useQuery();
   const updateProfileMutation = trpc.user.updateProfile.useMutation();
   const getUploadUrlMutation = trpc.user.getUploadUrl.useMutation();
+  const utils = trpc.useUtils();
 
   // Form setup
   const form = useForm<ProfileFormValues>({
@@ -133,6 +134,10 @@ export default function Profile() {
       }
 
       await updateProfileMutation.mutateAsync(updateData);
+      
+      // Invalidate and refetch the profile query to update the UI immediately
+      await utils.user.getProfile.invalidate();
+      
       toast.success("Profile updated successfully");
       setIsEditing(false);
       setPendingProfilePicture(null);
