@@ -32,10 +32,13 @@ import {
   Check,
   X,
 } from "lucide-react";
-import { trpc, type RouterInputs } from "@/lib/trpc";
+import { RouterOutputs, trpc, type RouterInputs } from "@/lib/trpc";
 import { toast } from "sonner";
 import { Skeleton } from "@/components/ui/skeleton";
 import { AvatarSelector } from "@/components/AvatarSelector";
+import { useDispatch, useSelector } from "react-redux";
+import { setAuth } from "@/store/appSlice";
+import { RootState } from "@/store/store";
 
 // Profile form schema
 const profileFormSchema = z.object({
@@ -48,6 +51,10 @@ const profileFormSchema = z.object({
 type ProfileFormValues = z.infer<typeof profileFormSchema>;
 
 export default function Profile() {
+
+  const dispatch  = useDispatch();
+  const appState = useSelector((state: RootState) => state.app);
+  
   const [isEditing, setIsEditing] = useState(false);
   const [pendingProfilePicture, setPendingProfilePicture] = useState<{
     name: string;
@@ -70,7 +77,14 @@ export default function Profile() {
 
   // API hooks
   const { data: profile, isLoading, error } = trpc.user.getProfile.useQuery();
-  const updateProfileMutation = trpc.user.updateProfile.useMutation();
+  const updateProfileMutation = trpc.user.updateProfile.useMutation({
+    onSuccess: (response: RouterOutputs['user']['updateProfile']) => {
+      dispatch(setAuth({
+        ...appState.user,
+        ...response.profile,
+      }));
+    }
+  });
   const getUploadUrlMutation = trpc.user.getUploadUrl.useMutation();
   const utils = trpc.useUtils();
 
@@ -333,7 +347,6 @@ export default function Profile() {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center space-x-2">
-              <User className="h-5 w-5" />
               <span>Personal Information</span>
             </CardTitle>
             <CardDescription>
@@ -441,7 +454,6 @@ export default function Profile() {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center space-x-2">
-              <Mail className="h-5 w-5" />
               <span>Account Information</span>
             </CardTitle>
             <CardDescription>
