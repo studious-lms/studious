@@ -21,18 +21,18 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         dispatch(setAuth({
             loggedIn: true,
             username: user.user.username,
-            profilePicture: user.user.profile!.profilePicture,
-            displayName: user.user.profile!.displayName,
-            bio: user.user.profile!.bio,
-            location: user.user.profile!.location,
-            website: user.user.profile!.website,
+            profilePicture: user.user.profile?.profilePicture || `https://api.dicebear.com/7.x/avataaars/svg?seed=${user.user.username}`,
+            displayName: user.user.profile?.displayName || user.user.username,
+            bio: user.user.profile?.bio || '',
+            location: user.user.profile?.location || '',
+            website: user.user.profile?.website || '',
             id: user.user.id,
         }));
     }
 }, [user]);
 
     useEffect(() => {
-        if (!user && AUTHED_PATHS.some(path => pathname.startsWith(path))) {
+        if (!user && !isLoading && AUTHED_PATHS.some(path => pathname.startsWith(path))) {
             router.push('/login');
         }
     }, [user]);

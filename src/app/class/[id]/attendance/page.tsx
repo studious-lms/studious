@@ -53,7 +53,9 @@ import {
 import { trpc, type RouterOutputs } from "@/lib/trpc";
 import { ClassEventModal, EventPreviewModal } from "@/components/modals";
 import type { ColumnDef } from "@tanstack/react-table";
-import { toast } from "sonner"
+import { toast } from "sonner";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
 
 interface AttendanceStatus {
   eventId: string;
@@ -79,6 +81,10 @@ interface EventTableRow {
 
 export default function Attendance() {
   const { id: classId } = useParams();
+  const appState = useSelector((state: RootState) => state.app);
+  const isStudent = appState.user.student;
+  const currentUserId = appState.user.id;
+  
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
   const [eventModalOpen, setEventModalOpen] = useState(false);
   const [eventToEdit, setEventToEdit] = useState<Event | null>(null);
@@ -475,6 +481,94 @@ export default function Attendance() {
   const selectedEventData = events.find(e => e.id === selectedEvent);
   const showStudentRoster = selectedEvent;
 
+  // Student-specific data
+  const studentAttendanceData = useMemo(() => {
+    if (!isStudent || !attendanceData) return [];
+    
+    return attendanceData.map((record) => {
+      const event = allEvents.find(e => e.id === record.eventId);
+      
+      // Check which array the current user is in
+      let status: 'present' | 'late' | 'absent' | 'not_taken' = 'not_taken';
+      if (record.present.some(s => s.id === currentUserId)) {
+        status = 'present';
+      } else if (record.late.some(s => s.id === currentUserId)) {
+        status = 'late';
+      } else if (record.absent.some(s => s.id === currentUserId)) {
+        status = 'absent';
+      }
+      
+      return {
+        event,
+        status,
+        date: event?.startTime,
+        name: event?.name,
+        location: event?.location,
+      };
+    }).filter(item => item.event);
+  }, [isStudent, attendanceData, allEvents, currentUserId]);
+
+  const studentStats = useMemo(() => {
+    if (!isStudent || studentAttendanceData.length === 0) {
+      return { present: 0, late: 0, absent: 0, total: 0, attendanceRate: 0 };
+    }
+
+    const present = studentAttendanceData.filter(item => item.status === 'present').length;
+    const late = studentAttendanceData.filter(item => item.status === 'late').length;
+    const absent = studentAttendanceData.filter(item => item.status === 'absent').length;
+    const total = studentAttendanceData.filter(item => item.status !== 'not_taken').length;
+    const attendanceRate = total > 0 ? Math.round(((present + late) / total) * 100) : 0;
+
+    return { present, late, absent, total, attendanceRate };
+  }, [isStudent, studentAttendanceData]);
+
+  // Student attendance table columns
+  const studentAttendanceColumns: ColumnDef<typeof studentAttendanceData[number]>[] = [
+    {
+      accessorKey: "date",
+      header: "Date",
+      cell: ({ row }) => {
+        const date = row.original.event?.startTime;
+        return date ? format(new Date(date), "MMM d, yyyy") : "-";
+      },
+    },
+    {
+      accessorKey: "name",
+      header: "Event",
+      cell: ({ row }) => (
+        <div>
+          <div className="font-medium">{row.original.event?.name}</div>
+          {row.original.event?.location && (
+            <div className="text-sm text-muted-foreground flex items-center gap-1">
+              <MapPin className="h-3 w-3" />
+              {row.original.event.location}
+            </div>
+          )}
+        </div>
+      ),
+    },
+    {
+      accessorKey: "status",
+      header: "Status",
+      cell: ({ row }) => {
+        const status = row.original.status;
+        return (
+          <div className="flex items-center gap-2">
+            {getStatusIcon(status)}
+            <Badge variant={
+              status === 'present' ? 'default' : 
+              status === 'late' ? 'secondary' : 
+              status === 'absent' ? 'destructive' : 
+              'outline'
+            }>
+              {status === 'not_taken' ? 'Not Taken' : status.charAt(0).toUpperCase() + status.slice(1)}
+            </Badge>
+          </div>
+        );
+      },
+    },
+  ];
+
   if (classLoading || attendanceLoading) {
     return (
       <PageLayout>
@@ -483,6 +577,105 @@ export default function Attendance() {
           <Card>
             <CardContent className="pt-6">
               <div className="h-40 w-full bg-muted rounded" />
+            </CardContent>
+          </Card>
+        </div>
+      </PageLayout>
+    );
+  }
+
+  // Student view
+  if (isStudent) {
+    return (
+      <PageLayout>
+        <div className="space-y-6">
+          {/* Header */}
+          <div>
+            <h1 className="text-2xl font-bold">My Attendance</h1>
+            <p className="text-muted-foreground">
+              Track your attendance for {classData?.class?.name || 'this class'}
+            </p>
+          </div>
+
+          {/* Student Stats */}
+          <div className="grid gap-4 md:grid-cols-4">
+            <Card>
+              <CardContent className="pt-6">
+                <div className="flex items-center space-x-2">
+                  <div className="h-8 w-8 rounded-full bg-muted flex items-center justify-center">
+                    <UserCheck className="h-4 w-4 text-muted-foreground" />
+                  </div>
+                  <div>
+                    <p className="text-2xl font-bold">{studentStats.present}</p>
+                    <p className="text-xs text-muted-foreground">Present</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card>
+              <CardContent className="pt-6">
+                <div className="flex items-center space-x-2">
+                  <div className="h-8 w-8 rounded-full bg-muted flex items-center justify-center">
+                    <Clock className="h-4 w-4 text-muted-foreground" />
+                  </div>
+                  <div>
+                    <p className="text-2xl font-bold">{studentStats.late}</p>
+                    <p className="text-xs text-muted-foreground">Late</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card>
+              <CardContent className="pt-6">
+                <div className="flex items-center space-x-2">
+                  <div className="h-8 w-8 rounded-full bg-muted flex items-center justify-center">
+                    <UserX className="h-4 w-4 text-muted-foreground" />
+                  </div>
+                  <div>
+                    <p className="text-2xl font-bold">{studentStats.absent}</p>
+                    <p className="text-xs text-muted-foreground">Absent</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card>
+              <CardContent className="pt-6">
+                <div className="flex items-center space-x-2">
+                  <div className="h-8 w-8 rounded-full bg-muted flex items-center justify-center">
+                    <ClipboardCheck className="h-4 w-4 text-muted-foreground" />
+                  </div>
+                  <div>
+                    <p className="text-2xl font-bold">{studentStats.attendanceRate}%</p>
+                    <p className="text-xs text-muted-foreground">Attendance Rate</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Attendance History */}
+          <Card>
+            <CardHeader>
+              <CardTitle>Attendance History</CardTitle>
+            </CardHeader>
+            <CardContent>
+              {studentAttendanceData.length === 0 ? (
+                <EmptyState
+                  icon={ClipboardCheck}
+                  title="No Attendance Records"
+                  description="Your attendance will appear here once events are created and attendance is taken"
+                />
+              ) : (
+                <DataTable
+                  columns={studentAttendanceColumns}
+                  data={studentAttendanceData}
+                  searchKey="name"
+                  searchPlaceholder="Search events..."
+                />
+              )}
             </CardContent>
           </Card>
         </div>

@@ -216,6 +216,7 @@ export default function Files() {
     itemCount: (folder.childFolders?.length || 0) + (folder.files?.length || 0),
     color: folder?.color || "#3b82f6",
     lastModified: new Date().toISOString(), // API doesn't provide this, using current date
+    readonly: !isTeacher, // Students can't edit folders
   });
   
   const transformFileToFileItem = (file: ApiFile): FileItem => ({
@@ -226,6 +227,7 @@ export default function Files() {
     size: formatFileSize(file.size || 0),
     uploadedBy: "Unknown", // API doesn't provide this in folder context
     uploadedAt: new Date().toISOString(), // API doesn't provide this
+    readonly: !isTeacher, // Students can't edit files
   });
   
   
@@ -424,34 +426,36 @@ export default function Files() {
           <p className="text-muted-foreground">Manage class files and resources</p>
         </div>
         
-        <div className="flex items-center space-x-2">
-              <Button 
-                variant="outline" 
-                size="sm" 
-                onClick={() => setCreateFolderModalOpen(true)}
-                disabled={createFolderMutation.isPending}
-              >
-                {createFolderMutation.isPending ? (
+        {isTeacher && (
+          <div className="flex items-center space-x-2">
+            <Button 
+              variant="outline" 
+              size="sm" 
+              onClick={() => setCreateFolderModalOpen(true)}
+              disabled={createFolderMutation.isPending}
+            >
+              {createFolderMutation.isPending ? (
+                <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+              ) : (
+                <FolderPlus className="h-4 w-4 mr-2" />
+              )}
+              New Folder
+            </Button>
+            <UploadFileModal 
+              currentFolder="root"
+              onFilesUploaded={handleUploadFiles}
+            >
+              <Button size="sm" disabled={uploadFilesMutation.isPending}>
+                {uploadFilesMutation.isPending ? (
                   <Loader2 className="h-4 w-4 mr-2 animate-spin" />
                 ) : (
-                  <FolderPlus className="h-4 w-4 mr-2" />
+                  <Upload className="h-4 w-4 mr-2" />
                 )}
-                New Folder
+                Upload
               </Button>
-              <UploadFileModal 
-                currentFolder="root"
-                onFilesUploaded={handleUploadFiles}
-              >
-                <Button size="sm" disabled={uploadFilesMutation.isPending}>
-                  {uploadFilesMutation.isPending ? (
-                    <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                  ) : (
-              <Upload className="h-4 w-4 mr-2" />
-                  )}
-              Upload
-            </Button>
-          </UploadFileModal>
-        </div>
+            </UploadFileModal>
+          </div>
+        )}
       </div>
 
         {/* Error Alert */}

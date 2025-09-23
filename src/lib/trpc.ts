@@ -61,3 +61,18 @@ export type NotificationListOutput = RouterOutputs['notification']['list'];
 export type NotificationGetOutput = RouterOutputs['notification']['get'];
 export type NotificationSendToInput = RouterInputs['notification']['sendTo'];
 export type NotificationSendToMultipleInput = RouterInputs['notification']['sendToMultiple'];
+
+// ===== CHAT TYPES =====
+// Conversation types
+export type ConversationListOutput = RouterOutputs['conversation']['list'];
+export type ConversationGetOutput = RouterOutputs['conversation']['get'];
+export type ConversationCreateInput = RouterInputs['conversation']['create'];
+
+// Message types
+export type MessageListOutput = RouterOutputs['message']['list'];
+export type MessageSendInput = RouterInputs['message']['send'];
+export type MessageUpdateInput = RouterInputs['message']['update'];
+export type MessageDeleteInput = RouterInputs['message']['delete'];
+export type MessageMarkAsReadInput = RouterInputs['message']['markAsRead'];
+export type MessageMarkMentionsAsReadInput = RouterInputs['message']['markMentionsAsRead'];
+export type MessageGetUnreadCountOutput = RouterOutputs['message']['getUnreadCount'];

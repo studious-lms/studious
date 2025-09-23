@@ -148,7 +148,15 @@ export function ClassSidebar({ classId }: ClassSidebarProps) {
 
       {/* Class Navigation */}
       <nav className="flex-1 p-4 space-y-1">
-        {classNavigationItems.map((item) => {
+        {classNavigationItems
+          .filter((item) => {
+            // Hide Settings for students
+            if (item.href === "/settings" && appState.user.student) {
+              return false;
+            }
+            return true;
+          })
+          .map((item) => {
           const Icon = item.icon;
           const href = `/class/${classId}${item.href}`;
           

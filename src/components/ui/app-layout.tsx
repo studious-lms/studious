@@ -17,15 +17,6 @@ interface AppLayoutProps {
   };
 }
 
-// Mock class data - in real app this would come from API
-const mockClasses = {
-  "1": { id: "1", title: "Advanced Physics", section: "AP-101", subject: "Physics", color: "#3b82f6" },
-  "2": { id: "2", title: "Calculus I", section: "MATH-201", subject: "Mathematics", color: "#8b5cf6" },
-  "3": { id: "3", title: "English Literature", section: "ENG-101", subject: "English", color: "#ef4444" },
-  "4": { id: "4", title: "World History", section: "HIST-150", subject: "History", color: "#f59e0b" },
-  "5": { id: "5", title: "Computer Science", section: "CS-102", subject: "Computer Science", color: "#10b981" }
-};
-
 export function AppLayout({ children, isAuthenticated = false, user }: AppLayoutProps) {
   const pathname = usePathname();
   const appState = useSelector((state: RootState) => state.app);

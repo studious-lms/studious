@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { PageLayout, PageHeader } from "@/components/ui/page-layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -19,16 +19,23 @@ import {
   TrendingUp,
   TrendingDown,
   Minus,
-  ClipboardList
+  ClipboardList,
+  ExternalLink
 } from "lucide-react";
 import type { ColumnDef } from "@tanstack/react-table";
 import { RouterOutputs, trpc } from "@/lib/trpc";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
 
 export default function StudentGrades() {
   const params = useParams();
+  const router = useRouter();
   const classId = params.id as string;
   const studentId = params.studentId as string;
   const [editingGrades, setEditingGrades] = useState<{[key: string]: string}>({});
+  
+  const appState = useSelector((state: RootState) => state.app);
+  const isStudent = appState.user.student;
   
   const { data: classData, isLoading: classLoading } = trpc.class.get.useQuery({ classId });
   const { data: studentGrades, isLoading: gradesLoading, refetch } = trpc.class.getGrades.useQuery({ classId, userId: studentId });
@@ -56,8 +63,51 @@ export default function StudentGrades() {
       header: "Grade",
       cell: ({ row }) => {
         const grade = row.original;
-        const isEditing = editingGrades[grade.assignment.id] !== undefined;
+        const hasRubric = grade.assignment.markScheme !== null;
+        const isEditing = !isStudent && !hasRubric && editingGrades[grade.assignment.id] !== undefined;
         
+        // Read-only view for students
+        if (isStudent) {
+          return (
+            <div className="text-center">
+              {grade.gradeReceived ? (
+                <div className={`font-medium ${getGradeColor(grade.gradeReceived, "graded")}`}>
+                  {grade.gradeReceived}
+                </div>
+              ) : (
+                <span className="text-muted-foreground">-</span>
+              )}
+            </div>
+          );
+        }
+        
+        // If assignment has a rubric, show grade with button to open assignment
+        if (hasRubric) {
+          return (
+            <div className="flex items-center justify-center space-x-2">
+              <div className="text-center">
+                {grade.gradeReceived ? (
+                  <div className={`font-medium ${getGradeColor(grade.gradeReceived, "graded")}`}>
+                    {grade.gradeReceived}
+                  </div>
+                ) : (
+                  <span className="text-muted-foreground">-</span>
+                )}
+              </div>
+              <Button
+                size="sm"
+                variant="outline"
+                onClick={() => router.push(`/class/${classId}/assignment/${grade.assignment.id}`)}
+                className="h-6 px-2 text-xs"
+              >
+                <ExternalLink className="h-3 w-3 mr-1" />
+                Grade
+              </Button>
+            </div>
+          );
+        }
+        
+        // Editable view for teachers (no rubric)
         if (isEditing) {
           return (
             <div className="flex items-center justify-center space-x-1">
@@ -293,14 +343,16 @@ export default function StudentGrades() {
   return (
     <PageLayout>
       <PageHeader 
-        title={`${student.username} - Grades`}
-        description="Individual student grade management"
+        title={isStudent ? "My Grades" : `${student.username} - Grades`}
+        description={isStudent ? "View your grades and progress" : "Individual student grade management"}
       >
         <div className="flex items-center space-x-2">
-          <Button variant="outline" size="sm">
-            <Download className="h-4 w-4 mr-2" />
-            Export
-          </Button>
+          {!isStudent && (
+            <Button variant="outline" size="sm">
+              <Download className="h-4 w-4 mr-2" />
+              Export
+            </Button>
+          )}
           <Button 
             variant="outline" 
             onClick={() => window.history.back()}
@@ -319,7 +371,12 @@ export default function StudentGrades() {
               <img src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${student.username}`} alt={student.username} />
             </Avatar>
             <div className="flex-1">
-              <h2 className="text-2xl font-bold">{student.username}</h2>
+              <h2 className="text-2xl font-bold">
+                {isStudent ? "Your Performance" : student.username}
+              </h2>
+              {isStudent && (
+                <p className="text-muted-foreground">Track your academic progress</p>
+              )}
             </div>
             <div className="grid grid-cols-3 gap-6 text-center">
               <div>
@@ -348,7 +405,7 @@ export default function StudentGrades() {
       {/* Assignments Table */}
       <Card>
         <CardHeader>
-          <CardTitle>Assignments</CardTitle>
+          <CardTitle>{isStudent ? "Your Grades" : "Assignments"}</CardTitle>
         </CardHeader>
         <CardContent>
           {grades.length === 0 ? (

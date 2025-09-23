@@ -41,6 +41,8 @@ import {
 } from "@/lib/trpc";
 import { RouterOutputs } from "@/lib/trpc";
 import { GradingBoundary, RubricCriteria } from "@/lib/types/rubric";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
 
 // Types
 type Assignment = {
@@ -238,8 +240,8 @@ export default function Syllabus() {
                 <p className="text-sm font-medium text-muted-foreground">Total Assignments</p>
                 <p className="text-2xl font-bold mt-1">{assignments.length}</p>
               </div>
-              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                <Target className="w-5 h-5 text-primary" />
+              <div className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center">
+                <Target className="w-5 h-5 text-muted-foreground" />
               </div>
             </div>
           </Card>
@@ -250,8 +252,8 @@ export default function Syllabus() {
                 <p className="text-sm font-medium text-muted-foreground">Completion Rate</p>
                 <p className="text-2xl font-bold mt-1">{completionRate}%</p>
               </div>
-              <div className="w-10 h-10 bg-green-500/10 rounded-lg flex items-center justify-center">
-                <BarChart3 className="w-5 h-5 text-green-500" />
+              <div className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center">
+                <BarChart3 className="w-5 h-5 text-muted-foreground" />
               </div>
             </div>
           </Card>
@@ -262,8 +264,8 @@ export default function Syllabus() {
                 <p className="text-sm font-medium text-muted-foreground">Total Points</p>
                 <p className="text-2xl font-bold mt-1">{totalPoints}</p>
               </div>
-              <div className="w-10 h-10 bg-purple-500/10 rounded-lg flex items-center justify-center">
-                <TrendingUp className="w-5 h-5 text-purple-500" />
+              <div className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center">
+                <TrendingUp className="w-5 h-5 text-muted-foreground" />
               </div>
             </div>
           </Card>
@@ -274,8 +276,8 @@ export default function Syllabus() {
                 <p className="text-sm font-medium text-muted-foreground">Upcoming</p>
                 <p className="text-2xl font-bold mt-1">{upcomingAssignments}</p>
               </div>
-              <div className="w-10 h-10 bg-orange-500/10 rounded-lg flex items-center justify-center">
-                <Clock className="w-5 h-5 text-orange-500" />
+              <div className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center">
+                <Clock className="w-5 h-5 text-muted-foreground" />
               </div>
             </div>
           </Card>
@@ -349,8 +351,8 @@ export default function Syllabus() {
                           <TableRow key={assignment.id}>
                             <TableCell>
                               <div className="flex items-center space-x-3">
-                                <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
-                                  <Target className="w-4 h-4 text-primary" />
+                                <div className="w-8 h-8 bg-muted rounded-lg flex items-center justify-center">
+                                  <Target className="w-4 h-4 text-muted-foreground" />
                                 </div>
                                 <div>
                                   <span className="font-medium block">
@@ -387,11 +389,11 @@ export default function Syllabus() {
                             </TableCell>
                             <TableCell>
                               {assignment.graded ? (
-                                <Badge variant="default" className="bg-green-500/10 text-green-700 hover:bg-green-500/20">
+                                <Badge variant="default">
                                   Graded
                                 </Badge>
                               ) : (
-                                <Badge variant="secondary" className="bg-yellow-500/10 text-yellow-700 hover:bg-yellow-500/20">
+                                <Badge variant="secondary">
                                   Pending
                                 </Badge>
                               )}

@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { PageLayout } from "@/components/ui/page-layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -30,7 +30,8 @@ import {
   ClipboardList,
   Eye,
   Edit3,
-  Users
+  Users,
+  ExternalLink
 } from "lucide-react";
 import { trpc, type RouterOutputs } from "@/lib/trpc";
 
@@ -46,6 +47,7 @@ import type { ColumnDef } from "@tanstack/react-table";
 
 export default function Grades() {
   const { id: classId } = useParams();
+  const router = useRouter();
   const [gradingBoundariesOpen, setGradingBoundariesOpen] = useState(false);
   const [rubricModalOpen, setRubricModalOpen] = useState(false);
   const [editingGradingBoundary, setEditingGradingBoundary] = useState<GradingBoundary | null>(null);
@@ -255,9 +257,17 @@ export default function Grades() {
       header: "Assignment",
       cell: ({ row }) => {
         const assignment = row.original;
+        const hasRubric = assignment.markScheme !== null;
         return (
-          <div className="font-medium">
-            {assignment.title}
+          <div className="flex items-center gap-2">
+            <div className="font-medium">
+              {assignment.title}
+            </div>
+            {hasRubric && (
+              <Badge variant="secondary" className="text-xs">
+                Rubric
+              </Badge>
+            )}
           </div>
         );
       },
@@ -267,8 +277,17 @@ export default function Grades() {
       header: "Max Points",
       cell: ({ row }) => {
         const assignment = row.original;
+        const hasRubric = assignment.markScheme !== null;
         const effectiveMax = Number(getEffective(assignment.id, "maxGrade", assignment.maxGrade ?? 0));
         const effectiveGraded = Boolean(getEffective(assignment.id, "graded", assignment.graded ?? false));
+        
+        if (hasRubric) {
+          return (
+            <div className="text-center text-muted-foreground">
+              {assignment.maxGrade || "—"}
+            </div>
+          );
+        }
         
         return (
           <Input
@@ -286,8 +305,17 @@ export default function Grades() {
       header: "Weight",
       cell: ({ row }) => {
         const assignment = row.original;
+        const hasRubric = assignment.markScheme !== null;
         const effectiveWeight = Number(getEffective(assignment.id, "weight", assignment.weight ?? 0));
         const effectiveGraded = Boolean(getEffective(assignment.id, "graded", assignment.graded ?? false));
+        
+        if (hasRubric) {
+          return (
+            <div className="text-center text-muted-foreground">
+              {assignment.weight || "—"}
+            </div>
+          );
+        }
         
         return (
           <Input
@@ -307,6 +335,7 @@ export default function Grades() {
       header: "Graded",
       cell: ({ row }) => {
         const assignment = row.original;
+        const hasRubric = assignment.markScheme !== null;
         const effectiveGraded = Boolean(getEffective(assignment.id, "graded", assignment.graded ?? false));
         
         return (
@@ -314,6 +343,7 @@ export default function Grades() {
             <Switch
               checked={effectiveGraded}
               onCheckedChange={(checked) => setEdit(assignment.id, "graded", checked)}
+              disabled={hasRubric}
             />
           </div>
         );
@@ -328,6 +358,32 @@ export default function Grades() {
           <span className="text-sm text-muted-foreground">
             {assignment.dueDate ? new Date(assignment.dueDate).toLocaleDateString() : '—'}
           </span>
+        );
+      },
+    },
+    {
+      accessorKey: "actions",
+      header: "Actions",
+      cell: ({ row }) => {
+        const assignment = row.original;
+        const hasRubric = assignment.markScheme !== null;
+        
+        if (!hasRubric) {
+          return null;
+        }
+        
+        return (
+          <div className="flex justify-center">
+            <Button
+              size="sm"
+              variant="outline"
+              onClick={() => router.push(`/class/${classId}/assignment/${assignment.id}`)}
+              className="h-8 px-3 text-xs"
+            >
+              <ExternalLink className="h-3 w-3 mr-1" />
+              Manage
+            </Button>
+          </div>
         );
       },
     },

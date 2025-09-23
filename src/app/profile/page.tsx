@@ -312,7 +312,7 @@ export default function Profile() {
                       ? (profilePicturePreviewUrl ?? undefined)
                       : pendingDicebearAvatar 
                         ? pendingDicebearAvatar
-                        : (profile?.profile as any)?.profilePicture
+                        : (profile?.profile as any)?.profilePicture || appState.user.profilePicture
                   }
                   onAvatarSelect={handleAvatarSelect}
                   disabled={!isEditing}

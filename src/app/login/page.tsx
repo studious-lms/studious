@@ -13,6 +13,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { setCookie } from "cookies-next";
 import { toast } from "sonner";
+import { setAuth } from "@/store/appSlice";
+import { useDispatch } from "react-redux";
 
 export default function Login() {
   const router = useRouter();
@@ -24,7 +26,8 @@ export default function Login() {
   const [resendEmailFormData, setResendEmailFormData] = useState<RouterInputs['auth']['resendVerificationEmail']>({
     email: '',
   });
-  
+  const dispatch = useDispatch();
+
   const [userNotVerified, setUserNotVerified] = useState(false);
   const [showResendForm, setShowResendForm] = useState(false);
   const [resendSuccess, setResendSuccess] = useState(false);
@@ -35,6 +38,11 @@ export default function Login() {
         toast.success('Successfully logged in');
         // set the session cookie
         setCookie('token', data.token);
+        dispatch(setAuth({
+          loggedIn: true,
+          username: data.user.username,
+          id: data.user.id,
+        }));
         router.push('/classes/');
       } else {
         // user not verified

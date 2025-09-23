@@ -58,6 +58,7 @@ export interface FileItem {
   itemCount?: number;
   lastModified?: string;
   children?: FileItem[];
+  readonly?: boolean;
 }
 
 interface DraggableFileItemProps {
@@ -84,6 +85,7 @@ export function DraggableFileItem({
   const [{ isDragging }, drag] = useDrag({
     type: "file",
     item: { id: item.id, name: item.name, type: item.type },
+    canDrag: !readonly && !item.readonly,
     collect: (monitor) => ({
       isDragging: monitor.isDragging(),
     }),
@@ -229,7 +231,7 @@ export function DraggableFileItem({
               <Share className="mr-2 h-4 w-4" />
               Share
             </DropdownMenuItem>
-            {!readonly && (
+            {!readonly && !item.readonly && (
               <>
                 <DropdownMenuItem 
                   onClick={() => {

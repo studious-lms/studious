@@ -130,7 +130,7 @@ export default function ClassFeed() {
             <div 
               className="absolute inset-0 bg-gradient-to-br opacity-90 rounded-lg"
               style={{ 
-                backgroundImage: `linear-gradient(135deg, #3b82f6dd, #8b5cf6aa), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>')` 
+                backgroundImage: `linear-gradient(135deg, ${classInfo?.color || '#3b82f6'}dd, ${classInfo?.color || '#3b82f6'}aa), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>')` 
               }}
             />
             <div className="absolute bottom-0 left-0 right-0 p-6">

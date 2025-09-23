@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { 
@@ -19,16 +19,15 @@ import {
   Settings, 
   User, 
   LogOut,
-  GraduationCap,
-  Hash,
   Plus,
-  Bell
 } from "lucide-react";
 import { NotificationBell } from "@/components/notifications";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
+import { trpc } from "@/lib/trpc";
+import { useChat } from "@/hooks/useChat";
 
 interface PrimarySidebarProps {
   isAuthenticated?: boolean;
@@ -58,14 +57,27 @@ export function PrimarySidebar({ isAuthenticated = false, user }: PrimarySidebar
   const pathname = usePathname();
   const appState = useSelector((state: RootState) => state.app);
   const [showChatServers, setShowChatServers] = useState(false);
+  const router = useRouter();
+  const logoutMutation = trpc.auth.logout.useMutation({
+    onSuccess: () => {
+      router.push("/login");
+    }
+  });
 
+  // Get chat data for badge counts
+  const { conversations } = useChat(appState.user.loggedIn ? appState.user.id : "");
+  
+  // Calculate total unread counts
+  const totalUnreadCount = conversations.reduce((sum, conv) => sum + conv.unreadCount, 0);
+  const totalMentionCount = conversations.reduce((sum, conv) => sum + conv.unreadMentionCount, 0);
   const isActive = (path: string) => {
     if (path === "/home") return pathname === "/" || pathname === "/home";
     return pathname.startsWith(path);
   };
 
   const handleChatClick = () => {
-    setShowChatServers(!showChatServers);
+    router.push("/chat");
+    // setShowChatServers(!showChatServers);
   };
 
   if (!isAuthenticated) {
@@ -89,25 +101,40 @@ export function PrimarySidebar({ isAuthenticated = false, user }: PrimarySidebar
           // Special handling for chat icon
           if (item.href === "/chat") {
             return (
-              <Button
-                key={item.href}
-                variant="ghost"
-                size="sm"
-                onClick={handleChatClick}
-                className={cn(
-                  "flex items-center justify-center h-10 w-10 rounded-md text-sm font-medium transition-colors group relative mx-auto",
-                  showChatServers || isActive(item.href)
-                    ? "bg-accent text-accent-foreground"
-                    : "text-muted-foreground hover:text-foreground hover:bg-accent"
+              <div key={item.href} className="relative flex justify-center">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={handleChatClick}
+                  className={cn(
+                    "flex items-center justify-center h-10 w-10 rounded-md text-sm font-medium transition-colors group relative",
+                    showChatServers || isActive(item.href)
+                      ? "bg-accent text-accent-foreground"
+                      : "text-muted-foreground hover:text-foreground hover:bg-accent"
+                  )}
+                  title={item.label}
+                >
+                  <Icon className="h-4 w-4" />
+                  {/* Tooltip */}
+                  <div className="absolute left-full ml-2 px-2 py-1 bg-popover text-popover-foreground text-xs rounded border opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity whitespace-nowrap z-50">
+                    {item.label}
+                  </div>
+                </Button>
+                
+                {/* Mention Badge (Red) */}
+                {totalMentionCount > 0 && (
+                  <div className="absolute -top-1 -right-1 bg-destructive text-destructive-foreground text-xs min-w-[18px] h-[18px] rounded-full flex items-center justify-center font-bold z-10">
+                    {totalMentionCount > 99 ? '99+' : totalMentionCount}
+                  </div>
                 )}
-                title={item.label}
-              >
-                <Icon className="h-4 w-4" />
-                {/* Tooltip */}
-                <div className="absolute left-full ml-2 px-2 py-1 bg-popover text-popover-foreground text-xs rounded border opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity whitespace-nowrap z-50">
-                  {item.label}
-                </div>
-              </Button>
+                
+                {/* Unread Badge (Gray) - only show if no mentions */}
+                {totalUnreadCount > 0 && totalMentionCount === 0 && (
+                  <div className="absolute -top-1 -right-1 bg-muted-foreground text-background text-xs min-w-[18px] h-[18px] rounded-full flex items-center justify-center font-bold z-10">
+                    {totalUnreadCount > 99 ? '99+' : totalUnreadCount}
+                  </div>
+                )}
+              </div>
             );
           }
           
@@ -214,7 +241,9 @@ export function PrimarySidebar({ isAuthenticated = false, user }: PrimarySidebar
                 Account Settings
               </DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>
+              <DropdownMenuItem onClick={() => {
+                logoutMutation.mutate();
+              }}>
                 <LogOut className="mr-2 h-4 w-4" />
                 Sign out
               </DropdownMenuItem>
