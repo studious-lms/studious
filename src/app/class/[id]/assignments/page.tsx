@@ -655,13 +655,14 @@ export default function Assignments() {
 
           <TabsContent value={activeTab} className="space-y-6">
             {filteredTopLevelItems.length > 0 ? (
-              <MainDropZone onMoveAssignment={moveAssignment}>
+              <MainDropZone onMoveAssignment={moveAssignment} isTeacher={!isStudent}>
                 <div className="space-y-6">
                   {filteredTopLevelItems.map((item, index) => (
                     <DroppableItemSlot 
                       key={`${item.type}-${item.data.id}`}
                       index={index}
                       onMoveItem={moveItem}
+                      isTeacher={!isStudent}
                     >
                       {item.type === 'assignment' ? (
                         <DraggableAssignment
@@ -690,7 +691,7 @@ export default function Assignments() {
                       )}
                     </DroppableItemSlot>
                   ))}
-                  <DroppableItemSlot index={0} onMoveItem={moveItem}>
+                  <DroppableItemSlot index={0} onMoveItem={moveItem} isTeacher={!isStudent}>
                     {/* bottommost item */}
                   </DroppableItemSlot>
                 </div>
