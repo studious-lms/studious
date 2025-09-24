@@ -31,6 +31,8 @@ interface AssignmentFolderProps {
   onEditSection?: (section: { id: string; name: string; color: string }) => void;
   onDeleteSection?: (sectionId: string) => void;
   onDeleteAssignment?: (assignmentId: string) => void;
+  onPublishAssignment?: (assignmentId: string) => void;
+  isTeacher?: boolean;
   index?: number;
 }
 
@@ -44,7 +46,9 @@ export function AssignmentFolder({
   onEditSection,
   onDeleteSection,
   onDeleteAssignment,
-  index 
+  onPublishAssignment,
+  isTeacher,
+  index
 }: AssignmentFolderProps) {
   const [{ isOver }, drop] = useDrop({
     accept: "assignment",
@@ -60,6 +64,7 @@ export function AssignmentFolder({
   const [{ isDragging }, drag] = useDrag({
     type: "folder",
     item: { id: folder.id, type: "folder", index },
+    canDrag: isTeacher,
     collect: (monitor) => ({
       isDragging: monitor.isDragging(),
     }),
@@ -76,12 +81,16 @@ export function AssignmentFolder({
   };
 
   const ref = useRef<HTMLDivElement>(null);
-  drag(drop(ref));
+  if (isTeacher) {
+    drag(drop(ref));
+  } else {
+    drop(ref);
+  }
 
   return (
     <div ref={ref} className={`transition-opacity ${isDragging ? 'opacity-50' : 'opacity-100'}`}>
       <Collapsible open={isOpen} onOpenChange={onToggle}>
-        <Card className={`transition-all duration-200 bg-card cursor-move ${isOver ? 'ring-2 ring-primary shadow-lg' : ''}`}>
+        <Card className={`transition-all duration-200 bg-card ${isTeacher ? 'cursor-move' : ''} ${isOver ? 'ring-2 ring-primary shadow-lg' : ''}`}>
           <CollapsibleTrigger asChild>
             <CardHeader className="cursor-pointer hover:bg-muted/50 transition-colors py-3 px-4">
               <div className="flex items-center justify-between">
@@ -166,6 +175,8 @@ export function AssignmentFolder({
                       classId={classId}
                       index={index}
                       onDelete={onDeleteAssignment}
+                      onPublish={onPublishAssignment}
+                      isTeacher={isTeacher}
                     />
                   </DroppableAssignmentSlot>
                 ))}

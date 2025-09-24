@@ -22,6 +22,9 @@ import { CreateAssignmentModal, CreateSectionModal, SectionModal } from "@/compo
 import { AssignmentCardSkeleton } from "@/components/ui/class-card-skeleton";
 import { RouterInputs, RouterOutputs, trpc } from "@/lib/trpc";
 import { EmptyState } from "@/components/ui/empty-state";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
+import { toast } from "sonner";
 
 type Assignment = RouterOutputs['assignment']['get'];
 type Section = RouterOutputs['class']['get']['class']['sections'][number];
@@ -37,18 +40,20 @@ type Folder = {
 function DroppableItemSlot({ 
   children, 
   index, 
-  onMoveItem 
+  onMoveItem,
+  isTeacher = true
 }: { 
   children?: React.ReactNode;
   index: number;
   onMoveItem: (draggedId: string, draggedType: string, targetIndex: number) => void;
+  isTeacher?: boolean;
 }) {
 
   const [{ isOver, draggedItem }, drop] = useDrop({
     accept: ["assignment", "folder"],
     canDrop: (item: { id: string; type?: string, index?: number }) => {
-      // Don't allow dropping on the same position
-      return item.index !== index;
+      // Don't allow dropping for students or on the same position
+      return isTeacher && item.index !== index;
     },
     drop: (item: { id: string; type?: string, index?: number }, monitor: DropTargetMonitor) => {
       if (monitor.didDrop()) return;
@@ -119,6 +124,8 @@ function MainDropZone({
 export default function Assignments() {
   const params = useParams();
   const classId = params.id as string;
+  const appState = useSelector((state: RootState) => state.app);
+  const isStudent = appState.user.student;
   const [searchQuery, setSearchQuery] = useState("");
   const [activeTab, setActiveTab] = useState("all");
   const [topLevelItems, setTopLevelItems] = useState<Array<{type: 'assignment' | 'folder', data: Assignment | Folder}>>([]);
@@ -161,11 +168,35 @@ export default function Assignments() {
         console.error('Section deletion failed:', error);
       }
     });
+
+  const publishAssignmentMutation = trpc.assignment.update.useMutation({
+    onSuccess: () => {
+      refetch();
+      toast.success("Assignment published successfully!");
+    },
+    onError: (error) => {
+      console.error('Failed to publish assignment:', error);
+      toast.error("Failed to publish assignment");
+    }
+  });
+
+  const handlePublishAssignment = (assignmentId: string) => {
+    publishAssignmentMutation.mutate({
+      classId,
+      id: assignmentId,
+      inProgress: false
+    });
+  };
   
   // Initialize topLevelItems with real data from API
   useEffect(() => {
     if (classData?.class) {
-      const assignments = classData.class.assignments || [];
+      let assignments = classData.class.assignments || [];
+      
+      // Filter out draft assignments for students
+      if (isStudent) {
+        assignments = assignments.filter(assignment => !assignment.inProgress);
+      }
       const sections = classData.class.sections || [];
       
       // Create folder items from sections with their assignments
@@ -182,6 +213,7 @@ export default function Assignments() {
             submissions: assignment.submissions?.length || 0,
             totalStudents: classData.class.students?.length || 0,
             hasAttachments: (assignment.attachments?.length || 0) > 0,
+            inProgress: assignment.inProgress,
             points: assignment.maxGrade || 0,
             description: assignment.instructions || ''
           }));
@@ -211,6 +243,7 @@ export default function Assignments() {
           submissions: assignment.submissions?.length || 0,
           totalStudents: classData.class.students?.length || 0,
           hasAttachments: (assignment.attachments?.length || 0) > 0,
+          inProgress: assignment.inProgress,
           points: assignment.maxGrade || 0,
           description: assignment.instructions || '',
           order: assignment.order
@@ -633,6 +666,8 @@ export default function Assignments() {
                           classId={classId!}
                           index={index}
                           onDelete={handleDeleteAssignment}
+                          onPublish={handlePublishAssignment}
+                          isTeacher={!isStudent}
                         />
                       ) : (
                         <AssignmentFolder
@@ -645,6 +680,8 @@ export default function Assignments() {
                           onEditSection={handleEditSection}
                           onDeleteSection={handleDeleteSection}
                           onDeleteAssignment={handleDeleteAssignment}
+                          onPublishAssignment={handlePublishAssignment}
+                          isTeacher={!isStudent}
                           index={index}
                         />
                       )}
