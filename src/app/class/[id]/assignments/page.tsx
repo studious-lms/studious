@@ -84,13 +84,16 @@ function DroppableItemSlot({
 // Main drop zone component
 function MainDropZone({ 
   children, 
-  onMoveAssignment 
+  onMoveAssignment,
+  isTeacher = true
 }: { 
   children: React.ReactNode;
   onMoveAssignment: (assignmentId: string, targetFolderId: string | null) => void;
+  isTeacher?: boolean;
 }) {
   const [{ isOver }, drop] = useDrop({
     accept: "assignment",
+    canDrop: () => isTeacher,
     drop: (item: { id: string }, monitor: DropTargetMonitor) => {
       if (monitor.isOver({ shallow: true })) {
         console.log('Dropping assignment to top level:', item.id);
