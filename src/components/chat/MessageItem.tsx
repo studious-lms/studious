@@ -7,6 +7,9 @@ import { cn } from "@/lib/utils";
 import type { MessageListOutput } from "@/lib/trpc";
 import { MessageActions } from "./MessageActions";
 import { MessageEdit } from "./MessageEdit";
+import { AIMarkdown } from "./AIMarkdown";
+import { Sparkles } from "lucide-react";
+import Image from "next/image";
 
 type Message = MessageListOutput['messages'][number];
 
@@ -80,8 +83,8 @@ export function MessageItem({
   isDeletingMessage = false,
 }: MessageItemProps) {
   const [isEditing, setIsEditing] = useState(false);
-  const isOwnMessage = message.senderId === currentUserId;
   const isMentioned = message.mentionsMe;
+  const isAIAssistant = message.senderId === 'AI_ASSISTANT';
   
   const senderDisplayName = message.sender.profile?.displayName || message.sender.username;
   const senderAvatar = message.sender.profile?.profilePicture || "";
@@ -112,13 +115,29 @@ export function MessageItem({
       className={cn(
         "flex space-x-3 group relative hover:bg-muted px-4 py-1 transition-colors",
         isMentioned && "bg-yellow-500/10 hover:bg-yellow-500/20 border-l-2 border-yellow-500",
+        isAIAssistant && "bg-primary/5 hover:bg-primary/10 border-l-2 border-primary/30",
       )}
     >
       {/* Avatar */}
       <Avatar className={`h-10 w-10 flex-shrink-0 mt-0.5 ${!showAvatar && "opacity-0 h-0"}`}>
         <AvatarImage src={senderAvatar} />
-        <AvatarFallback className="text-sm bg-primary text-primary-foreground">
-          {senderDisplayName.charAt(0).toUpperCase()}
+        <AvatarFallback className={cn(
+          "text-sm",
+          isAIAssistant 
+            ? "bg-primary text-primary-foreground" 
+            : "bg-secondary text-secondary-foreground"
+        )}>
+          {isAIAssistant ? (
+            <Image
+              src="/ai-icon.svg"
+              alt="AI Assistant"
+              width={20}
+              height={20}
+              className="h-5 w-5"
+            />
+          ) : (
+            senderDisplayName.charAt(0).toUpperCase()
+          )}
         </AvatarFallback>
       </Avatar>
       
@@ -126,9 +145,18 @@ export function MessageItem({
         {/* Message Header */}
         {showAvatar && (
           <div className="flex items-baseline space-x-2 mb-0.5">
-            <span className="font-semibold text-sm text-foreground hover:underline cursor-pointer">
+            <span className={cn(
+              "font-semibold text-sm hover:underline cursor-pointer",
+              isAIAssistant ? "text-primary" : "text-foreground"
+            )}>
               {senderDisplayName}
             </span>
+            {isAIAssistant && (
+              <Badge variant="outline" className="text-xs h-4 px-1 bg-primary/10 text-primary border-primary/20">
+                <Sparkles className="h-2 w-2 mr-1" />
+                AI
+              </Badge>
+            )}
             <span className="text-xs text-muted-foreground">
               {formatMessageTime(new Date(message.createdAt))}
             </span>
@@ -141,7 +169,7 @@ export function MessageItem({
         )}
         
         {/* Message Content */}
-        {isEditing ? (
+        {isEditing && !isAIAssistant ? (
           <MessageEdit
             initialContent={message.content}
             onSave={handleSaveEdit}
@@ -155,7 +183,11 @@ export function MessageItem({
             <div className={cn(
               "text-sm leading-relaxed text-foreground flex-1 min-w-0 pr-2",
             )}>
-              {renderMessageContent(message.content, message.mentions)}
+              {isAIAssistant ? (
+                <AIMarkdown content={message.content} />
+              ) : (
+                renderMessageContent(message.content, message.mentions)
+              )}
             </div>
             
             {/* Message Actions and Timestamp */}
@@ -168,14 +200,16 @@ export function MessageItem({
               )}
               
               {/* Message Actions */}
-              <MessageActions
-                messageId={message.id}
-                currentUserId={currentUserId}
-                senderId={message.senderId}
-                onEdit={handleEdit}
-                onDelete={handleDelete}
-                isDeleting={isDeletingMessage}
-              />
+              {!isAIAssistant && (
+                <MessageActions
+                  messageId={message.id}
+                  currentUserId={currentUserId}
+                  senderId={message.senderId}
+                  onEdit={handleEdit}
+                  onDelete={handleDelete}
+                  isDeleting={isDeletingMessage}
+                />
+              )}
             </div>
           </div>
         )}

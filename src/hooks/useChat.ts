@@ -275,8 +275,10 @@ export function useChat(currentUserId: string) {
   }, [deleteMessageMutation]);
 
   return {
-    // Data
-    conversations: conversationsQuery.data || [],
+    // Data - filter out lab chat conversations (exclude conversations with labChatId)
+    conversations: (conversationsQuery.data || []).filter(conversation => 
+      !conversation.labChat
+    ),
     selectedConversation: selectedConversationQuery.data,
     messages: messagesData.messages,
     selectedConversationId,

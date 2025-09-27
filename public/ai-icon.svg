@@ -1,0 +1,20 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Neural network nodes -->
+  <circle cx="6" cy="6" r="2" fill="currentColor" opacity="0.8"/>
+  <circle cx="18" cy="6" r="2" fill="currentColor" opacity="0.8"/>
+  <circle cx="6" cy="18" r="2" fill="currentColor" opacity="0.8"/>
+  <circle cx="18" cy="18" r="2" fill="currentColor" opacity="0.8"/>
+  <circle cx="12" cy="12" r="2.5" fill="currentColor"/>
+  
+  <!-- Connection lines -->
+  <line x1="8" y1="6" x2="10" y2="10.5" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
+  <line x1="16" y1="6" x2="14" y2="10.5" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
+  <line x1="8" y1="18" x2="10" y2="13.5" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
+  <line x1="16" y1="18" x2="14" y2="13.5" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
+  
+  <!-- Sparkle effects -->
+  <path d="M3 3L4 2L3 1L2 2Z" fill="currentColor" opacity="0.7"/>
+  <path d="M21 3L22 2L21 1L20 2Z" fill="currentColor" opacity="0.7"/>
+  <path d="M3 21L4 22L3 23L2 22Z" fill="currentColor" opacity="0.7"/>
+  <path d="M21 21L22 22L21 23L20 22Z" fill="currentColor" opacity="0.7"/>
+</svg>
