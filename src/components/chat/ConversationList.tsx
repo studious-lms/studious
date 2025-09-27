@@ -80,55 +80,44 @@ export function ConversationList({
   }
 
   return (
-    <div className="h-screen flex flex-col">
+    <div className="h-screen flex flex-col bg-background w-full">
       {/* Header */}
-      <div className="p-4 border-b">
-        <div className="flex items-center justify-between mb-3">
-          <h2 className="font-semibold text-lg">Messages</h2>
+      <div className="px-2 py-3 border-b border-border/40">
+        <div className="flex items-center justify-between mb-2">
+          <h2 className="font-medium text-sm text-foreground/90 px-2">Direct Messages</h2>
           <Button
             variant="ghost"
             size="sm"
             onClick={onCreateConversation}
-            className="h-8 w-8 p-0"
+            className="h-6 w-6 p-0 hover:bg-accent/50"
           >
-            <Plus className="h-4 w-4" />
+            <Plus className="h-3.5 w-3.5" />
           </Button>
         </div>
         
         {/* Search */}
-        <div className="relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+        <div className="relative px-2">
           <Input
-            placeholder="Search conversations..."
+            placeholder="Find or start a conversation"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="pl-9"
+            className="h-7 text-xs bg-background border-border/40 placeholder:text-muted-foreground/60"
           />
+          <Search className="absolute right-4 top-1/2 transform -translate-y-1/2 h-3 w-3 text-muted-foreground/40" />
         </div>
       </div>
 
       {/* Conversations List */}
       <ScrollArea className="flex-1">
-        <div className="p-2 space-y-1">
+
+        <div className="px-2 py-1 w-full">
           {filteredConversations.length === 0 ? (
-            <div className="text-center py-8">
-              <EmptyState
-                icon={MessageSquare}
-                title={searchQuery ? 'No conversations found' : 'No conversations yet'}
-                description={searchQuery ? 'Try adjusting your search terms' : 'Start chatting with someone'}
-              />
-              {!searchQuery && (
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={onCreateConversation}
-                  className="mt-4"
-                >
-                  <Plus className="h-4 w-4 mr-2" />
-                  Start a conversation
-                </Button>
-              )}
-            </div>
+            <EmptyState
+              icon={MessageSquare}
+              title={searchQuery ? 'No conversations found' : 'No conversations yet'}
+              description={searchQuery ? 'Try different search terms' : 'Start chatting with someone'}
+              className="py-8"
+            />
           ) : (
             filteredConversations.map((conversation) => {
               const displayName = getConversationDisplayName(conversation, currentUserId);
@@ -136,77 +125,66 @@ export function ConversationList({
               const isSelected = selectedConversationId === conversation.id;
               
               return (
-                <Button
+                <div
                   key={conversation.id}
-                  variant={isSelected ? "secondary" : "ghost"}
                   className={cn(
-                    "w-full justify-start h-auto p-3 text-left",
-                    isSelected && "bg-accent text-accent-foreground"
+                    "flex items-center px-2 py-1 mx-1 rounded cursor-pointer group transition-colors duration-75 overflow-hidden",
+                    isSelected 
+                      ? "bg-accent/60 text-foreground" 
+                      : "hover:bg-accent/30 text-muted-foreground hover:text-foreground"
                   )}
                   onClick={() => onSelectConversation(conversation.id)}
                 >
-                  <div className="flex items-start space-x-3 w-full min-w-0">
+                  <div className="flex items-center gap-3 min-w-0 flex-1">
                     <div className="relative flex-shrink-0">
-                      <Avatar className="h-10 w-10">
+                      <Avatar className="h-8 w-8">
                         <AvatarImage src={conversation.type === 'DM' ? 
                           conversation.members.find(m => m.userId !== currentUserId)?.user.profile?.profilePicture 
                           : `https://api.dicebear.com/7.x/avataaars/svg?seed=${conversation.members.find(m => m.userId !== currentUserId)?.user.username}`
                         } />
                         <AvatarFallback className={cn(
-                          "text-sm font-medium",
-                          conversation.type === 'GROUP' ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"
+                          "text-xs font-medium",
+                          conversation.type === 'GROUP' ? "bg-primary/10 text-primary" : "bg-muted/50 text-muted-foreground"
                         )}>
                           {conversation.type === 'GROUP' ? (
-                            <Users className="h-4 w-4" />
+                            <Users className="h-3.5 w-3.5" />
                           ) : (
                             avatarText
                           )}
                         </AvatarFallback>
                       </Avatar>
+                      {conversation.unreadCount > 0 && (
+                        <div className="absolute -bottom-1 -right-1 h-4 w-4 bg-destructive rounded-full flex items-center justify-center">
+                          <span className="text-xs font-medium text-destructive-foreground">
+                            {conversation.unreadCount > 9 ? '9+' : conversation.unreadCount}
+                          </span>
+                        </div>
+                      )}
                     </div>
                     
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center justify-between gap-2 mb-1">
-                        <h4 className="font-medium text-sm truncate flex-1 min-w-0">
+                    <div className="flex-1 min-w-0 max-w-full overflow-hidden">
+                      <div className="flex items-center justify-between gap-2">
+                        <span className={cn(
+                          "text-sm font-medium truncate flex-1 min-w-0",
+                          conversation.unreadCount > 0 && "text-foreground font-semibold"
+                        )}>
                           {displayName}
-                        </h4>
-                        <div className="flex items-center space-x-1 flex-shrink-0">
-                          {conversation.lastMessage && (
-                            <span className="text-xs text-muted-foreground whitespace-nowrap">
-                              {formatLastMessageTime(conversation.lastMessage.createdAt)}
-                            </span>
-                          )}
-                        </div>
+                        </span>
+                        {conversation.lastMessage && (
+                          <span className="text-xs text-muted-foreground/60 flex-shrink-0">
+                            {formatLastMessageTime(conversation.lastMessage.createdAt)}
+                          </span>
+                        )}
                       </div>
                       
-                      <div className="flex items-start justify-between gap-2">
-                        <p className="text-xs text-muted-foreground truncate max-w-48 flex-1 min-w-0 leading-tight">
-                          {conversation.lastMessage ? (
-                            <span className="break-words">
-                              <span className="font-medium">{conversation.lastMessage.sender.username}:</span>{' '}
-                              <span className="break-all">{conversation.lastMessage.content}</span>
-                            </span>
-                          ) : (
-                            'No messages yet'
-                          )}
+                      {conversation.lastMessage && (
+                        <p className="text-xs text-muted-foreground/80 truncate mt-0.5 overflow-hidden">
+                          {conversation.lastMessage.content}
                         </p>
-                        
-                        <div className="flex space-x-1 flex-shrink-0">
-                          {conversation.unreadMentionCount > 0 && (
-                            <Badge variant="destructive" className="h-4 text-xs px-1 min-w-[16px] flex items-center justify-center">
-                              @{conversation.unreadMentionCount}
-                            </Badge>
-                          )}
-                          {conversation.unreadCount > 0 && conversation.unreadMentionCount === 0 && (
-                            <Badge variant="secondary" className="h-4 text-xs px-1 min-w-[16px] flex items-center justify-center">
-                              {conversation.unreadCount > 99 ? '99+' : conversation.unreadCount}
-                            </Badge>
-                          )}
-                        </div>
-                      </div>
+                      )}
                     </div>
                   </div>
-                </Button>
+                </div>
               );
             })
           )}

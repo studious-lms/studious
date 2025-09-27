@@ -94,6 +94,8 @@ export function UniversalEventModal({
   // Get classes where user is a teacher
   const teacherClasses = classesData?.teacherInClass || [];
 
+  // @fix-me: maximum update depth exceeded
+
   // Initialize form data
   useEffect(() => {
     if (event) {
