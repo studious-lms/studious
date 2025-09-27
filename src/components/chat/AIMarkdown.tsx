@@ -46,7 +46,7 @@ export function AIMarkdown({ content, className }: AIMarkdownProps) {
           ),
           
           // Customize code styles
-          code: ({ inline, className, children, ...props }) => {
+          code: ({ inline, className, children, ...props }: any) => {
             const match = /language-(\w+)/.exec(className || '');
             
             if (!inline && match) {
