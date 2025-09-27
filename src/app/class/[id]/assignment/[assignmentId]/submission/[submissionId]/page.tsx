@@ -26,7 +26,8 @@ import {  parseMarkScheme,
 import { Skeleton } from "@/components/ui/skeleton";
 import { EmptyState } from "@/components/ui/empty-state";
 import { toast } from "sonner";
-import { DraggableFileItem, FileItem } from "@/components/DraggableFileItem";
+import { DraggableFileItem } from "@/components/DraggableFileItem";
+import { FileItem, FileHandlers } from "@/lib/types/file";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { FilePreviewModal } from "@/components/modals";
@@ -341,22 +342,41 @@ export default function SubmissionDetailPage() {
     }));
   };
 
-  const handleFileAction = (action: string, item: FileItem) => {
-    if (action === "download") {
-      // Handle download
+  // File handlers for submission files
+  const fileHandlers: FileHandlers = {
+    onFolderClick: () => {}, // Not used in assignment context
+    onDownload: async (item: FileItem) => {
       console.log("Download file:", item);
-    } else if (action === "preview") {
-      // Handle preview
-      setPreviewFile(item);
+      // TODO: Implement download for submission files
+    },
+    onShare: async (item: FileItem) => {
+      console.log("Share file:", item);
+      // TODO: Implement share for submission files
+    },
+    onRename: async () => {
+      // Not allowed in submission view
+    },
+    onDelete: async (item: FileItem) => {
+      if (isTeacher) {
+        // Handle annotation deletion for teachers
+        uploadAnnotationMutation.mutate({
+          assignmentId,
+          classId,
+          submissionId,
+          removedAttachments: [item.id],
+        });
+      }
+    },
+    onMove: async () => {
+      // Not applicable for submission files
+    },
+    onPreview: (file: FileItem) => {
+      setPreviewFile(file);
       setIsPreviewOpen(true);
-    } else if (action === "delete" && isTeacher) {
-      // Handle annotation deletion for teachers
-      uploadAnnotationMutation.mutate({
-        assignmentId,
-        classId,
-        submissionId,
-        removedAttachments: [item.id],
-      });
+    },
+    onFileClick: (file: FileItem) => {
+      setPreviewFile(file);
+      setIsPreviewOpen(true);
     }
   };
 
@@ -506,11 +526,10 @@ export default function SubmissionDetailPage() {
                         <DraggableFileItem
                           key={fileItem.id}
                           item={fileItem}
-                          getFileIcon={getFileIcon}
-                          onItemAction={handleFileAction}
-                          onFileClick={handleFileClick}
                           classId={classId}
                           readonly={true}
+                          handlers={fileHandlers}
+                          getFileIcon={getFileIcon}
                         />
                       ))}
                     </div>
@@ -815,12 +834,10 @@ export default function SubmissionDetailPage() {
                         <DraggableFileItem
                           key={fileItem.id}
                           item={fileItem}
-                          getFileIcon={getFileIcon}
-                          onItemAction={handleFileAction}
-                          onFileClick={handleFileClick}
                           classId={classId}
                           readonly={false}
-                          onRefetch={refetchSubmission}
+                          handlers={fileHandlers}
+                          getFileIcon={getFileIcon}
                         />
                       ))}
                     </div>
@@ -866,7 +883,22 @@ export default function SubmissionDetailPage() {
           file={previewFile}
           isOpen={isPreviewOpen}
           onClose={() => setIsPreviewOpen(false)}
-          onAction={handleFileAction}
+          onAction={async (action: string, item: FileItem) => {
+            switch (action) {
+              case "download":
+                await fileHandlers.onDownload(item);
+                break;
+              case "share":
+                await fileHandlers.onShare(item);
+                break;
+              case "delete":
+                await fileHandlers.onDelete(item);
+                break;
+              case "preview":
+                fileHandlers.onPreview?.(item);
+                break;
+            }
+          }}
           getPreviewUrl={async (fileId: string) => {
             const result = await getSignedUrlMutation.mutateAsync({ fileId });
             return result.url;

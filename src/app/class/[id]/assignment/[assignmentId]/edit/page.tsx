@@ -33,7 +33,7 @@ import { DraggableFileItem } from "@/components/DraggableFileItem";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { FilePreviewModal } from "@/components/modals";
-import { FileItem } from "@/components/DraggableFileItem";
+import { FileItem, FileHandlers } from "@/lib/types/file";
 import {
   FileText,
   Image,
@@ -336,16 +336,33 @@ export default function AssignmentEditPage() {
     }));
   };
 
-  const handleFileAction = (action: string, item: FileItem) => {
-    if (action === "download") {
-      // Handle download
+  // File handlers for attachments
+  const fileHandlers: FileHandlers = {
+    onFolderClick: () => {}, // Not used in assignment context
+    onDownload: async (item: FileItem) => {
       console.log("Download file:", item);
-    } else if (action === "delete") {
-      // Handle delete
+      // TODO: Implement download for attachments
+    },
+    onShare: async (item: FileItem) => {
+      console.log("Share file:", item);
+      // TODO: Implement share for attachments
+    },
+    onRename: async (item: FileItem, newName: string) => {
+      console.log("Rename file:", item, newName);
+      // TODO: Implement rename for attachments
+    },
+    onDelete: async (item: FileItem) => {
       removeAttachment(item.id);
-    } else if (action === "preview") {
-      // Handle preview
-      setPreviewFile(item);
+    },
+    onMove: async () => {
+      // Not applicable for attachments
+    },
+    onPreview: (file: FileItem) => {
+      setPreviewFile(file);
+      setIsPreviewOpen(true);
+    },
+    onFileClick: (file: FileItem) => {
+      setPreviewFile(file);
       setIsPreviewOpen(true);
     }
   };
@@ -676,12 +693,10 @@ export default function AssignmentEditPage() {
                         <DraggableFileItem
                           key={fileItem.id}
                           item={fileItem}
-                          getFileIcon={getFileIcon}
-                          onItemAction={handleFileAction}
-                          onFileClick={handleFileClick}
                           classId={classId}
                           readonly={false}
-                          onRefetch={refetchAssignment}
+                          handlers={fileHandlers}
+                          getFileIcon={getFileIcon}
                         />
                       ))}
                     </div>
@@ -792,7 +807,22 @@ export default function AssignmentEditPage() {
           file={previewFile}
           isOpen={isPreviewOpen}
           onClose={() => setIsPreviewOpen(false)}
-          onAction={handleFileAction}
+          onAction={async (action: string, item: FileItem) => {
+            switch (action) {
+              case "download":
+                await fileHandlers.onDownload(item);
+                break;
+              case "share":
+                await fileHandlers.onShare(item);
+                break;
+              case "delete":
+                await fileHandlers.onDelete(item);
+                break;
+              case "preview":
+                fileHandlers.onPreview?.(item);
+                break;
+            }
+          }}
           getPreviewUrl={async (fileId: string) => {
             const result = await getSignedUrlMutation.mutateAsync({ fileId });
             return result.url;

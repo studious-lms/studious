@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -11,7 +11,6 @@ import { toast } from "sonner";
 import {
   Move,
   Folder,
-  ChevronLeft,
   Home,
   Check,
   Loader2,
@@ -50,9 +49,67 @@ export function MoveItemDropdown({
   const [breadcrumbs, setBreadcrumbs] = useState<SimpleFolder[]>([]);
 
   // Fetch current folder's children
-  const { data: currentFolderData, isLoading } = currentFolderId_nav 
-    ? trpc.folder.get.useQuery({ classId, folderId: currentFolderId_nav }, { enabled: isOpen })
-    : trpc.folder.getRootFolder.useQuery({ classId }, { enabled: isOpen });
+  const rootFolderQuery = trpc.folder.getRootFolder.useQuery(
+    { classId }, 
+    { enabled: isOpen && !currentFolderId_nav }
+  );
+  
+  const specificFolderQuery = trpc.folder.get.useQuery(
+    { classId, folderId: currentFolderId_nav! }, 
+    { enabled: isOpen && !!currentFolderId_nav }
+  );
+
+  // Fetch the full parent hierarchy for the current folder
+  const parentHierarchyQuery = trpc.folder.getParents.useQuery(
+    { folderId: currentFolderId! },
+    { enabled: isOpen && !!currentFolderId }
+  );
+
+  const currentFolderData = currentFolderId_nav ? specificFolderQuery.data : rootFolderQuery.data;
+  const isLoading = currentFolderId_nav ? specificFolderQuery.isLoading : rootFolderQuery.isLoading;
+  
+  // Build breadcrumbs when parent hierarchy loads
+  useEffect(() => {
+    if (isOpen && currentFolderId_nav && parentHierarchyQuery.data && breadcrumbs.length === 0) {
+      // The getParents query returns folders from current to root, so reverse it
+      const parents = [...parentHierarchyQuery.data].reverse();
+      
+      // Build breadcrumbs from root to current (excluding root since that's handled separately)
+      const breadcrumbPath = parents
+        .filter(folder => folder.parentFolderId !== null) // Exclude root folder
+        .map(folder => ({
+          id: folder.id,
+          name: folder.name,
+          color: folder.color || undefined
+        }));
+      
+      setBreadcrumbs(breadcrumbPath);
+    }
+  }, [isOpen, currentFolderId_nav, parentHierarchyQuery.data, breadcrumbs.length]);
+
+  // Get the current folder name for display
+  const getCurrentFolderName = () => {
+    if (!currentFolderId_nav) return "Files";
+    
+    // If we've navigated within the dialog, use the breadcrumb
+    if (breadcrumbs.length > 0) {
+      const currentInBreadcrumbs = breadcrumbs.find(b => b.id === currentFolderId_nav);
+      if (currentInBreadcrumbs) return currentInBreadcrumbs.name;
+    }
+    
+    // If we're at the initial folder and have parent hierarchy data, use that
+    if (currentFolderId === currentFolderId_nav && parentHierarchyQuery.data) {
+      const currentFolder = parentHierarchyQuery.data.find(f => f.id === currentFolderId);
+      if (currentFolder) return currentFolder.name;
+    }
+    
+    // If we're viewing a specific folder and have its data, use that
+    if (currentFolderId_nav && specificFolderQuery.data) {
+      return specificFolderQuery.data.name;
+    }
+    
+    return "Current Folder";
+  };
 
   // Move mutations
   const moveFileMutation = trpc.file.move.useMutation({
@@ -80,13 +137,11 @@ export function MoveItemDropdown({
   const handleOpenMove = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    onOpenChange?.(false);
-    setTimeout(() => {
-      setIsOpen(true);
-      setCurrentFolderId_nav(null);
-      setBreadcrumbs([]);
-      setSelectedFolderId(null);
-    }, 100);
+    onOpenChange?.(false); // Close the dropdown menu
+    setIsOpen(true);
+    setCurrentFolderId_nav(currentFolderId || null);
+    setSelectedFolderId(currentFolderId || null);
+    setBreadcrumbs([]); // Will be built from the folder data when it loads
   };
 
   const handleFolderClick = (folder: SimpleFolder) => {
@@ -96,8 +151,9 @@ export function MoveItemDropdown({
 
   const handleBreadcrumbClick = (index: number) => {
     if (index === -1) {
-      // Root
-      setCurrentFolderId_nav(null);
+      // Root - get the root folder ID from parent hierarchy
+      const rootFolder = parentHierarchyQuery.data?.find(f => f.parentFolderId === null);
+      setCurrentFolderId_nav(rootFolder?.id || null);
       setBreadcrumbs([]);
     } else {
       const newBreadcrumbs = breadcrumbs.slice(0, index + 1);
@@ -107,16 +163,23 @@ export function MoveItemDropdown({
   };
 
   const handleMove = () => {
+    if (!selectedFolderId) {
+      toast.error("Please select a destination folder");
+      return;
+    }
+
+    console.log("Moving item:", { itemType, itemId, selectedFolderId, classId });
+
     if (itemType === "file") {
       moveFileMutation.mutate({
         fileId: itemId,
-        targetFolderId: selectedFolderId!,
+        targetFolderId: selectedFolderId,
         classId,
       });
     } else {
       moveFolderMutation.mutate({
         folderId: itemId,
-        targetParentFolderId: selectedFolderId!,
+        targetParentFolderId: selectedFolderId,
         classId,
       });
     }
@@ -131,187 +194,255 @@ export function MoveItemDropdown({
   return (
     <>
       <div 
-        className="relative flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+        className="relative flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:bg-accent hover:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50"
         onClick={handleOpenMove}
+        role="menuitem"
       >
         <Move className="mr-2 h-4 w-4" />
         Move
       </div>
 
-      <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="sm:max-w-[450px] max-h-[600px]">
-          <DialogHeader className="pb-4">
-            <DialogTitle className="flex items-center gap-2 text-lg">
-              <div className="p-2 bg-primary/10 rounded-lg">
-                <Move className="h-5 w-5 text-primary" />
-              </div>
-              Move "{itemName}"
-            </DialogTitle>
-          </DialogHeader>
-
-          <div className="space-y-4">
-            {/* Breadcrumbs */}
-            <div className="flex items-center text-sm bg-gradient-to-r from-muted/50 to-muted/30 p-3 rounded-lg border">
-              <button 
-                onClick={() => handleBreadcrumbClick(-1)} 
-                className="flex items-center gap-1 px-2 py-1 rounded hover:bg-background/60 transition-colors"
-              >
-                <Home className="h-4 w-4 text-primary" />
-                <span className="font-medium">Root</span>
-              </button>
-              {breadcrumbs.map((crumb, index) => (
-                <div key={crumb.id} className="flex items-center">
-                  <ChevronRight className="h-3 w-3 mx-1 text-muted-foreground" />
-                  <button 
-                    onClick={() => handleBreadcrumbClick(index)}
-                    className="px-2 py-1 rounded hover:bg-background/60 transition-colors truncate max-w-[120px]"
-                    title={crumb.name}
-                  >
-                    {crumb.name}
-                  </button>
-                </div>
-              ))}
-            </div>
-
-            {/* Current Location */}
-            <div className="flex items-center justify-between p-4 bg-gradient-to-r from-primary/5 to-primary/10 border border-primary/20 rounded-lg">
-              <div className="flex items-center gap-3">
+        <Dialog open={isOpen} onOpenChange={setIsOpen}>
+          <DialogContent className="sm:max-w-[500px] max-h-[650px] p-0">
+            <DialogHeader className="px-6 py-4 border-b bg-muted/20">
+              <DialogTitle className="flex items-center gap-3 text-lg font-semibold">
                 <div className="p-2 bg-primary/10 rounded-lg">
-                  <FolderOpen className="h-5 w-5 text-primary" />
+                  <Move className="h-5 w-5 text-primary" />
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground">
-                    {currentFolderId_nav ? breadcrumbs[breadcrumbs.length - 1]?.name : "Root Folder"}
+                  <span>Move item</span>
+                  <p className="text-sm font-normal text-muted-foreground mt-1">
+                    Choose a new location for "{itemName}"
                   </p>
-                  <p className="text-xs text-muted-foreground">Current location</p>
+                </div>
+              </DialogTitle>
+            </DialogHeader>
+
+             <div className="flex flex-col h-full">
+               {/* Navigation Bar - OneDrive style */}
+               <div className="px-6 py-3 bg-muted/10 border-b">
+                 {parentHierarchyQuery.isLoading ? (
+                   // Loading skeleton for breadcrumbs
+                   <div className="flex items-center gap-1">
+                     <div className="h-8 w-16 bg-muted/50 rounded-md animate-pulse" />
+                     <ChevronRight className="h-4 w-4 mx-1 text-muted-foreground" />
+                     <div className="h-8 w-24 bg-muted/50 rounded-md animate-pulse" />
+                   </div>
+                 ) : (
+                   <div className="flex items-center gap-1 text-sm">
+                     <button 
+                       onClick={() => handleBreadcrumbClick(-1)} 
+                       className="flex items-center gap-2 px-3 py-1.5 rounded-md hover:bg-muted/50 transition-colors font-medium"
+                     >
+                       <Home className="h-4 w-4" />
+                       <span>Files</span>
+                     </button>
+                     {breadcrumbs.map((crumb, index) => {
+                       const isLast = index === breadcrumbs.length - 1;
+                       const isCurrent = crumb.id === currentFolderId_nav;
+                       
+                       return (
+                         <div key={crumb.id} className="flex items-center">
+                           <ChevronRight className="h-4 w-4 mx-1 text-muted-foreground" />
+                           {isCurrent ? (
+                             // Current folder - highlight it
+                             <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-md font-medium text-sm">
+                               {crumb.name}
+                             </span>
+                           ) : (
+                             // Navigable folder
+                             <button 
+                               onClick={() => handleBreadcrumbClick(index)}
+                               className="px-3 py-1.5 rounded-md hover:bg-muted/50 transition-colors font-medium truncate max-w-[140px]"
+                               title={crumb.name}
+                             >
+                               {crumb.name}
+                             </button>
+                           )}
+                         </div>
+                       );
+                     })}
+                   </div>
+                 )}
+               </div>
+
+              {/* Current Location Header */}
+              <div className="px-6 py-4 bg-background border-b">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 bg-muted/20 rounded-lg">
+                      <FolderOpen className="h-5 w-5 text-muted-foreground" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-base">
+                        {getCurrentFolderName()}
+                      </h3>
+                      <p className="text-sm text-muted-foreground">
+                        {folders.length} folder{folders.length !== 1 ? 's' : ''} • Choose destination
+                      </p>
+                    </div>
+                  </div>
+                  
+                  {/* Select current folder button */}
+                  <Button
+                    variant={selectedFolderId === currentFolderId_nav ? "default" : "secondary"}
+                    size="sm"
+                    onClick={() => setSelectedFolderId(currentFolderId_nav)}
+                    className="min-w-[100px]"
+                  >
+                    {selectedFolderId === currentFolderId_nav ? (
+                      <>
+                        <Check className="h-4 w-4 mr-2" />
+                        Selected
+                      </>
+                    ) : (
+                      <>
+                        <Folder className="h-4 w-4 mr-2" />
+                        Select Here
+                      </>
+                    )}
+                  </Button>
                 </div>
               </div>
-              <Button
-                variant={selectedFolderId === currentFolderId_nav ? "default" : "outline"}
-                size="sm"
-                onClick={() => setSelectedFolderId(currentFolderId_nav)}
-                className="min-w-[80px]"
-              >
-                {selectedFolderId === currentFolderId_nav ? (
-                  <>
-                    <Check className="h-3 w-3 mr-1" />
-                    Selected
-                  </>
-                ) : (
-                  "Select"
-                )}
-              </Button>
-            </div>
 
-            {/* Folder List */}
-            <div className="space-y-2">
-              <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
-                <Folder className="h-4 w-4" />
-                <span>Available folders</span>
-              </div>
-              <div className="max-h-52 overflow-y-auto space-y-2 pr-1">
-                {isLoading ? (
-                  <div className="flex justify-center py-8">
-                    <div className="flex flex-col items-center gap-2">
-                      <Loader2 className="h-6 w-6 animate-spin text-primary" />
-                      <p className="text-sm text-muted-foreground">Loading folders...</p>
-                    </div>
-                  </div>
-                ) : folders.length === 0 ? (
-                  <div className="text-center py-8">
-                    <div className="flex flex-col items-center gap-2">
-                      <div className="p-3 bg-muted/50 rounded-full">
-                        <FolderOpen className="h-6 w-6 text-muted-foreground/50" />
-                      </div>
-                      <p className="text-sm text-muted-foreground">No folders here</p>
-                    </div>
-                  </div>
-                ) : (
-                  folders.map((folder) => {
-                    const isSelected = selectedFolderId === folder.id;
-                    return (
-                      <div 
-                        key={folder.id} 
-                        className={`group flex items-center justify-between p-3 border rounded-lg transition-all duration-200 hover:shadow-sm ${
-                          isSelected 
-                            ? 'bg-primary/5 border-primary/30 shadow-sm' 
-                            : 'hover:bg-muted/30 hover:border-border'
-                        }`}
-                      >
-                        <button
-                          onClick={() => handleFolderClick(folder as SimpleFolder)}
-                          className="flex items-center gap-3 flex-1 text-left min-w-0"
-                        >
-                          <div className="flex-shrink-0">
-                            <Folder 
-                              className="h-5 w-5 fill-current transition-colors" 
-                              style={{ color: folder.color || '#3b82f6' }}
-                            />
+              {/* Folder List */}
+              <div className="flex-1 px-6 py-2">
+                <div className="space-y-3">
+                  {isLoading ? (
+                    <div className="space-y-2">
+                      {Array.from({ length: 4 }).map((_, i) => (
+                        <div key={i} className="flex items-center gap-3 p-3 rounded-lg animate-pulse">
+                          <div className="h-10 w-10 bg-muted/50 rounded-lg" />
+                          <div className="flex-1">
+                            <div className="h-4 bg-muted/50 rounded w-32 mb-1" />
+                            <div className="h-3 bg-muted/30 rounded w-20" />
                           </div>
-                          <div className="min-w-0 flex-1">
-                            <p className="font-medium truncate">{folder.name}</p>
-                            <p className="text-xs text-muted-foreground">Click to open</p>
-                          </div>
-                          <ChevronRight className="h-4 w-4 text-muted-foreground group-hover:text-foreground transition-colors" />
-                        </button>
-                        <Button
-                          variant={isSelected ? "default" : "outline"}
-                          size="sm"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            setSelectedFolderId(folder.id);
-                          }}
-                          className="ml-2 min-w-[70px]"
-                        >
-                          {isSelected ? (
-                            <>
-                              <Check className="h-3 w-3 mr-1" />
-                              Selected
-                            </>
-                          ) : (
-                            "Select"
-                          )}
-                        </Button>
+                        </div>
+                      ))}
+                    </div>
+                  ) : folders.length > 0 ? (
+                    <div className="space-y-1">
+                      <div className="text-sm font-medium text-muted-foreground mb-3 flex items-center gap-2">
+                        <Folder className="h-4 w-4" />
+                        Folders ({folders.length})
                       </div>
-                    );
-                  })
-                )}
-              </div>
-            </div>
-
-            {/* Actions */}
-            <div className="flex justify-between items-center pt-4 border-t">
-              <p className="text-xs text-muted-foreground">
-                {selectedFolderId ? "Ready to move" : "Select a destination"}
-              </p>
-              <div className="flex gap-2">
-                <Button 
-                  variant="outline" 
-                  onClick={() => setIsOpen(false)}
-                  disabled={moveFileMutation.isPending || moveFolderMutation.isPending}
-                >
-                  Cancel
-                </Button>
-                <Button 
-                  onClick={handleMove} 
-                  disabled={!selectedFolderId || !canMoveHere || moveFileMutation.isPending || moveFolderMutation.isPending}
-                  className="min-w-[100px]"
-                >
-                  {(moveFileMutation.isPending || moveFolderMutation.isPending) ? (
-                    <>
-                      <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                      Moving...
-                    </>
+                      <div className="max-h-64 overflow-y-auto space-y-1 pr-2">
+                        {folders.map((folder) => {
+                          const isSelected = selectedFolderId === folder.id;
+                          return (
+                            <div
+                              key={folder.id}
+                              className={`group flex items-center gap-3 p-3 rounded-lg cursor-pointer transition-all hover:bg-muted/20 ${
+                                isSelected
+                                  ? 'bg-primary/5 border border-primary/20 shadow-sm'
+                                  : 'hover:shadow-sm border border-transparent hover:border-border/50'
+                              }`}
+                              onClick={() => setSelectedFolderId(folder.id)}
+                              onDoubleClick={() => handleFolderClick(folder as SimpleFolder)}
+                            >
+                              <div className="relative flex-shrink-0">
+                                <div className="p-2 bg-muted/10 rounded-lg">
+                                  <Folder 
+                                    className="h-5 w-5 fill-current" 
+                                    style={{ color: folder.color || '#3b82f6' }}
+                                  />
+                                </div>
+                                {isSelected && (
+                                  <div className="absolute -top-1 -right-1 bg-primary text-primary-foreground rounded-full p-0.5">
+                                    <Check className="h-3 w-3" />
+                                  </div>
+                                )}
+                              </div>
+                              
+                              <div className="flex-1 min-w-0">
+                                <p className="font-medium text-sm truncate text-foreground">{folder.name}</p>
+                                <p className="text-xs text-muted-foreground">Double-click to open</p>
+                              </div>
+                              
+                              <div className="flex items-center gap-2">
+                                {isSelected && (
+                                  <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-md font-medium">
+                                    Selected
+                                  </span>
+                                )}
+                                <Button
+                                  variant="ghost"
+                                  size="sm"
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    handleFolderClick(folder as SimpleFolder);
+                                  }}
+                                  className="h-8 w-8 p-0 opacity-0 group-hover:opacity-100 transition-opacity"
+                                  title="Open folder"
+                                >
+                                  <ChevronRight className="h-4 w-4" />
+                                </Button>
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
                   ) : (
-                    <>
-                      <Move className="h-4 w-4 mr-2" />
-                      Move Here
-                    </>
+                    <div className="flex flex-col items-center justify-center py-16 text-center">
+                      <div className="p-6 bg-muted/10 rounded-full mb-4">
+                        <Folder className="h-12 w-12 text-muted-foreground" />
+                      </div>
+                      <h3 className="font-semibold text-base mb-2">No folders here</h3>
+                      <p className="text-sm text-muted-foreground max-w-[300px] leading-relaxed">
+                        This location doesn't contain any folders. You can still select this location as the destination.
+                      </p>
+                    </div>
                   )}
-                </Button>
+                </div>
+              </div>
+
+              {/* Actions Footer */}
+              <div className="px-6 py-4 bg-muted/5 border-t">
+                <div className="flex justify-between items-center">
+                  <div className="flex items-center gap-2">
+                    {selectedFolderId ? (
+                      <>
+                        <div className="h-2 w-2 bg-primary rounded-full"></div>
+                        <p className="text-sm text-muted-foreground">Ready to move</p>
+                      </>
+                    ) : (
+                      <>
+                        <div className="h-2 w-2 bg-muted-foreground rounded-full"></div>
+                        <p className="text-sm text-muted-foreground">Select a destination</p>
+                      </>
+                    )}
+                  </div>
+                  <div className="flex gap-3">
+                    <Button
+                      variant="outline"
+                      onClick={() => setIsOpen(false)}
+                      disabled={moveFileMutation.isPending || moveFolderMutation.isPending}
+                      className="min-w-[80px]"
+                    >
+                      Cancel
+                    </Button>
+                    <Button
+                      onClick={handleMove}
+                      disabled={!selectedFolderId || !canMoveHere || moveFileMutation.isPending || moveFolderMutation.isPending}
+                      className="min-w-[120px]"
+                    >
+                      {(moveFileMutation.isPending || moveFolderMutation.isPending) ? (
+                        <>
+                          <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                          Moving...
+                        </>
+                      ) : (
+                        <>
+                          <Move className="h-4 w-4 mr-2" />
+                          Move Here
+                        </>
+                      )}
+                    </Button>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
         </DialogContent>
       </Dialog>
     </>

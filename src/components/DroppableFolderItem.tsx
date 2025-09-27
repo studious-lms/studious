@@ -9,17 +9,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-} from "@/components/ui/alert-dialog";
-import { trpc } from "@/lib/trpc";
-import {
   MoreHorizontal,
   Share,
   Edit,
@@ -27,109 +16,53 @@ import {
   Trash2,
   Folder,
   GripVertical,
-  Check,
-  X,
-  Move
 } from "lucide-react";
+import { GridFileComponentProps } from "@/lib/types/file";
 import { MoveItemDropdown } from "@/components/MoveItemDropdown";
-import { toast } from "sonner";
-interface FileItem {
-  id: string;
-  name: string;
-  type: "file" | "folder";
-  fileType?: string;
-  size?: string;
-  uploadedBy?: string;
-  uploadedAt?: string;
-  itemCount?: number;
-  color?: string;
-  lastModified?: string;
-  starred?: boolean;
-  children?: FileItem[];
-}
-
-interface DroppableFolderItemProps {
-  item: FileItem;
-  getFolderColor: (folderId: string) => string;
-  onFolderClick: (folderName: string) => void;
-  onItemAction: (action: string, item: FileItem) => void;
-  classId: string;
-  currentFolderId?: string;
-  readonly?: boolean;
-  onRefetch?: () => void;
-}
 
 export function DroppableFolderItem({ 
   item, 
-  getFolderColor, 
-  onFolderClick, 
-  onItemAction,
   classId,
   currentFolderId,
   readonly = false,
-  onRefetch
-}: DroppableFolderItemProps) {
-  
-  // Local state for dialogs
-  const [showDeleteDialog, setShowDeleteDialog] = useState(false);
+  handlers,
+  getFolderColor
+}: GridFileComponentProps) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  // tRPC mutations
-
-  const deleteFolderMutation = trpc.folder.delete.useMutation({
-    onSuccess: () => {
-      toast.success("Folder deleted successfully");
-      setShowDeleteDialog(false);
-      onRefetch?.();
-    },
-    onError: (error) => {
-      toast.error(error.message);
-    }
-  });
-
-  const moveFolderMutation = trpc.folder.move.useMutation({
-    onSuccess: () => {
-      toast.success("Folder moved successfully");
-      onRefetch?.();
-    },
-    onError: (error) => {
-      toast.error(error.message);
-    }
-  });
-
-  const moveFileMutation = trpc.file.move.useMutation({
-    onSuccess: () => {
-      toast.success("File moved successfully");
-      onRefetch?.();
-    },
-    onError: (error) => {
-      toast.error(error.message);
-    }
-  });
-
-
-  const handleDelete = () => {
-    deleteFolderMutation.mutate({ classId, folderId: item.id });
-  };
-
-  const handleMoveItem = (draggedItemId: string, draggedItemType: string) => {
-    if (draggedItemType === "folder") {
-      moveFolderMutation.mutate({ 
-        classId, 
-        folderId: draggedItemId, 
-        targetParentFolderId: item.id 
-      });
-    } else {
-      moveFileMutation.mutate({ 
-        classId, 
-        fileId: draggedItemId, 
-        targetFolderId: item.id 
-      });
+  const handleAction = async (action: string, e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    setDropdownOpen(false);
+    
+    try {
+      switch (action) {
+        case "share":
+          await handlers.onShare(item);
+          break;
+        case "rename":
+          // This will trigger external rename modal/dialog
+          await handlers.onRename(item, item.name, item.color);
+          break;
+        case "delete":
+          await handlers.onDelete(item);
+          break;
+        case "star":
+          if (handlers.onStar) {
+            await handlers.onStar(item);
+          }
+          break;
+      }
+    } catch (error) {
+      // Error handling is done by the handlers
+      console.error(`Action ${action} failed:`, error);
     }
   };
 
-  const isLoading = deleteFolderMutation.isPending ||
-                   moveFolderMutation.isPending || moveFileMutation.isPending;
+  const handleMoveItem = async (draggedItemId: string, draggedItemType: string) => {
+    if (draggedItemId !== item.id) {
+      await handlers.onMove(draggedItemId, item.id, draggedItemType);
+    }
+  };
 
   const [{ isOver, canDrop }, drop] = useDrop({
     accept: "file",
@@ -148,6 +81,7 @@ export function DroppableFolderItem({
   const [{ isDragging }, drag] = useDrag({
     type: "file",
     item: { id: item.id, name: item.name, type: item.type },
+    canDrag: !readonly && !item.readonly,
     collect: (monitor) => ({
       isDragging: monitor.isDragging(),
     }),
@@ -166,17 +100,19 @@ export function DroppableFolderItem({
           ? 'border-primary bg-primary/5 shadow-md' 
           : 'border-transparent hover:border-border hover:shadow-sm'
       }`}
-      onDoubleClick={() => onFolderClick(item.name)}
+      onDoubleClick={() => handlers.onFolderClick(item.name)}
     >
       <div className="p-3 flex flex-col items-center">
         {/* Drag Handle */}
-        <div 
-          ref={drag as unknown as React.Ref<HTMLDivElement>}
-          className="absolute top-1 left-1 opacity-0 group-hover:opacity-100 transition-opacity cursor-move"
-          onClick={(e) => e.stopPropagation()}
-        >
-          <GripVertical className="h-4 w-4 text-muted-foreground" />
-        </div>
+        {!readonly && !item.readonly && (
+          <div 
+            ref={drag as unknown as React.Ref<HTMLDivElement>}
+            className="absolute top-1 left-1 opacity-0 group-hover:opacity-100 transition-opacity cursor-move"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <GripVertical className="h-4 w-4 text-muted-foreground" />
+          </div>
+        )}
 
         {/* Drop indicator */}
         {isOver && canDrop && (
@@ -188,7 +124,10 @@ export function DroppableFolderItem({
         {/* Icon and Star */}
         <div className="relative mb-2 flex justify-center">
           <div className="relative">
-            <Folder className={`h-8 w-8  fill-current drop-shadow-sm`} style={{ color: item.color }} />
+            <Folder 
+              className="h-8 w-8 fill-current drop-shadow-sm" 
+              style={{ color: item.color || (getFolderColor ? getFolderColor(item.id) : "#3b82f6") }} 
+            />
             {item.starred && (
               <Star className="h-3 w-3 text-yellow-500 fill-current absolute -top-0.5 -right-0.5" />
             )}
@@ -210,47 +149,48 @@ export function DroppableFolderItem({
       <div className="absolute top-1 right-1 opacity-0 group-hover:opacity-100 transition-opacity">
         <DropdownMenu open={dropdownOpen} onOpenChange={setDropdownOpen}>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" size="sm" className="h-6 w-6 p-0 bg-background/80 backdrop-blur-sm" onClick={(e) => e.stopPropagation()}>
+            <Button 
+              variant="ghost" 
+              size="sm" 
+              className="h-6 w-6 p-0 bg-background/80 backdrop-blur-sm" 
+              onClick={(e) => e.stopPropagation()}
+            >
               <MoreHorizontal className="h-3 w-3" />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent>
-            <DropdownMenuItem onClick={() => onItemAction("share", item)}>
+            <DropdownMenuItem onClick={(e) => handleAction("share", e)}>
               <Share className="mr-2 h-4 w-4" />
               Share
             </DropdownMenuItem>
-            {!readonly && (
+            {!readonly && !item.readonly && (
               <>
-                <DropdownMenuItem 
-                  onClick={() => {
-                    onItemAction("modify", item);
-                  }}
-                  disabled={isLoading}
-                >
+                <DropdownMenuItem onClick={(e) => handleAction("rename", e)}>
                   <Edit className="mr-2 h-4 w-4" />
                   Modify
                 </DropdownMenuItem>
-                 <DropdownMenuItem onClick={() => onItemAction("star", item)}>
-                   <Star className="mr-2 h-4 w-4" />
-                   {item.starred ? "Remove star" : "Add star"}
-                 </DropdownMenuItem>
-                 <MoveItemDropdown
-                   itemId={item.id}
-                   itemName={item.name}
-                   itemType={item.type}
-                   classId={classId}
-                   currentFolderId={currentFolderId}
-                   onSuccess={onRefetch}
-                   onOpenChange={(open) => {
-                     if (open) {
-                       setDropdownOpen(false);
-                     }
-                   }}
-                 />
-                 <DropdownMenuSeparator />
+                <MoveItemDropdown
+                  itemId={item.id}
+                  itemName={item.name}
+                  itemType={item.type}
+                  classId={classId}
+                  currentFolderId={currentFolderId}
+                  onSuccess={() => handlers.onRefresh?.()}
+                  onOpenChange={(open) => {
+                    if (open) {
+                      setDropdownOpen(false);
+                    }
+                  }}
+                />
+                {handlers.onStar && (
+                  <DropdownMenuItem onClick={(e) => handleAction("star", e)}>
+                    <Star className="mr-2 h-4 w-4" />
+                    {item.starred ? "Remove star" : "Add star"}
+                  </DropdownMenuItem>
+                )}
+                <DropdownMenuSeparator />
                 <DropdownMenuItem 
-                  onClick={() => setShowDeleteDialog(true)}
-                  disabled={isLoading}
+                  onClick={(e) => handleAction("delete", e)}
                   className="text-destructive focus:text-destructive"
                 >
                   <Trash2 className="mr-2 h-4 w-4" />
@@ -261,29 +201,6 @@ export function DroppableFolderItem({
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-
-      {/* Delete Confirmation Dialog */}
-      <AlertDialog open={showDeleteDialog} onOpenChange={setShowDeleteDialog}>
-        <AlertDialogContent>
-          <AlertDialogHeader>
-            <AlertDialogTitle>Delete Folder</AlertDialogTitle>
-            <AlertDialogDescription>
-              Are you sure you want to delete "{item.name}"? This will also delete all files and folders inside it. This action cannot be undone.
-            </AlertDialogDescription>
-          </AlertDialogHeader>
-          <AlertDialogFooter>
-            <AlertDialogCancel disabled={isLoading}>Cancel</AlertDialogCancel>
-            <AlertDialogAction 
-              onClick={handleDelete}
-              disabled={isLoading}
-              className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
-            >
-              {isLoading ? "Deleting..." : "Delete"}
-            </AlertDialogAction>
-          </AlertDialogFooter>
-        </AlertDialogContent>
-      </AlertDialog>
     </div>
   );
 }
-
