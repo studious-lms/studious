@@ -2,9 +2,8 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { AppLayout } from "@/components/ui/app-layout";
 import { 
   BookOpen, 
   FileText, 
@@ -12,7 +11,7 @@ import {
   Calendar, 
   MessageCircle, 
   Bot,
-  Sparkles
+  Menu
 } from "lucide-react";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
@@ -30,207 +29,310 @@ export default function Home() {
   }, [appState.user.loggedIn, router]);
   
   return (
-    <AppLayout isAuthenticated={appState.user.loggedIn}>
-      <div className="min-h-screen overflow-hidden bg-background">
+    <div className="min-h-screen bg-background">
+      {/* Fixed Navbar */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border">
+        <div className="container mx-auto px-6">
+          <div className="flex items-center justify-between h-14">
+            {/* Logo */}
+            <Link href="/" className="flex items-center gap-2">
+              <img src="/logo.png" alt="Studious" className="w-6 h-6" />
+              <span className="text-lg font-bold text-foreground">Studious</span>
+            </Link>
+            
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center gap-6">
+              <Link href="#features" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                Features
+              </Link>
+              <Link href="/login" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                Sign In
+              </Link>
+              <Link href="/signup">
+                <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                  Get Started
+                </Button>
+              </Link>
+            </div>
+            
+            {/* Mobile Menu Button */}
+            <button className="md:hidden">
+              <Menu className="h-5 w-5 text-muted-foreground" />
+            </button>
+          </div>
+        </div>
+      </nav>
+
       {/* Hero Section */}
-      <section className="relative min-h-screen bg-gradient-to-br from-background to-muted/20">
+      <section className="pt-28 pb-20 px-6 bg-gradient-to-b from-secondary to-background relative overflow-hidden">
+        {/* Grid Background */}
+        <div className="absolute inset-0 bg-grid-pattern opacity-50"></div>
         
-        <div className="container mx-auto px-4 py-20 relative z-10">
-          <div className="text-center mb-20">
-            {/* Logo with glow effect */}
-            <div className="flex justify-center mb-8">
-              <div className="relative">
-                <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full"></div>
-                <img src="/logo.png" alt="Studious Logo" className="w-20 h-20 relative z-10" />
-              </div>
-            </div>
-            
-            {/* Main headline with sparkles */}
-            <div className="relative">
-              <Sparkles className="absolute -top-4 -left-4 h-6 w-6 text-primary animate-pulse" />
-              <Sparkles className="absolute -top-2 right-8 h-4 w-4 text-primary/60 animate-pulse delay-300" />
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-foreground mb-8 leading-tight">
-                The Future of
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="text-center">
+            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
+              Modern Learning
                 <br />
-                <span className="text-primary">
-                  Education
-                </span>
-                <br />
-                is Here
+              <span className="text-primary">Management Platform</span>
               </h1>
-            </div>
             
-            <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
-              <span className="font-semibold text-foreground">Studious</span> revolutionizes learning management with cutting-edge AI, 
-              intuitive design, and powerful analytics. Transform your educational experience today.
+            <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
+              Streamline your educational workflow with powerful tools for class management, assignments, and AI-powered insights.
             </p>
             
-            {/* CTA Buttons with enhanced styling */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/signup">
-                <Button size="lg" className="px-12 py-4 text-xl font-semibold shadow-2xl hover:shadow-primary/25 transition-all duration-300 transform hover:scale-105">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg">
                   Start Free Trial
                 </Button>
               </Link>
               <Link href="/login">
-                <Button variant="outline" size="lg" className="px-12 py-4 text-xl font-semibold border-2 hover:bg-muted/50 transition-all duration-300">
+                <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-secondary px-8 py-6 text-lg">
                   Sign In
                 </Button>
               </Link>
             </div>
-            
           </div>
           
-          {/* Hero Image Placeholder */}
-          <div className="relative max-w-6xl mx-auto">
-            <div className="relative bg-gradient-to-r from-muted/50 to-muted/30 rounded-2xl p-8 shadow-2xl backdrop-blur-sm border">
-              <div className="aspect-video bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-24 h-24 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <BookOpen className="h-12 w-12 text-primary" />
-                  </div>
-                  <p className="text-muted-foreground font-medium">Dashboard Preview Coming Soon</p>
-                </div>
-              </div>
-            </div>
-            {/* Floating elements */}
-            <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary/10 rounded-full blur-xl"></div>
-            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-primary/5 rounded-full blur-2xl"></div>
+          {/* Hero Image */}
+          <div className="mt-16 rounded-xl overflow-hidden shadow-2xl border border-border relative">
+            <img src="/hero-light.png" alt="Platform Dashboard" className="w-full h-auto block dark:hidden" />
+            <img src="/hero-dark.png" alt="Platform Dashboard" className="w-full h-auto hidden dark:block" />
+            <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none"></div>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-32 bg-gradient-to-b from-muted/20 to-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
-            <Badge variant="secondary" className="mb-4 px-4 py-2 text-sm font-semibold">
-              <Sparkles className="mr-2 h-4 w-4" />
-              Powerful Features
-            </Badge>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Everything You Need to
-              <span className="block text-primary">Excel in Education</span>
+      <section id="features" className="py-20 px-6 bg-background -mt-16">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-4">
+              Everything You Need
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Discover the comprehensive suite of tools designed to revolutionize your teaching and learning experience.
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Comprehensive tools designed for modern education
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-            <Card className="group hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 transform hover:-translate-y-2 border-2 hover:border-primary/20">
-              <CardHeader className="pb-4">
-                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <BookOpen className="h-8 w-8 text-primary" />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="border border-border hover:border-primary hover:shadow-lg transition-all">
+              <CardHeader>
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <BookOpen className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle className="text-xl font-bold">Class Management</CardTitle>
-                <CardDescription className="text-base">
-                  Create and organize classes with unprecedented ease
-                </CardDescription>
+                <CardTitle className="text-xl">Class Management</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground leading-relaxed">
-                  Set up classes, manage enrollment, and organize your curriculum in one central, intuitive location with advanced organizational tools.
+                <p className="text-muted-foreground">
+                  Organize classes, manage enrollment, and structure your curriculum efficiently.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="group hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 transform hover:-translate-y-2 border-2 hover:border-primary/20">
-              <CardHeader className="pb-4">
-                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <FileText className="h-8 w-8 text-primary" />
+            <Card className="border border-border hover:border-primary hover:shadow-lg transition-all">
+              <CardHeader>
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <FileText className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle className="text-xl font-bold">Assignment Tracking</CardTitle>
-                <CardDescription className="text-base">
-                  Streamline assignment creation and submission workflows
-                </CardDescription>
+                <CardTitle className="text-xl">Assignments</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground leading-relaxed">
-                  Create assignments, set due dates, and track student submissions with detailed rubrics and automated grading capabilities.
+                <p className="text-muted-foreground">
+                  Create, distribute, and track assignments with automated grading support.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="group hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 transform hover:-translate-y-2 border-2 hover:border-primary/20">
-              <CardHeader className="pb-4">
-                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <BarChart3 className="h-8 w-8 text-primary" />
+            <Card className="border border-border hover:border-primary hover:shadow-lg transition-all">
+              <CardHeader>
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <BarChart3 className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle className="text-xl font-bold">Advanced Analytics</CardTitle>
-                <CardDescription className="text-base">
-                  Comprehensive grading and performance insights
-                </CardDescription>
+                <CardTitle className="text-xl">Analytics</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground leading-relaxed">
-                  Track student progress with AI-powered analytics, generate detailed reports, and provide data-driven feedback for optimal learning outcomes.
+                <p className="text-muted-foreground">
+                  Track student progress with detailed reports and performance insights.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="group hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 transform hover:-translate-y-2 border-2 hover:border-primary/20">
-              <CardHeader className="pb-4">
-                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <Calendar className="h-8 w-8 text-primary" />
+            <Card className="border border-border hover:border-primary hover:shadow-lg transition-all">
+              <CardHeader>
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <Calendar className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle className="text-xl font-bold">Smart Calendar</CardTitle>
-                <CardDescription className="text-base">
-                  Never miss important academic milestones
-                </CardDescription>
+                <CardTitle className="text-xl">Calendar</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground leading-relaxed">
-                  Integrated calendar system with intelligent scheduling, automated reminders, and seamless synchronization across all your devices.
+                <p className="text-muted-foreground">
+                  Integrated scheduling with reminders and deadline management.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="group hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 transform hover:-translate-y-2 border-2 hover:border-primary/20">
-              <CardHeader className="pb-4">
-                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <MessageCircle className="h-8 w-8 text-primary" />
+            <Card className="border border-border hover:border-primary hover:shadow-lg transition-all">
+              <CardHeader>
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <MessageCircle className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle className="text-xl font-bold">Real-time Communication</CardTitle>
-                <CardDescription className="text-base">
-                  Stay connected with your entire academic community
-                </CardDescription>
+                <CardTitle className="text-xl">Communication</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground leading-relaxed">
-                  Built-in chat system, announcements, and collaborative tools to keep everyone informed, engaged, and connected in real-time.
+                <p className="text-muted-foreground">
+                  Built-in messaging, announcements, and collaboration tools.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="group hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 transform hover:-translate-y-2 border-2 hover:border-primary/20">
-              <CardHeader className="pb-4">
-                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <Bot className="h-8 w-8 text-primary" />
+            <Card className="border border-border hover:border-primary hover:shadow-lg transition-all">
+              <CardHeader>
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <Bot className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle className="text-xl font-bold">AI-Powered Labs</CardTitle>
-                <CardDescription className="text-base">
-                  Next-generation learning with artificial intelligence
-                </CardDescription>
+                <CardTitle className="text-xl">AI Assistant</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground leading-relaxed">
-                  Leverage cutting-edge AI tools for content generation, personalized feedback, and enhanced learning experiences that adapt to each student.
+                <p className="text-muted-foreground">
+                  Leverage AI for content generation and personalized feedback.
                 </p>
               </CardContent>
             </Card>
           </div>
-          
-          {/* Feature Image Placeholder */}
-          <div className="relative max-w-5xl mx-auto">
-            <div className="bg-gradient-to-r from-muted/30 to-muted/20 rounded-3xl p-12 border-2 border-muted/50">
-              <div className="aspect-[16/9] bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-32 h-32 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Sparkles className="h-16 w-16 text-primary" />
+        </div>
+      </section>
+
+      {/* Feature Showcase Section */}
+      <section className="pt-12 pb-32 px-6 bg-background">
+        <div className="container mx-auto max-w-6xl space-y-32">
+          {/* Feature 1 - Smart Grading */}
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <div className="inline-flex items-center gap-2 text-primary font-semibold">
+                <FileText className="h-5 w-5" />
+                <span>Smart Grading</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+                Grade assignments in seconds, not hours.
+              </h2>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                Streamline your grading workflow with intuitive tools, 
+                customizable rubrics, and consistent criteria across all submissions.
+              </p>
+            </div>
+            <div className="relative">
+              <div className="rounded-2xl bg-primary/10 p-8 border border-primary/20 shadow-2xl">
+                <div className="bg-background rounded-xl p-6 space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-muted-foreground">Student Submission</span>
+                    <Badge className="bg-primary/10 text-primary">Graded</Badge>
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-2">Features in Action</h3>
-                  <p className="text-muted-foreground text-lg">Interactive demo and screenshots coming soon</p>
+                  <div className="space-y-2">
+                    <div className="h-3 bg-muted rounded w-full"></div>
+                    <div className="h-3 bg-muted rounded w-5/6"></div>
+                    <div className="h-3 bg-muted rounded w-4/6"></div>
+                  </div>
+                  <div className="flex items-center gap-2 pt-4">
+                    <div className="flex-1 bg-primary/20 rounded-full h-2">
+                      <div className="bg-primary rounded-full h-2 w-4/5"></div>
+                    </div>
+                    <span className="text-2xl font-bold text-primary">92%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Feature 2 - Real-time Analytics */}
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="relative order-2 md:order-1">
+              <div className="rounded-2xl bg-primary/10 p-8 border border-primary/20 shadow-2xl">
+                <div className="bg-background rounded-xl p-6 space-y-4">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-sm font-semibold text-foreground">Class Performance</span>
+                    <BarChart3 className="h-5 w-5 text-primary" />
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3">
+                      <div className="flex-1 bg-muted rounded-full h-8">
+                        <div className="bg-primary rounded-full h-8 flex items-center justify-end pr-2" style={{width: '85%'}}>
+                          <span className="text-xs font-semibold text-primary-foreground">85%</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="flex-1 bg-muted rounded-full h-8">
+                        <div className="bg-primary/70 rounded-full h-8 flex items-center justify-end pr-2" style={{width: '72%'}}>
+                          <span className="text-xs font-semibold text-primary-foreground">72%</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="flex-1 bg-muted rounded-full h-8">
+                        <div className="bg-primary/50 rounded-full h-8 flex items-center justify-end pr-2" style={{width: '93%'}}>
+                          <span className="text-xs font-semibold text-primary-foreground">93%</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="space-y-6 order-1 md:order-2">
+              <div className="inline-flex items-center gap-2 text-primary font-semibold">
+                <BarChart3 className="h-5 w-5" />
+                <span>Analytics</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+                Track progress, identify gaps.
+              </h2>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                Get real-time insights into student performance with detailed analytics. 
+                Spot trends, identify struggling students, and adjust your teaching strategy.
+              </p>
+            </div>
+          </div>
+
+          {/* Feature 3 - Collaboration */}
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <div className="inline-flex items-center gap-2 text-primary font-semibold">
+                <MessageCircle className="h-5 w-5" />
+                <span>Communication</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+                Stay connected with your students.
+              </h2>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                Built-in messaging, announcements, and real-time notifications keep 
+                everyone on the same page. Foster collaboration and engagement.
+              </p>
+            </div>
+            <div className="relative">
+              <div className="rounded-2xl bg-primary/10 p-8 border border-primary/20 shadow-2xl">
+                <div className="bg-background rounded-xl p-6 space-y-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-primary/20"></div>
+                    <div className="flex-1 space-y-1">
+                      <div className="h-3 bg-muted rounded w-2/3"></div>
+                      <div className="h-2 bg-muted rounded w-1/3"></div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-primary/20"></div>
+                    <div className="flex-1 space-y-1">
+                      <div className="h-3 bg-muted rounded w-3/4"></div>
+                      <div className="h-2 bg-muted rounded w-1/2"></div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-primary/20"></div>
+                    <div className="flex-1 space-y-1">
+                      <div className="h-3 bg-muted rounded w-1/2"></div>
+                      <div className="h-2 bg-muted rounded w-1/4"></div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -238,67 +340,42 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Final CTA Section */}
-      <section className="py-32 bg-gradient-to-r from-primary via-primary to-primary/90 relative overflow-hidden">
-        {/* Background decoration */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 to-primary"></div>
-        <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-10 left-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
-          <div className="absolute bottom-10 right-10 w-48 h-48 bg-white/5 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
-        </div>
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <Badge variant="secondary" className="mb-6 px-6 py-3 text-base font-semibold bg-white/20 text-white border-white/30">
-              <Sparkles className="mr-2 h-5 w-5" />
-              Join the Revolution
-            </Badge>
-            <h2 className="text-6xl font-extrabold text-white mb-8 leading-tight">
-              Ready to Transform
-              <br />
-              <span className="text-white/90">Your Teaching?</span>
+      {/* CTA Section */}
+      <section className="py-20 px-6 bg-primary">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
+            Ready to Get Started?
             </h2>
-            <p className="text-2xl text-white/90 mb-12 leading-relaxed">
-              Join thousands of educators who are already using <span className="font-bold text-white">Studious</span> to revolutionize their teaching experience and unlock their students' full potential.
+          <p className="text-xl text-primary-foreground/90 mb-10">
+            Join thousands of educators already using Studious to enhance their teaching experience.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/signup">
-                <Button size="lg" variant="secondary" className="px-12 py-4 text-xl font-bold shadow-2xl hover:shadow-white/25 transition-all duration-300 transform hover:scale-105 bg-white text-primary hover:bg-white/90">
-                  Start Your Free Trial
+              <Button size="lg" className="bg-background text-primary hover:bg-background/90 px-8 py-6 text-lg">
+                Join us now
                 </Button>
               </Link>
-              <Link href="/login">
-                <Button size="lg" variant="outline" className="px-12 py-4 text-xl font-semibold border-2 border-white text-white hover:bg-white hover:text-primary transition-all duration-300">
-                  Sign In Now
-                </Button>
-              </Link>
-            </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-muted/30 border-t border-muted py-16">
-        <div className="container mx-auto px-4">
+      <footer className="py-12 px-6 bg-secondary border-t border-border">
+        <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center gap-3 mb-6 md:mb-0">
-              <img src="/logo.png" alt="Studious Logo" className="w-8 h-8" />
+            <div className="flex items-center gap-2 mb-4 md:mb-0">
+              <img src="/logo.png" alt="Studious" className="w-6 h-6" />
               <span className="text-xl font-bold text-foreground">Studious</span>
             </div>
             <div className="text-center md:text-right">
-              <p className="text-muted-foreground mb-2">
-                &copy; 2025 Studious. Built for educators, by educators.
-              </p>
-              <p className="text-sm text-muted-foreground">
-                Empowering the future of education, one classroom at a time.
+              <p className="text-muted-foreground">
+                &copy; 2025 Studious. All rights reserved.
               </p>
             </div>
           </div>
         </div>
       </footer>
       </div>
-    </AppLayout>
   );
 }

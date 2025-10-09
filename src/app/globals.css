@@ -331,3 +331,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  /* Grid Pattern Background */
+  .bg-grid-pattern {
+    background-image: 
+      radial-gradient(circle, hsl(var(--primary) / 0.15) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+}

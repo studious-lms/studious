@@ -69,7 +69,7 @@ export default function Signup() {
         {/* Logo and Title */}
         <div className="text-center space-y-4">
           <div className="flex justify-center">
-            <img src="/lovable-uploads/7b621e2f-b8ec-49c7-bd03-5ed34b7071ac.png" alt="Studious Logo" className="h-10 w-10" />
+            <img src="/logo.png" alt="Studious Logo" className="h-10 w-10" />
           </div>
           <div className="space-y-2">
             <h1 className="text-3xl font-bold">Create your account</h1>
