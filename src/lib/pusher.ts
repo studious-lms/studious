@@ -12,6 +12,7 @@ export interface NewMessageEvent {
   content: string;
   senderId: string;
   conversationId: string;
+  attachments: any[];
   createdAt: Date;
   sender: {
     id: string;

@@ -86,8 +86,8 @@ export function DraggableFileItem({
         isDragging ? 'opacity-50' : 'opacity-100'
       }`}
       onDoubleClick={() => {
-        if (item.type === "file" && handlers.onFileClick) {
-          handlers.onFileClick(item);
+        if (item.type === "file" && handlers.onPreview) {
+          handlers.onPreview(item);
         }
       }}
     >

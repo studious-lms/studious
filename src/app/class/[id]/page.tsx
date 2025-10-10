@@ -78,6 +78,7 @@ export default function ClassFeed() {
     id: string;
     type: 'announcement' | 'assignment';
     data: Announcement | Assignment;
+    teacher: RouterOutputs['announcement']['getAll']['announcements'][number]['teacher'];
     createdAt: string;
   }> = [];
   
@@ -88,6 +89,7 @@ export default function ClassFeed() {
       type: 'announcement' as const,
       data: announcement,
       createdAt: announcement.createdAt,
+      teacher: announcement.teacher,
     })));
   }
 
@@ -98,6 +100,7 @@ export default function ClassFeed() {
       type: 'assignment' as const,
       data: assignment,
       createdAt: assignment.createdAt,
+      teacher: assignment.teacher,
     })));
   }
 
@@ -153,11 +156,11 @@ export default function ClassFeed() {
 
         {/* New Post Card - Teachers Only */}
         {isTeacher && (
-          <Card className="border-border/50 shadow-sm">
+          <Card className="border-border shadow-sm hover:shadow-md transition-shadow">
             <CardContent className="p-6">
               <div className="flex items-start space-x-4">
                 <Avatar className="h-10 w-10 flex-shrink-0">
-                  <AvatarImage src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${appState.user.username}`} />
+                  <AvatarImage src={appState.user.profilePicture || ""} />
                   <AvatarFallback className="bg-primary/10 text-primary font-medium">
                     {appState.user.username?.substring(0, 2).toUpperCase()}
                   </AvatarFallback>
@@ -167,7 +170,7 @@ export default function ClassFeed() {
                     placeholder="Share something with your class..."
                     value={newPost}
                     onChange={(e) => setNewPost(e.target.value)}
-                    className="min-h-[80px] resize-none border-border/50 bg-background focus-visible:ring-2 focus-visible:ring-primary/20 focus-visible:border-primary transition-all duration-200 placeholder:text-muted-foreground/60"
+                    className="min-h-[80px] resize-none border-border bg-background focus-visible:ring-2 focus-visible:ring-primary/20 focus-visible:border-primary transition-all duration-200 placeholder:text-muted-foreground/60"
                   />
                   <div className="flex items-center justify-between pt-1">
                     <div className="flex items-center space-x-2">
@@ -204,7 +207,7 @@ export default function ClassFeed() {
         {/* Feed Items */}
         <div className="space-y-6">
           {feedItems.length === 0 ? (
-        <Card>
+            <Card className="border-border shadow-sm">
               <CardContent className="py-12 text-center">
                 <MessageSquare className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
                 <h3 className="text-lg font-semibold mb-2">No posts yet</h3>
@@ -223,16 +226,14 @@ export default function ClassFeed() {
               </CardContent>
             </Card>
           ) : (
-            feedItems.map((item) => (
-              <Card key={`${item.type}-${item.id}`} className="hover:shadow-sm transition-shadow">
-                <CardContent className="p-4">
-                  {item.type === 'announcement' ? (
+            feedItems.filter((item) => item.type === "announcement").map((item) => (
+              <Card key={`${item.type}-${item.id}`} className="border-border shadow-sm hover:shadow-md transition-shadow">
+                <CardContent className="p-6">
+                  {item.type === 'announcement' && (
                     <AnnouncementItem announcement={item.data as Announcement} />
-                  ) : (
-                    <AssignmentItem assignment={item.data as Assignment} />
                   )}
-          </CardContent>
-        </Card>
+                </CardContent>
+              </Card>
             ))
           )}
         </div>
@@ -249,7 +250,7 @@ function AnnouncementItem({ announcement }: { announcement: Announcement }) {
       <div className="flex items-start justify-between">
         <div className="flex items-start space-x-3">
           <Avatar className="h-8 w-8 flex-shrink-0">
-            <AvatarImage src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${announcement.teacher.username}`} />
+            <AvatarImage src={announcement.teacher.profile?.profilePicture || ""} />
             <AvatarFallback>
               {announcement.teacher.username.substring(0, 2).toUpperCase()}
             </AvatarFallback>

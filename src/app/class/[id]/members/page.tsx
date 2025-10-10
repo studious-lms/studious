@@ -33,17 +33,6 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { toast } from "sonner";
 import { useParams } from "next/navigation";
-
-type Member = {
-  id: string;
-  username: string;
-  email?: string;
-  type: 'teacher' | 'student';
-  avatar?: string;
-  joinedAt?: string;
-  lastActive?: string;
-};
-
 type MemberFilter = 'all' | 'teachers' | 'students';
 
 // Skeleton component for member cards
@@ -150,16 +139,14 @@ export default function Members() {
   const filteredMembers = useMemo(() => {
     if (!members) return { teachers: [], students: [] };
 
-    const filterMembers = (memberList: Member[]) => {
+    const filterMembers = (memberList: RouterOutputs["class"]["get"]['class']['students']| RouterOutputs["class"]["get"]['class']['teachers']) => {
       return memberList.filter(member => 
-        member.username.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        (member.email && member.email.toLowerCase().includes(searchQuery.toLowerCase()))
-      );
+        member.username.toLowerCase().includes(searchQuery.toLowerCase())      );
     };
 
     return {
-      teachers: filterMembers(members.teachers),
-      students: filterMembers(members.students)
+      teachers: filterMembers(members.teachers) as RouterOutputs["class"]["get"]['class']['teachers'] & { type: 'teacher' },
+      students: filterMembers(members.students) as RouterOutputs["class"]["get"]['class']['students'] & { type: 'student' },
     };
   }, [members, searchQuery]);
 
@@ -327,7 +314,7 @@ export default function Members() {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4">
                         <Avatar className="h-12 w-12">
-                          <AvatarImage src={student.avatar} />
+                          <AvatarImage src={student.profile?.profilePicture || ""} />
                           <AvatarFallback>
                             {student.username.split(' ').map(n => n[0]).join('').toUpperCase()}
                           </AvatarFallback>
@@ -338,15 +325,6 @@ export default function Members() {
                             <h4 className="font-medium">{student.username}</h4>
                             {getRoleBadge(student.type)}
                           </div>
-                          {student.email && (
-                            <p className="text-sm text-muted-foreground">{student.email}</p>
-                          )}
-                          {student.joinedAt && (
-                            <div className="flex items-center space-x-4 text-xs text-muted-foreground">
-                              <span>Joined {new Date(student.joinedAt).toLocaleDateString()}</span>
-                              {student.lastActive && <span>Last active {student.lastActive}</span>}
-                            </div>
-                          )}
                         </div>
                       </div>
 
@@ -416,7 +394,7 @@ export default function Members() {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4">
                         <Avatar className="h-12 w-12">
-                          <AvatarImage src={teacher.avatar} />
+                          <AvatarImage src={teacher.profile?.profilePicture || ""} />
                           <AvatarFallback>
                             {teacher.username.split(' ').map(n => n[0]).join('').toUpperCase()}
                           </AvatarFallback>
@@ -427,15 +405,6 @@ export default function Members() {
                             <h4 className="font-medium">{teacher.username}</h4>
                             {getRoleBadge(teacher.type)}
                           </div>
-                          {teacher.email && (
-                            <p className="text-sm text-muted-foreground">{teacher.email}</p>
-                          )}
-                          {teacher.joinedAt && (
-                            <div className="flex items-center space-x-4 text-xs text-muted-foreground">
-                              <span>Joined {new Date(teacher.joinedAt).toLocaleDateString()}</span>
-                              {teacher.lastActive && <span>Last active {teacher.lastActive}</span>}
-                            </div>
-                          )}
                         </div>
                       </div>
 

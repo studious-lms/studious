@@ -8,8 +8,25 @@ import type { MessageListOutput } from "@/lib/trpc";
 import { MessageActions } from "./MessageActions";
 import { MessageEdit } from "./MessageEdit";
 import { AIMarkdown } from "./AIMarkdown";
-import { Sparkles } from "lucide-react";
+import { DraggableFileItem } from "@/components/DraggableFileItem";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
+import { FilePreviewModal } from "@/components/modals";
+import { 
+  Sparkles,
+  FileText,
+  File,
+  FileSpreadsheet,
+  FileVideo,
+  Music,
+  Archive,
+  Image as ImageIcon,
+  Presentation
+} from "lucide-react";
 import Image from "next/image";
+import type { FileItem, FileHandlers } from "@/lib/types/file";
+import { baseFileHandler } from "@/lib/fileHandler";
+import { trpc } from "@/lib/trpc";
 
 type Message = MessageListOutput['messages'][number];
 
@@ -83,6 +100,11 @@ export function MessageItem({
   isDeletingMessage = false,
 }: MessageItemProps) {
   const [isEditing, setIsEditing] = useState(false);
+  const [previewFile, setPreviewFile] = useState<FileItem | null>(null);
+  const [isPreviewOpen, setIsPreviewOpen] = useState(false);
+  const getSignedUrlMutation = trpc.file.getSignedUrl.useMutation();
+
+
   const isMentioned = message.mentionsMe;
   const isAIAssistant = message.senderId === 'AI_ASSISTANT';
   
@@ -110,6 +132,117 @@ export function MessageItem({
     }
   };
 
+  // Convert message attachments to FileItem format
+  const convertAttachmentsToFileItems = (attachments: any[]): FileItem[] => {
+    return attachments.map(attachment => ({
+      id: attachment.id,
+      name: attachment.name,
+      type: "file" as const,
+      fileType: attachment.name.split('.').pop()?.toLowerCase() || 'file',
+      size: attachment.size ? formatFileSize(attachment.size) : undefined,
+      readonly: true,
+    }));
+  };
+
+  // Format file size helper
+  const formatFileSize = (bytes: number): string => {
+    if (bytes === 0) return '0 B';
+    const k = 1024;
+    const sizes = ['B', 'KB', 'MB', 'GB'];
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+    return Math.round(bytes / Math.pow(k, i) * 100) / 100 + ' ' + sizes[i];
+  };
+
+  // Get file icon helper
+  const getFileIcon = (fileType: string, size: "sm" | "lg" = "lg") => {
+    const iconSize = size === "sm" ? "h-4 w-4" : "h-8 w-8";
+    
+    switch (fileType) {
+      case "pdf":
+        return <FileText className={`${iconSize} text-red-500`} />;
+      case "docx":
+      case "doc":
+        return <FileText className={`${iconSize} text-blue-500`} />;
+      case "pptx":
+      case "ppt":
+        return <Presentation className={`${iconSize} text-orange-500`} />;
+      case "xlsx":
+      case "xls":
+        return <FileSpreadsheet className={`${iconSize} text-green-500`} />;
+      case "mp4":
+      case "mov":
+      case "avi":
+        return <FileVideo className={`${iconSize} text-purple-500`} />;
+      case "mp3":
+      case "wav":
+        return <Music className={`${iconSize} text-pink-500`} />;
+      case "zip":
+      case "rar":
+        return <Archive className={`${iconSize} text-gray-500`} />;
+      case "jpg":
+      case "jpeg":
+      case "png":
+      case "gif":
+      case "webp":
+        return <ImageIcon className={`${iconSize} text-emerald-500`} />;
+      default:
+        return <File className={`${iconSize} text-slate-500`} />;
+    }
+  };
+
+  // Get preview URL for file
+  const getPreviewUrl = async (fileId: string): Promise<string> => {
+      const result = await getSignedUrlMutation.mutateAsync({ fileId });
+      return result.url;
+  };
+
+  // Handle preview modal actions
+  const handlePreviewAction = async (action: string, file: FileItem) => {
+    if (action === 'download') {
+      const attachment = message.attachments?.find(a => a.id === file.id);
+      if (attachment && 'data' in attachment) {
+        const blob = new Blob([atob(attachment.data as string)], { type: attachment.type });
+        const url = window.URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = attachment.name;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(url);
+      }
+    } else if (action === 'share') {
+      // Handle share
+      console.log('Share file:', file);
+    }
+  };
+
+  // File handlers for attachments (read-only)
+  const fileHandlers: FileHandlers = {
+    ...baseFileHandler,
+    onFolderClick: () => {},
+    onPreview: (file: FileItem) => {
+      setPreviewFile(file);
+      setIsPreviewOpen(true);
+    },
+    onDownload: async (item: FileItem) => {
+      // Handle download
+      const attachment = message.attachments?.find(a => a.id === item.id);
+      if (attachment && 'data' in attachment) {
+        // If attachment has base64 data, download it
+        const blob = new Blob([atob(attachment.data as string)], { type: attachment.type });
+        const url = window.URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = attachment.name;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(url);
+      }
+    },
+  };
+
   return (
     <div
       className={cn(
@@ -120,24 +253,14 @@ export function MessageItem({
     >
       {/* Avatar */}
       <Avatar className={`h-10 w-10 flex-shrink-0 mt-0.5 ${!showAvatar && "opacity-0 h-0"}`}>
-        <AvatarImage src={senderAvatar} />
+        <AvatarImage src={isAIAssistant ? "/ai-icon.png" : senderAvatar} />
         <AvatarFallback className={cn(
           "text-sm",
           isAIAssistant 
             ? "bg-primary text-primary-foreground" 
             : "bg-secondary text-secondary-foreground"
         )}>
-          {isAIAssistant ? (
-            <Image
-              src="/ai-icon.svg"
-              alt="AI Assistant"
-              width={20}
-              height={20}
-              className="h-5 w-5"
-            />
-          ) : (
-            senderDisplayName.charAt(0).toUpperCase()
-          )}
+          {isAIAssistant ? "AI" : senderDisplayName.charAt(0).toUpperCase()}
         </AvatarFallback>
       </Avatar>
       
@@ -214,6 +337,26 @@ export function MessageItem({
           </div>
         )}
         
+        {/* File Attachments */}
+        {message.attachments && message.attachments.length > 0 && (
+          <div className="mt-3">
+            <DndProvider backend={HTML5Backend}>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-3">
+                {convertAttachmentsToFileItems(message.attachments).map((fileItem) => (
+                  <DraggableFileItem
+                    key={fileItem.id}
+                    item={fileItem}
+                    classId=""
+                    readonly={true}
+                    handlers={fileHandlers}
+                    getFileIcon={getFileIcon}
+                  />
+                ))}
+              </div>
+            </DndProvider>
+          </div>
+        )}
+        
         {/* Mentions List (if any) @note: i don't think this is necessary */}
         {/* {message.mentions && message.mentions.length > 0 && (
           <div className="flex flex-wrap gap-1 mt-1">
@@ -230,6 +373,14 @@ export function MessageItem({
         )} */}
       </div>
       
+      {/* File Preview Modal */}
+      <FilePreviewModal
+        file={previewFile}
+        isOpen={isPreviewOpen}
+        onClose={() => setIsPreviewOpen(false)}
+        onAction={handlePreviewAction}
+        getPreviewUrl={getPreviewUrl}
+      />
     </div>
   );
 }

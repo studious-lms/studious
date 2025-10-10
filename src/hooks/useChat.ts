@@ -30,6 +30,9 @@ export function useChat(currentUserId: string) {
   // Only run queries if user is logged in
   const isEnabled = !!currentUserId;
 
+  // Get tRPC utils for manual fetches
+  const utils = trpc.useUtils();
+
   // Queries
   const conversationsQuery = trpc.conversation.list.useQuery(undefined, {
     enabled: isEnabled
@@ -108,6 +111,7 @@ export function useChat(currentUserId: string) {
     content: data.content,
     senderId: data.senderId,
     conversationId: data.conversationId,
+    attachments: data.attachments,
     createdAt: typeof data.createdAt === 'string' ? data.createdAt : data.createdAt.toISOString(),
     sender: {
       ...data.sender,
@@ -127,7 +131,6 @@ export function useChat(currentUserId: string) {
     }
 
     try {
-      const utils = trpc.useUtils();
       const moreMessages = await utils.message.list.fetch({
         conversationId: selectedConversationId,
         cursor: messagesData.nextCursor,
@@ -141,7 +144,7 @@ export function useChat(currentUserId: string) {
     } catch (error) {
       console.error('Failed to load more messages:', error);
     }
-  }, [selectedConversationId, messagesData.nextCursor, messagesQuery.isFetching]);
+  }, [selectedConversationId, messagesData.nextCursor, messagesQuery.isFetching, utils]);
 
   // Real-time event handlers
   const handleNewMessage = useCallback((data: NewMessageEvent) => {
