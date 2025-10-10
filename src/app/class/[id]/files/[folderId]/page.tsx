@@ -5,11 +5,10 @@ import { useParams, useRouter } from "next/navigation";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { PageLayout } from "@/components/ui/page-layout";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Skeleton } from "@/components/ui/skeleton";
 import { EmptyState } from "@/components/ui/empty-state";
@@ -18,9 +17,7 @@ import {
   FolderPlus, 
   Search, 
   Download,
-  MoreHorizontal,
   File,
-  Folder,
   FileText,
   Image,
   FileVideo,
@@ -29,7 +26,6 @@ import {
   Filter,
   Share,
   Trash2,
-  Edit,
   ArrowUpDown,
   HardDrive,
   Music,
@@ -44,7 +40,6 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
   DropdownMenuCheckboxItem,
   DropdownMenuLabel,
@@ -52,7 +47,6 @@ import {
 import {
   Table,
   TableBody,
-  TableCell,
   TableHead,
   TableHeader,
   TableRow,
@@ -62,26 +56,14 @@ import { UploadFileModal, FilePreviewModal, RenameModal, CreateFolderModal } fro
 import { DraggableFileItem } from "@/components/DraggableFileItem";
 import { DroppableFolderItem } from "@/components/DroppableFolderItem";
 import { DraggableTableRow } from "@/components/DraggableTableRow";
-import {  RouterInputs, RouterOutputs, trpc } from "@/lib/trpc";
+import {
+  RouterInputs,
+  trpc
+} from "@/lib/trpc";
+import { FileItem, FileHandlers, ApiFolderGetFile, ApiFolderGetFolder } from "@/lib/types/file";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
-// Types for our file system
-type ApiFile = NonNullable<RouterOutputs["folder"]["get"]>['files'][number];
 
-type ApiFolder = NonNullable<RouterOutputs["folder"]["get"]>['childFolders'][number];
-
-type FileItem = {
-  id: string;
-  color?: string;
-  name: string;
-  type: "file" | "folder";
-  fileType?: string;
-  size?: string;
-  uploadedBy?: string;
-  uploadedAt?: string;
-  itemCount?: number;
-  lastModified?: string;
-};
 
 export default function FolderPage() {
   const params = useParams();
@@ -95,8 +77,7 @@ export default function FolderPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [sortBy, setSortBy] = useState<"name" | "modified" | "size">("name");
-  const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
-  const [selectedItems, setSelectedItems] = useState<string[]>([]);
+  const [selectedItems] = useState<string[]>([]);
   const [previewFile, setPreviewFile] = useState<FileItem | null>(null);
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
   const [renameItem, setRenameItem] = useState<FileItem | null>(null);
@@ -171,22 +152,43 @@ export default function FolderPage() {
     }
   });
   
+  const moveFileMutation = trpc.file.move.useMutation({
+    onSuccess: () => {
+      toast.success("File moved successfully");
+      refetch();
+    },
+    onError: (error) => {
+      toast.error(error.message);
+    }
+  });
+  
+  const moveFolderMutation = trpc.folder.move.useMutation({
+    onSuccess: () => {
+      toast.success("Folder moved successfully");
+      refetch();
+    },
+    onError: (error) => {
+      toast.error(error.message);
+    }
+  });
+  
   const getSignedUrlMutation = trpc.file.getSignedUrl.useMutation();
   
   // Check if user is teacher
   const isTeacher = appState.user.teacher;
 
   // Transform API data to FileItem format
-  const transformFolderToFileItem = (folder: ApiFolder): FileItem => ({
+  const transformFolderToFileItem = (folder: ApiFolderGetFolder): FileItem => ({
     id: folder.id,
     name: folder.name,
     type: "folder" as const,
-    itemCount: (folder._count.childFolders || 0) + (folder._count.files || 0),
+    itemCount: (folder._count?.childFolders || 0) + (folder._count?.files || 0),
     lastModified: new Date().toISOString(),
     color: folder.color || "#3b82f6",
+    readonly: !isTeacher,
   });
   
-  const transformFileToFileItem = (file: ApiFile): FileItem => ({
+  const transformFileToFileItem = (file: ApiFolderGetFile): FileItem => ({
     id: file.id,
     name: file.name,
     type: "file" as const,
@@ -194,6 +196,7 @@ export default function FolderPage() {
     size: formatFileSize(file.size || 0),
     uploadedBy: "Unknown",
     uploadedAt: new Date().toISOString(),
+    readonly: !isTeacher,
   });
   
   // Get current folder content
@@ -268,74 +271,137 @@ export default function FolderPage() {
     return colors[index];
   };
 
-  const handleFolderClick = (folderName: string) => {
-    // Find the folder by name to get its ID
-    const folder = currentItems.find(item => item.name === folderName && item.type === "folder");
-    if (folder) {
-      router.push(`/class/${classId}/files/${folder.id}`);
-    }
-  };
+  // External handlers for all file/folder operations
+  const fileHandlers: FileHandlers = {
+    onFolderClick: (folderName: string) => {
+      // Find the folder by name to get its ID
+      const folder = currentItems.find(item => item.name === folderName && item.type === "folder");
+      if (folder) {
+        router.push(`/class/${classId}/files/${folder.id}`);
+      }
+    },
 
+    onFileClick: (file: FileItem) => {
+      if (file.type === "file") {
+        setPreviewFile(file);
+        setIsPreviewOpen(true);
+      }
+    },
 
-  const handleItemAction = async (action: string, item: FileItem) => {
-    if (!isTeacher && ["modify", "delete", "move"].includes(action)) {
-      toast.error("Permission denied");
-      return;
-    }
-    
-    switch (action) {
-      case "download":
-        try {
-          const result = await getSignedUrlMutation.mutateAsync({ fileId: item.id });
-          window.open(result.url, '_blank');
-          toast.success("Download started");
-          toast.success(`Downloading ${item.name}...`);
-        } catch (error) {
-          toast.error("Download failed");
-          toast.error("Unable to download file.");
-        }
-        break;
-      case "share":
-        try {
-          const result = await getSignedUrlMutation.mutateAsync({ fileId: item.id });
-          await navigator.clipboard.writeText(result.url);
-          toast.success("Share link copied");
-        } catch (error) {
-          toast.error("Share failed");
-        }
-        break;
-      case "modify":
+    onDownload: async (item: FileItem) => {
+      if (!isTeacher && ["modify", "delete", "move"].includes("download")) {
+        toast.error("Permission denied");
+        return;
+      }
+      
+      try {
+        const result = await getSignedUrlMutation.mutateAsync({ fileId: item.id });
+        window.open(result.url, '_blank');
+        toast.success("Download started");
+      } catch (error) {
+        toast.error("Download failed");
+        throw error;
+      }
+    },
+
+    onShare: async (item: FileItem) => {
+      try {
+        const result = await getSignedUrlMutation.mutateAsync({ fileId: item.id });
+        await navigator.clipboard.writeText(result.url);
+        toast.success("Share link copied");
+      } catch (error) {
+        toast.error("Share failed");
+        throw error;
+      }
+    },
+
+    onRename: async (item: FileItem, newName: string, color?: string) => {
+      if (!isTeacher) {
+        toast.error("Permission denied");
+        return;
+      }
+
+      // If called with the same name and no color change, open the rename modal
+      if (newName === item.name && (!color || color === item.color)) {
         setRenameItem(item);
         setIsRenameOpen(true);
-        break;
-      case "delete":
-        if (item.type === "folder") {
-          deleteFolderMutation.mutate({ classId, folderId: item.id });
-        } else {
-          deleteFileMutation.mutate({ classId, fileId: item.id });
-        }
-        break;
-    }
-  };
+        return;
+      }
 
-  const handleFileClick = (file: FileItem) => {
-    if (file.type === "file") {
+      try {
+        if (item.type === "folder") {
+          // For folders, we can change name and/or color
+          await renameFolderMutation.mutateAsync({ 
+            classId, 
+            folderId: item.id, 
+            name: newName,
+            color: color || item.color || getFolderColor(item.id)
+          });
+        } else {
+          // For files, only rename (no color)
+          if (newName !== item.name) {
+            await renameFileMutation.mutateAsync({ classId, fileId: item.id, newName });
+          }
+        }
+      } catch (error) {
+        throw error;
+      }
+    },
+
+    onDelete: async (item: FileItem) => {
+      if (!isTeacher) {
+        toast.error("Permission denied");
+        return;
+      }
+
+      try {
+        if (item.type === "folder") {
+          await deleteFolderMutation.mutateAsync({ classId, folderId: item.id });
+        } else {
+          await deleteFileMutation.mutateAsync({ classId, fileId: item.id });
+        }
+      } catch (error) {
+        throw error;
+      }
+    },
+
+    onMove: async (draggedItemId: string, targetFolderId: string, draggedItemType: string) => {
+      if (!isTeacher) {
+        toast.error("Permission denied");
+        return;
+      }
+
+      try {
+        if (draggedItemType === "folder") {
+          await moveFolderMutation.mutateAsync({
+            classId,
+            folderId: draggedItemId,
+            targetParentFolderId: targetFolderId
+          });
+        } else {
+          await moveFileMutation.mutateAsync({
+            classId,
+            fileId: draggedItemId,
+            targetFolderId: targetFolderId
+          });
+        }
+      } catch (error) {
+        throw error;
+      }
+    },
+
+    onPreview: (file: FileItem) => {
       setPreviewFile(file);
       setIsPreviewOpen(true);
+    },
+
+    onRefresh: () => {
+      refetch();
     }
   };
 
   const handleModify = (item: FileItem, newName: string, color?: string) => {
-    if (item.type === "folder") {
-      renameFolderMutation.mutate({ 
-        classId, 
-        folderId: item.id, 
-        name: newName,
-        color: color || getFolderColor(item.id) // Keep existing color if not provided
-      });
-    } else {
-      renameFileMutation.mutate({ classId, fileId: item.id, newName });
-    }
+    fileHandlers.onRename(item, newName, color);
   };
 
   const handleCreateFolder = async (folderData: { name: string; description?: string; color?: string }) => {
@@ -365,14 +431,6 @@ export default function FolderPage() {
       folderId: folderId,
       files: apiFiles
     });
-  };
-
-  const handleMoveItem = (itemId: string, targetFolderId: string) => {
-    const item = currentItems.find(i => i.id === itemId);
-    if (!item) return;
-    
-    // For now, just show a toast since we don't have move mutations set up
-    toast.error("File moving functionality will be available soon.");
   };
 
   const selectedCount = selectedItems.length;
@@ -555,7 +613,7 @@ export default function FolderPage() {
         </div>
 
         {/* Content */}
-        {isLoading ? (
+        {isLoading || !folderId ? (
           /* Loading State */
           <div className="space-y-4">
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-3">
@@ -577,21 +635,22 @@ export default function FolderPage() {
                   <DroppableFolderItem
                     key={item.id}
                     item={item}
-                    getFolderColor={getFolderColor}
-                    onFolderClick={handleFolderClick}
-                    onItemAction={handleItemAction}
                     classId={classId}
-                    onRefetch={refetch}
+                    readonly={item.readonly}
+                    handlers={fileHandlers}
+                    getFolderColor={getFolderColor}
+                    getFileIcon={getFileIcon}
+                    currentFolderId={folderId}
                   />
                 ) : (
                   <DraggableFileItem
                     key={item.id}
                     item={item}
-                    getFileIcon={getFileIcon}
-                    onItemAction={handleItemAction}
-                    onFileClick={handleFileClick}
                     classId={classId}
-                    onRefetch={refetch}
+                    readonly={item.readonly}
+                    handlers={fileHandlers}
+                    getFileIcon={getFileIcon}
+                    currentFolderId={folderId}
                   />
                 )
               ))}
@@ -612,15 +671,15 @@ export default function FolderPage() {
                 <TableBody>
                   {filteredItems.map((item) => (
                     <DraggableTableRow
-                      classId={classId}
                       key={item.id}
                       item={item}
+                      classId={classId}
+                      readonly={item.readonly}
+                      handlers={fileHandlers}
                       getFolderColor={getFolderColor}
                       getFileIcon={getFileIcon}
                       formatDate={formatDate}
-                      onFolderClick={handleFolderClick}
-                      onItemAction={handleItemAction}
-                      onFileClick={handleFileClick}
+                      currentFolderId={folderId}
                     />
                   ))}
                 </TableBody>
@@ -675,7 +734,22 @@ export default function FolderPage() {
           file={previewFile}
           isOpen={isPreviewOpen}
           onClose={() => setIsPreviewOpen(false)}
-          onAction={handleItemAction}
+          onAction={async (action: string, item: FileItem) => {
+            switch (action) {
+              case "download":
+                await fileHandlers.onDownload(item);
+                break;
+              case "share":
+                await fileHandlers.onShare(item);
+                break;
+              case "modify":
+                await fileHandlers.onRename(item, item.name);
+                break;
+              case "delete":
+                await fileHandlers.onDelete(item);
+                break;
+            }
+          }}
           getPreviewUrl={async (fileId: string) => {
             const result = await getSignedUrlMutation.mutateAsync({ fileId });
             return result.url;

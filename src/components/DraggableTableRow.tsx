@@ -1,5 +1,5 @@
 import { useDrag, useDrop } from "react-dnd";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { TableRow, TableCell } from "@/components/ui/table";
 import {
@@ -17,50 +17,70 @@ import {
   Folder,
   Download,
   Eye,
-  GripVertical
+  GripVertical,
+  Star
 } from "lucide-react";
-
-interface FileItem {
-  id: string;
-  name: string;
-  type: "file" | "folder";
-  fileType?: string;
-  size?: string;
-  uploadedBy?: string;
-  uploadedAt?: string;
-  itemCount?: number;
-  lastModified?: string;
-  children?: FileItem[];
-}
-
-interface DraggableTableRowProps {
-  item: FileItem;
-  getFolderColor: (folderId: string) => string;
-  getFileIcon: (fileType: string, size?: "sm" | "lg") => React.ReactNode;
-  formatDate: (dateString: string) => string;
-  onFolderClick: (folderName: string) => void;
-  onItemAction: (action: string, item: FileItem) => void;
-  onFileClick?: (file: FileItem) => void;
-  classId: string;
-  onRefetch?: () => void;
-  readonly?: boolean;
-}
+import { TableFileComponentProps } from "@/lib/types/file";
+import { MoveItemDropdown } from "@/components/MoveItemDropdown";
 
 export function DraggableTableRow({ 
   item, 
+  classId,
+  currentFolderId,
+  readonly = false,
+  handlers,
   getFolderColor,
   getFileIcon,
-  formatDate,
-  onFolderClick, 
-  onItemAction,
-  onFileClick,
-  classId,
-  onRefetch,
-  readonly = false
-}: DraggableTableRowProps) {
+  formatDate
+}: TableFileComponentProps) {
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  const handleAction = async (action: string, e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    setDropdownOpen(false);
+    
+    try {
+      switch (action) {
+        case "download":
+          await handlers.onDownload(item);
+          break;
+        case "share":
+          await handlers.onShare(item);
+          break;
+        case "rename":
+          // This will trigger external rename modal/dialog
+          await handlers.onRename(item, item.name, item.color);
+          break;
+        case "delete":
+          await handlers.onDelete(item);
+          break;
+        case "star":
+          if (handlers.onStar) {
+            await handlers.onStar(item);
+          }
+          break;
+        case "preview":
+          if (handlers.onPreview) {
+            handlers.onPreview(item);
+          }
+          break;
+      }
+    } catch (error) {
+      // Error handling is done by the handlers
+      console.error(`Action ${action} failed:`, error);
+    }
+  };
+
+  const handleMoveItem = async (draggedItemId: string, draggedItemType: string) => {
+    if (draggedItemId !== item.id && item.type === "folder") {
+      await handlers.onMove(draggedItemId, item.id, draggedItemType);
+    }
+  };
+
   const [{ isDragging }, drag] = useDrag({
     type: "file",
     item: { id: item.id, name: item.name, type: item.type },
+    canDrag: !readonly && !item.readonly,
     collect: (monitor) => ({
       isDragging: monitor.isDragging(),
     }),
@@ -70,7 +90,7 @@ export function DraggableTableRow({
     accept: "file",
     drop: (draggedItem: { id: string; name: string; type: string }) => {
       if (draggedItem.id !== item.id && item.type === "folder") {
-        // onMoveItem(draggedItem.id, item.id);
+        handleMoveItem(draggedItem.id, draggedItem.type);
       }
     },
     canDrop: (draggedItem) => draggedItem.id !== item.id && item.type === "folder",
@@ -95,29 +115,41 @@ export function DraggableTableRow({
       }`}
       onDoubleClick={() => {
         if (item.type === "folder") {
-          onFolderClick(item.name);
-        } else if (item.type === "file" && onFileClick) {
-          onFileClick(item);
+          handlers.onFolderClick(item.name);
+        } else if (item.type === "file" && handlers.onFileClick) {
+          handlers.onFileClick(item);
         }
       }}
     >
       <TableCell>
         <div className="flex items-center space-x-3">
           {/* Drag Handle */}
-          <div 
-            ref={drag as unknown as React.Ref<HTMLDivElement>}
-            className="opacity-0 group-hover:opacity-100 transition-opacity cursor-move"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <GripVertical className="h-4 w-4 text-muted-foreground" />
-          </div>
-          
-          {item.type === "folder" ? (
-            <Folder className={`h-5 w-5 ${getFolderColor(item.id)} fill-current`} />
-          ) : (
-            getFileIcon(item.fileType!)
+          {!readonly && !item.readonly && (
+            <div 
+              ref={drag as unknown as React.Ref<HTMLDivElement>}
+              className="opacity-0 group-hover:opacity-100 transition-opacity cursor-move"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <GripVertical className="h-4 w-4 text-muted-foreground" />
+            </div>
           )}
-          <span className="font-medium">{item.name}</span>
+          
+          <div className="flex items-center space-x-2">
+            {item.type === "folder" ? (
+              <Folder 
+                className="h-5 w-5 fill-current" 
+                style={{ color: item.color || getFolderColor(item.id) }} 
+              />
+            ) : (
+              getFileIcon(item.fileType!)
+            )}
+            <span className="font-medium flex items-center space-x-1">
+              {item.name}
+              {item.starred && (
+                <Star className="h-3 w-3 text-yellow-500 fill-current" />
+              )}
+            </span>
+          </div>
           
           {/* Drop indicator for folders */}
           {isOver && canDrop && (
@@ -143,7 +175,7 @@ export function DraggableTableRow({
         }
       </TableCell>
       <TableCell>
-        <DropdownMenu>
+        <DropdownMenu open={dropdownOpen} onOpenChange={setDropdownOpen}>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" size="sm" onClick={(e) => e.stopPropagation()}>
               <MoreHorizontal className="h-4 w-4" />
@@ -152,29 +184,55 @@ export function DraggableTableRow({
           <DropdownMenuContent>
             {item.type === "file" && (
               <>
-                <DropdownMenuItem onClick={() => onItemAction("download", item)}>
+                <DropdownMenuItem onClick={(e) => handleAction("download", e)}>
                   <Download className="mr-2 h-4 w-4" />
                   Download
                 </DropdownMenuItem>
-                <DropdownMenuItem>
+                <DropdownMenuItem onClick={(e) => handleAction("preview", e)}>
                   <Eye className="mr-2 h-4 w-4" />
                   Preview
                 </DropdownMenuItem>
               </>
             )}
-            <DropdownMenuItem onClick={() => onItemAction("share", item)}>
+            <DropdownMenuItem onClick={(e) => handleAction("share", e)}>
               <Share className="mr-2 h-4 w-4" />
               Share
             </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => onItemAction("modify", item)}>
-              <Edit className="mr-2 h-4 w-4" />
-              Modify
-            </DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem onClick={() => onItemAction("delete", item)}>
-              <Trash2 className="mr-2 h-4 w-4" />
-              Delete
-            </DropdownMenuItem>
+            {!readonly && !item.readonly && (
+              <>
+                <DropdownMenuItem onClick={(e) => handleAction("rename", e)}>
+                  <Edit className="mr-2 h-4 w-4" />
+                  {item.type === "folder" ? "Modify" : "Rename"}
+                </DropdownMenuItem>
+                <MoveItemDropdown
+                  itemId={item.id}
+                  itemName={item.name}
+                  itemType={item.type}
+                  classId={classId}
+                  currentFolderId={currentFolderId}
+                  onSuccess={() => handlers.onRefresh?.()}
+                  onOpenChange={(open) => {
+                    if (open) {
+                      setDropdownOpen(false);
+                    }
+                  }}
+                />
+                {handlers.onStar && (
+                  <DropdownMenuItem onClick={(e) => handleAction("star", e)}>
+                    <Star className="mr-2 h-4 w-4" />
+                    {item.starred ? "Remove star" : "Add star"}
+                  </DropdownMenuItem>
+                )}
+                <DropdownMenuSeparator />
+                <DropdownMenuItem 
+                  onClick={(e) => handleAction("delete", e)}
+                  className="text-destructive focus:text-destructive"
+                >
+                  <Trash2 className="mr-2 h-4 w-4" />
+                  Delete
+                </DropdownMenuItem>
+              </>
+            )}
           </DropdownMenuContent>
         </DropdownMenu>
       </TableCell>

@@ -54,7 +54,22 @@ export type AnnouncementCreateInput = RouterInputs['announcement']['create'];
 export type AnnouncementUpdateInput = RouterInputs['announcement']['update'];
 
 // ===== FILE TYPES =====
+export type FileGetSignedUrlInput = RouterInputs['file']['getSignedUrl'];
 export type FileGetSignedUrlOutput = RouterOutputs['file']['getSignedUrl'];
+export type FileMoveInput = RouterInputs['file']['move'];
+export type FileRenameInput = RouterInputs['file']['rename'];
+export type FileDeleteInput = RouterInputs['file']['delete'];
+
+// ===== FOLDER TYPES =====
+export type FolderCreateInput = RouterInputs['folder']['create'];
+export type FolderGetInput = RouterInputs['folder']['get'];
+export type FolderGetRootFolderInput = RouterInputs['folder']['getRootFolder'];
+export type FolderGetRootFolderOutput = RouterOutputs['folder']['getRootFolder'];
+export type FolderGetOutput = RouterOutputs['folder']['get'];
+export type FolderUpdateInput = RouterInputs['folder']['update'];
+export type FolderDeleteInput = RouterInputs['folder']['delete'];
+export type FolderMoveInput = RouterInputs['folder']['move'];
+export type FolderUploadFilesInput = RouterInputs['folder']['uploadFiles'];
 
 // ===== NOTIFICATION TYPES =====
 export type NotificationListOutput = RouterOutputs['notification']['list'];

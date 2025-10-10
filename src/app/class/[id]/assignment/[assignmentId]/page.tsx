@@ -25,6 +25,7 @@ import { EmptyState } from "@/components/ui/empty-state";
 import { DataTable } from "@/components/ui/data-table";
 import { toast } from "sonner";
 import { DraggableFileItem } from "@/components/DraggableFileItem";
+import { FileHandlers } from "@/lib/types/file";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { FilePreviewModal } from "@/components/modals";
@@ -46,6 +47,7 @@ import type {
 } from "@/lib/types/assignment";
 import {  parseMarkScheme,
   parseGradingBoundary} from "@/lib/types/assignment";
+import { baseFileHandler } from "@/lib/fileHandler";
 
 type Assignment = RouterOutputs['assignment']['get'];
 type Submissions = RouterOutputs['assignment']['getSubmissions'];
@@ -243,21 +245,27 @@ export default function AssignmentDetailPage() {
     }));
   };
 
-  const handleFileAction = (action: string, item: FileItem) => {
-    if (action === "download") {
-      // Handle download
-      console.log("Download file:", item);
-    } else if (action === "preview") {
-      // Handle preview
-      setPreviewFile(item);
+  // File handlers for attachments (read-only in assignment view)
+  const fileHandlers: FileHandlers = {
+    ...baseFileHandler,
+    onFolderClick: () => {}, // Not used in assignment context
+    onRename: async () => {
+      // Not allowed in assignment view
+    },
+    onDelete: async () => {
+      // Not allowed in assignment view
+    },
+    onMove: async () => {
+      // Not applicable for attachments
+    },
+    onPreview: (file: FileItem) => {
+      setPreviewFile(file);
+      setIsPreviewOpen(true);
+    },
+    onFileClick: (file: FileItem) => {
+      setPreviewFile(file);
       setIsPreviewOpen(true);
     }
-  };
-
-  const handleFileClick = (file: FileItem) => {
-    // Handle file click - open preview
-    setPreviewFile(file);
-    setIsPreviewOpen(true);
   };
 
   // Handle student submission file upload
@@ -457,12 +465,10 @@ export default function AssignmentDetailPage() {
                           <DraggableFileItem
                             key={fileItem.id}
                             item={fileItem}
-                            getFileIcon={getFileIcon}
-                            onItemAction={handleFileAction}
-                            onFileClick={handleFileClick}
                             classId={classId}
                             readonly={studentSubmission.submitted || false}
-                            onRefetch={refetchStudentSubmission}
+                            handlers={fileHandlers}
+                            getFileIcon={getFileIcon}
                           />
                         ))}
                       </div>
@@ -635,11 +641,10 @@ export default function AssignmentDetailPage() {
                           <DraggableFileItem
                             key={fileItem.id}
                             item={fileItem}
-                            getFileIcon={getFileIcon}
-                            onItemAction={handleFileAction}
-                            onFileClick={handleFileClick}
                             classId={classId}
                             readonly={true}
+                            handlers={fileHandlers}
+                            getFileIcon={getFileIcon}
                           />
                         ))}
                       </div>
@@ -724,11 +729,10 @@ export default function AssignmentDetailPage() {
                         <DraggableFileItem
                           key={fileItem.id}
                           item={fileItem}
-                          getFileIcon={getFileIcon}
-                          onItemAction={handleFileAction}
-                          onFileClick={handleFileClick}
                           classId={classId}
                           readonly={true}
+                          handlers={fileHandlers}
+                          getFileIcon={getFileIcon}
                         />
                       ))}
                     </div>
@@ -750,7 +754,19 @@ export default function AssignmentDetailPage() {
           file={previewFile}
           isOpen={isPreviewOpen}
           onClose={() => setIsPreviewOpen(false)}
-          onAction={handleFileAction}
+          onAction={async (action: string, item: FileItem) => {
+            switch (action) {
+              case "download":
+                await fileHandlers.onDownload(item);
+                break;
+              case "share":
+                await fileHandlers.onShare(item);
+                break;
+              case "preview":
+                fileHandlers.onPreview?.(item);
+                break;
+            }
+          }}
           getPreviewUrl={async (fileId: string) => {
             const result = await getSignedUrlMutation.mutateAsync({ fileId });
             return result.url;

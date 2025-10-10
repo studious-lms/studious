@@ -52,6 +52,13 @@ export function DraggableAssignment({ assignment, classId, index, onDelete, onPu
     return new Date(dateString).toLocaleDateString();
   };
 
+
+
+  console.log(assignment);
+  const totalStudents = assignment.submissions ? assignment.submissions.length : 0;
+
+  const totalSubmissions = assignment.submissions ? assignment.submissions.filter(submission => submission.submitted).length : 0;
+
   return (
     <div ref={isTeacher ? drag as unknown as React.Ref<HTMLDivElement> : null} className={`transition-opacity ${isDragging ? 'opacity-50' : 'opacity-100'}`}>
       <Card className={`hover:shadow-md transition-all duration-200 border-l-4 border-l-primary group ${isTeacher ? 'cursor-move' : ''}`}>
@@ -108,12 +115,12 @@ export function DraggableAssignment({ assignment, classId, index, onDelete, onPu
                 {isTeacher && (
                   <div className="flex items-center space-x-4">
                     <span className="text-sm">
-                      <strong>{assignment.submissions}</strong> of <strong>{assignment.totalStudents}</strong> submitted
+                      <strong>{totalSubmissions}</strong> of <strong>{totalStudents}</strong> submitted
                     </span>
                     <div className="w-32 bg-muted rounded-full h-2">
                       <div 
                         className="bg-primary h-2 rounded-full transition-all"
-                        style={{ width: `${(assignment.submissions / assignment.totalStudents) * 100}%` }}
+                        style={{ width: `${(totalSubmissions / totalStudents) * 100}%` }}
                       />
                     </div>
                   </div>
