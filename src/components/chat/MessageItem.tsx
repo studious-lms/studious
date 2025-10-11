@@ -272,7 +272,7 @@ export function MessageItem({
               "font-semibold text-sm hover:underline cursor-pointer",
               isAIAssistant ? "text-primary" : "text-foreground"
             )}>
-              {senderDisplayName}
+              {isAIAssistant ? "Newton AI" : senderDisplayName}
             </span>
             {isAIAssistant && (
               <Badge variant="outline" className="text-xs h-4 px-1 bg-primary/10 text-primary border-primary/20">

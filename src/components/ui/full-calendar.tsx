@@ -215,7 +215,7 @@ const EventGroup = ({
           return (
             <div
               key={event.id}
-              className={cn('relative group', dayEventBaseClasses)}
+              className={cn('relative group overflow-y-hidden', dayEventBaseClasses)}
               style={{
                 top: `${startPosition * 100}%`,
                 height: `${hoursDifference * 100}%`,
