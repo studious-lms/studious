@@ -6,13 +6,13 @@
   This overrides any theme switching from globals.css
 */
 
-/* Override ALL theme classes to always use blue */
-:root,
-:root.blue,
-:root.green, 
-:root.purple,
-:root.orange,
-:root.default {
+/* Override ALL theme classes to always use blue - SCOPED TO MARKETING PAGES ONLY */
+.marketing-theme,
+.marketing-theme.blue,
+.marketing-theme.green, 
+.marketing-theme.purple,
+.marketing-theme.orange,
+.marketing-theme.default {
   /* Light Mode - Blue-White Palette (LOCKED) */
   --background: 0 0% 100% !important;
   --foreground: 214 50% 15% !important;
@@ -36,13 +36,13 @@
   --radius: 0.5rem !important;
 }
 
-/* Override dark mode for ALL theme classes */
-.dark,
-.dark.blue,
-.dark.green,
-.dark.purple,
-.dark.orange,
-.dark.default {
+/* Override dark mode for ALL theme classes - SCOPED TO MARKETING PAGES ONLY */
+.marketing-theme.dark,
+.marketing-theme.dark.blue,
+.marketing-theme.dark.green,
+.marketing-theme.dark.purple,
+.marketing-theme.dark.orange,
+.marketing-theme.dark.default {
   /* Dark Mode - Blue Theme (LOCKED) */
   --background: 214 8% 12% !important;
   --foreground: 214 15% 90% !important;
