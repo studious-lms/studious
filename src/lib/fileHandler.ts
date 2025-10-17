@@ -1,4 +1,5 @@
 import { FileHandlers, FileItem } from "./types/file";
+import { getCookie } from "cookies-next";
 
 /**
  * Base file handler implementation with default no-op handlers
@@ -16,7 +17,11 @@ export const baseFileHandler: FileHandlers = {
     
     try {
       // Fetch the file blob
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/files/${item.id}/download`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL?.split('/trpc')[0]}/api/files/${item.id}`, {
+        headers: {
+          'x-user': getCookie('token')?.toString() || '',
+        },
+      });
       if (!response.ok) throw new Error("Download failed");
       
       const blob = await response.blob();
@@ -41,7 +46,7 @@ export const baseFileHandler: FileHandlers = {
   onShare: async (item: FileItem) => {
     try {
       // Generate shareable link
-      const shareUrl = `${process.env.NEXT_PUBLIC_APP_URL}/api/files/${item.id}/share`;
+      const shareUrl = `${process.env.NEXT_PUBLIC_APP_URL?.split('/trpc')[0]}/api/files/${item.id}`;
       
       // Try to use native share API if available
       if (navigator.share) {
