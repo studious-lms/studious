@@ -37,12 +37,12 @@
 }
 
 /* Override dark mode for ALL theme classes - SCOPED TO MARKETING PAGES ONLY */
-.marketing-theme.dark,
-.marketing-theme.dark.blue,
-.marketing-theme.dark.green,
-.marketing-theme.dark.purple,
-.marketing-theme.dark.orange,
-.marketing-theme.dark.default {
+.dark .marketing-theme,
+.dark .marketing-theme.blue,
+.dark .marketing-theme.green,
+.dark .marketing-theme.purple,
+.dark .marketing-theme.orange,
+.dark .marketing-theme.default {
   /* Dark Mode - Blue Theme (LOCKED) */
   --background: 214 8% 12% !important;
   --foreground: 214 15% 90% !important;

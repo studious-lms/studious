@@ -4,7 +4,7 @@ import { ThemeProvider } from "@/components/ui/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { AppLayout } from "@/components/ui/app-layout";
-import { FloatingThemeToggle } from "@/components/ui/floating-theme-toggle";
+import { ConditionalThemeToggle } from "@/components/ConditionalThemeToggle";
 import { TRPCProvider } from "@/lib/trpc-provider";
 import { Provider } from "react-redux";
 import { AuthProvider } from "./providers/AuthProvider";
@@ -30,7 +30,7 @@ export function Providers({ children }: ProvidersProps) {
             <AuthProvider>
             <Sonner />
             <AppLayout isAuthenticated={true} user={mockUser}>
-              <FloatingThemeToggle />
+              <ConditionalThemeToggle />
               {children}
             </AppLayout>
             </AuthProvider>
