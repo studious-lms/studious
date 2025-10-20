@@ -91,3 +91,16 @@ export type MessageDeleteInput = RouterInputs['message']['delete'];
 export type MessageMarkAsReadInput = RouterInputs['message']['markAsRead'];
 export type MessageMarkMentionsAsReadInput = RouterInputs['message']['markMentionsAsRead'];
 export type MessageGetUnreadCountOutput = RouterOutputs['message']['getUnreadCount'];
+
+// ===== DIRECT UPLOAD TYPES =====
+export type AssignmentGetUploadUrlsInput = RouterInputs['assignment']['getAssignmentUploadUrls'];
+export type AssignmentGetUploadUrlsOutput = RouterOutputs['assignment']['getAssignmentUploadUrls'];
+export type AssignmentConfirmUploadInput = RouterInputs['assignment']['confirmAssignmentUpload'];
+
+export type SubmissionGetUploadUrlsInput = RouterInputs['assignment']['getSubmissionUploadUrls'];
+export type SubmissionGetUploadUrlsOutput = RouterOutputs['assignment']['getSubmissionUploadUrls'];
+export type SubmissionConfirmUploadInput = RouterInputs['assignment']['confirmSubmissionUpload'];
+
+export type FolderGetUploadUrlsInput = RouterInputs['folder']['getFolderUploadUrls'];
+export type FolderGetUploadUrlsOutput = RouterOutputs['folder']['getFolderUploadUrls'];
+export type FolderConfirmUploadInput = RouterInputs['folder']['confirmFolderUpload'];

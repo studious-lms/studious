@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { format } from "date-fns";
 import { trpc, type RouterOutputs, type RouterInputs } from "@/lib/trpc";
+import { fixUploadUrl } from "@/lib/directUpload";
 import type { 
   RubricGrade,
 } from "@/lib/types/assignment";
@@ -380,6 +381,10 @@ export default function SubmissionDetailPage() {
     setIsPreviewOpen(true);
   };
 
+  // Direct upload functions using proper TRPC hooks
+  const getSubmissionUploadUrls = trpc.assignment.getSubmissionUploadUrls.useMutation();
+  const confirmSubmissionUpload = trpc.assignment.confirmSubmissionUpload.useMutation();
+
   // Handle annotation file upload
   const handleAnnotationUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;
@@ -388,36 +393,68 @@ export default function SubmissionDetailPage() {
     setIsUploading(true);
 
     try {
-      // Convert files to base64
-      const filePromises = Array.from(files).map(async (file) => {
-        const base64 = await new Promise<string>((resolve) => {
-          const reader = new FileReader();
-          reader.onload = () => resolve(reader.result as string);
-          reader.readAsDataURL(file);
+      // Use direct upload approach
+      const fileMetadata = Array.from(files).map(file => ({
+        name: file.name,
+        type: file.type,
+        size: file.size
+      }));
+
+      // 1. Get upload URLs from backend
+      const uploadResponse = await getSubmissionUploadUrls.mutateAsync({
+        assignmentId,
+        classId,
+        submissionId,
+        files: fileMetadata
+      });
+
+      // 2. Upload files through backend proxy (not direct to GCS)
+      const uploadPromises = Array.from(files).map(async (file, index) => {
+        const { fileId, uploadUrl } = uploadResponse[index];
+        
+        // Fix upload URL to use correct API base URL from environment
+        const fixedUploadUrl = fixUploadUrl(uploadUrl);
+        
+        // Upload to backend proxy endpoint (resolves CORS issues)
+        const response = await fetch(fixedUploadUrl, {
+          method: 'POST', // Backend proxy uses POST
+          body: file,
+          headers: { 'Content-Type': file.type }
+        });
+
+        if (!response.ok) {
+          throw new Error(`Upload failed for ${file.name}`);
+        }
+
+        // 3. Confirm upload to backend
+        await confirmSubmissionUpload.mutateAsync({
+          fileId,
+          uploadSuccess: true
         });
         
         return {
           name: file.name,
           type: file.type,
           size: file.size,
-          data: base64.split(',')[1], // Remove data:type;base64, prefix
+          fileId
         };
       });
 
-      const newFiles = await Promise.all(filePromises);
+      const uploadedFiles = await Promise.all(uploadPromises);
       
-      // Upload as annotations
+      // 4. Upload as annotations
       uploadAnnotationMutation.mutate({
         assignmentId,
         classId,
         submissionId,
-        newAttachments: newFiles,
+        newAttachments: uploadedFiles,
       });
 
       // Clear the input
       event.target.value = '';
-    } catch {
-      toast.error("There was a problem processing the files. Please try again.");
+    } catch (error) {
+      toast.error(`Failed to upload files: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    } finally {
       setIsUploading(false);
     }
   };

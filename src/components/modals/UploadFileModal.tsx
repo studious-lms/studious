@@ -11,6 +11,8 @@ import { toast } from "sonner";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { Upload as UploadIcon, X as XIcon, File as FileIcon, Image as ImageIcon, FileVideo, FileText } from "lucide-react";
+import { useDirectUpload } from "@/hooks/useDirectUpload";
+import { trpc } from "@/lib/trpc";
 
 
 interface ApiFile {
@@ -18,13 +20,15 @@ interface ApiFile {
   name: string;
   type: string;
   size: number;
-  data: string;
+  fileId?: string;
 }
 
 interface UploadFileModalProps {
   children?: React.ReactNode;
   onFilesUploaded?: (files: ApiFile[]) => void;
   currentFolder?: string;
+  classId?: string;
+  folderId?: string;
 }
 
 interface FileUpload {
@@ -37,24 +41,32 @@ interface FileUpload {
   status: 'pending' | 'uploading' | 'completed' | 'error';
 }
 
-async function fileToBase64(file: File): Promise<string> {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => {
-      const base64 = reader.result as string;
-      resolve(base64.split(',')[1]);
-    };
-    reader.onerror = (error) => reject(error);
-  });
-}
 
-export function UploadFileModal({ children, onFilesUploaded, currentFolder = "/" }: UploadFileModalProps) {
+export function UploadFileModal({ children, onFilesUploaded, currentFolder = "/", classId, folderId }: UploadFileModalProps) {
   const [open, setOpen] = useState(false);
   const [files, setFiles] = useState<FileUpload[]>([]);
   const [uploading, setUploading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const appState = useSelector((state: RootState) => state.app);
+  
+  // Use the new direct upload hook
+  const {
+    files: uploadFiles,
+    isUploading: isDirectUploading,
+    addFiles: addUploadFiles,
+    removeFile: removeUploadFile,
+    updateFileStatus,
+    uploadFiles: performDirectUpload,
+    clearFiles,
+    reset
+  } = useDirectUpload({
+    onComplete: (fileId, fileData) => {
+      // Handle successful upload
+    },
+    onError: (fileId, error) => {
+      toast.error(`Upload failed: ${error}`);
+    }
+  });
 
 
   const categories = [
@@ -115,38 +127,10 @@ export function UploadFileModal({ children, onFilesUploaded, currentFolder = "/"
     setFiles(prev => prev.filter(file => file.id !== id));
   };
 
-  const simulateUpload = (file: FileUpload): Promise<void> => {
-    return new Promise((resolve, reject) => {
-      updateFile(file.id, { status: 'uploading', progress: 0 });
 
-      const interval = setInterval(() => {
-        setFiles(prev => prev.map(f => {
-          if (f.id === file.id) {
-            const newProgress = f.progress + Math.random() * 30;
-
-            if (newProgress >= 100) {
-              clearInterval(interval);
-              updateFile(file.id, { status: 'completed', progress: 100 });
-              resolve();
-              return { ...f, progress: 100 };
-            }
-
-            return { ...f, progress: newProgress };
-          }
-          return f;
-        }));
-      }, 200);
-
-      // Simulate occasional failures
-      if (Math.random() < 0.1) {
-        setTimeout(() => {
-          clearInterval(interval);
-          updateFile(file.id, { status: 'error' });
-          reject(new Error('Upload failed'));
-        }, 1000);
-      }
-    });
-  };
+  // Direct upload functions using proper TRPC hooks
+  const getUploadUrls = trpc.folder.getFolderUploadUrls.useMutation();
+  const confirmUpload = trpc.folder.confirmFolderUpload.useMutation();
 
   const handleUpload = async () => {
     if (files.length === 0) {
@@ -157,38 +141,40 @@ export function UploadFileModal({ children, onFilesUploaded, currentFolder = "/"
     setUploading(true);
 
     try {
-      await Promise.all(files.map(file => simulateUpload(file)));
-
-      // get base64
-
-      const uploadedFiles = await Promise.all(files.map(async file => {
-
-        const base64Data = await fileToBase64(file.file);
-
-        return {
-        id: file.id,
-        name: file.name,
-        description: file.description,
-        category: file.category,
-        size: file.file.size,
-        type: file.file.type,
-        uploadedAt: new Date().toISOString(),
-        folder: currentFolder,
-        data: base64Data,
-        // Prisma-aligned fields
-        path: `${currentFolder}/${file.name}`,
-        userId: appState.user.id
+      // Use direct upload with proper mutation functions
+      await performDirectUpload(
+        files.map(f => f.file),
+        async (fileData) => {
+          return await getUploadUrls.mutateAsync({
+            classId: classId || '',
+            folderId: folderId || '',
+            files: fileData
+          });
+        },
+        async (fileId, success) => {
+          return await confirmUpload.mutateAsync({
+            fileId,
+            uploadSuccess: success
+          });
         }
-      }));
+      );
+      
+      // Get completed files for callback
+      const completedFiles = uploadFiles.filter(file => file.status === 'completed');
+      if (completedFiles.length > 0 && onFilesUploaded) {
+        onFilesUploaded(completedFiles.map(file => ({
+          id: file.fileId || file.id,
+          name: file.name,
+          type: file.type,
+          size: file.size,
+          fileId: file.fileId
+        })));
+      }
 
-      onFilesUploaded?.(uploadedFiles);
-
-      toast.success(`Successfully uploaded ${files.length} file(s).`);
-
-      setFiles([]);
       setOpen(false);
+      reset();
     } catch (error) {
-      toast.error("Upload Failed");
+      toast.error(`Upload failed: ${error instanceof Error ? error.message : 'Unknown error'}`);
     } finally {
       setUploading(false);
     }

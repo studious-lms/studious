@@ -12,6 +12,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { Progress } from "@/components/ui/progress";
 import { toast } from "sonner";
 import ColorPicker from "@/components/ui/color-picker";
 import {
@@ -24,19 +25,26 @@ import {
   Calendar,
   Target,
   BookOpen,
-  Trash2
+  Trash2,
+  Loader2,
+  CheckCircle,
+  Users,
+  FileUp
 } from "lucide-react";
 import { useParams } from "next/navigation";
 import {
   trpc,
 } from "@/lib/trpc";
+import { fixUploadUrl } from "@/lib/directUpload";
+
 
 type FileData = {
   id?: string;
   name: string;
   type: string;
   size: number;
-  data: string;
+  data?: string; // Optional for base64 files
+  file?: File; // For direct upload files
 };
 
 interface AssignmentFormData {
@@ -92,6 +100,13 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
   const [showNewSection, setShowNewSection] = useState(false);
   const [newSectionName, setNewSectionName] = useState('');
   const [newSectionColor, setNewSectionColor] = useState('#3b82f6');
+  
+  // Progress tracking state
+  const [isCreating, setIsCreating] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [currentStatus, setCurrentStatus] = useState('');
+  const [uploadedFiles, setUploadedFiles] = useState(0);
+  const [totalFiles, setTotalFiles] = useState(0);
 
   const { id: classId } = useParams();
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -102,7 +117,18 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
   const { data: gradingBoundaries } = trpc.class.listGradingBoundaries.useQuery({ classId: classId as string });
 
   // Mutations
-  const createAssignmentMutation = trpc.assignment.create.useMutation();
+  const utils = trpc.useUtils();
+  const createAssignmentMutation = trpc.assignment.create.useMutation({
+    onSuccess: (data) => {
+      console.log('Assignment created successfully:', data);
+    },
+    onError: (error) => {
+      console.error('Failed to create assignment:', error);
+      toast.error("Failed to create assignment. Please try again.");
+    }
+  });
+  const getAssignmentUploadUrls = trpc.assignment.getAssignmentUploadUrls.useMutation();
+  const confirmAssignmentUpload = trpc.assignment.confirmAssignmentUpload.useMutation();
   const createSectionMutation = trpc.section.create.useMutation({
     onSuccess: (data) => {
       setFormData(prev => ({ ...prev, sectionId: data.id }));
@@ -123,29 +149,45 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
     setShowNewSection(false);
     setNewSectionName('');
     setNewSectionColor('#3b82f6');
+    setIsCreating(false);
+    setProgress(0);
+    setCurrentStatus('');
+    setUploadedFiles(0);
+    setTotalFiles(0);
   };
+
+  // Status messages for different stages
+  const statusMessages = [
+    "Creating assignment...",
+    "Setting up assignment details...",
+    "Preparing file uploads...",
+    "Uploading files to cloud storage...",
+    "Processing uploaded files...",
+    "Finalizing assignment...",
+    "Assigning to students...",
+    "Almost done..."
+  ];
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(event.target.files || []);
 
-    files.forEach(async (file) => {
-      try {
-        const base64Data = await fileToBase64(file);
-        const newFile: FileData = {
+    if (files.length === 0) return;
+
+    // Store files temporarily - we'll upload them after assignment creation
+    const newFiles: FileData[] = files.map(file => ({
           name: file.name,
           type: file.type,
           size: file.size,
-          data: base64Data
-        };
+      // Store the actual File object for later upload
+      file: file
+    } as FileData & { file: File }));
 
         setFormData(prev => ({
           ...prev,
-          files: [...prev.files, newFile]
-        }));
-      } catch (error) {
-        toast.error(`Failed to process file: ${file.name}`);
-      }
-    });
+      files: [...prev.files, ...newFiles]
+    }));
+    
+    console.log('Files added to form, will upload after assignment creation');
   };
 
   const removeFile = (index: number) => {
@@ -163,18 +205,20 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
       return;
     }
 
-    try {
-      // Separate new files from existing files
-      const newFiles = formData.files.filter(file => !file.id);
-      const existingFileIds = formData.files.filter(file => file.id).map(file => file.id!);
+    setIsCreating(true);
+    setProgress(0);
+    setCurrentStatus(statusMessages[0]);
 
+    try {
+      // 1. Create assignment WITHOUT files first
+      setCurrentStatus(statusMessages[1]);
+      setProgress(20);
+      
       const assignmentData = {
         classId: classId as string,
         title: formData.title,
         instructions: formData.instructions,
         dueDate: formData.dueDate,
-        files: newFiles,
-        existingFileIds: existingFileIds.length > 0 ? existingFileIds : undefined,
         maxGrade: formData.graded ? formData.maxGrade : undefined,
         graded: formData.graded,
         weight: formData.graded ? formData.weight : undefined,
@@ -185,16 +229,116 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
         inProgress: formData.inProgress
       };
 
-      await createAssignmentMutation.mutateAsync(assignmentData);
+      const assignment = await createAssignmentMutation.mutateAsync(assignmentData);
+      setProgress(30);
+
+      // 2. If there are files, upload them using direct upload
+      const filesToUpload = formData.files.filter(file => file.file && !file.id);
+      if (filesToUpload.length > 0) {
+        setCurrentStatus(statusMessages[2]);
+        setProgress(40);
+        setTotalFiles(filesToUpload.length);
+        setUploadedFiles(0);
+        
+        // Convert files to metadata (no base64!)
+        const fileMetadata = filesToUpload.map(file => ({
+          name: file.name,
+          type: file.type,
+          size: file.size,
+        }));
+
+        // Get upload URLs from backend
+        setCurrentStatus(statusMessages[3]);
+        setProgress(50);
+        const uploadResponse = await getAssignmentUploadUrls.mutateAsync({
+          assignmentId: assignment.id,
+          classId: classId as string,
+          files: fileMetadata,
+        });
+
+        // Upload files through backend proxy (not direct to GCS)
+        for (let i = 0; i < filesToUpload.length; i++) {
+          const fileData = filesToUpload[i];
+          const uploadFile = uploadResponse.uploadFiles[i];
+
+          try {
+            // Update status for current file
+            setCurrentStatus(`Uploading ${fileData.name}...`);
+            
+            // Fix upload URL to use correct API base URL from environment
+            const uploadUrl = fixUploadUrl(uploadFile.uploadUrl);
+            
+            // Upload to backend proxy endpoint (resolves CORS issues)
+            const response = await fetch(uploadUrl, {
+              method: 'POST', // Backend proxy uses POST
+              body: fileData.file!,
+              headers: {
+                'Content-Type': fileData.type,
+              },
+            });
+
+            if (!response.ok) {
+              throw new Error(`Upload failed: ${response.statusText}`);
+            }
+
+            // Confirm upload to backend
+            await confirmAssignmentUpload.mutateAsync({
+              fileId: uploadFile.id,
+              uploadSuccess: true,
+              classId: classId as string,
+            });
+
+            // Update progress
+            setUploadedFiles(prev => prev + 1);
+            const fileProgress = 50 + ((i + 1) / filesToUpload.length) * 30; // 50-80% for file uploads
+            setProgress(fileProgress);
+            
+            console.log(`File ${fileData.name} uploaded successfully`);
+          } catch (error) {
+            // Report error to backend
+            await confirmAssignmentUpload.mutateAsync({
+              fileId: uploadFile.id,
+              uploadSuccess: false,
+              errorMessage: error instanceof Error ? error.message : 'Unknown error',
+              classId: classId as string,
+            });
+
+            console.error(`Upload failed for ${fileData.name}:`, error);
+            toast.error(`Failed to upload ${fileData.name}`);
+          }
+        }
+
+        // Invalidate assignment detail so attachments show immediately
+        setCurrentStatus(statusMessages[4]);
+        setProgress(85);
+        await utils.assignment.get.invalidate({ id: assignment.id, classId: classId as string });
+      }
+
+      // Final steps
+      setCurrentStatus(statusMessages[5]);
+      setProgress(90);
+      
+      setCurrentStatus(statusMessages[6]);
+      setProgress(95);
+      
+      setCurrentStatus(statusMessages[7]);
+      setProgress(100);
 
       toast.success(`Assignment ${formData.inProgress ? 'saved as draft' : 'created'} successfully.`);
 
-      onAssignmentCreated?.(assignmentData as AssignmentFormData);
-      setOpen(false);
-      resetForm();
+      onAssignmentCreated?.(assignmentData as AssignmentFormData & { files: formData.files });
+      
+      // Small delay to show completion
+      setTimeout(() => {
+        setOpen(false);
+        resetForm();
+      }, 1000);
     } catch (error) {
       console.error('Failed to create assignment:', error);
       toast.error("Failed to create assignment. Please try again.");
+      setIsCreating(false);
+      setProgress(0);
+      setCurrentStatus('');
     }
   };
 
@@ -224,6 +368,65 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
         )}
       </DialogTrigger>
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-hidden">
+        {/* Progress Overlay */}
+        {isCreating && (
+          <div className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center">
+            <div className="bg-background border rounded-lg p-8 max-w-md w-full mx-4 shadow-lg">
+              <div className="text-center space-y-6">
+                {/* Animated Icon */}
+                <div className="flex justify-center">
+                  <div className="relative">
+                    <div className="w-16 h-16 border-4 border-primary/20 border-t-primary rounded-full animate-spin"></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <Loader2 className="w-6 h-6 text-primary animate-pulse" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Status Text */}
+                <div className="space-y-2">
+                  <h3 className="text-lg font-semibold">Creating Assignment</h3>
+                  <p className="text-sm text-muted-foreground animate-pulse">
+                    {currentStatus}
+                  </p>
+                </div>
+
+                {/* Progress Bar */}
+                <div className="space-y-2">
+                  <Progress value={progress} className="w-full" />
+                  <div className="flex justify-between text-xs text-muted-foreground">
+                    <span>{Math.round(progress)}%</span>
+                    {totalFiles > 0 && (
+                      <span>{uploadedFiles} of {totalFiles} files uploaded</span>
+                    )}
+                  </div>
+                </div>
+
+                {/* File Upload Progress */}
+                {totalFiles > 0 && (
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2 text-sm">
+                      <FileUp className="w-4 h-4" />
+                      <span>Uploading files...</span>
+                    </div>
+                    <div className="text-xs text-muted-foreground">
+                      Files are being uploaded to secure cloud storage
+                    </div>
+                  </div>
+                )}
+
+                {/* Completion Status */}
+                {progress === 100 && (
+                  <div className="flex items-center justify-center gap-2 text-green-600">
+                    <CheckCircle className="w-5 h-5" />
+                    <span className="text-sm font-medium">Assignment created successfully!</span>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
+
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             Create New Assignment
@@ -635,18 +838,18 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
                     setOpen(false);
                     resetForm();
                   }}
-                  disabled={createAssignmentMutation.isPending}
+                  disabled={isCreating}
                 >
                   Cancel
                 </Button>
                 <Button
                   type="submit"
-                  disabled={createAssignmentMutation.isPending || !formData.title.trim() || !formData.instructions.trim()}
+                  disabled={isCreating || !formData.title.trim() || !formData.instructions.trim()}
                   className="min-w-[140px]"
                 >
-                  {createAssignmentMutation.isPending ? (
+                  {isCreating ? (
                     <div className="flex items-center gap-2">
-                      <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                      <Loader2 className="w-4 h-4 animate-spin" />
                       Creating...
                     </div>
                   ) : formData.inProgress ? (

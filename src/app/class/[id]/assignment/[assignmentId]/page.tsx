@@ -14,12 +14,14 @@ import {
   FileText, 
   Users,
   CheckCircle,
-  Upload
+  Upload,
+  Loader2
 } from "lucide-react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { format } from "date-fns";
 import { trpc, type RouterOutputs } from "@/lib/trpc";
+import { fixUploadUrl } from "@/lib/directUpload";
 import { Skeleton } from "@/components/ui/skeleton";
 import { EmptyState } from "@/components/ui/empty-state";
 import { DataTable } from "@/components/ui/data-table";
@@ -140,6 +142,21 @@ export default function AssignmentDetailPage() {
     },
   });
 
+  // Direct upload functions using proper TRPC hooks
+  const getSubmissionUploadUrls = trpc.assignment.getSubmissionUploadUrls.useMutation();
+  const confirmSubmissionUpload = trpc.assignment.confirmSubmissionUpload.useMutation();
+  
+  // File deletion mutation for student submissions
+  const deleteSubmissionFileMutation = trpc.assignment.deleteSubmissionFile.useMutation({
+    onSuccess: () => {
+      toast.success("File deleted successfully");
+      refetchStudentSubmission();
+    },
+    onError: (error) => {
+      toast.error(error.message || "Failed to delete file");
+    },
+  });
+
   const isLoading = assignmentLoading || submissionsLoading || studentSubmissionLoading;
 
   // Import toast for notifications
@@ -147,6 +164,24 @@ export default function AssignmentDetailPage() {
   // File preview state
   const [previewFile, setPreviewFile] = useState<FileItem | null>(null);
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
+
+  // Progress tracking state for file uploads
+  const [isUploading, setIsUploading] = useState(false);
+  const [uploadProgress, setUploadProgress] = useState(0);
+  const [currentUploadStatus, setCurrentUploadStatus] = useState('');
+  const [uploadedFiles, setUploadedFiles] = useState(0);
+  const [totalFiles, setTotalFiles] = useState(0);
+
+  // Status messages for different upload stages
+  const uploadStatusMessages = [
+    "Preparing files for upload...",
+    "Getting upload URLs from server...",
+    "Uploading files to secure cloud storage...",
+    "Processing uploaded files...",
+    "Confirming uploads...",
+    "Finalizing submission...",
+    "Almost done..."
+  ];
 
   // Get signed URL mutation for file preview
   const getSignedUrlMutation = trpc.file.getSignedUrl.useMutation();
@@ -245,15 +280,29 @@ export default function AssignmentDetailPage() {
     }));
   };
 
-  // File handlers for attachments (read-only in assignment view)
+  // File handlers for student submission attachments
   const fileHandlers: FileHandlers = {
     ...baseFileHandler,
     onFolderClick: () => {}, // Not used in assignment context
     onRename: async () => {
       // Not allowed in assignment view
     },
-    onDelete: async () => {
-      // Not allowed in assignment view
+    onDelete: async (file: FileItem) => {
+      if (!studentSubmission || studentSubmission.submitted) {
+        toast.error("Cannot delete files from submitted assignments");
+        return;
+      }
+      
+      try {
+        await deleteSubmissionFileMutation.mutateAsync({
+          assignmentId,
+          classId,
+          submissionId: studentSubmission.id,
+          fileId: file.id
+        });
+      } catch (error) {
+        console.error('Failed to delete file:', error);
+      }
     },
     onMove: async () => {
       // Not applicable for attachments
@@ -273,37 +322,151 @@ export default function AssignmentDetailPage() {
     const files = event.target.files;
     if (!files || !studentSubmission) return;
 
+    // Debug logging
+    console.log('Upload parameters:', {
+      assignmentId,
+      classId,
+      submissionId: studentSubmission?.id,
+      filesCount: files.length
+    });
+
+    // Validate required parameters
+    if (!classId || !assignmentId || !studentSubmission?.id) {
+      toast.error("Missing required parameters for upload");
+      return;
+    }
+
+    // Start upload progress tracking
+    setIsUploading(true);
+    setUploadProgress(0);
+    setCurrentUploadStatus(uploadStatusMessages[0]);
+    setTotalFiles(files.length);
+    setUploadedFiles(0);
+
     try {
-      // Convert files to base64
-      const filePromises = Array.from(files).map(async (file) => {
-        const base64 = await new Promise<string>((resolve) => {
-          const reader = new FileReader();
-          reader.onload = () => resolve(reader.result as string);
-          reader.readAsDataURL(file);
+      // Use direct upload approach
+      const fileMetadata = Array.from(files).map(file => ({
+        name: file.name,
+        type: file.type,
+        size: file.size
+      }));
+
+      // 1. Get upload URLs from backend
+      setCurrentUploadStatus(uploadStatusMessages[1]);
+      setUploadProgress(20);
+      
+      const uploadResponse = await getSubmissionUploadUrls.mutateAsync({
+        assignmentId,
+        classId,
+        submissionId: studentSubmission.id,
+        files: fileMetadata
+      });
+
+      // Debug the response structure
+      console.log('Upload response:', uploadResponse);
+      console.log('Upload files array:', uploadResponse.uploadFiles);
+
+      // 2. Upload files through backend proxy (not direct to GCS)
+      setCurrentUploadStatus(uploadStatusMessages[2]);
+      setUploadProgress(30);
+      
+      const uploadPromises = Array.from(files).map(async (file, index) => {
+        const uploadFile = uploadResponse.uploadFiles[index];
+        
+        if (!uploadFile) {
+          throw new Error(`No upload data for file ${file.name} at index ${index}`);
+        }
+        
+        // The backend might not be returning fileId in the expected format
+        // Let's check what properties are actually available
+        console.log('Upload file object:', uploadFile);
+        
+        const { fileId, uploadUrl, id } = uploadFile;
+        
+        // Try to get fileId from either 'fileId' or 'id' property
+        const actualFileId = fileId || id;
+        
+        if (!actualFileId || !uploadUrl) {
+          throw new Error(`Missing fileId or uploadUrl for file ${file.name}: fileId=${actualFileId}, uploadUrl=${uploadUrl}, available props: ${Object.keys(uploadFile)}`);
+        }
+        
+        // Update status for current file
+        setCurrentUploadStatus(`Uploading ${file.name}...`);
+        
+        // Fix upload URL to use correct API base URL from environment
+        const fixedUploadUrl = fixUploadUrl(uploadUrl);
+        
+        // Upload to backend proxy endpoint (resolves CORS issues)
+        const response = await fetch(fixedUploadUrl, {
+          method: 'POST', // Backend proxy uses POST
+          body: file,
+          headers: { 'Content-Type': file.type }
         });
+
+        if (!response.ok) {
+          throw new Error(`Upload failed for ${file.name}`);
+        }
+
+        // 3. Confirm upload to backend
+        setCurrentUploadStatus(`Confirming upload for ${file.name}...`);
+        await confirmSubmissionUpload.mutateAsync({
+          fileId: actualFileId,
+          uploadSuccess: true,
+          classId: classId
+        });
+        
+        // Update progress
+        setUploadedFiles(prev => prev + 1);
+        const fileProgress = 30 + ((index + 1) / files.length) * 50; // 30-80% for file uploads
+        setUploadProgress(fileProgress);
         
         return {
           name: file.name,
           type: file.type,
           size: file.size,
-          data: base64.split(',')[1], // Remove data:type;base64, prefix
+          fileId: actualFileId
         };
       });
 
-      const newFiles = await Promise.all(filePromises);
+      const uploadedFiles = await Promise.all(uploadPromises);
       
-      // Update student submission
+      // 4. Update student submission with uploaded file IDs
+      setCurrentUploadStatus(uploadStatusMessages[4]);
+      setUploadProgress(85);
+      
       updateStudentSubmissionMutation.mutate({
         assignmentId,
         classId,
         submissionId: studentSubmission.id,
-        newAttachments: newFiles,
+        newAttachments: uploadedFiles,
       });
+
+      // Final completion
+      setCurrentUploadStatus(uploadStatusMessages[5]);
+      setUploadProgress(95);
+      
+      setCurrentUploadStatus(uploadStatusMessages[6]);
+      setUploadProgress(100);
 
       // Clear the input
       event.target.value = '';
-    } catch {
-      toast.error("There was a problem uploading your files. Please try again.");
+      
+      // Show success and reset after a delay
+      setTimeout(() => {
+        setIsUploading(false);
+        setUploadProgress(0);
+        setCurrentUploadStatus('');
+        setUploadedFiles(0);
+        setTotalFiles(0);
+      }, 1000);
+      
+    } catch (error) {
+      toast.error(`Failed to upload files: ${error instanceof Error ? error.message : 'Unknown error'}`);
+      setIsUploading(false);
+      setUploadProgress(0);
+      setCurrentUploadStatus('');
+      setUploadedFiles(0);
+      setTotalFiles(0);
     }
   };
 
@@ -748,6 +911,70 @@ export default function AssignmentDetailPage() {
             </Card>
           </div>
         </div>
+
+        {/* Upload Progress Overlay */}
+        {isUploading && (
+          <div className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center">
+            <div className="bg-background border rounded-lg p-8 max-w-md w-full mx-4 shadow-lg">
+              <div className="text-center space-y-6">
+                {/* Animated Icon */}
+                <div className="flex justify-center">
+                  <div className="relative">
+                    <div className="w-16 h-16 border-4 border-primary/20 border-t-primary rounded-full animate-spin"></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <Upload className="w-6 h-6 text-primary animate-pulse" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Status Text */}
+                <div className="space-y-2">
+                  <h3 className="text-lg font-semibold">Uploading Files</h3>
+                  <p className="text-sm text-muted-foreground animate-pulse">
+                    {currentUploadStatus}
+                  </p>
+                </div>
+
+                {/* Progress Bar */}
+                <div className="space-y-2">
+                  <div className="w-full bg-muted rounded-full h-2">
+                    <div 
+                      className="bg-primary h-2 rounded-full transition-all duration-300 ease-out"
+                      style={{ width: `${uploadProgress}%` }}
+                    ></div>
+                  </div>
+                  <div className="flex justify-between text-xs text-muted-foreground">
+                    <span>{Math.round(uploadProgress)}%</span>
+                    {totalFiles > 0 && (
+                      <span>{uploadedFiles} of {totalFiles} files uploaded</span>
+                    )}
+                  </div>
+                </div>
+
+                {/* File Upload Progress */}
+                {totalFiles > 0 && (
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2 text-sm">
+                      <Upload className="w-4 h-4" />
+                      <span>Uploading files...</span>
+                    </div>
+                    <div className="text-xs text-muted-foreground">
+                      Files are being uploaded to secure cloud storage
+                    </div>
+                  </div>
+                )}
+
+                {/* Completion Status */}
+                {uploadProgress === 100 && (
+                  <div className="flex items-center justify-center gap-2 text-green-600">
+                    <CheckCircle className="w-5 h-5" />
+                    <span className="text-sm font-medium">Files uploaded successfully!</span>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* File Preview Modal */}
         <FilePreviewModal
