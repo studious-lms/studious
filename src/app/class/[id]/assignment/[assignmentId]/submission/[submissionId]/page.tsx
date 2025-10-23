@@ -809,7 +809,7 @@ export default function SubmissionDetailPage() {
               <CardContent>
                 <div className="flex items-center space-x-3">
                   <Avatar className="h-12 w-12">
-                    <AvatarImage src="https://api.dicebear.com/7.x/avataaars/svg?seed=${submission.student.username}" />
+                    <AvatarImage src={submission.student?.profile?.profilePicture || ""} />
                     <AvatarFallback>
                       {submission.student.username.substring(0, 2).toUpperCase()}
                     </AvatarFallback>

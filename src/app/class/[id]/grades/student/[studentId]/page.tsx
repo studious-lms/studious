@@ -368,7 +368,7 @@ export default function StudentGrades() {
         <CardContent className="pt-6">
           <div className="flex items-center space-x-4">
             <Avatar className="h-16 w-16">
-              <img src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${student.username}`} alt={student.username} />
+              <img src={student.profile?.profilePicture || ""} alt={student.username} />
             </Avatar>
             <div className="flex-1">
               <h2 className="text-2xl font-bold">

@@ -91,8 +91,9 @@ export default function ConversationPage() {
                 <Avatar className="h-8 w-8">
                   <AvatarImage 
                     src={selectedConversation.type === 'DM' ? 
-                      selectedConversation.members.find(m => m.userId !== user.id)?.user.profile?.profilePicture ?? undefined
-                      : `https://api.dicebear.com/7.x/avataaars/svg?seed=${selectedConversation.members.find(m => m.userId !== user.id)?.user.username}`
+                      selectedConversation.members.find(m => m.userId !== user.id)?.user.profile?.profilePicture 
+                      // @TODO: Fix this
+                      : selectedConversation.members.find(m => m.userId !== user.id)?.user.profile?.profilePicture || ""
                     }
                   />
                   <AvatarFallback className="text-sm bg-primary text-primary-foreground">

@@ -244,6 +244,7 @@ export default function ClassFeed() {
 
 // Announcement Item Component
 function AnnouncementItem({ announcement }: { announcement: Announcement }) {
+  console.log(announcement);
   return (
     <div className="space-y-3">
       {/* Header */}

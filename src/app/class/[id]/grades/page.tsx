@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
-import { Avatar } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { GradingBoundariesModal, RubricModal } from "@/components/modals";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -399,8 +399,12 @@ export default function Grades() {
         return (
           <div className="flex items-center space-x-3">
             <Avatar className="h-8 w-8">
-              <img src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${student.username}`} alt={student.username} />
+              <img src={student.profile?.profilePicture || ""} alt={student.username} />
+              <AvatarFallback>
+                {student.username.substring(0, 2).toUpperCase()}
+              </AvatarFallback>
             </Avatar>
+            
             <span className="font-medium">{student.username}</span>
           </div>
         );
