@@ -414,19 +414,9 @@ export default function Files() {
   };
 
   const handleUploadFiles = (files: FolderUploadFilesInput['files']) => {
-    // Transform the files from UploadFileModal format to API format
-    const apiFiles = files.map(file => ({
-      name: file.name,
-      type: file.type,
-      size: file.size,
-      data: file.data || '' // base64 data should be included
-    }));
-    
-    uploadFilesMutation.mutate({
-      classId,  
-      folderId: rootFolder?.id || '',
-      files: apiFiles
-    });
+    // Files are already uploaded via direct upload in the modal
+    // Just refresh the file list to show the new files
+    refetch();
   };
 
   const handleModify = (item: FileItem, newName: string, color?: string) => {
@@ -464,9 +454,14 @@ export default function Files() {
             </Button>
             <UploadFileModal 
               currentFolder="root"
+              classId={classId}
+              folderId={rootFolder?.id || ''}
               onFilesUploaded={handleUploadFiles}
             >
-              <Button size="sm" disabled={uploadFilesMutation.isPending}>
+              <Button 
+                size="sm" 
+                disabled={uploadFilesMutation.isPending || !rootFolder?.id || customLoading}
+              >
                 {uploadFilesMutation.isPending ? (
                   <Loader2 className="h-4 w-4 mr-2 animate-spin" />
                 ) : (
@@ -677,9 +672,11 @@ export default function Files() {
             <div className="flex justify-center space-x-3">
               <UploadFileModal 
                 currentFolder="root"
+                classId={classId}
+                folderId={rootFolder?.id || ''}
                 onFilesUploaded={handleUploadFiles}
               >
-                <Button disabled={uploadFilesMutation.isPending}>
+                <Button disabled={uploadFilesMutation.isPending || !rootFolder?.id || customLoading}>
                   {uploadFilesMutation.isPending ? (
                     <Loader2 className="h-4 w-4 mr-2 animate-spin" />
                   ) : (

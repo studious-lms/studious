@@ -1,9 +1,7 @@
-import { trpc } from './trpc';
-
 /**
  * Direct Upload Utility Functions
  * 
- * These functions provide a clean interface for the new direct upload endpoints.
+ * These utilities help with the direct upload flow to Google Cloud Storage.
  */
 
 /**
@@ -15,78 +13,50 @@ export function fixUploadUrl(uploadUrl: string): string {
   return uploadUrl.replace(/^https?:\/\/[^\/]+/, apiBaseUrl);
 }
 
-// Assignment file upload functions
-export const assignmentUpload = {
-  /**
-   * Get upload URLs for assignment files
-   */
-  async getUploadUrls(files: { name: string; type: string; size: number }[], assignmentId: string, classId: string) {
-    return await trpc.assignment.getAssignmentUploadUrls.mutate({
-      assignmentId,
-      classId,
-      files
-    });
-  },
-
-  /**
-   * Confirm assignment file upload
-   */
-  async confirmUpload(fileId: string, success: boolean) {
-    return await trpc.assignment.confirmAssignmentUpload.mutate({
-      fileId,
-      uploadSuccess: success
-    });
-  }
-};
-
-// Submission file upload functions
-export const submissionUpload = {
-  /**
-   * Get upload URLs for submission files
-   */
-  async getUploadUrls(files: { name: string; type: string; size: number }[], assignmentId: string, classId: string, submissionId: string) {
-    return await trpc.assignment.getSubmissionUploadUrls.mutate({
-      assignmentId,
-      classId,
-      submissionId,
-      files
-    });
-  },
-
-  /**
-   * Confirm submission file upload
-   */
-  async confirmUpload(fileId: string, success: boolean) {
-    return await trpc.assignment.confirmSubmissionUpload.mutate({
-      fileId,
-      uploadSuccess: success
-    });
-  }
-};
-
-// Folder file upload functions
-export const folderUpload = {
-  /**
-   * Get upload URLs for folder files
-   */
-  async getUploadUrls(files: { name: string; type: string; size: number }[], classId: string, folderId: string) {
-    return await trpc.folder.getFolderUploadUrls.mutate({
-      classId,
-      folderId,
-      files
-    });
-  },
-
-  /**
-   * Confirm folder file upload
-   */
-  async confirmUpload(fileId: string, success: boolean) {
-    return await trpc.folder.confirmFolderUpload.mutate({
-      fileId,
-      uploadSuccess: success
-    });
-  }
-};
+/**
+ * BACKEND API STRUCTURE REFERENCE
+ * 
+ * Use these patterns in React components with TRPC hooks:
+ * 
+ * === ASSIGNMENT UPLOAD (Teacher creates/updates assignment with files) ===
+ * const getUploadUrls = trpc.assignment.getAssignmentUploadUrls.useMutation();
+ * const response = await getUploadUrls.mutateAsync({ assignmentId, classId, files });
+ * // Returns: { success: true, uploadFiles: [{ id, name, type, size, path, uploadUrl, uploadExpiresAt, uploadSessionId }] }
+ * 
+ * === SUBMISSION UPLOAD (Student submits their work) ===
+ * const getUploadUrls = trpc.assignment.getSubmissionUploadUrls.useMutation();
+ * const response = await getUploadUrls.mutateAsync({ submissionId, classId, files });
+ * // Returns: { success: true, uploadFiles: [{ id, name, type, size, path, uploadUrl, uploadExpiresAt, uploadSessionId }] }
+ * // Note: NO assignmentId parameter needed
+ * 
+ * === ANNOTATION UPLOAD (Teacher adds feedback files to student submission) ===
+ * const getUploadUrls = trpc.assignment.getAnnotationUploadUrls.useMutation();
+ * const response = await getUploadUrls.mutateAsync({ submissionId, classId, files });
+ * // Returns: { success: true, uploadFiles: [{ id, name, type, size, path, uploadUrl, uploadExpiresAt, uploadSessionId }] }
+ * 
+ * === FOLDER UPLOAD (Teacher uploads files to class folder) ===
+ * const getUploadUrls = trpc.folder.getFolderUploadUrls.useMutation();
+ * const response = await getUploadUrls.mutateAsync({ classId, folderId, files });
+ * // Returns: [{ id, name, type, size, path, uploadUrl, uploadExpiresAt, uploadSessionId }]
+ * // Note: Returns array DIRECTLY, not wrapped in { uploadFiles: [] }
+ * 
+ * === CONFIRM UPLOAD ===
+ * // Assignment confirm
+ * const confirmUpload = trpc.assignment.confirmAssignmentUpload.useMutation();
+ * await confirmUpload.mutateAsync({ classId, fileId, uploadSuccess: true });
+ * 
+ * // Submission confirm
+ * const confirmUpload = trpc.assignment.confirmSubmissionUpload.useMutation();
+ * await confirmUpload.mutateAsync({ classId, fileId, uploadSuccess: true });
+ * 
+ * // Annotation confirm
+ * const confirmUpload = trpc.assignment.confirmAnnotationUpload.useMutation();
+ * await confirmUpload.mutateAsync({ classId, fileId, uploadSuccess: true });
+ * 
+ * // Folder confirm
+ * const confirmUpload = trpc.folder.confirmFolderUpload.useMutation();
+ * await confirmUpload.mutateAsync({ classId, fileId, uploadSuccess: true });
+ */
 
 /**
  * Generic direct upload function that handles the complete flow
@@ -165,24 +135,82 @@ export async function performDirectUpload(
  * Example usage in components:
  * 
  * ```typescript
- * import { assignmentUpload, performDirectUpload } from '@/lib/directUpload';
+ * // === ASSIGNMENT UPLOAD (Teacher creates assignment with files) ===
+ * const getAssignmentUploadUrls = trpc.assignment.getAssignmentUploadUrls.useMutation();
+ * const confirmAssignmentUpload = trpc.assignment.confirmAssignmentUpload.useMutation();
  * 
- * const handleFileUpload = async (files: File[]) => {
- *   try {
- *     const uploadedFiles = await performDirectUpload(
- *       files,
- *       (fileData) => assignmentUpload.getUploadUrls(fileData, assignmentId, classId),
- *       (fileId, success) => assignmentUpload.confirmUpload(fileId, success),
- *       (fileId, progress) => {
- *         // Update progress UI
- *         console.log(`File ${fileId}: ${progress}%`);
- *       }
- *     );
+ * const handleAssignmentUpload = async (files: File[]) => {
+ *   const fileMetadata = Array.from(files).map(file => ({
+ *     name: file.name,
+ *     type: file.type,
+ *     size: file.size
+ *   }));
+ *   
+ *   const response = await getAssignmentUploadUrls.mutateAsync({
+ *     assignmentId,
+ *     classId,
+ *     files: fileMetadata
+ *   });
+ *   
+ *   for (const [index, file] of Array.from(files).entries()) {
+ *     const uploadFile = response.uploadFiles[index];
+ *     const fixedUrl = fixUploadUrl(uploadFile.uploadUrl);
  *     
- *     console.log('Upload completed:', uploadedFiles);
- *   } catch (error) {
- *     console.error('Upload failed:', error);
+ *     await fetch(fixedUrl, {
+ *       method: 'POST',
+ *       body: file,
+ *       headers: { 'Content-Type': file.type }
+ *     });
+ *     
+ *     await confirmAssignmentUpload.mutateAsync({
+ *       classId,
+ *       fileId: uploadFile.id,
+ *       uploadSuccess: true
+ *     });
  *   }
+ * };
+ * 
+ * // === SUBMISSION UPLOAD (Student submits work) ===
+ * const getSubmissionUploadUrls = trpc.assignment.getSubmissionUploadUrls.useMutation();
+ * const confirmSubmissionUpload = trpc.assignment.confirmSubmissionUpload.useMutation();
+ * 
+ * const handleSubmissionUpload = async (files: File[]) => {
+ *   const response = await getSubmissionUploadUrls.mutateAsync({
+ *     submissionId,
+ *     classId,
+ *     files: fileMetadata
+ *   });
+ *   
+ *   // ... same upload flow as above ...
+ * };
+ * 
+ * // === ANNOTATION UPLOAD (Teacher adds feedback files) ===
+ * const getAnnotationUploadUrls = trpc.assignment.getAnnotationUploadUrls.useMutation();
+ * const confirmAnnotationUpload = trpc.assignment.confirmAnnotationUpload.useMutation();
+ * 
+ * const handleAnnotationUpload = async (files: File[]) => {
+ *   const response = await getAnnotationUploadUrls.mutateAsync({
+ *     submissionId,
+ *     classId,
+ *     files: fileMetadata
+ *   });
+ *   
+ *   // ... same upload flow as above ...
+ * };
+ * 
+ * // === FOLDER UPLOAD (Teacher uploads to class folder) ===
+ * const getFolderUploadUrls = trpc.folder.getFolderUploadUrls.useMutation();
+ * const confirmFolderUpload = trpc.folder.confirmFolderUpload.useMutation();
+ * 
+ * const handleFolderUpload = async (files: File[]) => {
+ *   const response = await getFolderUploadUrls.mutateAsync({
+ *     classId,
+ *     folderId,
+ *     files: fileMetadata
+ *   });
+ *   // Note: response is ARRAY directly, not { uploadFiles: [] }
+ *   
+ *   // ... same upload flow as above ...
  * };
  * ```
  */

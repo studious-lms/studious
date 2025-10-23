@@ -377,14 +377,13 @@ export default function AssignmentDetailPage() {
           throw new Error(`No upload data for file ${file.name} at index ${index}`);
         }
         
-        // The backend might not be returning fileId in the expected format
-        // Let's check what properties are actually available
+        // Backend returns 'id' not 'fileId'
         console.log('Upload file object:', uploadFile);
         
-        const { fileId, uploadUrl, id } = uploadFile;
+        const { uploadUrl, id } = uploadFile;
         
-        // Try to get fileId from either 'fileId' or 'id' property
-        const actualFileId = fileId || id;
+        // Backend uses 'id' as the file identifier
+        const actualFileId = id;
         
         if (!actualFileId || !uploadUrl) {
           throw new Error(`Missing fileId or uploadUrl for file ${file.name}: fileId=${actualFileId}, uploadUrl=${uploadUrl}, available props: ${Object.keys(uploadFile)}`);
@@ -447,6 +446,9 @@ export default function AssignmentDetailPage() {
       
       setCurrentUploadStatus(uploadStatusMessages[6]);
       setUploadProgress(100);
+
+      // Refresh submission data to show new files
+      refetchStudentSubmission();
 
       // Clear the input
       event.target.value = '';

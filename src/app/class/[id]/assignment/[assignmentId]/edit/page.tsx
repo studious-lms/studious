@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { PageLayout } from "@/components/ui/page-layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -45,6 +46,7 @@ import {
   File
 } from "lucide-react";
 import { baseFileHandler } from "@/lib/fileHandler";
+import { fixUploadUrl } from "@/lib/directUpload";
 
 type Assignment = RouterOutputs['assignment']['get'];
 type AssignmentUpdateInput = RouterInputs['assignment']['update'];
@@ -107,8 +109,17 @@ export default function AssignmentEditPage() {
   const [previewFile, setPreviewFile] = useState<FileItem | null>(null);
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
 
+  // Upload progress state
+  const [isUploading, setIsUploading] = useState(false);
+  const [uploadProgress, setUploadProgress] = useState(0);
+  const [currentUploadStatus, setCurrentUploadStatus] = useState('');
+  const [uploadedFiles, setUploadedFiles] = useState(0);
+  const [totalFiles, setTotalFiles] = useState(0);
+
   // Get signed URL mutation for file preview
   const getSignedUrlMutation = trpc.file.getSignedUrl.useMutation();
+  const getAssignmentUploadUrls = trpc.assignment.getAssignmentUploadUrls.useMutation();
+  const confirmAssignmentUpload = trpc.assignment.confirmAssignmentUpload.useMutation();
 
   // Specific mutations for grading tools and events
   const attachMarkSchemeMutation = trpc.assignment.attachMarkScheme.useMutation({
@@ -255,30 +266,114 @@ export default function AssignmentEditPage() {
     const files = event.target.files;
     if (!files || !assignment) return;
 
-    // Convert files to base64 and prepare for upload
-    const filePromises = Array.from(files).map(async (file) => {
-      const base64 = await new Promise<string>((resolve) => {
-        const reader = new FileReader();
-        reader.onload = () => resolve(reader.result as string);
-        reader.readAsDataURL(file);
-      });
-      
-      return {
+    // Start upload progress tracking
+    setIsUploading(true);
+    setUploadProgress(0);
+    setCurrentUploadStatus('Preparing upload...');
+    setTotalFiles(files.length);
+    setUploadedFiles(0);
+
+    try {
+      // Use direct upload approach
+      const fileMetadata = Array.from(files).map(file => ({
         name: file.name,
         type: file.type,
-        size: file.size,
-        data: base64.split(',')[1], // Remove data:type;base64, prefix
-      };
-    });
+        size: file.size
+      }));
 
-    const newFiles = await Promise.all(filePromises);
-    
-    // Update assignment with new files
-    updateAssignmentMutation.mutate({
-      classId,
-      id: assignmentId,
-      files: newFiles,
-    });
+      // 1. Get upload URLs from backend
+      setCurrentUploadStatus('Getting upload URLs...');
+      setUploadProgress(10);
+
+      const uploadResponse = await getAssignmentUploadUrls.mutateAsync({
+        assignmentId,
+        classId,
+        files: fileMetadata
+      });
+
+      setUploadProgress(20);
+
+      // 2. Upload files through backend proxy
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        const uploadFile = uploadResponse.uploadFiles[i];
+
+        try {
+          // Update status for current file
+          setCurrentUploadStatus(`Uploading ${file.name}...`);
+          const fileProgress = 20 + ((i / files.length) * 60); // 20-80% for uploads
+          setUploadProgress(fileProgress);
+
+          // Fix upload URL to use correct API base URL from environment
+          const uploadUrl = fixUploadUrl(uploadFile.uploadUrl);
+
+          // Upload to backend proxy endpoint
+          const response = await fetch(uploadUrl, {
+            method: 'POST',
+            body: file,
+            headers: {
+              'Content-Type': file.type
+            }
+          });
+
+          if (!response.ok) {
+            throw new Error(`Upload failed: ${response.statusText}`);
+          }
+
+          // 3. Confirm upload to backend
+          setCurrentUploadStatus(`Confirming ${file.name}...`);
+          await confirmAssignmentUpload.mutateAsync({
+            fileId: uploadFile.id,
+            uploadSuccess: true,
+            classId
+          });
+
+          // Update progress
+          setUploadedFiles(i + 1);
+          console.log(`File ${file.name} uploaded successfully`);
+        } catch (error) {
+          // Report error to backend
+          await confirmAssignmentUpload.mutateAsync({
+            fileId: uploadFile.id,
+            uploadSuccess: false,
+            errorMessage: error instanceof Error ? error.message : 'Unknown error',
+            classId
+          });
+
+          console.error(`Upload failed for ${file.name}:`, error);
+          toast.error(`Failed to upload ${file.name}`);
+        }
+      }
+
+      // Final steps
+      setCurrentUploadStatus('Finalizing...');
+      setUploadProgress(90);
+
+      // Refresh assignment data to show new files
+      refetchAssignment();
+      
+      setUploadProgress(100);
+      setCurrentUploadStatus('Upload complete!');
+      toast.success("Files uploaded successfully");
+      
+      // Clear the input
+      event.target.value = '';
+
+      // Reset progress after delay
+      setTimeout(() => {
+        setIsUploading(false);
+        setUploadProgress(0);
+        setCurrentUploadStatus('');
+        setUploadedFiles(0);
+        setTotalFiles(0);
+      }, 1000);
+    } catch (error) {
+      console.error('File upload error:', error);
+      toast.error('Failed to upload files');
+      setIsUploading(false);
+      setUploadProgress(0);
+      setCurrentUploadStatus('');
+    }
   };
 
   const removeAttachment = (attachmentId: string) => {
@@ -700,6 +795,22 @@ export default function AssignmentEditPage() {
 
                 <Separator />
 
+                {/* Upload Progress */}
+                {isUploading && (
+                  <div className="space-y-2 p-4 bg-muted rounded-lg">
+                    <div className="flex justify-between text-sm">
+                      <span className="font-medium">{currentUploadStatus}</span>
+                      <span>{Math.round(uploadProgress)}%</span>
+                    </div>
+                    <Progress value={uploadProgress} className="h-2" />
+                    {totalFiles > 0 && (
+                      <p className="text-xs text-muted-foreground text-center">
+                        {uploadedFiles} of {totalFiles} files uploaded
+                      </p>
+                    )}
+                  </div>
+                )}
+
                 <div>
                   <Label htmlFor="file-upload" className="cursor-pointer">
                     <div className="flex items-center justify-center w-full p-4 border-2 border-dashed border-muted-foreground/25 rounded-lg hover:border-muted-foreground/50 transition-colors">
@@ -717,6 +828,7 @@ export default function AssignmentEditPage() {
                     onChange={handleFileUpload}
                     className="hidden"
                     accept="*/*"
+                    disabled={isUploading}
                   />
                 </div>
               </CardContent>
