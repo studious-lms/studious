@@ -107,10 +107,10 @@ export default function AboutPage() {
                 <div className="w-px h-full bg-border mt-4"></div>
               </div>
               <div className="pb-12">
-                <Badge className="mb-3 bg-primary text-primary-foreground">October 17, 2025</Badge>
-                <h3 className="text-2xl font-bold text-foreground mb-2">Public Launch</h3>
+                <Badge className="mb-3 bg-primary text-primary-foreground">October 31, 2025</Badge>
+                <h3 className="text-2xl font-bold text-foreground mb-2">Public Beta Launch</h3>
                 <p className="text-muted-foreground">
-                  Official public launch of Studious LMS. Opening early access to schools worldwide with full platform capabilities.
+                  Official public beta-testing launch of Studious LMS. Opening early access to schools worldwide with full platform capabilities.
                 </p>
               </div>
             </div>

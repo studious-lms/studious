@@ -251,145 +251,160 @@ export default function Home() {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Simple, transparent pricing
+              Choose the right plan for your institution
             </h2>
             <p className="text-xl text-muted-foreground">
-              Choose the plan that fits your institution
+              Simple, transparent pricing with no hidden fees. All plans include core features with scalable options.
             </p>
               </div>
           
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {/* Starter Plan */}
-            <Card className="border-2 border-border hover:border-primary/50 transition-all">
+            <Card className="border-2 border-border hover:border-primary/50 transition-all flex flex-col h-full">
               <CardHeader className="space-y-4">
                 <CardTitle className="text-2xl">Starter</CardTitle>
                 <div>
-                  <div className="text-4xl font-bold text-foreground">Free</div>
-                  <p className="text-sm text-muted-foreground mt-1">Beta access</p>
+                  <div className="text-5xl font-bold text-foreground">Free</div>
+                  <p className="text-sm text-muted-foreground mt-2">Beta access included</p>
             </div>
                 <p className="text-muted-foreground">
-                  For small classes & pilot programs
+                  Perfect for small classes & pilot programs
                 </p>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-2">
+              <CardContent className="flex flex-col flex-1 space-y-4">
+                <ul className="space-y-3 flex-1">
+                  <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <span className="text-sm">Up to 30 students</span>
                   </li>
-                  <li className="flex items-start gap-2">
+                  <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Core features</span>
+                    <span className="text-sm">Unlimited classes</span>
                   </li>
-                  <li className="flex items-start gap-2">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Core features (assignments, calendar, grades)</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">AI assistant (5 chats/month)</span>
+                  </li>
+                  <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <span className="text-sm">Community support</span>
                   </li>
-                  <li className="flex items-start gap-2">
+                  <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">AI assistant (limited)</span>
+                    <span className="text-sm">5GB storage</span>
                   </li>
                 </ul>
-                <Link href="/signup" className="block">
-                  <Button variant="outline" className="w-full mt-6">
-                    Get Started
-                  </Button>
-                </Link>
+                <Button 
+                  variant="outline" 
+                  className="w-full mt-auto"
+                  onClick={() => setShowEarlyAccess(true)}
+                >
+                  Get Started Free
+                </Button>
               </CardContent>
             </Card>
 
-            {/* School Plan */}
-            <Card className="border-2 border-primary shadow-xl relative">
+            {/* School Plan - Featured */}
+            <Card className="border-2 border-primary shadow-2xl relative scale-105 flex flex-col h-full">
               <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                <Badge className="bg-primary text-primary-foreground px-4 py-1">
-                  Popular
+                <Badge className="bg-primary text-primary-foreground px-4 py-1.5">
+                  Most Popular
                 </Badge>
               </div>
               <CardHeader className="space-y-4">
                 <CardTitle className="text-2xl">School</CardTitle>
                 <div>
-                  <div className="text-4xl font-bold text-foreground">$5</div>
-                  <p className="text-sm text-muted-foreground mt-1">per user / month</p>
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-5xl font-bold text-foreground">$5</span>
+                    <span className="text-muted-foreground">/user/month</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground mt-2">Billed annually or $6/month</p>
                 </div>
                 <p className="text-muted-foreground">
-                  Schools with &lt; 1000 students
+                  For schools with up to 1,000 students
                 </p>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-2">
+              <CardContent className="flex flex-col flex-1 space-y-4">
+                <ul className="space-y-3 flex-1">
+                  <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <span className="text-sm">Unlimited students</span>
                   </li>
-                  <li className="flex items-start gap-2">
+                  <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">All features included</span>
+                    <span className="text-sm">Unlimited classes</span>
                   </li>
-                  <li className="flex items-start gap-2">
+                  <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Priority support</span>
+                    <span className="text-sm">All core features</span>
                   </li>
-                  <li className="flex items-start gap-2">
+                  <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Full AI capabilities</span>
+                    <span className="text-sm">AI assistant (unlimited queries)</span>
                   </li>
-                  <li className="flex items-start gap-2">
+                  <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Advanced analytics</span>
+                    <span className="text-sm">First-in-line for Studious CMS beta access</span>
                   </li>
                 </ul>
-                <Link href="/signup" className="block">
-                  <Button className="w-full mt-6 bg-primary hover:bg-primary/90">
-                    Get Started
-                  </Button>
-                </Link>
+                <Button 
+                  className="w-full mt-auto bg-primary hover:bg-primary/90"
+                  onClick={() => setShowEarlyAccess(true)}
+                >
+                  Get Started
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
               </CardContent>
             </Card>
 
             {/* Institution Plan */}
-            <Card className="border-2 border-border hover:border-primary/50 transition-all">
+            <Card className="border-2 border-border hover:border-primary/50 transition-all flex flex-col h-full">
               <CardHeader className="space-y-4">
                 <CardTitle className="text-2xl">Institution</CardTitle>
                 <div>
-                  <div className="text-4xl font-bold text-foreground">Custom</div>
-                  <p className="text-sm text-muted-foreground mt-1">Contact sales</p>
-            </div>
+                  <div className="text-5xl font-bold text-foreground">Custom</div>
+                  <p className="text-sm text-muted-foreground mt-2">Tailored to your needs</p>
+                </div>
                 <p className="text-muted-foreground">
-                  Large schools / universities
+                  For large schools & universities (1,000+ students)
                 </p>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-2">
+              <CardContent className="flex flex-col flex-1 space-y-4">
+                <ul className="space-y-3 flex-1">
+                  <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Unlimited everything</span>
+                    <span className="text-sm">Everything in School plan</span>
                   </li>
-                  <li className="flex items-start gap-2">
+                  <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Custom integrations</span>
+                    <span className="text-sm">24/7 priority support</span>
                   </li>
-                  <li className="flex items-start gap-2">
+                  <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Dedicated support</span>
+                    <span className="text-sm">Unlimited storage</span>
                   </li>
-                  <li className="flex items-start gap-2">
+                  <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">On-premise deployment</span>
-                  </li>
-                  <li className="flex items-start gap-2">
+                    <span className="text-sm">Custom training & onboarding</span>
+                    </li>
+                    <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">SLA guarantee</span>
-                  </li>
+                    <span className="text-sm">Cheaper per-user expenses</span>
+                    </li>
                 </ul>
-                <Button variant="outline" className="w-full mt-6">
+                <Button variant="outline" className="w-full mt-auto" onClick={() => setShowEarlyAccess(true)}>
                   Contact Sales
                 </Button>
               </CardContent>
             </Card>
           </div>
 
-          <p className="text-center text-muted-foreground mt-12 max-w-2xl mx-auto">
-            Early adopters receive extended beta access and onboarding support.
+          <p className="text-center text-muted-foreground mt-12 text-lg">
+            🎉 Early adopters receive <span className="font-semibold text-foreground">3 months free</span> on annual plans + dedicated onboarding support
           </p>
               </div>
       </section>

@@ -2,12 +2,13 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { EarlyAccessModal } from "./EarlyAccessModal";
 import { useState } from "react";
 
 export function Navbar() {
   const [showEarlyAccess, setShowEarlyAccess] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <>
@@ -48,10 +49,72 @@ export function Navbar() {
             </div>
             
             {/* Mobile Menu Button */}
-            <button className="md:hidden">
-              <Menu className="h-5 w-5 text-muted-foreground" />
+            <button 
+              className="md:hidden"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? (
+                <X className="h-5 w-5 text-muted-foreground" />
+              ) : (
+                <Menu className="h-5 w-5 text-muted-foreground" />
+              )}
             </button>
           </div>
+          
+          {/* Mobile Menu */}
+          {isMobileMenuOpen && (
+            <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-md">
+              <div className="px-6 py-4 space-y-4">
+                <Link 
+                  href="/pricing" 
+                  className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Pricing
+                </Link>
+                <Link 
+                  href="/program" 
+                  className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  School Program
+                </Link>
+                <Link 
+                  href="/about" 
+                  className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  About
+                </Link>
+                <Link 
+                  href="/press" 
+                  className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Press
+                </Link>
+                <div className="pt-4 border-t border-border">
+                  <Link 
+                    href="/login" 
+                    className="block text-sm text-muted-foreground hover:text-foreground transition-colors mb-4"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Sign In
+                  </Link>
+                  <Button 
+                    size="sm" 
+                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                    onClick={() => {
+                      setShowEarlyAccess(true);
+                      setIsMobileMenuOpen(false);
+                    }}
+                  >
+                    Request Early Access
+                  </Button>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 

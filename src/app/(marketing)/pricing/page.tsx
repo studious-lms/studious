@@ -51,7 +51,7 @@ export default function PricingPage() {
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {/* Starter Plan */}
-            <Card className="border-2 border-border hover:border-primary/50 transition-all">
+            <Card className="border-2 border-border hover:border-primary/50 transition-all flex flex-col h-full">
               <CardHeader className="space-y-4">
                 <CardTitle className="text-2xl">Starter</CardTitle>
                 <div>
@@ -62,15 +62,15 @@ export default function PricingPage() {
                   Perfect for small classes & pilot programs
                 </p>
               </CardHeader>
-              <CardContent className="space-y-6">
-                <ul className="space-y-3">
+              <CardContent className="flex flex-col flex-1 space-y-6">
+                <ul className="space-y-3 flex-1">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <span className="text-sm">Up to 30 students</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">1 class</span>
+                    <span className="text-sm">Unlimited classes</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
@@ -78,7 +78,7 @@ export default function PricingPage() {
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">AI assistant (100 queries/month)</span>
+                    <span className="text-sm">AI assistant (5 chats/month)</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
@@ -91,7 +91,7 @@ export default function PricingPage() {
                 </ul>
                 <Button 
                   variant="outline" 
-                  className="w-full"
+                  className="w-full mt-auto"
                   onClick={() => setShowEarlyAccess(true)}
                 >
                   Get Started Free
@@ -100,7 +100,7 @@ export default function PricingPage() {
             </Card>
 
             {/* School Plan - Featured */}
-            <Card className="border-2 border-primary shadow-2xl relative scale-105">
+            <Card className="border-2 border-primary shadow-2xl relative scale-105 flex flex-col h-full">
               <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                 <Badge className="bg-primary text-primary-foreground px-4 py-1.5">
                   Most Popular
@@ -119,8 +119,8 @@ export default function PricingPage() {
                   For schools with up to 1,000 students
                 </p>
               </CardHeader>
-              <CardContent className="space-y-6">
-                <ul className="space-y-3">
+              <CardContent className="flex flex-col flex-1 space-y-6">
+                <ul className="space-y-3 flex-1">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <span className="text-sm">Unlimited students</span>
@@ -131,7 +131,7 @@ export default function PricingPage() {
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">All core features + advanced analytics</span>
+                    <span className="text-sm">All core features</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
@@ -139,23 +139,15 @@ export default function PricingPage() {
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Priority email support (24hr response)</span>
+                    <span className="text-sm">First-in-line for Studious CMS beta access</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">100GB storage per teacher</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Custom branding</span>
-                  </li>
-                  <li className="flex items-start gap-3">
+                  {/* <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <span className="text-sm">API access</span>
-                  </li>
+                  </li> */}
                 </ul>
                 <Button 
-                  className="w-full mt-6 bg-primary hover:bg-primary/90"
+                  className="w-full mt-auto bg-primary hover:bg-primary/90"
                   onClick={() => setShowEarlyAccess(true)}
                 >
                   Get Started
@@ -165,7 +157,7 @@ export default function PricingPage() {
             </Card>
 
             {/* Institution Plan */}
-            <Card className="border-2 border-border hover:border-primary/50 transition-all">
+            <Card className="border-2 border-border hover:border-primary/50 transition-all flex flex-col h-full">
               <CardHeader className="space-y-4">
                 <CardTitle className="text-2xl">Institution</CardTitle>
                 <div>
@@ -176,20 +168,20 @@ export default function PricingPage() {
                   For large schools & universities (1,000+ students)
                 </p>
               </CardHeader>
-              <CardContent className="space-y-6">
-                <ul className="space-y-3">
+              <CardContent className="flex flex-col flex-1 space-y-6">
+                <ul className="space-y-3 flex-1">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <span className="text-sm">Everything in School plan</span>
                   </li>
-                  <li className="flex items-start gap-3">
+                  {/* <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <span className="text-sm">Custom integrations (SIS, LTI, SSO)</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <span className="text-sm">Dedicated account manager</span>
-                  </li>
+                  </li> */}
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <span className="text-sm">24/7 priority support</span>
@@ -198,20 +190,24 @@ export default function PricingPage() {
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <span className="text-sm">Unlimited storage</span>
                   </li>
-                  <li className="flex items-start gap-3">
+                  {/* <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <span className="text-sm">On-premise deployment option</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <span className="text-sm">99.9% uptime SLA</span>
-                  </li>
+                  </li> */}
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <span className="text-sm">Custom training & onboarding</span>
                     </li>
+                    <li className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Cheaper per-user expenses</span>
+                    </li>
                 </ul>
-                <Button variant="outline" className="w-full">
+                <Button variant="outline" className="w-full mt-auto" onClick={() => setShowEarlyAccess(true)}>
                   Contact Sales
                 </Button>
               </CardContent>
@@ -342,7 +338,7 @@ export default function PricingPage() {
       </section>
 
       {/* Included in All Plans */}
-      <section className="py-20 px-6 bg-secondary/30">
+      {/* <section className="py-20 px-6 bg-secondary/30">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-4">
@@ -439,10 +435,10 @@ export default function PricingPage() {
             </Card>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* FAQ Section */}
-      <section className="py-20 px-6 bg-background">
+      {/* <section className="py-20 px-6 bg-background">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-4">
@@ -527,7 +523,7 @@ export default function PricingPage() {
             </AccordionItem>
           </Accordion>
         </div>
-      </section>
+      </section> */}
 
       {/* Footer */}
       <footer className="py-16 px-6 bg-secondary border-t border-border">

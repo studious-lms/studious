@@ -140,7 +140,8 @@ export function ConversationList({
                       <Avatar className="h-8 w-8">
                         <AvatarImage src={conversation.type === 'DM' ? 
                           conversation.members.find(m => m.userId !== currentUserId)?.user.profile?.profilePicture 
-                          : `https://api.dicebear.com/7.x/avataaars/svg?seed=${conversation.members.find(m => m.userId !== currentUserId)?.user.username}`
+                          // @TODO: Fix this
+                          : conversation.members.find(m => m.userId !== currentUserId)?.user.profile?.profilePicture || ""
                         } />
                         <AvatarFallback className={cn(
                           "text-xs font-medium",

@@ -21,7 +21,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         dispatch(setAuth({
             loggedIn: true,
             username: user.user.username,
-            profilePicture: user.user.profile?.profilePicture || `https://api.dicebear.com/7.x/avataaars/svg?seed=${user.user.username}`,
+            profilePicture: user.user.profile?.profilePicture || "",
+            // @TODO: Fix this
             displayName: user.user.profile?.displayName || user.user.username,
             bio: user.user.profile?.bio || '',
             location: user.user.profile?.location || '',
@@ -32,10 +33,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 }, [user]);
 
     useEffect(() => {
-        if (!user && !isLoading && AUTHED_PATHS.some(path => pathname.startsWith(path))) {
+        if (!user && !isLoading && AUTHED_PATHS.some(path => pathname.includes(path))) {
             router.push('/login');
         }
-    }, [user]);
+    }, [user, isLoading, pathname]);
 
     if (isLoading) {
         return <div className="flex h-[calc(100vh)] w-screen items-center justify-center">

@@ -952,8 +952,8 @@ export default function Attendance() {
                     <div key={student.id} className="p-3 rounded-lg border hover:shadow-sm transition-shadow">
                       <div className="flex items-center space-x-3 mb-3">
                         <Avatar className="h-8 w-8">
-                          <AvatarImage src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${student.username}`} alt={student.username} />
-                          <AvatarFallback className="bg-primary/10 text-primary text-xs font-medium">
+                          <AvatarImage src={student.profile?.profilePicture || ""} alt={student.username} />
+                          <AvatarFallback>
                             {student.username.substring(0, 2).toUpperCase()}
                           </AvatarFallback>
                         </Avatar>

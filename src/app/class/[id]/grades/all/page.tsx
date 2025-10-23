@@ -46,7 +46,7 @@ export default function AllStudentsGrades() {
         return (
           <div className="flex items-center space-x-3">
             <Avatar className="h-8 w-8">
-              <img src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${student.username}`} alt={student.username} />
+              <img src={student.profile?.profilePicture || ""} alt={student.username} />
             </Avatar>
             <span className="font-medium">{student.username}</span>
           </div>
