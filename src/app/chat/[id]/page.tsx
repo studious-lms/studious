@@ -91,7 +91,7 @@ export default function ConversationPage() {
                 <Avatar className="h-8 w-8">
                   <AvatarImage 
                     src={selectedConversation.type === 'DM' ? 
-                      selectedConversation.members.find(m => m.userId !== user.id)?.user.profile?.profilePicture 
+                      selectedConversation.members.find(m => m.userId !== user.id)?.user.profile?.profilePicture ?? undefined
                       : `https://api.dicebear.com/7.x/avataaars/svg?seed=${selectedConversation.members.find(m => m.userId !== user.id)?.user.username}`
                     }
                   />
@@ -131,7 +131,16 @@ export default function ConversationPage() {
             isLoading={isLoadingMessages}
             hasNextPage={hasMoreMessages}
             onLoadMore={loadMoreMessages}
-            conversationMembers={selectedConversation.members}
+            conversationMembers={selectedConversation.members.map(m => ({
+              ...m,
+              user: {
+                ...m.user,
+                profile: m.user.profile ? {
+                  displayName: m.user.profile.displayName ?? undefined,
+                  profilePicture: m.user.profile.profilePicture ?? undefined
+                } : undefined
+              }
+            }))}
             onUpdateMessage={updateMessage}
             onDeleteMessage={deleteMessage}
             isUpdatingMessage={isUpdatingMessage}
@@ -143,7 +152,16 @@ export default function ConversationPage() {
             <MessageInput
               onSend={sendMessage}
               placeholder={`Message ${getConversationDisplayName()}`}
-              conversationMembers={selectedConversation.members}
+              conversationMembers={selectedConversation.members.map(m => ({
+                ...m,
+                user: {
+                  ...m.user,
+                  profile: m.user.profile ? {
+                    displayName: m.user.profile.displayName ?? undefined,
+                    profilePicture: m.user.profile.profilePicture ?? undefined
+                  } : undefined
+                }
+              }))}
               currentUserId={user.id}
             />
           </div>

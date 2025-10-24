@@ -730,7 +730,7 @@ export default function SubmissionDetailPage() {
                           value={grade || ""}
                           onChange={(e) => !submission.returned && setGrade(e.target.value ? parseInt(e.target.value) : undefined)}
                           placeholder={submission.returned ? "Grade (read-only)" : "Enter grade"}
-                          max={submission.assignment.maxGrade}
+                          max={submission.assignment.maxGrade ?? undefined}
                           min="0"
                           readOnly={submission.returned || false}
                           className={submission.returned ? "bg-muted cursor-not-allowed" : ""}

@@ -145,17 +145,6 @@ export default function AssignmentDetailPage() {
   // Direct upload functions using proper TRPC hooks
   const getSubmissionUploadUrls = trpc.assignment.getSubmissionUploadUrls.useMutation();
   const confirmSubmissionUpload = trpc.assignment.confirmSubmissionUpload.useMutation();
-  
-  // File deletion mutation for student submissions
-  const deleteSubmissionFileMutation = trpc.assignment.deleteSubmissionFile.useMutation({
-    onSuccess: () => {
-      toast.success("File deleted successfully");
-      refetchStudentSubmission();
-    },
-    onError: (error) => {
-      toast.error(error.message || "Failed to delete file");
-    },
-  });
 
   const isLoading = assignmentLoading || submissionsLoading || studentSubmissionLoading;
 
@@ -269,7 +258,7 @@ export default function AssignmentDetailPage() {
     return colors[index];
   };
 
-  const convertAttachmentsToFileItems = (attachments: RouterOutputs['assignment']['getSubmission']['attachments']) => {
+  const convertAttachmentsToFileItems = (attachments: Array<{ id: string; name: string; type: string; size: number | null; uploadedAt: string | null }>): FileItem[] => {
     return attachments.map(attachment => ({
       id: attachment.id,
       name: attachment.name,
@@ -294,14 +283,16 @@ export default function AssignmentDetailPage() {
       }
       
       try {
-        await deleteSubmissionFileMutation.mutateAsync({
+        await updateStudentSubmissionMutation.mutateAsync({
           assignmentId,
           classId,
           submissionId: studentSubmission.id,
-          fileId: file.id
+          removedAttachments: [file.id]
         });
+        toast.success("File deleted successfully");
       } catch (error) {
         console.error('Failed to delete file:', error);
+        toast.error("Failed to delete file");
       }
     },
     onMove: async () => {
@@ -708,15 +699,15 @@ export default function AssignmentDetailPage() {
                             try {
                               const parsedBoundary = parseGradingBoundary(assignment.gradingBoundary.structured);
                               if (parsedBoundary?.boundaries) {
-                                const percentage = ((studentSubmission.gradeReceived ?? 0) / assignment.maxGrade) * 100;
+                                const percentage = ((studentSubmission.gradeReceived ?? 0) / (assignment.maxGrade ?? 1)) * 100;
                                 const letterGrade = parsedBoundary.boundaries.find(b => 
                                   percentage >= b.minPercentage && percentage <= b.maxPercentage
                                 )?.grade || 'F';
                                 return `${percentage.toFixed(1)}% (${letterGrade})`;
                               }
-                              return `${(((studentSubmission.gradeReceived ?? 0) / assignment.maxGrade) * 100).toFixed(1)}%`;
+                              return `${(((studentSubmission.gradeReceived ?? 0) / (assignment.maxGrade ?? 1)) * 100).toFixed(1)}%`;
                             } catch {
-                              return `${(((studentSubmission.gradeReceived ?? 0) / assignment.maxGrade) * 100).toFixed(1)}%`;
+                              return `${(((studentSubmission.gradeReceived ?? 0) / (assignment.maxGrade ?? 1)) * 100).toFixed(1)}%`;
                             }
                           })()}
                         </div>

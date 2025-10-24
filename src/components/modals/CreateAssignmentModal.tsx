@@ -326,7 +326,7 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
 
       toast.success(`Assignment ${formData.inProgress ? 'saved as draft' : 'created'} successfully.`);
 
-      onAssignmentCreated?.(assignmentData as AssignmentFormData & { files: formData.files });
+      onAssignmentCreated?.(formData);
       
       // Small delay to show completion
       setTimeout(() => {
