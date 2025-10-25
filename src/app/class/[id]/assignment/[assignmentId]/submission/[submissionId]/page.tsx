@@ -47,8 +47,6 @@ import { RootState } from "@/store/store";
 import { useSelector } from "react-redux";
 import { baseFileHandler } from "@/lib/fileHandler";
 
-type Submission = RouterOutputs['assignment']['getSubmissionById'];
-type Assignment = RouterOutputs['assignment']['get'];
 type AssignmentUpdateSubmissionAsTeacherInput = RouterInputs['assignment']['updateSubmissionAsTeacher'];
 
 type RubricCriterion = {

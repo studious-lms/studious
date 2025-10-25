@@ -15,7 +15,6 @@ import {
   Users,
   CheckCircle,
   Upload,
-  Loader2
 } from "lucide-react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -44,17 +43,14 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import type { 
   ParsedMarkScheme, 
-  ParsedGradingBoundary,
   StoredRubricItem,
 } from "@/lib/types/assignment";
 import {  parseMarkScheme,
   parseGradingBoundary} from "@/lib/types/assignment";
 import { baseFileHandler } from "@/lib/fileHandler";
 
-type Assignment = RouterOutputs['assignment']['get'];
 type Submissions = RouterOutputs['assignment']['getSubmissions'];
 type Submission = Submissions[number];
-type StudentSubmission = RouterOutputs['assignment']['getSubmission'];
 
 type FileItem = {
   id: string;
@@ -242,23 +238,7 @@ export default function AssignmentDetailPage() {
         return <File className={`${iconSize} text-slate-500`} />;
     }
   };
-
-  const getFolderColor = (folderId: string) => {
-    const colors = [
-      "text-blue-500",
-      "text-green-500", 
-      "text-purple-500",
-      "text-orange-500",
-      "text-pink-500",
-      "text-indigo-500",
-      "text-teal-500",
-      "text-red-500"
-    ];
-    const index = parseInt(folderId) % colors.length;
-    return colors[index];
-  };
-
-  const convertAttachmentsToFileItems = (attachments: Array<{ id: string; name: string; type: string; size: number | null; uploadedAt: string | null }>): FileItem[] => {
+  const convertAttachmentsToFileItems = (attachments: RouterOutputs['assignment']['getSubmission']['attachments']) => {
     return attachments.map(attachment => ({
       id: attachment.id,
       name: attachment.name,
@@ -541,7 +521,7 @@ export default function AssignmentDetailPage() {
               )}
             </div>
           </div>
-          
+          {appState.user.teacher && (
           <Button 
             onClick={() => router.push(`/class/${classId}/assignment/${assignmentId}/edit`)}
             className="flex items-center space-x-2"
@@ -549,6 +529,7 @@ export default function AssignmentDetailPage() {
             <Edit className="h-4 w-4" />
             <span>Edit</span>
           </Button>
+          )}
         </div>
 
         {/* Main Content */}
