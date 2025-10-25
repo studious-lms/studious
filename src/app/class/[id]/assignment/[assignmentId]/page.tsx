@@ -14,12 +14,13 @@ import {
   FileText, 
   Users,
   CheckCircle,
-  Upload
+  Upload,
 } from "lucide-react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { format } from "date-fns";
 import { trpc, type RouterOutputs } from "@/lib/trpc";
+import { fixUploadUrl } from "@/lib/directUpload";
 import { Skeleton } from "@/components/ui/skeleton";
 import { EmptyState } from "@/components/ui/empty-state";
 import { DataTable } from "@/components/ui/data-table";
@@ -42,17 +43,15 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import type { 
   ParsedMarkScheme, 
-  ParsedGradingBoundary,
   StoredRubricItem,
 } from "@/lib/types/assignment";
 import {  parseMarkScheme,
   parseGradingBoundary} from "@/lib/types/assignment";
 import { baseFileHandler } from "@/lib/fileHandler";
+import { Progress } from "@/components/ui/progress";
 
-type Assignment = RouterOutputs['assignment']['get'];
 type Submissions = RouterOutputs['assignment']['getSubmissions'];
 type Submission = Submissions[number];
-type StudentSubmission = RouterOutputs['assignment']['getSubmission'];
 
 type FileItem = {
   id: string;
@@ -140,6 +139,10 @@ export default function AssignmentDetailPage() {
     },
   });
 
+  // Direct upload functions using proper TRPC hooks
+  const getSubmissionUploadUrls = trpc.assignment.getSubmissionUploadUrls.useMutation();
+  const confirmSubmissionUpload = trpc.assignment.confirmSubmissionUpload.useMutation();
+
   const isLoading = assignmentLoading || submissionsLoading || studentSubmissionLoading;
 
   // Import toast for notifications
@@ -147,6 +150,24 @@ export default function AssignmentDetailPage() {
   // File preview state
   const [previewFile, setPreviewFile] = useState<FileItem | null>(null);
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
+
+  // Progress tracking state for file uploads
+  const [isUploading, setIsUploading] = useState(false);
+  const [uploadProgress, setUploadProgress] = useState(0);
+  const [currentUploadStatus, setCurrentUploadStatus] = useState('');
+  const [uploadedFiles, setUploadedFiles] = useState(0);
+  const [totalFiles, setTotalFiles] = useState(0);
+
+  // Status messages for different upload stages
+  const uploadStatusMessages = [
+    "Preparing files for upload...",
+    "Getting upload URLs from server...",
+    "Uploading files to secure cloud storage...",
+    "Processing uploaded files...",
+    "Confirming uploads...",
+    "Finalizing submission...",
+    "Almost done..."
+  ];
 
   // Get signed URL mutation for file preview
   const getSignedUrlMutation = trpc.file.getSignedUrl.useMutation();
@@ -218,22 +239,6 @@ export default function AssignmentDetailPage() {
         return <File className={`${iconSize} text-slate-500`} />;
     }
   };
-
-  const getFolderColor = (folderId: string) => {
-    const colors = [
-      "text-blue-500",
-      "text-green-500", 
-      "text-purple-500",
-      "text-orange-500",
-      "text-pink-500",
-      "text-indigo-500",
-      "text-teal-500",
-      "text-red-500"
-    ];
-    const index = parseInt(folderId) % colors.length;
-    return colors[index];
-  };
-
   const convertAttachmentsToFileItems = (attachments: RouterOutputs['assignment']['getSubmission']['attachments']) => {
     return attachments.map(attachment => ({
       id: attachment.id,
@@ -245,15 +250,31 @@ export default function AssignmentDetailPage() {
     }));
   };
 
-  // File handlers for attachments (read-only in assignment view)
+  // File handlers for student submission attachments
   const fileHandlers: FileHandlers = {
     ...baseFileHandler,
     onFolderClick: () => {}, // Not used in assignment context
     onRename: async () => {
       // Not allowed in assignment view
     },
-    onDelete: async () => {
-      // Not allowed in assignment view
+    onDelete: async (file: FileItem) => {
+      if (!studentSubmission || studentSubmission.submitted) {
+        toast.error("Cannot delete files from submitted assignments");
+        return;
+      }
+      
+      try {
+        await updateStudentSubmissionMutation.mutateAsync({
+          assignmentId,
+          classId,
+          submissionId: studentSubmission.id,
+          removedAttachments: [file.id]
+        });
+        toast.success("File deleted successfully");
+      } catch (error) {
+        console.error('Failed to delete file:', error);
+        toast.error("Failed to delete file");
+      }
     },
     onMove: async () => {
       // Not applicable for attachments
@@ -273,37 +294,136 @@ export default function AssignmentDetailPage() {
     const files = event.target.files;
     if (!files || !studentSubmission) return;
 
+    // Debug logging
+    console.log('Upload parameters:', {
+      assignmentId,
+      classId,
+      submissionId: studentSubmission?.id,
+      filesCount: files.length
+    });
+
+    // Validate required parameters
+    if (!classId || !assignmentId || !studentSubmission?.id) {
+      toast.error("Missing required parameters for upload");
+      return;
+    }
+
+    // Start upload progress tracking
+    setIsUploading(true);
+    setUploadProgress(0);
+    setCurrentUploadStatus(uploadStatusMessages[0]);
+    setTotalFiles(files.length);
+    setUploadedFiles(0);
+
     try {
-      // Convert files to base64
-      const filePromises = Array.from(files).map(async (file) => {
-        const base64 = await new Promise<string>((resolve) => {
-          const reader = new FileReader();
-          reader.onload = () => resolve(reader.result as string);
-          reader.readAsDataURL(file);
+      // Use direct upload approach
+      const fileMetadata = Array.from(files).map(file => ({
+        name: file.name,
+        type: file.type,
+        size: file.size
+      }));
+
+      // 1. Get upload URLs from backend
+      setCurrentUploadStatus(uploadStatusMessages[1]);
+      setUploadProgress(20);
+      
+      const uploadResponse = await getSubmissionUploadUrls.mutateAsync({
+        assignmentId,
+        classId,
+        submissionId: studentSubmission.id,
+        files: fileMetadata
+      });
+
+      // Debug the response structure
+      console.log('Upload response:', uploadResponse);
+      console.log('Upload files array:', uploadResponse.uploadFiles);
+
+      // 2. Upload files through backend proxy (not direct to GCS)
+      setCurrentUploadStatus(uploadStatusMessages[2]);
+      setUploadProgress(30);
+      
+      const uploadPromises = Array.from(files).map(async (file, index) => {
+        const uploadFile = uploadResponse.uploadFiles[index];
+        
+        if (!uploadFile) {
+          throw new Error(`No upload data for file ${file.name} at index ${index}`);
+        }
+        
+        // Backend returns 'id' not 'fileId'
+        console.log('Upload file object:', uploadFile);
+        
+        const { uploadUrl, id } = uploadFile;
+        
+        // Backend uses 'id' as the file identifier
+        const actualFileId = id;
+        
+        if (!actualFileId || !uploadUrl) {
+          throw new Error(`Missing fileId or uploadUrl for file ${file.name}: fileId=${actualFileId}, uploadUrl=${uploadUrl}, available props: ${Object.keys(uploadFile)}`);
+        }
+        
+        // Update status for current file
+        setCurrentUploadStatus(`Uploading ${file.name}...`);
+        
+        // Fix upload URL to use correct API base URL from environment
+        const fixedUploadUrl = fixUploadUrl(uploadUrl);
+        
+        // Upload to backend proxy endpoint (resolves CORS issues)
+        const response = await fetch(fixedUploadUrl, {
+          method: 'POST', // Backend proxy uses POST
+          body: file,
+          headers: { 'Content-Type': file.type }
         });
+
+        if (!response.ok) {
+          throw new Error(`Upload failed for ${file.name}`);
+        }
+
+        // 3. Confirm upload to backend
+        setCurrentUploadStatus(`Confirming upload for ${file.name}...`);
+        await confirmSubmissionUpload.mutateAsync({
+          fileId: actualFileId,
+          uploadSuccess: true,
+          classId: classId
+        });
+        
+        // Update progress
+        setUploadedFiles(prev => prev + 1);
+        const fileProgress = 30 + ((index + 1) / files.length) * 50; // 30-80% for file uploads
+        setUploadProgress(fileProgress);
         
         return {
           name: file.name,
           type: file.type,
           size: file.size,
-          data: base64.split(',')[1], // Remove data:type;base64, prefix
+          fileId: actualFileId
         };
       });
+      // @todo: fix the `uploadStatusMessages` to remove redundant messages / steps      
+      setCurrentUploadStatus(uploadStatusMessages[6]);
+      setUploadProgress(100);
 
-      const newFiles = await Promise.all(filePromises);
-      
-      // Update student submission
-      updateStudentSubmissionMutation.mutate({
-        assignmentId,
-        classId,
-        submissionId: studentSubmission.id,
-        newAttachments: newFiles,
-      });
+      // Refresh submission data to show new files
+      refetchStudentSubmission();
 
       // Clear the input
       event.target.value = '';
-    } catch {
-      toast.error("There was a problem uploading your files. Please try again.");
+      
+      // Show success and reset after a delay
+      setTimeout(() => {
+        setIsUploading(false);
+        setUploadProgress(0);
+        setCurrentUploadStatus('');
+        setUploadedFiles(0);
+        setTotalFiles(0);
+      }, 1000);
+      
+    } catch (error) {
+      toast.error(`Failed to upload files: ${error instanceof Error ? error.message : 'Unknown error'}`);
+      setIsUploading(false);
+      setUploadProgress(0);
+      setCurrentUploadStatus('');
+      setUploadedFiles(0);
+      setTotalFiles(0);
     }
   };
 
@@ -385,7 +505,7 @@ export default function AssignmentDetailPage() {
               )}
             </div>
           </div>
-          
+          {appState.user.teacher && (
           <Button 
             onClick={() => router.push(`/class/${classId}/assignment/${assignmentId}/edit`)}
             className="flex items-center space-x-2"
@@ -393,6 +513,7 @@ export default function AssignmentDetailPage() {
             <Edit className="h-4 w-4" />
             <span>Edit</span>
           </Button>
+          )}
         </div>
 
         {/* Main Content */}
@@ -483,15 +604,32 @@ export default function AssignmentDetailPage() {
                   
                   {!studentSubmission.submitted && (
                     <div className="space-y-3">
+                      {/* Upload Progress */}
+                      {isUploading && (
+                        <div className="space-y-2 p-4 bg-muted rounded-lg">
+                          <div className="flex justify-between text-sm">
+                            <span className="font-medium">{currentUploadStatus}</span>
+                            <span>{Math.round(uploadProgress)}%</span>
+                          </div>
+                          <Progress value={uploadProgress} className="h-2" />
+                          {totalFiles > 0 && (
+                            <p className="text-xs text-muted-foreground text-center">
+                              {uploadedFiles} of {totalFiles} files uploaded
+                            </p>
+                          )}
+                        </div>
+                      )}
+                      <div>
                       <Label htmlFor="student-file-upload" className="cursor-pointer">
                         <div className="flex items-center justify-center w-full p-4 border-2 border-dashed border-muted-foreground/25 rounded-lg hover:border-muted-foreground/50 transition-colors">
                           <div className="text-center">
                             <Upload className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
-                            <p className="text-sm font-medium">Upload files</p>
+                            <p className="text-sm font-medium">{isUploading ? 'Uploading...' : 'Upload files'}</p>
                             <p className="text-xs text-muted-foreground">Click to select files or drag and drop</p>
                           </div>
                         </div>
                       </Label>
+                      </div>
                       <Input
                         id="student-file-upload"
                         type="file"
@@ -499,6 +637,7 @@ export default function AssignmentDetailPage() {
                         onChange={handleStudentFileUpload}
                         className="hidden"
                         accept="*/*"
+                        disabled={isUploading}
                       />
                     </div>
                   )}
@@ -543,15 +682,15 @@ export default function AssignmentDetailPage() {
                             try {
                               const parsedBoundary = parseGradingBoundary(assignment.gradingBoundary.structured);
                               if (parsedBoundary?.boundaries) {
-                                const percentage = ((studentSubmission.gradeReceived ?? 0) / assignment.maxGrade) * 100;
+                                const percentage = ((studentSubmission.gradeReceived ?? 0) / (assignment.maxGrade ?? 1)) * 100;
                                 const letterGrade = parsedBoundary.boundaries.find(b => 
                                   percentage >= b.minPercentage && percentage <= b.maxPercentage
                                 )?.grade || 'F';
                                 return `${percentage.toFixed(1)}% (${letterGrade})`;
                               }
-                              return `${(((studentSubmission.gradeReceived ?? 0) / assignment.maxGrade) * 100).toFixed(1)}%`;
+                              return `${(((studentSubmission.gradeReceived ?? 0) / (assignment.maxGrade ?? 1)) * 100).toFixed(1)}%`;
                             } catch {
-                              return `${(((studentSubmission.gradeReceived ?? 0) / assignment.maxGrade) * 100).toFixed(1)}%`;
+                              return `${(((studentSubmission.gradeReceived ?? 0) / (assignment.maxGrade ?? 1)) * 100).toFixed(1)}%`;
                             }
                           })()}
                         </div>

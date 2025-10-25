@@ -419,18 +419,9 @@ export default function FolderPage() {
   };
 
   const handleUploadFiles = (files: RouterInputs['folder']['uploadFiles']['files']) => {
-    const apiFiles = files.map(file => ({
-      name: file.name,
-      type: file.type,
-      size: file.size,
-      data: file.data || ''
-    }));
-    
-    uploadFilesMutation.mutate({
-      classId,
-      folderId: folderId,
-      files: apiFiles
-    });
+    // Files are already uploaded via direct upload in the modal
+    // Just refresh the file list to show the new files
+    refetch();
   };
 
   const selectedCount = selectedItems.length;
@@ -478,6 +469,8 @@ export default function FolderPage() {
               </Button>
               <UploadFileModal 
                 currentFolder={folderId}
+                classId={classId}
+                folderId={folderId}
                 onFilesUploaded={handleUploadFiles}
               >
                 <Button size="sm" disabled={uploadFilesMutation.isPending}>
@@ -701,6 +694,8 @@ export default function FolderPage() {
               <div className="flex justify-center space-x-3">
                 <UploadFileModal 
                   currentFolder={folderId}
+                  classId={classId}
+                  folderId={folderId}
                   onFilesUploaded={handleUploadFiles}
                 >
                   <Button disabled={uploadFilesMutation.isPending}>

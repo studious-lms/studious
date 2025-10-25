@@ -11,6 +11,8 @@ import { toast } from "sonner";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { Upload as UploadIcon, X as XIcon, File as FileIcon, Image as ImageIcon, FileVideo, FileText } from "lucide-react";
+import { trpc } from "@/lib/trpc";
+import { fixUploadUrl } from "@/lib/directUpload";
 
 
 interface ApiFile {
@@ -18,13 +20,15 @@ interface ApiFile {
   name: string;
   type: string;
   size: number;
-  data: string;
+  fileId?: string;
 }
 
 interface UploadFileModalProps {
   children?: React.ReactNode;
   onFilesUploaded?: (files: ApiFile[]) => void;
   currentFolder?: string;
+  classId?: string;
+  folderId?: string;
 }
 
 interface FileUpload {
@@ -37,24 +41,18 @@ interface FileUpload {
   status: 'pending' | 'uploading' | 'completed' | 'error';
 }
 
-async function fileToBase64(file: File): Promise<string> {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => {
-      const base64 = reader.result as string;
-      resolve(base64.split(',')[1]);
-    };
-    reader.onerror = (error) => reject(error);
-  });
-}
 
-export function UploadFileModal({ children, onFilesUploaded, currentFolder = "/" }: UploadFileModalProps) {
+export function UploadFileModal({ children, onFilesUploaded, currentFolder = "/", classId, folderId }: UploadFileModalProps) {
   const [open, setOpen] = useState(false);
   const [files, setFiles] = useState<FileUpload[]>([]);
   const [uploading, setUploading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const appState = useSelector((state: RootState) => state.app);
+  
+  // Overall upload progress state
+  const [uploadProgress, setUploadProgress] = useState(0);
+  const [currentUploadStatus, setCurrentUploadStatus] = useState('');
+  const [uploadedFilesCount, setUploadedFilesCount] = useState(0);
 
 
   const categories = [
@@ -115,38 +113,11 @@ export function UploadFileModal({ children, onFilesUploaded, currentFolder = "/"
     setFiles(prev => prev.filter(file => file.id !== id));
   };
 
-  const simulateUpload = (file: FileUpload): Promise<void> => {
-    return new Promise((resolve, reject) => {
-      updateFile(file.id, { status: 'uploading', progress: 0 });
 
-      const interval = setInterval(() => {
-        setFiles(prev => prev.map(f => {
-          if (f.id === file.id) {
-            const newProgress = f.progress + Math.random() * 30;
-
-            if (newProgress >= 100) {
-              clearInterval(interval);
-              updateFile(file.id, { status: 'completed', progress: 100 });
-              resolve();
-              return { ...f, progress: 100 };
-            }
-
-            return { ...f, progress: newProgress };
-          }
-          return f;
-        }));
-      }, 200);
-
-      // Simulate occasional failures
-      if (Math.random() < 0.1) {
-        setTimeout(() => {
-          clearInterval(interval);
-          updateFile(file.id, { status: 'error' });
-          reject(new Error('Upload failed'));
-        }, 1000);
-      }
-    });
-  };
+  // Direct upload functions using proper TRPC hooks
+  // Using type assertion until backend types are regenerated
+  const getUploadUrls = (trpc.folder as any).getFolderUploadUrls.useMutation();
+  const confirmUpload = (trpc.folder as any).confirmFolderUpload.useMutation();
 
   const handleUpload = async () => {
     if (files.length === 0) {
@@ -154,43 +125,127 @@ export function UploadFileModal({ children, onFilesUploaded, currentFolder = "/"
       return;
     }
 
+    // Validate required parameters
+    if (!classId) {
+      toast.error("Class ID is missing");
+      return;
+    }
+
+    if (!folderId) {
+      toast.error("Folder ID is missing. Please wait for the folder to load.");
+      return;
+    }
+
     setUploading(true);
+    setUploadProgress(0);
+    setCurrentUploadStatus('Preparing upload...');
+    setUploadedFilesCount(0);
 
     try {
-      await Promise.all(files.map(file => simulateUpload(file)));
+      // Get upload URLs from backend (returns direct array)
+      setCurrentUploadStatus('Getting upload URLs...');
+      setUploadProgress(10);
 
-      // get base64
+      const uploadFilesResponse = await getUploadUrls.mutateAsync({
+        classId,
+        folderId,
+        files: files.map(f => ({
+          name: f.file.name,
+          type: f.file.type,
+          size: f.file.size
+        }))
+      });
 
-      const uploadedFiles = await Promise.all(files.map(async file => {
+      setUploadProgress(20);
 
-        const base64Data = await fileToBase64(file.file);
+      // Upload each file to its uploadUrl
+      for (let i = 0; i < files.length; i++) {
+        const fileData = files[i];
+        const uploadFile = uploadFilesResponse[i];  // Direct array access
 
-        return {
-        id: file.id,
-        name: file.name,
-        description: file.description,
-        category: file.category,
-        size: file.file.size,
-        type: file.file.type,
-        uploadedAt: new Date().toISOString(),
-        folder: currentFolder,
-        data: base64Data,
-        // Prisma-aligned fields
-        path: `${currentFolder}/${file.name}`,
-        userId: appState.user.id
+        try {
+          // Update overall status
+          setCurrentUploadStatus(`Uploading ${fileData.name}...`);
+          const overallProgress = 20 + ((i / files.length) * 60); // 20-80% for uploads
+          setUploadProgress(overallProgress);
+
+          // Update UI status
+          updateFile(fileData.id, { status: 'uploading', progress: 0 });
+
+          // Fix upload URL to use correct API base URL from environment
+          const uploadUrl = fixUploadUrl(uploadFile.uploadUrl);
+
+          // Upload to backend proxy endpoint (resolves CORS issues)
+          const response = await fetch(uploadUrl, {
+            method: 'POST', // Backend proxy uses POST
+            body: fileData.file,
+            headers: {
+              'Content-Type': fileData.file.type,
+            },
+          });
+
+          if (!response.ok) {
+            throw new Error(`Upload failed: ${response.statusText}`);
+          }
+
+          // Confirm upload to backend
+          setCurrentUploadStatus(`Confirming ${fileData.name}...`);
+          await confirmUpload.mutateAsync({
+            classId,
+            fileId: uploadFile.id,
+            uploadSuccess: true
+          });
+
+          // Update UI status
+          updateFile(fileData.id, { status: 'completed', progress: 100 });
+          setUploadedFilesCount(i + 1);
+        } catch (error) {
+          // Report error to backend
+          await confirmUpload.mutateAsync({
+            classId,
+            fileId: uploadFile.id,
+            uploadSuccess: false
+          });
+
+          // Update UI status
+          updateFile(fileData.id, { status: 'error', progress: 0 });
+          toast.error(`Failed to upload ${fileData.name}`);
         }
-      }));
+      }
 
-      onFilesUploaded?.(uploadedFiles);
+      // Final steps
+      setCurrentUploadStatus('Finalizing...');
+      setUploadProgress(90);
 
-      toast.success(`Successfully uploaded ${files.length} file(s).`);
+      // Callback with uploaded files
+      if (onFilesUploaded) {
+        onFilesUploaded(uploadFilesResponse.map(file => ({
+          id: file.id,
+          name: file.name,
+          type: file.type,
+          size: file.size,
+          fileId: file.id
+        })));
+      }
 
-      setFiles([]);
+      setUploadProgress(100);
+      setCurrentUploadStatus('Upload complete!');
+      toast.success("Files uploaded successfully");
+      
+      // Reset after delay
+      setTimeout(() => {
       setOpen(false);
+        setFiles([]);
+        setUploading(false);
+        setUploadProgress(0);
+        setCurrentUploadStatus('');
+        setUploadedFilesCount(0);
+      }, 1000);
     } catch (error) {
-      toast.error("Upload Failed");
-    } finally {
+      toast.error(`Upload failed: ${error instanceof Error ? error.message : 'Unknown error'}`);
       setUploading(false);
+      setUploadProgress(0);
+      setCurrentUploadStatus('');
     }
   };
 
@@ -210,6 +265,22 @@ export function UploadFileModal({ children, onFilesUploaded, currentFolder = "/"
         </DialogHeader>
 
         <div className="space-y-4">
+          {/* Overall Upload Progress */}
+          {uploading && (
+            <div className="space-y-2 p-4 bg-muted rounded-lg">
+              <div className="flex justify-between text-sm">
+                <span className="font-medium">{currentUploadStatus}</span>
+                <span>{Math.round(uploadProgress)}%</span>
+              </div>
+              <Progress value={uploadProgress} className="h-2" />
+              {files.length > 0 && (
+                <p className="text-xs text-muted-foreground text-center">
+                  {uploadedFilesCount} of {files.length} files uploaded
+                </p>
+              )}
+            </div>
+          )}
+
           {/* File Selection */}
           <div
             className="border-2 border-dashed border-muted-foreground/25 rounded-lg p-8 text-center cursor-pointer hover:border-muted-foreground/50 transition-colors"
@@ -227,6 +298,7 @@ export function UploadFileModal({ children, onFilesUploaded, currentFolder = "/"
               className="hidden"
               onChange={handleFileSelect}
               accept="*/*"
+              disabled={uploading}
             />
           </div>
 

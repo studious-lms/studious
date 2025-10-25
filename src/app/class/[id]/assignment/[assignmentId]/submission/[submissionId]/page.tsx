@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { PageLayout } from "@/components/ui/page-layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Textarea } from "@/components/ui/textarea";
@@ -18,6 +19,7 @@ import {
 } from "lucide-react";
 import { format } from "date-fns";
 import { trpc, type RouterOutputs, type RouterInputs } from "@/lib/trpc";
+import { fixUploadUrl } from "@/lib/directUpload";
 import type { 
   RubricGrade,
 } from "@/lib/types/assignment";
@@ -45,8 +47,6 @@ import { RootState } from "@/store/store";
 import { useSelector } from "react-redux";
 import { baseFileHandler } from "@/lib/fileHandler";
 
-type Submission = RouterOutputs['assignment']['getSubmissionById'];
-type Assignment = RouterOutputs['assignment']['get'];
 type AssignmentUpdateSubmissionAsTeacherInput = RouterInputs['assignment']['updateSubmissionAsTeacher'];
 
 type RubricCriterion = {
@@ -108,6 +108,10 @@ export default function SubmissionDetailPage() {
 
   // File upload state for annotations
   const [isUploading, setIsUploading] = useState(false);
+  const [uploadProgress, setUploadProgress] = useState(0);
+  const [currentUploadStatus, setCurrentUploadStatus] = useState('');
+  const [uploadedFiles, setUploadedFiles] = useState(0);
+  const [totalFiles, setTotalFiles] = useState(0);
 
   // File preview state
   const [previewFile, setPreviewFile] = useState<FileItem | null>(null);
@@ -137,19 +141,6 @@ export default function SubmissionDetailPage() {
     },
     onError: (error) => {
       toast.error(error.message || "There was a problem saving the grade. Please try again.");
-    },
-  });
-
-  // File upload mutation for annotations
-  const uploadAnnotationMutation = trpc.assignment.updateSubmissionAsTeacher.useMutation({
-    onSuccess: () => {
-      toast.success("Files uploaded");
-      refetchSubmission();
-      setIsUploading(false);
-    },
-    onError: (error) => {
-      toast.error(error.message || "There was a problem uploading the files. Please try again.");
-      setIsUploading(false);
     },
   });
 
@@ -353,7 +344,7 @@ export default function SubmissionDetailPage() {
     onDelete: async (item: FileItem) => {
       if (isTeacher) {
         // Handle annotation deletion for teachers
-        uploadAnnotationMutation.mutate({
+        updateSubmissionMutation.mutate({
           assignmentId,
           classId,
           submissionId,
@@ -380,45 +371,104 @@ export default function SubmissionDetailPage() {
     setIsPreviewOpen(true);
   };
 
-  // Handle annotation file upload
+  // Direct upload functions using proper TRPC hooks for annotations (teacher uploads)
+  const getAnnotationUploadUrls = trpc.assignment.getAnnotationUploadUrls.useMutation();
+  const confirmAnnotationUpload = trpc.assignment.confirmAnnotationUpload.useMutation();
+
+  // Handle annotation file upload (teacher uploads feedback files to student submission)
   const handleAnnotationUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;
     if (!files || !submission) return;
 
+    // Start upload progress tracking
     setIsUploading(true);
+    setUploadProgress(0);
+    setCurrentUploadStatus('Preparing annotation upload...');
+    setTotalFiles(files.length);
+    setUploadedFiles(0);
 
     try {
-      // Convert files to base64
-      const filePromises = Array.from(files).map(async (file) => {
-        const base64 = await new Promise<string>((resolve) => {
-          const reader = new FileReader();
-          reader.onload = () => resolve(reader.result as string);
-          reader.readAsDataURL(file);
-        });
-        
-        return {
-          name: file.name,
-          type: file.type,
-          size: file.size,
-          data: base64.split(',')[1], // Remove data:type;base64, prefix
-        };
+      // Use NEW direct upload approach for annotations
+      const fileMetadata = Array.from(files).map(file => ({
+        name: file.name,
+        type: file.type,
+        size: file.size
+      }));
+
+      // 1. Get upload URLs from backend using ANNOTATION endpoint
+      setCurrentUploadStatus('Getting upload URLs...');
+      setUploadProgress(10);
+
+      const uploadResponse = await getAnnotationUploadUrls.mutateAsync({
+        submissionId,
+        classId,
+        files: fileMetadata
       });
 
-      const newFiles = await Promise.all(filePromises);
-      
-      // Upload as annotations
-      uploadAnnotationMutation.mutate({
-        assignmentId,
-        classId,
-        submissionId,
-        newAttachments: newFiles,
+      setUploadProgress(20);
+
+      // 2. Upload files through backend proxy
+      const uploadPromises = Array.from(files).map(async (file, index) => {
+        const uploadFile = uploadResponse.uploadFiles[index];
+        
+        // Update status for current file
+        setCurrentUploadStatus(`Uploading annotation ${file.name}...`);
+        const fileProgress = 20 + ((index / files.length) * 60); // 20-80% for uploads
+        setUploadProgress(fileProgress);
+
+        // Fix upload URL to use correct API base URL from environment
+        const fixedUploadUrl = fixUploadUrl(uploadFile.uploadUrl);
+        
+        // Upload to backend proxy endpoint (resolves CORS issues)
+        const response = await fetch(fixedUploadUrl, {
+          method: 'POST', // Backend proxy uses POST
+          body: file,
+          headers: { 'Content-Type': file.type }
+        });
+
+        if (!response.ok) {
+          throw new Error(`Upload failed for ${file.name}`);
+        }
+
+        // 3. Confirm upload to backend
+        setCurrentUploadStatus(`Confirming ${file.name}...`);
+        await confirmAnnotationUpload.mutateAsync({
+          classId,
+          fileId: uploadFile.id,
+          uploadSuccess: true
+        });
+
+        // Update progress
+        setUploadedFiles(index + 1);
+        
+        return uploadFile.id;
       });
+
+      await Promise.all(uploadPromises);
+      
+      setUploadProgress(100);
+      setCurrentUploadStatus('Upload complete!');
+      toast.success('Annotations uploaded successfully');
+
+      // Refresh submission to show new annotations
+      refetchSubmission();
 
       // Clear the input
       event.target.value = '';
-    } catch {
-      toast.error("There was a problem processing the files. Please try again.");
+
+      // Reset progress after delay
+      setTimeout(() => {
+        setIsUploading(false);
+        setUploadProgress(0);
+        setCurrentUploadStatus('');
+        setUploadedFiles(0);
+        setTotalFiles(0);
+      }, 1000);
+    } catch (error) {
+      toast.error(`Failed to upload files: ${error instanceof Error ? error.message : 'Unknown error'}`);
       setIsUploading(false);
+      setUploadProgress(0);
+      setCurrentUploadStatus('');
     }
   };
 
@@ -678,7 +728,7 @@ export default function SubmissionDetailPage() {
                           value={grade || ""}
                           onChange={(e) => !submission.returned && setGrade(e.target.value ? parseInt(e.target.value) : undefined)}
                           placeholder={submission.returned ? "Grade (read-only)" : "Enter grade"}
-                          max={submission.assignment.maxGrade}
+                          max={submission.assignment.maxGrade ?? undefined}
                           min="0"
                           readOnly={submission.returned || false}
                           className={submission.returned ? "bg-muted cursor-not-allowed" : ""}
@@ -845,7 +895,23 @@ export default function SubmissionDetailPage() {
                 )}
 
                 {isTeacher && (
-                  <div className="space-y-2">
+                  <div className="space-y-4">
+                    {/* Upload Progress */}
+                    {isUploading && (
+                      <div className="space-y-2 p-4 bg-muted rounded-lg">
+                        <div className="flex justify-between text-sm">
+                          <span className="font-medium">{currentUploadStatus}</span>
+                          <span>{Math.round(uploadProgress)}%</span>
+                        </div>
+                        <Progress value={uploadProgress} className="h-2" />
+                        {totalFiles > 0 && (
+                          <p className="text-xs text-muted-foreground text-center">
+                            {uploadedFiles} of {totalFiles} annotations uploaded
+                          </p>
+                        )}
+                      </div>
+                    )}
+
                     <Label htmlFor="annotation-upload" className="cursor-pointer">
                       <div className="flex items-center justify-center w-full p-4 border-2 border-dashed border-muted-foreground/25 rounded-lg hover:border-muted-foreground/50 transition-colors">
                         <div className="text-center">

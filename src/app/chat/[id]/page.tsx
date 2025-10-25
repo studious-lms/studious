@@ -132,7 +132,16 @@ export default function ConversationPage() {
             isLoading={isLoadingMessages}
             hasNextPage={hasMoreMessages}
             onLoadMore={loadMoreMessages}
-            conversationMembers={selectedConversation.members}
+            conversationMembers={selectedConversation.members.map(m => ({
+              ...m,
+              user: {
+                ...m.user,
+                profile: m.user.profile ? {
+                  displayName: m.user.profile.displayName ?? undefined,
+                  profilePicture: m.user.profile.profilePicture ?? undefined
+                } : undefined
+              }
+            }))}
             onUpdateMessage={updateMessage}
             onDeleteMessage={deleteMessage}
             isUpdatingMessage={isUpdatingMessage}
@@ -144,7 +153,16 @@ export default function ConversationPage() {
             <MessageInput
               onSend={sendMessage}
               placeholder={`Message ${getConversationDisplayName()}`}
-              conversationMembers={selectedConversation.members}
+              conversationMembers={selectedConversation.members.map(m => ({
+                ...m,
+                user: {
+                  ...m.user,
+                  profile: m.user.profile ? {
+                    displayName: m.user.profile.displayName ?? undefined,
+                    profilePicture: m.user.profile.profilePicture ?? undefined
+                  } : undefined
+                }
+              }))}
               currentUserId={user.id}
             />
           </div>
