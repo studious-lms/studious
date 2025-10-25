@@ -247,18 +247,18 @@ export default function Home() {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-20 px-6 bg-secondary/30">
+      <section id="pricing" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-secondary/30">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <div className="text-center mb-10 sm:mb-12 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-3 sm:mb-4 px-4">
               Choose the right plan for your institution
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-lg sm:text-xl text-muted-foreground px-4">
               Simple, transparent pricing with no hidden fees. All plans include core features with scalable options.
             </p>
               </div>
           
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto px-4 sm:px-0">
             {/* Starter Plan */}
             <Card className="border-2 border-border hover:border-primary/50 transition-all flex flex-col h-full">
               <CardHeader className="space-y-4">
@@ -309,9 +309,9 @@ export default function Home() {
             </Card>
 
             {/* School Plan - Featured */}
-            <Card className="border-2 border-primary shadow-2xl relative scale-105 flex flex-col h-full">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                <Badge className="bg-primary text-primary-foreground px-4 py-1.5">
+            <Card className="border-2 border-primary shadow-2xl relative md:scale-105 flex flex-col h-full">
+              <div className="absolute -top-3 sm:-top-4 left-1/2 -translate-x-1/2">
+                <Badge className="bg-primary text-primary-foreground px-3 sm:px-4 py-1 sm:py-1.5 text-xs sm:text-sm">
                   Most Popular
                 </Badge>
               </div>
@@ -403,27 +403,27 @@ export default function Home() {
             </Card>
           </div>
 
-          <p className="text-center text-muted-foreground mt-12 text-lg">
+          <p className="text-center text-muted-foreground mt-8 sm:mt-10 md:mt-12 text-base sm:text-lg px-4">
             🎉 Early adopters receive <span className="font-semibold text-foreground">3 months free</span> on annual plans + dedicated onboarding support
           </p>
               </div>
       </section>
 
       {/* Team Section */}
-      <section id="team" className="py-20 px-6 bg-background">
+      <section id="team" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-background">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <div className="text-center mb-10 sm:mb-12 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 sm:mb-6 px-4">
               Our Team
               </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
               A globally distributed team of developers, designers, and educators — connecting Switzerland, Singapore, and China to build the future of education.
               </p>
             </div>
           
           {/* World Map Visualization */}
-          <div className="relative bg-secondary/30 rounded-2xl p-12 border border-border">
-            <div className="flex items-center justify-center gap-16 flex-wrap">
+          <div className="relative bg-secondary/30 rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-12 border border-border">
+            <div className="flex items-center justify-center gap-8 sm:gap-12 md:gap-16 flex-wrap">
               <div className="text-center space-y-2">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
                   <Globe className="h-8 w-8 text-primary" />
@@ -451,17 +451,17 @@ export default function Home() {
       </section>
 
       {/* School Development Program */}
-      <section className="py-20 px-6 bg-gradient-to-br from-primary/5 via-background to-primary/5 border-y border-primary/10">
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-br from-primary/5 via-background to-primary/5 border-y border-primary/10">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <Badge variant="outline" className="border-primary/30 text-primary">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
+            <div className="space-y-4 sm:space-y-6">
+              <Badge variant="outline" className="border-primary/30 text-primary text-sm sm:text-base">
                 Social Impact
               </Badge>
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
                 Studious School Development Program
               </h2>
-              <p className="text-xl text-muted-foreground leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
                 We believe every student deserves access to modern learning tools, regardless of their school's economic situation.
               </p>
               <div className="space-y-4">
@@ -487,15 +487,15 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="pt-4 flex gap-3">
-                <Link href="/program/apply">
-                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+              <div className="pt-4 flex flex-col sm:flex-row gap-3 sm:gap-3">
+                <Link href="/program/apply" className="w-full sm:w-auto">
+                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground w-full sm:w-auto">
                     Apply Now
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                    <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5" />
                   </Button>
                 </Link>
-                <Link href="/program">
-                  <Button size="lg" variant="outline" className="border-border hover:bg-secondary">
+                <Link href="/program" className="w-full sm:w-auto">
+                  <Button size="lg" variant="outline" className="border-border hover:bg-secondary w-full sm:w-auto">
                     Learn More
                   </Button>
                 </Link>
@@ -550,18 +550,18 @@ export default function Home() {
       </section>
 
       {/* Future Developments Section */}
-      <section className="py-20 px-6 bg-secondary/30">
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-secondary/30">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <div className="text-center mb-10 sm:mb-12 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 sm:mb-6 px-4">
               Future Developments
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-lg sm:text-xl text-muted-foreground px-4">
               Our roadmap for transforming education
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             <Card className="border border-border">
               <CardHeader>
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
@@ -608,25 +608,25 @@ export default function Home() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-24 px-6 bg-background">
+      <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-background">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6 leading-tight px-4">
             Ready to redefine how your school learns and teaches?
             </h2>
-          <p className="text-xl text-muted-foreground mb-12">
+          <p className="text-lg sm:text-xl text-muted-foreground mb-8 sm:mb-10 md:mb-12 px-4">
             Join the future of education with Studious LMS
             </p>
             
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
             <Button 
               size="lg" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 h-14 text-base font-medium"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 sm:px-8 md:px-10 h-12 sm:h-14 text-sm sm:text-base font-medium w-full sm:w-auto"
               onClick={() => setShowEarlyAccess(true)}
             >
               Request Access
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5" />
             </Button>
-            <Button size="lg" variant="outline" className="border-border hover:bg-secondary px-10 h-14 text-base font-medium">
+            <Button size="lg" variant="outline" className="border-border hover:bg-secondary px-6 sm:px-8 md:px-10 h-12 sm:h-14 text-sm sm:text-base font-medium w-full sm:w-auto">
               Partner with Us
             </Button>
           </div>
@@ -638,13 +638,13 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-16 px-6 bg-secondary border-t border-border">
+      <footer className="py-12 sm:py-14 md:py-16 px-4 sm:px-6 bg-secondary border-t border-border">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-10 sm:mb-12">
             <div className="space-y-4">
               <div className="flex items-center gap-2">
                 <img src="/logo.png" alt="Studious" className="w-7 h-7" />
-                <span className="text-xl font-semibold text-foreground">Studious</span>
+                <span className="text-lg sm:text-xl font-semibold text-foreground">Studious</span>
             </div>
               <p className="text-sm text-muted-foreground">
                 Modern learning management for the next generation of education.

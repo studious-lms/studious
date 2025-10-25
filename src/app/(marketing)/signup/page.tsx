@@ -64,30 +64,30 @@ export default function Signup() {
   };
 
   return (
-    <PageLayout className="min-h-screen flex items-center justify-center">
-      <div className="w-full max-w-md space-y-8">
+    <PageLayout className="min-h-screen flex items-center justify-center px-4 py-8 sm:px-6">
+      <div className="w-full max-w-md space-y-6 sm:space-y-8">
         {/* Logo and Title */}
-        <div className="text-center space-y-4">
+        <div className="text-center space-y-3 sm:space-y-4">
           <div className="flex justify-center">
-            <img src="/logo.png" alt="Studious Logo" className="h-10 w-10" />
+            <img src="/logo.png" alt="Studious Logo" className="h-9 w-9 sm:h-10 sm:w-10" />
           </div>
           <div className="space-y-2">
-            <h1 className="text-3xl font-bold">Create your account</h1>
-            <p className="text-muted-foreground">Join Studious and start learning</p>
+            <h1 className="text-2xl sm:text-3xl font-bold">Create your account</h1>
+            <p className="text-sm sm:text-base text-muted-foreground">Join Studious and start learning</p>
           </div>
         </div>
 
         {/* Signup Form */}
         <Card>
           <CardHeader>
-            <CardTitle>Sign Up</CardTitle>
+            <CardTitle className="text-lg sm:text-xl">Sign Up</CardTitle>
           </CardHeader>
           <CardContent>
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
               {/* Name Fields */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="firstName">First Name</Label>
+                  <Label htmlFor="firstName" className="text-sm">First Name</Label>
                   <div className="relative">
                     <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                     <Input
@@ -102,7 +102,7 @@ export default function Signup() {
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="lastName">Last Name</Label>
+                  <Label htmlFor="lastName" className="text-sm">Last Name</Label>
                   <Input
                     id="lastName"
                     type="text"
@@ -116,7 +116,7 @@ export default function Signup() {
 
               {/* Email Field */}
               <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email" className="text-sm">Email</Label>
                 <div className="relative">
                   <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                   <Input
@@ -133,7 +133,7 @@ export default function Signup() {
 
               {/* Password Field */}
               <div className="space-y-2">
-                <Label htmlFor="password">Password</Label>
+                <Label htmlFor="password" className="text-sm">Password</Label>
                 <div className="relative">
                   <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                   <Input
@@ -163,7 +163,7 @@ export default function Signup() {
 
               {/* Confirm Password Field */}
               <div className="space-y-2">
-                <Label htmlFor="confirmPassword">Confirm Password</Label>
+                <Label htmlFor="confirmPassword" className="text-sm">Confirm Password</Label>
                 <div className="relative">
                   <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                   <Input
@@ -220,9 +220,9 @@ export default function Signup() {
             </form>
 
             {/* Sign In Link */}
-            <div className="mt-6 text-center text-sm">
+            <div className="mt-4 sm:mt-6 text-center text-sm">
               <span className="text-muted-foreground">Already have an account? </span>
-              <Button variant="link" className="px-0" asChild>
+              <Button variant="link" className="px-0 text-sm" asChild>
                 <a href="/login">Sign in</a>
               </Button>
             </div>

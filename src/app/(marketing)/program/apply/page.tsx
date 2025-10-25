@@ -76,26 +76,26 @@ export default function ApplyPage() {
       <div className="min-h-screen bg-background">
         <Navbar />
         
-        <section className="pt-32 pb-20 px-6">
+        <section className="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6">
           <div className="container mx-auto max-w-2xl text-center">
-            <div className="mb-8">
-              <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-6">
-                <CheckCircle className="h-10 w-10 text-green-600" />
+            <div className="mb-6 sm:mb-8">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                <CheckCircle className="h-8 w-8 sm:h-10 sm:w-10 text-green-600" />
               </div>
-              <h1 className="text-4xl font-bold text-foreground mb-4">
+              <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 sm:mb-4 px-4">
                 Application Submitted!
               </h1>
-              <p className="text-xl text-muted-foreground mb-8">
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 px-4">
                 Thank you for applying to the Studious School Development Program
               </p>
             </div>
 
             <Card className="border border-border shadow-lg">
-              <CardContent className="pt-8 pb-8 space-y-6">
+              <CardContent className="pt-6 sm:pt-8 pb-6 sm:pb-8 space-y-4 sm:space-y-6">
                 <div>
-                  <p className="text-sm text-muted-foreground mb-2">Your Application ID</p>
-                  <div className="bg-secondary/50 rounded-lg p-4">
-                    <p className="text-2xl font-mono font-bold text-primary">{applicationId}</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground mb-2">Your Application ID</p>
+                  <div className="bg-secondary/50 rounded-lg p-3 sm:p-4">
+                    <p className="text-xl sm:text-2xl font-mono font-bold text-primary break-all">{applicationId}</p>
                   </div>
                   <p className="text-xs text-muted-foreground mt-2">
                     Save this ID to check your application status
@@ -120,7 +120,7 @@ export default function ApplyPage() {
                   </ul>
                 </div>
 
-                <div className="flex gap-3 pt-4">
+                <div className="flex flex-col sm:flex-row gap-3 pt-4">
                   <Link href="/program" className="flex-1">
                     <Button variant="outline" className="w-full">
                       Back to Program
@@ -145,35 +145,35 @@ export default function ApplyPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-12 px-6 bg-gradient-to-b from-background via-secondary/30 to-background">
+      <section className="pt-24 sm:pt-28 md:pt-32 pb-8 sm:pb-10 md:pb-12 px-4 sm:px-6 bg-gradient-to-b from-background via-secondary/30 to-background">
         <div className="container mx-auto max-w-5xl">
-          <Link href="/program" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-6">
-            <ArrowLeft className="h-4 w-4" />
+          <Link href="/program" className="inline-flex items-center gap-2 text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors mb-4 sm:mb-6">
+            <ArrowLeft className="h-3 w-3 sm:h-4 sm:w-4" />
             Back to Program Overview
           </Link>
           
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-3 sm:mb-4 px-4">
             Apply to the School Development Program
           </h1>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-base sm:text-lg text-muted-foreground px-4">
             Complete the form below to apply for free access to Studious LMS. We review all applications within 5-7 business days.
           </p>
         </div>
       </section>
 
       {/* Application Form */}
-      <section className="pb-20 px-6">
+      <section className="pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6">
         <div className="container mx-auto max-w-5xl">
           <Card className="border border-border shadow-lg">
-            <CardContent className="pt-8 pb-8">
-              <form onSubmit={handleSubmit} className="space-y-8">
+            <CardContent className="pt-6 sm:pt-8 pb-6 sm:pb-8">
+              <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
                 {/* School Information */}
-                <div className="space-y-4">
-                  <h3 className="text-xl font-semibold text-foreground border-b border-border pb-3">
+                <div className="space-y-3 sm:space-y-4">
+                  <h3 className="text-lg sm:text-xl font-semibold text-foreground border-b border-border pb-2 sm:pb-3">
                     School Information
                   </h3>
                   
-                  <div className="grid md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="school-name">School Name *</Label>
                       <Input 
@@ -268,12 +268,12 @@ export default function ApplyPage() {
                 </div>
 
                 {/* Contact Person */}
-                <div className="space-y-4">
-                  <h3 className="text-xl font-semibold text-foreground border-b border-border pb-3">
+                <div className="space-y-3 sm:space-y-4">
+                  <h3 className="text-lg sm:text-xl font-semibold text-foreground border-b border-border pb-2 sm:pb-3">
                     Contact Information
                   </h3>
                   
-                  <div className="grid md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="contact-name">Full Name *</Label>
                       <Input 
@@ -323,17 +323,17 @@ export default function ApplyPage() {
                 </div>
 
                 {/* Eligibility Information */}
-                <div className="space-y-4">
-                  <h3 className="text-xl font-semibold text-foreground border-b border-border pb-3">
+                <div className="space-y-3 sm:space-y-4">
+                  <h3 className="text-lg sm:text-xl font-semibold text-foreground border-b border-border pb-2 sm:pb-3">
                     Eligibility Information
                   </h3>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="qualification">Why does your school qualify for this program? *</Label>
+                    <Label htmlFor="qualification" className="text-sm sm:text-base">Why does your school qualify for this program? *</Label>
                     <Textarea 
                       id="qualification" 
                       placeholder="Please describe your school's situation (e.g., Title I status, non-profit status, economic challenges, location in underserved area, etc.)"
-                      className="min-h-[140px]"
+                      className="min-h-[120px] sm:min-h-[140px] text-sm sm:text-base"
                       value={formData.qualification}
                       onChange={(e) => updateField('qualification', e.target.value)}
                       required 
@@ -344,11 +344,11 @@ export default function ApplyPage() {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="how-help">How would Studious help your school and students? *</Label>
+                    <Label htmlFor="how-help" className="text-sm sm:text-base">How would Studious help your school and students? *</Label>
                     <Textarea 
                       id="how-help" 
                       placeholder="Tell us about your current challenges and how you plan to use Studious to improve education at your school"
-                      className="min-h-[140px]"
+                      className="min-h-[120px] sm:min-h-[140px] text-sm sm:text-base"
                       value={formData.howHelp}
                       onChange={(e) => updateField('howHelp', e.target.value)}
                       required 
@@ -368,17 +368,17 @@ export default function ApplyPage() {
                 </div>
 
                 {/* Additional Information */}
-                <div className="space-y-4">
-                  <h3 className="text-xl font-semibold text-foreground border-b border-border pb-3">
+                <div className="space-y-3 sm:space-y-4">
+                  <h3 className="text-lg sm:text-xl font-semibold text-foreground border-b border-border pb-2 sm:pb-3">
                     Additional Information
                   </h3>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="additional">Anything else we should know?</Label>
+                    <Label htmlFor="additional" className="text-sm sm:text-base">Anything else we should know?</Label>
                     <Textarea 
                       id="additional" 
                       placeholder="Share any additional context about your school, students, or application"
-                      className="min-h-[100px]"
+                      className="min-h-[80px] sm:min-h-[100px] text-sm sm:text-base"
                       value={formData.additional}
                       onChange={(e) => updateField('additional', e.target.value)}
                     />
@@ -390,13 +390,13 @@ export default function ApplyPage() {
                   <Button 
                     type="submit" 
                     size="lg" 
-                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground h-12 sm:h-auto"
                     disabled={createApplication.isPending}
                   >
                     {createApplication.isPending ? "Submitting..." : "Submit Application"}
                     <Send className="ml-2 h-4 w-4" />
                   </Button>
-                  <p className="text-sm text-muted-foreground mt-4 text-center">
+                  <p className="text-xs sm:text-sm text-muted-foreground mt-3 sm:mt-4 text-center px-2">
                     By submitting this form, you agree to our application review process. We'll respond within 5-7 business days.
                   </p>
                 </div>
@@ -405,11 +405,11 @@ export default function ApplyPage() {
           </Card>
 
           {/* Help Section */}
-          <div className="mt-12 text-center">
-            <p className="text-muted-foreground mb-4">
+          <div className="mt-8 sm:mt-10 md:mt-12 text-center px-4">
+            <p className="text-sm sm:text-base text-muted-foreground mb-3 sm:mb-4">
               Need help with your application?
             </p>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-xs sm:text-sm text-muted-foreground">
               Email us at <a href="mailto:impact@studious.sh" className="text-primary hover:underline font-medium">impact@studious.sh</a>
             </p>
           </div>
@@ -417,9 +417,9 @@ export default function ApplyPage() {
       </section>
 
       {/* Footer */}
-      <footer className="py-16 px-6 bg-secondary border-t border-border">
+      <footer className="py-12 sm:py-14 md:py-16 px-4 sm:px-6 bg-secondary border-t border-border">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-10 sm:mb-12">
             <div className="space-y-4">
               <div className="flex items-center gap-2">
                 <img src="/logo.png" alt="Studious" className="w-7 h-7" />

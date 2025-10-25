@@ -32,24 +32,24 @@ export default function PricingPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-6 bg-gradient-to-b from-background via-secondary/30 to-background">
+      <section className="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-14 md:pb-16 px-4 sm:px-6 bg-gradient-to-b from-background via-secondary/30 to-background">
         <div className="container mx-auto max-w-4xl text-center">
-          <Badge variant="outline" className="mb-6 px-4 py-1.5 border-primary/20 text-primary">
+          <Badge variant="outline" className="mb-4 sm:mb-6 px-3 sm:px-4 py-1 sm:py-1.5 border-primary/20 text-primary text-sm">
             Transparent Pricing
           </Badge>
-          <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6 tracking-tight px-4">
             Choose the right plan for your institution
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
             Simple, transparent pricing with no hidden fees. All plans include core features with scalable options.
           </p>
         </div>
       </section>
 
       {/* Pricing Cards */}
-      <section className="py-12 px-6">
+      <section className="py-8 sm:py-10 md:py-12 px-4 sm:px-6">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
             {/* Starter Plan */}
             <Card className="border-2 border-border hover:border-primary/50 transition-all flex flex-col h-full">
               <CardHeader className="space-y-4">
@@ -100,9 +100,9 @@ export default function PricingPage() {
             </Card>
 
             {/* School Plan - Featured */}
-            <Card className="border-2 border-primary shadow-2xl relative scale-105 flex flex-col h-full">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                <Badge className="bg-primary text-primary-foreground px-4 py-1.5">
+            <Card className="border-2 border-primary shadow-2xl relative md:scale-105 flex flex-col h-full">
+              <div className="absolute -top-3 sm:-top-4 left-1/2 -translate-x-1/2">
+                <Badge className="bg-primary text-primary-foreground px-3 sm:px-4 py-1 sm:py-1.5 text-xs sm:text-sm">
                   Most Popular
                 </Badge>
               </div>
@@ -214,34 +214,34 @@ export default function PricingPage() {
             </Card>
           </div>
 
-          <p className="text-center text-muted-foreground mt-12 text-lg">
+          <p className="text-center text-muted-foreground mt-8 sm:mt-10 md:mt-12 text-base sm:text-lg px-4">
             🎉 Early adopters receive <span className="font-semibold text-foreground">3 months free</span> on annual plans + dedicated onboarding support
           </p>
         </div>
       </section>
 
       {/* School Development Program */}
-      <section className="py-24 px-6 bg-secondary/30">
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 bg-secondary/30">
         <div className="container mx-auto max-w-7xl">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 md:gap-16 items-center">
             {/* Left Column - Main Content */}
-            <div className="space-y-8">
-              <div className="space-y-6">
-                <Badge variant="outline" className="border-primary/30 text-primary bg-primary/5">
+            <div className="space-y-6 sm:space-y-8">
+              <div className="space-y-4 sm:space-y-6">
+                <Badge variant="outline" className="border-primary/30 text-primary bg-primary/5 text-sm">
                   Social Impact
                 </Badge>
                 
-                <h2 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
                   Studious School Development Program
                 </h2>
                 
-                <p className="text-xl text-muted-foreground leading-relaxed">
+                <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
                   We believe every student deserves access to modern learning tools, regardless of their school's economic situation.
                 </p>
               </div>
 
               {/* Key Features */}
-              <div className="space-y-6 pt-4">
+              <div className="space-y-4 sm:space-y-6 pt-2 sm:pt-4">
                 <div className="flex items-start gap-4">
                   <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
                     <CheckCircle2 className="h-5 w-5 text-primary" />
@@ -274,15 +274,15 @@ export default function PricingPage() {
               </div>
 
               {/* CTA */}
-              <div className="pt-4 flex gap-3">
-                <Link href="/program/apply">
-                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+              <div className="pt-4 flex flex-col sm:flex-row gap-3">
+                <Link href="/program/apply" className="w-full sm:w-auto">
+                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground w-full sm:w-auto">
                     Apply Now
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                    <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5" />
                   </Button>
                 </Link>
-                <Link href="/program">
-                  <Button size="lg" variant="outline" className="border-border hover:bg-secondary">
+                <Link href="/program" className="w-full sm:w-auto">
+                  <Button size="lg" variant="outline" className="border-border hover:bg-secondary w-full sm:w-auto">
                     Learn More
                   </Button>
                 </Link>
@@ -526,13 +526,13 @@ export default function PricingPage() {
       </section> */}
 
       {/* Footer */}
-      <footer className="py-16 px-6 bg-secondary border-t border-border">
+      <footer className="py-12 sm:py-14 md:py-16 px-4 sm:px-6 bg-secondary border-t border-border">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-10 sm:mb-12">
             <div className="space-y-4">
               <div className="flex items-center gap-2">
                 <img src="/logo.png" alt="Studious" className="w-7 h-7" />
-                <span className="text-xl font-semibold text-foreground">Studious</span>
+                <span className="text-lg sm:text-xl font-semibold text-foreground">Studious</span>
               </div>
               <p className="text-sm text-muted-foreground">
                 Modern learning management for the next generation of education.

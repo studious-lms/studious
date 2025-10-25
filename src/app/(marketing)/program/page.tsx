@@ -60,7 +60,7 @@ export default function ProgramPage() {
       <Navbar />
 
       {/* Hero Section with Background Image */}
-      <section className="pt-32 pb-24 px-6 relative overflow-hidden">
+      <section className="pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20 md:pb-24 px-4 sm:px-6 relative overflow-hidden">
         {/* Background Image - Cropped to show middle section */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-black/40 z-10"></div>
@@ -73,52 +73,52 @@ export default function ProgramPage() {
         </div>
         
         <div className="container mx-auto max-w-4xl text-center relative z-20">
-          <Badge variant="outline" className="mb-6 px-4 py-1.5 border-white/30 text-white bg-white/10 backdrop-blur-sm">
+          <Badge variant="outline" className="mb-4 sm:mb-6 px-3 sm:px-4 py-1 sm:py-1.5 border-white/30 text-white bg-white/10 backdrop-blur-sm text-sm">
             Social Impact Initiative
           </Badge>
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight leading-tight drop-shadow-lg">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 tracking-tight leading-tight drop-shadow-lg px-4">
             Studious School Development Program
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-md px-4">
             Providing free access to modern learning technology for schools without economic means
           </p>
         </div>
       </section>
 
       {/* Program Commitment */}
-      <section className="py-16 px-6 bg-secondary/30">
+      <section className="py-10 sm:py-12 md:py-16 px-4 sm:px-6 bg-secondary/30">
         <div className="container mx-auto max-w-5xl">
-          <div className="grid md:grid-cols-3 gap-8 text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-center">
             <div>
-              <div className="text-5xl font-bold text-primary mb-2">10%</div>
-              <p className="text-muted-foreground">Revenue Committed</p>
+              <div className="text-4xl sm:text-5xl font-bold text-primary mb-2">10%</div>
+              <p className="text-sm sm:text-base text-muted-foreground">Revenue Committed</p>
             </div>
             <div>
-              <div className="text-5xl font-bold text-primary mb-2">Jan 2026</div>
-              <p className="text-muted-foreground">First Cohort Launch</p>
+              <div className="text-4xl sm:text-5xl font-bold text-primary mb-2">Jan 2026</div>
+              <p className="text-sm sm:text-base text-muted-foreground">First Cohort Launch</p>
             </div>
             <div>
-              <div className="text-5xl font-bold text-primary mb-2">100%</div>
-              <p className="text-muted-foreground">Free Access</p>
+              <div className="text-4xl sm:text-5xl font-bold text-primary mb-2">100%</div>
+              <p className="text-sm sm:text-base text-muted-foreground">Free Access</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* About the Program */}
-      <section className="py-20 px-6 bg-background">
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-background">
         <div className="container mx-auto max-w-4xl">
-          <div className="prose prose-lg max-w-none">
-            <div className="space-y-8 text-muted-foreground text-lg leading-relaxed">
+          <div className="prose prose-base sm:prose-lg max-w-none">
+            <div className="space-y-6 sm:space-y-8 text-muted-foreground text-base sm:text-lg leading-relaxed">
               <div>
-                <h2 className="text-3xl font-bold text-foreground mb-4">Our Mission</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3 sm:mb-4">Our Mission</h2>
                 <p>
                   The Studious School Development Program was established with a clear mission: to ensure that every student, regardless of their school's economic circumstances, has access to world-class learning management technology. We recognize that educational inequality often begins with unequal access to tools and resources, and we're committed to changing that.
                 </p>
               </div>
 
               <div>
-                <h2 className="text-3xl font-bold text-foreground mb-4">Why We Created This Program</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3 sm:mb-4">Why We Created This Program</h2>
                 <p>
                   Throughout our journey building Studious, we've witnessed firsthand the challenges faced by schools in underserved communities. While wealthier institutions can afford the latest educational technology, schools serving disadvantaged students often struggle with outdated systems or prohibitive licensing costs. This disparity creates an educational gap that can impact students' entire academic careers.
                 </p>
@@ -128,7 +128,7 @@ export default function ProgramPage() {
               </div>
 
               <div>
-                <h2 className="text-3xl font-bold text-foreground mb-4">What You'll Receive</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3 sm:mb-4">What You'll Receive</h2>
                 <p>
                   Schools accepted into the program receive the full Studious platform experience—not a limited or stripped-down version. This includes unlimited student and teacher accounts, all premium features (AI assistant, advanced analytics, real-time collaboration), priority technical support, dedicated onboarding specialists, ongoing training resources, and access to all future updates and improvements.
                 </p>
@@ -138,7 +138,7 @@ export default function ProgramPage() {
               </div>
 
               <div>
-                <h2 className="text-3xl font-bold text-foreground mb-4">Who Qualifies</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3 sm:mb-4">Who Qualifies</h2>
                 <p>
                   We prioritize schools serving students who would benefit most from improved educational technology. This includes public schools in underserved or economically disadvantaged communities, registered non-profit educational institutions demonstrating financial constraints, schools in developing regions or countries, US Title I schools and their international equivalents, and any educational institution that can demonstrate genuine financial need alongside a commitment to improving student outcomes.
                 </p>
@@ -148,7 +148,7 @@ export default function ProgramPage() {
               </div>
 
               <div>
-                <h2 className="text-3xl font-bold text-foreground mb-4">Our Vision for Impact</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3 sm:mb-4">Our Vision for Impact</h2>
                 <p>
                   The School Development Program launches in January 2026, with our first cohort of partner schools to be announced. We're committed to building this program as Studious grows, with a goal of supporting dozens of schools within the first year and hundreds as our platform scales.
                 </p>
@@ -162,12 +162,12 @@ export default function ProgramPage() {
       </section>
 
       {/* Application CTA & Status Checker */}
-      <section className="py-20 px-6 bg-secondary/30">
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-secondary/30">
         <div className="container mx-auto max-w-5xl">
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {/* Apply Card */}
             <div>
-            <Card className="border border-border shadow-lg bg-background">
+            <Card className="border border-border shadow-lg bg-background h-full">
               <CardHeader>
                 <CardTitle className="text-2xl">Apply to the Program</CardTitle>
               </CardHeader>
@@ -331,17 +331,17 @@ export default function ProgramPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 px-6 bg-background">
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-background">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-bold text-foreground mb-4">
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3 sm:mb-4 px-4">
             Have Questions?
           </h2>
-          <p className="text-lg text-muted-foreground mb-8">
+          <p className="text-base sm:text-lg text-muted-foreground mb-6 sm:mb-8 px-4">
             Our team is here to help you through the application process
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href="mailto:impact@studious.sh">
-              <Button size="lg" variant="outline" className="border-border hover:bg-secondary">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4">
+            <a href="mailto:impact@studious.sh" className="w-full sm:w-auto">
+              <Button size="lg" variant="outline" className="border-border hover:bg-secondary w-full sm:w-auto">
                 Email Us: impact@studious.sh
               </Button>
             </a>
@@ -350,9 +350,9 @@ export default function ProgramPage() {
       </section>
 
       {/* Footer */}
-      <footer className="py-16 px-6 bg-secondary border-t border-border">
+      <footer className="py-12 sm:py-14 md:py-16 px-4 sm:px-6 bg-secondary border-t border-border">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-10 sm:mb-12">
             <div className="space-y-4">
               <div className="flex items-center gap-2">
                 <img src="/logo.png" alt="Studious" className="w-7 h-7" />

@@ -22,33 +22,33 @@ export default function PressPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-6 bg-gradient-to-b from-background via-secondary/30 to-background">
+      <section className="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-14 md:pb-16 px-4 sm:px-6 bg-gradient-to-b from-background via-secondary/30 to-background">
         <div className="container mx-auto max-w-4xl text-center">
-          <Badge variant="outline" className="mb-6 px-4 py-1.5 border-primary/20 text-primary">
+          <Badge variant="outline" className="mb-4 sm:mb-6 px-3 sm:px-4 py-1 sm:py-1.5 border-primary/20 text-primary text-sm">
             Press & Media
           </Badge>
-          <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6 tracking-tight px-4">
             Studious in the news
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
             Media resources, brand assets, and company information for journalists and content creators
           </p>
         </div>
       </section>
 
       {/* Company Factsheet */}
-      <section className="py-20 px-6 bg-background">
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-background">
         <div className="container mx-auto max-w-5xl">
-          <div className="mb-12">
-            <h2 className="text-4xl font-bold text-foreground mb-4">
+          <div className="mb-8 sm:mb-10 md:mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 sm:mb-4 px-4">
               Company Factsheet
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-4">
               Quick facts about Studious LMS
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             <Card className="border border-border">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
@@ -306,35 +306,35 @@ export default function PressPage() {
       </section> */}
 
       {/* Press Contact */}
-      <section className="py-20 px-6 bg-background">
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-background">
         <div className="container mx-auto max-w-4xl text-center">
-          <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
-            <Mail className="h-8 w-8 text-primary" />
+          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 sm:mb-6">
+            <Mail className="h-7 w-7 sm:h-8 sm:w-8 text-primary" />
           </div>
-          <h2 className="text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 sm:mb-4 px-4">
             Press Inquiries
           </h2>
-          <p className="text-xl text-muted-foreground mb-8">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 px-4">
             For press inquiries, interviews, and media requests
           </p>
           
-          <div className="space-y-4 max-w-md mx-auto">
-            <div className="flex items-center justify-center gap-2 text-foreground">
-              <Mail className="h-5 w-5" />
-              <a href="mailto:press@studious.sh" className="text-lg font-medium hover:text-primary transition-colors">
+          <div className="space-y-3 sm:space-y-4 max-w-md mx-auto px-4">
+            <div className="flex items-center justify-center gap-2 text-foreground flex-wrap">
+              <Mail className="h-4 w-4 sm:h-5 sm:w-5" />
+              <a href="mailto:press@studious.sh" className="text-base sm:text-lg font-medium hover:text-primary transition-colors">
                 press@studious.sh
               </a>
             </div>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-xs sm:text-sm text-muted-foreground">
               We typically respond within 24 hours
             </p>
           </div>
 
-          <div className="mt-12 pt-12 border-t border-border">
-            <p className="text-muted-foreground mb-6">
+          <div className="mt-8 sm:mt-10 md:mt-12 pt-8 sm:pt-10 md:pt-12 border-t border-border">
+            <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 px-4">
               For general inquiries and support
             </p>
-            <a href="mailto:hello@studious.sh" className="text-primary hover:underline">
+            <a href="mailto:hello@studious.sh" className="text-primary hover:underline text-sm sm:text-base">
               hello@studious.sh
             </a>
           </div>
@@ -342,9 +342,9 @@ export default function PressPage() {
       </section>
 
       {/* Footer */}
-      <footer className="py-16 px-6 bg-secondary border-t border-border">
+      <footer className="py-12 sm:py-14 md:py-16 px-4 sm:px-6 bg-secondary border-t border-border">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-10 sm:mb-12">
             <div className="space-y-4">
               <div className="flex items-center gap-2">
                 <img src="/logo.png" alt="Studious" className="w-7 h-7" />
