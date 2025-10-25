@@ -42,35 +42,35 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 bg-gradient-to-b from-background via-secondary/30 to-background relative overflow-hidden">
+      <section className="pt-20 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6 bg-gradient-to-b from-background via-secondary/30 to-background relative overflow-hidden">
         {/* Grid Background */}
         <div className="absolute inset-0 bg-grid-pattern opacity-30"></div>
         
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center">
-            <Badge variant="outline" className="mb-6 px-4 py-1.5 border-primary/20 text-primary">
+            <Badge variant="outline" className="mb-4 sm:mb-6 px-3 sm:px-4 py-1 sm:py-1.5 border-primary/20 text-primary text-xs sm:text-sm">
               Modern Learning Platform
             </Badge>
-            <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 tracking-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-foreground mb-4 sm:mb-6 tracking-tight px-2">
               Seamless, distraction-free
-                <br />
-              <span className="text-primary">learning for modern schools</span>
+                <br className="hidden sm:block" />
+              <span className="text-primary"> learning for modern schools</span>
               </h1>
             
-            <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed px-4">
               Studious LMS integrates AI, real-time calendars, and class communication into one cohesive platform — designed to help teachers teach and students thrive.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center px-4 sm:px-0">
               <Button 
                 size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 h-12 text-base font-medium"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 sm:px-8 h-11 sm:h-12 text-sm sm:text-base font-medium w-full sm:w-auto"
                 onClick={() => setShowEarlyAccess(true)}
               >
                 Request Early Access
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-              <Button size="lg" variant="outline" className="border-border hover:bg-secondary px-8 h-12 text-base font-medium">
+              <Button size="lg" variant="outline" className="border-border hover:bg-secondary px-6 sm:px-8 h-11 sm:h-12 text-sm sm:text-base font-medium w-full sm:w-auto">
                 <Play className="mr-2 h-4 w-4" />
                 Watch Demo
               </Button>
@@ -78,27 +78,27 @@ export default function Home() {
           </div>
           
           {/* Hero Image */}
-          <div className="mt-20 rounded-2xl overflow-hidden shadow-2xl border border-border relative">
+          <div className="mt-12 sm:mt-16 md:mt-20 rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden shadow-2xl border border-border relative">
             <img src="/hero-light.png" alt="Platform Dashboard" className="w-full h-auto block dark:hidden" />
             <img src="/hero-dark.png" alt="Platform Dashboard" className="w-full h-auto hidden dark:block" />
-            <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none"></div>
+            <div className="absolute inset-x-0 bottom-0 h-20 sm:h-32 bg-gradient-to-t from-background to-transparent pointer-events-none"></div>
           </div>
         </div>
       </section>
 
       {/* The Problem Section */}
-      <section className="py-20 px-6 bg-secondary/50">
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-secondary/50">
         <div className="container mx-auto max-w-5xl">
-          <div className="text-center space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+          <div className="text-center space-y-4 sm:space-y-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground px-4">
               Traditional school portals are fragmented and outdated
             </h2>
-            <div className="grid md:grid-cols-3 gap-8 mt-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mt-8 sm:mt-12 px-4 sm:px-0">
               <div className="space-y-3">
                 <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center mx-auto">
                   <Zap className="h-6 w-6 text-muted-foreground" />
                 </div>
-                <p className="text-muted-foreground text-lg">
+                <p className="text-muted-foreground text-base sm:text-lg">
                   Teachers waste time switching between multiple tools
                 </p>
               </div>
@@ -106,15 +106,15 @@ export default function Home() {
                 <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center mx-auto">
                   <Users className="h-6 w-6 text-muted-foreground" />
                 </div>
-                <p className="text-muted-foreground text-lg">
+                <p className="text-muted-foreground text-base sm:text-lg">
                   Students struggle with organisation and deadlines
                 </p>
               </div>
-              <div className="space-y-3">
+              <div className="space-y-3 sm:col-span-2 md:col-span-1">
                 <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center mx-auto">
                   <Bot className="h-6 w-6 text-muted-foreground" />
                 </div>
-                <p className="text-muted-foreground text-lg">
+                <p className="text-muted-foreground text-base sm:text-lg">
                   AI remains under-integrated in actual school workflows
                 </p>
               </div>
@@ -124,32 +124,32 @@ export default function Home() {
       </section>
 
       {/* Our Response Section */}
-      <section className="py-20 px-6 bg-background">
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-background">
         <div className="container mx-auto max-w-5xl text-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 sm:mb-6 px-4 leading-tight">
             Studious LMS unifies teaching, learning,
-            <br />
-            and communication into a single workspace
+            <br className="hidden sm:block" />
+            <span className="block sm:inline"> and communication into a single workspace</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4">
             Built with cutting-edge frameworks and human-centred design, it's built to scale across schools of any size.
           </p>
         </div>
       </section>
 
       {/* Key Features Table */}
-      <section id="features" className="py-20 px-6 bg-secondary/30">
+      <section id="features" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-secondary/30">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <div className="text-center mb-10 sm:mb-12 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-3 sm:mb-4 px-4">
               Key Features
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
               Everything you need to manage modern learning experiences
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             <Card className="border border-border hover:border-primary/50 transition-all hover:shadow-lg">
               <CardHeader>
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
@@ -238,9 +238,9 @@ export default function Home() {
       </section>
 
       {/* Quote Section */}
-      <section className="py-20 px-6 bg-primary">
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-primary">
         <div className="container mx-auto max-w-4xl text-center">
-          <blockquote className="text-3xl md:text-4xl font-medium text-primary-foreground leading-relaxed">
+          <blockquote className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-primary-foreground leading-relaxed px-4">
             "Every feature in Studious was built to reduce friction — not add it."
           </blockquote>
               </div>

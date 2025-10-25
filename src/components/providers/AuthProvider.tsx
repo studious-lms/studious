@@ -7,6 +7,8 @@ import { useDispatch } from "react-redux";
 import { Spinner } from "../ui/spinner";
 import { usePathname, useRouter } from "next/navigation";
 
+import '../../app/branding.css';
+
 const AUTHED_PATHS = ['/home', '/class', '/profile', '/agenda', '/chat']
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
