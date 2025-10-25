@@ -13,6 +13,7 @@ import { RootState } from "@/store/store";
 import { Upload as UploadIcon, X as XIcon, File as FileIcon, Image as ImageIcon, FileVideo, FileText } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { fixUploadUrl } from "@/lib/directUpload";
+import { Skeleton } from "../ui/skeleton";
 
 
 interface ApiFile {
@@ -48,7 +49,9 @@ export function UploadFileModal({ children, onFilesUploaded, currentFolder = "/"
   const [uploading, setUploading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const appState = useSelector((state: RootState) => state.app);
-  
+
+  const  { data: folderInformation, isLoading: folderInformationLoading }  = trpc.folder.get.useQuery({ classId: classId!, folderId: currentFolder! }, { enabled: !!currentFolder && !!classId });
+
   // Overall upload progress state
   const [uploadProgress, setUploadProgress] = useState(0);
   const [currentUploadStatus, setCurrentUploadStatus] = useState('');
@@ -309,7 +312,7 @@ export function UploadFileModal({ children, onFilesUploaded, currentFolder = "/"
               <div className="space-y-3 max-h-64 overflow-y-auto">
                 {files.map((file) => (
                   <div key={file.id} className="border rounded-lg p-4">
-                    <div className="flex items-start justify-between mb-3">
+                    <div className="flex items-start justify-between">
                       <div className="flex items-center space-x-3 flex-1 min-w-0">
                         {getFileIcon(file.name)}
                         <div className="flex-1 min-w-0">
@@ -329,59 +332,14 @@ export function UploadFileModal({ children, onFilesUploaded, currentFolder = "/"
                       </Button>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-3 mb-3">
-                      <div className="space-y-1">
-                        <Label className="text-xs">Display Name</Label>
-                        <Input
-                          value={file.name}
-                          onChange={(e) => updateFile(file.id, { name: e.target.value })}
-                          className="h-8 text-sm"
-                          disabled={uploading}
-                        />
-                      </div>
-                      <div className="space-y-1">
-                        <Label className="text-xs">Category</Label>
-                        <Select
-                          value={file.category}
-                          onValueChange={(value) => updateFile(file.id, { category: value })}
-                          disabled={uploading}
-                        >
-                          <SelectTrigger className="h-8 text-sm">
-                            <SelectValue />
-                          </SelectTrigger>
-                          <SelectContent>
-                            {categories.map((category) => (
-                              <SelectItem key={category.value} value={category.value}>
-                                {category.label}
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
-                      </div>
-                    </div>
-
-                    <div className="space-y-1 mb-3">
-                      <Label className="text-xs">Description (Optional)</Label>
-                      <Textarea
-                        value={file.description}
-                        onChange={(e) => updateFile(file.id, { description: e.target.value })}
-                        className="h-16 text-sm"
-                        placeholder="Add a description for this file..."
-                        disabled={uploading}
-                      />
-                    </div>
-
                     {/* Progress Bar */}
                     {file.status !== 'pending' && (
-                      <div className="space-y-2">
+                      <div className="space-y-2 mt-3">
                         <div className="flex justify-between text-sm">
-                          <span className={`capitalize ${file.status === 'completed' ? 'text-green-600' :
-                              file.status === 'error' ? 'text-red-600' :
-                                'text-blue-600'
-                            }`}>
+                          <span className="text-muted-foreground capitalize">
                             {file.status}
                           </span>
-                          <span>{Math.round(file.progress)}%</span>
+                          <span className="text-muted-foreground">{Math.round(file.progress)}%</span>
                         </div>
                         <Progress value={file.progress} className="h-2" />
                       </div>
@@ -394,11 +352,17 @@ export function UploadFileModal({ children, onFilesUploaded, currentFolder = "/"
 
           {/* Upload Info */}
           {currentFolder !== "/" && (
-            <div className="bg-muted p-3 rounded-lg">
-              <p className="text-sm">
-                <strong>Uploading to:</strong> {currentFolder}
-              </p>
+            <div className="flex items-center gap-2 p-3 bg-muted/50 border border-border rounded-lg">
+            <UploadIcon className="h-4 w-4 text-muted-foreground shrink-0" />
+            <div className="text-sm flex-1 min-w-0 items-center flex gap-2">
+              <span className="text-muted-foreground">Uploading to: </span>
+              {folderInformationLoading ? (
+                <Skeleton className="inline-block w-24 h-4" />
+              ) : (
+                <span className="font-medium">{folderInformation?.name || 'Home Directory'}</span>
+              )}
             </div>
+          </div>
           )}
 
           {/* Actions */}
