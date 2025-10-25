@@ -48,6 +48,7 @@ import type {
 import {  parseMarkScheme,
   parseGradingBoundary} from "@/lib/types/assignment";
 import { baseFileHandler } from "@/lib/fileHandler";
+import { Progress } from "@/components/ui/progress";
 
 type Submissions = RouterOutputs['assignment']['getSubmissions'];
 type Submission = Submissions[number];
@@ -397,24 +398,7 @@ export default function AssignmentDetailPage() {
           fileId: actualFileId
         };
       });
-
-      const uploadedFiles = await Promise.all(uploadPromises);
-      
-      // 4. Update student submission with uploaded file IDs
-      setCurrentUploadStatus(uploadStatusMessages[4]);
-      setUploadProgress(85);
-      
-      updateStudentSubmissionMutation.mutate({
-        assignmentId,
-        classId,
-        submissionId: studentSubmission.id,
-        newAttachments: uploadedFiles,
-      });
-
-      // Final completion
-      setCurrentUploadStatus(uploadStatusMessages[5]);
-      setUploadProgress(95);
-      
+      // @todo: fix the `uploadStatusMessages` to remove redundant messages / steps      
       setCurrentUploadStatus(uploadStatusMessages[6]);
       setUploadProgress(100);
 
@@ -620,15 +604,32 @@ export default function AssignmentDetailPage() {
                   
                   {!studentSubmission.submitted && (
                     <div className="space-y-3">
+                      {/* Upload Progress */}
+                      {isUploading && (
+                        <div className="space-y-2 p-4 bg-muted rounded-lg">
+                          <div className="flex justify-between text-sm">
+                            <span className="font-medium">{currentUploadStatus}</span>
+                            <span>{Math.round(uploadProgress)}%</span>
+                          </div>
+                          <Progress value={uploadProgress} className="h-2" />
+                          {totalFiles > 0 && (
+                            <p className="text-xs text-muted-foreground text-center">
+                              {uploadedFiles} of {totalFiles} files uploaded
+                            </p>
+                          )}
+                        </div>
+                      )}
+                      <div>
                       <Label htmlFor="student-file-upload" className="cursor-pointer">
                         <div className="flex items-center justify-center w-full p-4 border-2 border-dashed border-muted-foreground/25 rounded-lg hover:border-muted-foreground/50 transition-colors">
                           <div className="text-center">
                             <Upload className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
-                            <p className="text-sm font-medium">Upload files</p>
+                            <p className="text-sm font-medium">{isUploading ? 'Uploading...' : 'Upload files'}</p>
                             <p className="text-xs text-muted-foreground">Click to select files or drag and drop</p>
                           </div>
                         </div>
                       </Label>
+                      </div>
                       <Input
                         id="student-file-upload"
                         type="file"
@@ -636,6 +637,7 @@ export default function AssignmentDetailPage() {
                         onChange={handleStudentFileUpload}
                         className="hidden"
                         accept="*/*"
+                        disabled={isUploading}
                       />
                     </div>
                   )}
@@ -885,70 +887,6 @@ export default function AssignmentDetailPage() {
             </Card>
           </div>
         </div>
-
-        {/* Upload Progress Overlay */}
-        {isUploading && (
-          <div className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center">
-            <div className="bg-background border rounded-lg p-8 max-w-md w-full mx-4 shadow-lg">
-              <div className="text-center space-y-6">
-                {/* Animated Icon */}
-                <div className="flex justify-center">
-                  <div className="relative">
-                    <div className="w-16 h-16 border-4 border-primary/20 border-t-primary rounded-full animate-spin"></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <Upload className="w-6 h-6 text-primary animate-pulse" />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Status Text */}
-                <div className="space-y-2">
-                  <h3 className="text-lg font-semibold">Uploading Files</h3>
-                  <p className="text-sm text-muted-foreground animate-pulse">
-                    {currentUploadStatus}
-                  </p>
-                </div>
-
-                {/* Progress Bar */}
-                <div className="space-y-2">
-                  <div className="w-full bg-muted rounded-full h-2">
-                    <div 
-                      className="bg-primary h-2 rounded-full transition-all duration-300 ease-out"
-                      style={{ width: `${uploadProgress}%` }}
-                    ></div>
-                  </div>
-                  <div className="flex justify-between text-xs text-muted-foreground">
-                    <span>{Math.round(uploadProgress)}%</span>
-                    {totalFiles > 0 && (
-                      <span>{uploadedFiles} of {totalFiles} files uploaded</span>
-                    )}
-                  </div>
-                </div>
-
-                {/* File Upload Progress */}
-                {totalFiles > 0 && (
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2 text-sm">
-                      <Upload className="w-4 h-4" />
-                      <span>Uploading files...</span>
-                    </div>
-                    <div className="text-xs text-muted-foreground">
-                      Files are being uploaded to secure cloud storage
-                    </div>
-                  </div>
-                )}
-
-                {/* Completion Status */}
-                {uploadProgress === 100 && (
-                  <div className="flex items-center justify-center gap-2 text-green-600">
-                    <CheckCircle className="w-5 h-5" />
-                    <span className="text-sm font-medium">Files uploaded successfully!</span>
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-        )}
 
         {/* File Preview Modal */}
         <FilePreviewModal
