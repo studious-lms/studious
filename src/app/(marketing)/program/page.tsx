@@ -94,7 +94,7 @@ export default function ProgramPage() {
               <p className="text-sm sm:text-base text-muted-foreground">Revenue Committed</p>
             </div>
             <div>
-              <div className="text-4xl sm:text-5xl font-bold text-primary mb-2">Jan 2026</div>
+              <div className="text-4xl sm:text-5xl font-bold text-primary mb-2">Nov-Dec 2025</div>
               <p className="text-sm sm:text-base text-muted-foreground">First Cohort Launch</p>
             </div>
             <div>
@@ -113,17 +113,17 @@ export default function ProgramPage() {
               <div>
                 <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3 sm:mb-4">Our Mission</h2>
                 <p>
-                  The Studious School Development Program was established with a clear mission: to ensure that every student, regardless of their school's economic circumstances, has access to world-class learning management technology. We recognize that educational inequality often begins with unequal access to tools and resources, and we're committed to changing that.
+                  The Studious School Development Program aims to support underprivileged schools by providing them with free, unlimited access to our learning management platform. We recognize that technology is a dominant factor in the future workforce, yet many educational institutions lack access to such resources. Through this program, we bring modern learning management technology to schools that need it most.
                 </p>
               </div>
 
               <div>
-                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3 sm:mb-4">Why We Created This Program</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3 sm:mb-4">Program Aims</h2>
                 <p>
-                  Throughout our journey building Studious, we've witnessed firsthand the challenges faced by schools in underserved communities. While wealthier institutions can afford the latest educational technology, schools serving disadvantaged students often struggle with outdated systems or prohibitive licensing costs. This disparity creates an educational gap that can impact students' entire academic careers.
+                  Through extensive conversations with teachers and educational professionals, we've identified significant gaps in the digital learning infrastructure available to many schools. Many learning management systems on the market lack a cohesive, intuitive user experience, and schools in underprivileged areas often cannot afford access to modern educational technology.
                 </p>
                 <p className="mt-4">
-                  We believe this is fundamentally unfair. Technology should be an equalizer in education, not another barrier. That's why we've committed 10% of our revenue from paying customers to provide completely free access to qualifying schools. This isn't charity—it's an investment in the future of education and a recognition that every student deserves the best tools available.
+                  Our program addresses these challenges directly. Revenue from our paid institutional subscriptions enables us to provide underprivileged schools with comprehensive access to Studious LMS and related educational tools. This sustainable model allows us to bridge the digital divide while continuously improving our platform for all users.
                 </p>
               </div>
 
@@ -150,10 +150,10 @@ export default function ProgramPage() {
               <div>
                 <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3 sm:mb-4">Our Vision for Impact</h2>
                 <p>
-                  The School Development Program launches in January 2026, with our first cohort of partner schools to be announced. We're committed to building this program as Studious grows, with a goal of supporting dozens of schools within the first year and hundreds as our platform scales.
+                  By providing schools with free access to modern learning management technology, we aim to eliminate one of the key barriers facing educational institutions in underprivileged areas. Our approach goes beyond just software—we're committed to providing comprehensive support including training resources, onboarding assistance, and access to educational tools like e-books and digital stationery materials.
                 </p>
                 <p className="mt-4">
-                  This is just the beginning. As Studious grows, so does our capacity to support more schools. Every school that chooses to pay for Studious directly enables us to provide free access to another school in need, creating a sustainable model for educational equity that grows stronger over time.
+                  The School Development Program launches in late November to mid-December 2025, with our first cohort of partner schools. As Studious grows, so does our capacity to support more schools. All revenue generated from our paid institutional subscriptions is reinvested into expanding access for schools in need, creating a sustainable model for educational equity that strengthens over time.
                 </p>
               </div>
             </div>
