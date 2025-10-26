@@ -34,11 +34,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
 }, [user]);
 
-    useEffect(() => {
-        if (!user && !isLoading && AUTHED_PATHS.some(path => pathname.includes(path))) {
-            router.push('/login');
-        }
-    }, [user, isLoading, pathname]);
+    // useEffect(() => {
+    //     if (!user && !isLoading && AUTHED_PATHS.some(path => pathname.includes(path))) {
+    //         router.push('/login');
+    //     }
+    // }, [user, isLoading, pathname]);
 
     if (isLoading) {
         return <div className="flex h-[calc(100vh)] w-screen items-center justify-center">
