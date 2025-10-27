@@ -408,48 +408,7 @@ export default function Home() {
           </p>
               </div>
       </section>
-
-      {/* Team Section */}
-      <section id="team" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-background">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-10 sm:mb-12 md:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 sm:mb-6 px-4">
-              Our Team
-              </h2>
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
-              A globally distributed team of developers, designers, and educators — connecting Switzerland, Singapore, and China to build the future of education.
-              </p>
-            </div>
-          
-          {/* World Map Visualization */}
-          <div className="relative bg-secondary/30 rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-12 border border-border">
-            <div className="flex items-center justify-center gap-8 sm:gap-12 md:gap-16 flex-wrap">
-              <div className="text-center space-y-2">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Globe className="h-8 w-8 text-primary" />
-                    </div>
-                <p className="font-semibold text-foreground">Switzerland</p>
-                <p className="text-sm text-muted-foreground">Engineering & Design</p>
-                  </div>
-              <div className="text-center space-y-2">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Globe className="h-8 w-8 text-primary" />
-                    </div>
-                <p className="font-semibold text-foreground">Singapore</p>
-                <p className="text-sm text-muted-foreground">Product & Education</p>
-                  </div>
-              <div className="text-center space-y-2">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Globe className="h-8 w-8 text-primary" />
-                </div>
-                <p className="font-semibold text-foreground">China</p>
-                <p className="text-sm text-muted-foreground">Development & AI</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      
       {/* School Development Program */}
       <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-br from-primary/5 via-background to-primary/5 border-y border-primary/10">
         <div className="container mx-auto max-w-6xl">
