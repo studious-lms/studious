@@ -28,6 +28,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { trpc } from "@/lib/trpc";
 import { useChat } from "@/hooks/useChat";
+import { useTranslations } from "next-intl";
 
 interface PrimarySidebarProps {
   isAuthenticated?: boolean;
@@ -38,11 +39,12 @@ interface PrimarySidebarProps {
   };
 }
 
-const navigationItems = [
-  { href: "/home", label: "Home", icon: Home },
-  { href: "/classes", label: "Classes", icon: BookOpen },
-  { href: "/agenda", label: "Agenda", icon: Calendar },
-  { href: "/chat", label: "Chat", icon: MessageSquare },
+// Navigation items with translation keys
+const getNavigationItems = (t: (key: string) => string) => [
+  { href: "/home", label: t('home'), icon: Home },
+  { href: "/classes", label: t('classes'), icon: BookOpen },
+  { href: "/agenda", label: t('agenda'), icon: Calendar },
+  { href: "/chat", label: t('chat'), icon: MessageSquare },
 ];
 
 const mockChatServers = [
@@ -54,6 +56,7 @@ const mockChatServers = [
 ];
 
 export function PrimarySidebar({ isAuthenticated = false, user }: PrimarySidebarProps) {
+  const t = useTranslations('navigation');
   const pathname = usePathname();
   const appState = useSelector((state: RootState) => state.app);
   const [showChatServers, setShowChatServers] = useState(false);
@@ -63,6 +66,8 @@ export function PrimarySidebar({ isAuthenticated = false, user }: PrimarySidebar
       router.push("/login");
     }
   });
+  
+  const navigationItems = getNavigationItems(t);
 
   // Get chat data for badge counts
   const { conversations } = useChat(appState.user.loggedIn ? appState.user.id : "");
@@ -233,19 +238,19 @@ export function PrimarySidebar({ isAuthenticated = false, user }: PrimarySidebar
             <DropdownMenuItem asChild>
               <Link href="/profile" className="flex items-center">
                 <User className="mr-2 h-4 w-4" />
-                Profile
+                {t('profile')}
               </Link>
             </DropdownMenuItem>
               <DropdownMenuItem>
                 <Settings className="mr-2 h-4 w-4" />
-                Account Settings
+                {t('accountSettings')}
               </DropdownMenuItem>
               <DropdownMenuSeparator />
               <DropdownMenuItem onClick={() => {
                 logoutMutation.mutate();
               }}>
                 <LogOut className="mr-2 h-4 w-4" />
-                Sign out
+                {t('signOut')}
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>

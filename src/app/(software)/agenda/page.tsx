@@ -19,8 +19,11 @@ import {
 } from "@/components/ui/full-calendar";
 import { trpc } from "@/lib/trpc";
 import { useEffect, useState, useMemo } from "react";
+import { useTranslations } from 'next-intl';
 
 export default function Agenda() {
+  const t = useTranslations('agenda');
+  const tViews = useTranslations('agenda.views');
   const [previewModalOpen, setPreviewModalOpen] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState<string | null>(null);
 
@@ -48,7 +51,7 @@ export default function Agenda() {
     
     return joinedEvents.map(event => ({
       id: event.id,
-      title: event.name || 'Untitled Event',
+      title: event.name || t('untitledEvent'),
       start: new Date(event.startTime),
       end: new Date(event.endTime),
       color: event.color || '#3B82F6',
@@ -58,7 +61,7 @@ export default function Agenda() {
         setPreviewModalOpen(true);
       },
     }));
-  }, [events]);
+  }, [events, t]);
 
   console.log('Events data:', events);
   console.log('Formatted events:', formattedEvents);
@@ -66,24 +69,24 @@ export default function Agenda() {
   return (
     <PageLayout>
       <PageHeader
-        title="Agenda"
-        description="View your schedule and upcoming events with comprehensive calendar views"
+        title={t('title')}
+        description={t('description')}
       />
 
       <Calendar events={formattedEvents}>
         <div className="h-[calc(100vh-200px)] flex flex-col">
           <div className="flex items-center gap-2 mb-6">
             <CalendarViewTrigger className="aria-[current=true]:bg-accent" view="day">
-              Day
+              {tViews('day')}
             </CalendarViewTrigger>
             <CalendarViewTrigger view="week" className="aria-[current=true]:bg-accent">
-              Week
+              {tViews('week')}
             </CalendarViewTrigger>
             <CalendarViewTrigger view="month" className="aria-[current=true]:bg-accent">
-              Month
+              {tViews('month')}
             </CalendarViewTrigger>
             <CalendarViewTrigger view="year" className="aria-[current=true]:bg-accent">
-              Year
+              {tViews('year')}
             </CalendarViewTrigger>
 
             <span className="flex-1" />
@@ -92,20 +95,20 @@ export default function Agenda() {
 
             <CalendarPrevTrigger>
               <ChevronLeft size={20} />
-              <span className="sr-only">Previous</span>
+              <span className="sr-only">{t('previous')}</span>
             </CalendarPrevTrigger>
 
-            <CalendarTodayTrigger>Today</CalendarTodayTrigger>
+            <CalendarTodayTrigger>{t('today')}</CalendarTodayTrigger>
 
             <CalendarNextTrigger>
               <ChevronRight size={20} />
-              <span className="sr-only">Next</span>
+              <span className="sr-only">{t('next')}</span>
             </CalendarNextTrigger>
 
             <CreateEventButton>
               <Button size="sm">
                 <Plus className="h-4 w-4 mr-2" />
-                Add Event
+                {t('addEvent')}
               </Button>
             </CreateEventButton>
           </div>

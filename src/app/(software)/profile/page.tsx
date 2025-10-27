@@ -39,6 +39,7 @@ import { AvatarSelector } from "@/components/AvatarSelector";
 import { useDispatch, useSelector } from "react-redux";
 import { setAuth } from "@/store/appSlice";
 import { RootState } from "@/store/store";
+import { useTranslations } from 'next-intl';
 
 // Profile form schema
 const profileFormSchema = z.object({
@@ -51,6 +52,11 @@ const profileFormSchema = z.object({
 type ProfileFormValues = z.infer<typeof profileFormSchema>;
 
 export default function Profile() {
+  const t = useTranslations('profile');
+  const tPersonal = useTranslations('profile.personalInformation');
+  const tAccount = useTranslations('profile.accountInformation');
+  const tMessages = useTranslations('profile.messages');
+  const tCommon = useTranslations('common');
 
   const dispatch  = useDispatch();
   const appState = useSelector((state: RootState) => state.app);
@@ -154,7 +160,7 @@ export default function Profile() {
           };
         } catch (uploadError) {
           console.error("Failed to upload profile picture:", uploadError);
-          toast.error("Failed to upload profile picture");
+          toast.error(tMessages('profilePictureUploadFailed'));
           return;
         }
       } else if (pendingDicebearAvatar) {
@@ -169,13 +175,13 @@ export default function Profile() {
       // Invalidate and refetch the profile query to update the UI immediately
       await utils.user.getProfile.invalidate();
       
-      toast.success("Profile updated successfully");
+      toast.success(tMessages('profileUpdated'));
       setIsEditing(false);
       setPendingProfilePicture(null);
       setPendingDicebearAvatar(null);
     } catch (error) {
       console.error("Failed to update profile:", error);
-      toast.error("Failed to update profile");
+      toast.error(tMessages('profileUpdateFailed'));
     }
   };
 
@@ -202,16 +208,16 @@ export default function Profile() {
           file: file,
         });
         setPendingDicebearAvatar(null); // Clear any pending DiceBear avatar
-        toast.success("Profile picture selected. Click 'Save Changes' to update.");
+        toast.success(tMessages('profilePictureSelected'));
       } else if (!isCustom) {
         // Handle DiceBear avatar - store URL
         setPendingDicebearAvatar(avatarUrl);
         setPendingProfilePicture(null); // Clear any pending file upload
-        toast.success("Avatar selected. Click 'Save Changes' to update.");
+        toast.success(tMessages('avatarSelected'));
       }
     } catch (error: any) {
       console.error("Failed to select profile picture:", error);
-      toast.error("Failed to select profile picture");
+      toast.error(tMessages('profilePictureSelectFailed'));
     }
   };
 
@@ -219,8 +225,8 @@ export default function Profile() {
     return (
       <PageLayout>
         <PageHeader
-          title="Profile"
-          description="Manage your personal information and profile settings"
+          title={t('title')}
+          description={t('description')}
         />
         
         <div className="space-y-6">
@@ -251,12 +257,12 @@ export default function Profile() {
     return (
       <PageLayout>
         <PageHeader
-          title="Profile"
-          description="Manage your personal information and profile settings"
+          title={t('title')}
+          description={t('description')}
         />
         <Card>
           <CardContent className="text-center py-12">
-            <p className="text-destructive">Failed to load profile. Please try again.</p>
+            <p className="text-destructive">{tMessages('failedToLoadProfile')}</p>
           </CardContent>
         </Card>
       </PageLayout>
@@ -266,13 +272,13 @@ export default function Profile() {
   return (
     <PageLayout>
       <PageHeader
-        title="Profile"
-        description="Manage your personal information and profile settings"
+        title={t('title')}
+        description={t('description')}
       >
         {!isEditing ? (
           <Button onClick={() => setIsEditing(true)} className="flex items-center space-x-2">
             <Edit className="h-4 w-4" />
-            <span>Edit Profile</span>
+            <span>{t('editProfile')}</span>
           </Button>
         ) : (
           <div className="flex items-center space-x-2">
@@ -282,7 +288,7 @@ export default function Profile() {
               className="flex items-center space-x-2"
             >
               <X className="h-4 w-4" />
-              <span>Cancel</span>
+              <span>{tCommon('cancel')}</span>
             </Button>
             <Button
               onClick={form.handleSubmit(handleSave)}
@@ -294,7 +300,7 @@ export default function Profile() {
               className="flex items-center space-x-2"
             >
               <Save className="h-4 w-4" />
-              <span>Save Changes</span>
+              <span>{t('saveChanges')}</span>
             </Button>
           </div>
         )}
@@ -331,7 +337,7 @@ export default function Profile() {
                   </h2>
                   <Badge variant="secondary" className="flex items-center space-x-1">
                     <GraduationCap className="h-3 w-3" />
-                    <span>Student</span>
+                    <span>{t('student')}</span>
                   </Badge>
                 </div>
                 <p className="text-muted-foreground">@{profile?.username}</p>
@@ -347,10 +353,10 @@ export default function Profile() {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center space-x-2">
-              <span>Personal Information</span>
+              <span>{tPersonal('title')}</span>
             </CardTitle>
             <CardDescription>
-              Update your personal details and profile information
+              {tPersonal('description')}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -362,16 +368,16 @@ export default function Profile() {
                     name="displayName"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Display Name</FormLabel>
+                        <FormLabel>{tPersonal('displayName')}</FormLabel>
                         <FormControl>
                           <Input
                             {...field}
-                            placeholder="Enter your display name"
+                            placeholder={tPersonal('displayNamePlaceholder')}
                             disabled={!isEditing}
                           />
                         </FormControl>
                         <FormDescription>
-                          This is how your name will appear to others
+                          {tPersonal('displayNameDescription')}
                         </FormDescription>
                         <FormMessage />
                       </FormItem>
@@ -383,16 +389,16 @@ export default function Profile() {
                     name="location"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Location</FormLabel>
+                        <FormLabel>{tPersonal('location')}</FormLabel>
                         <FormControl>
                           <Input
                             {...field}
-                            placeholder="Enter your location"
+                            placeholder={tPersonal('locationPlaceholder')}
                             disabled={!isEditing}
                           />
                         </FormControl>
                         <FormDescription>
-                          Your city, state, or country
+                          {tPersonal('locationDescription')}
                         </FormDescription>
                         <FormMessage />
                       </FormItem>
@@ -405,17 +411,17 @@ export default function Profile() {
                   name="bio"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Bio</FormLabel>
+                      <FormLabel>{tPersonal('bio')}</FormLabel>
                       <FormControl>
                         <Textarea
                           {...field}
-                          placeholder="Tell us about yourself..."
+                          placeholder={tPersonal('bioPlaceholder')}
                           className="min-h-[100px]"
                           disabled={!isEditing}
                         />
                       </FormControl>
                       <FormDescription>
-                        A brief description about yourself (max 500 characters)
+                        {tPersonal('bioDescription')}
                       </FormDescription>
                       <FormMessage />
                     </FormItem>
@@ -427,16 +433,16 @@ export default function Profile() {
                   name="website"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Website</FormLabel>
+                      <FormLabel>{tPersonal('website')}</FormLabel>
                       <FormControl>
                         <Input
                           {...field}
-                          placeholder="https://your-website.com"
+                          placeholder={tPersonal('websitePlaceholder')}
                           disabled={!isEditing}
                         />
                       </FormControl>
                       <FormDescription>
-                        Your personal website or portfolio
+                        {tPersonal('websiteDescription')}
                       </FormDescription>
                       <FormMessage />
                     </FormItem>
@@ -454,31 +460,31 @@ export default function Profile() {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center space-x-2">
-              <span>Account Information</span>
+              <span>{tAccount('title')}</span>
             </CardTitle>
             <CardDescription>
-              Your account details and login information
+              {tAccount('description')}
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <Label className="text-sm font-medium text-muted-foreground">Username</Label>
+                <Label className="text-sm font-medium text-muted-foreground">{tAccount('username')}</Label>
                 <div className="p-3 bg-muted/50 rounded-md">
                   <span className="text-sm font-medium">{profile?.username || "N/A"}</span>
                 </div>
                 <p className="text-xs text-muted-foreground">
-                  Username cannot be changed
+                  {tAccount('usernameNote')}
                 </p>
               </div>
 
               <div className="space-y-2">
-                <Label className="text-sm font-medium text-muted-foreground">Email</Label>
+                <Label className="text-sm font-medium text-muted-foreground">{tAccount('email')}</Label>
                 <div className="p-3 bg-muted/50 rounded-md">
                   <span className="text-sm font-medium">user@example.com</span>
                 </div>
                 <p className="text-xs text-muted-foreground">
-                  Email is managed in Account Settings
+                  {tAccount('emailNote')}
                 </p>
               </div>
             </div>
@@ -486,7 +492,7 @@ export default function Profile() {
             <Separator />
 
             <div className="space-y-2">
-              <Label className="text-sm font-medium text-muted-foreground">Member Since</Label>
+              <Label className="text-sm font-medium text-muted-foreground">{tAccount('memberSince')}</Label>
               <div className="flex items-center space-x-2 p-3 bg-muted/50 rounded-md">
                 <Calendar className="h-4 w-4 text-muted-foreground" />
                 <span className="text-sm font-medium">

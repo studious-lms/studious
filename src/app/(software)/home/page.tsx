@@ -23,6 +23,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { format, isToday, isTomorrow, parseISO } from "date-fns";
+import { useTranslations } from "next-intl";
 
 type ClassData = RouterOutputs['class']['getAll'];
 type Assignment = NonNullable<ClassData['teacherInClass']>[0]['assignments'][0];
@@ -120,6 +121,7 @@ function StatsCard({
 }
 
 function UpcomingAssignments({ classes }: { classes: ClassData }) {
+  const t = useTranslations('home.upcomingAssignments');
   const allAssignments: Array<Assignment & { class: ClassWithAssignments; role: 'teacher' | 'student' }> = [
     ...(classes?.teacherInClass || []).flatMap(cls => 
       cls.assignments.map(assignment => ({ ...assignment, class: cls, role: 'teacher' as const }))
@@ -136,29 +138,29 @@ function UpcomingAssignments({ classes }: { classes: ClassData }) {
 
   const formatDueDate = (dueDate: string) => {
     const date = parseISO(dueDate);
-    if (isToday(date)) return "Due today";
-    if (isTomorrow(date)) return "Due tomorrow";
-    return `Due ${format(date, 'MMM d')}`;
+    if (isToday(date)) return t('dueToday');
+    if (isTomorrow(date)) return t('dueTomorrow');
+    return t('due', { date: format(date, 'MMM d') });
   };
 
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Upcoming Assignments</CardTitle>
-        <CardDescription>Your next deadlines</CardDescription>
+        <CardTitle>{t('title')}</CardTitle>
+        <CardDescription>{t('subtitle')}</CardDescription>
       </CardHeader>
       <CardContent>
         {upcomingAssignments.length === 0 ? (
           <div className="space-y-4">
             <EmptyState
               icon={CheckCircle}
-              title="All caught up!"
-              description="No upcoming assignments at the moment."
+              title={t('allCaughtUp')}
+              description={t('noUpcoming')}
             />
             <div className="flex justify-center">
               <Link href="/agenda">
                 <Button variant="outline">
-                  View Agenda
+                  {t('viewAgenda')}
                   <ChevronRight className="h-4 w-4 ml-2" />
                 </Button>
               </Link>
@@ -190,7 +192,7 @@ function UpcomingAssignments({ classes }: { classes: ClassData }) {
                   {assignment.role === 'teacher' && (
                     <div className="flex items-center gap-2 mt-1">
                       <Users className="h-3 w-3 text-muted-foreground" />
-                      <span className="text-xs text-muted-foreground">Teaching</span>
+                      <span className="text-xs text-muted-foreground">{t('teaching')}</span>
                     </div>
                   )}
                 </div>
@@ -198,7 +200,7 @@ function UpcomingAssignments({ classes }: { classes: ClassData }) {
             ))}
             <Link href="/agenda">
               <Button variant="ghost" className="w-full">
-                View All Assignments
+                {t('viewAllAssignments')}
                 <ChevronRight className="h-4 w-4 ml-2" />
               </Button>
             </Link>
@@ -210,6 +212,7 @@ function UpcomingAssignments({ classes }: { classes: ClassData }) {
 }
 
 function RecentNotifications() {
+  const t = useTranslations('home.notifications');
   const { data: notifications, isLoading } = trpc.notification.list.useQuery();
 
   const recentNotifications = notifications?.slice(0, 5) || [];
@@ -217,8 +220,8 @@ function RecentNotifications() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Recent Notifications</CardTitle>
-        <CardDescription>Latest updates</CardDescription>
+        <CardTitle>{t('title')}</CardTitle>
+        <CardDescription>{t('subtitle')}</CardDescription>
       </CardHeader>
       <CardContent>
         {isLoading ? (
@@ -233,7 +236,7 @@ function RecentNotifications() {
         ) : recentNotifications.length === 0 ? (
           <div className="text-center py-6 text-muted-foreground">
             <Bell className="h-12 w-12 mx-auto mb-2" />
-            <p>No new notifications</p>
+            <p>{t('noNew')}</p>
           </div>
         ) : (
           <div className="space-y-4">
@@ -252,7 +255,7 @@ function RecentNotifications() {
             ))}
             <Link href="/notifications">
               <Button variant="ghost" className="w-full">
-                View All Notifications
+                {t('viewAll')}
                 <ChevronRight className="h-4 w-4 ml-2" />
               </Button>
             </Link>
@@ -264,14 +267,15 @@ function RecentNotifications() {
 }
 
 function ClassOverview({ classes }: { classes: ClassData }) {
+  const t = useTranslations('home.classes');
   const teachingClasses = classes?.teacherInClass || [];
   const enrolledClasses = classes?.studentInClass || [];
   
   return (
     <Card>
       <CardHeader>
-        <CardTitle>My Classes</CardTitle>
-        <CardDescription>Quick access to your classes</CardDescription>
+        <CardTitle>{t('title')}</CardTitle>
+        <CardDescription>{t('subtitle')}</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="space-y-4">
@@ -279,7 +283,7 @@ function ClassOverview({ classes }: { classes: ClassData }) {
             <div>
               <h4 className="text-sm font-medium text-muted-foreground mb-2 flex items-center gap-2">
                 <GraduationCap className="h-4 w-4" />
-                Teaching ({teachingClasses.length})
+                {t('teaching')} ({teachingClasses.length})
               </h4>
               <div className="space-y-2">
                 {teachingClasses.slice(0, 3).map((cls) => (
@@ -304,7 +308,7 @@ function ClassOverview({ classes }: { classes: ClassData }) {
             <div>
               <h4 className="text-sm font-medium text-muted-foreground mb-2 flex items-center gap-2">
                 <Users className="h-4 w-4" />
-                Enrolled ({enrolledClasses.length})
+                {t('enrolled')} ({enrolledClasses.length})
               </h4>
               <div className="space-y-2">
                 {enrolledClasses.slice(0, 3).map((cls) => (
@@ -316,7 +320,7 @@ function ClassOverview({ classes }: { classes: ClassData }) {
                         <p className="text-xs text-muted-foreground">{cls.subject} • {cls.section}</p>
                       </div>
                       <Badge variant="secondary" className="text-xs">
-                        {cls.dueToday?.length || 0} due
+                        {cls.dueToday?.length || 0} {t('due')}
                       </Badge>
                     </div>
                   </Link>
@@ -328,10 +332,10 @@ function ClassOverview({ classes }: { classes: ClassData }) {
           {teachingClasses.length === 0 && enrolledClasses.length === 0 && (
             <div className="text-center py-6 text-muted-foreground">
               <BookOpen className="h-12 w-12 mx-auto mb-2" />
-              <p>No classes yet</p>
+              <p>{t('noClasses')}</p>
               <Link href="/classes">
                 <Button variant="outline" className="mt-2">
-                  Browse Classes
+                  {t('browseClasses')}
                 </Button>
               </Link>
             </div>
@@ -339,7 +343,7 @@ function ClassOverview({ classes }: { classes: ClassData }) {
           
           <Link href="/classes">
             <Button variant="ghost" className="w-full">
-              View All Classes
+              {t('viewAllClasses')}
               <ChevronRight className="h-4 w-4 ml-2" />
             </Button>
           </Link>
@@ -350,6 +354,8 @@ function ClassOverview({ classes }: { classes: ClassData }) {
 }
 
 export default function HomePage() {
+  const t = useTranslations('home');
+  const tStats = useTranslations('home.stats');
   const appState = useSelector((state: RootState) => state.app);
   const { data: classes, isLoading } = trpc.class.getAll.useQuery();
 
@@ -385,38 +391,38 @@ export default function HomePage() {
         {/* Header */}
         <div className="space-y-2">
           <h1 className="text-3xl font-bold tracking-tight">
-            Welcome back, {appState.user.displayName || appState.user.username}!
+            {t('welcomeBack', { name: appState.user.displayName || appState.user.username })}
           </h1>
           <p className="text-muted-foreground">
-            Here's what's happening with your classes today.
+            {t('subtitle')}
           </p>
         </div>
 
         {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <StatsCard
-            title="Total Classes"
+            title={tStats('totalClasses')}
             value={totalClasses}
             icon={BookOpen}
-            description={`${teachingClasses.length} teaching, ${enrolledClasses.length} enrolled`}
+            description={tStats('teachingEnrolled', { teaching: teachingClasses.length, enrolled: enrolledClasses.length })}
           />
           <StatsCard
-            title="Due Today"
+            title={tStats('dueToday')}
             value={dueTodayCount}
             icon={AlertCircle}
-            description="Assignments due today"
+            description={tStats('dueTodayDesc')}
           />
           <StatsCard
-            title="Upcoming"
+            title={tStats('upcoming')}
             value={upcomingCount}
             icon={Clock}
-            description="Assignments coming up"
+            description={tStats('upcomingDesc')}
           />
           <StatsCard
-            title="This Week"
+            title={tStats('thisWeek')}
             value={allAssignments.length}
             icon={Calendar}
-            description="Total assignments"
+            description={tStats('totalAssignments')}
           />
         </div>
 

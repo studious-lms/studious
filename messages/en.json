@@ -1,0 +1,252 @@
+{
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "submit": "Submit",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "loading": "Loading...",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "viewAll": "View All",
+    "noData": "No data available"
+  },
+  "navigation": {
+    "home": "Home",
+    "classes": "Classes",
+    "agenda": "Agenda",
+    "chat": "Chat",
+    "notifications": "Notifications",
+    "profile": "Profile",
+    "settings": "Settings",
+    "signOut": "Sign out",
+    "accountSettings": "Account Settings",
+    "pricing": "Pricing",
+    "schoolProgram": "School Program",
+    "about": "About",
+    "press": "Press",
+    "signIn": "Sign In"
+  },
+  "auth": {
+    "login": {
+      "title": "Welcome Back",
+      "subtitle": "Sign in to your Studious account",
+      "username": "Username",
+      "password": "Password",
+      "forgotPassword": "Forgot password?",
+      "signIn": "Sign in",
+      "signingIn": "Signing in...",
+      "noAccount": "Don't have an account?",
+      "signUp": "Sign up",
+      "successMessage": "Successfully logged in",
+      "cancel": "Cancel"
+    },
+    "signup": {
+      "title": "Create your account",
+      "subtitle": "Join Studious and start learning",
+      "signUp": "Sign Up",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "firstNamePlaceholder": "First name",
+      "lastNamePlaceholder": "Last name",
+      "emailPlaceholder": "Enter your email",
+      "passwordPlaceholder": "Create a password",
+      "confirmPasswordPlaceholder": "Confirm your password",
+      "agreeToTerms": "I agree to the",
+      "termsOfService": "Terms of Service",
+      "and": "and",
+      "privacyPolicy": "Privacy Policy",
+      "createAccount": "Create Account",
+      "creatingAccount": "Creating account...",
+      "alreadyHaveAccount": "Already have an account?",
+      "signIn": "Sign in",
+      "passwordMismatch": "Passwords do not match",
+      "termsRequired": "You must agree to the terms",
+      "accountCreated": "Account created successfully!",
+      "signUpFailed": "Failed to create account"
+    },
+    "verification": {
+      "notVerified": "Account Not Verified",
+      "message": "Your account needs to be verified before you can sign in. Please check your email for a verification link.",
+      "emailSentTo": "Verification email sent to:",
+      "resendEmail": "Resend Verification Email",
+      "backToSignIn": "Back to Sign In",
+      "emailSent": "Verification email sent!",
+      "checkInbox": "Please check your inbox and spam folder.",
+      "enterEmail": "Enter your email address",
+      "sending": "Sending...",
+      "sendEmail": "Send Email"
+    }
+  },
+  "home": {
+    "welcomeBack": "Welcome back, {name}!",
+    "subtitle": "Here's what's happening with your classes today.",
+    "stats": {
+      "totalClasses": "Total Classes",
+      "teachingEnrolled": "{teaching} teaching, {enrolled} enrolled",
+      "dueToday": "Due Today",
+      "dueTodayDesc": "Assignments due today",
+      "upcoming": "Upcoming",
+      "upcomingDesc": "Assignments coming up",
+      "thisWeek": "This Week",
+      "totalAssignments": "Total assignments"
+    },
+    "upcomingAssignments": {
+      "title": "Upcoming Assignments",
+      "subtitle": "Your next deadlines",
+      "allCaughtUp": "All caught up!",
+      "noUpcoming": "No upcoming assignments at the moment.",
+      "viewAgenda": "View Agenda",
+      "dueToday": "Due today",
+      "dueTomorrow": "Due tomorrow",
+      "due": "Due {date}",
+      "teaching": "Teaching",
+      "viewAllAssignments": "View All Assignments"
+    },
+    "notifications": {
+      "title": "Recent Notifications",
+      "subtitle": "Latest updates",
+      "noNew": "No new notifications",
+      "viewAll": "View All Notifications"
+    },
+    "classes": {
+      "title": "My Classes",
+      "subtitle": "Quick access to your classes",
+      "teaching": "Teaching",
+      "enrolled": "Enrolled",
+      "due": "due",
+      "noClasses": "No classes yet",
+      "browseClasses": "Browse Classes",
+      "viewAllClasses": "View All Classes"
+    }
+  },
+  "marketing": {
+    "navbar": {
+      "requestEarlyAccess": "Request Early Access"
+    },
+    "hero": {
+      "title": "Modern Learning Management",
+      "subtitle": "Streamline your classroom with powerful tools"
+    }
+  },
+  "errors": {
+    "somethingWentWrong": "Something went wrong",
+    "tryAgain": "Try again",
+    "pageNotFound": "Page not found",
+    "unauthorized": "Unauthorized access"
+  },
+  "classes": {
+    "title": "Classes",
+    "description": "Manage your teaching and enrolled classes",
+    "joinClass": "Join Class",
+    "createClass": "Create Class",
+    "searchPlaceholder": "Search classes...",
+    "teaching": "Teaching",
+    "enrolled": "Enrolled",
+    "noClassesFound": "No classes found",
+    "noTeachingClassesFound": "No teaching classes found matching \"{query}\"",
+    "noEnrolledClassesFound": "No enrolled classes found matching \"{query}\"",
+    "noClassesYet": "No classes yet",
+    "noClassesYetDesc": "Create your first class to start managing assignments, grades, and student interactions.",
+    "noEnrolledClasses": "No enrolled classes",
+    "noEnrolledClassesDesc": "Join a class using an invite code or link provided by your teacher.",
+    "classDeleted": "Class deleted successfully",
+    "classDeleteFailed": "Failed to delete class",
+    "failedToLoad": "Failed to load classes"
+  },
+  "agenda": {
+    "title": "Agenda",
+    "description": "View your schedule and upcoming events with comprehensive calendar views",
+    "addEvent": "Add Event",
+    "untitledEvent": "Untitled Event",
+    "today": "Today",
+    "previous": "Previous",
+    "next": "Next",
+    "views": {
+      "day": "Day",
+      "week": "Week",
+      "month": "Month",
+      "year": "Year"
+    }
+  },
+  "chat": {
+    "title": "Welcome to Chat",
+    "description": "Select a conversation from the sidebar to start chatting.",
+    "pleaseSignIn": "Please sign in",
+    "signInRequired": "You need to be signed in to access chat."
+  },
+  "profile": {
+    "title": "Profile",
+    "description": "Manage your personal information and profile settings",
+    "editProfile": "Edit Profile",
+    "saveChanges": "Save Changes",
+    "cancel": "Cancel",
+    "student": "Student",
+    "personalInformation": {
+      "title": "Personal Information",
+      "description": "Update your personal details and profile information",
+      "displayName": "Display Name",
+      "displayNamePlaceholder": "Enter your display name",
+      "displayNameDescription": "This is how your name will appear to others",
+      "location": "Location",
+      "locationPlaceholder": "Enter your location",
+      "locationDescription": "Your city, state, or country",
+      "bio": "Bio",
+      "bioPlaceholder": "Tell us about yourself...",
+      "bioDescription": "A brief description about yourself (max 500 characters)",
+      "website": "Website",
+      "websitePlaceholder": "https://your-website.com",
+      "websiteDescription": "Your personal website or portfolio"
+    },
+    "accountInformation": {
+      "title": "Account Information",
+      "description": "Your account details and login information",
+      "username": "Username",
+      "usernameNote": "Username cannot be changed",
+      "email": "Email",
+      "emailNote": "Email is managed in Account Settings",
+      "memberSince": "Member Since"
+    },
+    "messages": {
+      "profileUpdated": "Profile updated successfully",
+      "profileUpdateFailed": "Failed to update profile",
+      "profilePictureSelected": "Profile picture selected. Click 'Save Changes' to update.",
+      "avatarSelected": "Avatar selected. Click 'Save Changes' to update.",
+      "profilePictureUploadFailed": "Failed to upload profile picture",
+      "profilePictureSelectFailed": "Failed to select profile picture",
+      "failedToLoadProfile": "Failed to load profile. Please try again."
+    }
+  },
+  "class": {
+    "assignments": "Assignments",
+    "members": "Members",
+    "grades": "Grades",
+    "files": "Files",
+    "settings": "Settings",
+    "syllabus": "Syllabus",
+    "attendance": "Attendance"
+  },
+  "assignment": {
+    "dueDate": "Due Date",
+    "submit": "Submit",
+    "grade": "Grade",
+    "feedback": "Feedback",
+    "submissions": "Submissions"
+  },
+  "time": {
+    "today": "Today",
+    "tomorrow": "Tomorrow",
+    "yesterday": "Yesterday",
+    "thisWeek": "This Week",
+    "nextWeek": "Next Week",
+    "lastWeek": "Last Week"
+  }
+}
+

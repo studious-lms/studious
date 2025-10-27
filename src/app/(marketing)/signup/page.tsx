@@ -10,8 +10,10 @@ import { PageLayout } from "@/components/ui/page-layout";
 import { toast } from "sonner";
 import { Eye, EyeOff, Mail, Lock, User } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
+import { useTranslations } from "next-intl";
 
 export default function Signup() {
+  const t = useTranslations('auth.signup');
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -35,14 +37,14 @@ export default function Signup() {
 
     // Basic validation
     if (formData.password !== formData.confirmPassword) {
-      toast.error("Password mismatch");
+      toast.error(t('passwordMismatch'));
 
       setIsLoading(false);
       return;
     }
 
     if (!formData.agreeToTerms) {
-      toast.error("Terms required");
+      toast.error(t('termsRequired'));
 
       setIsLoading(false);
       return;
@@ -52,11 +54,11 @@ export default function Signup() {
     try {
       await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API call
       
-      toast.success("Account created!");
+      toast.success(t('accountCreated'));
 
       router.push("/verify/mock-token");
     } catch {
-      toast.error("Sign up failed");
+      toast.error(t('signUpFailed'));
 
     } finally {
       setIsLoading(false);
@@ -72,28 +74,28 @@ export default function Signup() {
             <img src="/logo.png" alt="Studious Logo" className="h-9 w-9 sm:h-10 sm:w-10" />
           </div>
           <div className="space-y-2">
-            <h1 className="text-2xl sm:text-3xl font-bold">Create your account</h1>
-            <p className="text-sm sm:text-base text-muted-foreground">Join Studious and start learning</p>
+            <h1 className="text-2xl sm:text-3xl font-bold">{t('title')}</h1>
+            <p className="text-sm sm:text-base text-muted-foreground">{t('subtitle')}</p>
           </div>
         </div>
 
         {/* Signup Form */}
         <Card>
           <CardHeader>
-            <CardTitle className="text-lg sm:text-xl">Sign Up</CardTitle>
+            <CardTitle className="text-lg sm:text-xl">{t('signUp')}</CardTitle>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
               {/* Name Fields */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="firstName" className="text-sm">First Name</Label>
+                  <Label htmlFor="firstName" className="text-sm">{t('firstName')}</Label>
                   <div className="relative">
                     <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                     <Input
                       id="firstName"
                       type="text"
-                      placeholder="First name"
+                      placeholder={t('firstNamePlaceholder')}
                       value={formData.firstName}
                       onChange={(e) => handleInputChange("firstName", e.target.value)}
                       className="pl-10"
@@ -102,11 +104,11 @@ export default function Signup() {
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="lastName" className="text-sm">Last Name</Label>
+                  <Label htmlFor="lastName" className="text-sm">{t('lastName')}</Label>
                   <Input
                     id="lastName"
                     type="text"
-                    placeholder="Last name"
+                    placeholder={t('lastNamePlaceholder')}
                     value={formData.lastName}
                     onChange={(e) => handleInputChange("lastName", e.target.value)}
                     required
@@ -116,13 +118,13 @@ export default function Signup() {
 
               {/* Email Field */}
               <div className="space-y-2">
-                <Label htmlFor="email" className="text-sm">Email</Label>
+                <Label htmlFor="email" className="text-sm">{t('email')}</Label>
                 <div className="relative">
                   <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                   <Input
                     id="email"
                     type="email"
-                    placeholder="Enter your email"
+                    placeholder={t('emailPlaceholder')}
                     value={formData.email}
                     onChange={(e) => handleInputChange("email", e.target.value)}
                     className="pl-10"
@@ -133,13 +135,13 @@ export default function Signup() {
 
               {/* Password Field */}
               <div className="space-y-2">
-                <Label htmlFor="password" className="text-sm">Password</Label>
+                <Label htmlFor="password" className="text-sm">{t('password')}</Label>
                 <div className="relative">
                   <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                   <Input
                     id="password"
                     type={showPassword ? "text" : "password"}
-                    placeholder="Create a password"
+                    placeholder={t('passwordPlaceholder')}
                     value={formData.password}
                     onChange={(e) => handleInputChange("password", e.target.value)}
                     className="pl-10 pr-10"
@@ -163,13 +165,13 @@ export default function Signup() {
 
               {/* Confirm Password Field */}
               <div className="space-y-2">
-                <Label htmlFor="confirmPassword" className="text-sm">Confirm Password</Label>
+                <Label htmlFor="confirmPassword" className="text-sm">{t('confirmPassword')}</Label>
                 <div className="relative">
                   <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                   <Input
                     id="confirmPassword"
                     type={showConfirmPassword ? "text" : "password"}
-                    placeholder="Confirm your password"
+                    placeholder={t('confirmPasswordPlaceholder')}
                     value={formData.confirmPassword}
                     onChange={(e) => handleInputChange("confirmPassword", e.target.value)}
                     className="pl-10 pr-10"
@@ -202,28 +204,28 @@ export default function Signup() {
                   htmlFor="terms"
                   className="text-sm text-muted-foreground leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                 >
-                  I agree to the{" "}
+                  {t('agreeToTerms')}{" "}
                   <Button variant="link" className="px-0 h-auto text-sm">
-                    Terms of Service
+                    {t('termsOfService')}
                   </Button>{" "}
-                  and{" "}
+                  {t('and')}{" "}
                   <Button variant="link" className="px-0 h-auto text-sm">
-                    Privacy Policy
+                    {t('privacyPolicy')}
                   </Button>
                 </label>
               </div>
 
               {/* Submit Button */}
               <Button type="submit" className="w-full" disabled={isLoading}>
-                {isLoading ? "Creating account..." : "Create Account"}
+                {isLoading ? t('creatingAccount') : t('createAccount')}
               </Button>
             </form>
 
             {/* Sign In Link */}
             <div className="mt-4 sm:mt-6 text-center text-sm">
-              <span className="text-muted-foreground">Already have an account? </span>
+              <span className="text-muted-foreground">{t('alreadyHaveAccount')} </span>
               <Button variant="link" className="px-0 text-sm" asChild>
-                <a href="/login">Sign in</a>
+                <a href="/login">{t('signIn')}</a>
               </Button>
             </div>
           </CardContent>

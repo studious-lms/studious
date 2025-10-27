@@ -20,8 +20,10 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { ClassCardSkeleton } from "@/components/ui/class-card-skeleton";
 import { EmptyState } from "@/components/ui/empty-state";
 import { ClassCreateInput } from "@/lib/trpc";
+import { useTranslations } from "next-intl";
 
 export default function Classes() {
+  const t = useTranslations('classes');
   const [searchQuery, setSearchQuery] = useState("");
   const [activeTab, setActiveTab] = useState("teaching");
 
@@ -47,7 +49,7 @@ export default function Classes() {
   const handleDeleteClass = async (classId: string) => {
     try {
       await deleteClassMutation.mutateAsync({ classId, id: classId });
-      toast.success("Class deleted successfully");
+      toast.success(t('classDeleted'));
 
       // Update local state
       // setClasses(prev: { teacherInClass: any[]; studentInClass: any[]; }) => ({
@@ -56,7 +58,7 @@ export default function Classes() {
       // }));
     } catch (err) {
       console.error("Failed to delete class:", err);
-      toast.error("Failed to delete class");
+      toast.error(t('classDeleteFailed'));
     }
   };
 
@@ -73,8 +75,8 @@ export default function Classes() {
     return (
       <PageLayout>
         <PageHeader
-          title="Classes"
-          description="Manage your teaching and enrolled classes"
+          title={t('title')}
+          description={t('description')}
         >
           <div className="flex flex-col sm:flex-row gap-2">
             <Skeleton className="h-10 w-24" />
@@ -105,20 +107,20 @@ export default function Classes() {
   return (
     <PageLayout>
       <PageHeader
-        title="Classes"
-        description="Manage your teaching and enrolled classes"
+        title={t('title')}
+        description={t('description')}
       >
         <div className="flex flex-col sm:flex-row gap-2">
           <JoinClassModal onClassJoined={handleClassJoined}>
             <Button variant="outline" className="flex items-center space-x-2">
               <UserPlus className="h-4 w-4" />
-              <span>Join Class</span>
+              <span>{t('joinClass')}</span>
             </Button>
           </JoinClassModal>
           <CreateClassModal onClassCreated={handleClassCreated}>
             <Button className="flex items-center space-x-2">
               <Plus className="h-4 w-4" />
-              <span>Create Class</span>
+              <span>{t('createClass')}</span>
             </Button>
           </CreateClassModal>
         </div>
@@ -128,7 +130,7 @@ export default function Classes() {
       <div className="relative max-w-md mb-6">
         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
         <Input
-          placeholder="Search classes..."
+          placeholder={t('searchPlaceholder')}
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           className="pl-10"
@@ -139,13 +141,13 @@ export default function Classes() {
       <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
         <TabsList className="grid w-full max-w-md grid-cols-2">
           <TabsTrigger value="teaching">
-            <span>Teaching</span>
+            <span>{t('teaching')}</span>
             <span className="bg-muted text-muted-foreground px-2 rounded-full text-xs ml-2">
               {filteredTeaching.length}
             </span>
           </TabsTrigger>
           <TabsTrigger value="enrolled">
-            <span>Enrolled</span>
+            <span>{t('enrolled')}</span>
             <span className="bg-muted text-muted-foreground px-2 rounded-full text-xs ml-2">
               {filteredEnrolled.length}
             </span>
@@ -156,7 +158,7 @@ export default function Classes() {
           {error && (
             <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
               <p className="text-yellow-800 text-sm">
-                {error.message || "Failed to load classes"}. Showing fallback data.
+                {error.message || t('failedToLoad')}. Showing fallback data.
               </p>
             </div>
           )}
@@ -179,14 +181,14 @@ export default function Classes() {
           ) : searchQuery ? (
             <EmptyState
               icon={Search}
-              title="No classes found"
-              description={`No teaching classes found matching "${searchQuery}"`}
+              title={t('noClassesFound')}
+              description={t('noTeachingClassesFound', { query: searchQuery })}
             />
           ) : (
             <EmptyState
               icon={Building}
-              title="No classes yet"
-              description="Create your first class to start managing assignments, grades, and student interactions." 
+              title={t('noClassesYet')}
+              description={t('noClassesYetDesc')} 
             />
           )}
         </TabsContent>
@@ -195,7 +197,7 @@ export default function Classes() {
           {error && (
             <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
               <p className="text-yellow-800 text-sm">
-                {error.message || "Failed to load classes"}. Showing fallback data.
+                {error.message || t('failedToLoad')}. Showing fallback data.
               </p>
             </div>
           )}
@@ -217,14 +219,14 @@ export default function Classes() {
           ) : searchQuery ? (
             <EmptyState
               icon={Search}
-              title="No classes found"
-              description={`No enrolled classes found matching "${searchQuery}"`}
+              title={t('noClassesFound')}
+              description={t('noEnrolledClassesFound', { query: searchQuery })}
             />
           ) : (
             <EmptyState
               icon={UserPlus}
-              title="No enrolled classes"
-              description="Join a class using an invite code or link provided by your teacher."
+              title={t('noEnrolledClasses')}
+              description={t('noEnrolledClassesDesc')}
             />
           )}
         </TabsContent>

@@ -15,8 +15,12 @@ import { setCookie } from "cookies-next";
 import { toast } from "sonner";
 import { setAuth } from "@/store/appSlice";
 import { useDispatch } from "react-redux";
+import { useTranslations } from "next-intl";
 
 export default function Login() {
+  const t = useTranslations('auth.login');
+  const tVerification = useTranslations('auth.verification');
+  const tCommon = useTranslations('common');
   const router = useRouter();
   const [formData, setFormData] = useState<RouterInputs['auth']['login']>({
     username: '',
@@ -35,7 +39,7 @@ export default function Login() {
   const loginMutation = trpc.auth.login.useMutation({
     onSuccess: (data: RouterOutputs['auth']['login']) => {
       if ('token' in data) {
-        toast.success('Successfully logged in');
+        toast.success(t('successMessage'));
         // set the session cookie
         setCookie('token', data.token);
         dispatch(setAuth({
@@ -58,10 +62,10 @@ export default function Login() {
   const resendVerificationMutation = trpc.auth.resendVerificationEmail.useMutation({
     onSuccess: () => {
       setResendSuccess(true);
-      toast.success('Verification email sent successfully!');
+      toast.success(tVerification('emailSent'));
     },
     onError: (error) => {
-      toast.error(error.message || 'Failed to send verification email');
+      toast.error(error.message);
     }
   });
   
@@ -110,8 +114,8 @@ export default function Login() {
           <div className="flex justify-center mb-3 sm:mb-4">
             <img src="/logo.png" alt="Studious" className="w-9 h-9 sm:w-10 sm:h-10" />
           </div>
-          <h1 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">Welcome Back</h1>
-          <p className="text-sm sm:text-base text-foreground-muted">Sign in to your Studious account</p>
+          <h1 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">{t('title')}</h1>
+          <p className="text-sm sm:text-base text-foreground-muted">{t('subtitle')}</p>
         </div>
 
         {userNotVerified && (
@@ -128,16 +132,15 @@ export default function Login() {
 
               {/* Message */}
               <div className="space-y-2">
-                <h2 className="text-lg sm:text-xl font-semibold text-foreground">Account Not Verified</h2>
+                <h2 className="text-lg sm:text-xl font-semibold text-foreground">{tVerification('notVerified')}</h2>
                 <p className="text-sm sm:text-base text-foreground-muted">
-                  Your account needs to be verified before you can sign in. 
-                  Please check your email for a verification link.
+                  {tVerification('message')}
                 </p>
               </div>
 
               {/* Email Display */}
               <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-                <p className="text-sm text-foreground-muted mb-1">Verification email sent to:</p>
+                <p className="text-sm text-foreground-muted mb-1">{tVerification('emailSentTo')}</p>
                 <p className="font-medium text-foreground">{resendEmailFormData.email}</p>
               </div>
 
@@ -149,14 +152,14 @@ export default function Login() {
                       onClick={() => setShowResendForm(true)}
                       className="w-full font-medium"
                     >
-                      Resend Verification Email
+                      {tVerification('resendEmail')}
                     </Button>
                     <Button
                       variant="outline"
                       onClick={handleBackToLogin}
                       className="w-full font-medium"
                     >
-                      Back to Sign In
+                      {tVerification('backToSignIn')}
                     </Button>
                   </>
                 ) : (
@@ -166,17 +169,17 @@ export default function Login() {
                         <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
-                        <p className="text-green-700 font-medium">Verification email sent!</p>
+                        <p className="text-green-700 font-medium">{tVerification('emailSent')}</p>
                       </div>
                       <p className="text-sm text-green-600 mt-1">
-                        Please check your inbox and spam folder.
+                        {tVerification('checkInbox')}
                       </p>
                     </div>
                     <Button
                       onClick={handleBackToLogin}
                       className="w-full font-medium"
                     >
-                      Back to Sign In
+                      {tVerification('backToSignIn')}
                     </Button>
                   </>
                 )}
@@ -189,7 +192,7 @@ export default function Login() {
                     <Input
                       value={resendEmailFormData.email}
                       onChange={handleResendEmailChange}
-                      placeholder="Enter your email address"
+                      placeholder={tVerification('enterEmail')}
                       required
                     />
                     <div className="flex space-x-3">
@@ -198,14 +201,14 @@ export default function Login() {
                         className="flex-1 font-medium"
                         disabled={resendVerificationMutation.isPending}
                       >
-                        {resendVerificationMutation.isPending ? 'Sending...' : 'Send Email'}
+                        {resendVerificationMutation.isPending ? tVerification('sending') : tVerification('sendEmail')}
                       </Button>
                       <Button
                         variant="outline"
                         onClick={() => setShowResendForm(false)}
                         className="flex-1 font-medium"
                       >
-                        Cancel
+                        {tCommon('cancel')}
                       </Button>
                     </div>
                   </form>
@@ -222,22 +225,22 @@ export default function Login() {
               <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                 {/* Username Field */}
                 <div className="space-y-2">
-                  <label className="text-sm font-medium">Username</label>
+                  <label className="text-sm font-medium">{t('username')}</label>
                   <Input
                     value={formData.username}
                     onChange={handleInputChange('username')}
-                    placeholder="Enter your username"
+                    placeholder={t('username')}
                   />
               </div>
 
               {/* Password Field */}
               <div className="space-y-2">
-                  <label className="text-sm font-medium">Password</label>
+                  <label className="text-sm font-medium">{t('password')}</label>
                   <Input
                     type="password"
                     value={formData.password}
                     onChange={handleInputChange('password')}
-                    placeholder="Enter your password"
+                    placeholder={t('password')}
                   />
                 </div>
 
@@ -248,7 +251,7 @@ export default function Login() {
                     onChange={() => {}}
                   />
                   <Link href="/forgot-password" className="text-sm text-primary-500 hover:underline">
-                    Forgot password?
+                    {t('forgotPassword')}
                   </Link>
               </div>
 
@@ -258,7 +261,7 @@ export default function Login() {
                   className="w-full font-medium"
                   disabled={loginMutation.isPending}
                 >
-                  {loginMutation.isPending ? 'Signing in...' : 'Sign in'}
+                  {loginMutation.isPending ? t('signingIn') : t('signIn')}
               </Button>
             </form>
         </Card>
@@ -266,9 +269,9 @@ export default function Login() {
             {/* Signup Link */}
             <div className="text-center mt-6">
               <p className="text-sm sm:text-base text-foreground-muted">
-                Don't have an account?{' '}
+                {t('noAccount')}{' '}
                 <Link href="/signup" className="text-primary-500 hover:underline font-medium">
-                  Sign up
+                  {t('signUp')}
                 </Link>
               </p>
             </div>

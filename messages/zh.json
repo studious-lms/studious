@@ -1,0 +1,252 @@
+{
+  "common": {
+    "save": "保存",
+    "cancel": "取消",
+    "delete": "删除",
+    "edit": "编辑",
+    "submit": "提交",
+    "close": "关闭",
+    "back": "返回",
+    "next": "下一步",
+    "loading": "加载中...",
+    "search": "搜索",
+    "filter": "筛选",
+    "sort": "排序",
+    "viewAll": "查看全部",
+    "noData": "暂无数据"
+  },
+  "navigation": {
+    "home": "首页",
+    "classes": "课程",
+    "agenda": "日程",
+    "chat": "聊天",
+    "notifications": "通知",
+    "profile": "个人资料",
+    "settings": "设置",
+    "signOut": "退出登录",
+    "accountSettings": "账户设置",
+    "pricing": "定价",
+    "schoolProgram": "学校计划",
+    "about": "关于",
+    "press": "新闻",
+    "signIn": "登录"
+  },
+  "auth": {
+    "login": {
+      "title": "欢迎回来",
+      "subtitle": "登录您的 Studious 账户",
+      "username": "用户名",
+      "password": "密码",
+      "forgotPassword": "忘记密码？",
+      "signIn": "登录",
+      "signingIn": "登录中...",
+      "noAccount": "还没有账户？",
+      "signUp": "注册",
+      "successMessage": "登录成功",
+      "cancel": "取消"
+    },
+    "signup": {
+      "title": "创建您的账户",
+      "subtitle": "加入 Studious 开始学习",
+      "signUp": "注册",
+      "firstName": "名字",
+      "lastName": "姓氏",
+      "email": "电子邮件",
+      "password": "密码",
+      "confirmPassword": "确认密码",
+      "firstNamePlaceholder": "名字",
+      "lastNamePlaceholder": "姓氏",
+      "emailPlaceholder": "输入您的电子邮件",
+      "passwordPlaceholder": "创建密码",
+      "confirmPasswordPlaceholder": "确认您的密码",
+      "agreeToTerms": "我同意",
+      "termsOfService": "服务条款",
+      "and": "和",
+      "privacyPolicy": "隐私政策",
+      "createAccount": "创建账户",
+      "creatingAccount": "创建账户中...",
+      "alreadyHaveAccount": "已有账户？",
+      "signIn": "登录",
+      "passwordMismatch": "密码不匹配",
+      "termsRequired": "您必须同意条款",
+      "accountCreated": "账户创建成功！",
+      "signUpFailed": "创建账户失败"
+    },
+    "verification": {
+      "notVerified": "账户未验证",
+      "message": "您的账户需要在登录前进行验证。请检查您的电子邮件以获取验证链接。",
+      "emailSentTo": "验证邮件已发送至：",
+      "resendEmail": "重新发送验证邮件",
+      "backToSignIn": "返回登录",
+      "emailSent": "验证邮件已发送！",
+      "checkInbox": "请检查您的收件箱和垃圾邮件文件夹。",
+      "enterEmail": "输入您的电子邮件地址",
+      "sending": "发送中...",
+      "sendEmail": "发送邮件"
+    }
+  },
+  "home": {
+    "welcomeBack": "欢迎回来，{name}！",
+    "subtitle": "这是您今天课程的最新动态。",
+    "stats": {
+      "totalClasses": "总课程数",
+      "teachingEnrolled": "{teaching} 授课，{enrolled} 已注册",
+      "dueToday": "今日到期",
+      "dueTodayDesc": "今日到期的作业",
+      "upcoming": "即将到期",
+      "upcomingDesc": "即将到期的作业",
+      "thisWeek": "本周",
+      "totalAssignments": "总作业数"
+    },
+    "upcomingAssignments": {
+      "title": "即将到期的作业",
+      "subtitle": "您的下一个截止日期",
+      "allCaughtUp": "全部完成！",
+      "noUpcoming": "目前没有即将到期的作业。",
+      "viewAgenda": "查看日程",
+      "dueToday": "今日到期",
+      "dueTomorrow": "明日到期",
+      "due": "{date} 到期",
+      "teaching": "授课中",
+      "viewAllAssignments": "查看所有作业"
+    },
+    "notifications": {
+      "title": "最近通知",
+      "subtitle": "最新更新",
+      "noNew": "没有新通知",
+      "viewAll": "查看所有通知"
+    },
+    "classes": {
+      "title": "我的课程",
+      "subtitle": "快速访问您的课程",
+      "teaching": "授课中",
+      "enrolled": "已注册",
+      "due": "到期",
+      "noClasses": "还没有课程",
+      "browseClasses": "浏览课程",
+      "viewAllClasses": "查看所有课程"
+    }
+  },
+  "marketing": {
+    "navbar": {
+      "requestEarlyAccess": "申请抢先体验"
+    },
+    "hero": {
+      "title": "现代学习管理",
+      "subtitle": "使用强大的工具简化您的课堂"
+    }
+  },
+  "errors": {
+    "somethingWentWrong": "出错了",
+    "tryAgain": "重试",
+    "pageNotFound": "页面未找到",
+    "unauthorized": "未授权访问"
+  },
+  "classes": {
+    "title": "课程",
+    "description": "管理您的教学和注册课程",
+    "joinClass": "加入课程",
+    "createClass": "创建课程",
+    "searchPlaceholder": "搜索课程...",
+    "teaching": "授课中",
+    "enrolled": "已注册",
+    "noClassesFound": "未找到课程",
+    "noTeachingClassesFound": "未找到与 \"{query}\" 匹配的教学课程",
+    "noEnrolledClassesFound": "未找到与 \"{query}\" 匹配的已注册课程",
+    "noClassesYet": "还没有课程",
+    "noClassesYetDesc": "创建您的第一个课程以开始管理作业、成绩和学生互动。",
+    "noEnrolledClasses": "没有已注册的课程",
+    "noEnrolledClassesDesc": "使用教师提供的邀请码或链接加入课程。",
+    "classDeleted": "课程删除成功",
+    "classDeleteFailed": "删除课程失败",
+    "failedToLoad": "加载课程失败"
+  },
+  "agenda": {
+    "title": "日程",
+    "description": "通过全面的日历视图查看您的日程和即将到来的事件",
+    "addEvent": "添加事件",
+    "untitledEvent": "无标题事件",
+    "today": "今天",
+    "previous": "上一个",
+    "next": "下一个",
+    "views": {
+      "day": "日",
+      "week": "周",
+      "month": "月",
+      "year": "年"
+    }
+  },
+  "chat": {
+    "title": "欢迎使用聊天",
+    "description": "从侧边栏选择一个对话开始聊天。",
+    "pleaseSignIn": "请登录",
+    "signInRequired": "您需要登录才能访问聊天。"
+  },
+  "profile": {
+    "title": "个人资料",
+    "description": "管理您的个人信息和个人资料设置",
+    "editProfile": "编辑资料",
+    "saveChanges": "保存更改",
+    "cancel": "取消",
+    "student": "学生",
+    "personalInformation": {
+      "title": "个人信息",
+      "description": "更新您的个人详细信息和个人资料信息",
+      "displayName": "显示名称",
+      "displayNamePlaceholder": "输入您的显示名称",
+      "displayNameDescription": "这是您的名字将如何显示给其他人",
+      "location": "位置",
+      "locationPlaceholder": "输入您的位置",
+      "locationDescription": "您的城市、州或国家",
+      "bio": "个人简介",
+      "bioPlaceholder": "介绍一下您自己...",
+      "bioDescription": "简短的自我介绍（最多500个字符）",
+      "website": "网站",
+      "websitePlaceholder": "https://your-website.com",
+      "websiteDescription": "您的个人网站或作品集"
+    },
+    "accountInformation": {
+      "title": "账户信息",
+      "description": "您的账户详细信息和登录信息",
+      "username": "用户名",
+      "usernameNote": "用户名无法更改",
+      "email": "电子邮件",
+      "emailNote": "电子邮件在账户设置中管理",
+      "memberSince": "加入时间"
+    },
+    "messages": {
+      "profileUpdated": "个人资料更新成功",
+      "profileUpdateFailed": "更新个人资料失败",
+      "profilePictureSelected": "已选择个人资料图片。点击\"保存更改\"以更新。",
+      "avatarSelected": "已选择头像。点击\"保存更改\"以更新。",
+      "profilePictureUploadFailed": "上传个人资料图片失败",
+      "profilePictureSelectFailed": "选择个人资料图片失败",
+      "failedToLoadProfile": "加载个人资料失败。请重试。"
+    }
+  },
+  "class": {
+    "assignments": "作业",
+    "members": "成员",
+    "grades": "成绩",
+    "files": "文件",
+    "settings": "设置",
+    "syllabus": "教学大纲",
+    "attendance": "考勤"
+  },
+  "assignment": {
+    "dueDate": "截止日期",
+    "submit": "提交",
+    "grade": "成绩",
+    "feedback": "反馈",
+    "submissions": "提交内容"
+  },
+  "time": {
+    "today": "今天",
+    "tomorrow": "明天",
+    "yesterday": "昨天",
+    "thisWeek": "本周",
+    "nextWeek": "下周",
+    "lastWeek": "上周"
+  }
+}
+

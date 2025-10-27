@@ -5,8 +5,11 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { EarlyAccessModal } from "./EarlyAccessModal";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 export function Navbar() {
+  const t = useTranslations('navigation');
+  const tMarketing = useTranslations('marketing.navbar');
   const [showEarlyAccess, setShowEarlyAccess] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -24,27 +27,27 @@ export function Navbar() {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
               <Link href="/pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Pricing
+                {t('pricing')}
               </Link>
               <Link href="/program" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                School Program
+                {t('schoolProgram')}
               </Link>
               <Link href="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                About
+                {t('about')}
               </Link>
               <Link href="/press" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Press
+                {t('press')}
               </Link>
               <div className="h-4 w-px bg-border" />
               <Link href="/login" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Sign In
+                {t('signIn')}
               </Link>
               <Button 
                 size="sm" 
                 className="bg-primary hover:bg-primary/90 text-primary-foreground"
                 onClick={() => setShowEarlyAccess(true)}
               >
-                Request Early Access
+                {tMarketing('requestEarlyAccess')}
               </Button>
             </div>
             
@@ -70,28 +73,28 @@ export function Navbar() {
                   className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Pricing
+                  {t('pricing')}
                 </Link>
                 <Link 
                   href="/program" 
                   className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  School Program
+                  {t('schoolProgram')}
                 </Link>
                 <Link 
                   href="/about" 
                   className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  About
+                  {t('about')}
                 </Link>
                 <Link 
                   href="/press" 
                   className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Press
+                  {t('press')}
                 </Link>
                 <div className="pt-4 border-t border-border">
                   <Link 
@@ -99,7 +102,7 @@ export function Navbar() {
                     className="block text-sm text-muted-foreground hover:text-foreground transition-colors mb-4"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    Sign In
+                    {t('signIn')}
                   </Link>
                   <Button 
                     size="sm" 
@@ -109,7 +112,7 @@ export function Navbar() {
                       setIsMobileMenuOpen(false);
                     }}
                   >
-                    Request Early Access
+                    {tMarketing('requestEarlyAccess')}
                   </Button>
                 </div>
               </div>

@@ -4,8 +4,10 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { MessageSquare, LogIn } from "lucide-react";
 import { EmptyState } from "@/components/ui/empty-state";
+import { useTranslations } from 'next-intl';
 
 export default function Chat() {
+  const t = useTranslations('chat');
   const appState = useSelector((state: RootState) => state.app);
   const user = appState.user;
 
@@ -14,8 +16,8 @@ export default function Chat() {
       <div className="h-full bg-background flex items-center justify-center">
         <EmptyState
           icon={LogIn}
-          title="Please sign in"
-          description="You need to be signed in to access chat."
+          title={t('pleaseSignIn')}
+          description={t('signInRequired')}
         />
       </div>
     );
@@ -26,8 +28,8 @@ export default function Chat() {
     <div className="h-full bg-background flex items-center justify-center">
       <EmptyState
         icon={MessageSquare}
-        title="Welcome to Chat"
-        description="Select a conversation from the sidebar to start chatting."
+        title={t('title')}
+        description={t('description')}
       />
     </div>
   );

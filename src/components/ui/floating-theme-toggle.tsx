@@ -1,8 +1,12 @@
+'use client'
+
 import { Moon, Sun, Settings, Palette, Globe, ChevronLeft, Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Switch } from "@/components/ui/switch"
 import { useTheme, DarkMode, ColorTheme } from "@/components/ui/theme-provider"
-import { useState, useEffect } from "react"
+import { useState } from "react"
+import { useLocale } from "next-intl"
+import { setCookie } from "cookies-next"
 
 // Color theme configurations
 const colorThemes = [
@@ -20,46 +24,35 @@ const darkModes = [
   { id: "system", name: "System", icon: Settings },
 ]
 
-// Language configurations
+// Language configurations (matching available translation files)
 const languages = [
   { code: "en", name: "English", flag: "🇺🇸" },
   { code: "es", name: "Español", flag: "🇪🇸" },
   { code: "fr", name: "Français", flag: "🇫🇷" },
-  { code: "de", name: "Deutsch", flag: "🇩🇪" },
-  { code: "it", name: "Italiano", flag: "🇮🇹" },
-  { code: "pt", name: "Português", flag: "🇵🇹" },
   { code: "zh", name: "中文", flag: "🇨🇳" },
-  { code: "ja", name: "日本語", flag: "🇯🇵" },
-  { code: "ko", name: "한국어", flag: "🇰🇷" },
-  { code: "ar", name: "العربية", flag: "🇸🇦" },
 ]
 
 type View = "main" | "themes" | "languages"
 
 export function FloatingThemeToggle() {
   const { darkMode, colorTheme, setDarkMode, setColorTheme } = useTheme()
-  const [currentLanguage, setCurrentLanguage] = useState("en")
+  const locale = useLocale() // Get current locale from next-intl
   const [isOpen, setIsOpen] = useState(false)
   const [currentView, setCurrentView] = useState<View>("main")
 
-  // Load saved language from localStorage
-  useEffect(() => {
-    const savedLanguage = localStorage.getItem("app-language")
-    if (savedLanguage) {
-      setCurrentLanguage(savedLanguage)
-    }
-  }, [])
-
-  // Save language to localStorage
+  // Handle language change with next-intl
   const handleLanguageChange = (languageCode: string) => {
-    setCurrentLanguage(languageCode)
-    localStorage.setItem("app-language", languageCode)
-    // You can add actual i18n implementation here
+    setCookie('NEXT_LOCALE', languageCode, {
+      maxAge: 60 * 60 * 24 * 365, // 1 year
+      path: '/',
+    })
+    // Reload to apply new language
+    window.location.reload()
   }
 
   const currentColorTheme = colorThemes.find(t => t.id === colorTheme) || colorThemes[0]
   const currentDarkMode = darkModes.find(d => d.id === darkMode) || darkModes[0]
-  const currentLang = languages.find(l => l.code === currentLanguage) || languages[0]
+  const currentLang = languages.find(l => l.code === locale) || languages[0]
 
   const handleClose = () => {
     setIsOpen(false)
@@ -211,7 +204,7 @@ export function FloatingThemeToggle() {
               {currentView === "languages" && (
                 <div className="max-h-80 overflow-y-auto p-2 space-y-1">
                   {languages.map((language) => {
-                    const isSelected = currentLanguage === language.code
+                    const isSelected = locale === language.code
                     
                     return (
                       <button

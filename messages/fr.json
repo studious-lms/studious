@@ -1,0 +1,252 @@
+{
+  "common": {
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "submit": "Soumettre",
+    "close": "Fermer",
+    "back": "Retour",
+    "next": "Suivant",
+    "loading": "Chargement...",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "sort": "Trier",
+    "viewAll": "Tout voir",
+    "noData": "Aucune donnée disponible"
+  },
+  "navigation": {
+    "home": "Accueil",
+    "classes": "Cours",
+    "agenda": "Agenda",
+    "chat": "Chat",
+    "notifications": "Notifications",
+    "profile": "Profil",
+    "settings": "Paramètres",
+    "signOut": "Se déconnecter",
+    "accountSettings": "Paramètres du compte",
+    "pricing": "Tarifs",
+    "schoolProgram": "Programme scolaire",
+    "about": "À propos",
+    "press": "Presse",
+    "signIn": "Se connecter"
+  },
+  "auth": {
+    "login": {
+      "title": "Bon retour",
+      "subtitle": "Connectez-vous à votre compte Studious",
+      "username": "Nom d'utilisateur",
+      "password": "Mot de passe",
+      "forgotPassword": "Mot de passe oublié?",
+      "signIn": "Se connecter",
+      "signingIn": "Connexion en cours...",
+      "noAccount": "Vous n'avez pas de compte?",
+      "signUp": "S'inscrire",
+      "successMessage": "Connexion réussie",
+      "cancel": "Annuler"
+    },
+    "signup": {
+      "title": "Créez votre compte",
+      "subtitle": "Rejoignez Studious et commencez à apprendre",
+      "signUp": "S'inscrire",
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "email": "E-mail",
+      "password": "Mot de passe",
+      "confirmPassword": "Confirmer le mot de passe",
+      "firstNamePlaceholder": "Prénom",
+      "lastNamePlaceholder": "Nom",
+      "emailPlaceholder": "Entrez votre e-mail",
+      "passwordPlaceholder": "Créez un mot de passe",
+      "confirmPasswordPlaceholder": "Confirmez votre mot de passe",
+      "agreeToTerms": "J'accepte les",
+      "termsOfService": "Conditions d'utilisation",
+      "and": "et la",
+      "privacyPolicy": "Politique de confidentialité",
+      "createAccount": "Créer un compte",
+      "creatingAccount": "Création du compte...",
+      "alreadyHaveAccount": "Vous avez déjà un compte?",
+      "signIn": "Se connecter",
+      "passwordMismatch": "Les mots de passe ne correspondent pas",
+      "termsRequired": "Vous devez accepter les conditions",
+      "accountCreated": "Compte créé avec succès!",
+      "signUpFailed": "Échec de la création du compte"
+    },
+    "verification": {
+      "notVerified": "Compte non vérifié",
+      "message": "Votre compte doit être vérifié avant de pouvoir vous connecter. Veuillez vérifier votre e-mail pour un lien de vérification.",
+      "emailSentTo": "E-mail de vérification envoyé à:",
+      "resendEmail": "Renvoyer l'e-mail de vérification",
+      "backToSignIn": "Retour à la connexion",
+      "emailSent": "E-mail de vérification envoyé!",
+      "checkInbox": "Veuillez vérifier votre boîte de réception et dossier spam.",
+      "enterEmail": "Entrez votre adresse e-mail",
+      "sending": "Envoi en cours...",
+      "sendEmail": "Envoyer l'e-mail"
+    }
+  },
+  "home": {
+    "welcomeBack": "Bon retour, {name}!",
+    "subtitle": "Voici ce qui se passe avec vos cours aujourd'hui.",
+    "stats": {
+      "totalClasses": "Total des cours",
+      "teachingEnrolled": "{teaching} enseignement, {enrolled} inscrit",
+      "dueToday": "À rendre aujourd'hui",
+      "dueTodayDesc": "Devoirs à rendre aujourd'hui",
+      "upcoming": "À venir",
+      "upcomingDesc": "Devoirs à venir",
+      "thisWeek": "Cette semaine",
+      "totalAssignments": "Total des devoirs"
+    },
+    "upcomingAssignments": {
+      "title": "Devoirs à venir",
+      "subtitle": "Vos prochaines échéances",
+      "allCaughtUp": "Tout est à jour!",
+      "noUpcoming": "Aucun devoir à venir pour le moment.",
+      "viewAgenda": "Voir l'agenda",
+      "dueToday": "À rendre aujourd'hui",
+      "dueTomorrow": "À rendre demain",
+      "due": "À rendre {date}",
+      "teaching": "Enseignement",
+      "viewAllAssignments": "Voir tous les devoirs"
+    },
+    "notifications": {
+      "title": "Notifications récentes",
+      "subtitle": "Dernières mises à jour",
+      "noNew": "Aucune nouvelle notification",
+      "viewAll": "Voir toutes les notifications"
+    },
+    "classes": {
+      "title": "Mes cours",
+      "subtitle": "Accès rapide à vos cours",
+      "teaching": "Enseignement",
+      "enrolled": "Inscrit",
+      "due": "à rendre",
+      "noClasses": "Pas encore de cours",
+      "browseClasses": "Parcourir les cours",
+      "viewAllClasses": "Voir tous les cours"
+    }
+  },
+  "marketing": {
+    "navbar": {
+      "requestEarlyAccess": "Demander un accès anticipé"
+    },
+    "hero": {
+      "title": "Gestion de l'apprentissage moderne",
+      "subtitle": "Rationalisez votre salle de classe avec des outils puissants"
+    }
+  },
+  "errors": {
+    "somethingWentWrong": "Quelque chose s'est mal passé",
+    "tryAgain": "Réessayer",
+    "pageNotFound": "Page non trouvée",
+    "unauthorized": "Accès non autorisé"
+  },
+  "classes": {
+    "title": "Cours",
+    "description": "Gérez vos cours en tant qu'enseignant et étudiant",
+    "joinClass": "Rejoindre un cours",
+    "createClass": "Créer un cours",
+    "searchPlaceholder": "Rechercher des cours...",
+    "teaching": "Enseignement",
+    "enrolled": "Inscrit",
+    "noClassesFound": "Aucun cours trouvé",
+    "noTeachingClassesFound": "Aucun cours d'enseignement trouvé correspondant à \"{query}\"",
+    "noEnrolledClassesFound": "Aucun cours inscrit trouvé correspondant à \"{query}\"",
+    "noClassesYet": "Pas encore de cours",
+    "noClassesYetDesc": "Créez votre premier cours pour commencer à gérer les devoirs, les notes et les interactions avec les étudiants.",
+    "noEnrolledClasses": "Aucun cours inscrit",
+    "noEnrolledClassesDesc": "Rejoignez un cours en utilisant un code d'invitation ou un lien fourni par votre enseignant.",
+    "classDeleted": "Cours supprimé avec succès",
+    "classDeleteFailed": "Échec de la suppression du cours",
+    "failedToLoad": "Échec du chargement des cours"
+  },
+  "agenda": {
+    "title": "Agenda",
+    "description": "Consultez votre emploi du temps et vos événements à venir avec des vues de calendrier complètes",
+    "addEvent": "Ajouter un événement",
+    "untitledEvent": "Événement sans titre",
+    "today": "Aujourd'hui",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "views": {
+      "day": "Jour",
+      "week": "Semaine",
+      "month": "Mois",
+      "year": "Année"
+    }
+  },
+  "chat": {
+    "title": "Bienvenue dans le chat",
+    "description": "Sélectionnez une conversation dans la barre latérale pour commencer à discuter.",
+    "pleaseSignIn": "Veuillez vous connecter",
+    "signInRequired": "Vous devez être connecté pour accéder au chat."
+  },
+  "profile": {
+    "title": "Profil",
+    "description": "Gérez vos informations personnelles et les paramètres de votre profil",
+    "editProfile": "Modifier le profil",
+    "saveChanges": "Enregistrer les modifications",
+    "cancel": "Annuler",
+    "student": "Étudiant",
+    "personalInformation": {
+      "title": "Informations personnelles",
+      "description": "Mettez à jour vos détails personnels et les informations de votre profil",
+      "displayName": "Nom d'affichage",
+      "displayNamePlaceholder": "Entrez votre nom d'affichage",
+      "displayNameDescription": "C'est ainsi que votre nom apparaîtra aux autres",
+      "location": "Emplacement",
+      "locationPlaceholder": "Entrez votre emplacement",
+      "locationDescription": "Votre ville, état ou pays",
+      "bio": "Biographie",
+      "bioPlaceholder": "Parlez-nous de vous...",
+      "bioDescription": "Une brève description de vous-même (max 500 caractères)",
+      "website": "Site web",
+      "websitePlaceholder": "https://votre-site-web.com",
+      "websiteDescription": "Votre site web personnel ou portfolio"
+    },
+    "accountInformation": {
+      "title": "Informations du compte",
+      "description": "Les détails de votre compte et informations de connexion",
+      "username": "Nom d'utilisateur",
+      "usernameNote": "Le nom d'utilisateur ne peut pas être modifié",
+      "email": "E-mail",
+      "emailNote": "L'e-mail est géré dans les paramètres du compte",
+      "memberSince": "Membre depuis"
+    },
+    "messages": {
+      "profileUpdated": "Profil mis à jour avec succès",
+      "profileUpdateFailed": "Échec de la mise à jour du profil",
+      "profilePictureSelected": "Photo de profil sélectionnée. Cliquez sur 'Enregistrer les modifications' pour mettre à jour.",
+      "avatarSelected": "Avatar sélectionné. Cliquez sur 'Enregistrer les modifications' pour mettre à jour.",
+      "profilePictureUploadFailed": "Échec du téléchargement de la photo de profil",
+      "profilePictureSelectFailed": "Échec de la sélection de la photo de profil",
+      "failedToLoadProfile": "Échec du chargement du profil. Veuillez réessayer."
+    }
+  },
+  "class": {
+    "assignments": "Devoirs",
+    "members": "Membres",
+    "grades": "Notes",
+    "files": "Fichiers",
+    "settings": "Paramètres",
+    "syllabus": "Programme",
+    "attendance": "Présence"
+  },
+  "assignment": {
+    "dueDate": "Date d'échéance",
+    "submit": "Soumettre",
+    "grade": "Note",
+    "feedback": "Commentaires",
+    "submissions": "Soumissions"
+  },
+  "time": {
+    "today": "Aujourd'hui",
+    "tomorrow": "Demain",
+    "yesterday": "Hier",
+    "thisWeek": "Cette semaine",
+    "nextWeek": "Semaine prochaine",
+    "lastWeek": "Semaine dernière"
+  }
+}
+
