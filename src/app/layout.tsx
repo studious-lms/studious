@@ -31,6 +31,9 @@ export default async function RootLayout({
     <html lang={locale}>
       <head>
         <meta name="apple-mobile-web-app-title" content="Studious" /> 
+        <meta property="og:image" content="/icon.svg/og-image.png" />
+        <meta property="og:title" content="Studious" />
+        <meta property="og:description" content="Unified Learning Management System" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased marketing-theme`}
