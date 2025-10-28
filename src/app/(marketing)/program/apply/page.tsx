@@ -12,8 +12,11 @@ import { Navbar } from "@/components/marketing/Navbar";
 import { trpc } from "@/lib/trpc";
 import { useState } from "react";
 import { toast } from "sonner";
+import { Footer } from "@/components/marketing/Footer";
+import { useTranslations } from "next-intl";
 
 export default function ApplyPage() {
+  const t = useTranslations('apply');
   const [formData, setFormData] = useState({
     schoolName: "",
     schoolType: "",
@@ -37,10 +40,10 @@ export default function ApplyPage() {
   const createApplication = trpc.marketing.createSchoolDevelopementProgram.useMutation({
     onSuccess: (data) => {
       setApplicationId(data.id);
-      toast.success("Application submitted successfully!");
+      toast.success(t('toasts.submitted'));
     },
     onError: (error) => {
-      toast.error("Failed to submit application: " + error.message);
+      toast.error(t('errors.submitFailed', { message: error.message }));
     }
   });
 
@@ -83,39 +86,39 @@ export default function ApplyPage() {
                 <CheckCircle className="h-8 w-8 sm:h-10 sm:w-10 text-green-600" />
               </div>
               <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 sm:mb-4 px-4">
-                Application Submitted!
+                {t('success.title')}
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 px-4">
-                Thank you for applying to the Studious School Development Program
+                {t('success.subtitle')}
               </p>
             </div>
 
             <Card className="border border-border shadow-lg">
               <CardContent className="pt-6 sm:pt-8 pb-6 sm:pb-8 space-y-4 sm:space-y-6">
                 <div>
-                  <p className="text-xs sm:text-sm text-muted-foreground mb-2">Your Application ID</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground mb-2">{t('success.applicationId')}</p>
                   <div className="bg-secondary/50 rounded-lg p-3 sm:p-4">
                     <p className="text-xl sm:text-2xl font-mono font-bold text-primary break-all">{applicationId}</p>
                   </div>
                   <p className="text-xs text-muted-foreground mt-2">
-                    Save this ID to check your application status
+                    {t('success.saveId')}
                   </p>
                 </div>
 
                 <div className="bg-primary/5 border border-primary/20 rounded-lg p-4 text-left">
-                  <h3 className="font-semibold text-foreground mb-2">What Happens Next?</h3>
+                  <h3 className="font-semibold text-foreground mb-2">{t('success.nextSteps.title')}</h3>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li className="flex items-start gap-2">
                       <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                      <span>You'll receive a confirmation email at {formData.contactEmail}</span>
+                      <span>{t('success.nextSteps.item1', { email: formData.contactEmail })}</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                      <span>Our team will review your application within 5-7 business days</span>
+                      <span>{t('success.nextSteps.item2')}</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                      <span>We'll notify you via email once a decision is made</span>
+                      <span>{t('success.nextSteps.item3')}</span>
                     </li>
                   </ul>
                 </div>
@@ -123,12 +126,12 @@ export default function ApplyPage() {
                 <div className="flex flex-col sm:flex-row gap-3 pt-4">
                   <Link href="/program" className="flex-1">
                     <Button variant="outline" className="w-full">
-                      Back to Program
+                      {t('success.backToProgram')}
                     </Button>
                   </Link>
                   <Link href="/" className="flex-1">
                     <Button className="w-full bg-primary hover:bg-primary/90">
-                      Return Home
+                      {t('success.returnHome')}
                     </Button>
                   </Link>
                 </div>
@@ -417,62 +420,7 @@ export default function ApplyPage() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 sm:py-14 md:py-16 px-4 sm:px-6 bg-secondary border-t border-border">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-10 sm:mb-12">
-            <div className="space-y-4">
-              <div className="flex items-center gap-2">
-                <img src="/logo.png" alt="Studious" className="w-7 h-7" />
-                <span className="text-xl font-semibold text-foreground">Studious</span>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Modern learning management for the next generation of education.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold text-foreground mb-4">Product</h3>
-              <ul className="space-y-2">
-                <li><Link href="/#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Features</Link></li>
-                <li><Link href="/pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Pricing</Link></li>
-                <li><Link href="/program" className="text-sm text-muted-foreground hover:text-foreground transition-colors">School Program</Link></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold text-foreground mb-4">Company</h3>
-              <ul className="space-y-2">
-                <li><Link href="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">About</Link></li>
-                <li><Link href="/#team" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Team</Link></li>
-                <li><Link href="/press" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Press</Link></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold text-foreground mb-4">Contact</h3>
-              <ul className="space-y-2">
-                <li><a href="mailto:hello@studious.sh" className="text-sm text-muted-foreground hover:text-foreground transition-colors">hello@studious.sh</a></li>
-                <li><a href="mailto:press@studious.sh" className="text-sm text-muted-foreground hover:text-foreground transition-colors">press@studious.sh</a></li>
-                <li><a href="mailto:impact@studious.sh" className="text-sm text-muted-foreground hover:text-foreground transition-colors">impact@studious.sh</a></li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-muted-foreground">
-              © 2025 Studious LMS. All rights reserved.
-            </p>
-            <div className="flex gap-6">
-              <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Terms of Service
-              </Link>
-            </div>
-          </div>
-        </div>
-      </footer>
+      {Footer()}
     </div>
   );
 }

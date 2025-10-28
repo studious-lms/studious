@@ -14,6 +14,7 @@ import { Bell, Plus } from "lucide-react";
 import { useParams } from "next/navigation";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
+import { useTranslations } from "next-intl";
 
 
 interface CreateAnnouncementModalProps {
@@ -22,6 +23,7 @@ interface CreateAnnouncementModalProps {
 }
 
 export function CreateAnnouncementModal({ children, onAnnouncementCreated }: CreateAnnouncementModalProps) {
+  const t = useTranslations('components.createAnnouncement');
   const [open, setOpen] = useState(false);
   const [formData, setFormData] = useState({
     title: "",
@@ -41,17 +43,17 @@ const classId = params.id as string;
 
 
   const priorities = [
-    { label: "Low", value: "low" },
-    { label: "Normal", value: "normal" },
-    { label: "High", value: "high" },
-    { label: "Urgent", value: "urgent" }
+    { label: t('priority.low'), value: "low" },
+    { label: t('priority.normal'), value: "normal" },
+    { label: t('priority.high'), value: "high" },
+    { label: t('priority.urgent'), value: "urgent" }
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!formData.title || !formData.content) {
-      toast.error("Please fill in all required fields.");
+      toast.error(t('toasts.errorRequired'));
       return;
     }
 
@@ -83,7 +85,7 @@ const classId = params.id as string;
 
     onAnnouncementCreated?.(newAnnouncement);
     
-    toast.success("Announcement Created");
+    toast.success(t('toasts.success'));
 
     setFormData({
       title: "",
@@ -106,34 +108,34 @@ const classId = params.id as string;
         {children || (
           <Button>
             <Bell className="h-4 w-4 mr-2" />
-            Post Announcement
+            {t('buttonLabel')}
           </Button>
         )}
       </DialogTrigger>
       <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle>Create Announcement</DialogTitle>
+          <DialogTitle>{t('title')}</DialogTitle>
         </DialogHeader>
         
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="title">Announcement Title *</Label>
+            <Label htmlFor="title">{t('fields.title')}</Label>
             <Input
               id="title"
               value={formData.title}
               onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-              placeholder="e.g., Lab report due Friday"
+              placeholder={t('placeholders.title')}
               required
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="content">Content *</Label>
+            <Label htmlFor="content">{t('fields.content')}</Label>
             <Textarea
               id="content"
               value={formData.content}
               onChange={(e) => setFormData({ ...formData, content: e.target.value })}
-              placeholder="Write your announcement content here..."
+              placeholder={t('placeholders.content')}
               rows={5}
               required
             />
@@ -141,7 +143,7 @@ const classId = params.id as string;
 
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="priority">Priority Level</Label>
+              <Label htmlFor="priority">{t('fields.priority')}</Label>
               <Select value={formData.priority} onValueChange={(value) => setFormData({ ...formData, priority: value })}>
                 <SelectTrigger>
                   <SelectValue />
@@ -156,7 +158,7 @@ const classId = params.id as string;
               </Select>
             </div>
             <div className="space-y-2">
-              <Label htmlFor="expiryDate">Expiry Date (Optional)</Label>
+              <Label htmlFor="expiryDate">{t('fields.expiryDate')}</Label>
               <Input
                 id="expiryDate"
                 type="date"
@@ -167,12 +169,12 @@ const classId = params.id as string;
           </div>
 
           <div className="space-y-4">
-            <h4 className="font-medium">Settings</h4>
+            <h4 className="font-medium">{t('sections.settings')}</h4>
             
             <div className="flex items-center justify-between">
               <div className="space-y-1">
-                <Label>Pin to top</Label>
-                <p className="text-sm text-muted-foreground">Keep this announcement at the top of the list</p>
+                <Label>{t('settings.pinned.label')}</Label>
+                <p className="text-sm text-muted-foreground">{t('settings.pinned.description')}</p>
               </div>
               <Switch
                 checked={formData.pinned}
@@ -182,8 +184,8 @@ const classId = params.id as string;
 
             <div className="flex items-center justify-between">
               <div className="space-y-1">
-                <Label>Mark as urgent</Label>
-                <p className="text-sm text-muted-foreground">Highlight with urgent styling</p>
+                <Label>{t('settings.urgent.label')}</Label>
+                <p className="text-sm text-muted-foreground">{t('settings.urgent.description')}</p>
               </div>
               <Switch
                 checked={formData.urgent}
@@ -193,12 +195,12 @@ const classId = params.id as string;
           </div>
 
           <div className="space-y-4">
-            <h4 className="font-medium">Notifications</h4>
+            <h4 className="font-medium">{t('sections.notifications')}</h4>
             
             <div className="flex items-center justify-between">
               <div className="space-y-1">
-                <Label>Send email notification</Label>
-                <p className="text-sm text-muted-foreground">Notify students via email</p>
+                <Label>{t('notifications.email.label')}</Label>
+                <p className="text-sm text-muted-foreground">{t('notifications.email.description')}</p>
               </div>
               <Switch
                 checked={formData.notifyEmail}
@@ -208,8 +210,8 @@ const classId = params.id as string;
 
             <div className="flex items-center justify-between">
               <div className="space-y-1">
-                <Label>Send push notification</Label>
-                <p className="text-sm text-muted-foreground">Send mobile app notification</p>
+                <Label>{t('notifications.push.label')}</Label>
+                <p className="text-sm text-muted-foreground">{t('notifications.push.description')}</p>
               </div>
               <Switch
                 checked={formData.notifyPush}
@@ -219,20 +221,20 @@ const classId = params.id as string;
           </div>
 
           <div className="space-y-4">
-            <h4 className="font-medium">Schedule Publishing (Optional)</h4>
+            <h4 className="font-medium">{t('sections.schedule')}</h4>
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label htmlFor="scheduledDate">Publish Date</Label>
+                <Label htmlFor="scheduledDate">{t('fields.publishDate')}</Label>
                 <Input
                   id="scheduledDate"
                   type="date"
                   value={formData.scheduledDate}
                   onChange={(e) => setFormData({ ...formData, scheduledDate: e.target.value })}
-                  placeholder="Publish immediately if empty"
+                  placeholder={t('placeholders.publishDate')}
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="scheduledTime">Publish Time</Label>
+                <Label htmlFor="scheduledTime">{t('fields.publishTime')}</Label>
                 <Input
                   id="scheduledTime"
                   type="time"
@@ -245,10 +247,10 @@ const classId = params.id as string;
 
           <div className="flex justify-end space-x-2 pt-4">
             <Button type="button" variant="outline" onClick={() => setOpen(false)}>
-              Cancel
+              {t('actions.cancel')}
             </Button>
             <Button type="submit">
-              {formData.scheduledDate ? "Schedule Announcement" : "Publish Now"}
+              {formData.scheduledDate ? t('actions.schedule') : t('actions.publishNow')}
             </Button>
           </div>
         </form>

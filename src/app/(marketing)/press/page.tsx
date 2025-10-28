@@ -15,8 +15,11 @@ import {
   Award
 } from "lucide-react";
 import { Navbar } from "@/components/marketing/Navbar";
+import { Footer } from "@/components/marketing/Footer";
+import { useTranslations } from "next-intl";
 
 export default function PressPage() {
+  const t = useTranslations('press');
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -25,13 +28,13 @@ export default function PressPage() {
       <section className="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-14 md:pb-16 px-4 sm:px-6 bg-gradient-to-b from-background via-secondary/30 to-background">
         <div className="container mx-auto max-w-4xl text-center">
           <Badge variant="outline" className="mb-4 sm:mb-6 px-3 sm:px-4 py-1 sm:py-1.5 border-primary/20 text-primary text-sm">
-            Press & Media
+            {t('badge')}
           </Badge>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6 tracking-tight px-4">
-            Studious in the news
+            {t('title')}
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
-            Media resources, brand assets, and company information for journalists and content creators
+            {t('subtitle')}
           </p>
         </div>
       </section>
@@ -41,10 +44,10 @@ export default function PressPage() {
         <div className="container mx-auto max-w-5xl">
           <div className="mb-8 sm:mb-10 md:mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 sm:mb-4 px-4">
-              Company Factsheet
+              {t('factsheet.title')}
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-4">
-              Quick facts about Studious LMS
+              {t('factsheet.subtitle')}
             </p>
           </div>
 
@@ -53,28 +56,28 @@ export default function PressPage() {
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <FileText className="h-5 w-5 text-primary" />
-                  Company Information
+                  {t('factsheet.companyInfo')}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3 text-sm">
                 <div className="flex justify-between py-2 border-b border-border">
-                  <span className="text-muted-foreground">Founded</span>
+                  <span className="text-muted-foreground">{t('factsheet.founded')}</span>
                   <span className="font-medium text-foreground">Q1 2023</span>
                 </div>
                 <div className="flex justify-between py-2 border-b border-border">
-                  <span className="text-muted-foreground">Headquarters</span>
+                  <span className="text-muted-foreground">{t('factsheet.hq')}</span>
                   <span className="font-medium text-foreground">Distributed (CH, SG, CN)</span>
                 </div>
                 <div className="flex justify-between py-2 border-b border-border">
-                  <span className="text-muted-foreground">Industry</span>
+                  <span className="text-muted-foreground">{t('factsheet.industry')}</span>
                   <span className="font-medium text-foreground">Education Technology</span>
                 </div>
                 <div className="flex justify-between py-2 border-b border-border">
-                  <span className="text-muted-foreground">Website</span>
+                  <span className="text-muted-foreground">{t('factsheet.website')}</span>
                   <span className="font-medium text-foreground">studious.sh</span>
                 </div>
                 <div className="flex justify-between py-2">
-                  <span className="text-muted-foreground">Status</span>
+                  <span className="text-muted-foreground">{t('factsheet.status')}</span>
                   <span className="font-medium text-foreground">Early Access (Launched Oct 17, 2025)</span>
                 </div>
               </CardContent>
@@ -84,28 +87,28 @@ export default function PressPage() {
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <TrendingUp className="h-5 w-5 text-primary" />
-                  Current Status
+                  {t('factsheet.currentStatus')}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3 text-sm">
                 <div className="flex justify-between py-2 border-b border-border">
-                  <span className="text-muted-foreground">Launch Date</span>
+                  <span className="text-muted-foreground">{t('factsheet.launchDate')}</span>
                   <span className="font-medium text-foreground">October 17, 2025</span>
                 </div>
                 <div className="flex justify-between py-2 border-b border-border">
-                  <span className="text-muted-foreground">Current Phase</span>
+                  <span className="text-muted-foreground">{t('factsheet.currentPhase')}</span>
                   <span className="font-medium text-foreground">Early Access</span>
                 </div>
                 <div className="flex justify-between py-2 border-b border-border">
-                  <span className="text-muted-foreground">Target Markets</span>
+                  <span className="text-muted-foreground">{t('factsheet.targetMarkets')}</span>
                   <span className="font-medium text-foreground">Global</span>
                 </div>
                 <div className="flex justify-between py-2 border-b border-border">
-                  <span className="text-muted-foreground">Team Size</span>
+                  <span className="text-muted-foreground">{t('factsheet.teamSize')}</span>
                   <span className="font-medium text-foreground">8 members</span>
                 </div>
                 <div className="flex justify-between py-2">
-                  <span className="text-muted-foreground">Development HQs</span>
+                  <span className="text-muted-foreground">{t('factsheet.devHqs')}</span>
                   <span className="font-medium text-foreground">CH, SG, CN</span>
                 </div>
               </CardContent>
@@ -312,10 +315,10 @@ export default function PressPage() {
             <Mail className="h-7 w-7 sm:h-8 sm:w-8 text-primary" />
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 sm:mb-4 px-4">
-            Press Inquiries
+            {t('contact.title')}
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 px-4">
-            For press inquiries, interviews, and media requests
+            {t('contact.subtitle')}
           </p>
           
           <div className="space-y-3 sm:space-y-4 max-w-md mx-auto px-4">
@@ -326,13 +329,13 @@ export default function PressPage() {
               </a>
             </div>
             <p className="text-xs sm:text-sm text-muted-foreground">
-              We typically respond within 24 hours
+              {t('contact.sl')}
             </p>
           </div>
 
           <div className="mt-8 sm:mt-10 md:mt-12 pt-8 sm:pt-10 md:pt-12 border-t border-border">
             <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 px-4">
-              For general inquiries and support
+              {t('contact.general')}
             </p>
             <a href="mailto:hello@studious.sh" className="text-primary hover:underline text-sm sm:text-base">
               hello@studious.sh
@@ -342,62 +345,7 @@ export default function PressPage() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 sm:py-14 md:py-16 px-4 sm:px-6 bg-secondary border-t border-border">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-10 sm:mb-12">
-            <div className="space-y-4">
-              <div className="flex items-center gap-2">
-                <img src="/logo.png" alt="Studious" className="w-7 h-7" />
-                <span className="text-xl font-semibold text-foreground">Studious</span>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Modern learning management for the next generation of education.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold text-foreground mb-4">Product</h3>
-              <ul className="space-y-2">
-                <li><Link href="/#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Features</Link></li>
-                <li><Link href="/pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Pricing</Link></li>
-                <li><Link href="/program" className="text-sm text-muted-foreground hover:text-foreground transition-colors">School Program</Link></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold text-foreground mb-4">Company</h3>
-              <ul className="space-y-2">
-                <li><Link href="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">About</Link></li>
-                <li><Link href="/#team" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Team</Link></li>
-                <li><Link href="/press" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Press</Link></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold text-foreground mb-4">Contact</h3>
-              <ul className="space-y-2">
-                <li><a href="mailto:hello@studious.sh" className="text-sm text-muted-foreground hover:text-foreground transition-colors">hello@studious.sh</a></li>
-                <li><a href="mailto:press@studious.sh" className="text-sm text-muted-foreground hover:text-foreground transition-colors">press@studious.sh</a></li>
-                <li><a href="mailto:impact@studious.sh" className="text-sm text-muted-foreground hover:text-foreground transition-colors">impact@studious.sh</a></li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-muted-foreground">
-              © 2025 Studious LMS. All rights reserved.
-            </p>
-            <div className="flex gap-6">
-              <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Terms of Service
-              </Link>
-            </div>
-          </div>
-        </div>
-      </footer>
+      {Footer()}
     </div>
   );
 }

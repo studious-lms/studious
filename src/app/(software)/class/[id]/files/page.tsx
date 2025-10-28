@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { useParams, useRouter } from "next/navigation";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
@@ -68,6 +69,7 @@ export default function Files() {
   const router = useRouter();
   const classId = params.id as string;
   const appState = useSelector((state: RootState) => state.app);
+  const t = useTranslations('class.files');
   
   // State management
   const [searchQuery, setSearchQuery] = useState("");
@@ -90,7 +92,7 @@ export default function Files() {
   // Mutations
   const createFolderMutation = trpc.folder.create.useMutation({
     onSuccess: () => {
-      toast.success("Folder created successfully");
+      toast.success(t('toasts.folderCreated'));
       refetch();
     },
     onError: (error) => {
@@ -100,7 +102,7 @@ export default function Files() {
   
   const deleteFolderMutation = trpc.folder.delete.useMutation({
     onSuccess: () => {
-      toast.success("Folder deleted successfully");
+      toast.success(t('toasts.folderDeleted'));
       refetch();
     },
     onError: (error) => {
@@ -110,7 +112,7 @@ export default function Files() {
   
   const renameFolderMutation = trpc.folder.update.useMutation({
     onSuccess: () => {
-      toast.success("Folder renamed successfully");
+      toast.success(t('toasts.folderRenamed'));
       refetch();
     },
     onError: (error) => {
@@ -120,7 +122,7 @@ export default function Files() {
   
   const moveFolderMutation = trpc.folder.move.useMutation({
     onSuccess: () => {
-      toast.success("Folder moved successfully");
+      toast.success(t('toasts.folderMoved'));
       refetch();
     },
     onError: (error) => {
@@ -130,7 +132,7 @@ export default function Files() {
   
   const uploadFilesMutation = trpc.folder.uploadFiles.useMutation({
     onSuccess: () => {
-      toast.success("Files uploaded successfully");
+      toast.success(t('toasts.filesUploaded'));
       refetch();
     },
     onError: (error) => {
@@ -140,7 +142,7 @@ export default function Files() {
   
   const deleteFileMutation = trpc.file.delete.useMutation({
     onSuccess: () => {
-      toast.success("File deleted successfully");
+      toast.success(t('toasts.fileDeleted'));
       refetch();
     },
     onError: (error) => {
@@ -150,7 +152,7 @@ export default function Files() {
   
   const renameFileMutation = trpc.file.rename.useMutation({
     onSuccess: () => {
-      toast.success("File renamed successfully");
+      toast.success(t('toasts.fileRenamed'));
       refetch();
     },
     onError: (error) => {
@@ -160,7 +162,7 @@ export default function Files() {
   
   const moveFileMutation = trpc.file.move.useMutation({
     onSuccess: () => {
-      toast.success("File moved successfully");
+      toast.success(t('toasts.fileMoved'));
       refetch();
     },
     onError: (error) => {
@@ -289,16 +291,16 @@ export default function Files() {
 
     onDownload: async (item: FileItem) => {
       if (!isTeacher && ["modify", "delete", "move"].includes("download")) {
-        toast.error("Only teachers can download files.");
+        toast.error(t('errors.teacherOnly'));
         return;
       }
       
       try {
         const result = await getSignedUrlMutation.mutateAsync({ fileId: item.id });
         window.open(result.url, '_blank');
-        toast.success("Download started");
+        toast.success(t('toasts.downloadStarted'));
       } catch (error) {
-        toast.error("Download failed");
+        toast.error(t('errors.downloadFailed'));
         throw error;
       }
     },
@@ -307,16 +309,16 @@ export default function Files() {
       try {
         const result = await getSignedUrlMutation.mutateAsync({ fileId: item.id });
         await navigator.clipboard.writeText(result.url);
-        toast.success("Share link copied");
+        toast.success(t('toasts.shareCopied'));
       } catch (error) {
-        toast.error("Share failed");
+        toast.error(t('errors.shareFailed'));
         throw error;
       }
     },
 
     onRename: async (item: FileItem, newName: string, color?: string) => {
       if (!isTeacher) {
-        toast.error("Only teachers can modify files.");
+        toast.error(t('errors.teacherOnly'));
         return;
       }
 
@@ -349,7 +351,7 @@ export default function Files() {
 
     onDelete: async (item: FileItem) => {
       if (!isTeacher) {
-        toast.error("Only teachers can modify files.");
+        toast.error(t('errors.teacherOnly'));
         return;
       }
 
@@ -433,8 +435,8 @@ export default function Files() {
         {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-bold">Files</h1>
-          <p className="text-muted-foreground">Manage class files and resources</p>
+          <h1 className="text-2xl font-bold">{t('title')}</h1>
+          <p className="text-muted-foreground">{t('subtitle')}</p>
         </div>
         
         {isTeacher && (
@@ -450,7 +452,7 @@ export default function Files() {
               ) : (
                 <FolderPlus className="h-4 w-4 mr-2" />
               )}
-              New Folder
+              {t('actions.newFolder')}
             </Button>
             <UploadFileModal 
               currentFolder="root"
@@ -467,7 +469,7 @@ export default function Files() {
                 ) : (
                   <Upload className="h-4 w-4 mr-2" />
                 )}
-                Upload
+                {t('actions.upload')}
               </Button>
             </UploadFileModal>
           </div>
@@ -479,7 +481,7 @@ export default function Files() {
           <Alert variant="destructive" className="mb-4">
             <AlertCircle className="h-4 w-4" />
             <AlertDescription>
-              Failed to load files. Please try again later.
+              {t('errors.failedToLoad')}
             </AlertDescription>
           </Alert>
         )}
@@ -493,7 +495,7 @@ export default function Files() {
               className="h-auto p-1 font-medium hover:bg-muted cursor-default"
               disabled
             >
-              Class Files
+              {t('breadcrumbs.classFiles')}
             </Button>
           </div>
       </div>
@@ -504,7 +506,7 @@ export default function Files() {
           <div className="relative max-w-md">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
-              placeholder="Search in files"
+              placeholder={t('search.placeholder')}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="pl-10 w-80"
@@ -513,18 +515,18 @@ export default function Files() {
           
           {selectedCount > 0 && (
             <div className="flex items-center space-x-2">
-              <Badge variant="secondary">{selectedCount} selected</Badge>
+              <Badge variant="secondary">{t('selected', { count: selectedCount })}</Badge>
               <Button variant="outline" size="sm">
                 <Download className="h-4 w-4 mr-2" />
-                Download
+                {t('actions.download')}
               </Button>
               <Button variant="outline" size="sm">
                 <Share className="h-4 w-4 mr-2" />
-                Share
+                {t('actions.share')}
               </Button>
               <Button variant="outline" size="sm">
                 <Trash2 className="h-4 w-4 mr-2" />
-                Delete
+                {t('actions.delete')}
               </Button>
             </div>
           )}
@@ -535,15 +537,15 @@ export default function Files() {
             <DropdownMenuTrigger asChild>
               <Button variant="outline" size="sm">
                 <Filter className="h-4 w-4 mr-2" />
-                Filter
+                {t('actions.filter')}
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
-              <DropdownMenuLabel>File Type</DropdownMenuLabel>
-              <DropdownMenuCheckboxItem>Documents</DropdownMenuCheckboxItem>
-              <DropdownMenuCheckboxItem>Images</DropdownMenuCheckboxItem>
-              <DropdownMenuCheckboxItem>Videos</DropdownMenuCheckboxItem>
-              <DropdownMenuCheckboxItem>Presentations</DropdownMenuCheckboxItem>
+              <DropdownMenuLabel>{t('filters.fileType')}</DropdownMenuLabel>
+              <DropdownMenuCheckboxItem>{t('filters.documents')}</DropdownMenuCheckboxItem>
+              <DropdownMenuCheckboxItem>{t('filters.images')}</DropdownMenuCheckboxItem>
+              <DropdownMenuCheckboxItem>{t('filters.videos')}</DropdownMenuCheckboxItem>
+              <DropdownMenuCheckboxItem>{t('filters.presentations')}</DropdownMenuCheckboxItem>
             </DropdownMenuContent>
           </DropdownMenu>
 
@@ -551,18 +553,18 @@ export default function Files() {
             <DropdownMenuTrigger asChild>
               <Button variant="outline" size="sm">
                 <ArrowUpDown className="h-4 w-4 mr-2" />
-                Sort
+                {t('actions.sort')}
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               <DropdownMenuItem onClick={() => setSortBy("name")}>
-                Name
+                {t('sort.name')}
               </DropdownMenuItem>
               <DropdownMenuItem onClick={() => setSortBy("modified")}>
-                Last modified
+                {t('sort.lastModified')}
               </DropdownMenuItem>
               <DropdownMenuItem onClick={() => setSortBy("size")}>
-                File size
+                {t('sort.fileSize')}
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
@@ -633,10 +635,10 @@ export default function Files() {
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>Name</TableHead>
-                  <TableHead>Owner</TableHead>
-                  <TableHead>Last modified</TableHead>
-                  <TableHead>File size</TableHead>
+                  <TableHead>{t('table.name')}</TableHead>
+                  <TableHead>{t('table.owner')}</TableHead>
+                  <TableHead>{t('table.lastModified')}</TableHead>
+                  <TableHead>{t('table.fileSize')}</TableHead>
                   <TableHead className="w-12"></TableHead>
                 </TableRow>
               </TableHeader>
@@ -662,10 +664,10 @@ export default function Files() {
         <div className="space-y-6">
           <EmptyState
             icon={HardDrive}
-            title={searchQuery ? "No files found" : "This folder is empty"}
+            title={searchQuery ? t('empty.searchTitle') : t('empty.title')}
             description={searchQuery 
-              ? `No files match "${searchQuery}". Try a different search term.`
-              : "Upload files or create folders to get started organizing your class materials."
+              ? t('empty.searchDescription', { query: searchQuery })
+              : t('empty.description')
             }
           />
           {isTeacher && (
@@ -682,7 +684,7 @@ export default function Files() {
                   ) : (
                     <Upload className="h-4 w-4 mr-2" />
                   )}
-                  Upload Files
+                  {t('actions.uploadFiles')}
                 </Button>
               </UploadFileModal>
               <Button 
@@ -695,7 +697,7 @@ export default function Files() {
                 ) : (
                   <FolderPlus className="h-4 w-4 mr-2" />
                 )}
-                Create Folder
+                {t('actions.createFolder')}
               </Button>
             </div>
           )}

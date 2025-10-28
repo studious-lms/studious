@@ -24,6 +24,7 @@ import { RootState } from "@/store/store";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Navbar } from "@/components/marketing/Navbar";
+import { Footer } from "@/components/marketing/Footer";
 import { EarlyAccessModal } from "@/components/marketing/EarlyAccessModal";
 
 export default function Home() {
@@ -597,62 +598,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 sm:py-14 md:py-16 px-4 sm:px-6 bg-secondary border-t border-border">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-10 sm:mb-12">
-            <div className="space-y-4">
-              <div className="flex items-center gap-2">
-                <img src="/logo.png" alt="Studious" className="w-7 h-7" />
-                <span className="text-lg sm:text-xl font-semibold text-foreground">Studious</span>
-            </div>
-              <p className="text-sm text-muted-foreground">
-                Modern learning management for the next generation of education.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold text-foreground mb-4">Product</h3>
-              <ul className="space-y-2">
-                <li><Link href="#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Features</Link></li>
-                <li><Link href="/pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Pricing</Link></li>
-                <li><Link href="/program" className="text-sm text-muted-foreground hover:text-foreground transition-colors">School Program</Link></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold text-foreground mb-4">Company</h3>
-              <ul className="space-y-2">
-                <li><Link href="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">About</Link></li>
-                <li><Link href="#team" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Team</Link></li>
-                <li><Link href="/press" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Press</Link></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold text-foreground mb-4">Contact</h3>
-              <ul className="space-y-2">
-                <li><a href="mailto:hello@studious.sh" className="text-sm text-muted-foreground hover:text-foreground transition-colors">hello@studious.sh</a></li>
-                <li><a href="mailto:press@studious.sh" className="text-sm text-muted-foreground hover:text-foreground transition-colors">press@studious.sh</a></li>
-                <li><a href="mailto:impact@studious.sh" className="text-sm text-muted-foreground hover:text-foreground transition-colors">impact@studious.sh</a></li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-muted-foreground">
-              © 2025 Studious LMS. All rights reserved.
-            </p>
-            <div className="flex gap-6">
-              <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Terms of Service
-              </Link>
-            </div>
-          </div>
-        </div>
-      </footer>
+      {Footer()}
       
       <EarlyAccessModal open={showEarlyAccess} onOpenChange={setShowEarlyAccess} />
     </div>

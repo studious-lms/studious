@@ -23,9 +23,12 @@ import {
 import { Navbar } from "@/components/marketing/Navbar";
 import { EarlyAccessModal } from "@/components/marketing/EarlyAccessModal";
 import { useState } from "react";
+import { Footer } from "@/components/marketing/Footer";
+import { useTranslations } from "next-intl"
 
 export default function PricingPage() {
   const [showEarlyAccess, setShowEarlyAccess] = useState(false);
+  const t = useTranslations('pricing');
 
   return (
     <div className="min-h-screen bg-background">
@@ -35,13 +38,13 @@ export default function PricingPage() {
       <section className="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-14 md:pb-16 px-4 sm:px-6 bg-gradient-to-b from-background via-secondary/30 to-background">
         <div className="container mx-auto max-w-4xl text-center">
           <Badge variant="outline" className="mb-4 sm:mb-6 px-3 sm:px-4 py-1 sm:py-1.5 border-primary/20 text-primary text-sm">
-            Transparent Pricing
+            {t('pricingStatement1')}
           </Badge>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6 tracking-tight px-4">
-            Choose the right plan for your institution
+            {t('pricingStatement2')}
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
-            Simple, transparent pricing with no hidden fees. All plans include core features with scalable options.
+            {t('pricingStatement3')}
           </p>
         </div>
       </section>
@@ -53,40 +56,40 @@ export default function PricingPage() {
             {/* Starter Plan */}
             <Card className="border-2 border-border hover:border-primary/50 transition-all flex flex-col h-full">
               <CardHeader className="space-y-4">
-                <CardTitle className="text-2xl">Starter</CardTitle>
+                <CardTitle className="text-2xl">{t('pricingStarterTitle')}</CardTitle>
                 <div>
-                  <div className="text-5xl font-bold text-foreground">Free</div>
-                  <p className="text-sm text-muted-foreground mt-2">Beta access included</p>
+                  <div className="text-5xl font-bold text-foreground">{t('pricingStarterPrice')}</div>
+                  <p className="text-sm text-muted-foreground mt-2">{t('pricingStarterNote')}</p>
           </div>
                 <p className="text-muted-foreground">
-                  Perfect for small classes & pilot programs
+                  {t('pricingStarterDescription')}
                 </p>
               </CardHeader>
               <CardContent className="flex flex-col flex-1 space-y-6">
                 <ul className="space-y-3 flex-1">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Up to 30 students</span>
+                    <span className="text-sm">{t('pricingStarterPerk1')}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Unlimited classes</span>
+                    <span className="text-sm">{t('pricingStarterPerk2')}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Core features (assignments, calendar, grades)</span>
+                    <span className="text-sm">{t('pricingStarterPerk3')}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">AI assistant (5 chats/month)</span>
+                    <span className="text-sm">{t('pricingStarterPerk4')}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Community support</span>
+                    <span className="text-sm">{t('pricingStarterPerk5')}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">5GB storage</span>
+                    <span className="text-sm">{t('pricingStarterPerk6')}</span>
                   </li>
                 </ul>
                 <Button 
@@ -94,7 +97,7 @@ export default function PricingPage() {
                   className="w-full mt-auto"
                   onClick={() => setShowEarlyAccess(true)}
                 >
-                  Get Started Free
+                  {t('pricingStarterLink')}
                 </Button>
               </CardContent>
             </Card>
@@ -103,54 +106,54 @@ export default function PricingPage() {
             <Card className="border-2 border-primary shadow-2xl relative md:scale-105 flex flex-col h-full">
               <div className="absolute -top-3 sm:-top-4 left-1/2 -translate-x-1/2">
                 <Badge className="bg-primary text-primary-foreground px-3 sm:px-4 py-1 sm:py-1.5 text-xs sm:text-sm">
-                  Most Popular
+                  {t('mostPopular')}
                 </Badge>
               </div>
               <CardHeader className="space-y-4">
-                <CardTitle className="text-2xl">School</CardTitle>
+                <CardTitle className="text-2xl">{t('pricingSchoolTitle')}</CardTitle>
                 <div>
                   <div className="flex items-baseline gap-2">
                     <span className="text-5xl font-bold text-foreground">$5</span>
-                    <span className="text-muted-foreground">/user/month</span>
+                    <span className="text-muted-foreground">{t('priceUnit')}</span>
                   </div>
-                  <p className="text-sm text-muted-foreground mt-2">Billed annually or $6/month</p>
+                  <p className="text-sm text-muted-foreground mt-2">{t('pricingSchoolPriceNote')}</p>
                 </div>
                 <p className="text-muted-foreground">
-                  For schools with up to 1,000 students
+                  {t('pricingSchoolNote')}
                 </p>
               </CardHeader>
               <CardContent className="flex flex-col flex-1 space-y-6">
                 <ul className="space-y-3 flex-1">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Unlimited students</span>
+                    <span className="text-sm">{t('pricingSchoolPerk1')}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Unlimited classes</span>
+                    <span className="text-sm">{t('pricingSchoolPerk2')}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">All core features</span>
+                    <span className="text-sm">{t('pricingSchoolPerk3')}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">AI assistant (unlimited queries)</span>
+                    <span className="text-sm">{t('pricingSchoolPerk4')}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">First-in-line for Studious CMS beta access</span>
+                    <span className="text-sm">{t('pricingSchoolPerk5')}</span>
                   </li>
                   {/* <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">API access</span>
+                    <span className="text-sm">{t('pricingSchoolPerk6')}</span>
                   </li> */}
                 </ul>
                 <Button 
                   className="w-full mt-auto bg-primary hover:bg-primary/90"
                   onClick={() => setShowEarlyAccess(true)}
                 >
-                  Get Started
+                  {t('pricingSchoolLink')}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </CardContent>
@@ -526,62 +529,7 @@ export default function PricingPage() {
       </section> */}
 
       {/* Footer */}
-      <footer className="py-12 sm:py-14 md:py-16 px-4 sm:px-6 bg-secondary border-t border-border">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-10 sm:mb-12">
-            <div className="space-y-4">
-              <div className="flex items-center gap-2">
-                <img src="/logo.png" alt="Studious" className="w-7 h-7" />
-                <span className="text-lg sm:text-xl font-semibold text-foreground">Studious</span>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Modern learning management for the next generation of education.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold text-foreground mb-4">Product</h3>
-              <ul className="space-y-2">
-                <li><Link href="/#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Features</Link></li>
-                <li><Link href="/pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Pricing</Link></li>
-                <li><Link href="/program" className="text-sm text-muted-foreground hover:text-foreground transition-colors">School Program</Link></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold text-foreground mb-4">Company</h3>
-              <ul className="space-y-2">
-                <li><Link href="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">About</Link></li>
-                <li><Link href="/#team" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Team</Link></li>
-                <li><Link href="/press" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Press</Link></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold text-foreground mb-4">Contact</h3>
-              <ul className="space-y-2">
-                <li><a href="mailto:hello@studious.sh" className="text-sm text-muted-foreground hover:text-foreground transition-colors">hello@studious.sh</a></li>
-                <li><a href="mailto:press@studious.sh" className="text-sm text-muted-foreground hover:text-foreground transition-colors">press@studious.sh</a></li>
-                <li><a href="mailto:impact@studious.sh" className="text-sm text-muted-foreground hover:text-foreground transition-colors">impact@studious.sh</a></li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-muted-foreground">
-              © 2025 Studious LMS. All rights reserved.
-            </p>
-            <div className="flex gap-6">
-              <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Terms of Service
-              </Link>
-        </div>
-          </div>
-        </div>
-      </footer>
+      {Footer()}
       
       <EarlyAccessModal open={showEarlyAccess} onOpenChange={setShowEarlyAccess} />
     </div>

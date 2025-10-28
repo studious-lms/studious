@@ -16,8 +16,8 @@ export default function Chat() {
       <div className="h-full bg-background flex items-center justify-center">
         <EmptyState
           icon={LogIn}
-          title={t('pleaseSignIn')}
-          description={t('signInRequired')}
+          title={t('landing.pleaseSignIn')}
+          description={t('landing.signInRequired')}
         />
       </div>
     );
@@ -28,8 +28,8 @@ export default function Chat() {
     <div className="h-full bg-background flex items-center justify-center">
       <EmptyState
         icon={MessageSquare}
-        title={t('title')}
-        description={t('description')}
+        title={t('landing.title')}
+        description={t('landing.description')}
       />
     </div>
   );

@@ -25,6 +25,7 @@ import { EmptyState } from "@/components/ui/empty-state";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { toast } from "sonner";
+import { useTranslations } from "next-intl"
 
 type Assignment = RouterOutputs['assignment']['get'];
 type Section = RouterOutputs['class']['get']['class']['sections'][number];
@@ -91,6 +92,8 @@ function MainDropZone({
   onMoveAssignment: (assignmentId: string, targetFolderId: string | null) => void;
   isTeacher?: boolean;
 }) {
+  const t = useTranslations('assignment');
+
   const [{ isOver }, drop] = useDrop({
     accept: "assignment",
     canDrop: () => isTeacher,
@@ -116,7 +119,7 @@ function MainDropZone({
       {isOver && (
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
           <div className="bg-primary/10 text-primary px-4 py-2 rounded-lg border-2 border-dashed border-primary">
-            Drop assignment here to move to top level
+            {t('assignmentDrop')}
           </div>
         </div>
       )}
@@ -134,6 +137,7 @@ export default function Assignments() {
   const [topLevelItems, setTopLevelItems] = useState<Array<{type: 'assignment' | 'folder', data: Assignment | Folder}>>([]);
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
   const [editingSection, setEditingSection] = useState<{ id: string; name: string; color: string } | null>(null);
+  const t = useTranslations('assignment');
 
   // API queries
   const { data: classData, isLoading, refetch } = trpc.class.get.useQuery({ classId });
@@ -366,7 +370,7 @@ export default function Assignments() {
   };
 
   const handleDeleteSection = async (sectionId: string) => {
-    if (!confirm('Are you sure you want to delete this section? All assignments will be moved to the top level.')) {
+    if (!confirm(t('sectionDeletionConfirmation'))) {
       return;
     }
     
@@ -386,7 +390,7 @@ export default function Assignments() {
   };
 
   const handleDeleteAssignment = async (assignmentId: string) => {
-    if (!confirm('Are you sure you want to delete this assignment? This action cannot be undone.')) {
+    if (!confirm(t('assignmentDeletionConfirmation'))) {
       return;
     }
     
@@ -608,25 +612,25 @@ export default function Assignments() {
       <PageLayout>
         <div className="flex items-center justify-between mb-6">
           <div>
-            <h1 className="text-2xl font-bold">Assignments</h1>
-            <p className="text-muted-foreground">Manage and track class assignments</p>
+            <h1 className="text-2xl font-bold">{t('assignments')}</h1>
+            <p className="text-muted-foreground">{t('manageAndTrack')}</p>
           </div>
           
           <div className="flex items-center space-x-2">
             <Button variant="outline" size="sm">
               <Filter className="h-4 w-4 mr-2" />
-              Filters
+              {t('filters')}
             </Button>
             <CreateSectionModal classId={classId} onSectionCreated={handleSectionCreated}>
               <Button variant="outline" size="sm">
                 <Folder className="h-4 w-4 mr-2" />
-                New Section
+                {t('newSection')}
               </Button>
             </CreateSectionModal>
             <CreateAssignmentModal onAssignmentCreated={handleAssignmentCreated}>
               <Button size="sm">
                 <Plus className="h-4 w-4 mr-2" />
-                Create Assignment
+                {t('createAssignment')}
               </Button>
             </CreateAssignmentModal>
           </div>
@@ -637,7 +641,7 @@ export default function Assignments() {
           <div className="relative flex-1 max-w-md">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
-              placeholder="Search assignments..."
+              placeholder={t('searchAssignments')}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="pl-10"
@@ -648,9 +652,9 @@ export default function Assignments() {
         {/* Assignments Tabs */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
           <TabsList>
-            <TabsTrigger value="all">All Assignments</TabsTrigger>
-            <TabsTrigger value="open">Open</TabsTrigger>
-            <TabsTrigger value="closed">Closed</TabsTrigger>
+            <TabsTrigger value="all">{t('allAssignments')}</TabsTrigger>
+            <TabsTrigger value="open">{t('open')}</TabsTrigger>
+            <TabsTrigger value="closed">{t('closed')}</TabsTrigger>
           </TabsList>
 
           <TabsContent value={activeTab} className="space-y-6">
@@ -699,8 +703,8 @@ export default function Assignments() {
             ) : (
               <EmptyState
                 icon={FileText}
-                title="No assignments found"
-                description="Create your first assignment to get started"
+                title={t('noAssignmentsFound')}
+                description={t('createFirstAssignment')}
               />
             )}
           </TabsContent>

@@ -21,8 +21,11 @@ import {
 import { Navbar } from "@/components/marketing/Navbar";
 import { useState } from "react";
 import { trpc } from "@/lib/trpc";
+import { Footer } from "@/components/marketing/Footer";
+import { useTranslations } from "next-intl";
 
 export default function ProgramPage() {
+  const t = useTranslations('program');
   const [searchId, setSearchId] = useState("");
   const [shouldSearch, setShouldSearch] = useState(false);
 
@@ -74,13 +77,13 @@ export default function ProgramPage() {
         
         <div className="container mx-auto max-w-4xl text-center relative z-20">
           <Badge variant="outline" className="mb-4 sm:mb-6 px-3 sm:px-4 py-1 sm:py-1.5 border-white/30 text-white bg-white/10 backdrop-blur-sm text-sm">
-            Social Impact Initiative
+            {t('hero.badge')}
           </Badge>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 tracking-tight leading-tight drop-shadow-lg px-4">
-            Studious School Development Program
+            {t('hero.title')}
           </h1>
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-md px-4">
-            Providing free access to modern learning technology for schools without economic means
+            {t('hero.subtitle')}
           </p>
         </div>
       </section>
@@ -91,15 +94,15 @@ export default function ProgramPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-center">
             <div>
               <div className="text-4xl sm:text-5xl font-bold text-primary mb-2">10%</div>
-              <p className="text-sm sm:text-base text-muted-foreground">Revenue Committed</p>
+              <p className="text-sm sm:text-base text-muted-foreground">{t('commitment.revenue')}</p>
             </div>
             <div>
               <div className="text-4xl sm:text-5xl font-bold text-primary mb-2">Nov-Dec 2025</div>
-              <p className="text-sm sm:text-base text-muted-foreground">First Cohort Launch</p>
+              <p className="text-sm sm:text-base text-muted-foreground">{t('commitment.cohort')}</p>
             </div>
             <div>
               <div className="text-4xl sm:text-5xl font-bold text-primary mb-2">100%</div>
-              <p className="text-sm sm:text-base text-muted-foreground">Free Access</p>
+              <p className="text-sm sm:text-base text-muted-foreground">{t('commitment.free')}</p>
             </div>
           </div>
         </div>
@@ -111,49 +114,49 @@ export default function ProgramPage() {
           <div className="prose prose-base sm:prose-lg max-w-none">
             <div className="space-y-6 sm:space-y-8 text-muted-foreground text-base sm:text-lg leading-relaxed">
               <div>
-                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3 sm:mb-4">Our Mission</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3 sm:mb-4">{t('about.mission.title')}</h2>
                 <p>
-                  The Studious School Development Program aims to support underprivileged schools by providing them with free, unlimited access to our learning management platform. We recognize that technology is a dominant factor in the future workforce, yet many educational institutions lack access to such resources. Through this program, we bring modern learning management technology to schools that need it most.
+                  {t('about.mission.body1')}
                 </p>
               </div>
 
               <div>
-                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3 sm:mb-4">Program Aims</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3 sm:mb-4">{t('about.aims.title')}</h2>
                 <p>
-                  Through extensive conversations with teachers and educational professionals, we've identified significant gaps in the digital learning infrastructure available to many schools. Many learning management systems on the market lack a cohesive, intuitive user experience, and schools in underprivileged areas often cannot afford access to modern educational technology.
+                  {t('about.aims.body1')}
                 </p>
                 <p className="mt-4">
-                  Our program addresses these challenges directly. Revenue from our paid institutional subscriptions enables us to provide underprivileged schools with comprehensive access to Studious LMS and related educational tools. This sustainable model allows us to bridge the digital divide while continuously improving our platform for all users.
+                  {t('about.aims.body2')}
                 </p>
               </div>
 
               <div>
-                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3 sm:mb-4">What You'll Receive</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3 sm:mb-4">{t('about.receive.title')}</h2>
                 <p>
-                  Schools accepted into the program receive the full Studious platform experience—not a limited or stripped-down version. This includes unlimited student and teacher accounts, all premium features (AI assistant, advanced analytics, real-time collaboration), priority technical support, dedicated onboarding specialists, ongoing training resources, and access to all future updates and improvements.
+                  {t('about.receive.body1')}
                 </p>
                 <p className="mt-4">
-                  Beyond the software itself, we provide comprehensive support to ensure your school can maximize the platform's benefits. Our team will work directly with your administrators and teachers to customize the system for your specific needs, provide hands-on training, and remain available for ongoing assistance throughout your journey.
+                  {t('about.receive.body2')}
                 </p>
               </div>
 
               <div>
-                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3 sm:mb-4">Who Qualifies</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3 sm:mb-4">{t('about.qualifies.title')}</h2>
                 <p>
-                  We prioritize schools serving students who would benefit most from improved educational technology. This includes public schools in underserved or economically disadvantaged communities, registered non-profit educational institutions demonstrating financial constraints, schools in developing regions or countries, US Title I schools and their international equivalents, and any educational institution that can demonstrate genuine financial need alongside a commitment to improving student outcomes.
+                  {t('about.qualifies.body1')}
                 </p>
                 <p className="mt-4">
-                  We evaluate each application individually, considering not just financial metrics but also your school's mission, the population you serve, and your plans for using Studious to enhance education. Our goal is to partner with schools that will truly benefit from and effectively utilize our platform to improve student learning experiences.
+                  {t('about.qualifies.body2')}
                 </p>
               </div>
 
               <div>
-                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3 sm:mb-4">Our Vision for Impact</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3 sm:mb-4">{t('about.impact.title')}</h2>
                 <p>
-                  By providing schools with free access to modern learning management technology, we aim to eliminate one of the key barriers facing educational institutions in underprivileged areas. Our approach goes beyond just software—we're committed to providing comprehensive support including training resources, onboarding assistance, and access to educational tools like e-books and digital stationery materials.
+                  {t('about.impact.body1')}
                 </p>
                 <p className="mt-4">
-                  The School Development Program launches in late November to mid-December 2025, with our first cohort of partner schools. As Studious grows, so does our capacity to support more schools. All revenue generated from our paid institutional subscriptions is reinvested into expanding access for schools in need, creating a sustainable model for educational equity that strengthens over time.
+                  {t('about.impact.body2')}
                 </p>
               </div>
             </div>
@@ -169,29 +172,29 @@ export default function ProgramPage() {
             <div>
             <Card className="border border-border shadow-lg bg-background h-full">
               <CardHeader>
-                <CardTitle className="text-2xl">Apply to the Program</CardTitle>
+                <CardTitle className="text-2xl">{t('cta.apply.title')}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-muted-foreground">
-                  Ready to bring Studious to your school? Fill out our application form and we'll review it within 5-7 business days.
+                  {t('cta.apply.description')}
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                    <span>Takes approximately 10-15 minutes</span>
+                    <span>{t('cta.apply.item1')}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                    <span>No application fee required</span>
+                    <span>{t('cta.apply.item2')}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                    <span>Response within 5-7 business days</span>
+                    <span>{t('cta.apply.item3')}</span>
                   </li>
                 </ul>
                 <Link href="/program/apply" className="block pt-4">
                   <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-                    Start Application
+                    {t('cta.apply.button')}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
@@ -202,18 +205,18 @@ export default function ProgramPage() {
             {/* Status Checker Card */}
             <Card className="border border-border shadow-lg bg-background">
               <CardHeader>
-                <CardTitle className="text-2xl">Check Application Status</CardTitle>
+                <CardTitle className="text-2xl">{t('status.title')}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-muted-foreground">
-                  Already applied? Enter your application ID to check the status of your application.
+                  {t('status.description')}
                 </p>
                 <div className="space-y-3">
-                  <Label htmlFor="application-id">Application ID</Label>
+                  <Label htmlFor="application-id">{t('status.inputLabel')}</Label>
                   <div className="flex gap-2">
                     <Input 
                       id="application-id" 
-                      placeholder="e.g., EXA2025-..." 
+                      placeholder={t('status.placeholder')} 
                       className="flex-1"
                       value={searchId}
                       onChange={(e) => {
@@ -232,7 +235,7 @@ export default function ProgramPage() {
                     </Button>
                   </div>
                   <p className="text-xs text-muted-foreground">
-                    You received your application ID via email after submitting your application.
+                    {t('status.help')}
                   </p>
                 </div>
 
@@ -247,21 +250,21 @@ export default function ProgramPage() {
                     ) : application ? (
                       <div className="space-y-4">
                         <div className="flex items-center justify-between">
-                          <h4 className="font-semibold text-foreground">Application Found</h4>
+                          <h4 className="font-semibold text-foreground">{t('status.results.found')}</h4>
                           {getStatusBadge(application.status || "PENDING")}
                         </div>
                         
                         <div className="bg-secondary/50 rounded-lg p-4 space-y-3">
                           <div className="flex justify-between text-sm">
-                            <span className="text-muted-foreground">School:</span>
+                            <span className="text-muted-foreground">{t('status.results.school')}</span>
                             <span className="font-medium text-foreground">{application.name}</span>
                           </div>
                           <div className="flex justify-between text-sm">
-                            <span className="text-muted-foreground">Location:</span>
+                            <span className="text-muted-foreground">{t('status.results.location')}</span>
                             <span className="font-medium text-foreground">{application.city}, {application.country}</span>
                           </div>
                           <div className="flex justify-between text-sm">
-                            <span className="text-muted-foreground">Submitted:</span>
+                            <span className="text-muted-foreground">{t('status.results.submitted')}</span>
                             <span className="font-medium text-foreground">
                               {new Date(application.submittedAt || "").toLocaleDateString('en-US', { 
                                 year: 'numeric', 
@@ -271,7 +274,7 @@ export default function ProgramPage() {
                             </span>
                           </div>
                           <div className="flex justify-between text-sm">
-                            <span className="text-muted-foreground">Contact:</span>
+                            <span className="text-muted-foreground">{t('status.results.contact')}</span>
                             <span className="font-medium text-foreground">{application.contactEmail}</span>
                           </div>
                         </div>
@@ -279,10 +282,10 @@ export default function ProgramPage() {
                         {application.status === "APPROVED" && (
                           <div className="bg-green-50 border border-green-200 rounded-lg p-4">
                             <p className="text-sm text-green-800 font-medium mb-2">
-                              🎉 Congratulations! Your application has been approved.
+                              {t('status.cards.approved.title')}
                             </p>
                             <p className="text-sm text-green-700">
-                              Check your email for next steps to set up your account.
+                              {t('status.cards.approved.body')}
                             </p>
                           </div>
                         )}
@@ -290,10 +293,10 @@ export default function ProgramPage() {
                         {application.status === "UNDER_REVIEW" && (
                           <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
                             <p className="text-sm text-yellow-800 font-medium mb-2">
-                              ⏳ Your application is currently under review.
+                              {t('status.cards.underReview.title')}
                             </p>
                             <p className="text-sm text-yellow-700">
-                              We'll contact you via email once the review is complete.
+                              {t('status.cards.underReview.body')}
                             </p>
                           </div>
                         )}
@@ -301,10 +304,10 @@ export default function ProgramPage() {
                         {(!application.status || application.status === "PENDING") && (
                           <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
                             <p className="text-sm text-blue-800 font-medium mb-2">
-                              📋 Your application has been received.
+                              {t('status.cards.pending.title')}
                             </p>
                             <p className="text-sm text-blue-700">
-                              Our team will begin reviewing it soon. Expected review time: 5-7 business days.
+                              {t('status.cards.pending.body')}
                             </p>
                           </div>
                         )}
@@ -313,12 +316,8 @@ export default function ProgramPage() {
                       <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-4 flex items-start gap-3">
                         <XCircle className="h-5 w-5 text-destructive flex-shrink-0 mt-0.5" />
                         <div>
-                          <p className="text-sm font-medium text-foreground mb-1">
-                            Application not found
-                          </p>
-                          <p className="text-sm text-muted-foreground">
-                            Please check your application ID and try again. If you continue to have issues, contact us at impact@studious.sh
-                          </p>
+                          <p className="text-sm font-medium text-foreground mb-1">{t('status.results.notFound.title')}</p>
+                          <p className="text-sm text-muted-foreground">{t('status.results.notFound.body')}</p>
                         </div>
                       </div>
                     )}
@@ -334,15 +333,15 @@ export default function ProgramPage() {
       <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-background">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3 sm:mb-4 px-4">
-            Have Questions?
+            {t('contact.title')}
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground mb-6 sm:mb-8 px-4">
-            Our team is here to help you through the application process
+            {t('contact.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4">
             <a href="mailto:impact@studious.sh" className="w-full sm:w-auto">
               <Button size="lg" variant="outline" className="border-border hover:bg-secondary w-full sm:w-auto">
-                Email Us: impact@studious.sh
+                {t('contact.button')}
               </Button>
             </a>
           </div>
@@ -350,62 +349,7 @@ export default function ProgramPage() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 sm:py-14 md:py-16 px-4 sm:px-6 bg-secondary border-t border-border">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-10 sm:mb-12">
-            <div className="space-y-4">
-              <div className="flex items-center gap-2">
-                <img src="/logo.png" alt="Studious" className="w-7 h-7" />
-                <span className="text-xl font-semibold text-foreground">Studious</span>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Modern learning management for the next generation of education.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold text-foreground mb-4">Product</h3>
-              <ul className="space-y-2">
-                <li><Link href="/#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Features</Link></li>
-                <li><Link href="/pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Pricing</Link></li>
-                <li><Link href="/program" className="text-sm text-muted-foreground hover:text-foreground transition-colors">School Program</Link></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold text-foreground mb-4">Company</h3>
-              <ul className="space-y-2">
-                <li><Link href="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">About</Link></li>
-                <li><Link href="/#team" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Team</Link></li>
-                <li><Link href="/press" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Press</Link></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold text-foreground mb-4">Contact</h3>
-              <ul className="space-y-2">
-                <li><a href="mailto:hello@studious.sh" className="text-sm text-muted-foreground hover:text-foreground transition-colors">hello@studious.sh</a></li>
-                <li><a href="mailto:press@studious.sh" className="text-sm text-muted-foreground hover:text-foreground transition-colors">press@studious.sh</a></li>
-                <li><a href="mailto:impact@studious.sh" className="text-sm text-muted-foreground hover:text-foreground transition-colors">impact@studious.sh</a></li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-muted-foreground">
-              © 2025 Studious LMS. All rights reserved.
-            </p>
-            <div className="flex gap-6">
-              <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Terms of Service
-              </Link>
-            </div>
-          </div>
-        </div>
-      </footer>
+      {Footer()}
     </div>
   );
 }

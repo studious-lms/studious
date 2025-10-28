@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo, useEffect } from "react";
+import { useTranslations } from "next-intl";
 import { useParams } from "next/navigation";
 import { PageLayout } from "@/components/ui/page-layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -106,6 +107,7 @@ const SyllabusPageSkeleton = () => (
 export default function Syllabus() {
   const params = useParams();
   const classId = params.id as string;
+  const t = useTranslations('class.syllabus');
   
   const [isEditing, setIsEditing] = useState(false);
   const [syllabusContent, setSyllabusContent] = useState("");
@@ -166,8 +168,8 @@ export default function Syllabus() {
         <div className="flex items-center justify-center h-64">
           <div className="text-center">
             <AlertCircle className="h-12 w-12 text-destructive mx-auto mb-4" />
-            <h3 className="text-lg font-semibold mb-2">Failed to load syllabus</h3>
-            <p className="text-muted-foreground">Please try again later.</p>
+            <h3 className="text-lg font-semibold mb-2">{t('errors.failedToLoad')}</h3>
+            <p className="text-muted-foreground">{t('errors.tryLater')}</p>
           </div>
         </div>
       </PageLayout>
@@ -195,9 +197,9 @@ export default function Syllabus() {
         {/* Header */}
         <div className="flex items-center justify-between">
         <div>
-            <h1 className="font-semibold text-xl">Syllabus</h1>
+            <h1 className="font-semibold text-xl">{t('title')}</h1>
             <p className="text-sm text-muted-foreground mt-1">
-              {classData.class.name} • Course overview and academic information
+              {classData.class.name} • {t('subtitle')}
             </p>
         </div>
           <div className="flex items-center space-x-3">
@@ -209,7 +211,7 @@ export default function Syllabus() {
                   disabled={updateSyllabusMutation.isPending}
                 >
                   <Save className="w-4 h-4" />
-                  <span>Save Changes</span>
+                  <span>{t('actions.saveChanges')}</span>
               </Button>
                 <Button
                   variant="outline"
@@ -217,7 +219,7 @@ export default function Syllabus() {
                   className="flex items-center space-x-2"
                 >
                   <X className="w-4 h-4" />
-                  <span>Cancel</span>
+                  <span>{t('actions.cancel')}</span>
               </Button>
             </>
             ) : (
@@ -226,7 +228,7 @@ export default function Syllabus() {
                 className="flex items-center space-x-2"
               >
                 <Edit className="w-4 h-4" />
-                <span>Edit Syllabus</span>
+                <span>{t('actions.edit')}</span>
               </Button>
           )}
         </div>
@@ -237,7 +239,7 @@ export default function Syllabus() {
           <Card className="p-4">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-muted-foreground">Total Assignments</p>
+                <p className="text-sm font-medium text-muted-foreground">{t('stats.totalAssignments')}</p>
                 <p className="text-2xl font-bold mt-1">{assignments.length}</p>
               </div>
               <div className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center">
@@ -249,7 +251,7 @@ export default function Syllabus() {
           <Card className="p-4">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-muted-foreground">Completion Rate</p>
+                <p className="text-sm font-medium text-muted-foreground">{t('stats.completionRate')}</p>
                 <p className="text-2xl font-bold mt-1">{completionRate}%</p>
               </div>
               <div className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center">
@@ -261,7 +263,7 @@ export default function Syllabus() {
           <Card className="p-4">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-muted-foreground">Total Points</p>
+                <p className="text-sm font-medium text-muted-foreground">{t('stats.totalPoints')}</p>
                 <p className="text-2xl font-bold mt-1">{totalPoints}</p>
               </div>
               <div className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center">
@@ -273,7 +275,7 @@ export default function Syllabus() {
           <Card className="p-4">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-muted-foreground">Upcoming</p>
+                <p className="text-sm font-medium text-muted-foreground">{t('stats.upcoming')}</p>
                 <p className="text-2xl font-bold mt-1">{upcomingAssignments}</p>
               </div>
               <div className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center">
@@ -286,7 +288,7 @@ export default function Syllabus() {
         {/* Course Overview */}
         <Card>
           <CardHeader>
-            <CardTitle className="text-lg font-semibold">Course Overview</CardTitle>
+            <CardTitle className="text-lg font-semibold">{t('overview.title')}</CardTitle>
           </CardHeader>
           <CardContent>
             {isEditing ? (
@@ -294,11 +296,11 @@ export default function Syllabus() {
             <Textarea
                   value={syllabusContent}
                   onChange={(e) => setSyllabusContent(e.target.value)}
-                  placeholder="Enter course overview, objectives, and other important information..."
+                  placeholder={t('overview.placeholder')}
                   className="min-h-[300px]"
                 />
                 <p className="text-sm text-muted-foreground">
-                  Enter your course information, learning objectives, policies, and other important details.
+                  {t('overview.helper')}
                 </p>
               </div>
             ) : (
@@ -311,8 +313,8 @@ export default function Syllabus() {
                   ) : (
                     <div className="text-center py-8 text-muted-foreground">
                       <FileText className="h-12 w-12 mx-auto mb-4 opacity-50" />
-                      <p>No syllabus content yet</p>
-                      <p className="text-sm">Click 'Edit Syllabus' to add course information, learning objectives, policies, and more.</p>
+                      <p>{t('overview.empty.title')}</p>
+                      <p className="text-sm">{t('overview.empty.description')}</p>
                     </div>
                   )}
                 </div>
@@ -320,14 +322,14 @@ export default function Syllabus() {
                 {/* Course Assignments Table */}
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-lg font-semibold">Course Assignments</h3>
+                    <h3 className="text-lg font-semibold">{t('assignments.title')}</h3>
                     {assignments.length > 0 && (
                       <div className="flex items-center space-x-4">
                         <div className="text-sm text-muted-foreground">
-                          {assignments.filter(a => a.graded).length} of {assignments.length} graded
+                          {t('assignments.gradedCount', { graded: assignments.filter(a => a.graded).length, total: assignments.length })}
                         </div>
                         <div className="text-sm text-muted-foreground">
-                          {totalPoints} total points
+                          {t('assignments.totalPoints', { total: totalPoints })}
                         </div>
                       </div>
                     )}
@@ -337,11 +339,11 @@ export default function Syllabus() {
                     <Table>
                       <TableHeader>
                         <TableRow>
-                          <TableHead>Assignment</TableHead>
-                          <TableHead>Due Date</TableHead>
-                          <TableHead className="text-right">Points</TableHead>
-                          <TableHead>Weight</TableHead>
-                          <TableHead>Status</TableHead>
+                          <TableHead>{t('table.assignment')}</TableHead>
+                          <TableHead>{t('table.dueDate')}</TableHead>
+                          <TableHead className="text-right">{t('table.points')}</TableHead>
+                          <TableHead>{t('table.weight')}</TableHead>
+                          <TableHead>{t('table.status')}</TableHead>
                         </TableRow>
                       </TableHeader>
                       <TableBody>
@@ -380,7 +382,7 @@ export default function Syllabus() {
                               <span className="font-semibold">
                                 {assignment.maxGrade ? `${assignment.maxGrade}` : '—'}
                               </span>
-                              {assignment.maxGrade && <span className="text-xs text-muted-foreground ml-1">pts</span>}
+                              {assignment.maxGrade && <span className="text-xs text-muted-foreground ml-1">{t('table.pts')}</span>}
                             </TableCell>
                             <TableCell>
                               <span className="text-sm text-muted-foreground font-medium">
@@ -390,11 +392,11 @@ export default function Syllabus() {
                             <TableCell>
                               {assignment.graded ? (
                                 <Badge variant="default">
-                                  Graded
+                                  {t('status.graded')}
                                 </Badge>
                               ) : (
                                 <Badge variant="secondary">
-                                  Pending
+                                  {t('status.pending')}
                                 </Badge>
                               )}
                             </TableCell>
@@ -405,8 +407,8 @@ export default function Syllabus() {
                   ) : (
                     <div className="text-center py-8 text-muted-foreground">
                       <Target className="h-12 w-12 mx-auto mb-4 opacity-50" />
-                      <p>No assignments yet</p>
-                      <p className="text-sm">Assignments will appear here once they're created.</p>
+                      <p>{t('assignments.empty.title')}</p>
+                      <p className="text-sm">{t('assignments.empty.description')}</p>
                     </div>
                   )}
                 </div>
@@ -420,7 +422,7 @@ export default function Syllabus() {
             <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <School className="h-5 w-5" />
-              Course Information
+              {t('courseInfo.title')}
             </CardTitle>
             </CardHeader>
             <CardContent>
@@ -428,19 +430,19 @@ export default function Syllabus() {
               {/* Basic Information */}
               <div className="space-y-4">
                 <h3 className="text-md font-medium border-b border-border pb-2">
-                  Basic Information
+                  {t('courseInfo.basic.title')}
                 </h3>
               <div className="space-y-3">
                   <div className="bg-muted p-3 rounded-lg">
-                    <label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Class Name</label>
+                    <label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">{t('courseInfo.basic.className')}</label>
                     <p className="font-medium mt-1">{classData.class.name}</p>
                   </div>
                   <div className="bg-muted p-3 rounded-lg">
-                    <label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Section</label>
+                    <label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">{t('courseInfo.basic.section')}</label>
                     <p className="mt-1">{classData.class.section || 'Not specified'}</p>
                   </div>
                   <div className="bg-muted p-3 rounded-lg">
-                    <label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Subject</label>
+                    <label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">{t('courseInfo.basic.subject')}</label>
                     <p className="mt-1">{classData.class.subject || 'Not specified'}</p>
                   </div>
                 </div>
@@ -449,13 +451,13 @@ export default function Syllabus() {
               {/* Statistics */}
               <div className="space-y-4">
                 <h3 className="text-md font-medium border-b border-border pb-2">
-                  Course Statistics
+                  {t('courseInfo.stats.title')}
                 </h3>
                 <div className="space-y-3">
                   <div className="bg-muted p-3 rounded-lg">
                     <div className="flex items-center justify-between">
                       <div>
-                        <label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Total Assignments</label>
+                        <label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">{t('courseInfo.stats.totalAssignments')}</label>
                         <p className="text-xl font-bold mt-1">{assignments.length}</p>
                       </div>
                       <Target className="w-6 h-6 text-muted-foreground" />
@@ -464,7 +466,7 @@ export default function Syllabus() {
                   <div className="bg-muted p-3 rounded-lg">
                     <div className="flex items-center justify-between">
                       <div>
-                        <label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Graded Assignments</label>
+                        <label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">{t('courseInfo.stats.gradedAssignments')}</label>
                         <p className="text-xl font-bold mt-1">{assignments.filter(a => a.graded).length}</p>
                       </div>
                       <CheckCircle className="w-6 h-6 text-muted-foreground" />
@@ -473,7 +475,7 @@ export default function Syllabus() {
                   <div className="bg-muted p-3 rounded-lg">
                     <div className="flex items-center justify-between">
                       <div>
-                        <label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Total Points</label>
+                        <label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">{t('courseInfo.stats.totalPoints')}</label>
                         <p className="text-xl font-bold mt-1">{totalPoints}</p>
                       </div>
                       <TrendingUp className="w-6 h-6 text-muted-foreground" />
