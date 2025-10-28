@@ -10,6 +10,7 @@ import ColorPicker from "@/components/ui/color-picker";
 import { Plus, Loader2 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
+import { useTranslations } from "next-intl";
 
 interface CreateClassModalProps {
   children?: React.ReactNode;
@@ -17,6 +18,7 @@ interface CreateClassModalProps {
 }
 
 export function CreateClassModal({ children, onClassCreated }: CreateClassModalProps) {
+  const t = useTranslations('components.createClass');
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -39,7 +41,7 @@ export function CreateClassModal({ children, onClassCreated }: CreateClassModalP
     
     // Validate required fields
     if (!formData.title || !formData.section || !formData.subject) {
-      toast.error("Please fill in all required fields.");
+      toast.error(t('toasts.errorRequired'));
       return;
     }
 
@@ -56,7 +58,7 @@ export function CreateClassModal({ children, onClassCreated }: CreateClassModalP
 
       onClassCreated?.(newClass);
       
-      toast.success(`Class ${formData.title} has been created successfully.`);
+      toast.success(t('toasts.success', { name: formData.title }));
 
       // Reset form
       setFormData({
@@ -73,7 +75,7 @@ export function CreateClassModal({ children, onClassCreated }: CreateClassModalP
       setOpen(false);
     } catch (error) {
       console.error("Failed to create class:", error);
-      toast.error("Failed to create class. Please try again later.");
+      toast.error(t('toasts.errorFailed'));
     } finally {
       setLoading(false);
     }
@@ -85,34 +87,34 @@ export function CreateClassModal({ children, onClassCreated }: CreateClassModalP
         {children || (
           <Button>
             <Plus className="h-4 w-4 mr-2" />
-            Create Class
+            {t('buttonLabel')}
           </Button>
         )}
       </DialogTrigger>
       <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle>Create New Class</DialogTitle>
+          <DialogTitle>{t('title')}</DialogTitle>
         </DialogHeader>
         
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="title">Class Title *</Label>
+              <Label htmlFor="title">{t('fields.title')}</Label>
               <Input
                 id="title"
                 value={formData.title}
                 onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                placeholder="e.g., Advanced Physics"
+                placeholder={t('placeholders.title')}
                 required
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="section">Section *</Label>
+              <Label htmlFor="section">{t('fields.section')}</Label>
               <Input
                 id="section"
                 value={formData.section}
                 onChange={(e) => setFormData({ ...formData, section: e.target.value })}
-                placeholder="e.g., AP-101"
+                placeholder={t('placeholders.section')}
                 required
               />
             </div>
@@ -120,35 +122,35 @@ export function CreateClassModal({ children, onClassCreated }: CreateClassModalP
 
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="subject">Subject *</Label>
+              <Label htmlFor="subject">{t('fields.subject')}</Label>
               <Input
                 id="subject"
                 value={formData.subject}
                 onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                placeholder="e.g., Physics"
+                placeholder={t('placeholders.subject')}
                 required
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="semester">Semester</Label>
+              <Label htmlFor="semester">{t('fields.semester')}</Label>
               <Input
                 id="semester"
                 value={formData.semester}
                 onChange={(e) => setFormData({ ...formData, semester: e.target.value })}
-                placeholder="e.g., Spring 2025"
+                placeholder={t('placeholders.semester')}
               />
             </div>
           </div>
 
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="credits">Credits</Label>
+              <Label htmlFor="credits">{t('fields.credits')}</Label>
               <Input
                 id="credits"
                 type="number"
                 value={formData.credits}
                 onChange={(e) => setFormData({ ...formData, credits: e.target.value })}
-                placeholder="e.g., 3"
+                placeholder={t('placeholders.credits')}
               />
             </div>
             <div className="space-y-2">
@@ -163,48 +165,48 @@ export function CreateClassModal({ children, onClassCreated }: CreateClassModalP
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="meetingTime">Meeting Time</Label>
+            <Label htmlFor="meetingTime">{t('fields.meetingTime')}</Label>
             <Input
               id="meetingTime"
               value={formData.meetingTime}
               onChange={(e) => setFormData({ ...formData, meetingTime: e.target.value })}
-              placeholder="e.g., MWF 10:00-11:00 AM"
+              placeholder={t('placeholders.meetingTime')}
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="location">Location</Label>
+            <Label htmlFor="location">{t('fields.location')}</Label>
             <Input
               id="location"
               value={formData.location}
               onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-              placeholder="e.g., Room 205, Science Building"
+              placeholder={t('placeholders.location')}
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="description">Description</Label>
+            <Label htmlFor="description">{t('fields.description')}</Label>
             <Textarea
               id="description"
               value={formData.description}
               onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-              placeholder="Describe the class content and objectives..."
+              placeholder={t('placeholders.description')}
               rows={3}
             />
           </div>
 
           <div className="flex justify-end space-x-2 pt-4">
             <Button type="button" variant="outline" onClick={() => setOpen(false)} disabled={loading}>
-              Cancel
+              {t('actions.cancel')}
             </Button>
             <Button type="submit" disabled={loading}>
               {loading ? (
                 <>
                   <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                  Creating...
+                  {t('actions.creating')}
                 </>
               ) : (
-                "Create Class"
+                t('actions.create')
               )}
             </Button>
           </div>

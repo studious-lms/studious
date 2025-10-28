@@ -14,8 +14,10 @@ import {
 } from "@/components/chat";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { ConversationPageSkeleton } from "@/components/chat/ChatSkeletons";
+import { useTranslations } from "next-intl";
 
 export default function ConversationPage() {
+  const t = useTranslations('chat.page');
   const params = useParams();
   const router = useRouter();
   const appState = useSelector((state: RootState) => state.app);
@@ -47,15 +49,15 @@ export default function ConversationPage() {
   }, [conversationId, selectConversation]);
 
   const getConversationDisplayName = (): string => {
-    if (!selectedConversation) return 'Unknown';
+    if (!selectedConversation) return t('unknown');
     
     if (selectedConversation.type === 'GROUP') {
-      return selectedConversation.name || 'Unnamed Group';
+      return selectedConversation.name || t('unnamedGroup');
     }
     
     // For DMs, find the other user
     const otherMember = selectedConversation.members.find(member => member.userId !== user.id);
-    return otherMember?.user.profile?.displayName || otherMember?.user.username || 'Unknown User';
+    return otherMember?.user.profile?.displayName || otherMember?.user.username || t('unknownUser');
   };
 
   if (isLoadingMessages && !selectedConversation) {
@@ -68,12 +70,12 @@ export default function ConversationPage() {
         <div className="text-center space-y-6">
           <EmptyState
             icon={MessageSquare}
-            title="Conversation Not Found"
-            description="This conversation doesn't exist or you don't have access to it."
+            title={t('notFound.title')}
+            description={t('notFound.description')}
           />
           <Button onClick={() => router.push('/chat')}>
             <ArrowLeft className="h-4 w-4 mr-2" />
-            Back to Chat
+            {t('notFound.backToChat')}
           </Button>
         </div>
       </div>
@@ -105,7 +107,7 @@ export default function ConversationPage() {
                 </span>
                 {selectedConversation.type === 'GROUP' && (
                   <span className="text-sm text-muted-foreground">
-                    ({selectedConversation.members.length} members)
+                    ({selectedConversation.members.length} {t('header.members')})
                   </span>
                 )}
               </div>
@@ -117,7 +119,7 @@ export default function ConversationPage() {
                 onClick={markMentionsAsRead}
                 className="text-xs text-muted-foreground hover:text-foreground"
               >
-                Mark mentions read
+                {t('header.markMentionsRead')}
               </Button>
               <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
                 <Settings className="h-4 w-4" />
@@ -152,7 +154,7 @@ export default function ConversationPage() {
           <div className="flex-shrink-0">
             <MessageInput
               onSend={sendMessage}
-              placeholder={`Message ${getConversationDisplayName()}`}
+              placeholder={`${t('input.placeholderPrefix')} ${getConversationDisplayName()}`}
               conversationMembers={selectedConversation.members.map(m => ({
                 ...m,
                 user: {
@@ -171,7 +173,7 @@ export default function ConversationPage() {
         <div className="flex-1 flex items-center justify-center">
           <div className="text-center space-y-4">
             <MessageSquare className="h-16 w-16 mx-auto text-muted-foreground" />
-            <p className="text-muted-foreground">Loading conversation...</p>
+            <p className="text-muted-foreground">{t('loading')}</p>
           </div>
         </div>
       )}

@@ -21,6 +21,7 @@ import {
 import { CheckCircle, Send } from "lucide-react";
 import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
+import { useTranslations } from "next-intl";
 
 interface EarlyAccessModalProps {
   open: boolean;
@@ -28,6 +29,7 @@ interface EarlyAccessModalProps {
 }
 
 export function EarlyAccessModal({ open, onOpenChange }: EarlyAccessModalProps) {
+  const t = useTranslations('components.earlyAccess');
   const [email, setEmail] = useState("");
   const [institutionSize, setInstitutionSize] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -37,7 +39,7 @@ export function EarlyAccessModal({ open, onOpenChange }: EarlyAccessModalProps) 
     onSuccess: () => {
       setSubmitted(true);
       setIsSubmitting(false);
-      toast.success("Successfully joined the waitlist!");
+      toast.success(t('toasts.success'));
     },
     onError: (error) => {
       toast.error(error.message);
@@ -71,19 +73,19 @@ export function EarlyAccessModal({ open, onOpenChange }: EarlyAccessModalProps) 
         {!submitted ? (
           <>
             <DialogHeader>
-              <DialogTitle className="text-2xl">Request Early Access</DialogTitle>
+              <DialogTitle className="text-2xl">{t('title')}</DialogTitle>
               <DialogDescription>
-                Join the waitlist and be among the first to experience Studious LMS
+                {t('description')}
               </DialogDescription>
             </DialogHeader>
             
             <form onSubmit={handleSubmit} className="space-y-6 pt-4">
               <div className="space-y-2">
-                <Label htmlFor="email">Email Address *</Label>
+                <Label htmlFor="email">{t('fields.email')}</Label>
                 <Input
                   id="email"
                   type="email"
-                  placeholder="you@school.edu"
+                  placeholder={t('placeholders.email')}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -91,17 +93,17 @@ export function EarlyAccessModal({ open, onOpenChange }: EarlyAccessModalProps) 
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="institution-size">Institution Size *</Label>
+                <Label htmlFor="institution-size">{t('fields.institutionSize')}</Label>
                 <Select value={institutionSize} onValueChange={setInstitutionSize} required>
                   <SelectTrigger id="institution-size">
-                    <SelectValue placeholder="Select institution size" />
+                    <SelectValue placeholder={t('placeholders.institutionSize')} />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="1-30">1-30 students (Individual Teacher)</SelectItem>
-                    <SelectItem value="31-100">31-100 students (Small School)</SelectItem>
-                    <SelectItem value="101-500">101-500 students (Medium School)</SelectItem>
-                    <SelectItem value="501-1000">501-1,000 students (Large School)</SelectItem>
-                    <SelectItem value="1001+">1,001+ students (Institution)</SelectItem>
+                    <SelectItem value="1-30">{t('sizes.tiny')}</SelectItem>
+                    <SelectItem value="31-100">{t('sizes.small')}</SelectItem>
+                    <SelectItem value="101-500">{t('sizes.medium')}</SelectItem>
+                    <SelectItem value="501-1000">{t('sizes.large')}</SelectItem>
+                    <SelectItem value="1001+">{t('sizes.institution')}</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -111,7 +113,7 @@ export function EarlyAccessModal({ open, onOpenChange }: EarlyAccessModalProps) 
                 className="w-full bg-primary hover:bg-primary/90"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? "Submitting..." : "Request Access"}
+                {isSubmitting ? t('actions.submitting') : t('actions.submit')}
                 <Send className="ml-2 h-4 w-4" />
               </Button>
             </form>
@@ -121,12 +123,12 @@ export function EarlyAccessModal({ open, onOpenChange }: EarlyAccessModalProps) 
             <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
               <CheckCircle className="h-8 w-8 text-green-600" />
             </div>
-            <DialogTitle className="text-2xl mb-2">You're on the list!</DialogTitle>
+            <DialogTitle className="text-2xl mb-2">{t('success.title')}</DialogTitle>
             <DialogDescription className="mb-6">
-              We'll send you an email at <span className="font-medium text-foreground">{email}</span> when we're ready for you.
+              {t('success.description', { email })}
             </DialogDescription>
             <Button onClick={handleClose} className="bg-primary hover:bg-primary/90">
-              Done
+              {t('actions.done')}
             </Button>
           </div>
         )}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import { useTranslations } from "next-intl";
 import { PageLayout } from "@/components/ui/page-layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -99,6 +100,7 @@ const MembersPageSkeleton = () => (
 );
 
 export default function Members() {
+  const t = useTranslations('class.members');
   const { id: classId } = useParams();
   const [searchQuery, setSearchQuery] = useState("");
   const [activeTab, setActiveTab] = useState("students");
@@ -112,11 +114,11 @@ export default function Members() {
   const removeMemberMutation = trpc.class.removeMember.useMutation();
   const regenerateInviteCodeMutation = trpc.class.createInviteCode.useMutation({
     onSuccess: () => {
-      toast.success('Invite code regenerated successfully');
+      toast.success(t('toasts.inviteRegenerated'));
       refetchInviteCode();
     },
     onError: () => {
-      toast.error('Failed to regenerate invite code');
+      toast.error(t('errors.regenerateFailed'));
     }
   });
   // Process members data
@@ -155,7 +157,7 @@ export default function Members() {
   const copyInviteCode = () => {
     if (inviteCode && inviteCode !== "Loading...") {
       navigator.clipboard.writeText(inviteCode);
-      toast.success("Invite code copied to clipboard");
+      toast.success(t('toasts.copied'));
     }
   };
 
@@ -166,10 +168,10 @@ export default function Members() {
         userId,
         type: newType,
       });
-      toast.success(`Role changed to ${newType}`);
+      toast.success(t('toasts.roleChanged', { role: newType }));
       refetch();
     } catch {
-      toast.error('Failed to change role');
+      toast.error(t('errors.changeRoleFailed'));
     }
   };
 
@@ -179,10 +181,10 @@ export default function Members() {
         classId: classId as string,
         userId,
       });
-      toast.success("Member removed successfully");
+      toast.success(t('toasts.memberRemoved'));
       refetch();
     } catch {
-      toast.error('Failed to remove member');
+      toast.error(t('errors.removeFailed'));
     }
   };
 
@@ -191,14 +193,14 @@ export default function Members() {
     await regenerateInviteCodeMutation.mutateAsync({
       classId: classId as string,
     });
-    toast.success('Invite code regenerated successfully');
+    toast.success(t('toasts.inviteRegenerated'));
   };
   const getRoleBadge = (type: string) => {
     switch (type) {
       case "teacher":
-        return <Badge variant="secondary">Teacher</Badge>;
+        return <Badge variant="secondary">{t('labels.teacher')}</Badge>;
       default:
-        return <Badge variant="outline">Student</Badge>;
+        return <Badge variant="outline">{t('labels.student')}</Badge>;
     }
   };
 
@@ -214,9 +216,9 @@ export default function Members() {
     return (
       <PageLayout>
         <div className="text-center py-12">
-          <h3 className="text-lg font-semibold mb-2">Failed to load members</h3>
+          <h3 className="text-lg font-semibold mb-2">{t('errors.failedToLoad')}</h3>
           <p className="text-muted-foreground mb-4">{error.message}</p>
-          <Button onClick={() => refetch()}>Try Again</Button>
+          <Button onClick={() => refetch()}>{t('actions.tryAgain')}</Button>
         </div>
       </PageLayout>
     );
@@ -226,24 +228,24 @@ export default function Members() {
     <PageLayout>
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-bold">Members</h1>
+          <h1 className="text-2xl font-bold">{t('title')}</h1>
           <p className="text-muted-foreground">
-            {members.teachers.length + members.students.length} members
+            {t('counts.totalMembers', { count: members.teachers.length + members.students.length })}
           </p>
         </div>
         
         <Button>
           <UserPlus className="h-4 w-4 mr-2" />
-          Invite Member
+          {t('actions.inviteMember')}
         </Button>
       </div>
 
       {/* Invite Code Section */}
       <Card className="mb-6">
         <CardHeader>
-          <CardTitle>Class Invite Code</CardTitle>
+          <CardTitle>{t('invite.title')}</CardTitle>
           <p className="text-sm text-muted-foreground">
-            Share this code with students to join the class
+            {t('invite.description')}
           </p>
         </CardHeader>
         <CardContent>
@@ -266,11 +268,11 @@ export default function Members() {
                 disabled={inviteCode === "Loading..."}
               >
                 <Copy className="h-4 w-4 mr-2" />
-                Copy
+                {t('actions.copy')}
               </Button>
               <Button variant="outline" onClick={regenerateInviteCode}>
                 <RefreshCcw className="h-4 w-4 mr-2" />
-                Regenerate
+                {t('actions.regenerate')}
               </Button>
             </div>
           )}
@@ -281,7 +283,7 @@ export default function Members() {
       <div className="relative max-w-md mb-6">
         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
         <Input
-          placeholder="Search members..."
+          placeholder={t('search.placeholder')}
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           className="pl-10"
@@ -292,13 +294,13 @@ export default function Members() {
       <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
         <TabsList>
           <TabsTrigger value="students" className="flex items-center space-x-2">
-            <span>Students</span>
+            <span>{t('tabs.students')}</span>
             <span className="bg-muted text-muted-foreground px-2 py-1 rounded-full text-xs">
               {filteredMembers.students.length}
             </span>
           </TabsTrigger>
           <TabsTrigger value="teachers" className="flex items-center space-x-2">
-            <span>Teachers</span>
+            <span>{t('tabs.teachers')}</span>
             <span className="bg-muted text-muted-foreground px-2 py-1 rounded-full text-xs">
               {filteredMembers.teachers.length}
             </span>
@@ -331,7 +333,7 @@ export default function Members() {
                       <div className="flex items-center space-x-2">
                         <Button variant="outline" size="sm">
                           <Mail className="h-4 w-4 mr-2" />
-                          Message
+                          {t('actions.message')}
                         </Button>
                         {appState.user?.teacher && student.id !== appState.user?.id && (
                           <DropdownMenu>
@@ -343,16 +345,16 @@ export default function Members() {
                             <DropdownMenuContent align="end">
                               <DropdownMenuItem>
                                 <User className="mr-2 h-4 w-4" />
-                                View Profile
+                                {t('actions.viewProfile')}
                               </DropdownMenuItem>
                               <DropdownMenuItem>
-                                View Grades
+                                {t('actions.viewGrades')}
                               </DropdownMenuItem>
                               <DropdownMenuItem
                                 onClick={() => handleRoleChange(student.id, 'teacher')}
                               >
                                 <Shield className="mr-2 h-4 w-4" />
-                                Make Teacher
+                                {t('actions.makeTeacher')}
                               </DropdownMenuItem>
                               <DropdownMenuSeparator />
                               <DropdownMenuItem 
@@ -360,14 +362,14 @@ export default function Members() {
                                 onClick={() => handleRemoveMember(student.id)}
                               >
                                 <UserX className="mr-2 h-4 w-4" />
-                                Remove from Class
+                                {t('actions.removeFromClass')}
                               </DropdownMenuItem>
                             </DropdownMenuContent>
                           </DropdownMenu>
                         )}
                         {student.id === appState.user?.id && (
                           <div className="text-sm text-muted-foreground bg-muted px-2 py-1 rounded-full">
-                            You
+                            {t('labels.you')}
                           </div>
                         )}
                       </div>
@@ -379,8 +381,8 @@ export default function Members() {
           ) : (
             <EmptyState
               icon={User}
-              title="No students found"
-              description={searchQuery ? `No students match "${searchQuery}"` : "No students have joined this class yet"}
+              title={t('students.empty.title')}
+              description={searchQuery ? t('students.empty.matchNone', { query: searchQuery }) : t('students.empty.noStudents')}
             />
           )}
         </TabsContent>
@@ -411,7 +413,7 @@ export default function Members() {
                       <div className="flex items-center space-x-2">
                         <Button variant="outline" size="sm">
                           <Mail className="h-4 w-4 mr-2" />
-                          Message
+                          {t('actions.message')}
                         </Button>
                         {appState.user?.teacher && teacher.id !== appState.user?.id && (
                           <DropdownMenu>
@@ -423,13 +425,13 @@ export default function Members() {
                             <DropdownMenuContent align="end">
                               <DropdownMenuItem>
                                 <User className="mr-2 h-4 w-4" />
-                                View Profile
+                                {t('actions.viewProfile')}
                               </DropdownMenuItem>
                               <DropdownMenuItem
                                 onClick={() => handleRoleChange(teacher.id, 'student')}
                               >
                                 <User className="mr-2 h-4 w-4" />
-                                Make Student
+                                {t('actions.makeStudent')}
                               </DropdownMenuItem>
                               <DropdownMenuSeparator />
                               <DropdownMenuItem 
@@ -437,14 +439,14 @@ export default function Members() {
                                 onClick={() => handleRemoveMember(teacher.id)}
                               >
                                 <UserX className="mr-2 h-4 w-4" />
-                                Remove Access
+                                {t('actions.removeAccess')}
                               </DropdownMenuItem>
                             </DropdownMenuContent>
                           </DropdownMenu>
                         )}
                         {teacher.id === appState.user?.id && (
                           <div className="text-sm text-muted-foreground bg-muted px-2 py-1 rounded-full">
-                            You
+                            {t('labels.you')}
                           </div>
                         )}
                       </div>
@@ -456,8 +458,8 @@ export default function Members() {
           ) : (
             <EmptyState
               icon={Shield}
-              title="No teachers found"
-              description={searchQuery ? `No teachers match "${searchQuery}"` : "No additional teachers have been added"}
+              title={t('teachers.empty.title')}
+              description={searchQuery ? t('teachers.empty.matchNone', { query: searchQuery }) : t('teachers.empty.noTeachers')}
             />
           )}
         </TabsContent>

@@ -15,6 +15,7 @@ import {
 import { FolderPlus, Folder, Edit3 } from "lucide-react";
 import { toast } from "sonner";
 import ColorPicker from "@/components/ui/color-picker";
+import { useTranslations } from "next-intl";
 
 interface FolderData {
   id?: string;
@@ -40,6 +41,7 @@ export function CreateFolderModal({
   existingFolder = null,
   isLoading = false,
 }: CreateFolderModalProps) {
+  const t = useTranslations('components.createFolder');
   const [formData, setFormData] = useState({
     name: existingFolder?.name || "",
     description: existingFolder?.description || "",
@@ -65,19 +67,19 @@ export function CreateFolderModal({
     e.preventDefault();
     
     if (!formData.name.trim()) {
-      toast.error("Folder name is required");
+      toast.error(t('toasts.errorRequired'));
       return;
     }
 
     // Validate folder name (basic validation)
     const invalidChars = /[<>:"/\\|?*]/;
     if (invalidChars.test(formData.name)) {
-      toast.error("Folder name contains invalid characters");
+      toast.error(t('toasts.errorInvalidChars'));
       return;
     }
 
     if (formData.name.length > 255) {
-      toast.error("Folder name is too long (max 255 characters)");
+      toast.error(t('toasts.errorTooLong'));
       return;
     }
 
@@ -124,12 +126,12 @@ export function CreateFolderModal({
               {isEditing ? (
                 <>
                   <Edit3 className="h-5 w-5" />
-                  Edit Folder
+                  {t('titleEdit')}
                 </>
               ) : (
                 <>
                   <FolderPlus className="h-5 w-5" />
-                  Create New Folder
+                  {t('titleCreate')}
                 </>
               )}
             </DialogTitle>
@@ -138,14 +140,14 @@ export function CreateFolderModal({
           <div className="space-y-4 py-4">
             {/* Folder Name */}
             <div className="space-y-2">
-              <Label htmlFor="folder-name">Folder Name *</Label>
+              <Label htmlFor="folder-name">{t('fields.name')}</Label>
               <div className="relative">
                 <Folder className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                 <Input
                   id="folder-name"
                   value={formData.name}
                   onChange={(e) => handleInputChange("name", e.target.value)}
-                  placeholder="Enter folder name"
+                  placeholder={t('placeholders.name')}
                   className="pl-10"
                   maxLength={255}
                   required
@@ -154,24 +156,24 @@ export function CreateFolderModal({
                 />
               </div>
               <p className="text-xs text-muted-foreground">
-                Choose a descriptive name for your folder
+                {t('help.name')}
               </p>
             </div>
 
             {/* Folder Description */}
             <div className="space-y-2">
-              <Label htmlFor="folder-description">Description (Optional)</Label>
+              <Label htmlFor="folder-description">{t('fields.description')}</Label>
               <Textarea
                 id="folder-description"
                 value={formData.description}
                 onChange={(e) => handleInputChange("description", e.target.value)}
-                placeholder="Add a description for this folder..."
+                placeholder={t('placeholders.description')}
                 rows={3}
                 maxLength={500}
                 disabled={isLoading}
               />
               <p className="text-xs text-muted-foreground">
-                {formData.description.length}/500 characters
+                {t('help.description', { count: formData.description.length })}
               </p>
             </div>
 
@@ -180,7 +182,7 @@ export function CreateFolderModal({
               <ColorPicker
                 value={formData.color}
                 onChange={(color) => handleInputChange("color", color)}
-                label="Folder Color"
+                label={t('fields.color')}
               />
             </div>
           </div>
@@ -192,7 +194,7 @@ export function CreateFolderModal({
               onClick={handleClose}
               disabled={isLoading}
             >
-              Cancel
+              {t('actions.cancel')}
             </Button>
             <Button
               type="submit"
@@ -200,11 +202,11 @@ export function CreateFolderModal({
             >
               {isLoading
                 ? isEditing
-                  ? "Updating..."
-                  : "Creating..."
+                  ? t('actions.updating')
+                  : t('actions.creating')
                 : isEditing
-                ? "Update Folder"
-                : "Create Folder"}
+                ? t('actions.update')
+                : t('actions.create')}
             </Button>
           </DialogFooter>
         </form>

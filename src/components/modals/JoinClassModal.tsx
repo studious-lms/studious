@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { UserPlus, Loader2 } from "lucide-react";
 import { RouterOutputs, trpc } from "@/lib/trpc";
 import { toast } from "sonner";
+import { useTranslations } from "next-intl";
 
 interface JoinClassModalProps {
   children?: React.ReactNode;
@@ -14,6 +15,7 @@ interface JoinClassModalProps {
 }
 
 export function JoinClassModal({ children, onClassJoined }: JoinClassModalProps) {
+  const t = useTranslations('components.joinClass');
   const [open, setOpen] = useState(false);
   const [inviteCode, setInviteCode] = useState("");
   const [loading, setLoading] = useState(false);
@@ -23,7 +25,7 @@ export function JoinClassModal({ children, onClassJoined }: JoinClassModalProps)
     e.preventDefault();
     
     if (!inviteCode.trim()) {
-      toast.error("Please enter a valid invite code.");
+      toast.error(t('toasts.errorEmpty'));
       return;
     }
 
@@ -37,17 +39,13 @@ export function JoinClassModal({ children, onClassJoined }: JoinClassModalProps)
 
       onClassJoined?.(joinedClass);
       
-      toast.success(
-        `You've joined the class successfully.`
-      );
+      toast.success(t('toasts.success'));
 
       setInviteCode("");
       setOpen(false);
     } catch (error) {
       console.error("Failed to join class:", error);
-      toast.error(
-        "Invalid invite code or class not found."
-      );
+      toast.error(t('toasts.errorInvalid'));
     } finally {
       setLoading(false);
     }
@@ -59,52 +57,52 @@ export function JoinClassModal({ children, onClassJoined }: JoinClassModalProps)
         {children || (
           <Button variant="outline">
             <UserPlus className="h-4 w-4 mr-2" />
-            Join Class
+            {t('buttonLabel')}
           </Button>
         )}
       </DialogTrigger>
       <DialogContent className="max-w-md">
         <DialogHeader>
-          <DialogTitle>Join a Class</DialogTitle>
+          <DialogTitle>{t('title')}</DialogTitle>
         </DialogHeader>
         
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="inviteCode">Class Invite Code</Label>
+            <Label htmlFor="inviteCode">{t('fields.inviteCode')}</Label>
             <Input
               id="inviteCode"
               value={inviteCode}
               onChange={(e) => setInviteCode(e.target.value.toUpperCase())}
-              placeholder="e.g., MATH101-2025"
+              placeholder={t('placeholders.inviteCode')}
               className="font-mono"
               required
             />
             <p className="text-sm text-muted-foreground">
-              Enter the invite code provided by your teacher
+              {t('help')}
             </p>
           </div>
 
           <div className="bg-muted p-4 rounded-lg">
-            <h4 className="font-medium mb-2">How to get an invite code:</h4>
+            <h4 className="font-medium mb-2">{t('howTo.title')}</h4>
             <ul className="text-sm text-muted-foreground space-y-1">
-              <li>• Ask your teacher for the class invite code</li>
-              <li>• Check your email for class enrollment instructions</li>
-              <li>• Look for the code on your syllabus or course materials</li>
+              <li>• {t('howTo.item1')}</li>
+              <li>• {t('howTo.item2')}</li>
+              <li>• {t('howTo.item3')}</li>
             </ul>
           </div>
 
           <div className="flex justify-end space-x-2 pt-4">
             <Button type="button" variant="outline" onClick={() => setOpen(false)} disabled={loading}>
-              Cancel
+              {t('actions.cancel')}
             </Button>
             <Button type="submit" disabled={loading}>
               {loading ? (
                 <>
                   <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                  Joining...
+                  {t('actions.joining')}
                 </>
               ) : (
-                "Join Class"
+                t('actions.join')
               )}
             </Button>
           </div>

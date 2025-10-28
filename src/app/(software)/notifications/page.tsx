@@ -22,10 +22,12 @@ import { trpc, type RouterOutputs } from "@/lib/trpc";
 import { toast } from "sonner";
 import { format, formatDistanceToNow } from "date-fns";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 type Notification = RouterOutputs['notification']['list'][number];
 
 export default function NotificationsPage() {
+  const t = useTranslations('notifications');
   const [filter, setFilter] = useState<'all' | 'unread' | 'read'>('all');
   const [markingAsRead, setMarkingAsRead] = useState<string | null>(null);
 
@@ -37,7 +39,7 @@ export default function NotificationsPage() {
     onSuccess: () => {
       setMarkingAsRead(null);
       refetch();
-      toast.success("Notification marked as read");
+      toast.success(t('toasts.markedAsRead'));
       refetch();
     },
     onError: (error) => {
@@ -78,15 +80,15 @@ export default function NotificationsPage() {
         {/* Header */}
         <div className="flex items-center justify-between">
           <div className="space-y-1">
-            <h1 className="text-2xl font-bold tracking-tight">Notifications</h1>
+            <h1 className="text-2xl font-bold tracking-tight">{t('title')}</h1>
             <p className="text-muted-foreground">
-              Stay up to date with your classes and assignments
+              {t('subtitle')}
             </p>
           </div>
           
           {unreadCount > 0 && (
             <Badge variant="secondary" className="text-sm">
-              {unreadCount} unread
+              {t('badge.unread', { count: unreadCount })}
             </Badge>
           )}
         </div>
@@ -96,28 +98,28 @@ export default function NotificationsPage() {
           <CardContent className="p-4">
             <div className="flex items-center space-x-2">
               <Filter className="h-4 w-4 text-muted-foreground" />
-              <span className="text-sm font-medium text-muted-foreground">Filter:</span>
+              <span className="text-sm font-medium text-muted-foreground">{t('filters.label')}</span>
               <div className="flex space-x-1">
                 <Button
                   variant={filter === 'all' ? 'default' : 'ghost'}
                   size="sm"
                   onClick={() => setFilter('all')}
                 >
-                  All ({notifications?.length || 0})
+                  {t('filters.all', { count: notifications?.length || 0 })}
                 </Button>
                 <Button
                   variant={filter === 'unread' ? 'default' : 'ghost'}
                   size="sm"
                   onClick={() => setFilter('unread')}
                 >
-                  Unread ({unreadCount})
+                  {t('filters.unread', { count: unreadCount })}
                 </Button>
                 <Button
                   variant={filter === 'read' ? 'default' : 'ghost'}
                   size="sm"
                   onClick={() => setFilter('read')}
                 >
-                  Read ({(notifications?.length || 0) - unreadCount})
+                  {t('filters.read', { count: (notifications?.length || 0) - unreadCount })}
                 </Button>
               </div>
             </div>
@@ -131,14 +133,14 @@ export default function NotificationsPage() {
               <CardContent className="p-12 text-center">
                 <Bell className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
                 <h3 className="text-lg font-semibold mb-2">
-                  {filter === 'unread' ? 'No unread notifications' : 
-                   filter === 'read' ? 'No read notifications' : 
-                   'No notifications yet'}
+                  {filter === 'unread' ? t('empty.unread.title') : 
+                   filter === 'read' ? t('empty.read.title') : 
+                   t('empty.all.title')}
                 </h3>
                 <p className="text-muted-foreground">
-                  {filter === 'unread' ? 'All caught up! You have no unread notifications.' :
-                   filter === 'read' ? 'No notifications have been marked as read yet.' :
-                   'When you receive notifications, they will appear here.'}
+                  {filter === 'unread' ? t('empty.unread.description') :
+                   filter === 'read' ? t('empty.read.description') :
+                   t('empty.all.description')}
                 </p>
               </CardContent>
             </Card>
@@ -167,6 +169,7 @@ function NotificationCard({
   onMarkAsRead: (id: string) => void;
   isMarkingAsRead: boolean;
 }) {
+  const t = useTranslations('notifications');
   const Icon = getNotificationIcon(notification);
   const iconColor = getNotificationColor(notification);
 
@@ -206,12 +209,12 @@ function NotificationCard({
                   {isMarkingAsRead ? (
                     <>
                       <div className="animate-spin h-3 w-3 border border-primary border-t-transparent rounded-full mr-2" />
-                      Marking...
+                      {t('actions.marking')}
                     </>
                   ) : (
                     <>
                       <Check className="h-3 w-3 mr-2" />
-                      Mark as Read
+                      {t('actions.markAsRead')}
                     </>
                   )}
                 </Button>
@@ -234,7 +237,7 @@ function NotificationCard({
               
               {notification.sender && (
                 <div className="flex items-center space-x-1">
-                  <span>from</span>
+                  <span>{t('meta.from')}</span>
                   <span className="font-medium">{notification.sender.username}</span>
                 </div>
               )}

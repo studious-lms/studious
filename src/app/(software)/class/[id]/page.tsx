@@ -25,6 +25,7 @@ import { toast } from "sonner";
 import { format } from "date-fns";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
+import { useTranslations } from "next-intl"
 
 type Class = RouterOutputs['class']['get']['class'];
 type Announcement = RouterOutputs['class']['get']['class']['announcements'][number];
@@ -39,6 +40,7 @@ export default function ClassFeed() {
   
   const [newPost, setNewPost] = useState("");
   const [isPosting, setIsPosting] = useState(false);
+  const t = useTranslations('class');
 
   // Get class data
   const { data: classData, isLoading, refetch } = trpc.class.get.useQuery({ 
@@ -147,7 +149,7 @@ export default function ClassFeed() {
                 </span>
                 <span className="flex items-center gap-1">
                   <Users className="h-4 w-4" />
-                  {classInfo?.students?.length || 0} students
+                  {classInfo?.students?.length || 0} {t('students')}
                 </span>
               </div>
             </div>
@@ -176,7 +178,7 @@ export default function ClassFeed() {
                     <div className="flex items-center space-x-2">
                       <Button variant="ghost" size="sm" className="h-9 px-3 text-muted-foreground hover:text-foreground hover:bg-muted/50">
                         <Paperclip className="h-4 w-4 mr-2" />
-                        Attach file
+                        {t('attachFile')}
                       </Button>
                     </div>
                     <Button 
@@ -188,12 +190,12 @@ export default function ClassFeed() {
                       {isPosting ? (
                         <>
                           <div className="animate-spin h-3 w-3 border border-white border-t-transparent rounded-full mr-2" />
-                          Posting...
+                          {t('posting')}
                         </>
                       ) : (
                         <>
                           <Send className="h-4 w-4 mr-2" />
-                          Post
+                          {t('post')}
                         </>
                       )}
                     </Button>
@@ -210,7 +212,7 @@ export default function ClassFeed() {
             <Card className="border-border shadow-sm">
               <CardContent className="py-12 text-center">
                 <MessageSquare className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                <h3 className="text-lg font-semibold mb-2">No posts yet</h3>
+                <h3 className="text-lg font-semibold mb-2">{t('noPosts')}</h3>
                 <p className="text-muted-foreground mb-4">
                   {isTeacher 
                     ? "Share announcements, assignments, and updates with your class."
@@ -220,7 +222,7 @@ export default function ClassFeed() {
                 {isTeacher && (
                   <Button onClick={() => setNewPost("Share something with your class...")}>
                     <MessageSquare className="h-4 w-4 mr-2" />
-                    Create first post
+                    {t('createFirstPost')}
                   </Button>
                 )}
               </CardContent>
@@ -285,6 +287,7 @@ function AssignmentItem({ assignment }: { assignment: Assignment }) {
   const router = useRouter();
   const isOverdue = assignment.dueDate && new Date(assignment.dueDate) < new Date();
   const dueDate = assignment.dueDate ? new Date(assignment.dueDate) : null;
+  const t = useTranslations('assignment');
 
   return (
     <div className="space-y-3">
@@ -295,7 +298,7 @@ function AssignmentItem({ assignment }: { assignment: Assignment }) {
             <FileText className="h-4 w-4 text-blue-600" />
           </div>
           <div className="min-w-0">
-            <p className="font-medium text-sm">New Assignment</p>
+            <p className="font-medium text-sm">{t('newAssignment')}</p>
             <p className="text-xs text-muted-foreground flex items-center">
               <Clock className="h-3 w-3 mr-1" />
               {format(new Date(assignment.createdAt), 'MMM d, yyyy \'at\' h:mm a')}
@@ -305,7 +308,7 @@ function AssignmentItem({ assignment }: { assignment: Assignment }) {
         <div className="flex items-center space-x-2">
           {assignment.graded && (
             <Badge variant="secondary" className="text-xs">
-              {assignment.maxGrade} pts
+              {assignment.maxGrade} {t('pts')}
             </Badge>
           )}
           <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
@@ -333,7 +336,7 @@ function AssignmentItem({ assignment }: { assignment: Assignment }) {
               <Calendar className="h-4 w-4 text-muted-foreground" />
               <span className={`text-sm ${isOverdue ? 'text-red-600 font-medium' : 'text-muted-foreground'}`}>
                 Due {format(dueDate, 'EEE, MMM d \'at\' h:mm a')}
-                {isOverdue && ' (Overdue)'}
+                {isOverdue && (' ' + t('overdue'))}
               </span>
             </div>
           )}
@@ -357,7 +360,7 @@ function AssignmentItem({ assignment }: { assignment: Assignment }) {
             className="h-8"
             onClick={() => router.push(`/class/${assignment.classId}/assignment/${assignment.id}`)}
           >
-            View Assignment
+            {t('viewAssignment')}
           </Button>
         </div>
       </div>

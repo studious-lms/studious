@@ -33,6 +33,7 @@ import {
   trpc,
 } from "@/lib/trpc";
 import { fixUploadUrl } from "@/lib/directUpload";
+import { useTranslations } from "next-intl";
 
 
 type FileData = {
@@ -79,19 +80,21 @@ const defaultFormData: AssignmentFormData = {
   files: []
 };
 
-const assignmentTypes: { label: string; value: AssignmentFormData['type']; icon: React.ReactNode }[] = [
-  { label: "Homework", value: "HOMEWORK", icon: <BookOpen className="h-4 w-4" /> },
-  { label: "Quiz", value: "QUIZ", icon: <FileText className="h-4 w-4" /> },
-  { label: "Test", value: "TEST", icon: <ClipboardCheck className="h-4 w-4" /> },
-  { label: "Project", value: "PROJECT", icon: <Target className="h-4 w-4" /> },
-  { label: "Essay", value: "ESSAY", icon: <FileText className="h-4 w-4" /> },
-  { label: "Discussion", value: "DISCUSSION", icon: <BookOpen className="h-4 w-4" /> },
-  { label: "Presentation", value: "PRESENTATION", icon: <Target className="h-4 w-4" /> },
-  { label: "Lab", value: "LAB", icon: <ClipboardList className="h-4 w-4" /> },
-  { label: "Other", value: "OTHER", icon: <FileText className="h-4 w-4" /> }
-];
-
 export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateAssignmentModalProps) {
+  const t = useTranslations('components.createAssignment');
+  
+  const assignmentTypes: { label: string; value: AssignmentFormData['type']; icon: React.ReactNode }[] = [
+    { label: t('types.homework'), value: "HOMEWORK", icon: <BookOpen className="h-4 w-4" /> },
+    { label: t('types.quiz'), value: "QUIZ", icon: <FileText className="h-4 w-4" /> },
+    { label: t('types.test'), value: "TEST", icon: <ClipboardCheck className="h-4 w-4" /> },
+    { label: t('types.project'), value: "PROJECT", icon: <Target className="h-4 w-4" /> },
+    { label: t('types.essay'), value: "ESSAY", icon: <FileText className="h-4 w-4" /> },
+    { label: t('types.discussion'), value: "DISCUSSION", icon: <BookOpen className="h-4 w-4" /> },
+    { label: t('types.presentation'), value: "PRESENTATION", icon: <Target className="h-4 w-4" /> },
+    { label: t('types.lab'), value: "LAB", icon: <ClipboardList className="h-4 w-4" /> },
+    { label: t('types.other'), value: "OTHER", icon: <FileText className="h-4 w-4" /> }
+  ];
+  
   const [open, setOpen] = useState(false);
   const [formData, setFormData] = useState<AssignmentFormData>(defaultFormData);
   const [showNewSection, setShowNewSection] = useState(false);
@@ -121,7 +124,7 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
     },
     onError: (error) => {
       console.error('Failed to create assignment:', error);
-      toast.error("Failed to create assignment. Please try again.");
+      toast.error(t('toasts.errorFailed'));
     }
   });
   const getAssignmentUploadUrls = trpc.assignment.getAssignmentUploadUrls.useMutation();
@@ -132,7 +135,7 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
       setShowNewSection(false);
       setNewSectionName('');
       setNewSectionColor('#3b82f6');
-      toast.success(`Section "${data.name}" created successfully.`);
+      toast.success(t('toasts.sectionCreated', { name: data.name }));
     },
     onError: (error) => {
       toast.error(error.message);
@@ -155,14 +158,14 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
 
   // Status messages for different stages
   const statusMessages = [
-    "Creating assignment...",
-    "Setting up assignment details...",
-    "Preparing file uploads...",
-    "Uploading files to cloud storage...",
-    "Processing uploaded files...",
-    "Finalizing assignment...",
-    "Assigning to students...",
-    "Almost done..."
+    t('status.creating'),
+    t('status.settingUp'),
+    t('status.preparing'),
+    t('status.uploading'),
+    t('status.processing'),
+    t('status.finalizing'),
+    t('status.assigning'),
+    t('status.almostDone')
   ];
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -198,7 +201,7 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
     e.preventDefault();
 
     if (!formData.title.trim() || !formData.instructions.trim()) {
-      toast.error("Please fill in all required fields.");
+      toast.error(t('toasts.errorRequired'));
       return;
     }
 
@@ -260,7 +263,7 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
 
           try {
             // Update status for current file
-            setCurrentStatus(`Uploading ${fileData.name}...`);
+            setCurrentStatus(t('status.uploadingFile', { name: fileData.name }));
             
             // Fix upload URL to use correct API base URL from environment
             const uploadUrl = fixUploadUrl(uploadFile.uploadUrl);
@@ -301,7 +304,7 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
             });
 
             console.error(`Upload failed for ${fileData.name}:`, error);
-            toast.error(`Failed to upload ${fileData.name}`);
+            toast.error(t('toasts.errorUploadFailed', { name: fileData.name }));
           }
         }
 
@@ -321,7 +324,7 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
       setCurrentStatus(statusMessages[7]);
       setProgress(100);
 
-      toast.success(`Assignment ${formData.inProgress ? 'saved as draft' : 'created'} successfully.`);
+      toast.success(formData.inProgress ? t('toasts.successDraft') : t('toasts.successCreated'));
 
       onAssignmentCreated?.(formData);
       
@@ -332,7 +335,7 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
       }, 1000);
     } catch (error) {
       console.error('Failed to create assignment:', error);
-      toast.error("Failed to create assignment. Please try again.");
+      toast.error(t('toasts.errorFailed'));
       setIsCreating(false);
       setProgress(0);
       setCurrentStatus('');
@@ -346,7 +349,7 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
         {children || (
           <Button>
             <Plus className="h-4 w-4 mr-2" />
-            Create Assignment
+            {t('buttonLabel')}
           </Button>
         )}
       </DialogTrigger>
@@ -354,7 +357,7 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
 
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
-            Create New Assignment
+            {t('title')}
           </DialogTitle>
         </DialogHeader>
 
@@ -364,7 +367,7 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
             <div className="space-y-3">
               <div className="flex items-center gap-2">
                 <Loader2 className="h-4 w-4 animate-spin text-primary" />
-                <span className="text-sm font-medium">Creating Assignment</span>
+                <span className="text-sm font-medium">{t('status.creatingProgress')}</span>
               </div>
               
               <div className="space-y-2">
@@ -378,7 +381,7 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
               {totalFiles > 0 && (
                 <div className="flex items-center gap-2 text-xs text-muted-foreground">
                   <FileUp className="w-3 h-3" />
-                  <span>{uploadedFiles} of {totalFiles} files uploaded</span>
+                  <span>{t('files.filesUploaded', { uploaded: uploadedFiles, total: totalFiles })}</span>
                 </div>
               )}
             </div>
@@ -390,29 +393,29 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
             {/* 📝 Basic Information Section */}
             <div className="space-y-6">
               <div className="text-lg font-semibold">
-                Assignment Details
+                {t('sections.details')}
               </div>
 
               <div className="grid gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="title" className="text-sm font-medium">Title *</Label>
+                  <Label htmlFor="title" className="text-sm font-medium">{t('fields.title')}</Label>
                   <Input
                     id="title"
                     value={formData.title}
                     onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                    placeholder="e.g., Chapter 5 Quiz, Physics Lab Report"
+                    placeholder={t('placeholders.title')}
                     className="text-base"
                     required
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="instructions" className="text-sm font-medium">Instructions *</Label>
+                  <Label htmlFor="instructions" className="text-sm font-medium">{t('fields.instructions')}</Label>
                   <Textarea
                     id="instructions"
                     value={formData.instructions}
                     onChange={(e) => setFormData({ ...formData, instructions: e.target.value })}
-                    placeholder="Provide clear instructions for students..."
+                    placeholder={t('placeholders.instructions')}
                     rows={4}
                     className="resize-none"
                     required
@@ -424,7 +427,7 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
             {/* ⚙️ Assignment Configuration */}
             <div className="space-y-6">
               <div className="text-lg font-semibold">
-                Configuration
+                {t('sections.configuration')}
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -432,7 +435,7 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
                 <div className="space-y-4">
                   {/* Due Date */}
                   <div className="space-y-2">
-                    <Label htmlFor="dueDate" className="text-sm font-medium">Due Date</Label>
+                    <Label htmlFor="dueDate" className="text-sm font-medium">{t('fields.dueDate')}</Label>
                     <div className="relative">
                       <Calendar className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                       <Input
@@ -447,7 +450,7 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
 
                   {/* Assignment Type */}
                   <div className="space-y-2">
-                    <Label className="text-sm font-medium">Assignment Type</Label>
+                    <Label className="text-sm font-medium">{t('fields.type')}</Label>
                     <Select value={formData.type} onValueChange={(value: AssignmentFormData['type']) => setFormData({ ...formData, type: value })}>
                       <SelectTrigger>
                         <SelectValue />
@@ -470,7 +473,7 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
                 <div className="space-y-4">
                   {/* Section */}
                   <div className="space-y-2">
-                    <Label className="text-sm font-medium">Section</Label>
+                    <Label className="text-sm font-medium">{t('fields.section')}</Label>
                     {!showNewSection ? (
                       <Select
                         value={formData.sectionId || 'none'}
@@ -483,10 +486,10 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
                         }}
                       >
                         <SelectTrigger>
-                          <SelectValue placeholder="Choose section" />
+                          <SelectValue placeholder={t('placeholders.chooseSection')} />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="none">No section</SelectItem>
+                          <SelectItem value="none">{t('section.none')}</SelectItem>
                           {sections.map((section) => (
                             <SelectItem key={section.id} value={section.id}>
                               {section.name}
@@ -496,7 +499,7 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
                           <SelectItem value="create-new">
                             <div className="flex items-center gap-2 text-primary">
                               <Plus className="h-3 w-3" />
-                              <span>Create New Section</span>
+                              <span>{t('section.createNew')}</span>
                             </div>
                           </SelectItem>
                         </SelectContent>
@@ -507,7 +510,7 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
                           <Input
                             value={newSectionName}
                             onChange={(e) => setNewSectionName(e.target.value)}
-                            placeholder="Enter section name..."
+                            placeholder={t('placeholders.newSectionName')}
                             className="flex-1"
                             autoFocus
                           />
@@ -525,7 +528,7 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
                             }}
                             disabled={!newSectionName.trim()}
                           >
-                            Add
+                            {t('actions.add')}
                           </Button>
                           <Button
                             type="button"
@@ -544,7 +547,7 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
                           <ColorPicker
                             value={newSectionColor}
                             onChange={setNewSectionColor}
-                            label="Section Color"
+                            label={t('fields.sectionColor')}
                           />
                         </div>
                       </div>
@@ -561,9 +564,9 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
                       />
                       <div className="flex-1">
                         <Label htmlFor="graded" className="text-sm font-medium cursor-pointer">
-                          Graded Assignment
+                          {t('options.graded.label')}
                         </Label>
-                        <p className="text-xs text-muted-foreground">Include in gradebook</p>
+                        <p className="text-xs text-muted-foreground">{t('options.graded.description')}</p>
                       </div>
                     </div>
 
@@ -575,9 +578,9 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
                       />
                       <div className="flex-1">
                         <Label htmlFor="inProgress" className="text-sm font-medium cursor-pointer">
-                          Save as Draft
+                          {t('options.draft.label')}
                         </Label>
-                        <p className="text-xs text-muted-foreground">Hide from students</p>
+                        <p className="text-xs text-muted-foreground">{t('options.draft.description')}</p>
                       </div>
                     </div>
                   </div>
@@ -589,27 +592,27 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
             {formData.graded && (
               <div className="space-y-6">
                 <div className="text-lg font-semibold">
-                  Grading & Assessment
+                  {t('sections.grading')}
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {/* Rubric Selection */}
                   <div className="space-y-2">
-                    <Label className="text-sm font-medium">Rubric</Label>
+                    <Label className="text-sm font-medium">{t('fields.rubric')}</Label>
                     <Select
                       value={formData.markSchemeId || 'none'}
                       onValueChange={(value) => setFormData({ ...formData, markSchemeId: value === 'none' ? null : value })}
                     >
                       <SelectTrigger>
-                        <SelectValue placeholder="Choose rubric" />
+                        <SelectValue placeholder={t('placeholders.chooseRubric')} />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="none">No rubric</SelectItem>
+                        <SelectItem value="none">{t('rubric.none')}</SelectItem>
                         {markSchemes?.map((markScheme) => {
-                          let name = "Untitled Rubric";
+                          let name = t('rubric.untitled');
                           try {
                             const parsed = JSON.parse(markScheme.structured);
-                            name = parsed.name || "Untitled Rubric";
+                            name = parsed.name || t('rubric.untitled');
                           } catch (error) {
                             console.error("Error parsing markscheme:", error);
                           }
@@ -628,21 +631,21 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
 
                   {/* Grading Boundaries */}
                   <div className="space-y-2">
-                    <Label className="text-sm font-medium">Grade Scale</Label>
+                    <Label className="text-sm font-medium">{t('fields.gradeScale')}</Label>
                     <Select
                       value={formData.gradingBoundaryId || 'none'}
                       onValueChange={(value) => setFormData({ ...formData, gradingBoundaryId: value === 'none' ? null : value })}
                     >
                       <SelectTrigger>
-                        <SelectValue placeholder="Choose grade scale" />
+                        <SelectValue placeholder={t('placeholders.chooseGradeScale')} />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="none">Default scale</SelectItem>
+                        <SelectItem value="none">{t('gradeScale.default')}</SelectItem>
                         {gradingBoundaries?.map((boundary) => {
-                          let name = "Untitled Scale";
+                          let name = t('gradeScale.untitled');
                           try {
                             const parsed = JSON.parse(boundary.structured);
-                            name = parsed.name || "Untitled Scale";
+                            name = parsed.name || t('gradeScale.untitled');
                           } catch (error) {
                             console.error("Error parsing grading boundary:", error);
                           }
@@ -664,20 +667,20 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {!formData.markSchemeId && (
                     <div className="space-y-2">
-                      <Label htmlFor="maxGrade" className="text-sm font-medium">Max Points</Label>
+                      <Label htmlFor="maxGrade" className="text-sm font-medium">{t('fields.maxPoints')}</Label>
                       <Input
                         id="maxGrade"
                         type="number"
                         value={formData.maxGrade}
                         onChange={(e) => setFormData({ ...formData, maxGrade: parseInt(e.target.value) || 0 })}
                         min="0"
-                        placeholder="100"
+                        placeholder={t('placeholders.maxPoints')}
                       />
                     </div>
                   )}
 
                   <div className="space-y-2">
-                    <Label htmlFor="weight" className="text-sm font-medium">Weight (%)</Label>
+                    <Label htmlFor="weight" className="text-sm font-medium">{t('fields.weight')}</Label>
                     <Input
                       id="weight"
                       type="number"
@@ -685,7 +688,7 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
                       onChange={(e) => setFormData({ ...formData, weight: parseInt(e.target.value) || 0 })}
                       min="0"
                       step="0.1"
-                      placeholder="1.0"
+                      placeholder={t('placeholders.weight')}
                     />
                   </div>
                 </div>
@@ -694,7 +697,7 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
                   <div className="flex items-center gap-2 p-3 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
                     <ClipboardCheck className="h-4 w-4 text-blue-600" />
                     <span className="text-sm text-blue-700 dark:text-blue-300">
-                      Points will be calculated automatically from the selected rubric
+                      {t('rubric.autoCalculate')}
                     </span>
                   </div>
                 )}
@@ -705,7 +708,7 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
             <div className="space-y-6">
               <div className="flex items-center justify-between">
                 <div className="text-lg font-semibold">
-                  Attachments
+                  {t('sections.attachments')}
                 </div>
                 <Button
                   type="button"
@@ -714,7 +717,7 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
                   onClick={() => fileInputRef.current?.click()}
                 >
                   <Upload className="h-4 w-4 mr-2" />
-                  Upload Files
+                  {t('files.uploadButton')}
                 </Button>
               </div>
 
@@ -760,8 +763,8 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
                   onClick={() => fileInputRef.current?.click()}
                 >
                   <Upload className="h-8 w-8 mx-auto mb-3 text-muted-foreground" />
-                  <p className="text-sm font-medium text-muted-foreground">Drop files here or click to upload</p>
-                  <p className="text-xs text-muted-foreground mt-1">Supports all file types • Max 50MB per file</p>
+                  <p className="text-sm font-medium text-muted-foreground">{t('files.dropZone')}</p>
+                  <p className="text-xs text-muted-foreground mt-1">{t('files.dropZoneHint')}</p>
                 </div>
               )}
             </div>
@@ -772,12 +775,12 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
                 {formData.inProgress ? (
                   <>
                     <FileText className="h-4 w-4" />
-                    <span>Will be saved as draft</span>
+                    <span>{t('status.draftStatus')}</span>
                   </>
                 ) : (
                   <>
                     <Target className="h-4 w-4" />
-                    <span>Will be published to students</span>
+                    <span>{t('status.publishedStatus')}</span>
                   </>
                 )}
               </div>
@@ -792,7 +795,7 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
                   }}
                   disabled={isCreating}
                 >
-                  Cancel
+                  {t('actions.cancel')}
                 </Button>
                 <Button
                   type="submit"
@@ -802,17 +805,17 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
                   {isCreating ? (
                     <>
                       <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                      Creating...
+                      {t('actions.creating')}
                     </>
                   ) : formData.inProgress ? (
                     <>
                       <FileText className="w-4 h-4 mr-2" />
-                      Save Draft
+                      {t('actions.saveDraft')}
                     </>
                   ) : (
                     <>
                       <Target className="w-4 h-4 mr-2" />
-                      Create Assignment
+                      {t('actions.create')}
                     </>
                   )}
                 </Button>

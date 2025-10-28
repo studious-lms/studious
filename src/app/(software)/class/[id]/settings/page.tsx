@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
 import { useParams, useRouter } from "next/navigation";
 import { PageLayout } from "@/components/ui/page-layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -32,6 +33,7 @@ import { toast } from "sonner";
 export default function ClassSettings() {
   const { id: classId } = useParams();
   const router = useRouter();
+  const t = useTranslations('class.settings');
   const [isLoading, setIsLoading] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
   const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
@@ -101,13 +103,13 @@ export default function ClassSettings() {
       await refetch();
       setHasUnsavedChanges(false);
       
-      toast.success("Class Updated", {
-        description: "Class settings have been saved successfully."
+      toast.success(t('toasts.updated.title'), {
+        description: t('toasts.updated.description')
       });
     } catch (error) {
       console.error("Failed to update class:", error);
-      toast.error("Update Failed", {
-        description: "Failed to save class settings. Please try again."
+      toast.error(t('errors.updateFailed.title'), {
+        description: t('errors.updateFailed.description')
       });
     } finally {
       setIsLoading(false);
@@ -125,8 +127,8 @@ export default function ClassSettings() {
         id: classId as string // API expects both parameters
       });
       
-      toast.success("Class Deleted", {
-        description: "The class has been permanently deleted."
+      toast.success(t('toasts.deleted.title'), {
+        description: t('toasts.deleted.description')
       });
       
       // Redirect to classes page
@@ -160,13 +162,13 @@ export default function ClassSettings() {
     <PageLayout>
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-xl font-bold">Class Settings</h1>
-          <p className="text-muted-foreground">Configure class details and preferences</p>
+          <h1 className="text-xl font-bold">{t('title')}</h1>
+          <p className="text-muted-foreground">{t('subtitle')}</p>
         </div>
         
         <div className="flex items-center gap-2">
           {hasUnsavedChanges && (
-            <span className="text-sm text-orange-600">Unsaved changes</span>
+            <span className="text-sm text-orange-600">{t('labels.unsavedChanges')}</span>
           )}
           <Button 
             onClick={handleSave}
@@ -175,12 +177,12 @@ export default function ClassSettings() {
             {isLoading ? (
               <>
                 <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                Saving...
+                {t('actions.saving')}
               </>
             ) : (
               <>
                 <Save className="h-4 w-4 mr-2" />
-                Save Changes
+                {t('actions.saveChanges')}
               </>
             )}
           </Button>
@@ -190,28 +192,28 @@ export default function ClassSettings() {
       <div className="space-y-6">
         <Card>
           <CardHeader>
-            <CardTitle>Basic Information</CardTitle>
+            <CardTitle> {t('sections.basicInfo.title')} </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label htmlFor="className" className="text-sm">Class Name *</Label>
+                <Label htmlFor="className" className="text-sm">{t('fields.className')} *</Label>
                 <Input 
                   id="className" 
                   value={formData.name}
                   onChange={(e) => handleInputChange("name", e.target.value)}
-                  placeholder="e.g., Advanced Physics"
+                  placeholder={t('placeholders.className')}
                   className="text-sm"
                   required
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="section" className="text-sm">Section *</Label>
+                <Label htmlFor="section" className="text-sm">{t('fields.section')} *</Label>
                 <Input 
                   id="section" 
                   value={formData.section}
                   onChange={(e) => handleInputChange("section", e.target.value)}
-                  placeholder="e.g., AP-101"
+                  placeholder={t('placeholders.section')}
                   className="text-sm"
                   required
                 />
@@ -219,12 +221,12 @@ export default function ClassSettings() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label htmlFor="subject" className="text-sm">Subject *</Label>
+                <Label htmlFor="subject" className="text-sm">{t('fields.subject')} *</Label>
                 <Input 
                   id="subject" 
                   value={formData.subject}
                   onChange={(e) => handleInputChange("subject", e.target.value)}
-                  placeholder="e.g., Physics"
+                  placeholder={t('placeholders.subject')}
                   className="text-sm"
                   required
                 />
@@ -289,14 +291,14 @@ export default function ClassSettings() {
 
         <Card>
           <CardHeader>
-            <CardTitle>Class Theme</CardTitle>
+            <CardTitle>{t('sections.theme.title')}</CardTitle>
           </CardHeader>
           <CardContent>
             <ColorPicker
               value={formData.color}
               onChange={(color) => handleInputChange("color", color)}
               label=""
-              description="Choose a theme color for this class"
+              description={t('sections.theme.description')}
             />
           </CardContent>
         </Card>
@@ -305,14 +307,13 @@ export default function ClassSettings() {
           <CardHeader>
             <CardTitle className="text-destructive flex items-center gap-2">
               <AlertTriangle className="h-5 w-5" />
-              Danger Zone
+              {t('sections.danger.title')}
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
               <p className="text-sm text-muted-foreground">
-                Once you delete a class, there is no going back. This will permanently delete all assignments, 
-                grades, attendance records, and remove all students from the class.
+                {t('sections.danger.description')}
               </p>
               <AlertDialog>
                 <AlertDialogTrigger asChild>
@@ -320,37 +321,36 @@ export default function ClassSettings() {
                     {isDeleting ? (
                       <>
                         <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                        Deleting...
+                        {t('actions.deleting')}
                       </>
                     ) : (
                       <>
                         <Trash2 className="h-4 w-4 mr-2" />
-                        Delete Class
+                        {t('actions.deleteClass')}
                       </>
                     )}
                   </Button>
                 </AlertDialogTrigger>
                 <AlertDialogContent>
                   <AlertDialogHeader>
-                    <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+                    <AlertDialogTitle>{t('confirm.title')}</AlertDialogTitle>
                     <AlertDialogDescription>
-                      This action cannot be undone. This will permanently delete the class 
-                      "{formData.name}" and remove all associated data including:
+                      {t('confirm.description', { name: formData.name })}
                       <ul className="list-disc list-inside mt-2 space-y-1">
-                        <li>All assignments and submissions</li>
-                        <li>All grades and attendance records</li>
-                        <li>All students will be removed from the class</li>
-                        <li>All class events and announcements</li>
+                        <li>{t('confirm.items.assignments')}</li>
+                        <li>{t('confirm.items.records')}</li>
+                        <li>{t('confirm.items.students')}</li>
+                        <li>{t('confirm.items.events')}</li>
                       </ul>
                     </AlertDialogDescription>
                   </AlertDialogHeader>
                   <AlertDialogFooter>
-                    <AlertDialogCancel>Cancel</AlertDialogCancel>
+                    <AlertDialogCancel>{t('actions.cancel')}</AlertDialogCancel>
                     <AlertDialogAction
                       onClick={handleDelete}
                       className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
                     >
-                      Yes, delete class
+                      {t('confirm.confirmDelete')}
                     </AlertDialogAction>
                   </AlertDialogFooter>
                 </AlertDialogContent>
