@@ -1,4 +1,4 @@
-import { format, formatDistanceToNow, isToday, isTomorrow, isYesterday, parseISO } from 'date-fns';
+import { format, formatDistanceToNow, isToday, isTomorrow, isYesterday, Locale, parseISO } from 'date-fns';
 import { enUS, es, fr, zhCN } from 'date-fns/locale';
 
 // Map locale codes to date-fns locales
