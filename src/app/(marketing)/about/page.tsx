@@ -212,7 +212,7 @@ export default function AboutPage() {
       </section>
 
       {/* Footer */}
-      {Footer()}
+      <Footer />
       
       <EarlyAccessModal open={showEarlyAccess} onOpenChange={setShowEarlyAccess} />
     </div>

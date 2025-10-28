@@ -349,7 +349,7 @@ export default function ProgramPage() {
       </section>
 
       {/* Footer */}
-      {Footer()}
+      <Footer />
     </div>
   );
 }

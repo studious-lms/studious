@@ -529,7 +529,7 @@ export default function PricingPage() {
       </section> */}
 
       {/* Footer */}
-      {Footer()}
+      <Footer />
       
       <EarlyAccessModal open={showEarlyAccess} onOpenChange={setShowEarlyAccess} />
     </div>

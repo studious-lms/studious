@@ -420,7 +420,7 @@ export default function ApplyPage() {
       </section>
 
       {/* Footer */}
-      {Footer()}
+      <Footer />
     </div>
   );
 }

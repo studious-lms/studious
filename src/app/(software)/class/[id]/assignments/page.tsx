@@ -25,7 +25,7 @@ import { EmptyState } from "@/components/ui/empty-state";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { toast } from "sonner";
-import { useTranslations } from "next-intl"
+import { useTranslations } from "next-intl";
 
 type Assignment = RouterOutputs['assignment']['get'];
 type Section = RouterOutputs['class']['get']['class']['sections'][number];
@@ -86,11 +86,13 @@ function DroppableItemSlot({
 function MainDropZone({ 
   children, 
   onMoveAssignment,
-  isTeacher = true
+  isTeacher = true,
+  dropMessage
 }: { 
   children: React.ReactNode;
   onMoveAssignment: (assignmentId: string, targetFolderId: string | null) => void;
   isTeacher?: boolean;
+  dropMessage: string;
 }) {
   const t = useTranslations('assignment');
 
@@ -119,7 +121,7 @@ function MainDropZone({
       {isOver && (
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
           <div className="bg-primary/10 text-primary px-4 py-2 rounded-lg border-2 border-dashed border-primary">
-            {t('assignmentDrop')}
+            {dropMessage}
           </div>
         </div>
       )}
@@ -659,7 +661,11 @@ export default function Assignments() {
 
           <TabsContent value={activeTab} className="space-y-6">
             {filteredTopLevelItems.length > 0 ? (
-              <MainDropZone onMoveAssignment={moveAssignment} isTeacher={!isStudent}>
+              <MainDropZone 
+                onMoveAssignment={moveAssignment} 
+                isTeacher={!isStudent}
+                dropMessage={t('assignmentDrop')}
+              >
                 <div className="space-y-6">
                   {filteredTopLevelItems.map((item, index) => (
                     <DroppableItemSlot 

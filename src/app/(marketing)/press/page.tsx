@@ -345,7 +345,7 @@ export default function PressPage() {
       </section>
 
       {/* Footer */}
-      {Footer()}
+      <Footer />
     </div>
   );
 }

@@ -598,7 +598,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      {Footer()}
+      <Footer />
       
       <EarlyAccessModal open={showEarlyAccess} onOpenChange={setShowEarlyAccess} />
     </div>

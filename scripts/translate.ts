@@ -194,7 +194,6 @@ async function translateAll() {
 async function main() {
   const args = process.argv.slice(2);
   const langArg = args.find(arg => arg.startsWith('--lang='));
-  console.log(process.env.OPENAI_API_KEY);
   const targetLang = langArg ? langArg.split('=')[1] : null;
   
   console.log('🌐 Studious Translation Tool\n');

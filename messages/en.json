@@ -415,7 +415,6 @@
     "posting": "Posting...",
     "noPosts": "No posts yet",
     "createFirstPost": "Create first post",
-    "gradesSection": {},
     "grades": {
       "title": "Grades",
       "subtitle": "View and manage student grades",
@@ -505,10 +504,6 @@
         "deleteGradingBoundary": "Are you sure you want to delete this grading boundary?"
       }
     },
-    "membersSection": {},
-    "membersPage": {},
-    "membersManagement": {},
-    "membersInfo": {},
     "members": {
       "title": "Members",
       "counts": {
@@ -570,7 +565,6 @@
         "failedToLoad": "Failed to load members"
       }
     },
-    "filesPage": {},
     "files": {
       "title": "Files",
       "subtitle": "Manage class files and resources",
@@ -635,7 +629,6 @@
         "searchDescription": "No files match \"{query}\". Try a different search term."
       }
     },
-    "settingsPage": {},
     "settings": {
       "title": "Class Settings",
       "subtitle": "Configure class details and preferences",
@@ -700,7 +693,6 @@
         "confirmDelete": "Yes, delete class"
       }
     },
-    "syllabusPage": {},
     "syllabus": {
       "title": "Syllabus",
       "subtitle": "Course overview and academic information",
