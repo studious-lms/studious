@@ -29,6 +29,13 @@ import { RootState } from "@/store/store";
 import { trpc } from "@/lib/trpc";
 import { useChat } from "@/hooks/useChat";
 import { useTranslations } from "next-intl";
+import { useIsMobile } from "@/hooks/use-mobile";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { MoreHorizontal } from "lucide-react";
 
 interface PrimarySidebarProps {
   isAuthenticated?: boolean;
@@ -60,7 +67,9 @@ export function PrimarySidebar({ isAuthenticated = false, user }: PrimarySidebar
   const pathname = usePathname();
   const appState = useSelector((state: RootState) => state.app);
   const [showChatServers, setShowChatServers] = useState(false);
+  const [moreMenuOpen, setMoreMenuOpen] = useState(false);
   const router = useRouter();
+  const isMobile = useIsMobile();
   const logoutMutation = trpc.auth.logout.useMutation({
     onSuccess: () => {
       router.push("/login");
@@ -89,6 +98,180 @@ export function PrimarySidebar({ isAuthenticated = false, user }: PrimarySidebar
     return null;
   }
 
+  // Mobile version - Bottom navigation
+  if (isMobile) {
+    const primaryItems = navigationItems.slice(0, 3); // Show first 3 items
+    const overflowItems = navigationItems.slice(3); // Remaining items in "More" menu
+
+    return (
+      <div className="fixed bottom-0 left-0 right-0 z-40 bg-card border-t">
+        <nav className="flex items-center justify-around px-2 py-2 safe-area-inset-bottom">
+          {/* Primary Navigation Items */}
+          {primaryItems.map((item) => {
+            const Icon = item.icon;
+            const isItemActive = isActive(item.href);
+            
+            // Special handling for chat with badge
+            if (item.href === "/chat") {
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="relative flex flex-col items-center justify-center flex-1 py-2"
+                >
+                  <div className={cn(
+                    "relative flex items-center justify-center h-10 w-10 rounded-md transition-colors",
+                    isItemActive
+                      ? "bg-accent text-accent-foreground"
+                      : "text-muted-foreground"
+                  )}>
+                    <Icon className="h-5 w-5" />
+                    
+                    {/* Mention Badge (Red) */}
+                    {totalMentionCount > 0 && (
+                      <div className="absolute -top-1 -right-1 bg-destructive text-destructive-foreground text-xs min-w-[16px] h-[16px] rounded-full flex items-center justify-center font-bold text-[10px]">
+                        {totalMentionCount > 99 ? '99+' : totalMentionCount}
+                      </div>
+                    )}
+                    
+                    {/* Unread Badge (Gray) */}
+                    {totalUnreadCount > 0 && totalMentionCount === 0 && (
+                      <div className="absolute -top-1 -right-1 bg-muted-foreground text-background text-xs min-w-[16px] h-[16px] rounded-full flex items-center justify-center font-bold text-[10px]">
+                        {totalUnreadCount > 99 ? '99+' : totalUnreadCount}
+                      </div>
+                    )}
+                  </div>
+                  <span className={cn(
+                    "text-[10px] mt-0.5 font-medium",
+                    isItemActive ? "text-foreground" : "text-muted-foreground"
+                  )}>
+                    {item.label}
+                  </span>
+                </Link>
+              );
+            }
+
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="flex flex-col items-center justify-center flex-1 py-2"
+              >
+                <div className={cn(
+                  "flex items-center justify-center h-10 w-10 rounded-md transition-colors",
+                  isItemActive
+                    ? "bg-accent text-accent-foreground"
+                    : "text-muted-foreground"
+                )}>
+                  <Icon className="h-5 w-5" />
+                </div>
+                <span className={cn(
+                  "text-[10px] mt-0.5 font-medium",
+                  isItemActive ? "text-foreground" : "text-muted-foreground"
+                )}>
+                  {item.label}
+                </span>
+              </Link>
+            );
+          })}
+
+          {/* More Menu - with overflow items + notifications + profile */}
+          <Popover open={moreMenuOpen} onOpenChange={setMoreMenuOpen}>
+            <PopoverTrigger asChild>
+              <button className="flex flex-col items-center justify-center flex-1 py-2">
+                <div className="flex items-center justify-center h-10 w-10 rounded-md text-muted-foreground">
+                  <MoreHorizontal className="h-5 w-5" />
+                </div>
+                <span className="text-[10px] mt-0.5 font-medium text-muted-foreground">
+                  More
+                </span>
+              </button>
+            </PopoverTrigger>
+            <PopoverContent className="w-56 p-2" align="end" side="top">
+              <div className="space-y-1">
+                {/* Overflow Navigation Items */}
+                {overflowItems.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setMoreMenuOpen(false)}
+                      className={cn(
+                        "flex items-center space-x-3 px-3 py-2 rounded-md text-sm transition-colors",
+                        isActive(item.href)
+                          ? "bg-accent text-accent-foreground"
+                          : "text-muted-foreground hover:text-foreground hover:bg-accent"
+                      )}
+                    >
+                      <Icon className="h-4 w-4" />
+                      <span>{item.label}</span>
+                    </Link>
+                  );
+                })}
+                
+                {/* Divider */}
+                <div className="border-t my-2" />
+                
+                {/* Notifications */}
+                <div className="px-3 py-2">
+                  <NotificationBell />
+                </div>
+
+                {/* Divider */}
+                <div className="border-t my-2" />
+
+                {/* Profile Section */}
+                <div className="px-3 py-2">
+                  <div className="flex items-center space-x-3 mb-3">
+                    <Avatar className="h-8 w-8">
+                      <AvatarImage src={appState.user.profilePicture} alt={appState.user.displayName} />
+                      <AvatarFallback className="text-xs">
+                        {appState.user.displayName?.charAt(0).toUpperCase() || "U"}
+                      </AvatarFallback>
+                    </Avatar>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm font-medium truncate">{appState.user.displayName}</p>
+                      <p className="text-xs text-muted-foreground truncate">{appState.user.username}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-1">
+                    <Link
+                      href="/profile"
+                      onClick={() => setMoreMenuOpen(false)}
+                      className="flex items-center space-x-3 px-2 py-2 rounded-md text-sm hover:bg-accent transition-colors"
+                    >
+                      <User className="h-4 w-4" />
+                      <span>{t('profile')}</span>
+                    </Link>
+                    <button
+                      className="w-full flex items-center space-x-3 px-2 py-2 rounded-md text-sm hover:bg-accent transition-colors"
+                    >
+                      <Settings className="h-4 w-4" />
+                      <span>{t('accountSettings')}</span>
+                    </button>
+                    <button
+                      onClick={() => {
+                        logoutMutation.mutate();
+                        setMoreMenuOpen(false);
+                      }}
+                      className="w-full flex items-center space-x-3 px-2 py-2 rounded-md text-sm hover:bg-accent transition-colors text-destructive"
+                    >
+                      <LogOut className="h-4 w-4" />
+                      <span>{t('signOut')}</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </PopoverContent>
+          </Popover>
+        </nav>
+      </div>
+    );
+  }
+
+  // Desktop version - Original sidebar
   return (
     <div className="w-16 h-screen bg-card border-r flex flex-col fixed left-0 top-0 z-40">
       {/* Logo */}

@@ -10,6 +10,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { 
   BookOpen, 
   FileText, 
@@ -22,7 +29,9 @@ import {
   Settings,
   Copy,
   RefreshCcw,
-  Sparkles
+  Sparkles,
+  Menu,
+  ChevronDown
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Skeleton } from "./skeleton";
@@ -30,6 +39,8 @@ import { toast } from "sonner";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { RouterOutputs, trpc } from "@/lib/trpc";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { useState } from "react";
 
 const classNavigationItems = [
   { href: "", label: "Overview", icon: BookOpen },
@@ -50,6 +61,8 @@ interface ClassSidebarProps {
 export function ClassSidebar({ classId }: ClassSidebarProps) {
   const pathname = usePathname();
   const router = useRouter();
+  const isMobile = useIsMobile();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const appState = useSelector((state: RootState) => state.app);
 
@@ -96,6 +109,141 @@ export function ClassSidebar({ classId }: ClassSidebarProps) {
     toast.success("Invite code copied to clipboard");
   };
 
+  // Mobile version - Sheet/Dropdown style
+  if (isMobile) {
+    return (
+      <>
+        {/* Mobile Class Header with Dropdown */}
+        <div className="fixed top-0 left-0 right-0 z-30 bg-card border-b">
+          <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+            <SheetTrigger asChild>
+              <Button variant="ghost" className="w-full justify-between px-4 py-6 h-auto rounded-none">
+                <div className="flex items-center space-x-3 min-w-0 flex-1">
+                  {isClassLoading ? (
+                    <>
+                      <Skeleton className="w-3 h-3 rounded-full flex-shrink-0" />
+                      <Skeleton className="w-32 h-4 rounded-full flex-shrink-0" />
+                    </>
+                  ) : className ? (
+                    <>
+                      <div 
+                        className="w-3 h-3 rounded-full flex-shrink-0" 
+                        style={{ backgroundColor: className.color || "#000000" }}
+                      />
+                      <div className="min-w-0 flex-1 text-left">
+                        <div className="font-medium truncate text-left">{className.name}</div>
+                        <div className="text-xs text-muted-foreground truncate text-left">{className.section} • {className.subject}</div>
+                      </div>
+                    </>
+                  ) : null}
+                </div>
+                <ChevronDown className="h-4 w-4 flex-shrink-0" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="top" className="h-[100vh] overflow-y-auto">
+              <SheetHeader>
+                <SheetTitle>Class Navigation</SheetTitle>
+              </SheetHeader>
+              
+              <div className="space-y-6 mt-6">
+                {/* Class Selector */}
+                <div className="space-y-2">
+                  <label className="text-sm font-medium">Switch Class</label>
+                  <Select value={classId} onValueChange={(newClassId) => {
+                    handleClassChange(newClassId);
+                    setMobileMenuOpen(false);
+                  }}>
+                    <SelectTrigger className="w-full">
+                      <SelectValue>
+                        {isClassLoading && <Skeleton className="w-32 h-4" />}
+                        {className && !isClassLoading && (
+                          <div className="flex items-center space-x-3 min-w-0 flex-1">
+                            <div 
+                              className="w-3 h-3 rounded-full flex-shrink-0" 
+                              style={{ backgroundColor: className.color || "#000000" }}
+                            />
+                            <span className="truncate">{className.name}</span>
+                          </div>
+                        )}
+                      </SelectValue>
+                    </SelectTrigger>
+                    <SelectContent>
+                      {classes?.map((cls: RouterOutputs["class"]["getAll"]['teacherInClass'][number] | RouterOutputs["class"]["getAll"]['studentInClass'][number]) => (
+                        <SelectItem key={cls.id} value={cls.id}>
+                          <div className="flex items-center space-x-3 min-w-0 flex-1">
+                            <div 
+                              className="w-3 h-3 rounded-full flex-shrink-0" 
+                              style={{ backgroundColor: cls.color || "#000000" }}
+                            />
+                            <div className="min-w-0 flex-1 text-left">
+                              <div className="font-medium truncate">{cls.name}</div>
+                              <div className="text-xs text-muted-foreground truncate">{cls.section} • {cls.subject}</div>
+                            </div>
+                          </div>
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                {/* Navigation Items */}
+                <nav className="space-y-2">
+                  {classNavigationItems
+                    .filter((item) => {
+                      if (item.href === "/settings" && appState.user.student) {
+                        return false;
+                      }
+                      return true;
+                    })
+                    .map((item) => {
+                      const Icon = item.icon;
+                      const href = `/class/${classId}${item.href}`;
+                      
+                      return (
+                        <Link
+                          key={item.href}
+                          href={href}
+                          onClick={() => setMobileMenuOpen(false)}
+                          className={cn(
+                            "flex items-center space-x-3 px-4 py-3 rounded-md text-sm font-medium transition-colors",
+                            isActive(item.href)
+                              ? "bg-accent text-accent-foreground"
+                              : "text-muted-foreground hover:text-foreground hover:bg-accent"
+                          )}
+                        >
+                          <Icon className="h-5 w-5" />
+                          <span>{item.label}</span>
+                        </Link>
+                      );
+                    })}
+                </nav>
+
+                {/* Invite Code (Teachers only) */}
+                {appState.user.teacher && (
+                  <div className="space-y-2 pt-4 border-t">
+                    <label className="text-sm font-medium text-muted-foreground">Class Invite Code</label>
+                    <div className="flex items-center justify-between p-3 bg-muted rounded-md">
+                      <code className="text-sm font-mono">{inviteCode}</code>
+                      <div className="flex space-x-1">
+                        <Button onClick={handleCopyInviteCode} variant="ghost" size="sm" className="h-8 w-8 p-0">
+                          <Copy className="h-4 w-4" />
+                        </Button>
+                        <Button onClick={handleRegenerateInviteCode} variant="ghost" size="sm" className="h-8 w-8 p-0">
+                          <RefreshCcw className="h-4 w-4" />
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
+      </>
+    );
+  }
+
+  // Desktop version - Original sidebar
   return (
     <div className="w-64 h-screen bg-card border-r flex flex-col fixed left-16 top-0 z-30">
       {/* Class Header */}
