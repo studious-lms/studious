@@ -38,7 +38,7 @@ export default function ClassLayout({
   const loading = isUserLoading || isClassLoading;
   if (loading) {
     return (
-      <PageLayout>
+      <PageLayout hasClassHeader={true}>
         {/* Header skeleton */}
         <div className="mb-6">
           <div className="flex items-center justify-between mb-4">
@@ -95,8 +95,8 @@ export default function ClassLayout({
     );
   }
   return (
-    <PageLayout>
-      {!loading && <div className="flex h-screen">
+    <PageLayout hasClassHeader={true}>
+      {!loading && <div className="flex">
         <main className="flex-1 overflow-auto">
           {children}
         </main>

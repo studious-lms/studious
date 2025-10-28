@@ -1,13 +1,25 @@
+"use client";
+
 import { ReactNode } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface PageLayoutProps {
   children: ReactNode;
   className?: string;
+  hasClassHeader?: boolean; // Indicates if page has class sidebar header
 }
 
-export function PageLayout({ children, className = "" }: PageLayoutProps) {
+export function PageLayout({ children, className = "", hasClassHeader = false }: PageLayoutProps) {
+  const isMobile = useIsMobile();
+  
   return (
-    <div className={`container mx-auto py-4 px-4 max-w-7xl ${className}`}>
+    <div className={`container mx-auto px-4 max-w-7xl ${
+      isMobile 
+        ? hasClassHeader 
+          ? 'pt-20 pb-20' // Top padding for class header + bottom padding for bottom nav
+          : 'py-4 pb-20' // Normal top padding + bottom padding for bottom nav
+        : 'py-4'
+    } ${className}`}>
       {children}
     </div>
   );

@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { GradingBoundariesModal, RubricModal } from "@/components/modals";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -400,7 +400,7 @@ export default function Grades() {
         return (
           <div className="flex items-center space-x-3">
             <Avatar className="h-8 w-8">
-              <img src={student.profile?.profilePicture || undefined} alt={student.username} />
+              <AvatarImage src={student.profile?.profilePicture || ""} />
               <AvatarFallback>
                 {student.username.substring(0, 2).toUpperCase()}
               </AvatarFallback>

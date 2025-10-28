@@ -4,12 +4,12 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { 
-  DropdownMenu, 
-  DropdownMenuContent, 
-  DropdownMenuItem, 
-  DropdownMenuSeparator, 
-  DropdownMenuTrigger 
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { 
   Home, 
@@ -20,6 +20,7 @@ import {
   User, 
   LogOut,
   Plus,
+  Bell,
 } from "lucide-react";
 import { NotificationBell } from "@/components/notifications";
 import { cn } from "@/lib/utils";
@@ -29,6 +30,12 @@ import { RootState } from "@/store/store";
 import { trpc } from "@/lib/trpc";
 import { useChat } from "@/hooks/useChat";
 import { useTranslations } from "next-intl";
+import { useIsMobile } from "@/hooks/use-mobile";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 
 interface PrimarySidebarProps {
   isAuthenticated?: boolean;
@@ -60,7 +67,9 @@ export function PrimarySidebar({ isAuthenticated = false, user }: PrimarySidebar
   const pathname = usePathname();
   const appState = useSelector((state: RootState) => state.app);
   const [showChatServers, setShowChatServers] = useState(false);
+  const [profileMenuOpen, setProfileMenuOpen] = useState(false);
   const router = useRouter();
+  const isMobile = useIsMobile();
   const logoutMutation = trpc.auth.logout.useMutation({
     onSuccess: () => {
       router.push("/login");
@@ -89,6 +98,186 @@ export function PrimarySidebar({ isAuthenticated = false, user }: PrimarySidebar
     return null;
   }
 
+  const { data: notifications } = trpc.notification.list.useQuery();
+  const unreadNotificationCount = notifications?.filter(n => !n.read).length || 0;
+
+
+  // Mobile version - Bottom navigation
+  if (isMobile) {
+    return (
+      <div className="fixed bottom-0 left-0 right-0 z-40 bg-card border-t">
+        <nav className="flex items-center justify-around px-2 py-2 safe-area-inset-bottom">
+          {/* All Navigation Items */}
+          {navigationItems.map((item) => {
+            const Icon = item.icon;
+            const isItemActive = isActive(item.href);
+            
+            // Special handling for chat with badge
+            if (item.href === "/chat") {
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="relative flex flex-col items-center justify-center flex-1 py-2"
+                >
+                  <div className={cn(
+                    "relative flex items-center justify-center h-10 w-10 rounded-md transition-colors",
+                    isItemActive
+                      ? "bg-accent text-accent-foreground"
+                      : "text-muted-foreground"
+                  )}>
+                    <Icon className="h-5 w-5" />
+                    
+                    {/* Mention Badge (Red) */}
+                    {totalMentionCount > 0 && (
+                      <div className="absolute -top-1 -right-1 bg-destructive text-destructive-foreground text-xs min-w-[16px] h-[16px] rounded-full flex items-center justify-center font-bold text-[10px]">
+                        {totalMentionCount > 99 ? '99+' : totalMentionCount}
+                      </div>
+                    )}
+                    
+                    {/* Unread Badge (Gray) */}
+                    {totalUnreadCount > 0 && totalMentionCount === 0 && (
+                      <div className="absolute -top-1 -right-1 bg-muted-foreground text-background text-xs min-w-[16px] h-[16px] rounded-full flex items-center justify-center font-bold text-[10px]">
+                        {totalUnreadCount > 99 ? '99+' : totalUnreadCount}
+                      </div>
+                    )}
+                  </div>
+                  <span className={cn(
+                    "text-[10px] mt-0.5 font-medium",
+                    isItemActive ? "text-foreground" : "text-muted-foreground"
+                  )}>
+                    {item.label}
+                  </span>
+                </Link>
+              );
+            }
+
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="flex flex-col items-center justify-center flex-1 py-2"
+              >
+                <div className={cn(
+                  "flex items-center justify-center h-10 w-10 rounded-md transition-colors",
+                  isItemActive
+                    ? "bg-accent text-accent-foreground"
+                    : "text-muted-foreground"
+                )}>
+                  <Icon className="h-5 w-5" />
+                </div>
+                <span className={cn(
+                  "text-[10px] mt-0.5 font-medium",
+                  isItemActive ? "text-foreground" : "text-muted-foreground"
+                )}>
+                  {item.label}
+                </span>
+              </Link>
+            );
+          })}
+
+          {/* Notifications */}
+          <Link
+            href="/notifications"
+            className="relative flex flex-col items-center justify-center flex-1 py-2"
+          >
+            <div className={cn(
+              "relative flex items-center justify-center h-10 w-10 rounded-md transition-colors",
+              pathname === "/notifications"
+                ? "bg-accent text-accent-foreground"
+                : "text-muted-foreground"
+            )}>
+              <Bell className="h-5 w-5" />
+              {unreadNotificationCount > 0 && (
+                <div className="absolute -top-1 -right-1 bg-destructive text-destructive-foreground text-xs min-w-[16px] h-[16px] rounded-full flex items-center justify-center font-bold text-[10px]">
+                  {unreadNotificationCount > 99 ? '99+' : unreadNotificationCount}
+                </div>
+              )}
+            </div>
+            <span className={cn(
+              "text-[10px] mt-0.5 font-medium",
+              pathname === "/notifications" ? "text-foreground" : "text-muted-foreground"
+            )}>
+              Alerts
+            </span>
+          </Link>
+
+          {/* Profile */}
+          <Popover open={profileMenuOpen} onOpenChange={setProfileMenuOpen}>
+            <PopoverTrigger asChild>
+              <button className="flex flex-col items-center justify-center flex-1 py-2">
+                <div className={cn(
+                  "flex items-center justify-center h-10 w-10 rounded-md transition-colors",
+                  pathname === "/profile"
+                    ? "bg-accent text-accent-foreground"
+                    : "text-muted-foreground"
+                )}>
+                  <Avatar className="h-6 w-6">
+                    <AvatarImage src={appState.user.profilePicture} alt={appState.user.displayName} />
+                    <AvatarFallback className="text-[10px]">
+                      {appState.user.displayName?.charAt(0).toUpperCase() || "U"}
+                    </AvatarFallback>
+                  </Avatar>
+                </div>
+                <span className={cn(
+                  "text-[10px] mt-0.5 font-medium",
+                  pathname === "/profile" ? "text-foreground" : "text-muted-foreground"
+                )}>
+                  Profile
+                </span>
+              </button>
+            </PopoverTrigger>
+            <PopoverContent className="w-64 p-0 mb-2" align="center" side="top" sideOffset={8}>
+              <div className="flex items-center gap-3 p-3 border-b">
+                <Avatar className="h-10 w-10">
+                  <AvatarImage src={appState.user.profilePicture} alt={appState.user.displayName} />
+                  <AvatarFallback>
+                    {appState.user.displayName?.charAt(0).toUpperCase() || "U"}
+                  </AvatarFallback>
+                </Avatar>
+                <div className="flex flex-col space-y-0.5 flex-1 min-w-0">
+                  <p className="text-sm font-semibold leading-none truncate">{appState.user.displayName}</p>
+                  <p className="text-xs leading-none text-muted-foreground truncate">
+                    {appState.user.username}
+                  </p>
+                </div>
+              </div>
+              <div className="p-2">
+                <Link
+                  href="/profile"
+                  onClick={() => setProfileMenuOpen(false)}
+                  className="flex items-center gap-3 px-3 py-2 rounded-md text-sm hover:bg-accent transition-colors cursor-pointer"
+                >
+                  <User className="h-4 w-4" />
+                  <span>{t('profile')}</span>
+                </Link>
+                <button
+                  className="w-full flex items-center gap-3 px-3 py-2 rounded-md text-sm hover:bg-accent transition-colors"
+                >
+                  <Settings className="h-4 w-4" />
+                  <span>{t('accountSettings')}</span>
+                </button>
+              </div>
+              <div className="p-2 border-t">
+                <button
+                  onClick={() => {
+                    logoutMutation.mutate();
+                    setProfileMenuOpen(false);
+                  }}
+                  className="w-full flex items-center gap-3 px-3 py-2 rounded-md text-sm hover:bg-destructive/10 transition-colors text-destructive"
+                >
+                  <LogOut className="h-4 w-4" />
+                  <span>{t('signOut')}</span>
+                </button>
+              </div>
+            </PopoverContent>
+          </Popover>
+        </nav>
+      </div>
+    );
+  }
+
+  // Desktop version - Original sidebar
   return (
     <div className="w-16 h-screen bg-card border-r flex flex-col fixed left-0 top-0 z-40">
       {/* Logo */}
@@ -208,7 +397,7 @@ export function PrimarySidebar({ isAuthenticated = false, user }: PrimarySidebar
       </nav>
 
       {/* Notifications & User Menu */}
-      <div className="p-2 border-t space-y-2">
+      <div className="p-2 border-t space-y-1">
         {/* Notification Bell */}
         <div className="flex justify-center">
           <NotificationBell />
@@ -218,8 +407,8 @@ export function PrimarySidebar({ isAuthenticated = false, user }: PrimarySidebar
         <div className="flex justify-center">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="sm" className="h-10 w-10 rounded-md">
-                <Avatar className="h-6 w-6">
+              <Button variant="ghost" size="sm" className="h-10 w-10 rounded-md p-0 hover:bg-accent focus-visible:ring-0 focus-visible:ring-offset-0">
+                <Avatar className="h-7 w-7">
                   <AvatarImage src={appState.user.profilePicture} alt={appState.user.displayName} />
                   <AvatarFallback className="text-xs">
                     {appState.user.displayName?.charAt(0).toUpperCase() || "U"}
@@ -227,31 +416,46 @@ export function PrimarySidebar({ isAuthenticated = false, user }: PrimarySidebar
                 </Avatar>
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56" align="end" forceMount>
-              <div className="flex flex-col space-y-1 p-2">
-                <p className="text-sm font-medium leading-none">{appState.user.displayName}</p>
-                <p className="text-xs leading-none text-muted-foreground">
-                  {appState.user.username}
-                </p>
+            <DropdownMenuContent className="w-64 mb-2" align="start" side="right" alignOffset={-8} sideOffset={8}>
+              <div className="flex items-center gap-3 p-3">
+                <Avatar className="h-10 w-10">
+                  <AvatarImage src={appState.user.profilePicture} alt={appState.user.displayName} />
+                  <AvatarFallback>
+                    {appState.user.displayName?.charAt(0).toUpperCase() || "U"}
+                  </AvatarFallback>
+                </Avatar>
+                <div className="flex flex-col space-y-0.5 flex-1 min-w-0">
+                  <p className="text-sm font-semibold leading-none truncate">{appState.user.displayName}</p>
+                  <p className="text-xs leading-none text-muted-foreground truncate">
+                    {appState.user.username}
+                  </p>
+                </div>
               </div>
               <DropdownMenuSeparator />
-            <DropdownMenuItem asChild>
-              <Link href="/profile" className="flex items-center">
-                <User className="mr-2 h-4 w-4" />
-                {t('profile')}
-              </Link>
-            </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Settings className="mr-2 h-4 w-4" />
-                {t('accountSettings')}
-              </DropdownMenuItem>
+              <div className="p-1">
+                <DropdownMenuItem asChild>
+                  <Link href="/profile" className="flex items-center cursor-pointer">
+                    <User className="mr-3 h-4 w-4" />
+                    <span>{t('profile')}</span>
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="cursor-pointer">
+                  <Settings className="mr-3 h-4 w-4" />
+                  <span>{t('accountSettings')}</span>
+                </DropdownMenuItem>
+              </div>
               <DropdownMenuSeparator />
-              <DropdownMenuItem onClick={() => {
-                logoutMutation.mutate();
-              }}>
-                <LogOut className="mr-2 h-4 w-4" />
-                {t('signOut')}
-              </DropdownMenuItem>
+              <div className="p-1">
+                <DropdownMenuItem 
+                  onClick={() => {
+                    logoutMutation.mutate();
+                  }}
+                  className="cursor-pointer text-destructive focus:text-destructive focus:bg-destructive/10"
+                >
+                  <LogOut className="mr-3 h-4 w-4" />
+                  <span>{t('signOut')}</span>
+                </DropdownMenuItem>
+              </div>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>

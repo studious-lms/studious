@@ -7,6 +7,8 @@ import { useTheme, DarkMode, ColorTheme } from "@/components/ui/theme-provider"
 import { useState } from "react"
 import { useLocale } from "next-intl"
 import { setCookie } from "cookies-next"
+import { useIsMobile } from "@/hooks/use-mobile"
+import { cn } from "@/lib/utils"
 
 // Color theme configurations
 const colorThemes = [
@@ -39,6 +41,7 @@ export function FloatingThemeToggle() {
   const locale = useLocale() // Get current locale from next-intl
   const [isOpen, setIsOpen] = useState(false)
   const [currentView, setCurrentView] = useState<View>("main")
+  const isMobile = useIsMobile();
 
   // Handle language change with next-intl
   const handleLanguageChange = (languageCode: string) => {
@@ -78,7 +81,7 @@ export function FloatingThemeToggle() {
   return (
     <>
       {/* Floating Button */}
-      <div className="fixed bottom-6 right-6 z-50">
+      <div className={cn("fixed bottom-6 right-6 z-50", isMobile ? "bottom-24" : "bottom-6 right-6")}>
         <Button 
           onClick={() => setIsOpen(true)}
           size="icon" 

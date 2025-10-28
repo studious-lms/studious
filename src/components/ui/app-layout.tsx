@@ -6,6 +6,7 @@ import { PrimarySidebar } from "./primary-sidebar";
 import { ClassSidebar } from "./class-sidebar";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface AppLayoutProps {
   children: ReactNode;
@@ -29,6 +30,8 @@ export function AppLayout({ children, isAuthenticated = false, user }: AppLayout
 
   const isInClass = Boolean(classId && classId !== "" && classId !== "undefined");
 
+  const isMobile = useIsMobile();
+
   // Don't show sidebars for auth pages
   if (!isAuthenticated || ["/login", "/signup", "/pricing"].includes(pathname)) {
     return <div className="min-h-screen bg-background">{children}</div>;
@@ -44,7 +47,7 @@ export function AppLayout({ children, isAuthenticated = false, user }: AppLayout
       
       {/* Main Content */}
       <main className={`min-h-screen overflow-auto transition-all duration-200 ${
-        isInClass ? 'ml-80' : (appState.user.loggedIn ? 'ml-16' : 'ml-0')
+        isInClass && !isMobile ? 'ml-80' : (appState.user.loggedIn && !isMobile ? 'ml-16' : 'ml-0')
       }`}>
         {children}
       </main>
