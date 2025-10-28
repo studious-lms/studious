@@ -1,0 +1,97 @@
+{
+  "attendance": {
+    "title": "Klassenevenementen en aanwezigheid",
+    "subtitle": "Houd de aanwezigheid van studenten bij voor elk evenement",
+    "saving": {
+      "auto": "Automatisch opslaan...",
+      "unsaved": "Niet-opgeslagen wijzigingen",
+      "saving": "Besparing..."
+    },
+    "table": {
+      "date": "Datum",
+      "eventName": "Naam van het evenement",
+      "attendanceRate": "Aanwezigheidspercentage",
+      "attendance": "Aanwezigheid",
+      "actions": "Acties"
+    },
+    "actions": {
+      "viewDetails": "Bekijk details",
+      "editEvent": "Gebeurtenis bewerken",
+      "deleteEvent": "Gebeurtenis verwijderen",
+      "createEvent": "Evenement maken",
+      "saveAttendance": "Aanwezigheid opslaan",
+      "markAllPresent": "Markeer alle aanwezigen",
+      "markAllAbsent": "Markeer alles als afwezig"
+    },
+    "allEvents": {
+      "title": "Alle evenementen",
+      "description": "Volledige geschiedenis van klasgebeurtenissen en aanwezigheidsgegevens",
+      "searchPlaceholder": "Zoek evenementen...",
+      "empty": {
+        "title": "Geen evenementen gevonden",
+        "description": "Maak uw eerste evenement aan om de aanwezigheid bij te houden"
+      }
+    },
+    "eventsList": {
+      "pickDate": "Kies datum",
+      "untitled": "Naamloos evenement",
+      "empty": {
+        "noEventsOnDate": "Geen evenementen op deze datum",
+        "noEventsOnDateDescription": "Er zijn geen evenementen gepland voor {datum}. Probeer een andere datum te selecteren of maak een nieuw evenement aan.",
+        "noEvents": "Geen evenementen gevonden",
+        "noEventsDescription": "Maak uw eerste evenement aan om de aanwezigheid bij te houden",
+        "createForDate": "Maak een evenement voor deze datum",
+        "createFirst": "Eerste gebeurtenis maken"
+      }
+    },
+    "summary": {
+      "title": "Samenvatting van het evenement",
+      "selectedEvent": "Geselecteerd evenement",
+      "total": "Totaal",
+      "attendanceRate": "Aanwezigheidspercentage"
+    },
+    "roster": {
+      "title": "Studentenlijst",
+      "description": "Klik op de statusknoppen om de aanwezigheid van elke student te markeren",
+      "empty": {
+        "title": "Geen studenten ingeschreven",
+        "description": "Studenten verschijnen hier zodra ze de klas binnenkomen"
+      }
+    },
+    "prompt": {
+      "title": "Selecteer een evenement",
+      "description": "Kies hierboven een evenement om de aanwezigheid van studenten te bekijken en te beheren"
+    },
+    "status": {
+      "present": "Cadeau",
+      "late": "Laat",
+      "absent": "Afwezig",
+      "notTaken": "Niet genomen"
+    },
+    "student": {
+      "title": "Mijn aanwezigheid",
+      "subtitle": "Volg uw aanwezigheid voor {className}",
+      "attendanceRate": "Aanwezigheidspercentage",
+      "history": "Aanwezigheidsgeschiedenis",
+      "event": "Evenement",
+      "status": "Status",
+      "searchPlaceholder": "Zoek evenementen...",
+      "empty": {
+        "title": "Geen aanwezigheidsregistratie",
+        "description": "Zodra er evenementen zijn aangemaakt en de aanwezigheid is geregistreerd, wordt uw aanwezigheid hier weergegeven."
+      }
+    },
+    "deleteDialog": {
+      "title": "Gebeurtenis verwijderen",
+      "description": "Weet u zeker dat u \"{eventName}\" wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt en verwijdert alle bijbehorende aanwezigheidsgegevens.",
+      "deleting": "Verwijderen...",
+      "deleteButton": "Gebeurtenis verwijderen"
+    },
+    "toast": {
+      "attendanceSaved": "Aanwezigheid succesvol opgeslagen",
+      "attendanceSaveFailed": "Het is niet gelukt om de aanwezigheid op te slaan",
+      "eventDeleted": "Gebeurtenis succesvol verwijderd",
+      "eventDeleteFailed": "Het is niet gelukt om het evenement te verwijderen"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "navigation": {
+    "home": "হোম",
+    "classes": "ক্লাস",
+    "agenda": "এজেন্ডা",
+    "chat": "চ্যাট",
+    "notifications": "বিজ্ঞপ্তি",
+    "profile": "প্রোফাইলের",
+    "settings": "সেটিংস",
+    "signOut": "সাইন আউট করুন",
+    "accountSettings": "অ্যাকাউন্ট সেটিংস",
+    "pricing": "মূল্য নির্ধারণ",
+    "schoolProgram": "স্কুল প্রোগ্রাম",
+    "about": "সম্পর্কে",
+    "press": "প্রেস",
+    "signIn": "লগ ইন"
+  },
+  "classSidebar": {
+    "overview": "সংক্ষিপ্ত বিবরণ",
+    "assignments": "অ্যাসাইনমেন্ট",
+    "grades": "গ্রেড",
+    "files": "ফাইল",
+    "attendance": "উপস্থিতি",
+    "aiLabs": "এআই ল্যাবস",
+    "members": "সদস্যরা",
+    "syllabus": "সিলেবাস",
+    "settings": "সেটিংস",
+    "classNavigation": "ক্লাস নেভিগেশন",
+    "switchClass": "ক্লাস পরিবর্তন করুন",
+    "classInviteCode": "ক্লাসের আমন্ত্রণ কোড",
+    "copyCode": "কোড কপি করুন",
+    "regenerateCode": "কোড পুনঃজেনারেট করুন",
+    "toast": {
+      "inviteCodeRegenerated": "আমন্ত্রণ কোডটি সফলভাবে পুনরায় তৈরি করা হয়েছে",
+      "inviteCodeRegenerateFailed": "আমন্ত্রণ কোডটি পুনরায় তৈরি করা যায়নি",
+      "inviteCodeCopied": "আমন্ত্রণ কোড ক্লিপবোর্ডে কপি করা হয়েছে"
+    }
+  },
+  "footer": {
+    "productDescription": "পরবর্তী প্রজন্মের শিক্ষার জন্য আধুনিক শিক্ষা ব্যবস্থাপনা।",
+    "product": "পণ্য",
+    "features": "ফিচার",
+    "pricing": "মূল্য নির্ধারণ",
+    "schoolProgram": "স্কুল প্রোগ্রাম",
+    "company": "কোম্পানির",
+    "about": "সম্পর্কে",
+    "team": "টীম",
+    "press": "প্রেস",
+    "contact": "যোগাযোগ",
+    "privacyPolicy": "গোপনীয়তা নীতি",
+    "termsOfService": "পরিষেবার শর্তাবলী",
+    "copyright": "© ২০২৫ স্টাডিয়াস এলএমএস। সর্বস্বত্ব সংরক্ষিত।"
+  }
+}

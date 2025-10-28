@@ -1,0 +1,72 @@
+{
+  "aiLabs": {
+    "title": "AI-labb",
+    "subtitle": "Skapa utbildningsinnehåll med AI-hjälp",
+    "aiPowered": "AI-driven",
+    "createNew": "Skapa nytt innehåll",
+    "aiGenerated": "AI-genererad",
+    "deleteConfirm": "Är du säker på att du vill ta bort detta AI-labb? Den här åtgärden kan inte ångras.",
+    "widgets": {
+      "assignment": {
+        "title": "Uppdrag",
+        "description": "Skapa interaktiva uppgifter med AI-hjälp"
+      },
+      "quiz": {
+        "title": "Frågesport",
+        "description": "Skapa quiz med olika frågetyper"
+      },
+      "worksheet": {
+        "title": "Arbetsblad",
+        "description": "Skapa övningsblad och arbetsblad"
+      },
+      "lessonPlan": {
+        "title": "Lektionsplan",
+        "description": "Utforma omfattande lektionsplaner"
+      },
+      "rubric": {
+        "title": "Rubrik",
+        "description": "Skapa detaljerade betygsmatriser"
+      }
+    },
+    "tabs": {
+      "drafts": "Utkast till labb",
+      "chats": "AI-katter"
+    },
+    "drafts": {
+      "title": "Utkast till labb ({count})",
+      "empty": {
+        "title": "Inga labutkast ännu",
+        "description": "Skapa ditt första AI-genererade utbildningsinnehåll med hjälp av widgetarna ovan."
+      }
+    },
+    "chats": {
+      "title": "AI-labb ({count})",
+      "active": "Aktiv",
+      "messageCount": "{count} meddelanden",
+      "createdBy": "Skapad av {namn}",
+      "empty": {
+        "title": "Inga AI-labb ännu",
+        "description": "Skapa ditt första AI-labb för att börja samarbeta med AI kring utbildningsinnehåll."
+      }
+    },
+    "toast": {
+      "labCreated": "AI-labbet har skapats!",
+      "labCreateFailed": "Misslyckades med att skapa AI-labbet:",
+      "labDeleted": "AI Lab har raderats!",
+      "labDeleteFailed": "Misslyckades med att ta bort AI Lab:"
+    }
+  },
+  "aiLabChat": {
+    "backButton": "Tillbaka till AI-labb",
+    "loading": "Belastning...",
+    "aiThinking": "AI-tänkande...",
+    "getAIHelp": "Få AI-hjälp",
+    "notFound": {
+      "title": "Labbchatt hittades inte",
+      "description": "Detta AI-labb kan ha tagits bort eller så har du inte åtkomst till det."
+    },
+    "toast": {
+      "messageFailed": "Misslyckades med att skicka meddelandet:"
+    }
+  }
+}

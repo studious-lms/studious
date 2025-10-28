@@ -1,0 +1,97 @@
+{
+  "attendance": {
+    "title": "Wydarzenia klasowe i frekwencja",
+    "subtitle": "Śledź frekwencję uczniów na każdym wydarzeniu",
+    "saving": {
+      "auto": "Automatyczne zapisywanie...",
+      "unsaved": "Niezapisane zmiany",
+      "saving": "Oszczędność..."
+    },
+    "table": {
+      "date": "Data",
+      "eventName": "Nazwa wydarzenia",
+      "attendanceRate": "Wskaźnik frekwencji",
+      "attendance": "Frekwencja",
+      "actions": "Akcje"
+    },
+    "actions": {
+      "viewDetails": "Zobacz szczegóły",
+      "editEvent": "Edytuj wydarzenie",
+      "deleteEvent": "Usuń wydarzenie",
+      "createEvent": "Utwórz wydarzenie",
+      "saveAttendance": "Zapisz obecność",
+      "markAllPresent": "Zaznacz wszystkich obecnych",
+      "markAllAbsent": "Oznacz wszystkie jako nieobecne"
+    },
+    "allEvents": {
+      "title": "Wszystkie wydarzenia",
+      "description": "Pełna historia wydarzeń klasowych i rejestry obecności",
+      "searchPlaceholder": "Wyszukaj wydarzenia...",
+      "empty": {
+        "title": "Nie znaleziono wydarzeń",
+        "description": "Utwórz swoje pierwsze wydarzenie, aby rozpocząć śledzenie frekwencji"
+      }
+    },
+    "eventsList": {
+      "pickDate": "Wybierz datę",
+      "untitled": "Wydarzenie bez tytułu",
+      "empty": {
+        "noEventsOnDate": "Brak wydarzeń w tym dniu",
+        "noEventsOnDateDescription": "Brak zaplanowanych wydarzeń na {date}. Spróbuj wybrać inną datę lub utwórz nowe wydarzenie.",
+        "noEvents": "Nie znaleziono wydarzeń",
+        "noEventsDescription": "Utwórz swoje pierwsze wydarzenie, aby rozpocząć śledzenie frekwencji",
+        "createForDate": "Utwórz wydarzenie na tę datę",
+        "createFirst": "Utwórz pierwsze wydarzenie"
+      }
+    },
+    "summary": {
+      "title": "Podsumowanie wydarzenia",
+      "selectedEvent": "Wybrane wydarzenie",
+      "total": "Całkowity",
+      "attendanceRate": "Wskaźnik frekwencji"
+    },
+    "roster": {
+      "title": "Lista studentów",
+      "description": "Kliknij przyciski statusu, aby zaznaczyć obecność każdego ucznia",
+      "empty": {
+        "title": "Brak zapisanych studentów",
+        "description": "Uczniowie będą tu wyświetlani po dołączeniu do klasy"
+      }
+    },
+    "prompt": {
+      "title": "Wybierz wydarzenie",
+      "description": "Wybierz wydarzenie powyżej, aby wyświetlić i zarządzać frekwencją uczniów"
+    },
+    "status": {
+      "present": "Obecny",
+      "late": "Późno",
+      "absent": "Nieobecny",
+      "notTaken": "Nie zajęte"
+    },
+    "student": {
+      "title": "Moja obecność",
+      "subtitle": "Śledź swoją obecność na zajęciach {className}",
+      "attendanceRate": "Wskaźnik frekwencji",
+      "history": "Historia obecności",
+      "event": "Wydarzenie",
+      "status": "Status",
+      "searchPlaceholder": "Wyszukaj wydarzenia...",
+      "empty": {
+        "title": "Brak zapisów obecności",
+        "description": "Twoja obecność będzie widoczna w tym miejscu po utworzeniu wydarzeń i sprawdzeniu obecności"
+      }
+    },
+    "deleteDialog": {
+      "title": "Usuń wydarzenie",
+      "description": "Czy na pewno chcesz usunąć wydarzenie „{eventName}”? Tej czynności nie można cofnąć, a wszystkie powiązane rekordy obecności zostaną usunięte.",
+      "deleting": "Usuwanie...",
+      "deleteButton": "Usuń wydarzenie"
+    },
+    "toast": {
+      "attendanceSaved": "Obecność zapisana pomyślnie",
+      "attendanceSaveFailed": "Nie udało się zapisać obecności",
+      "eventDeleted": "Wydarzenie zostało pomyślnie usunięte",
+      "eventDeleteFailed": "Nie udało się usunąć wydarzenia"
+    }
+  }
+}

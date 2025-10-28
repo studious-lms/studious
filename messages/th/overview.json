@@ -1,0 +1,12 @@
+{
+  "overview": {
+    "assignments": "การมอบหมายงาน",
+    "students": "นักเรียน",
+    "attendance": "การเข้าร่วม",
+    "attachFile": "แนบไฟล์",
+    "post": "โพสต์",
+    "posting": "กำลังโพสต์...",
+    "noPosts": "ยังไม่มีโพสต์",
+    "createFirstPost": "สร้างโพสต์แรก"
+  }
+}

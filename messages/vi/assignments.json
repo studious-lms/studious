@@ -1,0 +1,54 @@
+{
+  "assignmentDetail": {
+    "title": "Chi tiết bài tập",
+    "description": "Sự miêu tả",
+    "instructions": "Hướng dẫn",
+    "dueDate": "Hai Ngày",
+    "maxPoints": "Điểm tối đa",
+    "submissions": "Đệ trình",
+    "submitted": "Đã nộp",
+    "notSubmitted": "Chưa nộp",
+    "graded": "Đã phân loại",
+    "pending": "Chưa giải quyết",
+    "late": "Muộn",
+    "onTime": "Đúng giờ",
+    "attachments": "Tệp đính kèm",
+    "rubric": "Tiêu chí",
+    "gradingBoundary": "Ranh giới phân loại",
+    "submissionDetails": "Chi tiết nộp bài",
+    "submittedBy": "Đã gửi bởi",
+    "submittedAt": "Đã nộp tại",
+    "grade": "Cấp",
+    "feedback": "Nhận xét",
+    "files": "Tập tin",
+    "noFiles": "Không có tập tin đính kèm",
+    "noSubmissions": "Chưa có bài nộp nào",
+    "noSubmissionsDescription": "Bài nộp sẽ xuất hiện ở đây sau khi học sinh nộp bài làm của mình",
+    "actions": {
+      "edit": "Chỉnh sửa bài tập",
+      "delete": "Xóa bài tập",
+      "viewSubmission": "Xem bài nộp",
+      "gradeSubmission": "Cấp",
+      "downloadAll": "Tải xuống tất cả",
+      "exportGrades": "Xuất khẩu các loại"
+    },
+    "stats": {
+      "totalSubmissions": "Tổng số bài nộp",
+      "averageGrade": "Điểm trung bình",
+      "submissionRate": "Tỷ lệ nộp bài",
+      "gradedCount": "Đã phân loại"
+    },
+    "table": {
+      "student": "Học sinh",
+      "status": "Trạng thái",
+      "grade": "Cấp",
+      "submittedAt": "Đã nộp",
+      "actions": "Hành động"
+    },
+    "toasts": {
+      "gradeUpdated": "Đã cập nhật điểm thành công",
+      "deleted": "Bài tập đã xóa",
+      "error": "Đã xảy ra lỗi"
+    }
+  }
+}

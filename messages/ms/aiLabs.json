@@ -1,0 +1,72 @@
+{
+  "aiLabs": {
+    "title": "Makmal AI",
+    "subtitle": "Cipta kandungan pendidikan dengan bantuan AI",
+    "aiPowered": "Dikuasakan AI",
+    "createNew": "Cipta Kandungan Baharu",
+    "aiGenerated": "AI Dijana",
+    "deleteConfirm": "Adakah anda pasti mahu memadamkan AI Lab ini? Tindakan ini tidak boleh dibuat asal.",
+    "widgets": {
+      "assignment": {
+        "title": "Tugasan",
+        "description": "Buat tugasan interaktif dengan bantuan AI"
+      },
+      "quiz": {
+        "title": "Kuiz",
+        "description": "Hasilkan kuiz dengan pelbagai jenis soalan"
+      },
+      "worksheet": {
+        "title": "Lembaran kerja",
+        "description": "Bina lembaran kerja latihan dan latihan"
+      },
+      "lessonPlan": {
+        "title": "Rancangan Pengajaran",
+        "description": "Reka rancangan pengajaran yang komprehensif"
+      },
+      "rubric": {
+        "title": "Rubrik",
+        "description": "Buat rubrik penggredan terperinci"
+      }
+    },
+    "tabs": {
+      "drafts": "Makmal Draf",
+      "chats": "Kucing AI"
+    },
+    "drafts": {
+      "title": "Makmal Draf ({count})",
+      "empty": {
+        "title": "Belum ada draf makmal",
+        "description": "Cipta kandungan pendidikan janaan AI pertama anda menggunakan widget di atas."
+      }
+    },
+    "chats": {
+      "title": "Makmal AI ({count})",
+      "active": "Aktif",
+      "messageCount": "{count} mesej",
+      "createdBy": "Dibuat oleh {name}",
+      "empty": {
+        "title": "Tiada Makmal AI lagi",
+        "description": "Cipta Makmal AI pertama anda untuk mula bekerjasama dengan AI mengenai kandungan pendidikan."
+      }
+    },
+    "toast": {
+      "labCreated": "AI Lab berjaya dibuat!",
+      "labCreateFailed": "Gagal membuat AI Lab: ",
+      "labDeleted": "AI Lab berjaya dipadamkan!",
+      "labDeleteFailed": "Gagal memadamkan AI Lab: "
+    }
+  },
+  "aiLabChat": {
+    "backButton": "Kembali ke Makmal AI",
+    "loading": "Memuatkan...",
+    "aiThinking": "AI Berfikir...",
+    "getAIHelp": "Dapatkan Bantuan AI",
+    "notFound": {
+      "title": "Sembang Makmal Tidak Ditemui",
+      "description": "Makmal AI ini mungkin telah dipadamkan atau anda tidak mempunyai akses kepadanya."
+    },
+    "toast": {
+      "messageFailed": "Gagal menghantar mesej: "
+    }
+  }
+}

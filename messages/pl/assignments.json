@@ -1,0 +1,54 @@
+{
+  "assignmentDetail": {
+    "title": "Szczegóły zadania",
+    "description": "Opis",
+    "instructions": "Instrukcje",
+    "dueDate": "Dwie daty",
+    "maxPoints": "Maksymalna liczba punktów",
+    "submissions": "Zgłoszenia",
+    "submitted": "Złożony",
+    "notSubmitted": "Nie wysłano",
+    "graded": "Oceniony",
+    "pending": "Aż do",
+    "late": "Późno",
+    "onTime": "O czasie",
+    "attachments": "Załączniki",
+    "rubric": "Rubryka",
+    "gradingBoundary": "Granica oceniania",
+    "submissionDetails": "Szczegóły przesłania",
+    "submittedBy": "Wysłane przez",
+    "submittedAt": "Złożono w",
+    "grade": "Stopień",
+    "feedback": "Informacja zwrotna",
+    "files": "Akta",
+    "noFiles": "Brak dołączonych plików",
+    "noSubmissions": "Brak jeszcze zgłoszeń",
+    "noSubmissionsDescription": "Zgłoszenia pojawią się tutaj, gdy uczniowie prześlą swoje prace",
+    "actions": {
+      "edit": "Edytuj zadanie",
+      "delete": "Usuń zadanie",
+      "viewSubmission": "Wyświetl zgłoszenie",
+      "gradeSubmission": "Stopień",
+      "downloadAll": "Pobierz wszystko",
+      "exportGrades": "Klasy eksportowe"
+    },
+    "stats": {
+      "totalSubmissions": "Łączna liczba zgłoszeń",
+      "averageGrade": "Średnia ocena",
+      "submissionRate": "Współczynnik zgłoszeń",
+      "gradedCount": "Oceniony"
+    },
+    "table": {
+      "student": "Student",
+      "status": "Status",
+      "grade": "Stopień",
+      "submittedAt": "Złożony",
+      "actions": "Akcje"
+    },
+    "toasts": {
+      "gradeUpdated": "Ocena zaktualizowana pomyślnie",
+      "deleted": "Zadanie usunięte",
+      "error": "Wystąpił błąd"
+    }
+  }
+}

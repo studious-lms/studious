@@ -1,0 +1,54 @@
+{
+  "assignmentDetail": {
+    "title": "Uppgiftsdetaljer",
+    "description": "Beskrivning",
+    "instructions": "Instruktioner",
+    "dueDate": "Två datum",
+    "maxPoints": "Maxpoäng",
+    "submissions": "Inskickade bidrag",
+    "submitted": "Inskickad",
+    "notSubmitted": "Inte inskickad",
+    "graded": "Graderad",
+    "pending": "I avvaktan på",
+    "late": "Sent",
+    "onTime": "I tid",
+    "attachments": "Bilagor",
+    "rubric": "Rubrik",
+    "gradingBoundary": "Betygsgräns",
+    "submissionDetails": "Inlämningsuppgifter",
+    "submittedBy": "Inskickat av",
+    "submittedAt": "Inskickat kl.",
+    "grade": "Kvalitet",
+    "feedback": "Feed-back",
+    "files": "Filer",
+    "noFiles": "Inga bifogade filer",
+    "noSubmissions": "Inga bidrag ännu",
+    "noSubmissionsDescription": "Inlämningar visas här när eleverna har lämnat in sina arbeten",
+    "actions": {
+      "edit": "Redigera uppgift",
+      "delete": "Ta bort uppgift",
+      "viewSubmission": "Visa inskick",
+      "gradeSubmission": "Kvalitet",
+      "downloadAll": "Ladda ner alla",
+      "exportGrades": "Exportera betyg"
+    },
+    "stats": {
+      "totalSubmissions": "Totalt antal inskickade bidrag",
+      "averageGrade": "Genomsnittligt betyg",
+      "submissionRate": "Inskickningsfrekvens",
+      "gradedCount": "Graderad"
+    },
+    "table": {
+      "student": "Student",
+      "status": "Status",
+      "grade": "Kvalitet",
+      "submittedAt": "Inskickad",
+      "actions": "Åtgärder"
+    },
+    "toasts": {
+      "gradeUpdated": "Betyget har uppdaterats",
+      "deleted": "Uppgift raderad",
+      "error": "Ett fel uppstod"
+    }
+  }
+}

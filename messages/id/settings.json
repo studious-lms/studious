@@ -1,0 +1,66 @@
+{
+  "settings": {
+    "title": "Pengaturan Kelas",
+    "subtitle": "Konfigurasikan detail dan preferensi kelas",
+    "labels": {
+      "unsavedChanges": "Perubahan yang belum disimpan"
+    },
+    "actions": {
+      "saving": "Penghematan...",
+      "saveChanges": "Simpan Perubahan",
+      "deleting": "Menghapus...",
+      "deleteClass": "Hapus Kelas",
+      "cancel": "Membatalkan"
+    },
+    "sections": {
+      "basicInfo": {
+        "title": "Informasi Dasar"
+      },
+      "theme": {
+        "title": "Tema Kelas",
+        "description": "Pilih warna tema untuk kelas ini"
+      },
+      "danger": {
+        "title": "Zona Bahaya",
+        "description": "Setelah Anda menghapus kelas, Anda tidak dapat kembali. Ini akan menghapus semua tugas, nilai, catatan kehadiran, dan mengeluarkan semua siswa dari kelas secara permanen."
+      }
+    },
+    "fields": {
+      "className": "Nama Kelas",
+      "section": "Bagian",
+      "subject": "Subjek"
+    },
+    "placeholders": {
+      "className": "misalnya, Fisika Lanjutan",
+      "section": "misalnya, AP-101",
+      "subject": "misalnya, Fisika"
+    },
+    "toasts": {
+      "updated": {
+        "title": "Kelas Diperbarui",
+        "description": "Pengaturan kelas telah berhasil disimpan."
+      },
+      "deleted": {
+        "title": "Kelas Dihapus",
+        "description": "Kelas telah dihapus secara permanen."
+      }
+    },
+    "errors": {
+      "updateFailed": {
+        "title": "Pembaruan Gagal",
+        "description": "Gagal menyimpan pengaturan kelas. Silakan coba lagi."
+      }
+    },
+    "confirm": {
+      "title": "Apakah Anda benar-benar yakin?",
+      "description": "Tindakan ini tidak dapat dibatalkan. Ini akan menghapus kelas \"{name}\" secara permanen dan menghapus semua data terkait, termasuk:",
+      "items": {
+        "assignments": "Semua tugas dan penyerahan",
+        "records": "Semua nilai dan catatan kehadiran",
+        "students": "Semua siswa akan dikeluarkan dari kelas",
+        "events": "Semua acara dan pengumuman kelas"
+      },
+      "confirmDelete": "Ya, hapus kelas"
+    }
+  }
+}

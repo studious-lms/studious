@@ -1,0 +1,54 @@
+{
+  "assignmentDetail": {
+    "title": "รายละเอียดการมอบหมาย",
+    "description": "คำอธิบาย",
+    "instructions": "คำแนะนำ",
+    "dueDate": "สองวันที่",
+    "maxPoints": "คะแนนสูงสุด",
+    "submissions": "การส่งผลงาน",
+    "submitted": "ส่งแล้ว",
+    "notSubmitted": "ไม่ได้ส่ง",
+    "graded": "เกรด",
+    "pending": "รอดำเนินการ",
+    "late": "ช้า",
+    "onTime": "ตรงเวลา",
+    "attachments": "สิ่งที่แนบมา",
+    "rubric": "หัวข้อ",
+    "gradingBoundary": "ขอบเขตการให้คะแนน",
+    "submissionDetails": "รายละเอียดการส่ง",
+    "submittedBy": "ส่งโดย",
+    "submittedAt": "ส่งที่",
+    "grade": "ระดับ",
+    "feedback": "ข้อเสนอแนะ",
+    "files": "ไฟล์",
+    "noFiles": "ไม่มีไฟล์แนบ",
+    "noSubmissions": "ยังไม่มีการส่งผลงาน",
+    "noSubmissionsDescription": "การส่งงานจะปรากฏที่นี่เมื่อนักเรียนส่งงานของพวกเขา",
+    "actions": {
+      "edit": "แก้ไขงานมอบหมาย",
+      "delete": "ลบงานมอบหมาย",
+      "viewSubmission": "ดูการส่ง",
+      "gradeSubmission": "ระดับ",
+      "downloadAll": "ดาวน์โหลดทั้งหมด",
+      "exportGrades": "เกรดส่งออก"
+    },
+    "stats": {
+      "totalSubmissions": "ยอดรวมการส่ง",
+      "averageGrade": "เกรดเฉลี่ย",
+      "submissionRate": "อัตราการส่ง",
+      "gradedCount": "เกรด"
+    },
+    "table": {
+      "student": "นักเรียน",
+      "status": "สถานะ",
+      "grade": "ระดับ",
+      "submittedAt": "ส่งแล้ว",
+      "actions": "การกระทำ"
+    },
+    "toasts": {
+      "gradeUpdated": "อัปเดตเกรดเรียบร้อยแล้ว",
+      "deleted": "ลบงานแล้ว",
+      "error": "เกิดข้อผิดพลาด"
+    }
+  }
+}

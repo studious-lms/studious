@@ -50,7 +50,7 @@
     "toasts": {
       "inviteRegenerated": "تم إعادة إنشاء رمز الدعوة بنجاح",
       "copied": "تم نسخ رمز الدعوة إلى الحافظة",
-      "roleChanged": "تم تغيير الدور إلى {الدور}",
+      "roleChanged": "تم تغيير الدور إلى {role}",
       "memberRemoved": "تمت إزالة العضو بنجاح"
     },
     "errors": {

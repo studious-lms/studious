@@ -1,0 +1,12 @@
+{
+  "overview": {
+    "assignments": "Uppgifter",
+    "students": "studenter",
+    "attendance": "Närvaro",
+    "attachFile": "Bifoga fil",
+    "post": "Posta",
+    "posting": "Publicerar...",
+    "noPosts": "Inga inlägg ännu",
+    "createFirstPost": "Skapa första inlägget"
+  }
+}

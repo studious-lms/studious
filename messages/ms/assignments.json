@@ -1,0 +1,54 @@
+{
+  "assignmentDetail": {
+    "title": "Butiran Tugasan",
+    "description": "Penerangan",
+    "instructions": "Arahan",
+    "dueDate": "Dua Kurma",
+    "maxPoints": "Mata Maks",
+    "submissions": "Penyerahan",
+    "submitted": "diserahkan",
+    "notSubmitted": "Tidak Dihantar",
+    "graded": "Digredkan",
+    "pending": "Belum selesai",
+    "late": "lewat",
+    "onTime": "Menepati Masa",
+    "attachments": "Lampiran",
+    "rubric": "Rubrik",
+    "gradingBoundary": "Sempadan Penggredan",
+    "submissionDetails": "Butiran Penyerahan",
+    "submittedBy": "Dihantar oleh",
+    "submittedAt": "Diserahkan pada",
+    "grade": "Gred",
+    "feedback": "Maklum balas",
+    "files": "Fail",
+    "noFiles": "Tiada fail dilampirkan",
+    "noSubmissions": "Tiada penyerahan lagi",
+    "noSubmissionsDescription": "Penyerahan akan dipaparkan di sini setelah pelajar menyerahkan kerja mereka",
+    "actions": {
+      "edit": "Edit Tugasan",
+      "delete": "Padamkan Tugasan",
+      "viewSubmission": "Lihat Penyerahan",
+      "gradeSubmission": "Gred",
+      "downloadAll": "Muat turun Semua",
+      "exportGrades": "Gred Eksport"
+    },
+    "stats": {
+      "totalSubmissions": "Jumlah Penyerahan",
+      "averageGrade": "Gred Purata",
+      "submissionRate": "Kadar Penyerahan",
+      "gradedCount": "Digredkan"
+    },
+    "table": {
+      "student": "Pelajar",
+      "status": "Status",
+      "grade": "Gred",
+      "submittedAt": "diserahkan",
+      "actions": "Tindakan"
+    },
+    "toasts": {
+      "gradeUpdated": "Gred berjaya dikemas kini",
+      "deleted": "Tugasan dipadamkan",
+      "error": "Ralat berlaku"
+    }
+  }
+}

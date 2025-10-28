@@ -26,7 +26,7 @@
     "noSubmissionsDescription": "Os envios aparecerão aqui assim que os alunos enviarem seus trabalhos",
     "actions": {
       "edit": "Editar tarefa",
-      "delete": "Excluir atribuição",
+      "delete": "Excluir tarefa",
       "viewSubmission": "Ver Envio",
       "gradeSubmission": "Nota",
       "downloadAll": "Baixar tudo",

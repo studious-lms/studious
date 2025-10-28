@@ -1,0 +1,63 @@
+{
+  "members": {
+    "title": "Anggota",
+    "counts": {
+      "totalMembers": "{count} anggota"
+    },
+    "actions": {
+      "inviteMember": "Undang Anggota",
+      "copy": "Menyalin",
+      "regenerate": "Diperbarui",
+      "message": "Pesan",
+      "viewProfile": "Lihat Profil",
+      "viewGrades": "Lihat Nilai",
+      "makeTeacher": "Jadikan Guru",
+      "makeStudent": "Jadikan Siswa",
+      "removeFromClass": "Hapus dari Kelas",
+      "removeAccess": "Hapus Akses",
+      "tryAgain": "Coba Lagi"
+    },
+    "labels": {
+      "teacher": "Guru",
+      "student": "Murid",
+      "you": "Anda"
+    },
+    "invite": {
+      "title": "Kode Undangan Kelas",
+      "description": "Bagikan kode ini dengan siswa untuk bergabung dengan kelas"
+    },
+    "search": {
+      "placeholder": "Cari anggota..."
+    },
+    "tabs": {
+      "students": "Siswa",
+      "teachers": "Guru"
+    },
+    "students": {
+      "empty": {
+        "title": "Tidak ada siswa yang ditemukan",
+        "matchNone": "Tidak ada siswa yang cocok dengan \"{query}\"",
+        "noStudents": "Belum ada siswa yang bergabung dengan kelas ini"
+      }
+    },
+    "teachers": {
+      "empty": {
+        "title": "Tidak ada guru yang ditemukan",
+        "matchNone": "Tidak ada guru yang cocok dengan \"{query}\"",
+        "noTeachers": "Tidak ada guru tambahan yang ditambahkan"
+      }
+    },
+    "toasts": {
+      "inviteRegenerated": "Kode undangan berhasil dibuat ulang",
+      "copied": "Kode undangan disalin ke papan klip",
+      "roleChanged": "Peran diubah menjadi {role}",
+      "memberRemoved": "Anggota berhasil dihapus"
+    },
+    "errors": {
+      "regenerateFailed": "Gagal membuat ulang kode undangan",
+      "changeRoleFailed": "Gagal mengubah peran",
+      "removeFailed": "Gagal menghapus anggota",
+      "failedToLoad": "Gagal memuat anggota"
+    }
+  }
+}

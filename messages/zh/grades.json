@@ -37,7 +37,7 @@
     "assignmentManagement": {
       "title": "任务管理",
       "empty": {
-        "title": "未找到作业",
+        "title": "未找到任何作业",
         "description": "创建作业来管理成绩和设置"
       },
       "searchPlaceholder": "搜索作业..."
@@ -132,7 +132,7 @@
       "pending": "待办的"
     },
     "empty": {
-      "title": "未找到作业",
+      "title": "未找到任何作业",
       "description": "该学生没有可显示的作业"
     },
     "searchPlaceholder": "搜索作业..."

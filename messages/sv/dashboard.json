@@ -1,0 +1,44 @@
+{
+  "home": {
+    "welcomeBack": "Välkommen tillbaka, {namn}!",
+    "subtitle": "Här är vad som händer med era klasser idag.",
+    "stats": {
+      "totalClasses": "Totalt antal klasser",
+      "teachingEnrolled": "undervisa, inskriven",
+      "dueToday": "Förfaller idag",
+      "dueTodayDesc": "Uppgifter som ska lämnas in idag",
+      "upcoming": "Kommande",
+      "upcomingDesc": "Uppgifter på gång",
+      "thisWeek": "Denna vecka",
+      "totalAssignments": "Totalt antal tilldelningar"
+    },
+    "upcomingAssignments": {
+      "title": "Kommande uppdrag",
+      "subtitle": "Dina nästa deadlines",
+      "allCaughtUp": "Allt ikapp!",
+      "noUpcoming": "Inga kommande uppdrag för tillfället.",
+      "viewAgenda": "Visa agenda",
+      "dueToday": "Förfaller idag",
+      "dueTomorrow": "Förfaller imorgon",
+      "due": "Två {datum}",
+      "teaching": "Undervisning",
+      "viewAllAssignments": "Visa alla uppgifter"
+    },
+    "notifications": {
+      "title": "Senaste aviseringar",
+      "subtitle": "Senaste uppdateringarna",
+      "noNew": "Inga nya aviseringar",
+      "viewAll": "Visa alla aviseringar"
+    },
+    "classes": {
+      "title": "Mina klasser",
+      "subtitle": "Snabb åtkomst till dina klasser",
+      "teaching": "Undervisning",
+      "enrolled": "Registrerad",
+      "due": "förfaller",
+      "noClasses": "Inga lektioner ännu",
+      "browseClasses": "Bläddra bland klasser",
+      "viewAllClasses": "Visa alla klasser"
+    }
+  }
+}

@@ -13,7 +13,7 @@
   "uploadFiles": {
     "title": "Télécharger des fichiers",
     "noFilesSelected": "Aucun fichier sélectionné",
-    "classIdMissing": "L'ID de classe est manquant",
+    "classIdMissing": "L'identifiant de classe est manquant",
     "folderIdMissing": "L'identifiant du dossier est manquant. Veuillez patienter pendant le chargement du dossier.",
     "preparing": "Préparation du téléchargement...",
     "gettingUrls": "Obtention des URL de téléchargement...",
@@ -57,7 +57,8 @@
     "created": "Rubrique créée avec succès",
     "updated": "Rubrique mise à jour avec succès",
     "createFailed": "Échec de la création de la rubrique",
-    "updateFailed": "Échec de la mise à jour de la rubrique"
+    "updateFailed": "Échec de la mise à jour de la rubrique",
+    "errorNameRequired": "Veuillez fournir un nom et au moins un critère"
   },
   "gradingBoundaries": {
     "title": "Créer une limite de niveau",

@@ -1,0 +1,21 @@
+{
+  "classes": {
+    "title": "Kelas",
+    "description": "Urus pengajaran dan kelas yang didaftarkan anda",
+    "joinClass": "Sertai Kelas",
+    "createClass": "Buat Kelas",
+    "searchPlaceholder": "Cari kelas...",
+    "teaching": "Mengajar",
+    "enrolled": "Didaftarkan",
+    "noClassesFound": "Tiada kelas ditemui",
+    "noTeachingClassesFound": "Tiada kelas pengajaran ditemui sepadan dengan \"{query}\"",
+    "noEnrolledClassesFound": "Tiada kelas yang didaftarkan ditemui sepadan dengan \"{query}\"",
+    "noClassesYet": "Tiada kelas lagi",
+    "noClassesYetDesc": "Buat kelas pertama anda untuk mula mengurus tugasan, gred dan interaksi pelajar.",
+    "noEnrolledClasses": "Tiada kelas yang didaftarkan",
+    "noEnrolledClassesDesc": "Sertai kelas menggunakan kod jemputan atau pautan yang diberikan oleh guru anda.",
+    "classDeleted": "Kelas berjaya dipadamkan",
+    "classDeleteFailed": "Gagal memadamkan kelas",
+    "failedToLoad": "Gagal memuatkan kelas"
+  }
+}

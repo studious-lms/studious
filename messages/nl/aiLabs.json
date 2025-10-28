@@ -1,0 +1,72 @@
+{
+  "aiLabs": {
+    "title": "AI-labs",
+    "subtitle": "Creëer educatieve content met AI-ondersteuning",
+    "aiPowered": "AI-aangedreven",
+    "createNew": "Nieuwe inhoud maken",
+    "aiGenerated": "AI gegenereerd",
+    "deleteConfirm": "Weet u zeker dat u dit AI Lab wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt.",
+    "widgets": {
+      "assignment": {
+        "title": "Opdracht",
+        "description": "Interactieve opdrachten maken met AI-assistentie"
+      },
+      "quiz": {
+        "title": "Quiz",
+        "description": "Genereer quizzen met verschillende vraagtypen"
+      },
+      "worksheet": {
+        "title": "Werkblad",
+        "description": "Maak oefenbladen en oefeningen"
+      },
+      "lessonPlan": {
+        "title": "Lesplan",
+        "description": "Ontwerp uitgebreide lesplannen"
+      },
+      "rubric": {
+        "title": "Rubriek",
+        "description": "Maak gedetailleerde beoordelingsrubrieken"
+      }
+    },
+    "tabs": {
+      "drafts": "Ontwerplabs",
+      "chats": "AI-katten"
+    },
+    "drafts": {
+      "title": "Ontwerplabs ({count})",
+      "empty": {
+        "title": "Nog geen laboratoriumontwerpen",
+        "description": "Maak uw eerste door AI gegenereerde educatieve content met behulp van de bovenstaande widgets."
+      }
+    },
+    "chats": {
+      "title": "AI Labs ({aantal})",
+      "active": "Actief",
+      "messageCount": "{count} berichten",
+      "createdBy": "Gemaakt door {naam}",
+      "empty": {
+        "title": "Nog geen AI Labs",
+        "description": "Richt uw eerste AI Lab op en ga met AI samenwerken aan educatieve content."
+      }
+    },
+    "toast": {
+      "labCreated": "AI Lab succesvol aangemaakt!",
+      "labCreateFailed": "Het is niet gelukt om AI Lab te maken:",
+      "labDeleted": "AI Lab succesvol verwijderd!",
+      "labDeleteFailed": "Het verwijderen van AI Lab is mislukt:"
+    }
+  },
+  "aiLabChat": {
+    "backButton": "Terug naar AI Labs",
+    "loading": "Bezig met laden...",
+    "aiThinking": "AI-denken...",
+    "getAIHelp": "Krijg AI-hulp",
+    "notFound": {
+      "title": "Labchat niet gevonden",
+      "description": "Dit AI Lab is mogelijk verwijderd of u heeft er geen toegang toe."
+    },
+    "toast": {
+      "messageFailed": "Bericht kon niet worden verzonden:"
+    }
+  }
+}

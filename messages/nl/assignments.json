@@ -1,0 +1,54 @@
+{
+  "assignmentDetail": {
+    "title": "Opdrachtdetails",
+    "description": "Beschrijving",
+    "instructions": "Instructies",
+    "dueDate": "Twee data",
+    "maxPoints": "Maximale punten",
+    "submissions": "Inzendingen",
+    "submitted": "Ingediend",
+    "notSubmitted": "Niet ingediend",
+    "graded": "Gegradeerd",
+    "pending": "In behandeling",
+    "late": "Laat",
+    "onTime": "Op tijd",
+    "attachments": "Bijlagen",
+    "rubric": "Rubriek",
+    "gradingBoundary": "Beoordelingsgrens",
+    "submissionDetails": "Inzendingdetails",
+    "submittedBy": "Ingezonden door",
+    "submittedAt": "Ingediend bij",
+    "grade": "Cijfer",
+    "feedback": "Feedback",
+    "files": "Bestanden",
+    "noFiles": "Geen bestanden bijgevoegd",
+    "noSubmissions": "Nog geen inzendingen",
+    "noSubmissionsDescription": "Inzendingen zullen hier verschijnen zodra studenten hun werk hebben ingediend",
+    "actions": {
+      "edit": "Opdracht bewerken",
+      "delete": "Opdracht verwijderen",
+      "viewSubmission": "Bekijk inzending",
+      "gradeSubmission": "Cijfer",
+      "downloadAll": "Alles downloaden",
+      "exportGrades": "Exportcijfers"
+    },
+    "stats": {
+      "totalSubmissions": "Totaal aantal inzendingen",
+      "averageGrade": "Gemiddeld cijfer",
+      "submissionRate": "Inzendingspercentage",
+      "gradedCount": "Gegradeerd"
+    },
+    "table": {
+      "student": "Student",
+      "status": "Status",
+      "grade": "Cijfer",
+      "submittedAt": "Ingediend",
+      "actions": "Acties"
+    },
+    "toasts": {
+      "gradeUpdated": "Cijfer succesvol bijgewerkt",
+      "deleted": "Opdracht verwijderd",
+      "error": "Er is een fout opgetreden"
+    }
+  }
+}

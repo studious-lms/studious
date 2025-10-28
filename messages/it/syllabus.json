@@ -1,0 +1,66 @@
+{
+  "syllabus": {
+    "title": "Programma",
+    "subtitle": "Panoramica del corso e informazioni accademiche",
+    "actions": {
+      "saveChanges": "Salva modifiche",
+      "cancel": "Cancellare",
+      "edit": "Modifica programma"
+    },
+    "errors": {
+      "failedToLoad": "Impossibile caricare il programma",
+      "tryLater": "Riprova più tardi."
+    },
+    "stats": {
+      "totalAssignments": "Assegnazioni totali",
+      "completionRate": "Tasso di completamento",
+      "totalPoints": "Punti totali",
+      "upcoming": "Prossimamente"
+    },
+    "overview": {
+      "title": "Panoramica del corso",
+      "placeholder": "Inserisci la panoramica del corso, gli obiettivi e altre informazioni importanti...",
+      "helper": "Inserisci le informazioni sul corso, gli obiettivi di apprendimento, le politiche e altri dettagli importanti.",
+      "empty": {
+        "title": "Nessun contenuto del programma ancora",
+        "description": "Fai clic su \"Modifica programma\" per aggiungere informazioni sul corso, obiettivi di apprendimento, politiche e altro ancora."
+      }
+    },
+    "assignments": {
+      "title": "Compiti del corso",
+      "gradedCount": "{valutato} compiti valutati",
+      "totalPoints": "{totale} punti totali",
+      "empty": {
+        "title": "Nessun incarico ancora",
+        "description": "Gli incarichi appariranno qui una volta creati."
+      }
+    },
+    "table": {
+      "assignment": "Incarico",
+      "dueDate": "Due date",
+      "points": "Punti",
+      "weight": "Peso",
+      "status": "Stato",
+      "pts": "punti"
+    },
+    "status": {
+      "graded": "Classificato",
+      "pending": "In attesa di"
+    },
+    "courseInfo": {
+      "title": "Informazioni sul corso",
+      "basic": {
+        "title": "Informazioni di base",
+        "className": "Nome della classe",
+        "section": "Sezione",
+        "subject": "Soggetto"
+      },
+      "stats": {
+        "title": "Statistiche del corso",
+        "totalAssignments": "Assegnazioni totali",
+        "gradedAssignments": "Compiti valutati",
+        "totalPoints": "Punti totali"
+      }
+    }
+  }
+}

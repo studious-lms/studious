@@ -1,0 +1,140 @@
+{
+  "classGrades": {
+    "title": "Betyg",
+    "subtitle": "Visa och hantera elevbetyg",
+    "columns": {
+      "assignment": "Uppdrag",
+      "maxPoints": "Maxpoäng",
+      "weight": "Vikt",
+      "graded": "Graderad",
+      "dueDate": "Två datum",
+      "actions": "Åtgärder",
+      "student": "Student",
+      "overallGrade": "Totalbetyg",
+      "assignmentsCompleted": "Uppgifter slutförda",
+      "trend": "Trend"
+    },
+    "labels": {
+      "rubric": "Rubrik"
+    },
+    "actions": {
+      "manage": "Hantera",
+      "viewGrades": "Visa betyg",
+      "saving": "Sparande...",
+      "saveChanges": "Spara ändringar",
+      "preview": "Förhandsvisning",
+      "edit": "Redigera",
+      "delete": "Radera",
+      "createNew": "Skapa ny"
+    },
+    "overview": {
+      "title": "Klassöversikt",
+      "classAverage": "Klassgenomsnitt",
+      "totalStudents": "Totalt antal studenter",
+      "assignments": "Uppgifter",
+      "submissionRate": "Inskickningsfrekvens"
+    },
+    "assignmentManagement": {
+      "title": "Uppdragshantering",
+      "empty": {
+        "title": "Inga uppgifter hittades",
+        "description": "Skapa uppgifter för att hantera betyg och inställningar"
+      },
+      "searchPlaceholder": "Sök uppgifter..."
+    },
+    "students": {
+      "title": "Studenter",
+      "viewAll": "Visa alla elever",
+      "empty": {
+        "title": "Inga studenter inskrivna",
+        "description": "Eleverna visas här när de går med i klassen"
+      },
+      "searchPlaceholder": "Sök elever..."
+    },
+    "gradeBoundaries": {
+      "title": "Betygsgränser",
+      "untitled": "Namnlös graderingsgräns",
+      "empty": {
+        "title": "Inga betygsgränser skapade",
+        "description": "Skapa betygsgränser för att definiera betygsintervall"
+      },
+      "previewTitle": "Förhandsvisning av graderingsgränser",
+      "details": {
+        "title": "Detaljer om graderingsgränser",
+        "name": "Namn",
+        "noneDefined": "Inga graderingsgränser definierade"
+      }
+    },
+    "rubrics": {
+      "title": "Rubriker",
+      "untitled": "Namnlös rubrik",
+      "empty": {
+        "title": "Inga bedömningskriterier skapade",
+        "description": "Skapa bedömningskriterier för att definiera bedömningsmatriser"
+      },
+      "previewTitle": "Förhandsgranskning av bedömningsmatris",
+      "details": {
+        "title": "Rubrikdetaljer",
+        "name": "Namn",
+        "category": "Kategori",
+        "description": "Beskrivning",
+        "custom": "Beställnings",
+        "noDescription": "Ingen beskrivning tillhandahålls",
+        "noCriteria": "Inga kriterier hittades i denna bedömningsmatris"
+      }
+    },
+    "confirm": {
+      "deleteRubric": "Är du säker på att du vill ta bort det här markeringsschemat?",
+      "deleteGradingBoundary": "Är du säker på att du vill ta bort den här bedömningsgränsen?"
+    }
+  },
+  "studentGrades": {
+    "title": "Alla elevbetyg",
+    "allStudents": "Visa och hantera betyg för alla elever i den här klassen",
+    "students": "Studenter",
+    "noGrades": "Inga elever hittades",
+    "noGradesDescription": "Inga elever är ännu inskrivna i den här kursen. Eleverna kommer att visas här när de går med.",
+    "table": {
+      "student": "Student",
+      "actions": "Åtgärder"
+    },
+    "actions": {
+      "viewSubmission": "Visa betyg"
+    }
+  },
+  "individualGrades": {
+    "myGrades": "Mina betyg",
+    "studentGrades": "Betyg",
+    "viewYourGrades": "Se dina betyg och framsteg",
+    "individualManagement": "Individuell elevbetygshantering",
+    "export": "Exportera",
+    "back": "Tillbaka",
+    "yourPerformance": "Din prestation",
+    "trackProgress": "Följ dina akademiska framsteg",
+    "overallGrade": "Totalbetyg",
+    "completed": "Avslutad",
+    "trend": "Trend",
+    "yourGrades": "Dina betyg",
+    "assignments": "Uppgifter",
+    "studentNotFound": "Studenten hittades inte",
+    "goBack": "Gå tillbaka",
+    "grade": "Kvalitet",
+    "table": {
+      "assignment": "Uppdrag",
+      "grade": "Kvalitet",
+      "total": "Total",
+      "percentage": "%",
+      "status": "Status",
+      "submitted": "Inskickad"
+    },
+    "status": {
+      "graded": "Graderad",
+      "pending": "I avvaktan på"
+    },
+    "empty": {
+      "title": "Inga uppgifter hittades",
+      "description": "Den här studenten har inga uppgifter att visa"
+    },
+    "searchPlaceholder": "Sök uppgifter..."
+  }
+}

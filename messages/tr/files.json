@@ -1,0 +1,130 @@
+{
+  "classFiles": {
+    "title": "Dosyalar",
+    "subtitle": "Sınıf dosyalarını ve kaynaklarını yönetin",
+    "actions": {
+      "newFolder": "Yeni Klasör",
+      "upload": "Yüklemek",
+      "uploadFiles": "Dosyaları Yükle",
+      "createFolder": "Klasör Oluştur",
+      "download": "İndirmek",
+      "share": "Paylaşmak",
+      "delete": "Silmek",
+      "filter": "Filtre",
+      "sort": "Düzenlemek"
+    },
+    "toasts": {
+      "folderCreated": "Klasör başarıyla oluşturuldu",
+      "folderDeleted": "Klasör başarıyla silindi",
+      "folderRenamed": "Klasör başarıyla yeniden adlandırıldı",
+      "folderMoved": "Klasör başarıyla taşındı",
+      "filesUploaded": "Dosyalar başarıyla yüklendi",
+      "fileDeleted": "Dosya başarıyla silindi",
+      "fileRenamed": "Dosya başarıyla yeniden adlandırıldı",
+      "fileMoved": "Dosya başarıyla taşındı",
+      "downloadStarted": "İndirme başladı",
+      "shareCopied": "Paylaşım bağlantısı kopyalandı"
+    },
+    "errors": {
+      "teacherOnly": "Dosyaları yalnızca öğretmenler değiştirebilir.",
+      "downloadFailed": "İndirme başarısız oldu",
+      "shareFailed": "Paylaşım başarısız oldu",
+      "failedToLoad": "Dosyalar yüklenemedi. Lütfen daha sonra tekrar deneyin."
+    },
+    "breadcrumbs": {
+      "classFiles": "Sınıf Dosyaları"
+    },
+    "search": {
+      "placeholder": "Dosyalarda ara"
+    },
+    "selected": "{count} seçildi",
+    "filters": {
+      "fileType": "Dosya Türü",
+      "documents": "Belgeler",
+      "images": "Görüntüler",
+      "videos": "Videolar",
+      "presentations": "Sunumlar"
+    },
+    "sort": {
+      "name": "İsim",
+      "lastModified": "Son değiştirilme tarihi",
+      "fileSize": "Dosya boyutu"
+    },
+    "table": {
+      "name": "İsim",
+      "owner": "Mal sahibi",
+      "lastModified": "Son değiştirilme tarihi",
+      "fileSize": "Dosya boyutu"
+    },
+    "empty": {
+      "title": "Bu klasör boş",
+      "description": "Sınıf materyallerinizi düzenlemeye başlamak için dosyaları yükleyin veya klasörler oluşturun.",
+      "searchTitle": "Hiçbir dosya bulunamadı",
+      "searchDescription": "\"{query}\" ile eşleşen dosya bulunamadı. Farklı bir arama terimi deneyin."
+    }
+  },
+  "folderView": {
+    "subtitle": "Klasör içeriği",
+    "notFound": {
+      "title": "Klasör Bulunamadı",
+      "description": "İstenilen klasör bulunamadı.",
+      "backButton": "Dosyalara Geri Dön"
+    },
+    "error": {
+      "loadFailed": "Klasör içeriği yüklenemedi. Lütfen daha sonra tekrar deneyin."
+    },
+    "breadcrumbs": {
+      "classFiles": "Sınıf Dosyaları"
+    },
+    "search": {
+      "placeholder": "Klasörde ara",
+      "selected": "{count} seçildi"
+    },
+    "filters": {
+      "label": "Filtre",
+      "fileType": "Dosya Türü",
+      "documents": "Belgeler",
+      "images": "Görüntüler",
+      "videos": "Videolar",
+      "presentations": "Sunumlar"
+    },
+    "sort": {
+      "label": "Düzenlemek",
+      "name": "İsim",
+      "lastModified": "Son değiştirilme tarihi",
+      "fileSize": "Dosya boyutu"
+    },
+    "table": {
+      "name": "İsim",
+      "owner": "Mal sahibi",
+      "lastModified": "Son değiştirilme tarihi",
+      "fileSize": "Dosya boyutu"
+    },
+    "empty": {
+      "noFilesFound": "Hiçbir dosya bulunamadı",
+      "noFilesFoundDescription": "\"{query}\" ile eşleşen dosya bulunamadı. Farklı bir arama terimi deneyin.",
+      "folderEmpty": "Bu klasör boş",
+      "folderEmptyDescription": "Dosyaları yükleyin veya materyallerinizi düzenlemek için klasörler oluşturun."
+    },
+    "actions": {
+      "newFolder": "Yeni Klasör",
+      "uploadFiles": "Dosyaları Yükle",
+      "createFolder": "Klasör Oluştur"
+    },
+    "toast": {
+      "folderCreated": "Klasör başarıyla oluşturuldu",
+      "folderDeleted": "Klasör başarıyla silindi",
+      "folderRenamed": "Klasör başarıyla yeniden adlandırıldı",
+      "folderMoved": "Klasör başarıyla taşındı",
+      "filesUploaded": "Dosyalar başarıyla yüklendi",
+      "fileDeleted": "Dosya başarıyla silindi",
+      "fileRenamed": "Dosya başarıyla yeniden adlandırıldı",
+      "fileMoved": "Dosya başarıyla taşındı",
+      "downloadStarted": "İndirme başladı",
+      "downloadFailed": "İndirme başarısız oldu",
+      "shareLinkCopied": "Paylaşım bağlantısı kopyalandı",
+      "shareFailed": "Paylaşım başarısız oldu",
+      "permissionDenied": "İzin reddedildi"
+    }
+  }
+}

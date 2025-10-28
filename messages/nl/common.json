@@ -1,0 +1,1218 @@
+{
+  "common": {
+    "save": "Redden",
+    "cancel": "Annuleren",
+    "delete": "Verwijderen",
+    "edit": "Bewerking",
+    "submit": "Indienen",
+    "close": "Dichtbij",
+    "back": "Rug",
+    "next": "Volgende",
+    "loading": "Bezig met laden...",
+    "search": "Zoekopdracht",
+    "filter": "Filter",
+    "sort": "Soort",
+    "viewAll": "Bekijk alles",
+    "noData": "Geen gegevens beschikbaar",
+    "export": "Exporteren"
+  },
+  "time": {
+    "today": "Vandaag",
+    "tomorrow": "Morgen",
+    "yesterday": "Gisteren",
+    "thisWeek": "Deze week",
+    "nextWeek": "Volgende week",
+    "lastWeek": "Vorige week"
+  },
+  "errors": {
+    "somethingWentWrong": "Er is iets misgegaan",
+    "tryAgain": "Probeer het opnieuw",
+    "pageNotFound": "Pagina niet gevonden",
+    "unauthorized": "Ongeautoriseerde toegang"
+  },
+  "auth": {
+    "login": {
+      "title": "Welkom terug",
+      "subtitle": "Meld u aan bij uw Studious-account",
+      "username": "Gebruikersnaam",
+      "password": "Wachtwoord",
+      "forgotPassword": "Wachtwoord vergeten?",
+      "signIn": "Aanmelden",
+      "signingIn": "Aanmelden...",
+      "noAccount": "Heeft u nog geen account?",
+      "signUp": "Aanmelden",
+      "successMessage": "Succesvol ingelogd",
+      "cancel": "Annuleren"
+    },
+    "signup": {
+      "title": "Maak uw account aan",
+      "subtitle": "Sluit je aan bij Studious en begin met leren",
+      "signUp": "Aanmelden",
+      "firstName": "Voornaam",
+      "lastName": "Achternaam",
+      "email": "E-mail",
+      "password": "Wachtwoord",
+      "confirmPassword": "Bevestig wachtwoord",
+      "firstNamePlaceholder": "Voornaam",
+      "lastNamePlaceholder": "Achternaam",
+      "emailPlaceholder": "Voer uw e-mailadres in",
+      "passwordPlaceholder": "Maak een wachtwoord aan",
+      "confirmPasswordPlaceholder": "Bevestig uw wachtwoord",
+      "agreeToTerms": "Ik ga akkoord met de",
+      "termsOfService": "Servicevoorwaarden",
+      "and": "En",
+      "privacyPolicy": "Privacybeleid",
+      "createAccount": "Account aanmaken",
+      "creatingAccount": "Account aanmaken...",
+      "alreadyHaveAccount": "Heeft u al een account?",
+      "signIn": "Aanmelden",
+      "passwordMismatch": "Wachtwoorden komen niet overeen",
+      "termsRequired": "U moet akkoord gaan met de voorwaarden",
+      "accountCreated": "Account succesvol aangemaakt!",
+      "signUpFailed": "Account aanmaken mislukt"
+    },
+    "verification": {
+      "notVerified": "Account niet geverifieerd",
+      "message": "Je account moet worden geverifieerd voordat je kunt inloggen. Controleer je e-mail voor een verificatielink.",
+      "emailSentTo": "Verificatie-e-mail verzonden naar:",
+      "resendEmail": "Verificatie-e-mail opnieuw verzenden",
+      "backToSignIn": "Terug naar Aanmelden",
+      "emailSent": "Verificatie-e-mail verzonden!",
+      "checkInbox": "Controleer uw inbox en spamfolder.",
+      "enterEmail": "Voer uw e-mailadres in",
+      "sending": "Verzenden...",
+      "sendEmail": "E-mail verzenden"
+    }
+  },
+  "marketing": {
+    "navbar": {
+      "requestEarlyAccess": "Vroegtijdige toegang aanvragen"
+    },
+    "hero": {
+      "badge": "Modern leerplatform",
+      "title1": "Naadloos, zonder afleiding",
+      "title2": "leren voor moderne scholen",
+      "subtitle": "Studious LMS integreert AI, realtimekalenders en klassencommunicatie in één samenhangend platform, ontworpen om docenten te helpen lesgeven en leerlingen te laten floreren.",
+      "requestEarlyAccess": "Vroegtijdige toegang aanvragen",
+      "watchDemo": "Bekijk demo",
+      "altDashboard": "Platformdashboard"
+    },
+    "problem": {
+      "title": "Traditionele schoolportalen zijn gefragmenteerd en verouderd",
+      "issue1": "Leraren verspillen tijd met het schakelen tussen meerdere hulpmiddelen",
+      "issue2": "Studenten hebben moeite met organisatie en deadlines",
+      "issue3": "AI is nog steeds onvoldoende geïntegreerd in de daadwerkelijke schoolworkflows"
+    },
+    "response": {
+      "title1": "Studious LMS verenigt onderwijs, leren,",
+      "title2": "en communicatie in één werkruimte",
+      "subtitle": "Het is gebouwd met geavanceerde frameworks en een op de mens gericht ontwerp, en is schaalbaar voor scholen van elke omvang."
+    },
+    "features": {
+      "title": "Belangrijkste kenmerken",
+      "subtitle": "Alles wat u nodig hebt om moderne leerervaringen te beheren",
+      "ai": {
+        "title": "AI-assistent",
+        "description": "Helpt bij het genereren van studiemateriaal, het samenvatten van inhoud en het beoordelen"
+      },
+      "classManagement": {
+        "title": "Klassenmanagement",
+        "description": "Organiseer moeiteloos lessen, opdrachten en aanwezigheid"
+      },
+      "assignments": {
+        "title": "Opdrachten",
+        "description": "Efficiënt inzendingen van studenten maken, verzamelen en beoordelen"
+      },
+      "calendar": {
+        "title": "Kalender",
+        "description": "Realtime synchronisatie met opdrachten, lessen en evenementen"
+      },
+      "analytics": {
+        "title": "Analyse",
+        "description": "Bekijk inzichten over prestaties, deelname en betrokkenheid"
+      },
+      "communication": {
+        "title": "Mededeling",
+        "description": "Ingebouwde berichten en aankondigingen voor uniforme samenwerking"
+      }
+    },
+    "quote": {
+      "text": "Elke functie in Studious is ontworpen om de wrijving te verminderen, niet om deze toe te voegen."
+    },
+    "pricing": {
+      "title": "Kies het juiste plan voor uw instelling",
+      "subtitle": "Eenvoudige, transparante prijzen zonder verborgen kosten. Alle abonnementen bevatten basisfuncties met schaalbare opties.",
+      "starter": {
+        "title": "Starter",
+        "price": "Vrij",
+        "note": "Beta-toegang inbegrepen",
+        "description": "Perfect voor kleine klassen en pilotprogramma's",
+        "perk1": "Maximaal 30 studenten",
+        "perk2": "Onbeperkte lessen",
+        "perk3": "Kernfuncties (opdrachten, agenda, cijfers)",
+        "perk4": "AI-assistent (5 chats/maand)",
+        "perk5": "Gemeenschapsondersteuning",
+        "perk6": "5 GB opslag",
+        "button": "Gratis aan de slag"
+      },
+      "school": {
+        "title": "School",
+        "price": "$5",
+        "priceUnit": "/gebruiker/maand",
+        "note": "Jaarlijks gefactureerd of $ 6/maand",
+        "description": "Voor scholen met maximaal 1.000 leerlingen",
+        "perk1": "Onbeperkt aantal studenten",
+        "perk2": "Onbeperkte lessen",
+        "perk3": "Alle kernfuncties",
+        "perk4": "AI-assistent (onbeperkt aantal zoekopdrachten)",
+        "perk5": "Eerste in de rij voor toegang tot de bètaversie van Studious CMS",
+        "button": "Aan de slag"
+      },
+      "institution": {
+        "title": "Instelling",
+        "price": "Aangepast",
+        "note": "Op maat gemaakt voor uw behoeften",
+        "description": "Voor grote scholen en universiteiten (1.000+ studenten)",
+        "perk1": "Alles in School-plan",
+        "perk2": "24/7 prioriteitsondersteuning",
+        "perk3": "Onbeperkte opslag",
+        "perk4": "Aangepaste training en onboarding",
+        "perk5": "Lagere kosten per gebruiker",
+        "button": "Neem contact op met Verkoop"
+      },
+      "mostPopular": "Meest populair",
+      "earlyBird": "🎉 Vroege gebruikers ontvangen <strong>3 maanden gratis</strong> op jaarabonnementen + speciale onboarding-ondersteuning"
+    },
+    "schoolProgram": {
+      "badge": "Maatschappelijke impact",
+      "title": "Studieus School Ontwikkelingsprogramma",
+      "subtitle": "Wij geloven dat elke leerling recht heeft op toegang tot moderne leermiddelen, ongeacht de economische situatie van zijn of haar school.",
+      "feature1Title": "100% gratis toegang",
+      "feature1Description": "Volledige platformtoegang met alle functies voor gekwalificeerde scholen",
+      "feature2Title": "Toegewijde ondersteuning",
+      "feature2Description": "Prioriteit bij het onboarden en trainen van docenten en personeel",
+      "feature3Title": "Onderwijsbronnen",
+      "feature3Description": "Gratis lesmateriaal en curriculumondersteuning",
+      "applyNow": "Solliciteer nu",
+      "learnMore": "Meer informatie",
+      "eligibilityTitle": "Programma-geschiktheid",
+      "qualifyingTitle": "Kwalificerende scholen:",
+      "qualify1": "Openbare scholen in achtergestelde gemeenschappen",
+      "qualify2": "Geregistreerde non-profit onderwijsinstellingen",
+      "qualify3": "Scholen in ontwikkelingsregio's",
+      "qualify4": "Scholen met titel I (VS) of gelijkwaardig",
+      "commitmentTitle": "Onze belofte:",
+      "commitment": "10% van onze betalende klanten is voorstander van gratis toegang voor scholen in nood.",
+      "launchTitle": "Programma lancering:",
+      "launch": "Januari 2026 • Aanmeldingen nu geopend"
+    },
+    "futureDevelopments": {
+      "title": "Toekomstige ontwikkelingen",
+      "subtitle": "Onze routekaart voor de transformatie van onderwijs",
+      "cas": {
+        "title": "CAS-perspectief",
+        "description": "Ondersteuning van ondergefinancierde scholen door middel van donaties en materialen, zodat kwalitatief goed onderwijs voor iedereen toegankelijk wordt."
+      },
+      "features": {
+        "title": "Kenmerken Perspectief",
+        "description": "Uitbreiding van de ondersteuning voor AI-studenten en het bouwen van API-integraties voor diverse onderwijssystemen wereldwijd."
+      },
+      "launch": {
+        "title": "Lanceringsperspectief",
+        "description": "Presentaties op scholen, universiteiten en conferenties om de leerervaring opnieuw vorm te geven."
+      }
+    },
+    "cta": {
+      "title": "Bent u klaar om de manier waarop uw school leert en onderwijst opnieuw te definiëren?",
+      "subtitle": "Sluit je aan bij de toekomst van onderwijs met Studious LMS",
+      "requestAccess": "Toegang aanvragen",
+      "partnerWithUs": "Werk samen met ons",
+      "tagline": "Studious LMS — Modern leren, vereenvoudigd."
+    }
+  },
+  "press": {
+    "badge": "Pers & Media",
+    "title": "Studerend in het nieuws",
+    "subtitle": "Mediabronnen, merkactiva en bedrijfsinformatie voor journalisten en contentmakers",
+    "factsheet": {
+      "title": "Bedrijfsinformatieblad",
+      "subtitle": "Snelle feiten over Studious LMS",
+      "companyInfo": "Bedrijfsinformatie",
+      "founded": "Opgericht",
+      "hq": "Hoofdkwartier",
+      "industry": "Industrie",
+      "website": "Website",
+      "status": "Status",
+      "currentStatus": "Huidige status",
+      "launchDate": "Lanceerdatum",
+      "currentPhase": "Huidige fase",
+      "targetMarkets": "Doelmarkten",
+      "teamSize": "Teamgrootte",
+      "devHqs": "Ontwikkelingshoofdkwartieren"
+    },
+    "contact": {
+      "title": "Persvragen",
+      "subtitle": "Voor persvragen, interviews en mediaverzoeken",
+      "sl": "Wij reageren doorgaans binnen 24 uur",
+      "general": "Voor algemene vragen en ondersteuning"
+    }
+  },
+  "program": {
+    "hero": {
+      "badge": "Sociaal Impact Initiatief",
+      "title": "Studieus School Ontwikkelingsprogramma",
+      "subtitle": "Het bieden van gratis toegang tot moderne leertechnologie voor scholen zonder financiële middelen"
+    },
+    "commitment": {
+      "revenue": "Toegewezen inkomsten",
+      "cohort": "Eerste cohortlancering",
+      "free": "Gratis toegang"
+    },
+    "about": {
+      "mission": {
+        "title": "Onze missie",
+        "body1": "Het Studious School Development Program is bedoeld om kansarme scholen te ondersteunen door hen gratis en onbeperkte toegang te bieden tot ons leermanagementplatform. We erkennen dat technologie een dominante factor is op de arbeidsmarkt van de toekomst, maar veel onderwijsinstellingen hebben geen toegang tot dergelijke middelen. Via dit programma bieden we moderne leermanagementtechnologie aan scholen die deze het hardst nodig hebben."
+      },
+      "aims": {
+        "title": "Doelstellingen van het programma",
+        "body1": "Door uitgebreide gesprekken met docenten en onderwijsprofessionals hebben we aanzienlijke tekortkomingen in de digitale leerinfrastructuur van veel scholen geïdentificeerd. Veel leermanagementsystemen op de markt bieden geen samenhangende, intuïtieve gebruikerservaring en scholen in achterstandswijken kunnen zich vaak geen toegang tot moderne onderwijstechnologie veroorloven.",
+        "body2": "Ons programma pakt deze uitdagingen direct aan. De inkomsten uit onze betaalde institutionele abonnementen stellen ons in staat om kansarme scholen uitgebreide toegang te bieden tot Studious LMS en bijbehorende educatieve tools. Dit duurzame model stelt ons in staat de digitale kloof te dichten en tegelijkertijd ons platform continu te verbeteren voor alle gebruikers."
+      },
+      "receive": {
+        "title": "Wat u ontvangt",
+        "body1": "Scholen die tot het programma worden toegelaten, ontvangen de volledige Studious-platformervaring – geen beperkte of uitgeklede versie. Dit omvat onbeperkte accounts voor studenten en docenten, alle premiumfuncties (AI-assistent, geavanceerde analyses, realtime samenwerking), prioritaire technische ondersteuning, toegewijde onboardingspecialisten, doorlopende trainingsbronnen en toegang tot alle toekomstige updates en verbeteringen.",
+        "body2": "Naast de software zelf bieden we uitgebreide ondersteuning om ervoor te zorgen dat uw school de voordelen van het platform optimaal kan benutten. Ons team werkt rechtstreeks samen met uw beheerders en docenten om het systeem aan te passen aan uw specifieke behoeften, biedt praktische training en blijft beschikbaar voor voortdurende ondersteuning tijdens uw traject."
+      },
+      "qualifies": {
+        "title": "Wie komt in aanmerking?",
+        "body1": "We geven prioriteit aan scholen die leerlingen bedienen die het meest baat zouden hebben bij verbeterde onderwijstechnologie. Dit omvat openbare scholen in achtergestelde of economisch achtergestelde gemeenschappen, geregistreerde non-profit onderwijsinstellingen die financiële beperkingen aantonen, scholen in ontwikkelingsregio's of -landen, Amerikaanse Title I-scholen en hun internationale equivalenten, en elke onderwijsinstelling die een reële financiële behoefte kan aantonen en zich inzet voor het verbeteren van de leerresultaten.",
+        "body2": "We beoordelen elke aanvraag individueel en houden daarbij niet alleen rekening met financiële gegevens, maar ook met de missie van uw school, de doelgroep die u bedient en uw plannen om Studious te gebruiken om het onderwijs te verbeteren. Ons doel is om samen te werken met scholen die echt profiteren van ons platform en het effectief inzetten om de leerervaring van leerlingen te verbeteren."
+      },
+      "impact": {
+        "title": "Onze visie op impact",
+        "body1": "Door scholen gratis toegang te bieden tot moderne leermanagementtechnologie, willen we een van de belangrijkste belemmeringen wegnemen waarmee onderwijsinstellingen in achterstandswijken te maken hebben. Onze aanpak gaat verder dan alleen software: we streven ernaar uitgebreide ondersteuning te bieden, inclusief trainingsmateriaal, onboarding-ondersteuning en toegang tot educatieve tools zoals e-books en digitaal schrijfmateriaal.",
+        "body2": "Het School Development Program start eind november tot medio december 2025 met onze eerste lichting partnerscholen. Naarmate Studious groeit, groeit ook onze capaciteit om meer scholen te ondersteunen. Alle inkomsten uit onze betaalde institutionele abonnementen worden geherinvesteerd in het verbeteren van de toegang voor scholen in nood, waardoor een duurzaam model voor onderwijsgelijkheid ontstaat dat in de loop der tijd sterker wordt."
+      }
+    },
+    "cta": {
+      "apply": {
+        "title": "Aanmelden voor het programma",
+        "description": "Klaar om Studious naar jouw school te halen? Vul ons aanmeldformulier in en we beoordelen het binnen 5-7 werkdagen.",
+        "item1": "Duurt ongeveer 10-15 minuten",
+        "item2": "Geen aanvraagkosten vereist",
+        "item3": "Reactie binnen 5-7 werkdagen",
+        "button": "Start applicatie"
+      }
+    },
+    "status": {
+      "title": "Controleer de status van de aanvraag",
+      "description": "Al aangemeld? Voer uw aanvraag-ID in om de status van uw aanvraag te controleren.",
+      "inputLabel": "Applicatie-ID",
+      "placeholder": "bijv. EXA2025-...",
+      "help": "Nadat u uw aanvraag heeft ingediend, heeft u uw aanvraag-ID per e-mail ontvangen.",
+      "results": {
+        "found": "Toepassing gevonden",
+        "school": "School:",
+        "location": "Locatie:",
+        "submitted": "Ingediend:",
+        "contact": "Contact:",
+        "notFound": {
+          "title": "Applicatie niet gevonden",
+          "body": "Controleer uw applicatie-ID en probeer het opnieuw. Als u problemen blijft ondervinden, neem dan contact met ons op via impact@studious.sh."
+        }
+      },
+      "cards": {
+        "approved": {
+          "title": "🎉 Gefeliciteerd! Je aanvraag is goedgekeurd.",
+          "body": "Controleer uw e-mail voor de volgende stappen om uw account in te stellen."
+        },
+        "underReview": {
+          "title": "⏳ Uw aanvraag wordt momenteel beoordeeld.",
+          "body": "Zodra de beoordeling is voltooid, nemen we per e-mail contact met u op."
+        },
+        "pending": {
+          "title": "📋 Uw aanvraag is ontvangen.",
+          "body": "Ons team gaat binnenkort met de beoordeling beginnen. Verwachte beoordelingstijd: 5-7 werkdagen."
+        }
+      }
+    },
+    "contact": {
+      "title": "Heeft u vragen?",
+      "subtitle": "Ons team staat voor u klaar om u te helpen bij het aanvraagproces",
+      "button": "Stuur ons een e-mail: impact@studious.sh"
+    }
+  },
+  "apply": {
+    "toasts": {
+      "submitted": "Aanvraag succesvol ingediend!"
+    },
+    "errors": {
+      "submitFailed": "Aanvraag indienen mislukt: {bericht}"
+    },
+    "success": {
+      "title": "Aanvraag ingediend!",
+      "subtitle": "Bedankt voor uw aanmelding voor het Studious School Development Program",
+      "applicationId": "Uw applicatie-ID",
+      "saveId": "Bewaar deze ID om de status van uw aanvraag te controleren",
+      "nextSteps": {
+        "title": "Wat gebeurt er nu?",
+        "item1": "Je ontvangt een bevestigingsmail op {email}",
+        "item2": "Ons team zal uw aanvraag binnen 5-7 werkdagen beoordelen",
+        "item3": "We zullen u per e-mail op de hoogte stellen zodra er een beslissing is genomen"
+      },
+      "backToProgram": "Terug naar programma",
+      "returnHome": "Terug naar huis"
+    }
+  },
+  "agenda": {
+    "title": "Agenda",
+    "description": "Bekijk uw schema en komende evenementen met uitgebreide kalenderweergaven",
+    "addEvent": "Gebeurtenis toevoegen",
+    "untitledEvent": "Naamloos evenement",
+    "today": "Vandaag",
+    "previous": "Vorig",
+    "next": "Volgende",
+    "views": {
+      "day": "Dag",
+      "week": "Week",
+      "month": "Maand",
+      "year": "Jaar"
+    }
+  },
+  "chat": {
+    "landing": {
+      "description": "Selecteer een gesprek in de zijbalk om te beginnen met chatten.",
+      "pleaseSignIn": "Meld u aan",
+      "signInRequired": "U moet zijn aangemeld om toegang te krijgen tot de chat.",
+      "title": "Welkom bij Chat"
+    },
+    "page": {
+      "unknown": "Onbekend",
+      "unnamedGroup": "Naamloze groep",
+      "unknownUser": "Onbekende gebruiker",
+      "notFound": {
+        "title": "Gesprek niet gevonden",
+        "description": "Dit gesprek bestaat niet of je hebt er geen toegang toe.",
+        "backToChat": "Terug naar Chat"
+      },
+      "header": {
+        "members": "leden",
+        "markMentionsRead": "Mark vermeldt lezen"
+      },
+      "input": {
+        "placeholderPrefix": "Bericht"
+      },
+      "loading": "Gesprek laden..."
+    }
+  },
+  "notifications": {
+    "title": "Meldingen",
+    "subtitle": "Blijf op de hoogte van je lessen en opdrachten",
+    "badge": {
+      "unread": "{count} ongelezen"
+    },
+    "filters": {
+      "label": "Filter:",
+      "all": "Allemaal ({count})",
+      "unread": "Ongelezen ({count})",
+      "read": "Lees ({count})"
+    },
+    "empty": {
+      "unread": {
+        "title": "Geen ongelezen meldingen",
+        "description": "Helemaal bij! Je hebt geen ongelezen meldingen."
+      },
+      "read": {
+        "title": "Geen leesmeldingen",
+        "description": "Er zijn nog geen meldingen als gelezen gemarkeerd."
+      },
+      "all": {
+        "title": "Nog geen meldingen",
+        "description": "Wanneer u meldingen ontvangt, worden deze hier weergegeven."
+      }
+    },
+    "actions": {
+      "marking": "Markeren...",
+      "markAsRead": "Markeren als gelezen"
+    },
+    "toasts": {
+      "markedAsRead": "Melding gemarkeerd als gelezen"
+    },
+    "meta": {
+      "from": "van"
+    }
+  },
+  "profile": {
+    "title": "Profiel",
+    "description": "Beheer uw persoonlijke gegevens en profielinstellingen",
+    "editProfile": "Profiel bewerken",
+    "saveChanges": "Wijzigingen opslaan",
+    "cancel": "Annuleren",
+    "student": "Student",
+    "personalInformation": {
+      "title": "Persoonlijke gegevens",
+      "description": "Werk uw persoonlijke gegevens en profielinformatie bij",
+      "displayName": "Weergavenaam",
+      "displayNamePlaceholder": "Voer uw weergavenaam in",
+      "displayNameDescription": "Zo zal uw naam voor anderen verschijnen",
+      "location": "Locatie",
+      "locationPlaceholder": "Voer uw locatie in",
+      "locationDescription": "Uw stad, staat of land",
+      "bio": "Was",
+      "bioPlaceholder": "Vertel ons iets over jezelf...",
+      "bioDescription": "Een korte beschrijving van uzelf (maximaal 500 tekens)",
+      "website": "Website",
+      "websitePlaceholder": "https://uw-website.com",
+      "websiteDescription": "Uw persoonlijke website of portfolio"
+    },
+    "accountInformation": {
+      "title": "Accountgegevens",
+      "description": "Uw accountgegevens en inloggegevens",
+      "username": "Gebruikersnaam",
+      "usernameNote": "Gebruikersnaam kan niet worden gewijzigd",
+      "email": "E-mail",
+      "emailNote": "E-mail wordt beheerd in Accountinstellingen",
+      "memberSince": "Lid sinds"
+    },
+    "messages": {
+      "profileUpdated": "Profiel succesvol bijgewerkt",
+      "profileUpdateFailed": "Profiel bijwerken mislukt",
+      "profilePictureSelected": "Profielfoto geselecteerd. Klik op 'Wijzigingen opslaan' om bij te werken.",
+      "avatarSelected": "Avatar geselecteerd. Klik op 'Wijzigingen opslaan' om bij te werken.",
+      "profilePictureUploadFailed": "Het uploaden van een profielfoto is mislukt",
+      "profilePictureSelectFailed": "Het is niet gelukt om een profielfoto te selecteren",
+      "failedToLoadProfile": "Profiel laden mislukt. Probeer het opnieuw."
+    }
+  },
+  "class": {
+    "assignments": "Opdrachten",
+    "students": "studenten",
+    "attendance": "Aanwezigheid",
+    "attachFile": "Bestand bijvoegen",
+    "post": "Na",
+    "posting": "Bericht plaatsen...",
+    "noPosts": "Nog geen berichten",
+    "createFirstPost": "Eerste bericht maken",
+    "grades": {
+      "title": "Cijfers",
+      "subtitle": "Bekijk en beheer de cijfers van studenten",
+      "columns": {
+        "assignment": "Opdracht",
+        "maxPoints": "Maximale punten",
+        "weight": "Gewicht",
+        "graded": "Gegradeerd",
+        "dueDate": "Twee data",
+        "actions": "Acties",
+        "student": "Student",
+        "overallGrade": "Algemene beoordeling",
+        "assignmentsCompleted": "Opdrachten voltooid",
+        "trend": "Trend"
+      },
+      "labels": {
+        "rubric": "Rubriek"
+      },
+      "actions": {
+        "manage": "Beheren",
+        "viewGrades": "Bekijk cijfers",
+        "saving": "Besparing...",
+        "saveChanges": "Wijzigingen opslaan",
+        "preview": "Voorvertoning",
+        "edit": "Bewerking",
+        "delete": "Verwijderen",
+        "createNew": "Nieuw maken"
+      },
+      "overview": {
+        "title": "Klassenoverzicht",
+        "classAverage": "Klasgemiddelde",
+        "totalStudents": "Totaal aantal studenten",
+        "assignments": "Opdrachten",
+        "submissionRate": "Inzendingspercentage"
+      },
+      "assignmentManagement": {
+        "title": "Opdrachtbeheer",
+        "empty": {
+          "title": "Geen opdrachten gevonden",
+          "description": "Maak opdrachten aan om cijfers en instellingen te beheren"
+        },
+        "searchPlaceholder": "Zoekopdrachten..."
+      },
+      "students": {
+        "title": "Studenten",
+        "viewAll": "Bekijk alle studenten",
+        "empty": {
+          "title": "Geen studenten ingeschreven",
+          "description": "Studenten verschijnen hier zodra ze de klas binnenkomen"
+        },
+        "searchPlaceholder": "Zoek studenten..."
+      },
+      "gradeBoundaries": {
+        "title": "Klassegrenzen",
+        "untitled": "Ongetitelde beoordelingsgrens",
+        "empty": {
+          "title": "Er zijn geen cijfergrenzen gemaakt",
+          "description": "Maak beoordelingsgrenzen om cijferbereiken te definiëren"
+        },
+        "previewTitle": "Voorbeeld van beoordelingsgrenzen",
+        "details": {
+          "title": "Details van de grenswaarde",
+          "name": "Naam",
+          "noneDefined": "Geen beoordelingsgrenzen gedefinieerd"
+        }
+      },
+      "rubrics": {
+        "title": "Rubrieken",
+        "untitled": "Rubriek zonder titel",
+        "empty": {
+          "title": "Geen rubrieken aangemaakt",
+          "description": "Maak rubrieken om beoordelingscriteria te definiëren"
+        },
+        "previewTitle": "Rubriekvoorbeeld",
+        "details": {
+          "title": "Rubriekdetails",
+          "name": "Naam",
+          "category": "Categorie",
+          "description": "Beschrijving",
+          "custom": "Aangepast",
+          "noDescription": "Geen beschrijving verstrekt",
+          "noCriteria": "Er zijn geen criteria gevonden in deze rubriek"
+        }
+      },
+      "confirm": {
+        "deleteRubric": "Weet u zeker dat u dit markschema wilt verwijderen?",
+        "deleteGradingBoundary": "Weet u zeker dat u deze beoordelingsgrens wilt verwijderen?"
+      }
+    },
+    "members": {
+      "title": "Leden",
+      "counts": {
+        "totalMembers": "{count} leden"
+      },
+      "actions": {
+        "inviteMember": "Lid uitnodigen",
+        "copy": "Kopiëren",
+        "regenerate": "Regenereren",
+        "message": "Bericht",
+        "viewProfile": "Bekijk profiel",
+        "viewGrades": "Bekijk cijfers",
+        "makeTeacher": "Maak leraar",
+        "makeStudent": "Maak student",
+        "removeFromClass": "Verwijderen uit de klas",
+        "removeAccess": "Toegang verwijderen",
+        "tryAgain": "Probeer het opnieuw"
+      },
+      "labels": {
+        "teacher": "Docent",
+        "student": "Student",
+        "you": "Jij"
+      },
+      "invite": {
+        "title": "Klasuitnodigingscode",
+        "description": "Deel deze code met studenten om deel te nemen aan de les"
+      },
+      "search": {
+        "placeholder": "Zoek leden..."
+      },
+      "tabs": {
+        "students": "Studenten",
+        "teachers": "Leraren"
+      },
+      "students": {
+        "empty": {
+          "title": "Geen studenten gevonden",
+          "matchNone": "Er zijn geen studenten die overeenkomen met \"{query}\"",
+          "noStudents": "Er zijn nog geen studenten bij deze klas gekomen"
+        }
+      },
+      "teachers": {
+        "empty": {
+          "title": "Geen leraren gevonden",
+          "matchNone": "Geen docenten gevonden die overeenkomen met \"{query}\"",
+          "noTeachers": "Er zijn geen extra docenten toegevoegd"
+        }
+      },
+      "toasts": {
+        "inviteRegenerated": "Uitnodigingscode succesvol opnieuw gegenereerd",
+        "copied": "Uitnodigingscode gekopieerd naar klembord",
+        "roleChanged": "Rol gewijzigd naar {role}",
+        "memberRemoved": "Lid succesvol verwijderd"
+      },
+      "errors": {
+        "regenerateFailed": "Het is niet gelukt om de uitnodigingscode opnieuw te genereren",
+        "changeRoleFailed": "Het is niet gelukt om de rol te veranderen",
+        "removeFailed": "Lid verwijderen mislukt",
+        "failedToLoad": "Het laden van leden is mislukt"
+      }
+    },
+    "files": {
+      "title": "Bestanden",
+      "subtitle": "Beheer klasbestanden en bronnen",
+      "actions": {
+        "newFolder": "Nieuwe map",
+        "upload": "Uploaden",
+        "uploadFiles": "Bestanden uploaden",
+        "createFolder": "Map maken",
+        "download": "Download",
+        "share": "Deel",
+        "delete": "Verwijderen",
+        "filter": "Filter",
+        "sort": "Soort"
+      },
+      "toasts": {
+        "folderCreated": "Map succesvol aangemaakt",
+        "folderDeleted": "Map succesvol verwijderd",
+        "folderRenamed": "Map succesvol hernoemd",
+        "folderMoved": "Map succesvol verplaatst",
+        "filesUploaded": "Bestanden succesvol geüpload",
+        "fileDeleted": "Bestand succesvol verwijderd",
+        "fileRenamed": "Bestand succesvol hernoemd",
+        "fileMoved": "Bestand succesvol verplaatst",
+        "downloadStarted": "Download gestart",
+        "shareCopied": "Link delen gekopieerd"
+      },
+      "errors": {
+        "teacherOnly": "Alleen docenten kunnen bestanden wijzigen.",
+        "downloadFailed": "Downloaden mislukt",
+        "shareFailed": "Delen mislukt",
+        "failedToLoad": "Bestanden laden mislukt. Probeer het later opnieuw."
+      },
+      "breadcrumbs": {
+        "classFiles": "Klassebestanden"
+      },
+      "search": {
+        "placeholder": "Zoeken in bestanden"
+      },
+      "selected": "{count} geselecteerd",
+      "filters": {
+        "fileType": "Bestandstype",
+        "documents": "Documenten",
+        "images": "Afbeeldingen",
+        "videos": "Video's",
+        "presentations": "Presentaties"
+      },
+      "sort": {
+        "name": "Naam",
+        "lastModified": "Laatst gewijzigd",
+        "fileSize": "Bestandsgrootte"
+      },
+      "table": {
+        "name": "Naam",
+        "owner": "Eigenaar",
+        "lastModified": "Laatst gewijzigd",
+        "fileSize": "Bestandsgrootte"
+      },
+      "empty": {
+        "title": "Deze map is leeg",
+        "description": "Upload bestanden of maak mappen om te beginnen met het organiseren van uw lesmateriaal.",
+        "searchTitle": "Geen bestanden gevonden",
+        "searchDescription": "Er zijn geen bestanden die overeenkomen met \"{query}\". Probeer een andere zoekterm."
+      }
+    },
+    "settings": {
+      "title": "Klasinstellingen",
+      "subtitle": "Klasdetails en voorkeuren configureren",
+      "labels": {
+        "unsavedChanges": "Niet-opgeslagen wijzigingen"
+      },
+      "actions": {
+        "saving": "Besparing...",
+        "saveChanges": "Wijzigingen opslaan",
+        "deleting": "Verwijderen...",
+        "deleteClass": "Klasse verwijderen",
+        "cancel": "Annuleren"
+      },
+      "sections": {
+        "basicInfo": {
+          "title": "Basisgegevens"
+        },
+        "theme": {
+          "title": "Klasthema",
+          "description": "Kies een thema kleur voor deze klas"
+        },
+        "danger": {
+          "title": "Gevarenzone",
+          "description": "Zodra je een klas verwijdert, is er geen weg meer terug. Hiermee worden alle opdrachten, cijfers en presentielijsten permanent verwijderd en worden alle studenten uit de klas verwijderd."
+        }
+      },
+      "fields": {
+        "className": "Klassenaam",
+        "section": "Sectie",
+        "subject": "Onderwerp"
+      },
+      "placeholders": {
+        "className": "bijvoorbeeld geavanceerde natuurkunde",
+        "section": "bijvoorbeeld AP-101",
+        "subject": "bijvoorbeeld natuurkunde"
+      },
+      "toasts": {
+        "updated": {
+          "title": "Klasse bijgewerkt",
+          "description": "De klasse-instellingen zijn succesvol opgeslagen."
+        },
+        "deleted": {
+          "title": "Klasse verwijderd",
+          "description": "De klas is permanent verwijderd."
+        }
+      },
+      "errors": {
+        "updateFailed": {
+          "title": "Update mislukt",
+          "description": "Het opslaan van de klasinstellingen is mislukt. Probeer het opnieuw."
+        }
+      },
+      "confirm": {
+        "title": "Weet je het absoluut zeker?",
+        "description": "Deze actie kan niet ongedaan worden gemaakt. Hiermee wordt de klasse \"{name}\" permanent verwijderd en worden alle bijbehorende gegevens verwijderd, waaronder:",
+        "items": {
+          "assignments": "Alle opdrachten en inzendingen",
+          "records": "Alle cijfers en aanwezigheidsgegevens",
+          "students": "Alle studenten worden uit de klas verwijderd",
+          "events": "Alle klassenevenementen en aankondigingen"
+        },
+        "confirmDelete": "Ja, klasse verwijderen"
+      }
+    },
+    "syllabus": {
+      "title": "Leerplan",
+      "subtitle": "Cursusoverzicht en academische informatie",
+      "actions": {
+        "saveChanges": "Wijzigingen opslaan",
+        "cancel": "Annuleren",
+        "edit": "Syllabus bewerken"
+      },
+      "errors": {
+        "failedToLoad": "Het is niet gelukt om de syllabus te laden",
+        "tryLater": "Probeer het later opnieuw."
+      },
+      "stats": {
+        "totalAssignments": "Totaal aantal opdrachten",
+        "completionRate": "Voltooiingspercentage",
+        "totalPoints": "Totaal aantal punten",
+        "upcoming": "Aankomende"
+      },
+      "overview": {
+        "title": "Cursusoverzicht",
+        "placeholder": "Vul een cursusoverzicht, doelstellingen en andere belangrijke informatie in...",
+        "helper": "Voer uw cursusgegevens, leerdoelen, beleid en andere belangrijke details in.",
+        "empty": {
+          "title": "Nog geen syllabusinhoud",
+          "description": "Klik op 'Syllabus bewerken' om cursusinformatie, leerdoelen, beleid en meer toe te voegen."
+        }
+      },
+      "assignments": {
+        "title": "Cursusopdrachten",
+        "gradedCount": "{gegradeerd} van {totaal} gegradeerd",
+        "totalPoints": "{totaal} totale punten",
+        "empty": {
+          "title": "Nog geen opdrachten",
+          "description": "Zodra u opdrachten hebt gemaakt, worden deze hier weergegeven."
+        }
+      },
+      "table": {
+        "assignment": "Opdracht",
+        "dueDate": "Twee data",
+        "points": "Punten",
+        "weight": "Gewicht",
+        "status": "Status",
+        "pts": "punten"
+      },
+      "status": {
+        "graded": "Gegradeerd",
+        "pending": "In behandeling"
+      },
+      "courseInfo": {
+        "title": "Cursusinformatie",
+        "basic": {
+          "title": "Basisgegevens",
+          "className": "Klassenaam",
+          "section": "Sectie",
+          "subject": "Onderwerp"
+        },
+        "stats": {
+          "title": "Cursusstatistieken",
+          "totalAssignments": "Totaal aantal opdrachten",
+          "gradedAssignments": "Beoordeelde opdrachten",
+          "totalPoints": "Totaal aantal punten"
+        }
+      }
+    }
+  },
+  "assignment": {
+    "dueDate": "Twee data",
+    "submit": "Indienen",
+    "grade": "Cijfer",
+    "feedback": "Feedback",
+    "submissions": "Inzendingen",
+    "open": "Open",
+    "closed": "Gesloten",
+    "assignment": "Opdracht",
+    "assignments": "Opdrachten",
+    "newAssignment": "Nieuwe opdracht",
+    "createAssignment": "Opdracht maken",
+    "viewAssignment": "Bekijk opdracht",
+    "allAssignments": "Alle opdrachten",
+    "searchAssignments": "Zoekopdrachten...",
+    "noAssignmentsFound": "Geen opdrachten gevonden",
+    "createFirstAssignment": "Maak je eerste opdracht om te beginnen",
+    "newSection": "Nieuwe sectie",
+    "pts": "punten",
+    "overdue": "(Verlopen)",
+    "assignmentDrop": "Laat de opdracht hier vallen om naar het hoogste niveau te gaan",
+    "sectionDeletionConfirmation": "Weet u zeker dat u deze sectie wilt verwijderen? Alle opdrachten worden naar het hoogste niveau verplaatst.",
+    "assignmentDeletionConfirmation": "Weet u zeker dat u deze toewijzing wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt.",
+    "manageAndTrack": "Beheer en volg klasopdrachten",
+    "filters": "Filters"
+  },
+  "pagination": {
+    "previous": "Vorig",
+    "next": "Volgende",
+    "goToPreviousPage": "Ga naar de vorige pagina",
+    "goToNextPage": "Ga naar de volgende pagina",
+    "morePages": "Meer pagina's"
+  },
+  "about": {
+    "titleStatement1": "Ons verhaal",
+    "titleStatement2": "Gebouwd uit frustratie,",
+    "titleStatement3": "opnieuw uitgevonden met AI",
+    "titleStatement4": "Na jarenlang te hebben geworsteld met verouderde, gefragmenteerde schoolportalen, besloten we het leermanagementsysteem te bouwen waar we altijd al van hadden gedroomd.",
+    "problemParagraph1": "Studious begon in 2023",
+    "problemParagraph2": "toen een groep studenten en docenten bij elkaar kwamen met een gedeelde frustratie: bestaande schoolportalen waren onhandig, traag en gebouwd voor een ander tijdperk van onderwijs.",
+    "problemDetailParagraph": "We moesten met meerdere platforms jongleren: één voor cijfers, één voor opdrachten en één voor communicatie. Docenten besteedden meer tijd aan het worstelen met software dan aan lesgeven. Studenten misten deadlines omdat meldingen verstopt zaten in verouderde interfaces.",
+    "betterWay": "Wij wisten dat er een betere manier moest zijn.",
+    "solutionParagraph1": "Geïnspireerd door moderne hulpmiddelen voor samenwerking zoals Linear en Notion, zijn we aan de slag gegaan met het creëren van een leermanagementsysteem dat aanvoelde als",
+    "solutionParagraph2": "snel, intuïtief en prettig in gebruik.",
+    "solutionParagraph3": "Een systeem waarin AI niet als gimmick wordt ingezet, maar als een echte productiviteitsverhoger voor zowel docenten als studenten.",
+    "launchParagraph": "Na twee jaar ontwikkeling hebben we Studious officieel gelanceerd op 17 oktober 2025. We bevinden ons nu in de vroege toegangsfase en zijn klaar om scholen wereldwijd te helpen hun leerervaring te transformeren.",
+    "journey1": "Onze reis",
+    "journey2": "Twee jaar bouwen, leren en groeien",
+    "journeyBeginningDate": "2023",
+    "journeyBeginning1": "Het begin",
+    "journeyBeginning2": "Eerste prototype ontwikkeld. Kernfuncties: klassenbeheer, opdrachten en agenda-integratie.",
+    "journeyBetaLaunchDate": "31 oktober 2025",
+    "journeyBetaLaunch1": "Openbare bètalancering",
+    "journeyBetaLaunch2": "Officiële publieke bètatestlancering van Studious LMS. Scholen wereldwijd krijgen er al vroeg toegang toe, met volledige platformmogelijkheden.",
+    "journeyPilotSchoolsDate": "November 2025",
+    "journeyPilotSchools1": "Pilot Schools Programma",
+    "journeyPilotSchools2": "Het opzetten van partnerschappen met pilotscholen om feedback uit de praktijk te verzamelen en het platform te verfijnen op basis van uiteenlopende onderwijsbehoeften.",
+    "journeyBetaCompleteDate": "December 2025",
+    "journeyBetaComplete1": "Beta voltooid",
+    "journeyBetaComplete2": "Overgang van bèta naar volledige productieversie. Platformstabilisatie met alle kernfuncties volledig getest en geoptimaliseerd.",
+    "journeySDPDate": "Januari 2026",
+    "journeySDP1": "Lancering van het School Development Program",
+    "journeySDP2": "Bekendmaking van de eerste lichting scholen die zijn toegelaten tot het Studious School Development Program, waarmee gratis toegang wordt verleend aan in aanmerking komende instellingen.",
+    "missionStatement1": "Onze missie is eenvoudig",
+    "missionStatement2": "Om een leermanagementsysteem te bouwen dat wij – als studenten, docenten en levenslang lerenden – elke dag willen gebruiken.",
+    "joinAppeal1": "Ga met ons mee op deze reis",
+    "joinAppeal2": "Maak deel uit van de toekomst van het onderwijs",
+    "requestEarlyAccess": "Vroegtijdige toegang aanvragen",
+    "pressKit": "Perskit"
+  },
+  "pricing": {
+    "pricingStatement1": "Transparante prijzen",
+    "pricingStatement2": "Kies het juiste plan voor uw instelling",
+    "pricingStatement3": "Eenvoudige, transparante prijzen zonder verborgen kosten. Alle abonnementen bevatten basisfuncties met schaalbare opties.",
+    "mostPopular": "Meest populair",
+    "priceUnit": "/gebruiker/maand",
+    "pricingStarterTitle": "Starter",
+    "pricingStarterPrice": "Vrij",
+    "pricingStarterNote": "Beta-toegang inbegrepen",
+    "pricingStarterDescription": "Perfect voor kleine klassen en pilotprogramma's",
+    "pricingStarterPerk1": "Maximaal 30 studenten",
+    "pricingStarterPerk2": "Onbeperkte lessen",
+    "pricingStarterPerk3": "Kernfuncties (opdrachten, agenda, cijfers)",
+    "pricingStarterPerk4": "AI-assistent (5 chats/maand)",
+    "pricingStarterPerk5": "Gemeenschapsondersteuning",
+    "pricingStarterPerk6": "5 GB opslag",
+    "pricingStarterLink": "Gratis aan de slag",
+    "pricingSchoolTitle": "School",
+    "pricingSchoolPriceNote": "Jaarlijks gefactureerd of $ 6/maand",
+    "pricingSchoolNote": "Voor scholen met maximaal 1.000 leerlingen",
+    "pricingSchoolPerk1": "Onbeperkt aantal studenten",
+    "pricingSchoolPerk2": "Onbeperkte lessen",
+    "pricingSchoolPerk3": "Alle kernfuncties",
+    "pricingSchoolPerk4": "AI-assistent (onbeperkt aantal zoekopdrachten)",
+    "pricingSchoolPerk5": "Eerste in de rij voor toegang tot de bètaversie van Studious CMS",
+    "pricingSchoolPerk6": "API-toegang",
+    "pricingSchoolLink": "Aan de slag"
+  },
+  "components": {
+    "earlyAccess": {
+      "title": "Vroegtijdige toegang aanvragen",
+      "description": "Sluit je aan bij de wachtlijst en wees een van de eersten die Studious LMS ervaart",
+      "fields": {
+        "email": "E-mailadres *",
+        "institutionSize": "Grootte van de instelling *"
+      },
+      "placeholders": {
+        "email": "jij@school.edu",
+        "institutionSize": "Selecteer de grootte van de instelling"
+      },
+      "sizes": {
+        "tiny": "1-30 studenten (individuele docent)",
+        "small": "31-100 leerlingen (kleine school)",
+        "medium": "101-500 studenten (middelbare school)",
+        "large": "501-1.000 studenten (grote school)",
+        "institution": "1.001+ studenten (instelling)"
+      },
+      "actions": {
+        "submit": "Toegang aanvragen",
+        "submitting": "Verzenden...",
+        "done": "Klaar"
+      },
+      "success": {
+        "title": "Je staat op de lijst!",
+        "description": "Zodra we klaar voor u zijn, sturen we u een e-mail op {email}."
+      },
+      "toasts": {
+        "success": "Met succes toegevoegd aan de wachtlijst!"
+      }
+    },
+    "joinClass": {
+      "title": "Doe mee aan een les",
+      "buttonLabel": "Doe mee met de les",
+      "fields": {
+        "inviteCode": "Klasuitnodigingscode"
+      },
+      "placeholders": {
+        "inviteCode": "bijvoorbeeld MATH101-2025"
+      },
+      "help": "Voer de uitnodigingscode in die u van uw docent heeft gekregen",
+      "howTo": {
+        "title": "Hoe krijg je een uitnodigingscode:",
+        "item1": "Vraag je docent om de uitnodigingscode voor de klas",
+        "item2": "Controleer uw e-mail voor instructies over inschrijving voor de cursus",
+        "item3": "Zoek de code op uw syllabus of cursusmateriaal"
+      },
+      "actions": {
+        "cancel": "Annuleren",
+        "join": "Doe mee met de les",
+        "joining": "Lid worden..."
+      },
+      "toasts": {
+        "success": "U bent succesvol bij de les aangekomen.",
+        "errorInvalid": "Ongeldige uitnodigingscode of klas niet gevonden.",
+        "errorEmpty": "Voer een geldige uitnodigingscode in."
+      }
+    },
+    "createClass": {
+      "title": "Nieuwe klasse maken",
+      "buttonLabel": "Klasse maken",
+      "fields": {
+        "title": "Klastitel *",
+        "section": "Sectie *",
+        "subject": "Onderwerp *",
+        "semester": "Semester",
+        "credits": "Credits",
+        "meetingTime": "Vergadertijd",
+        "location": "Locatie",
+        "description": "Beschrijving"
+      },
+      "placeholders": {
+        "title": "bijvoorbeeld geavanceerde natuurkunde",
+        "section": "bijvoorbeeld AP-101",
+        "subject": "bijvoorbeeld natuurkunde",
+        "semester": "bijv. voorjaar 2025",
+        "credits": "bijv. 3",
+        "meetingTime": "bijv. ma-wo-vr 10:00-11:00 uur",
+        "location": "bijv. kamer 205, wetenschapsgebouw",
+        "description": "Beschrijf de inhoud en doelstellingen van de les."
+      },
+      "actions": {
+        "cancel": "Annuleren",
+        "create": "Klasse maken",
+        "creating": "Creëren..."
+      },
+      "toasts": {
+        "success": "Klasse {name} is succesvol aangemaakt.",
+        "errorRequired": "Vul alle verplichte velden in.",
+        "errorFailed": "Het aanmaken van de klas is mislukt. Probeer het later opnieuw."
+      }
+    },
+    "createFolder": {
+      "titleCreate": "Nieuwe map maken",
+      "titleEdit": "Map bewerken",
+      "fields": {
+        "name": "Mapnaam *",
+        "description": "Beschrijving (optioneel)",
+        "color": "Mapkleur"
+      },
+      "placeholders": {
+        "name": "Voer mapnaam in",
+        "description": "Voeg een beschrijving voor deze map toe..."
+      },
+      "help": {
+        "name": "Kies een beschrijvende naam voor uw map",
+        "description": "{count}/500 tekens"
+      },
+      "actions": {
+        "cancel": "Annuleren",
+        "create": "Map maken",
+        "update": "Map bijwerken",
+        "creating": "Creëren...",
+        "updating": "Bijwerken..."
+      },
+      "toasts": {
+        "errorRequired": "Mapnaam is vereist",
+        "errorInvalidChars": "Mapnaam bevat ongeldige tekens",
+        "errorTooLong": "Mapnaam is te lang (maximaal 255 tekens)"
+      }
+    },
+    "createAssignment": {
+      "title": "Nieuwe opdracht maken",
+      "buttonLabel": "Opdracht maken",
+      "sections": {
+        "details": "Opdrachtdetails",
+        "configuration": "Configuratie",
+        "grading": "Beoordeling en beoordeling",
+        "attachments": "Bijlagen"
+      },
+      "fields": {
+        "title": "Titel *",
+        "instructions": "Instructies *",
+        "dueDate": "Twee data",
+        "type": "Opdrachttype",
+        "section": "Sectie",
+        "rubric": "Rubriek",
+        "gradeScale": "Cijferschaal",
+        "maxPoints": "Maximale punten",
+        "weight": "Gewicht (%)",
+        "sectionColor": "Sectiekleur"
+      },
+      "placeholders": {
+        "title": "bijv. Hoofdstuk 5 Quiz, Natuurkunde Lab Rapport",
+        "instructions": "Geef studenten duidelijke instructies...",
+        "maxPoints": "100",
+        "weight": "1.0",
+        "chooseSection": "Sectie kiezen",
+        "chooseRubric": "Rubriek kiezen",
+        "chooseGradeScale": "Kies een cijferschaal",
+        "newSectionName": "Voer een sectienaam in..."
+      },
+      "types": {
+        "homework": "Huiswerk",
+        "quiz": "Quiz",
+        "test": "Test",
+        "project": "Project",
+        "essay": "Essay",
+        "discussion": "Discussie",
+        "presentation": "Presentatie",
+        "lab": "Laboratorium",
+        "other": "Ander"
+      },
+      "options": {
+        "graded": {
+          "label": "Beoordeelde opdracht",
+          "description": "Opnemen in cijferlijst"
+        },
+        "draft": {
+          "label": "Opslaan als concept",
+          "description": "Verbergen voor studenten"
+        }
+      },
+      "section": {
+        "none": "Geen sectie",
+        "createNew": "Nieuwe sectie maken"
+      },
+      "rubric": {
+        "none": "Geen rubriek",
+        "untitled": "Rubriek zonder titel",
+        "autoCalculate": "Punten worden automatisch berekend op basis van de geselecteerde rubriek"
+      },
+      "gradeScale": {
+        "default": "Standaardschaal",
+        "untitled": "Ongetitelde schaal"
+      },
+      "files": {
+        "uploadButton": "Bestanden uploaden",
+        "dropZone": "Zet bestanden hier neer of klik om te uploaden",
+        "dropZoneHint": "Ondersteunt alle bestandstypen • Maximaal 50 MB per bestand",
+        "filesUploaded": "{geüpload} van {totaal} bestanden geüpload"
+      },
+      "status": {
+        "creating": "Opdracht maken...",
+        "settingUp": "Toewijzingsdetails instellen...",
+        "preparing": "Bestandsuploads voorbereiden...",
+        "uploading": "Bestanden uploaden naar cloudopslag...",
+        "processing": "Verwerken van geüploade bestanden...",
+        "finalizing": "Opdracht afronden...",
+        "assigning": "Toewijzen aan studenten...",
+        "almostDone": "Bijna klaar...",
+        "uploadingFile": "{name} uploaden...",
+        "creatingProgress": "Opdracht maken",
+        "draftStatus": "Wordt opgeslagen als concept",
+        "publishedStatus": "Wordt gepubliceerd voor studenten"
+      },
+      "actions": {
+        "cancel": "Annuleren",
+        "create": "Opdracht maken",
+        "saveDraft": "Concept opslaan",
+        "creating": "Creëren...",
+        "add": "Toevoegen"
+      },
+      "toasts": {
+        "successCreated": "Opdracht succesvol aangemaakt.",
+        "successDraft": "Opdracht succesvol opgeslagen als concept.",
+        "errorRequired": "Vul alle verplichte velden in.",
+        "errorFailed": "Het aanmaken van de opdracht is mislukt. Probeer het opnieuw.",
+        "errorUploadFailed": "Uploaden van {name} mislukt",
+        "sectionCreated": "Sectie \"{name}\" is succesvol aangemaakt."
+      }
+    },
+    "createAnnouncement": {
+      "title": "Aankondiging maken",
+      "buttonLabel": "Post aankondiging",
+      "fields": {
+        "title": "Titel van de aankondiging *",
+        "content": "Inhoud *",
+        "priority": "Prioriteitsniveau",
+        "expiryDate": "Vervaldatum (optioneel)",
+        "publishDate": "Publicatiedatum",
+        "publishTime": "Publicatietijd"
+      },
+      "placeholders": {
+        "title": "bijv. labrapport inleveren op vrijdag",
+        "content": "Schrijf hier de inhoud van uw aankondiging...",
+        "publishDate": "Onmiddellijk publiceren indien leeg"
+      },
+      "priority": {
+        "low": "Laag",
+        "normal": "Normaal",
+        "high": "Hoog",
+        "urgent": "Dringend"
+      },
+      "sections": {
+        "settings": "Instellingen",
+        "notifications": "Meldingen",
+        "schedule": "Planning publiceren (optioneel)"
+      },
+      "settings": {
+        "pinned": {
+          "label": "Vastpinnen bovenaan",
+          "description": "Houd deze aankondiging bovenaan de lijst"
+        },
+        "urgent": {
+          "label": "Markeer als urgent",
+          "description": "Accentueer met urgente styling"
+        }
+      },
+      "notifications": {
+        "email": {
+          "label": "E-mailmelding verzenden",
+          "description": "Studenten via e-mail op de hoogte stellen"
+        },
+        "push": {
+          "label": "Stuur pushmelding",
+          "description": "Melding via mobiele app verzenden"
+        }
+      },
+      "actions": {
+        "cancel": "Annuleren",
+        "publishNow": "Nu publiceren",
+        "schedule": "Aankondiging van het schema"
+      },
+      "toasts": {
+        "success": "Aankondiging gemaakt",
+        "errorRequired": "Vul alle verplichte velden in."
+      }
+    }
+  }
+}

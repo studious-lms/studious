@@ -1,0 +1,97 @@
+{
+  "attendance": {
+    "title": "Klassevenemang och närvaro",
+    "subtitle": "Spåra studenters närvaro för varje evenemang",
+    "saving": {
+      "auto": "Sparar automatiskt...",
+      "unsaved": "Osparade ändringar",
+      "saving": "Sparande..."
+    },
+    "table": {
+      "date": "Datum",
+      "eventName": "Händelsenamn",
+      "attendanceRate": "Närvarofrekvens",
+      "attendance": "Närvaro",
+      "actions": "Åtgärder"
+    },
+    "actions": {
+      "viewDetails": "Visa detaljer",
+      "editEvent": "Redigera händelse",
+      "deleteEvent": "Ta bort händelse",
+      "createEvent": "Skapa händelse",
+      "saveAttendance": "Spara närvaro",
+      "markAllPresent": "Markera alla närvarande",
+      "markAllAbsent": "Markera alla som frånvarande"
+    },
+    "allEvents": {
+      "title": "Alla evenemang",
+      "description": "Komplett historik över klasshändelser och närvaroregister",
+      "searchPlaceholder": "Sök händelser...",
+      "empty": {
+        "title": "Inga händelser hittades",
+        "description": "Skapa ditt första evenemang för att börja spåra närvaro"
+      }
+    },
+    "eventsList": {
+      "pickDate": "Välj datum",
+      "untitled": "Namnlös händelse",
+      "empty": {
+        "noEventsOnDate": "Inga händelser detta datum",
+        "noEventsOnDateDescription": "Inga evenemang schemalagda för {date}. Försök att välja ett annat datum eller skapa ett nytt evenemang.",
+        "noEvents": "Inga händelser hittades",
+        "noEventsDescription": "Skapa ditt första evenemang för att börja spåra närvaro",
+        "createForDate": "Skapa händelse för detta datum",
+        "createFirst": "Skapa första händelsen"
+      }
+    },
+    "summary": {
+      "title": "Händelsesammanfattning",
+      "selectedEvent": "Vald händelse",
+      "total": "Total",
+      "attendanceRate": "Närvarofrekvens"
+    },
+    "roster": {
+      "title": "Studentlista",
+      "description": "Klicka på statusknapparna för att markera närvaro för varje elev",
+      "empty": {
+        "title": "Inga studenter inskrivna",
+        "description": "Eleverna visas här när de går med i klassen"
+      }
+    },
+    "prompt": {
+      "title": "Välj en händelse",
+      "description": "Välj en händelse ovan för att visa och hantera elevnärvaro"
+    },
+    "status": {
+      "present": "Presentera",
+      "late": "Sent",
+      "absent": "Frånvarande",
+      "notTaken": "Inte upptagen"
+    },
+    "student": {
+      "title": "Min närvaro",
+      "subtitle": "Spåra din närvaro för {className}",
+      "attendanceRate": "Närvarofrekvens",
+      "history": "Närvarohistorik",
+      "event": "Händelse",
+      "status": "Status",
+      "searchPlaceholder": "Sök händelser...",
+      "empty": {
+        "title": "Inga närvaroregister",
+        "description": "Din närvaro kommer att visas här när händelser har skapats och närvaro registrerats"
+      }
+    },
+    "deleteDialog": {
+      "title": "Ta bort händelse",
+      "description": "Är du säker på att du vill ta bort \"{eventName}\"? Den här åtgärden kan inte ångras och kommer att ta bort alla tillhörande närvarouppgifter.",
+      "deleting": "Tar bort...",
+      "deleteButton": "Ta bort händelse"
+    },
+    "toast": {
+      "attendanceSaved": "Närvaro sparad",
+      "attendanceSaveFailed": "Kunde inte spara närvaro",
+      "eventDeleted": "Händelsen har raderats",
+      "eventDeleteFailed": "Misslyckades med att ta bort händelsen"
+    }
+  }
+}

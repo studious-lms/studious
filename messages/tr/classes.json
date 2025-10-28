@@ -1,0 +1,21 @@
+{
+  "classes": {
+    "title": "Sınıflar",
+    "description": "Öğretiminizi ve kayıtlı sınıflarınızı yönetin",
+    "joinClass": "Sınıfa Katıl",
+    "createClass": "Sınıf Oluştur",
+    "searchPlaceholder": "Sınıfları ara...",
+    "teaching": "Öğretim",
+    "enrolled": "Kayıtlı",
+    "noClassesFound": "Sınıf bulunamadı",
+    "noTeachingClassesFound": "\"{query}\" ile eşleşen öğretim sınıfı bulunamadı",
+    "noEnrolledClassesFound": "\"{query}\" ile eşleşen kayıtlı sınıf bulunamadı",
+    "noClassesYet": "Henüz ders yok",
+    "noClassesYetDesc": "Ödevleri, notları ve öğrenci etkileşimlerini yönetmeye başlamak için ilk sınıfınızı oluşturun.",
+    "noEnrolledClasses": "Kayıtlı ders yok",
+    "noEnrolledClassesDesc": "Öğretmeninizin sağladığı davet kodunu veya bağlantıyı kullanarak bir sınıfa katılın.",
+    "classDeleted": "Sınıf başarıyla silindi",
+    "classDeleteFailed": "Sınıf silinemedi",
+    "failedToLoad": "Sınıflar yüklenemedi"
+  }
+}

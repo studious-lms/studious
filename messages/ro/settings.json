@@ -1,0 +1,66 @@
+{
+  "settings": {
+    "title": "Setări de clasă",
+    "subtitle": "Configurați detaliile și preferințele clasei",
+    "labels": {
+      "unsavedChanges": "Modificări nesalvate"
+    },
+    "actions": {
+      "saving": "Economisire...",
+      "saveChanges": "Salvați modificările",
+      "deleting": "Se șterge...",
+      "deleteClass": "Ștergeți clasa",
+      "cancel": "Anula"
+    },
+    "sections": {
+      "basicInfo": {
+        "title": "Informații de bază"
+      },
+      "theme": {
+        "title": "Tema clasei",
+        "description": "Alegeți o culoare tematică pentru această clasă"
+      },
+      "danger": {
+        "title": "Zonă periculoasă",
+        "description": "După ce ștergeți un curs, nu mai există cale de întoarcere. Această acțiune va șterge definitiv toate temele, notele, înregistrările de prezență și va elimina toți elevii din curs."
+      }
+    },
+    "fields": {
+      "className": "Numele clasei",
+      "section": "Secțiune",
+      "subject": "Subiect"
+    },
+    "placeholders": {
+      "className": "de exemplu, Fizică Avansată",
+      "section": "de exemplu, AP-101",
+      "subject": "de exemplu, Fizică"
+    },
+    "toasts": {
+      "updated": {
+        "title": "Clasa actualizată",
+        "description": "Setările clasei au fost salvate cu succes."
+      },
+      "deleted": {
+        "title": "Curs șterse",
+        "description": "Clasa a fost ștearsă definitiv."
+      }
+    },
+    "errors": {
+      "updateFailed": {
+        "title": "Actualizare eșuată",
+        "description": "Setările clasei nu au putut fi salvate. Vă rugăm să încercați din nou."
+      }
+    },
+    "confirm": {
+      "title": "Ești absolut sigur?",
+      "description": "Această acțiune nu poate fi anulată. Aceasta va șterge definitiv clasa „{name}” și va elimina toate datele asociate, inclusiv:",
+      "items": {
+        "assignments": "Toate temele și lucrările trimise",
+        "records": "Toate notele și înregistrările de prezență",
+        "students": "Toți elevii vor fi eliminați din clasă",
+        "events": "Toate evenimentele și anunțurile clasei"
+      },
+      "confirmDelete": "Da, ștergeți cursul"
+    }
+  }
+}

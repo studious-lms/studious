@@ -1,0 +1,1218 @@
+{
+  "common": {
+    "save": "Salva",
+    "cancel": "Anula",
+    "delete": "Şterge",
+    "edit": "Edita",
+    "submit": "Trimite",
+    "close": "Aproape",
+    "back": "Spate",
+    "next": "Următorul",
+    "loading": "Încărcare...",
+    "search": "Căutare",
+    "filter": "Filtra",
+    "sort": "Sorta",
+    "viewAll": "Vezi toate",
+    "noData": "Nu sunt disponibile date",
+    "export": "Export"
+  },
+  "time": {
+    "today": "Astăzi",
+    "tomorrow": "Mâine",
+    "yesterday": "Ieri",
+    "thisWeek": "În această săptămână",
+    "nextWeek": "Săptămâna viitoare",
+    "lastWeek": "Săptămâna trecută"
+  },
+  "errors": {
+    "somethingWentWrong": "Ceva nu a mers bine",
+    "tryAgain": "Încearcă din nou",
+    "pageNotFound": "Pagina nu a fost găsită",
+    "unauthorized": "Acces neautorizat"
+  },
+  "auth": {
+    "login": {
+      "title": "Bine ai revenit",
+      "subtitle": "Conectați-vă la contul dvs. Studious",
+      "username": "Nume de utilizator",
+      "password": "Parolă",
+      "forgotPassword": "Aţi uitat parola?",
+      "signIn": "Conectare",
+      "signingIn": "Conectare...",
+      "noAccount": "Nu aveți un cont?",
+      "signUp": "Înscrie-te",
+      "successMessage": "Conectat cu succes",
+      "cancel": "Anula"
+    },
+    "signup": {
+      "title": "Creează-ți contul",
+      "subtitle": "Alătură-te Studious și începe să înveți",
+      "signUp": "Înregistrare",
+      "firstName": "Prenume",
+      "lastName": "Nume",
+      "email": "E-mail",
+      "password": "Parolă",
+      "confirmPassword": "Confirmați parola",
+      "firstNamePlaceholder": "Prenume",
+      "lastNamePlaceholder": "Nume",
+      "emailPlaceholder": "Introdu adresa ta de e-mail",
+      "passwordPlaceholder": "Creați o parolă",
+      "confirmPasswordPlaceholder": "Confirmați parola",
+      "agreeToTerms": "Sunt de acord cu",
+      "termsOfService": "Termeni și condiții",
+      "and": "şi",
+      "privacyPolicy": "Politica de confidențialitate",
+      "createAccount": "Creează cont",
+      "creatingAccount": "Se creează contul...",
+      "alreadyHaveAccount": "Ai deja un cont?",
+      "signIn": "Conectare",
+      "passwordMismatch": "Parolele nu se potrivesc",
+      "termsRequired": "Trebuie să fiți de acord cu termenii și condițiile",
+      "accountCreated": "Cont creat cu succes!",
+      "signUpFailed": "Nu s-a putut crea contul"
+    },
+    "verification": {
+      "notVerified": "Cont neverificat",
+      "message": "Contul tău trebuie verificat înainte de a te putea conecta. Te rugăm să verifici adresa ta de e-mail pentru un link de verificare.",
+      "emailSentTo": "E-mail de verificare trimis către:",
+      "resendEmail": "Retrimiteți e-mailul de verificare",
+      "backToSignIn": "Înapoi la Conectare",
+      "emailSent": "E-mail de verificare trimis!",
+      "checkInbox": "Vă rugăm să verificați inbox-ul și folderul de spam.",
+      "enterEmail": "Introdu adresa ta de e-mail",
+      "sending": "Se trimite...",
+      "sendEmail": "Trimiteți e-mail"
+    }
+  },
+  "marketing": {
+    "navbar": {
+      "requestEarlyAccess": "Solicitați acces anticipat"
+    },
+    "hero": {
+      "badge": "Platformă modernă de învățare",
+      "title1": "Perfect, fără distrageri",
+      "title2": "învățare pentru școlile moderne",
+      "subtitle": "Studious LMS integrează inteligența artificială, calendarele în timp real și comunicarea în clasă într-o singură platformă coerentă — concepută pentru a ajuta profesorii să predea și elevii să prospere.",
+      "requestEarlyAccess": "Solicitați acces anticipat",
+      "watchDemo": "Urmăriți demonstrația",
+      "altDashboard": "Tablou de bord al platformei"
+    },
+    "problem": {
+      "title": "Portalurile școlare tradiționale sunt fragmentate și învechite",
+      "issue1": "Profesorii pierd timpul schimbând între mai multe instrumente",
+      "issue2": "Studenții se luptă cu organizarea și termenele limită",
+      "issue3": "IA rămâne insuficient integrată în fluxurile de lucru școlare reale"
+    },
+    "response": {
+      "title1": "LMS-ul Studious unifică predarea, învățarea,",
+      "title2": "și comunicare într-un singur spațiu de lucru",
+      "subtitle": "Construit cu framework-uri de ultimă generație și un design centrat pe om, este conceput pentru a se adapta la școli de orice dimensiune."
+    },
+    "features": {
+      "title": "Caracteristici cheie",
+      "subtitle": "Tot ce ai nevoie pentru a gestiona experiențe de învățare moderne",
+      "ai": {
+        "title": "AI Assistant",
+        "description": "Ajută la generarea materialelor de studiu, la rezumarea conținutului și la notare"
+      },
+      "classManagement": {
+        "title": "Managementul clasei",
+        "description": "Organizați cursurile, temele și prezența fără efort"
+      },
+      "assignments": {
+        "title": "Sarcini",
+        "description": "Creați, colectați și notați eficient lucrările trimise de studenți"
+      },
+      "calendar": {
+        "title": "Calendaristic",
+        "description": "Sincronizare în timp real cu teme, lecții și evenimente"
+      },
+      "analytics": {
+        "title": "Analiză",
+        "description": "Vizualizați informații despre performanță, participare și implicare"
+      },
+      "communication": {
+        "title": "Comunicare",
+        "description": "Mesagerie și anunțuri încorporate pentru colaborare unificată"
+      }
+    },
+    "quote": {
+      "text": "Fiecare funcționalitate din Studious a fost concepută pentru a reduce dificultățile — nu pentru a le adăuga."
+    },
+    "pricing": {
+      "title": "Alegeți planul potrivit pentru instituția dumneavoastră",
+      "subtitle": "Prețuri simple și transparente, fără taxe ascunse. Toate abonamentele includ funcții de bază cu opțiuni scalabile.",
+      "starter": {
+        "title": "Starter",
+        "price": "Gratuit",
+        "note": "Acces beta inclus",
+        "description": "Perfect pentru clase mici și programe pilot",
+        "perk1": "Până la 30 de studenți",
+        "perk2": "Clase nelimitate",
+        "perk3": "Funcții de bază (teme, calendar, note)",
+        "perk4": "Asistent AI (5 chat-uri/lună)",
+        "perk5": "Sprijin comunitar",
+        "perk6": "5 GB de stocare",
+        "button": "Începeți gratuit"
+      },
+      "school": {
+        "title": "Şcoală",
+        "price": "5 dolari",
+        "priceUnit": "/utilizator/lună",
+        "note": "Facturat anual sau 6 USD/lună",
+        "description": "Pentru școli cu până la 1.000 de elevi",
+        "perk1": "Studenți nelimitați",
+        "perk2": "Clase nelimitate",
+        "perk3": "Toate caracteristicile de bază",
+        "perk4": "Asistent AI (interogări nelimitate)",
+        "perk5": "Primii în listă pentru acces beta la Studious CMS",
+        "button": "Începeți"
+      },
+      "institution": {
+        "title": "Instituţie",
+        "price": "Personalizat",
+        "note": "Adaptat nevoilor dumneavoastră",
+        "description": "Pentru școli și universități mari (peste 1.000 de studenți)",
+        "perk1": "Totul în planul școlii",
+        "perk2": "Asistență prioritară 24/7",
+        "perk3": "Stocare nelimitată",
+        "perk4": "Instruire personalizată și integrare",
+        "perk5": "Cheltuieli mai mici per utilizator",
+        "button": "Contactați departamentul de vânzări"
+      },
+      "mostPopular": "Cele mai populare",
+      "earlyBird": "🎉 Primii utilizatori primesc <strong>3 luni gratuite</strong> la abonamentele anuale + asistență dedicată pentru integrare"
+    },
+    "schoolProgram": {
+      "badge": "Impact social",
+      "title": "Programul de Dezvoltare a Școlilor Studioase",
+      "subtitle": "Credem că fiecare elev merită acces la instrumente moderne de învățare, indiferent de situația economică a școlii sale.",
+      "feature1Title": "Acces 100% gratuit",
+      "feature1Description": "Acces complet la platformă cu toate funcțiile pentru școlile eligibile",
+      "feature2Title": "Suport dedicat",
+      "feature2Description": "Integrare și formare prioritară pentru profesori și personal",
+      "feature3Title": "Resurse educaționale",
+      "feature3Description": "Materiale didactice gratuite și suport curricular",
+      "applyNow": "Aplică acum",
+      "learnMore": "Află mai multe",
+      "eligibilityTitle": "Eligibilitatea programului",
+      "qualifyingTitle": "Școli calificate:",
+      "qualify1": "Școli publice în comunități defavorizate",
+      "qualify2": "Instituții de învățământ non-profit înregistrate",
+      "qualify3": "Școlile din regiunile în curs de dezvoltare",
+      "qualify4": "Școli Titlul I (SUA) sau echivalent",
+      "commitmentTitle": "Angajamentul nostru:",
+      "commitment": "10% dintre clienții noștri plătitori susțin accesul gratuit pentru școlile aflate în nevoie.",
+      "launchTitle": "Lansarea programului:",
+      "launch": "Ianuarie 2026 • Aplicațiile sunt acum deschise"
+    },
+    "futureDevelopments": {
+      "title": "Dezvoltări viitoare",
+      "subtitle": "Foaia noastră de parcurs pentru transformarea educației",
+      "cas": {
+        "title": "Perspectiva CAS",
+        "description": "Sprijinirea școlilor subfinanțate prin donații și materiale, făcând educația de calitate accesibilă tuturor."
+      },
+      "features": {
+        "title": "Caracteristici Perspectivă",
+        "description": "Extinderea suportului pentru studenții care utilizează inteligența artificială și construirea de integrări API pentru diverse sisteme educaționale din întreaga lume."
+      },
+      "launch": {
+        "title": "Perspectiva de lansare",
+        "description": "Prezentări la școli, universități și conferințe pentru a remodela experiența de învățare."
+      }
+    },
+    "cta": {
+      "title": "Ești gata să redefinești modul în care școala ta învață și predă?",
+      "subtitle": "Alătură-te viitorului educației cu Studious LMS",
+      "requestAccess": "Solicitați acces",
+      "partnerWithUs": "Parteneriat cu noi",
+      "tagline": "Studious LMS — Învățare modernă, simplificată."
+    }
+  },
+  "press": {
+    "badge": "Presă și media",
+    "title": "Studios în știri",
+    "subtitle": "Resurse media, resurse de brand și informații despre companie pentru jurnaliști și creatori de conținut",
+    "factsheet": {
+      "title": "Fișă informativă a companiei",
+      "subtitle": "Informații rapide despre Studious LMS",
+      "companyInfo": "Informații despre companie",
+      "founded": "Fondat",
+      "hq": "Sediu",
+      "industry": "Industrie",
+      "website": "Site web",
+      "status": "Stare",
+      "currentStatus": "Starea actuală",
+      "launchDate": "Data lansării",
+      "currentPhase": "Faza curentă",
+      "targetMarkets": "Piețe țintă",
+      "teamSize": "Dimensiunea echipei",
+      "devHqs": "Sediile centrale de dezvoltare"
+    },
+    "contact": {
+      "title": "Întrebări de presă",
+      "subtitle": "Pentru solicitări de presă, interviuri și solicitări media",
+      "sl": "De obicei, răspundem în termen de 24 de ore",
+      "general": "Pentru întrebări generale și asistență"
+    }
+  },
+  "program": {
+    "hero": {
+      "badge": "Inițiativa de Impact Social",
+      "title": "Programul de Dezvoltare a Școlilor Studioase",
+      "subtitle": "Asigurarea accesului gratuit la tehnologii moderne de învățare pentru școlile fără mijloace economice"
+    },
+    "commitment": {
+      "revenue": "Venituri angajate",
+      "cohort": "Lansarea primei cohorte",
+      "free": "Acces gratuit"
+    },
+    "about": {
+      "mission": {
+        "title": "Misiunea noastră",
+        "body1": "Programul de Dezvoltare a Școlilor Studioase își propune să sprijine școlile defavorizate, oferindu-le acces gratuit și nelimitat la platforma noastră de management al învățării. Recunoaștem că tehnologia este un factor dominant în forța de muncă a viitorului, însă multe instituții de învățământ nu au acces la astfel de resurse. Prin intermediul acestui program, aducem tehnologie modernă de management al învățării în școlile care au cea mai mare nevoie de ea."
+      },
+      "aims": {
+        "title": "Obiectivele programului",
+        "body1": "Prin intermediul unor conversații ample cu profesori și profesioniști din domeniul educației, am identificat lacune semnificative în infrastructura digitală de învățare disponibilă multor școli. Multe sisteme de management al învățării de pe piață nu oferă o experiență de utilizare coerentă și intuitivă, iar școlile din zonele defavorizate adesea nu își permit accesul la tehnologia educațională modernă.",
+        "body2": "Programul nostru abordează direct aceste provocări. Veniturile din abonamentele noastre instituționale plătite ne permit să oferim școlilor defavorizate acces complet la Studious LMS și la instrumentele educaționale aferente. Acest model sustenabil ne permite să reducem decalajul digital, îmbunătățind în același timp platforma noastră pentru toți utilizatorii."
+      },
+      "receive": {
+        "title": "Ce vei primi",
+        "body1": "Școlile acceptate în program beneficiază de experiența completă a platformei Studious - nu de o versiune limitată sau simplificată. Aceasta include un număr nelimitat de conturi pentru studenți și profesori, toate funcțiile premium (asistent AI, analize avansate, colaborare în timp real), asistență tehnică prioritară, specialiști dedicați în integrare, resurse de instruire continuă și acces la toate actualizările și îmbunătățirile viitoare.",
+        "body2": "Dincolo de software-ul în sine, oferim asistență completă pentru a ne asigura că școala dumneavoastră poate maximiza beneficiile platformei. Echipa noastră va lucra direct cu administratorii și profesorii dumneavoastră pentru a personaliza sistemul în funcție de nevoile dumneavoastră specifice, va oferi instruire practică și va rămâne disponibilă pentru asistență continuă pe tot parcursul procesului dumneavoastră."
+      },
+      "qualifies": {
+        "title": "Cine se califică",
+        "body1": "Prioritizăm școlile care deservesc elevii care ar beneficia cel mai mult de pe urma îmbunătățirii tehnologiei educaționale. Aceasta include școlile publice din comunități subdeservite sau defavorizate din punct de vedere economic, instituțiile de învățământ non-profit înregistrate care prezintă constrângeri financiare, școlile din regiuni sau țări în curs de dezvoltare, școlile din SUA care beneficiază de Titlul I și echivalentele lor internaționale, precum și orice instituție de învățământ care poate demonstra o nevoie financiară reală, alături de un angajament de îmbunătățire a rezultatelor elevilor.",
+        "body2": "Evaluăm fiecare aplicație individual, luând în considerare nu doar indicatorii financiari, ci și misiunea școlii dumneavoastră, populația pe care o deserviți și planurile dumneavoastră de utilizare a Studious pentru îmbunătățirea educației. Scopul nostru este să colaborăm cu școli care vor beneficia cu adevărat de platforma noastră și o vor utiliza eficient pentru a îmbunătăți experiențele de învățare ale elevilor."
+      },
+      "impact": {
+        "title": "Viziunea noastră pentru impact",
+        "body1": "Prin oferirea de acces gratuit școlilor la tehnologii moderne de gestionare a învățării, ne propunem să eliminăm una dintre principalele bariere cu care se confruntă instituțiile de învățământ din zonele defavorizate. Abordarea noastră merge dincolo de software - ne angajăm să oferim asistență completă, inclusiv resurse de instruire, asistență la integrare și acces la instrumente educaționale precum cărți electronice și materiale de papetărie digitale.",
+        "body2": "Programul de Dezvoltare Școlară va fi lansat la sfârșitul lunii noiembrie - mijlocul lunii decembrie 2025, cu prima noastră cohortă de școli partenere. Pe măsură ce Studious crește, crește și capacitatea noastră de a sprijini mai multe școli. Toate veniturile generate din abonamentele noastre instituționale plătite sunt reinvestite în extinderea accesului pentru școlile aflate în nevoie, creând un model sustenabil de echitate educațională care se consolidează în timp."
+      }
+    },
+    "cta": {
+      "apply": {
+        "title": "Aplicați la program",
+        "description": "Ești gata să aduci Studious la școala ta? Completează formularul nostru de înscriere și îl vom analiza în termen de 5-7 zile lucrătoare.",
+        "item1": "Durează aproximativ 10-15 minute",
+        "item2": "Nu se percepe nicio taxă de înscriere",
+        "item3": "Răspuns în termen de 5-7 zile lucrătoare",
+        "button": "Porniți aplicația"
+      }
+    },
+    "status": {
+      "title": "Verificați starea aplicației",
+      "description": "Ați aplicat deja? Introduceți ID-ul aplicației pentru a verifica starea acesteia.",
+      "inputLabel": "ID-ul aplicației",
+      "placeholder": "de exemplu, EXA2025-...",
+      "help": "Ați primit ID-ul aplicației prin e-mail după trimiterea acesteia.",
+      "results": {
+        "found": "Aplicație găsită",
+        "school": "Şcoală:",
+        "location": "Locaţie:",
+        "submitted": "Trimis:",
+        "contact": "Contact:",
+        "notFound": {
+          "title": "Aplicația nu a fost găsită",
+          "body": "Verificați ID-ul aplicației și încercați din nou. Dacă problemele persistă, contactați-ne la impact@studious.sh"
+        }
+      },
+      "cards": {
+        "approved": {
+          "title": "🎉 Felicitări! Cererea ta a fost aprobată.",
+          "body": "Verifică-ți e-mailul pentru următorii pași pentru configurarea contului tău."
+        },
+        "underReview": {
+          "title": "⏳ Cererea dumneavoastră este în curs de examinare.",
+          "body": "Vă vom contacta prin e-mail după finalizarea revizuirii."
+        },
+        "pending": {
+          "title": "📋 Cererea dumneavoastră a fost primită.",
+          "body": "Echipa noastră va începe în curând să îl revizuiască. Timp estimat de revizuire: 5-7 zile lucrătoare."
+        }
+      }
+    },
+    "contact": {
+      "title": "Aveți întrebări?",
+      "subtitle": "Echipa noastră este aici pentru a vă ajuta în procesul de aplicare",
+      "button": "Trimiteți-ne un e-mail: impact@studious.sh"
+    }
+  },
+  "apply": {
+    "toasts": {
+      "submitted": "Aplicație trimisă cu succes!"
+    },
+    "errors": {
+      "submitFailed": "Nu s-a putut trimite aplicația: {message}"
+    },
+    "success": {
+      "title": "Cerere trimisă!",
+      "subtitle": "Vă mulțumim că ați aplicat la Programul de Dezvoltare a Școlilor Studioase",
+      "applicationId": "ID-ul aplicației dvs.",
+      "saveId": "Salvați acest ID pentru a verifica starea aplicației dvs.",
+      "nextSteps": {
+        "title": "Ce se întâmplă în continuare?",
+        "item1": "Vei primi un e-mail de confirmare la adresa {email}",
+        "item2": "Echipa noastră va analiza cererea dumneavoastră în termen de 5-7 zile lucrătoare",
+        "item3": "Vă vom anunța prin e-mail odată ce se ia o decizie"
+      },
+      "backToProgram": "Înapoi la program",
+      "returnHome": "Întoarcerea acasă"
+    }
+  },
+  "agenda": {
+    "title": "Ordinea de zi",
+    "description": "Vizualizați-vă programul și evenimentele viitoare cu ajutorul unor vizualizări complete ale calendarului",
+    "addEvent": "Adăugați eveniment",
+    "untitledEvent": "Eveniment fără titlu",
+    "today": "Astăzi",
+    "previous": "Anterior",
+    "next": "Următorul",
+    "views": {
+      "day": "Zi",
+      "week": "Săptămână",
+      "month": "Lună",
+      "year": "An"
+    }
+  },
+  "chat": {
+    "landing": {
+      "description": "Selectați o conversație din bara laterală pentru a începe discuția.",
+      "pleaseSignIn": "Vă rugăm să vă conectați",
+      "signInRequired": "Trebuie să fii autentificat pentru a accesa chatul.",
+      "title": "Bun venit pe Chat"
+    },
+    "page": {
+      "unknown": "Necunoscut",
+      "unnamedGroup": "Grup fără nume",
+      "unknownUser": "Utilizator necunoscut",
+      "notFound": {
+        "title": "Conversație negăsită",
+        "description": "Această conversație nu există sau nu aveți acces la ea.",
+        "backToChat": "Înapoi la Chat"
+      },
+      "header": {
+        "members": "membri",
+        "markMentionsRead": "Marcu menționează că a citit"
+      },
+      "input": {
+        "placeholderPrefix": "Mesaj"
+      },
+      "loading": "Se încarcă conversația..."
+    }
+  },
+  "notifications": {
+    "title": "Notificări",
+    "subtitle": "Rămâi la curent cu cursurile și temele tale",
+    "badge": {
+      "unread": "{count} necitit(ă)"
+    },
+    "filters": {
+      "label": "Filtra:",
+      "all": "Toate ({count})",
+      "unread": "Necitit ({count})",
+      "read": "Citit ({count})"
+    },
+    "empty": {
+      "unread": {
+        "title": "Nicio notificare necitită",
+        "description": "Am ajuns la zi! Nu aveți notificări necitite."
+      },
+      "read": {
+        "title": "Nicio notificare de citire",
+        "description": "Nicio notificare nu a fost marcată încă ca citită."
+      },
+      "all": {
+        "title": "Nicio notificare încă",
+        "description": "Când primiți notificări, acestea vor apărea aici."
+      }
+    },
+    "actions": {
+      "marking": "Marcare...",
+      "markAsRead": "Marchează ca citit"
+    },
+    "toasts": {
+      "markedAsRead": "Notificare marcată ca citită"
+    },
+    "meta": {
+      "from": "din"
+    }
+  },
+  "profile": {
+    "title": "Profil",
+    "description": "Gestionați-vă informațiile personale și setările profilului",
+    "editProfile": "Editați profilul",
+    "saveChanges": "Salvați modificările",
+    "cancel": "Anula",
+    "student": "Student",
+    "personalInformation": {
+      "title": "Informații personale",
+      "description": "Actualizați-vă datele personale și informațiile de profil",
+      "displayName": "Numele de afișare",
+      "displayNamePlaceholder": "Introduceți numele afișat",
+      "displayNameDescription": "Așa va apărea numele tău pentru ceilalți",
+      "location": "Locaţie",
+      "locationPlaceholder": "Introduceți locația dvs.",
+      "locationDescription": "Orașul, statul sau țara dvs.",
+      "bio": "A fost",
+      "bioPlaceholder": "Povestește-ne despre tine...",
+      "bioDescription": "O scurtă descriere despre tine (maxim 500 de caractere)",
+      "website": "Site web",
+      "websitePlaceholder": "https://site-ul-tau.com",
+      "websiteDescription": "Site-ul web personal sau portofoliul tău"
+    },
+    "accountInformation": {
+      "title": "Informații despre cont",
+      "description": "Detaliile contului dvs. și informațiile de conectare",
+      "username": "Nume de utilizator",
+      "usernameNote": "Numele de utilizator nu poate fi schimbat",
+      "email": "E-mail",
+      "emailNote": "E-mailul este gestionat în Setările contului",
+      "memberSince": "Membru din"
+    },
+    "messages": {
+      "profileUpdated": "Profilul a fost actualizat cu succes",
+      "profileUpdateFailed": "Nu s-a putut actualiza profilul",
+      "profilePictureSelected": "Fotografie de profil selectată. Faceți clic pe „Salvați modificările” pentru a actualiza.",
+      "avatarSelected": "Avatar selectat. Faceți clic pe „Salvați modificările” pentru a actualiza.",
+      "profilePictureUploadFailed": "Nu s-a putut încărca fotografia de profil",
+      "profilePictureSelectFailed": "Nu s-a putut selecta fotografia de profil",
+      "failedToLoadProfile": "Profilul nu a putut fi încărcat. Vă rugăm să încercați din nou."
+    }
+  },
+  "class": {
+    "assignments": "Sarcini",
+    "students": "studenți",
+    "attendance": "Prezență",
+    "attachFile": "Atașați fișierul",
+    "post": "Post",
+    "posting": "Se postează...",
+    "noPosts": "Nicio postare încă",
+    "createFirstPost": "Creează prima postare",
+    "grades": {
+      "title": "Note",
+      "subtitle": "Vizualizați și gestionați notele elevilor",
+      "columns": {
+        "assignment": "Sarcină",
+        "maxPoints": "Puncte maxime",
+        "weight": "Greutate",
+        "graded": "Gradat",
+        "dueDate": "Două întâlniri",
+        "actions": "Acțiuni",
+        "student": "Student",
+        "overallGrade": "Nota generală",
+        "assignmentsCompleted": "Sarcini finalizate",
+        "trend": "Tendinţă"
+      },
+      "labels": {
+        "rubric": "Rubrică"
+      },
+      "actions": {
+        "manage": "Gestionează",
+        "viewGrades": "Vizualizați notele",
+        "saving": "Economisire...",
+        "saveChanges": "Salvați modificările",
+        "preview": "Previzualizare",
+        "edit": "Edita",
+        "delete": "Şterge",
+        "createNew": "Creare Nou"
+      },
+      "overview": {
+        "title": "Prezentare generală a clasei",
+        "classAverage": "Media clasei",
+        "totalStudents": "Total studenți",
+        "assignments": "Sarcini",
+        "submissionRate": "Rata de trimitere"
+      },
+      "assignmentManagement": {
+        "title": "Gestionarea sarcinilor",
+        "empty": {
+          "title": "Nu s-au găsit teme",
+          "description": "Creați teme pentru a gestiona notele și setările"
+        },
+        "searchPlaceholder": "Căutați sarcini..."
+      },
+      "students": {
+        "title": "Studenți",
+        "viewAll": "Vezi toți studenții",
+        "empty": {
+          "title": "Niciun student înscris",
+          "description": "Studenții vor apărea aici odată ce se alătură cursului"
+        },
+        "searchPlaceholder": "Caută studenți..."
+      },
+      "gradeBoundaries": {
+        "title": "Limite de grad",
+        "untitled": "Limită de gradare fără titlu",
+        "empty": {
+          "title": "Nu au fost create limite de grad",
+          "description": "Creați limite de gradare pentru a defini intervalele de gradare"
+        },
+        "previewTitle": "Previzualizare limite gradare",
+        "details": {
+          "title": "Detalii despre limitele de nivelare",
+          "name": "Nume",
+          "noneDefined": "Nu sunt definite limite de clasificare"
+        }
+      },
+      "rubrics": {
+        "title": "Rubrici",
+        "untitled": "Rubrică fără titlu",
+        "empty": {
+          "title": "Nu au fost create rubrici",
+          "description": "Creați rubrici pentru a defini criteriile de evaluare"
+        },
+        "previewTitle": "Previzualizare rubrică",
+        "details": {
+          "title": "Detalii rubrică",
+          "name": "Nume",
+          "category": "Categorie",
+          "description": "Descriere",
+          "custom": "Personalizat",
+          "noDescription": "Nu a fost furnizată nicio descriere",
+          "noCriteria": "Nu s-au găsit criterii în această rubrică"
+        }
+      },
+      "confirm": {
+        "deleteRubric": "Sigur vrei să ștergi această schemă de marcare?",
+        "deleteGradingBoundary": "Sigur doriți să ștergeți această limită de gradare?"
+      }
+    },
+    "members": {
+      "title": "Membri",
+      "counts": {
+        "totalMembers": "{count} membri"
+      },
+      "actions": {
+        "inviteMember": "Invită membru",
+        "copy": "Copie",
+        "regenerate": "Regenera",
+        "message": "Mesaj",
+        "viewProfile": "Vizualizare profil",
+        "viewGrades": "Vizualizați notele",
+        "makeTeacher": "Fă-ți profesorul",
+        "makeStudent": "Faceți student",
+        "removeFromClass": "Eliminare din clasă",
+        "removeAccess": "Eliminați accesul",
+        "tryAgain": "Încearcă din nou"
+      },
+      "labels": {
+        "teacher": "Profesor",
+        "student": "Student",
+        "you": "Tu"
+      },
+      "invite": {
+        "title": "Cod de invitație la curs",
+        "description": "Distribuiți acest cod elevilor pentru a se alătura cursului"
+      },
+      "search": {
+        "placeholder": "Căutați membri..."
+      },
+      "tabs": {
+        "students": "Studenți",
+        "teachers": "Profesori"
+      },
+      "students": {
+        "empty": {
+          "title": "Nu s-au găsit studenți",
+          "matchNone": "Niciun student nu corespunde cu „{query}”",
+          "noStudents": "Niciun elev nu s-a alăturat încă acestui curs"
+        }
+      },
+      "teachers": {
+        "empty": {
+          "title": "Nu s-au găsit profesori",
+          "matchNone": "Niciun profesor nu corespunde cu „{query}”",
+          "noTeachers": "Nu au fost adăugați profesori suplimentari"
+        }
+      },
+      "toasts": {
+        "inviteRegenerated": "Codul de invitație a fost regenerat cu succes.",
+        "copied": "Codul de invitație a fost copiat în clipboard",
+        "roleChanged": "Rolul a fost schimbat în {role}",
+        "memberRemoved": "Membru eliminat cu succes"
+      },
+      "errors": {
+        "regenerateFailed": "Codul de invitație nu a putut fi regenerat.",
+        "changeRoleFailed": "Nu s-a putut schimba rolul",
+        "removeFailed": "Nu s-a putut elimina membrul",
+        "failedToLoad": "Nu s-au putut încărca membrii"
+      }
+    },
+    "files": {
+      "title": "Fișiere",
+      "subtitle": "Gestionarea fișierelor și resurselor clasei",
+      "actions": {
+        "newFolder": "Dosar nou",
+        "upload": "Încărcare",
+        "uploadFiles": "Încărcați fișiere",
+        "createFolder": "Creați un folder",
+        "download": "Descărcare",
+        "share": "Distribuie",
+        "delete": "Şterge",
+        "filter": "Filtra",
+        "sort": "Sorta"
+      },
+      "toasts": {
+        "folderCreated": "Dosarul a fost creat cu succes",
+        "folderDeleted": "Folderul a fost șters cu succes",
+        "folderRenamed": "Dosarul a fost redenumit cu succes",
+        "folderMoved": "Dosarul a fost mutat cu succes",
+        "filesUploaded": "Fișierele au fost încărcate cu succes",
+        "fileDeleted": "Fișierul a fost șters cu succes",
+        "fileRenamed": "Fișierul a fost redenumit cu succes",
+        "fileMoved": "Fișierul a fost mutat cu succes",
+        "downloadStarted": "Descărcarea a început",
+        "shareCopied": "Linkul de partajare a fost copiat"
+      },
+      "errors": {
+        "teacherOnly": "Doar profesorii pot modifica fișierele.",
+        "downloadFailed": "Descărcarea a eșuat",
+        "shareFailed": "Partajarea a eșuat",
+        "failedToLoad": "Nu s-au putut încărca fișierele. Vă rugăm să încercați din nou mai târziu."
+      },
+      "breadcrumbs": {
+        "classFiles": "Fișiere de clasă"
+      },
+      "search": {
+        "placeholder": "Căutare în fișiere"
+      },
+      "selected": "{count} selectate",
+      "filters": {
+        "fileType": "Tip de fișier",
+        "documents": "Documente",
+        "images": "Imagini",
+        "videos": "Videoclipuri",
+        "presentations": "Prezentări"
+      },
+      "sort": {
+        "name": "Nume",
+        "lastModified": "Ultima modificare",
+        "fileSize": "Dimensiunea fișierului"
+      },
+      "table": {
+        "name": "Nume",
+        "owner": "Proprietar",
+        "lastModified": "Ultima modificare",
+        "fileSize": "Dimensiunea fișierului"
+      },
+      "empty": {
+        "title": "Acest folder este gol",
+        "description": "Încărcați fișiere sau creați foldere pentru a începe să vă organizați materialele pentru clasă.",
+        "searchTitle": "Nu s-au găsit fișiere",
+        "searchDescription": "Niciun fișier nu corespunde cu „{query}”. Încercați un alt termen de căutare."
+      }
+    },
+    "settings": {
+      "title": "Setări de clasă",
+      "subtitle": "Configurați detaliile și preferințele clasei",
+      "labels": {
+        "unsavedChanges": "Modificări nesalvate"
+      },
+      "actions": {
+        "saving": "Economisire...",
+        "saveChanges": "Salvați modificările",
+        "deleting": "Se șterge...",
+        "deleteClass": "Ștergeți clasa",
+        "cancel": "Anula"
+      },
+      "sections": {
+        "basicInfo": {
+          "title": "Informații de bază"
+        },
+        "theme": {
+          "title": "Tema clasei",
+          "description": "Alegeți o culoare tematică pentru această clasă"
+        },
+        "danger": {
+          "title": "Zonă periculoasă",
+          "description": "După ce ștergeți un curs, nu mai există cale de întoarcere. Această acțiune va șterge definitiv toate temele, notele, înregistrările de prezență și va elimina toți elevii din curs."
+        }
+      },
+      "fields": {
+        "className": "Numele clasei",
+        "section": "Secțiune",
+        "subject": "Subiect"
+      },
+      "placeholders": {
+        "className": "de exemplu, Fizică Avansată",
+        "section": "de exemplu, AP-101",
+        "subject": "de exemplu, Fizică"
+      },
+      "toasts": {
+        "updated": {
+          "title": "Clasa actualizată",
+          "description": "Setările clasei au fost salvate cu succes."
+        },
+        "deleted": {
+          "title": "Curs șterse",
+          "description": "Clasa a fost ștearsă definitiv."
+        }
+      },
+      "errors": {
+        "updateFailed": {
+          "title": "Actualizare eșuată",
+          "description": "Setările clasei nu au putut fi salvate. Vă rugăm să încercați din nou."
+        }
+      },
+      "confirm": {
+        "title": "Ești absolut sigur?",
+        "description": "Această acțiune nu poate fi anulată. Aceasta va șterge definitiv clasa „{name}” și va elimina toate datele asociate, inclusiv:",
+        "items": {
+          "assignments": "Toate temele și lucrările trimise",
+          "records": "Toate notele și înregistrările de prezență",
+          "students": "Toți elevii vor fi eliminați din clasă",
+          "events": "Toate evenimentele și anunțurile clasei"
+        },
+        "confirmDelete": "Da, ștergeți cursul"
+      }
+    },
+    "syllabus": {
+      "title": "Programă",
+      "subtitle": "Prezentare generală a cursului și informații academice",
+      "actions": {
+        "saveChanges": "Salvați modificările",
+        "cancel": "Anula",
+        "edit": "Editați programa"
+      },
+      "errors": {
+        "failedToLoad": "Nu s-a putut încărca programa",
+        "tryLater": "Vă rugăm să încercați din nou mai târziu."
+      },
+      "stats": {
+        "totalAssignments": "Total sarcini",
+        "completionRate": "Rata de finalizare",
+        "totalPoints": "Total puncte",
+        "upcoming": "Viitoare"
+      },
+      "overview": {
+        "title": "Prezentare generală a cursului",
+        "placeholder": "Introduceți prezentarea generală a cursului, obiectivele și alte informații importante...",
+        "helper": "Introduceți informațiile despre curs, obiectivele de învățare, politicile și alte detalii importante.",
+        "empty": {
+          "title": "Încă nu există conținut pentru programa didactică",
+          "description": "Faceți clic pe „Modificați programa” pentru a adăuga informații despre curs, obiective de învățare, politici și multe altele."
+        }
+      },
+      "assignments": {
+        "title": "Teme de curs",
+        "gradedCount": "{notat} din {total} notate",
+        "totalPoints": "{total} puncte totale",
+        "empty": {
+          "title": "Nicio sarcină încă",
+          "description": "Temele vor apărea aici odată ce sunt create."
+        }
+      },
+      "table": {
+        "assignment": "Sarcină",
+        "dueDate": "Două întâlniri",
+        "points": "Puncte",
+        "weight": "Greutate",
+        "status": "Stare",
+        "pts": "puncte"
+      },
+      "status": {
+        "graded": "Gradat",
+        "pending": "În așteptare"
+      },
+      "courseInfo": {
+        "title": "Informații despre curs",
+        "basic": {
+          "title": "Informații de bază",
+          "className": "Numele clasei",
+          "section": "Secțiune",
+          "subject": "Subiect"
+        },
+        "stats": {
+          "title": "Statistici ale cursului",
+          "totalAssignments": "Total sarcini",
+          "gradedAssignments": "Teme notate",
+          "totalPoints": "Total puncte"
+        }
+      }
+    }
+  },
+  "assignment": {
+    "dueDate": "Două întâlniri",
+    "submit": "Trimite",
+    "grade": "Grad",
+    "feedback": "Feedback",
+    "submissions": "Trimiteri",
+    "open": "Deschide",
+    "closed": "Închis",
+    "assignment": "Sarcină",
+    "assignments": "Sarcini",
+    "newAssignment": "Sarcină nouă",
+    "createAssignment": "Creați o sarcină",
+    "viewAssignment": "Vizualizare temă",
+    "allAssignments": "Toate temele",
+    "searchAssignments": "Căutați sarcini...",
+    "noAssignmentsFound": "Nu s-au găsit teme",
+    "createFirstAssignment": "Creează-ți prima temă pentru a începe",
+    "newSection": "Secțiune nouă",
+    "pts": "puncte",
+    "overdue": "(Restanțat)",
+    "assignmentDrop": "Plasați tema aici pentru a trece la nivelul superior",
+    "sectionDeletionConfirmation": "Sigur doriți să ștergeți această secțiune? Toate sarcinile vor fi mutate la nivelul superior.",
+    "assignmentDeletionConfirmation": "Sigur vrei să ștergi această sarcină? Această acțiune nu poate fi anulată.",
+    "manageAndTrack": "Gestionați și urmăriți temele pentru curs",
+    "filters": "Filtre"
+  },
+  "pagination": {
+    "previous": "Anterior",
+    "next": "Următorul",
+    "goToPreviousPage": "Mergi la pagina anterioară",
+    "goToNextPage": "Mergi la pagina următoare",
+    "morePages": "Mai multe pagini"
+  },
+  "about": {
+    "titleStatement1": "Povestea noastră",
+    "titleStatement2": "Construit din frustrare,",
+    "titleStatement3": "reimaginat cu inteligență artificială",
+    "titleStatement4": "După ani de zile în care ne-am luptat cu portaluri școlare învechite și fragmentate, am decis să construim sistemul de management al învățării pe care ne-am dorit dintotdeauna să-l avem.",
+    "problemParagraph1": "Studious a început în 2023",
+    "problemParagraph2": "când un grup de elevi și educatori s-au reunit cu o frustrare comună: portalurile școlare existente erau greoaie, lente și construite pentru o altă eră a educației.",
+    "problemDetailParagraph": "Ne-am trezit jonglând cu mai multe platforme — una pentru note, alta pentru teme, a treia pentru comunicare. Profesorii petreceau mai mult timp luptând cu software-ul decât predând. Elevii ratau termenele limită pentru că notificările erau îngropate în interfețe învechite.",
+    "betterWay": "Știam că trebuie să existe o cale mai bună.",
+    "solutionParagraph1": "Inspirându-ne din instrumentele moderne de colaborare precum Linear și Notion, ne-am propus să creăm un sistem de management al învățării care să se simtă...",
+    "solutionParagraph2": "rapid, intuitiv și plăcut de utilizat.",
+    "solutionParagraph3": "Unul care a integrat inteligența artificială nu ca pe o truc, ci ca un multiplicator real al productivității atât pentru profesori, cât și pentru elevi.",
+    "launchParagraph": "După doi ani de dezvoltare, am lansat oficial Studious pe 17 octombrie 2025. Acum suntem în acces timpuriu, gata să ajutăm școlile din întreaga lume să își transforme experiența de învățare.",
+    "journey1": "Călătoria noastră",
+    "journey2": "Doi ani de construire, învățare și creștere",
+    "journeyBeginningDate": "2023",
+    "journeyBeginning1": "Începutul",
+    "journeyBeginning2": "Primul prototip dezvoltat. Caracteristici principale: gestionarea clasei, teme și integrarea calendarului.",
+    "journeyBetaLaunchDate": "31 octombrie 2025",
+    "journeyBetaLaunch1": "Lansare beta publică",
+    "journeyBetaLaunch2": "Lansarea oficială a beta-testării publice a Studious LMS. Accesul anticipat este disponibil pentru școlile din întreaga lume, cu funcționalități complete ale platformei.",
+    "journeyPilotSchoolsDate": "Noiembrie 2025",
+    "journeyPilotSchools1": "Programul Școlilor Pilot",
+    "journeyPilotSchools2": "Lansarea de parteneriate cu școli pilot pentru a colecta feedback din lumea reală și a rafina platforma pe baza unor nevoi educaționale diverse.",
+    "journeyBetaCompleteDate": "Decembrie 2025",
+    "journeyBetaComplete1": "Beta finalizată",
+    "journeyBetaComplete2": "Tranziție de la versiunea beta la versiunea completă de producție. Stabilizarea platformei cu toate funcțiile de bază testate și optimizate complet.",
+    "journeySDPDate": "ianuarie 2026",
+    "journeySDP1": "Lansarea Programului de Dezvoltare Școlară",
+    "journeySDP2": "Anunțăm prima cohortă de școli acceptate în Programul de Dezvoltare a Școlilor Studioase, care oferă acces gratuit instituțiilor eligibile.",
+    "missionStatement1": "Misiunea noastră este simplă",
+    "missionStatement2": "Pentru a construi sistemul de management al învățării pe care noi - ca elevi, profesori și cursanți pe tot parcursul vieții - am dori să-l folosim în fiecare zi.",
+    "joinAppeal1": "Alătură-te nouă în această călătorie",
+    "joinAppeal2": "Fii parte din viitorul educației",
+    "requestEarlyAccess": "Solicitați acces anticipat",
+    "pressKit": "Dosar de presă"
+  },
+  "pricing": {
+    "pricingStatement1": "Prețuri transparente",
+    "pricingStatement2": "Alegeți planul potrivit pentru instituția dumneavoastră",
+    "pricingStatement3": "Prețuri simple și transparente, fără taxe ascunse. Toate abonamentele includ funcții de bază cu opțiuni scalabile.",
+    "mostPopular": "Cele mai populare",
+    "priceUnit": "/utilizator/lună",
+    "pricingStarterTitle": "Starter",
+    "pricingStarterPrice": "Gratuit",
+    "pricingStarterNote": "Acces beta inclus",
+    "pricingStarterDescription": "Perfect pentru clase mici și programe pilot",
+    "pricingStarterPerk1": "Până la 30 de studenți",
+    "pricingStarterPerk2": "Clase nelimitate",
+    "pricingStarterPerk3": "Funcții de bază (teme, calendar, note)",
+    "pricingStarterPerk4": "Asistent AI (5 chat-uri/lună)",
+    "pricingStarterPerk5": "Sprijin comunitar",
+    "pricingStarterPerk6": "5 GB de stocare",
+    "pricingStarterLink": "Începeți gratuit",
+    "pricingSchoolTitle": "Şcoală",
+    "pricingSchoolPriceNote": "Facturat anual sau 6 USD/lună",
+    "pricingSchoolNote": "Pentru școli cu până la 1.000 de elevi",
+    "pricingSchoolPerk1": "Studenți nelimitați",
+    "pricingSchoolPerk2": "Clase nelimitate",
+    "pricingSchoolPerk3": "Toate caracteristicile de bază",
+    "pricingSchoolPerk4": "Asistent AI (interogări nelimitate)",
+    "pricingSchoolPerk5": "Primii în listă pentru acces beta la Studious CMS",
+    "pricingSchoolPerk6": "Acces API",
+    "pricingSchoolLink": "Începeți"
+  },
+  "components": {
+    "earlyAccess": {
+      "title": "Solicitați acces anticipat",
+      "description": "Alătură-te listei de așteptare și fii printre primii care experimentează Studious LMS",
+      "fields": {
+        "email": "Adresa de e-mail *",
+        "institutionSize": "Mărimea instituției *"
+      },
+      "placeholders": {
+        "email": "you@school.edu",
+        "institutionSize": "Selectați dimensiunea instituției"
+      },
+      "sizes": {
+        "tiny": "1-30 elevi (profesor individual)",
+        "small": "31-100 elevi (Școală mică)",
+        "medium": "101-500 elevi (Școală medie)",
+        "large": "501-1.000 de elevi (Școală mare)",
+        "institution": "Peste 1.001 studenți (Instituție)"
+      },
+      "actions": {
+        "submit": "Solicitați acces",
+        "submitting": "Se trimite...",
+        "done": "Făcut"
+      },
+      "success": {
+        "title": "Ești pe listă!",
+        "description": "Îți vom trimite un e-mail la adresa {email} când vom fi gata."
+      },
+      "toasts": {
+        "success": "Te-ai înscris cu succes pe lista de așteptare!"
+      }
+    },
+    "joinClass": {
+      "title": "Alătură-te unei clase",
+      "buttonLabel": "Alătură-te clasei",
+      "fields": {
+        "inviteCode": "Cod de invitație la curs"
+      },
+      "placeholders": {
+        "inviteCode": "de exemplu, MATEMATICĂ101-2025"
+      },
+      "help": "Introduceți codul de invitație furnizat de profesorul dumneavoastră",
+      "howTo": {
+        "title": "Cum să obții un cod de invitație:",
+        "item1": "Cere-i profesorului codul de invitație la curs",
+        "item2": "Verifică-ți e-mailul pentru instrucțiuni de înscriere la cursuri",
+        "item3": "Caută codul în programa sau în materialele cursului"
+      },
+      "actions": {
+        "cancel": "Anula",
+        "join": "Alătură-te clasei",
+        "joining": "Se alătură..."
+      },
+      "toasts": {
+        "success": "Te-ai alăturat cu succes cursului.",
+        "errorInvalid": "Cod de invitație nevalid sau curs negăsit.",
+        "errorEmpty": "Vă rugăm să introduceți un cod de invitație valid."
+      }
+    },
+    "createClass": {
+      "title": "Creați o clasă nouă",
+      "buttonLabel": "Creați o clasă",
+      "fields": {
+        "title": "Titlul clasei *",
+        "section": "Secțiune *",
+        "subject": "Subiect *",
+        "semester": "Semestru",
+        "credits": "Credite",
+        "meetingTime": "Ora întâlnirii",
+        "location": "Locaţie",
+        "description": "Descriere"
+      },
+      "placeholders": {
+        "title": "de exemplu, Fizică Avansată",
+        "section": "de exemplu, AP-101",
+        "subject": "de exemplu, Fizică",
+        "semester": "de exemplu, primăvara anului 2025",
+        "credits": "de exemplu, 3",
+        "meetingTime": "de exemplu, LMM 10:00-11:00 AM",
+        "location": "de exemplu, Sala 205, Clădirea de Științe",
+        "description": "Descrieți conținutul și obiectivele cursului..."
+      },
+      "actions": {
+        "cancel": "Anula",
+        "create": "Creați o clasă",
+        "creating": "Se creează..."
+      },
+      "toasts": {
+        "success": "Clasa {name} a fost creată cu succes.",
+        "errorRequired": "Vă rugăm să completați toate câmpurile obligatorii.",
+        "errorFailed": "Nu s-a putut crea cursul. Vă rugăm să încercați din nou mai târziu."
+      }
+    },
+    "createFolder": {
+      "titleCreate": "Creați un folder nou",
+      "titleEdit": "Editați folderul",
+      "fields": {
+        "name": "Nume folder *",
+        "description": "Descriere (opțional)",
+        "color": "Culoarea folderului"
+      },
+      "placeholders": {
+        "name": "Introduceți numele folderului",
+        "description": "Adăugați o descriere pentru acest folder..."
+      },
+      "help": {
+        "name": "Alegeți un nume descriptiv pentru folderul dvs.",
+        "description": "{count}/500 caractere"
+      },
+      "actions": {
+        "cancel": "Anula",
+        "create": "Creați un folder",
+        "update": "Actualizare folder",
+        "creating": "Se creează...",
+        "updating": "Se actualizează..."
+      },
+      "toasts": {
+        "errorRequired": "Numele folderului este obligatoriu",
+        "errorInvalidChars": "Numele folderului conține caractere nevalide",
+        "errorTooLong": "Numele folderului este prea lung (maxim 255 de caractere)"
+      }
+    },
+    "createAssignment": {
+      "title": "Creați o sarcină nouă",
+      "buttonLabel": "Creați o sarcină",
+      "sections": {
+        "details": "Detalii despre sarcină",
+        "configuration": "Configurare",
+        "grading": "Notare și evaluare",
+        "attachments": "Atașamente"
+      },
+      "fields": {
+        "title": "Titlu *",
+        "instructions": "Instrucțiuni *",
+        "dueDate": "Două întâlniri",
+        "type": "Tipul de sarcină",
+        "section": "Secțiune",
+        "rubric": "Rubrică",
+        "gradeScale": "Scala de notare",
+        "maxPoints": "Puncte maxime",
+        "weight": "Greutate (%)",
+        "sectionColor": "Culoarea secțiunii"
+      },
+      "placeholders": {
+        "title": "de exemplu, Chestionar Capitolul 5, Raport de laborator de fizică",
+        "instructions": "Oferiți instrucțiuni clare elevilor...",
+        "maxPoints": "100",
+        "weight": "1.0",
+        "chooseSection": "Alegeți secțiunea",
+        "chooseRubric": "Alegeți rubrica",
+        "chooseGradeScale": "Alegeți scara de notare",
+        "newSectionName": "Introduceți numele secțiunii..."
+      },
+      "types": {
+        "homework": "Teme pentru acasă",
+        "quiz": "Test",
+        "test": "Test",
+        "project": "Proiect",
+        "essay": "Eseu",
+        "discussion": "Discuţie",
+        "presentation": "Prezentare",
+        "lab": "Laborator",
+        "other": "Alte"
+      },
+      "options": {
+        "graded": {
+          "label": "Temă notată",
+          "description": "Includeți în carnetul de note"
+        },
+        "draft": {
+          "label": "Salvare ca schiță",
+          "description": "Ascunde-te de studenți"
+        }
+      },
+      "section": {
+        "none": "Nicio secțiune",
+        "createNew": "Creați o secțiune nouă"
+      },
+      "rubric": {
+        "none": "Fără rubrică",
+        "untitled": "Rubrică fără titlu",
+        "autoCalculate": "Punctele vor fi calculate automat din rubrica selectată"
+      },
+      "gradeScale": {
+        "default": "Scală implicită",
+        "untitled": "Scală fără titlu"
+      },
+      "files": {
+        "uploadButton": "Încărcați fișiere",
+        "dropZone": "Plasați fișierele aici sau faceți clic pentru a încărca",
+        "dropZoneHint": "Acceptă toate tipurile de fișiere • Maxim 50 MB per fișier",
+        "filesUploaded": "{uploaded} din {total} fișiere încărcate"
+      },
+      "status": {
+        "creating": "Se creează sarcina...",
+        "settingUp": "Se configurează detaliile temei...",
+        "preparing": "Se pregătesc încărcările de fișiere...",
+        "uploading": "Se încarcă fișierele în spațiul de stocare în cloud...",
+        "processing": "Se procesează fișierele încărcate...",
+        "finalizing": "Finalizarea temei...",
+        "assigning": "Se atribuie elevilor...",
+        "almostDone": "Aproape gata...",
+        "uploadingFile": "Se încarcă {name}...",
+        "creatingProgress": "Crearea temei",
+        "draftStatus": "Va fi salvat ca schiță",
+        "publishedStatus": "Va fi publicat pentru studenți"
+      },
+      "actions": {
+        "cancel": "Anula",
+        "create": "Creați o sarcină",
+        "saveDraft": "Salvați schița",
+        "creating": "Se creează...",
+        "add": "Adăuga"
+      },
+      "toasts": {
+        "successCreated": "Tema a fost creată cu succes.",
+        "successDraft": "Tema a fost salvată ca schiță.",
+        "errorRequired": "Vă rugăm să completați toate câmpurile obligatorii.",
+        "errorFailed": "Nu s-a putut crea tema. Vă rugăm să încercați din nou.",
+        "errorUploadFailed": "Nu s-a putut încărca {name}",
+        "sectionCreated": "Secțiunea „{name}” a fost creată cu succes."
+      }
+    },
+    "createAnnouncement": {
+      "title": "Creați un anunț",
+      "buttonLabel": "Postați anunțul",
+      "fields": {
+        "title": "Titlul anunțului *",
+        "content": "Conținut *",
+        "priority": "Nivel de prioritate",
+        "expiryDate": "Data expirării (opțional)",
+        "publishDate": "Data publicării",
+        "publishTime": "Ora publicării"
+      },
+      "placeholders": {
+        "title": "De exemplu, raportul de laborator trebuie predat vineri",
+        "content": "Scrieți conținutul anunțului dvs. aici...",
+        "publishDate": "Publică imediat dacă este gol"
+      },
+      "priority": {
+        "low": "Scăzut",
+        "normal": "Normal",
+        "high": "Ridicat",
+        "urgent": "Urgent"
+      },
+      "sections": {
+        "settings": "Setări",
+        "notifications": "Notificări",
+        "schedule": "Programați publicarea (opțional)"
+      },
+      "settings": {
+        "pinned": {
+          "label": "Fixează în partea de sus",
+          "description": "Păstrați acest anunț în capul listei"
+        },
+        "urgent": {
+          "label": "Marchează ca urgent",
+          "description": "Evidențiază-ți atmosfera cu un stil urgent"
+        }
+      },
+      "notifications": {
+        "email": {
+          "label": "Trimiteți notificare prin e-mail",
+          "description": "Anunță studenții prin e-mail"
+        },
+        "push": {
+          "label": "Trimiteți o notificare push",
+          "description": "Trimiteți o notificare pentru aplicația mobilă"
+        }
+      },
+      "actions": {
+        "cancel": "Anula",
+        "publishNow": "Publică acum",
+        "schedule": "Anunț de program"
+      },
+      "toasts": {
+        "success": "Anunț creat",
+        "errorRequired": "Vă rugăm să completați toate câmpurile obligatorii."
+      }
+    }
+  }
+}

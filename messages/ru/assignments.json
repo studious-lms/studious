@@ -1,0 +1,54 @@
+{
+  "assignmentDetail": {
+    "title": "Подробности задания",
+    "description": "Описание",
+    "instructions": "Инструкции",
+    "dueDate": "Две даты",
+    "maxPoints": "Макс. баллы",
+    "submissions": "Подачи",
+    "submitted": "Поданный",
+    "notSubmitted": "Не отправлено",
+    "graded": "Оцененный",
+    "pending": "В ожидании",
+    "late": "Поздно",
+    "onTime": "Вовремя",
+    "attachments": "Вложения",
+    "rubric": "Рубрика",
+    "gradingBoundary": "Граница градуировки",
+    "submissionDetails": "Подробности отправки",
+    "submittedBy": "Представлено",
+    "submittedAt": "Отправлено в",
+    "grade": "Оценка",
+    "feedback": "Обратная связь",
+    "files": "Файлы",
+    "noFiles": "Файлы не прикреплены.",
+    "noSubmissions": "Пока нет заявок",
+    "noSubmissionsDescription": "Материалы будут появляться здесь после того, как студенты отправят свои работы.",
+    "actions": {
+      "edit": "Редактировать задание",
+      "delete": "Удалить задание",
+      "viewSubmission": "Просмотреть отправку",
+      "gradeSubmission": "Оценка",
+      "downloadAll": "Скачать все",
+      "exportGrades": "Экспортные сорта"
+    },
+    "stats": {
+      "totalSubmissions": "Всего подано",
+      "averageGrade": "Средняя оценка",
+      "submissionRate": "Скорость отправки",
+      "gradedCount": "Оцененный"
+    },
+    "table": {
+      "student": "Студент",
+      "status": "Статус",
+      "grade": "Оценка",
+      "submittedAt": "Поданный",
+      "actions": "Действия"
+    },
+    "toasts": {
+      "gradeUpdated": "Оценка успешно обновлена",
+      "deleted": "Задание удалено",
+      "error": "Произошла ошибка"
+    }
+  }
+}

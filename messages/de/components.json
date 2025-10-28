@@ -57,7 +57,8 @@
     "created": "Rubrik erfolgreich erstellt",
     "updated": "Rubrik erfolgreich aktualisiert",
     "createFailed": "Rubrik konnte nicht erstellt werden",
-    "updateFailed": "Rubrik konnte nicht aktualisiert werden"
+    "updateFailed": "Rubrik konnte nicht aktualisiert werden",
+    "errorNameRequired": "Bitte geben Sie einen Namen und mindestens ein Kriterium an"
   },
   "gradingBoundaries": {
     "title": "Höhengrenze erstellen",

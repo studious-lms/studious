@@ -1,0 +1,63 @@
+{
+  "members": {
+    "title": "सदस्यों",
+    "counts": {
+      "totalMembers": "{गिनती} सदस्य"
+    },
+    "actions": {
+      "inviteMember": "सदस्य को आमंत्रित करें",
+      "copy": "प्रतिलिपि",
+      "regenerate": "पुनः जेनरेट",
+      "message": "संदेश",
+      "viewProfile": "प्रोफ़ाइल देखें",
+      "viewGrades": "ग्रेड देखें",
+      "makeTeacher": "शिक्षक बनाएं",
+      "makeStudent": "छात्र बनाएं",
+      "removeFromClass": "कक्षा से हटाएँ",
+      "removeAccess": "पहुँच हटाएँ",
+      "tryAgain": "पुनः प्रयास करें"
+    },
+    "labels": {
+      "teacher": "अध्यापक",
+      "student": "विद्यार्थी",
+      "you": "आप"
+    },
+    "invite": {
+      "title": "कक्षा आमंत्रण कोड",
+      "description": "कक्षा में शामिल होने के लिए छात्रों के साथ यह कोड साझा करें"
+    },
+    "search": {
+      "placeholder": "सदस्यों को खोजें..."
+    },
+    "tabs": {
+      "students": "छात्र",
+      "teachers": "शिक्षकों"
+    },
+    "students": {
+      "empty": {
+        "title": "कोई छात्र नहीं मिला",
+        "matchNone": "कोई भी छात्र \"{query}\" से मेल नहीं खाता",
+        "noStudents": "अभी तक कोई छात्र इस कक्षा में शामिल नहीं हुआ है"
+      }
+    },
+    "teachers": {
+      "empty": {
+        "title": "कोई शिक्षक नहीं मिला",
+        "matchNone": "\"{query}\" से कोई शिक्षक मेल नहीं खाता",
+        "noTeachers": "कोई अतिरिक्त शिक्षक नहीं जोड़ा गया है"
+      }
+    },
+    "toasts": {
+      "inviteRegenerated": "आमंत्रण कोड सफलतापूर्वक पुनः जनरेट किया गया",
+      "copied": "आमंत्रण कोड क्लिपबोर्ड पर कॉपी किया गया",
+      "roleChanged": "भूमिका {भूमिका} में बदली गई",
+      "memberRemoved": "सदस्य सफलतापूर्वक हटा दिया गया"
+    },
+    "errors": {
+      "regenerateFailed": "आमंत्रण कोड पुनः जनरेट करने में विफल",
+      "changeRoleFailed": "भूमिका बदलने में विफल",
+      "removeFailed": "सदस्य को हटाने में विफल",
+      "failedToLoad": "सदस्यों को लोड करने में विफल"
+    }
+  }
+}

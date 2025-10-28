@@ -1,0 +1,54 @@
+{
+  "assignmentDetail": {
+    "title": "Detail Tugas",
+    "description": "Keterangan",
+    "instructions": "Instruksi",
+    "dueDate": "Dua Tanggal",
+    "maxPoints": "Poin Maksimum",
+    "submissions": "Pengajuan",
+    "submitted": "Dikirimkan",
+    "notSubmitted": "Belum Dikirim",
+    "graded": "Bertingkat",
+    "pending": "Tertunda",
+    "late": "Terlambat",
+    "onTime": "Tepat Waktu",
+    "attachments": "Lampiran",
+    "rubric": "Rubrik",
+    "gradingBoundary": "Batas Penilaian",
+    "submissionDetails": "Detail Pengajuan",
+    "submittedBy": "Dikirimkan oleh",
+    "submittedAt": "Dikirimkan di",
+    "grade": "Nilai",
+    "feedback": "Masukan",
+    "files": "Berkas",
+    "noFiles": "Tidak ada file terlampir",
+    "noSubmissions": "Belum ada kiriman",
+    "noSubmissionsDescription": "Pengiriman akan muncul di sini setelah siswa mengirimkan tugasnya",
+    "actions": {
+      "edit": "Edit Tugas",
+      "delete": "Hapus Tugas",
+      "viewSubmission": "Lihat Pengajuan",
+      "gradeSubmission": "Nilai",
+      "downloadAll": "Unduh Semua",
+      "exportGrades": "Nilai Ekspor"
+    },
+    "stats": {
+      "totalSubmissions": "Total Pengajuan",
+      "averageGrade": "Nilai Rata-rata",
+      "submissionRate": "Tingkat Pengajuan",
+      "gradedCount": "Bertingkat"
+    },
+    "table": {
+      "student": "Murid",
+      "status": "Status",
+      "grade": "Nilai",
+      "submittedAt": "Dikirimkan",
+      "actions": "Tindakan"
+    },
+    "toasts": {
+      "gradeUpdated": "Nilai berhasil diperbarui",
+      "deleted": "Tugas dihapus",
+      "error": "Terjadi kesalahan"
+    }
+  }
+}

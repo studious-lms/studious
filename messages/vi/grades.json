@@ -1,0 +1,140 @@
+{
+  "classGrades": {
+    "title": "Điểm số",
+    "subtitle": "Xem và quản lý điểm của học sinh",
+    "columns": {
+      "assignment": "Phân công",
+      "maxPoints": "Điểm tối đa",
+      "weight": "Cân nặng",
+      "graded": "Đã phân loại",
+      "dueDate": "Hai Ngày",
+      "actions": "Hành động",
+      "student": "Học sinh",
+      "overallGrade": "Điểm tổng thể",
+      "assignmentsCompleted": "Bài tập đã hoàn thành",
+      "trend": "Xu hướng"
+    },
+    "labels": {
+      "rubric": "Tiêu chí"
+    },
+    "actions": {
+      "manage": "Quản lý",
+      "viewGrades": "Xem Điểm",
+      "saving": "Đang lưu...",
+      "saveChanges": "Lưu thay đổi",
+      "preview": "Xem trước",
+      "edit": "Biên tập",
+      "delete": "Xóa bỏ",
+      "createNew": "Tạo mới"
+    },
+    "overview": {
+      "title": "Tổng quan về lớp học",
+      "classAverage": "Lớp trung bình",
+      "totalStudents": "Tổng số học sinh",
+      "assignments": "Bài tập",
+      "submissionRate": "Tỷ lệ nộp bài"
+    },
+    "assignmentManagement": {
+      "title": "Quản lý bài tập",
+      "empty": {
+        "title": "Không tìm thấy bài tập nào",
+        "description": "Tạo bài tập để quản lý điểm và cài đặt"
+      },
+      "searchPlaceholder": "Tìm kiếm bài tập..."
+    },
+    "students": {
+      "title": "Học sinh",
+      "viewAll": "Xem tất cả học sinh",
+      "empty": {
+        "title": "Không có học sinh nào đăng ký",
+        "description": "Học sinh sẽ xuất hiện ở đây khi họ tham gia lớp học"
+      },
+      "searchPlaceholder": "Tìm kiếm học sinh..."
+    },
+    "gradeBoundaries": {
+      "title": "Ranh giới lớp",
+      "untitled": "Ranh giới chấm điểm chưa có tiêu đề",
+      "empty": {
+        "title": "Không có ranh giới lớp nào được tạo ra",
+        "description": "Tạo ranh giới phân loại để xác định phạm vi phân loại"
+      },
+      "previewTitle": "Xem trước ranh giới chấm điểm",
+      "details": {
+        "title": "Chi tiết ranh giới phân loại",
+        "name": "Tên",
+        "noneDefined": "Không có ranh giới phân loại được xác định"
+      }
+    },
+    "rubrics": {
+      "title": "Tiêu chí chấm điểm",
+      "untitled": "Tiêu đề chưa có tiêu đề",
+      "empty": {
+        "title": "Không có tiêu chí nào được tạo",
+        "description": "Tạo tiêu chí đánh giá để xác định tiêu chí đánh giá"
+      },
+      "previewTitle": "Xem trước tiêu chí",
+      "details": {
+        "title": "Chi tiết tiêu chí",
+        "name": "Tên",
+        "category": "Loại",
+        "description": "Sự miêu tả",
+        "custom": "Phong tục",
+        "noDescription": "Không có mô tả nào được cung cấp",
+        "noCriteria": "Không tìm thấy tiêu chí nào trong tiêu chí này"
+      }
+    },
+    "confirm": {
+      "deleteRubric": "Bạn có chắc chắn muốn xóa markscheme này không?",
+      "deleteGradingBoundary": "Bạn có chắc chắn muốn xóa ranh giới chấm điểm này không?"
+    }
+  },
+  "studentGrades": {
+    "title": "Tất cả các lớp của học sinh",
+    "allStudents": "Xem và quản lý điểm của tất cả học sinh trong lớp này",
+    "students": "Học sinh",
+    "noGrades": "Không tìm thấy học sinh nào",
+    "noGradesDescription": "Chưa có học viên nào đăng ký lớp này. Học viên sẽ được hiển thị ở đây khi tham gia.",
+    "table": {
+      "student": "Học sinh",
+      "actions": "Hành động"
+    },
+    "actions": {
+      "viewSubmission": "Xem Điểm"
+    }
+  },
+  "individualGrades": {
+    "myGrades": "Điểm của tôi",
+    "studentGrades": "Điểm số",
+    "viewYourGrades": "Xem điểm số và tiến độ của bạn",
+    "individualManagement": "Quản lý điểm của từng học sinh",
+    "export": "Xuất khẩu",
+    "back": "Mặt sau",
+    "yourPerformance": "Hiệu suất của bạn",
+    "trackProgress": "Theo dõi tiến độ học tập của bạn",
+    "overallGrade": "Điểm tổng thể",
+    "completed": "Hoàn thành",
+    "trend": "Xu hướng",
+    "yourGrades": "Điểm của bạn",
+    "assignments": "Bài tập",
+    "studentNotFound": "Không tìm thấy học sinh",
+    "goBack": "Quay lại",
+    "grade": "Cấp",
+    "table": {
+      "assignment": "Phân công",
+      "grade": "Cấp",
+      "total": "Tổng cộng",
+      "percentage": "%",
+      "status": "Trạng thái",
+      "submitted": "Đã nộp"
+    },
+    "status": {
+      "graded": "Đã phân loại",
+      "pending": "Chưa giải quyết"
+    },
+    "empty": {
+      "title": "Không tìm thấy bài tập nào",
+      "description": "Học sinh này không có bài tập nào để hiển thị"
+    },
+    "searchPlaceholder": "Tìm kiếm bài tập..."
+  }
+}

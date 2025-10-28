@@ -1,0 +1,54 @@
+{
+  "assignmentDetail": {
+    "title": "Görev Ayrıntıları",
+    "description": "Tanım",
+    "instructions": "Talimatlar",
+    "dueDate": "İki Tarih",
+    "maxPoints": "Maksimum Puan",
+    "submissions": "Gönderimler",
+    "submitted": "Sunuldu",
+    "notSubmitted": "Gönderilmedi",
+    "graded": "Derecelendirilmiş",
+    "pending": "Askıda olması",
+    "late": "Geç",
+    "onTime": "Zamanında",
+    "attachments": "Ekler",
+    "rubric": "Rubrik",
+    "gradingBoundary": "Sınıflandırma Sınırı",
+    "submissionDetails": "Gönderim Ayrıntıları",
+    "submittedBy": "Gönderen",
+    "submittedAt": "Gönderildi",
+    "grade": "Seviye",
+    "feedback": "Geri bildirim",
+    "files": "Dosyalar",
+    "noFiles": "Ekli dosya yok",
+    "noSubmissions": "Henüz gönderim yapılmadı",
+    "noSubmissionsDescription": "Öğrenciler çalışmalarını gönderdiğinde gönderiler burada görünecektir",
+    "actions": {
+      "edit": "Ödevi Düzenle",
+      "delete": "Atamayı Sil",
+      "viewSubmission": "Gönderimi Görüntüle",
+      "gradeSubmission": "Seviye",
+      "downloadAll": "Tümünü İndir",
+      "exportGrades": "İhracat Notları"
+    },
+    "stats": {
+      "totalSubmissions": "Toplam Gönderimler",
+      "averageGrade": "Ortalama Not",
+      "submissionRate": "Teslim Oranı",
+      "gradedCount": "Derecelendirilmiş"
+    },
+    "table": {
+      "student": "Öğrenci",
+      "status": "Durum",
+      "grade": "Seviye",
+      "submittedAt": "Sunuldu",
+      "actions": "Eylemler"
+    },
+    "toasts": {
+      "gradeUpdated": "Not başarıyla güncellendi",
+      "deleted": "Ödev silindi",
+      "error": "Bir hata oluştu"
+    }
+  }
+}

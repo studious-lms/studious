@@ -1,0 +1,21 @@
+{
+  "classes": {
+    "title": "कक्षाओं",
+    "description": "अपने शिक्षण और नामांकित कक्षाओं का प्रबंधन करें",
+    "joinClass": "कक्षा में शामिल हों",
+    "createClass": "कक्षा बनाएँ",
+    "searchPlaceholder": "कक्षाएं खोजें...",
+    "teaching": "शिक्षण",
+    "enrolled": "दाखिला लिया",
+    "noClassesFound": "कोई कक्षा नहीं मिली",
+    "noTeachingClassesFound": "\"{query}\" से मेल खाती कोई शिक्षण कक्षा नहीं मिली",
+    "noEnrolledClassesFound": "\"{query}\" से मेल खाती कोई नामांकित कक्षा नहीं मिली",
+    "noClassesYet": "अभी तक कोई कक्षा नहीं",
+    "noClassesYetDesc": "असाइनमेंट, ग्रेड और छात्र इंटरैक्शन का प्रबंधन शुरू करने के लिए अपनी पहली कक्षा बनाएं।",
+    "noEnrolledClasses": "कोई नामांकित कक्षा नहीं",
+    "noEnrolledClassesDesc": "अपने शिक्षक द्वारा दिए गए आमंत्रण कोड या लिंक का उपयोग करके कक्षा में शामिल हों।",
+    "classDeleted": "कक्षा सफलतापूर्वक हटा दी गई",
+    "classDeleteFailed": "कक्षा हटाने में विफल",
+    "failedToLoad": "कक्षाएं लोड करने में विफल"
+  }
+}

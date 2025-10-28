@@ -57,7 +57,8 @@
     "created": "Rubrica criada com sucesso",
     "updated": "Rubrica atualizada com sucesso",
     "createFailed": "Falha ao criar rubrica",
-    "updateFailed": "Falha ao atualizar a rubrica"
+    "updateFailed": "Falha ao atualizar a rubrica",
+    "errorNameRequired": "Por favor, forneça um nome e pelo menos um critério"
   },
   "gradingBoundaries": {
     "title": "Criar limite de grau",
@@ -132,7 +133,7 @@
     "name": "Nome da seção *",
     "placeholder": "por exemplo, Trimestre 1, Unidade 2, Capítulo 5",
     "helper": "As seções ajudam a organizar tarefas em grupos ou períodos de tempo.",
-    "color": "Cor da Seção",
+    "color": "Seção Cor",
     "cancel": "Cancelar",
     "create": "Criar Seção",
     "update": "Seção de atualização",

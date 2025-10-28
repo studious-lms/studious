@@ -57,7 +57,8 @@
     "created": "루브릭이 성공적으로 생성되었습니다.",
     "updated": "루브릭이 성공적으로 업데이트되었습니다.",
     "createFailed": "루브릭을 생성하지 못했습니다.",
-    "updateFailed": "루브릭을 업데이트하지 못했습니다."
+    "updateFailed": "루브릭을 업데이트하지 못했습니다.",
+    "errorNameRequired": "이름과 최소 하나의 기준을 입력해 주세요."
   },
   "gradingBoundaries": {
     "title": "등급 경계 생성",

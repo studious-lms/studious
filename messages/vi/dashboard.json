@@ -1,0 +1,44 @@
+{
+  "home": {
+    "welcomeBack": "Chào mừng trở lại, {name}!",
+    "subtitle": "Sau đây là những thông tin về lớp học của bạn hôm nay.",
+    "stats": {
+      "totalClasses": "Tổng số lớp học",
+      "teachingEnrolled": "{giảng dạy} giảng dạy, {đăng ký} đã đăng ký",
+      "dueToday": "Ngày đến hạn",
+      "dueTodayDesc": "Bài tập đến hạn hôm nay",
+      "upcoming": "Sắp tới",
+      "upcomingDesc": "Bài tập sắp tới",
+      "thisWeek": "Tuần này",
+      "totalAssignments": "Tổng số bài tập"
+    },
+    "upcomingAssignments": {
+      "title": "Nhiệm vụ sắp tới",
+      "subtitle": "Hạn chót tiếp theo của bạn",
+      "allCaughtUp": "Đã cập nhật đầy đủ!",
+      "noUpcoming": "Hiện tại không có bài tập nào sắp tới.",
+      "viewAgenda": "Xem Chương trình nghị sự",
+      "dueToday": "Ngày đến hạn",
+      "dueTomorrow": "Ngày mai đến hạn",
+      "due": "Hai {ngày}",
+      "teaching": "Giảng dạy",
+      "viewAllAssignments": "Xem tất cả bài tập"
+    },
+    "notifications": {
+      "title": "Thông báo gần đây",
+      "subtitle": "Cập nhật mới nhất",
+      "noNew": "Không có thông báo mới",
+      "viewAll": "Xem tất cả thông báo"
+    },
+    "classes": {
+      "title": "Lớp học của tôi",
+      "subtitle": "Truy cập nhanh vào lớp học của bạn",
+      "teaching": "Giảng dạy",
+      "enrolled": "Đã đăng ký",
+      "due": "quá hạn",
+      "noClasses": "Chưa có lớp học nào",
+      "browseClasses": "Duyệt các lớp học",
+      "viewAllClasses": "Xem tất cả các lớp học"
+    }
+  }
+}

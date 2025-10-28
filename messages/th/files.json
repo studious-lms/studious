@@ -1,0 +1,130 @@
+{
+  "classFiles": {
+    "title": "ไฟล์",
+    "subtitle": "จัดการไฟล์และทรัพยากรชั้นเรียน",
+    "actions": {
+      "newFolder": "โฟลเดอร์ใหม่",
+      "upload": "อัพโหลด",
+      "uploadFiles": "อัพโหลดไฟล์",
+      "createFolder": "สร้างโฟลเดอร์",
+      "download": "ดาวน์โหลด",
+      "share": "แบ่งปัน",
+      "delete": "ลบ",
+      "filter": "กรอง",
+      "sort": "เรียงลำดับ"
+    },
+    "toasts": {
+      "folderCreated": "สร้างโฟลเดอร์สำเร็จแล้ว",
+      "folderDeleted": "ลบโฟลเดอร์สำเร็จแล้ว",
+      "folderRenamed": "เปลี่ยนชื่อโฟลเดอร์สำเร็จแล้ว",
+      "folderMoved": "ย้ายโฟลเดอร์สำเร็จแล้ว",
+      "filesUploaded": "อัพโหลดไฟล์สำเร็จแล้ว",
+      "fileDeleted": "ลบไฟล์สำเร็จแล้ว",
+      "fileRenamed": "เปลี่ยนชื่อไฟล์สำเร็จแล้ว",
+      "fileMoved": "ย้ายไฟล์สำเร็จแล้ว",
+      "downloadStarted": "เริ่มดาวน์โหลดแล้ว",
+      "shareCopied": "คัดลอกลิงก์แชร์แล้ว"
+    },
+    "errors": {
+      "teacherOnly": "เฉพาะครูเท่านั้นที่สามารถแก้ไขไฟล์ได้",
+      "downloadFailed": "การดาวน์โหลดล้มเหลว",
+      "shareFailed": "การแชร์ล้มเหลว",
+      "failedToLoad": "ไม่สามารถโหลดไฟล์ได้ โปรดลองอีกครั้งในภายหลัง"
+    },
+    "breadcrumbs": {
+      "classFiles": "ไฟล์ชั้นเรียน"
+    },
+    "search": {
+      "placeholder": "ค้นหาในไฟล์"
+    },
+    "selected": "{count} ที่เลือก",
+    "filters": {
+      "fileType": "ประเภทไฟล์",
+      "documents": "เอกสาร",
+      "images": "รูปภาพ",
+      "videos": "วิดีโอ",
+      "presentations": "การนำเสนอ"
+    },
+    "sort": {
+      "name": "ชื่อ",
+      "lastModified": "แก้ไขล่าสุด",
+      "fileSize": "ขนาดไฟล์"
+    },
+    "table": {
+      "name": "ชื่อ",
+      "owner": "เจ้าของ",
+      "lastModified": "แก้ไขล่าสุด",
+      "fileSize": "ขนาดไฟล์"
+    },
+    "empty": {
+      "title": "โฟลเดอร์นี้ว่างเปล่า",
+      "description": "อัปโหลดไฟล์หรือสร้างโฟลเดอร์เพื่อเริ่มจัดระเบียบสื่อการเรียนของคุณ",
+      "searchTitle": "ไม่พบไฟล์",
+      "searchDescription": "ไม่มีไฟล์ที่ตรงกับ \"{query}\" ลองใช้คำค้นหาอื่น"
+    }
+  },
+  "folderView": {
+    "subtitle": "เนื้อหาโฟลเดอร์",
+    "notFound": {
+      "title": "ไม่พบโฟลเดอร์",
+      "description": "ไม่พบโฟลเดอร์ที่ร้องขอ",
+      "backButton": "กลับไปที่ไฟล์"
+    },
+    "error": {
+      "loadFailed": "ไม่สามารถโหลดเนื้อหาโฟลเดอร์ได้ โปรดลองอีกครั้งในภายหลัง"
+    },
+    "breadcrumbs": {
+      "classFiles": "ไฟล์ชั้นเรียน"
+    },
+    "search": {
+      "placeholder": "ค้นหาในโฟลเดอร์",
+      "selected": "{count} ที่เลือก"
+    },
+    "filters": {
+      "label": "กรอง",
+      "fileType": "ประเภทไฟล์",
+      "documents": "เอกสาร",
+      "images": "รูปภาพ",
+      "videos": "วิดีโอ",
+      "presentations": "การนำเสนอ"
+    },
+    "sort": {
+      "label": "เรียงลำดับ",
+      "name": "ชื่อ",
+      "lastModified": "แก้ไขล่าสุด",
+      "fileSize": "ขนาดไฟล์"
+    },
+    "table": {
+      "name": "ชื่อ",
+      "owner": "เจ้าของ",
+      "lastModified": "แก้ไขล่าสุด",
+      "fileSize": "ขนาดไฟล์"
+    },
+    "empty": {
+      "noFilesFound": "ไม่พบไฟล์",
+      "noFilesFoundDescription": "ไม่มีไฟล์ที่ตรงกับ \"{query}\" ลองใช้คำค้นหาอื่น",
+      "folderEmpty": "โฟลเดอร์นี้ว่างเปล่า",
+      "folderEmptyDescription": "อัพโหลดไฟล์หรือสร้างโฟลเดอร์เพื่อจัดระเบียบสื่อของคุณ"
+    },
+    "actions": {
+      "newFolder": "โฟลเดอร์ใหม่",
+      "uploadFiles": "อัพโหลดไฟล์",
+      "createFolder": "สร้างโฟลเดอร์"
+    },
+    "toast": {
+      "folderCreated": "สร้างโฟลเดอร์สำเร็จแล้ว",
+      "folderDeleted": "ลบโฟลเดอร์สำเร็จแล้ว",
+      "folderRenamed": "เปลี่ยนชื่อโฟลเดอร์สำเร็จแล้ว",
+      "folderMoved": "ย้ายโฟลเดอร์สำเร็จแล้ว",
+      "filesUploaded": "อัพโหลดไฟล์สำเร็จแล้ว",
+      "fileDeleted": "ลบไฟล์สำเร็จแล้ว",
+      "fileRenamed": "เปลี่ยนชื่อไฟล์สำเร็จแล้ว",
+      "fileMoved": "ย้ายไฟล์สำเร็จแล้ว",
+      "downloadStarted": "เริ่มดาวน์โหลดแล้ว",
+      "downloadFailed": "การดาวน์โหลดล้มเหลว",
+      "shareLinkCopied": "คัดลอกลิงก์แชร์แล้ว",
+      "shareFailed": "การแชร์ล้มเหลว",
+      "permissionDenied": "ปฏิเสธการอนุญาต"
+    }
+  }
+}

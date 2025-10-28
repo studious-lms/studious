@@ -1,0 +1,54 @@
+{
+  "navigation": {
+    "home": "Дом",
+    "classes": "Классы",
+    "agenda": "Повестка дня",
+    "chat": "Чат",
+    "notifications": "Уведомления",
+    "profile": "Профиль",
+    "settings": "Настройки",
+    "signOut": "выход",
+    "accountSettings": "Настройки учетной записи",
+    "pricing": "Цены",
+    "schoolProgram": "Школьная программа",
+    "about": "О",
+    "press": "Нажимать",
+    "signIn": "Войти"
+  },
+  "classSidebar": {
+    "overview": "Обзор",
+    "assignments": "Задания",
+    "grades": "Оценки",
+    "files": "Файлы",
+    "attendance": "Посещаемость",
+    "aiLabs": "Лаборатории искусственного интеллекта",
+    "members": "Участники",
+    "syllabus": "Учебный план",
+    "settings": "Настройки",
+    "classNavigation": "Навигация по классам",
+    "switchClass": "Класс переключателя",
+    "classInviteCode": "Код приглашения класса",
+    "copyCode": "Скопировать код",
+    "regenerateCode": "Регенерировать код",
+    "toast": {
+      "inviteCodeRegenerated": "Код приглашения успешно регенерирован",
+      "inviteCodeRegenerateFailed": "Не удалось повторно сгенерировать код приглашения",
+      "inviteCodeCopied": "Код приглашения скопирован в буфер обмена"
+    }
+  },
+  "footer": {
+    "productDescription": "Современное управление обучением для образования следующего поколения.",
+    "product": "Продукт",
+    "features": "Функции",
+    "pricing": "Цены",
+    "schoolProgram": "Школьная программа",
+    "company": "Компания",
+    "about": "О",
+    "team": "Команда",
+    "press": "Нажимать",
+    "contact": "Контакт",
+    "privacyPolicy": "политика конфиденциальности",
+    "termsOfService": "Условия обслуживания",
+    "copyright": "© 2025 Studious LMS. Все права защищены."
+  }
+}

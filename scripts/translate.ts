@@ -19,14 +19,13 @@ import fs from 'fs';
 import path from 'path';
 import dotenv from 'dotenv';
 
+import { LANGUAGES_TO_TRANSLATE } from '../src/lib/language';
+
 dotenv.config();
 
 interface TranslationObject {
   [key: string]: string | TranslationObject;
 }
-
-// Languages to translate - add or remove as needed
-const LANGUAGES_TO_TRANSLATE = ['es', 'fr', 'zh', 'de', 'ja', 'ko', 'pt', 'ar'];
 
 const LANGUAGES = {
   es: 'Spanish',

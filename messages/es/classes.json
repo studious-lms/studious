@@ -1,7 +1,7 @@
 {
   "classes": {
     "title": "Clases",
-    "description": "Gestiona tu docencia y clases matriculadas",
+    "description": "Gestiona tus clases docentes y matriculadas",
     "joinClass": "Unirse a la clase",
     "createClass": "Crear clase",
     "searchPlaceholder": "Buscar clases...",

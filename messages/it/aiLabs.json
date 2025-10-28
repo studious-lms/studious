@@ -1,0 +1,72 @@
+{
+  "aiLabs": {
+    "title": "Laboratori di intelligenza artificiale",
+    "subtitle": "Crea contenuti educativi con l'assistenza dell'intelligenza artificiale",
+    "aiPowered": "Alimentato dall'intelligenza artificiale",
+    "createNew": "Crea nuovi contenuti",
+    "aiGenerated": "Generato dall'IA",
+    "deleteConfirm": "Vuoi davvero eliminare questo laboratorio di intelligenza artificiale? Questa azione non può essere annullata.",
+    "widgets": {
+      "assignment": {
+        "title": "Incarico",
+        "description": "Crea compiti interattivi con l'assistenza dell'intelligenza artificiale"
+      },
+      "quiz": {
+        "title": "Quiz",
+        "description": "Genera quiz con vari tipi di domande"
+      },
+      "worksheet": {
+        "title": "Foglio di lavoro",
+        "description": "Crea schede di lavoro ed esercizi pratici"
+      },
+      "lessonPlan": {
+        "title": "Piano di lezione",
+        "description": "Progettare piani di lezione completi"
+      },
+      "rubric": {
+        "title": "Rubrica",
+        "description": "Creare griglie di valutazione dettagliate"
+      }
+    },
+    "tabs": {
+      "drafts": "Bozze di laboratori",
+      "chats": "Gatti AI"
+    },
+    "drafts": {
+      "title": "Bozze di laboratori ({count})",
+      "empty": {
+        "title": "Nessuna bozza di laboratorio ancora",
+        "description": "Crea il tuo primo contenuto didattico generato dall'intelligenza artificiale utilizzando i widget qui sopra."
+      }
+    },
+    "chats": {
+      "title": "Laboratori di intelligenza artificiale ({count})",
+      "active": "Attivo",
+      "messageCount": "{count} messaggi",
+      "createdBy": "Creato da {name}",
+      "empty": {
+        "title": "Nessun laboratorio di intelligenza artificiale ancora",
+        "description": "Crea il tuo primo laboratorio di intelligenza artificiale per iniziare a collaborare con l'intelligenza artificiale sui contenuti didattici."
+      }
+    },
+    "toast": {
+      "labCreated": "Laboratorio di intelligenza artificiale creato con successo!",
+      "labCreateFailed": "Impossibile creare AI Lab:",
+      "labDeleted": "AI Lab eliminato con successo!",
+      "labDeleteFailed": "Impossibile eliminare AI Lab:"
+    }
+  },
+  "aiLabChat": {
+    "backButton": "Torna ai laboratori di intelligenza artificiale",
+    "loading": "Caricamento...",
+    "aiThinking": "Pensiero dell'intelligenza artificiale...",
+    "getAIHelp": "Ottieni aiuto dall'intelligenza artificiale",
+    "notFound": {
+      "title": "Chat di laboratorio non trovata",
+      "description": "Questo laboratorio di intelligenza artificiale potrebbe essere stato eliminato o non hai più accesso ad esso."
+    },
+    "toast": {
+      "messageFailed": "Impossibile inviare il messaggio:"
+    }
+  }
+}

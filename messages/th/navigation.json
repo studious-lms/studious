@@ -1,0 +1,54 @@
+{
+  "navigation": {
+    "home": "บ้าน",
+    "classes": "ชั้นเรียน",
+    "agenda": "กำหนดการ",
+    "chat": "แชท",
+    "notifications": "การแจ้งเตือน",
+    "profile": "ประวัติโดยย่อ",
+    "settings": "การตั้งค่า",
+    "signOut": "ออกจากระบบ",
+    "accountSettings": "การตั้งค่าบัญชี",
+    "pricing": "การกำหนดราคา",
+    "schoolProgram": "โครงการโรงเรียน",
+    "about": "เกี่ยวกับ",
+    "press": "กด",
+    "signIn": "เข้าสู่ระบบ"
+  },
+  "classSidebar": {
+    "overview": "ภาพรวม",
+    "assignments": "การมอบหมายงาน",
+    "grades": "เกรด",
+    "files": "ไฟล์",
+    "attendance": "การเข้าร่วม",
+    "aiLabs": "ห้องปฏิบัติการ AI",
+    "members": "สมาชิก",
+    "syllabus": "หลักสูตร",
+    "settings": "การตั้งค่า",
+    "classNavigation": "การนำทางชั้นเรียน",
+    "switchClass": "สวิตช์คลาส",
+    "classInviteCode": "รหัสเชิญเข้าชั้นเรียน",
+    "copyCode": "คัดลอกรหัส",
+    "regenerateCode": "สร้างโค้ดใหม่",
+    "toast": {
+      "inviteCodeRegenerated": "สร้างรหัสเชิญใหม่สำเร็จแล้ว",
+      "inviteCodeRegenerateFailed": "ไม่สามารถสร้างรหัสเชิญใหม่ได้",
+      "inviteCodeCopied": "คัดลอกรหัสเชิญไปยังคลิปบอร์ดแล้ว"
+    }
+  },
+  "footer": {
+    "productDescription": "การจัดการเรียนรู้สมัยใหม่เพื่อการศึกษาในยุคต่อไป",
+    "product": "ผลิตภัณฑ์",
+    "features": "คุณสมบัติ",
+    "pricing": "การกำหนดราคา",
+    "schoolProgram": "โครงการโรงเรียน",
+    "company": "บริษัท",
+    "about": "เกี่ยวกับ",
+    "team": "ทีม",
+    "press": "กด",
+    "contact": "ติดต่อ",
+    "privacyPolicy": "นโยบายความเป็นส่วนตัว",
+    "termsOfService": "เงื่อนไขการบริการ",
+    "copyright": "© 2025 Studious LMS สงวนลิขสิทธิ์"
+  }
+}

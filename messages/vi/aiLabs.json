@@ -1,0 +1,72 @@
+{
+  "aiLabs": {
+    "title": "Phòng thí nghiệm AI",
+    "subtitle": "Tạo nội dung giáo dục với sự hỗ trợ của AI",
+    "aiPowered": "Được hỗ trợ bởi AI",
+    "createNew": "Tạo nội dung mới",
+    "aiGenerated": "AI tạo ra",
+    "deleteConfirm": "Bạn có chắc chắn muốn xóa AI Lab này không? Thao tác này không thể hoàn tác.",
+    "widgets": {
+      "assignment": {
+        "title": "Phân công",
+        "description": "Tạo bài tập tương tác với sự hỗ trợ của AI"
+      },
+      "quiz": {
+        "title": "Bài kiểm tra",
+        "description": "Tạo các câu đố với nhiều loại câu hỏi khác nhau"
+      },
+      "worksheet": {
+        "title": "Phiếu bài tập",
+        "description": "Xây dựng các bài tập và phiếu bài tập thực hành"
+      },
+      "lessonPlan": {
+        "title": "Kế hoạch bài học",
+        "description": "Thiết kế kế hoạch bài học toàn diện"
+      },
+      "rubric": {
+        "title": "Tiêu chí",
+        "description": "Tạo bảng chấm điểm chi tiết"
+      }
+    },
+    "tabs": {
+      "drafts": "Phòng thí nghiệm bản thảo",
+      "chats": "Mèo AI"
+    },
+    "drafts": {
+      "title": "Phòng thí nghiệm bản thảo ({count})",
+      "empty": {
+        "title": "Chưa có bản thảo phòng thí nghiệm nào",
+        "description": "Tạo nội dung giáo dục đầu tiên được tạo bằng AI bằng cách sử dụng các tiện ích ở trên."
+      }
+    },
+    "chats": {
+      "title": "Phòng thí nghiệm AI ({count})",
+      "active": "Tích cực",
+      "messageCount": "{count} tin nhắn",
+      "createdBy": "Được tạo bởi {name}",
+      "empty": {
+        "title": "Chưa có phòng thí nghiệm AI nào",
+        "description": "Tạo Phòng thí nghiệm AI đầu tiên của bạn để bắt đầu hợp tác với AI về nội dung giáo dục."
+      }
+    },
+    "toast": {
+      "labCreated": "Phòng thí nghiệm AI đã được tạo thành công!",
+      "labCreateFailed": "Không tạo được AI Lab:",
+      "labDeleted": "AI Lab đã được xóa thành công!",
+      "labDeleteFailed": "Không xóa được AI Lab:"
+    }
+  },
+  "aiLabChat": {
+    "backButton": "Quay lại Phòng thí nghiệm AI",
+    "loading": "Đang tải...",
+    "aiThinking": "Suy nghĩ của AI...",
+    "getAIHelp": "Nhận trợ giúp AI",
+    "notFound": {
+      "title": "Không tìm thấy phòng thí nghiệm trò chuyện",
+      "description": "Phòng thí nghiệm AI này có thể đã bị xóa hoặc bạn không có quyền truy cập vào nó."
+    },
+    "toast": {
+      "messageFailed": "Không gửi được tin nhắn:"
+    }
+  }
+}

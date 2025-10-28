@@ -1,0 +1,12 @@
+{
+  "overview": {
+    "assignments": "Atamalar",
+    "students": "öğrenciler",
+    "attendance": "Katılım",
+    "attachFile": "Dosya ekle",
+    "post": "Postalamak",
+    "posting": "Gönderiliyor...",
+    "noPosts": "Henüz gönderi yok",
+    "createFirstPost": "İlk gönderiyi oluştur"
+  }
+}

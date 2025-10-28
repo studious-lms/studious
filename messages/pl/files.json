@@ -1,0 +1,130 @@
+{
+  "classFiles": {
+    "title": "Akta",
+    "subtitle": "Zarządzaj plikami i zasobami klasowymi",
+    "actions": {
+      "newFolder": "Nowy folder",
+      "upload": "Wgrywać",
+      "uploadFiles": "Prześlij pliki",
+      "createFolder": "Utwórz folder",
+      "download": "Pobierać",
+      "share": "Udział",
+      "delete": "Usuwać",
+      "filter": "Filtr",
+      "sort": "Sortować"
+    },
+    "toasts": {
+      "folderCreated": "Folder został pomyślnie utworzony",
+      "folderDeleted": "Folder został pomyślnie usunięty",
+      "folderRenamed": "Pomyślnie zmieniono nazwę folderu",
+      "folderMoved": "Folder został pomyślnie przeniesiony",
+      "filesUploaded": "Pliki zostały pomyślnie przesłane",
+      "fileDeleted": "Plik został pomyślnie usunięty",
+      "fileRenamed": "Pomyślnie zmieniono nazwę pliku",
+      "fileMoved": "Plik został pomyślnie przeniesiony",
+      "downloadStarted": "Rozpoczęto pobieranie",
+      "shareCopied": "Udostępnij link skopiowany"
+    },
+    "errors": {
+      "teacherOnly": "Tylko nauczyciele mogą modyfikować pliki.",
+      "downloadFailed": "Pobieranie nie powiodło się",
+      "shareFailed": "Udostępnianie nie powiodło się",
+      "failedToLoad": "Nie udało się załadować plików. Spróbuj ponownie później."
+    },
+    "breadcrumbs": {
+      "classFiles": "Pliki klas"
+    },
+    "search": {
+      "placeholder": "Szukaj w plikach"
+    },
+    "selected": "{count} wybrano",
+    "filters": {
+      "fileType": "Typ pliku",
+      "documents": "Dokumenty",
+      "images": "Obrazy",
+      "videos": "Filmy",
+      "presentations": "Prezentacje"
+    },
+    "sort": {
+      "name": "Nazwa",
+      "lastModified": "Ostatnia modyfikacja",
+      "fileSize": "Rozmiar pliku"
+    },
+    "table": {
+      "name": "Nazwa",
+      "owner": "Właściciel",
+      "lastModified": "Ostatnia modyfikacja",
+      "fileSize": "Rozmiar pliku"
+    },
+    "empty": {
+      "title": "Ten folder jest pusty",
+      "description": "Prześlij pliki lub utwórz foldery, aby rozpocząć porządkowanie materiałów lekcyjnych.",
+      "searchTitle": "Nie znaleziono plików",
+      "searchDescription": "Brak plików pasujących do zapytania „{query}”. Spróbuj użyć innego terminu wyszukiwania."
+    }
+  },
+  "folderView": {
+    "subtitle": "Zawartość folderu",
+    "notFound": {
+      "title": "Nie znaleziono folderu",
+      "description": "Nie można odnaleźć żądanego folderu.",
+      "backButton": "Powrót do plików"
+    },
+    "error": {
+      "loadFailed": "Nie udało się załadować zawartości folderu. Spróbuj ponownie później."
+    },
+    "breadcrumbs": {
+      "classFiles": "Pliki klas"
+    },
+    "search": {
+      "placeholder": "Szukaj w folderze",
+      "selected": "{count} wybrano"
+    },
+    "filters": {
+      "label": "Filtr",
+      "fileType": "Typ pliku",
+      "documents": "Dokumenty",
+      "images": "Obrazy",
+      "videos": "Filmy",
+      "presentations": "Prezentacje"
+    },
+    "sort": {
+      "label": "Sortować",
+      "name": "Nazwa",
+      "lastModified": "Ostatnia modyfikacja",
+      "fileSize": "Rozmiar pliku"
+    },
+    "table": {
+      "name": "Nazwa",
+      "owner": "Właściciel",
+      "lastModified": "Ostatnia modyfikacja",
+      "fileSize": "Rozmiar pliku"
+    },
+    "empty": {
+      "noFilesFound": "Nie znaleziono plików",
+      "noFilesFoundDescription": "Brak plików pasujących do zapytania „{query}”. Spróbuj użyć innego terminu wyszukiwania.",
+      "folderEmpty": "Ten folder jest pusty",
+      "folderEmptyDescription": "Prześlij pliki lub utwórz foldery, aby uporządkować swoje materiały."
+    },
+    "actions": {
+      "newFolder": "Nowy folder",
+      "uploadFiles": "Prześlij pliki",
+      "createFolder": "Utwórz folder"
+    },
+    "toast": {
+      "folderCreated": "Folder został pomyślnie utworzony",
+      "folderDeleted": "Folder został pomyślnie usunięty",
+      "folderRenamed": "Pomyślnie zmieniono nazwę folderu",
+      "folderMoved": "Folder został pomyślnie przeniesiony",
+      "filesUploaded": "Pliki zostały pomyślnie przesłane",
+      "fileDeleted": "Plik został pomyślnie usunięty",
+      "fileRenamed": "Pomyślnie zmieniono nazwę pliku",
+      "fileMoved": "Plik został pomyślnie przeniesiony",
+      "downloadStarted": "Rozpoczęto pobieranie",
+      "downloadFailed": "Pobieranie nie powiodło się",
+      "shareLinkCopied": "Udostępnij link skopiowany",
+      "shareFailed": "Udostępnianie nie powiodło się",
+      "permissionDenied": "Odmowa pozwolenia"
+    }
+  }
+}

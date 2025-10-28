@@ -1,0 +1,97 @@
+{
+  "attendance": {
+    "title": "Sınıf Etkinlikleri ve Katılım",
+    "subtitle": "Her etkinlik için öğrenci katılımını takip edin",
+    "saving": {
+      "auto": "Otomatik kaydediliyor...",
+      "unsaved": "Kaydedilmemiş değişiklikler",
+      "saving": "Kaydediliyor..."
+    },
+    "table": {
+      "date": "Tarih",
+      "eventName": "Etkinlik Adı",
+      "attendanceRate": "Katılım Oranı",
+      "attendance": "Katılım",
+      "actions": "Eylemler"
+    },
+    "actions": {
+      "viewDetails": "Ayrıntıları Görüntüle",
+      "editEvent": "Etkinliği Düzenle",
+      "deleteEvent": "Etkinliği Sil",
+      "createEvent": "Etkinlik Oluştur",
+      "saveAttendance": "Katılımı Kaydet",
+      "markAllPresent": "Tümünü Mevcut Olarak İşaretle",
+      "markAllAbsent": "Tüm Yokları İşaretle"
+    },
+    "allEvents": {
+      "title": "Tüm Etkinlikler",
+      "description": "Sınıf etkinliklerinin ve katılım kayıtlarının tam geçmişi",
+      "searchPlaceholder": "Etkinlikleri ara...",
+      "empty": {
+        "title": "Hiçbir etkinlik bulunamadı",
+        "description": "Katılımı takip etmeye başlamak için ilk etkinliğinizi oluşturun"
+      }
+    },
+    "eventsList": {
+      "pickDate": "Tarih seç",
+      "untitled": "Başlıksız Etkinlik",
+      "empty": {
+        "noEventsOnDate": "Bu tarihte etkinlik yok",
+        "noEventsOnDateDescription": "{date} için planlanmış etkinlik yok. Farklı bir tarih seçmeyi veya yeni bir etkinlik oluşturmayı deneyin.",
+        "noEvents": "Hiçbir etkinlik bulunamadı",
+        "noEventsDescription": "Katılımı takip etmeye başlamak için ilk etkinliğinizi oluşturun",
+        "createForDate": "Bu Tarih İçin Etkinlik Oluştur",
+        "createFirst": "İlk Etkinliği Oluştur"
+      }
+    },
+    "summary": {
+      "title": "Etkinlik Özeti",
+      "selectedEvent": "Seçili Etkinlik",
+      "total": "Toplam",
+      "attendanceRate": "Katılım Oranı"
+    },
+    "roster": {
+      "title": "Öğrenci Listesi",
+      "description": "Her öğrencinin katılımını işaretlemek için durum düğmelerine tıklayın",
+      "empty": {
+        "title": "Kayıtlı öğrenci yok",
+        "description": "Öğrenciler sınıfa katıldığında burada görünecekler"
+      }
+    },
+    "prompt": {
+      "title": "Bir Etkinlik Seçin",
+      "description": "Öğrenci katılımını görüntülemek ve yönetmek için yukarıdan bir etkinlik seçin"
+    },
+    "status": {
+      "present": "Sunmak",
+      "late": "Geç",
+      "absent": "Mevcut olmayan",
+      "notTaken": "Alınmadı"
+    },
+    "student": {
+      "title": "Katılımım",
+      "subtitle": "{className} için katılımınızı takip edin",
+      "attendanceRate": "Katılım Oranı",
+      "history": "Katılım Geçmişi",
+      "event": "Etkinlik",
+      "status": "Durum",
+      "searchPlaceholder": "Etkinlikleri ara...",
+      "empty": {
+        "title": "Katılım Kaydı Yok",
+        "description": "Etkinlikler oluşturulduktan ve katılım alındıktan sonra katılımınız burada görünecektir"
+      }
+    },
+    "deleteDialog": {
+      "title": "Etkinliği Sil",
+      "description": "\"{eventName}\" etkinliğini silmek istediğinizden emin misiniz? Bu işlem geri alınamaz ve ilişkili tüm katılım kayıtlarını silecektir.",
+      "deleting": "Siliniyor...",
+      "deleteButton": "Etkinliği Sil"
+    },
+    "toast": {
+      "attendanceSaved": "Katılım başarıyla kaydedildi",
+      "attendanceSaveFailed": "Katılım kaydedilemedi",
+      "eventDeleted": "Etkinlik başarıyla silindi",
+      "eventDeleteFailed": "Etkinlik silinemedi"
+    }
+  }
+}

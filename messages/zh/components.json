@@ -57,7 +57,8 @@
     "created": "评分标准创建成功",
     "updated": "评分标准已成功更新",
     "createFailed": "未能创建评分标准",
-    "updateFailed": "更新评分标准失败"
+    "updateFailed": "更新评分标准失败",
+    "errorNameRequired": "请提供名称和至少一个条件"
   },
   "gradingBoundaries": {
     "title": "创建等级边界",
@@ -176,7 +177,7 @@
     "eventUpdated": "活动更新成功",
     "errorRequired": "请填写所有必填字段",
     "errorSelectClass": "请选择一个班级参加班级活动",
-    "errorCreate": "无法创建事件",
+    "errorCreate": "无法创建活动",
     "errorUpdate": "更新事件失败"
   },
   "classEvent": {
@@ -202,7 +203,7 @@
     "eventCreated": "活动创建成功",
     "eventUpdated": "活动更新成功",
     "errorRequired": "请填写所有必填字段",
-    "errorCreate": "无法创建活动",
+    "errorCreate": "无法创建事件",
     "errorUpdate": "更新事件失败"
   },
   "aiLab": {

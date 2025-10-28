@@ -1,0 +1,1218 @@
+{
+  "common": {
+    "save": "Ratować",
+    "cancel": "Anulować",
+    "delete": "Usuwać",
+    "edit": "Redagować",
+    "submit": "Składać",
+    "close": "Zamknąć",
+    "back": "Z powrotem",
+    "next": "Następny",
+    "loading": "Załadunek...",
+    "search": "Szukaj",
+    "filter": "Filtr",
+    "sort": "Sortować",
+    "viewAll": "Zobacz wszystko",
+    "noData": "Brak dostępnych danych",
+    "export": "Eksport"
+  },
+  "time": {
+    "today": "Dzisiaj",
+    "tomorrow": "Jutro",
+    "yesterday": "Wczoraj",
+    "thisWeek": "W tym tygodniu",
+    "nextWeek": "Przyszły tydzień",
+    "lastWeek": "Ostatni tydzień"
+  },
+  "errors": {
+    "somethingWentWrong": "Coś poszło nie tak",
+    "tryAgain": "Spróbuj ponownie",
+    "pageNotFound": "Strona nie znaleziona",
+    "unauthorized": "Nieautoryzowany dostęp"
+  },
+  "auth": {
+    "login": {
+      "title": "Witamy ponownie",
+      "subtitle": "Zaloguj się na swoje konto Studious",
+      "username": "Nazwa użytkownika",
+      "password": "Hasło",
+      "forgotPassword": "Zapomniałeś hasła?",
+      "signIn": "Zalogować się",
+      "signingIn": "Logowanie...",
+      "noAccount": "Nie masz konta?",
+      "signUp": "Zapisać się",
+      "successMessage": "Pomyślnie zalogowano",
+      "cancel": "Anulować"
+    },
+    "signup": {
+      "title": "Utwórz swoje konto",
+      "subtitle": "Dołącz do Studious i zacznij się uczyć",
+      "signUp": "Zapisać się",
+      "firstName": "Imię",
+      "lastName": "Nazwisko",
+      "email": "E-mail",
+      "password": "Hasło",
+      "confirmPassword": "Potwierdź hasło",
+      "firstNamePlaceholder": "Imię",
+      "lastNamePlaceholder": "Nazwisko",
+      "emailPlaceholder": "Podaj swój adres e-mail",
+      "passwordPlaceholder": "Utwórz hasło",
+      "confirmPasswordPlaceholder": "Potwierdź swoje hasło",
+      "agreeToTerms": "Zgadzam się na",
+      "termsOfService": "Warunki korzystania z usługi",
+      "and": "I",
+      "privacyPolicy": "Polityka prywatności",
+      "createAccount": "Utwórz konto",
+      "creatingAccount": "Tworzenie konta...",
+      "alreadyHaveAccount": "Masz już konto?",
+      "signIn": "Zalogować się",
+      "passwordMismatch": "Hasła nie pasują",
+      "termsRequired": "Musisz zaakceptować warunki",
+      "accountCreated": "Konto zostało utworzone pomyślnie!",
+      "signUpFailed": "Nie udało się utworzyć konta"
+    },
+    "verification": {
+      "notVerified": "Konto niezweryfikowane",
+      "message": "Zanim się zalogujesz, musisz zweryfikować swoje konto. Sprawdź swoją skrzynkę e-mail, aby znaleźć link weryfikacyjny.",
+      "emailSentTo": "E-mail weryfikacyjny został wysłany na adres:",
+      "resendEmail": "Wyślij ponownie e-mail weryfikacyjny",
+      "backToSignIn": "Powrót do logowania",
+      "emailSent": "E-mail weryfikacyjny został wysłany!",
+      "checkInbox": "Sprawdź swoją skrzynkę odbiorczą i folder ze spamem.",
+      "enterEmail": "Podaj swój adres e-mail",
+      "sending": "Przesyłka...",
+      "sendEmail": "Wyślij e-mail"
+    }
+  },
+  "marketing": {
+    "navbar": {
+      "requestEarlyAccess": "Poproś o wczesny dostęp"
+    },
+    "hero": {
+      "badge": "Nowoczesna platforma edukacyjna",
+      "title1": "Bezproblemowo, bez rozproszeń",
+      "title2": "nauka dla nowoczesnych szkół",
+      "subtitle": "Studious LMS integruje sztuczną inteligencję, kalendarze w czasie rzeczywistym i komunikację klasową w jedną spójną platformę, która została zaprojektowana, aby pomóc nauczycielom w nauczaniu i uczniom w rozwoju.",
+      "requestEarlyAccess": "Poproś o wczesny dostęp",
+      "watchDemo": "Obejrzyj demo",
+      "altDashboard": "Panel platformy"
+    },
+    "problem": {
+      "title": "Tradycyjne portale szkolne są rozdrobnione i przestarzałe",
+      "issue1": "Nauczyciele marnują czas na przełączanie się między wieloma narzędziami",
+      "issue2": "Studenci mają problemy z organizacją i terminami",
+      "issue3": "Sztuczna inteligencja nadal nie jest w pełni zintegrowana z rzeczywistym procesem pracy w szkołach"
+    },
+    "response": {
+      "title1": "Studious LMS łączy nauczanie, uczenie się,",
+      "title2": "i komunikacji w jednym miejscu pracy",
+      "subtitle": "Zaprojektowano je w oparciu o najnowocześniejsze rozwiązania i z myślą o użytkowniku, dzięki czemu można je dostosować do potrzeb szkół każdej wielkości."
+    },
+    "features": {
+      "title": "Główne cechy",
+      "subtitle": "Wszystko, czego potrzebujesz, aby zarządzać nowoczesnymi doświadczeniami edukacyjnymi",
+      "ai": {
+        "title": "Asystent AI",
+        "description": "Pomaga tworzyć materiały do nauki, podsumowywać treści i pomagać w ocenianiu"
+      },
+      "classManagement": {
+        "title": "Zarządzanie klasą",
+        "description": "Zorganizuj zajęcia, zadania i frekwencję bez wysiłku"
+      },
+      "assignments": {
+        "title": "Zadania",
+        "description": "Twórz, zbieraj i oceniaj prace studentów w wydajny sposób"
+      },
+      "calendar": {
+        "title": "Kalendarz",
+        "description": "Synchronizacja w czasie rzeczywistym z zadaniami, lekcjami i wydarzeniami"
+      },
+      "analytics": {
+        "title": "Analityka",
+        "description": "Zobacz analizy dotyczące wydajności, uczestnictwa i zaangażowania"
+      },
+      "communication": {
+        "title": "Komunikacja",
+        "description": "Wbudowane wiadomości i ogłoszenia umożliwiające ujednoliconą współpracę"
+      }
+    },
+    "quote": {
+      "text": "Każda funkcja w Studious została zaprojektowana po to, aby zmniejszyć tarcie — a nie je zwiększyć."
+    },
+    "pricing": {
+      "title": "Wybierz odpowiedni plan dla swojej instytucji",
+      "subtitle": "Prosty, przejrzysty cennik bez ukrytych opłat. Wszystkie plany obejmują podstawowe funkcje z możliwością skalowania.",
+      "starter": {
+        "title": "Rozrusznik",
+        "price": "Bezpłatny",
+        "note": "Dostęp do wersji beta wliczony w cenę",
+        "description": "Idealne dla małych klas i programów pilotażowych",
+        "perk1": "Do 30 uczniów",
+        "perk2": "Nieograniczone zajęcia",
+        "perk3": "Główne funkcje (zadania, kalendarz, oceny)",
+        "perk4": "Asystent AI (5 czatów/miesiąc)",
+        "perk5": "Wsparcie społeczności",
+        "perk6": "5 GB pamięci masowej",
+        "button": "Zacznij za darmo"
+      },
+      "school": {
+        "title": "Szkoła",
+        "price": "5 dolarów",
+        "priceUnit": "/użytkownik/miesiąc",
+        "note": "Rozliczane rocznie lub 6 USD/miesiąc",
+        "description": "Dla szkół do 1000 uczniów",
+        "perk1": "Nieograniczona liczba studentów",
+        "perk2": "Nieograniczone zajęcia",
+        "perk3": "Wszystkie podstawowe funkcje",
+        "perk4": "Asystent AI (nieograniczona liczba zapytań)",
+        "perk5": "Pierwszy w kolejce do uzyskania dostępu do wersji beta Studious CMS",
+        "button": "Rozpocznij"
+      },
+      "institution": {
+        "title": "Instytucja",
+        "price": "Zwyczaj",
+        "note": "Dostosowane do Twoich potrzeb",
+        "description": "Dla dużych szkół i uniwersytetów (ponad 1000 studentów)",
+        "perk1": "Wszystko w planie szkolnym",
+        "perk2": "Wsparcie priorytetowe 24/7",
+        "perk3": "Nieograniczona przestrzeń dyskowa",
+        "perk4": "Szkolenia i wdrożenia dostosowane do indywidualnych potrzeb",
+        "perk5": "Niższe koszty na użytkownika",
+        "button": "Skontaktuj się ze sprzedażą"
+      },
+      "mostPopular": "Najpopularniejsze",
+      "earlyBird": "🎉 Wcześni użytkownicy otrzymują <strong>3 miesiące gratis</strong> w przypadku planów rocznych + dedykowane wsparcie wdrożeniowe"
+    },
+    "schoolProgram": {
+      "badge": "Wpływ społeczny",
+      "title": "Program rozwoju szkół pilnych",
+      "subtitle": "Wierzymy, że każdy uczeń zasługuje na dostęp do nowoczesnych narzędzi edukacyjnych, niezależnie od sytuacji ekonomicznej szkoły.",
+      "feature1Title": "100% bezpłatny dostęp",
+      "feature1Description": "Pełny dostęp do platformy ze wszystkimi funkcjami dla kwalifikujących się szkół",
+      "feature2Title": "Dedykowane wsparcie",
+      "feature2Description": "Priorytetowe wdrażanie i szkolenie nauczycieli i personelu",
+      "feature3Title": "Zasoby edukacyjne",
+      "feature3Description": "Bezpłatne materiały dydaktyczne i wsparcie programowe",
+      "applyNow": "Złóż wniosek teraz",
+      "learnMore": "Dowiedz się więcej",
+      "eligibilityTitle": "Uprawnienia do programu",
+      "qualifyingTitle": "Szkoły kwalifikujące:",
+      "qualify1": "Szkoły publiczne w społecznościach niedostatecznie obsługiwanych",
+      "qualify2": "Zarejestrowane instytucje edukacyjne non-profit",
+      "qualify3": "Szkoły w regionach rozwijających się",
+      "qualify4": "Szkoły objęte programem Title I (USA) lub równoważne",
+      "commitmentTitle": "Nasze zobowiązanie:",
+      "commitment": "10% naszych płacących klientów popiera darmowy dostęp dla szkół w potrzebie.",
+      "launchTitle": "Rozpoczęcie programu:",
+      "launch": "Styczeń 2026 • Nabór wniosków już otwarty"
+    },
+    "futureDevelopments": {
+      "title": "Przyszłe wydarzenia",
+      "subtitle": "Nasza mapa drogowa transformacji edukacji",
+      "cas": {
+        "title": "Perspektywa CAS",
+        "description": "Wspieranie niedofinansowanych szkół poprzez darowizny i materiały, dzięki czemu wysokiej jakości edukacja jest dostępna dla wszystkich."
+      },
+      "features": {
+        "title": "Perspektywa cech",
+        "description": "Rozszerzanie wsparcia sztucznej inteligencji dla studentów i tworzenie integracji API dla różnych systemów edukacyjnych na całym świecie."
+      },
+      "launch": {
+        "title": "Perspektywa uruchomienia",
+        "description": "Prezentacje w szkołach, na uniwersytetach i konferencjach mające na celu przekształcenie procesu nauczania."
+      }
+    },
+    "cta": {
+      "title": "Chcesz zmienić sposób uczenia się i nauczania w swojej szkole?",
+      "subtitle": "Dołącz do przyszłości edukacji ze Studious LMS",
+      "requestAccess": "Poproś o dostęp",
+      "partnerWithUs": "Zostań naszym partnerem",
+      "tagline": "Studious LMS — nowoczesna nauka w prostym wydaniu."
+    }
+  },
+  "press": {
+    "badge": "Prasa i media",
+    "title": "Studious w wiadomościach",
+    "subtitle": "Zasoby medialne, zasoby marki i informacje o firmie dla dziennikarzy i twórców treści",
+    "factsheet": {
+      "title": "Arkusz informacyjny firmy",
+      "subtitle": "Krótkie fakty na temat Studious LMS",
+      "companyInfo": "Informacje o firmie",
+      "founded": "Założony",
+      "hq": "Siedziba",
+      "industry": "Przemysł",
+      "website": "Strona internetowa",
+      "status": "Status",
+      "currentStatus": "Aktualny status",
+      "launchDate": "Data premiery",
+      "currentPhase": "Obecna faza",
+      "targetMarkets": "Rynki docelowe",
+      "teamSize": "Wielkość zespołu",
+      "devHqs": "Siedziby rozwoju"
+    },
+    "contact": {
+      "title": "Zapytania prasowe",
+      "subtitle": "W celu uzyskania informacji prasowych, wywiadów i próśb medialnych",
+      "sl": "Zwykle odpowiadamy w ciągu 24 godzin",
+      "general": "W celu uzyskania ogólnych informacji i wsparcia"
+    }
+  },
+  "program": {
+    "hero": {
+      "badge": "Inicjatywa na rzecz wpływu społecznego",
+      "title": "Program rozwoju szkół pilnych",
+      "subtitle": "Zapewnienie bezpłatnego dostępu do nowoczesnych technologii edukacyjnych dla szkół nieposiadających środków finansowych"
+    },
+    "commitment": {
+      "revenue": "Przychody zaangażowane",
+      "cohort": "Pierwsze uruchomienie kohorty",
+      "free": "Bezpłatny dostęp"
+    },
+    "about": {
+      "mission": {
+        "title": "Nasza misja",
+        "body1": "Program Rozwoju Szkół Studyjnych ma na celu wsparcie szkół znajdujących się w trudnej sytuacji, zapewniając im bezpłatny, nieograniczony dostęp do naszej platformy do zarządzania nauczaniem. Zdajemy sobie sprawę, że technologia będzie dominującym czynnikiem w przyszłej sile roboczej, jednak wiele placówek edukacyjnych nie ma dostępu do takich zasobów. Dzięki temu programowi dostarczamy nowoczesną technologię zarządzania nauczaniem szkołom, które najbardziej jej potrzebują."
+      },
+      "aims": {
+        "title": "Cele programu",
+        "body1": "Dzięki szeroko zakrojonym rozmowom z nauczycielami i specjalistami z branży edukacyjnej zidentyfikowaliśmy istotne luki w infrastrukturze nauczania cyfrowego dostępnej w wielu szkołach. Wiele systemów zarządzania nauczaniem dostępnych na rynku nie oferuje spójnego, intuicyjnego interfejsu użytkownika, a szkoły w regionach o niskim statusie społecznym często nie mogą sobie pozwolić na dostęp do nowoczesnych technologii edukacyjnych.",
+        "body2": "Nasz program bezpośrednio odpowiada na te wyzwania. Przychody z płatnych subskrypcji instytucjonalnych pozwalają nam zapewnić szkołom z ubogich środowisk kompleksowy dostęp do Studious LMS i powiązanych z nim narzędzi edukacyjnych. Ten zrównoważony model pozwala nam niwelować wykluczenie cyfrowe, jednocześnie stale ulepszając naszą platformę dla wszystkich użytkowników."
+      },
+      "receive": {
+        "title": "Co otrzymasz",
+        "body1": "Szkoły przyjęte do programu otrzymują pełną wersję platformy Studious – a nie jej ograniczoną lub okrojoną wersję. Obejmuje to nieograniczoną liczbę kont uczniów i nauczycieli, wszystkie funkcje premium (asystent AI, zaawansowaną analitykę, współpracę w czasie rzeczywistym), priorytetowe wsparcie techniczne, dedykowanych specjalistów ds. wdrażania, stałe zasoby szkoleniowe oraz dostęp do wszystkich przyszłych aktualizacji i ulepszeń.",
+        "body2": "Oprócz samego oprogramowania, zapewniamy kompleksowe wsparcie, aby Twoja szkoła mogła zmaksymalizować korzyści płynące z platformy. Nasz zespół będzie bezpośrednio współpracować z administratorami i nauczycielami, aby dostosować system do Twoich specyficznych potrzeb, zapewnić praktyczne szkolenia i pozostać do Twojej dyspozycji przez cały okres wdrożenia."
+      },
+      "qualifies": {
+        "title": "Kto się kwalifikuje",
+        "body1": "Priorytetem są dla nas szkoły, które uczą uczniów, którzy odnieśliby największe korzyści z ulepszonych technologii edukacyjnych. Dotyczy to szkół publicznych w społecznościach niedostatecznie obsługiwanych lub znajdujących się w trudnej sytuacji ekonomicznej, zarejestrowanych instytucji edukacyjnych non-profit, które wykazują trudności finansowe, szkół w regionach lub krajach rozwijających się, szkół objętych programem Title I w USA i ich międzynarodowych odpowiedników, a także każdej instytucji edukacyjnej, która może wykazać rzeczywistą potrzebę finansową, a także zaangażowanie w poprawę wyników uczniów.",
+        "body2": "Oceniamy każdy wniosek indywidualnie, biorąc pod uwagę nie tylko wskaźniki finansowe, ale także misję szkoły, liczbę uczniów, których uczy, oraz plany wykorzystania Studious do rozwoju edukacji. Naszym celem jest współpraca ze szkołami, które odniosą rzeczywiste korzyści z naszej platformy i skutecznie ją wykorzystają, aby poprawić jakość nauczania uczniów."
+      },
+      "impact": {
+        "title": "Nasza wizja wpływu",
+        "body1": "Zapewniając szkołom bezpłatny dostęp do nowoczesnych technologii zarządzania nauczaniem, dążymy do wyeliminowania jednej z głównych barier, z jakimi borykają się placówki edukacyjne w regionach defaworyzowanych. Nasze podejście wykracza poza samo oprogramowanie – jesteśmy zaangażowani w zapewnianie kompleksowego wsparcia, obejmującego zasoby szkoleniowe, pomoc w procesie wdrażania oraz dostęp do narzędzi edukacyjnych, takich jak e-booki i cyfrowe materiały piśmiennicze.",
+        "body2": "Program Rozwoju Szkół rozpoczyna się pod koniec listopada i trwa do połowy grudnia 2025 roku, wraz z naszą pierwszą grupą szkół partnerskich. Wraz z rozwojem Studious, rosną również nasze możliwości wspierania kolejnych szkół. Wszystkie przychody z naszych płatnych subskrypcji instytucjonalnych są reinwestowane w rozszerzanie dostępu do edukacji dla szkół w potrzebie, tworząc zrównoważony model równości edukacyjnej, który z czasem będzie się umacniał."
+      }
+    },
+    "cta": {
+      "apply": {
+        "title": "Złóż wniosek do programu",
+        "description": "Gotowy, aby wprowadzić Studious do swojej szkoły? Wypełnij nasz formularz zgłoszeniowy, a rozpatrzymy go w ciągu 5-7 dni roboczych.",
+        "item1": "Zajmuje około 10-15 minut",
+        "item2": "Opłata aplikacyjna nie jest wymagana",
+        "item3": "Odpowiedź w ciągu 5-7 dni roboczych",
+        "button": "Rozpocznij aplikację"
+      }
+    },
+    "status": {
+      "title": "Sprawdź status aplikacji",
+      "description": "Już złożyłeś/aś wniosek? Wprowadź numer swojego wniosku, aby sprawdzić jego status.",
+      "inputLabel": "Identyfikator aplikacji",
+      "placeholder": "np. EXA2025-...",
+      "help": "Po wysłaniu zgłoszenia otrzymałeś numer identyfikacyjny zgłoszenia na adres e-mail.",
+      "results": {
+        "found": "Znaleziono aplikację",
+        "school": "Szkoła:",
+        "location": "Lokalizacja:",
+        "submitted": "Złożony:",
+        "contact": "Kontakt:",
+        "notFound": {
+          "title": "Nie znaleziono aplikacji",
+          "body": "Sprawdź identyfikator swojej aplikacji i spróbuj ponownie. Jeśli nadal będziesz mieć problemy, skontaktuj się z nami pod adresem impact@studious.sh."
+        }
+      },
+      "cards": {
+        "approved": {
+          "title": "🎉 Gratulacje! Twój wniosek został zatwierdzony.",
+          "body": "Sprawdź swoją skrzynkę e-mail, aby poznać kolejne kroki konfiguracji konta."
+        },
+        "underReview": {
+          "title": "⏳ Twój wniosek jest obecnie rozpatrywany.",
+          "body": "Skontaktujemy się z Tobą drogą mailową po zakończeniu przeglądu."
+        },
+        "pending": {
+          "title": "📋 Twoje zgłoszenie zostało otrzymane.",
+          "body": "Nasz zespół wkrótce rozpocznie jego weryfikację. Przewidywany czas weryfikacji: 5-7 dni roboczych."
+        }
+      }
+    },
+    "contact": {
+      "title": "Masz pytania?",
+      "subtitle": "Nasz zespół pomoże Ci w procesie aplikacyjnym",
+      "button": "Napisz do nas: impact@studious.sh"
+    }
+  },
+  "apply": {
+    "toasts": {
+      "submitted": "Wniosek został wysłany pomyślnie!"
+    },
+    "errors": {
+      "submitFailed": "Nie udało się wysłać aplikacji: {message}"
+    },
+    "success": {
+      "title": "Wniosek złożony!",
+      "subtitle": "Dziękujemy za zgłoszenie się do Programu Rozwoju Szkół Studenckich",
+      "applicationId": "Twój identyfikator aplikacji",
+      "saveId": "Zapisz ten identyfikator, aby sprawdzić status swojej aplikacji",
+      "nextSteps": {
+        "title": "Co będzie dalej?",
+        "item1": "Otrzymasz wiadomość e-mail z potwierdzeniem na adres {email}",
+        "item2": "Nasz zespół rozpatrzy Twoją aplikację w ciągu 5-7 dni roboczych",
+        "item3": "Powiadomimy Cię e-mailem, gdy zapadnie decyzja"
+      },
+      "backToProgram": "Powrót do programu",
+      "returnHome": "Powrót do domu"
+    }
+  },
+  "agenda": {
+    "title": "Porządek obrad",
+    "description": "Przeglądaj swój harmonogram i nadchodzące wydarzenia dzięki kompleksowym widokom kalendarza",
+    "addEvent": "Dodaj wydarzenie",
+    "untitledEvent": "Wydarzenie bez tytułu",
+    "today": "Dzisiaj",
+    "previous": "Poprzedni",
+    "next": "Następny",
+    "views": {
+      "day": "Dzień",
+      "week": "Tydzień",
+      "month": "Miesiąc",
+      "year": "Rok"
+    }
+  },
+  "chat": {
+    "landing": {
+      "description": "Aby rozpocząć czat, wybierz konwersację z paska bocznego.",
+      "pleaseSignIn": "Proszę się zalogować",
+      "signInRequired": "Aby uzyskać dostęp do czatu, musisz się zalogować.",
+      "title": "Witamy w czacie"
+    },
+    "page": {
+      "unknown": "Nieznany",
+      "unnamedGroup": "Nienazwana grupa",
+      "unknownUser": "Nieznany użytkownik",
+      "notFound": {
+        "title": "Nie znaleziono rozmowy",
+        "description": "Ta konwersacja nie istnieje lub nie masz do niej dostępu.",
+        "backToChat": "Powrót do czatu"
+      },
+      "header": {
+        "members": "członkowie",
+        "markMentionsRead": "Marek wspomina o czytaniu"
+      },
+      "input": {
+        "placeholderPrefix": "Wiadomość"
+      },
+      "loading": "Ładowanie konwersacji..."
+    }
+  },
+  "notifications": {
+    "title": "Powiadomienia",
+    "subtitle": "Bądź na bieżąco ze swoimi zajęciami i zadaniami",
+    "badge": {
+      "unread": "{count} nieprzeczytane"
+    },
+    "filters": {
+      "label": "Filtr:",
+      "all": "Wszystkie ({count})",
+      "unread": "Nieprzeczytane ({count})",
+      "read": "Odczyt ({count})"
+    },
+    "empty": {
+      "unread": {
+        "title": "Brak nieprzeczytanych powiadomień",
+        "description": "Wszystko gotowe! Nie masz żadnych nieprzeczytanych powiadomień."
+      },
+      "read": {
+        "title": "Brak powiadomień o przeczytaniu",
+        "description": "Żadne powiadomienie nie zostało jeszcze oznaczone jako przeczytane."
+      },
+      "all": {
+        "title": "Brak powiadomień",
+        "description": "Otrzymane powiadomienia będą wyświetlane tutaj."
+      }
+    },
+    "actions": {
+      "marking": "Cechowanie...",
+      "markAsRead": "Oznacz jako przeczytane"
+    },
+    "toasts": {
+      "markedAsRead": "Powiadomienie oznaczone jako przeczytane"
+    },
+    "meta": {
+      "from": "z"
+    }
+  },
+  "profile": {
+    "title": "Profil",
+    "description": "Zarządzaj swoimi danymi osobowymi i ustawieniami profilu",
+    "editProfile": "Edytuj profil",
+    "saveChanges": "Zapisz zmiany",
+    "cancel": "Anulować",
+    "student": "Student",
+    "personalInformation": {
+      "title": "Informacje osobiste",
+      "description": "Zaktualizuj swoje dane osobowe i informacje profilowe",
+      "displayName": "Nazwa wyświetlana",
+      "displayNamePlaceholder": "Wprowadź swoją nazwę wyświetlaną",
+      "displayNameDescription": "Tak Twoje imię będzie widoczne dla innych",
+      "location": "Lokalizacja",
+      "locationPlaceholder": "Wprowadź swoją lokalizację",
+      "locationDescription": "Twoje miasto, stan lub kraj",
+      "bio": "Był",
+      "bioPlaceholder": "Opowiedz nam o sobie...",
+      "bioDescription": "Krótki opis o sobie (maks. 500 znaków)",
+      "website": "Strona internetowa",
+      "websitePlaceholder": "https://twoja-strona.com",
+      "websiteDescription": "Twoja osobista strona internetowa lub portfolio"
+    },
+    "accountInformation": {
+      "title": "Informacje o koncie",
+      "description": "Szczegóły Twojego konta i dane logowania",
+      "username": "Nazwa użytkownika",
+      "usernameNote": "Nazwy użytkownika nie można zmienić",
+      "email": "E-mail",
+      "emailNote": "Zarządzanie pocztą elektroniczną odbywa się w Ustawieniach konta",
+      "memberSince": "Członek od"
+    },
+    "messages": {
+      "profileUpdated": "Profil zaktualizowany pomyślnie",
+      "profileUpdateFailed": "Nie udało się zaktualizować profilu",
+      "profilePictureSelected": "Wybrano zdjęcie profilowe. Kliknij „Zapisz zmiany”, aby zaktualizować.",
+      "avatarSelected": "Wybrano awatar. Kliknij „Zapisz zmiany”, aby zaktualizować.",
+      "profilePictureUploadFailed": "Nie udało się przesłać zdjęcia profilowego",
+      "profilePictureSelectFailed": "Nie udało się wybrać zdjęcia profilowego",
+      "failedToLoadProfile": "Nie udało się załadować profilu. Spróbuj ponownie."
+    }
+  },
+  "class": {
+    "assignments": "Zadania",
+    "students": "studenci",
+    "attendance": "Frekwencja",
+    "attachFile": "Załącz plik",
+    "post": "Post",
+    "posting": "Mianowanie...",
+    "noPosts": "Brak postów",
+    "createFirstPost": "Utwórz pierwszy post",
+    "grades": {
+      "title": "Oceny",
+      "subtitle": "Przeglądaj i zarządzaj ocenami uczniów",
+      "columns": {
+        "assignment": "Zadanie",
+        "maxPoints": "Maksymalna liczba punktów",
+        "weight": "Waga",
+        "graded": "Oceniony",
+        "dueDate": "Dwie daty",
+        "actions": "Akcje",
+        "student": "Student",
+        "overallGrade": "Ocena ogólna",
+        "assignmentsCompleted": "Zadania ukończone",
+        "trend": "Tendencja"
+      },
+      "labels": {
+        "rubric": "Rubryka"
+      },
+      "actions": {
+        "manage": "Zarządzać",
+        "viewGrades": "Wyświetl oceny",
+        "saving": "Oszczędność...",
+        "saveChanges": "Zapisz zmiany",
+        "preview": "Zapowiedź",
+        "edit": "Redagować",
+        "delete": "Usuwać",
+        "createNew": "Utwórz nowy"
+      },
+      "overview": {
+        "title": "Przegląd klasy",
+        "classAverage": "Średnia klasy",
+        "totalStudents": "Łączna liczba studentów",
+        "assignments": "Zadania",
+        "submissionRate": "Współczynnik zgłoszeń"
+      },
+      "assignmentManagement": {
+        "title": "Zarządzanie zadaniami",
+        "empty": {
+          "title": "Nie znaleziono zadań",
+          "description": "Twórz zadania, aby zarządzać ocenami i ustawieniami"
+        },
+        "searchPlaceholder": "Szukaj zadań..."
+      },
+      "students": {
+        "title": "Studenci",
+        "viewAll": "Zobacz wszystkich uczniów",
+        "empty": {
+          "title": "Brak zapisanych studentów",
+          "description": "Uczniowie będą tu wyświetlani po dołączeniu do klasy"
+        },
+        "searchPlaceholder": "Wyszukaj studentów..."
+      },
+      "gradeBoundaries": {
+        "title": "Granice stopni",
+        "untitled": "Granica stopniowania bez tytułu",
+        "empty": {
+          "title": "Nie utworzono granic ocen",
+          "description": "Utwórz granice oceniania, aby zdefiniować zakresy ocen"
+        },
+        "previewTitle": "Podgląd granic oceniania",
+        "details": {
+          "title": "Szczegóły granic klasyfikacji",
+          "name": "Nazwa",
+          "noneDefined": "Nie określono granic oceniania"
+        }
+      },
+      "rubrics": {
+        "title": "Rubryki",
+        "untitled": "Rubryka bez tytułu",
+        "empty": {
+          "title": "Nie utworzono żadnych rubryk",
+          "description": "Utwórz rubryki, aby zdefiniować kryteria oceny"
+        },
+        "previewTitle": "Podgląd rubryki",
+        "details": {
+          "title": "Szczegóły rubryki",
+          "name": "Nazwa",
+          "category": "Kategoria",
+          "description": "Opis",
+          "custom": "Zwyczaj",
+          "noDescription": "Brak opisu",
+          "noCriteria": "W tej rubryce nie znaleziono żadnych kryteriów"
+        }
+      },
+      "confirm": {
+        "deleteRubric": "Czy na pewno chcesz usunąć ten schemat ocen?",
+        "deleteGradingBoundary": "Czy na pewno chcesz usunąć tę granicę oceny?"
+      }
+    },
+    "members": {
+      "title": "Członkowie",
+      "counts": {
+        "totalMembers": "{count} członków"
+      },
+      "actions": {
+        "inviteMember": "Zaproś członka",
+        "copy": "Kopia",
+        "regenerate": "Zregenerować",
+        "message": "Wiadomość",
+        "viewProfile": "Wyświetl profil",
+        "viewGrades": "Wyświetl oceny",
+        "makeTeacher": "Uczyń nauczyciela",
+        "makeStudent": "Utwórz ucznia",
+        "removeFromClass": "Usuń z klasy",
+        "removeAccess": "Usuń dostęp",
+        "tryAgain": "Spróbuj ponownie"
+      },
+      "labels": {
+        "teacher": "Nauczyciel",
+        "student": "Student",
+        "you": "Ty"
+      },
+      "invite": {
+        "title": "Kod zaproszenia na klasę",
+        "description": "Udostępnij ten kod uczniom, aby mogli dołączyć do zajęć"
+      },
+      "search": {
+        "placeholder": "Szukaj członków..."
+      },
+      "tabs": {
+        "students": "Studenci",
+        "teachers": "Nauczycielstwo"
+      },
+      "students": {
+        "empty": {
+          "title": "Nie znaleziono żadnych uczniów",
+          "matchNone": "Żaden uczeń nie spełnia kryteriów „{query}”",
+          "noStudents": "Do tej klasy nie dołączył jeszcze żaden student"
+        }
+      },
+      "teachers": {
+        "empty": {
+          "title": "Nie znaleziono nauczycieli",
+          "matchNone": "Brak nauczycieli odpowiadających zapytaniu „{query}”",
+          "noTeachers": "Nie dodano żadnych dodatkowych nauczycieli"
+        }
+      },
+      "toasts": {
+        "inviteRegenerated": "Kod zaproszenia został pomyślnie wygenerowany",
+        "copied": "Kod zaproszenia skopiowany do schowka",
+        "roleChanged": "Rola zmieniona na {role}",
+        "memberRemoved": "Członek został pomyślnie usunięty"
+      },
+      "errors": {
+        "regenerateFailed": "Nie udało się ponownie wygenerować kodu zaproszenia",
+        "changeRoleFailed": "Nie udało się zmienić roli",
+        "removeFailed": "Nie udało się usunąć członka",
+        "failedToLoad": "Nie udało się załadować członków"
+      }
+    },
+    "files": {
+      "title": "Akta",
+      "subtitle": "Zarządzaj plikami i zasobami klasowymi",
+      "actions": {
+        "newFolder": "Nowy folder",
+        "upload": "Wgrywać",
+        "uploadFiles": "Prześlij pliki",
+        "createFolder": "Utwórz folder",
+        "download": "Pobierać",
+        "share": "Udział",
+        "delete": "Usuwać",
+        "filter": "Filtr",
+        "sort": "Sortować"
+      },
+      "toasts": {
+        "folderCreated": "Folder został pomyślnie utworzony",
+        "folderDeleted": "Folder został pomyślnie usunięty",
+        "folderRenamed": "Pomyślnie zmieniono nazwę folderu",
+        "folderMoved": "Folder został pomyślnie przeniesiony",
+        "filesUploaded": "Pliki zostały pomyślnie przesłane",
+        "fileDeleted": "Plik został pomyślnie usunięty",
+        "fileRenamed": "Pomyślnie zmieniono nazwę pliku",
+        "fileMoved": "Plik został pomyślnie przeniesiony",
+        "downloadStarted": "Rozpoczęto pobieranie",
+        "shareCopied": "Udostępnij link skopiowany"
+      },
+      "errors": {
+        "teacherOnly": "Tylko nauczyciele mogą modyfikować pliki.",
+        "downloadFailed": "Pobieranie nie powiodło się",
+        "shareFailed": "Udostępnianie nie powiodło się",
+        "failedToLoad": "Nie udało się załadować plików. Spróbuj ponownie później."
+      },
+      "breadcrumbs": {
+        "classFiles": "Pliki klas"
+      },
+      "search": {
+        "placeholder": "Szukaj w plikach"
+      },
+      "selected": "{count} wybrano",
+      "filters": {
+        "fileType": "Typ pliku",
+        "documents": "Dokumenty",
+        "images": "Obrazy",
+        "videos": "Filmy",
+        "presentations": "Prezentacje"
+      },
+      "sort": {
+        "name": "Nazwa",
+        "lastModified": "Ostatnia modyfikacja",
+        "fileSize": "Rozmiar pliku"
+      },
+      "table": {
+        "name": "Nazwa",
+        "owner": "Właściciel",
+        "lastModified": "Ostatnia modyfikacja",
+        "fileSize": "Rozmiar pliku"
+      },
+      "empty": {
+        "title": "Ten folder jest pusty",
+        "description": "Prześlij pliki lub utwórz foldery, aby rozpocząć porządkowanie materiałów lekcyjnych.",
+        "searchTitle": "Nie znaleziono plików",
+        "searchDescription": "Brak plików pasujących do zapytania „{query}”. Spróbuj użyć innego terminu wyszukiwania."
+      }
+    },
+    "settings": {
+      "title": "Ustawienia klasy",
+      "subtitle": "Skonfiguruj szczegóły i preferencje klasy",
+      "labels": {
+        "unsavedChanges": "Niezapisane zmiany"
+      },
+      "actions": {
+        "saving": "Oszczędność...",
+        "saveChanges": "Zapisz zmiany",
+        "deleting": "Usuwanie...",
+        "deleteClass": "Usuń klasę",
+        "cancel": "Anulować"
+      },
+      "sections": {
+        "basicInfo": {
+          "title": "Informacje podstawowe"
+        },
+        "theme": {
+          "title": "Temat klasy",
+          "description": "Wybierz kolor motywu dla tej klasy"
+        },
+        "danger": {
+          "title": "Strefa zagrożenia",
+          "description": "Po usunięciu zajęć nie ma już odwrotu. Spowoduje to trwałe usunięcie wszystkich zadań, ocen i zapisów obecności oraz usunięcie wszystkich uczniów z zajęć."
+        }
+      },
+      "fields": {
+        "className": "Nazwa klasy",
+        "section": "Sekcja",
+        "subject": "Temat"
+      },
+      "placeholders": {
+        "className": "np. zaawansowana fizyka",
+        "section": "np. AP-101",
+        "subject": "np. fizyka"
+      },
+      "toasts": {
+        "updated": {
+          "title": "Klasa zaktualizowana",
+          "description": "Ustawienia klasy zostały pomyślnie zapisane."
+        },
+        "deleted": {
+          "title": "Klasa usunięta",
+          "description": "Klasa została trwale usunięta."
+        }
+      },
+      "errors": {
+        "updateFailed": {
+          "title": "Aktualizacja nie powiodła się",
+          "description": "Nie udało się zapisać ustawień klasy. Spróbuj ponownie."
+        }
+      },
+      "confirm": {
+        "title": "Czy jesteś absolutnie pewien?",
+        "description": "Tej czynności nie można cofnąć. Spowoduje to trwałe usunięcie klasy „{name}” i usunięcie wszystkich powiązanych z nią danych, w tym:",
+        "items": {
+          "assignments": "Wszystkie zadania i zgłoszenia",
+          "records": "Wszystkie oceny i zapisy obecności",
+          "students": "Wszyscy uczniowie zostaną usunięci z klasy",
+          "events": "Wszystkie wydarzenia i ogłoszenia klasowe"
+        },
+        "confirmDelete": "Tak, usuń klasę"
+      }
+    },
+    "syllabus": {
+      "title": "Konspekt",
+      "subtitle": "Przegląd kursu i informacje akademickie",
+      "actions": {
+        "saveChanges": "Zapisz zmiany",
+        "cancel": "Anulować",
+        "edit": "Edytuj sylabus"
+      },
+      "errors": {
+        "failedToLoad": "Nie udało się załadować programu nauczania",
+        "tryLater": "Spróbuj ponownie później."
+      },
+      "stats": {
+        "totalAssignments": "Łączna liczba zadań",
+        "completionRate": "Wskaźnik ukończenia",
+        "totalPoints": "Suma punktów",
+        "upcoming": "Nadchodzące"
+      },
+      "overview": {
+        "title": "Przegląd kursu",
+        "placeholder": "Wprowadź opis kursu, cele i inne ważne informacje...",
+        "helper": "Wprowadź informacje o kursie, cele edukacyjne, zasady i inne ważne szczegóły.",
+        "empty": {
+          "title": "Brak jeszcze treści programu nauczania",
+          "description": "Kliknij „Edytuj program nauczania”, aby dodać informacje o kursie, cele nauczania, zasady i inne."
+        }
+      },
+      "assignments": {
+        "title": "Zadania kursowe",
+        "gradedCount": "{ocenione} z {całkowitej} oceny",
+        "totalPoints": "{total} całkowita liczba punktów",
+        "empty": {
+          "title": "Brak jeszcze zadań",
+          "description": "Zadania pojawią się tutaj po ich utworzeniu."
+        }
+      },
+      "table": {
+        "assignment": "Zadanie",
+        "dueDate": "Dwie daty",
+        "points": "Zwrotnica",
+        "weight": "Waga",
+        "status": "Status",
+        "pts": "punkty"
+      },
+      "status": {
+        "graded": "Oceniony",
+        "pending": "Aż do"
+      },
+      "courseInfo": {
+        "title": "Informacje o kursie",
+        "basic": {
+          "title": "Informacje podstawowe",
+          "className": "Nazwa klasy",
+          "section": "Sekcja",
+          "subject": "Temat"
+        },
+        "stats": {
+          "title": "Statystyki kursu",
+          "totalAssignments": "Łączna liczba zadań",
+          "gradedAssignments": "Oceniane zadania",
+          "totalPoints": "Suma punktów"
+        }
+      }
+    }
+  },
+  "assignment": {
+    "dueDate": "Dwie daty",
+    "submit": "Składać",
+    "grade": "Stopień",
+    "feedback": "Informacja zwrotna",
+    "submissions": "Zgłoszenia",
+    "open": "Otwarte",
+    "closed": "Zamknięte",
+    "assignment": "Zadanie",
+    "assignments": "Zadania",
+    "newAssignment": "Nowe zadanie",
+    "createAssignment": "Utwórz zadanie",
+    "viewAssignment": "Wyświetl zadanie",
+    "allAssignments": "Wszystkie zadania",
+    "searchAssignments": "Szukaj zadań...",
+    "noAssignmentsFound": "Nie znaleziono zadań",
+    "createFirstAssignment": "Utwórz swoje pierwsze zadanie, aby zacząć",
+    "newSection": "Nowa sekcja",
+    "pts": "punkty",
+    "overdue": "(Zaległy)",
+    "assignmentDrop": "Upuść zadanie tutaj, aby przejść na wyższy poziom",
+    "sectionDeletionConfirmation": "Czy na pewno chcesz usunąć tę sekcję? Wszystkie zadania zostaną przeniesione na najwyższy poziom.",
+    "assignmentDeletionConfirmation": "Czy na pewno chcesz usunąć to zadanie? Tej czynności nie można cofnąć.",
+    "manageAndTrack": "Zarządzaj i śledź zadania klasowe",
+    "filters": "Filtry"
+  },
+  "pagination": {
+    "previous": "Poprzedni",
+    "next": "Następny",
+    "goToPreviousPage": "Przejdź do poprzedniej strony",
+    "goToNextPage": "Przejdź do następnej strony",
+    "morePages": "Więcej stron"
+  },
+  "about": {
+    "titleStatement1": "Nasza historia",
+    "titleStatement2": "Zbudowany z frustracji,",
+    "titleStatement3": "przeprojektowane za pomocą sztucznej inteligencji",
+    "titleStatement4": "Po latach zmagań z przestarzałymi i rozproszonymi portalami szkolnymi postanowiliśmy stworzyć system zarządzania nauczaniem, o jakim zawsze marzyliśmy.",
+    "problemParagraph1": "Studious rozpoczęło działalność w 2023 roku",
+    "problemParagraph2": "gdy grupa uczniów i nauczycieli zjednoczyła się we wspólnej frustracji: istniejące portale szkolne były nieporęczne, powolne i dostosowane do innej ery edukacji.",
+    "problemDetailParagraph": "Musieliśmy żonglować wieloma platformami – jedną do ocen, drugą do zadań, trzecią do komunikacji. Nauczyciele spędzali więcej czasu na walce z oprogramowaniem niż na nauczaniu. Uczniowie nie dotrzymywali terminów, bo powiadomienia były ukryte w przestarzałych interfejsach.",
+    "betterWay": "Wiedzieliśmy, że musi być jakiś lepszy sposób.",
+    "solutionParagraph1": "Czerpiąc inspirację z nowoczesnych narzędzi do współpracy, takich jak Linear i Notion, postanowiliśmy stworzyć system zarządzania nauczaniem, który",
+    "solutionParagraph2": "szybki, intuicyjny i przyjemny w obsłudze.",
+    "solutionParagraph3": "Taki, który integruje sztuczną inteligencję nie jako gadżet, lecz jako rzeczywisty czynnik zwiększający produktywność, zarówno nauczycieli, jak i uczniów.",
+    "launchParagraph": "Po dwóch latach prac rozwojowych, 17 października 2025 r., oficjalnie uruchomiliśmy Studious. Jesteśmy teraz w fazie wczesnego dostępu i gotowi pomóc szkołom na całym świecie w przekształcaniu ich sposobu nauczania.",
+    "journey1": "Nasza podróż",
+    "journey2": "Dwa lata budowania, nauki i rozwoju",
+    "journeyBeginningDate": "2023",
+    "journeyBeginning1": "Początek",
+    "journeyBeginning2": "Opracowano pierwszy prototyp. Główne funkcje: zarządzanie klasą, zadania i integracja z kalendarzem.",
+    "journeyBetaLaunchDate": "31 października 2025 r.",
+    "journeyBetaLaunch1": "Uruchomienie publicznej wersji beta",
+    "journeyBetaLaunch2": "Oficjalne publiczne testy beta Studious LMS. Udostępnienie wczesnej wersji platformy szkołom na całym świecie z pełnymi możliwościami.",
+    "journeyPilotSchoolsDate": "Listopad 2025",
+    "journeyPilotSchools1": "Program Szkół Pilotażowych",
+    "journeyPilotSchools2": "Nawiązanie współpracy ze szkołami pilotażowymi w celu zebrania rzeczywistych opinii i udoskonalenia platformy w oparciu o zróżnicowane potrzeby edukacyjne.",
+    "journeyBetaCompleteDate": "Grudzień 2025",
+    "journeyBetaComplete1": "Wersja beta ukończona",
+    "journeyBetaComplete2": "Przejście z wersji beta do pełnej wersji produkcyjnej. Stabilizacja platformy z wszystkimi kluczowymi funkcjami w pełni przetestowanymi i zoptymalizowanymi.",
+    "journeySDPDate": "Styczeń 2026",
+    "journeySDP1": "Uruchomienie programu rozwoju szkół",
+    "journeySDP2": "Ogłaszamy pierwszą grupę szkół przyjętych do Programu Rozwoju Szkół Studenckich, zapewniającego bezpłatny dostęp do kwalifikujących się instytucji.",
+    "missionStatement1": "Nasza misja jest prosta",
+    "missionStatement2": "Aby zbudować system zarządzania nauczaniem, z którego my — jako uczniowie, nauczyciele i osoby uczące się przez całe życie — chcielibyśmy korzystać każdego dnia.",
+    "joinAppeal1": "Dołącz do nas w tej podróży",
+    "joinAppeal2": "Bądź częścią przyszłości edukacji",
+    "requestEarlyAccess": "Poproś o wczesny dostęp",
+    "pressKit": "Zestaw prasowy"
+  },
+  "pricing": {
+    "pricingStatement1": "Przejrzyste ceny",
+    "pricingStatement2": "Wybierz odpowiedni plan dla swojej instytucji",
+    "pricingStatement3": "Prosty, przejrzysty cennik bez ukrytych opłat. Wszystkie plany obejmują podstawowe funkcje z możliwością skalowania.",
+    "mostPopular": "Najpopularniejsze",
+    "priceUnit": "/użytkownik/miesiąc",
+    "pricingStarterTitle": "Rozrusznik",
+    "pricingStarterPrice": "Bezpłatny",
+    "pricingStarterNote": "Dostęp do wersji beta wliczony w cenę",
+    "pricingStarterDescription": "Idealne dla małych klas i programów pilotażowych",
+    "pricingStarterPerk1": "Do 30 uczniów",
+    "pricingStarterPerk2": "Nieograniczone zajęcia",
+    "pricingStarterPerk3": "Główne funkcje (zadania, kalendarz, oceny)",
+    "pricingStarterPerk4": "Asystent AI (5 czatów/miesiąc)",
+    "pricingStarterPerk5": "Wsparcie społeczności",
+    "pricingStarterPerk6": "5 GB pamięci masowej",
+    "pricingStarterLink": "Zacznij za darmo",
+    "pricingSchoolTitle": "Szkoła",
+    "pricingSchoolPriceNote": "Rozliczane rocznie lub 6 USD/miesiąc",
+    "pricingSchoolNote": "Dla szkół do 1000 uczniów",
+    "pricingSchoolPerk1": "Nieograniczona liczba studentów",
+    "pricingSchoolPerk2": "Nieograniczone zajęcia",
+    "pricingSchoolPerk3": "Wszystkie podstawowe funkcje",
+    "pricingSchoolPerk4": "Asystent AI (nieograniczona liczba zapytań)",
+    "pricingSchoolPerk5": "Pierwszy w kolejce do uzyskania dostępu do wersji beta Studious CMS",
+    "pricingSchoolPerk6": "Dostęp do API",
+    "pricingSchoolLink": "Rozpocznij"
+  },
+  "components": {
+    "earlyAccess": {
+      "title": "Poproś o wczesny dostęp",
+      "description": "Zapisz się na listę oczekujących i bądź jedną z pierwszych osób, które skorzystają z Studious LMS",
+      "fields": {
+        "email": "Adres e-mail *",
+        "institutionSize": "Wielkość instytucji *"
+      },
+      "placeholders": {
+        "email": "ty@school.edu",
+        "institutionSize": "Wybierz wielkość instytucji"
+      },
+      "sizes": {
+        "tiny": "1-30 uczniów (nauczyciel indywidualny)",
+        "small": "31-100 uczniów (Mała Szkoła)",
+        "medium": "101-500 uczniów (szkoła średnia)",
+        "large": "501-1000 uczniów (duża szkoła)",
+        "institution": "1001+ studentów (instytucja)"
+      },
+      "actions": {
+        "submit": "Poproś o dostęp",
+        "submitting": "Przedkładający...",
+        "done": "Zrobione"
+      },
+      "success": {
+        "title": "Jesteś na liście!",
+        "description": "Gdy będziemy gotowi, wyślemy Ci wiadomość e-mail na adres {email}."
+      },
+      "toasts": {
+        "success": "Pomyślnie dołączono do listy oczekujących!"
+      }
+    },
+    "joinClass": {
+      "title": "Dołącz do klasy",
+      "buttonLabel": "Dołącz do klasy",
+      "fields": {
+        "inviteCode": "Kod zaproszenia na klasę"
+      },
+      "placeholders": {
+        "inviteCode": "np. MATH101-2025"
+      },
+      "help": "Wprowadź kod zaproszenia podany przez nauczyciela",
+      "howTo": {
+        "title": "Jak uzyskać kod zaproszenia:",
+        "item1": "Zapytaj swojego nauczyciela o kod zaproszenia na zajęcia",
+        "item2": "Sprawdź swoją skrzynkę e-mail, aby uzyskać instrukcje dotyczące zapisów na zajęcia",
+        "item3": "Poszukaj kodu w sylabusie lub materiałach kursu"
+      },
+      "actions": {
+        "cancel": "Anulować",
+        "join": "Dołącz do klasy",
+        "joining": "Łączący..."
+      },
+      "toasts": {
+        "success": "Pomyślnie dołączyłeś do klasy.",
+        "errorInvalid": "Nieprawidłowy kod zaproszenia lub nie znaleziono klasy.",
+        "errorEmpty": "Proszę podać prawidłowy kod zaproszenia."
+      }
+    },
+    "createClass": {
+      "title": "Utwórz nową klasę",
+      "buttonLabel": "Utwórz klasę",
+      "fields": {
+        "title": "Tytuł klasy *",
+        "section": "Sekcja *",
+        "subject": "Temat *",
+        "semester": "Semestr",
+        "credits": "Kredyty",
+        "meetingTime": "Czas spotkania",
+        "location": "Lokalizacja",
+        "description": "Opis"
+      },
+      "placeholders": {
+        "title": "np. zaawansowana fizyka",
+        "section": "np. AP-101",
+        "subject": "np. fizyka",
+        "semester": "np. wiosna 2025",
+        "credits": "np. 3",
+        "meetingTime": "np. pon.-śr. pt. 10:00-11:00",
+        "location": "np. pokój 205, budynek naukowy",
+        "description": "Opisz treść i cele zajęć..."
+      },
+      "actions": {
+        "cancel": "Anulować",
+        "create": "Utwórz klasę",
+        "creating": "Tworzenie..."
+      },
+      "toasts": {
+        "success": "Klasa {name} została pomyślnie utworzona.",
+        "errorRequired": "Proszę wypełnić wszystkie wymagane pola.",
+        "errorFailed": "Nie udało się utworzyć klasy. Spróbuj ponownie później."
+      }
+    },
+    "createFolder": {
+      "titleCreate": "Utwórz nowy folder",
+      "titleEdit": "Edytuj folder",
+      "fields": {
+        "name": "Nazwa folderu *",
+        "description": "Opis (opcjonalnie)",
+        "color": "Kolor folderu"
+      },
+      "placeholders": {
+        "name": "Wprowadź nazwę folderu",
+        "description": "Dodaj opis tego folderu..."
+      },
+      "help": {
+        "name": "Wybierz opisową nazwę dla swojego folderu",
+        "description": "{liczba}/500 znaków"
+      },
+      "actions": {
+        "cancel": "Anulować",
+        "create": "Utwórz folder",
+        "update": "Aktualizuj folder",
+        "creating": "Tworzenie...",
+        "updating": "Aktualizowanie..."
+      },
+      "toasts": {
+        "errorRequired": "Nazwa folderu jest wymagana",
+        "errorInvalidChars": "Nazwa folderu zawiera nieprawidłowe znaki",
+        "errorTooLong": "Nazwa folderu jest za długa (maks. 255 znaków)"
+      }
+    },
+    "createAssignment": {
+      "title": "Utwórz nowe zadanie",
+      "buttonLabel": "Utwórz zadanie",
+      "sections": {
+        "details": "Szczegóły zadania",
+        "configuration": "Konfiguracja",
+        "grading": "Ocenianie i ocenianie",
+        "attachments": "Załączniki"
+      },
+      "fields": {
+        "title": "Tytuł *",
+        "instructions": "Instrukcje *",
+        "dueDate": "Dwie daty",
+        "type": "Typ zadania",
+        "section": "Sekcja",
+        "rubric": "Rubryka",
+        "gradeScale": "Skala ocen",
+        "maxPoints": "Maksymalna liczba punktów",
+        "weight": "Waga (%)",
+        "sectionColor": "Kolor sekcji"
+      },
+      "placeholders": {
+        "title": "np. Quiz z rozdziału 5, Raport z laboratorium fizycznego",
+        "instructions": "Podaj uczniom jasne instrukcje...",
+        "maxPoints": "100",
+        "weight": "1.0",
+        "chooseSection": "Wybierz sekcję",
+        "chooseRubric": "Wybierz rubrykę",
+        "chooseGradeScale": "Wybierz skalę ocen",
+        "newSectionName": "Wprowadź nazwę sekcji..."
+      },
+      "types": {
+        "homework": "Praca domowa",
+        "quiz": "Kwiz",
+        "test": "Test",
+        "project": "Projekt",
+        "essay": "Esej",
+        "discussion": "Dyskusja",
+        "presentation": "Prezentacja",
+        "lab": "Laboratorium",
+        "other": "Inny"
+      },
+      "options": {
+        "graded": {
+          "label": "Oceniane zadanie",
+          "description": "Uwzględnij w dzienniku ocen"
+        },
+        "draft": {
+          "label": "Zapisz jako wersję roboczą",
+          "description": "Ukryj przed studentami"
+        }
+      },
+      "section": {
+        "none": "Brak sekcji",
+        "createNew": "Utwórz nową sekcję"
+      },
+      "rubric": {
+        "none": "Brak rubryki",
+        "untitled": "Rubryka bez tytułu",
+        "autoCalculate": "Punkty zostaną automatycznie obliczone na podstawie wybranej rubryki"
+      },
+      "gradeScale": {
+        "default": "Skala domyślna",
+        "untitled": "Skala bez tytułu"
+      },
+      "files": {
+        "uploadButton": "Prześlij pliki",
+        "dropZone": "Upuść pliki tutaj lub kliknij, aby przesłać",
+        "dropZoneHint": "Obsługuje wszystkie typy plików • Maksymalnie 50 MB na plik",
+        "filesUploaded": "{uploaded} z {total} przesłanych plików"
+      },
+      "status": {
+        "creating": "Tworzenie zadania...",
+        "settingUp": "Konfigurowanie szczegółów zadania...",
+        "preparing": "Przygotowywanie przesyłania plików...",
+        "uploading": "Przesyłanie plików do pamięci masowej w chmurze...",
+        "processing": "Przetwarzanie przesłanych plików...",
+        "finalizing": "Finalizowanie zadania...",
+        "assigning": "Przypisywanie uczniom...",
+        "almostDone": "Prawie gotowe...",
+        "uploadingFile": "Przesyłanie {name}...",
+        "creatingProgress": "Tworzenie zadania",
+        "draftStatus": "Zostanie zapisany jako wersja robocza",
+        "publishedStatus": "Zostanie opublikowane dla studentów"
+      },
+      "actions": {
+        "cancel": "Anulować",
+        "create": "Utwórz zadanie",
+        "saveDraft": "Zapisz wersję roboczą",
+        "creating": "Tworzenie...",
+        "add": "Dodać"
+      },
+      "toasts": {
+        "successCreated": "Zadanie zostało pomyślnie utworzone.",
+        "successDraft": "Zadanie zostało pomyślnie zapisane jako wersja robocza.",
+        "errorRequired": "Proszę wypełnić wszystkie wymagane pola.",
+        "errorFailed": "Nie udało się utworzyć zadania. Spróbuj ponownie.",
+        "errorUploadFailed": "Nie udało się przesłać {name}",
+        "sectionCreated": "Sekcja „{name}” została pomyślnie utworzona."
+      }
+    },
+    "createAnnouncement": {
+      "title": "Utwórz ogłoszenie",
+      "buttonLabel": "Ogłoszenie po",
+      "fields": {
+        "title": "Tytuł ogłoszenia *",
+        "content": "Treść *",
+        "priority": "Poziom priorytetu",
+        "expiryDate": "Data ważności (opcjonalnie)",
+        "publishDate": "Data publikacji",
+        "publishTime": "Czas publikacji"
+      },
+      "placeholders": {
+        "title": "np. Sprawozdanie z laboratorium należy oddać w piątek",
+        "content": "Wpisz tutaj treść swojego ogłoszenia...",
+        "publishDate": "Opublikuj natychmiast, jeśli jest pusty"
+      },
+      "priority": {
+        "low": "Niski",
+        "normal": "Normalna",
+        "high": "Wysoki",
+        "urgent": "Pilny"
+      },
+      "sections": {
+        "settings": "Ustawienia",
+        "notifications": "Powiadomienia",
+        "schedule": "Harmonogram publikacji (opcjonalnie)"
+      },
+      "settings": {
+        "pinned": {
+          "label": "Przypnij na górę",
+          "description": "Umieść to ogłoszenie na górze listy"
+        },
+        "urgent": {
+          "label": "Oznacz jako pilne",
+          "description": "Podkreśl pilnym stylem"
+        }
+      },
+      "notifications": {
+        "email": {
+          "label": "Wyślij powiadomienie e-mail",
+          "description": "Powiadom uczniów za pośrednictwem poczty e-mail"
+        },
+        "push": {
+          "label": "Wyślij powiadomienie push",
+          "description": "Wyślij powiadomienie do aplikacji mobilnej"
+        }
+      },
+      "actions": {
+        "cancel": "Anulować",
+        "publishNow": "Opublikuj teraz",
+        "schedule": "Ogłoszenie harmonogramu"
+      },
+      "toasts": {
+        "success": "Ogłoszenie utworzone",
+        "errorRequired": "Proszę wypełnić wszystkie wymagane pola."
+      }
+    }
+  }
+}

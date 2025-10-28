@@ -1,0 +1,72 @@
+{
+  "aiLabs": {
+    "title": "ห้องปฏิบัติการ AI",
+    "subtitle": "สร้างเนื้อหาการศึกษาด้วยความช่วยเหลือจาก AI",
+    "aiPowered": "ขับเคลื่อนด้วย AI",
+    "createNew": "สร้างเนื้อหาใหม่",
+    "aiGenerated": "สร้างโดย AI",
+    "deleteConfirm": "คุณแน่ใจหรือไม่ว่าต้องการลบ AI Lab นี้? การดำเนินการนี้ไม่สามารถย้อนกลับได้",
+    "widgets": {
+      "assignment": {
+        "title": "งานที่มอบหมาย",
+        "description": "สร้างงานแบบโต้ตอบด้วยความช่วยเหลือจาก AI"
+      },
+      "quiz": {
+        "title": "แบบทดสอบ",
+        "description": "สร้างแบบทดสอบด้วยประเภทคำถามที่หลากหลาย"
+      },
+      "worksheet": {
+        "title": "ใบงาน",
+        "description": "สร้างแผ่นงานฝึกหัดและแบบฝึกหัด"
+      },
+      "lessonPlan": {
+        "title": "แผนการสอน",
+        "description": "ออกแบบแผนการสอนที่ครอบคลุม"
+      },
+      "rubric": {
+        "title": "หัวข้อ",
+        "description": "สร้างเกณฑ์การให้คะแนนโดยละเอียด"
+      }
+    },
+    "tabs": {
+      "drafts": "ดราฟท์แล็บส์",
+      "chats": "แมว AI"
+    },
+    "drafts": {
+      "title": "ร่างแล็บ ({count})",
+      "empty": {
+        "title": "ยังไม่มีร่างแล็บ",
+        "description": "สร้างเนื้อหาการศึกษาที่สร้างโดย AI รายการแรกของคุณโดยใช้วิดเจ็ตด้านบน"
+      }
+    },
+    "chats": {
+      "title": "ห้องทดลอง AI ({count})",
+      "active": "คล่องแคล่ว",
+      "messageCount": "{count} ข้อความ",
+      "createdBy": "สร้างโดย {ชื่อ}",
+      "empty": {
+        "title": "ยังไม่มี AI Labs",
+        "description": "สร้าง AI Lab แห่งแรกของคุณเพื่อเริ่มทำงานร่วมกันกับ AI ในเนื้อหาการศึกษา"
+      }
+    },
+    "toast": {
+      "labCreated": "สร้าง AI Lab สำเร็จแล้ว!",
+      "labCreateFailed": "ไม่สามารถสร้าง AI Lab ได้:",
+      "labDeleted": "AI Lab ลบสำเร็จแล้ว!",
+      "labDeleteFailed": "ไม่สามารถลบ AI Lab ได้:"
+    }
+  },
+  "aiLabChat": {
+    "backButton": "กลับไปที่ AI Labs",
+    "loading": "กำลังโหลด...",
+    "aiThinking": "AI กำลังคิด...",
+    "getAIHelp": "รับความช่วยเหลือด้าน AI",
+    "notFound": {
+      "title": "ไม่พบห้องแล็ปแชท",
+      "description": "AI Lab นี้อาจถูกลบไปแล้วหรือคุณไม่สามารถเข้าถึงได้"
+    },
+    "toast": {
+      "messageFailed": "ไม่สามารถส่งข้อความได้:"
+    }
+  }
+}

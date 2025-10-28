@@ -20,7 +20,7 @@
       "viewAgenda": "View Agenda",
       "dueToday": "Due today",
       "dueTomorrow": "Due tomorrow",
-      "due": "Due {date}",
+      "due": "Two {dates}",
       "teaching": "Teaching",
       "viewAllAssignments": "View All Assignments"
     },

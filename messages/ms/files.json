@@ -1,0 +1,130 @@
+{
+  "classFiles": {
+    "title": "Fail",
+    "subtitle": "Urus fail dan sumber kelas",
+    "actions": {
+      "newFolder": "Folder Baharu",
+      "upload": "Muat naik",
+      "uploadFiles": "Muat Naik Fail",
+      "createFolder": "Buat Folder",
+      "download": "Muat turun",
+      "share": "Kongsi",
+      "delete": "Padam",
+      "filter": "Penapis",
+      "sort": "Isih"
+    },
+    "toasts": {
+      "folderCreated": "Folder berjaya dibuat",
+      "folderDeleted": "Folder berjaya dipadamkan",
+      "folderRenamed": "Folder berjaya dinamakan semula",
+      "folderMoved": "Folder berjaya dialihkan",
+      "filesUploaded": "Fail berjaya dimuat naik",
+      "fileDeleted": "Fail berjaya dipadamkan",
+      "fileRenamed": "Fail berjaya dinamakan semula",
+      "fileMoved": "Fail berjaya dialihkan",
+      "downloadStarted": "Muat turun bermula",
+      "shareCopied": "Kongsi pautan disalin"
+    },
+    "errors": {
+      "teacherOnly": "Hanya guru boleh mengubah suai fail.",
+      "downloadFailed": "Muat turun gagal",
+      "shareFailed": "Kongsi gagal",
+      "failedToLoad": "Gagal memuatkan fail. Sila cuba lagi kemudian."
+    },
+    "breadcrumbs": {
+      "classFiles": "Fail Kelas"
+    },
+    "search": {
+      "placeholder": "Cari dalam fail"
+    },
+    "selected": "{count} dipilih",
+    "filters": {
+      "fileType": "Jenis Fail",
+      "documents": "Dokumen",
+      "images": "Imej",
+      "videos": "Video",
+      "presentations": "Persembahan"
+    },
+    "sort": {
+      "name": "Nama",
+      "lastModified": "Terakhir diubah suai",
+      "fileSize": "Saiz fail"
+    },
+    "table": {
+      "name": "Nama",
+      "owner": "Pemilik",
+      "lastModified": "Terakhir diubah suai",
+      "fileSize": "Saiz fail"
+    },
+    "empty": {
+      "title": "Folder ini kosong",
+      "description": "Muat naik fail atau cipta folder untuk mula menyusun bahan kelas anda.",
+      "searchTitle": "Tiada fail ditemui",
+      "searchDescription": "Tiada fail sepadan dengan \"{query}\". Cuba istilah carian yang berbeza."
+    }
+  },
+  "folderView": {
+    "subtitle": "Kandungan folder",
+    "notFound": {
+      "title": "Folder Tidak Ditemui",
+      "description": "Folder yang diminta tidak ditemui.",
+      "backButton": "Kembali ke Fail"
+    },
+    "error": {
+      "loadFailed": "Gagal memuatkan kandungan folder. Sila cuba lagi kemudian."
+    },
+    "breadcrumbs": {
+      "classFiles": "Fail Kelas"
+    },
+    "search": {
+      "placeholder": "Cari dalam folder",
+      "selected": "{count} dipilih"
+    },
+    "filters": {
+      "label": "Penapis",
+      "fileType": "Jenis Fail",
+      "documents": "Dokumen",
+      "images": "Imej",
+      "videos": "Video",
+      "presentations": "Persembahan"
+    },
+    "sort": {
+      "label": "Isih",
+      "name": "Nama",
+      "lastModified": "Terakhir diubah suai",
+      "fileSize": "Saiz fail"
+    },
+    "table": {
+      "name": "Nama",
+      "owner": "Pemilik",
+      "lastModified": "Terakhir diubah suai",
+      "fileSize": "Saiz fail"
+    },
+    "empty": {
+      "noFilesFound": "Tiada fail ditemui",
+      "noFilesFoundDescription": "Tiada fail sepadan dengan \"{query}\". Cuba istilah carian yang berbeza.",
+      "folderEmpty": "Folder ini kosong",
+      "folderEmptyDescription": "Muat naik fail atau buat folder untuk menyusun bahan anda."
+    },
+    "actions": {
+      "newFolder": "Folder Baharu",
+      "uploadFiles": "Muat Naik Fail",
+      "createFolder": "Buat Folder"
+    },
+    "toast": {
+      "folderCreated": "Folder berjaya dibuat",
+      "folderDeleted": "Folder berjaya dipadamkan",
+      "folderRenamed": "Folder berjaya dinamakan semula",
+      "folderMoved": "Folder berjaya dialihkan",
+      "filesUploaded": "Fail berjaya dimuat naik",
+      "fileDeleted": "Fail berjaya dipadamkan",
+      "fileRenamed": "Fail berjaya dinamakan semula",
+      "fileMoved": "Fail berjaya dialihkan",
+      "downloadStarted": "Muat turun bermula",
+      "downloadFailed": "Muat turun gagal",
+      "shareLinkCopied": "Kongsi pautan disalin",
+      "shareFailed": "Kongsi gagal",
+      "permissionDenied": "Kebenaran ditolak"
+    }
+  }
+}

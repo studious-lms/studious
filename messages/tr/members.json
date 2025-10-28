@@ -1,0 +1,63 @@
+{
+  "members": {
+    "title": "Üyeler",
+    "counts": {
+      "totalMembers": "{count} üye"
+    },
+    "actions": {
+      "inviteMember": "Üye Davet Et",
+      "copy": "Kopyala",
+      "regenerate": "Yeniden oluşturmak",
+      "message": "Mesaj",
+      "viewProfile": "Profili Görüntüle",
+      "viewGrades": "Notları Görüntüle",
+      "makeTeacher": "Öğretmen Yap",
+      "makeStudent": "Öğrenci Yap",
+      "removeFromClass": "Sınıftan Kaldır",
+      "removeAccess": "Erişimi Kaldır",
+      "tryAgain": "Tekrar deneyin"
+    },
+    "labels": {
+      "teacher": "Öğretmen",
+      "student": "Öğrenci",
+      "you": "Sen"
+    },
+    "invite": {
+      "title": "Sınıf Davetiye Kodu",
+      "description": "Sınıfa katılmak için bu kodu öğrencilerle paylaşın"
+    },
+    "search": {
+      "placeholder": "Üyeleri ara..."
+    },
+    "tabs": {
+      "students": "Öğrenciler",
+      "teachers": "Öğretmenler"
+    },
+    "students": {
+      "empty": {
+        "title": "Hiçbir öğrenci bulunamadı",
+        "matchNone": "\"{query}\" ile eşleşen öğrenci bulunamadı",
+        "noStudents": "Bu sınıfa henüz hiçbir öğrenci katılmadı"
+      }
+    },
+    "teachers": {
+      "empty": {
+        "title": "Öğretmen bulunamadı",
+        "matchNone": "\"{query}\" ile eşleşen öğretmen bulunamadı",
+        "noTeachers": "Ek öğretmen eklenmedi"
+      }
+    },
+    "toasts": {
+      "inviteRegenerated": "Davet kodu başarıyla yeniden oluşturuldu",
+      "copied": "Davet kodu panoya kopyalandı",
+      "roleChanged": "Rol {role} olarak değiştirildi",
+      "memberRemoved": "Üye başarıyla kaldırıldı"
+    },
+    "errors": {
+      "regenerateFailed": "Davet kodu yeniden oluşturulamadı",
+      "changeRoleFailed": "Rol değiştirilemedi",
+      "removeFailed": "Üye kaldırılamadı",
+      "failedToLoad": "Üyeler yüklenemedi"
+    }
+  }
+}

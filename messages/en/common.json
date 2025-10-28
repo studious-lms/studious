@@ -458,7 +458,7 @@
       "location": "Location",
       "locationPlaceholder": "Enter your location",
       "locationDescription": "Your city, state, or country",
-      "bio": "Bio",
+      "bio": "Was",
       "bioPlaceholder": "Tell us about yourself...",
       "bioDescription": "A brief description about yourself (max 500 characters)",
       "website": "Website",
@@ -501,7 +501,7 @@
         "maxPoints": "Max Points",
         "weight": "Weight",
         "graded": "Graded",
-        "dueDate": "Due Date",
+        "dueDate": "Two Dates",
         "actions": "Actions",
         "student": "Student",
         "overallGrade": "Overall Grade",
@@ -809,7 +809,7 @@
       },
       "table": {
         "assignment": "Assignment",
-        "dueDate": "Due Date",
+        "dueDate": "Two Dates",
         "points": "Points",
         "weight": "Weight",
         "status": "Status",
@@ -837,7 +837,7 @@
     }
   },
   "assignment": {
-    "dueDate": "Due Date",
+    "dueDate": "Two Dates",
     "submit": "Submit",
     "grade": "Grade",
     "feedback": "Feedback",
@@ -1068,7 +1068,7 @@
       "fields": {
         "title": "Title *",
         "instructions": "Instructions *",
-        "dueDate": "Due Date",
+        "dueDate": "Two Dates",
         "type": "Assignment Type",
         "section": "Section",
         "rubric": "Rubric",

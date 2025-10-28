@@ -1,0 +1,63 @@
+{
+  "members": {
+    "title": "Członkowie",
+    "counts": {
+      "totalMembers": "{count} członków"
+    },
+    "actions": {
+      "inviteMember": "Zaproś członka",
+      "copy": "Kopia",
+      "regenerate": "Zregenerować",
+      "message": "Wiadomość",
+      "viewProfile": "Wyświetl profil",
+      "viewGrades": "Wyświetl oceny",
+      "makeTeacher": "Uczyń nauczyciela",
+      "makeStudent": "Utwórz ucznia",
+      "removeFromClass": "Usuń z klasy",
+      "removeAccess": "Usuń dostęp",
+      "tryAgain": "Spróbuj ponownie"
+    },
+    "labels": {
+      "teacher": "Nauczyciel",
+      "student": "Student",
+      "you": "Ty"
+    },
+    "invite": {
+      "title": "Kod zaproszenia na klasę",
+      "description": "Udostępnij ten kod uczniom, aby mogli dołączyć do zajęć"
+    },
+    "search": {
+      "placeholder": "Szukaj członków..."
+    },
+    "tabs": {
+      "students": "Studenci",
+      "teachers": "Nauczycielstwo"
+    },
+    "students": {
+      "empty": {
+        "title": "Nie znaleziono żadnych uczniów",
+        "matchNone": "Żaden uczeń nie spełnia kryteriów „{query}”",
+        "noStudents": "Do tej klasy nie dołączył jeszcze żaden student"
+      }
+    },
+    "teachers": {
+      "empty": {
+        "title": "Nie znaleziono nauczycieli",
+        "matchNone": "Brak nauczycieli odpowiadających zapytaniu „{query}”",
+        "noTeachers": "Nie dodano żadnych dodatkowych nauczycieli"
+      }
+    },
+    "toasts": {
+      "inviteRegenerated": "Kod zaproszenia został pomyślnie wygenerowany",
+      "copied": "Kod zaproszenia skopiowany do schowka",
+      "roleChanged": "Rola zmieniona na {role}",
+      "memberRemoved": "Członek został pomyślnie usunięty"
+    },
+    "errors": {
+      "regenerateFailed": "Nie udało się ponownie wygenerować kodu zaproszenia",
+      "changeRoleFailed": "Nie udało się zmienić roli",
+      "removeFailed": "Nie udało się usunąć członka",
+      "failedToLoad": "Nie udało się załadować członków"
+    }
+  }
+}

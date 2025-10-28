@@ -1,0 +1,66 @@
+{
+  "syllabus": {
+    "title": "Silabus",
+    "subtitle": "Ikhtisar kursus dan informasi akademis",
+    "actions": {
+      "saveChanges": "Simpan Perubahan",
+      "cancel": "Membatalkan",
+      "edit": "Edit Silabus"
+    },
+    "errors": {
+      "failedToLoad": "Gagal memuat silabus",
+      "tryLater": "Silakan coba lagi nanti."
+    },
+    "stats": {
+      "totalAssignments": "Total Tugas",
+      "completionRate": "Tingkat Penyelesaian",
+      "totalPoints": "Total Poin",
+      "upcoming": "Mendatang"
+    },
+    "overview": {
+      "title": "Ikhtisar Kursus",
+      "placeholder": "Masukkan ikhtisar kursus, tujuan, dan informasi penting lainnya...",
+      "helper": "Masukkan informasi kursus, tujuan pembelajaran, kebijakan, dan detail penting lainnya.",
+      "empty": {
+        "title": "Belum ada konten silabus",
+        "description": "Klik 'Edit Silabus' untuk menambahkan informasi kursus, tujuan pembelajaran, kebijakan, dan banyak lagi."
+      }
+    },
+    "assignments": {
+      "title": "Tugas Kursus",
+      "gradedCount": "{graded} tugas yang dinilai",
+      "totalPoints": "{total} total poin",
+      "empty": {
+        "title": "Belum ada tugas",
+        "description": "Tugas akan muncul di sini setelah dibuat."
+      }
+    },
+    "table": {
+      "assignment": "Penugasan",
+      "dueDate": "Dua Tanggal",
+      "points": "Poin",
+      "weight": "Berat",
+      "status": "Status",
+      "pts": "poin"
+    },
+    "status": {
+      "graded": "Bertingkat",
+      "pending": "Tertunda"
+    },
+    "courseInfo": {
+      "title": "Informasi Kursus",
+      "basic": {
+        "title": "Informasi Dasar",
+        "className": "Nama Kelas",
+        "section": "Bagian",
+        "subject": "Subjek"
+      },
+      "stats": {
+        "title": "Statistik Kursus",
+        "totalAssignments": "Total Tugas",
+        "gradedAssignments": "Tugas yang Dinilai",
+        "totalPoints": "Total Poin"
+      }
+    }
+  }
+}

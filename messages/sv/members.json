@@ -1,0 +1,63 @@
+{
+  "members": {
+    "title": "Medlemmar",
+    "counts": {
+      "totalMembers": "{count} medlemmar"
+    },
+    "actions": {
+      "inviteMember": "Bjud in medlem",
+      "copy": "Kopiera",
+      "regenerate": "Regenerera",
+      "message": "Meddelande",
+      "viewProfile": "Visa profil",
+      "viewGrades": "Visa betyg",
+      "makeTeacher": "Gör lärare",
+      "makeStudent": "Gör student",
+      "removeFromClass": "Ta bort från klassen",
+      "removeAccess": "Ta bort åtkomst",
+      "tryAgain": "Försök igen"
+    },
+    "labels": {
+      "teacher": "Lärare",
+      "student": "Student",
+      "you": "Du"
+    },
+    "invite": {
+      "title": "Kod för klassinbjudan",
+      "description": "Dela den här koden med eleverna för att delta i klassen"
+    },
+    "search": {
+      "placeholder": "Sök medlemmar..."
+    },
+    "tabs": {
+      "students": "Studenter",
+      "teachers": "Lärare"
+    },
+    "students": {
+      "empty": {
+        "title": "Inga elever hittades",
+        "matchNone": "Inga elever matchar \"{query}\"",
+        "noStudents": "Inga elever har ännu anslutit sig till den här klassen"
+      }
+    },
+    "teachers": {
+      "empty": {
+        "title": "Inga lärare hittades",
+        "matchNone": "Inga lärare matchar \"{query}\"",
+        "noTeachers": "Inga ytterligare lärare har tillsatts"
+      }
+    },
+    "toasts": {
+      "inviteRegenerated": "Inbjudningskoden har genererats",
+      "copied": "Inbjudningskoden kopierad till urklipp",
+      "roleChanged": "Rollen har ändrats till {role}",
+      "memberRemoved": "Medlem har tagits bort"
+    },
+    "errors": {
+      "regenerateFailed": "Misslyckades med att generera inbjudningskoden",
+      "changeRoleFailed": "Misslyckades med att byta roll",
+      "removeFailed": "Misslyckades med att ta bort medlem",
+      "failedToLoad": "Misslyckades med att ladda medlemmar"
+    }
+  }
+}

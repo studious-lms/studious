@@ -1,0 +1,97 @@
+{
+  "attendance": {
+    "title": "Eventi e presenze in classe",
+    "subtitle": "Tieni traccia della presenza degli studenti per ogni evento",
+    "saving": {
+      "auto": "Salvataggio automatico...",
+      "unsaved": "Modifiche non salvate",
+      "saving": "Risparmio..."
+    },
+    "table": {
+      "date": "Data",
+      "eventName": "Nome dell'evento",
+      "attendanceRate": "Tasso di presenza",
+      "attendance": "Presenza",
+      "actions": "Azioni"
+    },
+    "actions": {
+      "viewDetails": "Visualizza dettagli",
+      "editEvent": "Modifica evento",
+      "deleteEvent": "Elimina evento",
+      "createEvent": "Crea evento",
+      "saveAttendance": "Salva la presenza",
+      "markAllPresent": "Segna tutti i presenti",
+      "markAllAbsent": "Segna tutti come assenti"
+    },
+    "allEvents": {
+      "title": "Tutti gli eventi",
+      "description": "Cronologia completa degli eventi di classe e dei registri delle presenze",
+      "searchPlaceholder": "Cerca eventi...",
+      "empty": {
+        "title": "Nessun evento trovato",
+        "description": "Crea il tuo primo evento per iniziare a monitorare le presenze"
+      }
+    },
+    "eventsList": {
+      "pickDate": "Scegli la data",
+      "untitled": "Evento senza titolo",
+      "empty": {
+        "noEventsOnDate": "Nessun evento in questa data",
+        "noEventsOnDateDescription": "Nessun evento programmato per {date}. Prova a selezionare una data diversa o a creare un nuovo evento.",
+        "noEvents": "Nessun evento trovato",
+        "noEventsDescription": "Crea il tuo primo evento per iniziare a monitorare le presenze",
+        "createForDate": "Crea evento per questa data",
+        "createFirst": "Crea il primo evento"
+      }
+    },
+    "summary": {
+      "title": "Riepilogo dell'evento",
+      "selectedEvent": "Evento selezionato",
+      "total": "Totale",
+      "attendanceRate": "Tasso di presenza"
+    },
+    "roster": {
+      "title": "Elenco degli studenti",
+      "description": "Fare clic sui pulsanti di stato per contrassegnare la presenza di ogni studente",
+      "empty": {
+        "title": "Nessuno studente iscritto",
+        "description": "Gli studenti appariranno qui una volta che si uniranno alla classe"
+      }
+    },
+    "prompt": {
+      "title": "Seleziona un evento",
+      "description": "Seleziona un evento qui sopra per visualizzare e gestire la presenza degli studenti"
+    },
+    "status": {
+      "present": "Presente",
+      "late": "Tardi",
+      "absent": "Assente",
+      "notTaken": "Non preso"
+    },
+    "student": {
+      "title": "La mia presenza",
+      "subtitle": "Tieni traccia della tua presenza per {className}",
+      "attendanceRate": "Tasso di presenza",
+      "history": "Cronologia delle presenze",
+      "event": "Evento",
+      "status": "Stato",
+      "searchPlaceholder": "Cerca eventi...",
+      "empty": {
+        "title": "Nessun record di presenze",
+        "description": "La tua presenza apparirà qui una volta che gli eventi saranno creati e le presenze saranno prese"
+      }
+    },
+    "deleteDialog": {
+      "title": "Elimina evento",
+      "description": "Vuoi davvero eliminare \"{eventName}\"? Questa azione non può essere annullata e rimuoverà tutti i record di presenza associati.",
+      "deleting": "Eliminazione in corso...",
+      "deleteButton": "Elimina evento"
+    },
+    "toast": {
+      "attendanceSaved": "Presenze salvate con successo",
+      "attendanceSaveFailed": "Impossibile salvare la presenza",
+      "eventDeleted": "Evento eliminato con successo",
+      "eventDeleteFailed": "Impossibile eliminare l'evento"
+    }
+  }
+}

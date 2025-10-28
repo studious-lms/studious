@@ -1,0 +1,130 @@
+{
+  "classFiles": {
+    "title": "Bestanden",
+    "subtitle": "Beheer klasbestanden en bronnen",
+    "actions": {
+      "newFolder": "Nieuwe map",
+      "upload": "Uploaden",
+      "uploadFiles": "Bestanden uploaden",
+      "createFolder": "Map maken",
+      "download": "Download",
+      "share": "Deel",
+      "delete": "Verwijderen",
+      "filter": "Filter",
+      "sort": "Soort"
+    },
+    "toasts": {
+      "folderCreated": "Map succesvol aangemaakt",
+      "folderDeleted": "Map succesvol verwijderd",
+      "folderRenamed": "Map succesvol hernoemd",
+      "folderMoved": "Map succesvol verplaatst",
+      "filesUploaded": "Bestanden succesvol geüpload",
+      "fileDeleted": "Bestand succesvol verwijderd",
+      "fileRenamed": "Bestand succesvol hernoemd",
+      "fileMoved": "Bestand succesvol verplaatst",
+      "downloadStarted": "Download gestart",
+      "shareCopied": "Link delen gekopieerd"
+    },
+    "errors": {
+      "teacherOnly": "Alleen docenten kunnen bestanden wijzigen.",
+      "downloadFailed": "Downloaden mislukt",
+      "shareFailed": "Delen mislukt",
+      "failedToLoad": "Bestanden laden mislukt. Probeer het later opnieuw."
+    },
+    "breadcrumbs": {
+      "classFiles": "Klassebestanden"
+    },
+    "search": {
+      "placeholder": "Zoeken in bestanden"
+    },
+    "selected": "{count} geselecteerd",
+    "filters": {
+      "fileType": "Bestandstype",
+      "documents": "Documenten",
+      "images": "Afbeeldingen",
+      "videos": "Video's",
+      "presentations": "Presentaties"
+    },
+    "sort": {
+      "name": "Naam",
+      "lastModified": "Laatst gewijzigd",
+      "fileSize": "Bestandsgrootte"
+    },
+    "table": {
+      "name": "Naam",
+      "owner": "Eigenaar",
+      "lastModified": "Laatst gewijzigd",
+      "fileSize": "Bestandsgrootte"
+    },
+    "empty": {
+      "title": "Deze map is leeg",
+      "description": "Upload bestanden of maak mappen om te beginnen met het organiseren van uw lesmateriaal.",
+      "searchTitle": "Geen bestanden gevonden",
+      "searchDescription": "Er zijn geen bestanden die overeenkomen met \"{query}\". Probeer een andere zoekterm."
+    }
+  },
+  "folderView": {
+    "subtitle": "Inhoud van de map",
+    "notFound": {
+      "title": "Map niet gevonden",
+      "description": "De gevraagde map kon niet gevonden worden.",
+      "backButton": "Terug naar bestanden"
+    },
+    "error": {
+      "loadFailed": "Het laden van de mapinhoud is mislukt. Probeer het later opnieuw."
+    },
+    "breadcrumbs": {
+      "classFiles": "Klassebestanden"
+    },
+    "search": {
+      "placeholder": "Zoeken in map",
+      "selected": "{count} geselecteerd"
+    },
+    "filters": {
+      "label": "Filter",
+      "fileType": "Bestandstype",
+      "documents": "Documenten",
+      "images": "Afbeeldingen",
+      "videos": "Video's",
+      "presentations": "Presentaties"
+    },
+    "sort": {
+      "label": "Soort",
+      "name": "Naam",
+      "lastModified": "Laatst gewijzigd",
+      "fileSize": "Bestandsgrootte"
+    },
+    "table": {
+      "name": "Naam",
+      "owner": "Eigenaar",
+      "lastModified": "Laatst gewijzigd",
+      "fileSize": "Bestandsgrootte"
+    },
+    "empty": {
+      "noFilesFound": "Geen bestanden gevonden",
+      "noFilesFoundDescription": "Er zijn geen bestanden die overeenkomen met \"{query}\". Probeer een andere zoekterm.",
+      "folderEmpty": "Deze map is leeg",
+      "folderEmptyDescription": "Upload bestanden of maak mappen om uw materialen te ordenen."
+    },
+    "actions": {
+      "newFolder": "Nieuwe map",
+      "uploadFiles": "Bestanden uploaden",
+      "createFolder": "Map maken"
+    },
+    "toast": {
+      "folderCreated": "Map succesvol aangemaakt",
+      "folderDeleted": "Map succesvol verwijderd",
+      "folderRenamed": "Map succesvol hernoemd",
+      "folderMoved": "Map succesvol verplaatst",
+      "filesUploaded": "Bestanden succesvol geüpload",
+      "fileDeleted": "Bestand succesvol verwijderd",
+      "fileRenamed": "Bestand succesvol hernoemd",
+      "fileMoved": "Bestand succesvol verplaatst",
+      "downloadStarted": "Download gestart",
+      "downloadFailed": "Downloaden mislukt",
+      "shareLinkCopied": "Link delen gekopieerd",
+      "shareFailed": "Delen mislukt",
+      "permissionDenied": "Toestemming geweigerd"
+    }
+  }
+}

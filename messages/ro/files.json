@@ -1,0 +1,130 @@
+{
+  "classFiles": {
+    "title": "Fișiere",
+    "subtitle": "Gestionarea fișierelor și resurselor clasei",
+    "actions": {
+      "newFolder": "Dosar nou",
+      "upload": "Încărcare",
+      "uploadFiles": "Încărcați fișiere",
+      "createFolder": "Creați un folder",
+      "download": "Descărcare",
+      "share": "Distribuie",
+      "delete": "Şterge",
+      "filter": "Filtra",
+      "sort": "Sorta"
+    },
+    "toasts": {
+      "folderCreated": "Dosarul a fost creat cu succes",
+      "folderDeleted": "Folderul a fost șters cu succes",
+      "folderRenamed": "Dosarul a fost redenumit cu succes",
+      "folderMoved": "Folderul a fost mutat cu succes",
+      "filesUploaded": "Fișierele au fost încărcate cu succes",
+      "fileDeleted": "Fișierul a fost șters cu succes",
+      "fileRenamed": "Fișierul a fost redenumit cu succes",
+      "fileMoved": "Fișierul a fost mutat cu succes",
+      "downloadStarted": "Descărcarea a început",
+      "shareCopied": "Linkul de partajare a fost copiat"
+    },
+    "errors": {
+      "teacherOnly": "Doar profesorii pot modifica fișierele.",
+      "downloadFailed": "Descărcarea a eșuat",
+      "shareFailed": "Partajarea a eșuat",
+      "failedToLoad": "Nu s-au putut încărca fișierele. Vă rugăm să încercați din nou mai târziu."
+    },
+    "breadcrumbs": {
+      "classFiles": "Fișiere de clasă"
+    },
+    "search": {
+      "placeholder": "Căutare în fișiere"
+    },
+    "selected": "{count} selectate",
+    "filters": {
+      "fileType": "Tip de fișier",
+      "documents": "Documente",
+      "images": "Imagini",
+      "videos": "Videoclipuri",
+      "presentations": "Prezentări"
+    },
+    "sort": {
+      "name": "Nume",
+      "lastModified": "Ultima modificare",
+      "fileSize": "Dimensiunea fișierului"
+    },
+    "table": {
+      "name": "Nume",
+      "owner": "Proprietar",
+      "lastModified": "Ultima modificare",
+      "fileSize": "Dimensiunea fișierului"
+    },
+    "empty": {
+      "title": "Acest folder este gol",
+      "description": "Încărcați fișiere sau creați foldere pentru a începe să vă organizați materialele pentru clasă.",
+      "searchTitle": "Nu s-au găsit fișiere",
+      "searchDescription": "Niciun fișier nu corespunde cu „{query}”. Încercați un alt termen de căutare."
+    }
+  },
+  "folderView": {
+    "subtitle": "Conținutul folderului",
+    "notFound": {
+      "title": "Dosar negăsit",
+      "description": "Folderul solicitat nu a putut fi găsit.",
+      "backButton": "Înapoi la Fișiere"
+    },
+    "error": {
+      "loadFailed": "Nu s-a putut încărca conținutul folderului. Vă rugăm să încercați din nou mai târziu."
+    },
+    "breadcrumbs": {
+      "classFiles": "Fișiere de clasă"
+    },
+    "search": {
+      "placeholder": "Căutare în folder",
+      "selected": "{count} selectate"
+    },
+    "filters": {
+      "label": "Filtra",
+      "fileType": "Tip de fișier",
+      "documents": "Documente",
+      "images": "Imagini",
+      "videos": "Videoclipuri",
+      "presentations": "Prezentări"
+    },
+    "sort": {
+      "label": "Sorta",
+      "name": "Nume",
+      "lastModified": "Ultima modificare",
+      "fileSize": "Dimensiunea fișierului"
+    },
+    "table": {
+      "name": "Nume",
+      "owner": "Proprietar",
+      "lastModified": "Ultima modificare",
+      "fileSize": "Dimensiunea fișierului"
+    },
+    "empty": {
+      "noFilesFound": "Nu s-au găsit fișiere",
+      "noFilesFoundDescription": "Niciun fișier nu corespunde cu „{query}”. Încercați un alt termen de căutare.",
+      "folderEmpty": "Acest folder este gol",
+      "folderEmptyDescription": "Încărcați fișiere sau creați foldere pentru a vă organiza materialele."
+    },
+    "actions": {
+      "newFolder": "Dosar nou",
+      "uploadFiles": "Încărcați fișiere",
+      "createFolder": "Creați un folder"
+    },
+    "toast": {
+      "folderCreated": "Dosarul a fost creat cu succes",
+      "folderDeleted": "Folderul a fost șters cu succes",
+      "folderRenamed": "Dosarul a fost redenumit cu succes",
+      "folderMoved": "Dosarul a fost mutat cu succes",
+      "filesUploaded": "Fișierele au fost încărcate cu succes",
+      "fileDeleted": "Fișierul a fost șters cu succes",
+      "fileRenamed": "Fișierul a fost redenumit cu succes",
+      "fileMoved": "Fișierul a fost mutat cu succes",
+      "downloadStarted": "Descărcarea a început",
+      "downloadFailed": "Descărcarea a eșuat",
+      "shareLinkCopied": "Linkul de partajare a fost copiat",
+      "shareFailed": "Partajarea a eșuat",
+      "permissionDenied": "Acces refuzat"
+    }
+  }
+}

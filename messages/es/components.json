@@ -57,7 +57,8 @@
     "created": "Rúbrica creada exitosamente",
     "updated": "Rúbrica actualizada exitosamente",
     "createFailed": "No se pudo crear la rúbrica",
-    "updateFailed": "No se pudo actualizar la rúbrica"
+    "updateFailed": "No se pudo actualizar la rúbrica",
+    "errorNameRequired": "Proporcione un nombre y al menos un criterio."
   },
   "gradingBoundaries": {
     "title": "Crear límite de calificación",
@@ -159,7 +160,7 @@
     "endDateTime": "Fecha y hora de finalización *",
     "pickDate": "Fecha de selección",
     "location": "Ubicación",
-    "locationPlaceholder": "Introduzca la ubicación del evento",
+    "locationPlaceholder": "Ingrese la ubicación del evento",
     "eventColor": "Color del evento",
     "eventColorDescription": "Elige un color para este evento",
     "remarks": "Observaciones",
@@ -188,7 +189,7 @@
     "endDateTime": "Fecha y hora de finalización *",
     "pickDate": "Fecha de selección",
     "location": "Ubicación",
-    "locationPlaceholder": "Introduzca la ubicación del evento",
+    "locationPlaceholder": "Ingrese la ubicación del evento",
     "eventColor": "Color del evento",
     "eventColorDescription": "Elige un color para este evento",
     "remarks": "Observaciones",

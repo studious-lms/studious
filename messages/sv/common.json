@@ -1,0 +1,1218 @@
+{
+  "common": {
+    "save": "Spara",
+    "cancel": "Avboka",
+    "delete": "Radera",
+    "edit": "Redigera",
+    "submit": "Överlämna",
+    "close": "Nära",
+    "back": "Tillbaka",
+    "next": "Nästa",
+    "loading": "Belastning...",
+    "search": "Söka",
+    "filter": "Filtrera",
+    "sort": "Sortera",
+    "viewAll": "Visa alla",
+    "noData": "Inga data tillgängliga",
+    "export": "Exportera"
+  },
+  "time": {
+    "today": "I dag",
+    "tomorrow": "I morgon",
+    "yesterday": "I går",
+    "thisWeek": "Denna vecka",
+    "nextWeek": "Nästa vecka",
+    "lastWeek": "Förra veckan"
+  },
+  "errors": {
+    "somethingWentWrong": "Något gick fel",
+    "tryAgain": "Försök igen",
+    "pageNotFound": "Sidan hittades inte",
+    "unauthorized": "Obehörig åtkomst"
+  },
+  "auth": {
+    "login": {
+      "title": "Välkommen tillbaka",
+      "subtitle": "Logga in på ditt Studious-konto",
+      "username": "Användarnamn",
+      "password": "Lösenord",
+      "forgotPassword": "Glömt lösenordet?",
+      "signIn": "Logga in",
+      "signingIn": "Loggar in...",
+      "noAccount": "Har du inget konto?",
+      "signUp": "Registrera dig",
+      "successMessage": "Inloggad",
+      "cancel": "Avboka"
+    },
+    "signup": {
+      "title": "Skapa ditt konto",
+      "subtitle": "Gå med i Studious och börja lära dig",
+      "signUp": "Registrera dig",
+      "firstName": "Förnamn",
+      "lastName": "Efternamn",
+      "email": "E-post",
+      "password": "Lösenord",
+      "confirmPassword": "Bekräfta lösenord",
+      "firstNamePlaceholder": "Förnamn",
+      "lastNamePlaceholder": "Efternamn",
+      "emailPlaceholder": "Ange din e-postadress",
+      "passwordPlaceholder": "Skapa ett lösenord",
+      "confirmPasswordPlaceholder": "Bekräfta ditt lösenord",
+      "agreeToTerms": "Jag godkänner",
+      "termsOfService": "Användarvillkor",
+      "and": "och",
+      "privacyPolicy": "Integritetspolicy",
+      "createAccount": "Skapa konto",
+      "creatingAccount": "Skapar konto...",
+      "alreadyHaveAccount": "Har du redan ett konto?",
+      "signIn": "Logga in",
+      "passwordMismatch": "Lösenorden matchar inte",
+      "termsRequired": "Du måste godkänna villkoren",
+      "accountCreated": "Konto skapat!",
+      "signUpFailed": "Misslyckades med att skapa konto"
+    },
+    "verification": {
+      "notVerified": "Konto inte verifierat",
+      "message": "Ditt konto måste verifieras innan du kan logga in. Kontrollera din e-post för en verifieringslänk.",
+      "emailSentTo": "Verifieringsmejl skickat till:",
+      "resendEmail": "Skicka verifieringsmejlet igen",
+      "backToSignIn": "Tillbaka till inloggning",
+      "emailSent": "Verifieringsmejl skickat!",
+      "checkInbox": "Kontrollera din inkorg och skräppostmapp.",
+      "enterEmail": "Ange din e-postadress",
+      "sending": "Sändning...",
+      "sendEmail": "Skicka e-post"
+    }
+  },
+  "marketing": {
+    "navbar": {
+      "requestEarlyAccess": "Begär tidig åtkomst"
+    },
+    "hero": {
+      "badge": "Modern lärplattform",
+      "title1": "Sömlös, distraktionsfri",
+      "title2": "lärande för moderna skolor",
+      "subtitle": "Studious LMS integrerar AI, realtidskalendrar och klasskommunikation i en sammanhängande plattform – utformad för att hjälpa lärare att undervisa och elever att blomstra.",
+      "requestEarlyAccess": "Begär tidig åtkomst",
+      "watchDemo": "Titta på demon",
+      "altDashboard": "Plattformsöversikt"
+    },
+    "problem": {
+      "title": "Traditionella skolportaler är fragmenterade och föråldrade",
+      "issue1": "Lärare slösar tid på att växla mellan flera verktyg",
+      "issue2": "Studenter kämpar med organisation och deadlines",
+      "issue3": "AI är fortfarande underintegrerad i faktiska skolarbetsflöden"
+    },
+    "response": {
+      "title1": "Studious LMS förenar undervisning, lärande,",
+      "title2": "och kommunikation i en enda arbetsyta",
+      "subtitle": "Byggd med banbrytande ramverk och människocentrerad design, är den byggd för att skalas över skolor av alla storlekar."
+    },
+    "features": {
+      "title": "Viktiga funktioner",
+      "subtitle": "Allt du behöver för att hantera moderna lärandeupplevelser",
+      "ai": {
+        "title": "AI-assistent",
+        "description": "Hjälper till att generera studiematerial, sammanfatta innehåll och bistå med betygsättning"
+      },
+      "classManagement": {
+        "title": "Klasshantering",
+        "description": "Organisera lektioner, uppgifter och närvaro utan ansträngning"
+      },
+      "assignments": {
+        "title": "Uppgifter",
+        "description": "Skapa, samla in och betygsätt studentinlämningar effektivt"
+      },
+      "calendar": {
+        "title": "Kalender",
+        "description": "Realtidssynkronisering med uppgifter, lektioner och händelser"
+      },
+      "analytics": {
+        "title": "Analys",
+        "description": "Visa insikter om prestation, deltagande och engagemang"
+      },
+      "communication": {
+        "title": "Kommunikation",
+        "description": "Inbyggda meddelanden och meddelanden för enhetligt samarbete"
+      }
+    },
+    "quote": {
+      "text": "Varje funktion i Studious byggdes för att minska friktion – inte lägga till den."
+    },
+    "pricing": {
+      "title": "Välj rätt plan för din institution",
+      "subtitle": "Enkel, transparent prissättning utan dolda avgifter. Alla planer inkluderar kärnfunktioner med skalbara alternativ.",
+      "starter": {
+        "title": "Starter",
+        "price": "Gratis",
+        "note": "Betaåtkomst ingår",
+        "description": "Perfekt för små klasser och pilotprogram",
+        "perk1": "Upp till 30 elever",
+        "perk2": "Obegränsade klasser",
+        "perk3": "Kärnfunktioner (uppgifter, kalender, betyg)",
+        "perk4": "AI-assistent (5 chattar/månad)",
+        "perk5": "Stöd från samhället",
+        "perk6": "5 GB lagringsutrymme",
+        "button": "Kom igång gratis"
+      },
+      "school": {
+        "title": "Skola",
+        "price": "5 dollar",
+        "priceUnit": "/användare/månad",
+        "note": "Faktureras årligen eller 6 USD/månad",
+        "description": "För skolor med upp till 1 000 elever",
+        "perk1": "Obegränsat antal studenter",
+        "perk2": "Obegränsade klasser",
+        "perk3": "Alla kärnfunktioner",
+        "perk4": "AI-assistent (obegränsade frågor)",
+        "perk5": "Först i kön för betaversionen av Studious CMS",
+        "button": "Kom igång"
+      },
+      "institution": {
+        "title": "Institution",
+        "price": "Beställnings",
+        "note": "Skräddarsydd efter dina behov",
+        "description": "För stora skolor och universitet (1 000+ studenter)",
+        "perk1": "Allt i skolplanen",
+        "perk2": "Prioriterad support dygnet runt",
+        "perk3": "Obegränsad lagring",
+        "perk4": "Anpassad utbildning och introduktion",
+        "perk5": "Billigare kostnader per användare",
+        "button": "Kontakta försäljning"
+      },
+      "mostPopular": "Mest populära",
+      "earlyBird": "🎉 Tidiga användare får **3 månader gratis** på årsplaner + dedikerad introduktionssupport"
+    },
+    "schoolProgram": {
+      "badge": "Social påverkan",
+      "title": "Studious skolutvecklingsprogram",
+      "subtitle": "Vi anser att varje elev förtjänar tillgång till moderna lärverktyg, oavsett skolans ekonomiska situation.",
+      "feature1Title": "100 % fri åtkomst",
+      "feature1Description": "Full plattformsåtkomst med alla funktioner för kvalificerade skolor",
+      "feature2Title": "Dedikerad support",
+      "feature2Description": "Prioriterad introduktion och utbildning för lärare och personal",
+      "feature3Title": "Utbildningsresurser",
+      "feature3Description": "Gratis undervisningsmaterial och stöd i läroplanen",
+      "applyNow": "Ansök nu",
+      "learnMore": "Läs mer",
+      "eligibilityTitle": "Programbehörighet",
+      "qualifyingTitle": "Kvalificerade skolor:",
+      "qualify1": "Offentliga skolor i underförsörjda samhällen",
+      "qualify2": "Registrerade ideella utbildningsinstitutioner",
+      "qualify3": "Skolor i utvecklingsregioner",
+      "qualify4": "Title I-skolor (USA) eller motsvarande",
+      "commitmentTitle": "Vårt åtagande:",
+      "commitment": "10 % av våra betalande kunder stöder gratis tillgång för skolor i nöd.",
+      "launchTitle": "Programlansering:",
+      "launch": "Januari 2026 • Ansökningar öppna nu"
+    },
+    "futureDevelopments": {
+      "title": "Framtida utveckling",
+      "subtitle": "Vår färdplan för att omvandla utbildningen",
+      "cas": {
+        "title": "CAS-perspektiv",
+        "description": "Stödja underfinansierade skolor genom donationer och material, vilket gör kvalitetsutbildning tillgänglig för alla."
+      },
+      "features": {
+        "title": "Funktioner Perspektiv",
+        "description": "Utöka AI-studentstödet och bygga API-integrationer för olika utbildningssystem världen över."
+      },
+      "launch": {
+        "title": "Lanseringsperspektiv",
+        "description": "Presentationer på skolor, universitet och konferenser för att omforma lärandeupplevelsen."
+      }
+    },
+    "cta": {
+      "title": "Redo att omdefiniera hur din skola lär sig och undervisar?",
+      "subtitle": "Följ med i framtidens utbildning med Studious LMS",
+      "requestAccess": "Begär åtkomst",
+      "partnerWithUs": "Samarbeta med oss",
+      "tagline": "Studious LMS — Modernt lärande, förenklat."
+    }
+  },
+  "press": {
+    "badge": "Press och media",
+    "title": "Studious i nyheterna",
+    "subtitle": "Medieresurser, varumärkestillgångar och företagsinformation för journalister och innehållsskapare",
+    "factsheet": {
+      "title": "Företagsfaktablad",
+      "subtitle": "Snabba fakta om Studious LMS",
+      "companyInfo": "Företagsinformation",
+      "founded": "Grundad",
+      "hq": "Huvudkontor",
+      "industry": "Industri",
+      "website": "Webbplats",
+      "status": "Status",
+      "currentStatus": "Nuvarande status",
+      "launchDate": "Lanseringsdatum",
+      "currentPhase": "Nuvarande fas",
+      "targetMarkets": "Målmarknader",
+      "teamSize": "Lagstorlek",
+      "devHqs": "Utvecklingshuvudkontor"
+    },
+    "contact": {
+      "title": "Pressförfrågningar",
+      "subtitle": "För pressförfrågningar, intervjuer och medieförfrågningar",
+      "sl": "Vi svarar vanligtvis inom 24 timmar",
+      "general": "För allmänna frågor och support"
+    }
+  },
+  "program": {
+    "hero": {
+      "badge": "Initiativ för social påverkan",
+      "title": "Studious skolutvecklingsprogram",
+      "subtitle": "Att ge fri tillgång till modern inlärningsteknik för skolor utan ekonomiska medel"
+    },
+    "commitment": {
+      "revenue": "Intäkter som beviljats",
+      "cohort": "Första kohortlanseringen",
+      "free": "Fri åtkomst"
+    },
+    "about": {
+      "mission": {
+        "title": "Vårt uppdrag",
+        "body1": "Studious School Development Program syftar till att stödja missgynnade skolor genom att ge dem fri och obegränsad tillgång till vår plattform för lärplattformar. Vi inser att teknik är en dominerande faktor i framtidens arbetskraft, men många utbildningsinstitutioner saknar tillgång till sådana resurser. Genom detta program tar vi fram modern teknik för lärplattformar till skolor som behöver den mest."
+      },
+      "aims": {
+        "title": "Programmets mål",
+        "body1": "Genom omfattande samtal med lärare och utbildningspersonal har vi identifierat betydande brister i den digitala lärinfrastrukturen som finns tillgänglig för många skolor. Många lärplattformar på marknaden saknar en sammanhängande och intuitiv användarupplevelse, och skolor i missgynnade områden har ofta inte råd med modern utbildningsteknik.",
+        "body2": "Vårt program tar itu med dessa utmaningar direkt. Intäkterna från våra betalda institutionella prenumerationer gör det möjligt för oss att ge missgynnade skolor omfattande tillgång till Studious LMS och relaterade utbildningsverktyg. Denna hållbara modell gör det möjligt för oss att överbrygga den digitala klyftan samtidigt som vi kontinuerligt förbättrar vår plattform för alla användare."
+      },
+      "receive": {
+        "title": "Vad du får",
+        "body1": "Skolor som antas till programmet får tillgång till hela Studious-plattformen – inte en begränsad eller nedskalad version. Detta inkluderar obegränsade elev- och lärarkonton, alla premiumfunktioner (AI-assistent, avancerad analys, samarbete i realtid), prioriterad teknisk support, dedikerade introduktionsspecialister, kontinuerliga utbildningsresurser och tillgång till alla framtida uppdateringar och förbättringar.",
+        "body2": "Utöver själva programvaran erbjuder vi omfattande support för att säkerställa att er skola kan maximera plattformens fördelar. Vårt team kommer att arbeta direkt med era administratörer och lärare för att anpassa systemet för era specifika behov, ge praktisk utbildning och vara tillgängliga för kontinuerlig hjälp under hela er resa."
+      },
+      "qualifies": {
+        "title": "Vem kvalificerar sig",
+        "body1": "Vi prioriterar skolor som betjänar elever som skulle gynnas mest av förbättrad utbildningsteknik. Detta inkluderar offentliga skolor i underförsörjda eller ekonomiskt missgynnade samhällen, registrerade ideella utbildningsinstitutioner som uppvisar ekonomiska begränsningar, skolor i utvecklingsregioner eller länder, amerikanska Title I-skolor och deras internationella motsvarigheter, och alla utbildningsinstitutioner som kan visa upp ett genuint ekonomiskt behov tillsammans med ett åtagande att förbättra elevernas resultat.",
+        "body2": "Vi utvärderar varje ansökan individuellt och beaktar inte bara ekonomiska mätvärden utan även er skolas uppdrag, den befolkning ni betjänar och era planer på att använda Studious för att förbättra utbildningen. Vårt mål är att samarbeta med skolor som verkligen kommer att dra nytta av och effektivt använda vår plattform för att förbättra elevernas lärandeupplevelser."
+      },
+      "impact": {
+        "title": "Vår vision för påverkan",
+        "body1": "Genom att ge skolor fri tillgång till modern teknik för lärplattformar strävar vi efter att eliminera ett av de största hindren för utbildningsinstitutioner i missgynnade områden. Vår strategi går utöver bara programvara – vi är engagerade i att tillhandahålla omfattande stöd, inklusive utbildningsresurser, introduktionshjälp och tillgång till utbildningsverktyg som e-böcker och digitala kontorsmaterial.",
+        "body2": "Skolutvecklingsprogrammet lanseras i slutet av november till mitten av december 2025, med vår första grupp partnerskolor. I takt med att Studious växer, ökar även vår kapacitet att stödja fler skolor. Alla intäkter som genereras från våra betalda institutionella prenumerationer återinvesteras i att utöka tillgången för skolor i nöd, vilket skapar en hållbar modell för utbildningsrättvisa som stärks över tid."
+      }
+    },
+    "cta": {
+      "apply": {
+        "title": "Ansök till programmet",
+        "description": "Är du redo att ta med Studious till din skola? Fyll i vårt ansökningsformulär så granskar vi det inom 5–7 arbetsdagar.",
+        "item1": "Tar ungefär 10-15 minuter",
+        "item2": "Ingen ansökningsavgift krävs",
+        "item3": "Svar inom 5–7 arbetsdagar",
+        "button": "Starta applikationen"
+      }
+    },
+    "status": {
+      "title": "Kontrollera ansökningsstatus",
+      "description": "Har du redan ansökt? Ange ditt ansöknings-ID för att kontrollera statusen för din ansökan.",
+      "inputLabel": "Applikations-ID",
+      "placeholder": "t.ex. EXA2025-...",
+      "help": "Du fick ditt ansöknings-ID via e-post efter att du skickat in din ansökan.",
+      "results": {
+        "found": "Applikation hittad",
+        "school": "Skola:",
+        "location": "Plats:",
+        "submitted": "Inskickat:",
+        "contact": "Kontakta:",
+        "notFound": {
+          "title": "Applikationen hittades inte",
+          "body": "Kontrollera ditt applikations-ID och försök igen. Om du fortsätter att ha problem kan du kontakta oss på impact@studious.sh"
+        }
+      },
+      "cards": {
+        "approved": {
+          "title": "🎉 Grattis! Din ansökan har godkänts.",
+          "body": "Kontrollera din e-post för nästa steg för att konfigurera ditt konto."
+        },
+        "underReview": {
+          "title": "⏳ Din ansökan granskas för närvarande.",
+          "body": "Vi kontaktar dig via e-post när granskningen är klar."
+        },
+        "pending": {
+          "title": "📋 Din ansökan har mottagits.",
+          "body": "Vårt team kommer snart att börja granska den. Förväntad granskningstid: 5–7 arbetsdagar."
+        }
+      }
+    },
+    "contact": {
+      "title": "Har du frågor?",
+      "subtitle": "Vårt team finns här för att hjälpa dig genom ansökningsprocessen",
+      "button": "Mejla oss: impact@studious.sh"
+    }
+  },
+  "apply": {
+    "toasts": {
+      "submitted": "Ansökan skickad!"
+    },
+    "errors": {
+      "submitFailed": "Misslyckades med att skicka in ansökan: {message}"
+    },
+    "success": {
+      "title": "Ansökan inskickad!",
+      "subtitle": "Tack för att du ansökt till Studious skolutvecklingsprogram",
+      "applicationId": "Ditt applikations-ID",
+      "saveId": "Spara detta ID för att kontrollera din ansökningsstatus",
+      "nextSteps": {
+        "title": "Vad händer härnäst?",
+        "item1": "Du får ett bekräftelsemejl på {email}",
+        "item2": "Vårt team kommer att granska din ansökan inom 5–7 arbetsdagar.",
+        "item3": "Vi meddelar dig via e-post när ett beslut har fattats"
+      },
+      "backToProgram": "Tillbaka till programmet",
+      "returnHome": "Hemkomst"
+    }
+  },
+  "agenda": {
+    "title": "Dagordning",
+    "description": "Se ditt schema och kommande evenemang med omfattande kalendervyer",
+    "addEvent": "Lägg till händelse",
+    "untitledEvent": "Namnlös händelse",
+    "today": "I dag",
+    "previous": "Tidigare",
+    "next": "Nästa",
+    "views": {
+      "day": "Dag",
+      "week": "Vecka",
+      "month": "Månad",
+      "year": "År"
+    }
+  },
+  "chat": {
+    "landing": {
+      "description": "Välj en konversation från sidofältet för att börja chatta.",
+      "pleaseSignIn": "Vänligen logga in",
+      "signInRequired": "Du måste vara inloggad för att få åtkomst till chatten.",
+      "title": "Välkommen till chatten"
+    },
+    "page": {
+      "unknown": "Okänd",
+      "unnamedGroup": "Namnlös grupp",
+      "unknownUser": "Okänd användare",
+      "notFound": {
+        "title": "Konversationen hittades inte",
+        "description": "Den här konversationen finns inte, eller så har du inte åtkomst till den.",
+        "backToChat": "Tillbaka till chatten"
+      },
+      "header": {
+        "members": "medlemmar",
+        "markMentionsRead": "Mark nämner läsning"
+      },
+      "input": {
+        "placeholderPrefix": "Meddelande"
+      },
+      "loading": "Laddar konversation..."
+    }
+  },
+  "notifications": {
+    "title": "Aviseringar",
+    "subtitle": "Håll dig uppdaterad om dina kurser och uppgifter",
+    "badge": {
+      "unread": "{count} olästa"
+    },
+    "filters": {
+      "label": "Filtrera:",
+      "all": "Alla ({count})",
+      "unread": "Oläst ({count})",
+      "read": "Läs ({count})"
+    },
+    "empty": {
+      "unread": {
+        "title": "Inga olästa aviseringar",
+        "description": "Allt ikapp! Du har inga olästa aviseringar."
+      },
+      "read": {
+        "title": "Inga läsaviseringar",
+        "description": "Inga aviseringar har markerats som lästa ännu."
+      },
+      "all": {
+        "title": "Inga aviseringar ännu",
+        "description": "När du får aviseringar visas de här."
+      }
+    },
+    "actions": {
+      "marking": "Märkning...",
+      "markAsRead": "Markera som läst"
+    },
+    "toasts": {
+      "markedAsRead": "Avisering markerad som läst"
+    },
+    "meta": {
+      "from": "från"
+    }
+  },
+  "profile": {
+    "title": "Profil",
+    "description": "Hantera din personliga information och dina profilinställningar",
+    "editProfile": "Redigera profil",
+    "saveChanges": "Spara ändringar",
+    "cancel": "Avboka",
+    "student": "Student",
+    "personalInformation": {
+      "title": "Personlig information",
+      "description": "Uppdatera dina personuppgifter och profilinformation",
+      "displayName": "Visningsnamn",
+      "displayNamePlaceholder": "Ange ditt visningsnamn",
+      "displayNameDescription": "Så här kommer ditt namn att visas för andra",
+      "location": "Plats",
+      "locationPlaceholder": "Ange din plats",
+      "locationDescription": "Din stad, delstat eller land",
+      "bio": "Var",
+      "bioPlaceholder": "Berätta om dig själv...",
+      "bioDescription": "En kort beskrivning av dig själv (max 500 tecken)",
+      "website": "Webbplats",
+      "websitePlaceholder": "https://din-webbplats.com",
+      "websiteDescription": "Din personliga webbplats eller portfolio"
+    },
+    "accountInformation": {
+      "title": "Kontoinformation",
+      "description": "Dina kontouppgifter och inloggningsuppgifter",
+      "username": "Användarnamn",
+      "usernameNote": "Användarnamnet kan inte ändras",
+      "email": "E-post",
+      "emailNote": "E-post hanteras i kontoinställningarna",
+      "memberSince": "Medlem sedan"
+    },
+    "messages": {
+      "profileUpdated": "Profilen har uppdaterats",
+      "profileUpdateFailed": "Misslyckades med att uppdatera profilen",
+      "profilePictureSelected": "Profilbild vald. Klicka på \"Spara ändringar\" för att uppdatera.",
+      "avatarSelected": "Avatar vald. Klicka på \"Spara ändringar\" för att uppdatera.",
+      "profilePictureUploadFailed": "Misslyckades med att ladda upp profilbilden",
+      "profilePictureSelectFailed": "Misslyckades med att välja profilbild",
+      "failedToLoadProfile": "Misslyckades med att läsa in profilen. Försök igen."
+    }
+  },
+  "class": {
+    "assignments": "Uppgifter",
+    "students": "studenter",
+    "attendance": "Närvaro",
+    "attachFile": "Bifoga fil",
+    "post": "Posta",
+    "posting": "Publicerar...",
+    "noPosts": "Inga inlägg ännu",
+    "createFirstPost": "Skapa första inlägget",
+    "grades": {
+      "title": "Betyg",
+      "subtitle": "Visa och hantera elevbetyg",
+      "columns": {
+        "assignment": "Uppdrag",
+        "maxPoints": "Maxpoäng",
+        "weight": "Vikt",
+        "graded": "Graderad",
+        "dueDate": "Två datum",
+        "actions": "Åtgärder",
+        "student": "Student",
+        "overallGrade": "Totalbetyg",
+        "assignmentsCompleted": "Uppgifter slutförda",
+        "trend": "Trend"
+      },
+      "labels": {
+        "rubric": "Rubrik"
+      },
+      "actions": {
+        "manage": "Hantera",
+        "viewGrades": "Visa betyg",
+        "saving": "Sparande...",
+        "saveChanges": "Spara ändringar",
+        "preview": "Förhandsvisning",
+        "edit": "Redigera",
+        "delete": "Radera",
+        "createNew": "Skapa ny"
+      },
+      "overview": {
+        "title": "Klassöversikt",
+        "classAverage": "Klassgenomsnitt",
+        "totalStudents": "Totalt antal studenter",
+        "assignments": "Uppgifter",
+        "submissionRate": "Inskickningsfrekvens"
+      },
+      "assignmentManagement": {
+        "title": "Uppdragshantering",
+        "empty": {
+          "title": "Inga uppgifter hittades",
+          "description": "Skapa uppgifter för att hantera betyg och inställningar"
+        },
+        "searchPlaceholder": "Sök uppgifter..."
+      },
+      "students": {
+        "title": "Studenter",
+        "viewAll": "Visa alla elever",
+        "empty": {
+          "title": "Inga studenter inskrivna",
+          "description": "Eleverna visas här när de går med i klassen"
+        },
+        "searchPlaceholder": "Sök elever..."
+      },
+      "gradeBoundaries": {
+        "title": "Betygsgränser",
+        "untitled": "Namnlös graderingsgräns",
+        "empty": {
+          "title": "Inga betygsgränser skapade",
+          "description": "Skapa betygsgränser för att definiera betygsintervall"
+        },
+        "previewTitle": "Förhandsvisning av graderingsgränser",
+        "details": {
+          "title": "Detaljer om graderingsgränser",
+          "name": "Namn",
+          "noneDefined": "Inga graderingsgränser definierade"
+        }
+      },
+      "rubrics": {
+        "title": "Rubriker",
+        "untitled": "Namnlös rubrik",
+        "empty": {
+          "title": "Inga bedömningskriterier skapade",
+          "description": "Skapa bedömningskriterier för att definiera bedömningsmatriser"
+        },
+        "previewTitle": "Förhandsgranskning av bedömningsmatris",
+        "details": {
+          "title": "Rubrikdetaljer",
+          "name": "Namn",
+          "category": "Kategori",
+          "description": "Beskrivning",
+          "custom": "Beställnings",
+          "noDescription": "Ingen beskrivning tillhandahålls",
+          "noCriteria": "Inga kriterier hittades i denna bedömningsmatris"
+        }
+      },
+      "confirm": {
+        "deleteRubric": "Är du säker på att du vill ta bort det här markeringsschemat?",
+        "deleteGradingBoundary": "Är du säker på att du vill ta bort den här bedömningsgränsen?"
+      }
+    },
+    "members": {
+      "title": "Medlemmar",
+      "counts": {
+        "totalMembers": "{count} medlemmar"
+      },
+      "actions": {
+        "inviteMember": "Bjud in medlem",
+        "copy": "Kopiera",
+        "regenerate": "Regenerera",
+        "message": "Meddelande",
+        "viewProfile": "Visa profil",
+        "viewGrades": "Visa betyg",
+        "makeTeacher": "Gör lärare",
+        "makeStudent": "Gör student",
+        "removeFromClass": "Ta bort från klassen",
+        "removeAccess": "Ta bort åtkomst",
+        "tryAgain": "Försök igen"
+      },
+      "labels": {
+        "teacher": "Lärare",
+        "student": "Student",
+        "you": "Du"
+      },
+      "invite": {
+        "title": "Kod för klassinbjudan",
+        "description": "Dela den här koden med eleverna för att gå med i klassen"
+      },
+      "search": {
+        "placeholder": "Sök medlemmar..."
+      },
+      "tabs": {
+        "students": "Studenter",
+        "teachers": "Lärare"
+      },
+      "students": {
+        "empty": {
+          "title": "Inga elever hittades",
+          "matchNone": "Inga elever matchar \"{query}\"",
+          "noStudents": "Inga elever har ännu anslutit sig till den här klassen"
+        }
+      },
+      "teachers": {
+        "empty": {
+          "title": "Inga lärare hittades",
+          "matchNone": "Inga lärare matchar \"{query}\"",
+          "noTeachers": "Inga ytterligare lärare har tillsatts"
+        }
+      },
+      "toasts": {
+        "inviteRegenerated": "Inbjudningskoden har genererats",
+        "copied": "Inbjudningskoden kopierad till urklipp",
+        "roleChanged": "Rollen har ändrats till {role}",
+        "memberRemoved": "Medlem har tagits bort"
+      },
+      "errors": {
+        "regenerateFailed": "Misslyckades med att generera inbjudningskoden",
+        "changeRoleFailed": "Misslyckades med att byta roll",
+        "removeFailed": "Misslyckades med att ta bort medlem",
+        "failedToLoad": "Misslyckades med att ladda medlemmar"
+      }
+    },
+    "files": {
+      "title": "Filer",
+      "subtitle": "Hantera klassfiler och resurser",
+      "actions": {
+        "newFolder": "Ny mapp",
+        "upload": "Ladda upp",
+        "uploadFiles": "Ladda upp filer",
+        "createFolder": "Skapa mapp",
+        "download": "Ladda ner",
+        "share": "Dela",
+        "delete": "Radera",
+        "filter": "Filtrera",
+        "sort": "Sortera"
+      },
+      "toasts": {
+        "folderCreated": "Mappen skapades",
+        "folderDeleted": "Mappen har raderats",
+        "folderRenamed": "Mappen har bytt namn",
+        "folderMoved": "Mappen har flyttats",
+        "filesUploaded": "Filerna har laddats upp",
+        "fileDeleted": "Filen har raderats",
+        "fileRenamed": "Filen har bytt namn",
+        "fileMoved": "Filen har flyttats",
+        "downloadStarted": "Nedladdningen har startat",
+        "shareCopied": "Delningslänk kopierad"
+      },
+      "errors": {
+        "teacherOnly": "Endast lärare kan ändra filer.",
+        "downloadFailed": "Nedladdningen misslyckades",
+        "shareFailed": "Delningen misslyckades",
+        "failedToLoad": "Misslyckades med att ladda filerna. Försök igen senare."
+      },
+      "breadcrumbs": {
+        "classFiles": "Klassfiler"
+      },
+      "search": {
+        "placeholder": "Sök i filer"
+      },
+      "selected": "{count} valda",
+      "filters": {
+        "fileType": "Filtyp",
+        "documents": "Dokument",
+        "images": "Bilder",
+        "videos": "Videor",
+        "presentations": "Presentationer"
+      },
+      "sort": {
+        "name": "Namn",
+        "lastModified": "Senast ändrad",
+        "fileSize": "Fil-storlek"
+      },
+      "table": {
+        "name": "Namn",
+        "owner": "Ägare",
+        "lastModified": "Senast ändrad",
+        "fileSize": "Fil-storlek"
+      },
+      "empty": {
+        "title": "Den här mappen är tom",
+        "description": "Ladda upp filer eller skapa mappar för att börja organisera ditt kursmaterial.",
+        "searchTitle": "Inga filer hittades",
+        "searchDescription": "Inga filer matchar \"{query}\". Försök med en annan sökterm."
+      }
+    },
+    "settings": {
+      "title": "Klassinställningar",
+      "subtitle": "Konfigurera klassdetaljer och inställningar",
+      "labels": {
+        "unsavedChanges": "Osparade ändringar"
+      },
+      "actions": {
+        "saving": "Sparande...",
+        "saveChanges": "Spara ändringar",
+        "deleting": "Tar bort...",
+        "deleteClass": "Ta bort klass",
+        "cancel": "Avboka"
+      },
+      "sections": {
+        "basicInfo": {
+          "title": "Grundläggande information"
+        },
+        "theme": {
+          "title": "Klasstema",
+          "description": "Välj en temafärg för den här klassen"
+        },
+        "danger": {
+          "title": "Riskzon",
+          "description": "När du har tagit bort en kurs finns det ingen återvändo. Detta kommer att permanent radera alla uppgifter, betyg, närvaroregister och ta bort alla elever från kursen."
+        }
+      },
+      "fields": {
+        "className": "Klassnamn",
+        "section": "Avsnitt",
+        "subject": "Ämne"
+      },
+      "placeholders": {
+        "className": "t.ex. avancerad fysik",
+        "section": "t.ex. AP-101",
+        "subject": "t.ex. fysik"
+      },
+      "toasts": {
+        "updated": {
+          "title": "Klass uppdaterad",
+          "description": "Klassinställningarna har sparats."
+        },
+        "deleted": {
+          "title": "Klass borttagen",
+          "description": "Klassen har tagits bort permanent."
+        }
+      },
+      "errors": {
+        "updateFailed": {
+          "title": "Uppdateringen misslyckades",
+          "description": "Det gick inte att spara kursinställningarna. Försök igen."
+        }
+      },
+      "confirm": {
+        "title": "Är du helt säker?",
+        "description": "Den här åtgärden kan inte ångras. Detta kommer att permanent radera klassen \"{name}\" och ta bort all tillhörande data, inklusive:",
+        "items": {
+          "assignments": "Alla uppgifter och inlämningar",
+          "records": "Alla betyg och närvaroregister",
+          "students": "Alla elever kommer att tas bort från klassen",
+          "events": "Alla klassevenemang och tillkännagivanden"
+        },
+        "confirmDelete": "Ja, radera kurs"
+      }
+    },
+    "syllabus": {
+      "title": "Kursplan",
+      "subtitle": "Kursöversikt och akademisk information",
+      "actions": {
+        "saveChanges": "Spara ändringar",
+        "cancel": "Avboka",
+        "edit": "Redigera kursplan"
+      },
+      "errors": {
+        "failedToLoad": "Misslyckades med att ladda kursplanen",
+        "tryLater": "Försök igen senare."
+      },
+      "stats": {
+        "totalAssignments": "Totalt antal uppdrag",
+        "completionRate": "Färdigställandegrad",
+        "totalPoints": "Totalt antal poäng",
+        "upcoming": "Kommande"
+      },
+      "overview": {
+        "title": "Kursöversikt",
+        "placeholder": "Ange kursöversikt, mål och annan viktig information...",
+        "helper": "Ange din kursinformation, lärandemål, policyer och andra viktiga detaljer.",
+        "empty": {
+          "title": "Inget kursplaninnehåll ännu",
+          "description": "Klicka på \"Redigera kursplan\" för att lägga till kursinformation, lärandemål, policyer med mera."
+        }
+      },
+      "assignments": {
+        "title": "Kursuppgifter",
+        "gradedCount": "{graded} av {total} graderade",
+        "totalPoints": "{total} poäng totalt",
+        "empty": {
+          "title": "Inga uppgifter ännu",
+          "description": "Uppgifterna visas här när de har skapats."
+        }
+      },
+      "table": {
+        "assignment": "Uppdrag",
+        "dueDate": "Två datum",
+        "points": "Poäng",
+        "weight": "Vikt",
+        "status": "Status",
+        "pts": "poäng"
+      },
+      "status": {
+        "graded": "Graderad",
+        "pending": "I avvaktan på"
+      },
+      "courseInfo": {
+        "title": "Kursinformation",
+        "basic": {
+          "title": "Grundläggande information",
+          "className": "Klassnamn",
+          "section": "Avsnitt",
+          "subject": "Ämne"
+        },
+        "stats": {
+          "title": "Kursstatistik",
+          "totalAssignments": "Totalt antal uppdrag",
+          "gradedAssignments": "Betygsatta uppgifter",
+          "totalPoints": "Totalt antal poäng"
+        }
+      }
+    }
+  },
+  "assignment": {
+    "dueDate": "Två datum",
+    "submit": "Överlämna",
+    "grade": "Kvalitet",
+    "feedback": "Feed-back",
+    "submissions": "Inskickade bidrag",
+    "open": "Öppna",
+    "closed": "Stängd",
+    "assignment": "Uppdrag",
+    "assignments": "Uppgifter",
+    "newAssignment": "Ny uppgift",
+    "createAssignment": "Skapa uppgift",
+    "viewAssignment": "Visa uppgift",
+    "allAssignments": "Alla uppgifter",
+    "searchAssignments": "Sök uppgifter...",
+    "noAssignmentsFound": "Inga uppgifter hittades",
+    "createFirstAssignment": "Skapa din första uppgift för att komma igång",
+    "newSection": "Nytt avsnitt",
+    "pts": "poäng",
+    "overdue": "(Försenad)",
+    "assignmentDrop": "Släpp uppgiften här för att flytta till den översta nivån",
+    "sectionDeletionConfirmation": "Är du säker på att du vill ta bort det här avsnittet? Alla uppgifter kommer att flyttas till den översta nivån.",
+    "assignmentDeletionConfirmation": "Är du säker på att du vill ta bort den här uppgiften? Åtgärden kan inte ångras.",
+    "manageAndTrack": "Hantera och spåra klassuppgifter",
+    "filters": "Filter"
+  },
+  "pagination": {
+    "previous": "Tidigare",
+    "next": "Nästa",
+    "goToPreviousPage": "Gå till föregående sida",
+    "goToNextPage": "Gå till nästa sida",
+    "morePages": "Fler sidor"
+  },
+  "about": {
+    "titleStatement1": "Vår berättelse",
+    "titleStatement2": "Byggd ur frustration,",
+    "titleStatement3": "omformulerad med AI",
+    "titleStatement4": "Efter år av att ha kämpat med föråldrade, fragmenterade skolportaler bestämde vi oss för att bygga det lärplattformssystem vi alltid önskat att vi hade.",
+    "problemParagraph1": "Studious startade 2023",
+    "problemParagraph2": "när en grupp elever och lärare samlades med en gemensam frustration: befintliga skolportaler var klumpiga, långsamma och byggda för en annan era av utbildning.",
+    "problemDetailParagraph": "Vi jonglerade med flera plattformar – en för betyg, en annan för uppgifter och en tredje för kommunikation. Lärare lade ner mer tid på att kämpa med programvara än på att undervisa. Eleverna missade deadlines eftersom aviseringar var begravda i föråldrade gränssnitt.",
+    "betterWay": "Vi visste att det måste finnas ett bättre sätt.",
+    "solutionParagraph1": "Med inspiration från moderna samarbetsverktyg som Linear och Notion bestämde vi oss för att skapa ett lärplattformssystem som kändes",
+    "solutionParagraph2": "snabb, intuitiv och trevlig att använda.",
+    "solutionParagraph3": "En som integrerade AI inte som en gimmick, utan som en genuin produktivitetsmultiplikator för både lärare och elever.",
+    "launchParagraph": "Efter två års utveckling lanserade vi officiellt Studious den 17 oktober 2025. Vi är nu i tidig åtkomst, redo att hjälpa skolor över hela världen att transformera sin lärandeupplevelse.",
+    "journey1": "Vår resa",
+    "journey2": "Två år av att bygga, lära och växa",
+    "journeyBeginningDate": "2023",
+    "journeyBeginning1": "Början",
+    "journeyBeginning2": "Första prototypen utvecklad. Kärnfunktioner: klasshantering, uppgifter och kalenderintegration.",
+    "journeyBetaLaunchDate": "31 oktober 2025",
+    "journeyBetaLaunch1": "Offentlig betalansering",
+    "journeyBetaLaunch2": "Officiell offentlig betatestning av Studious LMS. Öppnar tidig åtkomst för skolor över hela världen med fullständiga plattformsfunktioner.",
+    "journeyPilotSchoolsDate": "November 2025",
+    "journeyPilotSchools1": "Pilotskoleprogram",
+    "journeyPilotSchools2": "Inleda partnerskap med pilotskolor för att samla in feedback från verkligheten och förfina plattformen baserat på olika utbildningsbehov.",
+    "journeyBetaCompleteDate": "December 2025",
+    "journeyBetaComplete1": "Betaversionen är klar",
+    "journeyBetaComplete2": "Övergång från betaversion till fullständig produktionsversion. Plattformsstabilisering med alla kärnfunktioner fullt testade och optimerade.",
+    "journeySDPDate": "Januari 2026",
+    "journeySDP1": "Lansering av skolutvecklingsprogram",
+    "journeySDP2": "Tillkännager den första kullen skolor som antagits till Studious School Development Program, vilket ger fri tillgång till kvalificerade institutioner.",
+    "missionStatement1": "Vårt uppdrag är enkelt",
+    "missionStatement2": "Att bygga det lärplattform som vi – som elever, lärare och livslånga elever – skulle vilja använda varje dag.",
+    "joinAppeal1": "Följ med oss på denna resa",
+    "joinAppeal2": "Bli en del av framtidens utbildning",
+    "requestEarlyAccess": "Begär tidig åtkomst",
+    "pressKit": "Presskit"
+  },
+  "pricing": {
+    "pricingStatement1": "Transparent prissättning",
+    "pricingStatement2": "Välj rätt plan för din institution",
+    "pricingStatement3": "Enkel, transparent prissättning utan dolda avgifter. Alla planer inkluderar kärnfunktioner med skalbara alternativ.",
+    "mostPopular": "Mest populära",
+    "priceUnit": "/användare/månad",
+    "pricingStarterTitle": "Starter",
+    "pricingStarterPrice": "Gratis",
+    "pricingStarterNote": "Betaåtkomst ingår",
+    "pricingStarterDescription": "Perfekt för små klasser och pilotprogram",
+    "pricingStarterPerk1": "Upp till 30 elever",
+    "pricingStarterPerk2": "Obegränsade klasser",
+    "pricingStarterPerk3": "Kärnfunktioner (uppgifter, kalender, betyg)",
+    "pricingStarterPerk4": "AI-assistent (5 chattar/månad)",
+    "pricingStarterPerk5": "Stöd från samhället",
+    "pricingStarterPerk6": "5 GB lagringsutrymme",
+    "pricingStarterLink": "Kom igång gratis",
+    "pricingSchoolTitle": "Skola",
+    "pricingSchoolPriceNote": "Faktureras årligen eller 6 USD/månad",
+    "pricingSchoolNote": "För skolor med upp till 1 000 elever",
+    "pricingSchoolPerk1": "Obegränsat antal studenter",
+    "pricingSchoolPerk2": "Obegränsade klasser",
+    "pricingSchoolPerk3": "Alla kärnfunktioner",
+    "pricingSchoolPerk4": "AI-assistent (obegränsade frågor)",
+    "pricingSchoolPerk5": "Först i kön för betaversionen av Studious CMS",
+    "pricingSchoolPerk6": "API-åtkomst",
+    "pricingSchoolLink": "Kom igång"
+  },
+  "components": {
+    "earlyAccess": {
+      "title": "Begär tidig åtkomst",
+      "description": "Gå med i väntelistan och var bland de första att uppleva Studious LMS",
+      "fields": {
+        "email": "E-postadress *",
+        "institutionSize": "Institutionsstorlek *"
+      },
+      "placeholders": {
+        "email": "du@skolan.edu",
+        "institutionSize": "Välj institutionsstorlek"
+      },
+      "sizes": {
+        "tiny": "1–30 elever (enskild lärare)",
+        "small": "31–100 elever (Liten skola)",
+        "medium": "101–500 elever (mellanstadieskola)",
+        "large": "501–1 000 elever (stor skola)",
+        "institution": "1 001+ studenter (institution)"
+      },
+      "actions": {
+        "submit": "Begär åtkomst",
+        "submitting": "Skickar in...",
+        "done": "Gjort"
+      },
+      "success": {
+        "title": "Du är med på listan!",
+        "description": "Vi skickar ett e-postmeddelande till dig på {email} när vi är redo att ta emot dig."
+      },
+      "toasts": {
+        "success": "Lyckades gå med i väntelistan!"
+      }
+    },
+    "joinClass": {
+      "title": "Gå med i en klass",
+      "buttonLabel": "Gå med i klassen",
+      "fields": {
+        "inviteCode": "Kod för klassinbjudan"
+      },
+      "placeholders": {
+        "inviteCode": "t.ex. MATH101-2025"
+      },
+      "help": "Ange inbjudningskoden som du fått av din lärare",
+      "howTo": {
+        "title": "Så här får du en inbjudningskod:",
+        "item1": "Fråga din lärare om klassens inbjudningskod",
+        "item2": "Kontrollera din e-post för instruktioner om kursanmälan",
+        "item3": "Leta efter koden i din kursplan eller i kursmaterialet"
+      },
+      "actions": {
+        "cancel": "Avboka",
+        "join": "Gå med i klassen",
+        "joining": "Sammanfogning..."
+      },
+      "toasts": {
+        "success": "Du har nu gått med i klassen.",
+        "errorInvalid": "Ogiltig inbjudningskod eller klass hittades inte.",
+        "errorEmpty": "Ange en giltig inbjudningskod."
+      }
+    },
+    "createClass": {
+      "title": "Skapa ny klass",
+      "buttonLabel": "Skapa klass",
+      "fields": {
+        "title": "Klasstitel *",
+        "section": "Avsnitt *",
+        "subject": "Ämne *",
+        "semester": "Termin",
+        "credits": "Krediter",
+        "meetingTime": "Mötestid",
+        "location": "Plats",
+        "description": "Beskrivning"
+      },
+      "placeholders": {
+        "title": "t.ex. avancerad fysik",
+        "section": "t.ex. AP-101",
+        "subject": "t.ex. fysik",
+        "semester": "t.ex. våren 2025",
+        "credits": "t.ex. 3",
+        "meetingTime": "t.ex. måndag-fredag 10:00-11:00",
+        "location": "t.ex. rum 205, naturvetenskapsbyggnaden",
+        "description": "Beskriv kursens innehåll och mål..."
+      },
+      "actions": {
+        "cancel": "Avboka",
+        "create": "Skapa klass",
+        "creating": "Skapande..."
+      },
+      "toasts": {
+        "success": "Klass {namn} har skapats.",
+        "errorRequired": "Vänligen fyll i alla obligatoriska fält.",
+        "errorFailed": "Misslyckades med att skapa klassen. Försök igen senare."
+      }
+    },
+    "createFolder": {
+      "titleCreate": "Skapa ny mapp",
+      "titleEdit": "Redigera mapp",
+      "fields": {
+        "name": "Mappnamn *",
+        "description": "Beskrivning (valfritt)",
+        "color": "Mappfärg"
+      },
+      "placeholders": {
+        "name": "Ange mappnamn",
+        "description": "Lägg till en beskrivning för den här mappen..."
+      },
+      "help": {
+        "name": "Välj ett beskrivande namn för din mapp",
+        "description": "500 tecken"
+      },
+      "actions": {
+        "cancel": "Avboka",
+        "create": "Skapa mapp",
+        "update": "Uppdatera mapp",
+        "creating": "Skapande...",
+        "updating": "Uppdaterar..."
+      },
+      "toasts": {
+        "errorRequired": "Mappnamn krävs",
+        "errorInvalidChars": "Mappnamnet innehåller ogiltiga tecken",
+        "errorTooLong": "Mappnamnet är för långt (max 255 tecken)"
+      }
+    },
+    "createAssignment": {
+      "title": "Skapa ny uppgift",
+      "buttonLabel": "Skapa uppgift",
+      "sections": {
+        "details": "Uppgiftsdetaljer",
+        "configuration": "Konfiguration",
+        "grading": "Betygsättning och bedömning",
+        "attachments": "Bilagor"
+      },
+      "fields": {
+        "title": "Titel *",
+        "instructions": "Instruktioner *",
+        "dueDate": "Två datum",
+        "type": "Uppgiftstyp",
+        "section": "Avsnitt",
+        "rubric": "Rubrik",
+        "gradeScale": "Betygsskala",
+        "maxPoints": "Maxpoäng",
+        "weight": "Vikt (%)",
+        "sectionColor": "Sektionsfärg"
+      },
+      "placeholders": {
+        "title": "t.ex. kapitel 5 Quiz, fysiklabbrapport",
+        "instructions": "Ge tydliga instruktioner till eleverna...",
+        "maxPoints": "100",
+        "weight": "1.0",
+        "chooseSection": "Välj sektion",
+        "chooseRubric": "Välj bedömningsmatris",
+        "chooseGradeScale": "Välj betygsskala",
+        "newSectionName": "Ange sektionsnamn..."
+      },
+      "types": {
+        "homework": "Läxa",
+        "quiz": "Frågesport",
+        "test": "Testa",
+        "project": "Projekt",
+        "essay": "Uppsats",
+        "discussion": "Diskussion",
+        "presentation": "Presentation",
+        "lab": "Labb",
+        "other": "Andra"
+      },
+      "options": {
+        "graded": {
+          "label": "Betygsatt uppgift",
+          "description": "Inkludera i betygsboken"
+        },
+        "draft": {
+          "label": "Spara som utkast",
+          "description": "Dölj för elever"
+        }
+      },
+      "section": {
+        "none": "Ingen sektion",
+        "createNew": "Skapa nytt avsnitt"
+      },
+      "rubric": {
+        "none": "Ingen bedömningsmatris",
+        "untitled": "Namnlös rubrik",
+        "autoCalculate": "Poäng beräknas automatiskt från den valda matrisen"
+      },
+      "gradeScale": {
+        "default": "Standardskala",
+        "untitled": "Namnlös skala"
+      },
+      "files": {
+        "uploadButton": "Ladda upp filer",
+        "dropZone": "Släpp filer här eller klicka för att ladda upp",
+        "dropZoneHint": "Stöder alla filtyper • Max 50 MB per fil",
+        "filesUploaded": "{uploaded} av {total} filer uppladdade"
+      },
+      "status": {
+        "creating": "Skapar uppgift...",
+        "settingUp": "Konfigurerar uppgiftsdetaljer...",
+        "preparing": "Förbereder filuppladdningar...",
+        "uploading": "Laddar upp filer till molnlagring...",
+        "processing": "Bearbetar uppladdade filer...",
+        "finalizing": "Slutför uppgiften...",
+        "assigning": "Tilldela till elever...",
+        "almostDone": "Nästan klar...",
+        "uploadingFile": "Laddar upp {namn}...",
+        "creatingProgress": "Skapar uppgift",
+        "draftStatus": "Kommer att sparas som utkast",
+        "publishedStatus": "Kommer att publiceras för studenter"
+      },
+      "actions": {
+        "cancel": "Avboka",
+        "create": "Skapa uppgift",
+        "saveDraft": "Spara utkast",
+        "creating": "Skapande...",
+        "add": "Tillägga"
+      },
+      "toasts": {
+        "successCreated": "Uppgiften har skapats.",
+        "successDraft": "Uppgiften har sparats som utkast.",
+        "errorRequired": "Vänligen fyll i alla obligatoriska fält.",
+        "errorFailed": "Misslyckades med att skapa uppgiften. Försök igen.",
+        "errorUploadFailed": "Misslyckades med att ladda upp {name}",
+        "sectionCreated": "Avsnittet \"{name}\" har skapats."
+      }
+    },
+    "createAnnouncement": {
+      "title": "Skapa meddelande",
+      "buttonLabel": "Publicera tillkännagivandet",
+      "fields": {
+        "title": "Meddelandets titel *",
+        "content": "Innehåll *",
+        "priority": "Prioritetsnivå",
+        "expiryDate": "Utgångsdatum (valfritt)",
+        "publishDate": "Publiceringsdatum",
+        "publishTime": "Publiceringstid"
+      },
+      "placeholders": {
+        "title": "t.ex. labrapport som ska lämnas in på fredag",
+        "content": "Skriv ditt meddelande här...",
+        "publishDate": "Publicera omedelbart om tomt"
+      },
+      "priority": {
+        "low": "Låg",
+        "normal": "Normal",
+        "high": "Hög",
+        "urgent": "Brådskande"
+      },
+      "sections": {
+        "settings": "Inställningar",
+        "notifications": "Aviseringar",
+        "schedule": "Schemalägg publicering (valfritt)"
+      },
+      "settings": {
+        "pinned": {
+          "label": "Fäst till toppen",
+          "description": "Låt detta meddelande stå högst upp på listan"
+        },
+        "urgent": {
+          "label": "Markera som brådskande",
+          "description": "Markera med brådskande styling"
+        }
+      },
+      "notifications": {
+        "email": {
+          "label": "Skicka e-postmeddelande",
+          "description": "Meddela eleverna via e-post"
+        },
+        "push": {
+          "label": "Skicka push-meddelande",
+          "description": "Skicka aviseringar i mobilappen"
+        }
+      },
+      "actions": {
+        "cancel": "Avboka",
+        "publishNow": "Publicera nu",
+        "schedule": "Schemameddelande"
+      },
+      "toasts": {
+        "success": "Meddelande skapat",
+        "errorRequired": "Vänligen fyll i alla obligatoriska fält."
+      }
+    }
+  }
+}

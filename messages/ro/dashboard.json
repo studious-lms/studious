@@ -1,0 +1,44 @@
+{
+  "home": {
+    "welcomeBack": "Bine ai revenit, {name}!",
+    "subtitle": "Iată ce se întâmplă cu cursurile voastre de astăzi.",
+    "stats": {
+      "totalClasses": "Total clase",
+      "teachingEnrolled": "predare, înscris",
+      "dueToday": "Scadent astăzi",
+      "dueTodayDesc": "Temele scadente pentru astăzi",
+      "upcoming": "Viitoare",
+      "upcomingDesc": "Teme care urmează",
+      "thisWeek": "În această săptămână",
+      "totalAssignments": "Total alocări"
+    },
+    "upcomingAssignments": {
+      "title": "Teme viitoare",
+      "subtitle": "Următoarele tale termene limită",
+      "allCaughtUp": "Totul a fost prins la zi!",
+      "noUpcoming": "Nu există sarcini viitoare în acest moment.",
+      "viewAgenda": "Vizualizați agenda",
+      "dueToday": "Scadent astăzi",
+      "dueTomorrow": "Scadent mâine",
+      "due": "Două {date}",
+      "teaching": "Predare",
+      "viewAllAssignments": "Vezi toate temele"
+    },
+    "notifications": {
+      "title": "Notificări recente",
+      "subtitle": "Ultimele actualizări",
+      "noNew": "Nicio notificare nouă",
+      "viewAll": "Vizualizați toate notificările"
+    },
+    "classes": {
+      "title": "Cursurile mele",
+      "subtitle": "Acces rapid la cursurile tale",
+      "teaching": "Predare",
+      "enrolled": "Înscris",
+      "due": "datorat",
+      "noClasses": "Niciun curs încă",
+      "browseClasses": "Răsfoiți cursurile",
+      "viewAllClasses": "Vezi toate cursurile"
+    }
+  }
+}

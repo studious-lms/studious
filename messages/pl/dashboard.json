@@ -1,0 +1,44 @@
+{
+  "home": {
+    "welcomeBack": "Witamy ponownie, {name}!",
+    "subtitle": "Oto, co będzie się dzisiaj działo na waszych zajęciach.",
+    "stats": {
+      "totalClasses": "Całkowita liczba klas",
+      "teachingEnrolled": "{nauczanie} nauczanie, {zapisany} zapisany",
+      "dueToday": "Należne dzisiaj",
+      "dueTodayDesc": "Zadania do oddania dzisiaj",
+      "upcoming": "Nadchodzące",
+      "upcomingDesc": "Nadchodzące zadania",
+      "thisWeek": "W tym tygodniu",
+      "totalAssignments": "Łączna liczba zadań"
+    },
+    "upcomingAssignments": {
+      "title": "Nadchodzące zadania",
+      "subtitle": "Twoje następne terminy",
+      "allCaughtUp": "Wszystko w porządku!",
+      "noUpcoming": "W tej chwili nie ma żadnych nadchodzących zadań.",
+      "viewAgenda": "Zobacz agendę",
+      "dueToday": "Należne dzisiaj",
+      "dueTomorrow": "Termin na jutro",
+      "due": "Dwie daty",
+      "teaching": "Nauczanie",
+      "viewAllAssignments": "Wyświetl wszystkie zadania"
+    },
+    "notifications": {
+      "title": "Ostatnie powiadomienia",
+      "subtitle": "Najnowsze aktualizacje",
+      "noNew": "Brak nowych powiadomień",
+      "viewAll": "Wyświetl wszystkie powiadomienia"
+    },
+    "classes": {
+      "title": "Moje zajęcia",
+      "subtitle": "Szybki dostęp do zajęć",
+      "teaching": "Nauczanie",
+      "enrolled": "Przyjęty",
+      "due": "należny",
+      "noClasses": "Jeszcze nie ma zajęć",
+      "browseClasses": "Przeglądaj klasy",
+      "viewAllClasses": "Zobacz wszystkie klasy"
+    }
+  }
+}

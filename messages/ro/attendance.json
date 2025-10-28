@@ -1,0 +1,97 @@
+{
+  "attendance": {
+    "title": "Evenimente și prezență la curs",
+    "subtitle": "Urmăriți prezența elevilor la fiecare eveniment",
+    "saving": {
+      "auto": "Salvare automată...",
+      "unsaved": "Modificări nesalvate",
+      "saving": "Economisire..."
+    },
+    "table": {
+      "date": "Data",
+      "eventName": "Numele evenimentului",
+      "attendanceRate": "Rata de prezență",
+      "attendance": "Prezență",
+      "actions": "Acțiuni"
+    },
+    "actions": {
+      "viewDetails": "Vedeți detaliile",
+      "editEvent": "Editați evenimentul",
+      "deleteEvent": "Șterge evenimentul",
+      "createEvent": "Creați un eveniment",
+      "saveAttendance": "Salvați prezența",
+      "markAllPresent": "Marchează toți cei prezenți",
+      "markAllAbsent": "Marchează toți absenții"
+    },
+    "allEvents": {
+      "title": "Toate evenimentele",
+      "description": "Istoricul complet al evenimentelor din clasă și al înregistrărilor de prezență",
+      "searchPlaceholder": "Căutați evenimente...",
+      "empty": {
+        "title": "Nu s-au găsit evenimente",
+        "description": "Creează-ți primul eveniment pentru a începe să urmărești prezența"
+      }
+    },
+    "eventsList": {
+      "pickDate": "Alegeți data",
+      "untitled": "Eveniment fără titlu",
+      "empty": {
+        "noEventsOnDate": "Niciun eveniment în această dată",
+        "noEventsOnDateDescription": "Nu sunt programate evenimente pentru {date}. Încercați să selectați o altă dată sau să creați un eveniment nou.",
+        "noEvents": "Nu s-au găsit evenimente",
+        "noEventsDescription": "Creează-ți primul eveniment pentru a începe să urmărești prezența",
+        "createForDate": "Creați un eveniment pentru această dată",
+        "createFirst": "Creați primul eveniment"
+      }
+    },
+    "summary": {
+      "title": "Rezumatul evenimentului",
+      "selectedEvent": "Eveniment selectat",
+      "total": "Total",
+      "attendanceRate": "Rata de prezență"
+    },
+    "roster": {
+      "title": "Lista studenților",
+      "description": "Faceți clic pe butoanele de stare pentru a marca prezența fiecărui elev",
+      "empty": {
+        "title": "Niciun student înscris",
+        "description": "Studenții vor apărea aici odată ce se alătură cursului"
+      }
+    },
+    "prompt": {
+      "title": "Selectați un eveniment",
+      "description": "Alegeți un eveniment de mai sus pentru a vizualiza și gestiona prezența studenților"
+    },
+    "status": {
+      "present": "Prezent",
+      "late": "Târziu",
+      "absent": "Absent",
+      "notTaken": "Neluat"
+    },
+    "student": {
+      "title": "Prezența mea",
+      "subtitle": "Urmărește-ți prezența pentru {className}",
+      "attendanceRate": "Rata de prezență",
+      "history": "Istoricul prezenței",
+      "event": "Eveniment",
+      "status": "Stare",
+      "searchPlaceholder": "Căutați evenimente...",
+      "empty": {
+        "title": "Fără înregistrări de prezență",
+        "description": "Prezența ta va apărea aici după ce evenimentele sunt create și prezența este înregistrată."
+      }
+    },
+    "deleteDialog": {
+      "title": "Șterge evenimentul",
+      "description": "Sigur doriți să ștergeți „{eventName}”? Această acțiune nu poate fi anulată și va elimina toate înregistrările de prezență asociate.",
+      "deleting": "Se șterge...",
+      "deleteButton": "Șterge evenimentul"
+    },
+    "toast": {
+      "attendanceSaved": "Prezența a fost salvată cu succes",
+      "attendanceSaveFailed": "Nu s-a putut salva prezența",
+      "eventDeleted": "Evenimentul a fost șters cu succes",
+      "eventDeleteFailed": "Evenimentul nu a putut fi șters"
+    }
+  }
+}

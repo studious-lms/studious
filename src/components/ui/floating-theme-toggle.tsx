@@ -9,6 +9,7 @@ import { useLocale } from "next-intl"
 import { setCookie } from "cookies-next"
 import { useIsMobile } from "@/hooks/use-mobile"
 import { cn } from "@/lib/utils"
+import { LANGUAGES as languages } from "@/lib/language"
 
 // Color theme configurations
 const colorThemes = [
@@ -24,14 +25,6 @@ const darkModes = [
   { id: "light", name: "Light", icon: Sun },
   { id: "dark", name: "Dark", icon: Moon },
   { id: "system", name: "System", icon: Settings },
-]
-
-// Language configurations (matching available translation files)
-const languages = [
-  { code: "en", name: "English", flag: "🇺🇸" },
-  { code: "es", name: "Español", flag: "🇪🇸" },
-  { code: "fr", name: "Français", flag: "🇫🇷" },
-  { code: "zh", name: "中文", flag: "🇨🇳" },
 ]
 
 type View = "main" | "themes" | "languages"

@@ -1,0 +1,130 @@
+{
+  "classFiles": {
+    "title": "Tập tin",
+    "subtitle": "Quản lý các tệp và tài nguyên lớp học",
+    "actions": {
+      "newFolder": "Thư mục mới",
+      "upload": "Tải lên",
+      "uploadFiles": "Tải lên tập tin",
+      "createFolder": "Tạo thư mục",
+      "download": "Tải xuống",
+      "share": "Chia sẻ",
+      "delete": "Xóa bỏ",
+      "filter": "Lọc",
+      "sort": "Loại"
+    },
+    "toasts": {
+      "folderCreated": "Thư mục đã được tạo thành công",
+      "folderDeleted": "Thư mục đã được xóa thành công",
+      "folderRenamed": "Đã đổi tên thư mục thành công",
+      "folderMoved": "Thư mục đã được di chuyển thành công",
+      "filesUploaded": "Đã tải tệp lên thành công",
+      "fileDeleted": "Đã xóa tập tin thành công",
+      "fileRenamed": "Đã đổi tên tệp thành công",
+      "fileMoved": "Tệp đã được di chuyển thành công",
+      "downloadStarted": "Đã bắt đầu tải xuống",
+      "shareCopied": "Đã sao chép liên kết chia sẻ"
+    },
+    "errors": {
+      "teacherOnly": "Chỉ giáo viên mới có thể chỉnh sửa tập tin.",
+      "downloadFailed": "Tải xuống không thành công",
+      "shareFailed": "Chia sẻ không thành công",
+      "failedToLoad": "Không tải được tệp. Vui lòng thử lại sau."
+    },
+    "breadcrumbs": {
+      "classFiles": "Tệp lớp"
+    },
+    "search": {
+      "placeholder": "Tìm kiếm trong các tập tin"
+    },
+    "selected": "{count} đã chọn",
+    "filters": {
+      "fileType": "Loại tập tin",
+      "documents": "Tài liệu",
+      "images": "Hình ảnh",
+      "videos": "Video",
+      "presentations": "Bài thuyết trình"
+    },
+    "sort": {
+      "name": "Tên",
+      "lastModified": "Lần sửa đổi cuối cùng",
+      "fileSize": "Kích thước tập tin"
+    },
+    "table": {
+      "name": "Tên",
+      "owner": "Người sở hữu",
+      "lastModified": "Lần sửa đổi cuối cùng",
+      "fileSize": "Kích thước tập tin"
+    },
+    "empty": {
+      "title": "Thư mục này trống",
+      "description": "Tải lên tệp hoặc tạo thư mục để bắt đầu sắp xếp tài liệu lớp học của bạn.",
+      "searchTitle": "Không tìm thấy tập tin",
+      "searchDescription": "Không có tệp nào khớp với \"{query}\". Hãy thử một thuật ngữ tìm kiếm khác."
+    }
+  },
+  "folderView": {
+    "subtitle": "Nội dung thư mục",
+    "notFound": {
+      "title": "Không tìm thấy thư mục",
+      "description": "Không tìm thấy thư mục được yêu cầu.",
+      "backButton": "Quay lại Tệp"
+    },
+    "error": {
+      "loadFailed": "Không tải được nội dung thư mục. Vui lòng thử lại sau."
+    },
+    "breadcrumbs": {
+      "classFiles": "Tệp lớp"
+    },
+    "search": {
+      "placeholder": "Tìm kiếm trong thư mục",
+      "selected": "{count} đã chọn"
+    },
+    "filters": {
+      "label": "Lọc",
+      "fileType": "Loại tập tin",
+      "documents": "Tài liệu",
+      "images": "Hình ảnh",
+      "videos": "Video",
+      "presentations": "Bài thuyết trình"
+    },
+    "sort": {
+      "label": "Loại",
+      "name": "Tên",
+      "lastModified": "Lần sửa đổi cuối cùng",
+      "fileSize": "Kích thước tập tin"
+    },
+    "table": {
+      "name": "Tên",
+      "owner": "Người sở hữu",
+      "lastModified": "Lần sửa đổi cuối cùng",
+      "fileSize": "Kích thước tập tin"
+    },
+    "empty": {
+      "noFilesFound": "Không tìm thấy tập tin",
+      "noFilesFoundDescription": "Không có tệp nào khớp với \"{query}\". Hãy thử một thuật ngữ tìm kiếm khác.",
+      "folderEmpty": "Thư mục này trống",
+      "folderEmptyDescription": "Tải lên tệp hoặc tạo thư mục để sắp xếp tài liệu của bạn."
+    },
+    "actions": {
+      "newFolder": "Thư mục mới",
+      "uploadFiles": "Tải lên tập tin",
+      "createFolder": "Tạo thư mục"
+    },
+    "toast": {
+      "folderCreated": "Thư mục đã được tạo thành công",
+      "folderDeleted": "Thư mục đã được xóa thành công",
+      "folderRenamed": "Đã đổi tên thư mục thành công",
+      "folderMoved": "Thư mục đã được di chuyển thành công",
+      "filesUploaded": "Đã tải tệp lên thành công",
+      "fileDeleted": "Đã xóa tập tin thành công",
+      "fileRenamed": "Đã đổi tên tệp thành công",
+      "fileMoved": "Tệp đã được di chuyển thành công",
+      "downloadStarted": "Đã bắt đầu tải xuống",
+      "downloadFailed": "Tải xuống không thành công",
+      "shareLinkCopied": "Đã sao chép liên kết chia sẻ",
+      "shareFailed": "Chia sẻ không thành công",
+      "permissionDenied": "Quyền bị từ chối"
+    }
+  }
+}

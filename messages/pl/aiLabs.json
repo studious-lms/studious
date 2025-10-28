@@ -1,0 +1,72 @@
+{
+  "aiLabs": {
+    "title": "Laboratoria AI",
+    "subtitle": "Twórz treści edukacyjne z pomocą sztucznej inteligencji",
+    "aiPowered": "Wspierane przez sztuczną inteligencję",
+    "createNew": "Utwórz nową treść",
+    "aiGenerated": "Wygenerowane przez sztuczną inteligencję",
+    "deleteConfirm": "Czy na pewno chcesz usunąć to laboratorium AI? Tej czynności nie można cofnąć.",
+    "widgets": {
+      "assignment": {
+        "title": "Zadanie",
+        "description": "Twórz interaktywne zadania z pomocą sztucznej inteligencji"
+      },
+      "quiz": {
+        "title": "Kwiz",
+        "description": "Generuj quizy z różnymi typami pytań"
+      },
+      "worksheet": {
+        "title": "Arkusz roboczy",
+        "description": "Twórz arkusze ćwiczeń i ćwiczenia praktyczne"
+      },
+      "lessonPlan": {
+        "title": "Plan lekcji",
+        "description": "Projektowanie kompleksowych planów lekcji"
+      },
+      "rubric": {
+        "title": "Rubryka",
+        "description": "Utwórz szczegółowe kryteria oceniania"
+      }
+    },
+    "tabs": {
+      "drafts": "Projekt Labs",
+      "chats": "Koty AI"
+    },
+    "drafts": {
+      "title": "Projekt Labs ({count})",
+      "empty": {
+        "title": "Brak jeszcze projektów laboratoryjnych",
+        "description": "Utwórz swoją pierwszą treść edukacyjną wygenerowaną przez sztuczną inteligencję, korzystając z powyższych widżetów."
+      }
+    },
+    "chats": {
+      "title": "Laboratoria AI ({count})",
+      "active": "Aktywny",
+      "messageCount": "{count} wiadomości",
+      "createdBy": "Utworzone przez {name}",
+      "empty": {
+        "title": "Brak jeszcze laboratoriów AI",
+        "description": "Załóż pierwsze laboratorium sztucznej inteligencji i rozpocznij współpracę ze sztuczną inteligencją w zakresie tworzenia treści edukacyjnych."
+      }
+    },
+    "toast": {
+      "labCreated": "Laboratorium AI zostało pomyślnie utworzone!",
+      "labCreateFailed": "Nie udało się utworzyć AI Lab:",
+      "labDeleted": "AI Lab zostało pomyślnie usunięte!",
+      "labDeleteFailed": "Nie udało się usunąć AI Lab:"
+    }
+  },
+  "aiLabChat": {
+    "backButton": "Powrót do AI Labs",
+    "loading": "Załadunek...",
+    "aiThinking": "Myślenie AI...",
+    "getAIHelp": "Uzyskaj pomoc AI",
+    "notFound": {
+      "title": "Nie znaleziono czatu laboratoryjnego",
+      "description": "To laboratorium AI mogło zostać usunięte lub nie masz do niego dostępu."
+    },
+    "toast": {
+      "messageFailed": "Nie udało się wysłać wiadomości:"
+    }
+  }
+}

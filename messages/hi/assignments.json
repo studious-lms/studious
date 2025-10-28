@@ -1,0 +1,54 @@
+{
+  "assignmentDetail": {
+    "title": "असाइनमेंट विवरण",
+    "description": "विवरण",
+    "instructions": "निर्देश",
+    "dueDate": "दो तिथियाँ",
+    "maxPoints": "अधिकतम अंक",
+    "submissions": "प्रविष्टियों",
+    "submitted": "प्रस्तुत",
+    "notSubmitted": "प्रस्तुत नही किया है",
+    "graded": "ग्रेड दिया गया",
+    "pending": "लंबित",
+    "late": "देर",
+    "onTime": "समय पर",
+    "attachments": "संलग्नक",
+    "rubric": "सरनामा",
+    "gradingBoundary": "ग्रेडिंग सीमा",
+    "submissionDetails": "सबमिशन विवरण",
+    "submittedBy": "द्वारा प्रस्तुत",
+    "submittedAt": "प्रस्तुत किया गया",
+    "grade": "श्रेणी",
+    "feedback": "प्रतिक्रिया",
+    "files": "फ़ाइलें",
+    "noFiles": "कोई फ़ाइल संलग्न नहीं है",
+    "noSubmissions": "अभी तक कोई सबमिशन नहीं",
+    "noSubmissionsDescription": "छात्रों द्वारा अपना कार्य प्रस्तुत करने के बाद प्रस्तुतियाँ यहाँ दिखाई देंगी",
+    "actions": {
+      "edit": "असाइनमेंट संपादित करें",
+      "delete": "असाइनमेंट हटाएं",
+      "viewSubmission": "सबमिशन देखें",
+      "gradeSubmission": "श्रेणी",
+      "downloadAll": "सभी डाउनलोड करें",
+      "exportGrades": "निर्यात ग्रेड"
+    },
+    "stats": {
+      "totalSubmissions": "कुल प्रस्तुतियाँ",
+      "averageGrade": "औसत क्षेणी",
+      "submissionRate": "सबमिशन दर",
+      "gradedCount": "ग्रेड दिया गया"
+    },
+    "table": {
+      "student": "विद्यार्थी",
+      "status": "स्थिति",
+      "grade": "श्रेणी",
+      "submittedAt": "प्रस्तुत",
+      "actions": "कार्रवाई"
+    },
+    "toasts": {
+      "gradeUpdated": "ग्रेड सफलतापूर्वक अपडेट किया गया",
+      "deleted": "असाइनमेंट हटा दिया गया",
+      "error": "एक त्रुटि पाई गई"
+    }
+  }
+}

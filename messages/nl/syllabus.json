@@ -1,0 +1,66 @@
+{
+  "syllabus": {
+    "title": "Leerplan",
+    "subtitle": "Cursusoverzicht en academische informatie",
+    "actions": {
+      "saveChanges": "Wijzigingen opslaan",
+      "cancel": "Annuleren",
+      "edit": "Syllabus bewerken"
+    },
+    "errors": {
+      "failedToLoad": "Het is niet gelukt om het leerplan te laden",
+      "tryLater": "Probeer het later opnieuw."
+    },
+    "stats": {
+      "totalAssignments": "Totaal aantal opdrachten",
+      "completionRate": "Voltooiingspercentage",
+      "totalPoints": "Totaal aantal punten",
+      "upcoming": "Aankomende"
+    },
+    "overview": {
+      "title": "Cursusoverzicht",
+      "placeholder": "Vul een cursusoverzicht, doelstellingen en andere belangrijke informatie in...",
+      "helper": "Voer uw cursusgegevens, leerdoelen, beleid en andere belangrijke details in.",
+      "empty": {
+        "title": "Nog geen syllabusinhoud",
+        "description": "Klik op 'Syllabus bewerken' om cursusinformatie, leerdoelen, beleid en meer toe te voegen."
+      }
+    },
+    "assignments": {
+      "title": "Cursusopdrachten",
+      "gradedCount": "{beoordeeld} beoordeelde opdrachten",
+      "totalPoints": "{totaal} totale punten",
+      "empty": {
+        "title": "Nog geen opdrachten",
+        "description": "Zodra u opdrachten hebt gemaakt, worden deze hier weergegeven."
+      }
+    },
+    "table": {
+      "assignment": "Opdracht",
+      "dueDate": "Twee data",
+      "points": "Punten",
+      "weight": "Gewicht",
+      "status": "Status",
+      "pts": "punten"
+    },
+    "status": {
+      "graded": "Gegradeerd",
+      "pending": "In behandeling"
+    },
+    "courseInfo": {
+      "title": "Cursusinformatie",
+      "basic": {
+        "title": "Basisgegevens",
+        "className": "Klassenaam",
+        "section": "Sectie",
+        "subject": "Onderwerp"
+      },
+      "stats": {
+        "title": "Cursusstatistieken",
+        "totalAssignments": "Totaal aantal opdrachten",
+        "gradedAssignments": "Beoordeelde opdrachten",
+        "totalPoints": "Totaal aantal punten"
+      }
+    }
+  }
+}

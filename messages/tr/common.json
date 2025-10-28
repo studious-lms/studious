@@ -1,0 +1,1218 @@
+{
+  "common": {
+    "save": "Kaydetmek",
+    "cancel": "İptal etmek",
+    "delete": "Silmek",
+    "edit": "Düzenlemek",
+    "submit": "Göndermek",
+    "close": "Kapalı",
+    "back": "Geri",
+    "next": "Sonraki",
+    "loading": "Yükleniyor...",
+    "search": "Aramak",
+    "filter": "Filtre",
+    "sort": "Düzenlemek",
+    "viewAll": "Tümünü Görüntüle",
+    "noData": "Veri mevcut değil",
+    "export": "İhracat"
+  },
+  "time": {
+    "today": "Bugün",
+    "tomorrow": "Yarın",
+    "yesterday": "Dün",
+    "thisWeek": "Bu hafta",
+    "nextWeek": "Gelecek Hafta",
+    "lastWeek": "Geçen hafta"
+  },
+  "errors": {
+    "somethingWentWrong": "Bir şeyler ters gitti",
+    "tryAgain": "Tekrar deneyin",
+    "pageNotFound": "Sayfa bulunamadı",
+    "unauthorized": "Yetkisiz erişim"
+  },
+  "auth": {
+    "login": {
+      "title": "Tekrar hoşgeldiniz",
+      "subtitle": "Studious hesabınıza giriş yapın",
+      "username": "Kullanıcı adı",
+      "password": "Şifre",
+      "forgotPassword": "Parolanızı mı unuttunuz?",
+      "signIn": "Giriş yap",
+      "signingIn": "Giriş yapılıyor...",
+      "noAccount": "Hesabınız yok mu?",
+      "signUp": "Üye olmak",
+      "successMessage": "Başarıyla giriş yapıldı",
+      "cancel": "İptal etmek"
+    },
+    "signup": {
+      "title": "Hesabınızı oluşturun",
+      "subtitle": "Studious'a katılın ve öğrenmeye başlayın",
+      "signUp": "Üye olmak",
+      "firstName": "İlk adı",
+      "lastName": "Soy isim",
+      "email": "E-posta",
+      "password": "Şifre",
+      "confirmPassword": "Şifreyi Onayla",
+      "firstNamePlaceholder": "İlk adı",
+      "lastNamePlaceholder": "Soy isim",
+      "emailPlaceholder": "E-postanızı girin",
+      "passwordPlaceholder": "Bir şifre oluşturun",
+      "confirmPasswordPlaceholder": "Şifrenizi onaylayın",
+      "agreeToTerms": "Kabul ediyorum",
+      "termsOfService": "Hizmet Şartları",
+      "and": "Ve",
+      "privacyPolicy": "Gizlilik Politikası",
+      "createAccount": "Hesap oluşturmak",
+      "creatingAccount": "Hesap oluşturuluyor...",
+      "alreadyHaveAccount": "Zaten bir hesabınız var mı?",
+      "signIn": "Giriş yap",
+      "passwordMismatch": "Şifreler eşleşmiyor",
+      "termsRequired": "Şartları kabul etmelisiniz",
+      "accountCreated": "Hesap başarıyla oluşturuldu!",
+      "signUpFailed": "Hesap oluşturulamadı"
+    },
+    "verification": {
+      "notVerified": "Hesap Doğrulanmadı",
+      "message": "Giriş yapabilmeniz için hesabınızın doğrulanması gerekiyor. Lütfen doğrulama bağlantısı için e-postanızı kontrol edin.",
+      "emailSentTo": "Doğrulama e-postası şu adrese gönderildi:",
+      "resendEmail": "Doğrulama E-postasını Yeniden Gönder",
+      "backToSignIn": "Oturum Açmaya Geri Dön",
+      "emailSent": "Doğrulama e-postası gönderildi!",
+      "checkInbox": "Lütfen gelen kutunuzu ve spam klasörünüzü kontrol edin.",
+      "enterEmail": "E-posta adresinizi girin",
+      "sending": "Gönderiliyor...",
+      "sendEmail": "E-posta gönder"
+    }
+  },
+  "marketing": {
+    "navbar": {
+      "requestEarlyAccess": "Erken Erişim Talebinde Bulunun"
+    },
+    "hero": {
+      "badge": "Modern Öğrenme Platformu",
+      "title1": "Kusursuz, dikkat dağıtıcı olmayan",
+      "title2": "modern okullar için öğrenme",
+      "subtitle": "Studious LMS, yapay zekayı, gerçek zamanlı takvimleri ve sınıf iletişimini tek bir uyumlu platformda bir araya getirerek öğretmenlerin ders vermesine ve öğrencilerin başarılı olmasına yardımcı olmak üzere tasarlanmıştır.",
+      "requestEarlyAccess": "Erken Erişim Talebinde Bulunun",
+      "watchDemo": "Demoyu İzle",
+      "altDashboard": "Platform Pano"
+    },
+    "problem": {
+      "title": "Geleneksel okul portalları parçalanmış ve güncelliğini yitirmiştir",
+      "issue1": "Öğretmenler birden fazla araç arasında geçiş yaparak zaman kaybediyor",
+      "issue2": "Öğrenciler organizasyon ve son tarihlerle mücadele ediyor",
+      "issue3": "Yapay zeka gerçek okul iş akışlarına yeterince entegre edilmiyor"
+    },
+    "response": {
+      "title1": "Çalışkan LMS, öğretmeyi, öğrenmeyi ve",
+      "title2": "ve iletişimi tek bir çalışma alanına",
+      "subtitle": "Son teknoloji çerçeveler ve insan odaklı tasarımla geliştirilen bu sistem, her büyüklükteki okulda ölçeklenebilecek şekilde tasarlandı."
+    },
+    "features": {
+      "title": "Temel Özellikler",
+      "subtitle": "Modern öğrenme deneyimlerini yönetmek için ihtiyacınız olan her şey",
+      "ai": {
+        "title": "Yapay Zeka Asistanı",
+        "description": "Çalışma materyallerinin oluşturulmasına, içeriğin özetlenmesine ve notlandırmaya yardımcı olur"
+      },
+      "classManagement": {
+        "title": "Sınıf Yönetimi",
+        "description": "Dersleri, ödevleri ve katılımı zahmetsizce düzenleyin"
+      },
+      "assignments": {
+        "title": "Atamalar",
+        "description": "Öğrenci gönderilerini verimli bir şekilde oluşturun, toplayın ve notlandırın"
+      },
+      "calendar": {
+        "title": "Takvim",
+        "description": "Ödevler, dersler ve etkinliklerle gerçek zamanlı senkronizasyon"
+      },
+      "analytics": {
+        "title": "Analitik",
+        "description": "Performans, katılım ve etkileşime ilişkin içgörüleri görüntüleyin"
+      },
+      "communication": {
+        "title": "İletişim",
+        "description": "Birleşik iş birliği için yerleşik mesajlaşma ve duyurular"
+      }
+    },
+    "quote": {
+      "text": "Studious'taki her özellik sürtünmeyi azaltmak için tasarlanmıştır; sürtünmeyi artırmak için değil."
+    },
+    "pricing": {
+      "title": "Kurumunuz için doğru planı seçin",
+      "subtitle": "Gizli ücretler olmadan basit ve şeffaf fiyatlandırma. Tüm planlar, ölçeklenebilir seçeneklerle temel özellikleri içerir.",
+      "starter": {
+        "title": "Başlangıç",
+        "price": "Özgür",
+        "note": "Beta erişimi dahildir",
+        "description": "Küçük sınıflar ve pilot programlar için mükemmel",
+        "perk1": "30 öğrenciye kadar",
+        "perk2": "Sınırsız sınıflar",
+        "perk3": "Temel özellikler (ödevler, takvim, notlar)",
+        "perk4": "Yapay zeka asistanı (ayda 5 sohbet)",
+        "perk5": "Topluluk desteği",
+        "perk6": "5 GB depolama alanı",
+        "button": "Ücretsiz Başlayın"
+      },
+      "school": {
+        "title": "Okul",
+        "price": "5 dolar",
+        "priceUnit": "/kullanıcı/ay",
+        "note": "Yıllık veya aylık 6$ faturalandırılır",
+        "description": "1.000'e kadar öğrencisi olan okullar için",
+        "perk1": "Sınırsız öğrenci",
+        "perk2": "Sınırsız sınıflar",
+        "perk3": "Tüm temel özellikler",
+        "perk4": "Yapay zeka asistanı (sınırsız sorgu)",
+        "perk5": "Studious CMS beta erişimi için ilk sırada",
+        "button": "Başlayın"
+      },
+      "institution": {
+        "title": "Kurum",
+        "price": "Gelenek",
+        "note": "İhtiyaçlarınıza göre uyarlanmış",
+        "description": "Büyük okullar ve üniversiteler için (1.000+ öğrenci)",
+        "perk1": "Okul planındaki her şey",
+        "perk2": "7/24 öncelikli destek",
+        "perk3": "Sınırsız depolama",
+        "perk4": "Özel eğitim ve oryantasyon",
+        "perk5": "Kullanıcı başına daha ucuz harcamalar",
+        "button": "Satış Ekibiyle İletişime Geçin"
+      },
+      "mostPopular": "En Popüler",
+      "earlyBird": "🎉 Erken benimseyenler yıllık planlarda <strong>3 ay ücretsiz</strong> + özel oryantasyon desteği alırlar"
+    },
+    "schoolProgram": {
+      "badge": "Sosyal Etki",
+      "title": "Çalışkan Okul Geliştirme Programı",
+      "subtitle": "Okulun ekonomik durumu ne olursa olsun, her öğrencinin modern öğrenme araçlarına erişmeyi hak ettiğine inanıyoruz.",
+      "feature1Title": "%100 Ücretsiz Erişim",
+      "feature1Description": "Nitelikli okullar için tüm özelliklere sahip tam platform erişimi",
+      "feature2Title": "Özel Destek",
+      "feature2Description": "Öğretmenler ve personel için öncelikli oryantasyon ve eğitim",
+      "feature3Title": "Eğitim Kaynakları",
+      "feature3Description": "Ücretsiz öğretim materyalleri ve müfredat desteği",
+      "applyNow": "Hemen Başvurun",
+      "learnMore": "Daha fazla bilgi edin",
+      "eligibilityTitle": "Program Uygunluğu",
+      "qualifyingTitle": "Nitelikli Okullar:",
+      "qualify1": "Hizmet yetersizliği çeken topluluklardaki devlet okulları",
+      "qualify2": "Kayıtlı kâr amacı gütmeyen eğitim kurumları",
+      "qualify3": "Gelişmekte olan bölgelerdeki okullar",
+      "qualify4": "Başlık I okulları (ABD) veya eşdeğeri",
+      "commitmentTitle": "Taahhüdümüz:",
+      "commitment": "Ücretli müşterilerimizin %10'u ihtiyaç sahibi okullara ücretsiz erişim sağlanmasını destekliyor.",
+      "launchTitle": "Programın Lansmanı:",
+      "launch": "Ocak 2026 • Başvurular açıldı"
+    },
+    "futureDevelopments": {
+      "title": "Gelecekteki Gelişmeler",
+      "subtitle": "Eğitimi dönüştürme yol haritamız",
+      "cas": {
+        "title": "CAS Perspektifi",
+        "description": "Bağışlar ve materyallerle yetersiz fonlanan okullara destek olmak, kaliteli eğitimi herkes için erişilebilir kılmak."
+      },
+      "features": {
+        "title": "Özellikler Perspektif",
+        "description": "Dünya çapında çeşitli eğitim sistemleri için AI öğrenci desteğini genişletmek ve API entegrasyonları oluşturmak."
+      },
+      "launch": {
+        "title": "Lansman Perspektifi",
+        "description": "Öğrenme deneyimini yeniden şekillendirmek için okullarda, üniversitelerde ve konferanslarda sunumlar."
+      }
+    },
+    "cta": {
+      "title": "Okulunuzun öğrenme ve öğretme biçimini yeniden tanımlamaya hazır mısınız?",
+      "subtitle": "Studious LMS ile eğitimin geleceğine katılın",
+      "requestAccess": "Erişim Talebinde Bulunun",
+      "partnerWithUs": "Bizimle Ortak Olun",
+      "tagline": "Çalışkan Öğrenme Yönetim Sistemi (LMS) — Modern Öğrenme, Basitleştirildi."
+    }
+  },
+  "press": {
+    "badge": "Basın ve Medya",
+    "title": "Haberlerde çalışkan",
+    "subtitle": "Gazeteciler ve içerik oluşturucular için medya kaynakları, marka varlıkları ve şirket bilgileri",
+    "factsheet": {
+      "title": "Şirket Bilgi Formu",
+      "subtitle": "Studious LMS hakkında kısa bilgiler",
+      "companyInfo": "Şirket Bilgileri",
+      "founded": "Kurulan",
+      "hq": "Karargah",
+      "industry": "Sanayi",
+      "website": "Web sitesi",
+      "status": "Durum",
+      "currentStatus": "Mevcut Durum",
+      "launchDate": "Lansman Tarihi",
+      "currentPhase": "Mevcut Aşama",
+      "targetMarkets": "Hedef Pazarlar",
+      "teamSize": "Takım Boyutu",
+      "devHqs": "Geliştirme Merkezleri"
+    },
+    "contact": {
+      "title": "Basın Soruları",
+      "subtitle": "Basın soruları, röportajlar ve medya talepleri için",
+      "sl": "Genellikle 24 saat içinde yanıt veriyoruz",
+      "general": "Genel sorular ve destek için"
+    }
+  },
+  "program": {
+    "hero": {
+      "badge": "Sosyal Etki Girişimi",
+      "title": "Çalışkan Okul Geliştirme Programı",
+      "subtitle": "Ekonomik imkânları olmayan okullara modern öğrenme teknolojilerine ücretsiz erişim sağlanması"
+    },
+    "commitment": {
+      "revenue": "Taahhüt Edilen Gelir",
+      "cohort": "İlk Grup Lansmanı",
+      "free": "Ücretsiz Erişim"
+    },
+    "about": {
+      "mission": {
+        "title": "Misyonumuz",
+        "body1": "Çalışkan Okul Gelişim Programı, öğrenim yönetimi platformumuza ücretsiz ve sınırsız erişim sağlayarak imkânları kısıtlı okullara destek olmayı amaçlamaktadır. Teknolojinin geleceğin işgücünde baskın bir faktör olduğunun farkındayız, ancak birçok eğitim kurumu bu tür kaynaklara erişimden yoksundur. Bu program aracılığıyla, en çok ihtiyaç duyan okullara modern öğrenim yönetimi teknolojisi sunuyoruz."
+      },
+      "aims": {
+        "title": "Programın Amaçları",
+        "body1": "Öğretmenler ve eğitim profesyonelleriyle yaptığımız kapsamlı görüşmeler sonucunda, birçok okulun kullanımına sunulan dijital öğrenme altyapısında önemli eksiklikler tespit ettik. Piyasadaki birçok öğrenme yönetim sistemi, tutarlı ve sezgisel bir kullanıcı deneyiminden yoksundur ve dezavantajlı bölgelerdeki okullar genellikle modern eğitim teknolojilerine erişim sağlayamamaktadır.",
+        "body2": "Programımız bu zorlukları doğrudan ele alıyor. Ücretli kurumsal aboneliklerimizden elde ettiğimiz gelir, dezavantajlı okullara Studious LMS ve ilgili eğitim araçlarına kapsamlı erişim sağlamamızı sağlıyor. Bu sürdürülebilir model, dijital uçurumu kapatmamıza ve platformumuzu tüm kullanıcılar için sürekli iyileştirmemize olanak tanıyor."
+      },
+      "receive": {
+        "title": "Alacağınız Şeyler",
+        "body1": "Programa kabul edilen okullar, sınırlı veya sadeleştirilmiş bir sürüm değil, tam Studious platform deneyimine sahip olurlar. Bu, sınırsız öğrenci ve öğretmen hesabı, tüm premium özellikler (yapay zeka asistanı, gelişmiş analizler, gerçek zamanlı iş birliği), öncelikli teknik destek, özel oryantasyon uzmanları, sürekli eğitim kaynakları ve gelecekteki tüm güncelleme ve iyileştirmelere erişim içerir.",
+        "body2": "Yazılımın ötesinde, okulunuzun platformun faydalarından en iyi şekilde yararlanabilmesi için kapsamlı destek sağlıyoruz. Ekibimiz, sistemi özel ihtiyaçlarınıza göre özelleştirmek, uygulamalı eğitim sağlamak ve yolculuğunuz boyunca sürekli destek sağlamak için yöneticileriniz ve öğretmenlerinizle doğrudan çalışacaktır."
+      },
+      "qualifies": {
+        "title": "Kimler Uygun?",
+        "body1": "Gelişmiş eğitim teknolojilerinden en çok faydalanacak öğrencilere hizmet veren okullara öncelik veriyoruz. Bunlar arasında, yetersiz hizmet alan veya ekonomik olarak dezavantajlı topluluklardaki devlet okulları, mali kısıtlamalar gösteren kayıtlı kâr amacı gütmeyen eğitim kurumları, gelişmekte olan bölge veya ülkelerdeki okullar, ABD'deki Title I okulları ve uluslararası eşdeğerleri ve öğrenci sonuçlarını iyileştirme taahhüdünün yanı sıra gerçek bir mali ihtiyaç gösterebilen tüm eğitim kurumları yer almaktadır.",
+        "body2": "Her başvuruyu, yalnızca finansal ölçütleri değil, aynı zamanda okulunuzun misyonunu, hizmet verdiğiniz nüfusu ve Studious'u eğitimi geliştirmek için kullanma planlarınızı da göz önünde bulundurarak ayrı ayrı değerlendiriyoruz. Amacımız, platformumuzdan gerçekten faydalanacak ve öğrencilerin öğrenme deneyimlerini iyileştirmek için platformumuzu etkili bir şekilde kullanacak okullarla ortaklık kurmaktır."
+      },
+      "impact": {
+        "title": "Etki Vizyonumuz",
+        "body1": "Okullara modern öğrenme yönetim teknolojilerine ücretsiz erişim sağlayarak, dezavantajlı bölgelerdeki eğitim kurumlarının karşılaştığı temel engellerden birini ortadan kaldırmayı hedefliyoruz. Yaklaşımımız yalnızca yazılımla sınırlı değil; eğitim kaynakları, oryantasyon desteği ve e-kitaplar ve dijital kırtasiye malzemeleri gibi eğitim araçlarına erişim de dahil olmak üzere kapsamlı destek sağlamaya kararlıyız.",
+        "body2": "Okul Geliştirme Programı, ilk ortak okul grubumuzla birlikte 2025 Kasım sonu ile Aralık ortası arasında başlayacak. Studious büyüdükçe, daha fazla okulu destekleme kapasitemiz de artacak. Ücretli kurumsal aboneliklerimizden elde edilen tüm gelir, ihtiyaç sahibi okullar için erişimi genişletmeye yeniden yatırılacak ve zamanla güçlenen sürdürülebilir bir eğitim eşitliği modeli oluşturulacak."
+      }
+    },
+    "cta": {
+      "apply": {
+        "title": "Programa Başvurun",
+        "description": "Studious'u okulunuza getirmeye hazır mısınız? Başvuru formumuzu doldurun, 5-7 iş günü içinde inceleyelim.",
+        "item1": "Yaklaşık 10-15 dakika sürer",
+        "item2": "Başvuru ücreti gerekmez",
+        "item3": "5-7 iş günü içinde yanıt",
+        "button": "Uygulamayı Başlat"
+      }
+    },
+    "status": {
+      "title": "Başvuru Durumunu Kontrol Edin",
+      "description": "Zaten başvuruda bulundunuz mu? Başvurunuzun durumunu kontrol etmek için başvuru kimliğinizi girin.",
+      "inputLabel": "Uygulama Kimliği",
+      "placeholder": "örneğin, EXA2025-...",
+      "help": "Başvurunuzu gönderdikten sonra başvuru numaranızı e-posta yoluyla aldınız.",
+      "results": {
+        "found": "Uygulama Bulundu",
+        "school": "Okul:",
+        "location": "Konum:",
+        "submitted": "Gönderildi:",
+        "contact": "Temas etmek:",
+        "notFound": {
+          "title": "Uygulama bulunamadı",
+          "body": "Lütfen uygulama kimliğinizi kontrol edip tekrar deneyin. Sorun yaşamaya devam ederseniz, impact@studious.sh adresinden bizimle iletişime geçin."
+        }
+      },
+      "cards": {
+        "approved": {
+          "title": "🎉 Tebrikler! Başvurunuz onaylandı.",
+          "body": "Hesabınızı kurmak için sonraki adımlar için e-postanızı kontrol edin."
+        },
+        "underReview": {
+          "title": "⏳ Başvurunuz şu anda inceleme aşamasındadır.",
+          "body": "İnceleme tamamlandıktan sonra sizinle e-posta yoluyla iletişime geçeceğiz."
+        },
+        "pending": {
+          "title": "📋 Başvurunuz alındı.",
+          "body": "Ekibimiz yakında incelemeye başlayacak. Tahmini inceleme süresi: 5-7 iş günü."
+        }
+      }
+    },
+    "contact": {
+      "title": "Sorularınız mı var?",
+      "subtitle": "Ekibimiz başvuru sürecinde size yardımcı olmak için burada",
+      "button": "Bize e-posta gönderin: impact@studious.sh"
+    }
+  },
+  "apply": {
+    "toasts": {
+      "submitted": "Başvurunuz başarıyla iletildi!"
+    },
+    "errors": {
+      "submitFailed": "Başvuru gönderilemedi: {mesaj}"
+    },
+    "success": {
+      "title": "Başvurunuz Gönderildi!",
+      "subtitle": "Çalışkan Okul Geliştirme Programına başvurduğunuz için teşekkür ederiz",
+      "applicationId": "Uygulama Kimliğiniz",
+      "saveId": "Başvurunuzun durumunu kontrol etmek için bu kimliği kaydedin",
+      "nextSteps": {
+        "title": "Peki Bundan Sonra Ne Olacak?",
+        "item1": "{email} adresine bir onay e-postası alacaksınız",
+        "item2": "Ekibimiz başvurunuzu 5-7 iş günü içinde inceleyecektir",
+        "item3": "Bir karar verildiğinde sizi e-posta yoluyla bilgilendireceğiz"
+      },
+      "backToProgram": "Programa Geri Dön",
+      "returnHome": "Eve Dönüş"
+    }
+  },
+  "agenda": {
+    "title": "Gündem",
+    "description": "Kapsamlı takvim görünümleriyle programınızı ve yaklaşan etkinliklerinizi görüntüleyin",
+    "addEvent": "Etkinlik Ekle",
+    "untitledEvent": "Başlıksız Etkinlik",
+    "today": "Bugün",
+    "previous": "Öncesi",
+    "next": "Sonraki",
+    "views": {
+      "day": "Gün",
+      "week": "Hafta",
+      "month": "Ay",
+      "year": "Yıl"
+    }
+  },
+  "chat": {
+    "landing": {
+      "description": "Sohbete başlamak için kenar çubuğundan bir konuşma seçin.",
+      "pleaseSignIn": "Lütfen giriş yapın",
+      "signInRequired": "Sohbete erişmek için oturum açmanız gerekir.",
+      "title": "Sohbete Hoş Geldiniz"
+    },
+    "page": {
+      "unknown": "Bilinmeyen",
+      "unnamedGroup": "İsimsiz Grup",
+      "unknownUser": "Bilinmeyen Kullanıcı",
+      "notFound": {
+        "title": "Konuşma Bulunamadı",
+        "description": "Bu konuşma mevcut değil veya bu konuşmaya erişiminiz yok.",
+        "backToChat": "Sohbete Geri Dön"
+      },
+      "header": {
+        "members": "üyeler",
+        "markMentionsRead": "Mark okunduğundan bahsediyor"
+      },
+      "input": {
+        "placeholderPrefix": "Mesaj"
+      },
+      "loading": "Konuşma yükleniyor..."
+    }
+  },
+  "notifications": {
+    "title": "Bildirimler",
+    "subtitle": "Dersleriniz ve ödevleriniz konusunda güncel kalın",
+    "badge": {
+      "unread": "{count} okunmamış"
+    },
+    "filters": {
+      "label": "Filtre:",
+      "all": "Tümü ({count})",
+      "unread": "Okunmamış ({count})",
+      "read": "Oku ({count})"
+    },
+    "empty": {
+      "unread": {
+        "title": "Okunmamış bildirim yok",
+        "description": "Tamamdır! Okunmamış bildiriminiz yok."
+      },
+      "read": {
+        "title": "Okunmamış bildirimler",
+        "description": "Henüz hiçbir bildirim okundu olarak işaretlenmedi."
+      },
+      "all": {
+        "title": "Henüz bildirim yok",
+        "description": "Bildirim aldığınızda burada görünecektir."
+      }
+    },
+    "actions": {
+      "marking": "İşaretleniyor...",
+      "markAsRead": "Okundu Olarak İşaretle"
+    },
+    "toasts": {
+      "markedAsRead": "Bildirim okundu olarak işaretlendi"
+    },
+    "meta": {
+      "from": "itibaren"
+    }
+  },
+  "profile": {
+    "title": "Profil",
+    "description": "Kişisel bilgilerinizi ve profil ayarlarınızı yönetin",
+    "editProfile": "Profili Düzenle",
+    "saveChanges": "Değişiklikleri Kaydet",
+    "cancel": "İptal etmek",
+    "student": "Öğrenci",
+    "personalInformation": {
+      "title": "Kişisel Bilgiler",
+      "description": "Kişisel bilgilerinizi ve profil bilgilerinizi güncelleyin",
+      "displayName": "Ekran adı",
+      "displayNamePlaceholder": "Görüntü adınızı girin",
+      "displayNameDescription": "Adınız başkalarına bu şekilde görünecek",
+      "location": "Konum",
+      "locationPlaceholder": "Konumunuzu girin",
+      "locationDescription": "Şehriniz, eyaletiniz veya ülkeniz",
+      "bio": "Oldu",
+      "bioPlaceholder": "Bize kendinizden bahseder misiniz?",
+      "bioDescription": "Kendiniz hakkında kısa bir açıklama (en fazla 500 karakter)",
+      "website": "Web sitesi",
+      "websitePlaceholder": "https://web-siteniz.com",
+      "websiteDescription": "Kişisel web siteniz veya portföyünüz"
+    },
+    "accountInformation": {
+      "title": "Hesap Bilgileri",
+      "description": "Hesap bilgileriniz ve giriş bilgileriniz",
+      "username": "Kullanıcı adı",
+      "usernameNote": "Kullanıcı adı değiştirilemez",
+      "email": "E-posta",
+      "emailNote": "E-posta, Hesap Ayarları'nda yönetilir",
+      "memberSince": "Üye Olduğu Tarih"
+    },
+    "messages": {
+      "profileUpdated": "Profil başarıyla güncellendi",
+      "profileUpdateFailed": "Profil güncellenemedi",
+      "profilePictureSelected": "Profil resmi seçildi. Güncellemek için 'Değişiklikleri Kaydet'e tıklayın.",
+      "avatarSelected": "Avatar seçildi. Güncellemek için 'Değişiklikleri Kaydet'e tıklayın.",
+      "profilePictureUploadFailed": "Profil resmi yüklenemedi",
+      "profilePictureSelectFailed": "Profil resmi seçilemedi",
+      "failedToLoadProfile": "Profil yüklenemedi. Lütfen tekrar deneyin."
+    }
+  },
+  "class": {
+    "assignments": "Atamalar",
+    "students": "öğrenciler",
+    "attendance": "Katılım",
+    "attachFile": "Dosya ekle",
+    "post": "Postalamak",
+    "posting": "Gönderiliyor...",
+    "noPosts": "Henüz gönderi yok",
+    "createFirstPost": "İlk gönderiyi oluştur",
+    "grades": {
+      "title": "Notlar",
+      "subtitle": "Öğrenci notlarını görüntüleyin ve yönetin",
+      "columns": {
+        "assignment": "Atama",
+        "maxPoints": "Maksimum Puan",
+        "weight": "Ağırlık",
+        "graded": "Derecelendirilmiş",
+        "dueDate": "İki Tarih",
+        "actions": "Eylemler",
+        "student": "Öğrenci",
+        "overallGrade": "Genel Not",
+        "assignmentsCompleted": "Tamamlanan Ödevler",
+        "trend": "Trend"
+      },
+      "labels": {
+        "rubric": "Rubrik"
+      },
+      "actions": {
+        "manage": "Üstesinden gelmek",
+        "viewGrades": "Notları Görüntüle",
+        "saving": "Kaydediliyor...",
+        "saveChanges": "Değişiklikleri Kaydet",
+        "preview": "Önizleme",
+        "edit": "Düzenlemek",
+        "delete": "Silmek",
+        "createNew": "Yeni Oluştur"
+      },
+      "overview": {
+        "title": "Sınıf Genel Bakışı",
+        "classAverage": "Sınıf Ortalaması",
+        "totalStudents": "Toplam Öğrenci Sayısı",
+        "assignments": "Atamalar",
+        "submissionRate": "Teslim Oranı"
+      },
+      "assignmentManagement": {
+        "title": "Görev Yönetimi",
+        "empty": {
+          "title": "Hiçbir ödev bulunamadı",
+          "description": "Notları ve ayarları yönetmek için ödevler oluşturun"
+        },
+        "searchPlaceholder": "Arama görevleri..."
+      },
+      "students": {
+        "title": "Öğrenciler",
+        "viewAll": "Tüm Öğrencileri Görüntüle",
+        "empty": {
+          "title": "Kayıtlı öğrenci yok",
+          "description": "Öğrenciler sınıfa katıldığında burada görünecekler"
+        },
+        "searchPlaceholder": "Öğrencileri ara..."
+      },
+      "gradeBoundaries": {
+        "title": "Sınıf Sınırları",
+        "untitled": "Başlıksız Derecelendirme Sınırı",
+        "empty": {
+          "title": "Hiçbir sınıf sınırı oluşturulmadı",
+          "description": "Not aralıklarını tanımlamak için notlandırma sınırları oluşturun"
+        },
+        "previewTitle": "Sınıflandırma Sınırları Önizlemesi",
+        "details": {
+          "title": "Sınıflandırma Sınırı Ayrıntıları",
+          "name": "İsim",
+          "noneDefined": "Sınıflandırma sınırları tanımlanmadı"
+        }
+      },
+      "rubrics": {
+        "title": "Rubrikler",
+        "untitled": "Başlıksız Rubrik",
+        "empty": {
+          "title": "Hiçbir rubrik oluşturulmadı",
+          "description": "Değerlendirme kriterlerini tanımlamak için ölçütler oluşturun"
+        },
+        "previewTitle": "Rubrik Önizlemesi",
+        "details": {
+          "title": "Rubrik Ayrıntıları",
+          "name": "İsim",
+          "category": "Kategori",
+          "description": "Tanım",
+          "custom": "Gelenek",
+          "noDescription": "Hiçbir açıklama sağlanmadı",
+          "noCriteria": "Bu başlıkta hiçbir kriter bulunamadı"
+        }
+      },
+      "confirm": {
+        "deleteRubric": "Bu notlandırma şemasını silmek istediğinizden emin misiniz?",
+        "deleteGradingBoundary": "Bu notlandırma sınırını silmek istediğinizden emin misiniz?"
+      }
+    },
+    "members": {
+      "title": "Üyeler",
+      "counts": {
+        "totalMembers": "{count} üye"
+      },
+      "actions": {
+        "inviteMember": "Üye Davet Et",
+        "copy": "Kopyala",
+        "regenerate": "Yeniden oluşturmak",
+        "message": "Mesaj",
+        "viewProfile": "Profili Görüntüle",
+        "viewGrades": "Notları Görüntüle",
+        "makeTeacher": "Öğretmen Yap",
+        "makeStudent": "Öğrenci Yap",
+        "removeFromClass": "Sınıftan Kaldır",
+        "removeAccess": "Erişimi Kaldır",
+        "tryAgain": "Tekrar deneyin"
+      },
+      "labels": {
+        "teacher": "Öğretmen",
+        "student": "Öğrenci",
+        "you": "Sen"
+      },
+      "invite": {
+        "title": "Sınıf Davetiye Kodu",
+        "description": "Sınıfa katılmak için bu kodu öğrencilerle paylaşın"
+      },
+      "search": {
+        "placeholder": "Üyeleri ara..."
+      },
+      "tabs": {
+        "students": "Öğrenciler",
+        "teachers": "Öğretmenler"
+      },
+      "students": {
+        "empty": {
+          "title": "Hiçbir öğrenci bulunamadı",
+          "matchNone": "\"{query}\" ile eşleşen öğrenci bulunamadı",
+          "noStudents": "Bu sınıfa henüz hiçbir öğrenci katılmadı"
+        }
+      },
+      "teachers": {
+        "empty": {
+          "title": "Öğretmen bulunamadı",
+          "matchNone": "\"{query}\" ile eşleşen öğretmen bulunamadı",
+          "noTeachers": "Ek öğretmen eklenmedi"
+        }
+      },
+      "toasts": {
+        "inviteRegenerated": "Davet kodu başarıyla yeniden oluşturuldu",
+        "copied": "Davet kodu panoya kopyalandı",
+        "roleChanged": "Rol {role} olarak değiştirildi",
+        "memberRemoved": "Üye başarıyla kaldırıldı"
+      },
+      "errors": {
+        "regenerateFailed": "Davet kodu yeniden oluşturulamadı",
+        "changeRoleFailed": "Rol değiştirilemedi",
+        "removeFailed": "Üye kaldırılamadı",
+        "failedToLoad": "Üyeler yüklenemedi"
+      }
+    },
+    "files": {
+      "title": "Dosyalar",
+      "subtitle": "Sınıf dosyalarını ve kaynaklarını yönetin",
+      "actions": {
+        "newFolder": "Yeni Klasör",
+        "upload": "Yüklemek",
+        "uploadFiles": "Dosyaları Yükle",
+        "createFolder": "Klasör Oluştur",
+        "download": "İndirmek",
+        "share": "Paylaşmak",
+        "delete": "Silmek",
+        "filter": "Filtre",
+        "sort": "Düzenlemek"
+      },
+      "toasts": {
+        "folderCreated": "Klasör başarıyla oluşturuldu",
+        "folderDeleted": "Klasör başarıyla silindi",
+        "folderRenamed": "Klasör başarıyla yeniden adlandırıldı",
+        "folderMoved": "Klasör başarıyla taşındı",
+        "filesUploaded": "Dosyalar başarıyla yüklendi",
+        "fileDeleted": "Dosya başarıyla silindi",
+        "fileRenamed": "Dosya başarıyla yeniden adlandırıldı",
+        "fileMoved": "Dosya başarıyla taşındı",
+        "downloadStarted": "İndirme başladı",
+        "shareCopied": "Paylaşım bağlantısı kopyalandı"
+      },
+      "errors": {
+        "teacherOnly": "Dosyaları yalnızca öğretmenler değiştirebilir.",
+        "downloadFailed": "İndirme başarısız oldu",
+        "shareFailed": "Paylaşım başarısız oldu",
+        "failedToLoad": "Dosyalar yüklenemedi. Lütfen daha sonra tekrar deneyin."
+      },
+      "breadcrumbs": {
+        "classFiles": "Sınıf Dosyaları"
+      },
+      "search": {
+        "placeholder": "Dosyalarda ara"
+      },
+      "selected": "{count} seçildi",
+      "filters": {
+        "fileType": "Dosya Türü",
+        "documents": "Belgeler",
+        "images": "Görüntüler",
+        "videos": "Videolar",
+        "presentations": "Sunumlar"
+      },
+      "sort": {
+        "name": "İsim",
+        "lastModified": "Son değiştirilme tarihi",
+        "fileSize": "Dosya boyutu"
+      },
+      "table": {
+        "name": "İsim",
+        "owner": "Mal sahibi",
+        "lastModified": "Son değiştirilme tarihi",
+        "fileSize": "Dosya boyutu"
+      },
+      "empty": {
+        "title": "Bu klasör boş",
+        "description": "Sınıf materyallerinizi düzenlemeye başlamak için dosyaları yükleyin veya klasörler oluşturun.",
+        "searchTitle": "Hiçbir dosya bulunamadı",
+        "searchDescription": "\"{query}\" ile eşleşen dosya bulunamadı. Farklı bir arama terimi deneyin."
+      }
+    },
+    "settings": {
+      "title": "Sınıf Ayarları",
+      "subtitle": "Sınıf ayrıntılarını ve tercihlerini yapılandırın",
+      "labels": {
+        "unsavedChanges": "Kaydedilmemiş değişiklikler"
+      },
+      "actions": {
+        "saving": "Kaydediliyor...",
+        "saveChanges": "Değişiklikleri Kaydet",
+        "deleting": "Siliniyor...",
+        "deleteClass": "Sınıfı Sil",
+        "cancel": "İptal etmek"
+      },
+      "sections": {
+        "basicInfo": {
+          "title": "Temel Bilgiler"
+        },
+        "theme": {
+          "title": "Sınıf Teması",
+          "description": "Bu sınıf için bir tema rengi seçin"
+        },
+        "danger": {
+          "title": "Tehlike Bölgesi",
+          "description": "Bir dersi sildiğinizde geri dönüşü yoktur. Bu işlem, tüm ödevleri, notları, devam kayıtlarını kalıcı olarak siler ve tüm öğrencileri dersten çıkarır."
+        }
+      },
+      "fields": {
+        "className": "Sınıf Adı",
+        "section": "Bölüm",
+        "subject": "Ders"
+      },
+      "placeholders": {
+        "className": "örneğin, İleri Fizik",
+        "section": "örneğin, AP-101",
+        "subject": "örneğin, Fizik"
+      },
+      "toasts": {
+        "updated": {
+          "title": "Sınıf Güncellendi",
+          "description": "Sınıf ayarları başarıyla kaydedildi."
+        },
+        "deleted": {
+          "title": "Sınıf Silindi",
+          "description": "Sınıf kalıcı olarak silindi."
+        }
+      },
+      "errors": {
+        "updateFailed": {
+          "title": "Güncelleme Başarısız Oldu",
+          "description": "Sınıf ayarları kaydedilemedi. Lütfen tekrar deneyin."
+        }
+      },
+      "confirm": {
+        "title": "Kesinlikle emin misin?",
+        "description": "Bu işlem geri alınamaz. Bu işlem, \"{name}\" sınıfını kalıcı olarak silecek ve aşağıdakiler de dahil olmak üzere tüm ilişkili verileri kaldıracaktır:",
+        "items": {
+          "assignments": "Tüm ödevler ve teslimler",
+          "records": "Tüm notlar ve katılım kayıtları",
+          "students": "Tüm öğrenciler sınıftan çıkarılacak",
+          "events": "Tüm sınıf etkinlikleri ve duyuruları"
+        },
+        "confirmDelete": "Evet, sınıfı sil"
+      }
+    },
+    "syllabus": {
+      "title": "Müfredat",
+      "subtitle": "Ders genel bakışı ve akademik bilgiler",
+      "actions": {
+        "saveChanges": "Değişiklikleri Kaydet",
+        "cancel": "İptal etmek",
+        "edit": "Müfredatı Düzenle"
+      },
+      "errors": {
+        "failedToLoad": "Müfredat yüklenemedi",
+        "tryLater": "Lütfen daha sonra tekrar deneyin."
+      },
+      "stats": {
+        "totalAssignments": "Toplam Ödevler",
+        "completionRate": "Tamamlanma Oranı",
+        "totalPoints": "Toplam Puan",
+        "upcoming": "Yaklaşan"
+      },
+      "overview": {
+        "title": "Kurs Genel Bakışı",
+        "placeholder": "Dersin genel görünümünü, hedeflerini ve diğer önemli bilgileri girin...",
+        "helper": "Ders bilgilerinizi, öğrenme hedeflerinizi, politikalarınızı ve diğer önemli ayrıntıları girin.",
+        "empty": {
+          "title": "Henüz müfredat içeriği yok",
+          "description": "Ders bilgilerini, öğrenme hedeflerini, politikaları ve daha fazlasını eklemek için 'Müfredatı Düzenle'ye tıklayın."
+        }
+      },
+      "assignments": {
+        "title": "Ders Ödevleri",
+        "gradedCount": "{toplam} notlandırılanın {graded} tanesi",
+        "totalPoints": "{toplam} toplam puan",
+        "empty": {
+          "title": "Henüz ödev yok",
+          "description": "Ödevler oluşturulduktan sonra burada görünecektir."
+        }
+      },
+      "table": {
+        "assignment": "Atama",
+        "dueDate": "İki Tarih",
+        "points": "Puanlar",
+        "weight": "Ağırlık",
+        "status": "Durum",
+        "pts": "puanlar"
+      },
+      "status": {
+        "graded": "Derecelendirilmiş",
+        "pending": "Askıda olması"
+      },
+      "courseInfo": {
+        "title": "Kurs Bilgileri",
+        "basic": {
+          "title": "Temel Bilgiler",
+          "className": "Sınıf Adı",
+          "section": "Bölüm",
+          "subject": "Ders"
+        },
+        "stats": {
+          "title": "Ders İstatistikleri",
+          "totalAssignments": "Toplam Ödevler",
+          "gradedAssignments": "Notlandırılmış Ödevler",
+          "totalPoints": "Toplam Puan"
+        }
+      }
+    }
+  },
+  "assignment": {
+    "dueDate": "İki Tarih",
+    "submit": "Göndermek",
+    "grade": "Seviye",
+    "feedback": "Geri bildirim",
+    "submissions": "Gönderimler",
+    "open": "Açık",
+    "closed": "Kapalı",
+    "assignment": "Atama",
+    "assignments": "Atamalar",
+    "newAssignment": "Yeni Görev",
+    "createAssignment": "Ödev Oluştur",
+    "viewAssignment": "Ödevi Görüntüle",
+    "allAssignments": "Tüm Ödevler",
+    "searchAssignments": "Arama görevleri...",
+    "noAssignmentsFound": "Hiçbir ödev bulunamadı",
+    "createFirstAssignment": "Başlamak için ilk ödevini oluştur",
+    "newSection": "Yeni Bölüm",
+    "pts": "puanlar",
+    "overdue": "(Gecikmiş)",
+    "assignmentDrop": "En üst seviyeye geçmek için ödevi buraya bırakın",
+    "sectionDeletionConfirmation": "Bu bölümü silmek istediğinizden emin misiniz? Tüm ödevler en üst seviyeye taşınacak.",
+    "assignmentDeletionConfirmation": "Bu ödevi silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
+    "manageAndTrack": "Sınıf ödevlerini yönetin ve takip edin",
+    "filters": "Filtreler"
+  },
+  "pagination": {
+    "previous": "Öncesi",
+    "next": "Sonraki",
+    "goToPreviousPage": "Önceki sayfaya git",
+    "goToNextPage": "Sonraki sayfaya git",
+    "morePages": "Daha fazla sayfa"
+  },
+  "about": {
+    "titleStatement1": "Hikayemiz",
+    "titleStatement2": "Hayal kırıklığından inşa edilmiş,",
+    "titleStatement3": "yapay zeka ile yeniden tasarlandı",
+    "titleStatement4": "Yıllarca güncelliğini yitirmiş, parçalanmış okul portallarıyla boğuştuktan sonra, her zaman sahip olmayı dilediğimiz öğrenme yönetim sistemini kurmaya karar verdik.",
+    "problemParagraph1": "Studious 2023'te başladı",
+    "problemParagraph2": "Bir grup öğrenci ve eğitimci ortak bir hayal kırıklığıyla bir araya geldiğinde: Mevcut okul portalları hantal, yavaştı ve farklı bir eğitim dönemi için tasarlanmıştı.",
+    "problemDetailParagraph": "Kendimizi birden fazla platform arasında mekik dokurken bulduk: biri notlar, diğeri ödevler, üçüncüsü de iletişim için. Öğretmenler, öğretmekten çok yazılımla boğuşmakla vakit geçiriyordu. Öğrenciler, bildirimler eski arayüzlerde kaybolduğu için teslim tarihlerini kaçırıyordu.",
+    "betterWay": "Daha iyi bir yolun olması gerektiğini biliyorduk.",
+    "solutionParagraph1": "Linear ve Notion gibi modern iş birliği araçlarından ilham alarak, kullanıcı dostu bir öğrenme yönetim sistemi yaratmaya koyulduk.",
+    "solutionParagraph2": "hızlı, sezgisel ve kullanımı keyifli.",
+    "solutionParagraph3": "Yapay zekayı bir hile olarak değil, hem öğretmenler hem de öğrenciler için gerçek bir üretkenlik çarpanı olarak entegre eden bir sistem.",
+    "launchParagraph": "İki yıllık geliştirme sürecinin ardından Studious'u 17 Ekim 2025'te resmen kullanıma sunduk. Şu anda erken erişim aşamasındayız ve dünya çapındaki okulların öğrenme deneyimlerini dönüştürmelerine yardımcı olmaya hazırız.",
+    "journey1": "Yolculuğumuz",
+    "journey2": "İki yıllık inşa, öğrenme ve büyüme",
+    "journeyBeginningDate": "2023",
+    "journeyBeginning1": "Başlangıç",
+    "journeyBeginning2": "İlk prototip geliştirildi. Temel özellikler: sınıf yönetimi, ödevler ve takvim entegrasyonu.",
+    "journeyBetaLaunchDate": "31 Ekim 2025",
+    "journeyBetaLaunch1": "Genel Beta Lansmanı",
+    "journeyBetaLaunch2": "Studious LMS'nin resmi beta testi lansmanı yapıldı. Tüm platform özellikleriyle dünya çapındaki okullarda erken erişime açıldı.",
+    "journeyPilotSchoolsDate": "Kasım 2025",
+    "journeyPilotSchools1": "Pilot Okullar Programı",
+    "journeyPilotSchools2": "Gerçek dünyadan geri bildirim toplamak ve platformu çeşitli eğitim ihtiyaçlarına göre geliştirmek için pilot okullarla ortaklıklar başlatıyoruz.",
+    "journeyBetaCompleteDate": "Aralık 2025",
+    "journeyBetaComplete1": "Beta Tamamlandı",
+    "journeyBetaComplete2": "Beta sürümünden tam üretim sürümüne geçiş. Tüm temel özelliklerin tamamen test edilip optimize edildiği platform stabilizasyonu.",
+    "journeySDPDate": "Ocak 2026",
+    "journeySDP1": "Okul Geliştirme Programı Lansmanı",
+    "journeySDP2": "Nitelikli kurumlara ücretsiz erişim sağlayan Çalışkan Okul Gelişim Programı'na kabul edilen ilk okul grubunu duyuruyoruz.",
+    "missionStatement1": "Misyonumuz basit",
+    "missionStatement2": "Öğrenciler, öğretmenler ve yaşam boyu öğrenenler olarak her gün kullanmak isteyeceğimiz öğrenme yönetim sistemini kurmak.",
+    "joinAppeal1": "Bu yolculuğa bize katılın",
+    "joinAppeal2": "Eğitimin geleceğinin bir parçası olun",
+    "requestEarlyAccess": "Erken Erişim Talebinde Bulunun",
+    "pressKit": "Basın Kiti"
+  },
+  "pricing": {
+    "pricingStatement1": "Şeffaf Fiyatlandırma",
+    "pricingStatement2": "Kurumunuz için doğru planı seçin",
+    "pricingStatement3": "Gizli ücretler olmadan basit ve şeffaf fiyatlandırma. Tüm planlar, ölçeklenebilir seçeneklerle temel özellikleri içerir.",
+    "mostPopular": "En Popüler",
+    "priceUnit": "/kullanıcı/ay",
+    "pricingStarterTitle": "Başlangıç",
+    "pricingStarterPrice": "Özgür",
+    "pricingStarterNote": "Beta erişimi dahildir",
+    "pricingStarterDescription": "Küçük sınıflar ve pilot programlar için mükemmel",
+    "pricingStarterPerk1": "30 öğrenciye kadar",
+    "pricingStarterPerk2": "Sınırsız sınıflar",
+    "pricingStarterPerk3": "Temel özellikler (ödevler, takvim, notlar)",
+    "pricingStarterPerk4": "Yapay zeka asistanı (ayda 5 sohbet)",
+    "pricingStarterPerk5": "Topluluk desteği",
+    "pricingStarterPerk6": "5 GB depolama alanı",
+    "pricingStarterLink": "Ücretsiz Başlayın",
+    "pricingSchoolTitle": "Okul",
+    "pricingSchoolPriceNote": "Yıllık veya aylık 6$ faturalandırılır",
+    "pricingSchoolNote": "1.000'e kadar öğrencisi olan okullar için",
+    "pricingSchoolPerk1": "Sınırsız öğrenci",
+    "pricingSchoolPerk2": "Sınırsız sınıflar",
+    "pricingSchoolPerk3": "Tüm temel özellikler",
+    "pricingSchoolPerk4": "Yapay zeka asistanı (sınırsız sorgu)",
+    "pricingSchoolPerk5": "Studious CMS beta erişimi için ilk sırada",
+    "pricingSchoolPerk6": "API erişimi",
+    "pricingSchoolLink": "Başlayın"
+  },
+  "components": {
+    "earlyAccess": {
+      "title": "Erken Erişim Talebinde Bulunun",
+      "description": "Bekleme listesine katılın ve Studious LMS'yi deneyimleyen ilk kişilerden olun",
+      "fields": {
+        "email": "E-posta Adresi *",
+        "institutionSize": "Kurum Boyutu *"
+      },
+      "placeholders": {
+        "email": "siz@okul.edu",
+        "institutionSize": "Kurum boyutunu seçin"
+      },
+      "sizes": {
+        "tiny": "1-30 öğrenci (Bireysel Öğretmen)",
+        "small": "31-100 öğrenci (Küçük Okul)",
+        "medium": "101-500 öğrenci (Ortaokul)",
+        "large": "501-1.000 öğrenci (Büyük Okul)",
+        "institution": "1.001+ öğrenci (Kurum)"
+      },
+      "actions": {
+        "submit": "Erişim Talebinde Bulunun",
+        "submitting": "Gönderiliyor...",
+        "done": "Tamamlamak"
+      },
+      "success": {
+        "title": "Listedesin!",
+        "description": "Hazır olduğumuzda {email} adresine bir e-posta göndereceğiz."
+      },
+      "toasts": {
+        "success": "Bekleme listesine başarıyla katıldınız!"
+      }
+    },
+    "joinClass": {
+      "title": "Bir Sınıfa Katılın",
+      "buttonLabel": "Sınıfa Katıl",
+      "fields": {
+        "inviteCode": "Sınıf Davetiye Kodu"
+      },
+      "placeholders": {
+        "inviteCode": "örneğin, MATH101-2025"
+      },
+      "help": "Öğretmeninizin sağladığı davet kodunu girin",
+      "howTo": {
+        "title": "Davetiye kodu nasıl alınır:",
+        "item1": "Öğretmeninizden sınıf davet kodunu isteyin",
+        "item2": "Sınıf kayıt talimatları için e-postanızı kontrol edin",
+        "item3": "Müfredatınızda veya ders materyallerinizde kodu arayın"
+      },
+      "actions": {
+        "cancel": "İptal etmek",
+        "join": "Sınıfa Katıl",
+        "joining": "Katılıyor..."
+      },
+      "toasts": {
+        "success": "Sınıfa başarıyla katıldınız.",
+        "errorInvalid": "Geçersiz davet kodu veya sınıf bulunamadı.",
+        "errorEmpty": "Lütfen geçerli bir davet kodu girin."
+      }
+    },
+    "createClass": {
+      "title": "Yeni Sınıf Oluştur",
+      "buttonLabel": "Sınıf Oluştur",
+      "fields": {
+        "title": "Sınıf Adı *",
+        "section": "Bölüm *",
+        "subject": "Ders *",
+        "semester": "Dönem",
+        "credits": "Krediler",
+        "meetingTime": "Toplantı Zamanı",
+        "location": "Konum",
+        "description": "Tanım"
+      },
+      "placeholders": {
+        "title": "örneğin, İleri Fizik",
+        "section": "örneğin, AP-101",
+        "subject": "örneğin, Fizik",
+        "semester": "örneğin, İlkbahar 2025",
+        "credits": "örneğin, 3",
+        "meetingTime": "örneğin, Pazartesi-Çarşamba-Cuma 10:00-11:00",
+        "location": "örneğin, Oda 205, Bilim Binası",
+        "description": "Dersin içeriğini ve hedeflerini açıklayın..."
+      },
+      "actions": {
+        "cancel": "İptal etmek",
+        "create": "Sınıf Oluştur",
+        "creating": "Oluşturuluyor..."
+      },
+      "toasts": {
+        "success": "{name} sınıfı başarıyla oluşturuldu.",
+        "errorRequired": "Lütfen gerekli alanları doldurunuz.",
+        "errorFailed": "Sınıf oluşturulamadı. Lütfen daha sonra tekrar deneyin."
+      }
+    },
+    "createFolder": {
+      "titleCreate": "Yeni Klasör Oluştur",
+      "titleEdit": "Klasörü Düzenle",
+      "fields": {
+        "name": "Klasör Adı *",
+        "description": "Açıklama (İsteğe bağlı)",
+        "color": "Klasör Rengi"
+      },
+      "placeholders": {
+        "name": "Klasör adını girin",
+        "description": "Bu klasör için bir açıklama ekleyin..."
+      },
+      "help": {
+        "name": "Klasörünüz için açıklayıcı bir ad seçin",
+        "description": "{count}/500 karakter"
+      },
+      "actions": {
+        "cancel": "İptal etmek",
+        "create": "Klasör Oluştur",
+        "update": "Klasörü Güncelle",
+        "creating": "Oluşturuluyor...",
+        "updating": "Güncelleniyor..."
+      },
+      "toasts": {
+        "errorRequired": "Klasör adı gereklidir",
+        "errorInvalidChars": "Klasör adı geçersiz karakterler içeriyor",
+        "errorTooLong": "Klasör adı çok uzun (maksimum 255 karakter)"
+      }
+    },
+    "createAssignment": {
+      "title": "Yeni Ödev Oluştur",
+      "buttonLabel": "Ödev Oluştur",
+      "sections": {
+        "details": "Görev Ayrıntıları",
+        "configuration": "Yapılandırma",
+        "grading": "Notlandırma ve Değerlendirme",
+        "attachments": "Ekler"
+      },
+      "fields": {
+        "title": "Başlık *",
+        "instructions": "Talimatlar *",
+        "dueDate": "İki Tarih",
+        "type": "Görev Türü",
+        "section": "Bölüm",
+        "rubric": "Rubrik",
+        "gradeScale": "Not Ölçeği",
+        "maxPoints": "Maksimum Puan",
+        "weight": "Ağırlık (%)",
+        "sectionColor": "Bölüm Rengi"
+      },
+      "placeholders": {
+        "title": "örneğin, Bölüm 5 Sınavı, Fizik Laboratuvar Raporu",
+        "instructions": "Öğrencilere net talimatlar verin...",
+        "maxPoints": "100",
+        "weight": "1.0",
+        "chooseSection": "Bölüm seçin",
+        "chooseRubric": "Rubrik seçin",
+        "chooseGradeScale": "Not ölçeğini seçin",
+        "newSectionName": "Bölüm adını girin..."
+      },
+      "types": {
+        "homework": "Ev ödevi",
+        "quiz": "Sınav",
+        "test": "Test",
+        "project": "Proje",
+        "essay": "Makale",
+        "discussion": "Tartışma",
+        "presentation": "Sunum",
+        "lab": "Laboratuvar",
+        "other": "Diğer"
+      },
+      "options": {
+        "graded": {
+          "label": "Notlandırılmış Ödev",
+          "description": "Not defterine ekle"
+        },
+        "draft": {
+          "label": "Taslak Olarak Kaydet",
+          "description": "Öğrencilerden saklan"
+        }
+      },
+      "section": {
+        "none": "Hiçbir bölüm",
+        "createNew": "Yeni Bölüm Oluştur"
+      },
+      "rubric": {
+        "none": "Hiçbir rubrik yok",
+        "untitled": "Başlıksız Rubrik",
+        "autoCalculate": "Puanlar seçilen değerlendirme ölçütlerine göre otomatik olarak hesaplanacaktır"
+      },
+      "gradeScale": {
+        "default": "Varsayılan ölçek",
+        "untitled": "Başlıksız Ölçek"
+      },
+      "files": {
+        "uploadButton": "Dosyaları Yükle",
+        "dropZone": "Dosyaları buraya bırakın veya yüklemek için tıklayın",
+        "dropZoneHint": "Tüm dosya türlerini destekler • Dosya başına maksimum 50 MB",
+        "filesUploaded": "{toplam} dosyadan {uploaded} tanesi yüklendi"
+      },
+      "status": {
+        "creating": "Ödev oluşturuluyor...",
+        "settingUp": "Görev detayları ayarlanıyor...",
+        "preparing": "Dosya yüklemeleri hazırlanıyor...",
+        "uploading": "Dosyalar bulut depolamaya yükleniyor...",
+        "processing": "Yüklenen dosyalar işleniyor...",
+        "finalizing": "Ödev tamamlanıyor...",
+        "assigning": "Öğrencilere atanıyor...",
+        "almostDone": "Neredeyse bitti...",
+        "uploadingFile": "{name} yükleniyor...",
+        "creatingProgress": "Ödev Oluşturma",
+        "draftStatus": "Taslak olarak kaydedilecek",
+        "publishedStatus": "Öğrencilere yayınlanacak"
+      },
+      "actions": {
+        "cancel": "İptal etmek",
+        "create": "Ödev Oluştur",
+        "saveDraft": "Taslağı Kaydet",
+        "creating": "Oluşturuluyor...",
+        "add": "Eklemek"
+      },
+      "toasts": {
+        "successCreated": "Ödev başarıyla oluşturuldu.",
+        "successDraft": "Ödev taslak olarak başarıyla kaydedildi.",
+        "errorRequired": "Lütfen gerekli alanları doldurunuz.",
+        "errorFailed": "Ödev oluşturulamadı. Lütfen tekrar deneyin.",
+        "errorUploadFailed": "{name} yüklenemedi",
+        "sectionCreated": "\"{name}\" bölümü başarıyla oluşturuldu."
+      }
+    },
+    "createAnnouncement": {
+      "title": "Duyuru Oluştur",
+      "buttonLabel": "Duyuru Gönderisi",
+      "fields": {
+        "title": "Duyuru Başlığı *",
+        "content": "İçerik *",
+        "priority": "Öncelik Seviyesi",
+        "expiryDate": "Son Kullanma Tarihi (İsteğe bağlı)",
+        "publishDate": "Yayın Tarihi",
+        "publishTime": "Yayın Zamanı"
+      },
+      "placeholders": {
+        "title": "örneğin, Laboratuvar raporunun Cuma günü teslim edilmesi gerekiyor",
+        "content": "Duyuru içeriğinizi buraya yazın...",
+        "publishDate": "Boşsa hemen yayınla"
+      },
+      "priority": {
+        "low": "Düşük",
+        "normal": "Normal",
+        "high": "Yüksek",
+        "urgent": "Acil"
+      },
+      "sections": {
+        "settings": "Ayarlar",
+        "notifications": "Bildirimler",
+        "schedule": "Program Yayınlama (İsteğe Bağlı)"
+      },
+      "settings": {
+        "pinned": {
+          "label": "Üste sabitle",
+          "description": "Bu duyuruyu listenin en üstünde tutun"
+        },
+        "urgent": {
+          "label": "Acil olarak işaretle",
+          "description": "Acil stil ile vurgulayın"
+        }
+      },
+      "notifications": {
+        "email": {
+          "label": "E-posta bildirimi gönder",
+          "description": "Öğrencileri e-posta yoluyla bilgilendirin"
+        },
+        "push": {
+          "label": "Anında bildirim gönder",
+          "description": "Mobil uygulama bildirimi gönder"
+        }
+      },
+      "actions": {
+        "cancel": "İptal etmek",
+        "publishNow": "Şimdi Yayınla",
+        "schedule": "Program Duyurusu"
+      },
+      "toasts": {
+        "success": "Duyuru Oluşturuldu",
+        "errorRequired": "Lütfen gerekli alanları doldurunuz."
+      }
+    }
+  }
+}

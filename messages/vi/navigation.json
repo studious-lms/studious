@@ -1,0 +1,54 @@
+{
+  "navigation": {
+    "home": "Trang chủ",
+    "classes": "Các lớp học",
+    "agenda": "Chương trình nghị sự",
+    "chat": "Trò chuyện",
+    "notifications": "Thông báo",
+    "profile": "Hồ sơ",
+    "settings": "Cài đặt",
+    "signOut": "Đăng xuất",
+    "accountSettings": "Cài đặt tài khoản",
+    "pricing": "Giá cả",
+    "schoolProgram": "Chương trình học",
+    "about": "Về",
+    "press": "Nhấn",
+    "signIn": "Đăng nhập"
+  },
+  "classSidebar": {
+    "overview": "Tổng quan",
+    "assignments": "Bài tập",
+    "grades": "Điểm số",
+    "files": "Tập tin",
+    "attendance": "Sự tham dự",
+    "aiLabs": "Phòng thí nghiệm AI",
+    "members": "Thành viên",
+    "syllabus": "Giáo trình",
+    "settings": "Cài đặt",
+    "classNavigation": "Điều hướng lớp",
+    "switchClass": "Chuyển lớp",
+    "classInviteCode": "Mã mời lớp học",
+    "copyCode": "Sao chép mã",
+    "regenerateCode": "Tạo lại mã",
+    "toast": {
+      "inviteCodeRegenerated": "Mã mời đã được tạo lại thành công",
+      "inviteCodeRegenerateFailed": "Không thể tạo lại mã mời",
+      "inviteCodeCopied": "Mã mời đã được sao chép vào bảng tạm"
+    }
+  },
+  "footer": {
+    "productDescription": "Quản lý học tập hiện đại cho thế hệ giáo dục tiếp theo.",
+    "product": "Sản phẩm",
+    "features": "Đặc trưng",
+    "pricing": "Giá cả",
+    "schoolProgram": "Chương trình học",
+    "company": "Công ty",
+    "about": "Về",
+    "team": "Đội",
+    "press": "Nhấn",
+    "contact": "Liên hệ",
+    "privacyPolicy": "Chính sách bảo mật",
+    "termsOfService": "Điều khoản dịch vụ",
+    "copyright": "© 2025 Studious LMS. Bảo lưu mọi quyền."
+  }
+}

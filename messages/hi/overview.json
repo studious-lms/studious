@@ -1,0 +1,12 @@
+{
+  "overview": {
+    "assignments": "कार्य",
+    "students": "छात्र",
+    "attendance": "उपस्थिति",
+    "attachFile": "फ़ाइल जोड़ें",
+    "post": "डाक",
+    "posting": "पोस्टिंग...",
+    "noPosts": "अब तक कोई पोस्ट नहीं",
+    "createFirstPost": "पहली पोस्ट बनाएँ"
+  }
+}

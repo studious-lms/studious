@@ -161,7 +161,7 @@
         "priceUnit": "/사용자/월",
         "note": "연간 또는 월 6달러 청구",
         "description": "최대 1,000명의 학생이 있는 학교의 경우",
-        "perk1": "학생 수 제한 없음",
+        "perk1": "학생 수 무제한",
         "perk2": "무제한 수업",
         "perk3": "모든 핵심 기능",
         "perk4": "AI 어시스턴트(무제한 쿼리)",
@@ -339,7 +339,7 @@
     "contact": {
       "title": "질문이 있으신가요?",
       "subtitle": "저희 팀은 신청 과정을 도와드립니다.",
-      "button": "이메일: impact@studious.sh"
+      "button": "이메일 문의: impact@studious.sh"
     }
   },
   "apply": {
@@ -356,7 +356,7 @@
       "saveId": "신청 상태를 확인하려면 이 ID를 저장하세요.",
       "nextSteps": {
         "title": "그 다음에는 무슨 일이 일어날까요?",
-        "item1": "{email}에서 확인 이메일을 받게 됩니다.",
+        "item1": "{email}로 확인 이메일을 받게 됩니다.",
         "item2": "저희 팀은 5-7 영업일 이내에 귀하의 신청서를 검토할 것입니다.",
         "item3": "결정이 내려지면 이메일로 알려드립니다."
       },
@@ -634,7 +634,7 @@
         "inviteRegenerated": "초대 코드가 성공적으로 재생성되었습니다.",
         "copied": "초대 코드가 클립보드에 복사되었습니다.",
         "roleChanged": "역할이 {role}로 변경되었습니다.",
-        "memberRemoved": "회원이 성공적으로 제거되었습니다"
+        "memberRemoved": "회원이 성공적으로 제거되었습니다."
       },
       "errors": {
         "regenerateFailed": "초대 코드를 다시 생성하지 못했습니다.",
@@ -664,7 +664,7 @@
         "folderMoved": "폴더가 성공적으로 이동되었습니다",
         "filesUploaded": "파일이 성공적으로 업로드되었습니다",
         "fileDeleted": "파일이 성공적으로 삭제되었습니다.",
-        "fileRenamed": "파일 이름이 성공적으로 변경되었습니다.",
+        "fileRenamed": "파일 이름이 성공적으로 바뀌었습니다.",
         "fileMoved": "파일이 성공적으로 이동되었습니다.",
         "downloadStarted": "다운로드가 시작되었습니다",
         "shareCopied": "공유 링크가 복사되었습니다."
@@ -926,7 +926,7 @@
     "pricingSchoolTitle": "학교",
     "pricingSchoolPriceNote": "연간 또는 월 6달러 청구",
     "pricingSchoolNote": "최대 1,000명의 학생이 있는 학교의 경우",
-    "pricingSchoolPerk1": "학생 수 제한 없음",
+    "pricingSchoolPerk1": "학생 수 무제한",
     "pricingSchoolPerk2": "무제한 수업",
     "pricingSchoolPerk3": "모든 핵심 기능",
     "pricingSchoolPerk4": "AI 어시스턴트(무제한 쿼리)",
@@ -1128,7 +1128,7 @@
         "filesUploaded": "{전체}개 파일 중 {업로드됨}개 업로드됨"
       },
       "status": {
-        "creating": "과제를 생성하는 중...",
+        "creating": "과제 생성 중...",
         "settingUp": "과제 세부정보 설정 중...",
         "preparing": "파일 업로드 준비 중...",
         "uploading": "클라우드 저장소에 파일을 업로드하는 중...",
@@ -1197,7 +1197,7 @@
       "notifications": {
         "email": {
           "label": "이메일 알림 보내기",
-          "description": "이메일을 통해 학생들에게 알림"
+          "description": "학생들에게 이메일을 통해 알림"
         },
         "push": {
           "label": "푸시 알림 보내기",

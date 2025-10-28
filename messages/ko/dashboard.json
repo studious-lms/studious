@@ -20,7 +20,7 @@
       "viewAgenda": "일정 보기",
       "dueToday": "오늘 마감",
       "dueTomorrow": "내일 마감",
-      "due": "기한 {날짜}",
+      "due": "두 개의 {날짜}",
       "teaching": "가르침",
       "viewAllAssignments": "모든 과제 보기"
     },

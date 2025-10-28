@@ -275,7 +275,7 @@
       },
       "aims": {
         "title": "项目目标",
-        "body1": "通过与教师和教育专业人士的广泛交流，我们发现许多学校的数字化学习基础设施存在重大缺口。市面上许多学习管理系统缺乏统一、直观的用户体验，而贫困地区的学校往往无力承担现代教育技术的费用。",
+        "body1": "通过与教师和教育专业人士的广泛交流，我们发现许多学校的数字化学习基础设施存在重大缺陷。市面上许多学习管理系统缺乏统一、直观的用户体验，而贫困地区的学校往往无力承担现代教育技术的费用。",
         "body2": "我们的项目直接应对了这些挑战。来自付费机构订阅的收入使我们能够为贫困学校提供全面使用 Studious LMS 及相关教育工具的渠道。这种可持续的模式使我们能够弥合数字鸿沟，同时持续改进平台，服务所有用户。"
       },
       "receive": {
@@ -351,7 +351,7 @@
     },
     "success": {
       "title": "申请已提交！",
-      "subtitle": "感谢您申请“勤奋好学学校发展计划”",
+      "subtitle": "感谢您申请“勤奋学校发展计划”",
       "applicationId": "您的应用程序 ID",
       "saveId": "保存此 ID 以检查您的申请状态",
       "nextSteps": {
@@ -531,10 +531,10 @@
       "assignmentManagement": {
         "title": "任务管理",
         "empty": {
-          "title": "未找到作业",
+          "title": "未找到任何作业",
           "description": "创建作业来管理成绩和设置"
         },
-        "searchPlaceholder": "搜索作业..."
+        "searchPlaceholder": "搜索任务..."
       },
       "students": {
         "title": "学生",
@@ -851,7 +851,7 @@
     "viewAssignment": "查看作业",
     "allAssignments": "所有作业",
     "searchAssignments": "搜索作业...",
-    "noAssignmentsFound": "未找到作业",
+    "noAssignmentsFound": "未找到任何作业",
     "createFirstAssignment": "创建您的第一个作业以开始",
     "newSection": "新部分",
     "pts": "点",
@@ -1186,7 +1186,7 @@
       },
       "settings": {
         "pinned": {
-          "label": "置顶",
+          "label": "固定至顶部",
           "description": "将此公告置于列表顶部"
         },
         "urgent": {

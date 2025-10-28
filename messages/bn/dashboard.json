@@ -1,0 +1,44 @@
+{
+  "home": {
+    "welcomeBack": "আবার স্বাগতম, {নাম}!",
+    "subtitle": "আজ তোমাদের ক্লাসগুলোর কী হচ্ছে তা এখানে দেওয়া হল।",
+    "stats": {
+      "totalClasses": "মোট ক্লাস",
+      "teachingEnrolled": "{শিক্ষাদান} শিক্ষকতা, {নথিভুক্ত} নথিভুক্ত",
+      "dueToday": "আজ শেষ",
+      "dueTodayDesc": "আজ অ্যাসাইনমেন্ট জমা দেওয়ার কথা",
+      "upcoming": "আসন্ন",
+      "upcomingDesc": "অ্যাসাইনমেন্ট আসছে",
+      "thisWeek": "এই সপ্তাহে",
+      "totalAssignments": "মোট অ্যাসাইনমেন্ট"
+    },
+    "upcomingAssignments": {
+      "title": "আসন্ন অ্যাসাইনমেন্ট",
+      "subtitle": "আপনার পরবর্তী সময়সীমা",
+      "allCaughtUp": "সব ধরা পড়েছে!",
+      "noUpcoming": "এই মুহূর্তে আসন্ন কোনও অ্যাসাইনমেন্ট নেই।",
+      "viewAgenda": "এজেন্ডা দেখুন",
+      "dueToday": "আজ শেষ",
+      "dueTomorrow": "আগামীকাল শেষ হবে",
+      "due": "দুটি {তারিখ}",
+      "teaching": "শিক্ষাদান",
+      "viewAllAssignments": "সমস্ত অ্যাসাইনমেন্ট দেখুন"
+    },
+    "notifications": {
+      "title": "সাম্প্রতিক বিজ্ঞপ্তি",
+      "subtitle": "সর্বশেষ আপডেট",
+      "noNew": "কোনও নতুন বিজ্ঞপ্তি নেই",
+      "viewAll": "সকল বিজ্ঞপ্তি দেখুন"
+    },
+    "classes": {
+      "title": "আমার ক্লাস",
+      "subtitle": "আপনার ক্লাসে দ্রুত অ্যাক্সেস",
+      "teaching": "শিক্ষাদান",
+      "enrolled": "নথিভুক্ত",
+      "due": "বকেয়া",
+      "noClasses": "এখনও কোনও ক্লাস নেই",
+      "browseClasses": "ক্লাস ব্রাউজ করুন",
+      "viewAllClasses": "সকল ক্লাস দেখুন"
+    }
+  }
+}

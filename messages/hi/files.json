@@ -1,0 +1,130 @@
+{
+  "classFiles": {
+    "title": "फ़ाइलें",
+    "subtitle": "क्लास फ़ाइलें और संसाधन प्रबंधित करें",
+    "actions": {
+      "newFolder": "नया फ़ोल्डर",
+      "upload": "अपलोड करें",
+      "uploadFiles": "फाइलें अपलोड करें",
+      "createFolder": "फ़ोल्डर बनाएँ",
+      "download": "डाउनलोड करना",
+      "share": "शेयर करना",
+      "delete": "मिटाना",
+      "filter": "फ़िल्टर",
+      "sort": "क्रम से लगाना"
+    },
+    "toasts": {
+      "folderCreated": "फ़ोल्डर सफलतापूर्वक बनाया गया",
+      "folderDeleted": "फ़ोल्डर सफलतापूर्वक हटा दिया गया",
+      "folderRenamed": "फ़ोल्डर का नाम सफलतापूर्वक बदला गया",
+      "folderMoved": "फ़ोल्डर सफलतापूर्वक स्थानांतरित हो गया",
+      "filesUploaded": "फ़ाइलें सफलतापूर्वक अपलोड की गईं",
+      "fileDeleted": "फ़ाइल सफलतापूर्वक हटा दी गई",
+      "fileRenamed": "फ़ाइल का नाम सफलतापूर्वक बदला गया",
+      "fileMoved": "फ़ाइल सफलतापूर्वक स्थानांतरित हो गई",
+      "downloadStarted": "डाउनलोड शुरू हुआ",
+      "shareCopied": "शेयर लिंक कॉपी किया गया"
+    },
+    "errors": {
+      "teacherOnly": "केवल शिक्षक ही फ़ाइलों को संशोधित कर सकते हैं.",
+      "downloadFailed": "डाउनलोड विफल",
+      "shareFailed": "साझा करना विफल",
+      "failedToLoad": "फ़ाइलें लोड करने में विफल. कृपया बाद में पुनः प्रयास करें."
+    },
+    "breadcrumbs": {
+      "classFiles": "कक्षा फ़ाइलें"
+    },
+    "search": {
+      "placeholder": "फ़ाइलों में खोजें"
+    },
+    "selected": "{count} चयनित",
+    "filters": {
+      "fileType": "फ़ाइल प्रकार",
+      "documents": "दस्तावेज़",
+      "images": "इमेजिस",
+      "videos": "वीडियो",
+      "presentations": "प्रस्तुतियों"
+    },
+    "sort": {
+      "name": "नाम",
+      "lastModified": "अंतिम संशोधन",
+      "fileSize": "फ़ाइल का साइज़"
+    },
+    "table": {
+      "name": "नाम",
+      "owner": "मालिक",
+      "lastModified": "अंतिम संशोधन",
+      "fileSize": "फ़ाइल का साइज़"
+    },
+    "empty": {
+      "title": "यह फ़ोल्डर खाली है",
+      "description": "अपनी कक्षा सामग्री को व्यवस्थित करने के लिए फ़ाइलें अपलोड करें या फ़ोल्डर बनाएँ।",
+      "searchTitle": "कोई फाईल नहीं मिली",
+      "searchDescription": "\"{query}\" से मेल खाने वाली कोई फ़ाइल नहीं है. कोई दूसरा खोज शब्द आज़माएँ."
+    }
+  },
+  "folderView": {
+    "subtitle": "फ़ोल्डर सामग्री",
+    "notFound": {
+      "title": "फ़ोल्डर नहीं मिला",
+      "description": "अनुरोधित फ़ोल्डर नहीं मिल सका.",
+      "backButton": "फ़ाइलों पर वापस जाएँ"
+    },
+    "error": {
+      "loadFailed": "फ़ोल्डर सामग्री लोड करने में विफल. कृपया बाद में पुनः प्रयास करें."
+    },
+    "breadcrumbs": {
+      "classFiles": "कक्षा फ़ाइलें"
+    },
+    "search": {
+      "placeholder": "फ़ोल्डर में खोजें",
+      "selected": "{count} चयनित"
+    },
+    "filters": {
+      "label": "फ़िल्टर",
+      "fileType": "फ़ाइल प्रकार",
+      "documents": "दस्तावेज़",
+      "images": "इमेजिस",
+      "videos": "वीडियो",
+      "presentations": "प्रस्तुतियों"
+    },
+    "sort": {
+      "label": "क्रम से लगाना",
+      "name": "नाम",
+      "lastModified": "अंतिम संशोधन",
+      "fileSize": "फ़ाइल का साइज़"
+    },
+    "table": {
+      "name": "नाम",
+      "owner": "मालिक",
+      "lastModified": "अंतिम संशोधन",
+      "fileSize": "फ़ाइल का साइज़"
+    },
+    "empty": {
+      "noFilesFound": "कोई फाईल नहीं मिली",
+      "noFilesFoundDescription": "\"{query}\" से मेल खाने वाली कोई फ़ाइल नहीं है. कोई दूसरा खोज शब्द आज़माएँ.",
+      "folderEmpty": "यह फ़ोल्डर खाली है",
+      "folderEmptyDescription": "अपनी सामग्री को व्यवस्थित करने के लिए फ़ाइलें अपलोड करें या फ़ोल्डर बनाएँ।"
+    },
+    "actions": {
+      "newFolder": "नया फ़ोल्डर",
+      "uploadFiles": "फाइलें अपलोड करें",
+      "createFolder": "फ़ोल्डर बनाएँ"
+    },
+    "toast": {
+      "folderCreated": "फ़ोल्डर सफलतापूर्वक बनाया गया",
+      "folderDeleted": "फ़ोल्डर सफलतापूर्वक हटा दिया गया",
+      "folderRenamed": "फ़ोल्डर का नाम सफलतापूर्वक बदला गया",
+      "folderMoved": "फ़ोल्डर सफलतापूर्वक स्थानांतरित हो गया",
+      "filesUploaded": "फ़ाइलें सफलतापूर्वक अपलोड की गईं",
+      "fileDeleted": "फ़ाइल सफलतापूर्वक हटा दी गई",
+      "fileRenamed": "फ़ाइल का नाम सफलतापूर्वक बदला गया",
+      "fileMoved": "फ़ाइल सफलतापूर्वक स्थानांतरित हो गई",
+      "downloadStarted": "डाउनलोड शुरू हुआ",
+      "downloadFailed": "डाउनलोड विफल",
+      "shareLinkCopied": "शेयर लिंक कॉपी किया गया",
+      "shareFailed": "साझा करना विफल",
+      "permissionDenied": "अनुमति नहीं मिली"
+    }
+  }
+}

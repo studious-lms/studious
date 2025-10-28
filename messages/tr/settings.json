@@ -1,0 +1,66 @@
+{
+  "settings": {
+    "title": "Sınıf Ayarları",
+    "subtitle": "Sınıf ayrıntılarını ve tercihlerini yapılandırın",
+    "labels": {
+      "unsavedChanges": "Kaydedilmemiş değişiklikler"
+    },
+    "actions": {
+      "saving": "Kaydediliyor...",
+      "saveChanges": "Değişiklikleri Kaydet",
+      "deleting": "Siliniyor...",
+      "deleteClass": "Sınıfı Sil",
+      "cancel": "İptal etmek"
+    },
+    "sections": {
+      "basicInfo": {
+        "title": "Temel Bilgiler"
+      },
+      "theme": {
+        "title": "Sınıf Teması",
+        "description": "Bu sınıf için bir tema rengi seçin"
+      },
+      "danger": {
+        "title": "Tehlike Bölgesi",
+        "description": "Bir dersi sildiğinizde geri dönüşü yoktur. Bu işlem, tüm ödevleri, notları, devam kayıtlarını kalıcı olarak siler ve tüm öğrencileri dersten çıkarır."
+      }
+    },
+    "fields": {
+      "className": "Sınıf Adı",
+      "section": "Bölüm",
+      "subject": "Ders"
+    },
+    "placeholders": {
+      "className": "örneğin, İleri Fizik",
+      "section": "örneğin, AP-101",
+      "subject": "örneğin, Fizik"
+    },
+    "toasts": {
+      "updated": {
+        "title": "Sınıf Güncellendi",
+        "description": "Sınıf ayarları başarıyla kaydedildi."
+      },
+      "deleted": {
+        "title": "Sınıf Silindi",
+        "description": "Sınıf kalıcı olarak silindi."
+      }
+    },
+    "errors": {
+      "updateFailed": {
+        "title": "Güncelleme Başarısız Oldu",
+        "description": "Sınıf ayarları kaydedilemedi. Lütfen tekrar deneyin."
+      }
+    },
+    "confirm": {
+      "title": "Kesinlikle emin misin?",
+      "description": "Bu işlem geri alınamaz. Bu işlem, \"{name}\" sınıfını kalıcı olarak silecek ve aşağıdakiler de dahil olmak üzere tüm ilişkili verileri kaldıracaktır:",
+      "items": {
+        "assignments": "Tüm ödevler ve teslimler",
+        "records": "Tüm notlar ve katılım kayıtları",
+        "students": "Tüm öğrenciler sınıftan çıkarılacak",
+        "events": "Tüm sınıf etkinlikleri ve duyuruları"
+      },
+      "confirmDelete": "Evet, sınıfı sil"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "classes": {
+    "title": "Zajęcia",
+    "description": "Zarządzaj swoimi zajęciami i zapisanymi klasami",
+    "joinClass": "Dołącz do klasy",
+    "createClass": "Utwórz klasę",
+    "searchPlaceholder": "Wyszukaj klasy...",
+    "teaching": "Nauczanie",
+    "enrolled": "Przyjęty",
+    "noClassesFound": "Nie znaleziono zajęć",
+    "noTeachingClassesFound": "Nie znaleziono zajęć dydaktycznych pasujących do „{query}”",
+    "noEnrolledClassesFound": "Nie znaleziono zapisanych zajęć pasujących do „{query}”",
+    "noClassesYet": "Jeszcze nie ma zajęć",
+    "noClassesYetDesc": "Utwórz swoją pierwszą klasę, aby zacząć zarządzać zadaniami, ocenami i interakcjami ze studentami.",
+    "noEnrolledClasses": "Brak zapisanych zajęć",
+    "noEnrolledClassesDesc": "Dołącz do zajęć korzystając z kodu zaproszenia lub linku dostarczonego przez nauczyciela.",
+    "classDeleted": "Klasa została pomyślnie usunięta",
+    "classDeleteFailed": "Nie udało się usunąć klasy",
+    "failedToLoad": "Nie udało się załadować klas"
+  }
+}

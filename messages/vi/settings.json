@@ -1,0 +1,66 @@
+{
+  "settings": {
+    "title": "Cài đặt lớp học",
+    "subtitle": "Cấu hình chi tiết và tùy chọn lớp học",
+    "labels": {
+      "unsavedChanges": "Những thay đổi chưa lưu"
+    },
+    "actions": {
+      "saving": "Đang lưu...",
+      "saveChanges": "Lưu thay đổi",
+      "deleting": "Đang xóa...",
+      "deleteClass": "Xóa lớp",
+      "cancel": "Hủy bỏ"
+    },
+    "sections": {
+      "basicInfo": {
+        "title": "Thông tin cơ bản"
+      },
+      "theme": {
+        "title": "Chủ đề lớp học",
+        "description": "Chọn màu chủ đề cho lớp này"
+      },
+      "danger": {
+        "title": "Khu vực nguy hiểm",
+        "description": "Một khi bạn đã xóa một lớp học, bạn sẽ không thể quay lại lớp cũ. Thao tác này sẽ xóa vĩnh viễn tất cả bài tập, điểm số, hồ sơ điểm danh và xóa tất cả học sinh khỏi lớp học."
+      }
+    },
+    "fields": {
+      "className": "Tên lớp",
+      "section": "Phần",
+      "subject": "Chủ thể"
+    },
+    "placeholders": {
+      "className": "ví dụ, Vật lý nâng cao",
+      "section": "ví dụ, AP-101",
+      "subject": "ví dụ, Vật lý"
+    },
+    "toasts": {
+      "updated": {
+        "title": "Lớp học đã được cập nhật",
+        "description": "Cài đặt lớp học đã được lưu thành công."
+      },
+      "deleted": {
+        "title": "Lớp đã xóa",
+        "description": "Lớp học đã bị xóa vĩnh viễn."
+      }
+    },
+    "errors": {
+      "updateFailed": {
+        "title": "Cập nhật không thành công",
+        "description": "Không lưu được cài đặt lớp học. Vui lòng thử lại."
+      }
+    },
+    "confirm": {
+      "title": "Bạn có chắc chắn không?",
+      "description": "Không thể hoàn tác hành động này. Thao tác này sẽ xóa vĩnh viễn lớp \"{name}\" và xóa tất cả dữ liệu liên quan, bao gồm:",
+      "items": {
+        "assignments": "Tất cả các bài tập và bài nộp",
+        "records": "Tất cả các điểm số và hồ sơ điểm danh",
+        "students": "Tất cả học sinh sẽ bị đuổi khỏi lớp",
+        "events": "Tất cả các sự kiện và thông báo của lớp"
+      },
+      "confirmDelete": "Có, xóa lớp"
+    }
+  }
+}

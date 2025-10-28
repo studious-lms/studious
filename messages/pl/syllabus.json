@@ -1,0 +1,66 @@
+{
+  "syllabus": {
+    "title": "Konspekt",
+    "subtitle": "Przegląd kursu i informacje akademickie",
+    "actions": {
+      "saveChanges": "Zapisz zmiany",
+      "cancel": "Anulować",
+      "edit": "Edytuj sylabus"
+    },
+    "errors": {
+      "failedToLoad": "Nie udało się załadować programu nauczania",
+      "tryLater": "Spróbuj ponownie później."
+    },
+    "stats": {
+      "totalAssignments": "Łączna liczba zadań",
+      "completionRate": "Wskaźnik ukończenia",
+      "totalPoints": "Suma punktów",
+      "upcoming": "Nadchodzące"
+    },
+    "overview": {
+      "title": "Przegląd kursu",
+      "placeholder": "Wprowadź opis kursu, cele i inne ważne informacje...",
+      "helper": "Wprowadź informacje o kursie, cele edukacyjne, zasady i inne ważne szczegóły.",
+      "empty": {
+        "title": "Brak jeszcze treści programu nauczania",
+        "description": "Kliknij „Edytuj program nauczania”, aby dodać informacje o kursie, cele nauczania, zasady i inne."
+      }
+    },
+    "assignments": {
+      "title": "Zadania kursowe",
+      "gradedCount": "{ocenione} ocenione zadania",
+      "totalPoints": "{total} całkowita liczba punktów",
+      "empty": {
+        "title": "Brak jeszcze zadań",
+        "description": "Zadania pojawią się tutaj po ich utworzeniu."
+      }
+    },
+    "table": {
+      "assignment": "Zadanie",
+      "dueDate": "Dwie daty",
+      "points": "Zwrotnica",
+      "weight": "Waga",
+      "status": "Status",
+      "pts": "punkty"
+    },
+    "status": {
+      "graded": "Oceniony",
+      "pending": "Aż do"
+    },
+    "courseInfo": {
+      "title": "Informacje o kursie",
+      "basic": {
+        "title": "Informacje podstawowe",
+        "className": "Nazwa klasy",
+        "section": "Sekcja",
+        "subject": "Temat"
+      },
+      "stats": {
+        "title": "Statystyki kursu",
+        "totalAssignments": "Łączna liczba zadań",
+        "gradedAssignments": "Oceniane zadania",
+        "totalPoints": "Suma punktów"
+      }
+    }
+  }
+}

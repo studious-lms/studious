@@ -1,0 +1,54 @@
+{
+  "assignmentDetail": {
+    "title": "অ্যাসাইনমেন্টের বিবরণ",
+    "description": "বিবরণ",
+    "instructions": "নির্দেশনা",
+    "dueDate": "দুটি তারিখ",
+    "maxPoints": "সর্বোচ্চ পয়েন্ট",
+    "submissions": "জমা",
+    "submitted": "জমা দেওয়া হয়েছে",
+    "notSubmitted": "জমা দেওয়া হয়নি",
+    "graded": "গ্রেড করা হয়েছে",
+    "pending": "মুলতুবি",
+    "late": "দেরীতে",
+    "onTime": "সময়মতো",
+    "attachments": "সংযুক্তি",
+    "rubric": "রুব্রিক",
+    "gradingBoundary": "গ্রেডিং সীমানা",
+    "submissionDetails": "জমা দেওয়ার বিবরণ",
+    "submittedBy": "জমা দিয়েছেন",
+    "submittedAt": "জমা দেওয়া হয়েছে",
+    "grade": "শ্রেণী",
+    "feedback": "প্রতিক্রিয়া",
+    "files": "ফাইল",
+    "noFiles": "কোনও ফাইল সংযুক্ত নেই",
+    "noSubmissions": "এখনও কোনও জমা নেই",
+    "noSubmissionsDescription": "শিক্ষার্থীরা তাদের কাজ জমা দেওয়ার পরে জমাগুলি এখানে প্রদর্শিত হবে।",
+    "actions": {
+      "edit": "অ্যাসাইনমেন্ট সম্পাদনা করুন",
+      "delete": "অ্যাসাইনমেন্ট মুছুন",
+      "viewSubmission": "জমা দেখুন",
+      "gradeSubmission": "শ্রেণী",
+      "downloadAll": "সব ডাউনলোড করুন",
+      "exportGrades": "গ্রেড রপ্তানি করুন"
+    },
+    "stats": {
+      "totalSubmissions": "মোট জমা",
+      "averageGrade": "গড় গ্রেড",
+      "submissionRate": "জমা দেওয়ার হার",
+      "gradedCount": "গ্রেড করা হয়েছে"
+    },
+    "table": {
+      "student": "ছাত্র",
+      "status": "অবস্থা",
+      "grade": "শ্রেণী",
+      "submittedAt": "জমা দেওয়া হয়েছে",
+      "actions": "কর্ম"
+    },
+    "toasts": {
+      "gradeUpdated": "গ্রেড সফলভাবে আপডেট করা হয়েছে",
+      "deleted": "অ্যাসাইনমেন্ট মুছে ফেলা হয়েছে",
+      "error": "একটি ত্রুটি ঘটেছে।"
+    }
+  }
+}

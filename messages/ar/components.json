@@ -3,7 +3,7 @@
     "editFolder": "تحرير المجلد",
     "renameFile": "إعادة تسمية الملف",
     "name": "اسم",
-    "placeholder": "أدخل اسم {type}",
+    "placeholder": "أدخل اسم {النوع}",
     "folderColor": "لون المجلد",
     "folderColorDescription": "اختر لونًا لهذا المجلد",
     "cancel": "يلغي",
@@ -57,7 +57,8 @@
     "created": "تم إنشاء المعيار بنجاح",
     "updated": "تم تحديث المعيار بنجاح",
     "createFailed": "فشل في إنشاء معيار التقييم",
-    "updateFailed": "فشل تحديث المعايير"
+    "updateFailed": "فشل تحديث المعايير",
+    "errorNameRequired": "يرجى تقديم اسم ومعيار واحد على الأقل"
   },
   "gradingBoundaries": {
     "title": "إنشاء حدود الدرجة",

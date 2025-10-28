@@ -1,0 +1,12 @@
+{
+  "overview": {
+    "assignments": "Задания",
+    "students": "студенты",
+    "attendance": "Посещаемость",
+    "attachFile": "Прикрепить файл",
+    "post": "Почта",
+    "posting": "Публикация...",
+    "noPosts": "Пока нет сообщений",
+    "createFirstPost": "Создать первый пост"
+  }
+}

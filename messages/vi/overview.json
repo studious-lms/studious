@@ -1,0 +1,12 @@
+{
+  "overview": {
+    "assignments": "Bài tập",
+    "students": "sinh viên",
+    "attendance": "Sự tham dự",
+    "attachFile": "Đính kèm tập tin",
+    "post": "Bưu kiện",
+    "posting": "Đang đăng...",
+    "noPosts": "Chưa có bài viết nào",
+    "createFirstPost": "Tạo bài đăng đầu tiên"
+  }
+}

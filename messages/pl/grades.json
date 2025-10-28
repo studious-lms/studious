@@ -1,0 +1,140 @@
+{
+  "classGrades": {
+    "title": "Oceny",
+    "subtitle": "Przeglądaj i zarządzaj ocenami uczniów",
+    "columns": {
+      "assignment": "Zadanie",
+      "maxPoints": "Maksymalna liczba punktów",
+      "weight": "Waga",
+      "graded": "Oceniony",
+      "dueDate": "Dwie daty",
+      "actions": "Akcje",
+      "student": "Student",
+      "overallGrade": "Ocena ogólna",
+      "assignmentsCompleted": "Zadania ukończone",
+      "trend": "Tendencja"
+    },
+    "labels": {
+      "rubric": "Rubryka"
+    },
+    "actions": {
+      "manage": "Zarządzać",
+      "viewGrades": "Wyświetl oceny",
+      "saving": "Oszczędność...",
+      "saveChanges": "Zapisz zmiany",
+      "preview": "Zapowiedź",
+      "edit": "Redagować",
+      "delete": "Usuwać",
+      "createNew": "Utwórz nowy"
+    },
+    "overview": {
+      "title": "Przegląd klasy",
+      "classAverage": "Średnia klasy",
+      "totalStudents": "Łączna liczba studentów",
+      "assignments": "Zadania",
+      "submissionRate": "Współczynnik zgłoszeń"
+    },
+    "assignmentManagement": {
+      "title": "Zarządzanie zadaniami",
+      "empty": {
+        "title": "Nie znaleziono zadań",
+        "description": "Twórz zadania, aby zarządzać ocenami i ustawieniami"
+      },
+      "searchPlaceholder": "Szukaj zadań..."
+    },
+    "students": {
+      "title": "Studenci",
+      "viewAll": "Zobacz wszystkich uczniów",
+      "empty": {
+        "title": "Brak zapisanych studentów",
+        "description": "Uczniowie będą tu wyświetlani po dołączeniu do klasy"
+      },
+      "searchPlaceholder": "Wyszukaj studentów..."
+    },
+    "gradeBoundaries": {
+      "title": "Granice stopni",
+      "untitled": "Granica stopniowania bez tytułu",
+      "empty": {
+        "title": "Nie utworzono granic ocen",
+        "description": "Utwórz granice oceniania, aby zdefiniować zakresy ocen"
+      },
+      "previewTitle": "Podgląd granic oceniania",
+      "details": {
+        "title": "Szczegóły granic klasyfikacji",
+        "name": "Nazwa",
+        "noneDefined": "Nie określono granic oceniania"
+      }
+    },
+    "rubrics": {
+      "title": "Rubryki",
+      "untitled": "Rubryka bez tytułu",
+      "empty": {
+        "title": "Nie utworzono żadnych rubryk",
+        "description": "Utwórz rubryki, aby zdefiniować kryteria oceny"
+      },
+      "previewTitle": "Podgląd rubryki",
+      "details": {
+        "title": "Szczegóły rubryki",
+        "name": "Nazwa",
+        "category": "Kategoria",
+        "description": "Opis",
+        "custom": "Zwyczaj",
+        "noDescription": "Brak opisu",
+        "noCriteria": "W tej rubryce nie znaleziono żadnych kryteriów"
+      }
+    },
+    "confirm": {
+      "deleteRubric": "Czy na pewno chcesz usunąć ten schemat ocen?",
+      "deleteGradingBoundary": "Czy na pewno chcesz usunąć tę granicę oceny?"
+    }
+  },
+  "studentGrades": {
+    "title": "Wszystkie klasy uczniów",
+    "allStudents": "Przeglądaj i zarządzaj ocenami wszystkich uczniów w tej klasie",
+    "students": "Studenci",
+    "noGrades": "Nie znaleziono żadnych uczniów",
+    "noGradesDescription": "Na te zajęcia nie ma jeszcze żadnych studentów. Studenci pojawią się tutaj, gdy dołączą.",
+    "table": {
+      "student": "Student",
+      "actions": "Akcje"
+    },
+    "actions": {
+      "viewSubmission": "Wyświetl oceny"
+    }
+  },
+  "individualGrades": {
+    "myGrades": "Moje oceny",
+    "studentGrades": "Oceny",
+    "viewYourGrades": "Przeglądaj swoje oceny i postępy",
+    "individualManagement": "Zarządzanie indywidualnymi ocenami uczniów",
+    "export": "Eksport",
+    "back": "Z powrotem",
+    "yourPerformance": "Twój występ",
+    "trackProgress": "Śledź swoje postępy w nauce",
+    "overallGrade": "Ocena ogólna",
+    "completed": "Zakończony",
+    "trend": "Tendencja",
+    "yourGrades": "Twoje oceny",
+    "assignments": "Zadania",
+    "studentNotFound": "Nie znaleziono studenta",
+    "goBack": "Wracać",
+    "grade": "Stopień",
+    "table": {
+      "assignment": "Zadanie",
+      "grade": "Stopień",
+      "total": "Całkowity",
+      "percentage": "%",
+      "status": "Status",
+      "submitted": "Złożony"
+    },
+    "status": {
+      "graded": "Oceniony",
+      "pending": "Aż do"
+    },
+    "empty": {
+      "title": "Nie znaleziono zadań",
+      "description": "Ten student nie ma żadnych zadań do wyświetlenia"
+    },
+    "searchPlaceholder": "Szukaj zadań..."
+  }
+}

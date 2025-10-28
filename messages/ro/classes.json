@@ -1,0 +1,21 @@
+{
+  "classes": {
+    "title": "Cursuri",
+    "description": "Gestionează-ți predarea și cursurile înscrise",
+    "joinClass": "Alătură-te clasei",
+    "createClass": "Creați o clasă",
+    "searchPlaceholder": "Căutați clase...",
+    "teaching": "Predare",
+    "enrolled": "Înscris",
+    "noClassesFound": "Nu s-au găsit cursuri",
+    "noTeachingClassesFound": "Nu s-au găsit cursuri de predare care să corespundă cu „{query}”",
+    "noEnrolledClassesFound": "Nu s-au găsit clase înscrise care să corespundă cu „{query}”",
+    "noClassesYet": "Niciun curs încă",
+    "noClassesYetDesc": "Creează-ți prima clasă pentru a începe să gestionezi temele, notele și interacțiunile cu elevii.",
+    "noEnrolledClasses": "Nicio clasă înscrisă",
+    "noEnrolledClassesDesc": "Alătură-te unui curs folosind un cod de invitație sau un link furnizat de profesorul tău.",
+    "classDeleted": "Cursul a fost șters cu succes",
+    "classDeleteFailed": "Nu s-a putut șterge clasa",
+    "failedToLoad": "Nu s-au putut încărca clasele"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "syllabus": {
+    "title": "Giáo trình",
+    "subtitle": "Tổng quan về khóa học và thông tin học thuật",
+    "actions": {
+      "saveChanges": "Lưu thay đổi",
+      "cancel": "Hủy bỏ",
+      "edit": "Chỉnh sửa giáo trình"
+    },
+    "errors": {
+      "failedToLoad": "Không tải được giáo trình",
+      "tryLater": "Vui lòng thử lại sau."
+    },
+    "stats": {
+      "totalAssignments": "Tổng số bài tập",
+      "completionRate": "Tỷ lệ hoàn thành",
+      "totalPoints": "Tổng điểm",
+      "upcoming": "Sắp tới"
+    },
+    "overview": {
+      "title": "Tổng quan về khóa học",
+      "placeholder": "Nhập thông tin tổng quan về khóa học, mục tiêu và các thông tin quan trọng khác...",
+      "helper": "Nhập thông tin khóa học, mục tiêu học tập, chính sách và các thông tin quan trọng khác.",
+      "empty": {
+        "title": "Chưa có nội dung giáo trình",
+        "description": "Nhấp vào 'Chỉnh sửa giáo trình' để thêm thông tin khóa học, mục tiêu học tập, chính sách, v.v."
+      }
+    },
+    "assignments": {
+      "title": "Bài tập khóa học",
+      "gradedCount": "bài tập được chấm điểm {đã chấm điểm}",
+      "totalPoints": "{tổng} tổng số điểm",
+      "empty": {
+        "title": "Chưa có bài tập nào",
+        "description": "Bài tập sẽ xuất hiện ở đây sau khi được tạo."
+      }
+    },
+    "table": {
+      "assignment": "Phân công",
+      "dueDate": "Hai Ngày",
+      "points": "Điểm",
+      "weight": "Cân nặng",
+      "status": "Trạng thái",
+      "pts": "điểm"
+    },
+    "status": {
+      "graded": "Đã phân loại",
+      "pending": "Chưa giải quyết"
+    },
+    "courseInfo": {
+      "title": "Thông tin khóa học",
+      "basic": {
+        "title": "Thông tin cơ bản",
+        "className": "Tên lớp",
+        "section": "Phần",
+        "subject": "Chủ thể"
+      },
+      "stats": {
+        "title": "Thống kê khóa học",
+        "totalAssignments": "Tổng số bài tập",
+        "gradedAssignments": "Bài tập được chấm điểm",
+        "totalPoints": "Tổng điểm"
+      }
+    }
+  }
+}

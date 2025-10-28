@@ -1,0 +1,97 @@
+{
+  "attendance": {
+    "title": "Acara & Kehadiran Kelas",
+    "subtitle": "Melacak kehadiran siswa untuk setiap acara",
+    "saving": {
+      "auto": "Menyimpan otomatis...",
+      "unsaved": "Perubahan yang belum disimpan",
+      "saving": "Penghematan..."
+    },
+    "table": {
+      "date": "Tanggal",
+      "eventName": "Nama Acara",
+      "attendanceRate": "Tingkat Kehadiran",
+      "attendance": "Kehadiran",
+      "actions": "Tindakan"
+    },
+    "actions": {
+      "viewDetails": "Lihat Detail",
+      "editEvent": "Edit Acara",
+      "deleteEvent": "Hapus Acara",
+      "createEvent": "Buat Acara",
+      "saveAttendance": "Simpan Kehadiran",
+      "markAllPresent": "Tandai Semua Hadir",
+      "markAllAbsent": "Tandai Semua Tidak Hadir"
+    },
+    "allEvents": {
+      "title": "Semua Acara",
+      "description": "Riwayat lengkap acara kelas dan catatan kehadiran",
+      "searchPlaceholder": "Cari acara...",
+      "empty": {
+        "title": "Tidak ada acara yang ditemukan",
+        "description": "Buat acara pertama Anda untuk mulai melacak kehadiran"
+      }
+    },
+    "eventsList": {
+      "pickDate": "Pilih tanggal",
+      "untitled": "Acara Tanpa Judul",
+      "empty": {
+        "noEventsOnDate": "Tidak ada acara pada tanggal ini",
+        "noEventsOnDateDescription": "Tidak ada acara yang dijadwalkan untuk {date}. Coba pilih tanggal lain atau buat acara baru.",
+        "noEvents": "Tidak ada acara yang ditemukan",
+        "noEventsDescription": "Buat acara pertama Anda untuk mulai melacak kehadiran",
+        "createForDate": "Buat Acara untuk Tanggal Ini",
+        "createFirst": "Buat Acara Pertama"
+      }
+    },
+    "summary": {
+      "title": "Ringkasan Acara",
+      "selectedEvent": "Acara Terpilih",
+      "total": "Total",
+      "attendanceRate": "Tingkat Kehadiran"
+    },
+    "roster": {
+      "title": "Daftar Siswa",
+      "description": "Klik tombol status untuk menandai kehadiran setiap siswa",
+      "empty": {
+        "title": "Tidak ada siswa yang terdaftar",
+        "description": "Siswa akan muncul di sini setelah mereka bergabung dengan kelas"
+      }
+    },
+    "prompt": {
+      "title": "Pilih Acara",
+      "description": "Pilih acara di atas untuk melihat dan mengelola kehadiran siswa"
+    },
+    "status": {
+      "present": "Hadiah",
+      "late": "Terlambat",
+      "absent": "Absen",
+      "notTaken": "Belum Diambil"
+    },
+    "student": {
+      "title": "Kehadiran Saya",
+      "subtitle": "Lacak kehadiran Anda untuk {className}",
+      "attendanceRate": "Tingkat Kehadiran",
+      "history": "Riwayat Kehadiran",
+      "event": "Peristiwa",
+      "status": "Status",
+      "searchPlaceholder": "Cari acara...",
+      "empty": {
+        "title": "Tidak Ada Catatan Kehadiran",
+        "description": "Kehadiran Anda akan muncul di sini setelah acara dibuat dan kehadiran dicatat"
+      }
+    },
+    "deleteDialog": {
+      "title": "Hapus Acara",
+      "description": "Yakin ingin menghapus \"{eventName}\"? Tindakan ini tidak dapat dibatalkan dan akan menghapus semua catatan kehadiran terkait.",
+      "deleting": "Menghapus...",
+      "deleteButton": "Hapus Acara"
+    },
+    "toast": {
+      "attendanceSaved": "Kehadiran berhasil disimpan",
+      "attendanceSaveFailed": "Gagal menyimpan kehadiran",
+      "eventDeleted": "Acara berhasil dihapus",
+      "eventDeleteFailed": "Gagal menghapus acara"
+    }
+  }
+}

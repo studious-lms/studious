@@ -10,7 +10,7 @@
       "upcoming": "Prochain",
       "upcomingDesc": "Devoirs à venir",
       "thisWeek": "Cette semaine",
-      "totalAssignments": "Total des affectations"
+      "totalAssignments": "Nombre total d'affectations"
     },
     "upcomingAssignments": {
       "title": "Missions à venir",
@@ -20,7 +20,7 @@
       "viewAgenda": "Voir l'ordre du jour",
       "dueToday": "À rendre aujourd'hui",
       "dueTomorrow": "À rendre demain",
-      "due": "Échéance {date}",
+      "due": "Deux {dates}",
       "teaching": "Enseignement",
       "viewAllAssignments": "Voir toutes les missions"
     },

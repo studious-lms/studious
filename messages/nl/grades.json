@@ -1,0 +1,140 @@
+{
+  "classGrades": {
+    "title": "Cijfers",
+    "subtitle": "Bekijk en beheer studentencijfers",
+    "columns": {
+      "assignment": "Opdracht",
+      "maxPoints": "Maximale punten",
+      "weight": "Gewicht",
+      "graded": "Gegradeerd",
+      "dueDate": "Twee data",
+      "actions": "Acties",
+      "student": "Student",
+      "overallGrade": "Algemene beoordeling",
+      "assignmentsCompleted": "Opdrachten voltooid",
+      "trend": "Trend"
+    },
+    "labels": {
+      "rubric": "Rubriek"
+    },
+    "actions": {
+      "manage": "Beheren",
+      "viewGrades": "Bekijk cijfers",
+      "saving": "Besparing...",
+      "saveChanges": "Wijzigingen opslaan",
+      "preview": "Voorvertoning",
+      "edit": "Bewerking",
+      "delete": "Verwijderen",
+      "createNew": "Nieuw maken"
+    },
+    "overview": {
+      "title": "Klassenoverzicht",
+      "classAverage": "Klasgemiddelde",
+      "totalStudents": "Totaal aantal studenten",
+      "assignments": "Opdrachten",
+      "submissionRate": "Inzendingspercentage"
+    },
+    "assignmentManagement": {
+      "title": "Opdrachtbeheer",
+      "empty": {
+        "title": "Geen opdrachten gevonden",
+        "description": "Maak opdrachten aan om cijfers en instellingen te beheren"
+      },
+      "searchPlaceholder": "Zoekopdrachten..."
+    },
+    "students": {
+      "title": "Studenten",
+      "viewAll": "Bekijk alle studenten",
+      "empty": {
+        "title": "Geen studenten ingeschreven",
+        "description": "Studenten verschijnen hier zodra ze de klas binnenkomen"
+      },
+      "searchPlaceholder": "Zoek studenten..."
+    },
+    "gradeBoundaries": {
+      "title": "Graadgrenzen",
+      "untitled": "Ongetitelde beoordelingsgrens",
+      "empty": {
+        "title": "Er zijn geen cijfergrenzen gemaakt",
+        "description": "Maak beoordelingsgrenzen om cijferbereiken te definiëren"
+      },
+      "previewTitle": "Voorbeeld van beoordelingsgrenzen",
+      "details": {
+        "title": "Details van de grenswaarde",
+        "name": "Naam",
+        "noneDefined": "Geen beoordelingsgrenzen gedefinieerd"
+      }
+    },
+    "rubrics": {
+      "title": "Rubrieken",
+      "untitled": "Rubriek zonder titel",
+      "empty": {
+        "title": "Geen rubrieken aangemaakt",
+        "description": "Maak rubrieken om beoordelingscriteria te definiëren"
+      },
+      "previewTitle": "Rubriekvoorbeeld",
+      "details": {
+        "title": "Rubriekdetails",
+        "name": "Naam",
+        "category": "Categorie",
+        "description": "Beschrijving",
+        "custom": "Aangepast",
+        "noDescription": "Geen beschrijving verstrekt",
+        "noCriteria": "Er zijn geen criteria gevonden in deze rubriek"
+      }
+    },
+    "confirm": {
+      "deleteRubric": "Weet u zeker dat u dit markschema wilt verwijderen?",
+      "deleteGradingBoundary": "Weet u zeker dat u deze beoordelingsgrens wilt verwijderen?"
+    }
+  },
+  "studentGrades": {
+    "title": "Alle leerlingniveaus",
+    "allStudents": "Bekijk en beheer de cijfers van alle studenten in deze klas",
+    "students": "Studenten",
+    "noGrades": "Geen studenten gevonden",
+    "noGradesDescription": "Er zijn nog geen studenten ingeschreven voor deze cursus. Studenten verschijnen hier zodra ze zich aanmelden.",
+    "table": {
+      "student": "Student",
+      "actions": "Acties"
+    },
+    "actions": {
+      "viewSubmission": "Bekijk cijfers"
+    }
+  },
+  "individualGrades": {
+    "myGrades": "Mijn cijfers",
+    "studentGrades": "Cijfers",
+    "viewYourGrades": "Bekijk je cijfers en voortgang",
+    "individualManagement": "Individueel cijferbeheer voor studenten",
+    "export": "Exporteren",
+    "back": "Rug",
+    "yourPerformance": "Uw prestaties",
+    "trackProgress": "Volg uw academische voortgang",
+    "overallGrade": "Algemene beoordeling",
+    "completed": "Voltooid",
+    "trend": "Trend",
+    "yourGrades": "Jouw cijfers",
+    "assignments": "Opdrachten",
+    "studentNotFound": "Student niet gevonden",
+    "goBack": "Ga terug",
+    "grade": "Cijfer",
+    "table": {
+      "assignment": "Opdracht",
+      "grade": "Cijfer",
+      "total": "Totaal",
+      "percentage": "%",
+      "status": "Status",
+      "submitted": "Ingediend"
+    },
+    "status": {
+      "graded": "Gegradeerd",
+      "pending": "In behandeling"
+    },
+    "empty": {
+      "title": "Geen opdrachten gevonden",
+      "description": "Deze student heeft geen opdrachten om weer te geven"
+    },
+    "searchPlaceholder": "Zoekopdrachten..."
+  }
+}

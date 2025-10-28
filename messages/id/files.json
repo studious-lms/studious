@@ -1,0 +1,130 @@
+{
+  "classFiles": {
+    "title": "Berkas",
+    "subtitle": "Kelola file dan sumber daya kelas",
+    "actions": {
+      "newFolder": "Folder Baru",
+      "upload": "Mengunggah",
+      "uploadFiles": "Unggah File",
+      "createFolder": "Buat Folder",
+      "download": "Unduh",
+      "share": "Membagikan",
+      "delete": "Menghapus",
+      "filter": "Menyaring",
+      "sort": "Menyortir"
+    },
+    "toasts": {
+      "folderCreated": "Folder berhasil dibuat",
+      "folderDeleted": "Folder berhasil dihapus",
+      "folderRenamed": "Folder berhasil diganti nama",
+      "folderMoved": "Folder berhasil dipindahkan",
+      "filesUploaded": "File berhasil diunggah",
+      "fileDeleted": "File berhasil dihapus",
+      "fileRenamed": "File berhasil diganti nama",
+      "fileMoved": "File berhasil dipindahkan",
+      "downloadStarted": "Unduhan dimulai",
+      "shareCopied": "Bagikan tautan disalin"
+    },
+    "errors": {
+      "teacherOnly": "Hanya guru yang dapat mengubah berkas.",
+      "downloadFailed": "Unduhan gagal",
+      "shareFailed": "Berbagi gagal",
+      "failedToLoad": "Gagal memuat berkas. Silakan coba lagi nanti."
+    },
+    "breadcrumbs": {
+      "classFiles": "File Kelas"
+    },
+    "search": {
+      "placeholder": "Cari dalam file"
+    },
+    "selected": "{count} dipilih",
+    "filters": {
+      "fileType": "Jenis Berkas",
+      "documents": "Dokumen",
+      "images": "Gambar",
+      "videos": "Video",
+      "presentations": "Presentasi"
+    },
+    "sort": {
+      "name": "Nama",
+      "lastModified": "Terakhir diubah",
+      "fileSize": "Ukuran berkas"
+    },
+    "table": {
+      "name": "Nama",
+      "owner": "Pemilik",
+      "lastModified": "Terakhir diubah",
+      "fileSize": "Ukuran berkas"
+    },
+    "empty": {
+      "title": "Folder ini kosong",
+      "description": "Unggah file atau buat folder untuk mulai mengatur materi kelas Anda.",
+      "searchTitle": "Tidak ada file yang ditemukan",
+      "searchDescription": "Tidak ada berkas yang cocok dengan \"{query}\". Coba istilah pencarian lain."
+    }
+  },
+  "folderView": {
+    "subtitle": "Isi folder",
+    "notFound": {
+      "title": "Folder Tidak Ditemukan",
+      "description": "Folder yang diminta tidak dapat ditemukan.",
+      "backButton": "Kembali ke File"
+    },
+    "error": {
+      "loadFailed": "Gagal memuat isi folder. Silakan coba lagi nanti."
+    },
+    "breadcrumbs": {
+      "classFiles": "File Kelas"
+    },
+    "search": {
+      "placeholder": "Cari di folder",
+      "selected": "{count} dipilih"
+    },
+    "filters": {
+      "label": "Menyaring",
+      "fileType": "Jenis Berkas",
+      "documents": "Dokumen",
+      "images": "Gambar",
+      "videos": "Video",
+      "presentations": "Presentasi"
+    },
+    "sort": {
+      "label": "Menyortir",
+      "name": "Nama",
+      "lastModified": "Terakhir diubah",
+      "fileSize": "Ukuran berkas"
+    },
+    "table": {
+      "name": "Nama",
+      "owner": "Pemilik",
+      "lastModified": "Terakhir diubah",
+      "fileSize": "Ukuran berkas"
+    },
+    "empty": {
+      "noFilesFound": "Tidak ada file yang ditemukan",
+      "noFilesFoundDescription": "Tidak ada berkas yang cocok dengan \"{query}\". Coba istilah pencarian lain.",
+      "folderEmpty": "Folder ini kosong",
+      "folderEmptyDescription": "Unggah file atau buat folder untuk mengatur materi Anda."
+    },
+    "actions": {
+      "newFolder": "Folder Baru",
+      "uploadFiles": "Unggah File",
+      "createFolder": "Buat Folder"
+    },
+    "toast": {
+      "folderCreated": "Folder berhasil dibuat",
+      "folderDeleted": "Folder berhasil dihapus",
+      "folderRenamed": "Folder berhasil diganti nama",
+      "folderMoved": "Folder berhasil dipindahkan",
+      "filesUploaded": "File berhasil diunggah",
+      "fileDeleted": "File berhasil dihapus",
+      "fileRenamed": "File berhasil diganti nama",
+      "fileMoved": "File berhasil dipindahkan",
+      "downloadStarted": "Unduhan dimulai",
+      "downloadFailed": "Unduhan gagal",
+      "shareLinkCopied": "Bagikan tautan disalin",
+      "shareFailed": "Berbagi gagal",
+      "permissionDenied": "Izin ditolak"
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "aiLabs": {
+    "title": "Laboratorium AI",
+    "subtitle": "Buat konten pendidikan dengan bantuan AI",
+    "aiPowered": "Didukung AI",
+    "createNew": "Buat Konten Baru",
+    "aiGenerated": "Dihasilkan oleh AI",
+    "deleteConfirm": "Yakin ingin menghapus AI Lab ini? Tindakan ini tidak dapat dibatalkan.",
+    "widgets": {
+      "assignment": {
+        "title": "Penugasan",
+        "description": "Buat tugas interaktif dengan bantuan AI"
+      },
+      "quiz": {
+        "title": "Kuis",
+        "description": "Hasilkan kuis dengan berbagai jenis pertanyaan"
+      },
+      "worksheet": {
+        "title": "Lembar kerja",
+        "description": "Membangun lembar kerja dan latihan praktik"
+      },
+      "lessonPlan": {
+        "title": "Rencana Pelajaran",
+        "description": "Merancang rencana pelajaran yang komprehensif"
+      },
+      "rubric": {
+        "title": "Rubrik",
+        "description": "Buat rubrik penilaian terperinci"
+      }
+    },
+    "tabs": {
+      "drafts": "Draf Lab",
+      "chats": "Kucing AI"
+    },
+    "drafts": {
+      "title": "Draf Lab ({count})",
+      "empty": {
+        "title": "Belum ada draf lab",
+        "description": "Buat konten pendidikan pertama Anda yang dihasilkan AI menggunakan widget di atas."
+      }
+    },
+    "chats": {
+      "title": "Laboratorium AI ({count})",
+      "active": "Aktif",
+      "messageCount": "{count} pesan",
+      "createdBy": "Dibuat oleh {name}",
+      "empty": {
+        "title": "Belum ada Lab AI",
+        "description": "Buat Lab AI pertama Anda untuk mulai berkolaborasi dengan AI pada konten pendidikan."
+      }
+    },
+    "toast": {
+      "labCreated": "AI Lab berhasil dibuat!",
+      "labCreateFailed": "Gagal membuat Lab AI:",
+      "labDeleted": "AI Lab berhasil dihapus!",
+      "labDeleteFailed": "Gagal menghapus AI Lab:"
+    }
+  },
+  "aiLabChat": {
+    "backButton": "Kembali ke AI Labs",
+    "loading": "Memuat...",
+    "aiThinking": "Berpikir AI...",
+    "getAIHelp": "Dapatkan Bantuan AI",
+    "notFound": {
+      "title": "Obrolan Lab Tidak Ditemukan",
+      "description": "Lab AI ini mungkin telah dihapus atau Anda tidak memiliki akses ke sana."
+    },
+    "toast": {
+      "messageFailed": "Gagal mengirim pesan:"
+    }
+  }
+}

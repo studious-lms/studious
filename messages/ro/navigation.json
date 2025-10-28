@@ -1,0 +1,54 @@
+{
+  "navigation": {
+    "home": "Acasă",
+    "classes": "Cursuri",
+    "agenda": "Ordinea de zi",
+    "chat": "Chat",
+    "notifications": "Notificări",
+    "profile": "Profil",
+    "settings": "Setări",
+    "signOut": "Sign out",
+    "accountSettings": "Setările contului",
+    "pricing": "Prețuri",
+    "schoolProgram": "Program școlar",
+    "about": "Despre",
+    "press": "Presa",
+    "signIn": "Conectare"
+  },
+  "classSidebar": {
+    "overview": "Prezentare generală",
+    "assignments": "Sarcini",
+    "grades": "Note",
+    "files": "Fișiere",
+    "attendance": "Prezență",
+    "aiLabs": "Laboratoare de inteligență artificială",
+    "members": "Membri",
+    "syllabus": "Programă",
+    "settings": "Setări",
+    "classNavigation": "Navigare în clasă",
+    "switchClass": "Schimbați clasa",
+    "classInviteCode": "Cod de invitație la curs",
+    "copyCode": "Copiați codul",
+    "regenerateCode": "Regenerați codul",
+    "toast": {
+      "inviteCodeRegenerated": "Codul de invitație a fost regenerat cu succes.",
+      "inviteCodeRegenerateFailed": "Codul de invitație nu a putut fi regenerat.",
+      "inviteCodeCopied": "Codul de invitație a fost copiat în clipboard"
+    }
+  },
+  "footer": {
+    "productDescription": "Managementul modern al învățării pentru următoarea generație de educație.",
+    "product": "Produs",
+    "features": "Caracteristici",
+    "pricing": "Prețuri",
+    "schoolProgram": "Program școlar",
+    "company": "Companie",
+    "about": "Despre",
+    "team": "Echipă",
+    "press": "Presa",
+    "contact": "Contact",
+    "privacyPolicy": "Politica de confidențialitate",
+    "termsOfService": "Termeni și condiții",
+    "copyright": "© 2025 Studious LMS. Toate drepturile rezervate."
+  }
+}

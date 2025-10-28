@@ -1,0 +1,72 @@
+{
+  "aiLabs": {
+    "title": "AI Labs",
+    "subtitle": "Yapay zeka yardımıyla eğitim içeriği oluşturun",
+    "aiPowered": "Yapay Zeka Destekli",
+    "createNew": "Yeni İçerik Oluştur",
+    "aiGenerated": "AI tarafından üretildi",
+    "deleteConfirm": "Bu AI Lab'ı silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
+    "widgets": {
+      "assignment": {
+        "title": "Atama",
+        "description": "Yapay zeka yardımıyla etkileşimli ödevler oluşturun"
+      },
+      "quiz": {
+        "title": "Sınav",
+        "description": "Çeşitli soru tipleriyle sınavlar oluşturun"
+      },
+      "worksheet": {
+        "title": "Çalışma sayfası",
+        "description": "Pratik çalışma kağıtları ve alıştırmalar oluşturun"
+      },
+      "lessonPlan": {
+        "title": "Ders Planı",
+        "description": "Kapsamlı ders planları tasarlayın"
+      },
+      "rubric": {
+        "title": "Rubrik",
+        "description": "Ayrıntılı notlandırma ölçütleri oluşturun"
+      }
+    },
+    "tabs": {
+      "drafts": "Taslak Laboratuvarları",
+      "chats": "Yapay Zeka Kedileri"
+    },
+    "drafts": {
+      "title": "Taslak Laboratuvarları ({count})",
+      "empty": {
+        "title": "Henüz laboratuvar taslağı yok",
+        "description": "Yukarıdaki araçları kullanarak ilk yapay zeka destekli eğitim içeriğinizi oluşturun."
+      }
+    },
+    "chats": {
+      "title": "Yapay Zeka Laboratuvarları ({count})",
+      "active": "Aktif",
+      "messageCount": "{count} mesaj",
+      "createdBy": "{name} tarafından oluşturuldu",
+      "empty": {
+        "title": "Henüz AI Laboratuvarları yok",
+        "description": "Eğitim içerikleri üzerinde yapay zeka ile iş birliği yapmaya başlamak için ilk yapay zeka laboratuvarınızı oluşturun."
+      }
+    },
+    "toast": {
+      "labCreated": "AI Lab başarıyla oluşturuldu!",
+      "labCreateFailed": "AI Lab oluşturulamadı:",
+      "labDeleted": "AI Lab başarıyla silindi!",
+      "labDeleteFailed": "AI Lab silinemedi:"
+    }
+  },
+  "aiLabChat": {
+    "backButton": "AI Laboratuvarlarına Dönüş",
+    "loading": "Yükleniyor...",
+    "aiThinking": "Yapay Zeka Düşünüyor...",
+    "getAIHelp": "Yapay Zeka Yardımı Alın",
+    "notFound": {
+      "title": "Laboratuvar Sohbeti Bulunamadı",
+      "description": "Bu AI Lab silinmiş olabilir veya erişiminiz olmayabilir."
+    },
+    "toast": {
+      "messageFailed": "Mesaj gönderilemedi:"
+    }
+  }
+}

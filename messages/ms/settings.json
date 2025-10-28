@@ -1,0 +1,66 @@
+{
+  "settings": {
+    "title": "Tetapan Kelas",
+    "subtitle": "Konfigurasikan butiran dan pilihan kelas",
+    "labels": {
+      "unsavedChanges": "Perubahan yang tidak disimpan"
+    },
+    "actions": {
+      "saving": "Menyimpan...",
+      "saveChanges": "Simpan Perubahan",
+      "deleting": "Memadamkan...",
+      "deleteClass": "Padamkan Kelas",
+      "cancel": "Batal"
+    },
+    "sections": {
+      "basicInfo": {
+        "title": "Maklumat Asas"
+      },
+      "theme": {
+        "title": "Tema Kelas",
+        "description": "Pilih warna tema untuk kelas ini"
+      },
+      "danger": {
+        "title": "Zon Bahaya",
+        "description": "Sebaik sahaja anda memadamkan kelas, anda tidak boleh kembali. Ini akan memadamkan semua tugasan, gred, rekod kehadiran secara kekal dan mengalih keluar semua pelajar daripada kelas."
+      }
+    },
+    "fields": {
+      "className": "Nama Kelas",
+      "section": "Bahagian",
+      "subject": "Subjek"
+    },
+    "placeholders": {
+      "className": "cth., Fizik Lanjutan",
+      "section": "cth., AP-101",
+      "subject": "cth., Fizik"
+    },
+    "toasts": {
+      "updated": {
+        "title": "Kelas Dikemaskini",
+        "description": "Tetapan kelas telah berjaya disimpan."
+      },
+      "deleted": {
+        "title": "Kelas Dipadamkan",
+        "description": "Kelas telah dipadamkan secara kekal."
+      }
+    },
+    "errors": {
+      "updateFailed": {
+        "title": "Kemas Kini Gagal",
+        "description": "Gagal menyimpan tetapan kelas. Sila cuba lagi."
+      }
+    },
+    "confirm": {
+      "title": "Adakah anda benar-benar pasti?",
+      "description": "Tindakan ini tidak boleh dibuat asal. Ini akan memadamkan kelas \"{name}\" secara kekal dan mengalih keluar semua data yang berkaitan termasuk:",
+      "items": {
+        "assignments": "Semua tugasan dan hantaran",
+        "records": "Semua gred dan rekod kehadiran",
+        "students": "Semua pelajar akan dikeluarkan dari kelas",
+        "events": "Semua acara dan pengumuman kelas"
+      },
+      "confirmDelete": "Ya, padamkan kelas"
+    }
+  }
+}

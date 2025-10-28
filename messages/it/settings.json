@@ -1,0 +1,66 @@
+{
+  "settings": {
+    "title": "Impostazioni di classe",
+    "subtitle": "Configura i dettagli e le preferenze della classe",
+    "labels": {
+      "unsavedChanges": "Modifiche non salvate"
+    },
+    "actions": {
+      "saving": "Risparmio...",
+      "saveChanges": "Salva modifiche",
+      "deleting": "Eliminazione in corso...",
+      "deleteClass": "Elimina classe",
+      "cancel": "Cancellare"
+    },
+    "sections": {
+      "basicInfo": {
+        "title": "Informazioni di base"
+      },
+      "theme": {
+        "title": "Tema della classe",
+        "description": "Scegli un colore tematico per questa classe"
+      },
+      "danger": {
+        "title": "Zona pericolosa",
+        "description": "Una volta eliminata una classe, non è più possibile tornare indietro. Questa operazione eliminerà definitivamente tutti i compiti, i voti, i registri delle presenze e rimuoverà tutti gli studenti dalla classe."
+      }
+    },
+    "fields": {
+      "className": "Nome della classe",
+      "section": "Sezione",
+      "subject": "Soggetto"
+    },
+    "placeholders": {
+      "className": "ad esempio, Fisica avanzata",
+      "section": "ad esempio, AP-101",
+      "subject": "ad esempio, Fisica"
+    },
+    "toasts": {
+      "updated": {
+        "title": "Classe aggiornata",
+        "description": "Le impostazioni della classe sono state salvate correttamente."
+      },
+      "deleted": {
+        "title": "Classe eliminata",
+        "description": "La classe è stata eliminata definitivamente."
+      }
+    },
+    "errors": {
+      "updateFailed": {
+        "title": "Aggiornamento non riuscito",
+        "description": "Impossibile salvare le impostazioni della classe. Riprova."
+      }
+    },
+    "confirm": {
+      "title": "Ne sei assolutamente sicuro?",
+      "description": "Questa azione non può essere annullata. Verrà eliminata definitivamente la classe \"{name}\" e verranno rimossi tutti i dati associati, tra cui:",
+      "items": {
+        "assignments": "Tutti i compiti e le consegne",
+        "records": "Tutti i voti e i registri delle presenze",
+        "students": "Tutti gli studenti saranno rimossi dalla classe",
+        "events": "Tutti gli eventi e gli annunci di classe"
+      },
+      "confirmDelete": "Sì, elimina la classe"
+    }
+  }
+}

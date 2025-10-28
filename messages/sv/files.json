@@ -1,0 +1,130 @@
+{
+  "classFiles": {
+    "title": "Filer",
+    "subtitle": "Hantera klassfiler och resurser",
+    "actions": {
+      "newFolder": "Ny mapp",
+      "upload": "Ladda upp",
+      "uploadFiles": "Ladda upp filer",
+      "createFolder": "Skapa mapp",
+      "download": "Ladda ner",
+      "share": "Dela",
+      "delete": "Radera",
+      "filter": "Filtrera",
+      "sort": "Sortera"
+    },
+    "toasts": {
+      "folderCreated": "Mappen skapades",
+      "folderDeleted": "Mappen har raderats",
+      "folderRenamed": "Mappen har bytt namn",
+      "folderMoved": "Mappen har flyttats",
+      "filesUploaded": "Filerna har laddats upp",
+      "fileDeleted": "Filen har raderats",
+      "fileRenamed": "Filen har bytt namn",
+      "fileMoved": "Filen har flyttats",
+      "downloadStarted": "Nedladdningen har startat",
+      "shareCopied": "Delningslänk kopierad"
+    },
+    "errors": {
+      "teacherOnly": "Endast lärare kan ändra filer.",
+      "downloadFailed": "Nedladdningen misslyckades",
+      "shareFailed": "Delningen misslyckades",
+      "failedToLoad": "Misslyckades med att ladda filerna. Försök igen senare."
+    },
+    "breadcrumbs": {
+      "classFiles": "Klassfiler"
+    },
+    "search": {
+      "placeholder": "Sök i filer"
+    },
+    "selected": "{count} valda",
+    "filters": {
+      "fileType": "Filtyp",
+      "documents": "Dokument",
+      "images": "Bilder",
+      "videos": "Videor",
+      "presentations": "Presentationer"
+    },
+    "sort": {
+      "name": "Namn",
+      "lastModified": "Senast ändrad",
+      "fileSize": "Fil-storlek"
+    },
+    "table": {
+      "name": "Namn",
+      "owner": "Ägare",
+      "lastModified": "Senast ändrad",
+      "fileSize": "Fil-storlek"
+    },
+    "empty": {
+      "title": "Den här mappen är tom",
+      "description": "Ladda upp filer eller skapa mappar för att börja organisera ditt kursmaterial.",
+      "searchTitle": "Inga filer hittades",
+      "searchDescription": "Inga filer matchar \"{query}\". Försök med en annan sökterm."
+    }
+  },
+  "folderView": {
+    "subtitle": "Mappinnehåll",
+    "notFound": {
+      "title": "Mappen hittades inte",
+      "description": "Den begärda mappen kunde inte hittas.",
+      "backButton": "Tillbaka till filer"
+    },
+    "error": {
+      "loadFailed": "Misslyckades med att ladda mappinnehållet. Försök igen senare."
+    },
+    "breadcrumbs": {
+      "classFiles": "Klassfiler"
+    },
+    "search": {
+      "placeholder": "Sök i mappen",
+      "selected": "{count} valda"
+    },
+    "filters": {
+      "label": "Filtrera",
+      "fileType": "Filtyp",
+      "documents": "Dokument",
+      "images": "Bilder",
+      "videos": "Videor",
+      "presentations": "Presentationer"
+    },
+    "sort": {
+      "label": "Sortera",
+      "name": "Namn",
+      "lastModified": "Senast ändrad",
+      "fileSize": "Fil-storlek"
+    },
+    "table": {
+      "name": "Namn",
+      "owner": "Ägare",
+      "lastModified": "Senast ändrad",
+      "fileSize": "Fil-storlek"
+    },
+    "empty": {
+      "noFilesFound": "Inga filer hittades",
+      "noFilesFoundDescription": "Inga filer matchar \"{query}\". Försök med en annan sökterm.",
+      "folderEmpty": "Den här mappen är tom",
+      "folderEmptyDescription": "Ladda upp filer eller skapa mappar för att organisera ditt material."
+    },
+    "actions": {
+      "newFolder": "Ny mapp",
+      "uploadFiles": "Ladda upp filer",
+      "createFolder": "Skapa mapp"
+    },
+    "toast": {
+      "folderCreated": "Mappen skapades",
+      "folderDeleted": "Mappen har raderats",
+      "folderRenamed": "Mappen har bytt namn",
+      "folderMoved": "Mappen har flyttats",
+      "filesUploaded": "Filerna har laddats upp",
+      "fileDeleted": "Filen har raderats",
+      "fileRenamed": "Filen har bytt namn",
+      "fileMoved": "Filen har flyttats",
+      "downloadStarted": "Nedladdningen har startat",
+      "downloadFailed": "Nedladdningen misslyckades",
+      "shareLinkCopied": "Delningslänk kopierad",
+      "shareFailed": "Delningen misslyckades",
+      "permissionDenied": "Tillstånd nekad"
+    }
+  }
+}

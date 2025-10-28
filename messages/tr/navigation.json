@@ -1,0 +1,54 @@
+{
+  "navigation": {
+    "home": "Ev",
+    "classes": "Sınıflar",
+    "agenda": "Gündem",
+    "chat": "Sohbet",
+    "notifications": "Bildirimler",
+    "profile": "Profil",
+    "settings": "Ayarlar",
+    "signOut": "oturumu Kapat",
+    "accountSettings": "Hesap Ayarları",
+    "pricing": "Fiyatlandırma",
+    "schoolProgram": "Okul Programı",
+    "about": "Hakkında",
+    "press": "Basmak",
+    "signIn": "Giriş Yap"
+  },
+  "classSidebar": {
+    "overview": "Genel Bakış",
+    "assignments": "Atamalar",
+    "grades": "Notlar",
+    "files": "Dosyalar",
+    "attendance": "Katılım",
+    "aiLabs": "AI Labs",
+    "members": "Üyeler",
+    "syllabus": "Müfredat",
+    "settings": "Ayarlar",
+    "classNavigation": "Sınıf Gezintisi",
+    "switchClass": "Anahtar Sınıfı",
+    "classInviteCode": "Sınıf Davetiye Kodu",
+    "copyCode": "Kodu kopyala",
+    "regenerateCode": "Kodu yeniden oluştur",
+    "toast": {
+      "inviteCodeRegenerated": "Davet kodu başarıyla yeniden oluşturuldu",
+      "inviteCodeRegenerateFailed": "Davet kodu yeniden oluşturulamadı",
+      "inviteCodeCopied": "Davet kodu panoya kopyalandı"
+    }
+  },
+  "footer": {
+    "productDescription": "Gelecek nesil eğitim için modern öğrenme yönetimi.",
+    "product": "Ürün",
+    "features": "Özellikler",
+    "pricing": "Fiyatlandırma",
+    "schoolProgram": "Okul Programı",
+    "company": "Şirket",
+    "about": "Hakkında",
+    "team": "Takım",
+    "press": "Basmak",
+    "contact": "Temas etmek",
+    "privacyPolicy": "Gizlilik Politikası",
+    "termsOfService": "Hizmet Şartları",
+    "copyright": "© 2025 Studious LMS. Tüm hakları saklıdır."
+  }
+}

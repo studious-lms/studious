@@ -1,0 +1,140 @@
+{
+  "classGrades": {
+    "title": "Notlar",
+    "subtitle": "Öğrenci notlarını görüntüleyin ve yönetin",
+    "columns": {
+      "assignment": "Atama",
+      "maxPoints": "Maksimum Puan",
+      "weight": "Ağırlık",
+      "graded": "Derecelendirilmiş",
+      "dueDate": "İki Tarih",
+      "actions": "Eylemler",
+      "student": "Öğrenci",
+      "overallGrade": "Genel Not",
+      "assignmentsCompleted": "Tamamlanan Ödevler",
+      "trend": "Trend"
+    },
+    "labels": {
+      "rubric": "Rubrik"
+    },
+    "actions": {
+      "manage": "Üstesinden gelmek",
+      "viewGrades": "Notları Görüntüle",
+      "saving": "Kaydediliyor...",
+      "saveChanges": "Değişiklikleri Kaydet",
+      "preview": "Önizleme",
+      "edit": "Düzenlemek",
+      "delete": "Silmek",
+      "createNew": "Yeni Oluştur"
+    },
+    "overview": {
+      "title": "Sınıf Genel Bakışı",
+      "classAverage": "Sınıf Ortalaması",
+      "totalStudents": "Toplam Öğrenci Sayısı",
+      "assignments": "Atamalar",
+      "submissionRate": "Teslim Oranı"
+    },
+    "assignmentManagement": {
+      "title": "Görev Yönetimi",
+      "empty": {
+        "title": "Hiçbir ödev bulunamadı",
+        "description": "Notları ve ayarları yönetmek için ödevler oluşturun"
+      },
+      "searchPlaceholder": "Arama görevleri..."
+    },
+    "students": {
+      "title": "Öğrenciler",
+      "viewAll": "Tüm Öğrencileri Görüntüle",
+      "empty": {
+        "title": "Kayıtlı öğrenci yok",
+        "description": "Öğrenciler sınıfa katıldığında burada görünecekler"
+      },
+      "searchPlaceholder": "Öğrencileri ara..."
+    },
+    "gradeBoundaries": {
+      "title": "Sınıf Sınırları",
+      "untitled": "Başlıksız Derecelendirme Sınırı",
+      "empty": {
+        "title": "Hiçbir sınıf sınırı oluşturulmadı",
+        "description": "Not aralıklarını tanımlamak için notlandırma sınırları oluşturun"
+      },
+      "previewTitle": "Sınıflandırma Sınırları Önizlemesi",
+      "details": {
+        "title": "Sınıflandırma Sınırı Ayrıntıları",
+        "name": "İsim",
+        "noneDefined": "Sınıflandırma sınırları tanımlanmadı"
+      }
+    },
+    "rubrics": {
+      "title": "Rubrikler",
+      "untitled": "Başlıksız Rubrik",
+      "empty": {
+        "title": "Hiçbir rubrik oluşturulmadı",
+        "description": "Değerlendirme kriterlerini tanımlamak için ölçütler oluşturun"
+      },
+      "previewTitle": "Rubrik Önizlemesi",
+      "details": {
+        "title": "Rubrik Ayrıntıları",
+        "name": "İsim",
+        "category": "Kategori",
+        "description": "Tanım",
+        "custom": "Gelenek",
+        "noDescription": "Hiçbir açıklama sağlanmadı",
+        "noCriteria": "Bu başlıkta hiçbir kriter bulunamadı"
+      }
+    },
+    "confirm": {
+      "deleteRubric": "Bu notlandırma şemasını silmek istediğinizden emin misiniz?",
+      "deleteGradingBoundary": "Bu notlandırma sınırını silmek istediğinizden emin misiniz?"
+    }
+  },
+  "studentGrades": {
+    "title": "Tüm Öğrenci Notları",
+    "allStudents": "Bu sınıftaki tüm öğrencilerin notlarını görüntüleyin ve yönetin",
+    "students": "Öğrenciler",
+    "noGrades": "Hiçbir öğrenci bulunamadı",
+    "noGradesDescription": "Bu sınıfa henüz kayıtlı öğrenci yok. Öğrenciler katıldıktan sonra burada görünecekler.",
+    "table": {
+      "student": "Öğrenci",
+      "actions": "Eylemler"
+    },
+    "actions": {
+      "viewSubmission": "Notları Görüntüle"
+    }
+  },
+  "individualGrades": {
+    "myGrades": "Notlarım",
+    "studentGrades": "Notlar",
+    "viewYourGrades": "Notlarınızı ve ilerlemenizi görüntüleyin",
+    "individualManagement": "Bireysel öğrenci not yönetimi",
+    "export": "İhracat",
+    "back": "Geri",
+    "yourPerformance": "Performansınız",
+    "trackProgress": "Akademik ilerlemenizi takip edin",
+    "overallGrade": "Genel Not",
+    "completed": "Tamamlanmış",
+    "trend": "Trend",
+    "yourGrades": "Notlarınız",
+    "assignments": "Atamalar",
+    "studentNotFound": "Öğrenci bulunamadı",
+    "goBack": "Geri gitmek",
+    "grade": "Seviye",
+    "table": {
+      "assignment": "Atama",
+      "grade": "Seviye",
+      "total": "Toplam",
+      "percentage": "%",
+      "status": "Durum",
+      "submitted": "Sunuldu"
+    },
+    "status": {
+      "graded": "Derecelendirilmiş",
+      "pending": "Askıda olması"
+    },
+    "empty": {
+      "title": "Hiçbir ödev bulunamadı",
+      "description": "Bu öğrencinin görüntülenecek ödevi yok"
+    },
+    "searchPlaceholder": "Arama görevleri..."
+  }
+}

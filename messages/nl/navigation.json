@@ -1,0 +1,54 @@
+{
+  "navigation": {
+    "home": "Thuis",
+    "classes": "Klassen",
+    "agenda": "Agenda",
+    "chat": "Chat",
+    "notifications": "Meldingen",
+    "profile": "Profiel",
+    "settings": "Instellingen",
+    "signOut": "Afmelden",
+    "accountSettings": "Accountinstellingen",
+    "pricing": "Prijzen",
+    "schoolProgram": "Schoolprogramma",
+    "about": "Over",
+    "press": "Pers",
+    "signIn": "Aanmelden"
+  },
+  "classSidebar": {
+    "overview": "Overzicht",
+    "assignments": "Opdrachten",
+    "grades": "Cijfers",
+    "files": "Bestanden",
+    "attendance": "Aanwezigheid",
+    "aiLabs": "AI-labs",
+    "members": "Leden",
+    "syllabus": "Leerplan",
+    "settings": "Instellingen",
+    "classNavigation": "Klasnavigatie",
+    "switchClass": "Schakelklasse",
+    "classInviteCode": "Klasuitnodigingscode",
+    "copyCode": "Kopieer code",
+    "regenerateCode": "Code regenereren",
+    "toast": {
+      "inviteCodeRegenerated": "Uitnodigingscode succesvol opnieuw gegenereerd",
+      "inviteCodeRegenerateFailed": "Het is niet gelukt om de uitnodigingscode opnieuw te genereren",
+      "inviteCodeCopied": "Uitnodigingscode gekopieerd naar klembord"
+    }
+  },
+  "footer": {
+    "productDescription": "Modern leermanagement voor de volgende generatie onderwijs.",
+    "product": "Product",
+    "features": "Functies",
+    "pricing": "Prijzen",
+    "schoolProgram": "Schoolprogramma",
+    "company": "Bedrijf",
+    "about": "Over",
+    "team": "Team",
+    "press": "Pers",
+    "contact": "Contact",
+    "privacyPolicy": "Privacybeleid",
+    "termsOfService": "Servicevoorwaarden",
+    "copyright": "© 2025 Studious LMS. Alle rechten voorbehouden."
+  }
+}

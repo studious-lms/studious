@@ -1,0 +1,63 @@
+{
+  "members": {
+    "title": "Membri",
+    "counts": {
+      "totalMembers": "{count} membri"
+    },
+    "actions": {
+      "inviteMember": "Invită membru",
+      "copy": "Copie",
+      "regenerate": "Regenera",
+      "message": "Mesaj",
+      "viewProfile": "Vizualizare profil",
+      "viewGrades": "Vizualizați notele",
+      "makeTeacher": "Fă-ți profesorul",
+      "makeStudent": "Faceți student",
+      "removeFromClass": "Eliminare din clasă",
+      "removeAccess": "Eliminați accesul",
+      "tryAgain": "Încearcă din nou"
+    },
+    "labels": {
+      "teacher": "Profesor",
+      "student": "Student",
+      "you": "Tu"
+    },
+    "invite": {
+      "title": "Cod de invitație la curs",
+      "description": "Distribuiți acest cod elevilor pentru a se alătura cursului"
+    },
+    "search": {
+      "placeholder": "Căutați membri..."
+    },
+    "tabs": {
+      "students": "Studenți",
+      "teachers": "Profesori"
+    },
+    "students": {
+      "empty": {
+        "title": "Nu s-au găsit studenți",
+        "matchNone": "Niciun student nu corespunde cu „{query}”",
+        "noStudents": "Niciun elev nu s-a alăturat încă acestui curs"
+      }
+    },
+    "teachers": {
+      "empty": {
+        "title": "Nu s-au găsit profesori",
+        "matchNone": "Niciun profesor nu corespunde cu „{query}”",
+        "noTeachers": "Nu au fost adăugați profesori suplimentari"
+      }
+    },
+    "toasts": {
+      "inviteRegenerated": "Codul de invitație a fost regenerat cu succes.",
+      "copied": "Codul de invitație a fost copiat în clipboard",
+      "roleChanged": "Rolul a fost schimbat în {role}",
+      "memberRemoved": "Membrul a fost eliminat cu succes"
+    },
+    "errors": {
+      "regenerateFailed": "Codul de invitație nu a putut fi regenerat.",
+      "changeRoleFailed": "Nu s-a putut schimba rolul",
+      "removeFailed": "Nu s-a putut elimina membrul",
+      "failedToLoad": "Nu s-au putut încărca membrii"
+    }
+  }
+}

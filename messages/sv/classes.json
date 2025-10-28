@@ -1,0 +1,21 @@
+{
+  "classes": {
+    "title": "Klasser",
+    "description": "Hantera din undervisning och dina inskrivna kurser",
+    "joinClass": "Gå med i klassen",
+    "createClass": "Skapa klass",
+    "searchPlaceholder": "Sök kurser...",
+    "teaching": "Undervisning",
+    "enrolled": "Registrerad",
+    "noClassesFound": "Inga klasser hittades",
+    "noTeachingClassesFound": "Inga undervisningskurser hittades som matchar \"{query}\"",
+    "noEnrolledClassesFound": "Inga inskrivna klasser hittades som matchar \"{query}\"",
+    "noClassesYet": "Inga lektioner ännu",
+    "noClassesYetDesc": "Skapa din första kurs för att börja hantera uppgifter, betyg och elevinteraktioner.",
+    "noEnrolledClasses": "Inga inskrivna klasser",
+    "noEnrolledClassesDesc": "Gå med i en kurs med en inbjudningskod eller länk som din lärare har gett dig.",
+    "classDeleted": "Klassen har raderats",
+    "classDeleteFailed": "Misslyckades med att ta bort klassen",
+    "failedToLoad": "Misslyckades med att ladda klasser"
+  }
+}

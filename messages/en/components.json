@@ -77,15 +77,27 @@
     "updateFailed": "Failed to update grading boundary"
   },
   "directUpload": {
-    "uploadingTo": "Uploading to",
-    "folder": "Folder",
-    "preparingUpload": "Preparing upload...",
-    "gettingUrls": "Getting upload URLs...",
-    "uploadingFile": "Uploading {name}...",
-    "uploadComplete": "Upload complete!",
-    "filesUploaded": "{count} files uploaded successfully",
-    "uploadFailed": "Failed to upload files",
-    "close": "Close"
+    "title": "Upload Files",
+    "description": "Select files to upload",
+    "selectFiles": "Select Files",
+    "selectedFiles": "Selected Files ({count})",
+    "maxFiles": "Maximum {max} files. Accepted types: {types}",
+    "allFiles": "All files",
+    "progressUploaded": "{progress}% uploaded",
+    "noFilesSelected": "No files selected",
+    "maxFilesExceeded": "Maximum {max} files allowed",
+    "uploadFailed": "Upload failed: {error}",
+    "uploadFailedGeneric": "Upload failed",
+    "status": {
+      "pending": "Pending",
+      "uploading": "Uploading",
+      "completed": "Completed",
+      "failed": "Failed"
+    },
+    "cancel": "Cancel",
+    "upload": "Upload {count} file",
+    "uploadPlural": "Upload {count} files",
+    "uploading": "Uploading..."
   },
   "chat": {
     "conversationList": {
@@ -132,29 +144,6 @@
     "errorEmpty": "Please enter a section name.",
     "errorCreate": "Failed to create section",
     "errorUpdate": "Failed to update section"
-  },
-  "directUpload": {
-    "title": "Upload Files",
-    "description": "Select files to upload",
-    "selectFiles": "Select Files",
-    "selectedFiles": "Selected Files ({count})",
-    "maxFiles": "Maximum {max} files. Accepted types: {types}",
-    "allFiles": "All files",
-    "progressUploaded": "{progress}% uploaded",
-    "noFilesSelected": "No files selected",
-    "maxFilesExceeded": "Maximum {max} files allowed",
-    "uploadFailed": "Upload failed: {error}",
-    "uploadFailedGeneric": "Upload failed",
-    "status": {
-      "pending": "Pending",
-      "uploading": "Uploading",
-      "completed": "Completed",
-      "failed": "Failed"
-    },
-    "cancel": "Cancel",
-    "upload": "Upload {count} file",
-    "uploadPlural": "Upload {count} files",
-    "uploading": "Uploading..."
   },
   "universalEvent": {
     "titleCreate": "Create New Event",
@@ -240,10 +229,10 @@
     "gradeLevel": "Grade Level *",
     "selectGrade": "Select grade level",
     "grades": {
-      "k2": "K-2",
       "35": "3-5",
       "68": "6-8",
       "912": "9-12",
+      "k2": "K-2",
       "college": "College"
     },
     "duration": "Duration",
@@ -265,4 +254,3 @@
     "creatingLab": "Creating Lab..."
   }
 }
-

@@ -1,0 +1,130 @@
+{
+  "classFiles": {
+    "title": "File",
+    "subtitle": "Gestisci file e risorse di classe",
+    "actions": {
+      "newFolder": "Nuova cartella",
+      "upload": "Caricamento",
+      "uploadFiles": "Carica file",
+      "createFolder": "Crea cartella",
+      "download": "Scaricamento",
+      "share": "Condividere",
+      "delete": "Eliminare",
+      "filter": "Filtro",
+      "sort": "Ordinare"
+    },
+    "toasts": {
+      "folderCreated": "Cartella creata con successo",
+      "folderDeleted": "Cartella eliminata con successo",
+      "folderRenamed": "Cartella rinominata correttamente",
+      "folderMoved": "Cartella spostata con successo",
+      "filesUploaded": "File caricati con successo",
+      "fileDeleted": "File eliminato con successo",
+      "fileRenamed": "File rinominato correttamente",
+      "fileMoved": "File spostato con successo",
+      "downloadStarted": "Download avviato",
+      "shareCopied": "Condividi il link copiato"
+    },
+    "errors": {
+      "teacherOnly": "Solo gli insegnanti possono modificare i file.",
+      "downloadFailed": "Download non riuscito",
+      "shareFailed": "Condivisione non riuscita",
+      "failedToLoad": "Impossibile caricare i file. Riprova più tardi."
+    },
+    "breadcrumbs": {
+      "classFiles": "File di classe"
+    },
+    "search": {
+      "placeholder": "Cerca nei file"
+    },
+    "selected": "{count} selezionati",
+    "filters": {
+      "fileType": "Tipo di file",
+      "documents": "Documenti",
+      "images": "Immagini",
+      "videos": "Video",
+      "presentations": "Presentazioni"
+    },
+    "sort": {
+      "name": "Nome",
+      "lastModified": "Ultima modifica",
+      "fileSize": "Dimensione del file"
+    },
+    "table": {
+      "name": "Nome",
+      "owner": "Proprietario",
+      "lastModified": "Ultima modifica",
+      "fileSize": "Dimensione del file"
+    },
+    "empty": {
+      "title": "Questa cartella è vuota",
+      "description": "Carica file o crea cartelle per iniziare a organizzare il materiale didattico.",
+      "searchTitle": "Nessun file trovato",
+      "searchDescription": "Nessun file corrisponde a \"{query}\". Prova un termine di ricerca diverso."
+    }
+  },
+  "folderView": {
+    "subtitle": "Contenuto della cartella",
+    "notFound": {
+      "title": "Cartella non trovata",
+      "description": "Impossibile trovare la cartella richiesta.",
+      "backButton": "Torna ai file"
+    },
+    "error": {
+      "loadFailed": "Impossibile caricare il contenuto della cartella. Riprova più tardi."
+    },
+    "breadcrumbs": {
+      "classFiles": "File di classe"
+    },
+    "search": {
+      "placeholder": "Cerca nella cartella",
+      "selected": "{count} selezionati"
+    },
+    "filters": {
+      "label": "Filtro",
+      "fileType": "Tipo di file",
+      "documents": "Documenti",
+      "images": "Immagini",
+      "videos": "Video",
+      "presentations": "Presentazioni"
+    },
+    "sort": {
+      "label": "Ordinare",
+      "name": "Nome",
+      "lastModified": "Ultima modifica",
+      "fileSize": "Dimensione del file"
+    },
+    "table": {
+      "name": "Nome",
+      "owner": "Proprietario",
+      "lastModified": "Ultima modifica",
+      "fileSize": "Dimensione del file"
+    },
+    "empty": {
+      "noFilesFound": "Nessun file trovato",
+      "noFilesFoundDescription": "Nessun file corrisponde a \"{query}\". Prova un termine di ricerca diverso.",
+      "folderEmpty": "Questa cartella è vuota",
+      "folderEmptyDescription": "Carica file o crea cartelle per organizzare i tuoi materiali."
+    },
+    "actions": {
+      "newFolder": "Nuova cartella",
+      "uploadFiles": "Carica file",
+      "createFolder": "Crea cartella"
+    },
+    "toast": {
+      "folderCreated": "Cartella creata con successo",
+      "folderDeleted": "Cartella eliminata con successo",
+      "folderRenamed": "Cartella rinominata correttamente",
+      "folderMoved": "Cartella spostata con successo",
+      "filesUploaded": "File caricati con successo",
+      "fileDeleted": "File eliminato con successo",
+      "fileRenamed": "File rinominato correttamente",
+      "fileMoved": "File spostato con successo",
+      "downloadStarted": "Download avviato",
+      "downloadFailed": "Download non riuscito",
+      "shareLinkCopied": "Condividi il link copiato",
+      "shareFailed": "Condivisione non riuscita",
+      "permissionDenied": "Permesso negato"
+    }
+  }
+}

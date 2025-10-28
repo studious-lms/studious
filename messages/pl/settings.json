@@ -1,0 +1,66 @@
+{
+  "settings": {
+    "title": "Ustawienia klasy",
+    "subtitle": "Skonfiguruj szczegóły i preferencje klasy",
+    "labels": {
+      "unsavedChanges": "Niezapisane zmiany"
+    },
+    "actions": {
+      "saving": "Oszczędność...",
+      "saveChanges": "Zapisz zmiany",
+      "deleting": "Usuwanie...",
+      "deleteClass": "Usuń klasę",
+      "cancel": "Anulować"
+    },
+    "sections": {
+      "basicInfo": {
+        "title": "Informacje podstawowe"
+      },
+      "theme": {
+        "title": "Temat klasy",
+        "description": "Wybierz kolor motywu dla tej klasy"
+      },
+      "danger": {
+        "title": "Strefa zagrożenia",
+        "description": "Po usunięciu zajęć nie ma już odwrotu. Spowoduje to trwałe usunięcie wszystkich zadań, ocen i zapisów obecności oraz usunięcie wszystkich uczniów z zajęć."
+      }
+    },
+    "fields": {
+      "className": "Nazwa klasy",
+      "section": "Sekcja",
+      "subject": "Temat"
+    },
+    "placeholders": {
+      "className": "np. zaawansowana fizyka",
+      "section": "np. AP-101",
+      "subject": "np. fizyka"
+    },
+    "toasts": {
+      "updated": {
+        "title": "Klasa zaktualizowana",
+        "description": "Ustawienia klasy zostały pomyślnie zapisane."
+      },
+      "deleted": {
+        "title": "Klasa usunięta",
+        "description": "Klasa została trwale usunięta."
+      }
+    },
+    "errors": {
+      "updateFailed": {
+        "title": "Aktualizacja nie powiodła się",
+        "description": "Nie udało się zapisać ustawień klasy. Spróbuj ponownie."
+      }
+    },
+    "confirm": {
+      "title": "Czy jesteś absolutnie pewien?",
+      "description": "Tej czynności nie można cofnąć. Spowoduje to trwałe usunięcie klasy „{name}” i usunięcie wszystkich powiązanych z nią danych, w tym:",
+      "items": {
+        "assignments": "Wszystkie zadania i zgłoszenia",
+        "records": "Wszystkie oceny i zapisy obecności",
+        "students": "Wszyscy uczniowie zostaną usunięci z klasy",
+        "events": "Wszystkie wydarzenia i ogłoszenia klasowe"
+      },
+      "confirmDelete": "Tak, usuń klasę"
+    }
+  }
+}

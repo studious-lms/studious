@@ -1,0 +1,54 @@
+{
+  "assignmentDetail": {
+    "title": "Dettagli dell'incarico",
+    "description": "Descrizione",
+    "instructions": "Istruzioni",
+    "dueDate": "Due date",
+    "maxPoints": "Punti massimi",
+    "submissions": "Invii",
+    "submitted": "Inviato",
+    "notSubmitted": "Non inviato",
+    "graded": "Classificato",
+    "pending": "In attesa di",
+    "late": "Tardi",
+    "onTime": "In tempo",
+    "attachments": "Allegati",
+    "rubric": "Rubrica",
+    "gradingBoundary": "Confine di classificazione",
+    "submissionDetails": "Dettagli di invio",
+    "submittedBy": "Inviato da",
+    "submittedAt": "Inviato a",
+    "grade": "Grado",
+    "feedback": "Feedback",
+    "files": "File",
+    "noFiles": "Nessun file allegato",
+    "noSubmissions": "Nessuna presentazione ancora",
+    "noSubmissionsDescription": "Gli invii appariranno qui una volta che gli studenti avranno inviato il loro lavoro",
+    "actions": {
+      "edit": "Modifica assegnazione",
+      "delete": "Elimina assegnazione",
+      "viewSubmission": "Visualizza invio",
+      "gradeSubmission": "Grado",
+      "downloadAll": "Scarica tutto",
+      "exportGrades": "Gradi di esportazione"
+    },
+    "stats": {
+      "totalSubmissions": "Totale invii",
+      "averageGrade": "voto medio",
+      "submissionRate": "Tasso di invio",
+      "gradedCount": "Classificato"
+    },
+    "table": {
+      "student": "Studente",
+      "status": "Stato",
+      "grade": "Grado",
+      "submittedAt": "Inviato",
+      "actions": "Azioni"
+    },
+    "toasts": {
+      "gradeUpdated": "Grado aggiornato con successo",
+      "deleted": "Assegnazione eliminata",
+      "error": "Si è verificato un errore"
+    }
+  }
+}

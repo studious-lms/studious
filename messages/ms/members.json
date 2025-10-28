@@ -1,0 +1,63 @@
+{
+  "members": {
+    "title": "ahli",
+    "counts": {
+      "totalMembers": "{count} ahli"
+    },
+    "actions": {
+      "inviteMember": "Jemput Ahli",
+      "copy": "salin",
+      "regenerate": "Menjana semula",
+      "message": "Mesej",
+      "viewProfile": "Lihat Profil",
+      "viewGrades": "Lihat Gred",
+      "makeTeacher": "Buat Cikgu",
+      "makeStudent": "Buat Pelajar",
+      "removeFromClass": "Alih keluar dari Kelas",
+      "removeAccess": "Alih keluar Akses",
+      "tryAgain": "Cuba Lagi"
+    },
+    "labels": {
+      "teacher": "cikgu",
+      "student": "Pelajar",
+      "you": "awak"
+    },
+    "invite": {
+      "title": "Kod Jemputan Kelas",
+      "description": "Kongsi kod ini dengan pelajar untuk menyertai kelas"
+    },
+    "search": {
+      "placeholder": "Cari ahli..."
+    },
+    "tabs": {
+      "students": "pelajar",
+      "teachers": "guru-guru"
+    },
+    "students": {
+      "empty": {
+        "title": "Tiada pelajar ditemui",
+        "matchNone": "Tiada pelajar yang sepadan dengan \"{query}\"",
+        "noStudents": "Belum ada pelajar yang menyertai kelas ini"
+      }
+    },
+    "teachers": {
+      "empty": {
+        "title": "Tiada guru ditemui",
+        "matchNone": "Tiada guru yang sepadan dengan \"{query}\"",
+        "noTeachers": "Tiada guru tambahan telah ditambah"
+      }
+    },
+    "toasts": {
+      "inviteRegenerated": "Kod jemputan berjaya dijana semula",
+      "copied": "Kod jemputan disalin ke papan keratan",
+      "roleChanged": "Peranan ditukar kepada {role}",
+      "memberRemoved": "Ahli berjaya dialih keluar"
+    },
+    "errors": {
+      "regenerateFailed": "Gagal menjana semula kod jemputan",
+      "changeRoleFailed": "Gagal menukar peranan",
+      "removeFailed": "Gagal mengalih keluar ahli",
+      "failedToLoad": "Gagal memuatkan ahli"
+    }
+  }
+}

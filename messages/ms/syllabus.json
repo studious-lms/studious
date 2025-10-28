@@ -1,0 +1,66 @@
+{
+  "syllabus": {
+    "title": "Sukatan pelajaran",
+    "subtitle": "Gambaran keseluruhan kursus dan maklumat akademik",
+    "actions": {
+      "saveChanges": "Simpan Perubahan",
+      "cancel": "Batal",
+      "edit": "Edit Sukatan Pelajaran"
+    },
+    "errors": {
+      "failedToLoad": "Gagal memuatkan sukatan pelajaran",
+      "tryLater": "Sila cuba lagi kemudian."
+    },
+    "stats": {
+      "totalAssignments": "Jumlah Tugasan",
+      "completionRate": "Kadar Penyiapan",
+      "totalPoints": "Jumlah Mata",
+      "upcoming": "Akan datang"
+    },
+    "overview": {
+      "title": "Gambaran Keseluruhan Kursus",
+      "placeholder": "Masukkan gambaran keseluruhan kursus, objektif dan maklumat penting lain...",
+      "helper": "Masukkan maklumat kursus anda, objektif pembelajaran, dasar dan butiran penting lain.",
+      "empty": {
+        "title": "Tiada kandungan silibus lagi",
+        "description": "Klik 'Edit Sukatan Pelajaran' untuk menambah maklumat kursus, objektif pembelajaran, dasar dan banyak lagi."
+      }
+    },
+    "assignments": {
+      "title": "Tugasan Kursus",
+      "gradedCount": "{gred} tugasan gred",
+      "totalPoints": "{total} jumlah mata",
+      "empty": {
+        "title": "Tiada tugasan lagi",
+        "description": "Tugasan akan dipaparkan di sini sebaik sahaja ia dibuat."
+      }
+    },
+    "table": {
+      "assignment": "Tugasan",
+      "dueDate": "Dua Kurma",
+      "points": "mata",
+      "weight": "Berat badan",
+      "status": "Status",
+      "pts": "mata"
+    },
+    "status": {
+      "graded": "Digredkan",
+      "pending": "Belum selesai"
+    },
+    "courseInfo": {
+      "title": "Maklumat Kursus",
+      "basic": {
+        "title": "Maklumat Asas",
+        "className": "Nama Kelas",
+        "section": "Bahagian",
+        "subject": "Subjek"
+      },
+      "stats": {
+        "title": "Statistik Kursus",
+        "totalAssignments": "Jumlah Tugasan",
+        "gradedAssignments": "Tugasan Berperingkat",
+        "totalPoints": "Jumlah Mata"
+      }
+    }
+  }
+}

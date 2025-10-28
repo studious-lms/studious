@@ -1,0 +1,54 @@
+{
+  "navigation": {
+    "home": "Rumah",
+    "classes": "Kelas",
+    "agenda": "Agenda",
+    "chat": "Sembang",
+    "notifications": "Pemberitahuan",
+    "profile": "Profil",
+    "settings": "tetapan",
+    "signOut": "Log keluar",
+    "accountSettings": "Tetapan Akaun",
+    "pricing": "penetapan harga",
+    "schoolProgram": "Program Sekolah",
+    "about": "Tentang",
+    "press": "Tekan",
+    "signIn": "Log Masuk"
+  },
+  "classSidebar": {
+    "overview": "Gambaran keseluruhan",
+    "assignments": "Tugasan",
+    "grades": "Gred",
+    "files": "Fail",
+    "attendance": "Kehadiran",
+    "aiLabs": "Makmal AI",
+    "members": "ahli",
+    "syllabus": "Sukatan pelajaran",
+    "settings": "tetapan",
+    "classNavigation": "Navigasi Kelas",
+    "switchClass": "Tukar Kelas",
+    "classInviteCode": "Kod Jemputan Kelas",
+    "copyCode": "Salin kod",
+    "regenerateCode": "Menjana semula kod",
+    "toast": {
+      "inviteCodeRegenerated": "Kod jemputan berjaya dijana semula",
+      "inviteCodeRegenerateFailed": "Gagal menjana semula kod jemputan",
+      "inviteCodeCopied": "Kod jemputan disalin ke papan keratan"
+    }
+  },
+  "footer": {
+    "productDescription": "Pengurusan pembelajaran moden untuk pendidikan generasi akan datang.",
+    "product": "produk",
+    "features": "Ciri-ciri",
+    "pricing": "penetapan harga",
+    "schoolProgram": "Program Sekolah",
+    "company": "Syarikat",
+    "about": "Tentang",
+    "team": "Pasukan",
+    "press": "Tekan",
+    "contact": "Kenalan",
+    "privacyPolicy": "Dasar Privasi",
+    "termsOfService": "Syarat Perkhidmatan",
+    "copyright": "© 2025 Studious LMS. Semua hak terpelihara."
+  }
+}

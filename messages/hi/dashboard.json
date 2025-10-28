@@ -1,0 +1,44 @@
+{
+  "home": {
+    "welcomeBack": "आपका पुनः स्वागत है, {नाम}!",
+    "subtitle": "आज आपकी कक्षाओं में क्या हो रहा है, यहां बताया गया है।",
+    "stats": {
+      "totalClasses": "कुल कक्षाएं",
+      "teachingEnrolled": "{शिक्षण} शिक्षण, {नामांकित} नामांकित",
+      "dueToday": "आज देय",
+      "dueTodayDesc": "आज जमा करने हैं असाइनमेंट",
+      "upcoming": "आगामी",
+      "upcomingDesc": "आने वाले कार्य",
+      "thisWeek": "इस सप्ताह",
+      "totalAssignments": "कुल असाइनमेंट"
+    },
+    "upcomingAssignments": {
+      "title": "आगामी असाइनमेंट",
+      "subtitle": "आपकी अगली समय सीमाएँ",
+      "allCaughtUp": "सारी जानकारी प्राप्त!",
+      "noUpcoming": "फिलहाल कोई आगामी कार्य नहीं है।",
+      "viewAgenda": "एजेंडा देखें",
+      "dueToday": "आज देय",
+      "dueTomorrow": "कल देय",
+      "due": "दो {तिथियाँ}",
+      "teaching": "शिक्षण",
+      "viewAllAssignments": "सभी असाइनमेंट देखें"
+    },
+    "notifications": {
+      "title": "हाल की सूचनाएं",
+      "subtitle": "नवीनतम अपडेट",
+      "noNew": "कोई नए संदेश नहीं",
+      "viewAll": "सभी सूचनाएं देखें"
+    },
+    "classes": {
+      "title": "मेरी कक्षाएँ",
+      "subtitle": "अपनी कक्षाओं तक त्वरित पहुँच",
+      "teaching": "शिक्षण",
+      "enrolled": "दाखिला लिया",
+      "due": "देय",
+      "noClasses": "अभी तक कोई कक्षा नहीं",
+      "browseClasses": "कक्षाएं ब्राउज़ करें",
+      "viewAllClasses": "सभी कक्षाएं देखें"
+    }
+  }
+}

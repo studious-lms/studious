@@ -1,0 +1,12 @@
+{
+  "overview": {
+    "assignments": "Incarichi",
+    "students": "studenti",
+    "attendance": "Presenza",
+    "attachFile": "Allega file",
+    "post": "Inviare",
+    "posting": "Pubblicazione in corso...",
+    "noPosts": "Nessun post ancora",
+    "createFirstPost": "Crea il primo post"
+  }
+}

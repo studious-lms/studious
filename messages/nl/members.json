@@ -1,0 +1,63 @@
+{
+  "members": {
+    "title": "Leden",
+    "counts": {
+      "totalMembers": "{count} leden"
+    },
+    "actions": {
+      "inviteMember": "Lid uitnodigen",
+      "copy": "Kopiëren",
+      "regenerate": "Regenereren",
+      "message": "Bericht",
+      "viewProfile": "Bekijk profiel",
+      "viewGrades": "Bekijk cijfers",
+      "makeTeacher": "Maak leraar",
+      "makeStudent": "Maak student",
+      "removeFromClass": "Verwijderen uit de klas",
+      "removeAccess": "Toegang verwijderen",
+      "tryAgain": "Probeer het opnieuw"
+    },
+    "labels": {
+      "teacher": "Docent",
+      "student": "Student",
+      "you": "Jij"
+    },
+    "invite": {
+      "title": "Klasuitnodigingscode",
+      "description": "Deel deze code met studenten om deel te nemen aan de les"
+    },
+    "search": {
+      "placeholder": "Zoek leden..."
+    },
+    "tabs": {
+      "students": "Studenten",
+      "teachers": "Leraren"
+    },
+    "students": {
+      "empty": {
+        "title": "Geen studenten gevonden",
+        "matchNone": "Er zijn geen studenten die overeenkomen met \"{query}\"",
+        "noStudents": "Er zijn nog geen studenten bij deze klas gekomen"
+      }
+    },
+    "teachers": {
+      "empty": {
+        "title": "Geen leraren gevonden",
+        "matchNone": "Geen docenten gevonden die overeenkomen met \"{query}\"",
+        "noTeachers": "Er zijn geen extra docenten toegevoegd"
+      }
+    },
+    "toasts": {
+      "inviteRegenerated": "Uitnodigingscode succesvol opnieuw gegenereerd",
+      "copied": "Uitnodigingscode gekopieerd naar klembord",
+      "roleChanged": "Rol gewijzigd naar {role}",
+      "memberRemoved": "Lid succesvol verwijderd"
+    },
+    "errors": {
+      "regenerateFailed": "Het is niet gelukt om de uitnodigingscode opnieuw te genereren",
+      "changeRoleFailed": "Het is niet gelukt om de rol te veranderen",
+      "removeFailed": "Lid verwijderen mislukt",
+      "failedToLoad": "Het laden van leden is mislukt"
+    }
+  }
+}

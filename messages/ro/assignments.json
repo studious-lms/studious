@@ -1,0 +1,54 @@
+{
+  "assignmentDetail": {
+    "title": "Detalii despre sarcină",
+    "description": "Descriere",
+    "instructions": "Instrucţiuni",
+    "dueDate": "Două întâlniri",
+    "maxPoints": "Puncte maxime",
+    "submissions": "Trimiteri",
+    "submitted": "Trimis",
+    "notSubmitted": "Netrimis",
+    "graded": "Gradat",
+    "pending": "În așteptare",
+    "late": "Târziu",
+    "onTime": "La timp",
+    "attachments": "Atașamente",
+    "rubric": "Rubrică",
+    "gradingBoundary": "Limită de gradare",
+    "submissionDetails": "Detalii despre trimitere",
+    "submittedBy": "Trimis de",
+    "submittedAt": "Trimis la",
+    "grade": "Grad",
+    "feedback": "Feedback",
+    "files": "Fișiere",
+    "noFiles": "Niciun fișier atașat",
+    "noSubmissions": "Nicio trimitere încă",
+    "noSubmissionsDescription": "Lucrările trimise vor apărea aici odată ce studenții își trimit lucrările",
+    "actions": {
+      "edit": "Editează sarcina",
+      "delete": "Ștergeți sarcina",
+      "viewSubmission": "Vizualizați trimiterea",
+      "gradeSubmission": "Grad",
+      "downloadAll": "Descărcați tot",
+      "exportGrades": "Clase de export"
+    },
+    "stats": {
+      "totalSubmissions": "Total trimiteri",
+      "averageGrade": "Nota medie",
+      "submissionRate": "Rata de trimitere",
+      "gradedCount": "Gradat"
+    },
+    "table": {
+      "student": "Student",
+      "status": "Stare",
+      "grade": "Grad",
+      "submittedAt": "Trimis",
+      "actions": "Acțiuni"
+    },
+    "toasts": {
+      "gradeUpdated": "Nota a fost actualizată cu succes",
+      "deleted": "Tema a fost ștearsă",
+      "error": "A apărut o eroare"
+    }
+  }
+}

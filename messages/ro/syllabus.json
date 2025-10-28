@@ -1,0 +1,66 @@
+{
+  "syllabus": {
+    "title": "Programă",
+    "subtitle": "Prezentare generală a cursului și informații academice",
+    "actions": {
+      "saveChanges": "Salvați modificările",
+      "cancel": "Anula",
+      "edit": "Editați programa"
+    },
+    "errors": {
+      "failedToLoad": "Nu s-a putut încărca programa",
+      "tryLater": "Vă rugăm să încercați din nou mai târziu."
+    },
+    "stats": {
+      "totalAssignments": "Total sarcini",
+      "completionRate": "Rata de finalizare",
+      "totalPoints": "Total puncte",
+      "upcoming": "Viitoare"
+    },
+    "overview": {
+      "title": "Prezentare generală a cursului",
+      "placeholder": "Introduceți prezentarea generală a cursului, obiectivele și alte informații importante...",
+      "helper": "Introduceți informațiile despre curs, obiectivele de învățare, politicile și alte detalii importante.",
+      "empty": {
+        "title": "Încă nu există conținut pentru programa didactică",
+        "description": "Faceți clic pe „Modificați programa” pentru a adăuga informații despre curs, obiective de învățare, politici și multe altele."
+      }
+    },
+    "assignments": {
+      "title": "Teme de curs",
+      "gradedCount": "teme notate cu {notă}",
+      "totalPoints": "{total} puncte totale",
+      "empty": {
+        "title": "Nicio sarcină încă",
+        "description": "Temele vor apărea aici odată ce sunt create."
+      }
+    },
+    "table": {
+      "assignment": "Sarcină",
+      "dueDate": "Două întâlniri",
+      "points": "Puncte",
+      "weight": "Greutate",
+      "status": "Stare",
+      "pts": "puncte"
+    },
+    "status": {
+      "graded": "Gradat",
+      "pending": "În așteptare"
+    },
+    "courseInfo": {
+      "title": "Informații despre curs",
+      "basic": {
+        "title": "Informații de bază",
+        "className": "Numele clasei",
+        "section": "Secțiune",
+        "subject": "Subiect"
+      },
+      "stats": {
+        "title": "Statistici ale cursului",
+        "totalAssignments": "Total sarcini",
+        "gradedAssignments": "Teme notate",
+        "totalPoints": "Total puncte"
+      }
+    }
+  }
+}

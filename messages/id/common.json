@@ -1,0 +1,1218 @@
+{
+  "common": {
+    "save": "Menyimpan",
+    "cancel": "Membatalkan",
+    "delete": "Menghapus",
+    "edit": "Sunting",
+    "submit": "Kirim",
+    "close": "Menutup",
+    "back": "Kembali",
+    "next": "Berikutnya",
+    "loading": "Memuat...",
+    "search": "Mencari",
+    "filter": "Menyaring",
+    "sort": "Menyortir",
+    "viewAll": "Lihat Semua",
+    "noData": "Tidak ada data tersedia",
+    "export": "Ekspor"
+  },
+  "time": {
+    "today": "Hari ini",
+    "tomorrow": "Besok",
+    "yesterday": "Kemarin",
+    "thisWeek": "Minggu Ini",
+    "nextWeek": "Minggu Depan",
+    "lastWeek": "Minggu lalu"
+  },
+  "errors": {
+    "somethingWentWrong": "Ada yang salah",
+    "tryAgain": "Coba lagi",
+    "pageNotFound": "Halaman tidak ditemukan",
+    "unauthorized": "Akses tidak sah"
+  },
+  "auth": {
+    "login": {
+      "title": "Selamat Datang kembali",
+      "subtitle": "Masuk ke akun Studious Anda",
+      "username": "Nama belakang",
+      "password": "Kata sandi",
+      "forgotPassword": "Lupa kata sandi?",
+      "signIn": "Masuk",
+      "signingIn": "Masuk...",
+      "noAccount": "Belum punya akun?",
+      "signUp": "Mendaftar",
+      "successMessage": "Berhasil masuk",
+      "cancel": "Membatalkan"
+    },
+    "signup": {
+      "title": "Buat akun Anda",
+      "subtitle": "Bergabunglah dengan Studious dan mulai belajar",
+      "signUp": "Mendaftar",
+      "firstName": "Nama depan",
+      "lastName": "Nama Belakang",
+      "email": "E-mail",
+      "password": "Kata sandi",
+      "confirmPassword": "Konfirmasi Kata Sandi",
+      "firstNamePlaceholder": "Nama depan",
+      "lastNamePlaceholder": "Nama belakang",
+      "emailPlaceholder": "Masukkan email Anda",
+      "passwordPlaceholder": "Buat kata sandi",
+      "confirmPasswordPlaceholder": "Konfirmasikan kata sandi Anda",
+      "agreeToTerms": "Saya setuju dengan",
+      "termsOfService": "Ketentuan Layanan",
+      "and": "Dan",
+      "privacyPolicy": "Kebijakan Privasi",
+      "createAccount": "Buat Akun",
+      "creatingAccount": "Membuat akun...",
+      "alreadyHaveAccount": "Sudah punya akun?",
+      "signIn": "Masuk",
+      "passwordMismatch": "Kata sandi tidak cocok",
+      "termsRequired": "Anda harus menyetujui persyaratannya",
+      "accountCreated": "Akun berhasil dibuat!",
+      "signUpFailed": "Gagal membuat akun"
+    },
+    "verification": {
+      "notVerified": "Akun Belum Diverifikasi",
+      "message": "Akun Anda perlu diverifikasi sebelum Anda dapat masuk. Silakan periksa email Anda untuk tautan verifikasi.",
+      "emailSentTo": "Email verifikasi dikirim ke:",
+      "resendEmail": "Kirim Ulang Email Verifikasi",
+      "backToSignIn": "Kembali ke Masuk",
+      "emailSent": "Email verifikasi telah terkirim!",
+      "checkInbox": "Silakan periksa kotak masuk dan folder spam Anda.",
+      "enterEmail": "Masukkan alamat email Anda",
+      "sending": "Mengirim...",
+      "sendEmail": "Kirim Email"
+    }
+  },
+  "marketing": {
+    "navbar": {
+      "requestEarlyAccess": "Minta Akses Awal"
+    },
+    "hero": {
+      "badge": "Platform Pembelajaran Modern",
+      "title1": "Lancar dan bebas gangguan",
+      "title2": "pembelajaran untuk sekolah modern",
+      "subtitle": "Studious LMS mengintegrasikan AI, kalender waktu nyata, dan komunikasi kelas menjadi satu platform yang kohesif — yang dirancang untuk membantu guru mengajar dan siswa berkembang.",
+      "requestEarlyAccess": "Minta Akses Awal",
+      "watchDemo": "Tonton Demo",
+      "altDashboard": "Dasbor Platform"
+    },
+    "problem": {
+      "title": "Portal sekolah tradisional terfragmentasi dan ketinggalan zaman",
+      "issue1": "Guru membuang-buang waktu untuk beralih di antara beberapa alat",
+      "issue2": "Siswa berjuang dengan organisasi dan tenggat waktu",
+      "issue3": "AI masih kurang terintegrasi dalam alur kerja sekolah yang sebenarnya"
+    },
+    "response": {
+      "title1": "LMS Studious menyatukan pengajaran, pembelajaran,",
+      "title2": "dan komunikasi ke dalam satu ruang kerja",
+      "subtitle": "Dibangun dengan kerangka kerja mutakhir dan desain yang berpusat pada manusia, sistem ini dirancang untuk diterapkan di sekolah dengan ukuran berapa pun."
+    },
+    "features": {
+      "title": "Fitur Utama",
+      "subtitle": "Segala yang Anda butuhkan untuk mengelola pengalaman belajar modern",
+      "ai": {
+        "title": "Asisten AI",
+        "description": "Membantu membuat materi belajar, meringkas konten, dan membantu penilaian"
+      },
+      "classManagement": {
+        "title": "Manajemen Kelas",
+        "description": "Atur kelas, tugas, dan kehadiran dengan mudah"
+      },
+      "assignments": {
+        "title": "Tugas",
+        "description": "Buat, kumpulkan, dan nilai kiriman siswa secara efisien"
+      },
+      "calendar": {
+        "title": "Kalender",
+        "description": "Sinkronisasi waktu nyata dengan tugas, pelajaran, dan acara"
+      },
+      "analytics": {
+        "title": "Analitik",
+        "description": "Lihat wawasan tentang kinerja, partisipasi, dan keterlibatan"
+      },
+      "communication": {
+        "title": "Komunikasi",
+        "description": "Pesan dan pengumuman terintegrasi untuk kolaborasi terpadu"
+      }
+    },
+    "quote": {
+      "text": "Setiap fitur di Studious dibuat untuk mengurangi hambatan — bukan menambahnya."
+    },
+    "pricing": {
+      "title": "Pilih paket yang tepat untuk institusi Anda",
+      "subtitle": "Harga yang sederhana dan transparan tanpa biaya tersembunyi. Semua paket mencakup fitur-fitur inti dengan opsi yang dapat disesuaikan.",
+      "starter": {
+        "title": "Starter",
+        "price": "Bebas",
+        "note": "Akses beta disertakan",
+        "description": "Sempurna untuk kelas kecil & program percontohan",
+        "perk1": "Hingga 30 siswa",
+        "perk2": "Kelas tak terbatas",
+        "perk3": "Fitur inti (tugas, kalender, nilai)",
+        "perk4": "Asisten AI (5 obrolan/bulan)",
+        "perk5": "Dukungan komunitas",
+        "perk6": "Penyimpanan 5GB",
+        "button": "Mulai Gratis"
+      },
+      "school": {
+        "title": "Sekolah",
+        "price": "$5",
+        "priceUnit": "/pengguna/bulan",
+        "note": "Ditagih setiap tahun atau $6/bulan",
+        "description": "Untuk sekolah dengan jumlah siswa hingga 1.000 siswa",
+        "perk1": "Siswa tak terbatas",
+        "perk2": "Kelas tak terbatas",
+        "perk3": "Semua fitur inti",
+        "perk4": "Asisten AI (pertanyaan tak terbatas)",
+        "perk5": "Yang pertama dalam antrean untuk akses beta Studious CMS",
+        "button": "Memulai"
+      },
+      "institution": {
+        "title": "Lembaga",
+        "price": "Kebiasaan",
+        "note": "Disesuaikan dengan kebutuhan Anda",
+        "description": "Untuk sekolah & universitas besar (1.000+ siswa)",
+        "perk1": "Rencana Segalanya di Sekolah",
+        "perk2": "Dukungan prioritas 24/7",
+        "perk3": "Penyimpanan tak terbatas",
+        "perk4": "Pelatihan & orientasi khusus",
+        "perk5": "Biaya per pengguna lebih murah",
+        "button": "Hubungi Penjualan"
+      },
+      "mostPopular": "Paling Populer",
+      "earlyBird": "🎉 Pengguna awal menerima <strong>3 bulan gratis</strong> untuk paket tahunan + dukungan orientasi khusus"
+    },
+    "schoolProgram": {
+      "badge": "Dampak Sosial",
+      "title": "Program Pengembangan Sekolah Studious",
+      "subtitle": "Kami percaya setiap siswa berhak mendapatkan akses ke alat bantu pembelajaran modern, terlepas dari situasi ekonomi sekolah mereka.",
+      "feature1Title": "Akses 100% Gratis",
+      "feature1Description": "Akses platform penuh dengan semua fitur untuk sekolah yang memenuhi syarat",
+      "feature2Title": "Dukungan Khusus",
+      "feature2Description": "Prioritas orientasi dan pelatihan bagi guru dan staf",
+      "feature3Title": "Sumber Daya Pendidikan",
+      "feature3Description": "Materi pengajaran gratis dan dukungan kurikulum",
+      "applyNow": "Lamaran Sekarang",
+      "learnMore": "Pelajari Lebih Lanjut",
+      "eligibilityTitle": "Kelayakan Program",
+      "qualifyingTitle": "Sekolah yang Memenuhi Syarat:",
+      "qualify1": "Sekolah negeri di komunitas kurang terlayani",
+      "qualify2": "Lembaga pendidikan nirlaba terdaftar",
+      "qualify3": "Sekolah di wilayah berkembang",
+      "qualify4": "Sekolah Judul I (AS) atau setara",
+      "commitmentTitle": "Komitmen Kami:",
+      "commitment": "10% pelanggan berbayar kami mendukung akses gratis bagi sekolah yang membutuhkan.",
+      "launchTitle": "Peluncuran Program:",
+      "launch": "Januari 2026 • Pendaftaran sudah dibuka"
+    },
+    "futureDevelopments": {
+      "title": "Perkembangan Masa Depan",
+      "subtitle": "Peta jalan kami untuk transformasi pendidikan",
+      "cas": {
+        "title": "Perspektif CAS",
+        "description": "Mendukung sekolah-sekolah yang kekurangan dana melalui sumbangan dan materi, menjadikan pendidikan bermutu dapat diakses oleh semua orang."
+      },
+      "features": {
+        "title": "Fitur Perspektif",
+        "description": "Memperluas dukungan siswa AI dan membangun integrasi API untuk berbagai sistem pendidikan di seluruh dunia."
+      },
+      "launch": {
+        "title": "Perspektif Peluncuran",
+        "description": "Presentasi di sekolah, universitas, dan konferensi untuk membentuk kembali pengalaman belajar."
+      }
+    },
+    "cta": {
+      "title": "Siap untuk mendefinisikan ulang cara sekolah Anda belajar dan mengajar?",
+      "subtitle": "Bergabunglah dengan masa depan pendidikan dengan Studious LMS",
+      "requestAccess": "Minta Akses",
+      "partnerWithUs": "Bermitra dengan Kami",
+      "tagline": "Studious LMS — Pembelajaran Modern, Sederhana."
+    }
+  },
+  "press": {
+    "badge": "Pers & Media",
+    "title": "Rajin membaca berita",
+    "subtitle": "Sumber daya media, aset merek, dan informasi perusahaan untuk jurnalis dan pembuat konten",
+    "factsheet": {
+      "title": "Lembar Fakta Perusahaan",
+      "subtitle": "Fakta singkat tentang Studious LMS",
+      "companyInfo": "Informasi Perusahaan",
+      "founded": "Didirikan",
+      "hq": "Markas besar",
+      "industry": "Industri",
+      "website": "Situs web",
+      "status": "Status",
+      "currentStatus": "Status Saat Ini",
+      "launchDate": "Tanggal Peluncuran",
+      "currentPhase": "Fase Saat Ini",
+      "targetMarkets": "Pasar Sasaran",
+      "teamSize": "Ukuran Tim",
+      "devHqs": "Kantor Pusat Pengembangan"
+    },
+    "contact": {
+      "title": "Pertanyaan Pers",
+      "subtitle": "Untuk pertanyaan pers, wawancara, dan permintaan media",
+      "sl": "Kami biasanya merespons dalam waktu 24 jam",
+      "general": "Untuk pertanyaan umum dan dukungan"
+    }
+  },
+  "program": {
+    "hero": {
+      "badge": "Inisiatif Dampak Sosial",
+      "title": "Program Pengembangan Sekolah Studious",
+      "subtitle": "Memberikan akses gratis terhadap teknologi pembelajaran modern bagi sekolah-sekolah yang tidak memiliki kemampuan ekonomi"
+    },
+    "commitment": {
+      "revenue": "Pendapatan yang Dikomitmenkan",
+      "cohort": "Peluncuran Kelompok Pertama",
+      "free": "Akses Gratis"
+    },
+    "about": {
+      "mission": {
+        "title": "Misi Kami",
+        "body1": "Program Pengembangan Sekolah Studious bertujuan untuk mendukung sekolah-sekolah kurang mampu dengan menyediakan akses gratis dan tak terbatas ke platform manajemen pembelajaran kami. Kami menyadari bahwa teknologi merupakan faktor dominan dalam tenaga kerja masa depan, namun banyak institusi pendidikan tidak memiliki akses ke sumber daya tersebut. Melalui program ini, kami menghadirkan teknologi manajemen pembelajaran modern ke sekolah-sekolah yang paling membutuhkannya."
+      },
+      "aims": {
+        "title": "Tujuan Program",
+        "body1": "Melalui diskusi mendalam dengan para guru dan profesional pendidikan, kami telah mengidentifikasi kesenjangan signifikan dalam infrastruktur pembelajaran digital yang tersedia di banyak sekolah. Banyak sistem manajemen pembelajaran di pasaran tidak memiliki pengalaman pengguna yang kohesif dan intuitif, dan sekolah-sekolah di daerah tertinggal seringkali tidak mampu mengakses teknologi pendidikan modern.",
+        "body2": "Program kami langsung mengatasi tantangan-tantangan ini. Pendapatan dari langganan institusi berbayar kami memungkinkan kami menyediakan akses komprehensif ke Studious LMS dan perangkat pendidikan terkait bagi sekolah-sekolah kurang mampu. Model berkelanjutan ini memungkinkan kami menjembatani kesenjangan digital sekaligus terus meningkatkan platform kami untuk semua pengguna."
+      },
+      "receive": {
+        "title": "Apa yang Akan Anda Terima",
+        "body1": "Sekolah yang diterima dalam program ini akan mendapatkan pengalaman platform Studious yang lengkap—bukan versi terbatas atau terbatas. Ini mencakup akun siswa dan guru tanpa batas, semua fitur premium (asisten AI, analitik tingkat lanjut, kolaborasi real-time), dukungan teknis prioritas, spesialis orientasi khusus, sumber daya pelatihan berkelanjutan, dan akses ke semua pembaruan dan peningkatan di masa mendatang.",
+        "body2": "Selain perangkat lunaknya sendiri, kami menyediakan dukungan komprehensif untuk memastikan sekolah Anda dapat memaksimalkan manfaat platform ini. Tim kami akan bekerja sama langsung dengan administrator dan guru Anda untuk menyesuaikan sistem dengan kebutuhan spesifik Anda, memberikan pelatihan langsung, dan selalu siap memberikan bantuan berkelanjutan selama Anda menjalani proses pembelajaran."
+      },
+      "qualifies": {
+        "title": "Siapa yang Memenuhi Syarat",
+        "body1": "Kami memprioritaskan sekolah-sekolah yang melayani siswa yang paling diuntungkan dari peningkatan teknologi pendidikan. Ini termasuk sekolah negeri di komunitas yang kurang terlayani atau kurang mampu secara ekonomi, lembaga pendidikan nirlaba terdaftar yang menunjukkan kendala keuangan, sekolah-sekolah di wilayah atau negara berkembang, sekolah-sekolah Title I di AS dan setara internasionalnya, dan lembaga pendidikan mana pun yang dapat menunjukkan kebutuhan keuangan yang nyata sekaligus berkomitmen untuk meningkatkan hasil belajar siswa.",
+        "body2": "Kami mengevaluasi setiap aplikasi secara individual, tidak hanya mempertimbangkan metrik keuangan tetapi juga misi sekolah Anda, populasi yang Anda layani, dan rencana Anda untuk menggunakan Studious guna meningkatkan pendidikan. Tujuan kami adalah bermitra dengan sekolah-sekolah yang benar-benar akan mendapatkan manfaat dari dan memanfaatkan platform kami secara efektif untuk meningkatkan pengalaman belajar siswa."
+      },
+      "impact": {
+        "title": "Visi Kami untuk Dampak",
+        "body1": "Dengan menyediakan akses gratis ke teknologi manajemen pembelajaran modern bagi sekolah, kami bertujuan untuk menghilangkan salah satu hambatan utama yang dihadapi lembaga pendidikan di daerah tertinggal. Pendekatan kami lebih dari sekadar perangkat lunak—kami berkomitmen untuk menyediakan dukungan komprehensif termasuk sumber daya pelatihan, bantuan orientasi, dan akses ke perangkat pendidikan seperti e-book dan materi alat tulis digital.",
+        "body2": "Program Pengembangan Sekolah diluncurkan pada akhir November hingga pertengahan Desember 2025, dengan kelompok sekolah mitra pertama kami. Seiring berkembangnya Studious, kapasitas kami untuk mendukung lebih banyak sekolah pun meningkat. Semua pendapatan yang dihasilkan dari langganan institusi berbayar kami diinvestasikan kembali untuk memperluas akses bagi sekolah-sekolah yang membutuhkan, menciptakan model berkelanjutan untuk pemerataan pendidikan yang semakin kuat seiring waktu."
+      }
+    },
+    "cta": {
+      "apply": {
+        "title": "Daftar ke Program",
+        "description": "Siap menghadirkan Studious ke sekolah Anda? Isi formulir aplikasi kami dan kami akan meninjaunya dalam 5-7 hari kerja.",
+        "item1": "Membutuhkan waktu sekitar 10-15 menit",
+        "item2": "Tidak diperlukan biaya pendaftaran",
+        "item3": "Respon dalam 5-7 hari kerja",
+        "button": "Mulai Aplikasi"
+      }
+    },
+    "status": {
+      "title": "Periksa Status Aplikasi",
+      "description": "Sudah mendaftar? Masukkan ID aplikasi Anda untuk memeriksa status aplikasi Anda.",
+      "inputLabel": "ID Aplikasi",
+      "placeholder": "misalnya, EXA2025-...",
+      "help": "Anda menerima ID aplikasi melalui email setelah mengirimkan aplikasi Anda.",
+      "results": {
+        "found": "Aplikasi Ditemukan",
+        "school": "Sekolah:",
+        "location": "Lokasi:",
+        "submitted": "Diserahkan:",
+        "contact": "Kontak:",
+        "notFound": {
+          "title": "Aplikasi tidak ditemukan",
+          "body": "Silakan periksa ID aplikasi Anda dan coba lagi. Jika Anda masih mengalami masalah, hubungi kami di impact@studious.sh"
+        }
+      },
+      "cards": {
+        "approved": {
+          "title": "Selamat! Aplikasi Anda telah disetujui.",
+          "body": "Periksa email Anda untuk langkah selanjutnya dalam menyiapkan akun Anda."
+        },
+        "underReview": {
+          "title": "⏳ Aplikasi Anda saat ini sedang ditinjau.",
+          "body": "Kami akan menghubungi Anda melalui email setelah peninjauan selesai."
+        },
+        "pending": {
+          "title": "📋 Aplikasi Anda telah diterima.",
+          "body": "Tim kami akan segera meninjaunya. Perkiraan waktu peninjauan: 5-7 hari kerja."
+        }
+      }
+    },
+    "contact": {
+      "title": "Ada Pertanyaan?",
+      "subtitle": "Tim kami siap membantu Anda melalui proses aplikasi",
+      "button": "Email Kami: impact@studious.sh"
+    }
+  },
+  "apply": {
+    "toasts": {
+      "submitted": "Aplikasi berhasil dikirimkan!"
+    },
+    "errors": {
+      "submitFailed": "Gagal mengirimkan aplikasi: {message}"
+    },
+    "success": {
+      "title": "Aplikasi Dikirim!",
+      "subtitle": "Terima kasih telah mendaftar ke Program Pengembangan Sekolah Studious",
+      "applicationId": "ID Aplikasi Anda",
+      "saveId": "Simpan ID ini untuk memeriksa status aplikasi Anda",
+      "nextSteps": {
+        "title": "Apa yang Terjadi Selanjutnya?",
+        "item1": "Anda akan menerima email konfirmasi di {email}",
+        "item2": "Tim kami akan meninjau aplikasi Anda dalam 5-7 hari kerja",
+        "item3": "Kami akan memberi tahu Anda melalui email setelah keputusan dibuat"
+      },
+      "backToProgram": "Kembali ke Program",
+      "returnHome": "Kembali ke Rumah"
+    }
+  },
+  "agenda": {
+    "title": "Agenda",
+    "description": "Lihat jadwal dan acara mendatang Anda dengan tampilan kalender yang komprehensif",
+    "addEvent": "Tambahkan Acara",
+    "untitledEvent": "Acara Tanpa Judul",
+    "today": "Hari ini",
+    "previous": "Sebelumnya",
+    "next": "Berikutnya",
+    "views": {
+      "day": "Hari",
+      "week": "Pekan",
+      "month": "Bulan",
+      "year": "Tahun"
+    }
+  },
+  "chat": {
+    "landing": {
+      "description": "Pilih percakapan dari bilah sisi untuk memulai mengobrol.",
+      "pleaseSignIn": "Silakan masuk",
+      "signInRequired": "Anda perlu masuk untuk mengakses obrolan.",
+      "title": "Selamat datang di Obrolan"
+    },
+    "page": {
+      "unknown": "Tidak dikenal",
+      "unnamedGroup": "Grup Tanpa Nama",
+      "unknownUser": "Pengguna Tidak Dikenal",
+      "notFound": {
+        "title": "Percakapan Tidak Ditemukan",
+        "description": "Percakapan ini tidak ada atau Anda tidak memiliki akses ke sana.",
+        "backToChat": "Kembali ke Obrolan"
+      },
+      "header": {
+        "members": "anggota",
+        "markMentionsRead": "Mark menyebutkan membaca"
+      },
+      "input": {
+        "placeholderPrefix": "Pesan"
+      },
+      "loading": "Memuat percakapan..."
+    }
+  },
+  "notifications": {
+    "title": "Pemberitahuan",
+    "subtitle": "Tetap mengikuti perkembangan kelas dan tugas Anda",
+    "badge": {
+      "unread": "{count} belum dibaca"
+    },
+    "filters": {
+      "label": "Menyaring:",
+      "all": "Semua ({count})",
+      "unread": "Belum dibaca ({count})",
+      "read": "Baca ({count})"
+    },
+    "empty": {
+      "unread": {
+        "title": "Tidak ada notifikasi yang belum dibaca",
+        "description": "Sudah selesai! Tidak ada notifikasi yang belum dibaca."
+      },
+      "read": {
+        "title": "Tidak ada notifikasi pembacaan",
+        "description": "Belum ada pemberitahuan yang ditandai sebagai telah dibaca."
+      },
+      "all": {
+        "title": "Belum ada notifikasi",
+        "description": "Saat Anda menerima pemberitahuan, pemberitahuan tersebut akan muncul di sini."
+      }
+    },
+    "actions": {
+      "marking": "Menandai...",
+      "markAsRead": "Tandai sebagai Sudah Dibaca"
+    },
+    "toasts": {
+      "markedAsRead": "Notifikasi ditandai sebagai telah dibaca"
+    },
+    "meta": {
+      "from": "dari"
+    }
+  },
+  "profile": {
+    "title": "Profil",
+    "description": "Kelola informasi pribadi dan pengaturan profil Anda",
+    "editProfile": "Edit Profil",
+    "saveChanges": "Simpan Perubahan",
+    "cancel": "Membatalkan",
+    "student": "Murid",
+    "personalInformation": {
+      "title": "Informasi Pribadi",
+      "description": "Perbarui detail pribadi dan informasi profil Anda",
+      "displayName": "Nama Tampilan",
+      "displayNamePlaceholder": "Masukkan nama tampilan Anda",
+      "displayNameDescription": "Beginilah nama Anda akan terlihat oleh orang lain",
+      "location": "Lokasi",
+      "locationPlaceholder": "Masukkan lokasi Anda",
+      "locationDescription": "Kota, negara bagian, atau negara Anda",
+      "bio": "Adalah",
+      "bioPlaceholder": "Ceritakan tentang diri Anda...",
+      "bioDescription": "Deskripsi singkat tentang diri Anda (maksimal 500 karakter)",
+      "website": "Situs web",
+      "websitePlaceholder": "https://situs-web-anda.com",
+      "websiteDescription": "Situs web atau portofolio pribadi Anda"
+    },
+    "accountInformation": {
+      "title": "Informasi Akun",
+      "description": "Detail akun dan informasi login Anda",
+      "username": "Nama belakang",
+      "usernameNote": "Nama pengguna tidak dapat diubah",
+      "email": "E-mail",
+      "emailNote": "Email dikelola di Pengaturan Akun",
+      "memberSince": "Anggota Sejak"
+    },
+    "messages": {
+      "profileUpdated": "Profil berhasil diperbarui",
+      "profileUpdateFailed": "Gagal memperbarui profil",
+      "profilePictureSelected": "Foto profil telah dipilih. Klik \"Simpan Perubahan\" untuk memperbarui.",
+      "avatarSelected": "Avatar dipilih. Klik 'Simpan Perubahan' untuk memperbarui.",
+      "profilePictureUploadFailed": "Gagal mengunggah gambar profil",
+      "profilePictureSelectFailed": "Gagal memilih gambar profil",
+      "failedToLoadProfile": "Gagal memuat profil. Silakan coba lagi."
+    }
+  },
+  "class": {
+    "assignments": "Tugas",
+    "students": "siswa",
+    "attendance": "Kehadiran",
+    "attachFile": "Lampirkan berkas",
+    "post": "Pos",
+    "posting": "Memposting...",
+    "noPosts": "Belum ada postingan",
+    "createFirstPost": "Buat postingan pertama",
+    "grades": {
+      "title": "Nilai",
+      "subtitle": "Melihat dan mengelola nilai siswa",
+      "columns": {
+        "assignment": "Penugasan",
+        "maxPoints": "Poin Maksimum",
+        "weight": "Berat",
+        "graded": "Bertingkat",
+        "dueDate": "Dua Tanggal",
+        "actions": "Tindakan",
+        "student": "Murid",
+        "overallGrade": "Nilai Keseluruhan",
+        "assignmentsCompleted": "Tugas Selesai",
+        "trend": "Kecenderungan"
+      },
+      "labels": {
+        "rubric": "Rubrik"
+      },
+      "actions": {
+        "manage": "Mengelola",
+        "viewGrades": "Lihat Nilai",
+        "saving": "Penghematan...",
+        "saveChanges": "Simpan Perubahan",
+        "preview": "Pratinjau",
+        "edit": "Sunting",
+        "delete": "Menghapus",
+        "createNew": "Buat Baru"
+      },
+      "overview": {
+        "title": "Ikhtisar Kelas",
+        "classAverage": "Rata-rata Kelas",
+        "totalStudents": "Jumlah Siswa",
+        "assignments": "Tugas",
+        "submissionRate": "Tingkat Pengajuan"
+      },
+      "assignmentManagement": {
+        "title": "Manajemen Tugas",
+        "empty": {
+          "title": "Tidak ada tugas yang ditemukan",
+          "description": "Buat tugas untuk mengelola nilai dan pengaturan"
+        },
+        "searchPlaceholder": "Pencarian tugas..."
+      },
+      "students": {
+        "title": "Siswa",
+        "viewAll": "Lihat Semua Siswa",
+        "empty": {
+          "title": "Tidak ada siswa yang terdaftar",
+          "description": "Siswa akan muncul di sini setelah mereka bergabung dengan kelas"
+        },
+        "searchPlaceholder": "Cari siswa..."
+      },
+      "gradeBoundaries": {
+        "title": "Batasan Nilai",
+        "untitled": "Batas Penilaian Tanpa Judul",
+        "empty": {
+          "title": "Tidak ada batas nilai yang dibuat",
+          "description": "Buat batasan penilaian untuk menentukan rentang nilai"
+        },
+        "previewTitle": "Pratinjau Batas Penilaian",
+        "details": {
+          "title": "Detail Batas Penilaian",
+          "name": "Nama",
+          "noneDefined": "Tidak ada batasan penilaian yang ditentukan"
+        }
+      },
+      "rubrics": {
+        "title": "Rubrik",
+        "untitled": "Rubrik Tanpa Judul",
+        "empty": {
+          "title": "Tidak ada rubrik yang dibuat",
+          "description": "Buat rubrik untuk menentukan kriteria penilaian"
+        },
+        "previewTitle": "Pratinjau Rubrik",
+        "details": {
+          "title": "Rincian Rubrik",
+          "name": "Nama",
+          "category": "Kategori",
+          "description": "Keterangan",
+          "custom": "Kebiasaan",
+          "noDescription": "Tidak ada deskripsi yang diberikan",
+          "noCriteria": "Tidak ada kriteria yang ditemukan dalam rubrik ini"
+        }
+      },
+      "confirm": {
+        "deleteRubric": "Apakah Anda yakin ingin menghapus markscheme ini?",
+        "deleteGradingBoundary": "Apakah Anda yakin ingin menghapus batasan penilaian ini?"
+      }
+    },
+    "members": {
+      "title": "Anggota",
+      "counts": {
+        "totalMembers": "{count} anggota"
+      },
+      "actions": {
+        "inviteMember": "Undang Anggota",
+        "copy": "Menyalin",
+        "regenerate": "Diperbarui",
+        "message": "Pesan",
+        "viewProfile": "Lihat Profil",
+        "viewGrades": "Lihat Nilai",
+        "makeTeacher": "Jadikan Guru",
+        "makeStudent": "Jadikan Siswa",
+        "removeFromClass": "Hapus dari Kelas",
+        "removeAccess": "Hapus Akses",
+        "tryAgain": "Coba Lagi"
+      },
+      "labels": {
+        "teacher": "Guru",
+        "student": "Murid",
+        "you": "Anda"
+      },
+      "invite": {
+        "title": "Kode Undangan Kelas",
+        "description": "Bagikan kode ini dengan siswa untuk bergabung dengan kelas"
+      },
+      "search": {
+        "placeholder": "Cari anggota..."
+      },
+      "tabs": {
+        "students": "Siswa",
+        "teachers": "Guru"
+      },
+      "students": {
+        "empty": {
+          "title": "Tidak ada siswa yang ditemukan",
+          "matchNone": "Tidak ada siswa yang cocok dengan \"{query}\"",
+          "noStudents": "Belum ada siswa yang bergabung dengan kelas ini"
+        }
+      },
+      "teachers": {
+        "empty": {
+          "title": "Tidak ada guru yang ditemukan",
+          "matchNone": "Tidak ada guru yang cocok dengan \"{query}\"",
+          "noTeachers": "Tidak ada guru tambahan yang ditambahkan"
+        }
+      },
+      "toasts": {
+        "inviteRegenerated": "Kode undangan berhasil dibuat ulang",
+        "copied": "Kode undangan disalin ke papan klip",
+        "roleChanged": "Peran diubah menjadi {role}",
+        "memberRemoved": "Anggota berhasil dihapus"
+      },
+      "errors": {
+        "regenerateFailed": "Gagal membuat ulang kode undangan",
+        "changeRoleFailed": "Gagal mengubah peran",
+        "removeFailed": "Gagal menghapus anggota",
+        "failedToLoad": "Gagal memuat anggota"
+      }
+    },
+    "files": {
+      "title": "Berkas",
+      "subtitle": "Kelola file dan sumber daya kelas",
+      "actions": {
+        "newFolder": "Folder Baru",
+        "upload": "Mengunggah",
+        "uploadFiles": "Unggah File",
+        "createFolder": "Buat Folder",
+        "download": "Unduh",
+        "share": "Membagikan",
+        "delete": "Menghapus",
+        "filter": "Menyaring",
+        "sort": "Menyortir"
+      },
+      "toasts": {
+        "folderCreated": "Folder berhasil dibuat",
+        "folderDeleted": "Folder berhasil dihapus",
+        "folderRenamed": "Folder berhasil diganti nama",
+        "folderMoved": "Folder berhasil dipindahkan",
+        "filesUploaded": "File berhasil diunggah",
+        "fileDeleted": "File berhasil dihapus",
+        "fileRenamed": "File berhasil diganti nama",
+        "fileMoved": "File berhasil dipindahkan",
+        "downloadStarted": "Unduhan dimulai",
+        "shareCopied": "Bagikan tautan disalin"
+      },
+      "errors": {
+        "teacherOnly": "Hanya guru yang dapat mengubah berkas.",
+        "downloadFailed": "Unduhan gagal",
+        "shareFailed": "Berbagi gagal",
+        "failedToLoad": "Gagal memuat berkas. Silakan coba lagi nanti."
+      },
+      "breadcrumbs": {
+        "classFiles": "File Kelas"
+      },
+      "search": {
+        "placeholder": "Cari dalam file"
+      },
+      "selected": "{count} dipilih",
+      "filters": {
+        "fileType": "Jenis Berkas",
+        "documents": "Dokumen",
+        "images": "Gambar",
+        "videos": "Video",
+        "presentations": "Presentasi"
+      },
+      "sort": {
+        "name": "Nama",
+        "lastModified": "Terakhir diubah",
+        "fileSize": "Ukuran berkas"
+      },
+      "table": {
+        "name": "Nama",
+        "owner": "Pemilik",
+        "lastModified": "Terakhir diubah",
+        "fileSize": "Ukuran berkas"
+      },
+      "empty": {
+        "title": "Folder ini kosong",
+        "description": "Unggah file atau buat folder untuk mulai mengatur materi kelas Anda.",
+        "searchTitle": "Tidak ada file yang ditemukan",
+        "searchDescription": "Tidak ada berkas yang cocok dengan \"{query}\". Coba istilah pencarian lain."
+      }
+    },
+    "settings": {
+      "title": "Pengaturan Kelas",
+      "subtitle": "Konfigurasikan detail dan preferensi kelas",
+      "labels": {
+        "unsavedChanges": "Perubahan yang belum disimpan"
+      },
+      "actions": {
+        "saving": "Penghematan...",
+        "saveChanges": "Simpan Perubahan",
+        "deleting": "Menghapus...",
+        "deleteClass": "Hapus Kelas",
+        "cancel": "Membatalkan"
+      },
+      "sections": {
+        "basicInfo": {
+          "title": "Informasi Dasar"
+        },
+        "theme": {
+          "title": "Tema Kelas",
+          "description": "Pilih warna tema untuk kelas ini"
+        },
+        "danger": {
+          "title": "Zona Bahaya",
+          "description": "Setelah Anda menghapus kelas, Anda tidak dapat kembali. Ini akan menghapus semua tugas, nilai, catatan kehadiran, dan mengeluarkan semua siswa dari kelas secara permanen."
+        }
+      },
+      "fields": {
+        "className": "Nama Kelas",
+        "section": "Bagian",
+        "subject": "Subjek"
+      },
+      "placeholders": {
+        "className": "misalnya, Fisika Lanjutan",
+        "section": "misalnya, AP-101",
+        "subject": "misalnya, Fisika"
+      },
+      "toasts": {
+        "updated": {
+          "title": "Kelas Diperbarui",
+          "description": "Pengaturan kelas telah berhasil disimpan."
+        },
+        "deleted": {
+          "title": "Kelas Dihapus",
+          "description": "Kelas telah dihapus secara permanen."
+        }
+      },
+      "errors": {
+        "updateFailed": {
+          "title": "Pembaruan Gagal",
+          "description": "Gagal menyimpan pengaturan kelas. Silakan coba lagi."
+        }
+      },
+      "confirm": {
+        "title": "Apakah Anda benar-benar yakin?",
+        "description": "Tindakan ini tidak dapat dibatalkan. Ini akan menghapus kelas \"{name}\" secara permanen dan menghapus semua data terkait, termasuk:",
+        "items": {
+          "assignments": "Semua tugas dan penyerahan",
+          "records": "Semua nilai dan catatan kehadiran",
+          "students": "Semua siswa akan dikeluarkan dari kelas",
+          "events": "Semua acara dan pengumuman kelas"
+        },
+        "confirmDelete": "Ya, hapus kelas"
+      }
+    },
+    "syllabus": {
+      "title": "Silabus",
+      "subtitle": "Ikhtisar kursus dan informasi akademis",
+      "actions": {
+        "saveChanges": "Simpan Perubahan",
+        "cancel": "Membatalkan",
+        "edit": "Edit Silabus"
+      },
+      "errors": {
+        "failedToLoad": "Gagal memuat silabus",
+        "tryLater": "Silakan coba lagi nanti."
+      },
+      "stats": {
+        "totalAssignments": "Total Tugas",
+        "completionRate": "Tingkat Penyelesaian",
+        "totalPoints": "Total Poin",
+        "upcoming": "Mendatang"
+      },
+      "overview": {
+        "title": "Ikhtisar Kursus",
+        "placeholder": "Masukkan ikhtisar kursus, tujuan, dan informasi penting lainnya...",
+        "helper": "Masukkan informasi kursus, tujuan pembelajaran, kebijakan, dan detail penting lainnya.",
+        "empty": {
+          "title": "Belum ada konten silabus",
+          "description": "Klik 'Edit Silabus' untuk menambahkan informasi kursus, tujuan pembelajaran, kebijakan, dan banyak lagi."
+        }
+      },
+      "assignments": {
+        "title": "Tugas Kursus",
+        "gradedCount": "{dinilai} dari {total} yang dinilai",
+        "totalPoints": "{total} total poin",
+        "empty": {
+          "title": "Belum ada tugas",
+          "description": "Tugas akan muncul di sini setelah dibuat."
+        }
+      },
+      "table": {
+        "assignment": "Penugasan",
+        "dueDate": "Dua Tanggal",
+        "points": "Poin",
+        "weight": "Berat",
+        "status": "Status",
+        "pts": "poin"
+      },
+      "status": {
+        "graded": "Bertingkat",
+        "pending": "Tertunda"
+      },
+      "courseInfo": {
+        "title": "Informasi Kursus",
+        "basic": {
+          "title": "Informasi Dasar",
+          "className": "Nama Kelas",
+          "section": "Bagian",
+          "subject": "Subjek"
+        },
+        "stats": {
+          "title": "Statistik Kursus",
+          "totalAssignments": "Total Tugas",
+          "gradedAssignments": "Tugas yang Dinilai",
+          "totalPoints": "Total Poin"
+        }
+      }
+    }
+  },
+  "assignment": {
+    "dueDate": "Dua Tanggal",
+    "submit": "Kirim",
+    "grade": "Nilai",
+    "feedback": "Masukan",
+    "submissions": "Pengajuan",
+    "open": "Membuka",
+    "closed": "Tertutup",
+    "assignment": "Penugasan",
+    "assignments": "Tugas",
+    "newAssignment": "Tugas Baru",
+    "createAssignment": "Buat Tugas",
+    "viewAssignment": "Lihat Tugas",
+    "allAssignments": "Semua Tugas",
+    "searchAssignments": "Pencarian tugas...",
+    "noAssignmentsFound": "Tidak ada tugas yang ditemukan",
+    "createFirstAssignment": "Buat tugas pertama Anda untuk memulai",
+    "newSection": "Bagian Baru",
+    "pts": "poin",
+    "overdue": "(Terlambat)",
+    "assignmentDrop": "Hapus tugas di sini untuk pindah ke tingkat atas",
+    "sectionDeletionConfirmation": "Yakin ingin menghapus bagian ini? Semua tugas akan dipindahkan ke tingkat teratas.",
+    "assignmentDeletionConfirmation": "Yakin ingin menghapus tugas ini? Tindakan ini tidak dapat dibatalkan.",
+    "manageAndTrack": "Kelola dan lacak tugas kelas",
+    "filters": "Filter"
+  },
+  "pagination": {
+    "previous": "Sebelumnya",
+    "next": "Berikutnya",
+    "goToPreviousPage": "Buka halaman sebelumnya",
+    "goToNextPage": "Buka halaman berikutnya",
+    "morePages": "Lebih banyak halaman"
+  },
+  "about": {
+    "titleStatement1": "Cerita Kami",
+    "titleStatement2": "Dibangun dari frustrasi,",
+    "titleStatement3": "dibayangkan kembali dengan AI",
+    "titleStatement4": "Setelah bertahun-tahun berjuang dengan portal sekolah yang ketinggalan zaman dan terfragmentasi, kami memutuskan untuk membangun sistem manajemen pembelajaran yang selalu kami inginkan.",
+    "problemParagraph1": "Studious dimulai pada tahun 2023",
+    "problemParagraph2": "ketika sekelompok siswa dan pendidik berkumpul dengan rasa frustrasi yang sama: portal sekolah yang ada kikuk, lambat, dan dibangun untuk era pendidikan yang berbeda.",
+    "problemDetailParagraph": "Kami mendapati diri kami harus menggunakan beberapa platform sekaligus — satu untuk nilai, satu untuk tugas, dan satu lagi untuk komunikasi. Guru menghabiskan lebih banyak waktu berkutat dengan perangkat lunak daripada mengajar. Siswa melewatkan tenggat waktu karena notifikasi tertimbun di antarmuka yang ketinggalan zaman.",
+    "betterWay": "Kami tahu pasti ada cara yang lebih baik.",
+    "solutionParagraph1": "Mengambil inspirasi dari alat kolaborasi modern seperti Linear dan Notion, kami mulai membuat sistem manajemen pembelajaran yang terasa",
+    "solutionParagraph2": "cepat, intuitif, dan menyenangkan untuk digunakan.",
+    "solutionParagraph3": "Yang mengintegrasikan AI bukan sebagai gimmick, tetapi sebagai pengganda produktivitas sejati bagi guru dan siswa.",
+    "launchParagraph": "Setelah dua tahun pengembangan, kami resmi meluncurkan Studious pada 17 Oktober 2025. Kini, kami berada dalam tahap akses awal, siap membantu sekolah-sekolah di seluruh dunia mentransformasi pengalaman belajar mereka.",
+    "journey1": "Perjalanan Kami",
+    "journey2": "Dua tahun membangun, belajar, dan berkembang",
+    "journeyBeginningDate": "tahun 2023",
+    "journeyBeginning1": "Awal mula",
+    "journeyBeginning2": "Prototipe pertama telah dikembangkan. Fitur inti: manajemen kelas, tugas, dan integrasi kalender.",
+    "journeyBetaLaunchDate": "31 Oktober 2025",
+    "journeyBetaLaunch1": "Peluncuran Beta Publik",
+    "journeyBetaLaunch2": "Peluncuran uji beta publik resmi Studious LMS. Membuka akses awal ke sekolah-sekolah di seluruh dunia dengan kemampuan platform yang lengkap.",
+    "journeyPilotSchoolsDate": "November 2025",
+    "journeyPilotSchools1": "Program Sekolah Pilot",
+    "journeyPilotSchools2": "Meluncurkan kemitraan dengan sekolah percontohan untuk mengumpulkan umpan balik dunia nyata dan menyempurnakan platform berdasarkan beragam kebutuhan pendidikan.",
+    "journeyBetaCompleteDate": "Desember 2025",
+    "journeyBetaComplete1": "Beta Lengkap",
+    "journeyBetaComplete2": "Transisi dari beta ke rilis produksi penuh. Stabilisasi platform dengan semua fitur inti telah diuji dan dioptimalkan sepenuhnya.",
+    "journeySDPDate": "Januari 2026",
+    "journeySDP1": "Peluncuran Program Pengembangan Sekolah",
+    "journeySDP2": "Mengumumkan kelompok sekolah pertama yang diterima dalam Program Pengembangan Sekolah Studious, menyediakan akses gratis ke lembaga yang memenuhi syarat.",
+    "missionStatement1": "Misi kami sederhana",
+    "missionStatement2": "Untuk membangun sistem manajemen pembelajaran yang kita—sebagai siswa, guru, dan pembelajar seumur hidup—ingin gunakan setiap hari.",
+    "joinAppeal1": "Bergabunglah dengan kami dalam perjalanan ini",
+    "joinAppeal2": "Jadilah bagian dari masa depan pendidikan",
+    "requestEarlyAccess": "Minta Akses Awal",
+    "pressKit": "Perlengkapan Pers"
+  },
+  "pricing": {
+    "pricingStatement1": "Harga Transparan",
+    "pricingStatement2": "Pilih paket yang tepat untuk institusi Anda",
+    "pricingStatement3": "Harga yang sederhana dan transparan tanpa biaya tersembunyi. Semua paket mencakup fitur-fitur inti dengan opsi yang dapat disesuaikan.",
+    "mostPopular": "Paling Populer",
+    "priceUnit": "/pengguna/bulan",
+    "pricingStarterTitle": "Starter",
+    "pricingStarterPrice": "Bebas",
+    "pricingStarterNote": "Akses beta disertakan",
+    "pricingStarterDescription": "Sempurna untuk kelas kecil & program percontohan",
+    "pricingStarterPerk1": "Hingga 30 siswa",
+    "pricingStarterPerk2": "Kelas tak terbatas",
+    "pricingStarterPerk3": "Fitur inti (tugas, kalender, nilai)",
+    "pricingStarterPerk4": "Asisten AI (5 obrolan/bulan)",
+    "pricingStarterPerk5": "Dukungan komunitas",
+    "pricingStarterPerk6": "Penyimpanan 5GB",
+    "pricingStarterLink": "Mulai Gratis",
+    "pricingSchoolTitle": "Sekolah",
+    "pricingSchoolPriceNote": "Ditagih setiap tahun atau $6/bulan",
+    "pricingSchoolNote": "Untuk sekolah dengan jumlah siswa hingga 1.000 siswa",
+    "pricingSchoolPerk1": "Siswa tak terbatas",
+    "pricingSchoolPerk2": "Kelas tak terbatas",
+    "pricingSchoolPerk3": "Semua fitur inti",
+    "pricingSchoolPerk4": "Asisten AI (pertanyaan tak terbatas)",
+    "pricingSchoolPerk5": "Yang pertama dalam antrean untuk akses beta Studious CMS",
+    "pricingSchoolPerk6": "Akses API",
+    "pricingSchoolLink": "Memulai"
+  },
+  "components": {
+    "earlyAccess": {
+      "title": "Minta Akses Awal",
+      "description": "Bergabunglah dalam daftar tunggu dan jadilah salah satu yang pertama merasakan Studious LMS",
+      "fields": {
+        "email": "Alamat Email *",
+        "institutionSize": "Ukuran Lembaga *"
+      },
+      "placeholders": {
+        "email": "kamu@sekolah.edu",
+        "institutionSize": "Pilih ukuran institusi"
+      },
+      "sizes": {
+        "tiny": "1-30 siswa (Guru Individu)",
+        "small": "31-100 siswa (Sekolah Kecil)",
+        "medium": "101-500 siswa (Sekolah Menengah)",
+        "large": "501-1.000 siswa (Sekolah Besar)",
+        "institution": "1.001+ siswa (Institusi)"
+      },
+      "actions": {
+        "submit": "Minta Akses",
+        "submitting": "Mengirimkan...",
+        "done": "Selesai"
+      },
+      "success": {
+        "title": "Anda ada dalam daftar!",
+        "description": "Kami akan mengirimkan email kepada Anda di {email} saat kami siap melayani Anda."
+      },
+      "toasts": {
+        "success": "Berhasil bergabung dalam daftar tunggu!"
+      }
+    },
+    "joinClass": {
+      "title": "Bergabunglah dengan Kelas",
+      "buttonLabel": "Bergabunglah dengan Kelas",
+      "fields": {
+        "inviteCode": "Kode Undangan Kelas"
+      },
+      "placeholders": {
+        "inviteCode": "misalnya, MATEMATIKA101-2025"
+      },
+      "help": "Masukkan kode undangan yang diberikan oleh guru Anda",
+      "howTo": {
+        "title": "Cara mendapatkan kode undangan:",
+        "item1": "Minta kode undangan kelas kepada guru Anda",
+        "item2": "Periksa email Anda untuk petunjuk pendaftaran kelas",
+        "item3": "Cari kode pada silabus atau materi kursus Anda"
+      },
+      "actions": {
+        "cancel": "Membatalkan",
+        "join": "Bergabunglah dengan Kelas",
+        "joining": "Bergabung..."
+      },
+      "toasts": {
+        "success": "Anda telah berhasil bergabung dalam kelas.",
+        "errorInvalid": "Kode undangan tidak valid atau kelas tidak ditemukan.",
+        "errorEmpty": "Silakan masukkan kode undangan yang valid."
+      }
+    },
+    "createClass": {
+      "title": "Buat Kelas Baru",
+      "buttonLabel": "Buat Kelas",
+      "fields": {
+        "title": "Judul Kelas *",
+        "section": "Bagian *",
+        "subject": "Subjek *",
+        "semester": "Semester",
+        "credits": "Kredit",
+        "meetingTime": "Waktu Pertemuan",
+        "location": "Lokasi",
+        "description": "Keterangan"
+      },
+      "placeholders": {
+        "title": "misalnya, Fisika Lanjutan",
+        "section": "misalnya, AP-101",
+        "subject": "misalnya, Fisika",
+        "semester": "misalnya, Musim Semi 2025",
+        "credits": "misalnya, 3",
+        "meetingTime": "misalnya, MWF 10:00-11:00 AM",
+        "location": "misalnya, Ruang 205, Gedung Sains",
+        "description": "Jelaskan isi dan tujuan kelas..."
+      },
+      "actions": {
+        "cancel": "Membatalkan",
+        "create": "Buat Kelas",
+        "creating": "Membuat..."
+      },
+      "toasts": {
+        "success": "Kelas {name} telah berhasil dibuat.",
+        "errorRequired": "Harap isi semua kolom yang diperlukan.",
+        "errorFailed": "Gagal membuat kelas. Silakan coba lagi nanti."
+      }
+    },
+    "createFolder": {
+      "titleCreate": "Buat Folder Baru",
+      "titleEdit": "Sunting Folder",
+      "fields": {
+        "name": "Nama Folder *",
+        "description": "Deskripsi (Opsional)",
+        "color": "Warna Folder"
+      },
+      "placeholders": {
+        "name": "Masukkan nama folder",
+        "description": "Tambahkan deskripsi untuk folder ini..."
+      },
+      "help": {
+        "name": "Pilih nama deskriptif untuk folder Anda",
+        "description": "{count}/500 karakter"
+      },
+      "actions": {
+        "cancel": "Membatalkan",
+        "create": "Buat Folder",
+        "update": "Perbarui Folder",
+        "creating": "Membuat...",
+        "updating": "Memperbarui..."
+      },
+      "toasts": {
+        "errorRequired": "Nama folder diperlukan",
+        "errorInvalidChars": "Nama folder mengandung karakter yang tidak valid",
+        "errorTooLong": "Nama folder terlalu panjang (maks. 255 karakter)"
+      }
+    },
+    "createAssignment": {
+      "title": "Buat Tugas Baru",
+      "buttonLabel": "Buat Tugas",
+      "sections": {
+        "details": "Detail Tugas",
+        "configuration": "Konfigurasi",
+        "grading": "Penilaian & Pemeringkatan",
+        "attachments": "Lampiran"
+      },
+      "fields": {
+        "title": "Judul *",
+        "instructions": "Instruksi *",
+        "dueDate": "Dua Tanggal",
+        "type": "Jenis Tugas",
+        "section": "Bagian",
+        "rubric": "Rubrik",
+        "gradeScale": "Skala Nilai",
+        "maxPoints": "Poin Maksimum",
+        "weight": "Berat (%)",
+        "sectionColor": "Bagian Warna"
+      },
+      "placeholders": {
+        "title": "misalnya, Kuis Bab 5, Laporan Praktikum Fisika",
+        "instructions": "Berikan instruksi yang jelas bagi siswa...",
+        "maxPoints": "100",
+        "weight": "1.0",
+        "chooseSection": "Pilih bagian",
+        "chooseRubric": "Pilih rubrik",
+        "chooseGradeScale": "Pilih skala nilai",
+        "newSectionName": "Masukkan nama bagian..."
+      },
+      "types": {
+        "homework": "Pekerjaan rumah",
+        "quiz": "Kuis",
+        "test": "Tes",
+        "project": "Proyek",
+        "essay": "Karangan",
+        "discussion": "Diskusi",
+        "presentation": "Presentasi",
+        "lab": "Laboratorium",
+        "other": "Lainnya"
+      },
+      "options": {
+        "graded": {
+          "label": "Tugas yang Dinilai",
+          "description": "Sertakan dalam buku nilai"
+        },
+        "draft": {
+          "label": "Simpan sebagai Draf",
+          "description": "Sembunyi dari siswa"
+        }
+      },
+      "section": {
+        "none": "Tidak ada bagian",
+        "createNew": "Buat Bagian Baru"
+      },
+      "rubric": {
+        "none": "Tidak ada rubrik",
+        "untitled": "Rubrik Tanpa Judul",
+        "autoCalculate": "Poin akan dihitung secara otomatis dari rubrik yang dipilih"
+      },
+      "gradeScale": {
+        "default": "Skala default",
+        "untitled": "Skala Tanpa Judul"
+      },
+      "files": {
+        "uploadButton": "Unggah File",
+        "dropZone": "Letakkan file di sini atau klik untuk mengunggah",
+        "dropZoneHint": "Mendukung semua jenis file • Maksimal 50MB per file",
+        "filesUploaded": "{diunggah} dari {total} file yang diunggah"
+      },
+      "status": {
+        "creating": "Membuat tugas...",
+        "settingUp": "Menyiapkan detail penugasan...",
+        "preparing": "Mempersiapkan unggahan berkas...",
+        "uploading": "Mengunggah file ke penyimpanan cloud...",
+        "processing": "Memproses berkas yang diunggah...",
+        "finalizing": "Menyelesaikan tugas...",
+        "assigning": "Menugaskan kepada siswa...",
+        "almostDone": "Hampir selesai...",
+        "uploadingFile": "Mengunggah {name}...",
+        "creatingProgress": "Membuat Tugas",
+        "draftStatus": "Akan disimpan sebagai draft",
+        "publishedStatus": "Akan dipublikasikan kepada siswa"
+      },
+      "actions": {
+        "cancel": "Membatalkan",
+        "create": "Buat Tugas",
+        "saveDraft": "Simpan Draf",
+        "creating": "Membuat...",
+        "add": "Menambahkan"
+      },
+      "toasts": {
+        "successCreated": "Tugas berhasil dibuat.",
+        "successDraft": "Tugas berhasil disimpan sebagai draf.",
+        "errorRequired": "Harap isi semua kolom yang diperlukan.",
+        "errorFailed": "Gagal membuat tugas. Silakan coba lagi.",
+        "errorUploadFailed": "Gagal mengunggah {name}",
+        "sectionCreated": "Bagian \"{name}\" berhasil dibuat."
+      }
+    },
+    "createAnnouncement": {
+      "title": "Buat Pengumuman",
+      "buttonLabel": "Pengumuman Pos",
+      "fields": {
+        "title": "Judul Pengumuman *",
+        "content": "Isi *",
+        "priority": "Tingkat Prioritas",
+        "expiryDate": "Tanggal Kedaluwarsa (Opsional)",
+        "publishDate": "Tanggal Terbit",
+        "publishTime": "Waktu Publikasi"
+      },
+      "placeholders": {
+        "title": "misalnya, laporan lab jatuh tempo hari jumat",
+        "content": "Tulis konten pengumuman Anda di sini...",
+        "publishDate": "Publikasikan segera jika kosong"
+      },
+      "priority": {
+        "low": "Rendah",
+        "normal": "Normal",
+        "high": "Tinggi",
+        "urgent": "Mendesak"
+      },
+      "sections": {
+        "settings": "Pengaturan",
+        "notifications": "Pemberitahuan",
+        "schedule": "Jadwal Penerbitan (Opsional)"
+      },
+      "settings": {
+        "pinned": {
+          "label": "Sematkan ke atas",
+          "description": "Simpan pengumuman ini di bagian atas daftar"
+        },
+        "urgent": {
+          "label": "Tandai sebagai mendesak",
+          "description": "Sorot dengan gaya yang mendesak"
+        }
+      },
+      "notifications": {
+        "email": {
+          "label": "Kirim pemberitahuan email",
+          "description": "Beritahu siswa melalui email"
+        },
+        "push": {
+          "label": "Kirim pemberitahuan push",
+          "description": "Kirim pemberitahuan aplikasi seluler"
+        }
+      },
+      "actions": {
+        "cancel": "Membatalkan",
+        "publishNow": "Publikasikan Sekarang",
+        "schedule": "Pengumuman Jadwal"
+      },
+      "toasts": {
+        "success": "Pengumuman Dibuat",
+        "errorRequired": "Harap isi semua kolom yang diperlukan."
+      }
+    }
+  }
+}

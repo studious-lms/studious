@@ -73,7 +73,7 @@
     },
     "verification": {
       "notVerified": "Compte non vérifié",
-      "message": "Votre compte doit être vérifié avant de pouvoir vous connecter. Veuillez vérifier votre courrier électronique pour un lien de vérification.",
+      "message": "Votre compte doit être vérifié avant de pouvoir vous connecter. Veuillez vérifier votre e-mail pour un lien de vérification.",
       "emailSentTo": "E-mail de vérification envoyé à :",
       "resendEmail": "Renvoyer l'e-mail de vérification",
       "backToSignIn": "Retour à la connexion",
@@ -671,7 +671,7 @@
       },
       "errors": {
         "teacherOnly": "Seuls les enseignants peuvent modifier les fichiers.",
-        "downloadFailed": "Téléchargement échoué",
+        "downloadFailed": "Échec du téléchargement",
         "shareFailed": "Le partage a échoué",
         "failedToLoad": "Échec du chargement des fichiers. Veuillez réessayer ultérieurement."
       },
@@ -1143,7 +1143,7 @@
       },
       "actions": {
         "cancel": "Annuler",
-        "create": "Créer une affectation",
+        "create": "Créer une mission",
         "saveDraft": "Enregistrer le brouillon",
         "creating": "Créer...",
         "add": "Ajouter"
@@ -1159,7 +1159,7 @@
     },
     "createAnnouncement": {
       "title": "Créer une annonce",
-      "buttonLabel": "Publier une annonce",
+      "buttonLabel": "Annonce de publication",
       "fields": {
         "title": "Titre de l'annonce *",
         "content": "Contenu *",

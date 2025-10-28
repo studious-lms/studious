@@ -1,0 +1,140 @@
+{
+  "classGrades": {
+    "title": "เกรด",
+    "subtitle": "ดูและจัดการเกรดของนักเรียน",
+    "columns": {
+      "assignment": "งานที่มอบหมาย",
+      "maxPoints": "คะแนนสูงสุด",
+      "weight": "น้ำหนัก",
+      "graded": "เกรด",
+      "dueDate": "สองวันที่",
+      "actions": "การกระทำ",
+      "student": "นักเรียน",
+      "overallGrade": "เกรดรวม",
+      "assignmentsCompleted": "งานที่มอบหมายเสร็จสมบูรณ์",
+      "trend": "แนวโน้ม"
+    },
+    "labels": {
+      "rubric": "หัวข้อ"
+    },
+    "actions": {
+      "manage": "จัดการ",
+      "viewGrades": "ดูเกรด",
+      "saving": "ประหยัด...",
+      "saveChanges": "บันทึกการเปลี่ยนแปลง",
+      "preview": "ตัวอย่าง",
+      "edit": "แก้ไข",
+      "delete": "ลบ",
+      "createNew": "สร้างใหม่"
+    },
+    "overview": {
+      "title": "ภาพรวมชั้นเรียน",
+      "classAverage": "ค่าเฉลี่ยของชั้นเรียน",
+      "totalStudents": "จำนวนนักเรียนทั้งหมด",
+      "assignments": "การมอบหมายงาน",
+      "submissionRate": "อัตราการส่ง"
+    },
+    "assignmentManagement": {
+      "title": "การจัดการงานมอบหมาย",
+      "empty": {
+        "title": "ไม่พบงานที่ได้รับมอบหมาย",
+        "description": "สร้างงานมอบหมายเพื่อจัดการเกรดและการตั้งค่า"
+      },
+      "searchPlaceholder": "ค้นหางานที่ได้รับมอบหมาย..."
+    },
+    "students": {
+      "title": "นักเรียน",
+      "viewAll": "ดูนักเรียนทั้งหมด",
+      "empty": {
+        "title": "ไม่มีนักเรียนลงทะเบียน",
+        "description": "นักเรียนจะปรากฏที่นี่เมื่อพวกเขาเข้าร่วมชั้นเรียน"
+      },
+      "searchPlaceholder": "ค้นหานักเรียน..."
+    },
+    "gradeBoundaries": {
+      "title": "ขอบเขตเกรด",
+      "untitled": "ขอบเขตการให้คะแนนที่ไม่มีชื่อ",
+      "empty": {
+        "title": "ไม่มีการสร้างขอบเขตเกรด",
+        "description": "สร้างขอบเขตการให้เกรดเพื่อกำหนดช่วงเกรด"
+      },
+      "previewTitle": "การดูตัวอย่างขอบเขตการให้คะแนน",
+      "details": {
+        "title": "รายละเอียดขอบเขตการให้คะแนน",
+        "name": "ชื่อ",
+        "noneDefined": "ไม่มีการกำหนดขอบเขตการให้คะแนน"
+      }
+    },
+    "rubrics": {
+      "title": "หัวข้อ",
+      "untitled": "หัวข้อที่ไม่มีชื่อ",
+      "empty": {
+        "title": "ไม่มีการสร้างหัวข้อ",
+        "description": "สร้างรูบริกเพื่อกำหนดเกณฑ์การประเมิน"
+      },
+      "previewTitle": "ตัวอย่างเกณฑ์การให้คะแนน",
+      "details": {
+        "title": "รายละเอียดเกณฑ์การให้คะแนน",
+        "name": "ชื่อ",
+        "category": "หมวดหมู่",
+        "description": "คำอธิบาย",
+        "custom": "กำหนดเอง",
+        "noDescription": "ไม่มีคำอธิบายให้",
+        "noCriteria": "ไม่พบเกณฑ์ในหัวข้อนี้"
+      }
+    },
+    "confirm": {
+      "deleteRubric": "คุณแน่ใจว่าต้องการลบ markscheme นี้หรือไม่?",
+      "deleteGradingBoundary": "คุณแน่ใจว่าต้องการลบขอบเขตการให้คะแนนนี้หรือไม่?"
+    }
+  },
+  "studentGrades": {
+    "title": "เกรดของนักเรียนทั้งหมด",
+    "allStudents": "ดูและจัดการเกรดสำหรับนักเรียนทุกคนในชั้นเรียนนี้",
+    "students": "นักเรียน",
+    "noGrades": "ไม่พบนักเรียน",
+    "noGradesDescription": "ยังไม่มีนักเรียนลงทะเบียนเรียนในชั้นเรียนนี้ นักเรียนจะปรากฏที่นี่เมื่อเข้าร่วมแล้ว",
+    "table": {
+      "student": "นักเรียน",
+      "actions": "การกระทำ"
+    },
+    "actions": {
+      "viewSubmission": "ดูเกรด"
+    }
+  },
+  "individualGrades": {
+    "myGrades": "เกรดของฉัน",
+    "studentGrades": "เกรด",
+    "viewYourGrades": "ดูเกรดและความคืบหน้าของคุณ",
+    "individualManagement": "การจัดการเกรดของนักเรียนแต่ละคน",
+    "export": "ส่งออก",
+    "back": "กลับ",
+    "yourPerformance": "ประสิทธิภาพการทำงานของคุณ",
+    "trackProgress": "ติดตามความก้าวหน้าทางวิชาการของคุณ",
+    "overallGrade": "เกรดรวม",
+    "completed": "สมบูรณ์",
+    "trend": "แนวโน้ม",
+    "yourGrades": "เกรดของคุณ",
+    "assignments": "การมอบหมายงาน",
+    "studentNotFound": "ไม่พบนักเรียน",
+    "goBack": "ย้อนกลับ",
+    "grade": "ระดับ",
+    "table": {
+      "assignment": "งานที่มอบหมาย",
+      "grade": "ระดับ",
+      "total": "ทั้งหมด",
+      "percentage": "-",
+      "status": "สถานะ",
+      "submitted": "ส่งแล้ว"
+    },
+    "status": {
+      "graded": "เกรด",
+      "pending": "รอดำเนินการ"
+    },
+    "empty": {
+      "title": "ไม่พบงานที่ได้รับมอบหมาย",
+      "description": "นักเรียนคนนี้ไม่มีงานที่จะแสดง"
+    },
+    "searchPlaceholder": "ค้นหางานที่ได้รับมอบหมาย..."
+  }
+}

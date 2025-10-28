@@ -1,0 +1,140 @@
+{
+  "classGrades": {
+    "title": "ग्रेड",
+    "subtitle": "छात्रों के ग्रेड देखें और प्रबंधित करें",
+    "columns": {
+      "assignment": "कार्यभार",
+      "maxPoints": "अधिकतम अंक",
+      "weight": "वज़न",
+      "graded": "ग्रेड दिया गया",
+      "dueDate": "दो तिथियाँ",
+      "actions": "कार्रवाई",
+      "student": "विद्यार्थी",
+      "overallGrade": "समग्र ग्रेड",
+      "assignmentsCompleted": "पूर्ण किए गए कार्य",
+      "trend": "रुझान"
+    },
+    "labels": {
+      "rubric": "सरनामा"
+    },
+    "actions": {
+      "manage": "प्रबंधित करना",
+      "viewGrades": "ग्रेड देखें",
+      "saving": "बचत...",
+      "saveChanges": "परिवर्तनों को सुरक्षित करें",
+      "preview": "पूर्व दर्शन",
+      "edit": "संपादन करना",
+      "delete": "मिटाना",
+      "createNew": "नया निर्माण"
+    },
+    "overview": {
+      "title": "कक्षा अवलोकन",
+      "classAverage": "कक्षा औसत",
+      "totalStudents": "कुल छात्र",
+      "assignments": "कार्य",
+      "submissionRate": "सबमिशन दर"
+    },
+    "assignmentManagement": {
+      "title": "असाइनमेंट प्रबंधन",
+      "empty": {
+        "title": "कोई असाइनमेंट नहीं मिला",
+        "description": "ग्रेड और सेटिंग्स प्रबंधित करने के लिए असाइनमेंट बनाएँ"
+      },
+      "searchPlaceholder": "असाइनमेंट खोजें..."
+    },
+    "students": {
+      "title": "छात्र",
+      "viewAll": "सभी छात्रों को देखें",
+      "empty": {
+        "title": "कोई छात्र नामांकित नहीं है",
+        "description": "कक्षा में शामिल होने के बाद छात्र यहां दिखाई देंगे"
+      },
+      "searchPlaceholder": "छात्रों को खोजें..."
+    },
+    "gradeBoundaries": {
+      "title": "ग्रेड सीमाएँ",
+      "untitled": "शीर्षकहीन ग्रेडिंग सीमा",
+      "empty": {
+        "title": "कोई ग्रेड सीमा नहीं बनाई गई",
+        "description": "ग्रेड श्रेणियों को परिभाषित करने के लिए ग्रेडिंग सीमाएँ बनाएँ"
+      },
+      "previewTitle": "ग्रेडिंग सीमाओं का पूर्वावलोकन",
+      "details": {
+        "title": "ग्रेडिंग सीमा विवरण",
+        "name": "नाम",
+        "noneDefined": "कोई ग्रेडिंग सीमाएँ परिभाषित नहीं हैं"
+      }
+    },
+    "rubrics": {
+      "title": "रुब्रिक",
+      "untitled": "शीर्षकहीन रूब्रिक",
+      "empty": {
+        "title": "कोई रूब्रिक नहीं बनाया गया",
+        "description": "मूल्यांकन मानदंड परिभाषित करने के लिए रूब्रिक बनाएं"
+      },
+      "previewTitle": "रूब्रिक पूर्वावलोकन",
+      "details": {
+        "title": "रूब्रिक विवरण",
+        "name": "नाम",
+        "category": "वर्ग",
+        "description": "विवरण",
+        "custom": "रिवाज़",
+        "noDescription": "कोई विवरण नहीं दिया गया",
+        "noCriteria": "इस रूब्रिक में कोई मानदंड नहीं मिला"
+      }
+    },
+    "confirm": {
+      "deleteRubric": "क्या आप वाकई इस मार्कस्कीम को हटाना चाहते हैं?",
+      "deleteGradingBoundary": "क्या आप वाकई इस ग्रेडिंग सीमा को हटाना चाहते हैं?"
+    }
+  },
+  "studentGrades": {
+    "title": "सभी छात्रों के ग्रेड",
+    "allStudents": "इस कक्षा के सभी छात्रों के ग्रेड देखें और प्रबंधित करें",
+    "students": "छात्र",
+    "noGrades": "कोई छात्र नहीं मिला",
+    "noGradesDescription": "इस कक्षा में अभी तक कोई छात्र नामांकित नहीं है। छात्र शामिल होने के बाद यहाँ दिखाई देंगे।",
+    "table": {
+      "student": "विद्यार्थी",
+      "actions": "कार्रवाई"
+    },
+    "actions": {
+      "viewSubmission": "ग्रेड देखें"
+    }
+  },
+  "individualGrades": {
+    "myGrades": "मेरे ग्रेड्स",
+    "studentGrades": "ग्रेड",
+    "viewYourGrades": "अपने ग्रेड और प्रगति देखें",
+    "individualManagement": "व्यक्तिगत छात्र ग्रेड प्रबंधन",
+    "export": "निर्यात",
+    "back": "पीछे",
+    "yourPerformance": "आपका प्रदर्शन",
+    "trackProgress": "अपनी शैक्षणिक प्रगति पर नज़र रखें",
+    "overallGrade": "समग्र ग्रेड",
+    "completed": "पुरा होना।",
+    "trend": "रुझान",
+    "yourGrades": "आपके ग्रेड",
+    "assignments": "कार्य",
+    "studentNotFound": "छात्र नहीं मिला",
+    "goBack": "वापस जाओ",
+    "grade": "श्रेणी",
+    "table": {
+      "assignment": "कार्यभार",
+      "grade": "श्रेणी",
+      "total": "कुल",
+      "percentage": "%",
+      "status": "स्थिति",
+      "submitted": "प्रस्तुत"
+    },
+    "status": {
+      "graded": "ग्रेड दिया गया",
+      "pending": "लंबित"
+    },
+    "empty": {
+      "title": "कोई असाइनमेंट नहीं मिला",
+      "description": "इस छात्र के पास दिखाने के लिए कोई असाइनमेंट नहीं है"
+    },
+    "searchPlaceholder": "असाइनमेंट खोजें..."
+  }
+}

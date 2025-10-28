@@ -1,0 +1,72 @@
+{
+  "aiLabs": {
+    "title": "Laboratoare de inteligență artificială",
+    "subtitle": "Creați conținut educațional cu asistență a inteligenței artificiale",
+    "aiPowered": "Susținut de inteligență artificială",
+    "createNew": "Creați conținut nou",
+    "aiGenerated": "Generat de inteligența artificială",
+    "deleteConfirm": "Sigur vrei să ștergi acest laborator de inteligență artificială? Această acțiune nu poate fi anulată.",
+    "widgets": {
+      "assignment": {
+        "title": "Sarcină",
+        "description": "Creați teme interactive cu asistență AI"
+      },
+      "quiz": {
+        "title": "Test",
+        "description": "Generați chestionare cu diverse tipuri de întrebări"
+      },
+      "worksheet": {
+        "title": "Foaie de lucru",
+        "description": "Creați fișe de lucru și exerciții"
+      },
+      "lessonPlan": {
+        "title": "Plan de lecție",
+        "description": "Proiectați planuri de lecție cuprinzătoare"
+      },
+      "rubric": {
+        "title": "Rubrică",
+        "description": "Creați rubrici de notare detaliate"
+      }
+    },
+    "tabs": {
+      "drafts": "Laboratoare de schițe",
+      "chats": "AI Cats"
+    },
+    "drafts": {
+      "title": "Laboratoare preliminare ({count})",
+      "empty": {
+        "title": "Încă nu există schițe de laborator",
+        "description": "Creează-ți primul conținut educațional generat de inteligența artificială folosind widget-urile de mai sus."
+      }
+    },
+    "chats": {
+      "title": "Laboratoare de inteligență artificială ({count})",
+      "active": "Activ",
+      "messageCount": "{count} mesaje",
+      "createdBy": "Creat de {name}",
+      "empty": {
+        "title": "Încă nu există laboratoare de inteligență artificială",
+        "description": "Creează-ți primul laborator de inteligență artificială pentru a începe colaborarea cu inteligența artificială la conținut educațional."
+      }
+    },
+    "toast": {
+      "labCreated": "Laboratorul de inteligență artificială a fost creat cu succes!",
+      "labCreateFailed": "Nu s-a putut crea Laboratorul de Inteligență Artificială:",
+      "labDeleted": "Laboratorul de inteligență artificială a fost șters cu succes!",
+      "labDeleteFailed": "Nu s-a putut șterge Laboratorul de Inteligență Artificială:"
+    }
+  },
+  "aiLabChat": {
+    "backButton": "Înapoi la Laboratoarele de Inteligență Artificială",
+    "loading": "Încărcare...",
+    "aiThinking": "Gândirea prin inteligență artificială...",
+    "getAIHelp": "Obțineți ajutor cu inteligența artificială",
+    "notFound": {
+      "title": "Chatul de laborator nu a fost găsit",
+      "description": "Este posibil ca acest laborator de inteligență artificială să fi fost șters sau să nu aveți acces la el."
+    },
+    "toast": {
+      "messageFailed": "Mesajul nu a fost trimis:"
+    }
+  }
+}

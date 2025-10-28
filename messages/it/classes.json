@@ -1,0 +1,21 @@
+{
+  "classes": {
+    "title": "Classi",
+    "description": "Gestisci il tuo insegnamento e le classi iscritte",
+    "joinClass": "Unisciti alla classe",
+    "createClass": "Crea classe",
+    "searchPlaceholder": "Cerca classi...",
+    "teaching": "Insegnamento",
+    "enrolled": "Iscritto",
+    "noClassesFound": "Nessuna classe trovata",
+    "noTeachingClassesFound": "Nessuna classe di insegnamento trovata corrispondente a \"{query}\"",
+    "noEnrolledClassesFound": "Nessuna classe iscritta trovata corrispondente a \"{query}\"",
+    "noClassesYet": "Nessuna lezione ancora",
+    "noClassesYetDesc": "Crea la tua prima classe per iniziare a gestire compiti, voti e interazioni con gli studenti.",
+    "noEnrolledClasses": "Nessuna classe iscritta",
+    "noEnrolledClassesDesc": "Partecipa a una lezione utilizzando un codice invito o un link fornito dal tuo insegnante.",
+    "classDeleted": "Classe eliminata con successo",
+    "classDeleteFailed": "Impossibile eliminare la classe",
+    "failedToLoad": "Impossibile caricare le classi"
+  }
+}

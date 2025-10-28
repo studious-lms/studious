@@ -1,0 +1,66 @@
+{
+  "syllabus": {
+    "title": "Kursplan",
+    "subtitle": "Kursöversikt och akademisk information",
+    "actions": {
+      "saveChanges": "Spara ändringar",
+      "cancel": "Avboka",
+      "edit": "Redigera kursplan"
+    },
+    "errors": {
+      "failedToLoad": "Misslyckades med att ladda kursplanen",
+      "tryLater": "Försök igen senare."
+    },
+    "stats": {
+      "totalAssignments": "Totalt antal uppdrag",
+      "completionRate": "Färdigställandegrad",
+      "totalPoints": "Totalt antal poäng",
+      "upcoming": "Kommande"
+    },
+    "overview": {
+      "title": "Kursöversikt",
+      "placeholder": "Ange kursöversikt, mål och annan viktig information...",
+      "helper": "Ange din kursinformation, lärandemål, policyer och andra viktiga detaljer.",
+      "empty": {
+        "title": "Inget kursplaninnehåll ännu",
+        "description": "Klicka på \"Redigera kursplan\" för att lägga till kursinformation, lärandemål, policyer med mera."
+      }
+    },
+    "assignments": {
+      "title": "Kursuppgifter",
+      "gradedCount": "{graded} betygsatta uppgifter",
+      "totalPoints": "{total} poäng totalt",
+      "empty": {
+        "title": "Inga uppgifter ännu",
+        "description": "Uppgifterna visas här när de har skapats."
+      }
+    },
+    "table": {
+      "assignment": "Uppdrag",
+      "dueDate": "Två datum",
+      "points": "Poäng",
+      "weight": "Vikt",
+      "status": "Status",
+      "pts": "poäng"
+    },
+    "status": {
+      "graded": "Graderad",
+      "pending": "I avvaktan på"
+    },
+    "courseInfo": {
+      "title": "Kursinformation",
+      "basic": {
+        "title": "Grundläggande information",
+        "className": "Klassnamn",
+        "section": "Avsnitt",
+        "subject": "Ämne"
+      },
+      "stats": {
+        "title": "Kursstatistik",
+        "totalAssignments": "Totalt antal uppdrag",
+        "gradedAssignments": "Betygsatta uppgifter",
+        "totalPoints": "Totalt antal poäng"
+      }
+    }
+  }
+}

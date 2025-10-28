@@ -1,0 +1,54 @@
+{
+  "navigation": {
+    "home": "Dom",
+    "classes": "Zajęcia",
+    "agenda": "Porządek obrad",
+    "chat": "Pogawędzić",
+    "notifications": "Powiadomienia",
+    "profile": "Profil",
+    "settings": "Ustawienia",
+    "signOut": "Wyloguj się",
+    "accountSettings": "Ustawienia konta",
+    "pricing": "Wycena",
+    "schoolProgram": "Program szkolny",
+    "about": "O",
+    "press": "Naciskać",
+    "signIn": "Zalogować się"
+  },
+  "classSidebar": {
+    "overview": "Przegląd",
+    "assignments": "Zadania",
+    "grades": "Oceny",
+    "files": "Akta",
+    "attendance": "Frekwencja",
+    "aiLabs": "Laboratoria AI",
+    "members": "Członkowie",
+    "syllabus": "Konspekt",
+    "settings": "Ustawienia",
+    "classNavigation": "Nawigacja klasowa",
+    "switchClass": "Przełącz klasę",
+    "classInviteCode": "Kod zaproszenia na klasę",
+    "copyCode": "Kopiuj kod",
+    "regenerateCode": "Regeneruj kod",
+    "toast": {
+      "inviteCodeRegenerated": "Kod zaproszenia został pomyślnie wygenerowany",
+      "inviteCodeRegenerateFailed": "Nie udało się ponownie wygenerować kodu zaproszenia",
+      "inviteCodeCopied": "Kod zaproszenia skopiowany do schowka"
+    }
+  },
+  "footer": {
+    "productDescription": "Nowoczesne zarządzanie nauczaniem dla nowej generacji edukacji.",
+    "product": "Produkt",
+    "features": "Cechy",
+    "pricing": "Wycena",
+    "schoolProgram": "Program szkolny",
+    "company": "Firma",
+    "about": "O",
+    "team": "Zespół",
+    "press": "Naciskać",
+    "contact": "Kontakt",
+    "privacyPolicy": "Polityka prywatności",
+    "termsOfService": "Warunki korzystania z usługi",
+    "copyright": "© 2025 Studious LMS. Wszelkie prawa zastrzeżone."
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "classes": {
+    "title": "Klassen",
+    "description": "Beheer uw onderwijs- en ingeschreven klassen",
+    "joinClass": "Doe mee met de les",
+    "createClass": "Klasse maken",
+    "searchPlaceholder": "Zoek klassen...",
+    "teaching": "Onderwijs",
+    "enrolled": "Ingeschreven",
+    "noClassesFound": "Geen klassen gevonden",
+    "noTeachingClassesFound": "Er zijn geen lesklassen gevonden die overeenkomen met \"{query}\"",
+    "noEnrolledClassesFound": "Geen ingeschreven klassen gevonden die overeenkomen met \"{query}\"",
+    "noClassesYet": "Nog geen lessen",
+    "noClassesYetDesc": "Maak uw eerste klas aan en begin met het beheren van opdrachten, cijfers en studenteninteracties.",
+    "noEnrolledClasses": "Geen ingeschreven klassen",
+    "noEnrolledClassesDesc": "Neem deel aan een les met behulp van de uitnodigingscode of link die u van uw docent hebt ontvangen.",
+    "classDeleted": "Klasse succesvol verwijderd",
+    "classDeleteFailed": "Het is niet gelukt om de klas te verwijderen",
+    "failedToLoad": "Het laden van klassen is mislukt"
+  }
+}

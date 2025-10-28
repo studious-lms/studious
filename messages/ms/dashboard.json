@@ -1,0 +1,44 @@
+{
+  "home": {
+    "welcomeBack": "Selamat kembali, {name}!",
+    "subtitle": "Inilah yang berlaku dengan kelas anda hari ini.",
+    "stats": {
+      "totalClasses": "Jumlah Kelas",
+      "teachingEnrolled": "{teaching} mengajar, {enrolled} didaftarkan",
+      "dueToday": "Diperuntukkan Hari Ini",
+      "dueTodayDesc": "Tugasan perlu dibayar hari ini",
+      "upcoming": "Akan datang",
+      "upcomingDesc": "Tugasan akan datang",
+      "thisWeek": "Minggu ini",
+      "totalAssignments": "Jumlah tugasan"
+    },
+    "upcomingAssignments": {
+      "title": "Tugasan Akan Datang",
+      "subtitle": "Tarikh akhir anda yang seterusnya",
+      "allCaughtUp": "Semua terperangkap!",
+      "noUpcoming": "Tiada tugasan akan datang buat masa ini.",
+      "viewAgenda": "Lihat Agenda",
+      "dueToday": "Diperuntukkan hari ini",
+      "dueTomorrow": "Esok kena bayar",
+      "due": "Dua {tarikh}",
+      "teaching": "Mengajar",
+      "viewAllAssignments": "Lihat Semua Tugasan"
+    },
+    "notifications": {
+      "title": "Pemberitahuan Terkini",
+      "subtitle": "Kemas kini terkini",
+      "noNew": "Tiada pemberitahuan baharu",
+      "viewAll": "Lihat Semua Pemberitahuan"
+    },
+    "classes": {
+      "title": "Kelas Saya",
+      "subtitle": "Akses cepat ke kelas anda",
+      "teaching": "Mengajar",
+      "enrolled": "Didaftarkan",
+      "due": "kena bayar",
+      "noClasses": "Tiada kelas lagi",
+      "browseClasses": "Semak imbas Kelas",
+      "viewAllClasses": "Lihat Semua Kelas"
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "settings": {
+    "title": "Klassinställningar",
+    "subtitle": "Konfigurera klassdetaljer och inställningar",
+    "labels": {
+      "unsavedChanges": "Osparade ändringar"
+    },
+    "actions": {
+      "saving": "Sparande...",
+      "saveChanges": "Spara ändringar",
+      "deleting": "Tar bort...",
+      "deleteClass": "Ta bort klass",
+      "cancel": "Avboka"
+    },
+    "sections": {
+      "basicInfo": {
+        "title": "Grundläggande information"
+      },
+      "theme": {
+        "title": "Klasstema",
+        "description": "Välj en temafärg för den här klassen"
+      },
+      "danger": {
+        "title": "Riskzon",
+        "description": "När du har tagit bort en kurs finns det ingen återvändo. Detta kommer att permanent radera alla uppgifter, betyg, närvaroregister och ta bort alla elever från kursen."
+      }
+    },
+    "fields": {
+      "className": "Klassnamn",
+      "section": "Avsnitt",
+      "subject": "Ämne"
+    },
+    "placeholders": {
+      "className": "t.ex. avancerad fysik",
+      "section": "t.ex. AP-101",
+      "subject": "t.ex. fysik"
+    },
+    "toasts": {
+      "updated": {
+        "title": "Klass uppdaterad",
+        "description": "Klassinställningarna har sparats."
+      },
+      "deleted": {
+        "title": "Klass borttagen",
+        "description": "Klassen har tagits bort permanent."
+      }
+    },
+    "errors": {
+      "updateFailed": {
+        "title": "Uppdateringen misslyckades",
+        "description": "Det gick inte att spara kursinställningarna. Försök igen."
+      }
+    },
+    "confirm": {
+      "title": "Är du helt säker?",
+      "description": "Den här åtgärden kan inte ångras. Detta kommer att permanent radera klassen \"{name}\" och ta bort all tillhörande data, inklusive:",
+      "items": {
+        "assignments": "Alla uppgifter och inlämningar",
+        "records": "Alla betyg och närvaroregister",
+        "students": "Alla elever kommer att tas bort från klassen",
+        "events": "Alla klassevenemang och tillkännagivanden"
+      },
+      "confirmDelete": "Ja, radera kurs"
+    }
+  }
+}

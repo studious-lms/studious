@@ -1,0 +1,12 @@
+{
+  "overview": {
+    "assignments": "Tugas",
+    "students": "siswa",
+    "attendance": "Kehadiran",
+    "attachFile": "Lampirkan berkas",
+    "post": "Pos",
+    "posting": "Memposting...",
+    "noPosts": "Belum ada postingan",
+    "createFirstPost": "Buat postingan pertama"
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "classFiles": {
+    "title": "Файлы",
+    "subtitle": "Управление файлами и ресурсами классов",
+    "actions": {
+      "newFolder": "Новая папка",
+      "upload": "Загрузить",
+      "uploadFiles": "Загрузить файлы",
+      "createFolder": "Создать папку",
+      "download": "Скачать",
+      "share": "Делиться",
+      "delete": "Удалить",
+      "filter": "Фильтр",
+      "sort": "Сортировать"
+    },
+    "toasts": {
+      "folderCreated": "Папка успешно создана",
+      "folderDeleted": "Папка успешно удалена",
+      "folderRenamed": "Папка успешно переименована",
+      "folderMoved": "Папка успешно перемещена",
+      "filesUploaded": "Файлы успешно загружены",
+      "fileDeleted": "Файл успешно удален",
+      "fileRenamed": "Файл успешно переименован",
+      "fileMoved": "Файл успешно перемещен",
+      "downloadStarted": "Загрузка началась",
+      "shareCopied": "Ссылка для общего доступа скопирована"
+    },
+    "errors": {
+      "teacherOnly": "Изменять файлы могут только учителя.",
+      "downloadFailed": "Загрузка не удалась",
+      "shareFailed": "Поделиться не удалось",
+      "failedToLoad": "Не удалось загрузить файлы. Повторите попытку позже."
+    },
+    "breadcrumbs": {
+      "classFiles": "Файлы классов"
+    },
+    "search": {
+      "placeholder": "Поиск в файлах"
+    },
+    "selected": "выбрано {count}",
+    "filters": {
+      "fileType": "Тип файла",
+      "documents": "Документы",
+      "images": "Изображения",
+      "videos": "Видео",
+      "presentations": "Презентации"
+    },
+    "sort": {
+      "name": "Имя",
+      "lastModified": "Последнее изменение",
+      "fileSize": "Размер файла"
+    },
+    "table": {
+      "name": "Имя",
+      "owner": "Владелец",
+      "lastModified": "Последнее изменение",
+      "fileSize": "Размер файла"
+    },
+    "empty": {
+      "title": "Эта папка пуста",
+      "description": "Загрузите файлы или создайте папки, чтобы начать организовывать материалы своего класса.",
+      "searchTitle": "Файлы не найдены.",
+      "searchDescription": "Ни один файл не соответствует запросу \"{query}\". Попробуйте другой поисковый запрос."
+    }
+  },
+  "folderView": {
+    "subtitle": "Содержимое папки",
+    "notFound": {
+      "title": "Папка не найдена",
+      "description": "Запрошенная папка не найдена.",
+      "backButton": "Вернуться к файлам"
+    },
+    "error": {
+      "loadFailed": "Не удалось загрузить содержимое папки. Повторите попытку позже."
+    },
+    "breadcrumbs": {
+      "classFiles": "Файлы классов"
+    },
+    "search": {
+      "placeholder": "Поиск в папке",
+      "selected": "выбрано {count}"
+    },
+    "filters": {
+      "label": "Фильтр",
+      "fileType": "Тип файла",
+      "documents": "Документы",
+      "images": "Изображения",
+      "videos": "Видео",
+      "presentations": "Презентации"
+    },
+    "sort": {
+      "label": "Сортировать",
+      "name": "Имя",
+      "lastModified": "Последнее изменение",
+      "fileSize": "Размер файла"
+    },
+    "table": {
+      "name": "Имя",
+      "owner": "Владелец",
+      "lastModified": "Последнее изменение",
+      "fileSize": "Размер файла"
+    },
+    "empty": {
+      "noFilesFound": "Файлы не найдены.",
+      "noFilesFoundDescription": "Ни один файл не соответствует запросу \"{query}\". Попробуйте другой поисковый запрос.",
+      "folderEmpty": "Эта папка пуста",
+      "folderEmptyDescription": "Загружайте файлы или создавайте папки для организации своих материалов."
+    },
+    "actions": {
+      "newFolder": "Новая папка",
+      "uploadFiles": "Загрузить файлы",
+      "createFolder": "Создать папку"
+    },
+    "toast": {
+      "folderCreated": "Папка успешно создана",
+      "folderDeleted": "Папка успешно удалена",
+      "folderRenamed": "Папка успешно переименована",
+      "folderMoved": "Папка успешно перемещена",
+      "filesUploaded": "Файлы успешно загружены",
+      "fileDeleted": "Файл успешно удален",
+      "fileRenamed": "Файл успешно переименован",
+      "fileMoved": "Файл успешно перемещен",
+      "downloadStarted": "Загрузка началась",
+      "downloadFailed": "Загрузка не удалась",
+      "shareLinkCopied": "Ссылка для общего доступа скопирована",
+      "shareFailed": "Поделиться не удалось",
+      "permissionDenied": "Доступ запрещен"
+    }
+  }
+}

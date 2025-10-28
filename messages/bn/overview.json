@@ -1,0 +1,12 @@
+{
+  "overview": {
+    "assignments": "অ্যাসাইনমেন্ট",
+    "students": "ছাত্র",
+    "attendance": "উপস্থিতি",
+    "attachFile": "ফাইল সংযুক্ত করুন",
+    "post": "পোস্ট",
+    "posting": "পোস্ট করা হচ্ছে...",
+    "noPosts": "এখনো কোনও পোস্ট নেই।",
+    "createFirstPost": "প্রথম পোস্ট তৈরি করুন"
+  }
+}

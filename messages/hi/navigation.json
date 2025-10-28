@@ -1,0 +1,54 @@
+{
+  "navigation": {
+    "home": "घर",
+    "classes": "कक्षाओं",
+    "agenda": "कार्यसूची",
+    "chat": "बात करना",
+    "notifications": "सूचनाएं",
+    "profile": "प्रोफ़ाइल",
+    "settings": "सेटिंग्स",
+    "signOut": "साइन आउट",
+    "accountSettings": "अकाउंट सेटिंग",
+    "pricing": "मूल्य निर्धारण",
+    "schoolProgram": "स्कूल कार्यक्रम",
+    "about": "के बारे में",
+    "press": "प्रेस",
+    "signIn": "दाखिल करना"
+  },
+  "classSidebar": {
+    "overview": "अवलोकन",
+    "assignments": "कार्य",
+    "grades": "ग्रेड",
+    "files": "फ़ाइलें",
+    "attendance": "उपस्थिति",
+    "aiLabs": "एआई लैब्स",
+    "members": "सदस्यों",
+    "syllabus": "पाठ्यक्रम",
+    "settings": "सेटिंग्स",
+    "classNavigation": "कक्षा नेविगेशन",
+    "switchClass": "स्विच क्लास",
+    "classInviteCode": "कक्षा आमंत्रण कोड",
+    "copyCode": "कोड कॉपी करें",
+    "regenerateCode": "कोड पुन: उत्पन्न करें",
+    "toast": {
+      "inviteCodeRegenerated": "आमंत्रण कोड सफलतापूर्वक पुनः जनरेट किया गया",
+      "inviteCodeRegenerateFailed": "आमंत्रण कोड पुनः जनरेट करने में विफल",
+      "inviteCodeCopied": "आमंत्रण कोड क्लिपबोर्ड पर कॉपी किया गया"
+    }
+  },
+  "footer": {
+    "productDescription": "अगली पीढ़ी की शिक्षा के लिए आधुनिक शिक्षण प्रबंधन।",
+    "product": "उत्पाद",
+    "features": "विशेषताएँ",
+    "pricing": "मूल्य निर्धारण",
+    "schoolProgram": "स्कूल कार्यक्रम",
+    "company": "कंपनी",
+    "about": "के बारे में",
+    "team": "टीम",
+    "press": "प्रेस",
+    "contact": "संपर्क",
+    "privacyPolicy": "गोपनीयता नीति",
+    "termsOfService": "सेवा की शर्तें",
+    "copyright": "© 2025 स्टूडियोस एलएमएस। सर्वाधिकार सुरक्षित।"
+  }
+}

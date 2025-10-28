@@ -1,0 +1,54 @@
+{
+  "navigation": {
+    "home": "Hem",
+    "classes": "Klasser",
+    "agenda": "Dagordning",
+    "chat": "Chatt",
+    "notifications": "Aviseringar",
+    "profile": "Profil",
+    "settings": "Inställningar",
+    "signOut": "Logga ut",
+    "accountSettings": "Kontoinställningar",
+    "pricing": "Prissättning",
+    "schoolProgram": "Skolprogram",
+    "about": "Om",
+    "press": "Trycka",
+    "signIn": "Logga in"
+  },
+  "classSidebar": {
+    "overview": "Översikt",
+    "assignments": "Uppgifter",
+    "grades": "Betyg",
+    "files": "Filer",
+    "attendance": "Närvaro",
+    "aiLabs": "AI-labb",
+    "members": "Medlemmar",
+    "syllabus": "Kursplan",
+    "settings": "Inställningar",
+    "classNavigation": "Klassnavigering",
+    "switchClass": "Växla klass",
+    "classInviteCode": "Kod för klassinbjudan",
+    "copyCode": "Kopiera kod",
+    "regenerateCode": "Återskapa kod",
+    "toast": {
+      "inviteCodeRegenerated": "Inbjudningskoden har genererats",
+      "inviteCodeRegenerateFailed": "Misslyckades med att generera inbjudningskoden",
+      "inviteCodeCopied": "Inbjudningskoden kopierad till urklipp"
+    }
+  },
+  "footer": {
+    "productDescription": "Modern lärhantering för nästa generations utbildning.",
+    "product": "Produkt",
+    "features": "Drag",
+    "pricing": "Prissättning",
+    "schoolProgram": "Skolprogram",
+    "company": "Företag",
+    "about": "Om",
+    "team": "Team",
+    "press": "Trycka",
+    "contact": "Kontakta",
+    "privacyPolicy": "Integritetspolicy",
+    "termsOfService": "Användarvillkor",
+    "copyright": "© 2025 Studious LMS. Alla rättigheter förbehållna."
+  }
+}

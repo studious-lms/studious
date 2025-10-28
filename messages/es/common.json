@@ -413,7 +413,7 @@
     },
     "filters": {
       "label": "Filtrar:",
-      "all": "Todos ({count})",
+      "all": "Todo ({count})",
       "unread": "No leídos ({count})",
       "read": "Leer ({count})"
     },
@@ -667,7 +667,7 @@
         "fileRenamed": "Archivo renombrado exitosamente",
         "fileMoved": "Archivo movido exitosamente",
         "downloadStarted": "Descarga iniciada",
-        "shareCopied": "Enlace compartido copiado"
+        "shareCopied": "Compartir enlace copiado"
       },
       "errors": {
         "teacherOnly": "Sólo los profesores pueden modificar los archivos.",
@@ -849,7 +849,7 @@
     "newAssignment": "Nueva asignación",
     "createAssignment": "Crear tarea",
     "viewAssignment": "Ver tarea",
-    "allAssignments": "Todas las asignaciones",
+    "allAssignments": "Todas las tareas",
     "searchAssignments": "Buscar asignaciones...",
     "noAssignmentsFound": "No se encontraron tareas",
     "createFirstAssignment": "Crea tu primera tarea para comenzar",

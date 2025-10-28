@@ -1,0 +1,44 @@
+{
+  "home": {
+    "welcomeBack": "Bentornato, {name}!",
+    "subtitle": "Ecco cosa succederà oggi nelle vostre lezioni.",
+    "stats": {
+      "totalClasses": "Totale classi",
+      "teachingEnrolled": "{insegnamento} insegnamento, {iscritto} iscritto",
+      "dueToday": "Scadenza oggi",
+      "dueTodayDesc": "Compiti in scadenza oggi",
+      "upcoming": "Prossimamente",
+      "upcomingDesc": "Incarichi in arrivo",
+      "thisWeek": "Questa settimana",
+      "totalAssignments": "Assegnazioni totali"
+    },
+    "upcomingAssignments": {
+      "title": "Prossimi incarichi",
+      "subtitle": "Le tue prossime scadenze",
+      "allCaughtUp": "Tutto aggiornato!",
+      "noUpcoming": "Al momento non ci sono incarichi in programma.",
+      "viewAgenda": "Visualizza l'agenda",
+      "dueToday": "Scadenza oggi",
+      "dueTomorrow": "Scadenza domani",
+      "due": "Due {date}",
+      "teaching": "Insegnamento",
+      "viewAllAssignments": "Visualizza tutti gli incarichi"
+    },
+    "notifications": {
+      "title": "Notifiche recenti",
+      "subtitle": "Ultimi aggiornamenti",
+      "noNew": "Nessuna nuova notifica",
+      "viewAll": "Visualizza tutte le notifiche"
+    },
+    "classes": {
+      "title": "Le mie lezioni",
+      "subtitle": "Accesso rapido alle tue lezioni",
+      "teaching": "Insegnamento",
+      "enrolled": "Iscritto",
+      "due": "dovuto",
+      "noClasses": "Nessuna lezione ancora",
+      "browseClasses": "Sfoglia le classi",
+      "viewAllClasses": "Visualizza tutte le classi"
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "syllabus": {
+    "title": "Müfredat",
+    "subtitle": "Ders genel bakışı ve akademik bilgiler",
+    "actions": {
+      "saveChanges": "Değişiklikleri Kaydet",
+      "cancel": "İptal etmek",
+      "edit": "Müfredatı Düzenle"
+    },
+    "errors": {
+      "failedToLoad": "Müfredat yüklenemedi",
+      "tryLater": "Lütfen daha sonra tekrar deneyin."
+    },
+    "stats": {
+      "totalAssignments": "Toplam Ödevler",
+      "completionRate": "Tamamlanma Oranı",
+      "totalPoints": "Toplam Puan",
+      "upcoming": "Yaklaşan"
+    },
+    "overview": {
+      "title": "Kurs Genel Bakışı",
+      "placeholder": "Dersin genel görünümünü, hedeflerini ve diğer önemli bilgileri girin...",
+      "helper": "Ders bilgilerinizi, öğrenme hedeflerinizi, politikalarınızı ve diğer önemli ayrıntıları girin.",
+      "empty": {
+        "title": "Henüz müfredat içeriği yok",
+        "description": "Ders bilgilerini, öğrenme hedeflerini, politikaları ve daha fazlasını eklemek için 'Müfredatı Düzenle'ye tıklayın."
+      }
+    },
+    "assignments": {
+      "title": "Ders Ödevleri",
+      "gradedCount": "{graded} derecelendirilmiş ödevler",
+      "totalPoints": "{toplam} toplam puan",
+      "empty": {
+        "title": "Henüz ödev yok",
+        "description": "Ödevler oluşturulduktan sonra burada görünecektir."
+      }
+    },
+    "table": {
+      "assignment": "Atama",
+      "dueDate": "İki Tarih",
+      "points": "Puanlar",
+      "weight": "Ağırlık",
+      "status": "Durum",
+      "pts": "puanlar"
+    },
+    "status": {
+      "graded": "Derecelendirilmiş",
+      "pending": "Askıda olması"
+    },
+    "courseInfo": {
+      "title": "Kurs Bilgileri",
+      "basic": {
+        "title": "Temel Bilgiler",
+        "className": "Sınıf Adı",
+        "section": "Bölüm",
+        "subject": "Ders"
+      },
+      "stats": {
+        "title": "Ders İstatistikleri",
+        "totalAssignments": "Toplam Ödevler",
+        "gradedAssignments": "Notlandırılmış Ödevler",
+        "totalPoints": "Toplam Puan"
+      }
+    }
+  }
+}

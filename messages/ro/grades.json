@@ -1,0 +1,140 @@
+{
+  "classGrades": {
+    "title": "Note",
+    "subtitle": "Vizualizați și gestionați notele elevilor",
+    "columns": {
+      "assignment": "Sarcină",
+      "maxPoints": "Puncte maxime",
+      "weight": "Greutate",
+      "graded": "Gradat",
+      "dueDate": "Două întâlniri",
+      "actions": "Acțiuni",
+      "student": "Student",
+      "overallGrade": "Nota generală",
+      "assignmentsCompleted": "Sarcini finalizate",
+      "trend": "Tendinţă"
+    },
+    "labels": {
+      "rubric": "Rubrică"
+    },
+    "actions": {
+      "manage": "Gestionează",
+      "viewGrades": "Vizualizați notele",
+      "saving": "Economisire...",
+      "saveChanges": "Salvați modificările",
+      "preview": "Previzualizare",
+      "edit": "Edita",
+      "delete": "Şterge",
+      "createNew": "Creare Nou"
+    },
+    "overview": {
+      "title": "Prezentare generală a clasei",
+      "classAverage": "Media clasei",
+      "totalStudents": "Total studenți",
+      "assignments": "Sarcini",
+      "submissionRate": "Rata de trimitere"
+    },
+    "assignmentManagement": {
+      "title": "Gestionarea sarcinilor",
+      "empty": {
+        "title": "Nu s-au găsit teme",
+        "description": "Creați teme pentru a gestiona notele și setările"
+      },
+      "searchPlaceholder": "Căutați sarcini..."
+    },
+    "students": {
+      "title": "Studenți",
+      "viewAll": "Vezi toți studenții",
+      "empty": {
+        "title": "Niciun student înscris",
+        "description": "Studenții vor apărea aici odată ce se alătură cursului"
+      },
+      "searchPlaceholder": "Caută studenți..."
+    },
+    "gradeBoundaries": {
+      "title": "Limite de grad",
+      "untitled": "Limită de gradare fără titlu",
+      "empty": {
+        "title": "Nu au fost create limite de grad",
+        "description": "Creați limite de gradare pentru a defini intervalele de gradare"
+      },
+      "previewTitle": "Previzualizare limite gradare",
+      "details": {
+        "title": "Detalii despre limitele de nivelare",
+        "name": "Nume",
+        "noneDefined": "Nu sunt definite limite de clasificare"
+      }
+    },
+    "rubrics": {
+      "title": "Rubrici",
+      "untitled": "Rubrică fără titlu",
+      "empty": {
+        "title": "Nu au fost create rubrici",
+        "description": "Creați rubrici pentru a defini criteriile de evaluare"
+      },
+      "previewTitle": "Previzualizare rubrică",
+      "details": {
+        "title": "Detalii rubrică",
+        "name": "Nume",
+        "category": "Categorie",
+        "description": "Descriere",
+        "custom": "Personalizat",
+        "noDescription": "Nu a fost furnizată nicio descriere",
+        "noCriteria": "Nu s-au găsit criterii în această rubrică"
+      }
+    },
+    "confirm": {
+      "deleteRubric": "Sigur vrei să ștergi această schemă de marcare?",
+      "deleteGradingBoundary": "Sigur doriți să ștergeți această limită de gradare?"
+    }
+  },
+  "studentGrades": {
+    "title": "Toate clasele elevilor",
+    "allStudents": "Vizualizați și gestionați notele pentru toți elevii din această clasă",
+    "students": "Studenți",
+    "noGrades": "Nu s-au găsit studenți",
+    "noGradesDescription": "Niciun student nu este încă înscris în acest curs. Studenții vor apărea aici odată ce se înscriu.",
+    "table": {
+      "student": "Student",
+      "actions": "Acțiuni"
+    },
+    "actions": {
+      "viewSubmission": "Vizualizați notele"
+    }
+  },
+  "individualGrades": {
+    "myGrades": "Notele mele",
+    "studentGrades": "Note",
+    "viewYourGrades": "Vizualizați-vă notele și progresul",
+    "individualManagement": "Gestionarea notelor individuale ale elevilor",
+    "export": "Export",
+    "back": "Spate",
+    "yourPerformance": "Performanța ta",
+    "trackProgress": "Urmărește-ți progresul academic",
+    "overallGrade": "Nota generală",
+    "completed": "Finalizat",
+    "trend": "Tendinţă",
+    "yourGrades": "Notele tale",
+    "assignments": "Sarcini",
+    "studentNotFound": "Studentul nu a fost găsit",
+    "goBack": "Întoarce-te",
+    "grade": "Grad",
+    "table": {
+      "assignment": "Sarcină",
+      "grade": "Grad",
+      "total": "Total",
+      "percentage": "%",
+      "status": "Stare",
+      "submitted": "Trimis"
+    },
+    "status": {
+      "graded": "Gradat",
+      "pending": "În așteptare"
+    },
+    "empty": {
+      "title": "Nu s-au găsit teme",
+      "description": "Acest elev nu are teme de afișat"
+    },
+    "searchPlaceholder": "Căutați sarcini..."
+  }
+}

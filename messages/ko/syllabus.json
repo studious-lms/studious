@@ -28,7 +28,7 @@
     },
     "assignments": {
       "title": "과정 과제",
-      "gradedCount": "{등급} 등급이 매겨진 과제",
+      "gradedCount": "{채점됨} 채점된 과제",
       "totalPoints": "{total} 총 포인트",
       "empty": {
         "title": "아직 과제가 없습니다",

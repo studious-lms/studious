@@ -27,7 +27,7 @@
     },
     "errors": {
       "teacherOnly": "Seuls les enseignants peuvent modifier les fichiers.",
-      "downloadFailed": "Téléchargement échoué",
+      "downloadFailed": "Échec du téléchargement",
       "shareFailed": "Le partage a échoué",
       "failedToLoad": "Échec du chargement des fichiers. Veuillez réessayer ultérieurement."
     },
@@ -121,7 +121,7 @@
       "fileRenamed": "Fichier renommé avec succès",
       "fileMoved": "Fichier déplacé avec succès",
       "downloadStarted": "Téléchargement commencé",
-      "downloadFailed": "Téléchargement échoué",
+      "downloadFailed": "Échec du téléchargement",
       "shareLinkCopied": "Lien de partage copié",
       "shareFailed": "Le partage a échoué",
       "permissionDenied": "Permission refusée"

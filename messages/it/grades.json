@@ -1,0 +1,140 @@
+{
+  "classGrades": {
+    "title": "Gradi",
+    "subtitle": "Visualizza e gestisci i voti degli studenti",
+    "columns": {
+      "assignment": "Incarico",
+      "maxPoints": "Punti massimi",
+      "weight": "Peso",
+      "graded": "Classificato",
+      "dueDate": "Due date",
+      "actions": "Azioni",
+      "student": "Studente",
+      "overallGrade": "Voto complessivo",
+      "assignmentsCompleted": "Incarichi completati",
+      "trend": "Tendenza"
+    },
+    "labels": {
+      "rubric": "Rubrica"
+    },
+    "actions": {
+      "manage": "Maneggio",
+      "viewGrades": "Visualizza i voti",
+      "saving": "Risparmio...",
+      "saveChanges": "Salva modifiche",
+      "preview": "Anteprima",
+      "edit": "Modificare",
+      "delete": "Eliminare",
+      "createNew": "Crea nuovo"
+    },
+    "overview": {
+      "title": "Panoramica della classe",
+      "classAverage": "Media della classe",
+      "totalStudents": "Numero totale di studenti",
+      "assignments": "Incarichi",
+      "submissionRate": "Tasso di invio"
+    },
+    "assignmentManagement": {
+      "title": "Gestione degli incarichi",
+      "empty": {
+        "title": "Nessun compito trovato",
+        "description": "Crea incarichi per gestire voti e impostazioni"
+      },
+      "searchPlaceholder": "Cerca incarichi..."
+    },
+    "students": {
+      "title": "studenti",
+      "viewAll": "Visualizza tutti gli studenti",
+      "empty": {
+        "title": "Nessuno studente iscritto",
+        "description": "Gli studenti appariranno qui una volta che si uniranno alla classe"
+      },
+      "searchPlaceholder": "Cerca studenti..."
+    },
+    "gradeBoundaries": {
+      "title": "Confini di livello",
+      "untitled": "Confine di classificazione senza titolo",
+      "empty": {
+        "title": "Nessun limite di grado creato",
+        "description": "Creare limiti di valutazione per definire gli intervalli di valutazione"
+      },
+      "previewTitle": "Anteprima dei limiti di valutazione",
+      "details": {
+        "title": "Dettagli dei confini di classificazione",
+        "name": "Nome",
+        "noneDefined": "Nessun limite di classificazione definito"
+      }
+    },
+    "rubrics": {
+      "title": "Rubriche",
+      "untitled": "Rubrica senza titolo",
+      "empty": {
+        "title": "Nessuna rubrica creata",
+        "description": "Creare rubriche per definire i criteri di valutazione"
+      },
+      "previewTitle": "Anteprima della rubrica",
+      "details": {
+        "title": "Dettagli della rubrica",
+        "name": "Nome",
+        "category": "Categoria",
+        "description": "Descrizione",
+        "custom": "Costume",
+        "noDescription": "Nessuna descrizione fornita",
+        "noCriteria": "Nessun criterio trovato in questa rubrica"
+      }
+    },
+    "confirm": {
+      "deleteRubric": "Sei sicuro di voler eliminare questo schema di valutazione?",
+      "deleteGradingBoundary": "Sei sicuro di voler eliminare questo limite di valutazione?"
+    }
+  },
+  "studentGrades": {
+    "title": "Tutti i voti degli studenti",
+    "allStudents": "Visualizza e gestisci i voti di tutti gli studenti di questa classe",
+    "students": "studenti",
+    "noGrades": "Nessuno studente trovato",
+    "noGradesDescription": "Nessuno studente è ancora iscritto a questo corso. Gli studenti appariranno qui non appena si saranno iscritti.",
+    "table": {
+      "student": "Studente",
+      "actions": "Azioni"
+    },
+    "actions": {
+      "viewSubmission": "Visualizza i voti"
+    }
+  },
+  "individualGrades": {
+    "myGrades": "I miei voti",
+    "studentGrades": "Gradi",
+    "viewYourGrades": "Visualizza i tuoi voti e progressi",
+    "individualManagement": "Gestione dei voti individuali degli studenti",
+    "export": "Esportare",
+    "back": "Indietro",
+    "yourPerformance": "La tua prestazione",
+    "trackProgress": "Tieni traccia dei tuoi progressi accademici",
+    "overallGrade": "Voto complessivo",
+    "completed": "Completato",
+    "trend": "Tendenza",
+    "yourGrades": "I tuoi voti",
+    "assignments": "Incarichi",
+    "studentNotFound": "Studente non trovato",
+    "goBack": "Torna indietro",
+    "grade": "Grado",
+    "table": {
+      "assignment": "Incarico",
+      "grade": "Grado",
+      "total": "Totale",
+      "percentage": "%",
+      "status": "Stato",
+      "submitted": "Inviato"
+    },
+    "status": {
+      "graded": "Classificato",
+      "pending": "In attesa di"
+    },
+    "empty": {
+      "title": "Nessun compito trovato",
+      "description": "Questo studente non ha compiti da visualizzare"
+    },
+    "searchPlaceholder": "Cerca incarichi..."
+  }
+}
