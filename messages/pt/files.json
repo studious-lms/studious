@@ -1,0 +1,130 @@
+{
+  "classFiles": {
+    "title": "Arquivos",
+    "subtitle": "Gerenciar arquivos e recursos de classe",
+    "actions": {
+      "newFolder": "Nova pasta",
+      "upload": "Carregar",
+      "uploadFiles": "Carregar arquivos",
+      "createFolder": "Criar pasta",
+      "download": "Download",
+      "share": "Compartilhar",
+      "delete": "Excluir",
+      "filter": "Filtro",
+      "sort": "Organizar"
+    },
+    "toasts": {
+      "folderCreated": "Pasta criada com sucesso",
+      "folderDeleted": "Pasta excluída com sucesso",
+      "folderRenamed": "Pasta renomeada com sucesso",
+      "folderMoved": "Pasta movida com sucesso",
+      "filesUploaded": "Arquivos enviados com sucesso",
+      "fileDeleted": "Arquivo excluído com sucesso",
+      "fileRenamed": "Arquivo renomeado com sucesso",
+      "fileMoved": "Arquivo movido com sucesso",
+      "downloadStarted": "Download iniciado",
+      "shareCopied": "Compartilhar link copiado"
+    },
+    "errors": {
+      "teacherOnly": "Somente professores podem modificar arquivos.",
+      "downloadFailed": "Falha no download",
+      "shareFailed": "Falha ao compartilhar",
+      "failedToLoad": "Falha ao carregar os arquivos. Tente novamente mais tarde."
+    },
+    "breadcrumbs": {
+      "classFiles": "Arquivos de classe"
+    },
+    "search": {
+      "placeholder": "Pesquisar em arquivos"
+    },
+    "selected": "{count} selecionado",
+    "filters": {
+      "fileType": "Tipo de arquivo",
+      "documents": "Documentos",
+      "images": "Imagens",
+      "videos": "Vídeos",
+      "presentations": "Apresentações"
+    },
+    "sort": {
+      "name": "Nome",
+      "lastModified": "Última modificação",
+      "fileSize": "Tamanho do arquivo"
+    },
+    "table": {
+      "name": "Nome",
+      "owner": "Proprietário",
+      "lastModified": "Última modificação",
+      "fileSize": "Tamanho do arquivo"
+    },
+    "empty": {
+      "title": "Esta pasta está vazia",
+      "description": "Carregue arquivos ou crie pastas para começar a organizar seus materiais de aula.",
+      "searchTitle": "Nenhum arquivo encontrado",
+      "searchDescription": "Nenhum arquivo corresponde a \"{query}\". Tente um termo de busca diferente."
+    }
+  },
+  "folderView": {
+    "subtitle": "Conteúdo da pasta",
+    "notFound": {
+      "title": "Pasta não encontrada",
+      "description": "A pasta solicitada não pôde ser encontrada.",
+      "backButton": "Voltar para Arquivos"
+    },
+    "error": {
+      "loadFailed": "Falha ao carregar o conteúdo da pasta. Tente novamente mais tarde."
+    },
+    "breadcrumbs": {
+      "classFiles": "Arquivos de classe"
+    },
+    "search": {
+      "placeholder": "Pesquisar na pasta",
+      "selected": "{count} selecionado"
+    },
+    "filters": {
+      "label": "Filtro",
+      "fileType": "Tipo de arquivo",
+      "documents": "Documentos",
+      "images": "Imagens",
+      "videos": "Vídeos",
+      "presentations": "Apresentações"
+    },
+    "sort": {
+      "label": "Organizar",
+      "name": "Nome",
+      "lastModified": "Última modificação",
+      "fileSize": "Tamanho do arquivo"
+    },
+    "table": {
+      "name": "Nome",
+      "owner": "Proprietário",
+      "lastModified": "Última modificação",
+      "fileSize": "Tamanho do arquivo"
+    },
+    "empty": {
+      "noFilesFound": "Nenhum arquivo encontrado",
+      "noFilesFoundDescription": "Nenhum arquivo corresponde a \"{query}\". Tente um termo de busca diferente.",
+      "folderEmpty": "Esta pasta está vazia",
+      "folderEmptyDescription": "Carregue arquivos ou crie pastas para organizar seus materiais."
+    },
+    "actions": {
+      "newFolder": "Nova pasta",
+      "uploadFiles": "Carregar arquivos",
+      "createFolder": "Criar pasta"
+    },
+    "toast": {
+      "folderCreated": "Pasta criada com sucesso",
+      "folderDeleted": "Pasta excluída com sucesso",
+      "folderRenamed": "Pasta renomeada com sucesso",
+      "folderMoved": "Pasta movida com sucesso",
+      "filesUploaded": "Arquivos enviados com sucesso",
+      "fileDeleted": "Arquivo excluído com sucesso",
+      "fileRenamed": "Arquivo renomeado com sucesso",
+      "fileMoved": "Arquivo movido com sucesso",
+      "downloadStarted": "Download iniciado",
+      "downloadFailed": "Falha no download",
+      "shareLinkCopied": "Compartilhar link copiado",
+      "shareFailed": "Falha ao compartilhar",
+      "permissionDenied": "Permissão negada"
+    }
+  }
+}

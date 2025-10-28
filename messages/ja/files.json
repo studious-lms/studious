@@ -1,0 +1,130 @@
+{
+  "classFiles": {
+    "title": "ファイル",
+    "subtitle": "クラスファイルとリソースを管理する",
+    "actions": {
+      "newFolder": "新しいフォルダ",
+      "upload": "アップロード",
+      "uploadFiles": "ファイルをアップロード",
+      "createFolder": "フォルダを作成",
+      "download": "ダウンロード",
+      "share": "共有",
+      "delete": "消去",
+      "filter": "フィルター",
+      "sort": "選別"
+    },
+    "toasts": {
+      "folderCreated": "フォルダが正常に作成されました",
+      "folderDeleted": "フォルダが正常に削除されました",
+      "folderRenamed": "フォルダ名の変更に成功しました",
+      "folderMoved": "フォルダを移動しました",
+      "filesUploaded": "ファイルのアップロードに成功しました",
+      "fileDeleted": "ファイルが正常に削除されました",
+      "fileRenamed": "ファイル名の変更に成功しました",
+      "fileMoved": "ファイルが正常に移動されました",
+      "downloadStarted": "ダウンロードを開始しました",
+      "shareCopied": "共有リンクをコピーしました"
+    },
+    "errors": {
+      "teacherOnly": "ファイルを変更できます。",
+      "downloadFailed": "ダウンロードに失敗しました",
+      "shareFailed": "共有に失敗しました",
+      "failedToLoad": "ファイルの読み込みに失敗しました。しばらくしてからもう一度お試しください。"
+    },
+    "breadcrumbs": {
+      "classFiles": "クラスファイル"
+    },
+    "search": {
+      "placeholder": "ファイル内検索"
+    },
+    "selected": "{count} 個選択済み",
+    "filters": {
+      "fileType": "ファイルタイプ",
+      "documents": "文書",
+      "images": "画像",
+      "videos": "ビデオ",
+      "presentations": "プレゼンテーション"
+    },
+    "sort": {
+      "name": "名前",
+      "lastModified": "最終更新日",
+      "fileSize": "ファイルサイズ"
+    },
+    "table": {
+      "name": "名前",
+      "owner": "所有者",
+      "lastModified": "最終更新日",
+      "fileSize": "ファイルサイズ"
+    },
+    "empty": {
+      "title": "このフォルダは空です",
+      "description": "ファイルをアップロードするか、フォルダーを作成して、授業の教材の整理を始めましょう。",
+      "searchTitle": "ファイルが見つかりません",
+      "searchDescription": "「{query}」に一致するファイルはありません。別の検索語句を試してください。"
+    }
+  },
+  "folderView": {
+    "subtitle": "フォルダの内容",
+    "notFound": {
+      "title": "フォルダが見つかりません",
+      "description": "要求されたフォルダが見つかりませんでした。",
+      "backButton": "ファイルに戻る"
+    },
+    "error": {
+      "loadFailed": "フォルダの内容を読み込めませんでした。しばらくしてからもう一度お試しください。"
+    },
+    "breadcrumbs": {
+      "classFiles": "クラスファイル"
+    },
+    "search": {
+      "placeholder": "フォルダ内を検索",
+      "selected": "{count} 個選択済み"
+    },
+    "filters": {
+      "label": "フィルター",
+      "fileType": "ファイルタイプ",
+      "documents": "文書",
+      "images": "画像",
+      "videos": "ビデオ",
+      "presentations": "プレゼンテーション"
+    },
+    "sort": {
+      "label": "選別",
+      "name": "名前",
+      "lastModified": "最終更新日",
+      "fileSize": "ファイルサイズ"
+    },
+    "table": {
+      "name": "名前",
+      "owner": "所有者",
+      "lastModified": "最終更新日",
+      "fileSize": "ファイルサイズ"
+    },
+    "empty": {
+      "noFilesFound": "ファイルが見つかりません",
+      "noFilesFoundDescription": "「{query}」に一致するファイルはありません。別の検索語句を試してください。",
+      "folderEmpty": "このフォルダは空です",
+      "folderEmptyDescription": "ファイルをアップロードするか、フォルダーを作成して資料を整理します。"
+    },
+    "actions": {
+      "newFolder": "新しいフォルダ",
+      "uploadFiles": "ファイルをアップロード",
+      "createFolder": "フォルダを作成"
+    },
+    "toast": {
+      "folderCreated": "フォルダが正常に作成されました",
+      "folderDeleted": "フォルダが正常に削除されました",
+      "folderRenamed": "フォルダ名の変更に成功しました",
+      "folderMoved": "フォルダを移動しました",
+      "filesUploaded": "ファイルのアップロードに成功しました",
+      "fileDeleted": "ファイルが正常に削除されました",
+      "fileRenamed": "ファイル名の変更に成功しました",
+      "fileMoved": "ファイルが正常に移動されました",
+      "downloadStarted": "ダウンロードを開始しました",
+      "downloadFailed": "ダウンロードに失敗しました",
+      "shareLinkCopied": "共有リンクをコピーしました",
+      "shareFailed": "共有に失敗しました",
+      "permissionDenied": "許可が拒否されました"
+    }
+  }
+}

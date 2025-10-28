@@ -1,0 +1,67 @@
+{
+  "syllabus": {
+    "title": "Syllabus",
+    "subtitle": "Course overview and academic information",
+    "actions": {
+      "saveChanges": "Save Changes",
+      "cancel": "Cancel",
+      "edit": "Edit Syllabus"
+    },
+    "errors": {
+      "failedToLoad": "Failed to load syllabus",
+      "tryLater": "Please try again later."
+    },
+    "stats": {
+      "totalAssignments": "Total Assignments",
+      "completionRate": "Completion Rate",
+      "totalPoints": "Total Points",
+      "upcoming": "Upcoming"
+    },
+    "overview": {
+      "title": "Course Overview",
+      "placeholder": "Enter course overview, objectives, and other important information...",
+      "helper": "Enter your course information, learning objectives, policies, and other important details.",
+      "empty": {
+        "title": "No syllabus content yet",
+        "description": "Click 'Edit Syllabus' to add course information, learning objectives, policies, and more."
+      }
+    },
+    "assignments": {
+      "title": "Course Assignments",
+      "gradedCount": "{graded} graded assignments",
+      "totalPoints": "{total} total points",
+      "empty": {
+        "title": "No assignments yet",
+        "description": "Assignments will appear here once they're created."
+      }
+    },
+    "table": {
+      "assignment": "Assignment",
+      "dueDate": "Due Date",
+      "points": "Points",
+      "weight": "Weight",
+      "status": "Status",
+      "pts": "pts"
+    },
+    "status": {
+      "graded": "Graded",
+      "pending": "Pending"
+    },
+    "courseInfo": {
+      "title": "Course Information",
+      "basic": {
+        "title": "Basic Information",
+        "className": "Class Name",
+        "section": "Section",
+        "subject": "Subject"
+      },
+      "stats": {
+        "title": "Course Statistics",
+        "totalAssignments": "Total Assignments",
+        "gradedAssignments": "Graded Assignments",
+        "totalPoints": "Total Points"
+      }
+    }
+  }
+}
+

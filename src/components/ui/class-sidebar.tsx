@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { 
   Select,
@@ -42,18 +43,6 @@ import { RouterOutputs, trpc } from "@/lib/trpc";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useState } from "react";
 
-const classNavigationItems = [
-  { href: "", label: "Overview", icon: BookOpen },
-  { href: "/assignments", label: "Assignments", icon: FileText },
-  { href: "/grades", label: "Grades", icon: BarChart3 },
-  { href: "/files", label: "Files", icon: FolderOpen },
-  { href: "/attendance", label: "Attendance", icon: UserCheck },
-  { href: "/ai-labs", label: "AI Labs", icon: Sparkles },
-  { href: "/members", label: "Members", icon: Users },
-  { href: "/syllabus", label: "Syllabus", icon: FileCheck },
-  { href: "/settings", label: "Settings", icon: Settings },
-];
-
 interface ClassSidebarProps {
   classId: string;
 }
@@ -63,8 +52,21 @@ export function ClassSidebar({ classId }: ClassSidebarProps) {
   const router = useRouter();
   const isMobile = useIsMobile();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const t = useTranslations('classSidebar');
 
   const appState = useSelector((state: RootState) => state.app);
+
+  const classNavigationItems = [
+    { href: "", label: t('overview'), icon: BookOpen },
+    { href: "/assignments", label: t('assignments'), icon: FileText },
+    { href: "/grades", label: t('grades'), icon: BarChart3 },
+    { href: "/files", label: t('files'), icon: FolderOpen },
+    { href: "/attendance", label: t('attendance'), icon: UserCheck },
+    { href: "/ai-labs", label: t('aiLabs'), icon: Sparkles },
+    { href: "/members", label: t('members'), icon: Users },
+    { href: "/syllabus", label: t('syllabus'), icon: FileCheck },
+    { href: "/settings", label: t('settings'), icon: Settings },
+  ];
 
   const { data: allClasses, isLoading, error } = trpc.class.getAll.useQuery();
   const classes = allClasses?.teacherInClass.concat(allClasses?.studentInClass);
@@ -74,11 +76,11 @@ export function ClassSidebar({ classId }: ClassSidebarProps) {
   const className = classData?.class;
   const regenerateInviteCodeMutation = trpc.class.createInviteCode.useMutation({
     onSuccess: () => {
-      toast.success("Invite code regenerated successfully");
+      toast.success(t('toast.inviteCodeRegenerated'));
       refetchInviteCode();
     },
     onError: () => {
-      toast.error("Failed to regenerate invite code");
+      toast.error(t('toast.inviteCodeRegenerateFailed'));
     }
   });
 
@@ -106,7 +108,7 @@ export function ClassSidebar({ classId }: ClassSidebarProps) {
 
   const handleCopyInviteCode = () => {
     navigator.clipboard.writeText(inviteCode!);
-    toast.success("Invite code copied to clipboard");
+    toast.success(t('toast.inviteCodeCopied'));
   };
 
   // Mobile version - Sheet/Dropdown style
@@ -142,13 +144,13 @@ export function ClassSidebar({ classId }: ClassSidebarProps) {
             </SheetTrigger>
             <SheetContent side="top" className="h-[100vh] overflow-y-auto">
               <SheetHeader>
-                <SheetTitle>Class Navigation</SheetTitle>
+                <SheetTitle>{t('classNavigation')}</SheetTitle>
               </SheetHeader>
               
               <div className="space-y-6 mt-6">
                 {/* Class Selector */}
                 <div className="space-y-2">
-                  <label className="text-sm font-medium">Switch Class</label>
+                  <label className="text-sm font-medium">{t('switchClass')}</label>
                   <Select value={classId} onValueChange={(newClassId) => {
                     handleClassChange(newClassId);
                     setMobileMenuOpen(false);
@@ -221,7 +223,7 @@ export function ClassSidebar({ classId }: ClassSidebarProps) {
                 {/* Invite Code (Teachers only) */}
                 {appState.user.teacher && (
                   <div className="space-y-2 pt-4 border-t">
-                    <label className="text-sm font-medium text-muted-foreground">Class Invite Code</label>
+                    <label className="text-sm font-medium text-muted-foreground">{t('classInviteCode')}</label>
                     <div className="flex items-center justify-between p-3 bg-muted rounded-md">
                       <code className="text-sm font-mono">{inviteCode}</code>
                       <div className="flex space-x-1">
@@ -329,14 +331,14 @@ export function ClassSidebar({ classId }: ClassSidebarProps) {
       {/* Class Invite Code */}
       {appState.user.teacher && <div className="p-4 border-t mt-auto">
         <div className="space-y-2">
-          <label className="text-xs font-medium text-muted-foreground">Class Invite Code</label>
+          <label className="text-xs font-medium text-muted-foreground">{t('classInviteCode')}</label>
           <div className="flex items-center justify-between p-2 bg-muted rounded-md hover:bg-muted/60 transition-colors duration-200">
             <code className="text-sm font-mono">{inviteCode}</code>
             <div className="flex space-x-1">
-              <Button onClick={handleCopyInviteCode} variant="ghost" size="sm" className="h-6 w-6 p-0 hover:scale-110 transition-transform duration-200" title="Copy code">
+              <Button onClick={handleCopyInviteCode} variant="ghost" size="sm" className="h-6 w-6 p-0 hover:scale-110 transition-transform duration-200" title={t('copyCode')}>
                 <Copy className="h-3 w-3" />
               </Button>
-              <Button onClick={handleRegenerateInviteCode} variant="ghost" size="sm" className="h-6 w-6 p-0 hover:scale-110 transition-transform duration-200" title="Regenerate code">
+              <Button onClick={handleRegenerateInviteCode} variant="ghost" size="sm" className="h-6 w-6 p-0 hover:scale-110 transition-transform duration-200" title={t('regenerateCode')}>
                 <RefreshCcw className="h-3 w-3" />
               </Button>
             </div>

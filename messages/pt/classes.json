@@ -1,0 +1,21 @@
+{
+  "classes": {
+    "title": "Aulas",
+    "description": "Gerencie seu ensino e aulas matriculadas",
+    "joinClass": "Junte-se à aula",
+    "createClass": "Criar classe",
+    "searchPlaceholder": "Pesquisar classes...",
+    "teaching": "Ensino",
+    "enrolled": "Matriculado",
+    "noClassesFound": "Nenhuma classe encontrada",
+    "noTeachingClassesFound": "Nenhuma aula de ensino encontrada correspondendo a \"{query}\"",
+    "noEnrolledClassesFound": "Nenhuma turma matriculada encontrada correspondendo a \"{query}\"",
+    "noClassesYet": "Nenhuma aula ainda",
+    "noClassesYetDesc": "Crie sua primeira turma para começar a gerenciar tarefas, notas e interações com alunos.",
+    "noEnrolledClasses": "Nenhuma turma matriculada",
+    "noEnrolledClassesDesc": "Participe de uma aula usando um código de convite ou link fornecido pelo seu professor.",
+    "classDeleted": "Classe excluída com sucesso",
+    "classDeleteFailed": "Falha ao excluir a classe",
+    "failedToLoad": "Falha ao carregar classes"
+  }
+}

@@ -100,7 +100,7 @@ const MembersPageSkeleton = () => (
 );
 
 export default function Members() {
-  const t = useTranslations('class.members');
+  const t = useTranslations('members');
   const { id: classId } = useParams();
   const [searchQuery, setSearchQuery] = useState("");
   const [activeTab, setActiveTab] = useState("students");

@@ -1,0 +1,63 @@
+{
+  "members": {
+    "title": "メンバー",
+    "counts": {
+      "totalMembers": "{count} 人のメンバー"
+    },
+    "actions": {
+      "inviteMember": "メンバーを招待",
+      "copy": "コピー",
+      "regenerate": "再生",
+      "message": "メッセージ",
+      "viewProfile": "プロフィールを見る",
+      "viewGrades": "成績を見る",
+      "makeTeacher": "先生を作る",
+      "makeStudent": "学生を作る",
+      "removeFromClass": "クラスから削除",
+      "removeAccess": "アクセスを削除",
+      "tryAgain": "もう一度やり直してください"
+    },
+    "labels": {
+      "teacher": "教師",
+      "student": "学生",
+      "you": "あなた"
+    },
+    "invite": {
+      "title": "クラス招待コード",
+      "description": "このコードを生徒と共有してクラスに参加してください"
+    },
+    "search": {
+      "placeholder": "メンバーを検索..."
+    },
+    "tabs": {
+      "students": "学生",
+      "teachers": "教師"
+    },
+    "students": {
+      "empty": {
+        "title": "生徒が見つかりません",
+        "matchNone": "「{query}」に一致する生徒がいません",
+        "noStudents": "このクラスにはまだ生徒が参加していません"
+      }
+    },
+    "teachers": {
+      "empty": {
+        "title": "教師が見つかりません",
+        "matchNone": "「{query}」に一致する教師はいません",
+        "noTeachers": "追加の教師は追加されていません"
+      }
+    },
+    "toasts": {
+      "inviteRegenerated": "招待コードが正常に再生成されました",
+      "copied": "招待コードをクリップボードにコピーしました",
+      "roleChanged": "役割が {role} に変更されました",
+      "memberRemoved": "メンバーが正常に削除されました"
+    },
+    "errors": {
+      "regenerateFailed": "招待コードの再生成に失敗しました",
+      "changeRoleFailed": "役割の変更に失敗しました",
+      "removeFailed": "メンバーの削除に失敗しました",
+      "failedToLoad": "メンバーの読み込みに失敗しました"
+    }
+  }
+}

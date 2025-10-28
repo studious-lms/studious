@@ -1,0 +1,67 @@
+{
+  "settings": {
+    "title": "Class Settings",
+    "subtitle": "Configure class details and preferences",
+    "labels": {
+      "unsavedChanges": "Unsaved changes"
+    },
+    "actions": {
+      "saving": "Saving...",
+      "saveChanges": "Save Changes",
+      "deleting": "Deleting...",
+      "deleteClass": "Delete Class",
+      "cancel": "Cancel"
+    },
+    "sections": {
+      "basicInfo": {
+        "title": "Basic Information"
+      },
+      "theme": {
+        "title": "Class Theme",
+        "description": "Choose a theme color for this class"
+      },
+      "danger": {
+        "title": "Danger Zone",
+        "description": "Once you delete a class, there is no going back. This will permanently delete all assignments, grades, attendance records, and remove all students from the class."
+      }
+    },
+    "fields": {
+      "className": "Class Name",
+      "section": "Section",
+      "subject": "Subject"
+    },
+    "placeholders": {
+      "className": "e.g., Advanced Physics",
+      "section": "e.g., AP-101",
+      "subject": "e.g., Physics"
+    },
+    "toasts": {
+      "updated": {
+        "title": "Class Updated",
+        "description": "Class settings have been saved successfully."
+      },
+      "deleted": {
+        "title": "Class Deleted",
+        "description": "The class has been permanently deleted."
+      }
+    },
+    "errors": {
+      "updateFailed": {
+        "title": "Update Failed",
+        "description": "Failed to save class settings. Please try again."
+      }
+    },
+    "confirm": {
+      "title": "Are you absolutely sure?",
+      "description": "This action cannot be undone. This will permanently delete the class \"{name}\" and remove all associated data including:",
+      "items": {
+        "assignments": "All assignments and submissions",
+        "records": "All grades and attendance records",
+        "students": "All students will be removed from the class",
+        "events": "All class events and announcements"
+      },
+      "confirmDelete": "Yes, delete class"
+    }
+  }
+}
+

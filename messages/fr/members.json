@@ -1,0 +1,63 @@
+{
+  "members": {
+    "title": "Membres",
+    "counts": {
+      "totalMembers": "{count} membres"
+    },
+    "actions": {
+      "inviteMember": "Inviter un membre",
+      "copy": "Copie",
+      "regenerate": "Régénérer",
+      "message": "Message",
+      "viewProfile": "Voir le profil",
+      "viewGrades": "Voir les notes",
+      "makeTeacher": "Faire un enseignant",
+      "makeStudent": "Faire des étudiants",
+      "removeFromClass": "Retirer de la classe",
+      "removeAccess": "Supprimer l'accès",
+      "tryAgain": "Essayer à nouveau"
+    },
+    "labels": {
+      "teacher": "Professeur",
+      "student": "Étudiant",
+      "you": "Toi"
+    },
+    "invite": {
+      "title": "Code d'invitation de classe",
+      "description": "Partagez ce code avec les étudiants pour rejoindre la classe"
+    },
+    "search": {
+      "placeholder": "Rechercher des membres..."
+    },
+    "tabs": {
+      "students": "Étudiants",
+      "teachers": "Enseignants"
+    },
+    "students": {
+      "empty": {
+        "title": "Aucun étudiant trouvé",
+        "matchNone": "Aucun étudiant ne correspond à « {query} »",
+        "noStudents": "Aucun étudiant n'a encore rejoint cette classe"
+      }
+    },
+    "teachers": {
+      "empty": {
+        "title": "Aucun enseignant trouvé",
+        "matchNone": "Aucun enseignant ne correspond à « {query} »",
+        "noTeachers": "Aucun enseignant supplémentaire n'a été ajouté"
+      }
+    },
+    "toasts": {
+      "inviteRegenerated": "Le code d'invitation a été régénéré avec succès",
+      "copied": "Code d'invitation copié dans le presse-papiers",
+      "roleChanged": "Rôle changé en {role}",
+      "memberRemoved": "Membre supprimé avec succès"
+    },
+    "errors": {
+      "regenerateFailed": "Échec de la régénération du code d'invitation",
+      "changeRoleFailed": "Échec du changement de rôle",
+      "removeFailed": "Échec de la suppression du membre",
+      "failedToLoad": "Échec du chargement des membres"
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "aiLabs": {
+    "title": "KI-Labore",
+    "subtitle": "Erstellen Sie Bildungsinhalte mit KI-Unterstützung",
+    "aiPowered": "KI-gestützt",
+    "createNew": "Neuen Inhalt erstellen",
+    "aiGenerated": "KI-generiert",
+    "deleteConfirm": "Möchten Sie dieses KI-Labor wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden.",
+    "widgets": {
+      "assignment": {
+        "title": "Abtretung",
+        "description": "Erstellen Sie interaktive Aufgaben mit KI-Unterstützung"
+      },
+      "quiz": {
+        "title": "Quiz",
+        "description": "Erstellen Sie Quizze mit verschiedenen Fragetypen"
+      },
+      "worksheet": {
+        "title": "Arbeitsblatt",
+        "description": "Erstellen Sie praktische Arbeitsblätter und Übungen"
+      },
+      "lessonPlan": {
+        "title": "Unterrichtsplan",
+        "description": "Entwerfen Sie umfassende Unterrichtspläne"
+      },
+      "rubric": {
+        "title": "Rubrik",
+        "description": "Erstellen Sie detaillierte Bewertungskriterien"
+      }
+    },
+    "tabs": {
+      "drafts": "Entwurfslabore",
+      "chats": "KI-Katzen"
+    },
+    "drafts": {
+      "title": "Entwurfslabore ({count})",
+      "empty": {
+        "title": "Noch keine Laborentwürfe",
+        "description": "Erstellen Sie mit den oben stehenden Widgets Ihren ersten KI-generierten Bildungsinhalt."
+      }
+    },
+    "chats": {
+      "title": "KI-Labore ({count})",
+      "active": "Aktiv",
+      "messageCount": "{count} Nachrichten",
+      "createdBy": "Erstellt von {name}",
+      "empty": {
+        "title": "Noch keine KI-Labore",
+        "description": "Erstellen Sie Ihr erstes KI-Labor, um mit der KI an Bildungsinhalten zusammenzuarbeiten."
+      }
+    },
+    "toast": {
+      "labCreated": "AI Lab erfolgreich erstellt!",
+      "labCreateFailed": "AI Lab konnte nicht erstellt werden:",
+      "labDeleted": "AI Lab erfolgreich gelöscht!",
+      "labDeleteFailed": "AI Lab konnte nicht gelöscht werden:"
+    }
+  },
+  "aiLabChat": {
+    "backButton": "Zurück zu AI Labs",
+    "loading": "Laden...",
+    "aiThinking": "KI-Denken ...",
+    "getAIHelp": "Holen Sie sich KI-Hilfe",
+    "notFound": {
+      "title": "Lab-Chat nicht gefunden",
+      "description": "Dieses KI-Labor wurde möglicherweise gelöscht oder Sie haben keinen Zugriff darauf."
+    },
+    "toast": {
+      "messageFailed": "Senden der Nachricht fehlgeschlagen:"
+    }
+  }
+}

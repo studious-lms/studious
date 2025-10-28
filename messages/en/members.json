@@ -1,0 +1,64 @@
+{
+  "members": {
+    "title": "Members",
+    "counts": {
+      "totalMembers": "{count} members"
+    },
+    "actions": {
+      "inviteMember": "Invite Member",
+      "copy": "Copy",
+      "regenerate": "Regenerate",
+      "message": "Message",
+      "viewProfile": "View Profile",
+      "viewGrades": "View Grades",
+      "makeTeacher": "Make Teacher",
+      "makeStudent": "Make Student",
+      "removeFromClass": "Remove from Class",
+      "removeAccess": "Remove Access",
+      "tryAgain": "Try Again"
+    },
+    "labels": {
+      "teacher": "Teacher",
+      "student": "Student",
+      "you": "You"
+    },
+    "invite": {
+      "title": "Class Invite Code",
+      "description": "Share this code with students to join the class"
+    },
+    "search": {
+      "placeholder": "Search members..."
+    },
+    "tabs": {
+      "students": "Students",
+      "teachers": "Teachers"
+    },
+    "students": {
+      "empty": {
+        "title": "No students found",
+        "matchNone": "No students match \"{query}\"",
+        "noStudents": "No students have joined this class yet"
+      }
+    },
+    "teachers": {
+      "empty": {
+        "title": "No teachers found",
+        "matchNone": "No teachers match \"{query}\"",
+        "noTeachers": "No additional teachers have been added"
+      }
+    },
+    "toasts": {
+      "inviteRegenerated": "Invite code regenerated successfully",
+      "copied": "Invite code copied to clipboard",
+      "roleChanged": "Role changed to {role}",
+      "memberRemoved": "Member removed successfully"
+    },
+    "errors": {
+      "regenerateFailed": "Failed to regenerate invite code",
+      "changeRoleFailed": "Failed to change role",
+      "removeFailed": "Failed to remove member",
+      "failedToLoad": "Failed to load members"
+    }
+  }
+}
+

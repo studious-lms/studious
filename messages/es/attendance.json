@@ -1,0 +1,97 @@
+{
+  "attendance": {
+    "title": "Eventos de clase y asistencia",
+    "subtitle": "Realizar un seguimiento de la asistencia de los estudiantes a cada evento",
+    "saving": {
+      "auto": "Guardado automático...",
+      "unsaved": "Cambios no guardados",
+      "saving": "Ahorro..."
+    },
+    "table": {
+      "date": "Fecha",
+      "eventName": "Nombre del evento",
+      "attendanceRate": "Tasa de asistencia",
+      "attendance": "Asistencia",
+      "actions": "Comportamiento"
+    },
+    "actions": {
+      "viewDetails": "Ver detalles",
+      "editEvent": "Editar evento",
+      "deleteEvent": "Eliminar evento",
+      "createEvent": "Crear evento",
+      "saveAttendance": "Guardar asistencia",
+      "markAllPresent": "Marcar todos los presentes",
+      "markAllAbsent": "Marcar todos los ausentes"
+    },
+    "allEvents": {
+      "title": "Todos los eventos",
+      "description": "Historial completo de eventos de clase y registros de asistencia.",
+      "searchPlaceholder": "Buscar eventos...",
+      "empty": {
+        "title": "No se encontraron eventos",
+        "description": "Crea tu primer evento para comenzar a realizar un seguimiento de la asistencia"
+      }
+    },
+    "eventsList": {
+      "pickDate": "Fecha de selección",
+      "untitled": "Evento sin título",
+      "empty": {
+        "noEventsOnDate": "No hay eventos en esta fecha",
+        "noEventsOnDateDescription": "No hay eventos programados para el {fecha}. Prueba a seleccionar otra fecha o crea un nuevo evento.",
+        "noEvents": "No se encontraron eventos",
+        "noEventsDescription": "Crea tu primer evento para comenzar a realizar un seguimiento de la asistencia",
+        "createForDate": "Crear evento para esta fecha",
+        "createFirst": "Crear el primer evento"
+      }
+    },
+    "summary": {
+      "title": "Resumen del evento",
+      "selectedEvent": "Evento seleccionado",
+      "total": "Total",
+      "attendanceRate": "Tasa de asistencia"
+    },
+    "roster": {
+      "title": "Lista de estudiantes",
+      "description": "Haga clic en los botones de estado para marcar la asistencia de cada estudiante",
+      "empty": {
+        "title": "No hay estudiantes inscritos",
+        "description": "Los estudiantes aparecerán aquí una vez que se unan a la clase."
+      }
+    },
+    "prompt": {
+      "title": "Seleccione un evento",
+      "description": "Elija un evento arriba para ver y administrar la asistencia de los estudiantes"
+    },
+    "status": {
+      "present": "Presente",
+      "late": "Tarde",
+      "absent": "Ausente",
+      "notTaken": "No tomado"
+    },
+    "student": {
+      "title": "Mi asistencia",
+      "subtitle": "Realice un seguimiento de su asistencia para {className}",
+      "attendanceRate": "Tasa de asistencia",
+      "history": "Historial de asistencia",
+      "event": "Evento",
+      "status": "Estado",
+      "searchPlaceholder": "Buscar eventos...",
+      "empty": {
+        "title": "Sin registros de asistencia",
+        "description": "Su asistencia aparecerá aquí una vez que se creen los eventos y se tome la asistencia."
+      }
+    },
+    "deleteDialog": {
+      "title": "Eliminar evento",
+      "description": "¿Seguro que desea eliminar \"{eventName}\"? Esta acción no se puede deshacer y eliminará todos los registros de asistencia asociados.",
+      "deleting": "Borrando...",
+      "deleteButton": "Eliminar evento"
+    },
+    "toast": {
+      "attendanceSaved": "Asistencia guardada exitosamente",
+      "attendanceSaveFailed": "No se pudo guardar la asistencia",
+      "eventDeleted": "Evento eliminado exitosamente",
+      "eventDeleteFailed": "No se pudo eliminar el evento"
+    }
+  }
+}

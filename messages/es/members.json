@@ -1,0 +1,63 @@
+{
+  "members": {
+    "title": "Miembros",
+    "counts": {
+      "totalMembers": "{count} miembros"
+    },
+    "actions": {
+      "inviteMember": "Invitar a un miembro",
+      "copy": "Copiar",
+      "regenerate": "Regenerado",
+      "message": "Mensaje",
+      "viewProfile": "Ver perfil",
+      "viewGrades": "Ver calificaciones",
+      "makeTeacher": "Hacer profesor",
+      "makeStudent": "Hacer estudiante",
+      "removeFromClass": "Eliminar de la clase",
+      "removeAccess": "Eliminar acceso",
+      "tryAgain": "Intentar otra vez"
+    },
+    "labels": {
+      "teacher": "Maestro",
+      "student": "Alumno",
+      "you": "Tú"
+    },
+    "invite": {
+      "title": "Código de invitación a la clase",
+      "description": "Comparte este código con los estudiantes para unirse a la clase."
+    },
+    "search": {
+      "placeholder": "Buscar miembros..."
+    },
+    "tabs": {
+      "students": "Estudiantes",
+      "teachers": "Profesores"
+    },
+    "students": {
+      "empty": {
+        "title": "No se encontraron estudiantes",
+        "matchNone": "Ningún estudiante coincide con \"{query}\"",
+        "noStudents": "Ningún estudiante se ha unido a esta clase todavía"
+      }
+    },
+    "teachers": {
+      "empty": {
+        "title": "No se encontraron profesores",
+        "matchNone": "No hay profesores que coincidan con \"{query}\"",
+        "noTeachers": "No se han añadido profesores adicionales"
+      }
+    },
+    "toasts": {
+      "inviteRegenerated": "Código de invitación regenerado exitosamente",
+      "copied": "Código de invitación copiado al portapapeles",
+      "roleChanged": "Rol cambiado a {role}",
+      "memberRemoved": "Miembro eliminado exitosamente"
+    },
+    "errors": {
+      "regenerateFailed": "No se pudo regenerar el código de invitación",
+      "changeRoleFailed": "No se pudo cambiar el rol",
+      "removeFailed": "No se pudo eliminar el miembro",
+      "failedToLoad": "No se pudieron cargar los miembros"
+    }
+  }
+}

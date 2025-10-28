@@ -1,0 +1,140 @@
+{
+  "classGrades": {
+    "title": "Noten",
+    "subtitle": "Anzeigen und Verwalten von Schülernoten",
+    "columns": {
+      "assignment": "Abtretung",
+      "maxPoints": "Maximale Punkte",
+      "weight": "Gewicht",
+      "graded": "Benotet",
+      "dueDate": "Zwei Termine",
+      "actions": "Aktionen",
+      "student": "Student",
+      "overallGrade": "Gesamtnote",
+      "assignmentsCompleted": "Abgeschlossene Aufgaben",
+      "trend": "Trend"
+    },
+    "labels": {
+      "rubric": "Rubrik"
+    },
+    "actions": {
+      "manage": "Verwalten",
+      "viewGrades": "Noten anzeigen",
+      "saving": "Speichern...",
+      "saveChanges": "Änderungen speichern",
+      "preview": "Vorschau",
+      "edit": "Bearbeiten",
+      "delete": "Löschen",
+      "createNew": "Neu erstellen"
+    },
+    "overview": {
+      "title": "Klassenübersicht",
+      "classAverage": "Klassendurchschnitt",
+      "totalStudents": "Studenten insgesamt",
+      "assignments": "Aufgaben",
+      "submissionRate": "Einreichungsrate"
+    },
+    "assignmentManagement": {
+      "title": "Auftragsverwaltung",
+      "empty": {
+        "title": "Keine Zuordnungen gefunden",
+        "description": "Erstellen Sie Aufgaben, um Noten und Einstellungen zu verwalten"
+      },
+      "searchPlaceholder": "Aufgaben suchen..."
+    },
+    "students": {
+      "title": "Studenten",
+      "viewAll": "Alle Studenten anzeigen",
+      "empty": {
+        "title": "Keine Studierenden eingeschrieben",
+        "description": "Die Schüler werden hier angezeigt, sobald sie der Klasse beitreten"
+      },
+      "searchPlaceholder": "Studierende suchen..."
+    },
+    "gradeBoundaries": {
+      "title": "Klassengrenzen",
+      "untitled": "Unbenannte Bewertungsgrenze",
+      "empty": {
+        "title": "Keine Notengrenzen erstellt",
+        "description": "Erstellen Sie Bewertungsgrenzen, um Bewertungsbereiche zu definieren"
+      },
+      "previewTitle": "Vorschau der Bewertungsgrenzen",
+      "details": {
+        "title": "Details zu Bewertungsgrenzen",
+        "name": "Name",
+        "noneDefined": "Keine Bewertungsgrenzen definiert"
+      }
+    },
+    "rubrics": {
+      "title": "Rubriken",
+      "untitled": "Unbenannte Rubrik",
+      "empty": {
+        "title": "Keine Rubriken erstellt",
+        "description": "Erstellen Sie Rubriken, um Bewertungskriterien zu definieren"
+      },
+      "previewTitle": "Rubrikvorschau",
+      "details": {
+        "title": "Rubrikdetails",
+        "name": "Name",
+        "category": "Kategorie",
+        "description": "Beschreibung",
+        "custom": "Brauch",
+        "noDescription": "Keine Beschreibung angegeben",
+        "noCriteria": "Keine Kriterien in dieser Rubrik gefunden"
+      }
+    },
+    "confirm": {
+      "deleteRubric": "Möchten Sie dieses Markierungsschema wirklich löschen?",
+      "deleteGradingBoundary": "Möchten Sie diese Bewertungsgrenze wirklich löschen?"
+    }
+  },
+  "studentGrades": {
+    "title": "Alle Schülernoten",
+    "allStudents": "Anzeigen und Verwalten der Noten aller Schüler dieser Klasse",
+    "students": "Studenten",
+    "noGrades": "Keine Schüler gefunden",
+    "noGradesDescription": "Für diesen Kurs sind noch keine Studenten angemeldet. Studenten werden hier angezeigt, sobald sie beitreten.",
+    "table": {
+      "student": "Student",
+      "actions": "Aktionen"
+    },
+    "actions": {
+      "viewSubmission": "Noten anzeigen"
+    }
+  },
+  "individualGrades": {
+    "myGrades": "Meine Noten",
+    "studentGrades": "Noten",
+    "viewYourGrades": "Sehen Sie sich Ihre Noten und Fortschritte an",
+    "individualManagement": "Individuelle Notenverwaltung für Studierende",
+    "export": "Export",
+    "back": "Zurück",
+    "yourPerformance": "Ihre Leistung",
+    "trackProgress": "Verfolgen Sie Ihren akademischen Fortschritt",
+    "overallGrade": "Gesamtnote",
+    "completed": "Vollendet",
+    "trend": "Trend",
+    "yourGrades": "Ihre Noten",
+    "assignments": "Aufgaben",
+    "studentNotFound": "Student nicht gefunden",
+    "goBack": "Geh zurück",
+    "grade": "Grad",
+    "table": {
+      "assignment": "Abtretung",
+      "grade": "Grad",
+      "total": "Gesamt",
+      "percentage": "%",
+      "status": "Status",
+      "submitted": "Gesendet"
+    },
+    "status": {
+      "graded": "Benotet",
+      "pending": "Ausstehend"
+    },
+    "empty": {
+      "title": "Keine Zuordnungen gefunden",
+      "description": "Dieser Student hat keine Aufgaben anzuzeigen"
+    },
+    "searchPlaceholder": "Aufgaben suchen..."
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "home": {
+    "welcomeBack": "Willkommen zurück, {name}!",
+    "subtitle": "Hier erfahren Sie, was heute in Ihren Kursen passiert.",
+    "stats": {
+      "totalClasses": "Klassen insgesamt",
+      "teachingEnrolled": "{lehren} lehren, {eingeschrieben} eingeschrieben",
+      "dueToday": "Heute fällig",
+      "dueTodayDesc": "Heute fällige Aufgaben",
+      "upcoming": "Demnächst",
+      "upcomingDesc": "Anstehende Aufgaben",
+      "thisWeek": "Diese Woche",
+      "totalAssignments": "Gesamtzuweisungen"
+    },
+    "upcomingAssignments": {
+      "title": "Kommende Aufgaben",
+      "subtitle": "Ihre nächsten Termine",
+      "allCaughtUp": "Alles aufgeholt!",
+      "noUpcoming": "Zurzeit liegen keine anstehenden Aufgaben vor.",
+      "viewAgenda": "Agenda anzeigen",
+      "dueToday": "Heute fällig",
+      "dueTomorrow": "Fällig morgen",
+      "due": "Zwei {Daten}",
+      "teaching": "Lehre",
+      "viewAllAssignments": "Alle Aufgaben anzeigen"
+    },
+    "notifications": {
+      "title": "Aktuelle Benachrichtigungen",
+      "subtitle": "Aktuelle Informationen",
+      "noNew": "Keine neuen Benachrichtigungen",
+      "viewAll": "Alle Benachrichtigungen anzeigen"
+    },
+    "classes": {
+      "title": "Meine Kurse",
+      "subtitle": "Schneller Zugriff auf Ihre Kurse",
+      "teaching": "Lehre",
+      "enrolled": "Eingeschrieben",
+      "due": "fällig",
+      "noClasses": "Noch keine Kurse",
+      "browseClasses": "Kurse durchsuchen",
+      "viewAllClasses": "Alle Kurse anzeigen"
+    }
+  }
+}

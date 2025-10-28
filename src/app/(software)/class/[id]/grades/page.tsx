@@ -46,7 +46,7 @@ import type { ColumnDef } from "@tanstack/react-table";
 
 
 export default function Grades() {
-  const t = useTranslations('class.grades');
+  const t = useTranslations('classGrades');
   const { id: classId } = useParams();
   const router = useRouter();
   const [gradingBoundariesOpen, setGradingBoundariesOpen] = useState(false);

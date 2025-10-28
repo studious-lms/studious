@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -22,6 +23,7 @@ interface GradingBoundariesModalProps {
 }
 
 export function GradingBoundariesModal({ open, onOpenChange, classId, existingGradingBoundary }: GradingBoundariesModalProps) {
+  const t = useTranslations('gradingBoundaries');
   const [selectedTemplate, setSelectedTemplate] = useState<string>("");
   const [isCreatingCustom, setIsCreatingCustom] = useState(false);
   const [newSetName, setNewSetName] = useState("");
@@ -92,7 +94,7 @@ export function GradingBoundariesModal({ open, onOpenChange, classId, existingGr
             structure: JSON.stringify(structured)
           });
           
-          toast.success("Grading boundary updated successfully");
+          toast.success(t('updated'));
         } else {
           // Create new grading boundary
           await createGradingBoundary.mutateAsync({
@@ -101,12 +103,12 @@ export function GradingBoundariesModal({ open, onOpenChange, classId, existingGr
             structure: JSON.stringify(structured)
           });
           
-          toast.success("Grading boundary created successfully");
+          toast.success(t('created'));
         }
         
         onOpenChange(false);
       } catch (error) {
-        toast.error(existingGradingBoundary ? "Failed to update grading boundary" : "Failed to create grading boundary");
+        toast.error(existingGradingBoundary ? t('updateFailed') : t('createFailed'));
       }
     }
   };
@@ -116,14 +118,14 @@ export function GradingBoundariesModal({ open, onOpenChange, classId, existingGr
       <DialogContent className="max-w-4xl max-h-[90vh]">
         <DialogHeader>
           <DialogTitle>
-            {existingGradingBoundary ? "Edit Grade Boundary" : "Create Grade Boundary"}
+            {existingGradingBoundary ? t('titleEdit') : t('title')}
           </DialogTitle>
         </DialogHeader>
         
         <div className="grid grid-cols-3 gap-6 h-[calc(90vh-140px)] overflow-hidden">
           {/* Left Column - Template Selection */}
           <div className="col-span-1 flex flex-col overflow-hidden">
-            <h3 className="text-lg font-semibold mb-4">Select Template</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('selectTemplate')}</h3>
             <div className="flex-1 overflow-y-auto">
               <div className="pr-4">
                 <GradingTemplateSelector
@@ -139,7 +141,7 @@ export function GradingBoundariesModal({ open, onOpenChange, classId, existingGr
           <div className="col-span-2 border-l pl-6 flex flex-col overflow-hidden">
             {isCreatingCustom ? (
               <>
-                <h3 className="text-lg font-semibold mb-4">Edit Grading Scale</h3>
+                <h3 className="text-lg font-semibold mb-4">{t('editGradingScale')}</h3>
                 <ScrollArea className="flex-1 h-0">
                   <div className="space-y-6 pr-4">
                     <GradingBoundaryEditor
@@ -154,22 +156,22 @@ export function GradingBoundariesModal({ open, onOpenChange, classId, existingGr
                 {/* Footer */}
                 <div className="flex justify-end gap-3 pt-4 border-t mt-4">
                   <Button variant="outline" onClick={() => onOpenChange(false)}>
-                    Cancel
+                    {t('cancel')}
                   </Button>
                   <Button
                     onClick={handleCreate}
                     disabled={!newSetName.trim() || customBoundaries.length === 0 || createGradingBoundary.isPending || updateGradingBoundary.isPending}
                   >
                     {(createGradingBoundary.isPending || updateGradingBoundary.isPending) 
-                      ? (existingGradingBoundary ? "Updating..." : "Creating...") 
-                      : (existingGradingBoundary ? "Update Grading Scale" : "Create Grading Scale")
+                      ? (existingGradingBoundary ? t('updating') : t('creating')) 
+                      : (existingGradingBoundary ? t('update') : t('create'))
                     }
                   </Button>
                 </div>
               </>
             ) : (
               <div className="h-full flex items-center justify-center text-muted-foreground">
-                <p>Select a template or create custom to start editing</p>
+                <p>{t('noTemplateSelected')}</p>
               </div>
             )}
           </div>

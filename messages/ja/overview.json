@@ -1,0 +1,12 @@
+{
+  "overview": {
+    "assignments": "課題",
+    "students": "学生",
+    "attendance": "出席",
+    "attachFile": "ファイルを添付",
+    "post": "役職",
+    "posting": "投稿中...",
+    "noPosts": "まだ投稿はありません",
+    "createFirstPost": "最初の投稿を作成する"
+  }
+}

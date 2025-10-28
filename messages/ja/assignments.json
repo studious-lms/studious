@@ -1,0 +1,54 @@
+{
+  "assignmentDetail": {
+    "title": "課題の詳細",
+    "description": "説明",
+    "instructions": "説明書",
+    "dueDate": "2つのデート",
+    "maxPoints": "最大ポイント",
+    "submissions": "提出物",
+    "submitted": "提出済み",
+    "notSubmitted": "提出されていません",
+    "graded": "段階的",
+    "pending": "保留中",
+    "late": "遅い",
+    "onTime": "時間通りに",
+    "attachments": "添付ファイル",
+    "rubric": "ルーブリック",
+    "gradingBoundary": "グレーディング境界",
+    "submissionDetails": "提出の詳細",
+    "submittedBy": "提出者",
+    "submittedAt": "提出先",
+    "grade": "学年",
+    "feedback": "フィードバック",
+    "files": "ファイル",
+    "noFiles": "添付ファイルはありません",
+    "noSubmissions": "まだ提出はありません",
+    "noSubmissionsDescription": "生徒が作品を提出すると、ここに提出物が表示されます。",
+    "actions": {
+      "edit": "割り当てを編集",
+      "delete": "割り当てを削除",
+      "viewSubmission": "提出内容を表示",
+      "gradeSubmission": "学年",
+      "downloadAll": "すべてダウンロード",
+      "exportGrades": "輸出グレード"
+    },
+    "stats": {
+      "totalSubmissions": "提出総数",
+      "averageGrade": "平均成績",
+      "submissionRate": "提出率",
+      "gradedCount": "段階的"
+    },
+    "table": {
+      "student": "学生",
+      "status": "状態",
+      "grade": "学年",
+      "submittedAt": "提出済み",
+      "actions": "アクション"
+    },
+    "toasts": {
+      "gradeUpdated": "成績が正常に更新されました",
+      "deleted": "割り当てを削除しました",
+      "error": "エラーが発生しました"
+    }
+  }
+}

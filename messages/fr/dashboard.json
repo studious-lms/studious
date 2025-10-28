@@ -1,0 +1,44 @@
+{
+  "home": {
+    "welcomeBack": "Bienvenue à nouveau, {name} !",
+    "subtitle": "Voici ce qui se passe dans vos cours aujourd'hui.",
+    "stats": {
+      "totalClasses": "Nombre total de classes",
+      "teachingEnrolled": "{enseignement} enseignement, {inscrit} inscrit",
+      "dueToday": "À rendre aujourd'hui",
+      "dueTodayDesc": "Devoirs à rendre aujourd'hui",
+      "upcoming": "Prochain",
+      "upcomingDesc": "Devoirs à venir",
+      "thisWeek": "Cette semaine",
+      "totalAssignments": "Total des affectations"
+    },
+    "upcomingAssignments": {
+      "title": "Missions à venir",
+      "subtitle": "Vos prochaines échéances",
+      "allCaughtUp": "Tout rattrapé !",
+      "noUpcoming": "Aucune mission à venir pour le moment.",
+      "viewAgenda": "Voir l'ordre du jour",
+      "dueToday": "À rendre aujourd'hui",
+      "dueTomorrow": "À rendre demain",
+      "due": "Échéance {date}",
+      "teaching": "Enseignement",
+      "viewAllAssignments": "Voir toutes les missions"
+    },
+    "notifications": {
+      "title": "Notifications récentes",
+      "subtitle": "Dernières mises à jour",
+      "noNew": "Aucune nouvelle notification",
+      "viewAll": "Afficher toutes les notifications"
+    },
+    "classes": {
+      "title": "Mes cours",
+      "subtitle": "Accès rapide à vos cours",
+      "teaching": "Enseignement",
+      "enrolled": "Inscrit",
+      "due": "exigible",
+      "noClasses": "Pas encore de cours",
+      "browseClasses": "Parcourir les cours",
+      "viewAllClasses": "Voir toutes les classes"
+    }
+  }
+}

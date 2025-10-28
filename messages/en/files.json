@@ -1,0 +1,130 @@
+{
+  "classFiles": {
+    "title": "Files",
+    "subtitle": "Manage class files and resources",
+    "actions": {
+      "newFolder": "New Folder",
+      "upload": "Upload",
+      "uploadFiles": "Upload Files",
+      "createFolder": "Create Folder",
+      "download": "Download",
+      "share": "Share",
+      "delete": "Delete",
+      "filter": "Filter",
+      "sort": "Sort"
+    },
+    "toasts": {
+      "folderCreated": "Folder created successfully",
+      "folderDeleted": "Folder deleted successfully",
+      "folderRenamed": "Folder renamed successfully",
+      "folderMoved": "Folder moved successfully",
+      "filesUploaded": "Files uploaded successfully",
+      "fileDeleted": "File deleted successfully",
+      "fileRenamed": "File renamed successfully",
+      "fileMoved": "File moved successfully",
+      "downloadStarted": "Download started",
+      "shareCopied": "Share link copied"
+    },
+    "errors": {
+      "teacherOnly": "Only teachers can modify files.",
+      "downloadFailed": "Download failed",
+      "shareFailed": "Share failed",
+      "failedToLoad": "Failed to load files. Please try again later."
+    },
+    "breadcrumbs": {
+      "classFiles": "Class Files"
+    },
+    "search": {
+      "placeholder": "Search in files"
+    },
+    "selected": "{count} selected",
+    "filters": {
+      "fileType": "File Type",
+      "documents": "Documents",
+      "images": "Images",
+      "videos": "Videos",
+      "presentations": "Presentations"
+    },
+    "sort": {
+      "name": "Name",
+      "lastModified": "Last modified",
+      "fileSize": "File size"
+    },
+    "table": {
+      "name": "Name",
+      "owner": "Owner",
+      "lastModified": "Last modified",
+      "fileSize": "File size"
+    },
+    "empty": {
+      "title": "This folder is empty",
+      "description": "Upload files or create folders to get started organizing your class materials.",
+      "searchTitle": "No files found",
+      "searchDescription": "No files match \"{query}\". Try a different search term."
+    }
+  },
+  "folderView": {
+    "subtitle": "Folder contents",
+    "notFound": {
+      "title": "Folder Not Found",
+      "description": "The requested folder could not be found.",
+      "backButton": "Back to Files"
+    },
+    "error": {
+      "loadFailed": "Failed to load folder contents. Please try again later."
+    },
+    "breadcrumbs": {
+      "classFiles": "Class Files"
+    },
+    "search": {
+      "placeholder": "Search in folder",
+      "selected": "{count} selected"
+    },
+    "filters": {
+      "label": "Filter",
+      "fileType": "File Type",
+      "documents": "Documents",
+      "images": "Images",
+      "videos": "Videos",
+      "presentations": "Presentations"
+    },
+    "sort": {
+      "label": "Sort",
+      "name": "Name",
+      "lastModified": "Last modified",
+      "fileSize": "File size"
+    },
+    "table": {
+      "name": "Name",
+      "owner": "Owner",
+      "lastModified": "Last modified",
+      "fileSize": "File size"
+    },
+    "empty": {
+      "noFilesFound": "No files found",
+      "noFilesFoundDescription": "No files match \"{query}\". Try a different search term.",
+      "folderEmpty": "This folder is empty",
+      "folderEmptyDescription": "Upload files or create folders to organize your materials."
+    },
+    "actions": {
+      "newFolder": "New Folder",
+      "uploadFiles": "Upload Files",
+      "createFolder": "Create Folder"
+    },
+    "toast": {
+      "folderCreated": "Folder created successfully",
+      "folderDeleted": "Folder deleted successfully",
+      "folderRenamed": "Folder renamed successfully",
+      "folderMoved": "Folder moved successfully",
+      "filesUploaded": "Files uploaded successfully",
+      "fileDeleted": "File deleted successfully",
+      "fileRenamed": "File renamed successfully",
+      "fileMoved": "File moved successfully",
+      "downloadStarted": "Download started",
+      "downloadFailed": "Download failed",
+      "shareLinkCopied": "Share link copied",
+      "shareFailed": "Share failed",
+      "permissionDenied": "Permission denied"
+    }
+  }
+}

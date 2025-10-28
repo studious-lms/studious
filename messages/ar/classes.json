@@ -1,0 +1,21 @@
+{
+  "classes": {
+    "title": "الفصول الدراسية",
+    "description": "إدارة التدريس والفصول الدراسية المسجلة",
+    "joinClass": "انضم إلى الفصل",
+    "createClass": "إنشاء الفصل",
+    "searchPlaceholder": "البحث عن الفصول الدراسية...",
+    "teaching": "تدريس",
+    "enrolled": "مسجل",
+    "noClassesFound": "لم يتم العثور على أي فصول دراسية",
+    "noTeachingClassesFound": "لم يتم العثور على فصول دراسية مطابقة لـ \"{query}\"",
+    "noEnrolledClassesFound": "لم يتم العثور على فصول دراسية مسجلة مطابقة لـ \"{query}\"",
+    "noClassesYet": "لا توجد فصول دراسية حتى الآن",
+    "noClassesYetDesc": "قم بإنشاء أول فصل دراسي لك لبدء إدارة الواجبات والدرجات والتفاعلات مع الطلاب.",
+    "noEnrolledClasses": "لا يوجد فصول مسجلة",
+    "noEnrolledClassesDesc": "انضم إلى الفصل الدراسي باستخدام رمز الدعوة أو الرابط الذي قدمه معلمك.",
+    "classDeleted": "تم حذف الفصل بنجاح",
+    "classDeleteFailed": "فشل في حذف الفصل",
+    "failedToLoad": "فشل تحميل الفصول الدراسية"
+  }
+}

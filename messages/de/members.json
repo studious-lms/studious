@@ -1,0 +1,63 @@
+{
+  "members": {
+    "title": "Mitglieder",
+    "counts": {
+      "totalMembers": "{count} Mitglieder"
+    },
+    "actions": {
+      "inviteMember": "Mitglied einladen",
+      "copy": "Kopie",
+      "regenerate": "Regenerieren",
+      "message": "Nachricht",
+      "viewProfile": "Profil anzeigen",
+      "viewGrades": "Noten anzeigen",
+      "makeTeacher": "Lehrer werden",
+      "makeStudent": "Zum Schüler machen",
+      "removeFromClass": "Aus der Klasse entfernen",
+      "removeAccess": "Zugriff entfernen",
+      "tryAgain": "Versuchen Sie es erneut"
+    },
+    "labels": {
+      "teacher": "Lehrer",
+      "student": "Student",
+      "you": "Du"
+    },
+    "invite": {
+      "title": "Klasseneinladungscode",
+      "description": "Geben Sie diesen Code an die Schüler weiter, um dem Unterricht beizutreten"
+    },
+    "search": {
+      "placeholder": "Mitglieder suchen..."
+    },
+    "tabs": {
+      "students": "Studenten",
+      "teachers": "Lehrer"
+    },
+    "students": {
+      "empty": {
+        "title": "Keine Schüler gefunden",
+        "matchNone": "Keine Schüler, die mit \"{query}\" übereinstimmen",
+        "noStudents": "Bisher haben sich noch keine Schüler für diesen Kurs angemeldet"
+      }
+    },
+    "teachers": {
+      "empty": {
+        "title": "Keine Lehrer gefunden",
+        "matchNone": "Keine Lehrer stimmen mit \"{query}\" überein",
+        "noTeachers": "Es wurden keine zusätzlichen Lehrer hinzugefügt"
+      }
+    },
+    "toasts": {
+      "inviteRegenerated": "Einladungscode erfolgreich neu generiert",
+      "copied": "Einladungscode in die Zwischenablage kopiert",
+      "roleChanged": "Rolle geändert zu {role}",
+      "memberRemoved": "Mitglied erfolgreich entfernt"
+    },
+    "errors": {
+      "regenerateFailed": "Einladungscode konnte nicht neu generiert werden",
+      "changeRoleFailed": "Rollenänderung fehlgeschlagen",
+      "removeFailed": "Das Entfernen des Mitglieds ist fehlgeschlagen.",
+      "failedToLoad": "Das Laden der Mitglieder ist fehlgeschlagen."
+    }
+  }
+}

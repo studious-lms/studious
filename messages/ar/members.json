@@ -1,0 +1,63 @@
+{
+  "members": {
+    "title": "أعضاء",
+    "counts": {
+      "totalMembers": "{count} عضوًا"
+    },
+    "actions": {
+      "inviteMember": "دعوة العضو",
+      "copy": "ينسخ",
+      "regenerate": "تجدد",
+      "message": "رسالة",
+      "viewProfile": "عرض الملف الشخصي",
+      "viewGrades": "عرض الدرجات",
+      "makeTeacher": "اصنع معلمًا",
+      "makeStudent": "جعل الطالب",
+      "removeFromClass": "إزالة من الفصل",
+      "removeAccess": "إزالة الوصول",
+      "tryAgain": "حاول ثانية"
+    },
+    "labels": {
+      "teacher": "مدرس",
+      "student": "طالب",
+      "you": "أنت"
+    },
+    "invite": {
+      "title": "رمز دعوة الفصل",
+      "description": "شارك هذا الرمز مع الطلاب للانضمام إلى الفصل"
+    },
+    "search": {
+      "placeholder": "البحث عن الأعضاء..."
+    },
+    "tabs": {
+      "students": "طلاب",
+      "teachers": "المعلمون"
+    },
+    "students": {
+      "empty": {
+        "title": "لم يتم العثور على أي طلاب",
+        "matchNone": "لا يوجد طلاب يطابقون \"{query}\"",
+        "noStudents": "لم ينضم أي طالب إلى هذه الفئة بعد"
+      }
+    },
+    "teachers": {
+      "empty": {
+        "title": "لم يتم العثور على معلمين",
+        "matchNone": "لا يوجد معلمين يطابقون \"{query}\"",
+        "noTeachers": "لم تتم إضافة أي معلمين إضافيين"
+      }
+    },
+    "toasts": {
+      "inviteRegenerated": "تم إعادة إنشاء رمز الدعوة بنجاح",
+      "copied": "تم نسخ رمز الدعوة إلى الحافظة",
+      "roleChanged": "تم تغيير الدور إلى {الدور}",
+      "memberRemoved": "تمت إزالة العضو بنجاح"
+    },
+    "errors": {
+      "regenerateFailed": "فشل في إعادة إنشاء رمز الدعوة",
+      "changeRoleFailed": "فشل في تغيير الدور",
+      "removeFailed": "فشل في إزالة العضو",
+      "failedToLoad": "فشل تحميل الأعضاء"
+    }
+  }
+}

@@ -22,8 +22,11 @@ import { DataTable } from "@/components/ui/data-table";
 import type { ColumnDef } from "@tanstack/react-table";
 import { trpc, type RouterOutputs } from "@/lib/trpc";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export default function AllStudentsGrades() {
+  const t = useTranslations('studentGrades');
+  const tCommon = useTranslations('common');
   const { id: classId } = useParams();
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -40,7 +43,7 @@ export default function AllStudentsGrades() {
   const studentColumns: ColumnDef<RouterOutputs["class"]["get"]["class"]["students"][number]>[] = [
     {
       accessorKey: "username",
-      header: "Student",
+      header: t('table.student'),
       cell: ({ row }) => {
         const student = row.original;
         return (
@@ -55,14 +58,14 @@ export default function AllStudentsGrades() {
     },
     {
       accessorKey: "actions",
-      header: "Actions",
+      header: t('table.actions'),
       cell: ({ row }) => {
         const student = row.original;
         return (
           <div className="">
             <Link href={`/class/${classId}/grades/student/${student.id}`}>
               <Button size="sm" variant="outline">
-                View Grades
+                {t('actions.viewSubmission')}
               </Button>
             </Link>
           </div>
@@ -91,10 +94,10 @@ export default function AllStudentsGrades() {
 
   return (
     <PageLayout>
-      <PageHeader title="All Students Grades" description="View and manage grades for all students">
+      <PageHeader title={t('title')} description={t('allStudents')}>
         <Button variant="outline" onClick={() => window.history.back()}>
           <ArrowLeft className="h-4 w-4 mr-2" />
-          Back
+          {tCommon('back')}
         </Button>
       </PageHeader>
 
@@ -104,11 +107,11 @@ export default function AllStudentsGrades() {
           <div className="flex items-center space-x-4">
             <div className="relative flex-1 max-w-sm">
               <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-              <Input placeholder="Search students..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className="pl-10" />
+              <Input placeholder={tCommon('search')} value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className="pl-10" />
             </div>
             <Button variant="outline" size="sm">
               <Download className="h-4 w-4 mr-2" />
-              Export
+              {tCommon('export')}
             </Button>
           </div>
         </CardContent>
@@ -117,17 +120,17 @@ export default function AllStudentsGrades() {
       {/* Students */}
       <Card>
         <CardHeader>
-          <CardTitle>Students</CardTitle>
+          <CardTitle>{t('students')}</CardTitle>
         </CardHeader>
         <CardContent>
           {filtered.length === 0 ? (
             <EmptyState
               icon={Users}
-              title={searchTerm.trim() ? "No students found" : "No students enrolled"}
+              title={searchTerm.trim() ? tCommon('noData') : t('noGrades')}
               description={
                 searchTerm.trim() 
-                  ? "Try adjusting your search terms" 
-                  : "Students will appear here once they join the class"
+                  ? t('noGradesDescription')
+                  : t('noGradesDescription')
               }
             />
           ) : (
@@ -135,7 +138,7 @@ export default function AllStudentsGrades() {
               columns={studentColumns}
               data={filtered}
               searchKey="username"
-              searchPlaceholder="Search students..."
+              searchPlaceholder={tCommon('search')}
             />
           )}
         </CardContent>

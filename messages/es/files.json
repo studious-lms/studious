@@ -1,0 +1,130 @@
+{
+  "classFiles": {
+    "title": "Archivos",
+    "subtitle": "Administrar archivos y recursos de clase",
+    "actions": {
+      "newFolder": "Nueva carpeta",
+      "upload": "Subir",
+      "uploadFiles": "Subir archivos",
+      "createFolder": "Crear carpeta",
+      "download": "Descargar",
+      "share": "Compartir",
+      "delete": "Borrar",
+      "filter": "Filtrar",
+      "sort": "Clasificar"
+    },
+    "toasts": {
+      "folderCreated": "Carpeta creada exitosamente",
+      "folderDeleted": "Carpeta eliminada exitosamente",
+      "folderRenamed": "Carpeta renombrada exitosamente",
+      "folderMoved": "La carpeta se movió correctamente",
+      "filesUploaded": "Archivos cargados exitosamente",
+      "fileDeleted": "Archivo eliminado exitosamente",
+      "fileRenamed": "Archivo renombrado exitosamente",
+      "fileMoved": "Archivo movido exitosamente",
+      "downloadStarted": "Descarga iniciada",
+      "shareCopied": "Compartir enlace copiado"
+    },
+    "errors": {
+      "teacherOnly": "Sólo los profesores pueden modificar los archivos.",
+      "downloadFailed": "Descarga fallida",
+      "shareFailed": "Error al compartir",
+      "failedToLoad": "No se pudieron cargar los archivos. Inténtelo de nuevo más tarde."
+    },
+    "breadcrumbs": {
+      "classFiles": "Archivos de clase"
+    },
+    "search": {
+      "placeholder": "Buscar en archivos"
+    },
+    "selected": "{count} seleccionados",
+    "filters": {
+      "fileType": "Tipo de archivo",
+      "documents": "Documentos",
+      "images": "Imágenes",
+      "videos": "Vídeos",
+      "presentations": "Presentaciones"
+    },
+    "sort": {
+      "name": "Nombre",
+      "lastModified": "Última modificación",
+      "fileSize": "Tamaño del archivo"
+    },
+    "table": {
+      "name": "Nombre",
+      "owner": "Dueño",
+      "lastModified": "Última modificación",
+      "fileSize": "Tamaño del archivo"
+    },
+    "empty": {
+      "title": "Esta carpeta está vacía",
+      "description": "Sube archivos o crea carpetas para comenzar a organizar los materiales de tu clase.",
+      "searchTitle": "No se encontraron archivos",
+      "searchDescription": "No hay archivos que coincidan con \"{query}\". Prueba con otro término de búsqueda."
+    }
+  },
+  "folderView": {
+    "subtitle": "Contenido de la carpeta",
+    "notFound": {
+      "title": "Carpeta no encontrada",
+      "description": "No se pudo encontrar la carpeta solicitada.",
+      "backButton": "Volver a Archivos"
+    },
+    "error": {
+      "loadFailed": "No se pudo cargar el contenido de la carpeta. Inténtelo de nuevo más tarde."
+    },
+    "breadcrumbs": {
+      "classFiles": "Archivos de clase"
+    },
+    "search": {
+      "placeholder": "Buscar en la carpeta",
+      "selected": "{count} seleccionados"
+    },
+    "filters": {
+      "label": "Filtrar",
+      "fileType": "Tipo de archivo",
+      "documents": "Documentos",
+      "images": "Imágenes",
+      "videos": "Vídeos",
+      "presentations": "Presentaciones"
+    },
+    "sort": {
+      "label": "Clasificar",
+      "name": "Nombre",
+      "lastModified": "Última modificación",
+      "fileSize": "Tamaño del archivo"
+    },
+    "table": {
+      "name": "Nombre",
+      "owner": "Dueño",
+      "lastModified": "Última modificación",
+      "fileSize": "Tamaño del archivo"
+    },
+    "empty": {
+      "noFilesFound": "No se encontraron archivos",
+      "noFilesFoundDescription": "No hay archivos que coincidan con \"{query}\". Prueba con otro término de búsqueda.",
+      "folderEmpty": "Esta carpeta está vacía",
+      "folderEmptyDescription": "Sube archivos o crea carpetas para organizar tus materiales."
+    },
+    "actions": {
+      "newFolder": "Nueva carpeta",
+      "uploadFiles": "Subir archivos",
+      "createFolder": "Crear carpeta"
+    },
+    "toast": {
+      "folderCreated": "Carpeta creada exitosamente",
+      "folderDeleted": "Carpeta eliminada exitosamente",
+      "folderRenamed": "Carpeta renombrada exitosamente",
+      "folderMoved": "La carpeta se movió correctamente",
+      "filesUploaded": "Archivos cargados exitosamente",
+      "fileDeleted": "Archivo eliminado exitosamente",
+      "fileRenamed": "Archivo renombrado exitosamente",
+      "fileMoved": "Archivo movido exitosamente",
+      "downloadStarted": "Descarga iniciada",
+      "downloadFailed": "Descarga fallida",
+      "shareLinkCopied": "Compartir enlace copiado",
+      "shareFailed": "Error al compartir",
+      "permissionDenied": "Permiso denegado"
+    }
+  }
+}

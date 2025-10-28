@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useParams, useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { PageLayout } from "@/components/ui/page-layout";
@@ -66,6 +67,8 @@ import { RootState } from "@/store/store";
 
 
 export default function FolderPage() {
+  const t = useTranslations('folderView');
+  const tCommon = useTranslations('common');
   const params = useParams();
   const router = useRouter();
   const classId = params.id as string;
@@ -94,7 +97,7 @@ export default function FolderPage() {
   // Mutations
   const createFolderMutation = trpc.folder.create.useMutation({
     onSuccess: () => {
-      toast.success("Folder created successfully");
+      toast.success(t('toast.folderCreated'));
       refetch();
     },
     onError: (error) => {
@@ -104,7 +107,7 @@ export default function FolderPage() {
   
   const deleteFolderMutation = trpc.folder.delete.useMutation({
     onSuccess: () => {
-      toast.success("Folder deleted successfully");
+      toast.success(t('toast.folderDeleted'));
       refetch();
     },
     onError: (error) => {
@@ -114,7 +117,7 @@ export default function FolderPage() {
   
   const renameFolderMutation = trpc.folder.update.useMutation({
     onSuccess: () => {
-      toast.success("Folder renamed successfully");
+      toast.success(t('toast.folderRenamed'));
       refetch();
     },
     onError: (error) => {
@@ -124,7 +127,7 @@ export default function FolderPage() {
   
   const uploadFilesMutation = trpc.folder.uploadFiles.useMutation({
     onSuccess: () => {
-      toast.success("Files uploaded successfully");
+      toast.success(t('toast.filesUploaded'));
       refetch();
     },
     onError: (error) => {
@@ -134,7 +137,7 @@ export default function FolderPage() {
   
   const deleteFileMutation = trpc.file.delete.useMutation({
     onSuccess: () => {
-      toast.success("File deleted successfully");
+      toast.success(t('toast.fileDeleted'));
       refetch();
     },
     onError: (error) => {
@@ -144,7 +147,7 @@ export default function FolderPage() {
   
   const renameFileMutation = trpc.file.rename.useMutation({
     onSuccess: () => {
-      toast.success("File renamed successfully");
+      toast.success(t('toast.fileRenamed'));
       refetch();
     },
     onError: (error) => {
@@ -154,7 +157,7 @@ export default function FolderPage() {
   
   const moveFileMutation = trpc.file.move.useMutation({
     onSuccess: () => {
-      toast.success("File moved successfully");
+      toast.success(t('toast.fileMoved'));
       refetch();
     },
     onError: (error) => {
@@ -164,7 +167,7 @@ export default function FolderPage() {
   
   const moveFolderMutation = trpc.folder.move.useMutation({
     onSuccess: () => {
-      toast.success("Folder moved successfully");
+      toast.success(t('toast.folderMoved'));
       refetch();
     },
     onError: (error) => {
@@ -290,16 +293,16 @@ export default function FolderPage() {
 
     onDownload: async (item: FileItem) => {
       if (!isTeacher && ["modify", "delete", "move"].includes("download")) {
-        toast.error("Permission denied");
+        toast.error(t('toast.permissionDenied'));
         return;
       }
       
       try {
         const result = await getSignedUrlMutation.mutateAsync({ fileId: item.id });
         window.open(result.url, '_blank');
-        toast.success("Download started");
+        toast.success(t('toast.downloadStarted'));
       } catch (error) {
-        toast.error("Download failed");
+        toast.error(t('toast.downloadFailed'));
         throw error;
       }
     },
@@ -308,16 +311,16 @@ export default function FolderPage() {
       try {
         const result = await getSignedUrlMutation.mutateAsync({ fileId: item.id });
         await navigator.clipboard.writeText(result.url);
-        toast.success("Share link copied");
+        toast.success(t('toast.shareLinkCopied'));
       } catch (error) {
-        toast.error("Share failed");
+        toast.error(t('toast.shareFailed'));
         throw error;
       }
     },
 
     onRename: async (item: FileItem, newName: string, color?: string) => {
       if (!isTeacher) {
-        toast.error("Permission denied");
+        toast.error(t('toast.permissionDenied'));
         return;
       }
 
@@ -350,7 +353,7 @@ export default function FolderPage() {
 
     onDelete: async (item: FileItem) => {
       if (!isTeacher) {
-        toast.error("Permission denied");
+        toast.error(t('toast.permissionDenied'));
         return;
       }
 
@@ -367,7 +370,7 @@ export default function FolderPage() {
 
     onMove: async (draggedItemId: string, targetFolderId: string, draggedItemType: string) => {
       if (!isTeacher) {
-        toast.error("Permission denied");
+        toast.error(t('toast.permissionDenied'));
         return;
       }
 
@@ -432,10 +435,10 @@ export default function FolderPage() {
     return (
       <PageLayout>
         <div className="text-center py-16">
-          <h1 className="text-2xl font-bold mb-4">Folder Not Found</h1>
-          <p className="text-muted-foreground mb-6">The requested folder could not be found.</p>
+          <h1 className="text-2xl font-bold mb-4">{t('notFound.title')}</h1>
+          <p className="text-muted-foreground mb-6">{t('notFound.description')}</p>
           <Button onClick={() => router.push(`/class/${classId}/files`)}>
-            Back to Files
+            {t('notFound.backButton')}
           </Button>
         </div>
       </PageLayout>
@@ -448,8 +451,8 @@ export default function FolderPage() {
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
           <div>
-            <h1 className="text-2xl font-bold">{currentFolder?.name || "Loading..."}</h1>
-            <p className="text-muted-foreground">Folder contents</p>
+            <h1 className="text-2xl font-bold">{currentFolder?.name || tCommon('loading')}</h1>
+            <p className="text-muted-foreground">{t('subtitle')}</p>
           </div>
           
           {isTeacher && (
@@ -465,7 +468,7 @@ export default function FolderPage() {
                 ) : (
                   <FolderPlus className="h-4 w-4 mr-2" />
                 )}
-                New Folder
+                {t('actions.newFolder')}
               </Button>
               <UploadFileModal 
                 currentFolder={folderId}
@@ -479,7 +482,7 @@ export default function FolderPage() {
                   ) : (
                     <Upload className="h-4 w-4 mr-2" />
                   )}
-                  Upload
+                  {tCommon('upload')}
                 </Button>
               </UploadFileModal>
             </div>
@@ -491,7 +494,7 @@ export default function FolderPage() {
           <Alert variant="destructive" className="mb-4">
             <AlertCircle className="h-4 w-4" />
             <AlertDescription>
-              Failed to load folder contents. Please try again later.
+              {t('error.loadFailed')}
             </AlertDescription>
           </Alert>
         )}
@@ -504,7 +507,7 @@ export default function FolderPage() {
             onClick={() => router.push(`/class/${classId}/files`)}
             className="h-auto p-1 font-medium hover:bg-muted"
           >
-            Class Files
+            {t('breadcrumbs.classFiles')}
           </Button>
           <ChevronRight className="h-4 w-4 text-muted-foreground" />
           <Button
@@ -513,7 +516,7 @@ export default function FolderPage() {
             className="h-auto p-1 font-medium hover:bg-muted cursor-default"
             disabled
           >
-            {currentFolder?.name || "Loading..."}
+            {currentFolder?.name || tCommon('loading')}
           </Button>
         </div>
 
@@ -523,7 +526,7 @@ export default function FolderPage() {
             <div className="relative max-w-md">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
-                placeholder="Search in folder"
+                placeholder={t('search.placeholder')}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-10 w-80"
@@ -532,18 +535,18 @@ export default function FolderPage() {
             
             {selectedCount > 0 && (
               <div className="flex items-center space-x-2">
-                <Badge variant="secondary">{selectedCount} selected</Badge>
+                <Badge variant="secondary">{t('search.selected', { count: selectedCount })}</Badge>
                 <Button variant="outline" size="sm">
                   <Download className="h-4 w-4 mr-2" />
-                  Download
+                  {tCommon('download')}
                 </Button>
                 <Button variant="outline" size="sm">
                   <Share className="h-4 w-4 mr-2" />
-                  Share
+                  {tCommon('share')}
                 </Button>
                 <Button variant="outline" size="sm">
                   <Trash2 className="h-4 w-4 mr-2" />
-                  Delete
+                  {tCommon('delete')}
                 </Button>
               </div>
             )}
@@ -554,15 +557,15 @@ export default function FolderPage() {
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" size="sm">
                   <Filter className="h-4 w-4 mr-2" />
-                  Filter
+                  {t('filters.label')}
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
-                <DropdownMenuLabel>File Type</DropdownMenuLabel>
-                <DropdownMenuCheckboxItem>Documents</DropdownMenuCheckboxItem>
-                <DropdownMenuCheckboxItem>Images</DropdownMenuCheckboxItem>
-                <DropdownMenuCheckboxItem>Videos</DropdownMenuCheckboxItem>
-                <DropdownMenuCheckboxItem>Presentations</DropdownMenuCheckboxItem>
+                <DropdownMenuLabel>{t('filters.fileType')}</DropdownMenuLabel>
+                <DropdownMenuCheckboxItem>{t('filters.documents')}</DropdownMenuCheckboxItem>
+                <DropdownMenuCheckboxItem>{t('filters.images')}</DropdownMenuCheckboxItem>
+                <DropdownMenuCheckboxItem>{t('filters.videos')}</DropdownMenuCheckboxItem>
+                <DropdownMenuCheckboxItem>{t('filters.presentations')}</DropdownMenuCheckboxItem>
               </DropdownMenuContent>
             </DropdownMenu>
 
@@ -570,18 +573,18 @@ export default function FolderPage() {
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" size="sm">
                   <ArrowUpDown className="h-4 w-4 mr-2" />
-                  Sort
+                  {t('sort.label')}
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuItem onClick={() => setSortBy("name")}>
-                  Name
+                  {t('sort.name')}
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => setSortBy("modified")}>
-                  Last modified
+                  {t('sort.lastModified')}
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => setSortBy("size")}>
-                  File size
+                  {t('sort.fileSize')}
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -654,10 +657,10 @@ export default function FolderPage() {
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>Name</TableHead>
-                    <TableHead>Owner</TableHead>
-                    <TableHead>Last modified</TableHead>
-                    <TableHead>File size</TableHead>
+                    <TableHead>{t('table.name')}</TableHead>
+                    <TableHead>{t('table.owner')}</TableHead>
+                    <TableHead>{t('table.lastModified')}</TableHead>
+                    <TableHead>{t('table.fileSize')}</TableHead>
                     <TableHead className="w-12"></TableHead>
                   </TableRow>
                 </TableHeader>
@@ -684,10 +687,10 @@ export default function FolderPage() {
           <div className="space-y-6">
             <EmptyState
               icon={HardDrive}
-              title={searchQuery ? "No files found" : "This folder is empty"}
+              title={searchQuery ? t('empty.noFilesFound') : t('empty.folderEmpty')}
               description={searchQuery 
-                ? `No files match "${searchQuery}". Try a different search term.`
-                : "Upload files or create folders to organize your materials."
+                ? t('empty.noFilesFoundDescription', { query: searchQuery })
+                : t('empty.folderEmptyDescription')
               }
             />
             {isTeacher && (
@@ -704,7 +707,7 @@ export default function FolderPage() {
                     ) : (
                       <Upload className="h-4 w-4 mr-2" />
                     )}
-                    Upload Files
+                    {t('actions.uploadFiles')}
                   </Button>
                 </UploadFileModal>
                 <Button 
@@ -717,7 +720,7 @@ export default function FolderPage() {
                   ) : (
                     <FolderPlus className="h-4 w-4 mr-2" />
                   )}
-                  Create Folder
+                  {t('actions.createFolder')}
                 </Button>
               </div>
             )}

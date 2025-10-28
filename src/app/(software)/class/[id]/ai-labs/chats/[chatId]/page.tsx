@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { trpc } from "@/lib/trpc";
@@ -21,6 +22,7 @@ import {
 
 
 export default function AILabChatPage() {
+  const t = useTranslations('aiLabChat');
   const params = useParams();
   const router = useRouter();
   const appState = useSelector((state: RootState) => state.app);
@@ -42,7 +44,7 @@ export default function AILabChatPage() {
       // Message will be updated via real-time events through useChat hook
     },
     onError: (error) => {
-      toast.error('Failed to send message: ' + error.message);
+      toast.error(t('toast.messageFailed') + error.message);
     }
   });
 
@@ -137,13 +139,13 @@ export default function AILabChatPage() {
             className="flex items-center gap-2"
           >
             <ArrowLeft className="h-4 w-4" />
-            Back to AI Labs
+            {t('backButton')}
           </Button>
         </div>
         <div className="flex-1 flex items-center justify-center">
           <div className="text-center space-y-2">
-            <h2 className="text-lg font-semibold text-muted-foreground">Lab Chat Not Found</h2>
-            <p className="text-sm text-muted-foreground">This AI Lab may have been deleted or you don't have access to it.</p>
+            <h2 className="text-lg font-semibold text-muted-foreground">{t('notFound.title')}</h2>
+            <p className="text-sm text-muted-foreground">{t('notFound.description')}</p>
           </div>
         </div>
       </div>
@@ -161,7 +163,7 @@ export default function AILabChatPage() {
           className="flex items-center gap-2"
         >
           <ArrowLeft className="h-4 w-4" />
-          Back to AI Labs
+          {t('backButton')}
         </Button>
       </div>
 
@@ -169,7 +171,7 @@ export default function AILabChatPage() {
       <div className="px-6 py-4 border-b border-border bg-background flex-shrink-0">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-lg font-semibold">{labChat?.title || 'Loading...'}</h1>
+            <h1 className="text-lg font-semibold">{labChat?.title || t('loading')}</h1>
             {labContext && (
               <div className="flex items-center gap-2 text-sm text-muted-foreground mt-1">
                 <Badge variant="outline">{labContext.topic}</Badge>
@@ -193,7 +195,7 @@ export default function AILabChatPage() {
               className="bg-primary hover:bg-primary/90"
             >
               <Wand2 className="h-4 w-4 mr-2" />
-              {isGenerating ? 'AI Thinking...' : 'Get AI Help'}
+              {isGenerating ? t('aiThinking') : t('getAIHelp')}
             </Button>
           </div>
         </div>

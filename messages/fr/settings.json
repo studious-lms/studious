@@ -1,0 +1,66 @@
+{
+  "settings": {
+    "title": "Paramètres de classe",
+    "subtitle": "Configurer les détails et les préférences de la classe",
+    "labels": {
+      "unsavedChanges": "Modifications non enregistrées"
+    },
+    "actions": {
+      "saving": "Économie...",
+      "saveChanges": "Enregistrer les modifications",
+      "deleting": "Suppression...",
+      "deleteClass": "Supprimer la classe",
+      "cancel": "Annuler"
+    },
+    "sections": {
+      "basicInfo": {
+        "title": "Informations de base"
+      },
+      "theme": {
+        "title": "Thème de la classe",
+        "description": "Choisissez une couleur de thème pour cette classe"
+      },
+      "danger": {
+        "title": "Zone de danger",
+        "description": "Une fois un cours supprimé, il n'y a plus de retour en arrière possible. Tous les devoirs, notes et relevés de présence seront supprimés définitivement, ainsi que tous les élèves du cours."
+      }
+    },
+    "fields": {
+      "className": "Nom de la classe",
+      "section": "Section",
+      "subject": "Sujet"
+    },
+    "placeholders": {
+      "className": "par exemple, physique avancée",
+      "section": "par exemple, AP-101",
+      "subject": "par exemple, la physique"
+    },
+    "toasts": {
+      "updated": {
+        "title": "Classe mise à jour",
+        "description": "Les paramètres de classe ont été enregistrés avec succès."
+      },
+      "deleted": {
+        "title": "Classe supprimée",
+        "description": "La classe a été définitivement supprimée."
+      }
+    },
+    "errors": {
+      "updateFailed": {
+        "title": "Échec de la mise à jour",
+        "description": "Échec de l'enregistrement des paramètres de cours. Veuillez réessayer."
+      }
+    },
+    "confirm": {
+      "title": "Êtes-vous absolument sûr ?",
+      "description": "Cette action est irréversible. Elle supprimera définitivement la classe « {name} » et toutes les données associées, notamment :",
+      "items": {
+        "assignments": "Toutes les tâches et soumissions",
+        "records": "Toutes les notes et tous les relevés de présence",
+        "students": "Tous les étudiants seront expulsés de la classe",
+        "events": "Tous les événements et annonces de classe"
+      },
+      "confirmDelete": "Oui, supprimer la classe"
+    }
+  }
+}

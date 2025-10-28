@@ -1,0 +1,66 @@
+{
+  "settings": {
+    "title": "Configurações de classe",
+    "subtitle": "Configurar detalhes e preferências da classe",
+    "labels": {
+      "unsavedChanges": "Alterações não salvas"
+    },
+    "actions": {
+      "saving": "Salvando...",
+      "saveChanges": "Salvar alterações",
+      "deleting": "Excluindo...",
+      "deleteClass": "Excluir classe",
+      "cancel": "Cancelar"
+    },
+    "sections": {
+      "basicInfo": {
+        "title": "Informações básicas"
+      },
+      "theme": {
+        "title": "Tema da aula",
+        "description": "Escolha uma cor de tema para esta aula"
+      },
+      "danger": {
+        "title": "Zona de perigo",
+        "description": "Depois de excluir uma turma, não há como voltar atrás. Isso excluirá permanentemente todas as tarefas, notas, registros de frequência e removerá todos os alunos da turma."
+      }
+    },
+    "fields": {
+      "className": "Nome da classe",
+      "section": "Seção",
+      "subject": "Assunto"
+    },
+    "placeholders": {
+      "className": "por exemplo, Física Avançada",
+      "section": "por exemplo, AP-101",
+      "subject": "por exemplo, Física"
+    },
+    "toasts": {
+      "updated": {
+        "title": "Classe atualizada",
+        "description": "As configurações da classe foram salvas com sucesso."
+      },
+      "deleted": {
+        "title": "Classe excluída",
+        "description": "A classe foi excluída permanentemente."
+      }
+    },
+    "errors": {
+      "updateFailed": {
+        "title": "Falha na atualização",
+        "description": "Falha ao salvar as configurações da turma. Tente novamente."
+      }
+    },
+    "confirm": {
+      "title": "Você tem certeza absoluta?",
+      "description": "Esta ação não pode ser desfeita. Isso excluirá permanentemente a classe \"{name}\" e removerá todos os dados associados, incluindo:",
+      "items": {
+        "assignments": "Todas as tarefas e envios",
+        "records": "Todas as notas e registros de frequência",
+        "students": "Todos os alunos serão retirados da aula",
+        "events": "Todos os eventos e anúncios de classe"
+      },
+      "confirmDelete": "Sim, excluir classe"
+    }
+  }
+}

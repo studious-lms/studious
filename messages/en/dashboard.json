@@ -1,0 +1,44 @@
+{
+  "home": {
+    "welcomeBack": "Welcome back, {name}!",
+    "subtitle": "Here's what's happening with your classes today.",
+    "stats": {
+      "totalClasses": "Total Classes",
+      "teachingEnrolled": "{teaching} teaching, {enrolled} enrolled",
+      "dueToday": "Due Today",
+      "dueTodayDesc": "Assignments due today",
+      "upcoming": "Upcoming",
+      "upcomingDesc": "Assignments coming up",
+      "thisWeek": "This Week",
+      "totalAssignments": "Total assignments"
+    },
+    "upcomingAssignments": {
+      "title": "Upcoming Assignments",
+      "subtitle": "Your next deadlines",
+      "allCaughtUp": "All caught up!",
+      "noUpcoming": "No upcoming assignments at the moment.",
+      "viewAgenda": "View Agenda",
+      "dueToday": "Due today",
+      "dueTomorrow": "Due tomorrow",
+      "due": "Due {date}",
+      "teaching": "Teaching",
+      "viewAllAssignments": "View All Assignments"
+    },
+    "notifications": {
+      "title": "Recent Notifications",
+      "subtitle": "Latest updates",
+      "noNew": "No new notifications",
+      "viewAll": "View All Notifications"
+    },
+    "classes": {
+      "title": "My Classes",
+      "subtitle": "Quick access to your classes",
+      "teaching": "Teaching",
+      "enrolled": "Enrolled",
+      "due": "due",
+      "noClasses": "No classes yet",
+      "browseClasses": "Browse Classes",
+      "viewAllClasses": "View All Classes"
+    }
+  }
+}

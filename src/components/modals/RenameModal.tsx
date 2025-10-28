@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
 import {
   Dialog,
   DialogContent,
@@ -28,6 +29,7 @@ interface RenameModalProps {
 }
 
 export function RenameModal({ item, isOpen, onClose, onRename }: RenameModalProps) {
+  const t = useTranslations('rename');
   const [newName, setNewName] = useState("");
   const [folderColor, setFolderColor] = useState("#3b82f6");
 
@@ -80,19 +82,19 @@ export function RenameModal({ item, isOpen, onClose, onRename }: RenameModalProp
         <form onSubmit={handleSubmit}>
           <DialogHeader>
             <DialogTitle>
-              {item.type === "folder" ? "Edit folder" : "Rename file"}
+              {item.type === "folder" ? t('editFolder') : t('renameFile')}
             </DialogTitle>
           </DialogHeader>
 
           <div className="space-y-4 py-4">
             <div className="space-y-2">
-              <Label htmlFor="name">Name</Label>
+              <Label htmlFor="name">{t('name')}</Label>
               <div className="flex items-center space-x-2">
                 <Input
                   id="name"
                   value={newName}
                   onChange={(e) => setNewName(e.target.value)}
-                  placeholder={`Enter ${item.type} name`}
+                  placeholder={t('placeholder', { type: item.type })}
                   className="flex-1"
                   autoFocus
                 />
@@ -110,8 +112,8 @@ export function RenameModal({ item, isOpen, onClose, onRename }: RenameModalProp
                 <ColorPicker
                   value={folderColor}
                   onChange={setFolderColor}
-                  label="Folder Color"
-                  description="Choose a color for this folder"
+                  label={t('folderColor')}
+                  description={t('folderColorDescription')}
                 />
               </div>
             )}
@@ -119,10 +121,10 @@ export function RenameModal({ item, isOpen, onClose, onRename }: RenameModalProp
 
           <DialogFooter>
             <Button type="button" variant="outline" onClick={onClose}>
-              Cancel
+              {t('cancel')}
             </Button>
             <Button type="submit">
-              {item.type === "folder" ? "Save Changes" : "Rename"}
+              {item.type === "folder" ? t('saveChanges') : t('rename')}
             </Button>
           </DialogFooter>
         </form>

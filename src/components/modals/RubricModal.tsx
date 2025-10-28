@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -220,6 +221,7 @@ const getTemplateIcon = (category: string) => {
 };
 
 export function RubricModal({ open, onOpenChange, classId, existingRubric }: RubricModalProps) {
+  const t = useTranslations('rubric');
   const [selectedTemplate, setSelectedTemplate] = useState<string>("");
   const [rubricCriteria, setRubricCriteria] = useState<RubricCriteria[]>([]);
   const [rubricName, setRubricName] = useState("");
@@ -228,7 +230,7 @@ export function RubricModal({ open, onOpenChange, classId, existingRubric }: Rub
 
   const createMarkScheme = trpc.class.createMarkScheme.useMutation({
     onSuccess: () => {
-      toast.success("Rubric created successfully");
+      toast.success(t('created'));
       onOpenChange(false);
       // Reset form
       setSelectedTemplate("");
@@ -238,13 +240,13 @@ export function RubricModal({ open, onOpenChange, classId, existingRubric }: Rub
       setRubricCategory("");
     },
     onError: (error) => {
-      toast.error(error.message || "Failed to create rubric");
+      toast.error(error.message || t('createFailed'));
     },
   });
 
   const updateMarkScheme = trpc.class.updateMarkScheme.useMutation({
     onSuccess: () => {
-        toast.success("Rubric updated successfully");
+        toast.success(t('updated'));
       onOpenChange(false);
       // Reset form
       setSelectedTemplate("");
@@ -254,7 +256,7 @@ export function RubricModal({ open, onOpenChange, classId, existingRubric }: Rub
       setRubricCategory("");
     },
     onError: (error) => {
-      toast.error(error.message || "Failed to update rubric");
+      toast.error(error.message || t('updateFailed'));
     },
   });
 
@@ -300,7 +302,7 @@ export function RubricModal({ open, onOpenChange, classId, existingRubric }: Rub
 
   const handleCreate = () => {
     if (!rubricName.trim() || rubricCriteria.length === 0) {
-      toast.error("Please provide a name and at least one criterion");
+      toast.error(t('errorNameRequired'));
       return;
     }
 

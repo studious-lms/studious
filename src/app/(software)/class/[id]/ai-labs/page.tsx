@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useParams, useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { toast } from "sonner";
@@ -36,6 +37,8 @@ import { formatDistanceToNow } from "date-fns";
 
 
 export default function ClassAILabs() {
+  const t = useTranslations('aiLabs');
+  const tCommon = useTranslations('common');
   const { id: classId } = useParams();
   const router = useRouter();
   const appState = useSelector((state: RootState) => state.app);
@@ -58,7 +61,7 @@ export default function ClassAILabs() {
   // Create lab chat mutation
   const createLabChatMutation = trpc.labChat.create.useMutation({
     onSuccess: (newLabChat) => {
-      toast.success('AI Lab created successfully!');
+      toast.success(t('toast.labCreated'));
       setShowModal(false);
       setSelectedLabType(null);
       refetchLabChats();
@@ -66,18 +69,18 @@ export default function ClassAILabs() {
       router.push(`/class/${classId}/ai-labs/chats/${newLabChat.id}`);
     },
     onError: (error) => {
-      toast.error('Failed to create AI Lab: ' + error.message);
+      toast.error(t('toast.labCreateFailed') + error.message);
     }
   });
 
   // Delete lab chat mutation
   const deleteLabChatMutation = trpc.labChat.delete.useMutation({
     onSuccess: () => {
-      toast.success('AI Lab deleted successfully!');
+      toast.success(t('toast.labDeleted'));
       refetchLabChats();
     },
     onError: (error) => {
-      toast.error('Failed to delete AI Lab: ' + error.message);
+      toast.error(t('toast.labDeleteFailed') + error.message);
     }
   });
 
@@ -102,7 +105,7 @@ export default function ClassAILabs() {
   };
 
   const handleDeleteLabChat = (labChatId: string) => {
-    if (window.confirm('Are you sure you want to delete this AI Lab? This action cannot be undone.')) {
+    if (window.confirm(t('deleteConfirm'))) {
       deleteLabChatMutation.mutate({ labChatId });
     }
   };
@@ -115,40 +118,40 @@ export default function ClassAILabs() {
   const creationWidgets = [
     {
       id: "assignment",
-      title: "Assignment",
-      description: "Create interactive assignments with AI assistance",
+      title: t('widgets.assignment.title'),
+      description: t('widgets.assignment.description'),
       icon: FileText,
       bgColor: "bg-primary/10",
       textColor: "text-primary"
     },
     {
       id: "quiz", 
-      title: "Quiz",
-      description: "Generate quizzes with various question types",
+      title: t('widgets.quiz.title'),
+      description: t('widgets.quiz.description'),
       icon: Brain,
       bgColor: "bg-primary/10",
       textColor: "text-primary"
     },
     {
       id: "worksheet",
-      title: "Worksheet",
-      description: "Build practice worksheets and exercises",
+      title: t('widgets.worksheet.title'),
+      description: t('widgets.worksheet.description'),
       icon: ClipboardList,
       bgColor: "bg-primary/10",
       textColor: "text-primary"
     },
     {
       id: "lesson-plan",
-      title: "Lesson Plan",
-      description: "Design comprehensive lesson plans",
+      title: t('widgets.lessonPlan.title'),
+      description: t('widgets.lessonPlan.description'),
       icon: GraduationCap,
       bgColor: "bg-primary/10",
       textColor: "text-primary"
     },
     {
       id: "rubric",
-      title: "Rubric",
-      description: "Create detailed grading rubrics",
+      title: t('widgets.rubric.title'),
+      description: t('widgets.rubric.description'),
       icon: Target,
       bgColor: "bg-primary/10",
       textColor: "text-primary"
@@ -181,14 +184,14 @@ export default function ClassAILabs() {
           {/* Header */}
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-3xl font-bold">AI Labs</h1>
+              <h1 className="text-3xl font-bold">{t('title')}</h1>
               <p className="text-muted-foreground mt-2">
-                Create educational content with AI assistance
+                {t('subtitle')}
               </p>
             </div>
             <Badge className="bg-primary text-primary-foreground">
               <Sparkles className="h-3 w-3 mr-1" />
-              AI Powered
+              {t('aiPowered')}
             </Badge>
           </div>
 
@@ -196,7 +199,7 @@ export default function ClassAILabs() {
           {!isStudent && (
             <div className="space-y-4">
               <div className="flex items-center gap-2">
-                <h2 className="text-xl font-semibold">Create New Content</h2>
+                <h2 className="text-xl font-semibold">{t('createNew')}</h2>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
@@ -220,7 +223,7 @@ export default function ClassAILabs() {
                         </div>
                         <div className="flex items-center justify-center gap-1 text-xs text-muted-foreground">
                           <Zap className="h-3 w-3" />
-                          AI Generated
+                          {t('aiGenerated')}
                         </div>
                       </CardContent>
                     </Card>
@@ -233,8 +236,8 @@ export default function ClassAILabs() {
           {/* Content Tabs */}
           <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as 'drafts' | 'chats')}>
             <TabsList>
-              <TabsTrigger value="drafts">Draft Labs</TabsTrigger>
-              <TabsTrigger value="chats">AI Chats</TabsTrigger>
+              <TabsTrigger value="drafts">{t('tabs.drafts')}</TabsTrigger>
+              <TabsTrigger value="chats">{t('tabs.chats')}</TabsTrigger>
             </TabsList>
 
             {/* Draft Labs Tab */}
@@ -264,13 +267,13 @@ export default function ClassAILabs() {
               ) : sortedDrafts.length === 0 ? (
                 <EmptyState
                   icon={BookOpen}
-                  title="No lab drafts yet"
-                  description="Create your first AI-generated educational content using the widgets above."
+                  title={t('drafts.empty.title')}
+                  description={t('drafts.empty.description')}
                 />
               ) : (
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-semibold">Draft Labs ({sortedDrafts.length})</h3>
+                    <h3 className="text-lg font-semibold">{t('drafts.title', { count: sortedDrafts.length })}</h3>
                   </div>
                   <div className="space-y-4">
                     {sortedDrafts.map((assignment, index) => (
@@ -316,18 +319,18 @@ export default function ClassAILabs() {
               ) : sortedChats.length === 0 ? (
                 <EmptyState
                   icon={MessageSquare}
-                  title="No AI Labs yet"
-                  description="Create your first AI Lab to start collaborating with AI on educational content."
+                  title={t('chats.empty.title')}
+                  description={t('chats.empty.description')}
                 />
               ) : (
                 <div className="space-y-6">
                   {/* All Lab Chats */}
                   <div className="space-y-4">
                     <div className="flex items-center gap-2">
-                      <h3 className="text-lg font-semibold">AI Labs ({sortedChats.length})</h3>
+                      <h3 className="text-lg font-semibold">{t('chats.title', { count: sortedChats.length })}</h3>
                       <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
                         <Brain className="h-3 w-3 mr-1" />
-                        Active
+                        {t('chats.active')}
                       </Badge>
                     </div>
                     <div className="grid gap-4">
@@ -366,7 +369,7 @@ export default function ClassAILabs() {
                                     <div className="flex items-center gap-4 mt-2 text-sm text-muted-foreground">
                                       <div className="flex items-center gap-1">
                                         <MessageSquare className="h-3 w-3" />
-                                        {labChat.messageCount || 0} messages
+                                        {t('chats.messageCount', { count: labChat.messageCount || 0 })}
                                       </div>
                                       <div className="flex items-center gap-1">
                                         <Clock className="h-3 w-3" />
@@ -374,7 +377,7 @@ export default function ClassAILabs() {
                                       </div>
                                       <div className="flex items-center gap-1">
                                         <Users className="h-3 w-3" />
-                                        Created by {labChat.createdBy.profile?.displayName || labChat.createdBy.username}
+                                        {t('chats.createdBy', { name: labChat.createdBy.profile?.displayName || labChat.createdBy.username })}
                                       </div>
                                     </div>
                                   </div>

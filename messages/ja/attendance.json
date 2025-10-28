@@ -1,0 +1,97 @@
+{
+  "attendance": {
+    "title": "クラスイベントと出席",
+    "subtitle": "各イベントの生徒の出席状況を追跡する",
+    "saving": {
+      "auto": "自動保存中...",
+      "unsaved": "保存されていない変更",
+      "saving": "保存中..."
+    },
+    "table": {
+      "date": "日付",
+      "eventName": "イベント名",
+      "attendanceRate": "出席率",
+      "attendance": "出席",
+      "actions": "アクション"
+    },
+    "actions": {
+      "viewDetails": "詳細を表示",
+      "editEvent": "イベントを編集",
+      "deleteEvent": "イベントを削除",
+      "createEvent": "イベントを作成",
+      "saveAttendance": "出席を保存",
+      "markAllPresent": "出席者全員をマーク",
+      "markAllAbsent": "全員欠席とする"
+    },
+    "allEvents": {
+      "title": "すべてのイベント",
+      "description": "クラスイベントと出席記録の完全な履歴",
+      "searchPlaceholder": "イベントを検索...",
+      "empty": {
+        "title": "イベントが見つかりません",
+        "description": "最初のイベントを作成して出席状況を追跡しましょう"
+      }
+    },
+    "eventsList": {
+      "pickDate": "日付を選択",
+      "untitled": "題名のないイベント",
+      "empty": {
+        "noEventsOnDate": "この日のイベントはありません",
+        "noEventsOnDateDescription": "{date} には予定されているイベントがありません。別の日付を選択するか、新しいイベントを作成してください。",
+        "noEvents": "イベントが見つかりません",
+        "noEventsDescription": "最初のイベントを作成して出席状況を追跡しましょう",
+        "createForDate": "この日付のイベントを作成",
+        "createFirst": "最初のイベントを作成する"
+      }
+    },
+    "summary": {
+      "title": "イベント概要",
+      "selectedEvent": "選択したイベント",
+      "total": "合計",
+      "attendanceRate": "出席率"
+    },
+    "roster": {
+      "title": "学生名簿",
+      "description": "ステータスボタンをクリックして各生徒の出席状況を確認します",
+      "empty": {
+        "title": "登録学生はいません",
+        "description": "生徒がクラスに参加するとここに表示されます"
+      }
+    },
+    "prompt": {
+      "title": "イベントを選択",
+      "description": "生徒の出席状況を表示および管理するには、上記のイベントを選択してください"
+    },
+    "status": {
+      "present": "現在",
+      "late": "遅い",
+      "absent": "不在",
+      "notTaken": "取られていない"
+    },
+    "student": {
+      "title": "私の出席",
+      "subtitle": "{className} の出席状況を追跡する",
+      "attendanceRate": "出席率",
+      "history": "出席履歴",
+      "event": "イベント",
+      "status": "状態",
+      "searchPlaceholder": "イベントを検索...",
+      "empty": {
+        "title": "出席記録なし",
+        "description": "イベントが作成され、出席が記録されると、あなたの出席状況がここに表示されます"
+      }
+    },
+    "deleteDialog": {
+      "title": "イベントを削除",
+      "description": "「{eventName}」を削除してもよろしいですか? この操作は元に戻すことができず、関連するすべての出席記録が削除されます。",
+      "deleting": "削除しています...",
+      "deleteButton": "イベントを削除"
+    },
+    "toast": {
+      "attendanceSaved": "出席が正常に保存されました",
+      "attendanceSaveFailed": "出席を保存できませんでした",
+      "eventDeleted": "イベントは正常に削除されました",
+      "eventDeleteFailed": "イベントを削除できませんでした"
+    }
+  }
+}

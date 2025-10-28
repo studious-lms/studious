@@ -1,0 +1,130 @@
+{
+  "classFiles": {
+    "title": "Dateien",
+    "subtitle": "Verwalten von Klassendateien und Ressourcen",
+    "actions": {
+      "newFolder": "Neuer Ordner",
+      "upload": "Hochladen",
+      "uploadFiles": "Dateien hochladen",
+      "createFolder": "Ordner erstellen",
+      "download": "Herunterladen",
+      "share": "Aktie",
+      "delete": "Löschen",
+      "filter": "Filter",
+      "sort": "Sortieren"
+    },
+    "toasts": {
+      "folderCreated": "Ordner erfolgreich erstellt",
+      "folderDeleted": "Ordner erfolgreich gelöscht",
+      "folderRenamed": "Ordner erfolgreich umbenannt",
+      "folderMoved": "Ordner erfolgreich verschoben",
+      "filesUploaded": "Dateien erfolgreich hochgeladen",
+      "fileDeleted": "Datei erfolgreich gelöscht",
+      "fileRenamed": "Datei erfolgreich umbenannt",
+      "fileMoved": "Datei erfolgreich verschoben",
+      "downloadStarted": "Download gestartet",
+      "shareCopied": "Link zum Teilen kopiert"
+    },
+    "errors": {
+      "teacherOnly": "Nur Lehrer können Dateien ändern.",
+      "downloadFailed": "Download fehlgeschlagen",
+      "shareFailed": "Teilen fehlgeschlagen",
+      "failedToLoad": "Das Laden der Dateien ist fehlgeschlagen. Bitte versuchen Sie es später noch einmal."
+    },
+    "breadcrumbs": {
+      "classFiles": "Klassendateien"
+    },
+    "search": {
+      "placeholder": "Suche in Dateien"
+    },
+    "selected": "{count} ausgewählt",
+    "filters": {
+      "fileType": "Dateityp",
+      "documents": "Unterlagen",
+      "images": "Bilder",
+      "videos": "Videos",
+      "presentations": "Präsentationen"
+    },
+    "sort": {
+      "name": "Name",
+      "lastModified": "Zuletzt geändert",
+      "fileSize": "Dateigröße"
+    },
+    "table": {
+      "name": "Name",
+      "owner": "Eigentümer",
+      "lastModified": "Zuletzt geändert",
+      "fileSize": "Dateigröße"
+    },
+    "empty": {
+      "title": "Dieser Ordner ist leer",
+      "description": "Laden Sie Dateien hoch oder erstellen Sie Ordner, um mit der Organisation Ihrer Unterrichtsmaterialien zu beginnen.",
+      "searchTitle": "Keine Dateien gefunden",
+      "searchDescription": "Keine Dateien stimmen mit „{query}“ überein. Versuchen Sie einen anderen Suchbegriff."
+    }
+  },
+  "folderView": {
+    "subtitle": "Ordnerinhalt",
+    "notFound": {
+      "title": "Ordner nicht gefunden",
+      "description": "Der angeforderte Ordner konnte nicht gefunden werden.",
+      "backButton": "Zurück zu Dateien"
+    },
+    "error": {
+      "loadFailed": "Der Ordnerinhalt konnte nicht geladen werden. Bitte versuchen Sie es später noch einmal."
+    },
+    "breadcrumbs": {
+      "classFiles": "Klassendateien"
+    },
+    "search": {
+      "placeholder": "Suche im Ordner",
+      "selected": "{count} ausgewählt"
+    },
+    "filters": {
+      "label": "Filter",
+      "fileType": "Dateityp",
+      "documents": "Unterlagen",
+      "images": "Bilder",
+      "videos": "Videos",
+      "presentations": "Präsentationen"
+    },
+    "sort": {
+      "label": "Sortieren",
+      "name": "Name",
+      "lastModified": "Zuletzt geändert",
+      "fileSize": "Dateigröße"
+    },
+    "table": {
+      "name": "Name",
+      "owner": "Eigentümer",
+      "lastModified": "Zuletzt geändert",
+      "fileSize": "Dateigröße"
+    },
+    "empty": {
+      "noFilesFound": "Keine Dateien gefunden",
+      "noFilesFoundDescription": "Keine Dateien stimmen mit „{query}“ überein. Versuchen Sie einen anderen Suchbegriff.",
+      "folderEmpty": "Dieser Ordner ist leer",
+      "folderEmptyDescription": "Laden Sie Dateien hoch oder erstellen Sie Ordner, um Ihre Materialien zu organisieren."
+    },
+    "actions": {
+      "newFolder": "Neuer Ordner",
+      "uploadFiles": "Dateien hochladen",
+      "createFolder": "Ordner erstellen"
+    },
+    "toast": {
+      "folderCreated": "Ordner erfolgreich erstellt",
+      "folderDeleted": "Ordner erfolgreich gelöscht",
+      "folderRenamed": "Ordner erfolgreich umbenannt",
+      "folderMoved": "Ordner erfolgreich verschoben",
+      "filesUploaded": "Dateien erfolgreich hochgeladen",
+      "fileDeleted": "Datei erfolgreich gelöscht",
+      "fileRenamed": "Datei erfolgreich umbenannt",
+      "fileMoved": "Datei erfolgreich verschoben",
+      "downloadStarted": "Download gestartet",
+      "downloadFailed": "Download fehlgeschlagen",
+      "shareLinkCopied": "Link zum Teilen kopiert",
+      "shareFailed": "Teilen fehlgeschlagen",
+      "permissionDenied": "Zugriff verweigert"
+    }
+  }
+}

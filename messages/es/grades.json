@@ -1,0 +1,140 @@
+{
+  "classGrades": {
+    "title": "Calificaciones",
+    "subtitle": "Ver y administrar las calificaciones de los estudiantes",
+    "columns": {
+      "assignment": "Asignación",
+      "maxPoints": "Puntos máximos",
+      "weight": "Peso",
+      "graded": "Calificado",
+      "dueDate": "Dos citas",
+      "actions": "Comportamiento",
+      "student": "Alumno",
+      "overallGrade": "Calificación general",
+      "assignmentsCompleted": "Tareas completadas",
+      "trend": "Tendencia"
+    },
+    "labels": {
+      "rubric": "Rúbrica"
+    },
+    "actions": {
+      "manage": "Administrar",
+      "viewGrades": "Ver calificaciones",
+      "saving": "Ahorro...",
+      "saveChanges": "Guardar cambios",
+      "preview": "Avance",
+      "edit": "Editar",
+      "delete": "Borrar",
+      "createNew": "Crear nuevo"
+    },
+    "overview": {
+      "title": "Descripción general de la clase",
+      "classAverage": "Promedio de la clase",
+      "totalStudents": "Total de estudiantes",
+      "assignments": "Tareas",
+      "submissionRate": "Tasa de envío"
+    },
+    "assignmentManagement": {
+      "title": "Gestión de asignaciones",
+      "empty": {
+        "title": "No se encontraron tareas",
+        "description": "Crear tareas para administrar calificaciones y configuraciones"
+      },
+      "searchPlaceholder": "Buscar asignaciones..."
+    },
+    "students": {
+      "title": "Estudiantes",
+      "viewAll": "Ver todos los estudiantes",
+      "empty": {
+        "title": "No hay estudiantes inscritos",
+        "description": "Los estudiantes aparecerán aquí una vez que se unan a la clase."
+      },
+      "searchPlaceholder": "Buscar estudiantes..."
+    },
+    "gradeBoundaries": {
+      "title": "Límites de calificación",
+      "untitled": "Límite de calificación sin título",
+      "empty": {
+        "title": "No se crearon límites de calificación",
+        "description": "Crear límites de calificación para definir rangos de calificación"
+      },
+      "previewTitle": "Vista previa de los límites de calificación",
+      "details": {
+        "title": "Detalles de los límites de calificación",
+        "name": "Nombre",
+        "noneDefined": "No hay límites de calificación definidos"
+      }
+    },
+    "rubrics": {
+      "title": "Rúbricas",
+      "untitled": "Rúbrica sin título",
+      "empty": {
+        "title": "No se crearon rúbricas",
+        "description": "Crear rúbricas para definir criterios de evaluación"
+      },
+      "previewTitle": "Vista previa de la rúbrica",
+      "details": {
+        "title": "Detalles de la rúbrica",
+        "name": "Nombre",
+        "category": "Categoría",
+        "description": "Descripción",
+        "custom": "Costumbre",
+        "noDescription": "No se proporcionó ninguna descripción",
+        "noCriteria": "No se encontraron criterios en esta rúbrica"
+      }
+    },
+    "confirm": {
+      "deleteRubric": "¿Está seguro que desea eliminar este esquema de calificación?",
+      "deleteGradingBoundary": "¿Está seguro de que desea eliminar este límite de calificación?"
+    }
+  },
+  "studentGrades": {
+    "title": "Todos los grados de los estudiantes",
+    "allStudents": "Ver y administrar las calificaciones de todos los estudiantes de esta clase",
+    "students": "Estudiantes",
+    "noGrades": "No se encontraron estudiantes",
+    "noGradesDescription": "Todavía no hay estudiantes inscritos en esta clase. Los estudiantes aparecerán aquí una vez que se unan.",
+    "table": {
+      "student": "Alumno",
+      "actions": "Comportamiento"
+    },
+    "actions": {
+      "viewSubmission": "Ver calificaciones"
+    }
+  },
+  "individualGrades": {
+    "myGrades": "Mis calificaciones",
+    "studentGrades": "Calificaciones",
+    "viewYourGrades": "Ver tus calificaciones y progreso",
+    "individualManagement": "Gestión de calificaciones individuales de los estudiantes",
+    "export": "Exportar",
+    "back": "Atrás",
+    "yourPerformance": "Tu rendimiento",
+    "trackProgress": "Realice un seguimiento de su progreso académico",
+    "overallGrade": "Calificación general",
+    "completed": "Terminado",
+    "trend": "Tendencia",
+    "yourGrades": "Tus calificaciones",
+    "assignments": "Tareas",
+    "studentNotFound": "Estudiante no encontrado",
+    "goBack": "Volver",
+    "grade": "Calificación",
+    "table": {
+      "assignment": "Asignación",
+      "grade": "Calificación",
+      "total": "Total",
+      "percentage": "%",
+      "status": "Estado",
+      "submitted": "Enviado"
+    },
+    "status": {
+      "graded": "Calificado",
+      "pending": "Pendiente"
+    },
+    "empty": {
+      "title": "No se encontraron tareas",
+      "description": "Este estudiante no tiene tareas para mostrar"
+    },
+    "searchPlaceholder": "Buscar asignaciones..."
+  }
+}

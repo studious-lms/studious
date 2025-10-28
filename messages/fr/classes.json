@@ -1,0 +1,21 @@
+{
+  "classes": {
+    "title": "Cours",
+    "description": "Gérez votre enseignement et vos cours inscrits",
+    "joinClass": "Rejoindre la classe",
+    "createClass": "Créer une classe",
+    "searchPlaceholder": "Rechercher des cours...",
+    "teaching": "Enseignement",
+    "enrolled": "Inscrit",
+    "noClassesFound": "Aucune classe trouvée",
+    "noTeachingClassesFound": "Aucune classe d'enseignement correspondant à « {query} » n'a été trouvée",
+    "noEnrolledClassesFound": "Aucun cours inscrit correspondant à « {query} » n'a été trouvé",
+    "noClassesYet": "Pas encore de cours",
+    "noClassesYetDesc": "Créez votre première classe pour commencer à gérer les devoirs, les notes et les interactions des étudiants.",
+    "noEnrolledClasses": "Pas de cours inscrits",
+    "noEnrolledClassesDesc": "Rejoignez un cours en utilisant un code d'invitation ou un lien fourni par votre enseignant.",
+    "classDeleted": "Classe supprimée avec succès",
+    "classDeleteFailed": "Échec de la suppression de la classe",
+    "failedToLoad": "Échec du chargement des classes"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "navigation": {
+    "home": "집",
+    "classes": "수업",
+    "agenda": "의제",
+    "chat": "채팅",
+    "notifications": "알림",
+    "profile": "윤곽",
+    "settings": "설정",
+    "signOut": "로그아웃",
+    "accountSettings": "계정 설정",
+    "pricing": "가격",
+    "schoolProgram": "학교 프로그램",
+    "about": "에 대한",
+    "press": "누르다",
+    "signIn": "로그인"
+  },
+  "classSidebar": {
+    "overview": "개요",
+    "assignments": "과제",
+    "grades": "성적",
+    "files": "파일",
+    "attendance": "출석",
+    "aiLabs": "AI 랩",
+    "members": "회원들",
+    "syllabus": "교과과정",
+    "settings": "설정",
+    "classNavigation": "클래스 탐색",
+    "switchClass": "스위치 클래스",
+    "classInviteCode": "수업 초대 코드",
+    "copyCode": "코드 복사",
+    "regenerateCode": "코드 재생성",
+    "toast": {
+      "inviteCodeRegenerated": "초대 코드가 성공적으로 재생성되었습니다.",
+      "inviteCodeRegenerateFailed": "초대 코드를 다시 생성하지 못했습니다.",
+      "inviteCodeCopied": "초대 코드가 클립보드에 복사되었습니다."
+    }
+  },
+  "footer": {
+    "productDescription": "차세대 교육을 위한 현대적인 학습 관리.",
+    "product": "제품",
+    "features": "특징",
+    "pricing": "가격",
+    "schoolProgram": "학교 프로그램",
+    "company": "회사",
+    "about": "에 대한",
+    "team": "팀",
+    "press": "누르다",
+    "contact": "연락하다",
+    "privacyPolicy": "개인정보 보호정책",
+    "termsOfService": "서비스 약관",
+    "copyright": "© 2025 Studious LMS. 모든 권리 보유."
+  }
+}

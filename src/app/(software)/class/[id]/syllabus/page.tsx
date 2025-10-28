@@ -107,7 +107,7 @@ const SyllabusPageSkeleton = () => (
 export default function Syllabus() {
   const params = useParams();
   const classId = params.id as string;
-  const t = useTranslations('class.syllabus');
+  const t = useTranslations('syllabus');
   
   const [isEditing, setIsEditing] = useState(false);
   const [syllabusContent, setSyllabusContent] = useState("");

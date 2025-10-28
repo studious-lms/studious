@@ -1,0 +1,21 @@
+{
+  "classes": {
+    "title": "Clases",
+    "description": "Gestiona tu docencia y clases matriculadas",
+    "joinClass": "Unirse a la clase",
+    "createClass": "Crear clase",
+    "searchPlaceholder": "Buscar clases...",
+    "teaching": "Enseñanza",
+    "enrolled": "Inscrito",
+    "noClassesFound": "No se encontraron clases",
+    "noTeachingClassesFound": "No se encontraron clases de enseñanza que coincidan con \"{query}\"",
+    "noEnrolledClassesFound": "No se encontraron clases inscritas que coincidan con \"{query}\"",
+    "noClassesYet": "No hay clases todavía",
+    "noClassesYetDesc": "Crea tu primera clase para comenzar a administrar tareas, calificaciones e interacciones de los estudiantes.",
+    "noEnrolledClasses": "No hay clases inscritas",
+    "noEnrolledClassesDesc": "Únase a una clase utilizando un código de invitación o un enlace proporcionado por su profesor.",
+    "classDeleted": "Clase eliminada exitosamente",
+    "classDeleteFailed": "No se pudo eliminar la clase",
+    "failedToLoad": "No se pudieron cargar las clases"
+  }
+}

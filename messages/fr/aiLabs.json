@@ -1,0 +1,72 @@
+{
+  "aiLabs": {
+    "title": "Laboratoires d'IA",
+    "subtitle": "Créez du contenu éducatif avec l'aide de l'IA",
+    "aiPowered": "Alimenté par l'IA",
+    "createNew": "Créer un nouveau contenu",
+    "aiGenerated": "Généré par l'IA",
+    "deleteConfirm": "Êtes-vous sûr de vouloir supprimer ce laboratoire d'IA ? Cette action est irréversible.",
+    "widgets": {
+      "assignment": {
+        "title": "Affectation",
+        "description": "Créez des tâches interactives avec l'aide de l'IA"
+      },
+      "quiz": {
+        "title": "Questionnaire",
+        "description": "Générer des quiz avec différents types de questions"
+      },
+      "worksheet": {
+        "title": "Feuille de travail",
+        "description": "Créez des feuilles de travail et des exercices pratiques"
+      },
+      "lessonPlan": {
+        "title": "Plan de cours",
+        "description": "Concevoir des plans de cours complets"
+      },
+      "rubric": {
+        "title": "Rubrique",
+        "description": "Créer des grilles de notation détaillées"
+      }
+    },
+    "tabs": {
+      "drafts": "Projets de laboratoire",
+      "chats": "AI Chats"
+    },
+    "drafts": {
+      "title": "Projets de laboratoire ({count})",
+      "empty": {
+        "title": "Pas encore de brouillons de laboratoire",
+        "description": "Créez votre premier contenu éducatif généré par l'IA à l'aide des widgets ci-dessus."
+      }
+    },
+    "chats": {
+      "title": "Laboratoires d'IA ({count})",
+      "active": "Actif",
+      "messageCount": "{count} messages",
+      "createdBy": "Créé par {name}",
+      "empty": {
+        "title": "Pas encore de laboratoires d'IA",
+        "description": "Créez votre premier laboratoire d'IA pour commencer à collaborer avec l'IA sur du contenu éducatif."
+      }
+    },
+    "toast": {
+      "labCreated": "AI Lab créé avec succès !",
+      "labCreateFailed": "Échec de la création du laboratoire d'IA :",
+      "labDeleted": "AI Lab a été supprimé avec succès !",
+      "labDeleteFailed": "Échec de la suppression du laboratoire d'IA :"
+    }
+  },
+  "aiLabChat": {
+    "backButton": "Retour aux laboratoires d'IA",
+    "loading": "Chargement...",
+    "aiThinking": "La pensée de l'IA...",
+    "getAIHelp": "Obtenez de l'aide de l'IA",
+    "notFound": {
+      "title": "Discussion de laboratoire introuvable",
+      "description": "Ce laboratoire d'IA a peut-être été supprimé ou vous n'y avez pas accès."
+    },
+    "toast": {
+      "messageFailed": "Échec de l'envoi du message :"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "overview": {
+    "assignments": "과제",
+    "students": "재학생",
+    "attendance": "출석",
+    "attachFile": "파일 첨부",
+    "post": "우편",
+    "posting": "전기...",
+    "noPosts": "아직 게시물이 없습니다",
+    "createFirstPost": "첫 번째 게시물을 작성하세요"
+  }
+}

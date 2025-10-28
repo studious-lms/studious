@@ -1,0 +1,66 @@
+{
+  "settings": {
+    "title": "Klasseneinstellungen",
+    "subtitle": "Konfigurieren Sie Klassendetails und -einstellungen",
+    "labels": {
+      "unsavedChanges": "Nicht gespeicherte Änderungen"
+    },
+    "actions": {
+      "saving": "Speichern...",
+      "saveChanges": "Änderungen speichern",
+      "deleting": "Löschen...",
+      "deleteClass": "Klasse löschen",
+      "cancel": "Stornieren"
+    },
+    "sections": {
+      "basicInfo": {
+        "title": "Grundlegende Informationen"
+      },
+      "theme": {
+        "title": "Klassenthema",
+        "description": "Wählen Sie eine Themenfarbe für diese Klasse"
+      },
+      "danger": {
+        "title": "Gefahrenzone",
+        "description": "Sobald Sie einen Kurs gelöscht haben, können Sie ihn nicht mehr rückgängig machen. Dadurch werden alle Aufgaben, Noten und Anwesenheitslisten dauerhaft gelöscht und alle Schüler aus dem Kurs entfernt."
+      }
+    },
+    "fields": {
+      "className": "Klassenname",
+      "section": "Abschnitt",
+      "subject": "Thema"
+    },
+    "placeholders": {
+      "className": "zB Fortgeschrittene Physik",
+      "section": "z. B. AP-101",
+      "subject": "zB Physik"
+    },
+    "toasts": {
+      "updated": {
+        "title": "Klasse aktualisiert",
+        "description": "Die Klasseneinstellungen wurden erfolgreich gespeichert."
+      },
+      "deleted": {
+        "title": "Klasse gelöscht",
+        "description": "Die Klasse wurde dauerhaft gelöscht."
+      }
+    },
+    "errors": {
+      "updateFailed": {
+        "title": "Aktualisierung fehlgeschlagen",
+        "description": "Das Speichern der Klasseneinstellungen ist fehlgeschlagen. Bitte versuchen Sie es erneut."
+      }
+    },
+    "confirm": {
+      "title": "Sind Sie absolut sicher?",
+      "description": "Diese Aktion kann nicht rückgängig gemacht werden. Dadurch wird die Klasse \"{name}\" dauerhaft gelöscht und alle zugehörigen Daten entfernt, einschließlich:",
+      "items": {
+        "assignments": "Alle Aufgaben und Abgaben",
+        "records": "Alle Noten und Anwesenheitsnachweise",
+        "students": "Alle Schüler werden aus der Klasse entfernt",
+        "events": "Alle Klassenveranstaltungen und Ankündigungen"
+      },
+      "confirmDelete": "Ja, Klasse löschen"
+    }
+  }
+}

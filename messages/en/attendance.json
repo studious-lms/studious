@@ -1,0 +1,97 @@
+{
+  "attendance": {
+    "title": "Class Events & Attendance",
+    "subtitle": "Track student attendance for each event",
+    "saving": {
+      "auto": "Auto-saving...",
+      "unsaved": "Unsaved changes",
+      "saving": "Saving..."
+    },
+    "table": {
+      "date": "Date",
+      "eventName": "Event Name",
+      "attendanceRate": "Attendance Rate",
+      "attendance": "Attendance",
+      "actions": "Actions"
+    },
+    "actions": {
+      "viewDetails": "View Details",
+      "editEvent": "Edit Event",
+      "deleteEvent": "Delete Event",
+      "createEvent": "Create Event",
+      "saveAttendance": "Save Attendance",
+      "markAllPresent": "Mark All Present",
+      "markAllAbsent": "Mark All Absent"
+    },
+    "allEvents": {
+      "title": "All Events",
+      "description": "Complete history of class events and attendance records",
+      "searchPlaceholder": "Search events...",
+      "empty": {
+        "title": "No events found",
+        "description": "Create your first event to start tracking attendance"
+      }
+    },
+    "eventsList": {
+      "pickDate": "Pick date",
+      "untitled": "Untitled Event",
+      "empty": {
+        "noEventsOnDate": "No events on this date",
+        "noEventsOnDateDescription": "No events scheduled for {date}. Try selecting a different date or create a new event.",
+        "noEvents": "No events found",
+        "noEventsDescription": "Create your first event to start tracking attendance",
+        "createForDate": "Create Event for This Date",
+        "createFirst": "Create First Event"
+      }
+    },
+    "summary": {
+      "title": "Event Summary",
+      "selectedEvent": "Selected Event",
+      "total": "Total",
+      "attendanceRate": "Attendance Rate"
+    },
+    "roster": {
+      "title": "Student Roster",
+      "description": "Click the status buttons to mark attendance for each student",
+      "empty": {
+        "title": "No students enrolled",
+        "description": "Students will appear here once they join the class"
+      }
+    },
+    "prompt": {
+      "title": "Select an Event",
+      "description": "Choose an event above to view and manage student attendance"
+    },
+    "status": {
+      "present": "Present",
+      "late": "Late",
+      "absent": "Absent",
+      "notTaken": "Not Taken"
+    },
+    "student": {
+      "title": "My Attendance",
+      "subtitle": "Track your attendance for {className}",
+      "attendanceRate": "Attendance Rate",
+      "history": "Attendance History",
+      "event": "Event",
+      "status": "Status",
+      "searchPlaceholder": "Search events...",
+      "empty": {
+        "title": "No Attendance Records",
+        "description": "Your attendance will appear here once events are created and attendance is taken"
+      }
+    },
+    "deleteDialog": {
+      "title": "Delete Event",
+      "description": "Are you sure you want to delete \"{eventName}\"? This action cannot be undone and will remove all associated attendance records.",
+      "deleting": "Deleting...",
+      "deleteButton": "Delete Event"
+    },
+    "toast": {
+      "attendanceSaved": "Attendance saved successfully",
+      "attendanceSaveFailed": "Failed to save attendance",
+      "eventDeleted": "Event deleted successfully",
+      "eventDeleteFailed": "Failed to delete event"
+    }
+  }
+}

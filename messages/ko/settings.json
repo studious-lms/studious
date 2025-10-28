@@ -1,0 +1,66 @@
+{
+  "settings": {
+    "title": "수업 설정",
+    "subtitle": "수업 세부 정보 및 기본 설정 구성",
+    "labels": {
+      "unsavedChanges": "저장되지 않은 변경 사항"
+    },
+    "actions": {
+      "saving": "절약...",
+      "saveChanges": "변경 사항 저장",
+      "deleting": "삭제 중...",
+      "deleteClass": "수업 삭제",
+      "cancel": "취소"
+    },
+    "sections": {
+      "basicInfo": {
+        "title": "기본 정보"
+      },
+      "theme": {
+        "title": "수업 주제",
+        "description": "이 수업의 테마 색상을 선택하세요"
+      },
+      "danger": {
+        "title": "위험 구역",
+        "description": "수업을 삭제하면 되돌릴 수 없습니다. 모든 과제, 성적, 출석 기록이 영구적으로 삭제되고, 모든 학생이 수업에서 제외됩니다."
+      }
+    },
+    "fields": {
+      "className": "클래스 이름",
+      "section": "부분",
+      "subject": "주제"
+    },
+    "placeholders": {
+      "className": "예를 들어, 고급 물리학",
+      "section": "예를 들어, AP-101",
+      "subject": "예를 들어, 물리학"
+    },
+    "toasts": {
+      "updated": {
+        "title": "클래스 업데이트됨",
+        "description": "수업 설정이 성공적으로 저장되었습니다."
+      },
+      "deleted": {
+        "title": "수업 삭제됨",
+        "description": "해당 수업은 영구적으로 삭제되었습니다."
+      }
+    },
+    "errors": {
+      "updateFailed": {
+        "title": "업데이트 실패",
+        "description": "수업 설정을 저장하지 못했습니다. 다시 시도해 주세요."
+      }
+    },
+    "confirm": {
+      "title": "정말 확신하시나요?",
+      "description": "이 작업은 실행 취소할 수 없습니다. 이 작업을 수행하면 \"{name}\" 클래스가 영구적으로 삭제되고 다음을 포함한 모든 관련 데이터가 제거됩니다.",
+      "items": {
+        "assignments": "모든 과제 및 제출물",
+        "records": "모든 성적 및 출석 기록",
+        "students": "모든 학생은 수업에서 제외됩니다.",
+        "events": "모든 수업 행사 및 공지사항"
+      },
+      "confirmDelete": "네, 수업을 삭제합니다"
+    }
+  }
+}

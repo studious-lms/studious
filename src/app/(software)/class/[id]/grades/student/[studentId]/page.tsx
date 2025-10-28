@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useParams, useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { PageLayout, PageHeader } from "@/components/ui/page-layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -33,6 +34,8 @@ export default function StudentGrades() {
   const classId = params.id as string;
   const studentId = params.studentId as string;
   const [editingGrades, setEditingGrades] = useState<{[key: string]: string}>({});
+  const t = useTranslations('individualGrades');
+  const tCommon = useTranslations('common');
   
   const appState = useSelector((state: RootState) => state.app);
   const isStudent = appState.user.student;
@@ -48,7 +51,7 @@ export default function StudentGrades() {
   const gradeColumns: ColumnDef<RouterOutputs["class"]["getGrades"]["grades"][number]>[] = [
     {
       accessorKey: "assignment.title",
-      header: "Assignment",
+      header: t('table.assignment'),
       cell: ({ row }) => {
         const grade = row.original;
         return (
@@ -60,7 +63,7 @@ export default function StudentGrades() {
     },
     {
       accessorKey: "grade",
-      header: "Grade",
+      header: t('table.grade'),
       cell: ({ row }) => {
         const grade = row.original;
         const hasRubric = grade.assignment.markScheme !== null;
@@ -101,7 +104,7 @@ export default function StudentGrades() {
                 className="h-6 px-2 text-xs"
               >
                 <ExternalLink className="h-3 w-3 mr-1" />
-                Grade
+                {t('grade')}
               </Button>
             </div>
           );
@@ -166,7 +169,7 @@ export default function StudentGrades() {
     },
     {
       accessorKey: "assignment.maxGrade",
-      header: "Total",
+      header: t('table.total'),
       cell: ({ row }) => {
         const grade = row.original;
         return (
@@ -178,7 +181,7 @@ export default function StudentGrades() {
     },
     {
       accessorKey: "percentage",
-      header: "%",
+      header: t('table.percentage'),
       cell: ({ row }) => {
         const grade = row.original;
         const percentage = grade.gradeReceived ? 
@@ -195,7 +198,7 @@ export default function StudentGrades() {
     },
     {
       accessorKey: "status",
-      header: "Status",
+      header: t('table.status'),
       cell: ({ row }) => {
         const grade = row.original;
         return (
@@ -203,7 +206,7 @@ export default function StudentGrades() {
             <Badge variant={
               grade.gradeReceived !== null ? "default" : "secondary"
             }>
-              {grade.gradeReceived !== null ? "Graded" : "Pending"}
+              {grade.gradeReceived !== null ? t('status.graded') : t('status.pending')}
             </Badge>
           </div>
         );
@@ -211,7 +214,7 @@ export default function StudentGrades() {
     },
     {
       accessorKey: "submitted",
-      header: "Submitted",
+      header: t('table.submitted'),
       cell: ({ row }) => {
         const grade = row.original;
         return (
@@ -258,12 +261,12 @@ export default function StudentGrades() {
     return (
       <PageLayout>
         <div className="text-center py-8">
-          <h2 className="text-2xl font-bold text-muted-foreground">Student not found</h2>
+          <h2 className="text-2xl font-bold text-muted-foreground">{t('studentNotFound')}</h2>
           <Button 
             className="mt-4"
             onClick={() => window.history.back()}
           >
-            Go Back
+            {t('goBack')}
           </Button>
         </div>
       </PageLayout>
@@ -343,14 +346,14 @@ export default function StudentGrades() {
   return (
     <PageLayout>
       <PageHeader 
-        title={isStudent ? "My Grades" : `${student.username} - Grades`}
-        description={isStudent ? "View your grades and progress" : "Individual student grade management"}
+        title={isStudent ? t('myGrades') : `${student.username} - ${t('studentGrades')}`}
+        description={isStudent ? t('viewYourGrades') : t('individualManagement')}
       >
         <div className="flex items-center space-x-2">
           {!isStudent && (
             <Button variant="outline" size="sm">
               <Download className="h-4 w-4 mr-2" />
-              Export
+              {t('export')}
             </Button>
           )}
           <Button 
@@ -358,7 +361,7 @@ export default function StudentGrades() {
             onClick={() => window.history.back()}
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
-            Back
+            {t('back')}
           </Button>
         </div>
       </PageHeader>
@@ -372,10 +375,10 @@ export default function StudentGrades() {
             </Avatar>
             <div className="flex-1">
               <h2 className="text-2xl font-bold">
-                {isStudent ? "Your Performance" : student.username}
+                {isStudent ? t('yourPerformance') : student.username}
               </h2>
               {isStudent && (
-                <p className="text-muted-foreground">Track your academic progress</p>
+                <p className="text-muted-foreground">{t('trackProgress')}</p>
               )}
             </div>
             <div className="grid grid-cols-3 gap-6 text-center">
@@ -383,19 +386,19 @@ export default function StudentGrades() {
                 <div className={`text-2xl font-bold ${getGradeColor(overallGrade, "graded")}`}>
                   {overallGrade.toFixed(1)}%
                 </div>
-                <p className="text-sm text-muted-foreground">Overall Grade</p>
+                <p className="text-sm text-muted-foreground">{t('overallGrade')}</p>
               </div>
               <div>
                 <div className="text-2xl font-bold text-foreground">
                   {completedAssignments}/{totalAssignments}
                 </div>
-                <p className="text-sm text-muted-foreground">Completed</p>
+                <p className="text-sm text-muted-foreground">{t('completed')}</p>
               </div>
               <div>
                 <div className="flex items-center justify-center">
                   {getTrendIcon("up")}
                 </div>
-                <p className="text-sm text-muted-foreground">Trend</p>
+                <p className="text-sm text-muted-foreground">{t('trend')}</p>
               </div>
             </div>
           </div>
@@ -405,21 +408,21 @@ export default function StudentGrades() {
       {/* Assignments Table */}
       <Card>
         <CardHeader>
-          <CardTitle>{isStudent ? "Your Grades" : "Assignments"}</CardTitle>
+          <CardTitle>{isStudent ? t('yourGrades') : t('assignments')}</CardTitle>
         </CardHeader>
         <CardContent>
           {grades.length === 0 ? (
             <EmptyState
               icon={ClipboardList}
-              title="No assignments found"
-              description="This student has no assignments to display"
+              title={t('empty.title')}
+              description={t('empty.description')}
             />
           ) : (
             <DataTable
               columns={gradeColumns}
               data={grades}
               searchKey="assignment.title"
-              searchPlaceholder="Search assignments..."
+              searchPlaceholder={t('searchPlaceholder')}
             />
           )}
         </CardContent>

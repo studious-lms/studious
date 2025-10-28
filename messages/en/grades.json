@@ -1,0 +1,140 @@
+{
+  "classGrades": {
+    "title": "Grades",
+    "subtitle": "View and manage student grades",
+    "columns": {
+      "assignment": "Assignment",
+      "maxPoints": "Max Points",
+      "weight": "Weight",
+      "graded": "Graded",
+      "dueDate": "Due Date",
+      "actions": "Actions",
+      "student": "Student",
+      "overallGrade": "Overall Grade",
+      "assignmentsCompleted": "Assignments Completed",
+      "trend": "Trend"
+    },
+    "labels": {
+      "rubric": "Rubric"
+    },
+    "actions": {
+      "manage": "Manage",
+      "viewGrades": "View Grades",
+      "saving": "Saving...",
+      "saveChanges": "Save Changes",
+      "preview": "Preview",
+      "edit": "Edit",
+      "delete": "Delete",
+      "createNew": "Create New"
+    },
+    "overview": {
+      "title": "Class Overview",
+      "classAverage": "Class Average",
+      "totalStudents": "Total Students",
+      "assignments": "Assignments",
+      "submissionRate": "Submission Rate"
+    },
+    "assignmentManagement": {
+      "title": "Assignment Management",
+      "empty": {
+        "title": "No assignments found",
+        "description": "Create assignments to manage grades and settings"
+      },
+      "searchPlaceholder": "Search assignments..."
+    },
+    "students": {
+      "title": "Students",
+      "viewAll": "View All Students",
+      "empty": {
+        "title": "No students enrolled",
+        "description": "Students will appear here once they join the class"
+      },
+      "searchPlaceholder": "Search students..."
+    },
+    "gradeBoundaries": {
+      "title": "Grade Boundaries",
+      "untitled": "Untitled Grading Boundary",
+      "empty": {
+        "title": "No grade boundaries created",
+        "description": "Create grading boundaries to define grade ranges"
+      },
+      "previewTitle": "Grading Boundaries Preview",
+      "details": {
+        "title": "Grading Boundary Details",
+        "name": "Name",
+        "noneDefined": "No grading boundaries defined"
+      }
+    },
+    "rubrics": {
+      "title": "Rubrics",
+      "untitled": "Untitled Rubric",
+      "empty": {
+        "title": "No rubrics created",
+        "description": "Create rubrics to define assessment criteria"
+      },
+      "previewTitle": "Rubric Preview",
+      "details": {
+        "title": "Rubric Details",
+        "name": "Name",
+        "category": "Category",
+        "description": "Description",
+        "custom": "Custom",
+        "noDescription": "No description provided",
+        "noCriteria": "No criteria found in this rubric"
+      }
+    },
+    "confirm": {
+      "deleteRubric": "Are you sure you want to delete this markscheme?",
+      "deleteGradingBoundary": "Are you sure you want to delete this grading boundary?"
+    }
+  },
+  "studentGrades": {
+    "title": "All Student Grades",
+    "allStudents": "View and manage grades for all students in this class",
+    "students": "Students",
+    "noGrades": "No students found",
+    "noGradesDescription": "No students are enrolled in this class yet. Students will appear here once they join.",
+    "table": {
+      "student": "Student",
+      "actions": "Actions"
+    },
+    "actions": {
+      "viewSubmission": "View Grades"
+    }
+  },
+  "individualGrades": {
+    "myGrades": "My Grades",
+    "studentGrades": "Grades",
+    "viewYourGrades": "View your grades and progress",
+    "individualManagement": "Individual student grade management",
+    "export": "Export",
+    "back": "Back",
+    "yourPerformance": "Your Performance",
+    "trackProgress": "Track your academic progress",
+    "overallGrade": "Overall Grade",
+    "completed": "Completed",
+    "trend": "Trend",
+    "yourGrades": "Your Grades",
+    "assignments": "Assignments",
+    "studentNotFound": "Student not found",
+    "goBack": "Go Back",
+    "grade": "Grade",
+    "table": {
+      "assignment": "Assignment",
+      "grade": "Grade",
+      "total": "Total",
+      "percentage": "%",
+      "status": "Status",
+      "submitted": "Submitted"
+    },
+    "status": {
+      "graded": "Graded",
+      "pending": "Pending"
+    },
+    "empty": {
+      "title": "No assignments found",
+      "description": "This student has no assignments to display"
+    },
+    "searchPlaceholder": "Search assignments..."
+  }
+}

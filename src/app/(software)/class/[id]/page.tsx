@@ -40,7 +40,7 @@ export default function ClassFeed() {
   
   const [newPost, setNewPost] = useState("");
   const [isPosting, setIsPosting] = useState(false);
-  const t = useTranslations('class');
+  const t = useTranslations('overview');
 
   // Get class data
   const { data: classData, isLoading, refetch } = trpc.class.get.useQuery({ 

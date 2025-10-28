@@ -1,0 +1,66 @@
+{
+  "syllabus": {
+    "title": "Programa de Estudos",
+    "subtitle": "Visão geral do curso e informações acadêmicas",
+    "actions": {
+      "saveChanges": "Salvar alterações",
+      "cancel": "Cancelar",
+      "edit": "Editar programa"
+    },
+    "errors": {
+      "failedToLoad": "Falha ao carregar o programa",
+      "tryLater": "Tente novamente mais tarde."
+    },
+    "stats": {
+      "totalAssignments": "Total de tarefas",
+      "completionRate": "Taxa de conclusão",
+      "totalPoints": "Total de pontos",
+      "upcoming": "Por vir"
+    },
+    "overview": {
+      "title": "Visão geral do curso",
+      "placeholder": "Insira a visão geral do curso, objetivos e outras informações importantes...",
+      "helper": "Insira as informações do curso, objetivos de aprendizagem, políticas e outros detalhes importantes.",
+      "empty": {
+        "title": "Nenhum conteúdo programático ainda",
+        "description": "Clique em \"Editar programa\" para adicionar informações do curso, objetivos de aprendizagem, políticas e muito mais."
+      }
+    },
+    "assignments": {
+      "title": "Tarefas do curso",
+      "gradedCount": "{graded} tarefas classificadas",
+      "totalPoints": "{total} pontos totais",
+      "empty": {
+        "title": "Nenhuma tarefa ainda",
+        "description": "As tarefas aparecerão aqui depois de criadas."
+      }
+    },
+    "table": {
+      "assignment": "Atribuição",
+      "dueDate": "Duas datas",
+      "points": "Pontos",
+      "weight": "Peso",
+      "status": "Status",
+      "pts": "pontos"
+    },
+    "status": {
+      "graded": "Classificado",
+      "pending": "Pendente"
+    },
+    "courseInfo": {
+      "title": "Informações do curso",
+      "basic": {
+        "title": "Informações básicas",
+        "className": "Nome da classe",
+        "section": "Seção",
+        "subject": "Assunto"
+      },
+      "stats": {
+        "title": "Estatísticas do curso",
+        "totalAssignments": "Total de tarefas",
+        "gradedAssignments": "Tarefas Classificadas",
+        "totalPoints": "Total de pontos"
+      }
+    }
+  }
+}

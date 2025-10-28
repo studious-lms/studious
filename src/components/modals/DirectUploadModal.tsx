@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -36,11 +37,12 @@ export function DirectUploadModal({
   onFilesUploaded, 
   getUploadUrls,
   confirmUpload,
-  title = "Upload Files",
-  description = "Select files to upload",
+  title,
+  description,
   maxFiles = 10,
   acceptedFileTypes = "*"
 }: DirectUploadModalProps) {
+  const t = useTranslations('directUpload');
   const [open, setOpen] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   
@@ -57,7 +59,7 @@ export function DirectUploadModal({
       // Handle successful upload
     },
     onError: (fileId, error) => {
-      toast.error(`Upload failed: ${error}`);
+      toast.error(t('uploadFailed', { error }));
     }
   });
 
@@ -99,13 +101,13 @@ export function DirectUploadModal({
   const getStatusBadge = (status: UploadFile['status']) => {
     switch (status) {
       case 'pending':
-        return <Badge variant="outline">Pending</Badge>;
+        return <Badge variant="outline">{t('status.pending')}</Badge>;
       case 'uploading':
-        return <Badge variant="secondary">Uploading</Badge>;
+        return <Badge variant="secondary">{t('status.uploading')}</Badge>;
       case 'completed':
-        return <Badge variant="default" className="bg-green-500">Completed</Badge>;
+        return <Badge variant="default" className="bg-green-500">{t('status.completed')}</Badge>;
       case 'failed':
-        return <Badge variant="destructive">Failed</Badge>;
+        return <Badge variant="destructive">{t('status.failed')}</Badge>;
       default:
         return null;
     }
@@ -115,7 +117,7 @@ export function DirectUploadModal({
     const selectedFiles = Array.from(e.target.files || []);
     
     if (selectedFiles.length + files.length > maxFiles) {
-      toast.error(`Maximum ${maxFiles} files allowed`);
+      toast.error(t('maxFilesExceeded', { max: maxFiles }));
       return;
     }
 
@@ -124,7 +126,7 @@ export function DirectUploadModal({
 
   const handleUpload = async () => {
     if (files.length === 0) {
-      toast.error("No files selected");
+      toast.error(t('noFilesSelected'));
       return;
     }
 
@@ -150,7 +152,7 @@ export function DirectUploadModal({
         reset();
       }
     } catch (error) {
-      toast.error("Upload failed");
+      toast.error(t('uploadFailedGeneric'));
     }
   };
 
@@ -168,14 +170,14 @@ export function DirectUploadModal({
       </DialogTrigger>
       <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle>{title}</DialogTitle>
-          <p className="text-sm text-muted-foreground">{description}</p>
+          <DialogTitle>{title || t('title')}</DialogTitle>
+          <p className="text-sm text-muted-foreground">{description || t('description')}</p>
         </DialogHeader>
 
         <div className="space-y-4">
           {/* File Input */}
           <div className="space-y-2">
-            <Label htmlFor="file-upload">Select Files</Label>
+            <Label htmlFor="file-upload">{t('selectFiles')}</Label>
             <Input
               ref={fileInputRef}
               id="file-upload"
@@ -187,14 +189,14 @@ export function DirectUploadModal({
               className="cursor-pointer"
             />
             <p className="text-xs text-muted-foreground">
-              Maximum {maxFiles} files. Accepted types: {acceptedFileTypes === "*" ? "All files" : acceptedFileTypes}
+              {t('maxFiles', { max: maxFiles, types: acceptedFileTypes === "*" ? t('allFiles') : acceptedFileTypes })}
             </p>
           </div>
 
           {/* File List */}
           {files.length > 0 && (
             <div className="space-y-2">
-              <Label>Selected Files ({files.length})</Label>
+              <Label>{t('selectedFiles', { count: files.length })}</Label>
               <div className="space-y-2 max-h-60 overflow-y-auto">
                 {files.map((file) => (
                   <Card key={file.id} className="p-3">
@@ -233,7 +235,7 @@ export function DirectUploadModal({
                         <div className="mt-2">
                           <Progress value={file.progress} className="h-2" />
                           <p className="text-xs text-muted-foreground mt-1">
-                            {file.progress}% uploaded
+                            {t('progressUploaded', { progress: file.progress })}
                           </p>
                         </div>
                       )}
@@ -256,7 +258,7 @@ export function DirectUploadModal({
               onClick={handleClose}
               disabled={isUploading}
             >
-              Cancel
+              {t('cancel')}
             </Button>
             <Button
               onClick={handleUpload}
@@ -265,12 +267,12 @@ export function DirectUploadModal({
               {isUploading ? (
                 <>
                   <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                  Uploading...
+                  {t('uploading')}
                 </>
               ) : (
                 <>
                   <Upload className="h-4 w-4 mr-2" />
-                  Upload {files.length} file{files.length !== 1 ? 's' : ''}
+                  {files.length === 1 ? t('upload', { count: files.length }) : t('uploadPlural', { count: files.length })}
                 </>
               )}
             </Button>

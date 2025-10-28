@@ -1,0 +1,72 @@
+{
+  "aiLabs": {
+    "title": "AI Labs",
+    "subtitle": "Create educational content with AI assistance",
+    "aiPowered": "AI Powered",
+    "createNew": "Create New Content",
+    "aiGenerated": "AI Generated",
+    "deleteConfirm": "Are you sure you want to delete this AI Lab? This action cannot be undone.",
+    "widgets": {
+      "assignment": {
+        "title": "Assignment",
+        "description": "Create interactive assignments with AI assistance"
+      },
+      "quiz": {
+        "title": "Quiz",
+        "description": "Generate quizzes with various question types"
+      },
+      "worksheet": {
+        "title": "Worksheet",
+        "description": "Build practice worksheets and exercises"
+      },
+      "lessonPlan": {
+        "title": "Lesson Plan",
+        "description": "Design comprehensive lesson plans"
+      },
+      "rubric": {
+        "title": "Rubric",
+        "description": "Create detailed grading rubrics"
+      }
+    },
+    "tabs": {
+      "drafts": "Draft Labs",
+      "chats": "AI Chats"
+    },
+    "drafts": {
+      "title": "Draft Labs ({count})",
+      "empty": {
+        "title": "No lab drafts yet",
+        "description": "Create your first AI-generated educational content using the widgets above."
+      }
+    },
+    "chats": {
+      "title": "AI Labs ({count})",
+      "active": "Active",
+      "messageCount": "{count} messages",
+      "createdBy": "Created by {name}",
+      "empty": {
+        "title": "No AI Labs yet",
+        "description": "Create your first AI Lab to start collaborating with AI on educational content."
+      }
+    },
+    "toast": {
+      "labCreated": "AI Lab created successfully!",
+      "labCreateFailed": "Failed to create AI Lab: ",
+      "labDeleted": "AI Lab deleted successfully!",
+      "labDeleteFailed": "Failed to delete AI Lab: "
+    }
+  },
+  "aiLabChat": {
+    "backButton": "Back to AI Labs",
+    "loading": "Loading...",
+    "aiThinking": "AI Thinking...",
+    "getAIHelp": "Get AI Help",
+    "notFound": {
+      "title": "Lab Chat Not Found",
+      "description": "This AI Lab may have been deleted or you don't have access to it."
+    },
+    "toast": {
+      "messageFailed": "Failed to send message: "
+    }
+  }
+}

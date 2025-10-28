@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import {
   Dialog,
   DialogContent,
@@ -27,6 +28,7 @@ interface AILabModalProps {
 
 export function AILabModal({ open, onOpenChange, labType, classId, onSubmit, isLoading }: AILabModalProps) {
   const router = useRouter();
+  const t = useTranslations('aiLab');
   const [formData, setFormData] = useState({
     title: "",
     subject: "",
@@ -134,98 +136,98 @@ export function AILabModal({ open, onOpenChange, labType, classId, onSubmit, isL
       <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
-            Create {labType}
+            {t('title', { type: labType })}
             <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20">
               <Sparkles className="h-3 w-3 mr-1" />
-              AI Powered
+              {t('aiPowered')}
             </Badge>
           </DialogTitle>
           <p className="text-muted-foreground">
-            Provide some basic information to help our AI create better content for you.
+            {t('description')}
           </p>
         </DialogHeader>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-2">
-              <Label htmlFor="title">Title *</Label>
+              <Label htmlFor="title">{t('titleField')}</Label>
               <Input
                 id="title"
-                placeholder={`Enter ${labType} title`}
+                placeholder={t('titlePlaceholder', { type: labType })}
                 value={formData.title}
                 onChange={(e) => handleFormChange("title", e.target.value)}
                 required
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="subject">Subject *</Label>
+              <Label htmlFor="subject">{t('subject')}</Label>
               <Select 
                 value={formData.subject} 
                 onValueChange={(value) => handleFormChange("subject", value)}
                 required
               >
                 <SelectTrigger>
-                  <SelectValue placeholder="Select subject" />
+                  <SelectValue placeholder={t('selectSubject')} />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="mathematics">Mathematics</SelectItem>
-                  <SelectItem value="science">Science</SelectItem>
-                  <SelectItem value="english">English</SelectItem>
-                  <SelectItem value="history">History</SelectItem>
-                  <SelectItem value="geography">Geography</SelectItem>
-                  <SelectItem value="chemistry">Chemistry</SelectItem>
-                  <SelectItem value="physics">Physics</SelectItem>
-                  <SelectItem value="biology">Biology</SelectItem>
-                  <SelectItem value="computer-science">Computer Science</SelectItem>
-                  <SelectItem value="other">Other</SelectItem>
+                  <SelectItem value="mathematics">{t('subjects.mathematics')}</SelectItem>
+                  <SelectItem value="science">{t('subjects.science')}</SelectItem>
+                  <SelectItem value="english">{t('subjects.english')}</SelectItem>
+                  <SelectItem value="history">{t('subjects.history')}</SelectItem>
+                  <SelectItem value="geography">{t('subjects.geography')}</SelectItem>
+                  <SelectItem value="chemistry">{t('subjects.chemistry')}</SelectItem>
+                  <SelectItem value="physics">{t('subjects.physics')}</SelectItem>
+                  <SelectItem value="biology">{t('subjects.biology')}</SelectItem>
+                  <SelectItem value="computer-science">{t('subjects.computerScience')}</SelectItem>
+                  <SelectItem value="other">{t('subjects.other')}</SelectItem>
                 </SelectContent>
               </Select>
             </div>
             <div className="space-y-2">
-              <Label htmlFor="gradeLevel">Grade Level *</Label>
+              <Label htmlFor="gradeLevel">{t('gradeLevel')}</Label>
               <Select 
                 value={formData.gradeLevel} 
                 onValueChange={(value) => handleFormChange("gradeLevel", value)}
                 required
               >
                 <SelectTrigger>
-                  <SelectValue placeholder="Select grade level" />
+                  <SelectValue placeholder={t('selectGrade')} />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="k-2">K-2</SelectItem>
-                  <SelectItem value="3-5">3-5</SelectItem>
-                  <SelectItem value="6-8">6-8</SelectItem>
-                  <SelectItem value="9-12">9-12</SelectItem>
-                  <SelectItem value="college">College</SelectItem>
+                  <SelectItem value="k-2">{t('grades.k2')}</SelectItem>
+                  <SelectItem value="3-5">{t('grades.35')}</SelectItem>
+                  <SelectItem value="6-8">{t('grades.68')}</SelectItem>
+                  <SelectItem value="9-12">{t('grades.912')}</SelectItem>
+                  <SelectItem value="college">{t('grades.college')}</SelectItem>
                 </SelectContent>
               </Select>
             </div>
             <div className="space-y-2">
-              <Label htmlFor="duration">Duration</Label>
+              <Label htmlFor="duration">{t('duration')}</Label>
               <Select 
                 value={formData.duration} 
                 onValueChange={(value) => handleFormChange("duration", value)}
               >
                 <SelectTrigger>
-                  <SelectValue placeholder="Select duration" />
+                  <SelectValue placeholder={t('selectDuration')} />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="15-min">15 minutes</SelectItem>
-                  <SelectItem value="30-min">30 minutes</SelectItem>
-                  <SelectItem value="45-min">45 minutes</SelectItem>
-                  <SelectItem value="1-hour">1 hour</SelectItem>
-                  <SelectItem value="90-min">90 minutes</SelectItem>
-                  <SelectItem value="2-hours">2 hours</SelectItem>
+                  <SelectItem value="15-min">{t('durations.15min')}</SelectItem>
+                  <SelectItem value="30-min">{t('durations.30min')}</SelectItem>
+                  <SelectItem value="45-min">{t('durations.45min')}</SelectItem>
+                  <SelectItem value="1-hour">{t('durations.1hour')}</SelectItem>
+                  <SelectItem value="90-min">{t('durations.90min')}</SelectItem>
+                  <SelectItem value="2-hours">{t('durations.2hours')}</SelectItem>
                 </SelectContent>
               </Select>
             </div>
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="description">Description</Label>
+            <Label htmlFor="description">{t('descriptionField')}</Label>
             <Textarea
               id="description"
-              placeholder={`Describe what this ${labType} should cover...`}
+              placeholder={t('descriptionPlaceholder', { type: labType })}
               value={formData.description}
               onChange={(e) => handleFormChange("description", e.target.value)}
               rows={3}
@@ -233,10 +235,10 @@ export function AILabModal({ open, onOpenChange, labType, classId, onSubmit, isL
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="requirements">Special Requirements</Label>
+            <Label htmlFor="requirements">{t('requirements')}</Label>
             <Textarea
               id="requirements"
-              placeholder="Any specific requirements, learning objectives, or constraints..."
+              placeholder={t('requirementsPlaceholder')}
               value={formData.requirements}
               onChange={(e) => handleFormChange("requirements", e.target.value)}
               rows={2}
@@ -249,14 +251,14 @@ export function AILabModal({ open, onOpenChange, labType, classId, onSubmit, isL
               variant="outline"
               onClick={() => onOpenChange(false)}
             >
-              Cancel
+              {t('cancel')}
             </Button>
             <Button 
               type="submit"
               className="bg-primary hover:bg-primary/90"
               disabled={!formData.title || !formData.subject || !formData.gradeLevel || isLoading}
             >
-              {isLoading ? 'Creating Lab...' : 'Create AI Lab'}
+              {isLoading ? t('creatingLab') : t('createLab')}
               <MessageSquare className="h-4 w-4 ml-2" />
             </Button>
           </div>

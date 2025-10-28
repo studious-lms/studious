@@ -1,0 +1,54 @@
+{
+  "assignmentDetail": {
+    "title": "Auftragsdetails",
+    "description": "Beschreibung",
+    "instructions": "Anweisungen",
+    "dueDate": "Zwei Termine",
+    "maxPoints": "Maximale Punkte",
+    "submissions": "Einreichungen",
+    "submitted": "Gesendet",
+    "notSubmitted": "Nicht übermittelt",
+    "graded": "Benotet",
+    "pending": "Ausstehend",
+    "late": "Spät",
+    "onTime": "Rechtzeitig",
+    "attachments": "Anlagen",
+    "rubric": "Rubrik",
+    "gradingBoundary": "Bewertungsgrenze",
+    "submissionDetails": "Details zur Einreichung",
+    "submittedBy": "Eingereicht von",
+    "submittedAt": "Eingereicht am",
+    "grade": "Grad",
+    "feedback": "Rückmeldung",
+    "files": "Dateien",
+    "noFiles": "Keine Dateien angehängt",
+    "noSubmissions": "Noch keine Einreichungen",
+    "noSubmissionsDescription": "Die eingereichten Arbeiten werden hier angezeigt, sobald die Studierenden ihre Arbeit eingereicht haben.",
+    "actions": {
+      "edit": "Zuweisung bearbeiten",
+      "delete": "Zuordnung löschen",
+      "viewSubmission": "Einreichung anzeigen",
+      "gradeSubmission": "Grad",
+      "downloadAll": "Alles herunterladen",
+      "exportGrades": "Exportqualitäten"
+    },
+    "stats": {
+      "totalSubmissions": "Gesamtanzahl der Einreichungen",
+      "averageGrade": "Durchschnittsnote",
+      "submissionRate": "Einreichungsrate",
+      "gradedCount": "Benotet"
+    },
+    "table": {
+      "student": "Student",
+      "status": "Status",
+      "grade": "Grad",
+      "submittedAt": "Gesendet",
+      "actions": "Aktionen"
+    },
+    "toasts": {
+      "gradeUpdated": "Note erfolgreich aktualisiert",
+      "deleted": "Zuordnung gelöscht",
+      "error": "Ein Fehler ist aufgetreten"
+    }
+  }
+}

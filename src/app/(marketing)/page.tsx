@@ -26,8 +26,10 @@ import { useRouter } from "next/navigation";
 import { Navbar } from "@/components/marketing/Navbar";
 import { Footer } from "@/components/marketing/Footer";
 import { EarlyAccessModal } from "@/components/marketing/EarlyAccessModal";
+import { useTranslations } from "next-intl";
 
 export default function Home() {
+  const t = useTranslations('marketing');
   const appState = useSelector((state: RootState) => state.app);
   const router = useRouter();
   const [showEarlyAccess, setShowEarlyAccess] = useState(false);
@@ -50,16 +52,16 @@ export default function Home() {
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center">
             <Badge variant="outline" className="mb-4 sm:mb-6 px-3 sm:px-4 py-1 sm:py-1.5 border-primary/20 text-primary text-xs sm:text-sm">
-              Modern Learning Platform
+              {t('hero.badge')}
             </Badge>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-foreground mb-4 sm:mb-6 tracking-tight px-2">
-              Seamless, distraction-free
+              {t('hero.title1')}
                 <br className="hidden sm:block" />
-              <span className="text-primary"> learning for modern schools</span>
+              <span className="text-primary"> {t('hero.title2')}</span>
               </h1>
             
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed px-4">
-              Studious LMS integrates AI, real-time calendars, and class communication into one cohesive platform — designed to help teachers teach and students thrive.
+              {t('hero.subtitle')}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center px-4 sm:px-0">
@@ -68,20 +70,20 @@ export default function Home() {
                 className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 sm:px-8 h-11 sm:h-12 text-sm sm:text-base font-medium w-full sm:w-auto"
                 onClick={() => setShowEarlyAccess(true)}
               >
-                Request Early Access
+                {t('hero.requestEarlyAccess')}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <Button size="lg" variant="outline" className="border-border hover:bg-secondary px-6 sm:px-8 h-11 sm:h-12 text-sm sm:text-base font-medium w-full sm:w-auto">
                 <Play className="mr-2 h-4 w-4" />
-                Watch Demo
+                {t('hero.watchDemo')}
               </Button>
             </div>
           </div>
           
           {/* Hero Image */}
           <div className="mt-12 sm:mt-16 md:mt-20 rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden shadow-2xl border border-border relative">
-            <img src="/hero-light.png" alt="Platform Dashboard" className="w-full h-auto block dark:hidden" />
-            <img src="/hero-dark.png" alt="Platform Dashboard" className="w-full h-auto hidden dark:block" />
+            <img src="/hero-light.png" alt={t('hero.altDashboard')} className="w-full h-auto block dark:hidden" />
+            <img src="/hero-dark.png" alt={t('hero.altDashboard')} className="w-full h-auto hidden dark:block" />
             <div className="absolute inset-x-0 bottom-0 h-20 sm:h-32 bg-gradient-to-t from-background to-transparent pointer-events-none"></div>
           </div>
         </div>
@@ -92,7 +94,7 @@ export default function Home() {
         <div className="container mx-auto max-w-5xl">
           <div className="text-center space-y-4 sm:space-y-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground px-4">
-              Traditional school portals are fragmented and outdated
+              {t('problem.title')}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mt-8 sm:mt-12 px-4 sm:px-0">
               <div className="space-y-3">
@@ -100,7 +102,7 @@ export default function Home() {
                   <Zap className="h-6 w-6 text-muted-foreground" />
                 </div>
                 <p className="text-muted-foreground text-base sm:text-lg">
-                  Teachers waste time switching between multiple tools
+                  {t('problem.issue1')}
                 </p>
               </div>
               <div className="space-y-3">
@@ -108,7 +110,7 @@ export default function Home() {
                   <Users className="h-6 w-6 text-muted-foreground" />
                 </div>
                 <p className="text-muted-foreground text-base sm:text-lg">
-                  Students struggle with organisation and deadlines
+                  {t('problem.issue2')}
                 </p>
               </div>
               <div className="space-y-3 sm:col-span-2 md:col-span-1">
@@ -116,7 +118,7 @@ export default function Home() {
                   <Bot className="h-6 w-6 text-muted-foreground" />
                 </div>
                 <p className="text-muted-foreground text-base sm:text-lg">
-                  AI remains under-integrated in actual school workflows
+                  {t('problem.issue3')}
                 </p>
               </div>
             </div>
@@ -128,12 +130,12 @@ export default function Home() {
       <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-background">
         <div className="container mx-auto max-w-5xl text-center">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 sm:mb-6 px-4 leading-tight">
-            Studious LMS unifies teaching, learning,
+            {t('response.title1')}
             <br className="hidden sm:block" />
-            <span className="block sm:inline"> and communication into a single workspace</span>
+            <span className="block sm:inline"> {t('response.title2')}</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4">
-            Built with cutting-edge frameworks and human-centred design, it's built to scale across schools of any size.
+            {t('response.subtitle')}
           </p>
         </div>
       </section>
@@ -143,10 +145,10 @@ export default function Home() {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-10 sm:mb-12 md:mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-3 sm:mb-4 px-4">
-              Key Features
+              {t('features.title')}
             </h2>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
-              Everything you need to manage modern learning experiences
+              {t('features.subtitle')}
             </p>
           </div>
           
@@ -156,11 +158,11 @@ export default function Home() {
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                   <Bot className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle className="text-xl">AI Assistant</CardTitle>
+                <CardTitle className="text-xl">{t('features.ai.title')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Helps generate study materials, summarise content, and assist with grading
+                  {t('features.ai.description')}
                 </p>
               </CardContent>
             </Card>
@@ -170,11 +172,11 @@ export default function Home() {
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                   <BookOpen className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle className="text-xl">Class Management</CardTitle>
+                <CardTitle className="text-xl">{t('features.classManagement.title')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Organise classes, assignments, and attendance effortlessly
+                  {t('features.classManagement.description')}
                 </p>
               </CardContent>
             </Card>
@@ -184,11 +186,11 @@ export default function Home() {
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                   <FileText className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle className="text-xl">Assignments</CardTitle>
+                <CardTitle className="text-xl">{t('features.assignments.title')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Create, collect, and grade student submissions efficiently
+                  {t('features.assignments.description')}
                 </p>
               </CardContent>
             </Card>
@@ -198,11 +200,11 @@ export default function Home() {
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                   <Calendar className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle className="text-xl">Calendar</CardTitle>
+                <CardTitle className="text-xl">{t('features.calendar.title')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Real-time sync with assignments, lessons, and events
+                  {t('features.calendar.description')}
                 </p>
               </CardContent>
             </Card>
@@ -212,11 +214,11 @@ export default function Home() {
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                   <BarChart3 className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle className="text-xl">Analytics</CardTitle>
+                <CardTitle className="text-xl">{t('features.analytics.title')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  View insights on performance, participation, and engagement
+                  {t('features.analytics.description')}
                 </p>
               </CardContent>
             </Card>
@@ -226,11 +228,11 @@ export default function Home() {
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                   <MessageCircle className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle className="text-xl">Communication</CardTitle>
+                <CardTitle className="text-xl">{t('features.communication.title')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Built-in messaging and announcements for unified collaboration
+                  {t('features.communication.description')}
                 </p>
               </CardContent>
             </Card>
@@ -242,7 +244,7 @@ export default function Home() {
       <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-primary">
         <div className="container mx-auto max-w-4xl text-center">
           <blockquote className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-primary-foreground leading-relaxed px-4">
-            "Every feature in Studious was built to reduce friction — not add it."
+            {t('quote.text')}
           </blockquote>
               </div>
       </section>
@@ -252,10 +254,10 @@ export default function Home() {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-10 sm:mb-12 md:mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-3 sm:mb-4 px-4">
-              Choose the right plan for your institution
+              {t('pricing.title')}
             </h2>
             <p className="text-lg sm:text-xl text-muted-foreground px-4">
-              Simple, transparent pricing with no hidden fees. All plans include core features with scalable options.
+              {t('pricing.subtitle')}
             </p>
               </div>
           
@@ -263,40 +265,40 @@ export default function Home() {
             {/* Starter Plan */}
             <Card className="border-2 border-border hover:border-primary/50 transition-all flex flex-col h-full">
               <CardHeader className="space-y-4">
-                <CardTitle className="text-2xl">Starter</CardTitle>
+                <CardTitle className="text-2xl">{t('pricing.starter.title')}</CardTitle>
                 <div>
-                  <div className="text-5xl font-bold text-foreground">Free</div>
-                  <p className="text-sm text-muted-foreground mt-2">Beta access included</p>
+                  <div className="text-5xl font-bold text-foreground">{t('pricing.starter.price')}</div>
+                  <p className="text-sm text-muted-foreground mt-2">{t('pricing.starter.note')}</p>
             </div>
                 <p className="text-muted-foreground">
-                  Perfect for small classes & pilot programs
+                  {t('pricing.starter.description')}
                 </p>
               </CardHeader>
               <CardContent className="flex flex-col flex-1 space-y-4">
                 <ul className="space-y-3 flex-1">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Up to 30 students</span>
+                    <span className="text-sm">{t('pricing.starter.perk1')}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Unlimited classes</span>
+                    <span className="text-sm">{t('pricing.starter.perk2')}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Core features (assignments, calendar, grades)</span>
+                    <span className="text-sm">{t('pricing.starter.perk3')}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">AI assistant (5 chats/month)</span>
+                    <span className="text-sm">{t('pricing.starter.perk4')}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Community support</span>
+                    <span className="text-sm">{t('pricing.starter.perk5')}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">5GB storage</span>
+                    <span className="text-sm">{t('pricing.starter.perk6')}</span>
                   </li>
                 </ul>
                 <Button 
@@ -304,7 +306,7 @@ export default function Home() {
                   className="w-full mt-auto"
                   onClick={() => setShowEarlyAccess(true)}
                 >
-                  Get Started Free
+                  {t('pricing.starter.button')}
                 </Button>
               </CardContent>
             </Card>
@@ -313,50 +315,50 @@ export default function Home() {
             <Card className="border-2 border-primary shadow-2xl relative md:scale-105 flex flex-col h-full">
               <div className="absolute -top-3 sm:-top-4 left-1/2 -translate-x-1/2">
                 <Badge className="bg-primary text-primary-foreground px-3 sm:px-4 py-1 sm:py-1.5 text-xs sm:text-sm">
-                  Most Popular
+                  {t('pricing.mostPopular')}
                 </Badge>
               </div>
               <CardHeader className="space-y-4">
-                <CardTitle className="text-2xl">School</CardTitle>
+                <CardTitle className="text-2xl">{t('pricing.school.title')}</CardTitle>
                 <div>
                   <div className="flex items-baseline gap-2">
-                    <span className="text-5xl font-bold text-foreground">$5</span>
-                    <span className="text-muted-foreground">/user/month</span>
+                    <span className="text-5xl font-bold text-foreground">{t('pricing.school.price')}</span>
+                    <span className="text-muted-foreground">{t('pricing.school.priceUnit')}</span>
                   </div>
-                  <p className="text-sm text-muted-foreground mt-2">Billed annually or $6/month</p>
+                  <p className="text-sm text-muted-foreground mt-2">{t('pricing.school.note')}</p>
                 </div>
                 <p className="text-muted-foreground">
-                  For schools with up to 1,000 students
+                  {t('pricing.school.description')}
                 </p>
               </CardHeader>
               <CardContent className="flex flex-col flex-1 space-y-4">
                 <ul className="space-y-3 flex-1">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Unlimited students</span>
+                    <span className="text-sm">{t('pricing.school.perk1')}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Unlimited classes</span>
+                    <span className="text-sm">{t('pricing.school.perk2')}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">All core features</span>
+                    <span className="text-sm">{t('pricing.school.perk3')}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">AI assistant (unlimited queries)</span>
+                    <span className="text-sm">{t('pricing.school.perk4')}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">First-in-line for Studious CMS beta access</span>
+                    <span className="text-sm">{t('pricing.school.perk5')}</span>
                   </li>
                 </ul>
                 <Button 
                   className="w-full mt-auto bg-primary hover:bg-primary/90"
                   onClick={() => setShowEarlyAccess(true)}
                 >
-                  Get Started
+                  {t('pricing.school.button')}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </CardContent>
@@ -365,48 +367,46 @@ export default function Home() {
             {/* Institution Plan */}
             <Card className="border-2 border-border hover:border-primary/50 transition-all flex flex-col h-full">
               <CardHeader className="space-y-4">
-                <CardTitle className="text-2xl">Institution</CardTitle>
+                <CardTitle className="text-2xl">{t('pricing.institution.title')}</CardTitle>
                 <div>
-                  <div className="text-5xl font-bold text-foreground">Custom</div>
-                  <p className="text-sm text-muted-foreground mt-2">Tailored to your needs</p>
+                  <div className="text-5xl font-bold text-foreground">{t('pricing.institution.price')}</div>
+                  <p className="text-sm text-muted-foreground mt-2">{t('pricing.institution.note')}</p>
                 </div>
                 <p className="text-muted-foreground">
-                  For large schools & universities (1,000+ students)
+                  {t('pricing.institution.description')}
                 </p>
               </CardHeader>
               <CardContent className="flex flex-col flex-1 space-y-4">
                 <ul className="space-y-3 flex-1">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Everything in School plan</span>
+                    <span className="text-sm">{t('pricing.institution.perk1')}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">24/7 priority support</span>
+                    <span className="text-sm">{t('pricing.institution.perk2')}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Unlimited storage</span>
+                    <span className="text-sm">{t('pricing.institution.perk3')}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Custom training & onboarding</span>
+                    <span className="text-sm">{t('pricing.institution.perk4')}</span>
                     </li>
                     <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Cheaper per-user expenses</span>
+                    <span className="text-sm">{t('pricing.institution.perk5')}</span>
                     </li>
                 </ul>
                 <Button variant="outline" className="w-full mt-auto" onClick={() => setShowEarlyAccess(true)}>
-                  Contact Sales
+                  {t('pricing.institution.button')}
                 </Button>
               </CardContent>
             </Card>
           </div>
 
-          <p className="text-center text-muted-foreground mt-8 sm:mt-10 md:mt-12 text-base sm:text-lg px-4">
-            🎉 Early adopters receive <span className="font-semibold text-foreground">3 months free</span> on annual plans + dedicated onboarding support
-          </p>
+          <p className="text-center text-muted-foreground mt-8 sm:mt-10 md:mt-12 text-base sm:text-lg px-4" dangerouslySetInnerHTML={{ __html: t('pricing.earlyBird') }} />
               </div>
       </section>
       
@@ -416,47 +416,47 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
             <div className="space-y-4 sm:space-y-6">
               <Badge variant="outline" className="border-primary/30 text-primary text-sm sm:text-base">
-                Social Impact
+                {t('schoolProgram.badge')}
               </Badge>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
-                Studious School Development Program
+                {t('schoolProgram.title')}
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
-                We believe every student deserves access to modern learning tools, regardless of their school's economic situation.
+                {t('schoolProgram.subtitle')}
               </p>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                   <div>
-                    <p className="font-semibold text-foreground">100% Free Access</p>
-                    <p className="text-sm text-muted-foreground">Full platform access with all features for qualifying schools</p>
+                    <p className="font-semibold text-foreground">{t('schoolProgram.feature1Title')}</p>
+                    <p className="text-sm text-muted-foreground">{t('schoolProgram.feature1Description')}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                   <div>
-                    <p className="font-semibold text-foreground">Dedicated Support</p>
-                    <p className="text-sm text-muted-foreground">Priority onboarding and training for teachers and staff</p>
+                    <p className="font-semibold text-foreground">{t('schoolProgram.feature2Title')}</p>
+                    <p className="text-sm text-muted-foreground">{t('schoolProgram.feature2Description')}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                   <div>
-                    <p className="font-semibold text-foreground">Educational Resources</p>
-                    <p className="text-sm text-muted-foreground">Free teaching materials and curriculum support</p>
+                    <p className="font-semibold text-foreground">{t('schoolProgram.feature3Title')}</p>
+                    <p className="text-sm text-muted-foreground">{t('schoolProgram.feature3Description')}</p>
                   </div>
                 </div>
               </div>
               <div className="pt-4 flex flex-col sm:flex-row gap-3 sm:gap-3">
                 <Link href="/program/apply" className="w-full sm:w-auto">
                   <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground w-full sm:w-auto">
-                    Apply Now
+                    {t('schoolProgram.applyNow')}
                     <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5" />
                   </Button>
                 </Link>
                 <Link href="/program" className="w-full sm:w-auto">
                   <Button size="lg" variant="outline" className="border-border hover:bg-secondary w-full sm:w-auto">
-                    Learn More
+                    {t('schoolProgram.learnMore')}
                   </Button>
                 </Link>
               </div>
@@ -464,43 +464,43 @@ export default function Home() {
             
             <Card className="border-2 border-primary/20 bg-card shadow-xl">
               <CardHeader>
-                <CardTitle className="text-2xl">Program Eligibility</CardTitle>
+                <CardTitle className="text-2xl">{t('schoolProgram.eligibilityTitle')}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div>
-                  <h4 className="font-semibold text-foreground mb-3">Qualifying Schools:</h4>
+                  <h4 className="font-semibold text-foreground mb-3">{t('schoolProgram.qualifyingTitle')}</h4>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li className="flex items-start gap-2">
                       <span className="text-primary">•</span>
-                      <span>Public schools in underserved communities</span>
+                      <span>{t('schoolProgram.qualify1')}</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-primary">•</span>
-                      <span>Registered non-profit educational institutions</span>
+                      <span>{t('schoolProgram.qualify2')}</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-primary">•</span>
-                      <span>Schools in developing regions</span>
+                      <span>{t('schoolProgram.qualify3')}</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-primary">•</span>
-                      <span>Title I schools (US) or equivalent</span>
+                      <span>{t('schoolProgram.qualify4')}</span>
                     </li>
                   </ul>
                 </div>
                 
                 <div className="pt-4 border-t border-border">
                   <p className="text-sm text-muted-foreground">
-                    <strong className="text-foreground">Our Commitment:</strong> 10% of our paying customers support free access for schools in need.
+                    <strong className="text-foreground">{t('schoolProgram.commitmentTitle')}</strong> {t('schoolProgram.commitment')}
                   </p>
                 </div>
                 
                 <div className="bg-primary/5 rounded-lg p-4">
                   <p className="text-sm font-medium text-foreground mb-2">
-                    Program Launch:
+                    {t('schoolProgram.launchTitle')}
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    January 2026 • Applications now open
+                    {t('schoolProgram.launch')}
                   </p>
                 </div>
               </CardContent>
@@ -514,10 +514,10 @@ export default function Home() {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-10 sm:mb-12 md:mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 sm:mb-6 px-4">
-              Future Developments
+              {t('futureDevelopments.title')}
             </h2>
             <p className="text-lg sm:text-xl text-muted-foreground px-4">
-              Our roadmap for transforming education
+              {t('futureDevelopments.subtitle')}
             </p>
           </div>
           
@@ -527,11 +527,11 @@ export default function Home() {
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                   <Users className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle className="text-xl">CAS Perspective</CardTitle>
+                <CardTitle className="text-xl">{t('futureDevelopments.cas.title')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground leading-relaxed">
-                  Supporting underfunded schools through donations and materials, making quality education accessible to all.
+                  {t('futureDevelopments.cas.description')}
                 </p>
               </CardContent>
             </Card>
@@ -541,11 +541,11 @@ export default function Home() {
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                   <TrendingUp className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle className="text-xl">Features Perspective</CardTitle>
+                <CardTitle className="text-xl">{t('futureDevelopments.features.title')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground leading-relaxed">
-                  Expanding AI student support and building API integrations for diverse educational systems worldwide.
+                  {t('futureDevelopments.features.description')}
                 </p>
               </CardContent>
             </Card>
@@ -555,11 +555,11 @@ export default function Home() {
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                   <Zap className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle className="text-xl">Launch Perspective</CardTitle>
+                <CardTitle className="text-xl">{t('futureDevelopments.launch.title')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground leading-relaxed">
-                  Presentations at schools, universities, and conferences to reshape the learning experience.
+                  {t('futureDevelopments.launch.description')}
                 </p>
               </CardContent>
             </Card>
@@ -571,10 +571,10 @@ export default function Home() {
       <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-background">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6 leading-tight px-4">
-            Ready to redefine how your school learns and teaches?
+            {t('cta.title')}
             </h2>
           <p className="text-lg sm:text-xl text-muted-foreground mb-8 sm:mb-10 md:mb-12 px-4">
-            Join the future of education with Studious LMS
+            {t('cta.subtitle')}
             </p>
             
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
@@ -583,16 +583,16 @@ export default function Home() {
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 sm:px-8 md:px-10 h-12 sm:h-14 text-sm sm:text-base font-medium w-full sm:w-auto"
               onClick={() => setShowEarlyAccess(true)}
             >
-              Request Access
+              {t('cta.requestAccess')}
               <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5" />
             </Button>
             <Button size="lg" variant="outline" className="border-border hover:bg-secondary px-6 sm:px-8 md:px-10 h-12 sm:h-14 text-sm sm:text-base font-medium w-full sm:w-auto">
-              Partner with Us
+              {t('cta.partnerWithUs')}
             </Button>
           </div>
           
           <p className="text-sm text-muted-foreground mt-8">
-            Studious LMS — Modern Learning, Simplified.
+            {t('cta.tagline')}
           </p>
         </div>
       </section>

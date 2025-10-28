@@ -1,0 +1,54 @@
+{
+  "navigation": {
+    "home": "Heim",
+    "classes": "Klassen",
+    "agenda": "Agenda",
+    "chat": "Chat",
+    "notifications": "Benachrichtigungen",
+    "profile": "Profil",
+    "settings": "Einstellungen",
+    "signOut": "Abmelden",
+    "accountSettings": "Kontoeinstellungen",
+    "pricing": "Preise",
+    "schoolProgram": "Schulprogramm",
+    "about": "Um",
+    "press": "Drücken",
+    "signIn": "Anmelden"
+  },
+  "classSidebar": {
+    "overview": "Überblick",
+    "assignments": "Aufgaben",
+    "grades": "Noten",
+    "files": "Dateien",
+    "attendance": "Teilnahme",
+    "aiLabs": "KI-Labore",
+    "members": "Mitglieder",
+    "syllabus": "Lehrplan",
+    "settings": "Einstellungen",
+    "classNavigation": "Klassennavigation",
+    "switchClass": "Switch-Klasse",
+    "classInviteCode": "Klasseneinladungscode",
+    "copyCode": "Code kopieren",
+    "regenerateCode": "Code neu generieren",
+    "toast": {
+      "inviteCodeRegenerated": "Einladungscode erfolgreich neu generiert",
+      "inviteCodeRegenerateFailed": "Einladungscode konnte nicht neu generiert werden",
+      "inviteCodeCopied": "Einladungscode in die Zwischenablage kopiert"
+    }
+  },
+  "footer": {
+    "productDescription": "Modernes Lernmanagement für die nächste Bildungsgeneration.",
+    "product": "Produkt",
+    "features": "Merkmale",
+    "pricing": "Preise",
+    "schoolProgram": "Schulprogramm",
+    "company": "Unternehmen",
+    "about": "Um",
+    "team": "Team",
+    "press": "Drücken",
+    "contact": "Kontakt",
+    "privacyPolicy": "Datenschutzrichtlinie",
+    "termsOfService": "Servicebedingungen",
+    "copyright": "© 2025 Studious LMS. Alle Rechte vorbehalten."
+  }
+}

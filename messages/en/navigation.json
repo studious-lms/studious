@@ -1,0 +1,54 @@
+{
+  "navigation": {
+    "home": "Home",
+    "classes": "Classes",
+    "agenda": "Agenda",
+    "chat": "Chat",
+    "notifications": "Notifications",
+    "profile": "Profile",
+    "settings": "Settings",
+    "signOut": "Sign out",
+    "accountSettings": "Account Settings",
+    "pricing": "Pricing",
+    "schoolProgram": "School Program",
+    "about": "About",
+    "press": "Press",
+    "signIn": "Sign In"
+  },
+  "classSidebar": {
+    "overview": "Overview",
+    "assignments": "Assignments",
+    "grades": "Grades",
+    "files": "Files",
+    "attendance": "Attendance",
+    "aiLabs": "AI Labs",
+    "members": "Members",
+    "syllabus": "Syllabus",
+    "settings": "Settings",
+    "classNavigation": "Class Navigation",
+    "switchClass": "Switch Class",
+    "classInviteCode": "Class Invite Code",
+    "copyCode": "Copy code",
+    "regenerateCode": "Regenerate code",
+    "toast": {
+      "inviteCodeRegenerated": "Invite code regenerated successfully",
+      "inviteCodeRegenerateFailed": "Failed to regenerate invite code",
+      "inviteCodeCopied": "Invite code copied to clipboard"
+    }
+  },
+  "footer": {
+    "productDescription": "Modern learning management for the next generation of education.",
+    "product": "Product",
+    "features": "Features",
+    "pricing": "Pricing",
+    "schoolProgram": "School Program",
+    "company": "Company",
+    "about": "About",
+    "team": "Team",
+    "press": "Press",
+    "contact": "Contact",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "copyright": "© 2025 Studious LMS. All rights reserved."
+  }
+}

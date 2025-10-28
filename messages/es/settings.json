@@ -1,0 +1,66 @@
+{
+  "settings": {
+    "title": "Configuración de la clase",
+    "subtitle": "Configurar detalles y preferencias de la clase",
+    "labels": {
+      "unsavedChanges": "Cambios no guardados"
+    },
+    "actions": {
+      "saving": "Ahorro...",
+      "saveChanges": "Guardar cambios",
+      "deleting": "Borrando...",
+      "deleteClass": "Eliminar clase",
+      "cancel": "Cancelar"
+    },
+    "sections": {
+      "basicInfo": {
+        "title": "Información básica"
+      },
+      "theme": {
+        "title": "Tema de la clase",
+        "description": "Elige un color temático para esta clase"
+      },
+      "danger": {
+        "title": "Zona de peligro",
+        "description": "Una vez que elimines una clase, no hay vuelta atrás. Esto eliminará permanentemente todas las tareas, calificaciones y registros de asistencia, y eliminará a todos los estudiantes de la clase."
+      }
+    },
+    "fields": {
+      "className": "Nombre de la clase",
+      "section": "Sección",
+      "subject": "Sujeto"
+    },
+    "placeholders": {
+      "className": "p. ej., Física Avanzada",
+      "section": "p. ej., AP-101",
+      "subject": "por ejemplo, Física"
+    },
+    "toasts": {
+      "updated": {
+        "title": "Clase actualizada",
+        "description": "La configuración de la clase se ha guardado correctamente."
+      },
+      "deleted": {
+        "title": "Clase eliminada",
+        "description": "La clase ha sido eliminada permanentemente."
+      }
+    },
+    "errors": {
+      "updateFailed": {
+        "title": "Actualización fallida",
+        "description": "No se pudo guardar la configuración de la clase. Inténtalo de nuevo."
+      }
+    },
+    "confirm": {
+      "title": "¿Estás completamente seguro?",
+      "description": "Esta acción no se puede deshacer. Eliminará permanentemente la clase \"{name}\" y todos los datos asociados, incluyendo:",
+      "items": {
+        "assignments": "Todas las tareas y entregas",
+        "records": "Todas las calificaciones y registros de asistencia",
+        "students": "Todos los estudiantes serán eliminados de la clase.",
+        "events": "Todos los eventos y anuncios de la clase"
+      },
+      "confirmDelete": "Sí, eliminar clase"
+    }
+  }
+}

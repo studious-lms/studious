@@ -33,7 +33,7 @@ import { toast } from "sonner";
 export default function ClassSettings() {
   const { id: classId } = useParams();
   const router = useRouter();
-  const t = useTranslations('class.settings');
+  const t = useTranslations('settings');
   const [isLoading, setIsLoading] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
   const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);

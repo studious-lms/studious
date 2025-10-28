@@ -1,0 +1,54 @@
+{
+  "assignmentDetail": {
+    "title": "Détails de la mission",
+    "description": "Description",
+    "instructions": "Instructions",
+    "dueDate": "Deux rendez-vous",
+    "maxPoints": "Points maximum",
+    "submissions": "Soumissions",
+    "submitted": "Soumis",
+    "notSubmitted": "Non soumis",
+    "graded": "Noté",
+    "pending": "En attente",
+    "late": "En retard",
+    "onTime": "À l'heure",
+    "attachments": "Pièces jointes",
+    "rubric": "Rubrique",
+    "gradingBoundary": "Limite de classement",
+    "submissionDetails": "Détails de la soumission",
+    "submittedBy": "Soumis par",
+    "submittedAt": "Soumis à",
+    "grade": "Grade",
+    "feedback": "Retour",
+    "files": "Fichiers",
+    "noFiles": "Aucun fichier joint",
+    "noSubmissions": "Aucune soumission pour le moment",
+    "noSubmissionsDescription": "Les soumissions apparaîtront ici une fois que les étudiants auront soumis leur travail",
+    "actions": {
+      "edit": "Modifier la tâche",
+      "delete": "Supprimer l'affectation",
+      "viewSubmission": "Voir la soumission",
+      "gradeSubmission": "Grade",
+      "downloadAll": "Télécharger tout",
+      "exportGrades": "Qualités d'exportation"
+    },
+    "stats": {
+      "totalSubmissions": "Total des soumissions",
+      "averageGrade": "Note moyenne",
+      "submissionRate": "Taux de soumission",
+      "gradedCount": "Noté"
+    },
+    "table": {
+      "student": "Étudiant",
+      "status": "Statut",
+      "grade": "Grade",
+      "submittedAt": "Soumis",
+      "actions": "Actes"
+    },
+    "toasts": {
+      "gradeUpdated": "Note mise à jour avec succès",
+      "deleted": "Affectation supprimée",
+      "error": "Une erreur s'est produite"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "assignmentDetail": {
+    "title": "Assignment Details",
+    "description": "Description",
+    "instructions": "Instructions",
+    "dueDate": "Due Date",
+    "maxPoints": "Max Points",
+    "submissions": "Submissions",
+    "submitted": "Submitted",
+    "notSubmitted": "Not Submitted",
+    "graded": "Graded",
+    "pending": "Pending",
+    "late": "Late",
+    "onTime": "On Time",
+    "attachments": "Attachments",
+    "rubric": "Rubric",
+    "gradingBoundary": "Grading Boundary",
+    "submissionDetails": "Submission Details",
+    "submittedBy": "Submitted by",
+    "submittedAt": "Submitted at",
+    "grade": "Grade",
+    "feedback": "Feedback",
+    "files": "Files",
+    "noFiles": "No files attached",
+    "noSubmissions": "No submissions yet",
+    "noSubmissionsDescription": "Submissions will appear here once students submit their work",
+    "actions": {
+      "edit": "Edit Assignment",
+      "delete": "Delete Assignment",
+      "viewSubmission": "View Submission",
+      "gradeSubmission": "Grade",
+      "downloadAll": "Download All",
+      "exportGrades": "Export Grades"
+    },
+    "stats": {
+      "totalSubmissions": "Total Submissions",
+      "averageGrade": "Average Grade",
+      "submissionRate": "Submission Rate",
+      "gradedCount": "Graded"
+    },
+    "table": {
+      "student": "Student",
+      "status": "Status",
+      "grade": "Grade",
+      "submittedAt": "Submitted",
+      "actions": "Actions"
+    },
+    "toasts": {
+      "gradeUpdated": "Grade updated successfully",
+      "deleted": "Assignment deleted",
+      "error": "An error occurred"
+    }
+  }
+}

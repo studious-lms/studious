@@ -1,0 +1,54 @@
+{
+  "navigation": {
+    "home": "Hogar",
+    "classes": "Clases",
+    "agenda": "Orden del día",
+    "chat": "Charlar",
+    "notifications": "Notificaciones",
+    "profile": "Perfil",
+    "settings": "Ajustes",
+    "signOut": "desconectar",
+    "accountSettings": "Configuraciones de la cuenta",
+    "pricing": "Precios",
+    "schoolProgram": "Programa escolar",
+    "about": "Acerca de",
+    "press": "Prensa",
+    "signIn": "Iniciar sesión"
+  },
+  "classSidebar": {
+    "overview": "Descripción general",
+    "assignments": "Tareas",
+    "grades": "Calificaciones",
+    "files": "Archivos",
+    "attendance": "Asistencia",
+    "aiLabs": "Laboratorios de IA",
+    "members": "Miembros",
+    "syllabus": "Programa de estudios",
+    "settings": "Ajustes",
+    "classNavigation": "Navegación de clases",
+    "switchClass": "Clase de conmutación",
+    "classInviteCode": "Código de invitación a la clase",
+    "copyCode": "Copiar código",
+    "regenerateCode": "Regenerar código",
+    "toast": {
+      "inviteCodeRegenerated": "Código de invitación regenerado exitosamente",
+      "inviteCodeRegenerateFailed": "No se pudo regenerar el código de invitación",
+      "inviteCodeCopied": "Código de invitación copiado al portapapeles"
+    }
+  },
+  "footer": {
+    "productDescription": "Gestión del aprendizaje moderna para la próxima generación de la educación.",
+    "product": "Producto",
+    "features": "Características",
+    "pricing": "Precios",
+    "schoolProgram": "Programa escolar",
+    "company": "Compañía",
+    "about": "Acerca de",
+    "team": "Equipo",
+    "press": "Prensa",
+    "contact": "Contacto",
+    "privacyPolicy": "política de privacidad",
+    "termsOfService": "Condiciones de servicio",
+    "copyright": "© 2025 Studious LMS. Todos los derechos reservados."
+  }
+}

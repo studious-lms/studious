@@ -1,0 +1,66 @@
+{
+  "syllabus": {
+    "title": "교과과정",
+    "subtitle": "과정 개요 및 학업 정보",
+    "actions": {
+      "saveChanges": "변경 사항 저장",
+      "cancel": "취소",
+      "edit": "교과과정 편집"
+    },
+    "errors": {
+      "failedToLoad": "교과과정을 로드하는 데 실패했습니다.",
+      "tryLater": "나중에 다시 시도해 주세요."
+    },
+    "stats": {
+      "totalAssignments": "총 과제",
+      "completionRate": "완료율",
+      "totalPoints": "총점",
+      "upcoming": "다가오는"
+    },
+    "overview": {
+      "title": "과정 개요",
+      "placeholder": "과정 개요, 목표 및 기타 중요 정보를 입력하세요...",
+      "helper": "과정 정보, 학습 목표, 정책 및 기타 중요한 세부 정보를 입력하세요.",
+      "empty": {
+        "title": "아직 교과과정 내용이 없습니다",
+        "description": "'교과과정 편집'을 클릭하여 과정 정보, 학습 목표, 정책 등을 추가하세요."
+      }
+    },
+    "assignments": {
+      "title": "과정 과제",
+      "gradedCount": "{등급} 등급이 매겨진 과제",
+      "totalPoints": "{total} 총 포인트",
+      "empty": {
+        "title": "아직 과제가 없습니다",
+        "description": "과제가 생성되면 여기에 표시됩니다."
+      }
+    },
+    "table": {
+      "assignment": "과제",
+      "dueDate": "두 날짜",
+      "points": "전철기",
+      "weight": "무게",
+      "status": "상태",
+      "pts": "포인트"
+    },
+    "status": {
+      "graded": "등급",
+      "pending": "보류 중"
+    },
+    "courseInfo": {
+      "title": "과정 정보",
+      "basic": {
+        "title": "기본 정보",
+        "className": "클래스 이름",
+        "section": "부분",
+        "subject": "주제"
+      },
+      "stats": {
+        "title": "과정 통계",
+        "totalAssignments": "총 과제",
+        "gradedAssignments": "채점 과제",
+        "totalPoints": "총점"
+      }
+    }
+  }
+}

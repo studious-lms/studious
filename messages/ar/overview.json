@@ -1,0 +1,12 @@
+{
+  "overview": {
+    "assignments": "المهام",
+    "students": "طلاب",
+    "attendance": "حضور",
+    "attachFile": "إرفاق الملف",
+    "post": "بريد",
+    "posting": "إرسال...",
+    "noPosts": "لا توجد مشاركات حتى الآن",
+    "createFirstPost": "إنشاء أول منشور"
+  }
+}

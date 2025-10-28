@@ -1,0 +1,66 @@
+{
+  "syllabus": {
+    "title": "Programme",
+    "subtitle": "Aperçu du cours et informations académiques",
+    "actions": {
+      "saveChanges": "Enregistrer les modifications",
+      "cancel": "Annuler",
+      "edit": "Modifier le programme"
+    },
+    "errors": {
+      "failedToLoad": "Échec du chargement du programme",
+      "tryLater": "Veuillez réessayer plus tard."
+    },
+    "stats": {
+      "totalAssignments": "Total des affectations",
+      "completionRate": "Taux d'achèvement",
+      "totalPoints": "Total des points",
+      "upcoming": "Prochain"
+    },
+    "overview": {
+      "title": "Aperçu du cours",
+      "placeholder": "Saisissez l'aperçu du cours, les objectifs et d'autres informations importantes...",
+      "helper": "Saisissez les informations de votre cours, vos objectifs d’apprentissage, vos politiques et d’autres détails importants.",
+      "empty": {
+        "title": "Pas encore de contenu de programme",
+        "description": "Cliquez sur « Modifier le programme » pour ajouter des informations sur le cours, des objectifs d’apprentissage, des politiques et plus encore."
+      }
+    },
+    "assignments": {
+      "title": "Devoirs de cours",
+      "gradedCount": "{graded} devoirs notés",
+      "totalPoints": "{total} total de points",
+      "empty": {
+        "title": "Aucune mission pour le moment",
+        "description": "Les devoirs apparaîtront ici une fois créés."
+      }
+    },
+    "table": {
+      "assignment": "Affectation",
+      "dueDate": "Deux rendez-vous",
+      "points": "Points",
+      "weight": "Poids",
+      "status": "Statut",
+      "pts": "points"
+    },
+    "status": {
+      "graded": "Noté",
+      "pending": "En attente"
+    },
+    "courseInfo": {
+      "title": "Informations sur le cours",
+      "basic": {
+        "title": "Informations de base",
+        "className": "Nom de la classe",
+        "section": "Section",
+        "subject": "Sujet"
+      },
+      "stats": {
+        "title": "Statistiques du cours",
+        "totalAssignments": "Total des affectations",
+        "gradedAssignments": "Devoirs notés",
+        "totalPoints": "Total des points"
+      }
+    }
+  }
+}

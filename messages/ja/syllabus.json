@@ -1,0 +1,66 @@
+{
+  "syllabus": {
+    "title": "シラバス",
+    "subtitle": "コースの概要と学術情報",
+    "actions": {
+      "saveChanges": "変更を保存",
+      "cancel": "キャンセル",
+      "edit": "シラバスを編集"
+    },
+    "errors": {
+      "failedToLoad": "シラバスの読み込みに失敗しました",
+      "tryLater": "後ほどもう一度お試しください。"
+    },
+    "stats": {
+      "totalAssignments": "合計割り当て数",
+      "completionRate": "完了率",
+      "totalPoints": "合計ポイント",
+      "upcoming": "今後の予定"
+    },
+    "overview": {
+      "title": "コースの概要",
+      "placeholder": "コースの概要、目的、その他の重要な情報を入力します...",
+      "helper": "コース情報、学習目標、ポリシー、その他の重要な詳細を入力します。",
+      "empty": {
+        "title": "シラバスコンテンツはまだありません",
+        "description": "コース情報、学習目標、ポリシーなどを追加するには、「シラバスの編集」をクリックします。"
+      }
+    },
+    "assignments": {
+      "title": "コースの課題",
+      "gradedCount": "{graded} 個の採点済み課題",
+      "totalPoints": "合計{total}ポイント",
+      "empty": {
+        "title": "まだ課題はありません",
+        "description": "課題は作成されるとここに表示されます。"
+      }
+    },
+    "table": {
+      "assignment": "割り当て",
+      "dueDate": "2つのデート",
+      "points": "ポイント",
+      "weight": "重さ",
+      "status": "状態",
+      "pts": "ポイント"
+    },
+    "status": {
+      "graded": "段階的",
+      "pending": "保留中"
+    },
+    "courseInfo": {
+      "title": "コース情報",
+      "basic": {
+        "title": "基本情報",
+        "className": "クラス名",
+        "section": "セクション",
+        "subject": "主題"
+      },
+      "stats": {
+        "title": "コース統計",
+        "totalAssignments": "合計割り当て数",
+        "gradedAssignments": "採点された課題",
+        "totalPoints": "合計ポイント"
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "assignmentDetail": {
+    "title": "作业详情",
+    "description": "描述",
+    "instructions": "指示",
+    "dueDate": "两次约会",
+    "maxPoints": "最高积分",
+    "submissions": "提交",
+    "submitted": "已提交",
+    "notSubmitted": "未提交",
+    "graded": "已分级",
+    "pending": "待办的",
+    "late": "晚的",
+    "onTime": "准时",
+    "attachments": "附件",
+    "rubric": "评分细则",
+    "gradingBoundary": "评分界限",
+    "submissionDetails": "提交详情",
+    "submittedBy": "提交人",
+    "submittedAt": "提交于",
+    "grade": "年级",
+    "feedback": "反馈",
+    "files": "文件",
+    "noFiles": "没有附加文件",
+    "noSubmissions": "尚未提交",
+    "noSubmissionsDescription": "学生提交作品后，作品将在此处显示",
+    "actions": {
+      "edit": "编辑作业",
+      "delete": "删除作业",
+      "viewSubmission": "查看提交",
+      "gradeSubmission": "年级",
+      "downloadAll": "下载全部",
+      "exportGrades": "出口等级"
+    },
+    "stats": {
+      "totalSubmissions": "提交总数",
+      "averageGrade": "平均成绩",
+      "submissionRate": "提交率",
+      "gradedCount": "已分级"
+    },
+    "table": {
+      "student": "学生",
+      "status": "地位",
+      "grade": "年级",
+      "submittedAt": "已提交",
+      "actions": "行动"
+    },
+    "toasts": {
+      "gradeUpdated": "成绩更新成功",
+      "deleted": "作业已删除",
+      "error": "发生错误"
+    }
+  }
+}

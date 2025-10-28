@@ -1,0 +1,54 @@
+{
+  "navigation": {
+    "home": "Lar",
+    "classes": "Aulas",
+    "agenda": "Agenda",
+    "chat": "Bater papo",
+    "notifications": "Notificações",
+    "profile": "Perfil",
+    "settings": "Configurações",
+    "signOut": "sair",
+    "accountSettings": "Configurações de Conta",
+    "pricing": "Preços",
+    "schoolProgram": "Programa Escolar",
+    "about": "Sobre",
+    "press": "Imprensa",
+    "signIn": "Entrar"
+  },
+  "classSidebar": {
+    "overview": "Visão geral",
+    "assignments": "Tarefas",
+    "grades": "Notas",
+    "files": "Arquivos",
+    "attendance": "Presença",
+    "aiLabs": "Laboratórios de IA",
+    "members": "Membros",
+    "syllabus": "Programa de Estudos",
+    "settings": "Configurações",
+    "classNavigation": "Navegação de classe",
+    "switchClass": "Mudar de classe",
+    "classInviteCode": "Código de convite para aula",
+    "copyCode": "Copiar código",
+    "regenerateCode": "Regenerar código",
+    "toast": {
+      "inviteCodeRegenerated": "Código de convite regenerado com sucesso",
+      "inviteCodeRegenerateFailed": "Falha ao regenerar o código de convite",
+      "inviteCodeCopied": "Código de convite copiado para a área de transferência"
+    }
+  },
+  "footer": {
+    "productDescription": "Gestão de aprendizagem moderna para a próxima geração de educação.",
+    "product": "Produto",
+    "features": "Características",
+    "pricing": "Preços",
+    "schoolProgram": "Programa Escolar",
+    "company": "Empresa",
+    "about": "Sobre",
+    "team": "Equipe",
+    "press": "Imprensa",
+    "contact": "Contato",
+    "privacyPolicy": "política de Privacidade",
+    "termsOfService": "Termos de Serviço",
+    "copyright": "© 2025 Studious LMS. Todos os direitos reservados."
+  }
+}

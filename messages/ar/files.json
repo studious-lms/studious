@@ -1,0 +1,130 @@
+{
+  "classFiles": {
+    "title": "الملفات",
+    "subtitle": "إدارة ملفات وموارد الفصل",
+    "actions": {
+      "newFolder": "مجلد جديد",
+      "upload": "رفع",
+      "uploadFiles": "تحميل الملفات",
+      "createFolder": "إنشاء مجلد",
+      "download": "تحميل",
+      "share": "يشارك",
+      "delete": "يمسح",
+      "filter": "فلتر",
+      "sort": "نوع"
+    },
+    "toasts": {
+      "folderCreated": "تم إنشاء المجلد بنجاح",
+      "folderDeleted": "تم حذف المجلد بنجاح",
+      "folderRenamed": "تمت إعادة تسمية المجلد بنجاح",
+      "folderMoved": "تم نقل المجلد بنجاح",
+      "filesUploaded": "تم تحميل الملفات بنجاح",
+      "fileDeleted": "تم حذف الملف بنجاح",
+      "fileRenamed": "تمت إعادة تسمية الملف بنجاح",
+      "fileMoved": "تم نقل الملف بنجاح",
+      "downloadStarted": "بدأ التنزيل",
+      "shareCopied": "تم نسخ رابط المشاركة"
+    },
+    "errors": {
+      "teacherOnly": "يمكن للمعلمين فقط تعديل الملفات.",
+      "downloadFailed": "فشل التنزيل",
+      "shareFailed": "فشلت المشاركة",
+      "failedToLoad": "فشل تحميل الملفات. يُرجى المحاولة لاحقًا."
+    },
+    "breadcrumbs": {
+      "classFiles": "ملفات الفصل"
+    },
+    "search": {
+      "placeholder": "البحث في الملفات"
+    },
+    "selected": "{count} تم اختياره",
+    "filters": {
+      "fileType": "نوع الملف",
+      "documents": "وثائق",
+      "images": "الصور",
+      "videos": "مقاطع الفيديو",
+      "presentations": "العروض التقديمية"
+    },
+    "sort": {
+      "name": "اسم",
+      "lastModified": "آخر تعديل",
+      "fileSize": "حجم الملف"
+    },
+    "table": {
+      "name": "اسم",
+      "owner": "مالك",
+      "lastModified": "آخر تعديل",
+      "fileSize": "حجم الملف"
+    },
+    "empty": {
+      "title": "هذا المجلد فارغ",
+      "description": "قم بتحميل الملفات أو إنشاء مجلدات للبدء في تنظيم المواد الخاصة بالفصل الدراسي.",
+      "searchTitle": "لم يتم العثور على أي ملفات",
+      "searchDescription": "لا توجد ملفات مطابقة لـ \"{query}\". جرّب مصطلح بحث آخر."
+    }
+  },
+  "folderView": {
+    "subtitle": "محتويات المجلد",
+    "notFound": {
+      "title": "لم يتم العثور على المجلد",
+      "description": "لم يتم العثور على المجلد المطلوب.",
+      "backButton": "العودة إلى الملفات"
+    },
+    "error": {
+      "loadFailed": "تعذّر تحميل محتويات المجلد. يُرجى المحاولة لاحقًا."
+    },
+    "breadcrumbs": {
+      "classFiles": "ملفات الفصل"
+    },
+    "search": {
+      "placeholder": "البحث في المجلد",
+      "selected": "{count} تم اختياره"
+    },
+    "filters": {
+      "label": "فلتر",
+      "fileType": "نوع الملف",
+      "documents": "وثائق",
+      "images": "الصور",
+      "videos": "مقاطع الفيديو",
+      "presentations": "العروض التقديمية"
+    },
+    "sort": {
+      "label": "نوع",
+      "name": "اسم",
+      "lastModified": "آخر تعديل",
+      "fileSize": "حجم الملف"
+    },
+    "table": {
+      "name": "اسم",
+      "owner": "مالك",
+      "lastModified": "آخر تعديل",
+      "fileSize": "حجم الملف"
+    },
+    "empty": {
+      "noFilesFound": "لم يتم العثور على أي ملفات",
+      "noFilesFoundDescription": "لا توجد ملفات مطابقة لـ \"{query}\". جرّب مصطلح بحث آخر.",
+      "folderEmpty": "هذا المجلد فارغ",
+      "folderEmptyDescription": "قم بتحميل الملفات أو إنشاء مجلدات لتنظيم المواد الخاصة بك."
+    },
+    "actions": {
+      "newFolder": "مجلد جديد",
+      "uploadFiles": "تحميل الملفات",
+      "createFolder": "إنشاء مجلد"
+    },
+    "toast": {
+      "folderCreated": "تم إنشاء المجلد بنجاح",
+      "folderDeleted": "تم حذف المجلد بنجاح",
+      "folderRenamed": "تمت إعادة تسمية المجلد بنجاح",
+      "folderMoved": "تم نقل المجلد بنجاح",
+      "filesUploaded": "تم تحميل الملفات بنجاح",
+      "fileDeleted": "تم حذف الملف بنجاح",
+      "fileRenamed": "تمت إعادة تسمية الملف بنجاح",
+      "fileMoved": "تم نقل الملف بنجاح",
+      "downloadStarted": "بدأ التنزيل",
+      "downloadFailed": "فشل التنزيل",
+      "shareLinkCopied": "تم نسخ رابط المشاركة",
+      "shareFailed": "فشلت المشاركة",
+      "permissionDenied": "تم رفض الإذن"
+    }
+  }
+}

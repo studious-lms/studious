@@ -1,0 +1,140 @@
+{
+  "classGrades": {
+    "title": "成績",
+    "subtitle": "生徒の成績の表示と管理",
+    "columns": {
+      "assignment": "割り当て",
+      "maxPoints": "最大ポイント",
+      "weight": "重さ",
+      "graded": "段階的",
+      "dueDate": "2つのデート",
+      "actions": "アクション",
+      "student": "学生",
+      "overallGrade": "総合評価",
+      "assignmentsCompleted": "課題完了",
+      "trend": "傾向"
+    },
+    "labels": {
+      "rubric": "ルーブリック"
+    },
+    "actions": {
+      "manage": "管理",
+      "viewGrades": "成績を見る",
+      "saving": "保存中...",
+      "saveChanges": "変更を保存",
+      "preview": "プレビュー",
+      "edit": "編集",
+      "delete": "消去",
+      "createNew": "新規作成"
+    },
+    "overview": {
+      "title": "クラスの概要",
+      "classAverage": "クラス平均",
+      "totalStudents": "生徒総数",
+      "assignments": "課題",
+      "submissionRate": "提出率"
+    },
+    "assignmentManagement": {
+      "title": "割り当て管理",
+      "empty": {
+        "title": "割り当てが見つかりません",
+        "description": "課題を作成して成績と設定を管理する"
+      },
+      "searchPlaceholder": "割り当てを検索..."
+    },
+    "students": {
+      "title": "学生",
+      "viewAll": "すべての学生を見る",
+      "empty": {
+        "title": "登録学生はいません",
+        "description": "生徒がクラスに参加するとここに表示されます"
+      },
+      "searchPlaceholder": "生徒を検索..."
+    },
+    "gradeBoundaries": {
+      "title": "グレード境界",
+      "untitled": "無題のグレーディング境界",
+      "empty": {
+        "title": "グレード境界は作成されません",
+        "description": "グレード範囲を定義するためのグレーディング境界を作成する"
+      },
+      "previewTitle": "グレーディング境界のプレビュー",
+      "details": {
+        "title": "グレーディング境界の詳細",
+        "name": "名前",
+        "noneDefined": "グレーディングの境界が定義されていない"
+      }
+    },
+    "rubrics": {
+      "title": "ルーブリック",
+      "untitled": "無題のルーブリック",
+      "empty": {
+        "title": "ルーブリックは作成されていません",
+        "description": "評価基準を定義するためのルーブリックを作成する"
+      },
+      "previewTitle": "ルーブリックプレビュー",
+      "details": {
+        "title": "ルーブリックの詳細",
+        "name": "名前",
+        "category": "カテゴリ",
+        "description": "説明",
+        "custom": "カスタム",
+        "noDescription": "説明なし",
+        "noCriteria": "このルーブリックには基準が見つかりません"
+      }
+    },
+    "confirm": {
+      "deleteRubric": "このマークスキームを削除してもよろしいですか?",
+      "deleteGradingBoundary": "このグレーディング境界を削除してもよろしいですか?"
+    }
+  },
+  "studentGrades": {
+    "title": "全生徒の学年",
+    "allStudents": "このクラスの全生徒の成績を表示および管理します",
+    "students": "学生",
+    "noGrades": "生徒が見つかりません",
+    "noGradesDescription": "このクラスにはまだ生徒が登録されていません。生徒が登録されるとここに表示されます。",
+    "table": {
+      "student": "学生",
+      "actions": "アクション"
+    },
+    "actions": {
+      "viewSubmission": "成績を見る"
+    }
+  },
+  "individualGrades": {
+    "myGrades": "私の成績",
+    "studentGrades": "成績",
+    "viewYourGrades": "成績と進捗状況を確認する",
+    "individualManagement": "個々の生徒の成績管理",
+    "export": "輸出",
+    "back": "戻る",
+    "yourPerformance": "あなたのパフォーマンス",
+    "trackProgress": "学業の進捗状況を追跡する",
+    "overallGrade": "総合評価",
+    "completed": "完了",
+    "trend": "傾向",
+    "yourGrades": "あなたの成績",
+    "assignments": "課題",
+    "studentNotFound": "学生が見つかりません",
+    "goBack": "戻る",
+    "grade": "学年",
+    "table": {
+      "assignment": "割り当て",
+      "grade": "学年",
+      "total": "合計",
+      "percentage": "%",
+      "status": "状態",
+      "submitted": "提出済み"
+    },
+    "status": {
+      "graded": "段階的",
+      "pending": "保留中"
+    },
+    "empty": {
+      "title": "割り当てが見つかりません",
+      "description": "この生徒には表示する課題がありません"
+    },
+    "searchPlaceholder": "割り当てを検索..."
+  }
+}

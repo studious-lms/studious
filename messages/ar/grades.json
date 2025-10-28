@@ -1,0 +1,140 @@
+{
+  "classGrades": {
+    "title": "الدرجات",
+    "subtitle": "عرض وإدارة درجات الطلاب",
+    "columns": {
+      "assignment": "تكليف",
+      "maxPoints": "أقصى النقاط",
+      "weight": "وزن",
+      "graded": "مُصنَّف",
+      "dueDate": "تاريخان",
+      "actions": "الإجراءات",
+      "student": "طالب",
+      "overallGrade": "الدرجة الإجمالية",
+      "assignmentsCompleted": "المهام المكتملة",
+      "trend": "اتجاه"
+    },
+    "labels": {
+      "rubric": "عنوان"
+    },
+    "actions": {
+      "manage": "يدير",
+      "viewGrades": "عرض الدرجات",
+      "saving": "توفير...",
+      "saveChanges": "حفظ التغييرات",
+      "preview": "معاينة",
+      "edit": "يحرر",
+      "delete": "يمسح",
+      "createNew": "إنشاء جديد"
+    },
+    "overview": {
+      "title": "نظرة عامة على الفصل",
+      "classAverage": "متوسط الفصل",
+      "totalStudents": "إجمالي الطلاب",
+      "assignments": "المهام",
+      "submissionRate": "معدل الإرسال"
+    },
+    "assignmentManagement": {
+      "title": "إدارة المهام",
+      "empty": {
+        "title": "لم يتم العثور على أي مهام",
+        "description": "إنشاء مهام لإدارة الدرجات والإعدادات"
+      },
+      "searchPlaceholder": "مهام البحث..."
+    },
+    "students": {
+      "title": "طلاب",
+      "viewAll": "عرض جميع الطلاب",
+      "empty": {
+        "title": "لا يوجد طلاب مسجلين",
+        "description": "سيظهر الطلاب هنا بمجرد انضمامهم إلى الفصل الدراسي"
+      },
+      "searchPlaceholder": "البحث عن الطلاب..."
+    },
+    "gradeBoundaries": {
+      "title": "حدود الدرجات",
+      "untitled": "حدود التصنيف بدون عنوان",
+      "empty": {
+        "title": "لم يتم إنشاء حدود للدرجات",
+        "description": "إنشاء حدود الدرجات لتحديد نطاقات الدرجات"
+      },
+      "previewTitle": "معاينة حدود التصنيف",
+      "details": {
+        "title": "تفاصيل حدود التصنيف",
+        "name": "اسم",
+        "noneDefined": "لم يتم تحديد حدود التصنيف"
+      }
+    },
+    "rubrics": {
+      "title": "معايير التقييم",
+      "untitled": "معيار بلا عنوان",
+      "empty": {
+        "title": "لم يتم إنشاء أي معايير",
+        "description": "إنشاء معايير لتحديد معايير التقييم"
+      },
+      "previewTitle": "معاينة معايير التقييم",
+      "details": {
+        "title": "تفاصيل المعايير",
+        "name": "اسم",
+        "category": "فئة",
+        "description": "وصف",
+        "custom": "مخصص",
+        "noDescription": "لم يتم تقديم وصف",
+        "noCriteria": "لم يتم العثور على معايير في هذا التصنيف"
+      }
+    },
+    "confirm": {
+      "deleteRubric": "هل أنت متأكد أنك تريد حذف مخطط العلامات هذا؟",
+      "deleteGradingBoundary": "هل أنت متأكد أنك تريد حذف حدود التصنيف هذه؟"
+    }
+  },
+  "studentGrades": {
+    "title": "جميع درجات الطلاب",
+    "allStudents": "عرض وإدارة الدرجات لجميع الطلاب في هذا الفصل",
+    "students": "طلاب",
+    "noGrades": "لم يتم العثور على أي طلاب",
+    "noGradesDescription": "لا يوجد طلاب مسجلون في هذه الفئة بعد. سيظهر الطلاب هنا فور انضمامهم.",
+    "table": {
+      "student": "طالب",
+      "actions": "الإجراءات"
+    },
+    "actions": {
+      "viewSubmission": "عرض الدرجات"
+    }
+  },
+  "individualGrades": {
+    "myGrades": "درجاتي",
+    "studentGrades": "الدرجات",
+    "viewYourGrades": "عرض درجاتك وتقدمك",
+    "individualManagement": "إدارة الدرجات الفردية للطلاب",
+    "export": "يصدّر",
+    "back": "خلف",
+    "yourPerformance": "أدائك",
+    "trackProgress": "تتبع تقدمك الأكاديمي",
+    "overallGrade": "الدرجة الإجمالية",
+    "completed": "مكتمل",
+    "trend": "اتجاه",
+    "yourGrades": "درجاتك",
+    "assignments": "المهام",
+    "studentNotFound": "لم يتم العثور على الطالب",
+    "goBack": "عُد",
+    "grade": "درجة",
+    "table": {
+      "assignment": "تكليف",
+      "grade": "درجة",
+      "total": "المجموع",
+      "percentage": "%",
+      "status": "حالة",
+      "submitted": "مُقَدَّم"
+    },
+    "status": {
+      "graded": "مُصنَّف",
+      "pending": "قيد الانتظار"
+    },
+    "empty": {
+      "title": "لم يتم العثور على أي مهام",
+      "description": "هذا الطالب ليس لديه واجبات لعرضها"
+    },
+    "searchPlaceholder": "مهام البحث..."
+  }
+}

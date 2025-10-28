@@ -1,0 +1,66 @@
+{
+  "syllabus": {
+    "title": "Lehrplan",
+    "subtitle": "Kursübersicht und akademische Informationen",
+    "actions": {
+      "saveChanges": "Änderungen speichern",
+      "cancel": "Stornieren",
+      "edit": "Lehrplan bearbeiten"
+    },
+    "errors": {
+      "failedToLoad": "Lehrplan konnte nicht geladen werden",
+      "tryLater": "Bitte versuchen Sie es später erneut."
+    },
+    "stats": {
+      "totalAssignments": "Gesamtzuweisungen",
+      "completionRate": "Abschlussrate",
+      "totalPoints": "Gesamtpunktzahl",
+      "upcoming": "Demnächst"
+    },
+    "overview": {
+      "title": "Kursübersicht",
+      "placeholder": "Geben Sie Kursübersicht, Ziele und andere wichtige Informationen ein …",
+      "helper": "Geben Sie Ihre Kursinformationen, Lernziele, Richtlinien und andere wichtige Details ein.",
+      "empty": {
+        "title": "Noch keine Lehrplaninhalte",
+        "description": "Klicken Sie auf „Lehrplan bearbeiten“, um Kursinformationen, Lernziele, Richtlinien und mehr hinzuzufügen."
+      }
+    },
+    "assignments": {
+      "title": "Kursaufgaben",
+      "gradedCount": "{graded} benotete Aufgaben",
+      "totalPoints": "{total} Gesamtpunkte",
+      "empty": {
+        "title": "Noch keine Aufgaben",
+        "description": "Aufgaben werden hier angezeigt, sobald sie erstellt wurden."
+      }
+    },
+    "table": {
+      "assignment": "Abtretung",
+      "dueDate": "Zwei Termine",
+      "points": "Punkte",
+      "weight": "Gewicht",
+      "status": "Status",
+      "pts": "Punkte"
+    },
+    "status": {
+      "graded": "Benotet",
+      "pending": "Ausstehend"
+    },
+    "courseInfo": {
+      "title": "Kursinformationen",
+      "basic": {
+        "title": "Grundlegende Informationen",
+        "className": "Klassenname",
+        "section": "Abschnitt",
+        "subject": "Thema"
+      },
+      "stats": {
+        "title": "Kursstatistik",
+        "totalAssignments": "Gesamtzuweisungen",
+        "gradedAssignments": "Benotete Aufgaben",
+        "totalPoints": "Gesamtpunktzahl"
+      }
+    }
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "classFiles": {
+    "title": "文件",
+    "subtitle": "管理类文件和资源",
+    "actions": {
+      "newFolder": "新建文件夹",
+      "upload": "上传",
+      "uploadFiles": "上传文件",
+      "createFolder": "创建文件夹",
+      "download": "下载",
+      "share": "分享",
+      "delete": "删除",
+      "filter": "筛选",
+      "sort": "种类"
+    },
+    "toasts": {
+      "folderCreated": "文件夹创建成功",
+      "folderDeleted": "文件夹删除成功",
+      "folderRenamed": "文件夹重命名成功",
+      "folderMoved": "文件夹移动成功",
+      "filesUploaded": "文件上传成功",
+      "fileDeleted": "文件删除成功",
+      "fileRenamed": "文件重命名成功",
+      "fileMoved": "文件移动成功",
+      "downloadStarted": "已开始下载",
+      "shareCopied": "分享链接已复制"
+    },
+    "errors": {
+      "teacherOnly": "只有老师可以修改文件。",
+      "downloadFailed": "下载失败",
+      "shareFailed": "分享失败",
+      "failedToLoad": "加载文件失败。请稍后重试。"
+    },
+    "breadcrumbs": {
+      "classFiles": "类文件"
+    },
+    "search": {
+      "placeholder": "在文件中搜索"
+    },
+    "selected": "已选择 {count} 个",
+    "filters": {
+      "fileType": "文件类型",
+      "documents": "文件",
+      "images": "图片",
+      "videos": "视频",
+      "presentations": "演示文稿"
+    },
+    "sort": {
+      "name": "姓名",
+      "lastModified": "上次修改时间",
+      "fileSize": "文件大小"
+    },
+    "table": {
+      "name": "姓名",
+      "owner": "所有者",
+      "lastModified": "上次修改时间",
+      "fileSize": "文件大小"
+    },
+    "empty": {
+      "title": "此文件夹为空",
+      "description": "上传文件或创建文件夹以开始组织您的课堂材料。",
+      "searchTitle": "未找到文件",
+      "searchDescription": "没有与“{query}”匹配的文件。请尝试其他搜索词。"
+    }
+  },
+  "folderView": {
+    "subtitle": "文件夹内容",
+    "notFound": {
+      "title": "未找到文件夹",
+      "description": "找不到请求的文件夹。",
+      "backButton": "返回文件"
+    },
+    "error": {
+      "loadFailed": "无法加载文件夹内容。请稍后重试。"
+    },
+    "breadcrumbs": {
+      "classFiles": "类文件"
+    },
+    "search": {
+      "placeholder": "在文件夹中搜索",
+      "selected": "已选择 {count} 个"
+    },
+    "filters": {
+      "label": "筛选",
+      "fileType": "文件类型",
+      "documents": "文件",
+      "images": "图片",
+      "videos": "视频",
+      "presentations": "演示文稿"
+    },
+    "sort": {
+      "label": "种类",
+      "name": "姓名",
+      "lastModified": "上次修改时间",
+      "fileSize": "文件大小"
+    },
+    "table": {
+      "name": "姓名",
+      "owner": "所有者",
+      "lastModified": "上次修改时间",
+      "fileSize": "文件大小"
+    },
+    "empty": {
+      "noFilesFound": "未找到文件",
+      "noFilesFoundDescription": "没有与“{query}”匹配的文件。请尝试其他搜索词。",
+      "folderEmpty": "此文件夹为空",
+      "folderEmptyDescription": "上传文件或创建文件夹来组织您的材料。"
+    },
+    "actions": {
+      "newFolder": "新建文件夹",
+      "uploadFiles": "上传文件",
+      "createFolder": "创建文件夹"
+    },
+    "toast": {
+      "folderCreated": "文件夹创建成功",
+      "folderDeleted": "文件夹删除成功",
+      "folderRenamed": "文件夹重命名成功",
+      "folderMoved": "文件夹移动成功",
+      "filesUploaded": "文件上传成功",
+      "fileDeleted": "文件删除成功",
+      "fileRenamed": "文件重命名成功",
+      "fileMoved": "文件移动成功",
+      "downloadStarted": "已开始下载",
+      "downloadFailed": "下载失败",
+      "shareLinkCopied": "分享链接已复制",
+      "shareFailed": "分享失败",
+      "permissionDenied": "没有权限"
+    }
+  }
+}

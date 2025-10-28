@@ -1,0 +1,1218 @@
+{
+  "common": {
+    "save": "구하다",
+    "cancel": "취소",
+    "delete": "삭제",
+    "edit": "편집하다",
+    "submit": "제출하다",
+    "close": "닫다",
+    "back": "뒤쪽에",
+    "next": "다음",
+    "loading": "로딩중...",
+    "search": "찾다",
+    "filter": "필터",
+    "sort": "종류",
+    "viewAll": "모두 보기",
+    "noData": "사용 가능한 데이터가 없습니다",
+    "export": "내보내다"
+  },
+  "time": {
+    "today": "오늘",
+    "tomorrow": "내일",
+    "yesterday": "어제",
+    "thisWeek": "이번 주",
+    "nextWeek": "다음 주",
+    "lastWeek": "지난주"
+  },
+  "errors": {
+    "somethingWentWrong": "뭔가 잘못되었습니다",
+    "tryAgain": "다시 시도하세요",
+    "pageNotFound": "페이지를 찾을 수 없습니다",
+    "unauthorized": "무단 접근"
+  },
+  "auth": {
+    "login": {
+      "title": "환영합니다",
+      "subtitle": "Studious 계정에 로그인하세요",
+      "username": "사용자 이름",
+      "password": "비밀번호",
+      "forgotPassword": "비밀번호를 잊으셨나요?",
+      "signIn": "로그인",
+      "signingIn": "로그인 중입니다...",
+      "noAccount": "계정이 없으신가요?",
+      "signUp": "가입하기",
+      "successMessage": "성공적으로 로그인되었습니다",
+      "cancel": "취소"
+    },
+    "signup": {
+      "title": "계정을 생성하세요",
+      "subtitle": "Studious에 가입하고 학습을 시작하세요",
+      "signUp": "가입하기",
+      "firstName": "이름",
+      "lastName": "성",
+      "email": "이메일",
+      "password": "비밀번호",
+      "confirmPassword": "비밀번호 확인",
+      "firstNamePlaceholder": "이름",
+      "lastNamePlaceholder": "성",
+      "emailPlaceholder": "이메일을 입력하세요",
+      "passwordPlaceholder": "비밀번호를 생성하세요",
+      "confirmPasswordPlaceholder": "비밀번호를 확인하세요",
+      "agreeToTerms": "나는 동의합니다",
+      "termsOfService": "서비스 약관",
+      "and": "그리고",
+      "privacyPolicy": "개인정보 보호정책",
+      "createAccount": "계정 생성",
+      "creatingAccount": "계정 생성 중...",
+      "alreadyHaveAccount": "이미 계정이 있으신가요?",
+      "signIn": "로그인",
+      "passwordMismatch": "비밀번호가 일치하지 않습니다",
+      "termsRequired": "약관에 동의하셔야 합니다.",
+      "accountCreated": "계정이 성공적으로 생성되었습니다!",
+      "signUpFailed": "계정 생성에 실패했습니다"
+    },
+    "verification": {
+      "notVerified": "계정이 확인되지 않았습니다",
+      "message": "로그인하려면 먼저 계정을 확인해야 합니다. 이메일에서 확인 링크를 확인하세요.",
+      "emailSentTo": "확인 이메일이 다음 주소로 전송되었습니다.",
+      "resendEmail": "확인 이메일 재전송",
+      "backToSignIn": "로그인으로 돌아가기",
+      "emailSent": "확인 이메일이 전송되었습니다!",
+      "checkInbox": "받은 편지함과 스팸 폴더를 확인해 주세요.",
+      "enterEmail": "이메일 주소를 입력하세요",
+      "sending": "배상...",
+      "sendEmail": "이메일 보내기"
+    }
+  },
+  "marketing": {
+    "navbar": {
+      "requestEarlyAccess": "조기 액세스 요청"
+    },
+    "hero": {
+      "badge": "현대적 학습 플랫폼",
+      "title1": "원활하고 방해받지 않음",
+      "title2": "현대 학교를 위한 학습",
+      "subtitle": "Studious LMS는 AI, 실시간 캘린더, 수업 커뮤니케이션을 하나의 통합 플랫폼으로 통합하여 교사가 가르치고 학생이 성공할 수 있도록 돕도록 설계되었습니다.",
+      "requestEarlyAccess": "조기 액세스 요청",
+      "watchDemo": "데모 보기",
+      "altDashboard": "플랫폼 대시보드"
+    },
+    "problem": {
+      "title": "기존 학교 포털은 단편화되고 오래되었습니다.",
+      "issue1": "교사들은 여러 도구 간을 전환하는 데 시간을 낭비합니다.",
+      "issue2": "학생들은 조직과 마감일로 어려움을 겪습니다.",
+      "issue3": "AI는 실제 학교 워크플로에 통합되지 않은 상태로 남아 있습니다."
+    },
+    "response": {
+      "title1": "Studious LMS는 교육, 학습을 통합합니다.",
+      "title2": "그리고 단일 작업 공간으로의 커뮤니케이션",
+      "subtitle": "최첨단 프레임워크와 인간 중심적 디자인으로 구축되어 모든 규모의 학교에 맞게 확장할 수 있습니다."
+    },
+    "features": {
+      "title": "주요 특징",
+      "subtitle": "현대적인 학습 경험을 관리하는 데 필요한 모든 것",
+      "ai": {
+        "title": "AI 어시스턴트",
+        "description": "학습 자료 생성, 내용 요약, 채점 지원"
+      },
+      "classManagement": {
+        "title": "수업 관리",
+        "description": "수업, 과제, 출석을 손쉽게 관리하세요"
+      },
+      "assignments": {
+        "title": "과제",
+        "description": "학생 제출물을 효율적으로 생성, 수집 및 평가"
+      },
+      "calendar": {
+        "title": "달력",
+        "description": "과제, 수업 및 이벤트와 실시간 동기화"
+      },
+      "analytics": {
+        "title": "해석학",
+        "description": "성과, 참여 및 참여에 대한 통찰력 보기"
+      },
+      "communication": {
+        "title": "의사소통",
+        "description": "통합 협업을 위한 내장 메시징 및 알림"
+      }
+    },
+    "quote": {
+      "text": "Studious의 모든 기능은 마찰을 줄이기 위해 만들어졌을 뿐, 마찰을 더하기 위해 만들어진 것은 아닙니다."
+    },
+    "pricing": {
+      "title": "귀하의 기관에 맞는 올바른 플랜을 선택하세요",
+      "subtitle": "숨은 비용 없이 간단하고 투명한 가격 책정. 모든 플랜에는 확장 가능한 옵션과 함께 핵심 기능이 포함되어 있습니다.",
+      "starter": {
+        "title": "기동기",
+        "price": "무료",
+        "note": "베타 액세스 포함",
+        "description": "소규모 수업 및 시범 프로그램에 적합합니다.",
+        "perk1": "최대 30명의 학생",
+        "perk2": "무제한 수업",
+        "perk3": "핵심 기능(과제, 일정, 성적)",
+        "perk4": "AI 비서(월 5회 채팅)",
+        "perk5": "커뮤니티 지원",
+        "perk6": "5GB 저장공간",
+        "button": "무료로 시작하세요"
+      },
+      "school": {
+        "title": "학교",
+        "price": "5달러",
+        "priceUnit": "/사용자/월",
+        "note": "연간 또는 월 6달러 청구",
+        "description": "최대 1,000명의 학생이 있는 학교의 경우",
+        "perk1": "학생 수 제한 없음",
+        "perk2": "무제한 수업",
+        "perk3": "모든 핵심 기능",
+        "perk4": "AI 어시스턴트(무제한 쿼리)",
+        "perk5": "Studious CMS 베타 액세스를 위한 첫 번째 줄",
+        "button": "시작하기"
+      },
+      "institution": {
+        "title": "기관",
+        "price": "관습",
+        "note": "귀하의 요구 사항에 맞게 맞춤화",
+        "description": "대규모 학교 및 대학(학생 1,000명 이상)의 경우",
+        "perk1": "학교 계획의 모든 것",
+        "perk2": "24시간 연중무휴 우선 지원",
+        "perk3": "무제한 저장 공간",
+        "perk4": "맞춤형 교육 및 온보딩",
+        "perk5": "사용자당 비용이 저렴합니다",
+        "button": "영업팀에 문의하세요"
+      },
+      "mostPopular": "가장 인기 있는",
+      "earlyBird": "🎉 조기 채택자는 연간 플랜에서 <strong>3개월 무료</strong>와 전담 온보딩 지원을 받습니다."
+    },
+    "schoolProgram": {
+      "badge": "사회적 영향",
+      "title": "학업적 학교 개발 프로그램",
+      "subtitle": "우리는 학교의 경제 상황에 관계없이 모든 학생이 현대적인 학습 도구를 이용할 수 있어야 한다고 믿습니다.",
+      "feature1Title": "100% 무료 접속",
+      "feature1Description": "자격을 갖춘 학교를 위한 모든 기능을 갖춘 전체 플랫폼 액세스",
+      "feature2Title": "전담 지원",
+      "feature2Description": "교사와 직원을 위한 우선 온보딩 및 교육",
+      "feature3Title": "교육 자료",
+      "feature3Description": "무료 교육 자료 및 커리큘럼 지원",
+      "applyNow": "지금 신청하세요",
+      "learnMore": "자세히 알아보기",
+      "eligibilityTitle": "프로그램 자격",
+      "qualifyingTitle": "자격 학교:",
+      "qualify1": "소외된 지역의 공립학교",
+      "qualify2": "등록된 비영리 교육 기관",
+      "qualify3": "개발도상국의 학교들",
+      "qualify4": "제1편 학교(미국) 또는 동등 학교",
+      "commitmentTitle": "우리의 약속:",
+      "commitment": "유료 고객의 10%는 도움이 필요한 학교에 무료로 접근하는 것을 지지합니다.",
+      "launchTitle": "프로그램 출시:",
+      "launch": "2026년 1월 • 지금 신청하세요"
+    },
+    "futureDevelopments": {
+      "title": "향후 개발",
+      "subtitle": "교육 혁신을 위한 로드맵",
+      "cas": {
+        "title": "CAS 관점",
+        "description": "기부와 물품 지원을 통해 자금이 부족한 학교를 지원하고, 모든 사람이 양질의 교육을 받을 수 있도록 합니다."
+      },
+      "features": {
+        "title": "특징 관점",
+        "description": "전 세계의 다양한 교육 시스템을 위한 AI 학생 지원을 확대하고 API 통합을 구축합니다."
+      },
+      "launch": {
+        "title": "출시 관점",
+        "description": "학습 경험을 재구성하기 위한 학교, 대학 및 컨퍼런스에서의 프레젠테이션."
+      }
+    },
+    "cta": {
+      "title": "학교에서의 학습과 교육 방식을 새롭게 정의할 준비가 되셨나요?",
+      "subtitle": "Studious LMS로 교육의 미래에 동참하세요",
+      "requestAccess": "접근 요청",
+      "partnerWithUs": "우리와 협력하세요",
+      "tagline": "Studious LMS — 현대적 학습을 간소화합니다."
+    }
+  },
+  "press": {
+    "badge": "언론 및 미디어",
+    "title": "뉴스에 나오는 공부하는 사람",
+    "subtitle": "저널리스트와 콘텐츠 제작자를 위한 미디어 리소스, 브랜드 자산 및 회사 정보",
+    "factsheet": {
+      "title": "회사 정보 시트",
+      "subtitle": "Studious LMS에 대한 간단한 사실",
+      "companyInfo": "회사 정보",
+      "founded": "설립됨",
+      "hq": "본부",
+      "industry": "산업",
+      "website": "웹사이트",
+      "status": "상태",
+      "currentStatus": "현재 상태",
+      "launchDate": "출시일",
+      "currentPhase": "현재 단계",
+      "targetMarkets": "타겟 마켓",
+      "teamSize": "팀 규모",
+      "devHqs": "개발 본사"
+    },
+    "contact": {
+      "title": "언론 문의",
+      "subtitle": "언론 문의, 인터뷰 및 미디어 요청",
+      "sl": "일반적으로 24시간 이내에 답변해 드립니다.",
+      "general": "일반 문의 및 지원"
+    }
+  },
+  "program": {
+    "hero": {
+      "badge": "사회적 영향 이니셔티브",
+      "title": "학업적 학교 개발 프로그램",
+      "subtitle": "경제적 여력이 없는 학교에 현대 학습 기술을 무료로 제공합니다."
+    },
+    "commitment": {
+      "revenue": "약속된 수익",
+      "cohort": "첫 번째 코호트 출시",
+      "free": "무료 액세스"
+    },
+    "about": {
+      "mission": {
+        "title": "우리의 사명",
+        "body1": "Studious School Development Program은 소외된 학교들이 저희 학습 관리 플랫폼을 무료로 무제한 이용할 수 있도록 지원하는 것을 목표로 합니다. 저희는 기술이 미래 인력에 중요한 요소임을 인지하고 있지만, 많은 교육 기관이 이러한 자원에 대한 접근성이 부족하다는 점을 인지하고 있습니다. 이 프로그램을 통해 저희는 가장 필요한 학교에 최신 학습 관리 기술을 제공하고자 합니다."
+      },
+      "aims": {
+        "title": "프로그램 목표",
+        "body1": "교사 및 교육 전문가들과의 폭넓은 대화를 통해, 저희는 많은 학교에서 이용 가능한 디지털 학습 인프라의 심각한 격차를 파악했습니다. 시중에 나와 있는 많은 학습 관리 시스템(LMS)은 일관되고 직관적인 사용자 경험을 제공하지 못하며, 소외 지역 학교는 최신 교육 기술을 도입할 여력이 부족한 경우가 많습니다.",
+        "body2": "저희 프로그램은 이러한 과제를 직접적으로 해결합니다. 유료 기관 구독 수익금을 통해 소외 계층 학교에 Studious LMS 및 관련 교육 도구에 대한 포괄적인 접근을 제공합니다. 이러한 지속 가능한 모델을 통해 디지털 격차를 해소하는 동시에 모든 사용자를 위한 플랫폼을 지속적으로 개선할 수 있습니다."
+      },
+      "receive": {
+        "title": "당신이 받을 것",
+        "body1": "프로그램에 참여하는 학교는 제한적이거나 간소화된 버전이 아닌 Studious 플랫폼의 모든 기능을 이용할 수 있습니다. 여기에는 무제한 학생 및 교사 계정, 모든 프리미엄 기능(AI 지원, 고급 분석, 실시간 협업), 우선 기술 지원, 전담 온보딩 전문가, 지속적인 교육 리소스, 그리고 향후 모든 업데이트 및 개선 사항에 대한 액세스가 포함됩니다.",
+        "body2": "소프트웨어 자체를 넘어, 저희는 귀 학교가 플랫폼의 이점을 극대화할 수 있도록 포괄적인 지원을 제공합니다. 저희 팀은 귀 학교의 관리자 및 교사와 직접 협력하여 귀 학교의 특정 요구에 맞춰 시스템을 맞춤 설정하고, 실습 교육을 제공하며, 귀 학교의 학습 과정 전반에 걸쳐 지속적인 지원을 제공할 것입니다."
+      },
+      "qualifies": {
+        "title": "누가 자격이 있나요?",
+        "body1": "저희는 교육 기술 개선으로 가장 큰 혜택을 볼 학생들에게 교육을 제공하는 학교를 우선적으로 고려합니다. 여기에는 서비스가 부족하거나 경제적으로 취약한 지역의 공립학교, 재정적 어려움을 입증하는 등록된 비영리 교육기관, 개발도상국 또는 개발도상국의 학교, 미국 Title I 학교 및 이에 상응하는 국제 학교, 그리고 학생 성과 향상에 대한 의지와 함께 진정한 재정적 필요성을 입증할 수 있는 모든 교육기관이 포함됩니다.",
+        "body2": "저희는 재정 지표뿐만 아니라 학교의 사명, 교육 대상 인구, 그리고 Studious를 활용한 교육 향상 계획까지 고려하여 각 신청서를 개별적으로 평가합니다. 저희의 목표는 저희 플랫폼을 통해 실질적인 혜택을 얻고 학생들의 학습 경험을 개선하기 위해 효과적으로 활용할 수 있는 학교와 협력하는 것입니다."
+      },
+      "impact": {
+        "title": "영향력에 대한 우리의 비전",
+        "body1": "저희는 학교에 최신 학습 관리 기술을 무료로 제공함으로써, 소외 지역 교육 기관이 직면한 주요 장벽 중 하나를 해소하고자 합니다. 저희는 단순한 소프트웨어 제공을 넘어, 교육 자료, 온보딩 지원, 전자책 및 디지털 문구류와 같은 교육 도구 이용 등 포괄적인 지원을 제공하기 위해 최선을 다하고 있습니다.",
+        "body2": "학교 개발 프로그램은 2025년 11월 말부터 12월 중순까지 첫 번째 협력 학교를 시작으로 시작됩니다. Studious의 성장에 따라 더 많은 학교를 지원할 수 있는 역량도 강화됩니다. 유료 기관 구독으로 발생하는 모든 수익은 도움이 필요한 학교의 접근성 확대에 재투자되어, 시간이 지남에 따라 더욱 강화되는 지속 가능한 교육 형평성 모델을 구축합니다."
+      }
+    },
+    "cta": {
+      "apply": {
+        "title": "프로그램에 지원하세요",
+        "description": "Studious를 학교에 도입할 준비가 되셨나요? 신청서를 작성해 주시면 영업일 기준 5~7일 이내에 검토해 드리겠습니다.",
+        "item1": "약 10~15분 정도 소요됩니다",
+        "item2": "신청 수수료가 필요하지 않습니다",
+        "item3": "5-7 영업일 이내 답변드립니다",
+        "button": "응용 프로그램 시작"
+      }
+    },
+    "status": {
+      "title": "신청 상태 확인",
+      "description": "이미 신청하셨나요? 신청 ID를 입력하여 신청 상태를 확인하세요.",
+      "inputLabel": "애플리케이션 ID",
+      "placeholder": "예를 들어, EXA2025-...",
+      "help": "신청서를 제출한 후 이메일로 신청 ID를 받았습니다.",
+      "results": {
+        "found": "응용 프로그램을 찾았습니다",
+        "school": "학교:",
+        "location": "위치:",
+        "submitted": "제출된:",
+        "contact": "연락하다:",
+        "notFound": {
+          "title": "응용 프로그램을 찾을 수 없습니다",
+          "body": "애플리케이션 ID를 확인하고 다시 시도해 주세요. 문제가 지속되면 impact@studious.sh로 문의해 주세요."
+        }
+      },
+      "cards": {
+        "approved": {
+          "title": "🎉 축하합니다! 신청이 승인되었습니다.",
+          "body": "계정 설정을 위한 다음 단계는 이메일에서 확인하세요."
+        },
+        "underReview": {
+          "title": "⏳ 귀하의 신청서는 현재 검토 중입니다.",
+          "body": "검토가 완료되면 이메일로 연락드리겠습니다."
+        },
+        "pending": {
+          "title": "📋 귀하의 신청서가 접수되었습니다.",
+          "body": "저희 팀에서 곧 검토를 시작할 예정입니다. 예상 검토 기간은 영업일 기준 5~7일입니다."
+        }
+      }
+    },
+    "contact": {
+      "title": "질문이 있으신가요?",
+      "subtitle": "저희 팀은 신청 과정을 도와드립니다.",
+      "button": "이메일: impact@studious.sh"
+    }
+  },
+  "apply": {
+    "toasts": {
+      "submitted": "신청서가 성공적으로 제출되었습니다!"
+    },
+    "errors": {
+      "submitFailed": "신청서 제출에 실패했습니다: {message}"
+    },
+    "success": {
+      "title": "신청서가 제출되었습니다!",
+      "subtitle": "Studious School Development Program에 지원해주셔서 감사합니다.",
+      "applicationId": "귀하의 애플리케이션 ID",
+      "saveId": "신청 상태를 확인하려면 이 ID를 저장하세요.",
+      "nextSteps": {
+        "title": "그 다음에는 무슨 일이 일어날까요?",
+        "item1": "{email}에서 확인 이메일을 받게 됩니다.",
+        "item2": "저희 팀은 5-7 영업일 이내에 귀하의 신청서를 검토할 것입니다.",
+        "item3": "결정이 내려지면 이메일로 알려드립니다."
+      },
+      "backToProgram": "프로그램으로 돌아가기",
+      "returnHome": "집으로 돌아가다"
+    }
+  },
+  "agenda": {
+    "title": "의제",
+    "description": "포괄적인 캘린더 보기로 일정과 예정된 이벤트를 확인하세요",
+    "addEvent": "이벤트 추가",
+    "untitledEvent": "제목 없는 이벤트",
+    "today": "오늘",
+    "previous": "이전의",
+    "next": "다음",
+    "views": {
+      "day": "낮",
+      "week": "주",
+      "month": "월",
+      "year": "년도"
+    }
+  },
+  "chat": {
+    "landing": {
+      "description": "사이드바에서 대화를 선택하여 채팅을 시작하세요.",
+      "pleaseSignIn": "로그인해주세요",
+      "signInRequired": "채팅에 접속하려면 로그인이 필요합니다.",
+      "title": "채팅에 오신 것을 환영합니다"
+    },
+    "page": {
+      "unknown": "알려지지 않은",
+      "unnamedGroup": "이름 없는 그룹",
+      "unknownUser": "알 수 없는 사용자",
+      "notFound": {
+        "title": "대화를 찾을 수 없습니다",
+        "description": "이 대화는 존재하지 않거나, 접근할 수 없습니다.",
+        "backToChat": "채팅으로 돌아가기"
+      },
+      "header": {
+        "members": "회원들",
+        "markMentionsRead": "마크는 읽은 것을 언급합니다"
+      },
+      "input": {
+        "placeholderPrefix": "메시지"
+      },
+      "loading": "대화를 로딩 중입니다..."
+    }
+  },
+  "notifications": {
+    "title": "알림",
+    "subtitle": "수업과 과제에 대한 최신 정보를 얻으세요",
+    "badge": {
+      "unread": "{count}개 읽지 않음"
+    },
+    "filters": {
+      "label": "필터:",
+      "all": "전체 ({count})",
+      "unread": "읽지 않음 ({count})",
+      "read": "읽기 ({count})"
+    },
+    "empty": {
+      "unread": {
+        "title": "읽지 않은 알림이 없습니다",
+        "description": "모두 완료되었습니다! 읽지 않은 알림이 없습니다."
+      },
+      "read": {
+        "title": "읽은 알림이 없습니다",
+        "description": "아직 읽음으로 표시된 알림이 없습니다."
+      },
+      "all": {
+        "title": "아직 알림이 없습니다",
+        "description": "알림을 받으면 여기에 표시됩니다."
+      }
+    },
+    "actions": {
+      "marking": "표시 중...",
+      "markAsRead": "읽음으로 표시"
+    },
+    "toasts": {
+      "markedAsRead": "알림이 읽음으로 표시됨"
+    },
+    "meta": {
+      "from": "~에서"
+    }
+  },
+  "profile": {
+    "title": "윤곽",
+    "description": "개인 정보 및 프로필 설정을 관리하세요",
+    "editProfile": "프로필 편집",
+    "saveChanges": "변경 사항 저장",
+    "cancel": "취소",
+    "student": "학생",
+    "personalInformation": {
+      "title": "개인 정보",
+      "description": "개인 정보 및 프로필 정보를 업데이트하세요",
+      "displayName": "표시 이름",
+      "displayNamePlaceholder": "표시 이름을 입력하세요",
+      "displayNameDescription": "이것은 당신의 이름이 다른 사람들에게 어떻게 나타날지입니다",
+      "location": "위치",
+      "locationPlaceholder": "위치를 입력하세요",
+      "locationDescription": "귀하의 도시, 주 또는 국가",
+      "bio": "였다",
+      "bioPlaceholder": "자신에 대해 말해주세요...",
+      "bioDescription": "본인에 대한 간략한 설명 (최대 500자)",
+      "website": "웹사이트",
+      "websitePlaceholder": "https://귀하의웹사이트.com",
+      "websiteDescription": "개인 웹사이트 또는 포트폴리오"
+    },
+    "accountInformation": {
+      "title": "계정 정보",
+      "description": "귀하의 계정 세부 정보 및 로그인 정보",
+      "username": "사용자 이름",
+      "usernameNote": "사용자 이름을 변경할 수 없습니다",
+      "email": "이메일",
+      "emailNote": "이메일은 계정 설정에서 관리됩니다.",
+      "memberSince": "회원 가입 후"
+    },
+    "messages": {
+      "profileUpdated": "프로필이 성공적으로 업데이트되었습니다.",
+      "profileUpdateFailed": "프로필 업데이트에 실패했습니다",
+      "profilePictureSelected": "프로필 사진을 선택했습니다. '변경 사항 저장'을 클릭하여 업데이트하세요.",
+      "avatarSelected": "아바타가 선택되었습니다. '변경 사항 저장'을 클릭하여 업데이트하세요.",
+      "profilePictureUploadFailed": "프로필 사진 업로드에 실패했습니다.",
+      "profilePictureSelectFailed": "프로필 사진을 선택하지 못했습니다.",
+      "failedToLoadProfile": "프로필을 불러오지 못했습니다. 다시 시도해 주세요."
+    }
+  },
+  "class": {
+    "assignments": "과제",
+    "students": "재학생",
+    "attendance": "출석",
+    "attachFile": "파일 첨부",
+    "post": "우편",
+    "posting": "전기...",
+    "noPosts": "아직 게시물이 없습니다",
+    "createFirstPost": "첫 번째 게시물을 작성하세요",
+    "grades": {
+      "title": "성적",
+      "subtitle": "학생 성적 보기 및 관리",
+      "columns": {
+        "assignment": "과제",
+        "maxPoints": "최대 포인트",
+        "weight": "무게",
+        "graded": "등급",
+        "dueDate": "두 날짜",
+        "actions": "행위",
+        "student": "학생",
+        "overallGrade": "전체 등급",
+        "assignmentsCompleted": "완료된 과제",
+        "trend": "경향"
+      },
+      "labels": {
+        "rubric": "표제"
+      },
+      "actions": {
+        "manage": "관리하다",
+        "viewGrades": "성적 보기",
+        "saving": "절약...",
+        "saveChanges": "변경 사항 저장",
+        "preview": "시사",
+        "edit": "편집하다",
+        "delete": "삭제",
+        "createNew": "새로 만들기"
+      },
+      "overview": {
+        "title": "수업 개요",
+        "classAverage": "학급 평균",
+        "totalStudents": "총 학생 수",
+        "assignments": "과제",
+        "submissionRate": "제출률"
+      },
+      "assignmentManagement": {
+        "title": "과제 관리",
+        "empty": {
+          "title": "과제를 찾을 수 없습니다",
+          "description": "성적과 설정을 관리하기 위한 과제 생성"
+        },
+        "searchPlaceholder": "과제 검색..."
+      },
+      "students": {
+        "title": "재학생",
+        "viewAll": "모든 학생 보기",
+        "empty": {
+          "title": "등록된 학생이 없습니다",
+          "description": "학생들은 수업에 참여하면 여기에 나타납니다."
+        },
+        "searchPlaceholder": "학생 검색..."
+      },
+      "gradeBoundaries": {
+        "title": "등급 경계",
+        "untitled": "제목 없는 등급 경계",
+        "empty": {
+          "title": "등급 경계가 생성되지 않았습니다.",
+          "description": "등급 범위를 정의하기 위해 등급 경계를 만듭니다."
+        },
+        "previewTitle": "등급 경계 미리보기",
+        "details": {
+          "title": "등급 경계 세부 정보",
+          "name": "이름",
+          "noneDefined": "등급 경계가 정의되지 않았습니다."
+        }
+      },
+      "rubrics": {
+        "title": "루브릭",
+        "untitled": "제목 없는 루브릭",
+        "empty": {
+          "title": "루브릭이 생성되지 않았습니다",
+          "description": "평가 기준을 정의하기 위한 기준을 만듭니다."
+        },
+        "previewTitle": "루브릭 미리보기",
+        "details": {
+          "title": "루브릭 세부 정보",
+          "name": "이름",
+          "category": "범주",
+          "description": "설명",
+          "custom": "관습",
+          "noDescription": "설명이 제공되지 않았습니다",
+          "noCriteria": "이 기준에서 기준을 찾을 수 없습니다."
+        }
+      },
+      "confirm": {
+        "deleteRubric": "이 마크스킴을 삭제하시겠습니까?",
+        "deleteGradingBoundary": "이 등급 경계를 삭제하시겠습니까?"
+      }
+    },
+    "members": {
+      "title": "회원들",
+      "counts": {
+        "totalMembers": "{count}명의 회원"
+      },
+      "actions": {
+        "inviteMember": "회원 초대",
+        "copy": "복사",
+        "regenerate": "재생하다",
+        "message": "메시지",
+        "viewProfile": "프로필 보기",
+        "viewGrades": "성적 보기",
+        "makeTeacher": "선생님 만들기",
+        "makeStudent": "학생 만들기",
+        "removeFromClass": "클래스에서 제거",
+        "removeAccess": "액세스 제거",
+        "tryAgain": "다시 시도하세요"
+      },
+      "labels": {
+        "teacher": "선생님",
+        "student": "학생",
+        "you": "너"
+      },
+      "invite": {
+        "title": "수업 초대 코드",
+        "description": "이 코드를 학생들과 공유하여 수업에 참여하세요."
+      },
+      "search": {
+        "placeholder": "회원 검색..."
+      },
+      "tabs": {
+        "students": "재학생",
+        "teachers": "교사들"
+      },
+      "students": {
+        "empty": {
+          "title": "학생이 없습니다",
+          "matchNone": "\"{query}\"와 일치하는 학생이 없습니다.",
+          "noStudents": "아직 이 수업에 참여한 학생이 없습니다."
+        }
+      },
+      "teachers": {
+        "empty": {
+          "title": "선생님을 찾을 수 없습니다",
+          "matchNone": "\"{query}\"와 일치하는 교사가 없습니다.",
+          "noTeachers": "추가된 교사가 없습니다."
+        }
+      },
+      "toasts": {
+        "inviteRegenerated": "초대 코드가 성공적으로 재생성되었습니다.",
+        "copied": "초대 코드가 클립보드에 복사되었습니다.",
+        "roleChanged": "역할이 {role}로 변경되었습니다.",
+        "memberRemoved": "회원이 성공적으로 제거되었습니다"
+      },
+      "errors": {
+        "regenerateFailed": "초대 코드를 다시 생성하지 못했습니다.",
+        "changeRoleFailed": "역할 변경에 실패했습니다",
+        "removeFailed": "회원 삭제에 실패했습니다",
+        "failedToLoad": "멤버를 불러오지 못했습니다."
+      }
+    },
+    "files": {
+      "title": "파일",
+      "subtitle": "수업 파일 및 리소스 관리",
+      "actions": {
+        "newFolder": "새 폴더",
+        "upload": "업로드",
+        "uploadFiles": "파일 업로드",
+        "createFolder": "폴더 만들기",
+        "download": "다운로드",
+        "share": "공유하다",
+        "delete": "삭제",
+        "filter": "필터",
+        "sort": "종류"
+      },
+      "toasts": {
+        "folderCreated": "폴더가 성공적으로 생성되었습니다",
+        "folderDeleted": "폴더가 성공적으로 삭제되었습니다.",
+        "folderRenamed": "폴더 이름이 성공적으로 변경되었습니다.",
+        "folderMoved": "폴더가 성공적으로 이동되었습니다",
+        "filesUploaded": "파일이 성공적으로 업로드되었습니다",
+        "fileDeleted": "파일이 성공적으로 삭제되었습니다.",
+        "fileRenamed": "파일 이름이 성공적으로 변경되었습니다.",
+        "fileMoved": "파일이 성공적으로 이동되었습니다.",
+        "downloadStarted": "다운로드가 시작되었습니다",
+        "shareCopied": "공유 링크가 복사되었습니다."
+      },
+      "errors": {
+        "teacherOnly": "교사만 파일을 수정할 수 있습니다.",
+        "downloadFailed": "다운로드 실패",
+        "shareFailed": "공유 실패",
+        "failedToLoad": "파일을 불러오지 못했습니다. 나중에 다시 시도해 주세요."
+      },
+      "breadcrumbs": {
+        "classFiles": "클래스 파일"
+      },
+      "search": {
+        "placeholder": "파일에서 검색"
+      },
+      "selected": "{count}개 선택됨",
+      "filters": {
+        "fileType": "파일 유형",
+        "documents": "서류",
+        "images": "이미지",
+        "videos": "비디오",
+        "presentations": "프레젠테이션"
+      },
+      "sort": {
+        "name": "이름",
+        "lastModified": "마지막 수정",
+        "fileSize": "파일 크기"
+      },
+      "table": {
+        "name": "이름",
+        "owner": "소유자",
+        "lastModified": "마지막 수정",
+        "fileSize": "파일 크기"
+      },
+      "empty": {
+        "title": "이 폴더는 비어 있습니다",
+        "description": "파일을 업로드하거나 폴더를 만들어 수업 자료를 정리해보세요.",
+        "searchTitle": "파일을 찾을 수 없습니다",
+        "searchDescription": "\"{query}\"와(과) 일치하는 파일이 없습니다. 다른 검색어를 사용해 보세요."
+      }
+    },
+    "settings": {
+      "title": "수업 설정",
+      "subtitle": "수업 세부 정보 및 기본 설정 구성",
+      "labels": {
+        "unsavedChanges": "저장되지 않은 변경 사항"
+      },
+      "actions": {
+        "saving": "절약...",
+        "saveChanges": "변경 사항 저장",
+        "deleting": "삭제 중...",
+        "deleteClass": "수업 삭제",
+        "cancel": "취소"
+      },
+      "sections": {
+        "basicInfo": {
+          "title": "기본 정보"
+        },
+        "theme": {
+          "title": "수업 주제",
+          "description": "이 수업의 테마 색상을 선택하세요"
+        },
+        "danger": {
+          "title": "위험 구역",
+          "description": "수업을 삭제하면 되돌릴 수 없습니다. 모든 과제, 성적, 출석 기록이 영구적으로 삭제되고, 모든 학생이 수업에서 제외됩니다."
+        }
+      },
+      "fields": {
+        "className": "클래스 이름",
+        "section": "부분",
+        "subject": "주제"
+      },
+      "placeholders": {
+        "className": "예를 들어, 고급 물리학",
+        "section": "예를 들어, AP-101",
+        "subject": "예를 들어, 물리학"
+      },
+      "toasts": {
+        "updated": {
+          "title": "클래스 업데이트됨",
+          "description": "수업 설정이 성공적으로 저장되었습니다."
+        },
+        "deleted": {
+          "title": "수업 삭제됨",
+          "description": "해당 수업은 영구적으로 삭제되었습니다."
+        }
+      },
+      "errors": {
+        "updateFailed": {
+          "title": "업데이트 실패",
+          "description": "수업 설정을 저장하지 못했습니다. 다시 시도해 주세요."
+        }
+      },
+      "confirm": {
+        "title": "정말 확신하시나요?",
+        "description": "이 작업은 실행 취소할 수 없습니다. 이 작업을 수행하면 \"{name}\" 클래스가 영구적으로 삭제되고 다음을 포함한 모든 관련 데이터가 제거됩니다.",
+        "items": {
+          "assignments": "모든 과제 및 제출물",
+          "records": "모든 성적 및 출석 기록",
+          "students": "모든 학생은 수업에서 제외됩니다.",
+          "events": "모든 수업 행사 및 공지사항"
+        },
+        "confirmDelete": "네, 수업을 삭제합니다"
+      }
+    },
+    "syllabus": {
+      "title": "교과과정",
+      "subtitle": "과정 개요 및 학업 정보",
+      "actions": {
+        "saveChanges": "변경 사항 저장",
+        "cancel": "취소",
+        "edit": "교과과정 편집"
+      },
+      "errors": {
+        "failedToLoad": "교과과정을 로드하는 데 실패했습니다.",
+        "tryLater": "나중에 다시 시도해 주세요."
+      },
+      "stats": {
+        "totalAssignments": "총 과제",
+        "completionRate": "완료율",
+        "totalPoints": "총점",
+        "upcoming": "다가오는"
+      },
+      "overview": {
+        "title": "과정 개요",
+        "placeholder": "과정 개요, 목표 및 기타 중요 정보를 입력하세요...",
+        "helper": "과정 정보, 학습 목표, 정책 및 기타 중요한 세부 정보를 입력하세요.",
+        "empty": {
+          "title": "아직 교과과정 내용이 없습니다",
+          "description": "'교과과정 편집'을 클릭하여 과정 정보, 학습 목표, 정책 등을 추가하세요."
+        }
+      },
+      "assignments": {
+        "title": "과정 과제",
+        "gradedCount": "{총}개 중 {등급}개가 등급 매겨짐",
+        "totalPoints": "{total} 총 포인트",
+        "empty": {
+          "title": "아직 과제가 없습니다",
+          "description": "과제가 생성되면 여기에 표시됩니다."
+        }
+      },
+      "table": {
+        "assignment": "과제",
+        "dueDate": "두 날짜",
+        "points": "전철기",
+        "weight": "무게",
+        "status": "상태",
+        "pts": "포인트"
+      },
+      "status": {
+        "graded": "등급",
+        "pending": "보류 중"
+      },
+      "courseInfo": {
+        "title": "과정 정보",
+        "basic": {
+          "title": "기본 정보",
+          "className": "클래스 이름",
+          "section": "부분",
+          "subject": "주제"
+        },
+        "stats": {
+          "title": "과정 통계",
+          "totalAssignments": "총 과제",
+          "gradedAssignments": "채점 과제",
+          "totalPoints": "총점"
+        }
+      }
+    }
+  },
+  "assignment": {
+    "dueDate": "두 날짜",
+    "submit": "제출하다",
+    "grade": "등급",
+    "feedback": "피드백",
+    "submissions": "제출물",
+    "open": "열려 있는",
+    "closed": "닫은",
+    "assignment": "과제",
+    "assignments": "과제",
+    "newAssignment": "새로운 임무",
+    "createAssignment": "과제 만들기",
+    "viewAssignment": "과제 보기",
+    "allAssignments": "모든 과제",
+    "searchAssignments": "과제 검색...",
+    "noAssignmentsFound": "과제를 찾을 수 없습니다",
+    "createFirstAssignment": "시작하려면 첫 번째 과제를 만드세요",
+    "newSection": "새로운 섹션",
+    "pts": "포인트",
+    "overdue": "(연체)",
+    "assignmentDrop": "최상위 레벨로 이동하려면 여기에 할당을 삭제하세요.",
+    "sectionDeletionConfirmation": "이 섹션을 삭제하시겠습니까? 모든 과제가 최상위 수준으로 이동됩니다.",
+    "assignmentDeletionConfirmation": "이 과제를 삭제하시겠습니까? 이 작업은 실행 취소할 수 없습니다.",
+    "manageAndTrack": "수업 과제 관리 및 추적",
+    "filters": "필터"
+  },
+  "pagination": {
+    "previous": "이전의",
+    "next": "다음",
+    "goToPreviousPage": "이전 페이지로 이동",
+    "goToNextPage": "다음 페이지로 이동",
+    "morePages": "더 많은 페이지"
+  },
+  "about": {
+    "titleStatement1": "우리의 이야기",
+    "titleStatement2": "좌절에서 만들어졌고,",
+    "titleStatement3": "AI로 재구성",
+    "titleStatement4": "수년간 오래되고 분산된 학교 포털로 어려움을 겪은 끝에, 우리는 항상 원했던 학습 관리 시스템을 구축하기로 결정했습니다.",
+    "problemParagraph1": "Studious는 2023년에 시작되었습니다.",
+    "problemParagraph2": "학생과 교육자들이 공통된 좌절감을 가지고 모였을 때, 기존의 학교 포털은 엉성하고 느리며 다른 시대의 교육에 맞춰 만들어졌다는 문제가 발생했습니다.",
+    "problemDetailParagraph": "우리는 여러 플랫폼을 동시에 사용해야 했습니다. 하나는 성적, 다른 하나는 과제, 그리고 세 번째는 소통을 위한 플랫폼이었습니다. 교사들은 가르치는 것보다 소프트웨어와 씨름하는 데 더 많은 시간을 보냈습니다. 학생들은 알림이 오래된 인터페이스에 묻혀 마감일을 놓쳤습니다.",
+    "betterWay": "우리는 더 나은 방법이 있을 거라는 걸 알았습니다.",
+    "solutionParagraph1": "Linear 및 Notion과 같은 최신 협업 도구에서 영감을 얻어 우리는 다음과 같은 학습 관리 시스템을 만들기로 했습니다.",
+    "solutionParagraph2": "빠르고, 직관적이며, 사용하기 편리합니다.",
+    "solutionParagraph3": "AI를 단순한 장난감이 아닌, 교사와 학생 모두의 생산성을 배가하는 진정한 도구로 통합한 것입니다.",
+    "launchParagraph": "2년간의 개발 끝에, 저희는 2025년 10월 17일에 Studious를 공식 출시했습니다. 현재 조기 접근 서비스를 제공하며, 전 세계 학교의 학습 경험을 혁신하는 데 도움을 드릴 준비가 되었습니다.",
+    "journey1": "우리의 여정",
+    "journey2": "2년간의 구축, 학습, 성장",
+    "journeyBeginningDate": "2023",
+    "journeyBeginning1": "시작",
+    "journeyBeginning2": "첫 번째 프로토타입이 개발되었습니다. 핵심 기능: 수업 관리, 과제, 일정 통합.",
+    "journeyBetaLaunchDate": "2025년 10월 31일",
+    "journeyBetaLaunch1": "공개 베타 출시",
+    "journeyBetaLaunch2": "Studious LMS의 공식 공개 베타 테스트가 시작되었습니다. 전 세계 학교에 전체 플랫폼 기능을 갖춘 조기 액세스를 제공합니다.",
+    "journeyPilotSchoolsDate": "2025년 11월",
+    "journeyPilotSchools1": "파일럿 학교 프로그램",
+    "journeyPilotSchools2": "다양한 교육적 요구에 맞춰 플랫폼을 개선하고 실제 피드백을 수집하기 위해 시범 학교와 파트너십을 맺었습니다.",
+    "journeyBetaCompleteDate": "2025년 12월",
+    "journeyBetaComplete1": "베타 완료",
+    "journeyBetaComplete2": "베타 버전에서 정식 프로덕션 릴리스로 전환합니다. 모든 핵심 기능을 완벽하게 테스트하고 최적화하여 플랫폼을 안정화했습니다.",
+    "journeySDPDate": "2026년 1월",
+    "journeySDP1": "학교 개발 프로그램 시작",
+    "journeySDP2": "자격을 갖춘 기관에 무료로 접근할 수 있는 Studious School Development Program에 참여한 첫 번째 학교 집단을 발표합니다.",
+    "missionStatement1": "우리의 사명은 간단합니다",
+    "missionStatement2": "학생, 교사, 평생 학습자로서 매일 사용하고 싶은 학습 관리 시스템을 구축합니다.",
+    "joinAppeal1": "이 여정에 우리와 함께하세요",
+    "joinAppeal2": "교육의 미래에 참여하세요",
+    "requestEarlyAccess": "조기 액세스 요청",
+    "pressKit": "보도자료"
+  },
+  "pricing": {
+    "pricingStatement1": "투명한 가격 책정",
+    "pricingStatement2": "귀하의 기관에 맞는 올바른 플랜을 선택하세요",
+    "pricingStatement3": "숨은 비용 없이 간단하고 투명한 가격 책정. 모든 플랜에는 확장 가능한 옵션과 함께 핵심 기능이 포함되어 있습니다.",
+    "mostPopular": "가장 인기 있는",
+    "priceUnit": "/사용자/월",
+    "pricingStarterTitle": "기동기",
+    "pricingStarterPrice": "무료",
+    "pricingStarterNote": "베타 액세스 포함",
+    "pricingStarterDescription": "소규모 수업 및 시범 프로그램에 적합",
+    "pricingStarterPerk1": "최대 30명의 학생",
+    "pricingStarterPerk2": "무제한 수업",
+    "pricingStarterPerk3": "핵심 기능(과제, 일정, 성적)",
+    "pricingStarterPerk4": "AI 비서(월 5회 채팅)",
+    "pricingStarterPerk5": "커뮤니티 지원",
+    "pricingStarterPerk6": "5GB 저장공간",
+    "pricingStarterLink": "무료로 시작하세요",
+    "pricingSchoolTitle": "학교",
+    "pricingSchoolPriceNote": "연간 또는 월 6달러 청구",
+    "pricingSchoolNote": "최대 1,000명의 학생이 있는 학교의 경우",
+    "pricingSchoolPerk1": "학생 수 제한 없음",
+    "pricingSchoolPerk2": "무제한 수업",
+    "pricingSchoolPerk3": "모든 핵심 기능",
+    "pricingSchoolPerk4": "AI 어시스턴트(무제한 쿼리)",
+    "pricingSchoolPerk5": "Studious CMS 베타 액세스를 위한 첫 번째 줄",
+    "pricingSchoolPerk6": "API 접근",
+    "pricingSchoolLink": "시작하기"
+  },
+  "components": {
+    "earlyAccess": {
+      "title": "조기 액세스 요청",
+      "description": "대기자 명단에 가입하고 Studious LMS를 가장 먼저 경험해보세요.",
+      "fields": {
+        "email": "이메일 주소 *",
+        "institutionSize": "기관 규모 *"
+      },
+      "placeholders": {
+        "email": "you@school.edu",
+        "institutionSize": "기관 규모 선택"
+      },
+      "sizes": {
+        "tiny": "1~30명의 학생 (개별 교사)",
+        "small": "31~100명(소규모 학교)",
+        "medium": "101-500명의 학생(중학교)",
+        "large": "501~1,000명의 학생(대규모 학교)",
+        "institution": "1,001명 이상의 학생(기관)"
+      },
+      "actions": {
+        "submit": "접근 요청",
+        "submitting": "제출 중...",
+        "done": "완료"
+      },
+      "success": {
+        "title": "당신은 목록에 올랐어요!",
+        "description": "준비가 되면 {email}로 이메일을 보내드리겠습니다."
+      },
+      "toasts": {
+        "success": "대기자 명단에 성공적으로 등록되었습니다!"
+      }
+    },
+    "joinClass": {
+      "title": "수업에 참여하세요",
+      "buttonLabel": "수업에 참여하세요",
+      "fields": {
+        "inviteCode": "수업 초대 코드"
+      },
+      "placeholders": {
+        "inviteCode": "예: MATH101-2025"
+      },
+      "help": "선생님이 제공한 초대 코드를 입력하세요",
+      "howTo": {
+        "title": "초대 코드를 받는 방법:",
+        "item1": "선생님께 수업 초대 코드를 문의하세요.",
+        "item2": "수업 등록 지침은 이메일을 확인하세요.",
+        "item3": "교과과정이나 교재에서 코드를 찾으세요."
+      },
+      "actions": {
+        "cancel": "취소",
+        "join": "수업에 참여하세요",
+        "joining": "합류..."
+      },
+      "toasts": {
+        "success": "수업에 성공적으로 참여했습니다.",
+        "errorInvalid": "잘못된 초대 코드 또는 수업을 찾을 수 없습니다.",
+        "errorEmpty": "유효한 초대 코드를 입력하세요."
+      }
+    },
+    "createClass": {
+      "title": "새로운 클래스 만들기",
+      "buttonLabel": "클래스 만들기",
+      "fields": {
+        "title": "학급명 *",
+        "section": "부분 *",
+        "subject": "주제 *",
+        "semester": "학기",
+        "credits": "크레딧",
+        "meetingTime": "회의 시간",
+        "location": "위치",
+        "description": "설명"
+      },
+      "placeholders": {
+        "title": "예를 들어, 고급 물리학",
+        "section": "예를 들어, AP-101",
+        "subject": "예를 들어, 물리학",
+        "semester": "예: 2025년 봄",
+        "credits": "예를 들어, 3",
+        "meetingTime": "예: 월~금 오전 10시~11시",
+        "location": "예: 과학관 205호실",
+        "description": "수업 내용과 목표를 설명하세요..."
+      },
+      "actions": {
+        "cancel": "취소",
+        "create": "클래스 만들기",
+        "creating": "생성 중..."
+      },
+      "toasts": {
+        "success": "클래스 {name}이 성공적으로 생성되었습니다.",
+        "errorRequired": "모든 필수 항목을 작성해 주세요.",
+        "errorFailed": "수업을 만들지 못했습니다. 나중에 다시 시도해 주세요."
+      }
+    },
+    "createFolder": {
+      "titleCreate": "새 폴더 만들기",
+      "titleEdit": "폴더 편집",
+      "fields": {
+        "name": "폴더 이름 *",
+        "description": "설명(선택 사항)",
+        "color": "폴더 색상"
+      },
+      "placeholders": {
+        "name": "폴더 이름을 입력하세요",
+        "description": "이 폴더에 대한 설명을 추가하세요..."
+      },
+      "help": {
+        "name": "폴더에 대한 설명적 이름을 선택하세요",
+        "description": "{count}/500자"
+      },
+      "actions": {
+        "cancel": "취소",
+        "create": "폴더 만들기",
+        "update": "폴더 업데이트",
+        "creating": "생성 중...",
+        "updating": "업데이트 중..."
+      },
+      "toasts": {
+        "errorRequired": "폴더 이름이 필요합니다",
+        "errorInvalidChars": "폴더 이름에 잘못된 문자가 포함되어 있습니다.",
+        "errorTooLong": "폴더 이름이 너무 깁니다(최대 255자)"
+      }
+    },
+    "createAssignment": {
+      "title": "새로운 과제 만들기",
+      "buttonLabel": "과제 만들기",
+      "sections": {
+        "details": "과제 세부 정보",
+        "configuration": "구성",
+        "grading": "등급 및 평가",
+        "attachments": "첨부 파일"
+      },
+      "fields": {
+        "title": "제목 *",
+        "instructions": "지침 *",
+        "dueDate": "두 날짜",
+        "type": "과제 유형",
+        "section": "부분",
+        "rubric": "표제",
+        "gradeScale": "등급 척도",
+        "maxPoints": "최대 포인트",
+        "weight": "무게 (%)",
+        "sectionColor": "섹션 색상"
+      },
+      "placeholders": {
+        "title": "예: 5장 퀴즈, 물리학 실험 보고서",
+        "instructions": "학생들에게 명확한 지침을 제공합니다.",
+        "maxPoints": "100",
+        "weight": "1.0",
+        "chooseSection": "섹션 선택",
+        "chooseRubric": "루브릭을 선택하세요",
+        "chooseGradeScale": "등급 척도를 선택하세요",
+        "newSectionName": "섹션 이름을 입력하세요..."
+      },
+      "types": {
+        "homework": "숙제",
+        "quiz": "놀리다",
+        "test": "시험",
+        "project": "프로젝트",
+        "essay": "수필",
+        "discussion": "논의",
+        "presentation": "프레젠테이션",
+        "lab": "랩",
+        "other": "다른"
+      },
+      "options": {
+        "graded": {
+          "label": "채점 과제",
+          "description": "성적부에 포함"
+        },
+        "draft": {
+          "label": "초안으로 저장",
+          "description": "학생들에게 숨기기"
+        }
+      },
+      "section": {
+        "none": "섹션 없음",
+        "createNew": "새 섹션 만들기"
+      },
+      "rubric": {
+        "none": "루브릭 없음",
+        "untitled": "제목 없는 루브릭",
+        "autoCalculate": "선택한 기준에 따라 포인트가 자동으로 계산됩니다."
+      },
+      "gradeScale": {
+        "default": "기본 스케일",
+        "untitled": "제목 없는 스케일"
+      },
+      "files": {
+        "uploadButton": "파일 업로드",
+        "dropZone": "여기에 파일을 놓거나 클릭하여 업로드하세요",
+        "dropZoneHint": "모든 파일 유형 지원 • 파일당 최대 50MB",
+        "filesUploaded": "{전체}개 파일 중 {업로드됨}개 업로드됨"
+      },
+      "status": {
+        "creating": "과제를 생성하는 중...",
+        "settingUp": "과제 세부정보 설정 중...",
+        "preparing": "파일 업로드 준비 중...",
+        "uploading": "클라우드 저장소에 파일을 업로드하는 중...",
+        "processing": "업로드된 파일을 처리하는 중...",
+        "finalizing": "과제 마무리 중...",
+        "assigning": "학생들에게 할당합니다...",
+        "almostDone": "거의 끝났어요...",
+        "uploadingFile": "{name}을 업로드 중입니다...",
+        "creatingProgress": "과제 만들기",
+        "draftStatus": "초안으로 저장됩니다",
+        "publishedStatus": "학생들에게 공개됩니다"
+      },
+      "actions": {
+        "cancel": "취소",
+        "create": "과제 만들기",
+        "saveDraft": "초안 저장",
+        "creating": "생성 중...",
+        "add": "추가하다"
+      },
+      "toasts": {
+        "successCreated": "과제가 성공적으로 생성되었습니다.",
+        "successDraft": "과제가 초안으로 성공적으로 저장되었습니다.",
+        "errorRequired": "모든 필수 항목을 작성해 주세요.",
+        "errorFailed": "과제를 만들지 못했습니다. 다시 시도해 주세요.",
+        "errorUploadFailed": "{name}을(를) 업로드하지 못했습니다.",
+        "sectionCreated": "섹션 \"{name}\"이 성공적으로 생성되었습니다."
+      }
+    },
+    "createAnnouncement": {
+      "title": "공지사항 만들기",
+      "buttonLabel": "공지사항 게시",
+      "fields": {
+        "title": "공지사항 제목 *",
+        "content": "콘텐츠 *",
+        "priority": "우선 순위 수준",
+        "expiryDate": "만료일(선택 사항)",
+        "publishDate": "게시 날짜",
+        "publishTime": "게시 시간"
+      },
+      "placeholders": {
+        "title": "예를 들어, 금요일에 실험 보고서를 제출해야 합니다.",
+        "content": "여기에 공지 내용을 적어주세요...",
+        "publishDate": "비어 있으면 즉시 게시"
+      },
+      "priority": {
+        "low": "낮은",
+        "normal": "정상",
+        "high": "높은",
+        "urgent": "긴급한"
+      },
+      "sections": {
+        "settings": "설정",
+        "notifications": "알림",
+        "schedule": "일정 게시(선택 사항)"
+      },
+      "settings": {
+        "pinned": {
+          "label": "맨 위로 고정",
+          "description": "이 공지사항을 목록 맨 위에 두십시오."
+        },
+        "urgent": {
+          "label": "긴급으로 표시",
+          "description": "긴급 스타일링으로 하이라이트"
+        }
+      },
+      "notifications": {
+        "email": {
+          "label": "이메일 알림 보내기",
+          "description": "이메일을 통해 학생들에게 알림"
+        },
+        "push": {
+          "label": "푸시 알림 보내기",
+          "description": "모바일 앱 알림 보내기"
+        }
+      },
+      "actions": {
+        "cancel": "취소",
+        "publishNow": "지금 게시하세요",
+        "schedule": "일정 공지"
+      },
+      "toasts": {
+        "success": "공지사항이 생성되었습니다",
+        "errorRequired": "모든 필수 항목을 작성해 주세요."
+      }
+    }
+  }
+}

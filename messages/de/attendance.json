@@ -1,0 +1,97 @@
+{
+  "attendance": {
+    "title": "Klassenveranstaltungen und Anwesenheit",
+    "subtitle": "Verfolgen Sie die Anwesenheit der Studenten bei jeder Veranstaltung",
+    "saving": {
+      "auto": "Automatisches Speichern...",
+      "unsaved": "Nicht gespeicherte Änderungen",
+      "saving": "Speichern..."
+    },
+    "table": {
+      "date": "Datum",
+      "eventName": "Ereignisname",
+      "attendanceRate": "Anwesenheitsrate",
+      "attendance": "Teilnahme",
+      "actions": "Aktionen"
+    },
+    "actions": {
+      "viewDetails": "Details anzeigen",
+      "editEvent": "Ereignis bearbeiten",
+      "deleteEvent": "Ereignis löschen",
+      "createEvent": "Ereignis erstellen",
+      "saveAttendance": "Anwesenheit speichern",
+      "markAllPresent": "Alle Anwesenden markieren",
+      "markAllAbsent": "Alle Abwesenden markieren"
+    },
+    "allEvents": {
+      "title": "Alle Veranstaltungen",
+      "description": "Vollständiger Verlauf der Unterrichtsveranstaltungen und Anwesenheitslisten",
+      "searchPlaceholder": "Veranstaltungen suchen...",
+      "empty": {
+        "title": "Keine Veranstaltungen gefunden",
+        "description": "Erstellen Sie Ihre erste Veranstaltung, um mit der Teilnehmererfassung zu beginnen"
+      }
+    },
+    "eventsList": {
+      "pickDate": "Datum auswählen",
+      "untitled": "Unbenanntes Ereignis",
+      "empty": {
+        "noEventsOnDate": "Keine Veranstaltungen an diesem Datum",
+        "noEventsOnDateDescription": "Für {date} sind keine Ereignisse geplant. Wählen Sie ein anderes Datum aus oder erstellen Sie ein neues Ereignis.",
+        "noEvents": "Keine Veranstaltungen gefunden",
+        "noEventsDescription": "Erstellen Sie Ihre erste Veranstaltung, um mit der Teilnehmererfassung zu beginnen",
+        "createForDate": "Ereignis für dieses Datum erstellen",
+        "createFirst": "Erstes Ereignis erstellen"
+      }
+    },
+    "summary": {
+      "title": "Veranstaltungszusammenfassung",
+      "selectedEvent": "Ausgewähltes Ereignis",
+      "total": "Gesamt",
+      "attendanceRate": "Anwesenheitsrate"
+    },
+    "roster": {
+      "title": "Studentenliste",
+      "description": "Klicken Sie auf die Statusschaltflächen, um die Anwesenheit jedes Schülers zu markieren",
+      "empty": {
+        "title": "Keine Studierenden eingeschrieben",
+        "description": "Die Schüler werden hier angezeigt, sobald sie der Klasse beitreten"
+      }
+    },
+    "prompt": {
+      "title": "Wählen Sie ein Ereignis aus",
+      "description": "Wählen Sie oben eine Veranstaltung aus, um die Anwesenheit der Studierenden anzuzeigen und zu verwalten"
+    },
+    "status": {
+      "present": "Gegenwärtig",
+      "late": "Spät",
+      "absent": "Abwesend",
+      "notTaken": "Nicht genommen"
+    },
+    "student": {
+      "title": "Meine Anwesenheit",
+      "subtitle": "Verfolgen Sie Ihre Anwesenheit für {className}",
+      "attendanceRate": "Anwesenheitsrate",
+      "history": "Anwesenheitsverlauf",
+      "event": "Ereignis",
+      "status": "Status",
+      "searchPlaceholder": "Veranstaltungen suchen...",
+      "empty": {
+        "title": "Keine Anwesenheitslisten",
+        "description": "Ihre Anwesenheit wird hier angezeigt, sobald Ereignisse erstellt und die Anwesenheit erfasst wurde"
+      }
+    },
+    "deleteDialog": {
+      "title": "Ereignis löschen",
+      "description": "Möchten Sie „{eventName}“ wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden und entfernt alle zugehörigen Anwesenheitsdatensätze.",
+      "deleting": "Löschen...",
+      "deleteButton": "Ereignis löschen"
+    },
+    "toast": {
+      "attendanceSaved": "Anwesenheit erfolgreich gespeichert",
+      "attendanceSaveFailed": "Anwesenheit konnte nicht gespeichert werden",
+      "eventDeleted": "Ereignis erfolgreich gelöscht",
+      "eventDeleteFailed": "Ereignis konnte nicht gelöscht werden"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "navigation": {
+    "home": "家",
+    "classes": "クラス",
+    "agenda": "議題",
+    "chat": "チャット",
+    "notifications": "通知",
+    "profile": "プロフィール",
+    "settings": "設定",
+    "signOut": "サインアウト",
+    "accountSettings": "アカウント設定",
+    "pricing": "価格",
+    "schoolProgram": "学校プログラム",
+    "about": "について",
+    "press": "プレス",
+    "signIn": "サインイン"
+  },
+  "classSidebar": {
+    "overview": "概要",
+    "assignments": "課題",
+    "grades": "成績",
+    "files": "ファイル",
+    "attendance": "出席",
+    "aiLabs": "AIラボ",
+    "members": "メンバー",
+    "syllabus": "シラバス",
+    "settings": "設定",
+    "classNavigation": "クラスナビゲーション",
+    "switchClass": "クラスを切り替える",
+    "classInviteCode": "クラス招待コード",
+    "copyCode": "コードをコピー",
+    "regenerateCode": "コードを再生成する",
+    "toast": {
+      "inviteCodeRegenerated": "招待コードが正常に再生成されました",
+      "inviteCodeRegenerateFailed": "招待コードの再生成に失敗しました",
+      "inviteCodeCopied": "招待コードをクリップボードにコピーしました"
+    }
+  },
+  "footer": {
+    "productDescription": "次世代の教育のための最新の学習管理。",
+    "product": "製品",
+    "features": "特徴",
+    "pricing": "価格",
+    "schoolProgram": "学校プログラム",
+    "company": "会社",
+    "about": "について",
+    "team": "チーム",
+    "press": "プレス",
+    "contact": "接触",
+    "privacyPolicy": "プライバシーポリシー",
+    "termsOfService": "利用規約",
+    "copyright": "© 2025 Studious LMS. 無断複写・転載を禁じます。"
+  }
+}

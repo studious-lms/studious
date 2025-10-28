@@ -1,0 +1,66 @@
+{
+  "syllabus": {
+    "title": "教学大纲",
+    "subtitle": "课程概述和学术信息",
+    "actions": {
+      "saveChanges": "保存更改",
+      "cancel": "取消",
+      "edit": "编辑教学大纲"
+    },
+    "errors": {
+      "failedToLoad": "无法加载课程大纲",
+      "tryLater": "请稍后重试。"
+    },
+    "stats": {
+      "totalAssignments": "总作业数",
+      "completionRate": "完成率",
+      "totalPoints": "总分",
+      "upcoming": "即将推出"
+    },
+    "overview": {
+      "title": "课程概述",
+      "placeholder": "输入课程概述、目标和其他重要信息...",
+      "helper": "输入您的课程信息、学习目标、政策和其他重要细节。",
+      "empty": {
+        "title": "尚无教学大纲内容",
+        "description": "单击“编辑课程大纲”以添加课程信息、学习目标、政策等。"
+      }
+    },
+    "assignments": {
+      "title": "课程作业",
+      "gradedCount": "{graded} 已评分的作业",
+      "totalPoints": "总分 {total}",
+      "empty": {
+        "title": "尚无作业",
+        "description": "作业一旦创建就会出现在这里。"
+      }
+    },
+    "table": {
+      "assignment": "任务",
+      "dueDate": "两次约会",
+      "points": "积分",
+      "weight": "重量",
+      "status": "地位",
+      "pts": "点"
+    },
+    "status": {
+      "graded": "已分级",
+      "pending": "待办的"
+    },
+    "courseInfo": {
+      "title": "课程信息",
+      "basic": {
+        "title": "基本信息",
+        "className": "类名",
+        "section": "部分",
+        "subject": "主题"
+      },
+      "stats": {
+        "title": "课程统计",
+        "totalAssignments": "总作业数",
+        "gradedAssignments": "评分作业",
+        "totalPoints": "总分"
+      }
+    }
+  }
+}

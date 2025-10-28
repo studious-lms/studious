@@ -1,0 +1,44 @@
+{
+  "home": {
+    "welcomeBack": "欢迎回来，{name}！",
+    "subtitle": "以下是今天课堂上发生的事情。",
+    "stats": {
+      "totalClasses": "总课程数",
+      "teachingEnrolled": "{teaching} 教学，{enrolled} 报名",
+      "dueToday": "今天到期",
+      "dueTodayDesc": "今天截止的作业",
+      "upcoming": "即将推出",
+      "upcomingDesc": "即将来临的作业",
+      "thisWeek": "本星期",
+      "totalAssignments": "总作业数"
+    },
+    "upcomingAssignments": {
+      "title": "即将进行的任务",
+      "subtitle": "你的下一个截止日期",
+      "allCaughtUp": "全部抓到啦！",
+      "noUpcoming": "目前没有即将到来的任务。",
+      "viewAgenda": "查看议程",
+      "dueToday": "今天到期",
+      "dueTomorrow": "明天到期",
+      "due": "两个{日期}",
+      "teaching": "教学",
+      "viewAllAssignments": "查看所有作业"
+    },
+    "notifications": {
+      "title": "最近的通知",
+      "subtitle": "最新更新",
+      "noNew": "没有新通知",
+      "viewAll": "查看所有通知"
+    },
+    "classes": {
+      "title": "我的课程",
+      "subtitle": "快速访问您的课程",
+      "teaching": "教学",
+      "enrolled": "已注册",
+      "due": "到期的",
+      "noClasses": "还没有课程",
+      "browseClasses": "浏览课程",
+      "viewAllClasses": "查看所有课程"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "assignmentDetail": {
+    "title": "تفاصيل المهمة",
+    "description": "وصف",
+    "instructions": "تعليمات",
+    "dueDate": "تاريخان",
+    "maxPoints": "أقصى النقاط",
+    "submissions": "الإرساليات",
+    "submitted": "مُقَدَّم",
+    "notSubmitted": "لم يتم تقديمه",
+    "graded": "مُصنَّف",
+    "pending": "قيد الانتظار",
+    "late": "متأخر",
+    "onTime": "في الوقت المحدد",
+    "attachments": "المرفقات",
+    "rubric": "عنوان",
+    "gradingBoundary": "حدود التصنيف",
+    "submissionDetails": "تفاصيل الإرسال",
+    "submittedBy": "تم تقديمه بواسطة",
+    "submittedAt": "تم تقديمه في",
+    "grade": "درجة",
+    "feedback": "تعليق",
+    "files": "الملفات",
+    "noFiles": "لا توجد ملفات مرفقة",
+    "noSubmissions": "لا توجد أي مشاركات حتى الآن",
+    "noSubmissionsDescription": "ستظهر المشاركات هنا بمجرد أن يقدم الطلاب أعمالهم",
+    "actions": {
+      "edit": "تحرير المهمة",
+      "delete": "حذف المهمة",
+      "viewSubmission": "عرض الإرسال",
+      "gradeSubmission": "درجة",
+      "downloadAll": "تنزيل الكل",
+      "exportGrades": "درجات التصدير"
+    },
+    "stats": {
+      "totalSubmissions": "إجمالي المشاركات",
+      "averageGrade": "متوسط الدرجة",
+      "submissionRate": "معدل الإرسال",
+      "gradedCount": "مُصنَّف"
+    },
+    "table": {
+      "student": "طالب",
+      "status": "حالة",
+      "grade": "درجة",
+      "submittedAt": "مُقَدَّم",
+      "actions": "الإجراءات"
+    },
+    "toasts": {
+      "gradeUpdated": "تم تحديث الدرجة بنجاح",
+      "deleted": "تم حذف المهمة",
+      "error": "حدث خطأ"
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "syllabus": {
+    "title": "Programa de estudios",
+    "subtitle": "Descripción general del curso e información académica",
+    "actions": {
+      "saveChanges": "Guardar cambios",
+      "cancel": "Cancelar",
+      "edit": "Editar el programa de estudios"
+    },
+    "errors": {
+      "failedToLoad": "No se pudo cargar el programa de estudios",
+      "tryLater": "Por favor, inténtelo de nuevo más tarde."
+    },
+    "stats": {
+      "totalAssignments": "Asignaciones totales",
+      "completionRate": "Tasa de finalización",
+      "totalPoints": "Puntos totales",
+      "upcoming": "Próximamente"
+    },
+    "overview": {
+      "title": "Descripción del curso",
+      "placeholder": "Ingrese la descripción general del curso, los objetivos y otra información importante...",
+      "helper": "Ingrese la información de su curso, los objetivos de aprendizaje, las políticas y otros detalles importantes.",
+      "empty": {
+        "title": "Aún no hay contenido del programa de estudios",
+        "description": "Haga clic en “Editar programa de estudios” para agregar información del curso, objetivos de aprendizaje, políticas y más."
+      }
+    },
+    "assignments": {
+      "title": "Tareas del curso",
+      "gradedCount": "{graded} tareas calificadas",
+      "totalPoints": "{total} puntos totales",
+      "empty": {
+        "title": "No hay tareas todavía",
+        "description": "Las tareas aparecerán aquí una vez creadas."
+      }
+    },
+    "table": {
+      "assignment": "Asignación",
+      "dueDate": "Dos citas",
+      "points": "Agujas",
+      "weight": "Peso",
+      "status": "Estado",
+      "pts": "puntos"
+    },
+    "status": {
+      "graded": "Calificado",
+      "pending": "Pendiente"
+    },
+    "courseInfo": {
+      "title": "Información del curso",
+      "basic": {
+        "title": "Información básica",
+        "className": "Nombre de la clase",
+        "section": "Sección",
+        "subject": "Sujeto"
+      },
+      "stats": {
+        "title": "Estadísticas del curso",
+        "totalAssignments": "Asignaciones totales",
+        "gradedAssignments": "Tareas calificadas",
+        "totalPoints": "Puntos totales"
+      }
+    }
+  }
+}

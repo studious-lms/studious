@@ -1,0 +1,21 @@
+{
+  "classes": {
+    "title": "Classes",
+    "description": "Manage your teaching and enrolled classes",
+    "joinClass": "Join Class",
+    "createClass": "Create Class",
+    "searchPlaceholder": "Search classes...",
+    "teaching": "Teaching",
+    "enrolled": "Enrolled",
+    "noClassesFound": "No classes found",
+    "noTeachingClassesFound": "No teaching classes found matching \"{query}\"",
+    "noEnrolledClassesFound": "No enrolled classes found matching \"{query}\"",
+    "noClassesYet": "No classes yet",
+    "noClassesYetDesc": "Create your first class to start managing assignments, grades, and student interactions.",
+    "noEnrolledClasses": "No enrolled classes",
+    "noEnrolledClassesDesc": "Join a class using an invite code or link provided by your teacher.",
+    "classDeleted": "Class deleted successfully",
+    "classDeleteFailed": "Failed to delete class",
+    "failedToLoad": "Failed to load classes"
+  }
+}

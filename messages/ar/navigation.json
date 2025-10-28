@@ -1,0 +1,54 @@
+{
+  "navigation": {
+    "home": "بيت",
+    "classes": "الفصول الدراسية",
+    "agenda": "جدول الأعمال",
+    "chat": "محادثة",
+    "notifications": "إشعارات",
+    "profile": "حساب تعريفي",
+    "settings": "إعدادات",
+    "signOut": "تسجيل الخروج",
+    "accountSettings": "إعدادات الحساب",
+    "pricing": "التسعير",
+    "schoolProgram": "برنامج المدرسة",
+    "about": "عن",
+    "press": "يضعط",
+    "signIn": "تسجيل الدخول"
+  },
+  "classSidebar": {
+    "overview": "ملخص",
+    "assignments": "المهام",
+    "grades": "الدرجات",
+    "files": "الملفات",
+    "attendance": "حضور",
+    "aiLabs": "مختبرات الذكاء الاصطناعي",
+    "members": "أعضاء",
+    "syllabus": "المنهج الدراسي",
+    "settings": "إعدادات",
+    "classNavigation": "التنقل بين الفئات",
+    "switchClass": "تبديل الفئة",
+    "classInviteCode": "رمز دعوة الفصل",
+    "copyCode": "نسخ الكود",
+    "regenerateCode": "تجديد الكود",
+    "toast": {
+      "inviteCodeRegenerated": "تم إعادة إنشاء رمز الدعوة بنجاح",
+      "inviteCodeRegenerateFailed": "فشل في إعادة إنشاء رمز الدعوة",
+      "inviteCodeCopied": "تم نسخ رمز الدعوة إلى الحافظة"
+    }
+  },
+  "footer": {
+    "productDescription": "إدارة التعلم الحديثة للجيل القادم من التعليم.",
+    "product": "منتج",
+    "features": "سمات",
+    "pricing": "التسعير",
+    "schoolProgram": "برنامج المدرسة",
+    "company": "شركة",
+    "about": "عن",
+    "team": "فريق",
+    "press": "يضعط",
+    "contact": "اتصال",
+    "privacyPolicy": "سياسة الخصوصية",
+    "termsOfService": "شروط الخدمة",
+    "copyright": "© ٢٠٢٥ ستوديوس، جميع الحقوق محفوظة."
+  }
+}

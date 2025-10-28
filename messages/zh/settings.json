@@ -1,0 +1,66 @@
+{
+  "settings": {
+    "title": "班级设置",
+    "subtitle": "配置课程详细信息和偏好",
+    "labels": {
+      "unsavedChanges": "未保存的更改"
+    },
+    "actions": {
+      "saving": "保存...",
+      "saveChanges": "保存更改",
+      "deleting": "正在删除...",
+      "deleteClass": "删除班级",
+      "cancel": "取消"
+    },
+    "sections": {
+      "basicInfo": {
+        "title": "基本信息"
+      },
+      "theme": {
+        "title": "班级主题",
+        "description": "为该课程选择主题颜色"
+      },
+      "danger": {
+        "title": "危险区域",
+        "description": "课程一旦删除，将无法恢复。这将永久删除所有作业、成绩、出勤记录，并将所有学生从课程中移除。"
+      }
+    },
+    "fields": {
+      "className": "类名",
+      "section": "部分",
+      "subject": "主题"
+    },
+    "placeholders": {
+      "className": "例如，高级物理学",
+      "section": "例如 AP-101",
+      "subject": "例如物理学"
+    },
+    "toasts": {
+      "updated": {
+        "title": "课程已更新",
+        "description": "班级设置已成功保存。"
+      },
+      "deleted": {
+        "title": "课程已删除",
+        "description": "该课程已被永久删除。"
+      }
+    },
+    "errors": {
+      "updateFailed": {
+        "title": "更新失败",
+        "description": "保存课程设置失败。请重试。"
+      }
+    },
+    "confirm": {
+      "title": "你真的确定吗？",
+      "description": "此操作无法撤消。这将永久删除课程“{name}”并移除所有相关数据，包括：",
+      "items": {
+        "assignments": "所有作业和提交",
+        "records": "所有成绩和出勤记录",
+        "students": "所有学生将被开除出课堂",
+        "events": "所有班级活动和公告"
+      },
+      "confirmDelete": "是的，删除课程"
+    }
+  }
+}

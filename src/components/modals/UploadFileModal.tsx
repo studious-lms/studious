@@ -1,5 +1,6 @@
 "use client";
 import { useState, useRef } from "react";
+import { useTranslations } from "next-intl";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -44,6 +45,7 @@ interface FileUpload {
 
 
 export function UploadFileModal({ children, onFilesUploaded, currentFolder = "/", classId, folderId }: UploadFileModalProps) {
+  const t = useTranslations('uploadFiles');
   const [open, setOpen] = useState(false);
   const [files, setFiles] = useState<FileUpload[]>([]);
   const [uploading, setUploading] = useState(false);
@@ -56,18 +58,6 @@ export function UploadFileModal({ children, onFilesUploaded, currentFolder = "/"
   const [uploadProgress, setUploadProgress] = useState(0);
   const [currentUploadStatus, setCurrentUploadStatus] = useState('');
   const [uploadedFilesCount, setUploadedFilesCount] = useState(0);
-
-
-  const categories = [
-    { label: "Lecture Materials", value: "lectures" },
-    { label: "Assignments", value: "assignments" },
-    { label: "Lab Resources", value: "labs" },
-    { label: "Reading Materials", value: "readings" },
-    { label: "Exam Resources", value: "exams" },
-    { label: "Project Files", value: "projects" },
-    { label: "Multimedia", value: "multimedia" },
-    { label: "Other", value: "other" }
-  ];
 
   const getFileIcon = (fileName: string) => {
     const extension = fileName.split('.').pop()?.toLowerCase();
@@ -124,29 +114,29 @@ export function UploadFileModal({ children, onFilesUploaded, currentFolder = "/"
 
   const handleUpload = async () => {
     if (files.length === 0) {
-      toast.error("No Files Selected");
+      toast.error(t('noFilesSelected'));
       return;
     }
 
     // Validate required parameters
     if (!classId) {
-      toast.error("Class ID is missing");
+      toast.error(t('classIdMissing'));
       return;
     }
 
     if (!folderId) {
-      toast.error("Folder ID is missing. Please wait for the folder to load.");
+      toast.error(t('folderIdMissing'));
       return;
     }
 
     setUploading(true);
     setUploadProgress(0);
-    setCurrentUploadStatus('Preparing upload...');
+    setCurrentUploadStatus(t('preparing'));
     setUploadedFilesCount(0);
 
     try {
       // Get upload URLs from backend (returns direct array)
-      setCurrentUploadStatus('Getting upload URLs...');
+      setCurrentUploadStatus(t('gettingUrls'));
       setUploadProgress(10);
 
       const uploadFilesResponse = await getUploadUrls.mutateAsync({
@@ -168,7 +158,7 @@ export function UploadFileModal({ children, onFilesUploaded, currentFolder = "/"
 
         try {
           // Update overall status
-          setCurrentUploadStatus(`Uploading ${fileData.name}...`);
+          setCurrentUploadStatus(t('uploadingFile', { name: fileData.name }));
           const overallProgress = 20 + ((i / files.length) * 60); // 20-80% for uploads
           setUploadProgress(overallProgress);
 
@@ -192,7 +182,7 @@ export function UploadFileModal({ children, onFilesUploaded, currentFolder = "/"
           }
 
           // Confirm upload to backend
-          setCurrentUploadStatus(`Confirming ${fileData.name}...`);
+          setCurrentUploadStatus(t('confirming', { name: fileData.name }));
           await confirmUpload.mutateAsync({
             classId,
             fileId: uploadFile.id,
@@ -212,12 +202,12 @@ export function UploadFileModal({ children, onFilesUploaded, currentFolder = "/"
 
           // Update UI status
           updateFile(fileData.id, { status: 'error', progress: 0 });
-          toast.error(`Failed to upload ${fileData.name}`);
+          toast.error(t('errorFile', { name: fileData.name }));
         }
       }
 
       // Final steps
-      setCurrentUploadStatus('Finalizing...');
+      setCurrentUploadStatus(t('finalizing'));
       setUploadProgress(90);
 
       // Callback with uploaded files
@@ -232,8 +222,8 @@ export function UploadFileModal({ children, onFilesUploaded, currentFolder = "/"
       }
 
       setUploadProgress(100);
-      setCurrentUploadStatus('Upload complete!');
-      toast.success("Files uploaded successfully");
+      setCurrentUploadStatus(t('success'));
+      toast.success(t('success'));
       
       // Reset after delay
       setTimeout(() => {
@@ -245,7 +235,7 @@ export function UploadFileModal({ children, onFilesUploaded, currentFolder = "/"
         setUploadedFilesCount(0);
       }, 1000);
     } catch (error) {
-      toast.error(`Upload failed: ${error instanceof Error ? error.message : 'Unknown error'}`);
+      toast.error(t('errorMessage', { message: error instanceof Error ? error.message : 'Unknown error' }));
       setUploading(false);
       setUploadProgress(0);
       setCurrentUploadStatus('');
@@ -258,13 +248,13 @@ export function UploadFileModal({ children, onFilesUploaded, currentFolder = "/"
         {children || (
           <Button>
             <UploadIcon className="h-4 w-4 mr-2" />
-            Upload Files
+            {t('title')}
           </Button>
         )}
       </DialogTrigger>
       <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle>Upload Files</DialogTitle>
+          <DialogTitle>{t('title')}</DialogTitle>
         </DialogHeader>
 
         <div className="space-y-4">
@@ -278,7 +268,7 @@ export function UploadFileModal({ children, onFilesUploaded, currentFolder = "/"
               <Progress value={uploadProgress} className="h-2" />
               {files.length > 0 && (
                 <p className="text-xs text-muted-foreground text-center">
-                  {uploadedFilesCount} of {files.length} files uploaded
+                  {t('filesUploaded', { uploaded: uploadedFilesCount, total: files.length })}
                 </p>
               )}
             </div>
@@ -290,9 +280,9 @@ export function UploadFileModal({ children, onFilesUploaded, currentFolder = "/"
             onClick={() => fileInputRef.current?.click()}
           >
             <UploadIcon className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
-            <p className="text-lg font-medium mb-2">Drop files here or click to browse</p>
+            <p className="text-lg font-medium mb-2">{t('dropZone')}</p>
             <p className="text-sm text-muted-foreground">
-              Support for images, documents, videos, and more
+              {t('dropZoneHint')}
             </p>
             <input
               ref={fileInputRef}
@@ -308,7 +298,7 @@ export function UploadFileModal({ children, onFilesUploaded, currentFolder = "/"
           {/* File List */}
           {files.length > 0 && (
             <div className="space-y-3">
-              <h4 className="font-medium">Selected Files ({files.length})</h4>
+              <h4 className="font-medium">{t('selectedFiles', { count: files.length })}</h4>
               <div className="space-y-3 max-h-64 overflow-y-auto">
                 {files.map((file) => (
                   <div key={file.id} className="border rounded-lg p-4">
@@ -336,8 +326,8 @@ export function UploadFileModal({ children, onFilesUploaded, currentFolder = "/"
                     {file.status !== 'pending' && (
                       <div className="space-y-2 mt-3">
                         <div className="flex justify-between text-sm">
-                          <span className="text-muted-foreground capitalize">
-                            {file.status}
+                          <span className="text-muted-foreground">
+                            {t(`status.${file.status}`)}
                           </span>
                           <span className="text-muted-foreground">{Math.round(file.progress)}%</span>
                         </div>
@@ -355,11 +345,11 @@ export function UploadFileModal({ children, onFilesUploaded, currentFolder = "/"
             <div className="flex items-center gap-2 p-3 bg-muted/50 border border-border rounded-lg">
             <UploadIcon className="h-4 w-4 text-muted-foreground shrink-0" />
             <div className="text-sm flex-1 min-w-0 items-center flex gap-2">
-              <span className="text-muted-foreground">Uploading to: </span>
+              <span className="text-muted-foreground">{t('uploadingTo')}</span>
               {folderInformationLoading ? (
                 <Skeleton className="inline-block w-24 h-4" />
               ) : (
-                <span className="font-medium">{folderInformation?.name || 'Home Directory'}</span>
+                <span className="font-medium">{folderInformation?.name || t('homeDirectory')}</span>
               )}
             </div>
           </div>
@@ -368,10 +358,10 @@ export function UploadFileModal({ children, onFilesUploaded, currentFolder = "/"
           {/* Actions */}
           <div className="flex justify-end space-x-2 pt-4">
             <Button type="button" variant="outline" onClick={() => setOpen(false)} disabled={uploading}>
-              Cancel
+              {t('cancel')}
             </Button>
             <Button onClick={handleUpload} disabled={files.length === 0 || uploading}>
-              {uploading ? "Uploading..." : `Upload ${files.length} File(s)`}
+              {uploading ? t('uploading') : t('upload', { count: files.length })}
             </Button>
           </div>
         </div>

@@ -1,0 +1,66 @@
+{
+  "settings": {
+    "title": "クラス設定",
+    "subtitle": "クラスの詳細と設定を構成する",
+    "labels": {
+      "unsavedChanges": "保存されていない変更"
+    },
+    "actions": {
+      "saving": "保存中...",
+      "saveChanges": "変更を保存",
+      "deleting": "削除しています...",
+      "deleteClass": "クラスを削除",
+      "cancel": "キャンセル"
+    },
+    "sections": {
+      "basicInfo": {
+        "title": "基本情報"
+      },
+      "theme": {
+        "title": "クラスのテーマ",
+        "description": "このクラスのテーマカラーを選択してください"
+      },
+      "danger": {
+        "title": "危険地帯",
+        "description": "クラスを削除すると、元に戻すことはできません。すべての課題、成績、出席記録が完全に削除され、すべての生徒がクラスから削除されます。"
+      }
+    },
+    "fields": {
+      "className": "クラス名",
+      "section": "セクション",
+      "subject": "主題"
+    },
+    "placeholders": {
+      "className": "例：上級物理学",
+      "section": "例：AP-101",
+      "subject": "例：物理学"
+    },
+    "toasts": {
+      "updated": {
+        "title": "クラスが更新されました",
+        "description": "クラス設定が正常に保存されました。"
+      },
+      "deleted": {
+        "title": "クラスを削除しました",
+        "description": "クラスは完全に削除されました。"
+      }
+    },
+    "errors": {
+      "updateFailed": {
+        "title": "更新に失敗しました",
+        "description": "クラス設定を保存できませんでした。もう一度お試しください。"
+      }
+    },
+    "confirm": {
+      "title": "本当に確かですか？",
+      "description": "この操作は元に戻せません。クラス「{name}」が完全に削除され、以下の関連データもすべて削除されます。",
+      "items": {
+        "assignments": "すべての課題と提出物",
+        "records": "すべての成績と出席記録",
+        "students": "生徒全員がクラスから除外される",
+        "events": "すべてのクラスのイベントとお知らせ"
+      },
+      "confirmDelete": "はい、クラスを削除します"
+    }
+  }
+}

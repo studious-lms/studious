@@ -1,0 +1,44 @@
+{
+  "home": {
+    "welcomeBack": "مرحبًا بك مرة أخرى، {الاسم}!",
+    "subtitle": "إليك ما يحدث مع فصولك الدراسية اليوم.",
+    "stats": {
+      "totalClasses": "إجمالي الفصول",
+      "teachingEnrolled": "{التدريس} التدريس، {المسجل} المسجل",
+      "dueToday": "المستحق اليوم",
+      "dueTodayDesc": "الواجبات المستحقة اليوم",
+      "upcoming": "القادمة",
+      "upcomingDesc": "المهام القادمة",
+      "thisWeek": "هذا الاسبوع",
+      "totalAssignments": "إجمالي المهام"
+    },
+    "upcomingAssignments": {
+      "title": "المهام القادمة",
+      "subtitle": "مواعيدك النهائية القادمة",
+      "allCaughtUp": "تم اللحاق بالجميع!",
+      "noUpcoming": "لا توجد مهام قادمة في الوقت الراهن.",
+      "viewAgenda": "عرض جدول الأعمال",
+      "dueToday": "المستحق اليوم",
+      "dueTomorrow": "مستحق غدا",
+      "due": "تاريخان",
+      "teaching": "تدريس",
+      "viewAllAssignments": "عرض جميع المهام"
+    },
+    "notifications": {
+      "title": "الإشعارات الأخيرة",
+      "subtitle": "آخر التحديثات",
+      "noNew": "لا يوجد إشعارات جديدة",
+      "viewAll": "عرض جميع الإشعارات"
+    },
+    "classes": {
+      "title": "فصولي الدراسية",
+      "subtitle": "الوصول السريع إلى فصولك الدراسية",
+      "teaching": "تدريس",
+      "enrolled": "مسجل",
+      "due": "حق",
+      "noClasses": "لا توجد فصول دراسية بعد",
+      "browseClasses": "تصفح الفصول الدراسية",
+      "viewAllClasses": "عرض جميع الفصول الدراسية"
+    }
+  }
+}

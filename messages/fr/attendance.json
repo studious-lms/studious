@@ -1,0 +1,97 @@
+{
+  "attendance": {
+    "title": "Événements et présences en classe",
+    "subtitle": "Suivre la participation des étudiants à chaque événement",
+    "saving": {
+      "auto": "Sauvegarde automatique...",
+      "unsaved": "Modifications non enregistrées",
+      "saving": "Économie..."
+    },
+    "table": {
+      "date": "Date",
+      "eventName": "Nom de l'événement",
+      "attendanceRate": "Taux de fréquentation",
+      "attendance": "Présence",
+      "actions": "Actes"
+    },
+    "actions": {
+      "viewDetails": "Voir les détails",
+      "editEvent": "Modifier l'événement",
+      "deleteEvent": "Supprimer l'événement",
+      "createEvent": "Créer un événement",
+      "saveAttendance": "Enregistrer la présence",
+      "markAllPresent": "Marquer tous les présents",
+      "markAllAbsent": "Marquer tous les absents"
+    },
+    "allEvents": {
+      "title": "Tous les événements",
+      "description": "Historique complet des événements de classe et des registres de présence",
+      "searchPlaceholder": "Rechercher des événements...",
+      "empty": {
+        "title": "Aucun événement trouvé",
+        "description": "Créez votre premier événement pour commencer à suivre la participation"
+      }
+    },
+    "eventsList": {
+      "pickDate": "Date de cueillette",
+      "untitled": "Événement sans titre",
+      "empty": {
+        "noEventsOnDate": "Aucun événement à cette date",
+        "noEventsOnDateDescription": "Aucun événement prévu pour le {date}. Essayez de sélectionner une autre date ou créez un nouvel événement.",
+        "noEvents": "Aucun événement trouvé",
+        "noEventsDescription": "Créez votre premier événement pour commencer à suivre la participation",
+        "createForDate": "Créer un événement pour cette date",
+        "createFirst": "Créer le premier événement"
+      }
+    },
+    "summary": {
+      "title": "Résumé de l'événement",
+      "selectedEvent": "Événement sélectionné",
+      "total": "Total",
+      "attendanceRate": "Taux de fréquentation"
+    },
+    "roster": {
+      "title": "Liste des étudiants",
+      "description": "Cliquez sur les boutons d'état pour marquer la présence de chaque élève",
+      "empty": {
+        "title": "Aucun étudiant inscrit",
+        "description": "Les étudiants apparaîtront ici une fois qu'ils auront rejoint la classe"
+      }
+    },
+    "prompt": {
+      "title": "Sélectionnez un événement",
+      "description": "Choisissez un événement ci-dessus pour afficher et gérer la présence des étudiants"
+    },
+    "status": {
+      "present": "Présent",
+      "late": "En retard",
+      "absent": "Absent",
+      "notTaken": "Non pris"
+    },
+    "student": {
+      "title": "Ma présence",
+      "subtitle": "Suivez votre présence pour {className}",
+      "attendanceRate": "Taux de fréquentation",
+      "history": "Historique de présence",
+      "event": "Événement",
+      "status": "Statut",
+      "searchPlaceholder": "Rechercher des événements...",
+      "empty": {
+        "title": "Aucun registre de présence",
+        "description": "Votre présence apparaîtra ici une fois les événements créés et la participation prise en compte"
+      }
+    },
+    "deleteDialog": {
+      "title": "Supprimer l'événement",
+      "description": "Êtes-vous sûr de vouloir supprimer « {eventName} » ? Cette action est irréversible et supprimera tous les enregistrements de présence associés.",
+      "deleting": "Suppression...",
+      "deleteButton": "Supprimer l'événement"
+    },
+    "toast": {
+      "attendanceSaved": "Présence enregistrée avec succès",
+      "attendanceSaveFailed": "Impossible d'enregistrer la présence",
+      "eventDeleted": "L'événement a été supprimé avec succès",
+      "eventDeleteFailed": "Échec de la suppression de l'événement"
+    }
+  }
+}

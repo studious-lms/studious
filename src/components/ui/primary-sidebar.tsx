@@ -198,7 +198,7 @@ export function PrimarySidebar({ isAuthenticated = false, user }: PrimarySidebar
               "text-[10px] mt-0.5 font-medium",
               pathname === "/notifications" ? "text-foreground" : "text-muted-foreground"
             )}>
-              Alerts
+              {t('notifications')}
             </span>
           </Link>
 
@@ -223,7 +223,7 @@ export function PrimarySidebar({ isAuthenticated = false, user }: PrimarySidebar
                   "text-[10px] mt-0.5 font-medium",
                   pathname === "/profile" ? "text-foreground" : "text-muted-foreground"
                 )}>
-                  Profile
+                  {t('profile')}
                 </span>
               </button>
             </PopoverTrigger>

@@ -1,23 +1,32 @@
 /**
- * Automatic Translation Script
+ * Automatic Translation Script with Google Translate
  * 
- * This script uses AI to automatically translate the base English translations
- * to other languages. It can use OpenAI GPT-4 or other translation services.
+ * This script uses Google Translate API to automatically translate the base English translations
+ * to other languages. Works with the new split translation file structure.
  * 
  * Usage:
- * 1. Set up your API key: export OPENAI_API_KEY="your-key-here"
- * 2. Run: npx ts-node scripts/translate.ts
+ * 1. Set up your API key: export SERVICE_TRANSLATION_KEY="your-google-translate-api-key"
+ * 2. Run: npx tsx scripts/translate.ts
  * 
  * Or manually translate specific language:
- * npx ts-node scripts/translate.ts --lang es
+ * npx tsx scripts/translate.ts --lang es
+ * 
+ * Install dependencies:
+ * npm install @google-cloud/translate
  */
 
 import fs from 'fs';
 import path from 'path';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 interface TranslationObject {
   [key: string]: string | TranslationObject;
 }
+
+// Languages to translate - add or remove as needed
+const LANGUAGES_TO_TRANSLATE = ['es', 'fr', 'zh', 'de', 'ja', 'ko', 'pt', 'ar'];
 
 const LANGUAGES = {
   es: 'Spanish',
@@ -36,7 +45,8 @@ const LANGUAGES = {
  */
 async function translateWithOpenAI(
   content: TranslationObject,
-  targetLang: string
+  targetLang: string,
+  fileName: string
 ): Promise<TranslationObject> {
   try {
     // Dynamic import to avoid errors if openai is not installed
@@ -44,180 +54,271 @@ async function translateWithOpenAI(
     
     const apiKey = process.env.OPENAI_API_KEY;
     if (!apiKey) {
-      throw new Error('OPENAI_API_KEY environment variable is not set');
+      console.error('❌ OPENAI_API_KEY environment variable not set');
+      return content;
     }
 
     const openai = new OpenAI({ apiKey });
-    
-    const langName = LANGUAGES[targetLang as keyof typeof LANGUAGES];
-    
-    console.log(`🤖 Translating to ${langName} using GPT-4...`);
-    
-    const response = await openai.chat.completions.create({
-      model: "gpt-4",
+    const languageName = LANGUAGES[targetLang as keyof typeof LANGUAGES];
+
+    console.log(`   🤖 Translating with OpenAI GPT-4 to ${languageName}...`);
+
+    const prompt = `You are a professional translator. Translate the following JSON object from English to ${languageName}.
+
+IMPORTANT RULES:
+1. Preserve all JSON structure, keys, and formatting
+2. Only translate the VALUES (text strings), never translate the KEYS
+3. Preserve all placeholders like {variable}, {count}, etc.
+4. Keep HTML tags intact if present
+5. Maintain the same punctuation and formatting style
+6. For technical terms, keep them in English if commonly used that way
+7. Return ONLY the translated JSON, no explanations
+
+Here's the JSON to translate:
+
+${JSON.stringify(content, null, 2)}`;
+
+    const completion = await openai.chat.completions.create({
+      model: 'gpt-4-turbo-preview',
       messages: [
         {
-          role: "system",
-          content: `You are a professional translator. Translate the following JSON from English to ${langName}. 
-          IMPORTANT: 
-          - Keep ALL keys in English - only translate the VALUES
-          - Maintain the exact same JSON structure
-          - Preserve any placeholders like {name}, {date}, etc.
-          - Keep formatting and punctuation appropriate for ${langName}
-          - Return ONLY valid JSON, no explanations`
+          role: 'system',
+          content: 'You are a professional translator. You translate JSON files while preserving structure and placeholders. Return only valid JSON.'
         },
         {
-          role: "user",
-          content: JSON.stringify(content, null, 2)
+          role: 'user',
+          content: prompt
         }
       ],
       temperature: 0.3, // Lower temperature for more consistent translations
     });
+
+    const translatedText = completion.choices[0]?.message?.content || '';
     
-    const translatedText = response.choices[0].message.content;
-    if (!translatedText) {
-      throw new Error('No translation received from OpenAI');
+    // Extract JSON from markdown code blocks if present
+    let jsonText = translatedText;
+    const jsonMatch = translatedText.match(/```(?:json)?\s*([\s\S]*?)\s*```/);
+    if (jsonMatch) {
+      jsonText = jsonMatch[1];
     }
     
-    // Parse the response, removing any markdown code blocks if present
-    const cleanedText = translatedText
-      .replace(/```json\n?/g, '')
-      .replace(/```\n?/g, '')
-      .trim();
-    
-    return JSON.parse(cleanedText);
-  } catch (error) {
-    if (error instanceof Error && error.message.includes('Cannot find module')) {
-      console.error('❌ OpenAI package not installed. Run: npm install openai');
-    } else {
-      console.error('❌ Translation error:', error);
-    }
-    throw error;
+    const translated = JSON.parse(jsonText);
+    return translated;
+
+  } catch (error: any) {
+    console.error(`   ❌ OpenAI translation failed for ${fileName}:`, error.message);
+    return content; // Return original on error
   }
 }
 
 /**
- * Translate using Google Translate
+ * Translate using Google Translate API with BATCHING for speed
  * Requires: npm install @google-cloud/translate
  */
 async function translateWithGoogle(
   content: TranslationObject,
   targetLang: string
 ): Promise<TranslationObject> {
-  console.log('📝 Google Translate integration - implement if needed');
-  // Implementation here if you prefer Google Translate
-  return content;
-}
-
-/**
- * Recursively translate all string values in an object
- */
-function translateObject(
-  obj: TranslationObject,
-  translateFn: (text: string) => Promise<string>
-): Promise<TranslationObject> {
-  const result: TranslationObject = {};
-  
-  const promises = Object.entries(obj).map(async ([key, value]) => {
-    if (typeof value === 'string') {
-      result[key] = await translateFn(value);
-    } else if (typeof value === 'object' && value !== null) {
-      result[key] = await translateObject(value, translateFn);
-    } else {
-      result[key] = value;
-    }
-  });
-  
-  return Promise.all(promises).then(() => result);
-}
-
-/**
- * Main translation function
- */
-async function translateFile(targetLang: string, method: 'openai' | 'google' = 'openai') {
-  const messagesDir = path.join(process.cwd(), 'messages');
-  const sourceFile = path.join(messagesDir, 'en.json');
-  const targetFile = path.join(messagesDir, `${targetLang}.json`);
-  
-  // Read source file
-  if (!fs.existsSync(sourceFile)) {
-    console.error(`❌ Source file not found: ${sourceFile}`);
-    return;
-  }
-  
-  const sourceContent = JSON.parse(fs.readFileSync(sourceFile, 'utf8'));
-  
-  console.log(`\n📚 Translating English → ${LANGUAGES[targetLang as keyof typeof LANGUAGES]}`);
-  console.log(`📄 Source: en.json`);
-  console.log(`📄 Target: ${targetLang}.json`);
-  
   try {
-    let translated: TranslationObject;
+    const { Translate } = await import('@google-cloud/translate').then(m => m.v2);
     
-    if (method === 'openai') {
-      translated = await translateWithOpenAI(sourceContent, targetLang);
-    } else {
-      translated = await translateWithGoogle(sourceContent, targetLang);
+    const apiKey = process.env.SERVICE_TRANSLATION_KEY;
+    if (!apiKey) {
+      console.error('❌ SERVICE_TRANSLATION_KEY environment variable not set');
+      return content;
+    }
+
+    const translate = new Translate({ key: apiKey });
+
+    // Step 1: Collect all strings to translate with their paths
+    const stringsToTranslate: { path: string[]; value: string }[] = [];
+    
+    function collectStrings(obj: any, currentPath: string[] = []) {
+      for (const [key, value] of Object.entries(obj)) {
+        if (typeof value === 'string') {
+          stringsToTranslate.push({ path: [...currentPath, key], value });
+        } else if (typeof value === 'object' && value !== null) {
+          collectStrings(value, [...currentPath, key]);
+        }
+      }
     }
     
-    // Write translated file
-    fs.writeFileSync(targetFile, JSON.stringify(translated, null, 2), 'utf8');
+    collectStrings(content);
+
+    if (stringsToTranslate.length === 0) {
+      return content;
+    }
+
+    // Step 2: Batch translate ALL strings at once (much faster!)
+    const textsToTranslate = stringsToTranslate.map(s => s.value);
+    const BATCH_SIZE = 100; // Google Translate supports up to 128 strings per request
+    const translations: string[] = [];
+
+    for (let i = 0; i < textsToTranslate.length; i += BATCH_SIZE) {
+      const batch = textsToTranslate.slice(i, i + BATCH_SIZE);
+      try {
+        const [batchTranslations] = await translate.translate(batch, targetLang);
+        translations.push(...(Array.isArray(batchTranslations) ? batchTranslations : [batchTranslations]));
+      } catch (error) {
+        console.error(`   ⚠️  Batch translation failed, using originals for batch ${i / BATCH_SIZE + 1}`);
+        translations.push(...batch); // Fallback to originals
+      }
+    }
+
+    // Step 3: Reconstruct the object with translations
+    const result = JSON.parse(JSON.stringify(content)); // Deep clone
     
-    console.log(`✅ Successfully translated to ${targetLang}.json`);
-  } catch (error) {
-    console.error(`❌ Failed to translate to ${targetLang}:`, error);
+    stringsToTranslate.forEach((item, index) => {
+      let current: any = result;
+      for (let i = 0; i < item.path.length - 1; i++) {
+        current = current[item.path[i]];
+      }
+      current[item.path[item.path.length - 1]] = translations[index];
+    });
+
+    return result;
+
+  } catch (error: any) {
+    console.error(`   ❌ Google Translate failed:`, error.message);
+    return content;
   }
 }
 
 /**
- * Translate all languages
+ * Get all JSON files in the English translations folder
+ */
+function getTranslationFiles(): string[] {
+  const enDir = path.join(process.cwd(), 'messages', 'en');
+  
+  if (!fs.existsSync(enDir)) {
+    console.error('❌ English translations folder not found at:', enDir);
+    console.log('\n💡 Run `npx tsx scripts/split-translations.ts` first to create the folder structure');
+    process.exit(1);
+  }
+
+  return fs.readdirSync(enDir)
+    .filter(file => file.endsWith('.json'))
+    .sort();
+}
+
+/**
+ * Translate a single file to target language
+ */
+async function translateFile(
+  fileName: string,
+  targetLang: string,
+  useOpenAI: boolean
+): Promise<void> {
+  const enPath = path.join(process.cwd(), 'messages', 'en', fileName);
+  const targetDir = path.join(process.cwd(), 'messages', targetLang);
+  const targetPath = path.join(targetDir, fileName);
+
+  // Create target directory if it doesn't exist
+  if (!fs.existsSync(targetDir)) {
+    fs.mkdirSync(targetDir, { recursive: true });
+  }
+
+  // Read English content
+  const enContent = JSON.parse(fs.readFileSync(enPath, 'utf-8'));
+
+  // Translate
+  const translated = useOpenAI
+    ? await translateWithOpenAI(enContent, targetLang, fileName)
+    : await translateWithGoogle(enContent, targetLang);
+
+  // Write to target language file
+  fs.writeFileSync(
+    targetPath,
+    JSON.stringify(translated, null, 2),
+    'utf-8'
+  );
+
+  console.log(`   ✓ Translated ${fileName}`);
+}
+
+/**
+ * Main translation function with PARALLEL PROCESSING
  */
 async function translateAll() {
-  console.log('🌍 Starting batch translation for all languages...\n');
-  
-  for (const [langCode, langName] of Object.entries(LANGUAGES)) {
-    try {
-      await translateFile(langCode);
-      // Add a small delay to avoid rate limits
-      await new Promise(resolve => setTimeout(resolve, 1000));
-    } catch (error) {
-      console.error(`Failed to translate ${langName}:`, error);
-    }
-  }
-  
-  console.log('\n✨ Batch translation complete!');
-}
-
-/**
- * CLI Interface
- */
-async function main() {
   const args = process.argv.slice(2);
-  const langArg = args.find(arg => arg.startsWith('--lang='));
-  const targetLang = langArg ? langArg.split('=')[1] : null;
+  const specificLang = args.find(arg => arg.startsWith('--lang='))?.split('=')[1];
+  const useOpenAI = args.includes('--openai') || !!process.env.OPENAI_API_KEY;
+  const parallelLanguages = args.includes('--parallel-langs'); // Translate all languages at once
+
+  console.log('🌍 Starting translation process...\n');
+  console.log(`📝 Translation method: ${useOpenAI ? 'OpenAI GPT-4' : 'Google Translate (BATCHED)'}`);
+  console.log(`⚡ Parallel processing: ${parallelLanguages ? 'ALL LANGUAGES' : 'FILES ONLY'}`);
   
-  console.log('🌐 Studious Translation Tool\n');
-  
-  if (targetLang) {
-    if (!LANGUAGES[targetLang as keyof typeof LANGUAGES]) {
-      console.error(`❌ Unsupported language: ${targetLang}`);
-      console.log(`Supported languages: ${Object.keys(LANGUAGES).join(', ')}`);
-      process.exit(1);
-    }
-    await translateFile(targetLang);
-  } else {
-    console.log('Translating to all supported languages...');
-    // For now, just translate the ones we have placeholder files for
-    await translateFile('es');
-    await translateFile('fr');
-    await translateFile('zh');
+  if (useOpenAI && !process.env.OPENAI_API_KEY) {
+    console.log('\n⚠️  OPENAI_API_KEY not set, will use Google Translate as fallback');
   }
+
+  const files = getTranslationFiles();
+  console.log(`📁 Found ${files.length} translation files\n`);
+
+  const languagesToProcess = specificLang 
+    ? [specificLang]
+    : LANGUAGES_TO_TRANSLATE;
+
+  const startTime = Date.now();
+
+  if (parallelLanguages) {
+    // Translate all languages in parallel (fastest but uses more API quota)
+    console.log('🚀 Translating ALL languages in parallel...\n');
+    
+    await Promise.all(
+      languagesToProcess.map(async (lang) => {
+        const languageName = LANGUAGES[lang as keyof typeof LANGUAGES] || lang;
+        console.log(`🌐 Starting ${languageName} (${lang})...`);
+        
+        // Translate all files for this language in parallel
+        await Promise.all(
+          files.map(file => 
+            translateFile(file, lang, useOpenAI).catch(error => {
+              console.error(`   ❌ ${lang}/${file}:`, error.message);
+            })
+          )
+        );
+        
+        console.log(`✅ Completed ${languageName}!`);
+      })
+    );
+  } else {
+    // Translate languages sequentially, but files in parallel
+    for (const lang of languagesToProcess) {
+      const languageName = LANGUAGES[lang as keyof typeof LANGUAGES] || lang;
+      console.log(`\n🌐 Translating to ${languageName} (${lang})...`);
+      console.log('─'.repeat(50));
+
+      // Translate all files in parallel (much faster!)
+      await Promise.all(
+        files.map(file => 
+          translateFile(file, lang, useOpenAI).catch(error => {
+            console.error(`   ❌ Error translating ${file}:`, error.message);
+          })
+        )
+      );
+
+      console.log(`\n✅ Completed ${languageName} translation!`);
+    }
+  }
+
+  const duration = ((Date.now() - startTime) / 1000).toFixed(1);
+
+  console.log('\n' + '='.repeat(50));
+  console.log(`✨ All translations completed in ${duration}s!`);
+  console.log('\n📁 Translation files created in:');
+  languagesToProcess.forEach(lang => {
+    console.log(`   • messages/${lang}/`);
+  });
+  console.log('\n💡 Next steps:');
+  console.log('   1. Review the translations for accuracy');
+  console.log('   2. Test your app in different languages');
+  console.log('   3. Make manual adjustments where needed');
 }
 
-// Run if called directly
-if (require.main === module) {
-  main().catch(console.error);
-}
-
-export { translateFile, translateAll };
-
+// Run the translation
+translateAll().catch(error => {
+  console.error('\n❌ Translation failed:', error);
+  process.exit(1);
+});

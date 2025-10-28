@@ -1,0 +1,21 @@
+{
+  "classes": {
+    "title": "수업",
+    "description": "수업 및 등록 수업을 관리하세요",
+    "joinClass": "수업에 참여하세요",
+    "createClass": "클래스 만들기",
+    "searchPlaceholder": "수업 검색...",
+    "teaching": "가르침",
+    "enrolled": "등록됨",
+    "noClassesFound": "수업을 찾을 수 없습니다",
+    "noTeachingClassesFound": "\"{query}\"와 일치하는 교육 수업이 없습니다.",
+    "noEnrolledClassesFound": "\"{query}\"와 일치하는 등록된 수업이 없습니다.",
+    "noClassesYet": "아직 수업이 없습니다",
+    "noClassesYetDesc": "첫 번째 수업을 만들어 과제, 성적, 학생 상호작용을 관리해 보세요.",
+    "noEnrolledClasses": "등록된 수업이 없습니다",
+    "noEnrolledClassesDesc": "선생님이 제공한 초대 코드나 링크를 사용하여 수업에 참여하세요.",
+    "classDeleted": "클래스가 성공적으로 삭제되었습니다.",
+    "classDeleteFailed": "클래스 삭제에 실패했습니다",
+    "failedToLoad": "클래스를 로드하는 데 실패했습니다"
+  }
+}

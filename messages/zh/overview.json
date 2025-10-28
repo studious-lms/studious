@@ -1,0 +1,12 @@
+{
+  "overview": {
+    "assignments": "作业",
+    "students": "学生",
+    "attendance": "出勤",
+    "attachFile": "附加文件",
+    "post": "邮政",
+    "posting": "正在发布...",
+    "noPosts": "还没有帖子",
+    "createFirstPost": "创建第一篇帖子"
+  }
+}

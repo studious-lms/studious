@@ -3,6 +3,7 @@
 import { useState, useEffect, useMemo } from "react";
 import { format } from "date-fns";
 import { useParams } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { PageLayout } from "@/components/ui/page-layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -80,6 +81,8 @@ interface EventTableRow {
 }
 
 export default function Attendance() {
+  const t = useTranslations('attendance');
+  const tCommon = useTranslations('common');
   const { id: classId } = useParams();
   const appState = useSelector((state: RootState) => state.app);
   const isStudent = appState.user.student;
@@ -139,7 +142,7 @@ export default function Attendance() {
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Date
+          {t('table.date')}
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       ),
@@ -154,7 +157,7 @@ export default function Attendance() {
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Event Name
+          {t('table.eventName')}
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       ),
@@ -178,7 +181,7 @@ export default function Attendance() {
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Attendance Rate
+          {t('table.attendanceRate')}
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       ),
@@ -196,7 +199,7 @@ export default function Attendance() {
     },
     {
       id: "attendance",
-      header: "Attendance",
+      header: t('table.attendance'),
       cell: ({ row }) => (
         <div className="flex space-x-1 text-xs">
           <div className="flex items-center space-x-1">
@@ -216,14 +219,14 @@ export default function Attendance() {
     },
     {
       id: "actions",
-      header: "Actions",
+      header: t('table.actions'),
       cell: ({ row }) => {
         const event = allEvents.find(e => e.id === row.original.id);
         return (
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" className="h-8 w-8 p-0">
-                <span className="sr-only">Open menu</span>
+                <span className="sr-only">{tCommon('openMenu')}</span>
                 <MoreHorizontal className="h-4 w-4" />
               </Button>
             </DropdownMenuTrigger>
@@ -235,7 +238,7 @@ export default function Attendance() {
                 }}
               >
                 <Eye className="mr-2 h-4 w-4" />
-                View Details
+                {t('actions.viewDetails')}
               </DropdownMenuItem>
               <DropdownMenuSeparator />
               <DropdownMenuItem
@@ -245,7 +248,7 @@ export default function Attendance() {
                 }}
               >
                 <Edit className="mr-2 h-4 w-4" />
-                Edit Event
+                {t('actions.editEvent')}
               </DropdownMenuItem>
               <DropdownMenuSeparator />
               <DropdownMenuItem
@@ -256,7 +259,7 @@ export default function Attendance() {
                 className="text-destructive"
               >
                 <Trash2 className="mr-2 h-4 w-4" />
-                Delete Event
+                {t('actions.deleteEvent')}
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
@@ -415,12 +418,12 @@ export default function Attendance() {
       });
 
       if (showToast) {
-        toast.success("Attendance saved successfully");
+        toast.success(t('toast.attendanceSaved'));
       }
     } catch (error) {
       console.error("Failed to save attendance:", error);
       if (showToast) {
-        toast.error("Failed to save attendance");
+        toast.error(t('toast.attendanceSaveFailed'));
       }
     }
   };
@@ -433,7 +436,7 @@ export default function Attendance() {
         id: eventToDelete.id
       });
       
-      toast.success("Event deleted successfully");
+      toast.success(t('toast.eventDeleted'));
       setDeleteConfirmOpen(false);
       setEventToDelete(null);
       
@@ -442,7 +445,7 @@ export default function Attendance() {
       refetchClass();
     } catch (error) {
       console.error("Failed to delete event:", error);
-      toast.error("Failed to delete event");
+      toast.error(t('toast.eventDeleteFailed'));
     }
   };
 
@@ -526,7 +529,7 @@ export default function Attendance() {
   const studentAttendanceColumns: ColumnDef<typeof studentAttendanceData[number]>[] = [
     {
       accessorKey: "date",
-      header: "Date",
+      header: t('table.date'),
       cell: ({ row }) => {
         const date = row.original.event?.startTime;
         return date ? format(new Date(date), "MMM d, yyyy") : "-";
@@ -534,7 +537,7 @@ export default function Attendance() {
     },
     {
       accessorKey: "name",
-      header: "Event",
+      header: t('student.event'),
       cell: ({ row }) => (
         <div>
           <div className="font-medium">{row.original.event?.name}</div>
@@ -549,7 +552,7 @@ export default function Attendance() {
     },
     {
       accessorKey: "status",
-      header: "Status",
+      header: t('student.status'),
       cell: ({ row }) => {
         const status = row.original.status;
         return (
@@ -561,7 +564,7 @@ export default function Attendance() {
               status === 'absent' ? 'destructive' : 
               'outline'
             }>
-              {status === 'not_taken' ? 'Not Taken' : status.charAt(0).toUpperCase() + status.slice(1)}
+              {status === 'not_taken' ? t('status.notTaken') : status.charAt(0).toUpperCase() + status.slice(1)}
             </Badge>
           </div>
         );
@@ -591,9 +594,9 @@ export default function Attendance() {
         <div className="space-y-6">
           {/* Header */}
           <div>
-            <h1 className="text-2xl font-bold">My Attendance</h1>
+            <h1 className="text-2xl font-bold">{t('student.title')}</h1>
             <p className="text-muted-foreground">
-              Track your attendance for {classData?.class?.name || 'this class'}
+              {t('student.subtitle', { className: classData?.class?.name || tCommon('class') })}
             </p>
           </div>
 
@@ -607,7 +610,7 @@ export default function Attendance() {
                   </div>
                   <div>
                     <p className="text-2xl font-bold">{studentStats.present}</p>
-                    <p className="text-xs text-muted-foreground">Present</p>
+                    <p className="text-xs text-muted-foreground">{t('status.present')}</p>
                   </div>
                 </div>
               </CardContent>
@@ -621,7 +624,7 @@ export default function Attendance() {
                   </div>
                   <div>
                     <p className="text-2xl font-bold">{studentStats.late}</p>
-                    <p className="text-xs text-muted-foreground">Late</p>
+                    <p className="text-xs text-muted-foreground">{t('status.late')}</p>
                   </div>
                 </div>
               </CardContent>
@@ -635,7 +638,7 @@ export default function Attendance() {
                   </div>
                   <div>
                     <p className="text-2xl font-bold">{studentStats.absent}</p>
-                    <p className="text-xs text-muted-foreground">Absent</p>
+                    <p className="text-xs text-muted-foreground">{t('status.absent')}</p>
                   </div>
                 </div>
               </CardContent>
@@ -649,7 +652,7 @@ export default function Attendance() {
                   </div>
                   <div>
                     <p className="text-2xl font-bold">{studentStats.attendanceRate}%</p>
-                    <p className="text-xs text-muted-foreground">Attendance Rate</p>
+                    <p className="text-xs text-muted-foreground">{t('student.attendanceRate')}</p>
                   </div>
                 </div>
               </CardContent>
@@ -659,21 +662,21 @@ export default function Attendance() {
           {/* Attendance History */}
           <Card>
             <CardHeader>
-              <CardTitle>Attendance History</CardTitle>
+              <CardTitle>{t('student.history')}</CardTitle>
             </CardHeader>
             <CardContent>
               {studentAttendanceData.length === 0 ? (
                 <EmptyState
                   icon={ClipboardCheck}
-                  title="No Attendance Records"
-                  description="Your attendance will appear here once events are created and attendance is taken"
+                  title={t('student.empty.title')}
+                  description={t('student.empty.description')}
                 />
               ) : (
                 <DataTable
                   columns={studentAttendanceColumns}
                   data={studentAttendanceData}
                   searchKey="name"
-                  searchPlaceholder="Search events..."
+                  searchPlaceholder={t('student.searchPlaceholder')}
                 />
               )}
             </CardContent>
@@ -687,16 +690,16 @@ export default function Attendance() {
     <PageLayout>
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-bold">Class Events & Attendance</h1>
-          <p className="text-muted-foreground">Track student attendance for each event</p>
+          <h1 className="text-2xl font-bold">{t('title')}</h1>
+          <p className="text-muted-foreground">{t('subtitle')}</p>
         </div>
         
         <div className="flex items-center gap-2">
           {isAutoSaving && (
-            <span className="text-sm text-muted-foreground">Auto-saving...</span>
+            <span className="text-sm text-muted-foreground">{t('saving.auto')}</span>
           )}
           {hasUnsavedChanges && !isAutoSaving && (
-            <span className="text-sm text-orange-600">Unsaved changes</span>
+            <span className="text-sm text-orange-600">{t('saving.unsaved')}</span>
           )}
           {(hasUnsavedChanges || showStudentRoster) && <Button 
             disabled={!showStudentRoster || updateAttendanceMutation.isPending}
@@ -706,7 +709,7 @@ export default function Attendance() {
             }}
           >
             <ClipboardCheck className="h-4 w-4 mr-2" />
-            {updateAttendanceMutation.isPending ? 'Saving...' : 'Save Attendance'}
+            {updateAttendanceMutation.isPending ? t('saving.saving') : t('actions.saveAttendance')}
           </Button>}
         </div>
       </div>
@@ -714,24 +717,24 @@ export default function Attendance() {
       {/* All Events Table */}
       <Card className="mb-6">
         <CardHeader>
-          <CardTitle>All Events</CardTitle>
+          <CardTitle>{t('allEvents.title')}</CardTitle>
           <p className="text-sm text-muted-foreground">
-            Complete history of class events and attendance records
+            {t('allEvents.description')}
           </p>
         </CardHeader>
         <CardContent>
           {tableData.length === 0 ? (
             <EmptyState
               icon={CalendarIcon}
-              title="No events found"
-              description="Create your first event to start tracking attendance"
+              title={t('allEvents.empty.title')}
+              description={t('allEvents.empty.description')}
             />
           ) : (
             <DataTable
               columns={columns}
               data={tableData}
               searchKey="name"
-              searchPlaceholder="Search events..."
+              searchPlaceholder={t('allEvents.searchPlaceholder')}
               onRowClick={(row) => {
                 // Set the selected event and date when row is clicked
                 setSelectedEvent(row.id);
@@ -761,7 +764,7 @@ export default function Attendance() {
                     )}
                   >
                     <CalendarIcon className="mr-2 h-4 w-4" />
-                    {selectedDate ? format(selectedDate, "MMMM dd") : "Pick date"}
+                    {selectedDate ? format(selectedDate, "MMMM dd") : t('eventsList.pickDate')}
                   </Button>
                 </PopoverTrigger>
                 <PopoverContent className="w-auto p-0" align="start">
@@ -783,7 +786,7 @@ export default function Attendance() {
               }}
             >
               <Plus className="h-4 w-4 mr-2" />
-              Create Event
+              {t('actions.createEvent')}
             </Button>
           </div>
         </CardHeader>
@@ -792,10 +795,10 @@ export default function Attendance() {
               <div className="space-y-4">
                 <EmptyState
                   icon={CalendarIcon}
-                  title={selectedDate ? "No events on this date" : "No events found"}
+                  title={selectedDate ? t('eventsList.empty.noEventsOnDate') : t('eventsList.empty.noEvents')}
                   description={selectedDate 
-                    ? `No events scheduled for ${format(selectedDate, "MMM d, yyyy")}. Try selecting a different date or create a new event.`
-                    : "Create your first event to start tracking attendance"
+                    ? t('eventsList.empty.noEventsOnDateDescription', { date: format(selectedDate, "MMM d, yyyy") })
+                    : t('eventsList.empty.noEventsDescription')
                   }
                 />
                 <Button
@@ -806,7 +809,7 @@ export default function Attendance() {
                   className="w-full"
                 >
                   <Plus className="h-4 w-4 mr-2" />
-                  {selectedDate ? "Create Event for This Date" : "Create First Event"}
+                  {selectedDate ? t('eventsList.empty.createForDate') : t('eventsList.empty.createFirst')}
                 </Button>
               </div>
             ) : (
@@ -828,7 +831,7 @@ export default function Attendance() {
                         style={{ backgroundColor: event.color || '#3B82F6' }}
                       />
                       <div>
-                        <h3 className="font-medium">{event.name || 'Untitled Event'}</h3>
+                        <h3 className="font-medium">{event.name || t('eventsList.untitled')}</h3>
                         <div className="flex items-center text-sm text-muted-foreground space-x-4">
                           <div className="flex items-center">
                             <Clock className="h-4 w-4 mr-1" />
@@ -857,36 +860,36 @@ export default function Attendance() {
           {/* Event Summary */}
           <Card>
             <CardHeader>
-              <CardTitle className="text-base">Event Summary</CardTitle>
+              <CardTitle className="text-base">{t('summary.title')}</CardTitle>
               <p className="text-sm text-muted-foreground">
-                {selectedEventData?.name || 'Selected Event'}
+                {selectedEventData?.name || t('summary.selectedEvent')}
               </p>
             </CardHeader>
             <CardContent className="space-y-3">
               <div className="grid grid-cols-2 gap-3">
                 <div className="text-center p-3 rounded-lg bg-green-50 dark:bg-green-950">
                   <div className="text-2xl font-bold text-green-600 dark:text-green-400">{stats.present}</div>
-                  <p className="text-sm">Present</p>
+                  <p className="text-sm">{t('status.present')}</p>
                 </div>
                 <div className="text-center p-3 rounded-lg bg-yellow-50 dark:bg-yellow-950">
                   <div className="text-2xl font-bold text-yellow-600 dark:text-yellow-400">{stats.late}</div>
-                  <p className="text-sm">Late</p>
+                  <p className="text-sm">{t('status.late')}</p>
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <div className="text-center p-3 rounded-lg bg-red-50 dark:bg-red-950">
                   <div className="text-2xl font-bold text-red-600 dark:text-red-400">{stats.absent}</div>
-                  <p className="text-sm">Absent</p>
+                  <p className="text-sm">{t('status.absent')}</p>
                 </div>
                 <div className="text-center p-3 rounded-lg bg-muted">
                   <div className="text-2xl font-bold">{stats.total}</div>
-                  <p className="text-sm">Total</p>
+                  <p className="text-sm">{t('summary.total')}</p>
                 </div>
               </div>
               
               <div className="pt-3 border-t">
                 <div className="flex justify-between text-sm">
-                  <span>Attendance Rate</span>
+                  <span>{t('summary.attendanceRate')}</span>
                   <span className="font-medium">
                     {Math.round(((stats.present + stats.late) / stats.total) * 100)}%
                   </span>
@@ -909,7 +912,7 @@ export default function Attendance() {
                   }}
                 >
                   <UserCheck className="h-4 w-4 mr-2" />
-                  Mark All Present
+                  {t('actions.markAllPresent')}
                 </Button>
                 <Button 
                   variant="outline" 
@@ -925,7 +928,7 @@ export default function Attendance() {
                   }}
                 >
                   <UserX className="h-4 w-4 mr-2" />
-                  Mark All Absent
+                  {t('actions.markAllAbsent')}
                 </Button>
               </div>
             </CardContent>
@@ -934,17 +937,17 @@ export default function Attendance() {
           {/* Student Roster */}
           <Card className="lg:col-span-2">
             <CardHeader>
-              <CardTitle className="text-base">Student Roster</CardTitle>
+              <CardTitle className="text-base">{t('roster.title')}</CardTitle>
               <p className="text-sm text-muted-foreground">
-                Click the status buttons to mark attendance for each student
+                {t('roster.description')}
               </p>
             </CardHeader>
             <CardContent>
               {students.length === 0 ? (
                 <EmptyState
                   icon={UserCheck}
-                  title="No students enrolled"
-                  description="Students will appear here once they join the class"
+                  title={t('roster.empty.title')}
+                  description={t('roster.empty.description')}
                 />
               ) : (
                 <div className="grid md:grid-cols-2 gap-3">
@@ -972,7 +975,7 @@ export default function Attendance() {
                           className="text-xs py-1 h-7"
                           onClick={() => updateAttendance(student.id, "present")}
                         >
-                          Present
+                          {t('status.present')}
                         </Button>
                         <Button
                           variant={attendance[student.id] === "late" ? "destructive" : "outline"}
@@ -980,7 +983,7 @@ export default function Attendance() {
                           className={`text-xs py-1 h-7 ${attendance[student.id] === "late" &&"bg-yellow-500 text-yellow-500-foreground hover:bg-yellow-600 hover:text-yellow-600-foreground"}`}
                           onClick={() => updateAttendance(student.id, "late")}
                         >
-                          Late
+                          {t('status.late')}
                         </Button>
                         <Button
                           variant={attendance[student.id] === "absent" ? "destructive" : "outline"}
@@ -988,7 +991,7 @@ export default function Attendance() {
                           className="text-xs py-1 h-7"
                           onClick={() => updateAttendance(student.id, "absent")}
                         >
-                          Absent
+                          {t('status.absent')}
                         </Button>
                       </div>
                     </div>
@@ -1006,8 +1009,8 @@ export default function Attendance() {
           <CardContent className="py-8">
             <EmptyState
               icon={CalendarIcon}
-              title="Select an Event"
-              description="Choose an event above to view and manage student attendance"
+              title={t('prompt.title')}
+              description={t('prompt.description')}
             />
           </CardContent>
         </Card>
@@ -1054,19 +1057,19 @@ export default function Attendance() {
       <AlertDialog open={deleteConfirmOpen} onOpenChange={setDeleteConfirmOpen}>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Delete Event</AlertDialogTitle>
+            <AlertDialogTitle>{t('deleteDialog.title')}</AlertDialogTitle>
             <AlertDialogDescription>
-              Are you sure you want to delete "{eventToDelete?.name}"? This action cannot be undone and will remove all associated attendance records.
+              {t('deleteDialog.description', { eventName: eventToDelete?.name || "" })}
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogCancel>{tCommon('cancel')}</AlertDialogCancel>
             <AlertDialogAction
               onClick={handleDeleteEvent}
               className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
               disabled={deleteEventMutation.isPending}
             >
-              {deleteEventMutation.isPending ? "Deleting..." : "Delete Event"}
+              {deleteEventMutation.isPending ? t('deleteDialog.deleting') : t('deleteDialog.deleteButton')}
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>

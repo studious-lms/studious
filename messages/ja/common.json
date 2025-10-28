@@ -1,0 +1,1218 @@
+{
+  "common": {
+    "save": "保存",
+    "cancel": "キャンセル",
+    "delete": "消去",
+    "edit": "編集",
+    "submit": "提出する",
+    "close": "近い",
+    "back": "戻る",
+    "next": "次",
+    "loading": "読み込み中...",
+    "search": "検索",
+    "filter": "フィルター",
+    "sort": "選別",
+    "viewAll": "すべて表示",
+    "noData": "データなし",
+    "export": "輸出"
+  },
+  "time": {
+    "today": "今日",
+    "tomorrow": "明日",
+    "yesterday": "昨日",
+    "thisWeek": "今週",
+    "nextWeek": "来週",
+    "lastWeek": "先週"
+  },
+  "errors": {
+    "somethingWentWrong": "問題が発生しました",
+    "tryAgain": "もう一度やり直してください",
+    "pageNotFound": "ページが見つかりません",
+    "unauthorized": "不正アクセス"
+  },
+  "auth": {
+    "login": {
+      "title": "おかえり",
+      "subtitle": "Studiousアカウントにサインイン",
+      "username": "ユーザー名",
+      "password": "パスワード",
+      "forgotPassword": "パスワードをお忘れですか？",
+      "signIn": "サインイン",
+      "signingIn": "サインインしています...",
+      "noAccount": "アカウントをお持ちではありませんか？",
+      "signUp": "サインアップ",
+      "successMessage": "ログインに成功しました",
+      "cancel": "キャンセル"
+    },
+    "signup": {
+      "title": "アカウントを作成",
+      "subtitle": "Studiousに参加して学習を始めましょう",
+      "signUp": "サインアップ",
+      "firstName": "ファーストネーム",
+      "lastName": "苗字",
+      "email": "メール",
+      "password": "パスワード",
+      "confirmPassword": "パスワードを認証する",
+      "firstNamePlaceholder": "ファーストネーム",
+      "lastNamePlaceholder": "苗字",
+      "emailPlaceholder": "メールアドレスを入力してください",
+      "passwordPlaceholder": "パスワードを作成",
+      "confirmPasswordPlaceholder": "パスワードを確認してください",
+      "agreeToTerms": "私は同意します",
+      "termsOfService": "利用規約",
+      "and": "そして",
+      "privacyPolicy": "プライバシーポリシー",
+      "createAccount": "アカウントを作成する",
+      "creatingAccount": "アカウントを作成しています...",
+      "alreadyHaveAccount": "すでにアカウントをお持ちですか?",
+      "signIn": "サインイン",
+      "passwordMismatch": "パスワードが一致しません",
+      "termsRequired": "利用規約に同意する必要があります",
+      "accountCreated": "アカウントが正常に作成されました。",
+      "signUpFailed": "アカウントの作成に失敗しました"
+    },
+    "verification": {
+      "notVerified": "アカウントが確認されていません",
+      "message": "サインインする前にアカウントを確認する必要があります。確認リンクが記載されたメールを確認してください。",
+      "emailSentTo": "確認メールが送信されました:",
+      "resendEmail": "確認メールを再送信",
+      "backToSignIn": "サインインに戻る",
+      "emailSent": "確認メールを送信しました。",
+      "checkInbox": "受信トレイとスパムフォルダを確認してください。",
+      "enterEmail": "メールアドレスを入力してください",
+      "sending": "送信中...",
+      "sendEmail": "メールを送信"
+    }
+  },
+  "marketing": {
+    "navbar": {
+      "requestEarlyAccess": "早期アクセスをリクエストする"
+    },
+    "hero": {
+      "badge": "最新の学習プラットフォーム",
+      "title1": "シームレスで邪魔にならない",
+      "title2": "現代の学校のための学習",
+      "subtitle": "Studious LMS は、AI、リアルタイム カレンダー、クラス コミュニケーションを 1 つの統合プラットフォームに統合し、教師の指導と生徒の成長を支援するように設計されています。",
+      "requestEarlyAccess": "早期アクセスをリクエストする",
+      "watchDemo": "デモを見る",
+      "altDashboard": "プラットフォームダッシュボード"
+    },
+    "problem": {
+      "title": "従来の学校ポータルは断片化しており、時代遅れになっている",
+      "issue1": "教師は複数のツールを切り替えることで時間を無駄にしている",
+      "issue2": "学生は組織と締め切りに苦労している",
+      "issue3": "AIは実際の学校のワークフローに十分に統合されていない"
+    },
+    "response": {
+      "title1": "Studious LMSは教育、学習、",
+      "title2": "コミュニケーションを1つのワークスペースに統合",
+      "subtitle": "最先端のフレームワークと人間中心設計を採用しており、あらゆる規模の学校に拡張できます。"
+    },
+    "features": {
+      "title": "主な特徴",
+      "subtitle": "現代の学習体験を管理するために必要なものすべて",
+      "ai": {
+        "title": "AIアシスタント",
+        "description": "学習教材の作成、内容の要約、採点の補助に役立ちます"
+      },
+      "classManagement": {
+        "title": "クラス管理",
+        "description": "授業、課題、出席を簡単に管理"
+      },
+      "assignments": {
+        "title": "課題",
+        "description": "生徒の提出物を効率的に作成、収集、採点する"
+      },
+      "calendar": {
+        "title": "カレンダー",
+        "description": "課題、レッスン、イベントとのリアルタイム同期"
+      },
+      "analytics": {
+        "title": "分析",
+        "description": "パフォーマンス、参加、エンゲージメントに関する分析情報を表示する"
+      },
+      "communication": {
+        "title": "コミュニケーション",
+        "description": "統合されたコラボレーションのための組み込みメッセージングとアナウンス"
+      }
+    },
+    "quote": {
+      "text": "Studious のすべての機能は、摩擦を増やすのではなく、摩擦を減らすために構築されています。"
+    },
+    "pricing": {
+      "title": "機関に最適なプランをお選びください",
+      "subtitle": "シンプルで透明性の高い価格設定。隠れた料金は一切ありません。すべてのプランに、拡張可能なオプションを備えたコア機能が含まれています。",
+      "starter": {
+        "title": "スターター",
+        "price": "無料",
+        "note": "ベータ版へのアクセスが含まれています",
+        "description": "少人数クラスやパイロットプログラムに最適",
+        "perk1": "最大30名の学生",
+        "perk2": "無制限のクラス",
+        "perk3": "コア機能（課題、カレンダー、成績）",
+        "perk4": "AIアシスタント（月5チャット）",
+        "perk5": "コミュニティサポート",
+        "perk6": "5GBのストレージ",
+        "button": "無料で始める"
+      },
+      "school": {
+        "title": "学校",
+        "price": "5ドル",
+        "priceUnit": "/ユーザー/月",
+        "note": "年払いまたは月額6ドル",
+        "description": "生徒数1,000人以下の学校向け",
+        "perk1": "学生数無制限",
+        "perk2": "無制限のクラス",
+        "perk3": "すべてのコア機能",
+        "perk4": "AIアシスタント（クエリ無制限）",
+        "perk5": "Studious CMS ベータ版への最優先アクセス",
+        "button": "始める"
+      },
+      "institution": {
+        "title": "機関",
+        "price": "カスタム",
+        "note": "ニーズに合わせてカスタマイズ",
+        "description": "大規模な学校や大学（学生数1,000人以上）向け",
+        "perk1": "学校プランのすべて",
+        "perk2": "24時間365日の優先サポート",
+        "perk3": "無制限のストレージ",
+        "perk4": "カスタムトレーニングとオンボーディング",
+        "perk5": "ユーザーあたりの費用が安い",
+        "button": "営業担当者へのお問い合わせ"
+      },
+      "mostPopular": "最も人気のある",
+      "earlyBird": "🎉 早期導入者は年間プランを<strong>3 か月無料</strong>で利用でき、専用のオンボーディング サポートも受けられます"
+    },
+    "schoolProgram": {
+      "badge": "社会への影響",
+      "title": "勤勉な学校開発プログラム",
+      "subtitle": "私たちは、学校の経済状況に関係なく、すべての生徒が最新の学習ツールにアクセスする権利があると信じています。",
+      "feature1Title": "100%無料アクセス",
+      "feature1Description": "対象となる学校は、すべての機能を備えたプラットフォームのフルアクセスが可能です",
+      "feature2Title": "専用サポート",
+      "feature2Description": "教師とスタッフへの優先的なオンボーディングとトレーニング",
+      "feature3Title": "教育リソース",
+      "feature3Description": "無料の教材とカリキュラムサポート",
+      "applyNow": "今すぐ申し込む",
+      "learnMore": "もっと詳しく知る",
+      "eligibilityTitle": "プログラムの資格",
+      "qualifyingTitle": "対象校：",
+      "qualify1": "恵まれない地域の公立学校",
+      "qualify2": "登録非営利教育機関",
+      "qualify3": "発展途上地域の学校",
+      "qualify4": "タイトルI学校（米国）または同等の学校",
+      "commitmentTitle": "私たちのコミットメント:",
+      "commitment": "弊社の有料顧客の 10% が、支援を必要とする学校への無料アクセスをサポートしています。",
+      "launchTitle": "プログラム開始:",
+      "launch": "2026年1月 • 応募受付中"
+    },
+    "futureDevelopments": {
+      "title": "今後の展開",
+      "subtitle": "教育改革に向けたロードマップ",
+      "cas": {
+        "title": "CASの視点",
+        "description": "寄付や資材の提供を通じて資金不足の学校を支援し、質の高い教育をすべての人に提供します。"
+      },
+      "features": {
+        "title": "機能の視点",
+        "description": "AI 学生サポートを拡大し、世界中のさまざまな教育システム向けの API 統合を構築します。"
+      },
+      "launch": {
+        "title": "ローンチの展望",
+        "description": "学校、大学、会議でのプレゼンテーションにより、学習体験を再構築します。"
+      }
+    },
+    "cta": {
+      "title": "学校での学習と教育の方法を再定義する準備はできていますか?",
+      "subtitle": "Studious LMSで教育の未来を創造しましょう",
+      "requestAccess": "アクセスをリクエストする",
+      "partnerWithUs": "パートナーになる",
+      "tagline": "Studious LMS — シンプルな最新学習。"
+    }
+  },
+  "press": {
+    "badge": "報道・メディア",
+    "title": "ニュースで勉強熱心",
+    "subtitle": "ジャーナリストやコンテンツクリエイター向けのメディアリソース、ブランド資産、企業情報",
+    "factsheet": {
+      "title": "会社概要",
+      "subtitle": "Studious LMS に関する簡単な事実",
+      "companyInfo": "会社情報",
+      "founded": "設立",
+      "hq": "本部",
+      "industry": "業界",
+      "website": "Webサイト",
+      "status": "状態",
+      "currentStatus": "現在の状況",
+      "launchDate": "発売日",
+      "currentPhase": "現在のフェーズ",
+      "targetMarkets": "ターゲット市場",
+      "teamSize": "チーム規模",
+      "devHqs": "開発本部"
+    },
+    "contact": {
+      "title": "報道関係のお問い合わせ",
+      "subtitle": "報道関係のお問い合わせ、インタビュー、メディアのリクエスト",
+      "sl": "通常24時間以内に返信いたします",
+      "general": "一般的なお問い合わせとサポート"
+    }
+  },
+  "program": {
+    "hero": {
+      "badge": "社会インパクトイニシアチブ",
+      "title": "勤勉な学校開発プログラム",
+      "subtitle": "経済的に困窮している学校に最新の学習技術を無料で提供する"
+    },
+    "commitment": {
+      "revenue": "確定収益",
+      "cohort": "最初のコホートの開始",
+      "free": "無料アクセス"
+    },
+    "about": {
+      "mission": {
+        "title": "私たちの使命",
+        "body1": "スタディアス・スクール開発プログラムは、恵まれない学校に学習管理プラットフォームへの無料かつ無制限のアクセスを提供することで、支援することを目的としています。テクノロジーは将来の労働力にとって重要な要素であるにもかかわらず、多くの教育機関がそうしたリソースにアクセスできないことを認識しています。このプログラムを通じて、私たちは最新の学習管理テクノロジーを最も必要としている学校に提供します。"
+      },
+      "aims": {
+        "title": "プログラムの目的",
+        "body1": "教師や教育専門家との綿密な対話を通じて、多くの学校が利用できるデジタル学習インフラに大きなギャップがあることがわかりました。市販されている多くの学習管理システムは、統一された直感的なユーザーエクスペリエンスを欠いており、恵まれない地域の学校は最新の教育テクノロジーを利用できないケースが少なくありません。",
+        "body2": "私たちのプログラムは、これらの課題に直接取り組んでいます。有料の機関向けサブスクリプションからの収益により、恵まれない学校にStudious LMSと関連教育ツールへの包括的なアクセスを提供することができます。この持続可能なモデルにより、デジタルディバイドを解消しながら、すべてのユーザーのためにプラットフォームを継続的に改善していくことができます。"
+      },
+      "receive": {
+        "title": "受け取るもの",
+        "body1": "プログラムへの参加が承認された学校は、Studyousプラットフォームの完全なエクスペリエンスを享受できます。機能制限や簡素化されたバージョンではありません。これには、生徒と教師のアカウント数無制限、すべてのプレミアム機能（AIアシスタント、高度な分析、リアルタイムコラボレーション）、優先テクニカルサポート、専任のオンボーディングスペシャリスト、継続的なトレーニングリソース、そして将来のすべてのアップデートと改善へのアクセスが含まれます。",
+        "body2": "ソフトウェア自体の提供に加え、学校がプラットフォームのメリットを最大限に活用できるよう、包括的なサポートを提供しています。当社のチームは、管理者や教師の方々と直接連携し、学校固有のニーズに合わせてシステムをカスタマイズし、実践的なトレーニングを提供するとともに、導入後も継続的なサポートを提供いたします。"
+      },
+      "qualifies": {
+        "title": "資格要件",
+        "body1": "私たちは、教育技術の向上から最も恩恵を受ける生徒を対象とする学校を優先的に支援します。これには、十分な教育を受けていない、または経済的に恵まれない地域の公立学校、財政的制約のある登録非営利教育機関、発展途上地域または発展途上国の学校、米国のタイトルI学校およびそれらに相当する国際的な学校、そして生徒の学習成果の向上へのコミットメントと併せて真の財政的ニーズを実証できるあらゆる教育機関が含まれます。",
+        "body2": "私たちは、財務指標だけでなく、学校の使命、対象者、そしてStudentousを活用して教育を向上させる計画などを考慮し、個々の申請を個別に審査します。私たちの目標は、生徒の学習体験を向上させるために、当社のプラットフォームから真に利益を得て効果的に活用していただける学校と提携することです。"
+      },
+      "impact": {
+        "title": "インパクトに対する私たちのビジョン",
+        "body1": "学校に最新の学習管理テクノロジーへの無料アクセスを提供することで、恵まれない地域の教育機関が直面する主要な障壁の一つを解消することを目指しています。私たちのアプローチはソフトウェアの提供にとどまらず、トレーニングリソース、オンボーディング支援、電子書籍やデジタル文具などの教育ツールへのアクセスなど、包括的なサポートを提供することに尽力しています。",
+        "body2": "学校開発プログラムは、最初の提携校を対象に、2025年11月下旬から12月中旬にかけて開始されます。Studuousの成長に伴い、より多くの学校を支援できるようになります。有料の機関サブスクリプションから得られる収益はすべて、支援を必要とする学校へのアクセス拡大に再投資され、時間の経過とともに強化される、持続可能な教育の公平性モデルを構築します。"
+      }
+    },
+    "cta": {
+      "apply": {
+        "title": "プログラムに応募する",
+        "description": "Studious を学校に導入する準備はできましたか? お申し込みフォームにご記入いただければ、5～7 営業日以内に審査させていただきます。",
+        "item1": "約10～15分かかります",
+        "item2": "申込料は不要です",
+        "item3": "5～7営業日以内に返信いたします",
+        "button": "アプリケーションを開始する"
+      }
+    },
+    "status": {
+      "title": "申請状況を確認する",
+      "description": "すでにお申し込み済みですか？お申し込み状況を確認するには、お申し込みIDを入力してください。",
+      "inputLabel": "アプリケーションID",
+      "placeholder": "例: EXA2025-...",
+      "help": "申請を送信した後、申請 ID が電子メールで送信されます。",
+      "results": {
+        "found": "アプリケーションが見つかりました",
+        "school": "学校：",
+        "location": "位置：",
+        "submitted": "提出:",
+        "contact": "接触：",
+        "notFound": {
+          "title": "アプリケーションが見つかりません",
+          "body": "アプリケーションIDをご確認の上、もう一度お試しください。問題が解決しない場合は、impact@studious.shまでご連絡ください。"
+        }
+      },
+      "cards": {
+        "approved": {
+          "title": "🎉 おめでとうございます！申請が承認されました。",
+          "body": "アカウントを設定するための次の手順については、メールを確認してください。"
+        },
+        "underReview": {
+          "title": "⏳ 現在、お申し込みを審査中です。",
+          "body": "レビューが完了するとメールでご連絡いたします。"
+        },
+        "pending": {
+          "title": "📋 ご申請を受理いたしました。",
+          "body": "弊社チームがすぐに審査を開始します。審査にかかる予想日数：5～7営業日。"
+        }
+      }
+    },
+    "contact": {
+      "title": "ご質問がありますか?",
+      "subtitle": "私たちのチームが申請プロセスをサポートします",
+      "button": "メールでお問い合わせください: impact@studious.sh"
+    }
+  },
+  "apply": {
+    "toasts": {
+      "submitted": "申請が正常に送信されました。"
+    },
+    "errors": {
+      "submitFailed": "申請の送信に失敗しました: {message}"
+    },
+    "success": {
+      "title": "申請を送信しました!",
+      "subtitle": "学校開発プログラムへのご応募ありがとうございます",
+      "applicationId": "アプリケーションID",
+      "saveId": "このIDを保存して申請状況を確認してください",
+      "nextSteps": {
+        "title": "次に何が起こるでしょうか?",
+        "item1": "確認メールが{email}に届きます",
+        "item2": "弊社のチームが5～7営業日以内に申請を審査いたします。",
+        "item3": "決定次第、メールでお知らせいたします"
+      },
+      "backToProgram": "プログラムに戻る",
+      "returnHome": "帰国"
+    }
+  },
+  "agenda": {
+    "title": "議題",
+    "description": "包括的なカレンダービューでスケジュールと今後のイベントを表示します",
+    "addEvent": "イベントを追加",
+    "untitledEvent": "題名のないイベント",
+    "today": "今日",
+    "previous": "前の",
+    "next": "次",
+    "views": {
+      "day": "日",
+      "week": "週",
+      "month": "月",
+      "year": "年"
+    }
+  },
+  "chat": {
+    "landing": {
+      "description": "サイドバーから会話を選択してチャットを開始します。",
+      "pleaseSignIn": "サインインしてください",
+      "signInRequired": "チャットにアクセスするにはサインインする必要があります。",
+      "title": "チャットへようこそ"
+    },
+    "page": {
+      "unknown": "未知",
+      "unnamedGroup": "名前のないグループ",
+      "unknownUser": "不明なユーザー",
+      "notFound": {
+        "title": "会話が見つかりません",
+        "description": "この会話は存在しないか、アクセス権がありません。",
+        "backToChat": "チャットに戻る"
+      },
+      "header": {
+        "members": "メンバー",
+        "markMentionsRead": "既読のマーク"
+      },
+      "input": {
+        "placeholderPrefix": "メッセージ"
+      },
+      "loading": "会話を読み込んでいます..."
+    }
+  },
+  "notifications": {
+    "title": "通知",
+    "subtitle": "授業や課題の最新情報を把握しましょう",
+    "badge": {
+      "unread": "未読件数: {count}"
+    },
+    "filters": {
+      "label": "フィルター：",
+      "all": "すべて（{count}）",
+      "unread": "未読（{count}）",
+      "read": "読む（{count}）"
+    },
+    "empty": {
+      "unread": {
+        "title": "未読通知はありません",
+        "description": "すべて追いつきました！未読の通知はありません。"
+      },
+      "read": {
+        "title": "既読通知なし",
+        "description": "まだ既読としてマークされた通知はありません。"
+      },
+      "all": {
+        "title": "まだ通知はありません",
+        "description": "通知を受信すると、ここに表示されます。"
+      }
+    },
+    "actions": {
+      "marking": "マーキング...",
+      "markAsRead": "既読にする"
+    },
+    "toasts": {
+      "markedAsRead": "通知を既読としてマークしました"
+    },
+    "meta": {
+      "from": "から"
+    }
+  },
+  "profile": {
+    "title": "プロフィール",
+    "description": "個人情報とプロフィール設定を管理する",
+    "editProfile": "プロフィールを編集",
+    "saveChanges": "変更を保存",
+    "cancel": "キャンセル",
+    "student": "学生",
+    "personalInformation": {
+      "title": "個人情報",
+      "description": "個人情報とプロフィール情報を更新する",
+      "displayName": "表示名",
+      "displayNamePlaceholder": "表示名を入力してください",
+      "displayNameDescription": "これはあなたの名前が他の人に表示される方法です",
+      "location": "位置",
+      "locationPlaceholder": "場所を入力してください",
+      "locationDescription": "あなたの市、州、または国",
+      "bio": "だった",
+      "bioPlaceholder": "あなた自身について教えてください...",
+      "bioDescription": "あなた自身についての簡単な説明（最大500文字）",
+      "website": "Webサイト",
+      "websitePlaceholder": "https://あなたのウェブサイト.com",
+      "websiteDescription": "個人のウェブサイトまたはポートフォリオ"
+    },
+    "accountInformation": {
+      "title": "アカウント情報",
+      "description": "アカウントの詳細とログイン情報",
+      "username": "ユーザー名",
+      "usernameNote": "ユーザー名は変更できません",
+      "email": "メール",
+      "emailNote": "メールはアカウント設定で管理されます",
+      "memberSince": "メンバーになってから"
+    },
+    "messages": {
+      "profileUpdated": "プロフィールが正常に更新されました",
+      "profileUpdateFailed": "プロフィールの更新に失敗しました",
+      "profilePictureSelected": "プロフィール写真を選択しました。更新するには「変更を保存」をクリックしてください。",
+      "avatarSelected": "アバターを選択しました。「変更を保存」をクリックして更新してください。",
+      "profilePictureUploadFailed": "プロフィール写真のアップロードに失敗しました",
+      "profilePictureSelectFailed": "プロフィール写真の選択に失敗しました",
+      "failedToLoadProfile": "プロフィールの読み込みに失敗しました。もう一度お試しください。"
+    }
+  },
+  "class": {
+    "assignments": "課題",
+    "students": "学生",
+    "attendance": "出席",
+    "attachFile": "ファイルを添付",
+    "post": "役職",
+    "posting": "投稿中...",
+    "noPosts": "まだ投稿はありません",
+    "createFirstPost": "最初の投稿を作成する",
+    "grades": {
+      "title": "成績",
+      "subtitle": "生徒の成績の表示と管理",
+      "columns": {
+        "assignment": "割り当て",
+        "maxPoints": "最大ポイント",
+        "weight": "重さ",
+        "graded": "段階的",
+        "dueDate": "2つのデート",
+        "actions": "アクション",
+        "student": "学生",
+        "overallGrade": "総合評価",
+        "assignmentsCompleted": "課題完了",
+        "trend": "傾向"
+      },
+      "labels": {
+        "rubric": "ルーブリック"
+      },
+      "actions": {
+        "manage": "管理",
+        "viewGrades": "成績を見る",
+        "saving": "保存中...",
+        "saveChanges": "変更を保存",
+        "preview": "プレビュー",
+        "edit": "編集",
+        "delete": "消去",
+        "createNew": "新規作成"
+      },
+      "overview": {
+        "title": "クラスの概要",
+        "classAverage": "クラス平均",
+        "totalStudents": "生徒総数",
+        "assignments": "課題",
+        "submissionRate": "提出率"
+      },
+      "assignmentManagement": {
+        "title": "割り当て管理",
+        "empty": {
+          "title": "割り当てが見つかりません",
+          "description": "課題を作成して成績と設定を管理する"
+        },
+        "searchPlaceholder": "割り当てを検索..."
+      },
+      "students": {
+        "title": "学生",
+        "viewAll": "すべての学生を見る",
+        "empty": {
+          "title": "登録学生はいません",
+          "description": "生徒がクラスに参加するとここに表示されます"
+        },
+        "searchPlaceholder": "生徒を検索..."
+      },
+      "gradeBoundaries": {
+        "title": "グレード境界",
+        "untitled": "無題のグレーディング境界",
+        "empty": {
+          "title": "グレード境界は作成されません",
+          "description": "グレード範囲を定義するためのグレーディング境界を作成する"
+        },
+        "previewTitle": "グレーディング境界のプレビュー",
+        "details": {
+          "title": "グレーディング境界の詳細",
+          "name": "名前",
+          "noneDefined": "グレーディングの境界が定義されていない"
+        }
+      },
+      "rubrics": {
+        "title": "ルーブリック",
+        "untitled": "無題のルーブリック",
+        "empty": {
+          "title": "ルーブリックは作成されていません",
+          "description": "評価基準を定義するためのルーブリックを作成する"
+        },
+        "previewTitle": "ルーブリックプレビュー",
+        "details": {
+          "title": "ルーブリックの詳細",
+          "name": "名前",
+          "category": "カテゴリ",
+          "description": "説明",
+          "custom": "カスタム",
+          "noDescription": "説明なし",
+          "noCriteria": "このルーブリックには基準が見つかりません"
+        }
+      },
+      "confirm": {
+        "deleteRubric": "このマークスキームを削除してもよろしいですか?",
+        "deleteGradingBoundary": "このグレーディング境界を削除してもよろしいですか?"
+      }
+    },
+    "members": {
+      "title": "メンバー",
+      "counts": {
+        "totalMembers": "{count} 人のメンバー"
+      },
+      "actions": {
+        "inviteMember": "メンバーを招待",
+        "copy": "コピー",
+        "regenerate": "再生",
+        "message": "メッセージ",
+        "viewProfile": "プロフィールを見る",
+        "viewGrades": "成績を見る",
+        "makeTeacher": "先生を作る",
+        "makeStudent": "学生を作る",
+        "removeFromClass": "クラスから削除",
+        "removeAccess": "アクセスを削除",
+        "tryAgain": "もう一度やり直してください"
+      },
+      "labels": {
+        "teacher": "教師",
+        "student": "学生",
+        "you": "あなた"
+      },
+      "invite": {
+        "title": "クラス招待コード",
+        "description": "このコードを生徒と共有してクラスに参加してください"
+      },
+      "search": {
+        "placeholder": "メンバーを検索..."
+      },
+      "tabs": {
+        "students": "学生",
+        "teachers": "教師"
+      },
+      "students": {
+        "empty": {
+          "title": "生徒が見つかりません",
+          "matchNone": "「{query}」に一致する生徒がいません",
+          "noStudents": "このクラスにはまだ生徒が参加していません"
+        }
+      },
+      "teachers": {
+        "empty": {
+          "title": "教師が見つかりません",
+          "matchNone": "「{query}」に一致する教師はいません",
+          "noTeachers": "追加の教師は追加されていません"
+        }
+      },
+      "toasts": {
+        "inviteRegenerated": "招待コードが正常に再生成されました",
+        "copied": "招待コードをクリップボードにコピーしました",
+        "roleChanged": "役割が {role} に変更されました",
+        "memberRemoved": "メンバーが正常に削除されました"
+      },
+      "errors": {
+        "regenerateFailed": "招待コードの再生成に失敗しました",
+        "changeRoleFailed": "役割の変更に失敗しました",
+        "removeFailed": "メンバーの削除に失敗しました",
+        "failedToLoad": "メンバーの読み込みに失敗しました"
+      }
+    },
+    "files": {
+      "title": "ファイル",
+      "subtitle": "クラスファイルとリソースを管理する",
+      "actions": {
+        "newFolder": "新しいフォルダ",
+        "upload": "アップロード",
+        "uploadFiles": "ファイルをアップロード",
+        "createFolder": "フォルダを作成",
+        "download": "ダウンロード",
+        "share": "共有",
+        "delete": "消去",
+        "filter": "フィルター",
+        "sort": "選別"
+      },
+      "toasts": {
+        "folderCreated": "フォルダが正常に作成されました",
+        "folderDeleted": "フォルダが正常に削除されました",
+        "folderRenamed": "フォルダ名の変更に成功しました",
+        "folderMoved": "フォルダを移動しました",
+        "filesUploaded": "ファイルのアップロードに成功しました",
+        "fileDeleted": "ファイルが正常に削除されました",
+        "fileRenamed": "ファイル名の変更に成功しました",
+        "fileMoved": "ファイルが正常に移動されました",
+        "downloadStarted": "ダウンロードを開始しました",
+        "shareCopied": "共有リンクをコピーしました"
+      },
+      "errors": {
+        "teacherOnly": "ファイルを変更できます。",
+        "downloadFailed": "ダウンロードに失敗しました",
+        "shareFailed": "共有に失敗しました",
+        "failedToLoad": "ファイルの読み込みに失敗しました。しばらくしてからもう一度お試しください。"
+      },
+      "breadcrumbs": {
+        "classFiles": "クラスファイル"
+      },
+      "search": {
+        "placeholder": "ファイル内検索"
+      },
+      "selected": "{count} 個選択済み",
+      "filters": {
+        "fileType": "ファイルタイプ",
+        "documents": "文書",
+        "images": "画像",
+        "videos": "ビデオ",
+        "presentations": "プレゼンテーション"
+      },
+      "sort": {
+        "name": "名前",
+        "lastModified": "最終更新日",
+        "fileSize": "ファイルサイズ"
+      },
+      "table": {
+        "name": "名前",
+        "owner": "所有者",
+        "lastModified": "最終更新日",
+        "fileSize": "ファイルサイズ"
+      },
+      "empty": {
+        "title": "このフォルダは空です",
+        "description": "ファイルをアップロードするか、フォルダーを作成して、授業の教材の整理を始めましょう。",
+        "searchTitle": "ファイルが見つかりません",
+        "searchDescription": "「{query}」に一致するファイルはありません。別の検索語句を試してください。"
+      }
+    },
+    "settings": {
+      "title": "クラス設定",
+      "subtitle": "クラスの詳細と設定を構成する",
+      "labels": {
+        "unsavedChanges": "保存されていない変更"
+      },
+      "actions": {
+        "saving": "保存中...",
+        "saveChanges": "変更を保存",
+        "deleting": "削除しています...",
+        "deleteClass": "クラスを削除",
+        "cancel": "キャンセル"
+      },
+      "sections": {
+        "basicInfo": {
+          "title": "基本情報"
+        },
+        "theme": {
+          "title": "クラスのテーマ",
+          "description": "このクラスのテーマカラーを選択してください"
+        },
+        "danger": {
+          "title": "危険地帯",
+          "description": "クラスを削除すると、元に戻すことはできません。すべての課題、成績、出席記録が完全に削除され、すべての生徒がクラスから削除されます。"
+        }
+      },
+      "fields": {
+        "className": "クラス名",
+        "section": "セクション",
+        "subject": "主題"
+      },
+      "placeholders": {
+        "className": "例：上級物理学",
+        "section": "例：AP-101",
+        "subject": "例：物理学"
+      },
+      "toasts": {
+        "updated": {
+          "title": "クラスが更新されました",
+          "description": "クラス設定が正常に保存されました。"
+        },
+        "deleted": {
+          "title": "クラスを削除しました",
+          "description": "クラスは完全に削除されました。"
+        }
+      },
+      "errors": {
+        "updateFailed": {
+          "title": "更新に失敗しました",
+          "description": "クラス設定を保存できませんでした。もう一度お試しください。"
+        }
+      },
+      "confirm": {
+        "title": "本当に確かですか？",
+        "description": "この操作は元に戻せません。クラス「{name}」が完全に削除され、以下の関連データもすべて削除されます。",
+        "items": {
+          "assignments": "すべての課題と提出物",
+          "records": "すべての成績と出席記録",
+          "students": "生徒全員がクラスから除外される",
+          "events": "すべてのクラスのイベントとお知らせ"
+        },
+        "confirmDelete": "はい、クラスを削除します"
+      }
+    },
+    "syllabus": {
+      "title": "シラバス",
+      "subtitle": "コースの概要と学術情報",
+      "actions": {
+        "saveChanges": "変更を保存",
+        "cancel": "キャンセル",
+        "edit": "シラバスを編集"
+      },
+      "errors": {
+        "failedToLoad": "シラバスの読み込みに失敗しました",
+        "tryLater": "後ほどもう一度お試しください。"
+      },
+      "stats": {
+        "totalAssignments": "合計割り当て数",
+        "completionRate": "完了率",
+        "totalPoints": "合計ポイント",
+        "upcoming": "今後の予定"
+      },
+      "overview": {
+        "title": "コースの概要",
+        "placeholder": "コースの概要、目的、その他の重要な情報を入力します...",
+        "helper": "コース情報、学習目標、ポリシー、その他の重要な詳細を入力します。",
+        "empty": {
+          "title": "シラバスコンテンツはまだありません",
+          "description": "コース情報、学習目標、ポリシーなどを追加するには、「シラバスの編集」をクリックします。"
+        }
+      },
+      "assignments": {
+        "title": "コースの課題",
+        "gradedCount": "{合計} 件中 {graded} 件が採点済み",
+        "totalPoints": "合計{total}ポイント",
+        "empty": {
+          "title": "まだ課題はありません",
+          "description": "課題は作成されるとここに表示されます。"
+        }
+      },
+      "table": {
+        "assignment": "割り当て",
+        "dueDate": "2つのデート",
+        "points": "ポイント",
+        "weight": "重さ",
+        "status": "状態",
+        "pts": "ポイント"
+      },
+      "status": {
+        "graded": "段階的",
+        "pending": "保留中"
+      },
+      "courseInfo": {
+        "title": "コース情報",
+        "basic": {
+          "title": "基本情報",
+          "className": "クラス名",
+          "section": "セクション",
+          "subject": "主題"
+        },
+        "stats": {
+          "title": "コース統計",
+          "totalAssignments": "合計割り当て数",
+          "gradedAssignments": "採点された課題",
+          "totalPoints": "合計ポイント"
+        }
+      }
+    }
+  },
+  "assignment": {
+    "dueDate": "2つのデート",
+    "submit": "提出する",
+    "grade": "学年",
+    "feedback": "フィードバック",
+    "submissions": "提出物",
+    "open": "開ける",
+    "closed": "閉鎖",
+    "assignment": "割り当て",
+    "assignments": "課題",
+    "newAssignment": "新しい任務",
+    "createAssignment": "課題を作成",
+    "viewAssignment": "割り当てを表示",
+    "allAssignments": "すべての課題",
+    "searchAssignments": "割り当てを検索...",
+    "noAssignmentsFound": "割り当てが見つかりません",
+    "createFirstAssignment": "始めるには最初の課題を作成してください",
+    "newSection": "新しいセクション",
+    "pts": "ポイント",
+    "overdue": "（延滞）",
+    "assignmentDrop": "トップレベルに移動するには、ここで割り当てをドロップします",
+    "sectionDeletionConfirmation": "このセクションを削除してもよろしいですか? すべての割り当ては最上位レベルに移動されます。",
+    "assignmentDeletionConfirmation": "この割り当てを削除してもよろしいですか? この操作は元に戻せません。",
+    "manageAndTrack": "授業の課題を管理および追跡する",
+    "filters": "フィルター"
+  },
+  "pagination": {
+    "previous": "前の",
+    "next": "次",
+    "goToPreviousPage": "前のページへ",
+    "goToNextPage": "次のページへ",
+    "morePages": "その他のページ"
+  },
+  "about": {
+    "titleStatement1": "私たちの物語",
+    "titleStatement2": "フラストレーションから生まれた、",
+    "titleStatement3": "AIで再考",
+    "titleStatement4": "時代遅れで断片化された学校ポータルに何年も苦労した後、私たちはずっと望んでいた学習管理システムを構築することを決めました。",
+    "problemParagraph1": "2023年に始まったスタディウス",
+    "problemParagraph2": "学生と教育者のグループが、既存の学校ポータルが使いにくく、遅く、異なる教育の時代に合わせて構築されているという共通の不満を抱いて集まりました。",
+    "problemDetailParagraph": "私たちは複数のプラットフォームを行き来する羽目になりました。成績管理用、課題管理用、そしてコミュニケーション用。教師たちは授業よりもソフトウェアとの格闘に多くの時間を費やしていました。通知が時代遅れのインターフェースに埋もれていたため、生徒たちは締め切りに間に合いませんでした。",
+    "betterWay": "もっと良い方法があるはずだと私たちはわかっていました。",
+    "solutionParagraph1": "LinearやNotionのような最新のコラボレーションツールからインスピレーションを得て、私たちは学習管理システムを作成することに着手しました。",
+    "solutionParagraph2": "高速、直感的、そして使いやすい。",
+    "solutionParagraph3": "AI を単なる小道具としてではなく、教師と生徒の両方にとって真の生産性向上装置として統合したものです。",
+    "launchParagraph": "2 年間の開発期間を経て、2025 年 10 月 17 日に Studious を正式にリリースしました。現在は早期アクセス段階にあり、世界中の学校の学習体験の変革を支援する準備ができています。",
+    "journey1": "私たちの旅",
+    "journey2": "構築、学習、成長の2年間",
+    "journeyBeginningDate": "2023",
+    "journeyBeginning1": "始まり",
+    "journeyBeginning2": "最初のプロトタイプが開発されました。主な機能：クラス管理、課題、カレンダー統合。",
+    "journeyBetaLaunchDate": "2025年10月31日",
+    "journeyBetaLaunch1": "パブリックベータ版のリリース",
+    "journeyBetaLaunch2": "Studious LMSの公式パブリックベータテストを開始しました。プラットフォームの全機能を備えた早期アクセスを世界中の学校に提供します。",
+    "journeyPilotSchoolsDate": "2025年11月",
+    "journeyPilotSchools1": "パイロットスクールプログラム",
+    "journeyPilotSchools2": "パイロット校とのパートナーシップを開始し、実際のフィードバックを収集し、多様な教育ニーズに基づいてプラットフォームを改良します。",
+    "journeyBetaCompleteDate": "2025年12月",
+    "journeyBetaComplete1": "ベータ版完了",
+    "journeyBetaComplete2": "ベータ版から正式リリースへの移行。すべてのコア機能を完全にテスト・最適化し、プラットフォームの安定化を実現。",
+    "journeySDPDate": "2026年1月",
+    "journeySDP1": "学校開発プログラムの開始",
+    "journeySDP2": "優秀な学校育成プログラムに受け入れられた最初の一群の学校を発表し、資格を満たした教育機関への無料アクセスを提供します。",
+    "missionStatement1": "私たちの使命はシンプルです",
+    "missionStatement2": "学生、教師、生涯学習者として私たちが毎日使いたいと思う学習管理システムを構築すること。",
+    "joinAppeal1": "この旅にご参加ください",
+    "joinAppeal2": "教育の未来を担う",
+    "requestEarlyAccess": "早期アクセスをリクエストする",
+    "pressKit": "プレスキット"
+  },
+  "pricing": {
+    "pricingStatement1": "透明な価格設定",
+    "pricingStatement2": "機関に最適なプランをお選びください",
+    "pricingStatement3": "シンプルで透明性の高い価格設定。隠れた料金は一切ありません。すべてのプランに、拡張可能なオプションを備えたコア機能が含まれています。",
+    "mostPopular": "最も人気のある",
+    "priceUnit": "/ユーザー/月",
+    "pricingStarterTitle": "スターター",
+    "pricingStarterPrice": "無料",
+    "pricingStarterNote": "ベータ版へのアクセスが含まれています",
+    "pricingStarterDescription": "少人数クラスやパイロットプログラムに最適",
+    "pricingStarterPerk1": "最大30名の学生",
+    "pricingStarterPerk2": "無制限のクラス",
+    "pricingStarterPerk3": "コア機能（課題、カレンダー、成績）",
+    "pricingStarterPerk4": "AIアシスタント（月5チャット）",
+    "pricingStarterPerk5": "コミュニティサポート",
+    "pricingStarterPerk6": "5GBのストレージ",
+    "pricingStarterLink": "無料で始める",
+    "pricingSchoolTitle": "学校",
+    "pricingSchoolPriceNote": "年払いまたは月額6ドル",
+    "pricingSchoolNote": "生徒数1,000人以下の学校向け",
+    "pricingSchoolPerk1": "学生数無制限",
+    "pricingSchoolPerk2": "無制限のクラス",
+    "pricingSchoolPerk3": "すべてのコア機能",
+    "pricingSchoolPerk4": "AIアシスタント（クエリ無制限）",
+    "pricingSchoolPerk5": "Studious CMS ベータ版への最優先アクセス",
+    "pricingSchoolPerk6": "APIアクセス",
+    "pricingSchoolLink": "始める"
+  },
+  "components": {
+    "earlyAccess": {
+      "title": "早期アクセスをリクエストする",
+      "description": "ウェイティングリストに参加して、Studious LMS をいち早く体験しましょう",
+      "fields": {
+        "email": "電子メールアドレス *",
+        "institutionSize": "機関規模 *"
+      },
+      "placeholders": {
+        "email": "you@school.edu",
+        "institutionSize": "機関の規模を選択"
+      },
+      "sizes": {
+        "tiny": "生徒数1～30名（個別指導）",
+        "small": "31～100名（小規模校）",
+        "medium": "生徒数101～500名（中等学校）",
+        "large": "生徒数501～1,000人（大規模校）",
+        "institution": "1,001人以上の学生（機関）"
+      },
+      "actions": {
+        "submit": "アクセスをリクエストする",
+        "submitting": "送信中...",
+        "done": "終わり"
+      },
+      "success": {
+        "title": "リストに載りました!",
+        "description": "準備が整いましたら、{email} にメールをお送りします。"
+      },
+      "toasts": {
+        "success": "順番待ちリストへの参加に成功しました!"
+      }
+    },
+    "joinClass": {
+      "title": "クラスに参加する",
+      "buttonLabel": "クラスに参加する",
+      "fields": {
+        "inviteCode": "クラス招待コード"
+      },
+      "placeholders": {
+        "inviteCode": "例：MATH101-2025"
+      },
+      "help": "先生から提供された招待コードを入力してください",
+      "howTo": {
+        "title": "招待コードの取得方法:",
+        "item1": "先生にクラスの招待コードを尋ねてください",
+        "item2": "クラスの登録手順についてはメールを確認してください",
+        "item3": "シラバスまたはコース資料に記載されているコードを探してください"
+      },
+      "actions": {
+        "cancel": "キャンセル",
+        "join": "クラスに参加する",
+        "joining": "接合..."
+      },
+      "toasts": {
+        "success": "クラスへの参加に成功しました。",
+        "errorInvalid": "招待コードが無効であるか、クラスが見つかりません。",
+        "errorEmpty": "有効な招待コードを入力してください。"
+      }
+    },
+    "createClass": {
+      "title": "新しいクラスを作成する",
+      "buttonLabel": "クラスを作成",
+      "fields": {
+        "title": "クラス名 *",
+        "section": "セクション *",
+        "subject": "主題 *",
+        "semester": "学期",
+        "credits": "クレジット",
+        "meetingTime": "集合時間",
+        "location": "位置",
+        "description": "説明"
+      },
+      "placeholders": {
+        "title": "例：上級物理学",
+        "section": "例：AP-101",
+        "subject": "例：物理学",
+        "semester": "例：2025年春",
+        "credits": "例: 3",
+        "meetingTime": "例：月水金 午前10:00～11:00",
+        "location": "例：理科棟205号室",
+        "description": "授業の内容と目的を説明してください。"
+      },
+      "actions": {
+        "cancel": "キャンセル",
+        "create": "クラスを作成",
+        "creating": "作成..."
+      },
+      "toasts": {
+        "success": "クラス {name} が正常に作成されました。",
+        "errorRequired": "必須項目をすべて入力してください。",
+        "errorFailed": "クラスの作成に失敗しました。しばらくしてからもう一度お試しください。"
+      }
+    },
+    "createFolder": {
+      "titleCreate": "新しいフォルダを作成",
+      "titleEdit": "フォルダを編集",
+      "fields": {
+        "name": "フォルダ名 *",
+        "description": "説明（オプション）",
+        "color": "フォルダの色"
+      },
+      "placeholders": {
+        "name": "フォルダ名を入力",
+        "description": "このフォルダの説明を追加します..."
+      },
+      "help": {
+        "name": "フォルダにわかりやすい名前を選択してください",
+        "description": "{count}/500文字"
+      },
+      "actions": {
+        "cancel": "キャンセル",
+        "create": "フォルダを作成",
+        "update": "フォルダを更新",
+        "creating": "作成...",
+        "updating": "更新中..."
+      },
+      "toasts": {
+        "errorRequired": "フォルダ名は必須です",
+        "errorInvalidChars": "フォルダ名に無効な文字が含まれています",
+        "errorTooLong": "フォルダ名が長すぎます（最大 255 文字）"
+      }
+    },
+    "createAssignment": {
+      "title": "新しい課題を作成",
+      "buttonLabel": "課題を作成",
+      "sections": {
+        "details": "課題の詳細",
+        "configuration": "構成",
+        "grading": "採点と評価",
+        "attachments": "添付ファイル"
+      },
+      "fields": {
+        "title": "タイトル *",
+        "instructions": "説明書 *",
+        "dueDate": "2つのデート",
+        "type": "割り当てタイプ",
+        "section": "セクション",
+        "rubric": "ルーブリック",
+        "gradeScale": "グレードスケール",
+        "maxPoints": "最大ポイント",
+        "weight": "重さ （％）",
+        "sectionColor": "セクションの色"
+      },
+      "placeholders": {
+        "title": "例：第5章のクイズ、物理学実験レポート",
+        "instructions": "生徒に明確な指示を与えます...",
+        "maxPoints": "100",
+        "weight": "1.0",
+        "chooseSection": "セクションを選択",
+        "chooseRubric": "ルーブリックを選択",
+        "chooseGradeScale": "グレードスケールを選択",
+        "newSectionName": "セクション名を入力してください..."
+      },
+      "types": {
+        "homework": "宿題",
+        "quiz": "クイズ",
+        "test": "テスト",
+        "project": "プロジェクト",
+        "essay": "エッセイ",
+        "discussion": "議論",
+        "presentation": "プレゼンテーション",
+        "lab": "ラボ",
+        "other": "他の"
+      },
+      "options": {
+        "graded": {
+          "label": "採点課題",
+          "description": "成績表に含める"
+        },
+        "draft": {
+          "label": "下書きとして保存",
+          "description": "生徒から隠れる"
+        }
+      },
+      "section": {
+        "none": "セクションなし",
+        "createNew": "新しいセクションを作成"
+      },
+      "rubric": {
+        "none": "ルーブリックなし",
+        "untitled": "無題のルーブリック",
+        "autoCalculate": "選択した評価基準に基づいてポイントが自動的に計算されます"
+      },
+      "gradeScale": {
+        "default": "デフォルトのスケール",
+        "untitled": "無題のスケール"
+      },
+      "files": {
+        "uploadButton": "ファイルをアップロード",
+        "dropZone": "ここにファイルをドロップするか、クリックしてアップロードしてください",
+        "dropZoneHint": "すべてのファイルタイプをサポート • ファイルあたり最大50MB",
+        "filesUploaded": "アップロードされたファイル数: {total} 件中 {uploaded} 件"
+      },
+      "status": {
+        "creating": "課題を作成しています...",
+        "settingUp": "割り当ての詳細を設定しています...",
+        "preparing": "ファイルのアップロードを準備しています...",
+        "uploading": "クラウド ストレージにファイルをアップロードしています...",
+        "processing": "アップロードされたファイルを処理しています...",
+        "finalizing": "割り当てを終了しています...",
+        "assigning": "生徒に割り当てています...",
+        "almostDone": "もうすぐ終わりです...",
+        "uploadingFile": "{name} をアップロードしています...",
+        "creatingProgress": "課題の作成",
+        "draftStatus": "下書きとして保存されます",
+        "publishedStatus": "学生向けに公開されます"
+      },
+      "actions": {
+        "cancel": "キャンセル",
+        "create": "課題を作成",
+        "saveDraft": "下書きを保存",
+        "creating": "作成...",
+        "add": "追加"
+      },
+      "toasts": {
+        "successCreated": "割り当てが正常に作成されました。",
+        "successDraft": "課題は下書きとして正常に保存されました。",
+        "errorRequired": "必須項目をすべて入力してください。",
+        "errorFailed": "課題の作成に失敗しました。もう一度お試しください。",
+        "errorUploadFailed": "{name} のアップロードに失敗しました",
+        "sectionCreated": "セクション「{name}」が正常に作成されました。"
+      }
+    },
+    "createAnnouncement": {
+      "title": "アナウンスを作成",
+      "buttonLabel": "投稿のお知らせ",
+      "fields": {
+        "title": "お知らせタイトル *",
+        "content": "コンテンツ *",
+        "priority": "優先度レベル",
+        "expiryDate": "有効期限（オプション）",
+        "publishDate": "公開日",
+        "publishTime": "公開時間"
+      },
+      "placeholders": {
+        "title": "例：金曜日までに提出する実験レポート",
+        "content": "ここにアナウンスの内容を記入してください...",
+        "publishDate": "空の場合はすぐに公開"
+      },
+      "priority": {
+        "low": "低い",
+        "normal": "普通",
+        "high": "高い",
+        "urgent": "緊急"
+      },
+      "sections": {
+        "settings": "設定",
+        "notifications": "通知",
+        "schedule": "公開スケジュール（オプション）"
+      },
+      "settings": {
+        "pinned": {
+          "label": "上部にピン留め",
+          "description": "このお知らせをリストの一番上に表示してください"
+        },
+        "urgent": {
+          "label": "緊急としてマーク",
+          "description": "緊急スタイリングでハイライト"
+        }
+      },
+      "notifications": {
+        "email": {
+          "label": "メール通知を送信",
+          "description": "メールで学生に通知"
+        },
+        "push": {
+          "label": "プッシュ通知を送信する",
+          "description": "モバイルアプリ通知を送信する"
+        }
+      },
+      "actions": {
+        "cancel": "キャンセル",
+        "publishNow": "今すぐ公開",
+        "schedule": "スケジュールのお知らせ"
+      },
+      "toasts": {
+        "success": "お知らせを作成しました",
+        "errorRequired": "必須項目をすべて入力してください。"
+      }
+    }
+  }
+}

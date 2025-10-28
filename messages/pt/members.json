@@ -1,0 +1,63 @@
+{
+  "members": {
+    "title": "Membros",
+    "counts": {
+      "totalMembers": "{count} membros"
+    },
+    "actions": {
+      "inviteMember": "Convidar Membro",
+      "copy": "Cópia",
+      "regenerate": "Regenerado",
+      "message": "Mensagem",
+      "viewProfile": "Ver perfil",
+      "viewGrades": "Ver notas",
+      "makeTeacher": "Faça Professor",
+      "makeStudent": "Faça Estudante",
+      "removeFromClass": "Remover da classe",
+      "removeAccess": "Remover acesso",
+      "tryAgain": "Tentar novamente"
+    },
+    "labels": {
+      "teacher": "Professor",
+      "student": "Estudante",
+      "you": "Você"
+    },
+    "invite": {
+      "title": "Código de convite para aula",
+      "description": "Compartilhe este código com os alunos para participar da aula"
+    },
+    "search": {
+      "placeholder": "Pesquisar membros..."
+    },
+    "tabs": {
+      "students": "Estudantes",
+      "teachers": "Professores"
+    },
+    "students": {
+      "empty": {
+        "title": "Nenhum aluno encontrado",
+        "matchNone": "Nenhum aluno corresponde a \"{query}\"",
+        "noStudents": "Nenhum aluno ingressou nesta aula ainda"
+      }
+    },
+    "teachers": {
+      "empty": {
+        "title": "Nenhum professor encontrado",
+        "matchNone": "Nenhum professor corresponde a \"{query}\"",
+        "noTeachers": "Nenhum professor adicional foi adicionado"
+      }
+    },
+    "toasts": {
+      "inviteRegenerated": "Código de convite regenerado com sucesso",
+      "copied": "Código de convite copiado para a área de transferência",
+      "roleChanged": "Função alterada para {role}",
+      "memberRemoved": "Membro removido com sucesso"
+    },
+    "errors": {
+      "regenerateFailed": "Falha ao regenerar o código de convite",
+      "changeRoleFailed": "Falha ao alterar a função",
+      "removeFailed": "Falha ao remover membro",
+      "failedToLoad": "Falha ao carregar membros"
+    }
+  }
+}

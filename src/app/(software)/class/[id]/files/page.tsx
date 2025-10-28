@@ -69,7 +69,7 @@ export default function Files() {
   const router = useRouter();
   const classId = params.id as string;
   const appState = useSelector((state: RootState) => state.app);
-  const t = useTranslations('class.files');
+  const t = useTranslations('classFiles');
   
   // State management
   const [searchQuery, setSearchQuery] = useState("");

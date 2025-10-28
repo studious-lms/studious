@@ -1,0 +1,72 @@
+{
+  "aiLabs": {
+    "title": "AI 랩",
+    "subtitle": "AI 지원을 통한 교육 콘텐츠 제작",
+    "aiPowered": "AI 기반",
+    "createNew": "새로운 콘텐츠 만들기",
+    "aiGenerated": "AI 생성",
+    "deleteConfirm": "이 AI 랩을 삭제하시겠습니까? 이 작업은 실행 취소할 수 없습니다.",
+    "widgets": {
+      "assignment": {
+        "title": "과제",
+        "description": "AI 지원을 통해 대화형 과제 만들기"
+      },
+      "quiz": {
+        "title": "놀리다",
+        "description": "다양한 질문 유형으로 퀴즈 생성"
+      },
+      "worksheet": {
+        "title": "워크시트",
+        "description": "연습 문제지와 연습문제를 작성하세요"
+      },
+      "lessonPlan": {
+        "title": "수업 계획",
+        "description": "포괄적인 수업 계획을 설계하세요"
+      },
+      "rubric": {
+        "title": "표제",
+        "description": "자세한 평가 기준을 만듭니다."
+      }
+    },
+    "tabs": {
+      "drafts": "드래프트 랩스",
+      "chats": "AI 고양이"
+    },
+    "drafts": {
+      "title": "드래프트 랩스 ({count})",
+      "empty": {
+        "title": "아직 실험실 초안이 없습니다",
+        "description": "위의 위젯을 사용하여 최초의 AI 생성 교육 콘텐츠를 만들어 보세요."
+      }
+    },
+    "chats": {
+      "title": "AI 랩({count})",
+      "active": "활동적인",
+      "messageCount": "{count}개의 메시지",
+      "createdBy": "{name}님이 생성함",
+      "empty": {
+        "title": "아직 AI 랩이 없습니다",
+        "description": "교육 콘텐츠 분야에서 AI와 협업을 시작하려면 첫 번째 AI 랩을 만들어 보세요."
+      }
+    },
+    "toast": {
+      "labCreated": "AI 랩이 성공적으로 생성되었습니다!",
+      "labCreateFailed": "AI 랩을 생성하지 못했습니다:",
+      "labDeleted": "AI Lab이 성공적으로 삭제되었습니다!",
+      "labDeleteFailed": "AI Lab을 삭제하지 못했습니다:"
+    }
+  },
+  "aiLabChat": {
+    "backButton": "AI 랩으로 돌아가기",
+    "loading": "로딩중...",
+    "aiThinking": "AI가 생각하는...",
+    "getAIHelp": "AI 도움말 받기",
+    "notFound": {
+      "title": "랩 채팅을 찾을 수 없습니다",
+      "description": "이 AI 랩이 삭제되었거나 액세스할 수 없습니다."
+    },
+    "toast": {
+      "messageFailed": "메시지를 보내지 못했습니다:"
+    }
+  }
+}

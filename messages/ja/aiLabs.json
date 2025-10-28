@@ -1,0 +1,72 @@
+{
+  "aiLabs": {
+    "title": "AIラボ",
+    "subtitle": "AIの支援を受けて教育コンテンツを作成する",
+    "aiPowered": "AI搭載",
+    "createNew": "新しいコンテンツを作成する",
+    "aiGenerated": "AI生成",
+    "deleteConfirm": "この AI ラボを削除してもよろしいですか? この操作は元に戻せません。",
+    "widgets": {
+      "assignment": {
+        "title": "割り当て",
+        "description": "AIの支援を受けてインタラクティブな課題を作成する"
+      },
+      "quiz": {
+        "title": "クイズ",
+        "description": "さまざまな質問タイプのクイズを生成する"
+      },
+      "worksheet": {
+        "title": "ワークシート",
+        "description": "練習用ワークシートと演習を作成する"
+      },
+      "lessonPlan": {
+        "title": "レッスンプラン",
+        "description": "包括的な授業計画を設計する"
+      },
+      "rubric": {
+        "title": "ルーブリック",
+        "description": "詳細な評価基準を作成する"
+      }
+    },
+    "tabs": {
+      "drafts": "ドラフトラボ",
+      "chats": "AI猫"
+    },
+    "drafts": {
+      "title": "ドラフトラボ ({count})",
+      "empty": {
+        "title": "ラボドラフトはまだありません",
+        "description": "上記のウィジェットを使用して、最初の AI 生成教育コンテンツを作成します。"
+      }
+    },
+    "chats": {
+      "title": "AIラボ（{count}）",
+      "active": "アクティブ",
+      "messageCount": "{count} 件のメッセージ",
+      "createdBy": "{name} によって作成されました",
+      "empty": {
+        "title": "AIラボはまだない",
+        "description": "最初の AI ラボを作成して、教育コンテンツで AI と連携し始めましょう。"
+      }
+    },
+    "toast": {
+      "labCreated": "AIラボが正常に作成されました！",
+      "labCreateFailed": "AI ラボの作成に失敗しました:",
+      "labDeleted": "AI Lab が正常に削除されました。",
+      "labDeleteFailed": "AI Lab の削除に失敗しました:"
+    }
+  },
+  "aiLabChat": {
+    "backButton": "AIラボに戻る",
+    "loading": "読み込み中...",
+    "aiThinking": "AIの思考...",
+    "getAIHelp": "AIの助けを得る",
+    "notFound": {
+      "title": "ラボチャットが見つかりません",
+      "description": "この AI ラボは削除されたか、アクセス権がない可能性があります。"
+    },
+    "toast": {
+      "messageFailed": "メッセージを送信できませんでした:"
+    }
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "classGrades": {
+    "title": "成绩",
+    "subtitle": "查看和管理学生成绩",
+    "columns": {
+      "assignment": "任务",
+      "maxPoints": "最高积分",
+      "weight": "重量",
+      "graded": "已分级",
+      "dueDate": "两次约会",
+      "actions": "行动",
+      "student": "学生",
+      "overallGrade": "总体成绩",
+      "assignmentsCompleted": "已完成的作业",
+      "trend": "趋势"
+    },
+    "labels": {
+      "rubric": "评分细则"
+    },
+    "actions": {
+      "manage": "管理",
+      "viewGrades": "查看成绩",
+      "saving": "保存...",
+      "saveChanges": "保存更改",
+      "preview": "预览",
+      "edit": "编辑",
+      "delete": "删除",
+      "createNew": "创建新的"
+    },
+    "overview": {
+      "title": "课程概述",
+      "classAverage": "班级平均分",
+      "totalStudents": "学生总数",
+      "assignments": "作业",
+      "submissionRate": "提交率"
+    },
+    "assignmentManagement": {
+      "title": "任务管理",
+      "empty": {
+        "title": "未找到作业",
+        "description": "创建作业来管理成绩和设置"
+      },
+      "searchPlaceholder": "搜索作业..."
+    },
+    "students": {
+      "title": "学生",
+      "viewAll": "查看所有学生",
+      "empty": {
+        "title": "沒有學生就註冊",
+        "description": "学生加入课程后就会出现在这里"
+      },
+      "searchPlaceholder": "搜索学生..."
+    },
+    "gradeBoundaries": {
+      "title": "等级界限",
+      "untitled": "无标题分级边界",
+      "empty": {
+        "title": "没有创建等级界限",
+        "description": "创建评分边界来定义评分范围"
+      },
+      "previewTitle": "评分边界预览",
+      "details": {
+        "title": "分级边界详细信息",
+        "name": "姓名",
+        "noneDefined": "没有定义评分界限"
+      }
+    },
+    "rubrics": {
+      "title": "评分标准",
+      "untitled": "无标题评分标准",
+      "empty": {
+        "title": "未创建评分标准",
+        "description": "创建评估标准来定义评估标准"
+      },
+      "previewTitle": "评分标准预览",
+      "details": {
+        "title": "评分细则详情",
+        "name": "姓名",
+        "category": "类别",
+        "description": "描述",
+        "custom": "风俗",
+        "noDescription": "没有提供描述",
+        "noCriteria": "此评分标准中未找到任何标准"
+      }
+    },
+    "confirm": {
+      "deleteRubric": "您确定要删除此标记方案吗？",
+      "deleteGradingBoundary": "您确定要删除此放坡边界吗？"
+    }
+  },
+  "studentGrades": {
+    "title": "所有学生成绩",
+    "allStudents": "查看和管理该班级所有学生的成绩",
+    "students": "学生",
+    "noGrades": "未找到学生",
+    "noGradesDescription": "此课程尚未有学生注册。学生加入后将显示在此处。",
+    "table": {
+      "student": "学生",
+      "actions": "行动"
+    },
+    "actions": {
+      "viewSubmission": "查看成绩"
+    }
+  },
+  "individualGrades": {
+    "myGrades": "我的成绩",
+    "studentGrades": "成绩",
+    "viewYourGrades": "查看你的成绩和进度",
+    "individualManagement": "个人学生成绩管理",
+    "export": "出口",
+    "back": "后退",
+    "yourPerformance": "你的表现",
+    "trackProgress": "追踪你的学业进展",
+    "overallGrade": "总体成绩",
+    "completed": "完全的",
+    "trend": "趋势",
+    "yourGrades": "你的成绩",
+    "assignments": "作业",
+    "studentNotFound": "找不到学生",
+    "goBack": "回去",
+    "grade": "年级",
+    "table": {
+      "assignment": "任务",
+      "grade": "年级",
+      "total": "全部的",
+      "percentage": "%",
+      "status": "地位",
+      "submitted": "已提交"
+    },
+    "status": {
+      "graded": "已分级",
+      "pending": "待办的"
+    },
+    "empty": {
+      "title": "未找到作业",
+      "description": "该学生没有可显示的作业"
+    },
+    "searchPlaceholder": "搜索作业..."
+  }
+}

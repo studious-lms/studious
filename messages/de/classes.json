@@ -1,0 +1,21 @@
+{
+  "classes": {
+    "title": "Klassen",
+    "description": "Verwalten Sie Ihren Unterricht und die belegten Kurse",
+    "joinClass": "Klasse beitreten",
+    "createClass": "Klasse erstellen",
+    "searchPlaceholder": "Kurse suchen...",
+    "teaching": "Lehre",
+    "enrolled": "Eingeschrieben",
+    "noClassesFound": "Keine Kurse gefunden",
+    "noTeachingClassesFound": "Es wurden keine Lehrveranstaltungen gefunden, die mit \"{query}\" übereinstimmen.",
+    "noEnrolledClassesFound": "Keine angemeldeten Kurse gefunden, die mit \"{query}\" übereinstimmen",
+    "noClassesYet": "Noch keine Kurse",
+    "noClassesYetDesc": "Erstellen Sie Ihre erste Klasse, um mit der Verwaltung von Aufgaben, Noten und Schülerinteraktionen zu beginnen.",
+    "noEnrolledClasses": "Keine belegten Kurse",
+    "noEnrolledClassesDesc": "Nehmen Sie mit einem Einladungscode oder Link, den Sie von Ihrem Lehrer erhalten haben, an einem Kurs teil.",
+    "classDeleted": "Klasse erfolgreich gelöscht",
+    "classDeleteFailed": "Klasse konnte nicht gelöscht werden",
+    "failedToLoad": "Fehler beim Laden der Klassen"
+  }
+}

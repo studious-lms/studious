@@ -1,0 +1,140 @@
+{
+  "classGrades": {
+    "title": "Notas",
+    "subtitle": "Ver e gerenciar notas dos alunos",
+    "columns": {
+      "assignment": "Atribuição",
+      "maxPoints": "Pontos máximos",
+      "weight": "Peso",
+      "graded": "Classificado",
+      "dueDate": "Duas datas",
+      "actions": "Ações",
+      "student": "Estudante",
+      "overallGrade": "Nota geral",
+      "assignmentsCompleted": "Tarefas concluídas",
+      "trend": "Tendência"
+    },
+    "labels": {
+      "rubric": "Rubrica"
+    },
+    "actions": {
+      "manage": "Gerenciar",
+      "viewGrades": "Ver notas",
+      "saving": "Salvando...",
+      "saveChanges": "Salvar alterações",
+      "preview": "Pré-visualização",
+      "edit": "Editar",
+      "delete": "Excluir",
+      "createNew": "Criar novo"
+    },
+    "overview": {
+      "title": "Visão geral da classe",
+      "classAverage": "Média da turma",
+      "totalStudents": "Total de alunos",
+      "assignments": "Tarefas",
+      "submissionRate": "Taxa de submissão"
+    },
+    "assignmentManagement": {
+      "title": "Gerenciamento de Tarefas",
+      "empty": {
+        "title": "Nenhuma tarefa encontrada",
+        "description": "Crie tarefas para gerenciar notas e configurações"
+      },
+      "searchPlaceholder": "Pesquisar tarefas..."
+    },
+    "students": {
+      "title": "Estudantes",
+      "viewAll": "Ver todos os alunos",
+      "empty": {
+        "title": "Nenhum aluno matriculado",
+        "description": "Os alunos aparecerão aqui quando entrarem na aula"
+      },
+      "searchPlaceholder": "Pesquisar alunos..."
+    },
+    "gradeBoundaries": {
+      "title": "Limites de notas",
+      "untitled": "Limite de classificação sem título",
+      "empty": {
+        "title": "Não foram criados limites de classificação",
+        "description": "Crie limites de classificação para definir faixas de classificação"
+      },
+      "previewTitle": "Visualização dos limites de classificação",
+      "details": {
+        "title": "Detalhes do limite de classificação",
+        "name": "Nome",
+        "noneDefined": "Não há limites de classificação definidos"
+      }
+    },
+    "rubrics": {
+      "title": "Rubricas",
+      "untitled": "Rubrica sem título",
+      "empty": {
+        "title": "Nenhuma rubrica criada",
+        "description": "Crie rubricas para definir critérios de avaliação"
+      },
+      "previewTitle": "Prévia da rubrica",
+      "details": {
+        "title": "Detalhes da rubrica",
+        "name": "Nome",
+        "category": "Categoria",
+        "description": "Descrição",
+        "custom": "Personalizado",
+        "noDescription": "Nenhuma descrição fornecida",
+        "noCriteria": "Nenhum critério encontrado nesta rubrica"
+      }
+    },
+    "confirm": {
+      "deleteRubric": "Tem certeza de que deseja excluir este esquema de marcas?",
+      "deleteGradingBoundary": "Tem certeza de que deseja excluir este limite de classificação?"
+    }
+  },
+  "studentGrades": {
+    "title": "Todas as notas dos alunos",
+    "allStudents": "Ver e gerenciar notas de todos os alunos desta turma",
+    "students": "Estudantes",
+    "noGrades": "Nenhum aluno encontrado",
+    "noGradesDescription": "Ainda não há alunos matriculados nesta turma. Os alunos aparecerão aqui assim que ingressarem.",
+    "table": {
+      "student": "Estudante",
+      "actions": "Ações"
+    },
+    "actions": {
+      "viewSubmission": "Ver notas"
+    }
+  },
+  "individualGrades": {
+    "myGrades": "Minhas notas",
+    "studentGrades": "Notas",
+    "viewYourGrades": "Veja suas notas e progresso",
+    "individualManagement": "Gestão de notas individuais dos alunos",
+    "export": "Exportar",
+    "back": "Voltar",
+    "yourPerformance": "Seu desempenho",
+    "trackProgress": "Acompanhe seu progresso acadêmico",
+    "overallGrade": "Nota geral",
+    "completed": "Concluído",
+    "trend": "Tendência",
+    "yourGrades": "Suas notas",
+    "assignments": "Tarefas",
+    "studentNotFound": "Aluno não encontrado",
+    "goBack": "Volte",
+    "grade": "Nota",
+    "table": {
+      "assignment": "Atribuição",
+      "grade": "Nota",
+      "total": "Total",
+      "percentage": "%",
+      "status": "Status",
+      "submitted": "Enviado"
+    },
+    "status": {
+      "graded": "Classificado",
+      "pending": "Pendente"
+    },
+    "empty": {
+      "title": "Nenhuma tarefa encontrada",
+      "description": "Este aluno não tem tarefas para exibir"
+    },
+    "searchPlaceholder": "Pesquisar tarefas..."
+  }
+}

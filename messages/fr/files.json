@@ -1,0 +1,130 @@
+{
+  "classFiles": {
+    "title": "Fichiers",
+    "subtitle": "Gérer les fichiers et les ressources de classe",
+    "actions": {
+      "newFolder": "Nouveau dossier",
+      "upload": "Télécharger",
+      "uploadFiles": "Télécharger des fichiers",
+      "createFolder": "Créer un dossier",
+      "download": "Télécharger",
+      "share": "Partager",
+      "delete": "Supprimer",
+      "filter": "Filtre",
+      "sort": "Trier"
+    },
+    "toasts": {
+      "folderCreated": "Dossier créé avec succès",
+      "folderDeleted": "Dossier supprimé avec succès",
+      "folderRenamed": "Le dossier a été renommé avec succès",
+      "folderMoved": "Le dossier a été déplacé avec succès",
+      "filesUploaded": "Fichiers téléchargés avec succès",
+      "fileDeleted": "Fichier supprimé avec succès",
+      "fileRenamed": "Fichier renommé avec succès",
+      "fileMoved": "Fichier déplacé avec succès",
+      "downloadStarted": "Téléchargement commencé",
+      "shareCopied": "Lien de partage copié"
+    },
+    "errors": {
+      "teacherOnly": "Seuls les enseignants peuvent modifier les fichiers.",
+      "downloadFailed": "Téléchargement échoué",
+      "shareFailed": "Le partage a échoué",
+      "failedToLoad": "Échec du chargement des fichiers. Veuillez réessayer ultérieurement."
+    },
+    "breadcrumbs": {
+      "classFiles": "Fichiers de classe"
+    },
+    "search": {
+      "placeholder": "Rechercher dans les fichiers"
+    },
+    "selected": "{count} sélectionné",
+    "filters": {
+      "fileType": "Type de fichier",
+      "documents": "Documents",
+      "images": "Images",
+      "videos": "Vidéos",
+      "presentations": "Présentations"
+    },
+    "sort": {
+      "name": "Nom",
+      "lastModified": "Dernière modification",
+      "fileSize": "Taille du fichier"
+    },
+    "table": {
+      "name": "Nom",
+      "owner": "Propriétaire",
+      "lastModified": "Dernière modification",
+      "fileSize": "Taille du fichier"
+    },
+    "empty": {
+      "title": "Ce dossier est vide",
+      "description": "Téléchargez des fichiers ou créez des dossiers pour commencer à organiser votre matériel de cours.",
+      "searchTitle": "Aucun fichier trouvé",
+      "searchDescription": "Aucun fichier ne correspond à « {query} ». Essayez un autre terme de recherche."
+    }
+  },
+  "folderView": {
+    "subtitle": "Contenu du dossier",
+    "notFound": {
+      "title": "Dossier non trouvé",
+      "description": "Le dossier demandé n'a pas pu être trouvé.",
+      "backButton": "Retour aux fichiers"
+    },
+    "error": {
+      "loadFailed": "Échec du chargement du contenu du dossier. Veuillez réessayer ultérieurement."
+    },
+    "breadcrumbs": {
+      "classFiles": "Fichiers de classe"
+    },
+    "search": {
+      "placeholder": "Rechercher dans le dossier",
+      "selected": "{count} sélectionné"
+    },
+    "filters": {
+      "label": "Filtre",
+      "fileType": "Type de fichier",
+      "documents": "Documents",
+      "images": "Images",
+      "videos": "Vidéos",
+      "presentations": "Présentations"
+    },
+    "sort": {
+      "label": "Trier",
+      "name": "Nom",
+      "lastModified": "Dernière modification",
+      "fileSize": "Taille du fichier"
+    },
+    "table": {
+      "name": "Nom",
+      "owner": "Propriétaire",
+      "lastModified": "Dernière modification",
+      "fileSize": "Taille du fichier"
+    },
+    "empty": {
+      "noFilesFound": "Aucun fichier trouvé",
+      "noFilesFoundDescription": "Aucun fichier ne correspond à « {query} ». Essayez un autre terme de recherche.",
+      "folderEmpty": "Ce dossier est vide",
+      "folderEmptyDescription": "Téléchargez des fichiers ou créez des dossiers pour organiser vos documents."
+    },
+    "actions": {
+      "newFolder": "Nouveau dossier",
+      "uploadFiles": "Télécharger des fichiers",
+      "createFolder": "Créer un dossier"
+    },
+    "toast": {
+      "folderCreated": "Dossier créé avec succès",
+      "folderDeleted": "Dossier supprimé avec succès",
+      "folderRenamed": "Le dossier a été renommé avec succès",
+      "folderMoved": "Le dossier a été déplacé avec succès",
+      "filesUploaded": "Fichiers téléchargés avec succès",
+      "fileDeleted": "Fichier supprimé avec succès",
+      "fileRenamed": "Fichier renommé avec succès",
+      "fileMoved": "Fichier déplacé avec succès",
+      "downloadStarted": "Téléchargement commencé",
+      "downloadFailed": "Téléchargement échoué",
+      "shareLinkCopied": "Lien de partage copié",
+      "shareFailed": "Le partage a échoué",
+      "permissionDenied": "Permission refusée"
+    }
+  }
+}

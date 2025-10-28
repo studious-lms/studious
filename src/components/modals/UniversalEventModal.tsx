@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { format } from "date-fns";
+import { useTranslations } from "next-intl";
 import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -82,6 +83,7 @@ export function UniversalEventModal({
   onEventUpdated,
   children
 }: UniversalEventModalProps) {
+  const t = useTranslations('universalEvent');
   const [formData, setFormData] = useState<EventFormData>(defaultFormData);
 
   const createEventMutation = trpc.event.create.useMutation();
@@ -137,12 +139,12 @@ export function UniversalEventModal({
     e.preventDefault();
     
     if (!formData.name || !formData.startDate || !formData.endDate) {
-      toast.error("Please fill in all required fields");
+      toast.error(t('errorRequired'));
       return;
     }
 
     if (formData.isClassEvent && !formData.selectedClassId) {
-      toast.error("Please select a class for the class event");
+      toast.error(t('errorSelectClass'));
       return;
     }
 
@@ -170,7 +172,7 @@ export function UniversalEventModal({
           }
         });
 
-        toast.success("Event updated successfully");
+        toast.success(t('eventUpdated'));
         onEventUpdated?.();
       } else {
         // Create new event
@@ -186,7 +188,8 @@ export function UniversalEventModal({
 
         const newEvent = await createEventMutation.mutateAsync(eventData);
 
-        toast.success(`${formData.isClassEvent ? 'Class event' : 'Personal event'} created successfully`);
+        const eventType = formData.isClassEvent ? t('classEvent') : t('personalEvent');
+        toast.success(t('eventCreated', { type: eventType }));
         onEventCreated?.(newEvent);
       }
 
@@ -194,7 +197,7 @@ export function UniversalEventModal({
       resetForm();
     } catch (error) {
       console.error(`Failed to ${isEditing ? 'update' : 'create'} event:`, error);
-      toast.error(`Failed to ${isEditing ? 'update' : 'create'} event`);
+      toast.error(isEditing ? t('errorUpdate') : t('errorCreate'));
     }
   };
 
@@ -226,7 +229,7 @@ export function UniversalEventModal({
             <DialogTitle className="flex items-center gap-3">
               <div className="flex items-center gap-2">
                 {/* {formData.isClassEvent ? <School className="h-5 w-5" /> : <User className="h-5 w-5" />} */}
-                {isEditing ? "Edit Event" : "Create New Event"}
+                {isEditing ? t('titleEdit') : t('titleCreate')}
               </div>
               {formData.isClassEvent && selectedClass && (
                 <div className="flex items-center gap-2 text-sm font-normal">
@@ -252,12 +255,12 @@ export function UniversalEventModal({
                   onCheckedChange={(checked) => handleInputChange("isClassEvent", !!checked)}
                 />
                 <Label htmlFor="isClassEvent" className="text-sm font-medium">
-                  This is a class event
+                  {t('isClassEvent')}
                 </Label>
                 {formData.isClassEvent && (
                   <Badge variant="secondary" className="ml-2">
                     <School className="h-3 w-3 mr-1" />
-                    Class Event
+                    {t('classEvent')}
                   </Badge>
                 )}
               </div>
@@ -266,13 +269,13 @@ export function UniversalEventModal({
             {/* Class Selection */}
             {formData.isClassEvent && !isEditing && (
               <div className="space-y-2">
-                <Label>Select Class *</Label>
+                <Label>{t('selectClass')}</Label>
                 <Select 
                   value={formData.selectedClassId} 
                   onValueChange={(value) => handleInputChange("selectedClassId", value)}
                 >
                   <SelectTrigger>
-                    <SelectValue placeholder="Choose a class" />
+                    <SelectValue placeholder={t('chooseClass')} />
                   </SelectTrigger>
                   <SelectContent>
                     {teacherClasses.map((classItem: RouterOutputs["class"]["getAll"]['teacherInClass'][number]) => (
@@ -291,7 +294,7 @@ export function UniversalEventModal({
                 </Select>
                 {teacherClasses.length === 0 && (
                   <p className="text-sm text-muted-foreground">
-                    You don't have any classes where you're a teacher.
+                    {t('noTeacherClasses')}
                   </p>
                 )}
               </div>
@@ -299,12 +302,12 @@ export function UniversalEventModal({
 
             {/* Event Name */}
             <div className="space-y-2">
-              <Label htmlFor="name">Event Name *</Label>
+              <Label htmlFor="name">{t('eventName')}</Label>
               <Input
                 id="name"
                 value={formData.name}
                 onChange={(e) => handleInputChange("name", e.target.value)}
-                placeholder="Enter event name"
+                placeholder={t('eventNamePlaceholder')}
                 required
               />
             </div>
@@ -313,7 +316,7 @@ export function UniversalEventModal({
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* Start Date & Time */}
               <div className="space-y-2">
-                <Label>Start Date & Time *</Label>
+                <Label>{t('startDateTime')}</Label>
                 <div className="flex gap-2">
                   <Popover>
                     <PopoverTrigger asChild>
@@ -326,7 +329,7 @@ export function UniversalEventModal({
                         )}
                       >
                         <CalendarIcon className="mr-2 h-4 w-4" />
-                        {formData.startDate ? format(formData.startDate, "PPP") : "Pick date"}
+                        {formData.startDate ? format(formData.startDate, "PPP") : t('pickDate')}
                       </Button>
                     </PopoverTrigger>
                     <PopoverContent className="w-auto p-0" align="start">
@@ -352,7 +355,7 @@ export function UniversalEventModal({
 
               {/* End Date & Time */}
               <div className="space-y-2">
-                <Label>End Date & Time *</Label>
+                <Label>{t('endDateTime')}</Label>
                 <div className="flex gap-2">
                   <Popover>
                     <PopoverTrigger asChild>
@@ -365,7 +368,7 @@ export function UniversalEventModal({
                         )}
                       >
                         <CalendarIcon className="mr-2 h-4 w-4" />
-                        {formData.endDate ? format(formData.endDate, "PPP") : "Pick date"}
+                        {formData.endDate ? format(formData.endDate, "PPP") : t('pickDate')}
                       </Button>
                     </PopoverTrigger>
                     <PopoverContent className="w-auto p-0" align="start">
@@ -392,14 +395,14 @@ export function UniversalEventModal({
 
             {/* Location */}
             <div className="space-y-2">
-              <Label htmlFor="location">Location</Label>
+              <Label htmlFor="location">{t('location')}</Label>
               <div className="relative">
                 <MapPin className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                 <Input
                   id="location"
                   value={formData.location}
                   onChange={(e) => handleInputChange("location", e.target.value)}
-                  placeholder="Enter event location"
+                  placeholder={t('locationPlaceholder')}
                   className="pl-10"
                 />
               </div>
@@ -410,19 +413,19 @@ export function UniversalEventModal({
               <ColorPicker
                 value={formData.color}
                 onChange={(color) => handleInputChange("color", color)}
-                label="Event Color"
-                description="Choose a color for this event"
+                label={t('eventColor')}
+                description={t('eventColorDescription')}
               />
             </div>
 
             {/* Remarks */}
             <div className="space-y-2">
-              <Label htmlFor="remarks">Remarks</Label>
+              <Label htmlFor="remarks">{t('remarks')}</Label>
               <Textarea
                 id="remarks"
                 value={formData.remarks}
                 onChange={(e) => handleInputChange("remarks", e.target.value)}
-                placeholder="Additional notes or remarks about the event"
+                placeholder={t('remarksPlaceholder')}
                 rows={3}
               />
             </div>
@@ -435,15 +438,15 @@ export function UniversalEventModal({
                 onClick={() => handleOpenChange(false)}
                 disabled={isLoading}
               >
-                Cancel
+                {t('cancel')}
               </Button>
               <Button
                 type="submit"
                 disabled={isLoading || !formData.name || !formData.startDate || !formData.endDate || (formData.isClassEvent && !formData.selectedClassId)}
               >
                 {isLoading 
-                  ? (isEditing ? "Updating..." : "Creating...")
-                  : (isEditing ? "Update Event" : `Create ${formData.isClassEvent ? 'Class' : 'Personal'} Event`)
+                  ? (isEditing ? t('updating') : t('creating'))
+                  : (isEditing ? t('updateEvent') : (formData.isClassEvent ? t('createClassEvent') : t('createPersonalEvent')))
                 }
               </Button>
             </div>
@@ -462,6 +465,7 @@ interface CreateEventButtonProps {
 }
 
 export function CreateEventButton({ defaultClassId, onEventCreated, children }: CreateEventButtonProps) {
+  const t = useTranslations('universalEvent');
   const [open, setOpen] = useState(false);
 
   return (
@@ -474,7 +478,7 @@ export function CreateEventButton({ defaultClassId, onEventCreated, children }: 
       {children || (
         <Button>
           <Plus className="h-4 w-4 mr-2" />
-          Add Event
+          {t('addEvent')}
         </Button>
       )}
     </UniversalEventModal>
