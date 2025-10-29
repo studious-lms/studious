@@ -29,6 +29,8 @@ import { useTranslations } from "next-intl"
 export default function PricingPage() {
   const [showEarlyAccess, setShowEarlyAccess] = useState(false);
   const t = useTranslations('pricing');
+  const tMarketing = useTranslations('marketing');
+
 
   return (
     <div className="min-h-screen bg-background">
@@ -224,114 +226,96 @@ export default function PricingPage() {
       </section>
 
       {/* School Development Program */}
-      <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 bg-secondary/30">
-        <div className="container mx-auto max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 md:gap-16 items-center">
-            {/* Left Column - Main Content */}
-            <div className="space-y-6 sm:space-y-8">
-              <div className="space-y-4 sm:space-y-6">
-                <Badge variant="outline" className="border-primary/30 text-primary bg-primary/5 text-sm">
-                  Social Impact
-                </Badge>
-                
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
-                  Studious School Development Program
-                </h2>
-                
-                <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
-                  We believe every student deserves access to modern learning tools, regardless of their school's economic situation.
-                </p>
-              </div>
-
-              {/* Key Features */}
-              <div className="space-y-4 sm:space-y-6 pt-2 sm:pt-4">
-                <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
-                    <CheckCircle2 className="h-5 w-5 text-primary" />
-                  </div>
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-br from-primary/5 via-background to-primary/5 border-y border-primary/10">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
+            <div className="space-y-4 sm:space-y-6">
+              <Badge variant="outline" className="border-primary/30 text-primary text-sm sm:text-base">
+                {tMarketing('schoolProgram.badge')}
+              </Badge>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
+                {tMarketing('schoolProgram.title')}
+              </h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
+                {tMarketing('schoolProgram.subtitle')}
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-bold text-foreground text-lg mb-1">100% Free Access</h3>
-                    <p className="text-muted-foreground">Full platform access with all features for qualifying schools</p>
+                    <p className="font-semibold text-foreground">{tMarketing('schoolProgram.feature1Title')}</p>
+                    <p className="text-sm text-muted-foreground">{tMarketing('schoolProgram.feature1Description')}</p>
                   </div>
                 </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
-                    <CheckCircle2 className="h-5 w-5 text-primary" />
-                  </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-bold text-foreground text-lg mb-1">Dedicated Support</h3>
-                    <p className="text-muted-foreground">Priority onboarding and training for teachers and staff</p>
+                    <p className="font-semibold text-foreground">{tMarketing('schoolProgram.feature2Title')}</p>
+                    <p className="text-sm text-muted-foreground">{tMarketing('schoolProgram.feature2Description')}</p>
                   </div>
                 </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
-                    <CheckCircle2 className="h-5 w-5 text-primary" />
-                  </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-bold text-foreground text-lg mb-1">Educational Resources</h3>
-                    <p className="text-muted-foreground">Free teaching materials and curriculum support</p>
+                    <p className="font-semibold text-foreground">{tMarketing('schoolProgram.feature3Title')}</p>
+                    <p className="text-sm text-muted-foreground">{tMarketing('schoolProgram.feature3Description')}</p>
                   </div>
                 </div>
               </div>
-
-              {/* CTA */}
-              <div className="pt-4 flex flex-col sm:flex-row gap-3">
+              <div className="pt-4 flex flex-col sm:flex-row gap-3 sm:gap-3">
                 <Link href="/program/apply" className="w-full sm:w-auto">
                   <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground w-full sm:w-auto">
-                    Apply Now
+                    {tMarketing('schoolProgram.applyNow')}
                     <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5" />
                   </Button>
                 </Link>
                 <Link href="/program" className="w-full sm:w-auto">
                   <Button size="lg" variant="outline" className="border-border hover:bg-secondary w-full sm:w-auto">
-                    Learn More
+                    {tMarketing('schoolProgram.learnMore')}
                   </Button>
                 </Link>
               </div>
             </div>
-
-            {/* Right Column - Eligibility Card */}
-            <Card className="border border-border shadow-lg bg-background">
+            
+            <Card className="border-2 border-primary/20 bg-card shadow-xl">
               <CardHeader>
-                <CardTitle className="text-2xl">Program Eligibility</CardTitle>
+                <CardTitle className="text-2xl">{tMarketing('schoolProgram.eligibilityTitle')}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div>
-                  <h3 className="font-semibold text-foreground mb-4">Qualifying Schools:</h3>
-                  <ul className="space-y-3">
-                    <li className="flex items-start gap-2 text-muted-foreground">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Public schools in underserved communities</span>
+                  <h4 className="font-semibold text-foreground mb-3">{tMarketing('schoolProgram.qualifyingTitle')}</h4>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary">•</span>
+                      <span>{tMarketing('schoolProgram.qualify1')}</span>
                     </li>
-                    <li className="flex items-start gap-2 text-muted-foreground">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Registered non-profit educational institutions</span>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary">•</span>
+                      <span>{tMarketing('schoolProgram.qualify2')}</span>
                     </li>
-                    <li className="flex items-start gap-2 text-muted-foreground">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Schools in developing regions</span>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary">•</span>
+                      <span>{tMarketing('schoolProgram.qualify3')}</span>
                     </li>
-                    <li className="flex items-start gap-2 text-muted-foreground">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Title I schools (US) or equivalent</span>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary">•</span>
+                      <span>{tMarketing('schoolProgram.qualify4')}</span>
                     </li>
                   </ul>
                 </div>
-
-                <div className="pt-6 border-t border-border">
+                
+                <div className="pt-4 border-t border-border">
                   <p className="text-sm text-muted-foreground">
-                    <span className="font-semibold text-foreground">Our Commitment:</span> 10% of our paying customers support free access for schools in need.
+                    <strong className="text-foreground">{tMarketing('schoolProgram.commitmentTitle')}</strong> {tMarketing('schoolProgram.commitment')}
                   </p>
                 </div>
-
-                <div className="pt-4 bg-secondary/50 rounded-lg p-4">
+                
+                <div className="bg-primary/5 rounded-lg p-4">
                   <p className="text-sm font-medium text-foreground mb-2">
-                    Program Launch:
+                    {tMarketing('schoolProgram.launchTitle')}
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    January 2026 • First cohort to be announced
+                    {tMarketing('schoolProgram.launch')}
                   </p>
                 </div>
               </CardContent>
