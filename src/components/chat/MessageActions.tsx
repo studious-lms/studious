@@ -20,6 +20,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import { MoreHorizontal, Edit, Trash2 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 interface MessageActionsProps {
   messageId: string;
@@ -38,6 +39,7 @@ export function MessageActions({
   onDelete,
   isDeleting = false,
 }: MessageActionsProps) {
+  const t = useTranslations('chat.messageActions');
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -75,7 +77,7 @@ export function MessageActions({
         <DropdownMenuContent align="end" className="w-48">
           <DropdownMenuItem onClick={handleEdit} className="cursor-pointer">
             <Edit className="h-4 w-4 mr-2" />
-            Edit message
+            {t('editMessage')}
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={() => setShowDeleteDialog(true)}
@@ -83,7 +85,7 @@ export function MessageActions({
             disabled={isDeleting}
           >
             <Trash2 className="h-4 w-4 mr-2" />
-            Delete message
+            {t('deleteMessage')}
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
@@ -91,19 +93,19 @@ export function MessageActions({
       <AlertDialog open={showDeleteDialog} onOpenChange={setShowDeleteDialog}>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Delete Message</AlertDialogTitle>
+            <AlertDialogTitle>{t('deleteConfirmTitle')}</AlertDialogTitle>
             <AlertDialogDescription>
-              Are you sure you want to delete this message? This action cannot be undone.
+              {t('deleteConfirmDescription')}
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogCancel>{t('cancel')}</AlertDialogCancel>
             <AlertDialogAction
               onClick={handleDelete}
               className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
               disabled={isDeleting}
             >
-              {isDeleting ? "Deleting..." : "Delete"}
+              {isDeleting ? t('deleting') : t('delete')}
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>

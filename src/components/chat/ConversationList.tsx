@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 import type { ConversationListOutput } from "@/lib/trpc";
 import { ConversationListSkeleton } from "./ChatSkeletons";
 import { EmptyState } from "@/components/ui/empty-state";
+import { useTranslations } from "next-intl";
 
 type Conversation = ConversationListOutput[number];
 
@@ -23,14 +24,14 @@ interface ConversationListProps {
   isLoading?: boolean;
 }
 
-const getConversationDisplayName = (conversation: Conversation, currentUserId: string): string => {
+const getConversationDisplayName = (conversation: Conversation, currentUserId: string, t: any): string => {
   if (conversation.type === 'GROUP') {
-    return conversation.name || 'Unnamed Group';
+    return conversation.name || t('unnamedGroup');
   }
   
   // For DMs, find the other user
   const otherMember = conversation.members.find(member => member.userId !== currentUserId);
-  return otherMember?.user.profile?.displayName || otherMember?.user.username || 'Unknown User';
+  return otherMember?.user.profile?.displayName || otherMember?.user.username || t('unknownUser');
 };
 
 const getConversationAvatar = (conversation: Conversation, currentUserId: string): string => {
@@ -68,10 +69,11 @@ export function ConversationList({
   currentUserId,
   isLoading = false,
 }: ConversationListProps) {
+  const t = useTranslations('chat.conversationList');
   const [searchQuery, setSearchQuery] = useState("");
 
   const filteredConversations = conversations.filter(conversation => {
-    const displayName = getConversationDisplayName(conversation, currentUserId);
+    const displayName = getConversationDisplayName(conversation, currentUserId, t);
     return displayName.toLowerCase().includes(searchQuery.toLowerCase());
   });
 
@@ -84,7 +86,7 @@ export function ConversationList({
       {/* Header */}
       <div className="px-2 py-3 border-b border-border/40">
         <div className="flex items-center justify-between mb-2">
-          <h2 className="font-medium text-sm text-foreground/90 px-2">Direct Messages</h2>
+          <h2 className="font-medium text-sm text-foreground/90 px-2">{t('title')}</h2>
           <Button
             variant="ghost"
             size="sm"
@@ -98,7 +100,7 @@ export function ConversationList({
         {/* Search */}
         <div className="relative px-2">
           <Input
-            placeholder="Find or start a conversation"
+            placeholder={t('searchPlaceholder')}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="h-7 text-xs bg-background border-border/40 placeholder:text-muted-foreground/60"
@@ -114,13 +116,13 @@ export function ConversationList({
           {filteredConversations.length === 0 ? (
             <EmptyState
               icon={MessageSquare}
-              title={searchQuery ? 'No conversations found' : 'No conversations yet'}
-              description={searchQuery ? 'Try different search terms' : 'Start chatting with someone'}
+              title={searchQuery ? t('noSearchResults') : t('noConversations')}
+              description={searchQuery ? t('noSearchResultsDescription') : t('noConversationsDescription')}
               className="py-8"
             />
           ) : (
             filteredConversations.map((conversation) => {
-              const displayName = getConversationDisplayName(conversation, currentUserId);
+              const displayName = getConversationDisplayName(conversation, currentUserId, t);
               const avatarText = getConversationAvatar(conversation, currentUserId);
               const isSelected = selectedConversationId === conversation.id;
               

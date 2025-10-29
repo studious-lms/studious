@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/dialog";
 import { Search, X, Users, MessageSquare } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 interface CreateConversationModalProps {
   open: boolean;
@@ -34,6 +35,7 @@ export function CreateConversationModal({
   availableUsers,
   isLoading = false,
 }: CreateConversationModalProps) {
+  const t = useTranslations('chat.createConversation');
   const [usernameInput, setUsernameInput] = useState("");
   const [selectedUsernames, setSelectedUsernames] = useState<string[]>([]);
   const [groupName, setGroupName] = useState("");
@@ -92,9 +94,9 @@ export function CreateConversationModal({
     <Dialog open={open} onOpenChange={handleClose}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>Start a conversation</DialogTitle>
+          <DialogTitle>{t('title')}</DialogTitle>
           <DialogDescription>
-            Create a direct message or group conversation
+            {t('description')}
           </DialogDescription>
         </DialogHeader>
 
@@ -102,21 +104,21 @@ export function CreateConversationModal({
           <TabsList className="grid w-full grid-cols-2">
             <TabsTrigger value="dm" className="flex items-center gap-2">
               <MessageSquare className="h-4 w-4" />
-              Direct Message
+              {t('direct')}
             </TabsTrigger>
             <TabsTrigger value="group" className="flex items-center gap-2">
               <Users className="h-4 w-4" />
-              Group Chat
+              {t('group')}
             </TabsTrigger>
           </TabsList>
 
           <TabsContent value="dm" className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="dm-username">Enter username to message</Label>
+              <Label htmlFor="dm-username">{t('dmLabel')}</Label>
               <div className="flex space-x-2">
                 <Input
                   id="dm-username"
-                  placeholder="Enter username..."
+                  placeholder={t('searchPlaceholder')}
                   value={usernameInput}
                   onChange={(e) => setUsernameInput(e.target.value)}
                   onKeyDown={handleKeyDown}
@@ -126,14 +128,14 @@ export function CreateConversationModal({
                   onClick={addUsername}
                   disabled={!usernameInput.trim()}
                 >
-                  Add
+                  {t('addButton')}
                 </Button>
               </div>
             </div>
 
             {selectedUsernames.length > 0 && (
               <div className="space-y-2">
-                <Label>Selected user:</Label>
+                <Label>{t('selectedUser')}</Label>
                 <div className="flex flex-wrap gap-2">
                   {selectedUsernames.map(username => (
                     <Badge
@@ -157,21 +159,21 @@ export function CreateConversationModal({
 
           <TabsContent value="group" className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="group-name">Group name</Label>
+              <Label htmlFor="group-name">{t('groupNameLabel')}</Label>
               <Input
                 id="group-name"
-                placeholder="Enter group name..."
+                placeholder={t('groupNamePlaceholder')}
                 value={groupName}
                 onChange={(e) => setGroupName(e.target.value)}
               />
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="group-username">Add members by username</Label>
+              <Label htmlFor="group-username">{t('addMembersLabel')}</Label>
               <div className="flex space-x-2">
                 <Input
                   id="group-username"
-                  placeholder="Enter username..."
+                  placeholder={t('searchPlaceholder')}
                   value={usernameInput}
                   onChange={(e) => setUsernameInput(e.target.value)}
                   onKeyDown={handleKeyDown}
@@ -181,7 +183,7 @@ export function CreateConversationModal({
                   onClick={addUsername}
                   disabled={!usernameInput.trim()}
                 >
-                  Add
+                  {t('addButton')}
                 </Button>
               </div>
             </div>
@@ -189,7 +191,7 @@ export function CreateConversationModal({
             {/* Selected users */}
             {selectedUsernames.length > 0 && (
               <div className="space-y-2">
-                <Label>Selected members ({selectedUsernames.length})</Label>
+                <Label>{t('selectedMembers', { count: selectedUsernames.length })}</Label>
                 <div className="flex flex-wrap gap-2">
                   {selectedUsernames.map(username => (
                     <Badge
@@ -214,13 +216,13 @@ export function CreateConversationModal({
 
         <DialogFooter>
           <Button variant="outline" onClick={handleClose}>
-            Cancel
+            {t('cancel')}
           </Button>
           <Button 
             onClick={handleCreate}
             disabled={!canCreate || isLoading}
           >
-            {isLoading ? "Creating..." : "Create"}
+            {isLoading ? t('creating') : t('create')}
           </Button>
         </DialogFooter>
       </DialogContent>

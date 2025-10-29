@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { X, Check, AtSign as At } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 interface MentionSuggestion {
   userId: string;
@@ -42,6 +43,7 @@ export function MessageEdit({
   currentUserId,
   isUpdating = false,
 }: MessageEditProps) {
+  const t = useTranslations('chat.messageEdit');
   const [content, setContent] = useState(initialContent);
   const [mentionedUsers, setMentionedUsers] = useState<string[]>([]);
   const [showMentionSuggestions, setShowMentionSuggestions] = useState(false);
@@ -244,14 +246,14 @@ export function MessageEdit({
           onKeyDown={handleKeyDown}
           disabled={isUpdating}
           className="min-h-[60px] max-h-32 resize-none bg-muted/50 border-muted text-foreground placeholder:text-muted-foreground focus:bg-background"
-          placeholder="Edit your message..."
+          placeholder={t('placeholder')}
           rows={2}
         />
         
         {/* Action Buttons */}
         <div className="flex items-center justify-between">
           <div className="text-xs text-muted-foreground">
-            Press Enter to save • Escape to cancel
+            {t('hint')}
           </div>
           <div className="flex space-x-2">
             <Button
@@ -262,7 +264,7 @@ export function MessageEdit({
               className="h-7 px-2"
             >
               <X className="h-3 w-3 mr-1" />
-              Cancel
+              {t('cancel')}
             </Button>
             <Button
               size="sm"
@@ -271,7 +273,7 @@ export function MessageEdit({
               className="h-7 px-2 bg-primary hover:bg-primary/90 text-primary-foreground"
             >
               <Check className="h-3 w-3 mr-1" />
-              {isUpdating ? "Saving..." : "Save"}
+              {isUpdating ? t('saving') : t('save')}
             </Button>
           </div>
         </div>

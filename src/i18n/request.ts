@@ -27,6 +27,7 @@ async function loadMessages(locale: string) {
     ...acc,
     ...module.default
   }), {});
+  
 }
 
 export default getRequestConfig(async () => {

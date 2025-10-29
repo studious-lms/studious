@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Send, Smile, AtSign as At, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 interface MentionSuggestion {
   userId: string;
@@ -35,11 +36,12 @@ interface MessageInputProps {
 
 export function MessageInput({
   onSend,
-  placeholder = "Type a message...",
+  placeholder,
   disabled = false,
   conversationMembers,
   currentUserId,
 }: MessageInputProps) {
+  const t = useTranslations('chat.messageInput');
   const [content, setContent] = useState("");
   const [mentionedUsers, setMentionedUsers] = useState<string[]>([]);
   const [showMentionSuggestions, setShowMentionSuggestions] = useState(false);
@@ -229,7 +231,7 @@ export function MessageInput({
         <div className="flex-1 relative">
           <Textarea
             ref={textareaRef}
-            placeholder={placeholder}
+            placeholder={placeholder || t('placeholder')}
             value={content}
             onChange={(e) => handleContentChange(e.target.value)}
             onKeyDown={handleKeyDown}

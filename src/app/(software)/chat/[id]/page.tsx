@@ -98,7 +98,7 @@ export default function ConversationPage() {
                       : selectedConversation.members.find(m => m.userId !== user.id)?.user.profile?.profilePicture || ""
                     }
                   />
-                  <AvatarFallback className="text-sm bg-primary text-primary-foreground">
+                  <AvatarFallback>
                     {getConversationDisplayName().charAt(0).toUpperCase()}
                   </AvatarFallback>
                 </Avatar>
