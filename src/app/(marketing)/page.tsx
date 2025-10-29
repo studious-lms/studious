@@ -73,7 +73,7 @@ export default function Home() {
                 {t('hero.requestEarlyAccess')}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-              <Button size="lg" variant="outline" className="border-border hover:bg-secondary px-6 sm:px-8 h-11 sm:h-12 text-sm sm:text-base font-medium w-full sm:w-auto">
+              <Button size="lg" variant="outline" className="border-border hover:bg-secondary px-6 sm:px-8 h-11 sm:h-12 text-sm sm:text-base font-medium w-full sm:w-auto" onClick={() => router.push('https://www.youtube.com/watch?v=RYae8MkEEjI')}>
                 <Play className="mr-2 h-4 w-4" />
                 {t('hero.watchDemo')}
               </Button>

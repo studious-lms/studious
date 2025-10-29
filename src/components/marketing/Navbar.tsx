@@ -63,49 +63,46 @@ export function Navbar() {
               <Link href="/press" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 {t('press')}
               </Link>
-              <div className="h-4 w-px bg-border" />
-              
-              {/* Theme Toggle */}
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={toggleDarkMode}
-                className="h-9 w-9"
-              >
-                {darkMode === "dark" ? (
-                  <Moon className="h-4 w-4" />
-                ) : (
-                  <Sun className="h-4 w-4" />
-                )}
-              </Button>
+              <div className="flex items-center gap-2">
+                {/* Theme Toggle */}
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={toggleDarkMode}
+                >
+                  {darkMode === "dark" ? (
+                    <Moon className="h-4 w-4" />
+                  ) : (
+                    <Sun className="h-4 w-4" />
+                  )}
+                </Button>
 
-              {/* Language Selector */}
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" size="sm" className="h-9 gap-1">
-                    <Globe className="h-4 w-4" />
-                    <span className="text-sm">{currentLang.flag}</span>
-                    <ChevronDown className="h-3 w-3" />
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="w-48 max-h-96 overflow-y-auto">
-                  {languages.map((language) => (
-                    <DropdownMenuItem
-                      key={language.code}
-                      onClick={() => handleLanguageChange(language.code)}
-                      className="flex items-center gap-2 cursor-pointer"
-                    >
-                      <span>{language.flag}</span>
-                      <span className="flex-1">{language.name}</span>
-                      {locale === language.code && (
-                        <Check className="h-4 w-4" />
-                      )}
-                    </DropdownMenuItem>
-                  ))}
-                </DropdownMenuContent>
-              </DropdownMenu>
+                {/* Language Selector */}
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="ghost" size="sm" className="h-9 gap-1">
+                      <span className="text-sm">{currentLang.flag}</span>
+                      <ChevronDown className="h-3 w-3" />
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end" className="w-48 max-h-96 overflow-y-auto">
+                    {languages.map((language) => (
+                      <DropdownMenuItem
+                        key={language.code}
+                        onClick={() => handleLanguageChange(language.code)}
+                        className="flex items-center gap-2 cursor-pointer"
+                      >
+                        <span>{language.flag}</span>
+                        <span className="flex-1">{language.name}</span>
+                        {locale === language.code && (
+                          <Check className="h-4 w-4" />
+                        )}
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </div>
 
-              <div className="h-4 w-px bg-border" />
               <Link href="/login" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 {t('signIn')}
               </Link>
@@ -195,7 +192,6 @@ export function Navbar() {
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
                         <Button variant="ghost" size="sm" className="h-9 gap-1">
-                          <Globe className="h-4 w-4" />
                           <span className="text-sm">{currentLang.flag}</span>
                           <span className="text-sm">{currentLang.name}</span>
                           <ChevronDown className="h-3 w-3" />
