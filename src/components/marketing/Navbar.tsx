@@ -2,16 +2,41 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Moon, Sun, Globe, ChevronDown, Check } from "lucide-react";
 import { EarlyAccessModal } from "./EarlyAccessModal";
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import { useTheme } from "@/components/ui/theme-provider";
+import { setCookie } from "cookies-next";
+import { LANGUAGES as languages } from "@/lib/language";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export function Navbar() {
   const t = useTranslations('navigation');
   const tMarketing = useTranslations('marketing.navbar');
   const [showEarlyAccess, setShowEarlyAccess] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { darkMode, setDarkMode } = useTheme();
+  const locale = useLocale();
+
+  const currentLang = languages.find(l => l.code === locale) || languages[0];
+
+  const toggleDarkMode = () => {
+    setDarkMode(darkMode === "dark" ? "light" : "dark");
+  };
+
+  const handleLanguageChange = (languageCode: string) => {
+    setCookie('NEXT_LOCALE', languageCode, {
+      maxAge: 60 * 60 * 24 * 365, // 1 year
+      path: '/',
+    });
+    window.location.reload();
+  };
 
   return (
     <>
@@ -38,6 +63,48 @@ export function Navbar() {
               <Link href="/press" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 {t('press')}
               </Link>
+              <div className="h-4 w-px bg-border" />
+              
+              {/* Theme Toggle */}
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={toggleDarkMode}
+                className="h-9 w-9"
+              >
+                {darkMode === "dark" ? (
+                  <Moon className="h-4 w-4" />
+                ) : (
+                  <Sun className="h-4 w-4" />
+                )}
+              </Button>
+
+              {/* Language Selector */}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" size="sm" className="h-9 gap-1">
+                    <Globe className="h-4 w-4" />
+                    <span className="text-sm">{currentLang.flag}</span>
+                    <ChevronDown className="h-3 w-3" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-48 max-h-96 overflow-y-auto">
+                  {languages.map((language) => (
+                    <DropdownMenuItem
+                      key={language.code}
+                      onClick={() => handleLanguageChange(language.code)}
+                      className="flex items-center gap-2 cursor-pointer"
+                    >
+                      <span>{language.flag}</span>
+                      <span className="flex-1">{language.name}</span>
+                      {locale === language.code && (
+                        <Check className="h-4 w-4" />
+                      )}
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+
               <div className="h-4 w-px bg-border" />
               <Link href="/login" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 {t('signIn')}
@@ -96,6 +163,63 @@ export function Navbar() {
                 >
                   {t('press')}
                 </Link>
+
+                {/* Theme and Language Controls */}
+                <div className="pt-4 border-t border-border space-y-3">
+                  {/* Theme Toggle */}
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-muted-foreground">Theme</span>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={toggleDarkMode}
+                      className="h-9 gap-2"
+                    >
+                      {darkMode === "dark" ? (
+                        <>
+                          <Moon className="h-4 w-4" />
+                          <span className="text-sm">Dark</span>
+                        </>
+                      ) : (
+                        <>
+                          <Sun className="h-4 w-4" />
+                          <span className="text-sm">Light</span>
+                        </>
+                      )}
+                    </Button>
+                  </div>
+
+                  {/* Language Selector */}
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-muted-foreground">Language</span>
+                    <DropdownMenu>
+                      <DropdownMenuTrigger asChild>
+                        <Button variant="ghost" size="sm" className="h-9 gap-1">
+                          <Globe className="h-4 w-4" />
+                          <span className="text-sm">{currentLang.flag}</span>
+                          <span className="text-sm">{currentLang.name}</span>
+                          <ChevronDown className="h-3 w-3" />
+                        </Button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent align="end" className="w-48 max-h-96 overflow-y-auto">
+                        {languages.map((language) => (
+                          <DropdownMenuItem
+                            key={language.code}
+                            onClick={() => handleLanguageChange(language.code)}
+                            className="flex items-center gap-2 cursor-pointer"
+                          >
+                            <span>{language.flag}</span>
+                            <span className="flex-1">{language.name}</span>
+                            {locale === language.code && (
+                              <Check className="h-4 w-4" />
+                            )}
+                          </DropdownMenuItem>
+                        ))}
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  </div>
+                </div>
+
                 <div className="pt-4 border-t border-border">
                   <Link 
                     href="/login" 
