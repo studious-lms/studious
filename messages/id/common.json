@@ -14,7 +14,8 @@
     "sort": "Menyortir",
     "viewAll": "Lihat Semua",
     "noData": "Tidak ada data tersedia",
-    "export": "Ekspor"
+    "export": "Ekspor",
+    "openMenu": "Buka menu"
   },
   "time": {
     "today": "Hari ini",
@@ -1019,7 +1020,7 @@
       "actions": {
         "cancel": "Membatalkan",
         "create": "Buat Kelas",
-        "creating": "Membuat..."
+        "creating": "Menciptakan..."
       },
       "toasts": {
         "success": "Kelas {name} telah berhasil dibuat.",

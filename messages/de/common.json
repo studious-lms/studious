@@ -14,7 +14,8 @@
     "sort": "Sortieren",
     "viewAll": "Alle anzeigen",
     "noData": "Keine Daten verfügbar",
-    "export": "Export"
+    "export": "Export",
+    "openMenu": "Menü öffnen"
   },
   "time": {
     "today": "Heute",
@@ -33,7 +34,7 @@
   "auth": {
     "login": {
       "title": "Willkommen zurück",
-      "subtitle": "Melden Sie sich in Ihrem Studious-Konto an.",
+      "subtitle": "Melden Sie sich in Ihrem Studious-Konto an",
       "username": "Benutzername",
       "password": "Passwort",
       "forgotPassword": "Passwort vergessen?",
@@ -80,7 +81,7 @@
       "emailSent": "Bestätigungs-E-Mail versendet!",
       "checkInbox": "Bitte überprüfen Sie Ihren Posteingang und Ihren Spam-Ordner.",
       "enterEmail": "Geben Sie Ihre E-Mail-Adresse ein.",
-      "sending": "Wird gesendet...",
+      "sending": "Senden...",
       "sendEmail": "E-Mail senden"
     }
   },
@@ -275,8 +276,8 @@
       },
       "aims": {
         "title": "Programmziele",
-        "body1": "Durch intensive Gespräche mit Lehrkräften und Bildungsexperten haben wir erhebliche Lücken in der digitalen Lerninfrastruktur vieler Schulen festgestellt. Vielen auf dem Markt erhältlichen Lernmanagementsystemen fehlt eine einheitliche und intuitive Benutzerführung, und Schulen in sozial benachteiligten Gebieten können sich den Zugang zu moderner Bildungstechnologie oft nicht leisten.",
-        "body2": "Unser Programm begegnet diesen Herausforderungen direkt. Die Einnahmen aus unseren kostenpflichtigen institutionellen Abonnements ermöglichen es uns, benachteiligten Schulen umfassenden Zugang zu Studious LMS und verwandten Lernwerkzeugen zu bieten. Dieses nachhaltige Modell hilft uns, die digitale Kluft zu überbrücken und unsere Plattform kontinuierlich für alle Nutzer zu verbessern."
+        "body1": "Durch intensive Gespräche mit Lehrkräften und pädagogischen Fachkräften haben wir erhebliche Lücken in der digitalen Lerninfrastruktur vieler Schulen festgestellt. Vielen auf dem Markt erhältlichen Lernmanagementsystemen fehlt eine einheitliche und intuitive Benutzerführung, und Schulen in sozial benachteiligten Gebieten können sich den Zugang zu moderner Bildungstechnologie oft nicht leisten.",
+        "body2": "Unser Programm begegnet diesen Herausforderungen direkt. Die Einnahmen aus unseren kostenpflichtigen institutionellen Abonnements ermöglichen es uns, benachteiligten Schulen umfassenden Zugang zu Studious LMS und verwandten Lernwerkzeugen zu bieten. Dieses nachhaltige Modell hilft uns, die digitale Kluft zu überbrücken und gleichzeitig unsere Plattform für alle Nutzer kontinuierlich zu verbessern."
       },
       "receive": {
         "title": "Was Sie erhalten",
@@ -859,7 +860,7 @@
     "assignmentDrop": "Aufgabe hier ablegen, um zur obersten Ebene zu gelangen",
     "sectionDeletionConfirmation": "Möchten Sie diesen Abschnitt wirklich löschen? Alle Aufgaben werden in die oberste Ebene verschoben.",
     "assignmentDeletionConfirmation": "Möchten Sie diese Aufgabe wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden.",
-    "manageAndTrack": "Kursaufgaben verwalten und verfolgen",
+    "manageAndTrack": "Klassenaufgaben verwalten und verfolgen",
     "filters": "Filter"
   },
   "pagination": {
@@ -1118,7 +1119,7 @@
         "autoCalculate": "Die Punkte werden automatisch anhand der ausgewählten Bewertungskriterien berechnet."
       },
       "gradeScale": {
-        "default": "Standardmaßstab",
+        "default": "Standardskalierung",
         "untitled": "Unbenannter Maßstab"
       },
       "files": {

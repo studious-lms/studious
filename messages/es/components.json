@@ -13,7 +13,7 @@
   "uploadFiles": {
     "title": "Subir archivos",
     "noFilesSelected": "No se ha seleccionado ningún archivo.",
-    "classIdMissing": "Falta el ID de clase",
+    "classIdMissing": "Falta el ID de la clase.",
     "folderIdMissing": "Falta el ID de la carpeta. Espere a que se cargue la carpeta.",
     "preparing": "Preparando la subida...",
     "gettingUrls": "Obtención de URLs de carga...",
@@ -132,7 +132,7 @@
     "page": {
       "header": {
         "members": "Miembros",
-        "markMentionsRead": "Mark menciona que lee"
+        "markMentionsRead": "Mark menciona que leyó"
       },
       "input": {
         "placeholderPrefix": "Mensaje"
@@ -318,6 +318,6 @@
     "requirementsPlaceholder": "Cualquier requisito específico, objetivo de aprendizaje o limitación...",
     "cancel": "Cancelar",
     "createLab": "Crear un laboratorio de IA",
-    "creatingLab": "Creando laboratorio..."
+    "creatingLab": "Creando un laboratorio..."
   }
 }

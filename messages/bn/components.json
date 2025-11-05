@@ -132,7 +132,7 @@
     "page": {
       "header": {
         "members": "সদস্যরা",
-        "markMentionsRead": "মার্ক উল্লেখ করেছেন যে পড়েছেন"
+        "markMentionsRead": "মার্ক পড়ার কথা উল্লেখ করেছেন"
       },
       "input": {
         "placeholderPrefix": "বার্তা"

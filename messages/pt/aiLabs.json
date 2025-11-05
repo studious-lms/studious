@@ -12,7 +12,7 @@
         "description": "Crie tarefas interativas com a ajuda da IA."
       },
       "quiz": {
-        "title": "Questionário",
+        "title": "Quiz",
         "description": "Gere questionários com vários tipos de perguntas."
       },
       "worksheet": {

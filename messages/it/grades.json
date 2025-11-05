@@ -3,7 +3,7 @@
     "title": "Gradi",
     "subtitle": "Visualizza e gestisci i voti degli studenti",
     "columns": {
-      "assignment": "Incarico",
+      "assignment": "Assegnazione",
       "maxPoints": "Punti massimi",
       "weight": "Peso",
       "graded": "Classificato",
@@ -120,7 +120,7 @@
     "goBack": "Torna indietro",
     "grade": "Grado",
     "table": {
-      "assignment": "Incarico",
+      "assignment": "Assegnazione",
       "grade": "Grado",
       "total": "Totale",
       "percentage": "%",

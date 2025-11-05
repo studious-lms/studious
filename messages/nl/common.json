@@ -14,7 +14,8 @@
     "sort": "Soort",
     "viewAll": "Bekijk alles",
     "noData": "Geen gegevens beschikbaar",
-    "export": "Exporteren"
+    "export": "Exporteren",
+    "openMenu": "Open menu"
   },
   "time": {
     "today": "Vandaag",
@@ -244,7 +245,7 @@
       "website": "Website",
       "status": "Status",
       "currentStatus": "Huidige status",
-      "launchDate": "Lanceringsdatum",
+      "launchDate": "Lanceerdatum",
       "currentPhase": "Huidige fase",
       "targetMarkets": "Doelmarkten",
       "teamSize": "Teamgrootte",
@@ -495,7 +496,7 @@
     "createFirstPost": "Eerste bericht maken",
     "grades": {
       "title": "Cijfers",
-      "subtitle": "Bekijk en beheer studentencijfers",
+      "subtitle": "Bekijk en beheer de cijfers van studenten",
       "columns": {
         "assignment": "Opdracht",
         "maxPoints": "Maximale punten",
@@ -780,7 +781,7 @@
         "edit": "Syllabus bewerken"
       },
       "errors": {
-        "failedToLoad": "Het is niet gelukt om de syllabus te laden",
+        "failedToLoad": "Het is niet gelukt om het leerplan te laden",
         "tryLater": "Probeer het later opnieuw."
       },
       "stats": {
@@ -963,7 +964,7 @@
         "description": "Zodra we klaar voor u zijn, sturen we u een e-mail op {email}"
       },
       "toasts": {
-        "success": "Met succes toegevoegd aan de wachtlijst!"
+        "success": "U bent succesvol toegevoegd aan de wachtlijst!"
       }
     },
     "joinClass": {
@@ -1171,7 +1172,7 @@
       "placeholders": {
         "title": "bijv. labrapport inleveren op vrijdag",
         "content": "Schrijf hier de inhoud van uw aankondiging...",
-        "publishDate": "Direct publiceren indien leeg"
+        "publishDate": "Onmiddellijk publiceren indien leeg"
       },
       "priority": {
         "low": "Laag",

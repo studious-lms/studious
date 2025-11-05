@@ -14,7 +14,8 @@
     "sort": "种类",
     "viewAll": "查看全部",
     "noData": "暂无数据",
-    "export": "出口"
+    "export": "出口",
+    "openMenu": "打开菜单"
   },
   "time": {
     "today": "今天",
@@ -949,7 +950,7 @@
       "sizes": {
         "tiny": "1-30名学生（一对一教师授课）",
         "small": "31-100名学生（小型学校）",
-        "medium": "101-500名学生（中等规模学校）",
+        "medium": "101-500名学生（中等学校）",
         "large": "学生人数 501-1000 人（大型学校）",
         "institution": "1001+名学生（机构）"
       },
@@ -959,7 +960,7 @@
         "done": "完毕"
       },
       "success": {
-        "title": "你上榜了！",
+        "title": "你上名单了！",
         "description": "准备就绪后，我们会向您发送一封电子邮件至 {email}。"
       },
       "toasts": {
@@ -989,7 +990,7 @@
       },
       "toasts": {
         "success": "你已成功加入课程。",
-        "errorInvalid": "邀请码无效或未找到课程。",
+        "errorInvalid": "邀请码无效或找不到课程。",
         "errorEmpty": "请输入有效的邀请码。"
       }
     },
@@ -1187,7 +1188,7 @@
       "settings": {
         "pinned": {
           "label": "置顶",
-          "description": "请将此公告置于列表顶部"
+          "description": "请将此公告置顶。"
         },
         "urgent": {
           "label": "标记为紧急",

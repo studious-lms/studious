@@ -14,7 +14,8 @@
     "sort": "Isih",
     "viewAll": "Lihat Semua",
     "noData": "Tiada data tersedia",
-    "export": "Eksport"
+    "export": "Eksport",
+    "openMenu": "Buka menu"
   },
   "time": {
     "today": "Hari ini",
@@ -512,7 +513,7 @@
         "rubric": "Rubrik"
       },
       "actions": {
-        "manage": "Urus",
+        "manage": "Uruskan",
         "viewGrades": "Lihat Gred",
         "saving": "Menyimpan...",
         "saveChanges": "Simpan Perubahan",
@@ -1012,7 +1013,7 @@
         "subject": "cth., Fizik",
         "semester": "cth., Musim bunga 2025",
         "credits": "cth., 3",
-        "meetingTime": "mis., MWF 10:00-11:00 PG",
+        "meetingTime": "cth., MWF 10:00-11:00 PG",
         "location": "cth., Bilik 205, Bangunan Sains",
         "description": "Huraikan kandungan dan objektif kelas..."
       },

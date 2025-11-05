@@ -8,7 +8,7 @@
     "teaching": "가르침",
     "enrolled": "등록됨",
     "noClassesFound": "수업을 찾을 수 없습니다",
-    "noTeachingClassesFound": "\"{query}\"과(와) 일치하는 교육 수업이 없습니다.",
+    "noTeachingClassesFound": "\"{query}\"과 일치하는 교육 수업이 없습니다.",
     "noEnrolledClassesFound": "\"{query}\"와 일치하는 등록된 수업이 없습니다.",
     "noClassesYet": "아직 수업이 없습니다",
     "noClassesYetDesc": "첫 번째 수업을 만들어 과제, 성적, 학생 상호작용을 관리해 보세요.",

@@ -158,7 +158,7 @@
     },
     "messageEdit": {
       "placeholder": "メッセージを編集します...",
-      "hint": "Enterキーを押して保存します。Escキーを押してキャンセルします。",
+      "hint": "保存するにはEnterキーを押します • キャンセルするにはEscキーを押します",
       "save": "保存",
       "saving": "保存中...",
       "cancel": "キャンセル"
@@ -196,7 +196,7 @@
   "createSection": {
     "buttonLabel": "新しいセクション",
     "titleCreate": "新しいセクションを作成",
-    "titleEdit": "セクション編集",
+    "titleEdit": "セクションを編集",
     "name": "セクション名 *",
     "placeholder": "例：第1学期、ユニット2、第5章",
     "helper": "セクションは、課題をグループまたは期間ごとに整理するのに役立ちます。",

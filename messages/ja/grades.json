@@ -89,7 +89,7 @@
     }
   },
   "studentGrades": {
-    "title": "全生徒の学年",
+    "title": "全学年",
     "allStudents": "このクラスの全生徒の成績を表示および管理します",
     "students": "学生",
     "noGrades": "生徒が見つかりません",

@@ -14,7 +14,8 @@
     "sort": "종류",
     "viewAll": "모두 보기",
     "noData": "사용 가능한 데이터가 없습니다",
-    "export": "내보내다"
+    "export": "내보내다",
+    "openMenu": "메뉴 열기"
   },
   "time": {
     "today": "오늘",
@@ -915,7 +916,7 @@
     "pricingStarterTitle": "기동기",
     "pricingStarterPrice": "무료",
     "pricingStarterNote": "베타 액세스 포함",
-    "pricingStarterDescription": "소규모 수업 및 시범 프로그램에 적합",
+    "pricingStarterDescription": "소규모 수업 및 시범 프로그램에 적합합니다.",
     "pricingStarterPerk1": "최대 30명의 학생",
     "pricingStarterPerk2": "무제한 수업",
     "pricingStarterPerk3": "핵심 기능(과제, 일정, 성적)",
@@ -1159,7 +1160,7 @@
     },
     "createAnnouncement": {
       "title": "공지사항 만들기",
-      "buttonLabel": "공지 게시",
+      "buttonLabel": "공지사항 게시",
       "fields": {
         "title": "공지사항 제목 *",
         "content": "콘텐츠 *",
@@ -1197,7 +1198,7 @@
       "notifications": {
         "email": {
           "label": "이메일 알림 보내기",
-          "description": "이메일을 통해 학생들에게 알림"
+          "description": "학생들에게 이메일을 통해 알림"
         },
         "push": {
           "label": "푸시 알림 보내기",

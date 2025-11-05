@@ -14,7 +14,8 @@
     "sort": "Ordinare",
     "viewAll": "Visualizza tutto",
     "noData": "Nessun dato disponibile",
-    "export": "Esportare"
+    "export": "Esportare",
+    "openMenu": "Apri il menu"
   },
   "time": {
     "today": "Oggi",
@@ -428,7 +429,7 @@
       },
       "all": {
         "title": "Nessuna notifica ancora",
-        "description": "Quando ricevi delle notifiche, queste appariranno qui."
+        "description": "Quando ricevi le notifiche, queste appariranno qui."
       }
     },
     "actions": {
@@ -497,7 +498,7 @@
       "title": "Gradi",
       "subtitle": "Visualizza e gestisci i voti degli studenti",
       "columns": {
-        "assignment": "Incarico",
+        "assignment": "Assegnazione",
         "maxPoints": "Punti massimi",
         "weight": "Peso",
         "graded": "Classificato",
@@ -588,7 +589,7 @@
         "totalMembers": "{count} membri"
       },
       "actions": {
-        "inviteMember": "Invita membro",
+        "inviteMember": "Invita un membro",
         "copy": "Copia",
         "regenerate": "Rigenerare",
         "message": "Messaggio",
@@ -808,7 +809,7 @@
         }
       },
       "table": {
-        "assignment": "Incarico",
+        "assignment": "Assegnazione",
         "dueDate": "Due date",
         "points": "Punti",
         "weight": "Peso",
@@ -844,7 +845,7 @@
     "submissions": "Invii",
     "open": "Aprire",
     "closed": "Chiuso",
-    "assignment": "Incarico",
+    "assignment": "Assegnazione",
     "assignments": "Incarichi",
     "newAssignment": "Nuovo incarico",
     "createAssignment": "Crea assegnazione",
@@ -1182,7 +1183,7 @@
       "sections": {
         "settings": "Impostazioni",
         "notifications": "Notifiche",
-        "schedule": "Pianifica la pubblicazione (facoltativo)"
+        "schedule": "Pubblicazione programmata (facoltativa)"
       },
       "settings": {
         "pinned": {

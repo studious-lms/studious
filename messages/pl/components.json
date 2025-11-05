@@ -16,7 +16,7 @@
     "classIdMissing": "Brak identyfikatora klasy",
     "folderIdMissing": "Brak identyfikatora folderu. Poczekaj na załadowanie folderu.",
     "preparing": "Przygotowywanie przesyłania...",
-    "gettingUrls": "Pobieranie adresów URL do przesyłania...",
+    "gettingUrls": "Pobieranie adresów URL przesyłania...",
     "uploadingFile": "Przesyłanie {name}...",
     "confirming": "Potwierdzam {name}...",
     "finalizing": "Finalizowanie...",

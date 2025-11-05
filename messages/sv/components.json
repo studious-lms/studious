@@ -41,7 +41,7 @@
     "uploading": "Laddar upp..."
   },
   "rubric": {
-    "title": "Skapa bedömningsmatris",
+    "title": "Skapa matris",
     "titleEdit": "Redigera bedömningsmatris",
     "selectTemplate": "Välj mall",
     "startFromScratch": "Börja från början",
@@ -50,12 +50,12 @@
     "name": "Rubriknamn",
     "placeholder": "Ange rubriknamn",
     "cancel": "Avboka",
-    "create": "Skapa bedömningsmatris",
+    "create": "Skapa matris",
     "update": "Uppdatera bedömningsmatris",
     "creating": "Skapande...",
     "updating": "Uppdaterar...",
     "created": "Matris skapad",
-    "updated": "Matrisen har uppdaterats",
+    "updated": "Matris uppdaterad",
     "createFailed": "Misslyckades med att skapa bedömningsmatris",
     "updateFailed": "Misslyckades med att uppdatera bedömningsmatrisen",
     "errorNameRequired": "Ange ett namn och minst ett kriterium"
@@ -241,7 +241,7 @@
     "creating": "Skapande...",
     "addEvent": "Lägg till händelse",
     "eventCreated": "{type} skapades",
-    "eventUpdated": "Händelsen uppdaterades",
+    "eventUpdated": "Händelsen har uppdaterats",
     "errorRequired": "Vänligen fyll i alla obligatoriska fält",
     "errorSelectClass": "Välj en klass för klassevenemanget",
     "errorCreate": "Misslyckades med att skapa händelsen",
@@ -278,7 +278,7 @@
     "aiPowered": "AI-driven",
     "description": "Ge oss lite grundläggande information som hjälper vår AI att skapa bättre innehåll åt dig.",
     "titleField": "Titel *",
-    "titlePlaceholder": "Ange {type} titel",
+    "titlePlaceholder": "Ange titeln {type}",
     "subject": "Ämne *",
     "selectSubject": "Välj ämne",
     "subjects": {

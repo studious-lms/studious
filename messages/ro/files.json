@@ -6,7 +6,7 @@
       "newFolder": "Dosar nou",
       "upload": "Încărcare",
       "uploadFiles": "Încărcați fișiere",
-      "createFolder": "Creați un folder",
+      "createFolder": "Creați folderul",
       "download": "Descărcare",
       "share": "Distribuie",
       "delete": "Şterge",
@@ -59,7 +59,7 @@
     "empty": {
       "title": "Acest folder este gol",
       "description": "Încărcați fișiere sau creați foldere pentru a începe să vă organizați materialele pentru clasă.",
-      "searchTitle": "Nu s-au găsit fișiere",
+      "searchTitle": "Nu au fost găsite fișiere",
       "searchDescription": "Niciun fișier nu corespunde cu „{query}”. Încercați un alt termen de căutare."
     }
   },
@@ -101,7 +101,7 @@
       "fileSize": "Dimensiunea fișierului"
     },
     "empty": {
-      "noFilesFound": "Nu s-au găsit fișiere",
+      "noFilesFound": "Nu au fost găsite fișiere",
       "noFilesFoundDescription": "Niciun fișier nu corespunde cu „{query}”. Încercați un alt termen de căutare.",
       "folderEmpty": "Acest folder este gol",
       "folderEmptyDescription": "Încărcați fișiere sau creați foldere pentru a vă organiza materialele."
@@ -109,7 +109,7 @@
     "actions": {
       "newFolder": "Dosar nou",
       "uploadFiles": "Încărcați fișiere",
-      "createFolder": "Creați un folder"
+      "createFolder": "Creați folderul"
     },
     "toast": {
       "folderCreated": "Dosarul a fost creat cu succes",

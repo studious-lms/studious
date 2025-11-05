@@ -14,7 +14,8 @@
     "sort": "Organizar",
     "viewAll": "Ver tudo",
     "noData": "Não há dados disponíveis.",
-    "export": "Exportar"
+    "export": "Exportar",
+    "openMenu": "Abrir menu"
   },
   "time": {
     "today": "Hoje",
@@ -305,7 +306,7 @@
       }
     },
     "status": {
-      "title": "Verificar status da inscrição",
+      "title": "Verificar status da candidatura",
       "description": "Já se candidatou? Insira o seu ID de candidatura para verificar o estado da sua candidatura.",
       "inputLabel": "ID do aplicativo",
       "placeholder": "Por exemplo, EXA2025-...",
@@ -433,7 +434,7 @@
     },
     "actions": {
       "marking": "Marcando...",
-      "markAsRead": "Marcar como lido"
+      "markAsRead": "Marcar como lida"
     },
     "toasts": {
       "markedAsRead": "Notificação marcada como lida"
@@ -454,7 +455,7 @@
       "description": "Atualize seus dados pessoais e informações de perfil.",
       "displayName": "Nome de exibição",
       "displayNamePlaceholder": "Digite seu nome de exibição",
-      "displayNameDescription": "Assim será o seu nome para os outros.",
+      "displayNameDescription": "Assim será que seu nome aparecerá para os outros.",
       "location": "Localização",
       "locationPlaceholder": "Insira sua localização",
       "locationDescription": "Sua cidade, estado ou país",
@@ -549,7 +550,7 @@
         "title": "Limites de nível",
         "untitled": "Limite de classificação sem título",
         "empty": {
-          "title": "Não foram criados limites de nota.",
+          "title": "Não foram criados limites de classificação por nível.",
           "description": "Criar limites de avaliação para definir as faixas de notas."
         },
         "previewTitle": "Prévia dos Limites de Avaliação",
@@ -1089,7 +1090,7 @@
       },
       "types": {
         "homework": "Trabalho de casa",
-        "quiz": "Questionário",
+        "quiz": "Quiz",
         "test": "Teste",
         "project": "Projeto",
         "essay": "Ensaio",
@@ -1191,7 +1192,7 @@
         },
         "urgent": {
           "label": "Marcar como urgente",
-          "description": "Destaque com estilização urgente"
+          "description": "Destaque com um estilo urgente."
         }
       },
       "notifications": {

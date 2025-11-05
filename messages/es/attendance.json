@@ -20,7 +20,7 @@
       "deleteEvent": "Eliminar evento",
       "createEvent": "Crear evento",
       "saveAttendance": "Guardar asistencia",
-      "markAllPresent": "Marcar todos los presentes",
+      "markAllPresent": "Marquen todos los presentes",
       "markAllAbsent": "Marcar todos los ausentes"
     },
     "allEvents": {

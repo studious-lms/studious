@@ -56,7 +56,7 @@
     "updating": "Đang cập nhật...",
     "created": "Tiêu chí đã được tạo thành công",
     "updated": "Tiêu chí đã được cập nhật thành công",
-    "createFailed": "Không tạo được tiêu chí chấm điểm",
+    "createFailed": "Không tạo được tiêu chí",
     "updateFailed": "Không cập nhật được tiêu chí",
     "errorNameRequired": "Vui lòng cung cấp tên và ít nhất một tiêu chí"
   },
@@ -71,7 +71,7 @@
     "update": "Cập nhật",
     "creating": "Đang tạo...",
     "updating": "Đang cập nhật...",
-    "created": "Đã tạo ranh giới phân loại thành công",
+    "created": "Ranh giới phân loại đã được tạo thành công",
     "updated": "Đã cập nhật ranh giới phân loại thành công",
     "createFailed": "Không tạo được ranh giới phân loại",
     "updateFailed": "Không cập nhật được ranh giới phân loại"

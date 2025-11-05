@@ -14,7 +14,8 @@
     "sort": "Loại",
     "viewAll": "Xem tất cả",
     "noData": "Không có dữ liệu có sẵn",
-    "export": "Xuất khẩu"
+    "export": "Xuất khẩu",
+    "openMenu": "Mở menu"
   },
   "time": {
     "today": "Hôm nay",
@@ -74,7 +75,7 @@
     "verification": {
       "notVerified": "Tài khoản chưa được xác minh",
       "message": "Tài khoản của bạn cần được xác minh trước khi có thể đăng nhập. Vui lòng kiểm tra email để biết liên kết xác minh.",
-      "emailSentTo": "Email xác minh đã được gửi tới:",
+      "emailSentTo": "Email xác minh đã được gửi đến:",
       "resendEmail": "Gửi lại email xác minh",
       "backToSignIn": "Quay lại Đăng nhập",
       "emailSent": "Đã gửi email xác minh!",
@@ -147,7 +148,7 @@
         "price": "Miễn phí",
         "note": "Đã bao gồm quyền truy cập Beta",
         "description": "Hoàn hảo cho các lớp học nhỏ và chương trình thí điểm",
-        "perk1": "Tối đa 30 học sinh",
+        "perk1": "Tối đa 30 sinh viên",
         "perk2": "Lớp học không giới hạn",
         "perk3": "Các tính năng cốt lõi (bài tập, lịch, điểm)",
         "perk4": "Trợ lý AI (5 cuộc trò chuyện/tháng)",
@@ -185,7 +186,7 @@
     },
     "schoolProgram": {
       "badge": "Tác động xã hội",
-      "title": "Chương trình Phát triển Trường học Hiếu học",
+      "title": "Chương trình phát triển trường học hiếu học",
       "subtitle": "Chúng tôi tin rằng mọi học sinh đều xứng đáng được tiếp cận với các công cụ học tập hiện đại, bất kể tình hình kinh tế của trường.",
       "feature1Title": "Truy cập miễn phí 100%",
       "feature1Description": "Truy cập toàn bộ nền tảng với tất cả các tính năng dành cho các trường đủ điều kiện",
@@ -260,7 +261,7 @@
   "program": {
     "hero": {
       "badge": "Sáng kiến tác động xã hội",
-      "title": "Chương trình phát triển trường học hiếu học",
+      "title": "Chương trình Phát triển Trường học Hiếu học",
       "subtitle": "Cung cấp quyền truy cập miễn phí vào công nghệ học tập hiện đại cho các trường học không có điều kiện kinh tế"
     },
     "commitment": {
@@ -271,12 +272,12 @@
     "about": {
       "mission": {
         "title": "Sứ mệnh của chúng tôi",
-        "body1": "Chương trình Phát triển Trường Học Năng Động (Schoolus School Development Program) nhằm hỗ trợ các trường học khó khăn bằng cách cung cấp cho họ quyền truy cập miễn phí, không giới hạn vào nền tảng quản lý học tập của chúng tôi. Chúng tôi nhận thấy công nghệ là yếu tố chủ đạo trong lực lượng lao động tương lai, nhưng nhiều cơ sở giáo dục lại thiếu nguồn lực này. Thông qua chương trình này, chúng tôi mang công nghệ quản lý học tập hiện đại đến những trường học đang cần nhất."
+        "body1": "Chương trình Phát triển Trường Học Năng Động (Schoolus School Development Program) nhằm hỗ trợ các trường học khó khăn bằng cách cung cấp cho họ quyền truy cập miễn phí, không giới hạn vào nền tảng quản lý học tập của chúng tôi. Chúng tôi nhận thấy công nghệ là yếu tố then chốt trong lực lượng lao động tương lai, nhưng nhiều cơ sở giáo dục lại thiếu nguồn lực này. Thông qua chương trình này, chúng tôi mang công nghệ quản lý học tập hiện đại đến những trường học đang cần nhất."
       },
       "aims": {
         "title": "Mục tiêu của chương trình",
         "body1": "Qua nhiều cuộc trao đổi sâu rộng với giáo viên và chuyên gia giáo dục, chúng tôi đã xác định được những khoảng trống đáng kể trong cơ sở hạ tầng học tập kỹ thuật số hiện có tại nhiều trường học. Nhiều hệ thống quản lý học tập trên thị trường thiếu trải nghiệm người dùng trực quan, gắn kết, và các trường học ở những khu vực khó khăn thường không đủ khả năng tiếp cận công nghệ giáo dục hiện đại.",
-        "body2": "Chương trình của chúng tôi giải quyết trực tiếp những thách thức này. Doanh thu từ các gói đăng ký trả phí của chúng tôi cho phép chúng tôi cung cấp cho các trường học có hoàn cảnh khó khăn quyền truy cập toàn diện vào Studious LMS và các công cụ giáo dục liên quan. Mô hình bền vững này cho phép chúng tôi thu hẹp khoảng cách kỹ thuật số, đồng thời liên tục cải thiện nền tảng của mình cho tất cả người dùng."
+        "body2": "Chương trình của chúng tôi giải quyết trực tiếp những thách thức này. Doanh thu từ các gói đăng ký trả phí cho phép chúng tôi cung cấp cho các trường học khó khăn quyền truy cập toàn diện vào Studious LMS và các công cụ giáo dục liên quan. Mô hình bền vững này cho phép chúng tôi thu hẹp khoảng cách kỹ thuật số, đồng thời liên tục cải thiện nền tảng của mình cho tất cả người dùng."
       },
       "receive": {
         "title": "Những gì bạn sẽ nhận được",
@@ -1197,7 +1198,7 @@
       "notifications": {
         "email": {
           "label": "Gửi thông báo qua email",
-          "description": "Thông báo cho học sinh qua email"
+          "description": "Thông báo cho sinh viên qua email"
         },
         "push": {
           "label": "Gửi thông báo đẩy",

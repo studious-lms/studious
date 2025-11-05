@@ -132,7 +132,7 @@
     "page": {
       "header": {
         "members": "Üyeler",
-        "markMentionsRead": "Mark okunduğundan bahsediyor"
+        "markMentionsRead": "Mark okunduğunu belirtiyor"
       },
       "input": {
         "placeholderPrefix": "Mesaj"
@@ -151,7 +151,7 @@
     },
     "messageList": {
       "noMessagesTitle": "Henüz mesaj yok",
-      "noMessagesDescription": "Bu, konuşmanızın başlangıcıdır"
+      "noMessagesDescription": "Bu konuşmanızın başlangıcıdır"
     },
     "messageInput": {
       "placeholder": "Bir mesaj yazın..."

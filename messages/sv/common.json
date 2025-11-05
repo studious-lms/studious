@@ -14,7 +14,8 @@
     "sort": "Sortera",
     "viewAll": "Visa alla",
     "noData": "Inga data tillgängliga",
-    "export": "Exportera"
+    "export": "Exportera",
+    "openMenu": "Öppna menyn"
   },
   "time": {
     "today": "I dag",
@@ -94,7 +95,7 @@
       "title2": "lärande för moderna skolor",
       "subtitle": "Studious LMS integrerar AI, realtidskalendrar och klasskommunikation i en sammanhängande plattform – utformad för att hjälpa lärare att undervisa och elever att blomstra.",
       "requestEarlyAccess": "Begär tidig åtkomst",
-      "watchDemo": "Titta på demo",
+      "watchDemo": "Titta på demon",
       "altDashboard": "Plattformsöversikt"
     },
     "problem": {
@@ -165,7 +166,7 @@
         "perk2": "Obegränsade klasser",
         "perk3": "Alla kärnfunktioner",
         "perk4": "AI-assistent (obegränsade frågor)",
-        "perk5": "Först i kön för betaversionen av Studious CMS",
+        "perk5": "Först i kön för betaåtkomst till Studious CMS",
         "button": "Kom igång"
       },
       "institution": {
@@ -232,7 +233,7 @@
   },
   "press": {
     "badge": "Press och media",
-    "title": "Studious i nyheterna",
+    "title": "Studig i nyheterna",
     "subtitle": "Medieresurser, varumärkestillgångar och företagsinformation för journalister och innehållsskapare",
     "factsheet": {
       "title": "Företagsfaktablad",
@@ -881,7 +882,7 @@
     "solutionParagraph1": "Med inspiration från moderna samarbetsverktyg som Linear och Notion bestämde vi oss för att skapa ett lärplattformssystem som kändes",
     "solutionParagraph2": "snabb, intuitiv och trevlig att använda.",
     "solutionParagraph3": "En som integrerade AI inte som en gimmick, utan som en genuin produktivitetsmultiplikator för både lärare och elever.",
-    "launchParagraph": "Efter två års utveckling lanserade vi officiellt Studious den 17 oktober 2025. Vi är nu i tidig åtkomst, redo att hjälpa skolor över hela världen att transformera sin lärandeupplevelse.",
+    "launchParagraph": "Efter två års utveckling lanserade vi officiellt Studious den 17 oktober 2025. Vi är nu i tidig åtkomst, redo att hjälpa skolor världen över att transformera sin lärandeupplevelse.",
     "journey1": "Vår resa",
     "journey2": "Två år av att bygga, lära och växa",
     "journeyBeginningDate": "2023",
@@ -988,7 +989,7 @@
         "joining": "Sammanfogning..."
       },
       "toasts": {
-        "success": "Du har nu gått med i klassen.",
+        "success": "Du har gått med i klassen.",
         "errorInvalid": "Ogiltig inbjudningskod eller klass hittades inte.",
         "errorEmpty": "Ange en giltig inbjudningskod."
       }

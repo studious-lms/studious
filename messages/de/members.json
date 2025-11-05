@@ -43,7 +43,7 @@
     "teachers": {
       "empty": {
         "title": "Keine Lehrer gefunden",
-        "matchNone": "Keine Lehrer entsprechen der \"{query}\"-Vorgabe.",
+        "matchNone": "Keine Lehrer entsprechen \"{query}\"",
         "noTeachers": "Es wurden keine zusätzlichen Lehrkräfte eingestellt."
       }
     },

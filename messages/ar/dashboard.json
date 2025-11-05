@@ -7,7 +7,7 @@
       "teachingEnrolled": "{teaching} التدريس، {enrolled} المسجلين",
       "dueToday": "المستحق اليوم",
       "dueTodayDesc": "الواجبات المستحقة اليوم",
-      "upcoming": "القادمة",
+      "upcoming": "قادم",
       "upcomingDesc": "المهام القادمة",
       "thisWeek": "هذا الاسبوع",
       "totalAssignments": "إجمالي المهام"
@@ -36,7 +36,7 @@
       "teaching": "تدريس",
       "enrolled": "مسجل",
       "due": "حق",
-      "noClasses": "لا توجد فصول دراسية حتى الآن",
+      "noClasses": "لا توجد فصول دراسية بعد",
       "browseClasses": "تصفح الفصول الدراسية",
       "viewAllClasses": "عرض جميع الفصول الدراسية"
     }

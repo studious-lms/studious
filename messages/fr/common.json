@@ -14,7 +14,8 @@
     "sort": "Trier",
     "viewAll": "Afficher tout",
     "noData": "Aucune donnée disponible",
-    "export": "Exporter"
+    "export": "Exporter",
+    "openMenu": "Ouvrir le menu"
   },
   "time": {
     "today": "Aujourd'hui",
@@ -81,7 +82,7 @@
       "checkInbox": "Veuillez vérifier votre boîte de réception et votre dossier de courriers indésirables.",
       "enterEmail": "Saisissez votre adresse e-mail",
       "sending": "Envoi...",
-      "sendEmail": "Envoyer un courriel"
+      "sendEmail": "Envoyer un e-mail"
     }
   },
   "marketing": {
@@ -271,7 +272,7 @@
     "about": {
       "mission": {
         "title": "Notre mission",
-        "body1": "Le programme de développement des écoles ambitieuses vise à soutenir les établissements scolaires défavorisés en leur offrant un accès gratuit et illimité à notre plateforme de gestion de l'apprentissage. Nous sommes conscients du rôle prépondérant des technologies dans le monde du travail de demain, or de nombreux établissements scolaires n'ont pas accès à ces ressources. Grâce à ce programme, nous mettons à disposition des écoles qui en ont le plus besoin des technologies modernes de gestion de l'apprentissage."
+        "body1": "Le programme de développement des écoles ambitieuses vise à soutenir les établissements scolaires défavorisés en leur offrant un accès gratuit et illimité à notre plateforme de gestion de l'apprentissage. Nous sommes conscients du rôle prépondérant des technologies dans le monde du travail de demain, or de nombreux établissements d'enseignement n'ont pas accès à ces ressources. Grâce à ce programme, nous mettons à disposition des écoles qui en ont le plus besoin des technologies modernes de gestion de l'apprentissage."
       },
       "aims": {
         "title": "Objectifs du programme",
@@ -846,7 +847,7 @@
     "closed": "Fermé",
     "assignment": "Affectation",
     "assignments": "Devoirs",
-    "newAssignment": "Nouvelle mission",
+    "newAssignment": "Nouvelle affectation",
     "createAssignment": "Créer un devoir",
     "viewAssignment": "Voir le devoir",
     "allAssignments": "Tous les devoirs",
@@ -892,7 +893,7 @@
     "journeyBetaLaunch2": "Lancement officiel de la bêta publique de Studious LMS. Accès anticipé ouvert aux établissements scolaires du monde entier avec toutes les fonctionnalités de la plateforme.",
     "journeyPilotSchoolsDate": "Novembre 2025",
     "journeyPilotSchools1": "Programme des écoles pilotes",
-    "journeyPilotSchools2": "Lancement de partenariats avec des écoles pilotes afin de recueillir des retours d'expérience concrets et d'affiner la plateforme en fonction de la diversité des besoins éducatifs.",
+    "journeyPilotSchools2": "Lancement de partenariats avec des écoles pilotes afin de recueillir des retours d'expérience concrets et d'affiner la plateforme en fonction des divers besoins éducatifs.",
     "journeyBetaCompleteDate": "Décembre 2025",
     "journeyBetaComplete1": "Bêta complète",
     "journeyBetaComplete2": "Passage de la version bêta à la version finale. Stabilisation de la plateforme : toutes les fonctionnalités principales ont été entièrement testées et optimisées.",
@@ -960,7 +961,7 @@
       },
       "success": {
         "title": "Vous êtes sur la liste !",
-        "description": "Nous vous enverrons un e-mail à {email} lorsque nous serons prêts pour vous."
+        "description": "Nous vous enverrons un courriel à {email} lorsque nous serons prêts pour vous."
       },
       "toasts": {
         "success": "Inscription réussie sur la liste d'attente !"

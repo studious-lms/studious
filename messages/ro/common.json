@@ -14,7 +14,8 @@
     "sort": "Sorta",
     "viewAll": "Vezi toate",
     "noData": "Nu sunt disponibile date",
-    "export": "Export"
+    "export": "Export",
+    "openMenu": "Deschide meniul"
   },
   "time": {
     "today": "Astăzi",
@@ -318,13 +319,13 @@
         "contact": "Contact:",
         "notFound": {
           "title": "Aplicația nu a fost găsită",
-          "body": "Vă rugăm să verificați ID-ul aplicației și să încercați din nou. Dacă problemele persistă, contactați-ne la impact@studious.sh"
+          "body": "Verificați ID-ul aplicației și încercați din nou. Dacă problemele persistă, contactați-ne la impact@studious.sh"
         }
       },
       "cards": {
         "approved": {
           "title": "🎉 Felicitări! Cererea ta a fost aprobată.",
-          "body": "Verifică-ți e-mailul pentru următorii pași pentru configurarea contului."
+          "body": "Verifică-ți e-mailul pentru următorii pași pentru configurarea contului tău."
         },
         "underReview": {
           "title": "⏳ Cererea dumneavoastră este în curs de examinare.",
@@ -344,7 +345,7 @@
   },
   "apply": {
     "toasts": {
-      "submitted": "Aplicație trimisă cu succes!"
+      "submitted": "Cerere trimisă cu succes!"
     },
     "errors": {
       "submitFailed": "Nu s-a putut trimite aplicația: {message}"
@@ -427,7 +428,7 @@
         "description": "Nicio notificare nu a fost marcată încă ca citită."
       },
       "all": {
-        "title": "Încă nu există notificări",
+        "title": "Nicio notificare încă",
         "description": "Când primiți notificări, acestea vor apărea aici."
       }
     },
@@ -634,7 +635,7 @@
         "inviteRegenerated": "Codul de invitație a fost regenerat cu succes.",
         "copied": "Codul de invitație a fost copiat în clipboard",
         "roleChanged": "Rolul a fost schimbat în {role}",
-        "memberRemoved": "Membrul a fost eliminat cu succes"
+        "memberRemoved": "Membru eliminat cu succes"
       },
       "errors": {
         "regenerateFailed": "Codul de invitație nu a putut fi regenerat.",
@@ -650,7 +651,7 @@
         "newFolder": "Dosar nou",
         "upload": "Încărcare",
         "uploadFiles": "Încărcați fișiere",
-        "createFolder": "Creați un folder",
+        "createFolder": "Creați folderul",
         "download": "Descărcare",
         "share": "Distribuie",
         "delete": "Şterge",
@@ -703,7 +704,7 @@
       "empty": {
         "title": "Acest folder este gol",
         "description": "Încărcați fișiere sau creați foldere pentru a începe să vă organizați materialele pentru clasă.",
-        "searchTitle": "Nu s-au găsit fișiere",
+        "searchTitle": "Nu au fost găsite fișiere",
         "searchDescription": "Niciun fișier nu corespunde cu „{query}”. Încercați un alt termen de căutare."
       }
     },
@@ -876,7 +877,7 @@
     "titleStatement4": "După ani de zile în care ne-am luptat cu portaluri școlare învechite și fragmentate, am decis să construim sistemul de management al învățării pe care ne-am dorit dintotdeauna să-l avem.",
     "problemParagraph1": "Studious a început în 2023",
     "problemParagraph2": "când un grup de elevi și educatori s-au reunit cu o frustrare comună: portalurile școlare existente erau greoaie, lente și construite pentru o altă eră a educației.",
-    "problemDetailParagraph": "Ne-am trezit jonglând cu mai multe platforme — una pentru note, alta pentru teme, o a treia pentru comunicare. Profesorii petreceau mai mult timp luptând cu software-ul decât predând. Elevii ratau termenele limită pentru că notificările erau îngropate în interfețe învechite.",
+    "problemDetailParagraph": "Ne-am trezit jonglând cu mai multe platforme — una pentru note, alta pentru teme, a treia pentru comunicare. Profesorii petreceau mai mult timp luptând cu software-ul decât predând. Elevii ratau termenele limită pentru că notificările erau îngropate în interfețe învechite.",
     "betterWay": "Știam că trebuie să existe o cale mai bună.",
     "solutionParagraph1": "Inspirându-ne din instrumentele moderne de colaborare precum Linear și Notion, ne-am propus să creăm un sistem de management al învățării care să se simtă...",
     "solutionParagraph2": "rapid, intuitiv și plăcut de utilizat.",
@@ -963,7 +964,7 @@
         "description": "Îți vom trimite un e-mail la adresa {email} când vom fi gata pentru tine."
       },
       "toasts": {
-        "success": "Te-ai înscris cu succes pe lista de așteptare!"
+        "success": "Înscris cu succes pe lista de așteptare!"
       }
     },
     "joinClass": {
@@ -1045,7 +1046,7 @@
       },
       "actions": {
         "cancel": "Anula",
-        "create": "Creați un folder",
+        "create": "Creați folderul",
         "update": "Actualizare folder",
         "creating": "Se creează...",
         "updating": "Se actualizează..."

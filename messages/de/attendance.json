@@ -89,7 +89,7 @@
     },
     "toast": {
       "attendanceSaved": "Anwesenheit erfolgreich gespeichert",
-      "attendanceSaveFailed": "Die Anwesenheitsliste konnte nicht gespeichert werden",
+      "attendanceSaveFailed": "Die Anwesenheitsliste konnte nicht gespeichert werden.",
       "eventDeleted": "Ereignis erfolgreich gelöscht",
       "eventDeleteFailed": "Ereignis konnte nicht gelöscht werden"
     }

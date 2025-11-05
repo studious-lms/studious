@@ -61,8 +61,8 @@
     "errorNameRequired": "Bitte geben Sie einen Namen und mindestens ein Kriterium an."
   },
   "gradingBoundaries": {
-    "title": "Niveaugrenzen erstellen",
-    "titleEdit": "Notengrenze bearbeiten",
+    "title": "Niveaugrenze erstellen",
+    "titleEdit": "Notengrenzen bearbeiten",
     "selectTemplate": "Vorlage auswählen",
     "editGradingScale": "Bewertungsskala bearbeiten",
     "noTemplateSelected": "Wählen Sie eine Vorlage aus oder erstellen Sie benutzerdefinierte Grenzen",

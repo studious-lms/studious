@@ -18,7 +18,7 @@
       "rubric": "Rubrik"
     },
     "actions": {
-      "manage": "Urus",
+      "manage": "Uruskan",
       "viewGrades": "Lihat Gred",
       "saving": "Menyimpan...",
       "saveChanges": "Simpan Perubahan",
@@ -58,7 +58,7 @@
         "title": "Tiada sempadan gred dibuat",
         "description": "Buat sempadan penggredan untuk menentukan julat gred"
       },
-      "previewTitle": "Pratonton Sempadan Penggredan",
+      "previewTitle": "Pratonton Penggredan Sempadan",
       "details": {
         "title": "Butiran Sempadan Penggredan",
         "name": "Nama",

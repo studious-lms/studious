@@ -14,7 +14,8 @@
     "sort": "Clasificar",
     "viewAll": "Ver todo",
     "noData": "No hay datos disponibles.",
-    "export": "Exportar"
+    "export": "Exportar",
+    "openMenu": "Abrir menú"
   },
   "time": {
     "today": "Hoy",
@@ -397,7 +398,7 @@
       },
       "header": {
         "members": "miembros",
-        "markMentionsRead": "Mark menciona que lee"
+        "markMentionsRead": "Mark menciona que leyó"
       },
       "input": {
         "placeholderPrefix": "Mensaje"
@@ -856,7 +857,7 @@
     "newSection": "Nueva sección",
     "pts": "puntos",
     "overdue": "(Atrasado)",
-    "assignmentDrop": "Deje la tarea aquí para pasar al nivel superior.",
+    "assignmentDrop": "Deja de asignar aquí para pasar al nivel superior.",
     "sectionDeletionConfirmation": "¿Seguro que quieres eliminar esta sección? Todas las tareas se moverán al nivel superior.",
     "assignmentDeletionConfirmation": "¿Seguro que quieres eliminar esta tarea? Esta acción no se puede deshacer.",
     "manageAndTrack": "Gestionar y dar seguimiento a las tareas de clase",

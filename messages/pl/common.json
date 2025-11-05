@@ -14,7 +14,8 @@
     "sort": "Sortować",
     "viewAll": "Zobacz wszystko",
     "noData": "Brak dostępnych danych",
-    "export": "Eksport"
+    "export": "Eksport",
+    "openMenu": "Otwórz menu"
   },
   "time": {
     "today": "Dzisiaj",
@@ -541,7 +542,7 @@
         "viewAll": "Zobacz wszystkich uczniów",
         "empty": {
           "title": "Brak zapisanych studentów",
-          "description": "Uczniowie będą tu wyświetlani po dołączeniu do klasy"
+          "description": "Uczniowie pojawią się tutaj po dołączeniu do klasy"
         },
         "searchPlaceholder": "Wyszukaj studentów..."
       },
@@ -1197,7 +1198,7 @@
       "notifications": {
         "email": {
           "label": "Wyślij powiadomienie e-mail",
-          "description": "Powiadom uczniów e-mailem"
+          "description": "Powiadom uczniów za pośrednictwem poczty e-mail"
         },
         "push": {
           "label": "Wyślij powiadomienie push",

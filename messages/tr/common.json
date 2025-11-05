@@ -14,7 +14,8 @@
     "sort": "Düzenlemek",
     "viewAll": "Tümünü Görüntüle",
     "noData": "Veri mevcut değil",
-    "export": "İhracat"
+    "export": "İhracat",
+    "openMenu": "Menüyü aç"
   },
   "time": {
     "today": "Bugün",
@@ -271,7 +272,7 @@
     "about": {
       "mission": {
         "title": "Misyonumuz",
-        "body1": "Çalışkan Okul Gelişim Programı, öğrenim yönetimi platformumuza ücretsiz ve sınırsız erişim sağlayarak imkânları kısıtlı okullara destek olmayı amaçlamaktadır. Teknolojinin geleceğin işgücünde baskın bir faktör olduğunun farkındayız, ancak birçok eğitim kurumu bu kaynaklara erişimden yoksundur. Bu program aracılığıyla, en çok ihtiyaç duyan okullara modern öğrenim yönetimi teknolojisi sunuyoruz."
+        "body1": "Çalışkan Okul Gelişim Programı, öğrenim yönetimi platformumuza ücretsiz ve sınırsız erişim sağlayarak imkânları kısıtlı okullara destek olmayı amaçlamaktadır. Teknolojinin geleceğin işgücünde baskın bir faktör olduğunun farkındayız, ancak birçok eğitim kurumu bu tür kaynaklara erişimden yoksundur. Bu program aracılığıyla, en çok ihtiyaç duyan okullara modern öğrenim yönetimi teknolojisi sunuyoruz."
       },
       "aims": {
         "title": "Programın Amaçları",
@@ -453,7 +454,7 @@
       "title": "Kişisel Bilgiler",
       "description": "Kişisel bilgilerinizi ve profil bilgilerinizi güncelleyin",
       "displayName": "Ekran adı",
-      "displayNamePlaceholder": "Görünen adınızı girin",
+      "displayNamePlaceholder": "Görüntü adınızı girin",
       "displayNameDescription": "Adınız başkalarına bu şekilde görünecek",
       "location": "Konum",
       "locationPlaceholder": "Konumunuzu girin",
@@ -892,7 +893,7 @@
     "journeyBetaLaunch2": "Studious LMS'nin resmi beta testi lansmanı yapıldı. Tüm platform özellikleriyle dünya çapındaki okullarda erken erişime açıldı.",
     "journeyPilotSchoolsDate": "Kasım 2025",
     "journeyPilotSchools1": "Pilot Okullar Programı",
-    "journeyPilotSchools2": "Gerçek dünyadan geri bildirim toplamak ve platformu çeşitli eğitim ihtiyaçlarına göre geliştirmek için pilot okullarla ortaklıklar başlatıyoruz.",
+    "journeyPilotSchools2": "Gerçek dünyadan geri bildirim toplamak ve platformu çeşitli eğitim ihtiyaçlarına göre geliştirmek için pilot okullarla ortaklıklar başlatmak.",
     "journeyBetaCompleteDate": "Aralık 2025",
     "journeyBetaComplete1": "Beta Tamamlandı",
     "journeyBetaComplete2": "Beta sürümünden tam üretim sürümüne geçiş. Tüm temel özelliklerin tamamen test edilip optimize edildiği platform stabilizasyonu.",
@@ -900,7 +901,7 @@
     "journeySDP1": "Okul Geliştirme Programı Lansmanı",
     "journeySDP2": "Nitelikli kurumlara ücretsiz erişim sağlayan Çalışkan Okul Gelişim Programı'na kabul edilen ilk okul grubunu duyuruyoruz.",
     "missionStatement1": "Misyonumuz basit",
-    "missionStatement2": "Öğrenciler, öğretmenler ve yaşam boyu öğrenenler olarak her gün kullanmak isteyeceğimiz öğrenme yönetim sistemini kurmak.",
+    "missionStatement2": "Öğrenciler, öğretmenler ve yaşam boyu öğrenenler olarak her gün kullanmak isteyeceğimiz öğrenme yönetim sistemini oluşturmak.",
     "joinAppeal1": "Bu yolculuğa bize katılın",
     "joinAppeal2": "Eğitimin geleceğinin bir parçası olun",
     "requestEarlyAccess": "Erken Erişim Talebinde Bulunun",

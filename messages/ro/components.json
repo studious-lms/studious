@@ -117,7 +117,7 @@
     },
     "empty": {
       "all": {
-        "title": "Încă nu există notificări",
+        "title": "Nicio notificare încă",
         "description": "Când primiți notificări, acestea vor apărea aici."
       }
     }

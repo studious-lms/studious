@@ -22,7 +22,7 @@
       "dueTomorrow": "明天到期",
       "due": "两个 {dates}",
       "teaching": "教学",
-      "viewAllAssignments": "查看所有作业"
+      "viewAllAssignments": "查看所有任务"
     },
     "notifications": {
       "title": "最新通知",
