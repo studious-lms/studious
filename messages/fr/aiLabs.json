@@ -2,41 +2,41 @@
   "aiLabs": {
     "title": "Laboratoires d'IA",
     "subtitle": "Créez du contenu éducatif avec l'aide de l'IA",
-    "aiPowered": "Alimenté par l'IA",
-    "createNew": "Créer un nouveau contenu",
+    "aiPowered": "Intelligence artificielle",
+    "createNew": "Créer du nouveau contenu",
     "aiGenerated": "Généré par l'IA",
     "deleteConfirm": "Êtes-vous sûr de vouloir supprimer ce laboratoire d'IA ? Cette action est irréversible.",
     "widgets": {
       "assignment": {
         "title": "Affectation",
-        "description": "Créez des tâches interactives avec l'aide de l'IA"
+        "description": "Créez des devoirs interactifs avec l'aide de l'IA"
       },
       "quiz": {
         "title": "Questionnaire",
-        "description": "Générer des quiz avec différents types de questions"
+        "description": "Générez des quiz avec différents types de questions"
       },
       "worksheet": {
         "title": "Feuille de travail",
-        "description": "Créez des feuilles de travail et des exercices pratiques"
+        "description": "Créer des feuilles de travail et des exercices pratiques"
       },
       "lessonPlan": {
-        "title": "Plan de cours",
+        "title": "Plan de leçon",
         "description": "Concevoir des plans de cours complets"
       },
       "rubric": {
         "title": "Rubrique",
-        "description": "Créer des grilles de notation détaillées"
+        "description": "Créer des grilles d'évaluation détaillées"
       }
     },
     "tabs": {
-      "drafts": "Projets de laboratoire",
+      "drafts": "Laboratoires de brouillon",
       "chats": "Chats IA"
     },
     "drafts": {
-      "title": "Projets de laboratoire ({count})",
+      "title": "Draft Labs ({count})",
       "empty": {
         "title": "Pas encore de brouillons de laboratoire",
-        "description": "Créez votre premier contenu éducatif généré par l'IA à l'aide des widgets ci-dessus."
+        "description": "Créez votre premier contenu éducatif généré par l'IA en utilisant les widgets ci-dessus."
       }
     },
     "chats": {
@@ -50,19 +50,19 @@
       }
     },
     "toast": {
-      "labCreated": "AI Lab créé avec succès !",
+      "labCreated": "Laboratoire d'IA créé avec succès !",
       "labCreateFailed": "Échec de la création du laboratoire d'IA :",
-      "labDeleted": "AI Lab a été supprimé avec succès !",
-      "labDeleteFailed": "Échec de la suppression du laboratoire d'IA :"
+      "labDeleted": "Laboratoire d'IA supprimé avec succès !",
+      "labDeleteFailed": "Impossible de supprimer AI Lab :"
     }
   },
   "aiLabChat": {
     "backButton": "Retour aux laboratoires d'IA",
     "loading": "Chargement...",
-    "aiThinking": "La pensée de l'IA...",
-    "getAIHelp": "Obtenez de l'aide de l'IA",
+    "aiThinking": "La pensée IA...",
+    "getAIHelp": "Obtenez de l'aide en IA",
     "notFound": {
-      "title": "Discussion de laboratoire introuvable",
+      "title": "Chat de laboratoire introuvable",
       "description": "Ce laboratoire d'IA a peut-être été supprimé ou vous n'y avez pas accès."
     },
     "toast": {

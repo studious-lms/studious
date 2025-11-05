@@ -1,10 +1,10 @@
 {
   "home": {
-    "welcomeBack": "Tekrar hoş geldin, {isim}!",
+    "welcomeBack": "Tekrar hoş geldin, {name}!",
     "subtitle": "İşte bugün derslerinizde neler oluyor.",
     "stats": {
-      "totalClasses": "Toplam Sınıflar",
-      "teachingEnrolled": "{öğretim} öğretim, {kayıtlı} kayıtlı",
+      "totalClasses": "Toplam Sınıf Sayısı",
+      "teachingEnrolled": "{teaching} öğretim, {enrolled} kayıtlı",
       "dueToday": "Bugün Son Ödeme Tarihi",
       "dueTodayDesc": "Bugün teslim edilmesi gereken ödevler",
       "upcoming": "Yaklaşan",
@@ -20,7 +20,7 @@
       "viewAgenda": "Gündemi Görüntüle",
       "dueToday": "Bugün vadesi doldu",
       "dueTomorrow": "Yarın teslim edilecek",
-      "due": "İki {tarih}",
+      "due": "İki {dates}",
       "teaching": "Öğretim",
       "viewAllAssignments": "Tüm Ödevleri Görüntüle"
     },

@@ -2,7 +2,7 @@
   "members": {
     "title": "أعضاء",
     "counts": {
-      "totalMembers": "{count} عضوًا"
+      "totalMembers": "{count} أعضاء"
     },
     "actions": {
       "inviteMember": "دعوة العضو",

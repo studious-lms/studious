@@ -13,23 +13,23 @@
   "uploadFiles": {
     "title": "Dateien hochladen",
     "noFilesSelected": "Keine Dateien ausgewählt",
-    "classIdMissing": "Klassen-ID fehlt",
-    "folderIdMissing": "Ordner-ID fehlt. Bitte warten Sie, bis der Ordner geladen ist.",
+    "classIdMissing": "Die Klassen-ID fehlt.",
+    "folderIdMissing": "Die Ordner-ID fehlt. Bitte warten Sie, bis der Ordner geladen ist.",
     "preparing": "Upload wird vorbereitet...",
-    "gettingUrls": "Upload-URLs werden abgerufen ...",
-    "uploadingFile": "{name} wird hochgeladen …",
-    "confirming": "{name} wird bestätigt …",
-    "finalizing": "Abschließen...",
+    "gettingUrls": "Upload-URLs werden abgerufen...",
+    "uploadingFile": "Hochladen von {name}...",
+    "confirming": "Bestätige {name}...",
+    "finalizing": "Abschluss...",
     "success": "Dateien erfolgreich hochgeladen!",
-    "error": "Das Hochladen der Dateien ist fehlgeschlagen. Bitte versuchen Sie es erneut.",
-    "errorFile": "{name} konnte nicht hochgeladen werden",
-    "errorMessage": "Hochladen fehlgeschlagen: {message}",
+    "error": "Die Dateien konnten nicht hochgeladen werden. Bitte versuchen Sie es erneut.",
+    "errorFile": "Hochladen fehlgeschlagen {name}",
+    "errorMessage": "Upload fehlgeschlagen: {message}",
     "dropZone": "Dateien hier ablegen oder zum Durchsuchen klicken",
     "dropZoneHint": "Unterstützung für Bilder, Dokumente, Videos und mehr",
     "selectedFiles": "Ausgewählte Dateien ({count})",
     "filesUploaded": "{uploaded} von {total} hochgeladenen Dateien",
     "uploadingTo": "Hochladen nach:",
-    "homeDirectory": "Home-Verzeichnis",
+    "homeDirectory": "Startseite",
     "status": {
       "pending": "Ausstehend",
       "uploading": "Hochladen",
@@ -37,56 +37,56 @@
       "error": "Fehler"
     },
     "cancel": "Stornieren",
-    "upload": "{count} Datei(en) hochladen",
-    "uploading": "Hochladen..."
+    "upload": "Datei(en) hochladen {count}",
+    "uploading": "Wird hochgeladen..."
   },
   "rubric": {
     "title": "Rubrik erstellen",
-    "titleEdit": "Rubrik bearbeiten",
+    "titleEdit": "Bearbeitungsrubrik",
     "selectTemplate": "Vorlage auswählen",
-    "startFromScratch": "Von vorne beginnen",
-    "editRubric": "Rubrik bearbeiten",
-    "noTemplateSelected": "Wählen Sie eine Vorlage aus oder erstellen Sie eine benutzerdefinierte Rubrik",
+    "startFromScratch": "Von Grund auf beginnen",
+    "editRubric": "Bearbeitungsrubrik",
+    "noTemplateSelected": "Wählen Sie eine Vorlage aus oder erstellen Sie eine benutzerdefinierte Rubrik.",
     "name": "Rubrikname",
     "placeholder": "Rubriknamen eingeben",
     "cancel": "Stornieren",
     "create": "Rubrik erstellen",
-    "update": "Rubrik aktualisieren",
-    "creating": "Erstellen...",
+    "update": "Aktualisierungsrubrik",
+    "creating": "Wird erstellt...",
     "updating": "Aktualisierung...",
     "created": "Rubrik erfolgreich erstellt",
     "updated": "Rubrik erfolgreich aktualisiert",
-    "createFailed": "Rubrik konnte nicht erstellt werden",
-    "updateFailed": "Rubrik konnte nicht aktualisiert werden",
-    "errorNameRequired": "Bitte geben Sie einen Namen und mindestens ein Kriterium an"
+    "createFailed": "Bewertungsraster konnte nicht erstellt werden",
+    "updateFailed": "Bewertungsraster konnte nicht aktualisiert werden",
+    "errorNameRequired": "Bitte geben Sie einen Namen und mindestens ein Kriterium an."
   },
   "gradingBoundaries": {
-    "title": "Höhengrenze erstellen",
-    "titleEdit": "Gradgrenze bearbeiten",
+    "title": "Niveaugrenzen erstellen",
+    "titleEdit": "Notengrenze bearbeiten",
     "selectTemplate": "Vorlage auswählen",
     "editGradingScale": "Bewertungsskala bearbeiten",
     "noTemplateSelected": "Wählen Sie eine Vorlage aus oder erstellen Sie benutzerdefinierte Grenzen",
     "cancel": "Stornieren",
     "create": "Erstellen",
     "update": "Aktualisieren",
-    "creating": "Erstellen...",
+    "creating": "Wird erstellt...",
     "updating": "Aktualisierung...",
-    "created": "Bewertungsgrenze erfolgreich erstellt",
-    "updated": "Bewertungsgrenze erfolgreich aktualisiert",
-    "createFailed": "Fehler beim Erstellen der Bewertungsgrenze",
+    "created": "Die Gradierungsgrenze wurde erfolgreich erstellt.",
+    "updated": "Die Bewertungsgrenze wurde erfolgreich aktualisiert.",
+    "createFailed": "Fehler beim Erstellen der Gradierungsgrenze",
     "updateFailed": "Fehler beim Aktualisieren der Bewertungsgrenze"
   },
   "directUpload": {
     "title": "Dateien hochladen",
-    "description": "Dateien zum Hochladen auswählen",
+    "description": "Wählen Sie die hochzuladenden Dateien aus.",
     "selectFiles": "Dateien auswählen",
     "selectedFiles": "Ausgewählte Dateien ({count})",
-    "maxFiles": "Maximal {max} Dateien. Akzeptierte Typen: {types}",
+    "maxFiles": "Maximal {max} Dateien. Zulässige Dateitypen: {types}",
     "allFiles": "Alle Dateien",
-    "progressUploaded": "{progress} % hochgeladen",
+    "progressUploaded": "{progress}% hochgeladen",
     "noFilesSelected": "Keine Dateien ausgewählt",
     "maxFilesExceeded": "Maximal {max} Dateien zulässig",
-    "uploadFailed": "Hochladen fehlgeschlagen: {Fehler}",
+    "uploadFailed": "Upload fehlgeschlagen: {error}",
     "uploadFailedGeneric": "Hochladen fehlgeschlagen",
     "status": {
       "pending": "Ausstehend",
@@ -95,32 +95,99 @@
       "failed": "Fehlgeschlagen"
     },
     "cancel": "Stornieren",
-    "upload": "{count} Datei hochladen",
+    "upload": "Datei hochladen {count}",
     "uploadPlural": "{count} Dateien hochladen",
-    "uploading": "Hochladen..."
+    "uploading": "Wird hochgeladen..."
+  },
+  "notifications": {
+    "title": "Benachrichtigungen",
+    "subtitle": "Bleiben Sie bezüglich Ihrer Kurse und Aufgaben auf dem Laufenden.",
+    "filters": {
+      "label": "Filter:",
+      "all": "Alle ({count})",
+      "unread": "Ungelesen ({count})",
+      "read": "Lies ({count})"
+    },
+    "badge": {
+      "unread": "{count} neu"
+    },
+    "actions": {
+      "viewAll": "Alle Benachrichtigungen anzeigen",
+      "markAsRead": "Als gelesen markieren"
+    },
+    "empty": {
+      "all": {
+        "title": "Noch keine Benachrichtigungen",
+        "description": "Wenn Sie Benachrichtigungen erhalten, werden diese hier angezeigt."
+      }
+    }
   },
   "chat": {
+    "landing": {
+      "pleaseSignIn": "Bitte melden Sie sich an, um fortzufahren.",
+      "signInRequired": "Für den Zugriff auf diese Seite ist eine Anmeldung erforderlich.",
+      "title": "Chat",
+      "description": "Wählen Sie in der Seitenleiste eine Konversation aus, um einen Chat zu starten."
+    },
+    "page": {
+      "header": {
+        "members": "Mitglieder",
+        "markMentionsRead": "Mark erwähnt das Lesen"
+      },
+      "input": {
+        "placeholderPrefix": "Nachricht"
+      },
+      "loading": "Konversation wird geladen..."
+    },
     "conversationList": {
-      "searchPlaceholder": "Suchen oder starten Sie eine Unterhaltung"
+      "title": "Direktnachrichten",
+      "searchPlaceholder": "Finden oder beginnen Sie ein Gespräch",
+      "noConversations": "Bisher keine Konversationen",
+      "noConversationsDescription": "Beginne ein Gespräch mit jemandem",
+      "noSearchResults": "Keine Konversationen gefunden",
+      "noSearchResultsDescription": "Probieren Sie andere Suchbegriffe.",
+      "unnamedGroup": "Unbenannte Gruppe",
+      "unknownUser": "Unbekannter Benutzer"
     },
     "messageList": {
       "noMessagesTitle": "Noch keine Nachrichten",
       "noMessagesDescription": "Dies ist der Beginn Ihres Gesprächs"
     },
+    "messageInput": {
+      "placeholder": "Geben Sie eine Nachricht ein..."
+    },
     "messageEdit": {
-      "placeholder": "Bearbeiten Sie Ihre Nachricht..."
+      "placeholder": "Bearbeiten Sie Ihre Nachricht...",
+      "hint": "Zum Speichern die Eingabetaste drücken • Zum Abbrechen die Escape-Taste drücken",
+      "save": "Speichern",
+      "saving": "Speichern...",
+      "cancel": "Stornieren"
+    },
+    "messageActions": {
+      "editMessage": "Nachricht bearbeiten",
+      "deleteMessage": "Nachricht löschen",
+      "deleteConfirmTitle": "Nachricht löschen",
+      "deleteConfirmDescription": "Möchten Sie diese Nachricht wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden.",
+      "cancel": "Stornieren",
+      "delete": "Löschen",
+      "deleting": "Löschen..."
     },
     "createConversation": {
-      "title": "Neue Konversation",
+      "title": "Beginnen Sie ein Gespräch",
+      "description": "Erstelle eine Direktnachricht oder eine Gruppenunterhaltung",
       "direct": "Direktnachricht",
       "group": "Gruppenchat",
+      "dmLabel": "Geben Sie Ihren Benutzernamen ein, um eine Nachricht zu senden.",
       "searchPlaceholder": "Benutzernamen eingeben...",
-      "groupName": "Gruppenname",
-      "groupNamePlaceholder": "Gruppennamen eingeben...",
-      "addMembers": "Mitglieder hinzufügen",
+      "groupNameLabel": "Gruppenname",
+      "groupNamePlaceholder": "Geben Sie den Gruppennamen ein...",
+      "addMembersLabel": "Mitglieder anhand ihres Benutzernamens hinzufügen",
+      "addButton": "Hinzufügen",
+      "selectedUser": "Ausgewählter Benutzer:",
+      "selectedMembers": "Ausgewählte Mitglieder ({count})",
       "cancel": "Stornieren",
       "create": "Erstellen",
-      "creating": "Erstellen..."
+      "creating": "Wird erstellt..."
     }
   },
   "avatarSelector": {
@@ -131,16 +198,16 @@
     "titleCreate": "Neuen Abschnitt erstellen",
     "titleEdit": "Abschnitt bearbeiten",
     "name": "Abschnittsname *",
-    "placeholder": "z. B. Term 1, Unit 2, Kapitel 5",
-    "helper": "Abschnitte helfen dabei, Aufgaben in Gruppen oder Zeiträume zu organisieren.",
+    "placeholder": "z. B. Semester 1, Einheit 2, Kapitel 5",
+    "helper": "Abschnitte helfen dabei, Aufgaben in Gruppen oder Zeiträume zu gliedern.",
     "color": "Abschnittsfarbe",
     "cancel": "Stornieren",
     "create": "Abschnitt erstellen",
-    "update": "Abschnitt „Update“",
-    "creating": "Erstellen...",
+    "update": "Aktualisierungsbereich",
+    "creating": "Wird erstellt...",
     "updating": "Aktualisierung...",
-    "created": "Abschnitt „{name}“ erfolgreich erstellt.",
-    "updated": "Abschnitt „{name}“ erfolgreich aktualisiert.",
+    "created": "Abschnitt \"{name}\" erfolgreich erstellt.",
+    "updated": "Abschnitt \"{name}\" erfolgreich aktualisiert.",
     "errorEmpty": "Bitte geben Sie einen Abschnittsnamen ein.",
     "errorCreate": "Abschnitt konnte nicht erstellt werden",
     "errorUpdate": "Abschnitt konnte nicht aktualisiert werden"
@@ -150,68 +217,68 @@
     "titleEdit": "Ereignis bearbeiten",
     "classEvent": "Klassenveranstaltung",
     "personalEvent": "Persönliches Ereignis",
-    "isClassEvent": "Dies ist eine Klassenveranstaltung",
+    "isClassEvent": "Dies ist eine Klassenveranstaltung.",
     "selectClass": "Klasse auswählen *",
-    "chooseClass": "Wähle eine Klasse",
-    "noTeacherClasses": "Sie haben keine Kurse, in denen Sie Lehrer sind.",
+    "chooseClass": "Wähle einen Kurs",
+    "noTeacherClasses": "Sie haben keine Kurse, in denen Sie als Lehrer tätig sind.",
     "eventName": "Veranstaltungsname *",
-    "eventNamePlaceholder": "Geben Sie den Ereignisnamen ein",
-    "startDateTime": "Startdatum und -zeit *",
-    "endDateTime": "Enddatum und -zeit *",
-    "pickDate": "Datum auswählen",
+    "eventNamePlaceholder": "Geben Sie den Veranstaltungsnamen ein",
+    "startDateTime": "Startdatum und -uhrzeit *",
+    "endDateTime": "Enddatum und -uhrzeit *",
+    "pickDate": "Wählen Sie ein Datum",
     "location": "Standort",
     "locationPlaceholder": "Veranstaltungsort eingeben",
-    "eventColor": "Ereignisfarbe",
-    "eventColorDescription": "Wählen Sie eine Farbe für dieses Ereignis",
-    "remarks": "Hinweise",
-    "remarksPlaceholder": "Zusätzliche Hinweise oder Anmerkungen zur Veranstaltung",
+    "eventColor": "Eventfarbe",
+    "eventColorDescription": "Wähle eine Farbe für dieses Ereignis",
+    "remarks": "Anmerkungen",
+    "remarksPlaceholder": "Zusätzliche Anmerkungen oder Bemerkungen zum Ereignis",
     "cancel": "Stornieren",
-    "updateEvent": "Update-Ereignis",
+    "updateEvent": "Aktualisierungsereignis",
     "createEvent": "Ereignis erstellen",
-    "createClassEvent": "Klassenereignis erstellen",
-    "createPersonalEvent": "Persönliches Event erstellen",
+    "createClassEvent": "Ereignis „Klasse erstellen“",
+    "createPersonalEvent": "Persönliches Ereignis erstellen",
     "updating": "Aktualisierung...",
-    "creating": "Erstellen...",
+    "creating": "Wird erstellt...",
     "addEvent": "Ereignis hinzufügen",
     "eventCreated": "{type} erfolgreich erstellt",
     "eventUpdated": "Ereignis erfolgreich aktualisiert",
-    "errorRequired": "Bitte füllen Sie alle Pflichtfelder aus",
-    "errorSelectClass": "Bitte wählen Sie eine Klasse für die Klassenveranstaltung aus",
-    "errorCreate": "Fehler beim Erstellen des Ereignisses",
-    "errorUpdate": "Fehler beim Aktualisieren des Ereignisses"
+    "errorRequired": "Bitte füllen Sie alle Pflichtfelder aus.",
+    "errorSelectClass": "Bitte wählen Sie einen Kurs für die Kursveranstaltung aus.",
+    "errorCreate": "Ereignis konnte nicht erstellt werden",
+    "errorUpdate": "Ereignis konnte nicht aktualisiert werden"
   },
   "classEvent": {
     "titleCreate": "Neues Klassenereignis erstellen",
-    "titleEdit": "Klassenereignis bearbeiten",
+    "titleEdit": "Ereignis „Klasse bearbeiten“",
     "eventName": "Veranstaltungsname *",
-    "eventNamePlaceholder": "Geben Sie den Ereignisnamen ein",
-    "startDateTime": "Startdatum und -zeit *",
-    "endDateTime": "Enddatum und -zeit *",
-    "pickDate": "Datum auswählen",
+    "eventNamePlaceholder": "Geben Sie den Veranstaltungsnamen ein",
+    "startDateTime": "Startdatum und -uhrzeit *",
+    "endDateTime": "Enddatum und -uhrzeit *",
+    "pickDate": "Wählen Sie ein Datum",
     "location": "Standort",
     "locationPlaceholder": "Veranstaltungsort eingeben",
-    "eventColor": "Ereignisfarbe",
-    "eventColorDescription": "Wählen Sie eine Farbe für dieses Ereignis",
-    "remarks": "Hinweise",
-    "remarksPlaceholder": "Zusätzliche Hinweise oder Anmerkungen zur Veranstaltung",
+    "eventColor": "Eventfarbe",
+    "eventColorDescription": "Wähle eine Farbe für dieses Ereignis",
+    "remarks": "Anmerkungen",
+    "remarksPlaceholder": "Zusätzliche Anmerkungen oder Bemerkungen zum Ereignis",
     "cancel": "Stornieren",
-    "updateEvent": "Update-Ereignis",
+    "updateEvent": "Aktualisierungsereignis",
     "createEvent": "Ereignis erstellen",
     "updating": "Aktualisierung...",
-    "creating": "Erstellen...",
+    "creating": "Wird erstellt...",
     "addClassEvent": "Klassenereignis hinzufügen",
     "eventCreated": "Ereignis erfolgreich erstellt",
     "eventUpdated": "Ereignis erfolgreich aktualisiert",
-    "errorRequired": "Bitte füllen Sie alle Pflichtfelder aus",
-    "errorCreate": "Fehler beim Erstellen des Ereignisses",
-    "errorUpdate": "Fehler beim Aktualisieren des Ereignisses"
+    "errorRequired": "Bitte füllen Sie alle Pflichtfelder aus.",
+    "errorCreate": "Ereignis konnte nicht erstellt werden",
+    "errorUpdate": "Ereignis konnte nicht aktualisiert werden"
   },
   "aiLab": {
-    "title": "Erstellen Sie {Typ}",
+    "title": "Erstelle {type}",
     "aiPowered": "KI-gestützt",
-    "description": "Geben Sie einige grundlegende Informationen an, damit unsere KI bessere Inhalte für Sie erstellen kann.",
+    "description": "Geben Sie uns einige grundlegende Informationen, damit unsere KI bessere Inhalte für Sie erstellen kann.",
     "titleField": "Titel *",
-    "titlePlaceholder": "Geben Sie den Titel {type} ein",
+    "titlePlaceholder": "Geben Sie {type} Titel ein",
     "subject": "Thema *",
     "selectSubject": "Thema auswählen",
     "subjects": {
@@ -227,7 +294,7 @@
       "other": "Andere"
     },
     "gradeLevel": "Klassenstufe *",
-    "selectGrade": "Wählen Sie die Klassenstufe",
+    "selectGrade": "Klassenstufe auswählen",
     "grades": {
       "35": "3-5",
       "68": "6-8",
@@ -246,11 +313,11 @@
       "2hours": "2 Stunden"
     },
     "descriptionField": "Beschreibung",
-    "descriptionPlaceholder": "Beschreiben Sie, was dieser {Typ} abdecken soll ...",
+    "descriptionPlaceholder": "Beschreiben Sie, was dieses {type} abdecken sollte...",
     "requirements": "Besondere Anforderungen",
-    "requirementsPlaceholder": "Alle spezifischen Anforderungen, Lernziele oder Einschränkungen ...",
+    "requirementsPlaceholder": "Gibt es irgendwelche spezifischen Anforderungen, Lernziele oder Einschränkungen...",
     "cancel": "Stornieren",
     "createLab": "KI-Labor erstellen",
-    "creatingLab": "Labor erstellen..."
+    "creatingLab": "Einrichtung des Labors..."
   }
 }

@@ -99,6 +99,29 @@
     "uploadPlural": "Upload {count} files",
     "uploading": "Uploading..."
   },
+  "notifications": {
+    "title": "Notifications",
+    "subtitle": "Stay up to date with your classes and assignments",
+    "filters": {
+      "label": "Filter:",
+      "all": "All ({count})",
+      "unread": "Unread ({count})",
+      "read": "Read ({count})"
+    },
+    "badge": {
+      "unread": "{count} new"
+    },
+    "actions": {
+      "viewAll": "View All Notifications",
+      "markAsRead": "Mark as Read"
+    },
+    "empty": {
+      "all": {
+        "title": "No notifications yet",
+        "description": "When you receive notifications, they will appear here."
+      }
+    }
+  },
   "chat": {
     "landing": {
       "pleaseSignIn": "Please sign in to continue",

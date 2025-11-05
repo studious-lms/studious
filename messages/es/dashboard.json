@@ -1,33 +1,33 @@
 {
   "home": {
-    "welcomeBack": "¡Bienvenido de nuevo, {nombre}!",
-    "subtitle": "Esto es lo que está pasando con tus clases hoy.",
+    "welcomeBack": "¡Bienvenido de nuevo, {name}!",
+    "subtitle": "Esto es lo que sucederá hoy con tus clases.",
     "stats": {
-      "totalClasses": "Total de clases",
-      "teachingEnrolled": "{enseñando} enseñando, {inscrito} inscrito",
-      "dueToday": "Vencimiento hoy",
-      "dueTodayDesc": "Tareas que deben entregarse hoy",
+      "totalClasses": "Clases totales",
+      "teachingEnrolled": "{teaching} enseñanza, {enrolled} matriculado",
+      "dueToday": "Con vencimiento hoy",
+      "dueTodayDesc": "Tareas para entregar hoy",
       "upcoming": "Próximamente",
-      "upcomingDesc": "Tareas próximas",
+      "upcomingDesc": "Próximas tareas",
       "thisWeek": "Esta semana",
       "totalAssignments": "Asignaciones totales"
     },
     "upcomingAssignments": {
       "title": "Próximas tareas",
       "subtitle": "Tus próximos plazos",
-      "allCaughtUp": "¡Todos atrapados!",
-      "noUpcoming": "No hay tareas próximas en este momento.",
+      "allCaughtUp": "¡Todo al día!",
+      "noUpcoming": "Por el momento no hay asignaciones pendientes.",
       "viewAgenda": "Ver agenda",
-      "dueToday": "Vencimiento hoy",
-      "dueTomorrow": "Vencimiento mañana",
-      "due": "Dos {citas}",
+      "dueToday": "Con vencimiento hoy",
+      "dueTomorrow": "Se entrega mañana",
+      "due": "Dos {dates}",
       "teaching": "Enseñanza",
       "viewAllAssignments": "Ver todas las tareas"
     },
     "notifications": {
       "title": "Notificaciones recientes",
       "subtitle": "Últimas actualizaciones",
-      "noNew": "No hay nuevas notificaciones",
+      "noNew": "No hay notificaciones nuevas",
       "viewAll": "Ver todas las notificaciones"
     },
     "classes": {
@@ -36,7 +36,7 @@
       "teaching": "Enseñanza",
       "enrolled": "Inscrito",
       "due": "pendiente",
-      "noClasses": "No hay clases todavía",
+      "noClasses": "Aún no hay clases.",
       "browseClasses": "Explorar clases",
       "viewAllClasses": "Ver todas las clases"
     }

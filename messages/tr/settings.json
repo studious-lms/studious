@@ -53,7 +53,7 @@
     },
     "confirm": {
       "title": "Kesinlikle emin misin?",
-      "description": "Bu işlem geri alınamaz. Bu işlem, \"{name}\" sınıfını kalıcı olarak silecek ve aşağıdakiler de dahil olmak üzere tüm ilişkili verileri kaldıracaktır:",
+      "description": "Bu işlem geri alınamaz. Bu işlem, \"{name}\" sınıfını kalıcı olarak silecek ve aşağıdakiler de dahil olmak üzere ilişkili tüm verileri kaldıracaktır:",
       "items": {
         "assignments": "Tüm ödevler ve teslimler",
         "records": "Tüm notlar ve katılım kayıtları",

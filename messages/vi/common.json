@@ -147,7 +147,7 @@
         "price": "Miễn phí",
         "note": "Đã bao gồm quyền truy cập Beta",
         "description": "Hoàn hảo cho các lớp học nhỏ và chương trình thí điểm",
-        "perk1": "Tối đa 30 sinh viên",
+        "perk1": "Tối đa 30 học sinh",
         "perk2": "Lớp học không giới hạn",
         "perk3": "Các tính năng cốt lõi (bài tập, lịch, điểm)",
         "perk4": "Trợ lý AI (5 cuộc trò chuyện/tháng)",
@@ -181,7 +181,7 @@
         "button": "Liên hệ bán hàng"
       },
       "mostPopular": "Phổ biến nhất",
-      "earlyBird": "🎉 Người dùng đầu tiên sẽ được <strong>3 tháng miễn phí</strong> khi đăng ký gói hàng năm + hỗ trợ hướng dẫn sử dụng chuyên dụng"
+      "earlyBird": "🎉 Người dùng đầu tiên sẽ được tặng 2 tháng miễn phí khi đăng ký gói hàng năm + hỗ trợ hướng dẫn sử dụng chuyên dụng"
     },
     "schoolProgram": {
       "badge": "Tác động xã hội",
@@ -214,7 +214,7 @@
         "description": "Hỗ trợ các trường học thiếu kinh phí thông qua các khoản quyên góp và vật liệu, giúp mọi người đều có thể tiếp cận được nền giáo dục chất lượng."
       },
       "features": {
-        "title": "Tính năng Góc nhìn",
+        "title": "Tính năng Phối cảnh",
         "description": "Mở rộng hỗ trợ sinh viên AI và xây dựng tích hợp API cho nhiều hệ thống giáo dục khác nhau trên toàn thế giới."
       },
       "launch": {
@@ -260,7 +260,7 @@
   "program": {
     "hero": {
       "badge": "Sáng kiến tác động xã hội",
-      "title": "Chương trình Phát triển Trường học Hiếu học",
+      "title": "Chương trình phát triển trường học hiếu học",
       "subtitle": "Cung cấp quyền truy cập miễn phí vào công nghệ học tập hiện đại cho các trường học không có điều kiện kinh tế"
     },
     "commitment": {
@@ -347,7 +347,7 @@
       "submitted": "Đã nộp đơn thành công!"
     },
     "errors": {
-      "submitFailed": "Không thể nộp đơn: {message}"
+      "submitFailed": "Không nộp được đơn: {message}"
     },
     "success": {
       "title": "Đã nộp đơn!",
@@ -415,7 +415,7 @@
       "label": "Lọc:",
       "all": "Tất cả ({count})",
       "unread": "Chưa đọc ({count})",
-      "read": "Đã đọc ({count})"
+      "read": "Đọc ({count})"
     },
     "empty": {
       "unread": {
@@ -800,8 +800,8 @@
       },
       "assignments": {
         "title": "Bài tập khóa học",
-        "gradedCount": "{đã chấm điểm} trong tổng số {tổng} điểm",
-        "totalPoints": "{tổng} tổng số điểm",
+        "gradedCount": "{graded} của {total} được xếp hạng",
+        "totalPoints": "{total} tổng số điểm",
         "empty": {
           "title": "Chưa có bài tập nào",
           "description": "Bài tập sẽ xuất hiện ở đây sau khi được tạo."
@@ -1125,7 +1125,7 @@
         "uploadButton": "Tải lên tập tin",
         "dropZone": "Thả tập tin vào đây hoặc nhấp để tải lên",
         "dropZoneHint": "Hỗ trợ tất cả các loại tệp • Tối đa 50MB cho mỗi tệp",
-        "filesUploaded": "{đã tải lên} trong tổng số {tổng} tệp đã tải lên"
+        "filesUploaded": "{uploaded} trong số {total} tệp đã tải lên"
       },
       "status": {
         "creating": "Tạo bài tập...",
@@ -1197,7 +1197,7 @@
       "notifications": {
         "email": {
           "label": "Gửi thông báo qua email",
-          "description": "Thông báo cho sinh viên qua email"
+          "description": "Thông báo cho học sinh qua email"
         },
         "push": {
           "label": "Gửi thông báo đẩy",

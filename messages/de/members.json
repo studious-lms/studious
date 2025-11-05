@@ -9,10 +9,10 @@
       "copy": "Kopie",
       "regenerate": "Regenerieren",
       "message": "Nachricht",
-      "viewProfile": "Profil anzeigen",
+      "viewProfile": "Profil ansehen",
       "viewGrades": "Noten anzeigen",
-      "makeTeacher": "Lehrer werden",
-      "makeStudent": "Zum Schüler machen",
+      "makeTeacher": "Lehrer",
+      "makeStudent": "Schüler",
       "removeFromClass": "Aus der Klasse entfernen",
       "removeAccess": "Zugriff entfernen",
       "tryAgain": "Versuchen Sie es erneut"
@@ -23,8 +23,8 @@
       "you": "Du"
     },
     "invite": {
-      "title": "Klasseneinladungscode",
-      "description": "Geben Sie diesen Code an die Schüler weiter, um dem Unterricht beizutreten"
+      "title": "Einladungscode für die Klasse",
+      "description": "Teilen Sie diesen Code mit den Schülern, damit sie der Klasse beitreten können."
     },
     "search": {
       "placeholder": "Mitglieder suchen..."
@@ -36,15 +36,15 @@
     "students": {
       "empty": {
         "title": "Keine Schüler gefunden",
-        "matchNone": "Keine Schüler, die mit \"{query}\" übereinstimmen",
-        "noStudents": "Bisher haben sich noch keine Schüler für diesen Kurs angemeldet"
+        "matchNone": "Keine Schüler entsprechen der \"{query}\"-Eigenschaft.",
+        "noStudents": "Bisher sind noch keine Schüler diesem Kurs beigetreten."
       }
     },
     "teachers": {
       "empty": {
         "title": "Keine Lehrer gefunden",
-        "matchNone": "Keine Lehrer stimmen mit \"{query}\" überein",
-        "noTeachers": "Es wurden keine zusätzlichen Lehrer hinzugefügt"
+        "matchNone": "Keine Lehrer entsprechen der \"{query}\"-Vorgabe.",
+        "noTeachers": "Es wurden keine zusätzlichen Lehrkräfte eingestellt."
       }
     },
     "toasts": {
@@ -55,9 +55,9 @@
     },
     "errors": {
       "regenerateFailed": "Einladungscode konnte nicht neu generiert werden",
-      "changeRoleFailed": "Rollenänderung fehlgeschlagen",
-      "removeFailed": "Das Entfernen des Mitglieds ist fehlgeschlagen.",
-      "failedToLoad": "Das Laden der Mitglieder ist fehlgeschlagen."
+      "changeRoleFailed": "Rollenwechsel fehlgeschlagen",
+      "removeFailed": "Mitglied konnte nicht entfernt werden",
+      "failedToLoad": "Mitglieder konnten nicht geladen werden"
     }
   }
 }

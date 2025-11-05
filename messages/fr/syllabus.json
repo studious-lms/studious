@@ -1,7 +1,7 @@
 {
   "syllabus": {
     "title": "Programme",
-    "subtitle": "Aperçu du cours et informations académiques",
+    "subtitle": "Présentation du cours et informations académiques",
     "actions": {
       "saveChanges": "Enregistrer les modifications",
       "cancel": "Annuler",
@@ -19,19 +19,19 @@
     },
     "overview": {
       "title": "Aperçu du cours",
-      "placeholder": "Saisissez l'aperçu du cours, les objectifs et d'autres informations importantes...",
-      "helper": "Saisissez les informations de votre cours, vos objectifs d’apprentissage, vos politiques et d’autres détails importants.",
+      "placeholder": "Saisissez le résumé du cours, les objectifs et autres informations importantes...",
+      "helper": "Saisissez les informations relatives à votre cours, les objectifs d'apprentissage, les politiques et autres détails importants.",
       "empty": {
-        "title": "Pas encore de contenu de programme",
-        "description": "Cliquez sur « Modifier le programme » pour ajouter des informations sur le cours, des objectifs d’apprentissage, des politiques et plus encore."
+        "title": "Le programme n'est pas encore disponible.",
+        "description": "Cliquez sur « Modifier le programme » pour ajouter des informations sur le cours, les objectifs d'apprentissage, les politiques et plus encore."
       }
     },
     "assignments": {
-      "title": "Devoirs de cours",
+      "title": "Travaux de cours",
       "gradedCount": "{graded} devoirs notés",
-      "totalPoints": "{total} total de points",
+      "totalPoints": "{total} points totaux",
       "empty": {
-        "title": "Aucune mission pour le moment",
+        "title": "Pas encore de devoirs",
         "description": "Les devoirs apparaîtront ici une fois créés."
       }
     },

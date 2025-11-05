@@ -1,13 +1,13 @@
 {
   "classGrades": {
     "title": "Notas",
-    "subtitle": "Ver e gerenciar notas dos alunos",
+    "subtitle": "Veja e gerencie as notas dos alunos.",
     "columns": {
       "assignment": "Atribuição",
-      "maxPoints": "Pontos máximos",
+      "maxPoints": "Pontuação máxima",
       "weight": "Peso",
       "graded": "Classificado",
-      "dueDate": "Duas datas",
+      "dueDate": "Dois encontros",
       "actions": "Ações",
       "student": "Estudante",
       "overallGrade": "Nota geral",
@@ -28,72 +28,72 @@
       "createNew": "Criar novo"
     },
     "overview": {
-      "title": "Visão geral da classe",
+      "title": "Visão geral da aula",
       "classAverage": "Média da turma",
       "totalStudents": "Total de alunos",
       "assignments": "Tarefas",
       "submissionRate": "Taxa de submissão"
     },
     "assignmentManagement": {
-      "title": "Gerenciamento de Tarefas",
+      "title": "Gestão de tarefas",
       "empty": {
         "title": "Nenhuma tarefa encontrada",
-        "description": "Crie tarefas para gerenciar notas e configurações"
+        "description": "Crie tarefas para gerenciar notas e configurações."
       },
-      "searchPlaceholder": "Pesquisar tarefas..."
+      "searchPlaceholder": "Procurar tarefas..."
     },
     "students": {
       "title": "Estudantes",
       "viewAll": "Ver todos os alunos",
       "empty": {
         "title": "Nenhum aluno matriculado",
-        "description": "Os alunos aparecerão aqui quando entrarem na aula"
+        "description": "Os alunos aparecerão aqui assim que ingressarem na turma."
       },
       "searchPlaceholder": "Pesquisar alunos..."
     },
     "gradeBoundaries": {
-      "title": "Limites de notas",
+      "title": "Limites de nível",
       "untitled": "Limite de classificação sem título",
       "empty": {
-        "title": "Não foram criados limites de classificação",
-        "description": "Crie limites de classificação para definir faixas de classificação"
+        "title": "Não foram criados limites de nota.",
+        "description": "Criar limites de avaliação para definir as faixas de notas."
       },
-      "previewTitle": "Visualização dos limites de classificação",
+      "previewTitle": "Prévia dos Limites de Avaliação",
       "details": {
-        "title": "Detalhes do limite de classificação",
+        "title": "Detalhes dos limites de classificação",
         "name": "Nome",
-        "noneDefined": "Não há limites de classificação definidos"
+        "noneDefined": "Não foram definidos limites de classificação."
       }
     },
     "rubrics": {
       "title": "Rubricas",
       "untitled": "Rubrica sem título",
       "empty": {
-        "title": "Nenhuma rubrica criada",
-        "description": "Crie rubricas para definir critérios de avaliação"
+        "title": "Nenhuma rubrica criada.",
+        "description": "Crie rubricas para definir os critérios de avaliação."
       },
-      "previewTitle": "Prévia da rubrica",
+      "previewTitle": "Prévia da Rubrica",
       "details": {
-        "title": "Detalhes da rubrica",
+        "title": "Detalhes da Rubrica",
         "name": "Nome",
         "category": "Categoria",
         "description": "Descrição",
         "custom": "Personalizado",
         "noDescription": "Nenhuma descrição fornecida",
-        "noCriteria": "Nenhum critério encontrado nesta rubrica"
+        "noCriteria": "Nenhum critério encontrado nesta rubrica."
       }
     },
     "confirm": {
-      "deleteRubric": "Tem certeza de que deseja excluir este esquema de marcas?",
-      "deleteGradingBoundary": "Tem certeza de que deseja excluir este limite de classificação?"
+      "deleteRubric": "Tem certeza de que deseja excluir este esquema de avaliação?",
+      "deleteGradingBoundary": "Tem certeza de que deseja excluir esse limite de avaliação?"
     }
   },
   "studentGrades": {
     "title": "Todas as notas dos alunos",
-    "allStudents": "Ver e gerenciar notas de todos os alunos desta turma",
+    "allStudents": "Veja e gerencie as notas de todos os alunos desta turma.",
     "students": "Estudantes",
     "noGrades": "Nenhum aluno encontrado",
-    "noGradesDescription": "Ainda não há alunos matriculados nesta turma. Os alunos aparecerão aqui assim que ingressarem.",
+    "noGradesDescription": "Ainda não há alunos matriculados nesta turma. Os alunos aparecerão aqui assim que se inscreverem.",
     "table": {
       "student": "Estudante",
       "actions": "Ações"
@@ -105,8 +105,8 @@
   "individualGrades": {
     "myGrades": "Minhas notas",
     "studentGrades": "Notas",
-    "viewYourGrades": "Veja suas notas e progresso",
-    "individualManagement": "Gestão de notas individuais dos alunos",
+    "viewYourGrades": "Veja suas notas e seu progresso.",
+    "individualManagement": "Gestão individual de notas dos alunos",
     "export": "Exportar",
     "back": "Voltar",
     "yourPerformance": "Seu desempenho",
@@ -133,8 +133,8 @@
     },
     "empty": {
       "title": "Nenhuma tarefa encontrada",
-      "description": "Este aluno não tem tarefas para exibir"
+      "description": "Este aluno não tem tarefas para exibir."
     },
-    "searchPlaceholder": "Pesquisar tarefas..."
+    "searchPlaceholder": "Procurar tarefas..."
   }
 }

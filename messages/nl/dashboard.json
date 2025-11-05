@@ -4,7 +4,7 @@
     "subtitle": "Dit is wat er vandaag met jullie lessen gebeurt.",
     "stats": {
       "totalClasses": "Totaal aantal klassen",
-      "teachingEnrolled": "{onderwijs} onderwijs, {ingeschreven} ingeschreven",
+      "teachingEnrolled": "{teaching} lesgeven, {enrolled} ingeschreven",
       "dueToday": "Vandaag te betalen",
       "dueTodayDesc": "Opdrachten die vandaag ingeleverd moeten worden",
       "upcoming": "Aankomende",
@@ -15,12 +15,12 @@
     "upcomingAssignments": {
       "title": "Aankomende opdrachten",
       "subtitle": "Uw volgende deadlines",
-      "allCaughtUp": "Helemaal bij!",
+      "allCaughtUp": "Alles bij!",
       "noUpcoming": "Momenteel geen opdrachten in de toekomst.",
       "viewAgenda": "Bekijk Agenda",
       "dueToday": "Vandaag inleveren",
       "dueTomorrow": "Morgen inleveren",
-      "due": "Twee {data}",
+      "due": "Twee {dates}",
       "teaching": "Onderwijs",
       "viewAllAssignments": "Bekijk alle opdrachten"
     },

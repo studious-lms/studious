@@ -82,6 +82,9 @@ export function Navbar() {
                   <DropdownMenuTrigger asChild>
                     <Button variant="ghost" size="sm" className="h-9 gap-1">
                       <span className="text-sm">{currentLang.flag}</span>
+                      <span className="px-1.5 py-0.5 text-xs bg-primary/10 text-primary rounded-md font-medium">
+                        BETA
+                      </span>
                       <ChevronDown className="h-3 w-3" />
                     </Button>
                   </DropdownMenuTrigger>
@@ -188,7 +191,12 @@ export function Navbar() {
 
                   {/* Language Selector */}
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">Language</span>
+                    <span className="text-sm text-muted-foreground flex items-center gap-2">
+                      Language
+                      <span className="px-1.5 py-0.5 text-xs bg-primary/10 text-primary rounded-md font-medium">
+                        BETA
+                      </span>
+                    </span>
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
                         <Button variant="ghost" size="sm" className="h-9 gap-1">

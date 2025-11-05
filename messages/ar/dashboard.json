@@ -1,13 +1,13 @@
 {
   "home": {
-    "welcomeBack": "مرحبًا بك مرة أخرى، {الاسم}!",
+    "welcomeBack": "مرحبًا بك مرة أخرى، {name}!",
     "subtitle": "إليك ما يحدث مع فصولك الدراسية اليوم.",
     "stats": {
       "totalClasses": "إجمالي الفصول",
-      "teachingEnrolled": "{التدريس} التدريس، {المسجل} المسجل",
+      "teachingEnrolled": "{teaching} التدريس، {enrolled} المسجلين",
       "dueToday": "المستحق اليوم",
       "dueTodayDesc": "الواجبات المستحقة اليوم",
-      "upcoming": "قادم",
+      "upcoming": "القادمة",
       "upcomingDesc": "المهام القادمة",
       "thisWeek": "هذا الاسبوع",
       "totalAssignments": "إجمالي المهام"
@@ -20,7 +20,7 @@
       "viewAgenda": "عرض جدول الأعمال",
       "dueToday": "المستحق اليوم",
       "dueTomorrow": "مستحق غدا",
-      "due": "تاريخان",
+      "due": "اثنان {dates}",
       "teaching": "تدريس",
       "viewAllAssignments": "عرض جميع المهام"
     },
@@ -36,7 +36,7 @@
       "teaching": "تدريس",
       "enrolled": "مسجل",
       "due": "حق",
-      "noClasses": "لا توجد فصول دراسية بعد",
+      "noClasses": "لا توجد فصول دراسية حتى الآن",
       "browseClasses": "تصفح الفصول الدراسية",
       "viewAllClasses": "عرض جميع الفصول الدراسية"
     }

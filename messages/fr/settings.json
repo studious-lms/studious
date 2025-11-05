@@ -8,7 +8,7 @@
     "actions": {
       "saving": "Économie...",
       "saveChanges": "Enregistrer les modifications",
-      "deleting": "Suppression...",
+      "deleting": "Suppression en cours...",
       "deleteClass": "Supprimer la classe",
       "cancel": "Annuler"
     },
@@ -18,11 +18,11 @@
       },
       "theme": {
         "title": "Thème de la classe",
-        "description": "Choisissez une couleur de thème pour cette classe"
+        "description": "Choisissez une couleur thématique pour ce cours."
       },
       "danger": {
         "title": "Zone de danger",
-        "description": "Une fois un cours supprimé, il n'y a plus de retour en arrière possible. Tous les devoirs, notes et relevés de présence seront supprimés définitivement, ainsi que tous les élèves du cours."
+        "description": "Une fois un cours supprimé, il est impossible de revenir en arrière. Cela supprimera définitivement tous les devoirs, les notes, les enregistrements de présence et retirera tous les étudiants du cours."
       }
     },
     "fields": {
@@ -31,7 +31,7 @@
       "subject": "Sujet"
     },
     "placeholders": {
-      "className": "par exemple, physique avancée",
+      "className": "par exemple, la physique avancée",
       "section": "par exemple, AP-101",
       "subject": "par exemple, la physique"
     },
@@ -42,23 +42,23 @@
       },
       "deleted": {
         "title": "Classe supprimée",
-        "description": "La classe a été définitivement supprimée."
+        "description": "Ce cours a été définitivement supprimé."
       }
     },
     "errors": {
       "updateFailed": {
         "title": "Échec de la mise à jour",
-        "description": "Échec de l'enregistrement des paramètres de cours. Veuillez réessayer."
+        "description": "Impossible d'enregistrer les paramètres de classe. Veuillez réessayer."
       }
     },
     "confirm": {
       "title": "Êtes-vous absolument sûr ?",
-      "description": "Cette action est irréversible. Elle supprimera définitivement la classe « {name} » et toutes les données associées, notamment :",
+      "description": "Cette action est irréversible. Elle supprimera définitivement la classe « {name} » et toutes les données associées, y compris :",
       "items": {
-        "assignments": "Toutes les tâches et soumissions",
-        "records": "Toutes les notes et tous les relevés de présence",
-        "students": "Tous les étudiants seront expulsés de la classe",
-        "events": "Tous les événements et annonces de classe"
+        "assignments": "Tous les devoirs et les soumissions",
+        "records": "Tous les relevés de notes et de présence",
+        "students": "Tous les élèves seront exclus de la classe.",
+        "events": "Tous les événements et annonces de la classe"
       },
       "confirmDelete": "Oui, supprimer la classe"
     }

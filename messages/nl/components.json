@@ -17,17 +17,17 @@
     "folderIdMissing": "Map-ID ontbreekt. Wacht tot de map geladen is.",
     "preparing": "Upload voorbereiden...",
     "gettingUrls": "Upload-URL's ophalen...",
-    "uploadingFile": "{name} uploaden...",
+    "uploadingFile": "Uploaden {name}...",
     "confirming": "Bevestigen {name}...",
     "finalizing": "Afronden...",
     "success": "Bestanden succesvol geüpload!",
     "error": "Bestanden uploaden is mislukt. Probeer het opnieuw.",
     "errorFile": "Uploaden van {name} mislukt",
-    "errorMessage": "Uploaden mislukt: {bericht}",
+    "errorMessage": "Uploaden mislukt: {message}",
     "dropZone": "Zet bestanden hier neer of klik om te bladeren",
     "dropZoneHint": "Ondersteuning voor afbeeldingen, documenten, video's en meer",
     "selectedFiles": "Geselecteerde bestanden ({count})",
-    "filesUploaded": "{geüpload} van {totaal} bestanden geüpload",
+    "filesUploaded": "{uploaded} van {total} bestanden geüpload",
     "uploadingTo": "Uploaden naar:",
     "homeDirectory": "Home Directory",
     "status": {
@@ -83,7 +83,7 @@
     "selectedFiles": "Geselecteerde bestanden ({count})",
     "maxFiles": "Maximaal {max} bestanden. Geaccepteerde typen: {types}",
     "allFiles": "Alle bestanden",
-    "progressUploaded": "{voortgang}% geüpload",
+    "progressUploaded": "{progress}% geüpload",
     "noFilesSelected": "Geen bestanden geselecteerd",
     "maxFilesExceeded": "Maximaal {max} bestanden toegestaan",
     "uploadFailed": "Uploaden mislukt: {error}",
@@ -95,29 +95,96 @@
       "failed": "Mislukt"
     },
     "cancel": "Annuleren",
-    "upload": "Upload {count} bestand",
+    "upload": "Upload {count}-bestand",
     "uploadPlural": "Upload {count} bestanden",
     "uploading": "Uploaden..."
   },
+  "notifications": {
+    "title": "Meldingen",
+    "subtitle": "Blijf op de hoogte van je lessen en opdrachten",
+    "filters": {
+      "label": "Filter:",
+      "all": "Allemaal ({count})",
+      "unread": "Ongelezen ({count})",
+      "read": "Lees ({count})"
+    },
+    "badge": {
+      "unread": "{count} nieuw"
+    },
+    "actions": {
+      "viewAll": "Bekijk alle meldingen",
+      "markAsRead": "Markeren als gelezen"
+    },
+    "empty": {
+      "all": {
+        "title": "Nog geen meldingen",
+        "description": "Wanneer u meldingen ontvangt, worden deze hier weergegeven."
+      }
+    }
+  },
   "chat": {
+    "landing": {
+      "pleaseSignIn": "Meld u aan om verder te gaan",
+      "signInRequired": "Aanmelden vereist om toegang te krijgen tot deze pagina",
+      "title": "Chat",
+      "description": "Selecteer een gesprek in de zijbalk om te beginnen met chatten."
+    },
+    "page": {
+      "header": {
+        "members": "Leden",
+        "markMentionsRead": "Mark vermeldt lezen"
+      },
+      "input": {
+        "placeholderPrefix": "Bericht"
+      },
+      "loading": "Gesprek laden..."
+    },
     "conversationList": {
-      "searchPlaceholder": "Zoek of start een gesprek"
+      "title": "Directe berichten",
+      "searchPlaceholder": "Zoek of start een gesprek",
+      "noConversations": "Nog geen gesprekken",
+      "noConversationsDescription": "Begin met chatten met iemand",
+      "noSearchResults": "Geen gesprekken gevonden",
+      "noSearchResultsDescription": "Probeer verschillende zoektermen",
+      "unnamedGroup": "Naamloze groep",
+      "unknownUser": "Onbekende gebruiker"
     },
     "messageList": {
       "noMessagesTitle": "Nog geen berichten",
       "noMessagesDescription": "Dit is het begin van je gesprek"
     },
+    "messageInput": {
+      "placeholder": "Typ een bericht..."
+    },
     "messageEdit": {
-      "placeholder": "Bewerk uw bericht..."
+      "placeholder": "Bewerk uw bericht...",
+      "hint": "Druk op Enter om op te slaan • Escape om te annuleren",
+      "save": "Redden",
+      "saving": "Besparing...",
+      "cancel": "Annuleren"
+    },
+    "messageActions": {
+      "editMessage": "Bericht bewerken",
+      "deleteMessage": "Bericht verwijderen",
+      "deleteConfirmTitle": "Bericht verwijderen",
+      "deleteConfirmDescription": "Weet u zeker dat u dit bericht wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt.",
+      "cancel": "Annuleren",
+      "delete": "Verwijderen",
+      "deleting": "Verwijderen..."
     },
     "createConversation": {
-      "title": "Nieuw gesprek",
+      "title": "Begin een gesprek",
+      "description": "Maak een direct bericht of groepsgesprek",
       "direct": "Direct bericht",
       "group": "Groepschat",
+      "dmLabel": "Voer gebruikersnaam in om een bericht te sturen",
       "searchPlaceholder": "Voer gebruikersnaam in...",
-      "groupName": "Groepsnaam",
+      "groupNameLabel": "Groepsnaam",
       "groupNamePlaceholder": "Voer een groepsnaam in...",
-      "addMembers": "Leden toevoegen",
+      "addMembersLabel": "Leden toevoegen op gebruikersnaam",
+      "addButton": "Toevoegen",
+      "selectedUser": "Geselecteerde gebruiker:",
+      "selectedMembers": "Geselecteerde leden ({count})",
       "cancel": "Annuleren",
       "create": "Creëren",
       "creating": "Creëren..."
@@ -246,7 +313,7 @@
       "2hours": "2 uur"
     },
     "descriptionField": "Beschrijving",
-    "descriptionPlaceholder": "Beschrijf wat dit {type} zou moeten omvatten...",
+    "descriptionPlaceholder": "Beschrijf wat deze {type} zou moeten omvatten...",
     "requirements": "Speciale vereisten",
     "requirementsPlaceholder": "Specifieke vereisten, leerdoelen of beperkingen...",
     "cancel": "Annuleren",

@@ -1,15 +1,15 @@
 {
   "settings": {
-    "title": "班级设置",
-    "subtitle": "配置课程详细信息和偏好",
+    "title": "课程设置",
+    "subtitle": "配置课程详情和偏好",
     "labels": {
       "unsavedChanges": "未保存的更改"
     },
     "actions": {
       "saving": "保存...",
       "saveChanges": "保存更改",
-      "deleting": "正在删除...",
-      "deleteClass": "删除班级",
+      "deleting": "正在删除……",
+      "deleteClass": "删除类",
       "cancel": "取消"
     },
     "sections": {
@@ -18,11 +18,11 @@
       },
       "theme": {
         "title": "班级主题",
-        "description": "为该课程选择主题颜色"
+        "description": "为这门课选择一个主题颜色"
       },
       "danger": {
         "title": "危险区域",
-        "description": "课程一旦删除，将无法恢复。这将永久删除所有作业、成绩、出勤记录，并将所有学生从课程中移除。"
+        "description": "删除课程后无法撤销。这将永久删除所有作业、成绩、考勤记录，并将所有学生从课程中移除。"
       }
     },
     "fields": {
@@ -31,14 +31,14 @@
       "subject": "主题"
     },
     "placeholders": {
-      "className": "例如，高级物理学",
-      "section": "例如 AP-101",
-      "subject": "例如物理学"
+      "className": "例如，高等物理学",
+      "section": "例如，AP-101",
+      "subject": "例如，物理学"
     },
     "toasts": {
       "updated": {
         "title": "课程已更新",
-        "description": "班级设置已成功保存。"
+        "description": "课程设置已成功保存。"
       },
       "deleted": {
         "title": "课程已删除",
@@ -48,17 +48,17 @@
     "errors": {
       "updateFailed": {
         "title": "更新失败",
-        "description": "保存课程设置失败。请重试。"
+        "description": "课程设置保存失败，请重试。"
       }
     },
     "confirm": {
-      "title": "你真的确定吗？",
-      "description": "此操作无法撤消。这将永久删除课程“{name}”并移除所有相关数据，包括：",
+      "title": "你确定吗？",
+      "description": "此操作无法撤销。这将永久删除类“{name}”并移除所有关联数据，包括：",
       "items": {
         "assignments": "所有作业和提交",
         "records": "所有成绩和出勤记录",
-        "students": "所有学生将被开除出课堂",
-        "events": "所有班级活动和公告"
+        "students": "所有学生将被带离教室。",
+        "events": "所有课堂活动和通知"
       },
       "confirmDelete": "是的，删除课程"
     }

@@ -161,7 +161,7 @@
         "priceUnit": "/사용자/월",
         "note": "연간 또는 월 6달러 청구",
         "description": "최대 1,000명의 학생이 있는 학교의 경우",
-        "perk1": "학생 수 무제한",
+        "perk1": "학생 수 제한 없음",
         "perk2": "무제한 수업",
         "perk3": "모든 핵심 기능",
         "perk4": "AI 어시스턴트(무제한 쿼리)",
@@ -181,7 +181,7 @@
         "button": "영업팀에 문의하세요"
       },
       "mostPopular": "가장 인기 있는",
-      "earlyBird": "🎉 조기 채택자는 연간 플랜에서 <strong>3개월 무료</strong>와 전담 온보딩 지원을 받습니다."
+      "earlyBird": "🎉 조기 채택자는 연간 플랜에서 2개월 무료 이용 및 전담 온보딩 지원을 받습니다."
     },
     "schoolProgram": {
       "badge": "사회적 영향",
@@ -356,7 +356,7 @@
       "saveId": "신청 상태를 확인하려면 이 ID를 저장하세요.",
       "nextSteps": {
         "title": "그 다음에는 무슨 일이 일어날까요?",
-        "item1": "{email}로 확인 이메일을 받게 됩니다.",
+        "item1": "{email}에서 확인 이메일을 받게 됩니다.",
         "item2": "저희 팀은 5-7 영업일 이내에 귀하의 신청서를 검토할 것입니다.",
         "item3": "결정이 내려지면 이메일로 알려드립니다."
       },
@@ -409,7 +409,7 @@
     "title": "알림",
     "subtitle": "수업과 과제에 대한 최신 정보를 얻으세요",
     "badge": {
-      "unread": "{count}개 읽지 않음"
+      "unread": "{count} 읽지 않음"
     },
     "filters": {
       "label": "필터:",
@@ -563,7 +563,7 @@
         "title": "루브릭",
         "untitled": "제목 없는 루브릭",
         "empty": {
-          "title": "루브릭이 생성되지 않았습니다",
+          "title": "생성된 루브릭이 없습니다",
           "description": "평가 기준을 정의하기 위한 기준을 만듭니다."
         },
         "previewTitle": "루브릭 미리보기",
@@ -619,22 +619,22 @@
       "students": {
         "empty": {
           "title": "학생이 없습니다",
-          "matchNone": "\"{query}\"와 일치하는 학생이 없습니다.",
+          "matchNone": "\"{query}\"에 일치하는 학생이 없습니다.",
           "noStudents": "아직 이 수업에 참여한 학생이 없습니다."
         }
       },
       "teachers": {
         "empty": {
           "title": "선생님을 찾을 수 없습니다",
-          "matchNone": "\"{query}\"와 일치하는 교사가 없습니다.",
+          "matchNone": "\"{query}\"에 일치하는 교사가 없습니다.",
           "noTeachers": "추가된 교사가 없습니다."
         }
       },
       "toasts": {
         "inviteRegenerated": "초대 코드가 성공적으로 재생성되었습니다.",
         "copied": "초대 코드가 클립보드에 복사되었습니다.",
-        "roleChanged": "역할이 {role}로 변경되었습니다.",
-        "memberRemoved": "회원이 성공적으로 제거되었습니다."
+        "roleChanged": "역할이 {role}으로 변경되었습니다.",
+        "memberRemoved": "회원이 성공적으로 제거되었습니다"
       },
       "errors": {
         "regenerateFailed": "초대 코드를 다시 생성하지 못했습니다.",
@@ -664,7 +664,7 @@
         "folderMoved": "폴더가 성공적으로 이동되었습니다",
         "filesUploaded": "파일이 성공적으로 업로드되었습니다",
         "fileDeleted": "파일이 성공적으로 삭제되었습니다.",
-        "fileRenamed": "파일 이름이 성공적으로 바뀌었습니다.",
+        "fileRenamed": "파일 이름이 성공적으로 변경되었습니다.",
         "fileMoved": "파일이 성공적으로 이동되었습니다.",
         "downloadStarted": "다운로드가 시작되었습니다",
         "shareCopied": "공유 링크가 복사되었습니다."
@@ -704,7 +704,7 @@
         "title": "이 폴더는 비어 있습니다",
         "description": "파일을 업로드하거나 폴더를 만들어 수업 자료를 정리해보세요.",
         "searchTitle": "파일을 찾을 수 없습니다",
-        "searchDescription": "\"{query}\"와(과) 일치하는 파일이 없습니다. 다른 검색어를 사용해 보세요."
+        "searchDescription": "\"{query}\"와 일치하는 파일이 없습니다. 다른 검색어를 사용해 보세요."
       }
     },
     "settings": {
@@ -800,8 +800,8 @@
       },
       "assignments": {
         "title": "과정 과제",
-        "gradedCount": "{총}개 중 {등급}개가 등급 매겨짐",
-        "totalPoints": "{total} 총 포인트",
+        "gradedCount": "{total}개 중 {graded}개가 평가됨",
+        "totalPoints": "총 {total}점",
         "empty": {
           "title": "아직 과제가 없습니다",
           "description": "과제가 생성되면 여기에 표시됩니다."
@@ -926,7 +926,7 @@
     "pricingSchoolTitle": "학교",
     "pricingSchoolPriceNote": "연간 또는 월 6달러 청구",
     "pricingSchoolNote": "최대 1,000명의 학생이 있는 학교의 경우",
-    "pricingSchoolPerk1": "학생 수 무제한",
+    "pricingSchoolPerk1": "학생 수 제한 없음",
     "pricingSchoolPerk2": "무제한 수업",
     "pricingSchoolPerk3": "모든 핵심 기능",
     "pricingSchoolPerk4": "AI 어시스턴트(무제한 쿼리)",
@@ -960,7 +960,7 @@
       },
       "success": {
         "title": "당신은 목록에 올랐어요!",
-        "description": "준비가 되면 {email}로 이메일을 보내드리겠습니다."
+        "description": "준비가 되면 {email}으로 이메일을 보내드리겠습니다."
       },
       "toasts": {
         "success": "대기자 명단에 성공적으로 등록되었습니다!"
@@ -1125,10 +1125,10 @@
         "uploadButton": "파일 업로드",
         "dropZone": "여기에 파일을 놓거나 클릭하여 업로드하세요",
         "dropZoneHint": "모든 파일 유형 지원 • 파일당 최대 50MB",
-        "filesUploaded": "{전체}개 파일 중 {업로드됨}개 업로드됨"
+        "filesUploaded": "{total}개 파일 중 {uploaded}개가 업로드되었습니다."
       },
       "status": {
-        "creating": "과제 생성 중...",
+        "creating": "과제를 생성하는 중...",
         "settingUp": "과제 세부정보 설정 중...",
         "preparing": "파일 업로드 준비 중...",
         "uploading": "클라우드 저장소에 파일을 업로드하는 중...",
@@ -1136,7 +1136,7 @@
         "finalizing": "과제 마무리 중...",
         "assigning": "학생들에게 할당합니다...",
         "almostDone": "거의 끝났어요...",
-        "uploadingFile": "{name}을 업로드 중입니다...",
+        "uploadingFile": "{name} 업로드 중...",
         "creatingProgress": "과제 만들기",
         "draftStatus": "초안으로 저장됩니다",
         "publishedStatus": "학생들에게 공개됩니다"
@@ -1153,13 +1153,13 @@
         "successDraft": "과제가 초안으로 성공적으로 저장되었습니다.",
         "errorRequired": "모든 필수 항목을 작성해 주세요.",
         "errorFailed": "과제를 만들지 못했습니다. 다시 시도해 주세요.",
-        "errorUploadFailed": "{name}을(를) 업로드하지 못했습니다.",
+        "errorUploadFailed": "{name} 업로드에 실패했습니다.",
         "sectionCreated": "섹션 \"{name}\"이 성공적으로 생성되었습니다."
       }
     },
     "createAnnouncement": {
       "title": "공지사항 만들기",
-      "buttonLabel": "공지사항 게시",
+      "buttonLabel": "공지 게시",
       "fields": {
         "title": "공지사항 제목 *",
         "content": "콘텐츠 *",
@@ -1197,7 +1197,7 @@
       "notifications": {
         "email": {
           "label": "이메일 알림 보내기",
-          "description": "학생들에게 이메일을 통해 알림"
+          "description": "이메일을 통해 학생들에게 알림"
         },
         "push": {
           "label": "푸시 알림 보내기",

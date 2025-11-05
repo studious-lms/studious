@@ -1,10 +1,10 @@
 {
   "home": {
-    "welcomeBack": "आपका पुनः स्वागत है, {नाम}!",
+    "welcomeBack": "आपका स्वागत है, {name}!",
     "subtitle": "आज आपकी कक्षाओं में क्या हो रहा है, यहां बताया गया है।",
     "stats": {
       "totalClasses": "कुल कक्षाएं",
-      "teachingEnrolled": "{शिक्षण} शिक्षण, {नामांकित} नामांकित",
+      "teachingEnrolled": "{teaching} शिक्षण, {enrolled} नामांकित",
       "dueToday": "आज देय",
       "dueTodayDesc": "आज जमा करने हैं असाइनमेंट",
       "upcoming": "आगामी",
@@ -20,7 +20,7 @@
       "viewAgenda": "एजेंडा देखें",
       "dueToday": "आज देय",
       "dueTomorrow": "कल देय",
-      "due": "दो {तिथियाँ}",
+      "due": "दो {dates}",
       "teaching": "शिक्षण",
       "viewAllAssignments": "सभी असाइनमेंट देखें"
     },

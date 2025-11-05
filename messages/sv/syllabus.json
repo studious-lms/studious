@@ -29,7 +29,7 @@
     "assignments": {
       "title": "Kursuppgifter",
       "gradedCount": "{graded} betygsatta uppgifter",
-      "totalPoints": "{total} poäng totalt",
+      "totalPoints": "{total} totala poäng",
       "empty": {
         "title": "Inga uppgifter ännu",
         "description": "Uppgifterna visas här när de har skapats."

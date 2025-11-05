@@ -2,7 +2,7 @@
   "members": {
     "title": "সদস্যরা",
     "counts": {
-      "totalMembers": "{গণনা} জন সদস্য"
+      "totalMembers": "{count} সদস্য"
     },
     "actions": {
       "inviteMember": "সদস্যকে আমন্ত্রণ জানান",
@@ -50,7 +50,7 @@
     "toasts": {
       "inviteRegenerated": "আমন্ত্রণ কোডটি সফলভাবে পুনরায় তৈরি করা হয়েছে",
       "copied": "আমন্ত্রণ কোড ক্লিপবোর্ডে কপি করা হয়েছে",
-      "roleChanged": "ভূমিকা {role} তে পরিবর্তন করা হয়েছে",
+      "roleChanged": "ভূমিকা {role} এ পরিবর্তন করা হয়েছে",
       "memberRemoved": "সদস্যকে সফলভাবে সরানো হয়েছে"
     },
     "errors": {

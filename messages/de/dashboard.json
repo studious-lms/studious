@@ -1,32 +1,32 @@
 {
   "home": {
     "welcomeBack": "Willkommen zurück, {name}!",
-    "subtitle": "Hier erfahren Sie, was heute in Ihren Kursen passiert.",
+    "subtitle": "Hier ist der aktuelle Ablauf eurer Kurse.",
     "stats": {
-      "totalClasses": "Klassen insgesamt",
-      "teachingEnrolled": "{lehren} lehren, {eingeschrieben} eingeschrieben",
-      "dueToday": "Heute fällig",
-      "dueTodayDesc": "Heute fällige Aufgaben",
+      "totalClasses": "Gesamtzahl der Klassen",
+      "teachingEnrolled": "{teaching} Lehre, {enrolled} eingeschrieben",
+      "dueToday": "Fällig heute",
+      "dueTodayDesc": "Aufgaben sind heute fällig",
       "upcoming": "Demnächst",
       "upcomingDesc": "Anstehende Aufgaben",
       "thisWeek": "Diese Woche",
-      "totalAssignments": "Gesamtzuweisungen"
+      "totalAssignments": "Gesamtzahl der Aufgaben"
     },
     "upcomingAssignments": {
-      "title": "Kommende Aufgaben",
-      "subtitle": "Ihre nächsten Termine",
-      "allCaughtUp": "Alles aufgeholt!",
-      "noUpcoming": "Zurzeit liegen keine anstehenden Aufgaben vor.",
-      "viewAgenda": "Agenda anzeigen",
-      "dueToday": "Heute fällig",
+      "title": "Bevorstehende Aufgaben",
+      "subtitle": "Ihre nächsten Abgabetermine",
+      "allCaughtUp": "Alles auf dem neuesten Stand!",
+      "noUpcoming": "Derzeit sind keine Aufträge anstehend.",
+      "viewAgenda": "Tagesordnung ansehen",
+      "dueToday": "Fällig heute",
       "dueTomorrow": "Fällig morgen",
-      "due": "Zwei {Daten}",
+      "due": "Zwei {dates}",
       "teaching": "Lehre",
       "viewAllAssignments": "Alle Aufgaben anzeigen"
     },
     "notifications": {
       "title": "Aktuelle Benachrichtigungen",
-      "subtitle": "Aktuelle Informationen",
+      "subtitle": "Neueste Updates",
       "noNew": "Keine neuen Benachrichtigungen",
       "viewAll": "Alle Benachrichtigungen anzeigen"
     },

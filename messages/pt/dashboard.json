@@ -1,33 +1,33 @@
 {
   "home": {
     "welcomeBack": "Bem-vindo de volta, {name}!",
-    "subtitle": "Veja o que está acontecendo com suas aulas hoje.",
+    "subtitle": "Eis o que acontecerá com suas aulas hoje.",
     "stats": {
       "totalClasses": "Total de aulas",
-      "teachingEnrolled": "{ensino} ensino, {matriculado} matriculado",
+      "teachingEnrolled": "{teaching} ensino, {enrolled} matriculado",
       "dueToday": "Vencimento hoje",
       "dueTodayDesc": "Tarefas com vencimento hoje",
       "upcoming": "Por vir",
-      "upcomingDesc": "Tarefas chegando",
+      "upcomingDesc": "Tarefas a caminho",
       "thisWeek": "Essa semana",
-      "totalAssignments": "Total de tarefas"
+      "totalAssignments": "Total de atribuições"
     },
     "upcomingAssignments": {
       "title": "Próximas tarefas",
       "subtitle": "Seus próximos prazos",
-      "allCaughtUp": "Todos atualizados!",
-      "noUpcoming": "Nenhuma tarefa futura no momento.",
+      "allCaughtUp": "Tudo em dia!",
+      "noUpcoming": "Não há trabalhos agendados no momento.",
       "viewAgenda": "Ver agenda",
       "dueToday": "Com vencimento hoje",
-      "dueTomorrow": "Devido amanhã",
-      "due": "Duas {datas}",
+      "dueTomorrow": "Com vencimento amanhã",
+      "due": "Dois {dates}",
       "teaching": "Ensino",
       "viewAllAssignments": "Ver todas as tarefas"
     },
     "notifications": {
       "title": "Notificações recentes",
       "subtitle": "Últimas atualizações",
-      "noNew": "Nenhuma nova notificação",
+      "noNew": "Nenhuma notificação nova",
       "viewAll": "Ver todas as notificações"
     },
     "classes": {
@@ -36,8 +36,8 @@
       "teaching": "Ensino",
       "enrolled": "Matriculado",
       "due": "devido",
-      "noClasses": "Nenhuma aula ainda",
-      "browseClasses": "Navegar pelas aulas",
+      "noClasses": "Ainda não há aulas.",
+      "browseClasses": "Procurar aulas",
       "viewAllClasses": "Ver todas as aulas"
     }
   }

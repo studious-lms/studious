@@ -5,7 +5,7 @@
     "aiPowered": "Dikuasakan AI",
     "createNew": "Cipta Kandungan Baharu",
     "aiGenerated": "AI Dijana",
-    "deleteConfirm": "Adakah anda pasti mahu memadamkan AI Lab ini? Tindakan ini tidak boleh dibuat asal.",
+    "deleteConfirm": "Adakah anda pasti mahu memadamkan Makmal AI ini? Tindakan ini tidak boleh dibuat asal.",
     "widgets": {
       "assignment": {
         "title": "Tugasan",
@@ -43,7 +43,7 @@
       "title": "Makmal AI ({count})",
       "active": "Aktif",
       "messageCount": "{count} mesej",
-      "createdBy": "Dibuat oleh {name}",
+      "createdBy": "Dicipta oleh {name}",
       "empty": {
         "title": "Tiada Makmal AI lagi",
         "description": "Cipta Makmal AI pertama anda untuk mula bekerjasama dengan AI mengenai kandungan pendidikan."

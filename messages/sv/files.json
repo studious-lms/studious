@@ -37,7 +37,7 @@
     "search": {
       "placeholder": "Sök i filer"
     },
-    "selected": "{count} valda",
+    "selected": "{count} valt",
     "filters": {
       "fileType": "Filtyp",
       "documents": "Dokument",
@@ -78,7 +78,7 @@
     },
     "search": {
       "placeholder": "Sök i mappen",
-      "selected": "{count} valda"
+      "selected": "{count} valt"
     },
     "filters": {
       "label": "Filtrera",

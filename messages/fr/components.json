@@ -11,25 +11,25 @@
     "rename": "Rebaptiser"
   },
   "uploadFiles": {
-    "title": "Télécharger des fichiers",
+    "title": "Téléverser des fichiers",
     "noFilesSelected": "Aucun fichier sélectionné",
-    "classIdMissing": "L'identifiant de classe est manquant",
+    "classIdMissing": "L'identifiant de classe est manquant.",
     "folderIdMissing": "L'identifiant du dossier est manquant. Veuillez patienter pendant le chargement du dossier.",
-    "preparing": "Préparation du téléchargement...",
-    "gettingUrls": "Obtention des URL de téléchargement...",
-    "uploadingFile": "Téléchargement de {name}...",
+    "preparing": "Préparation du chargement...",
+    "gettingUrls": "Récupération des URL de téléchargement...",
+    "uploadingFile": "Téléchargement en cours {name}...",
     "confirming": "Confirmation de {name}...",
-    "finalizing": "Finalisation...",
-    "success": "Fichiers téléchargés avec succès !",
-    "error": "Échec du téléchargement des fichiers. Veuillez réessayer.",
-    "errorFile": "Échec du téléchargement de {name}",
-    "errorMessage": "Échec du téléchargement : {message}",
-    "dropZone": "Déposez les fichiers ici ou cliquez pour parcourir",
+    "finalizing": "Finalisation en cours...",
+    "success": "Fichiers téléchargés avec succès !",
+    "error": "Impossible de télécharger les fichiers. Veuillez réessayer.",
+    "errorFile": "Échec du chargement {name}",
+    "errorMessage": "Échec du chargement : {message}",
+    "dropZone": "Déposez vos fichiers ici ou cliquez pour les parcourir.",
     "dropZoneHint": "Prise en charge des images, des documents, des vidéos et plus encore",
     "selectedFiles": "Fichiers sélectionnés ({count})",
-    "filesUploaded": "{téléchargé} sur {total} fichiers téléchargés",
+    "filesUploaded": "[[0] sur {total} fichiers téléchargés",
     "uploadingTo": "Téléchargement vers :",
-    "homeDirectory": "Répertoire d'accueil",
+    "homeDirectory": "Annuaire d'accueil",
     "status": {
       "pending": "En attente",
       "uploading": "Téléchargement",
@@ -37,57 +37,57 @@
       "error": "Erreur"
     },
     "cancel": "Annuler",
-    "upload": "Télécharger {count} fichier(s)",
-    "uploading": "Téléchargement en cours..."
+    "upload": "Téléverser {count} fichier(s)",
+    "uploading": "Chargement en cours..."
   },
   "rubric": {
-    "title": "Créer une rubrique",
-    "titleEdit": "Modifier la rubrique",
+    "title": "Créer une grille d'évaluation",
+    "titleEdit": "Modifier la grille d'évaluation",
     "selectTemplate": "Sélectionner un modèle",
-    "startFromScratch": "Commencer à partir de zéro",
-    "editRubric": "Modifier la rubrique",
-    "noTemplateSelected": "Sélectionnez un modèle ou créez une rubrique personnalisée",
+    "startFromScratch": "Partir de zéro",
+    "editRubric": "Modifier la grille d'évaluation",
+    "noTemplateSelected": "Sélectionnez un modèle ou créez une grille d'évaluation personnalisée",
     "name": "Nom de la rubrique",
-    "placeholder": "Entrez le nom de la rubrique",
+    "placeholder": "Saisir le nom de la rubrique",
     "cancel": "Annuler",
-    "create": "Créer une rubrique",
-    "update": "Mettre à jour la rubrique",
-    "creating": "Créer...",
-    "updating": "Mise à jour...",
+    "create": "Créer une grille d'évaluation",
+    "update": "Rubrique de mise à jour",
+    "creating": "Création...",
+    "updating": "Mise à jour en cours...",
     "created": "Rubrique créée avec succès",
     "updated": "Rubrique mise à jour avec succès",
-    "createFailed": "Échec de la création de la rubrique",
-    "updateFailed": "Échec de la mise à jour de la rubrique",
-    "errorNameRequired": "Veuillez fournir un nom et au moins un critère"
+    "createFailed": "Échec de la création de la grille d'évaluation",
+    "updateFailed": "Échec de la mise à jour de la grille d'évaluation",
+    "errorNameRequired": "Veuillez indiquer un nom et au moins un critère"
   },
   "gradingBoundaries": {
     "title": "Créer une limite de niveau",
-    "titleEdit": "Modifier la limite de note",
+    "titleEdit": "Modifier la limite de la note",
     "selectTemplate": "Sélectionner un modèle",
-    "editGradingScale": "Modifier l'échelle de notation",
+    "editGradingScale": "Échelle de notation modifiée",
     "noTemplateSelected": "Sélectionnez un modèle ou créez des limites personnalisées",
     "cancel": "Annuler",
     "create": "Créer",
     "update": "Mise à jour",
-    "creating": "Créer...",
-    "updating": "Mise à jour...",
+    "creating": "Création...",
+    "updating": "Mise à jour en cours...",
     "created": "Limite de nivellement créée avec succès",
-    "updated": "Limite de classement mise à jour avec succès",
-    "createFailed": "Échec de la création de la limite de notation",
-    "updateFailed": "Échec de la mise à jour de la limite de notation"
+    "updated": "Limite de nivellement mise à jour avec succès",
+    "createFailed": "Échec de la création de la limite de nivellement",
+    "updateFailed": "Échec de la mise à jour des limites de nivellement"
   },
   "directUpload": {
-    "title": "Télécharger des fichiers",
+    "title": "Téléverser des fichiers",
     "description": "Sélectionnez les fichiers à télécharger",
-    "selectFiles": "Sélectionner les fichiers",
+    "selectFiles": "Sélectionner des fichiers",
     "selectedFiles": "Fichiers sélectionnés ({count})",
-    "maxFiles": "Nombre maximal de fichiers : {max}. Types acceptés : {types}",
+    "maxFiles": "Nombre maximal de fichiers : [[0] ; types acceptés : {types}",
     "allFiles": "Tous les fichiers",
     "progressUploaded": "{progress}% téléchargé",
     "noFilesSelected": "Aucun fichier sélectionné",
-    "maxFilesExceeded": "Nombre maximal de fichiers autorisés : {max}",
-    "uploadFailed": "Échec du téléchargement : {error}",
-    "uploadFailedGeneric": "Le téléchargement a échoué",
+    "maxFilesExceeded": "Nombre maximal de fichiers autorisés : [[0]",
+    "uploadFailed": "Échec du chargement : {error}",
+    "uploadFailedGeneric": "Échec du chargement",
     "status": {
       "pending": "En attente",
       "uploading": "Téléchargement",
@@ -95,51 +95,118 @@
       "failed": "Échoué"
     },
     "cancel": "Annuler",
-    "upload": "Télécharger {count} fichier",
-    "uploadPlural": "Télécharger {count} fichiers",
-    "uploading": "Téléchargement en cours..."
+    "upload": "Téléverser un fichier {count}",
+    "uploadPlural": "Téléverser [[0] fichiers",
+    "uploading": "Chargement en cours..."
+  },
+  "notifications": {
+    "title": "Notifications",
+    "subtitle": "Restez à jour dans vos cours et vos devoirs.",
+    "filters": {
+      "label": "Filtre:",
+      "all": "Tous ({count})",
+      "unread": "Non lu ({count})",
+      "read": "Lire ({count})"
+    },
+    "badge": {
+      "unread": "{count} nouveau"
+    },
+    "actions": {
+      "viewAll": "Afficher toutes les notifications",
+      "markAsRead": "Marquer comme lu"
+    },
+    "empty": {
+      "all": {
+        "title": "Aucune notification pour le moment",
+        "description": "Les notifications que vous recevrez apparaîtront ici."
+      }
+    }
   },
   "chat": {
+    "landing": {
+      "pleaseSignIn": "Veuillez vous connecter pour continuer",
+      "signInRequired": "Connexion requise pour accéder à cette page",
+      "title": "Chat",
+      "description": "Sélectionnez une conversation dans la barre latérale pour commencer à discuter."
+    },
+    "page": {
+      "header": {
+        "members": "Membres",
+        "markMentionsRead": "Mark mentionne la lecture"
+      },
+      "input": {
+        "placeholderPrefix": "Message"
+      },
+      "loading": "Chargement de la conversation..."
+    },
     "conversationList": {
-      "searchPlaceholder": "Trouver ou démarrer une conversation"
+      "title": "Messages directs",
+      "searchPlaceholder": "Trouver ou entamer une conversation",
+      "noConversations": "Aucune conversation pour l'instant",
+      "noConversationsDescription": "Commencez à discuter avec quelqu'un",
+      "noSearchResults": "Aucune conversation trouvée",
+      "noSearchResultsDescription": "Essayez d'autres termes de recherche",
+      "unnamedGroup": "Groupe non identifié",
+      "unknownUser": "Utilisateur inconnu"
     },
     "messageList": {
-      "noMessagesTitle": "Aucun message pour le moment",
-      "noMessagesDescription": "C'est le début de votre conversation"
+      "noMessagesTitle": "Aucun message pour l'instant",
+      "noMessagesDescription": "Voici le début de votre conversation"
+    },
+    "messageInput": {
+      "placeholder": "Saisissez un message..."
     },
     "messageEdit": {
-      "placeholder": "Modifiez votre message..."
+      "placeholder": "Modifiez votre message...",
+      "hint": "Appuyez sur Entrée pour enregistrer • Échap pour annuler",
+      "save": "Sauvegarder",
+      "saving": "Économie...",
+      "cancel": "Annuler"
+    },
+    "messageActions": {
+      "editMessage": "Modifier le message",
+      "deleteMessage": "Supprimer le message",
+      "deleteConfirmTitle": "Supprimer le message",
+      "deleteConfirmDescription": "Êtes-vous sûr de vouloir supprimer ce message ? Cette action est irréversible.",
+      "cancel": "Annuler",
+      "delete": "Supprimer",
+      "deleting": "Suppression en cours..."
     },
     "createConversation": {
-      "title": "Nouvelle conversation",
+      "title": "Entamez une conversation",
+      "description": "Créer un message direct ou une conversation de groupe",
       "direct": "Message direct",
       "group": "Discussion de groupe",
-      "searchPlaceholder": "Entrez le nom d'utilisateur...",
-      "groupName": "Nom du groupe",
-      "groupNamePlaceholder": "Entrez le nom du groupe...",
-      "addMembers": "Ajouter des membres",
+      "dmLabel": "Saisissez votre nom d'utilisateur pour envoyer un message.",
+      "searchPlaceholder": "Entrez votre nom d'utilisateur...",
+      "groupNameLabel": "Nom du groupe",
+      "groupNamePlaceholder": "Saisissez le nom du groupe...",
+      "addMembersLabel": "Ajouter des membres par nom d'utilisateur",
+      "addButton": "Ajouter",
+      "selectedUser": "Utilisateur sélectionné :",
+      "selectedMembers": "Membres sélectionnés ({count})",
       "cancel": "Annuler",
       "create": "Créer",
-      "creating": "Créer..."
+      "creating": "Création..."
     }
   },
   "avatarSelector": {
-    "changeProfilePicture": "Changer la photo de profil"
+    "changeProfilePicture": "Changer ma photo de profil"
   },
   "createSection": {
     "buttonLabel": "Nouvelle section",
     "titleCreate": "Créer une nouvelle section",
     "titleEdit": "Modifier la section",
     "name": "Nom de la section *",
-    "placeholder": "par exemple, Trimestre 1, Unité 2, Chapitre 5",
-    "helper": "Les sections aident à organiser les tâches en groupes ou en périodes.",
+    "placeholder": "Par exemple, semestre 1, unité 2, chapitre 5",
+    "helper": "Les sections permettent d'organiser les tâches en groupes ou en périodes.",
     "color": "Couleur de la section",
     "cancel": "Annuler",
     "create": "Créer une section",
     "update": "Section Mise à jour",
-    "creating": "Créer...",
-    "updating": "Mise à jour...",
-    "created": "La section « {name} » a été créée avec succès.",
+    "creating": "Création...",
+    "updating": "Mise à jour en cours...",
+    "created": "Section \"{name}\" créée avec succès.",
     "updated": "La section « {name} » a été mise à jour avec succès.",
     "errorEmpty": "Veuillez saisir un nom de section.",
     "errorCreate": "Échec de la création de la section",
@@ -150,70 +217,70 @@
     "titleEdit": "Modifier l'événement",
     "classEvent": "Événement de classe",
     "personalEvent": "Événement personnel",
-    "isClassEvent": "C'est un événement de classe",
-    "selectClass": "Sélectionnez la classe *",
+    "isClassEvent": "Il s'agit d'un événement de classe",
+    "selectClass": "Sélectionner une classe *",
     "chooseClass": "Choisissez une classe",
     "noTeacherClasses": "Vous n'avez aucun cours où vous êtes professeur.",
     "eventName": "Nom de l'événement *",
-    "eventNamePlaceholder": "Entrez le nom de l'événement",
+    "eventNamePlaceholder": "Saisissez le nom de l'événement",
     "startDateTime": "Date et heure de début *",
     "endDateTime": "Date et heure de fin *",
-    "pickDate": "Date de cueillette",
+    "pickDate": "Choisissez une date",
     "location": "Emplacement",
-    "locationPlaceholder": "Entrez le lieu de l'événement",
+    "locationPlaceholder": "Indiquez le lieu de l'événement",
     "eventColor": "Couleur de l'événement",
     "eventColorDescription": "Choisissez une couleur pour cet événement",
     "remarks": "Remarques",
-    "remarksPlaceholder": "Notes ou remarques supplémentaires sur l'événement",
+    "remarksPlaceholder": "Remarques ou commentaires supplémentaires concernant l'événement",
     "cancel": "Annuler",
     "updateEvent": "Événement de mise à jour",
     "createEvent": "Créer un événement",
     "createClassEvent": "Créer un événement de classe",
     "createPersonalEvent": "Créer un événement personnel",
-    "updating": "Mise à jour...",
-    "creating": "Créer...",
+    "updating": "Mise à jour en cours...",
+    "creating": "Création...",
     "addEvent": "Ajouter un événement",
     "eventCreated": "{type} créé avec succès",
-    "eventUpdated": "L'événement a été mis à jour avec succès",
-    "errorRequired": "Veuillez remplir tous les champs obligatoires",
+    "eventUpdated": "Événement mis à jour avec succès",
+    "errorRequired": "Veuillez remplir tous les champs obligatoires.",
     "errorSelectClass": "Veuillez sélectionner une classe pour l'événement de classe",
     "errorCreate": "Échec de la création de l'événement",
     "errorUpdate": "Échec de la mise à jour de l'événement"
   },
   "classEvent": {
     "titleCreate": "Créer un nouvel événement de classe",
-    "titleEdit": "Modifier l'événement de classe",
+    "titleEdit": "Événement de classe Modifier",
     "eventName": "Nom de l'événement *",
-    "eventNamePlaceholder": "Entrez le nom de l'événement",
+    "eventNamePlaceholder": "Saisissez le nom de l'événement",
     "startDateTime": "Date et heure de début *",
     "endDateTime": "Date et heure de fin *",
-    "pickDate": "Date de cueillette",
+    "pickDate": "Choisissez une date",
     "location": "Emplacement",
-    "locationPlaceholder": "Entrez le lieu de l'événement",
+    "locationPlaceholder": "Indiquez le lieu de l'événement",
     "eventColor": "Couleur de l'événement",
     "eventColorDescription": "Choisissez une couleur pour cet événement",
     "remarks": "Remarques",
-    "remarksPlaceholder": "Notes ou remarques supplémentaires sur l'événement",
+    "remarksPlaceholder": "Remarques ou commentaires supplémentaires concernant l'événement",
     "cancel": "Annuler",
     "updateEvent": "Événement de mise à jour",
     "createEvent": "Créer un événement",
-    "updating": "Mise à jour...",
-    "creating": "Créer...",
+    "updating": "Mise à jour en cours...",
+    "creating": "Création...",
     "addClassEvent": "Ajouter un événement de classe",
     "eventCreated": "Événement créé avec succès",
-    "eventUpdated": "L'événement a été mis à jour avec succès",
-    "errorRequired": "Veuillez remplir tous les champs obligatoires",
+    "eventUpdated": "Événement mis à jour avec succès",
+    "errorRequired": "Veuillez remplir tous les champs obligatoires.",
     "errorCreate": "Échec de la création de l'événement",
     "errorUpdate": "Échec de la mise à jour de l'événement"
   },
   "aiLab": {
     "title": "Créer {type}",
-    "aiPowered": "Alimenté par l'IA",
+    "aiPowered": "Intelligence artificielle",
     "description": "Fournissez quelques informations de base pour aider notre IA à créer un meilleur contenu pour vous.",
     "titleField": "Titre *",
-    "titlePlaceholder": "Entrez le titre {type}",
+    "titlePlaceholder": "Saisissez le titre {type}.",
     "subject": "Sujet *",
-    "selectSubject": "Sélectionnez un sujet",
+    "selectSubject": "Sélectionnez le sujet",
     "subjects": {
       "mathematics": "Mathématiques",
       "science": "Science",
@@ -251,6 +318,6 @@
     "requirementsPlaceholder": "Des exigences particulières, des objectifs d'apprentissage ou des contraintes...",
     "cancel": "Annuler",
     "createLab": "Créer un laboratoire d'IA",
-    "creatingLab": "Création de laboratoire..."
+    "creatingLab": "Création d'un laboratoire..."
   }
 }

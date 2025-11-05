@@ -1,7 +1,7 @@
 {
   "settings": {
-    "title": "Configurações de classe",
-    "subtitle": "Configurar detalhes e preferências da classe",
+    "title": "Configurações de aula",
+    "subtitle": "Configure os detalhes e preferências da turma.",
     "labels": {
       "unsavedChanges": "Alterações não salvas"
     },
@@ -9,7 +9,7 @@
       "saving": "Salvando...",
       "saveChanges": "Salvar alterações",
       "deleting": "Excluindo...",
-      "deleteClass": "Excluir classe",
+      "deleteClass": "Excluir Classe",
       "cancel": "Cancelar"
     },
     "sections": {
@@ -18,49 +18,49 @@
       },
       "theme": {
         "title": "Tema da aula",
-        "description": "Escolha uma cor de tema para esta aula"
+        "description": "Escolha uma cor temática para esta aula."
       },
       "danger": {
-        "title": "Zona de perigo",
-        "description": "Depois de excluir uma turma, não há como voltar atrás. Isso excluirá permanentemente todas as tarefas, notas, registros de frequência e removerá todos os alunos da turma."
+        "title": "Zona de Perigo",
+        "description": "Depois de excluir uma turma, não há como voltar atrás. Isso apagará permanentemente todas as tarefas, notas, registros de frequência e removerá todos os alunos da turma."
       }
     },
     "fields": {
-      "className": "Nome da classe",
+      "className": "Nome da turma",
       "section": "Seção",
       "subject": "Assunto"
     },
     "placeholders": {
-      "className": "por exemplo, Física Avançada",
-      "section": "por exemplo, AP-101",
-      "subject": "por exemplo, Física"
+      "className": "Por exemplo, Física Avançada",
+      "section": "Exemplo: AP-101",
+      "subject": "Por exemplo, Física"
     },
     "toasts": {
       "updated": {
-        "title": "Classe atualizada",
-        "description": "As configurações da classe foram salvas com sucesso."
+        "title": "Aula atualizada",
+        "description": "As configurações da turma foram salvas com sucesso."
       },
       "deleted": {
         "title": "Classe excluída",
-        "description": "A classe foi excluída permanentemente."
+        "description": "A turma foi excluída permanentemente."
       }
     },
     "errors": {
       "updateFailed": {
-        "title": "Falha na atualização",
-        "description": "Falha ao salvar as configurações da turma. Tente novamente."
+        "title": "Atualização falhou",
+        "description": "Não foi possível salvar as configurações da turma. Tente novamente."
       }
     },
     "confirm": {
-      "title": "Você tem certeza absoluta?",
-      "description": "Esta ação não pode ser desfeita. Isso excluirá permanentemente a classe \"{name}\" e removerá todos os dados associados, incluindo:",
+      "title": "Tem certeza absoluta?",
+      "description": "Esta ação não pode ser desfeita. Ela excluirá permanentemente a classe \"{name}\" e removerá todos os dados associados, incluindo:",
       "items": {
-        "assignments": "Todas as tarefas e envios",
+        "assignments": "Todas as tarefas e entregas",
         "records": "Todas as notas e registros de frequência",
-        "students": "Todos os alunos serão retirados da aula",
-        "events": "Todos os eventos e anúncios de classe"
+        "students": "Todos os alunos serão retirados da sala de aula.",
+        "events": "Todos os eventos e avisos da turma"
       },
-      "confirmDelete": "Sim, excluir classe"
+      "confirmDelete": "Sim, exclua a classe."
     }
   }
 }

@@ -18,16 +18,16 @@
     "preparing": "กำลังเตรียมอัพโหลด...",
     "gettingUrls": "กำลังรับ URL อัพโหลด...",
     "uploadingFile": "กำลังอัพโหลด {name}...",
-    "confirming": "กำลังยืนยัน {ชื่อ}...",
+    "confirming": "ยืนยัน{name}...",
     "finalizing": "กำลังดำเนินการขั้นสุดท้าย...",
     "success": "อัพโหลดไฟล์สำเร็จแล้ว!",
     "error": "ไม่สามารถอัปโหลดไฟล์ได้ โปรดลองอีกครั้ง",
-    "errorFile": "ไม่สามารถอัพโหลด {name} ได้",
-    "errorMessage": "การอัพโหลดล้มเหลว: {ข้อความ}",
+    "errorFile": "ไม่สามารถอัพโหลด {name}",
+    "errorMessage": "การอัพโหลดล้มเหลว: {message}",
     "dropZone": "วางไฟล์ที่นี่หรือคลิกเพื่อเรียกดู",
     "dropZoneHint": "รองรับรูปภาพ เอกสาร วิดีโอ และอื่นๆ",
     "selectedFiles": "ไฟล์ที่เลือก ({count})",
-    "filesUploaded": "{อัปโหลด} จาก {ทั้งหมด} ไฟล์ที่อัปโหลด",
+    "filesUploaded": "{uploaded} จาก {total} ไฟล์ที่อัพโหลด",
     "uploadingTo": "กำลังอัพโหลดไปที่:",
     "homeDirectory": "โฮมไดเร็กทอรี",
     "status": {
@@ -81,12 +81,12 @@
     "description": "เลือกไฟล์ที่จะอัพโหลด",
     "selectFiles": "เลือกไฟล์",
     "selectedFiles": "ไฟล์ที่เลือก ({count})",
-    "maxFiles": "ไฟล์สูงสุด {max} ชนิดที่ยอมรับ: {types}",
+    "maxFiles": "ไฟล์สูงสุด {max} ไฟล์ ประเภทที่ยอมรับ: {types}",
     "allFiles": "ไฟล์ทั้งหมด",
-    "progressUploaded": "อัพโหลดแล้ว {progress}%",
+    "progressUploaded": "อัพโหลด {progress}%",
     "noFilesSelected": "ไม่มีไฟล์ที่เลือก",
-    "maxFilesExceeded": "ไฟล์สูงสุดที่อนุญาต {max}",
-    "uploadFailed": "การอัพโหลดล้มเหลว: {ข้อผิดพลาด}",
+    "maxFilesExceeded": "ไฟล์สูงสุดที่อนุญาต {max} ไฟล์",
+    "uploadFailed": "การอัพโหลดล้มเหลว: {error}",
     "uploadFailedGeneric": "การอัพโหลดล้มเหลว",
     "status": {
       "pending": "รอดำเนินการ",
@@ -96,28 +96,95 @@
     },
     "cancel": "ยกเลิก",
     "upload": "อัพโหลดไฟล์ {count}",
-    "uploadPlural": "อัพโหลด {count} ไฟล์",
+    "uploadPlural": "อัพโหลดไฟล์ {count} ไฟล์",
     "uploading": "กำลังอัพโหลด..."
   },
+  "notifications": {
+    "title": "การแจ้งเตือน",
+    "subtitle": "ติดตามข้อมูลอัปเดตเกี่ยวกับชั้นเรียนและงานที่ได้รับมอบหมายของคุณ",
+    "filters": {
+      "label": "กรอง:",
+      "all": "ทั้งหมด ({count})",
+      "unread": "ยังไม่ได้อ่าน ({count})",
+      "read": "อ่าน ({count})"
+    },
+    "badge": {
+      "unread": "{count} ใหม่"
+    },
+    "actions": {
+      "viewAll": "ดูการแจ้งเตือนทั้งหมด",
+      "markAsRead": "ทำเครื่องหมายว่าอ่านแล้ว"
+    },
+    "empty": {
+      "all": {
+        "title": "ยังไม่มีการแจ้งเตือน",
+        "description": "เมื่อคุณได้รับการแจ้งเตือนมันจะปรากฏที่นี่"
+      }
+    }
+  },
   "chat": {
+    "landing": {
+      "pleaseSignIn": "กรุณาลงชื่อเข้าใช้เพื่อดำเนินการต่อ",
+      "signInRequired": "ต้องลงชื่อเข้าใช้เพื่อเข้าถึงหน้านี้",
+      "title": "แชท",
+      "description": "เลือกการสนทนาจากแถบด้านข้างเพื่อเริ่มแชท"
+    },
+    "page": {
+      "header": {
+        "members": "สมาชิก",
+        "markMentionsRead": "มาร์คกล่าวถึงการอ่าน"
+      },
+      "input": {
+        "placeholderPrefix": "ข้อความ"
+      },
+      "loading": "กำลังโหลดการสนทนา..."
+    },
     "conversationList": {
-      "searchPlaceholder": "ค้นหาหรือเริ่มการสนทนา"
+      "title": "ข้อความโดยตรง",
+      "searchPlaceholder": "ค้นหาหรือเริ่มการสนทนา",
+      "noConversations": "ยังไม่มีการสนทนา",
+      "noConversationsDescription": "เริ่มสนทนากับใครสักคน",
+      "noSearchResults": "ไม่พบการสนทนา",
+      "noSearchResultsDescription": "ลองใช้คำค้นหาอื่น",
+      "unnamedGroup": "กลุ่มที่ไม่มีชื่อ",
+      "unknownUser": "ผู้ใช้ที่ไม่รู้จัก"
     },
     "messageList": {
       "noMessagesTitle": "ยังไม่มีข้อความ",
       "noMessagesDescription": "นี่คือจุดเริ่มต้นของการสนทนาของคุณ"
     },
+    "messageInput": {
+      "placeholder": "พิมพ์ข้อความ..."
+    },
     "messageEdit": {
-      "placeholder": "แก้ไขข้อความของคุณ..."
+      "placeholder": "แก้ไขข้อความของคุณ...",
+      "hint": "กด Enter เพื่อบันทึก • กด Escape เพื่อยกเลิก",
+      "save": "บันทึก",
+      "saving": "ประหยัด...",
+      "cancel": "ยกเลิก"
+    },
+    "messageActions": {
+      "editMessage": "แก้ไขข้อความ",
+      "deleteMessage": "ลบข้อความ",
+      "deleteConfirmTitle": "ลบข้อความ",
+      "deleteConfirmDescription": "คุณแน่ใจหรือไม่ว่าต้องการลบข้อความนี้? การดำเนินการนี้ไม่สามารถย้อนกลับได้",
+      "cancel": "ยกเลิก",
+      "delete": "ลบ",
+      "deleting": "กำลังลบ..."
     },
     "createConversation": {
-      "title": "บทสนทนาใหม่",
+      "title": "เริ่มการสนทนา",
+      "description": "สร้างข้อความโดยตรงหรือการสนทนาแบบกลุ่ม",
       "direct": "ข้อความโดยตรง",
       "group": "แชทกลุ่ม",
+      "dmLabel": "กรอกชื่อผู้ใช้เพื่อส่งข้อความ",
       "searchPlaceholder": "กรุณากรอกชื่อผู้ใช้...",
-      "groupName": "ชื่อกลุ่ม",
+      "groupNameLabel": "ชื่อกลุ่ม",
       "groupNamePlaceholder": "กรอกชื่อกลุ่ม...",
-      "addMembers": "เพิ่มสมาชิก",
+      "addMembersLabel": "เพิ่มสมาชิกด้วยชื่อผู้ใช้",
+      "addButton": "เพิ่ม",
+      "selectedUser": "ผู้ใช้ที่เลือก:",
+      "selectedMembers": "สมาชิกที่ได้รับการคัดเลือก ({count})",
       "cancel": "ยกเลิก",
       "create": "สร้าง",
       "creating": "กำลังสร้าง..."
@@ -173,7 +240,7 @@
     "updating": "กำลังอัปเดต...",
     "creating": "กำลังสร้าง...",
     "addEvent": "เพิ่มกิจกรรม",
-    "eventCreated": "สร้าง {type} สำเร็จแล้ว",
+    "eventCreated": "{type} สร้างสำเร็จแล้ว",
     "eventUpdated": "อัปเดตกิจกรรมสำเร็จแล้ว",
     "errorRequired": "กรุณากรอกข้อมูลในช่องที่จำเป็นทั้งหมด",
     "errorSelectClass": "กรุณาเลือกชั้นเรียนสำหรับกิจกรรมชั้นเรียน",
@@ -202,16 +269,16 @@
     "addClassEvent": "เพิ่มกิจกรรมคลาส",
     "eventCreated": "สร้างกิจกรรมสำเร็จแล้ว",
     "eventUpdated": "อัปเดตกิจกรรมสำเร็จแล้ว",
-    "errorRequired": "กรุณากรอกข้อมูลในช่องที่จำเป็นทั้งหมด",
+    "errorRequired": "กรุณากรอกข้อมูลที่จำเป็นให้ครบถ้วน",
     "errorCreate": "ไม่สามารถสร้างกิจกรรมได้",
     "errorUpdate": "ไม่สามารถอัปเดตกิจกรรมได้"
   },
   "aiLab": {
-    "title": "สร้าง {ประเภท}",
+    "title": "สร้าง {type}",
     "aiPowered": "ขับเคลื่อนด้วย AI",
     "description": "ให้ข้อมูลพื้นฐานบางอย่างเพื่อช่วยให้ AI ของเราสร้างเนื้อหาที่ดีขึ้นสำหรับคุณ",
     "titleField": "ชื่อ *",
-    "titlePlaceholder": "ป้อนชื่อเรื่อง {type}",
+    "titlePlaceholder": "ป้อนชื่อ {type}",
     "subject": "เรื่อง *",
     "selectSubject": "เลือกหัวข้อ",
     "subjects": {
@@ -246,7 +313,7 @@
       "2hours": "2 ชั่วโมง"
     },
     "descriptionField": "คำอธิบาย",
-    "descriptionPlaceholder": "อธิบายว่า {type} นี้ควรครอบคลุมอะไรบ้าง...",
+    "descriptionPlaceholder": "อธิบายว่า {type} นี้ควรครอบคลุมถึงอะไร...",
     "requirements": "ข้อกำหนดพิเศษ",
     "requirementsPlaceholder": "มีข้อกำหนด วัตถุประสงค์การเรียนรู้ หรือข้อจำกัดที่เฉพาะเจาะจงใดๆ...",
     "cancel": "ยกเลิก",

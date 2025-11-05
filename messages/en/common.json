@@ -14,7 +14,8 @@
     "sort": "Sort",
     "viewAll": "View All",
     "noData": "No data available",
-    "export": "Export"
+    "export": "Export",
+    "openMenu": "Open menu"
   },
   "time": {
     "today": "Today",

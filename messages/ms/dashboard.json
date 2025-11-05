@@ -4,7 +4,7 @@
     "subtitle": "Inilah yang berlaku dengan kelas anda hari ini.",
     "stats": {
       "totalClasses": "Jumlah Kelas",
-      "teachingEnrolled": "{teaching} mengajar, {enrolled} didaftarkan",
+      "teachingEnrolled": "{teaching} mengajar, {enrolled} mendaftar",
       "dueToday": "Diperuntukkan Hari Ini",
       "dueTodayDesc": "Tugasan perlu dibayar hari ini",
       "upcoming": "Akan datang",
@@ -20,7 +20,7 @@
       "viewAgenda": "Lihat Agenda",
       "dueToday": "Diperuntukkan hari ini",
       "dueTomorrow": "Esok kena bayar",
-      "due": "Dua {tarikh}",
+      "due": "Dua {dates}",
       "teaching": "Mengajar",
       "viewAllAssignments": "Lihat Semua Tugasan"
     },

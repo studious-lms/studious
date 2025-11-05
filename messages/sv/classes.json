@@ -9,7 +9,7 @@
     "enrolled": "Registrerad",
     "noClassesFound": "Inga klasser hittades",
     "noTeachingClassesFound": "Inga undervisningskurser hittades som matchar \"{query}\"",
-    "noEnrolledClassesFound": "Inga inskrivna klasser hittades som matchar \"{query}\"",
+    "noEnrolledClassesFound": "Inga inskrivna kurser hittades som matchar \"{query}\"",
     "noClassesYet": "Inga lektioner ännu",
     "noClassesYetDesc": "Skapa din första kurs för att börja hantera uppgifter, betyg och elevinteraktioner.",
     "noEnrolledClasses": "Inga inskrivna klasser",

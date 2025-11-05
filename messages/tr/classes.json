@@ -8,7 +8,7 @@
     "teaching": "Öğretim",
     "enrolled": "Kayıtlı",
     "noClassesFound": "Sınıf bulunamadı",
-    "noTeachingClassesFound": "\"{query}\" ile eşleşen öğretim sınıfı bulunamadı",
+    "noTeachingClassesFound": "\"{query}\" ile eşleşen öğretim dersi bulunamadı",
     "noEnrolledClassesFound": "\"{query}\" ile eşleşen kayıtlı sınıf bulunamadı",
     "noClassesYet": "Henüz ders yok",
     "noClassesYetDesc": "Ödevleri, notları ve öğrenci etkileşimlerini yönetmeye başlamak için ilk sınıfınızı oluşturun.",

@@ -42,8 +42,8 @@
     "chats": {
       "title": "एआई लैब्स ({count})",
       "active": "सक्रिय",
-      "messageCount": "{गिनती} संदेश",
-      "createdBy": "{नाम} द्वारा निर्मित",
+      "messageCount": "{count} संदेश",
+      "createdBy": "{name} द्वारा निर्मित",
       "empty": {
         "title": "अभी तक कोई AI लैब नहीं",
         "description": "शैक्षिक सामग्री पर AI के साथ सहयोग शुरू करने के लिए अपनी पहली AI लैब बनाएं।"

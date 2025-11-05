@@ -6,7 +6,7 @@
     "attachFile": "Joindre un fichier",
     "post": "Poste",
     "posting": "Affectation...",
-    "noPosts": "Aucun article pour le moment",
-    "createFirstPost": "Créer le premier message"
+    "noPosts": "Aucun message pour l'instant",
+    "createFirstPost": "Créer un premier message"
   }
 }

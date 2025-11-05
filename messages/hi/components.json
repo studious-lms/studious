@@ -17,17 +17,17 @@
     "folderIdMissing": "फ़ोल्डर आईडी गुम है। कृपया फ़ोल्डर लोड होने तक प्रतीक्षा करें।",
     "preparing": "अपलोड की तैयारी हो रही है...",
     "gettingUrls": "अपलोड URL प्राप्त हो रहे हैं...",
-    "uploadingFile": "{name} अपलोड हो रहा है...",
-    "confirming": "{name} की पुष्टि की जा रही है...",
+    "uploadingFile": "अपलोड हो रहा है {name}...",
+    "confirming": "पुष्टि {name}...",
     "finalizing": "अंतिम रूप दिया जा रहा है...",
     "success": "फ़ाइलें सफलतापूर्वक अपलोड हो गईं!",
     "error": "फ़ाइलें अपलोड करने में विफल. कृपया पुनः प्रयास करें.",
     "errorFile": "{name} अपलोड करने में विफल",
-    "errorMessage": "अपलोड विफल: {संदेश}",
+    "errorMessage": "अपलोड विफल: {message}",
     "dropZone": "फ़ाइलें यहां डालें या ब्राउज़ करने के लिए क्लिक करें",
     "dropZoneHint": "छवियों, दस्तावेज़ों, वीडियो और अन्य के लिए समर्थन",
     "selectedFiles": "चयनित फ़ाइलें ({count})",
-    "filesUploaded": "अपलोड की गई {कुल} फ़ाइलों में से {अपलोड की गई}",
+    "filesUploaded": "{uploaded} में से {total} फ़ाइलें अपलोड की गईं",
     "uploadingTo": "अपलोड किया जा रहा है:",
     "homeDirectory": "होम निर्देशिका",
     "status": {
@@ -83,10 +83,10 @@
     "selectedFiles": "चयनित फ़ाइलें ({count})",
     "maxFiles": "अधिकतम {max} फ़ाइलें. स्वीकृत प्रकार: {types}",
     "allFiles": "सभी फाइलें",
-    "progressUploaded": "{प्रगति}% अपलोड",
+    "progressUploaded": "{progress}% अपलोड किया गया",
     "noFilesSelected": "कोई फ़ाइल चयनित नहीं",
     "maxFilesExceeded": "अधिकतम {max} फ़ाइलें अनुमत हैं",
-    "uploadFailed": "अपलोड विफल: {त्रुटि}",
+    "uploadFailed": "अपलोड विफल: {error}",
     "uploadFailedGeneric": "अपलोड विफल",
     "status": {
       "pending": "लंबित",
@@ -99,25 +99,92 @@
     "uploadPlural": "{count} फ़ाइलें अपलोड करें",
     "uploading": "अपलोड हो रहा है..."
   },
+  "notifications": {
+    "title": "सूचनाएं",
+    "subtitle": "अपनी कक्षाओं और असाइनमेंट के बारे में अपडेट रहें",
+    "filters": {
+      "label": "फ़िल्टर:",
+      "all": "सभी ({count})",
+      "unread": "अपठित ({count})",
+      "read": "पढ़ें ({count})"
+    },
+    "badge": {
+      "unread": "{count} नया"
+    },
+    "actions": {
+      "viewAll": "सभी सूचनाएं देखें",
+      "markAsRead": "पढ़े हुए का चिह्न"
+    },
+    "empty": {
+      "all": {
+        "title": "अभी तक कोई सूचना नहीं",
+        "description": "जब आपको सूचनाएं प्राप्त होंगी, तो वे यहां दिखाई देंगी."
+      }
+    }
+  },
   "chat": {
+    "landing": {
+      "pleaseSignIn": "कृपया जारी रखने के लिए साइन इन करें",
+      "signInRequired": "इस पृष्ठ तक पहुँचने के लिए साइन इन आवश्यक है",
+      "title": "बात करना",
+      "description": "चैटिंग शुरू करने के लिए साइडबार से कोई वार्तालाप चुनें."
+    },
+    "page": {
+      "header": {
+        "members": "सदस्यों",
+        "markMentionsRead": "मार्क ने पढ़ा उल्लेख किया"
+      },
+      "input": {
+        "placeholderPrefix": "संदेश"
+      },
+      "loading": "बातचीत लोड हो रही है..."
+    },
     "conversationList": {
-      "searchPlaceholder": "बातचीत ढूंढें या शुरू करें"
+      "title": "प्रत्यक्ष संदेश",
+      "searchPlaceholder": "बातचीत ढूंढें या शुरू करें",
+      "noConversations": "अभी तक कोई बातचीत नहीं",
+      "noConversationsDescription": "किसी के साथ चैट करना शुरू करें",
+      "noSearchResults": "कोई बातचीत नहीं मिली",
+      "noSearchResultsDescription": "विभिन्न खोज शब्द आज़माएँ",
+      "unnamedGroup": "अनाम समूह",
+      "unknownUser": "अज्ञात उपयोगकर्ता"
     },
     "messageList": {
       "noMessagesTitle": "अभी तक कोई संदेश नहीं",
       "noMessagesDescription": "यह आपकी बातचीत की शुरुआत है"
     },
+    "messageInput": {
+      "placeholder": "संदेश लिखें..."
+    },
     "messageEdit": {
-      "placeholder": "अपना संदेश संपादित करें..."
+      "placeholder": "अपना संदेश संपादित करें...",
+      "hint": "सहेजने के लिए Enter दबाएँ • रद्द करने के लिए Escape दबाएँ",
+      "save": "बचाना",
+      "saving": "बचत...",
+      "cancel": "रद्द करना"
+    },
+    "messageActions": {
+      "editMessage": "संदेश संपादित करें",
+      "deleteMessage": "संदेश को हटाएं",
+      "deleteConfirmTitle": "संदेश को हटाएं",
+      "deleteConfirmDescription": "क्या आप वाकई इस संदेश को हटाना चाहते हैं? यह कार्रवाई पूर्ववत नहीं की जा सकती।",
+      "cancel": "रद्द करना",
+      "delete": "मिटाना",
+      "deleting": "हटा रहा है..."
     },
     "createConversation": {
-      "title": "नई बातचीत",
+      "title": "एक बातचीत शुरू",
+      "description": "प्रत्यक्ष संदेश या समूह वार्तालाप बनाएँ",
       "direct": "सीधा संदेश",
       "group": "समूह बातचीत",
+      "dmLabel": "संदेश भेजने के लिए उपयोगकर्ता नाम दर्ज करें",
       "searchPlaceholder": "उपयोगकर्ता नाम दर्ज करें...",
-      "groupName": "समूह नाम",
+      "groupNameLabel": "समूह नाम",
       "groupNamePlaceholder": "समूह का नाम दर्ज करें...",
-      "addMembers": "सदस्य जोड़ें",
+      "addMembersLabel": "उपयोगकर्ता नाम से सदस्य जोड़ें",
+      "addButton": "जोड़ना",
+      "selectedUser": "चयनित उपयोगकर्ता:",
+      "selectedMembers": "चयनित सदस्य ({count})",
       "cancel": "रद्द करना",
       "create": "बनाएं",
       "creating": "बनाना..."
@@ -140,7 +207,7 @@
     "creating": "बनाना...",
     "updating": "अद्यतन हो रहा है...",
     "created": "अनुभाग \"{name}\" सफलतापूर्वक बनाया गया.",
-    "updated": "अनुभाग \"{name}\" सफलतापूर्वक अपडेट किया गया.",
+    "updated": "अनुभाग \"{name}\" सफलतापूर्वक अद्यतन किया गया.",
     "errorEmpty": "कृपया अनुभाग का नाम दर्ज करें.",
     "errorCreate": "अनुभाग बनाने में विफल",
     "errorUpdate": "अनुभाग अपडेट करने में विफल"
@@ -207,7 +274,7 @@
     "errorUpdate": "ईवेंट अपडेट करने में विफल"
   },
   "aiLab": {
-    "title": "{प्रकार} बनाएँ",
+    "title": "{type} बनाएँ",
     "aiPowered": "AI संचालित",
     "description": "हमारे AI को आपके लिए बेहतर सामग्री बनाने में सहायता करने के लिए कुछ बुनियादी जानकारी प्रदान करें।",
     "titleField": "शीर्षक *",
@@ -246,7 +313,7 @@
       "2hours": "2 घंटे"
     },
     "descriptionField": "विवरण",
-    "descriptionPlaceholder": "वर्णन करें कि इस {प्रकार} में क्या शामिल होना चाहिए...",
+    "descriptionPlaceholder": "वर्णन करें कि इस {type} में क्या शामिल होना चाहिए...",
     "requirements": "विशेष ज़रूरतें",
     "requirementsPlaceholder": "कोई विशिष्ट आवश्यकताएं, सीखने के उद्देश्य, या बाधाएं...",
     "cancel": "रद्द करना",

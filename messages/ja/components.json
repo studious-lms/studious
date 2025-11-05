@@ -3,7 +3,7 @@
     "editFolder": "フォルダを編集",
     "renameFile": "ファイル名を変更する",
     "name": "名前",
-    "placeholder": "{type} の名前を入力してください",
+    "placeholder": "{type}の名前を入力",
     "folderColor": "フォルダの色",
     "folderColorDescription": "このフォルダの色を選択してください",
     "cancel": "キャンセル",
@@ -17,17 +17,17 @@
     "folderIdMissing": "フォルダIDがありません。フォルダが読み込まれるまでお待ちください。",
     "preparing": "アップロードを準備しています...",
     "gettingUrls": "アップロード URL を取得しています...",
-    "uploadingFile": "{name} をアップロードしています...",
-    "confirming": "{name} を確認しています...",
+    "uploadingFile": "{name}をアップロードしています...",
+    "confirming": "{name}を確認しています...",
     "finalizing": "終了しています...",
     "success": "ファイルのアップロードに成功しました。",
     "error": "ファイルのアップロードに失敗しました。もう一度お試しください。",
-    "errorFile": "{name} をアップロードできませんでした",
+    "errorFile": "{name}のアップロードに失敗しました",
     "errorMessage": "アップロードに失敗しました: {message}",
     "dropZone": "ここにファイルをドロップするか、クリックして参照してください",
     "dropZoneHint": "画像、ドキュメント、ビデオなどのサポート",
-    "selectedFiles": "選択したファイル ({count})",
-    "filesUploaded": "アップロードされたファイル数: {total} 件中 {uploaded} 件",
+    "selectedFiles": "選択されたファイル ({count})",
+    "filesUploaded": "{uploaded} / {total} ファイルがアップロードされました",
     "uploadingTo": "アップロード先:",
     "homeDirectory": "ホームディレクトリ",
     "status": {
@@ -80,12 +80,12 @@
     "title": "ファイルをアップロード",
     "description": "アップロードするファイルを選択",
     "selectFiles": "ファイルを選択",
-    "selectedFiles": "選択したファイル ({count})",
-    "maxFiles": "最大{max}個のファイル。許容されるタイプ: {types}",
+    "selectedFiles": "選択されたファイル ({count})",
+    "maxFiles": "最大{max}ファイル。許容されるファイルタイプ: {types}",
     "allFiles": "すべてのファイル",
-    "progressUploaded": "{progress}% アップロード済み",
+    "progressUploaded": "{progress}%アップロード済み",
     "noFilesSelected": "ファイルが選択されていません",
-    "maxFilesExceeded": "最大 {max} 個のファイルが許可されます",
+    "maxFilesExceeded": "最大{max}ファイルまで許可されます",
     "uploadFailed": "アップロードに失敗しました: {error}",
     "uploadFailedGeneric": "アップロードに失敗しました",
     "status": {
@@ -95,29 +95,96 @@
       "failed": "失敗した"
     },
     "cancel": "キャンセル",
-    "upload": "{count} 個のファイルをアップロード",
+    "upload": "{count} ファイルをアップロード",
     "uploadPlural": "{count} 個のファイルをアップロード",
     "uploading": "アップロード中..."
   },
+  "notifications": {
+    "title": "通知",
+    "subtitle": "授業や課題の最新情報を把握しましょう",
+    "filters": {
+      "label": "フィルター：",
+      "all": "すべて ({count})",
+      "unread": "未読 ({count})",
+      "read": "読む ({count})"
+    },
+    "badge": {
+      "unread": "{count} 新しい"
+    },
+    "actions": {
+      "viewAll": "すべての通知を表示",
+      "markAsRead": "既読にする"
+    },
+    "empty": {
+      "all": {
+        "title": "まだ通知はありません",
+        "description": "通知を受信すると、ここに表示されます。"
+      }
+    }
+  },
   "chat": {
+    "landing": {
+      "pleaseSignIn": "続行するにはサインインしてください",
+      "signInRequired": "このページにアクセスするにはサインインが必要です",
+      "title": "チャット",
+      "description": "サイドバーから会話を選択してチャットを開始します。"
+    },
+    "page": {
+      "header": {
+        "members": "メンバー",
+        "markMentionsRead": "既読のマーク"
+      },
+      "input": {
+        "placeholderPrefix": "メッセージ"
+      },
+      "loading": "会話を読み込んでいます..."
+    },
     "conversationList": {
-      "searchPlaceholder": "会話を見つけるか始める"
+      "title": "ダイレクトメッセージ",
+      "searchPlaceholder": "会話を見つけるか始める",
+      "noConversations": "まだ会話はありません",
+      "noConversationsDescription": "誰かとチャットを始める",
+      "noSearchResults": "会話が見つかりません",
+      "noSearchResultsDescription": "別の検索語を試してください",
+      "unnamedGroup": "名前のないグループ",
+      "unknownUser": "不明なユーザー"
     },
     "messageList": {
       "noMessagesTitle": "まだメッセージはありません",
       "noMessagesDescription": "これが会話の始まりです"
     },
+    "messageInput": {
+      "placeholder": "メッセージを入力してください..."
+    },
     "messageEdit": {
-      "placeholder": "メッセージを編集します..."
+      "placeholder": "メッセージを編集します...",
+      "hint": "Enterキーを押して保存します。Escキーを押してキャンセルします。",
+      "save": "保存",
+      "saving": "保存中...",
+      "cancel": "キャンセル"
+    },
+    "messageActions": {
+      "editMessage": "メッセージを編集",
+      "deleteMessage": "メッセージを削除",
+      "deleteConfirmTitle": "メッセージを削除",
+      "deleteConfirmDescription": "このメッセージを削除してもよろしいですか? この操作は元に戻せません。",
+      "cancel": "キャンセル",
+      "delete": "消去",
+      "deleting": "削除しています..."
     },
     "createConversation": {
-      "title": "新しい会話",
+      "title": "会話を始める",
+      "description": "ダイレクトメッセージまたはグループ会話を作成する",
       "direct": "ダイレクトメッセージ",
       "group": "グループチャット",
+      "dmLabel": "メッセージを送信するにはユーザー名を入力してください",
       "searchPlaceholder": "ユーザー名を入力してください...",
-      "groupName": "グループ名",
+      "groupNameLabel": "グループ名",
       "groupNamePlaceholder": "グループ名を入力してください...",
-      "addMembers": "メンバーを追加",
+      "addMembersLabel": "ユーザー名でメンバーを追加する",
+      "addButton": "追加",
+      "selectedUser": "選択されたユーザー:",
+      "selectedMembers": "選ばれたメンバー ({count})",
       "cancel": "キャンセル",
       "create": "作成する",
       "creating": "作成..."
@@ -129,7 +196,7 @@
   "createSection": {
     "buttonLabel": "新しいセクション",
     "titleCreate": "新しいセクションを作成",
-    "titleEdit": "セクションを編集",
+    "titleEdit": "セクション編集",
     "name": "セクション名 *",
     "placeholder": "例：第1学期、ユニット2、第5章",
     "helper": "セクションは、課題をグループまたは期間ごとに整理するのに役立ちます。",
@@ -139,8 +206,8 @@
     "update": "更新セクション",
     "creating": "作成...",
     "updating": "更新中...",
-    "created": "セクション「{name}」が正常に作成されました。",
-    "updated": "セクション「{name}」が正常に更新されました。",
+    "created": "セクション \"{name}\" が正常に作成されました。",
+    "updated": "セクション \"{name}\" が正常に更新されました。",
     "errorEmpty": "セクション名を入力してください。",
     "errorCreate": "セクションの作成に失敗しました",
     "errorUpdate": "セクションの更新に失敗しました"
@@ -207,11 +274,11 @@
     "errorUpdate": "イベントの更新に失敗しました"
   },
   "aiLab": {
-    "title": "{type} を作成する",
+    "title": "{type}を作成",
     "aiPowered": "AI搭載",
     "description": "AI がより良いコンテンツを作成できるよう、いくつかの基本情報を提供してください。",
     "titleField": "タイトル *",
-    "titlePlaceholder": "{type} のタイトルを入力してください",
+    "titlePlaceholder": "{type}のタイトルを入力",
     "subject": "主題 *",
     "selectSubject": "件名を選択",
     "subjects": {
@@ -246,7 +313,7 @@
       "2hours": "2時間"
     },
     "descriptionField": "説明",
-    "descriptionPlaceholder": "この {type} でカバーする内容を説明してください...",
+    "descriptionPlaceholder": "この{type}が何をカバーするのか説明してください...",
     "requirements": "特別な要件",
     "requirementsPlaceholder": "具体的な要件、学習目標、制約など...",
     "cancel": "キャンセル",

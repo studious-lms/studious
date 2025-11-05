@@ -28,8 +28,8 @@
     },
     "assignments": {
       "title": "การมอบหมายหลักสูตร",
-      "gradedCount": "งานที่ได้รับเกรด {graded}",
-      "totalPoints": "คะแนนรวม {total} คะแนน",
+      "gradedCount": "{graded} งานที่ให้คะแนน",
+      "totalPoints": "คะแนนรวม {total}",
       "empty": {
         "title": "ยังไม่มีงานมอบหมาย",
         "description": "งานที่มอบหมายจะปรากฏที่นี่หลังจากสร้างแล้ว"

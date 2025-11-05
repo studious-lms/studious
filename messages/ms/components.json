@@ -3,7 +3,7 @@
     "editFolder": "Edit folder",
     "renameFile": "Namakan semula fail",
     "name": "Nama",
-    "placeholder": "Masukkan nama {type}.",
+    "placeholder": "Masukkan {type} nama",
     "folderColor": "Warna Folder",
     "folderColorDescription": "Pilih warna untuk folder ini",
     "cancel": "Batal",
@@ -18,7 +18,7 @@
     "preparing": "Menyediakan muat naik...",
     "gettingUrls": "Mendapatkan URL muat naik...",
     "uploadingFile": "Memuat naik {name}...",
-    "confirming": "Mengesahkan {nama}...",
+    "confirming": "Mengesahkan {name}...",
     "finalizing": "Memuktamadkan...",
     "success": "Fail berjaya dimuat naik!",
     "error": "Gagal memuat naik fail. Sila cuba lagi.",
@@ -26,8 +26,8 @@
     "errorMessage": "Muat naik gagal: {message}",
     "dropZone": "Lepaskan fail di sini atau klik untuk menyemak imbas",
     "dropZoneHint": "Sokongan untuk imej, dokumen, video dan banyak lagi",
-    "selectedFiles": "Fail yang Dipilih ({count})",
-    "filesUploaded": "{uploaded} daripada {total} fail yang dimuat naik",
+    "selectedFiles": "Fail Terpilih ({count})",
+    "filesUploaded": "{uploaded} daripada {total} fail dimuat naik",
     "uploadingTo": "Memuat naik ke:",
     "homeDirectory": "Direktori Laman Utama",
     "status": {
@@ -80,8 +80,8 @@
     "title": "Muat Naik Fail",
     "description": "Pilih fail untuk dimuat naik",
     "selectFiles": "Pilih Fail",
-    "selectedFiles": "Fail yang Dipilih ({count})",
-    "maxFiles": "Maksimum {maks} fail. Jenis yang diterima: {types}",
+    "selectedFiles": "Fail Terpilih ({count})",
+    "maxFiles": "Maksimum {max} fail. Jenis yang diterima: {types}",
     "allFiles": "Semua fail",
     "progressUploaded": "{progress}% dimuat naik",
     "noFilesSelected": "Tiada fail dipilih",
@@ -99,25 +99,92 @@
     "uploadPlural": "Muat naik {count} fail",
     "uploading": "Memuat naik..."
   },
+  "notifications": {
+    "title": "Pemberitahuan",
+    "subtitle": "Ikuti perkembangan kelas dan tugasan anda",
+    "filters": {
+      "label": "Penapis:",
+      "all": "Semua ({count})",
+      "unread": "Belum dibaca ({count})",
+      "read": "Baca ({count})"
+    },
+    "badge": {
+      "unread": "{count} baharu"
+    },
+    "actions": {
+      "viewAll": "Lihat Semua Pemberitahuan",
+      "markAsRead": "Tandai sebagai Dibaca"
+    },
+    "empty": {
+      "all": {
+        "title": "Tiada pemberitahuan lagi",
+        "description": "Apabila anda menerima pemberitahuan, ia akan dipaparkan di sini."
+      }
+    }
+  },
   "chat": {
+    "landing": {
+      "pleaseSignIn": "Sila log masuk untuk meneruskan",
+      "signInRequired": "Log masuk diperlukan untuk mengakses halaman ini",
+      "title": "Sembang",
+      "description": "Pilih perbualan dari bar sisi untuk mula bersembang."
+    },
+    "page": {
+      "header": {
+        "members": "ahli",
+        "markMentionsRead": "Mark menyebut baca"
+      },
+      "input": {
+        "placeholderPrefix": "Mesej"
+      },
+      "loading": "Memuatkan perbualan..."
+    },
     "conversationList": {
-      "searchPlaceholder": "Cari atau mulakan perbualan"
+      "title": "Mesej Langsung",
+      "searchPlaceholder": "Cari atau mulakan perbualan",
+      "noConversations": "Tiada perbualan lagi",
+      "noConversationsDescription": "Mula bersembang dengan seseorang",
+      "noSearchResults": "Tiada perbualan ditemui",
+      "noSearchResultsDescription": "Cuba istilah carian yang berbeza",
+      "unnamedGroup": "Kumpulan Tanpa Nama",
+      "unknownUser": "Pengguna Tidak Diketahui"
     },
     "messageList": {
       "noMessagesTitle": "Tiada mesej lagi",
       "noMessagesDescription": "Ini adalah permulaan perbualan anda"
     },
+    "messageInput": {
+      "placeholder": "Taip mesej..."
+    },
     "messageEdit": {
-      "placeholder": "Edit mesej anda..."
+      "placeholder": "Edit mesej anda...",
+      "hint": "Tekan Enter untuk menyimpan • Escape untuk membatalkan",
+      "save": "Jimat",
+      "saving": "Menyimpan...",
+      "cancel": "Batal"
+    },
+    "messageActions": {
+      "editMessage": "Edit mesej",
+      "deleteMessage": "Padam mesej",
+      "deleteConfirmTitle": "Padam Mesej",
+      "deleteConfirmDescription": "Adakah anda pasti mahu memadamkan mesej ini? Tindakan ini tidak boleh dibuat asal.",
+      "cancel": "Batal",
+      "delete": "Padam",
+      "deleting": "Memadamkan..."
     },
     "createConversation": {
-      "title": "Perbualan Baru",
+      "title": "Mulakan perbualan",
+      "description": "Buat mesej langsung atau perbualan kumpulan",
       "direct": "Mesej Langsung",
       "group": "Sembang Kumpulan",
+      "dmLabel": "Masukkan nama pengguna untuk mesej",
       "searchPlaceholder": "Masukkan nama pengguna...",
-      "groupName": "Nama Kumpulan",
+      "groupNameLabel": "Nama kumpulan",
       "groupNamePlaceholder": "Masukkan nama kumpulan...",
-      "addMembers": "Tambah Ahli",
+      "addMembersLabel": "Tambah ahli mengikut nama pengguna",
+      "addButton": "Tambah",
+      "selectedUser": "Pengguna terpilih:",
+      "selectedMembers": "Ahli terpilih ({count})",
       "cancel": "Batal",
       "create": "Buat",
       "creating": "Mencipta..."
@@ -211,7 +278,7 @@
     "aiPowered": "Dikuasakan AI",
     "description": "Sediakan beberapa maklumat asas untuk membantu AI kami mencipta kandungan yang lebih baik untuk anda.",
     "titleField": "Tajuk *",
-    "titlePlaceholder": "Masukkan tajuk {type}.",
+    "titlePlaceholder": "Masukkan {type} tajuk",
     "subject": "Subjek *",
     "selectSubject": "Pilih subjek",
     "subjects": {
@@ -246,7 +313,7 @@
       "2hours": "2 jam"
     },
     "descriptionField": "Penerangan",
-    "descriptionPlaceholder": "Terangkan perkara yang harus dilindungi oleh {jenis} ini...",
+    "descriptionPlaceholder": "Terangkan perkara yang {type} ini perlu dilindungi...",
     "requirements": "Keperluan Khas",
     "requirementsPlaceholder": "Sebarang keperluan khusus, objektif pembelajaran atau kekangan...",
     "cancel": "Batal",

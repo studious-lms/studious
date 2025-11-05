@@ -1,72 +1,72 @@
 {
   "aiLabs": {
     "title": "人工智能实验室",
-    "subtitle": "在人工智能的帮助下创建教育内容",
+    "subtitle": "利用人工智能辅助创建教育内容",
     "aiPowered": "人工智能驱动",
     "createNew": "创建新内容",
     "aiGenerated": "人工智能生成",
-    "deleteConfirm": "您确定要删除此 AI 实验室吗？此操作无法撤消。",
+    "deleteConfirm": "您确定要删除此人工智能实验室吗？此操作无法撤销。",
     "widgets": {
       "assignment": {
         "title": "任务",
-        "description": "在人工智能的帮助下创建交互式作业"
+        "description": "借助人工智能创建交互式作业"
       },
       "quiz": {
         "title": "测验",
-        "description": "生成各种问题类型的测验"
+        "description": "生成包含各种题型的测验"
       },
       "worksheet": {
         "title": "工作表",
-        "description": "建立练习工作表和练习"
+        "description": "制作练习题和练习册"
       },
       "lessonPlan": {
         "title": "课程计划",
         "description": "设计全面的课程计划"
       },
       "rubric": {
-        "title": "评分细则",
-        "description": "创建详细的评分标准"
+        "title": "评分标准",
+        "description": "制定详细的评分标准"
       }
     },
     "tabs": {
-      "drafts": "草案实验室",
-      "chats": "人工智能猫"
+      "drafts": "Draft Labs",
+      "chats": "AI猫"
     },
     "drafts": {
-      "title": "草稿实验室（{count}）",
+      "title": "Draft Labs ({count})",
       "empty": {
-        "title": "尚无实验室草稿",
-        "description": "使用上面的小部件创建您的第一个 AI 生成的教育内容。"
+        "title": "实验室草案尚未出炉",
+        "description": "使用上面的组件创建您的第一个 AI 生成的教育内容。"
       }
     },
     "chats": {
-      "title": "人工智能实验室 ({count})",
+      "title": "AI实验室（{count}）",
       "active": "积极的",
       "messageCount": "{count} 条消息",
       "createdBy": "由 {name} 创建",
       "empty": {
-        "title": "尚无人工智能实验室",
-        "description": "创建您的第一个 AI 实验室，开始与 AI 合作开展教育内容。"
+        "title": "目前还没有人工智能实验室",
+        "description": "创建你的第一个人工智能实验室，开始与人工智能合作开发教育内容。"
       }
     },
     "toast": {
-      "labCreated": "AI Lab创建成功！",
-      "labCreateFailed": "无法创建 AI 实验室：",
-      "labDeleted": "AI Lab 删除成功！",
-      "labDeleteFailed": "无法删除 AI Lab："
+      "labCreated": "AI实验室创建成功！",
+      "labCreateFailed": "创建人工智能实验室失败：",
+      "labDeleted": "AI实验室已成功删除！",
+      "labDeleteFailed": "删除 AI Lab 失败："
     }
   },
   "aiLabChat": {
     "backButton": "返回人工智能实验室",
     "loading": "加载中...",
-    "aiThinking": "人工智能思维...",
+    "aiThinking": "人工智能思维……",
     "getAIHelp": "获取人工智能帮助",
     "notFound": {
-      "title": "未找到实验室聊天",
-      "description": "该 AI 实验室可能已被删除或您无权访问。"
+      "title": "实验室聊天记录未找到",
+      "description": "这个人工智能实验室可能已被删除，或者您没有访问权限。"
     },
     "toast": {
-      "messageFailed": "发送消息失败："
+      "messageFailed": "消息发送失败："
     }
   }
 }

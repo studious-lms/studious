@@ -1,21 +1,21 @@
 {
   "classes": {
     "title": "课程",
-    "description": "管理您的教学和注册课程",
-    "joinClass": "加入班级",
+    "description": "管理您的教学和已报名课程",
+    "joinClass": "加入课程",
     "createClass": "创建类",
-    "searchPlaceholder": "搜索课程...",
+    "searchPlaceholder": "搜索类别...",
     "teaching": "教学",
     "enrolled": "已注册",
-    "noClassesFound": "未找到任何课程",
-    "noTeachingClassesFound": "未找到符合“{query}”的教学课程",
-    "noEnrolledClassesFound": "未找到符合“{query}”的注册课程",
-    "noClassesYet": "还没有课程",
-    "noClassesYetDesc": "创建您的第一堂课来开始管理作业、成绩和学生互动。",
-    "noEnrolledClasses": "暂无注册课程",
+    "noClassesFound": "未找到任何类",
+    "noTeachingClassesFound": "未找到与“[0]]”匹配的教学课程",
+    "noEnrolledClassesFound": "未找到与“[0]]”匹配的已注册课程",
+    "noClassesYet": "目前还没有课程",
+    "noClassesYetDesc": "创建您的第一个班级，开始管理作业、成绩和学生互动。",
+    "noEnrolledClasses": "没有报名课程",
     "noEnrolledClassesDesc": "使用老师提供的邀请码或链接加入课程。",
-    "classDeleted": "班级删除成功",
-    "classDeleteFailed": "删除课程失败",
-    "failedToLoad": "无法加载类"
+    "classDeleted": "已成功删除类",
+    "classDeleteFailed": "删除类失败",
+    "failedToLoad": "类加载失败"
   }
 }

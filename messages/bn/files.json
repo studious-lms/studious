@@ -37,7 +37,7 @@
     "search": {
       "placeholder": "ফাইলগুলিতে অনুসন্ধান করুন"
     },
-    "selected": "{গণনা}টি নির্বাচিত হয়েছে",
+    "selected": "{count} নির্বাচিত",
     "filters": {
       "fileType": "ফাইলের ধরণ",
       "documents": "কাগজপত্র",
@@ -78,7 +78,7 @@
     },
     "search": {
       "placeholder": "ফোল্ডারে অনুসন্ধান করুন",
-      "selected": "{গণনা}টি নির্বাচিত হয়েছে"
+      "selected": "{count} নির্বাচিত"
     },
     "filters": {
       "label": "ফিল্টার",

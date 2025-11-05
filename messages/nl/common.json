@@ -181,7 +181,7 @@
         "button": "Neem contact op met Verkoop"
       },
       "mostPopular": "Meest populair",
-      "earlyBird": "🎉 Vroege gebruikers ontvangen <strong>3 maanden gratis</strong> op jaarabonnementen + speciale onboarding-ondersteuning"
+      "earlyBird": "🎉 Early adopters ontvangen 2 maanden gratis op jaarabonnementen + speciale onboarding-ondersteuning"
     },
     "schoolProgram": {
       "badge": "Maatschappelijke impact",
@@ -244,7 +244,7 @@
       "website": "Website",
       "status": "Status",
       "currentStatus": "Huidige status",
-      "launchDate": "Lanceerdatum",
+      "launchDate": "Lanceringsdatum",
       "currentPhase": "Huidige fase",
       "targetMarkets": "Doelmarkten",
       "teamSize": "Teamgrootte",
@@ -338,7 +338,7 @@
     },
     "contact": {
       "title": "Heeft u vragen?",
-      "subtitle": "Ons team staat voor u klaar om u te helpen bij het aanvraagproces",
+      "subtitle": "Ons team staat klaar om u te helpen tijdens het aanvraagproces",
       "button": "Stuur ons een e-mail: impact@studious.sh"
     }
   },
@@ -347,7 +347,7 @@
       "submitted": "Aanvraag succesvol ingediend!"
     },
     "errors": {
-      "submitFailed": "Aanvraag indienen mislukt: {bericht}"
+      "submitFailed": "Aanvraag kon niet worden ingediend: {message}"
     },
     "success": {
       "title": "Aanvraag ingediend!",
@@ -495,7 +495,7 @@
     "createFirstPost": "Eerste bericht maken",
     "grades": {
       "title": "Cijfers",
-      "subtitle": "Bekijk en beheer de cijfers van studenten",
+      "subtitle": "Bekijk en beheer studentencijfers",
       "columns": {
         "assignment": "Opdracht",
         "maxPoints": "Maximale punten",
@@ -546,7 +546,7 @@
         "searchPlaceholder": "Zoek studenten..."
       },
       "gradeBoundaries": {
-        "title": "Klassegrenzen",
+        "title": "Graadgrenzen",
         "untitled": "Ongetitelde beoordelingsgrens",
         "empty": {
           "title": "Er zijn geen cijfergrenzen gemaakt",
@@ -626,7 +626,7 @@
       "teachers": {
         "empty": {
           "title": "Geen leraren gevonden",
-          "matchNone": "Geen docenten gevonden die overeenkomen met \"{query}\"",
+          "matchNone": "Er zijn geen docenten die overeenkomen met \"{query}\"",
           "noTeachers": "Er zijn geen extra docenten toegevoegd"
         }
       },
@@ -800,8 +800,8 @@
       },
       "assignments": {
         "title": "Cursusopdrachten",
-        "gradedCount": "{gegradeerd} van {totaal} gegradeerd",
-        "totalPoints": "{totaal} totale punten",
+        "gradedCount": "{graded} van {total} beoordeeld",
+        "totalPoints": "{total} totaal aantal punten",
         "empty": {
           "title": "Nog geen opdrachten",
           "description": "Zodra u opdrachten hebt gemaakt, worden deze hier weergegeven."
@@ -960,7 +960,7 @@
       },
       "success": {
         "title": "Je staat op de lijst!",
-        "description": "Zodra we klaar voor u zijn, sturen we u een e-mail op {email}."
+        "description": "Zodra we klaar voor u zijn, sturen we u een e-mail op {email}"
       },
       "toasts": {
         "success": "Met succes toegevoegd aan de wachtlijst!"
@@ -1125,7 +1125,7 @@
         "uploadButton": "Bestanden uploaden",
         "dropZone": "Zet bestanden hier neer of klik om te uploaden",
         "dropZoneHint": "Ondersteunt alle bestandstypen • Maximaal 50 MB per bestand",
-        "filesUploaded": "{geüpload} van {totaal} bestanden geüpload"
+        "filesUploaded": "{uploaded} van {total} bestanden geüpload"
       },
       "status": {
         "creating": "Opdracht maken...",
@@ -1136,7 +1136,7 @@
         "finalizing": "Opdracht afronden...",
         "assigning": "Toewijzen aan studenten...",
         "almostDone": "Bijna klaar...",
-        "uploadingFile": "{name} uploaden...",
+        "uploadingFile": "Uploaden {name}...",
         "creatingProgress": "Opdracht maken",
         "draftStatus": "Wordt opgeslagen als concept",
         "publishedStatus": "Wordt gepubliceerd voor studenten"
@@ -1171,7 +1171,7 @@
       "placeholders": {
         "title": "bijv. labrapport inleveren op vrijdag",
         "content": "Schrijf hier de inhoud van uw aankondiging...",
-        "publishDate": "Onmiddellijk publiceren indien leeg"
+        "publishDate": "Direct publiceren indien leeg"
       },
       "priority": {
         "low": "Laag",

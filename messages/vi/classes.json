@@ -9,7 +9,7 @@
     "enrolled": "Đã đăng ký",
     "noClassesFound": "Không tìm thấy lớp học nào",
     "noTeachingClassesFound": "Không tìm thấy lớp học nào khớp với \"{query}\"",
-    "noEnrolledClassesFound": "Không tìm thấy lớp học nào đã đăng ký khớp với \"{query}\"",
+    "noEnrolledClassesFound": "Không tìm thấy lớp học nào được ghi danh khớp với \"{query}\"",
     "noClassesYet": "Chưa có lớp học nào",
     "noClassesYetDesc": "Tạo lớp học đầu tiên của bạn để bắt đầu quản lý bài tập, điểm số và tương tác với học sinh.",
     "noEnrolledClasses": "Không có lớp học nào được ghi danh",

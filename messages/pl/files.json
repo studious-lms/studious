@@ -60,7 +60,7 @@
       "title": "Ten folder jest pusty",
       "description": "Prześlij pliki lub utwórz foldery, aby rozpocząć porządkowanie materiałów lekcyjnych.",
       "searchTitle": "Nie znaleziono plików",
-      "searchDescription": "Brak plików pasujących do zapytania „{query}”. Spróbuj użyć innego terminu wyszukiwania."
+      "searchDescription": "Brak plików pasujących do „{query}”. Spróbuj użyć innego terminu wyszukiwania."
     }
   },
   "folderView": {
@@ -102,7 +102,7 @@
     },
     "empty": {
       "noFilesFound": "Nie znaleziono plików",
-      "noFilesFoundDescription": "Brak plików pasujących do zapytania „{query}”. Spróbuj użyć innego terminu wyszukiwania.",
+      "noFilesFoundDescription": "Brak plików pasujących do „{query}”. Spróbuj użyć innego terminu wyszukiwania.",
       "folderEmpty": "Ten folder jest pusty",
       "folderEmptyDescription": "Prześlij pliki lub utwórz foldery, aby uporządkować swoje materiały."
     },

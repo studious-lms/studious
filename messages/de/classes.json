@@ -1,21 +1,21 @@
 {
   "classes": {
     "title": "Klassen",
-    "description": "Verwalten Sie Ihren Unterricht und die belegten Kurse",
-    "joinClass": "Klasse beitreten",
+    "description": "Verwalten Sie Ihren Unterricht und Ihre eingeschriebenen Kurse",
+    "joinClass": "Treten Sie der Klasse bei",
     "createClass": "Klasse erstellen",
-    "searchPlaceholder": "Kurse suchen...",
+    "searchPlaceholder": "Klassen suchen...",
     "teaching": "Lehre",
     "enrolled": "Eingeschrieben",
-    "noClassesFound": "Keine Kurse gefunden",
-    "noTeachingClassesFound": "Es wurden keine Lehrveranstaltungen gefunden, die mit \"{query}\" übereinstimmen.",
-    "noEnrolledClassesFound": "Keine angemeldeten Kurse gefunden, die mit \"{query}\" übereinstimmen",
+    "noClassesFound": "Keine Klassen gefunden",
+    "noTeachingClassesFound": "Es wurden keine Unterrichtsklassen gefunden, die dem Wert \"{query}\" entsprechen.",
+    "noEnrolledClassesFound": "Es wurden keine belegten Kurse gefunden, die dem Wert \"{query}\" entsprechen.",
     "noClassesYet": "Noch keine Kurse",
-    "noClassesYetDesc": "Erstellen Sie Ihre erste Klasse, um mit der Verwaltung von Aufgaben, Noten und Schülerinteraktionen zu beginnen.",
-    "noEnrolledClasses": "Keine belegten Kurse",
-    "noEnrolledClassesDesc": "Nehmen Sie mit einem Einladungscode oder Link, den Sie von Ihrem Lehrer erhalten haben, an einem Kurs teil.",
+    "noClassesYetDesc": "Erstellen Sie Ihre erste Klasse, um Aufgaben, Noten und die Interaktion der Schüler zu verwalten.",
+    "noEnrolledClasses": "Keine eingeschriebenen Kurse",
+    "noEnrolledClassesDesc": "Nehmen Sie über einen Einladungscode oder Link, den Ihr Lehrer Ihnen zur Verfügung gestellt hat, an einem Kurs teil.",
     "classDeleted": "Klasse erfolgreich gelöscht",
     "classDeleteFailed": "Klasse konnte nicht gelöscht werden",
-    "failedToLoad": "Fehler beim Laden der Klassen"
+    "failedToLoad": "Klassen konnten nicht geladen werden"
   }
 }

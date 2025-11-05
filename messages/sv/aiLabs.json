@@ -43,7 +43,7 @@
       "title": "AI-labb ({count})",
       "active": "Aktiv",
       "messageCount": "{count} meddelanden",
-      "createdBy": "Skapad av {namn}",
+      "createdBy": "Skapad av {name}",
       "empty": {
         "title": "Inga AI-labb ännu",
         "description": "Skapa ditt första AI-labb för att börja samarbeta med AI kring utbildningsinnehåll."

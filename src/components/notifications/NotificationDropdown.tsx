@@ -22,6 +22,8 @@ import { trpc, type RouterOutputs } from "@/lib/trpc";
 import { toast } from "sonner";
 import { format, formatDistanceToNow } from "date-fns";
 import { cn } from "@/lib/utils";
+import { EmptyState } from "../ui/empty-state";
+import { useTranslations } from "next-intl";
 
 type Notification = RouterOutputs['notification']['list'][number];
 
@@ -34,7 +36,7 @@ interface NotificationDropdownProps {
 export function NotificationDropdown({ notifications, isLoading, onClose }: NotificationDropdownProps) {
   const router = useRouter();
   const [markingAsRead, setMarkingAsRead] = useState<string | null>(null);
-
+  const t = useTranslations('notifications');
   // Mark as read mutation
   const markAsReadMutation = trpc.notification.markAsRead.useMutation({
     onSuccess: () => {
@@ -94,10 +96,10 @@ export function NotificationDropdown({ notifications, isLoading, onClose }: Noti
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b">
         <div className="flex items-center space-x-2">
-          <h3 className="font-semibold">Notifications</h3>
+          <h3 className="font-semibold">{t('title')}</h3>
           {unreadNotifications.length > 0 && (
             <Badge variant="secondary" className="text-xs">
-              {unreadNotifications.length} new
+              {t('badge.unread', { count: unreadNotifications.length })}
             </Badge>
           )}
         </div>
@@ -106,9 +108,12 @@ export function NotificationDropdown({ notifications, isLoading, onClose }: Noti
       {/* Notifications List */}
       <ScrollArea className="flex-1">
         {notifications.length === 0 ? (
-          <div className="p-8 text-center">
-            <Bell className="h-8 w-8 text-muted-foreground mx-auto mb-2" />
-            <p className="text-sm text-muted-foreground">No notifications yet</p>
+          <div className="p-3">
+                      <EmptyState
+              icon={Bell}
+              title={t('empty.all.title')}
+              description={t('empty.all.description')}
+            />
           </div>
         ) : (
           <div className="divide-y">
@@ -153,7 +158,7 @@ export function NotificationDropdown({ notifications, isLoading, onClose }: Noti
             }}
           >
             <ExternalLink className="h-3 w-3 mr-2" />
-            View All Notifications
+            {t('actions.viewAll')}
           </Button>
         </div>
       )}

@@ -43,7 +43,7 @@
     "teachers": {
       "empty": {
         "title": "Nu s-au găsit profesori",
-        "matchNone": "Niciun profesor nu corespunde cu „{query}”",
+        "matchNone": "Niciun profesor nu se potrivește cu „{query}”",
         "noTeachers": "Nu au fost adăugați profesori suplimentari"
       }
     },

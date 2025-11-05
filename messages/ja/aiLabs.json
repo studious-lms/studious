@@ -40,10 +40,10 @@
       }
     },
     "chats": {
-      "title": "AIラボ（{count}）",
+      "title": "AIラボ ({count})",
       "active": "アクティブ",
       "messageCount": "{count} 件のメッセージ",
-      "createdBy": "{name} によって作成されました",
+      "createdBy": "{name}によって作成されました",
       "empty": {
         "title": "AIラボはまだない",
         "description": "最初の AI ラボを作成して、教育コンテンツで AI と連携し始めましょう。"

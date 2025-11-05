@@ -156,7 +156,12 @@ export function FloatingThemeToggle() {
                   >
                     <Globe className="h-4 w-4 mr-3" />
                     <div className="flex-1 text-left">
-                      <div className="font-medium text-sm">Language</div>
+                      <div className="font-medium text-sm flex items-center gap-2">
+                        Language
+                        <span className="px-1.5 py-0.5 text-xs bg-primary/10 text-primary rounded-md font-medium">
+                          BETA
+                        </span>
+                      </div>
                       <div className="text-xs text-muted-foreground flex items-center gap-2">
                         <span>{currentLang.flag}</span>
                         {currentLang.name}

@@ -130,12 +130,35 @@ async function translateWithGoogle(
     const translate = new Translate({ key: apiKey });
 
     // Step 1: Collect all strings to translate with their paths
-    const stringsToTranslate: { path: string[]; value: string }[] = [];
+    const stringsToTranslate: { path: string[]; value: string; placeholders: string[] }[] = [];
     
     function collectStrings(obj: any, currentPath: string[] = []) {
       for (const [key, value] of Object.entries(obj)) {
         if (typeof value === 'string') {
-          stringsToTranslate.push({ path: [...currentPath, key], value });
+          // Extract placeholders and store them in order
+          const placeholders: string[] = [];
+          let processedValue = value;
+          
+          // Find all placeholders like {variable}, {count}, etc.
+          const placeholderRegex = /\{[^}]+\}/g;
+          const matches = value.match(placeholderRegex);
+          
+          if (matches) {
+            // Replace placeholders with numbered markers that are unlikely to be translated
+            // Using a format that looks technical/code-like
+            matches.forEach((placeholder, index) => {
+              placeholders.push(placeholder);
+              // Use a format that Google Translate API typically preserves
+              const marker = `[[${index}]]`;
+              processedValue = processedValue.replace(placeholder, marker);
+            });
+          }
+          
+          stringsToTranslate.push({ 
+            path: [...currentPath, key], 
+            value: processedValue,
+            placeholders 
+          });
         } else if (typeof value === 'object' && value !== null) {
           collectStrings(value, [...currentPath, key]);
         }
@@ -164,7 +187,7 @@ async function translateWithGoogle(
       }
     }
 
-    // Step 3: Reconstruct the object with translations
+    // Step 3: Reconstruct the object with translations and restore placeholders
     const result = JSON.parse(JSON.stringify(content)); // Deep clone
     
     stringsToTranslate.forEach((item, index) => {
@@ -172,7 +195,17 @@ async function translateWithGoogle(
       for (let i = 0; i < item.path.length - 1; i++) {
         current = current[item.path[i]];
       }
-      current[item.path[item.path.length - 1]] = translations[index];
+      
+      // Restore placeholders in the translated text
+      let translatedText = translations[index];
+      
+      // Replace the numbered markers back with original placeholders
+      item.placeholders.forEach((placeholder, idx) => {
+        const marker = `[[${idx}]]`;
+        translatedText = translatedText.replace(marker, placeholder);
+      });
+      
+      current[item.path[item.path.length - 1]] = translatedText;
     });
 
     return result;

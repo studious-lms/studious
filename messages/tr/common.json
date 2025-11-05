@@ -117,7 +117,7 @@
       },
       "classManagement": {
         "title": "Sınıf Yönetimi",
-        "description": "Dersleri, ödevleri ve katılımı zahmetsizce düzenleyin"
+        "description": "Dersleri, ödevleri ve katılımı zahmetsizce organize edin"
       },
       "assignments": {
         "title": "Atamalar",
@@ -181,7 +181,7 @@
         "button": "Satış Ekibiyle İletişime Geçin"
       },
       "mostPopular": "En Popüler",
-      "earlyBird": "🎉 Erken benimseyenler yıllık planlarda <strong>3 ay ücretsiz</strong> + özel oryantasyon desteği alırlar"
+      "earlyBird": "🎉 Erken benimseyenler yıllık planlarda 2 ay ücretsiz + özel oryantasyon desteği alırlar"
     },
     "schoolProgram": {
       "badge": "Sosyal Etki",
@@ -271,7 +271,7 @@
     "about": {
       "mission": {
         "title": "Misyonumuz",
-        "body1": "Çalışkan Okul Gelişim Programı, öğrenim yönetimi platformumuza ücretsiz ve sınırsız erişim sağlayarak imkânları kısıtlı okullara destek olmayı amaçlamaktadır. Teknolojinin geleceğin işgücünde baskın bir faktör olduğunun farkındayız, ancak birçok eğitim kurumu bu tür kaynaklara erişimden yoksundur. Bu program aracılığıyla, en çok ihtiyaç duyan okullara modern öğrenim yönetimi teknolojisi sunuyoruz."
+        "body1": "Çalışkan Okul Gelişim Programı, öğrenim yönetimi platformumuza ücretsiz ve sınırsız erişim sağlayarak imkânları kısıtlı okullara destek olmayı amaçlamaktadır. Teknolojinin geleceğin işgücünde baskın bir faktör olduğunun farkındayız, ancak birçok eğitim kurumu bu kaynaklara erişimden yoksundur. Bu program aracılığıyla, en çok ihtiyaç duyan okullara modern öğrenim yönetimi teknolojisi sunuyoruz."
       },
       "aims": {
         "title": "Programın Amaçları",
@@ -347,7 +347,7 @@
       "submitted": "Başvurunuz başarıyla iletildi!"
     },
     "errors": {
-      "submitFailed": "Başvuru gönderilemedi: {mesaj}"
+      "submitFailed": "Başvuru gönderilemedi: {message}"
     },
     "success": {
       "title": "Başvurunuz Gönderildi!",
@@ -392,7 +392,7 @@
       "unknownUser": "Bilinmeyen Kullanıcı",
       "notFound": {
         "title": "Konuşma Bulunamadı",
-        "description": "Bu konuşma mevcut değil veya bu konuşmaya erişiminiz yok.",
+        "description": "Bu konuşma mevcut değil veya buna erişiminiz yok.",
         "backToChat": "Sohbete Geri Dön"
       },
       "header": {
@@ -453,7 +453,7 @@
       "title": "Kişisel Bilgiler",
       "description": "Kişisel bilgilerinizi ve profil bilgilerinizi güncelleyin",
       "displayName": "Ekran adı",
-      "displayNamePlaceholder": "Görüntü adınızı girin",
+      "displayNamePlaceholder": "Görünen adınızı girin",
       "displayNameDescription": "Adınız başkalarına bu şekilde görünecek",
       "location": "Konum",
       "locationPlaceholder": "Konumunuzu girin",
@@ -761,7 +761,7 @@
       },
       "confirm": {
         "title": "Kesinlikle emin misin?",
-        "description": "Bu işlem geri alınamaz. Bu işlem, \"{name}\" sınıfını kalıcı olarak silecek ve aşağıdakiler de dahil olmak üzere tüm ilişkili verileri kaldıracaktır:",
+        "description": "Bu işlem geri alınamaz. Bu işlem, \"{name}\" sınıfını kalıcı olarak silecek ve aşağıdakiler de dahil olmak üzere ilişkili tüm verileri kaldıracaktır:",
         "items": {
           "assignments": "Tüm ödevler ve teslimler",
           "records": "Tüm notlar ve katılım kayıtları",
@@ -800,8 +800,8 @@
       },
       "assignments": {
         "title": "Ders Ödevleri",
-        "gradedCount": "{toplam} notlandırılanın {graded} tanesi",
-        "totalPoints": "{toplam} toplam puan",
+        "gradedCount": "{graded} / {total} derecelendirildi",
+        "totalPoints": "{total} toplam puan",
         "empty": {
           "title": "Henüz ödev yok",
           "description": "Ödevler oluşturulduktan sonra burada görünecektir."
@@ -1022,7 +1022,7 @@
         "creating": "Oluşturuluyor..."
       },
       "toasts": {
-        "success": "{name} sınıfı başarıyla oluşturuldu.",
+        "success": "Sınıf {name} başarıyla oluşturuldu.",
         "errorRequired": "Lütfen gerekli alanları doldurunuz.",
         "errorFailed": "Sınıf oluşturulamadı. Lütfen daha sonra tekrar deneyin."
       }
@@ -1125,7 +1125,7 @@
         "uploadButton": "Dosyaları Yükle",
         "dropZone": "Dosyaları buraya bırakın veya yüklemek için tıklayın",
         "dropZoneHint": "Tüm dosya türlerini destekler • Dosya başına maksimum 50 MB",
-        "filesUploaded": "{toplam} dosyadan {uploaded} tanesi yüklendi"
+        "filesUploaded": "{uploaded} / {total} dosya yüklendi"
       },
       "status": {
         "creating": "Ödev oluşturuluyor...",

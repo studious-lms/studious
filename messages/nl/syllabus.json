@@ -28,8 +28,8 @@
     },
     "assignments": {
       "title": "Cursusopdrachten",
-      "gradedCount": "{beoordeeld} beoordeelde opdrachten",
-      "totalPoints": "{totaal} totale punten",
+      "gradedCount": "{graded} beoordeelde opdrachten",
+      "totalPoints": "{total} totaal aantal punten",
       "empty": {
         "title": "Nog geen opdrachten",
         "description": "Zodra u opdrachten hebt gemaakt, worden deze hier weergegeven."

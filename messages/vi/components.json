@@ -27,7 +27,7 @@
     "dropZone": "Thả tập tin vào đây hoặc nhấp để duyệt",
     "dropZoneHint": "Hỗ trợ hình ảnh, tài liệu, video và nhiều nội dung khác",
     "selectedFiles": "Các tập tin đã chọn ({count})",
-    "filesUploaded": "{đã tải lên} trong tổng số {tổng} tệp đã tải lên",
+    "filesUploaded": "{uploaded} trong số {total} tệp đã tải lên",
     "uploadingTo": "Đang tải lên:",
     "homeDirectory": "Thư mục trang chủ",
     "status": {
@@ -83,10 +83,10 @@
     "selectedFiles": "Các tập tin đã chọn ({count})",
     "maxFiles": "Tối đa {max} tệp. Các loại được chấp nhận: {types}",
     "allFiles": "Tất cả các tập tin",
-    "progressUploaded": "{tiến trình}% đã tải lên",
+    "progressUploaded": "{progress}% đã tải lên",
     "noFilesSelected": "Không có tập tin nào được chọn",
-    "maxFilesExceeded": "Số lượng tệp tối đa được phép là {max}",
-    "uploadFailed": "Tải lên không thành công: {lỗi}",
+    "maxFilesExceeded": "Số lượng tệp tối đa được phép {max}",
+    "uploadFailed": "Tải lên không thành công: {error}",
     "uploadFailedGeneric": "Tải lên không thành công",
     "status": {
       "pending": "Chưa giải quyết",
@@ -95,29 +95,96 @@
       "failed": "Thất bại"
     },
     "cancel": "Hủy bỏ",
-    "upload": "Tải lên {count} tệp",
+    "upload": "Tải lên tệp {count}",
     "uploadPlural": "Tải lên {count} tệp",
     "uploading": "Đang tải lên..."
   },
+  "notifications": {
+    "title": "Thông báo",
+    "subtitle": "Cập nhật thông tin về các lớp học và bài tập của bạn",
+    "filters": {
+      "label": "Lọc:",
+      "all": "Tất cả ({count})",
+      "unread": "Chưa đọc ({count})",
+      "read": "Đọc ({count})"
+    },
+    "badge": {
+      "unread": "{count} mới"
+    },
+    "actions": {
+      "viewAll": "Xem tất cả thông báo",
+      "markAsRead": "Đánh dấu là đã đọc"
+    },
+    "empty": {
+      "all": {
+        "title": "Chưa có thông báo nào",
+        "description": "Khi bạn nhận được thông báo, chúng sẽ xuất hiện ở đây."
+      }
+    }
+  },
   "chat": {
+    "landing": {
+      "pleaseSignIn": "Vui lòng đăng nhập để tiếp tục",
+      "signInRequired": "Cần phải đăng nhập để truy cập trang này",
+      "title": "Trò chuyện",
+      "description": "Chọn một cuộc trò chuyện từ thanh bên để bắt đầu trò chuyện."
+    },
+    "page": {
+      "header": {
+        "members": "Thành viên",
+        "markMentionsRead": "Mark đề cập đến việc đọc"
+      },
+      "input": {
+        "placeholderPrefix": "Tin nhắn"
+      },
+      "loading": "Đang tải cuộc trò chuyện..."
+    },
     "conversationList": {
-      "searchPlaceholder": "Tìm hoặc bắt đầu một cuộc trò chuyện"
+      "title": "Tin nhắn trực tiếp",
+      "searchPlaceholder": "Tìm hoặc bắt đầu một cuộc trò chuyện",
+      "noConversations": "Chưa có cuộc trò chuyện nào",
+      "noConversationsDescription": "Bắt đầu trò chuyện với ai đó",
+      "noSearchResults": "Không tìm thấy cuộc trò chuyện nào",
+      "noSearchResultsDescription": "Hãy thử các thuật ngữ tìm kiếm khác nhau",
+      "unnamedGroup": "Nhóm không tên",
+      "unknownUser": "Người dùng không xác định"
     },
     "messageList": {
       "noMessagesTitle": "Chưa có tin nhắn nào",
       "noMessagesDescription": "Đây là sự khởi đầu của cuộc trò chuyện của bạn"
     },
+    "messageInput": {
+      "placeholder": "Nhập tin nhắn..."
+    },
     "messageEdit": {
-      "placeholder": "Chỉnh sửa tin nhắn của bạn..."
+      "placeholder": "Chỉnh sửa tin nhắn của bạn...",
+      "hint": "Nhấn Enter để lưu • Thoát để hủy",
+      "save": "Cứu",
+      "saving": "Đang lưu...",
+      "cancel": "Hủy bỏ"
+    },
+    "messageActions": {
+      "editMessage": "Chỉnh sửa tin nhắn",
+      "deleteMessage": "Xóa tin nhắn",
+      "deleteConfirmTitle": "Xóa tin nhắn",
+      "deleteConfirmDescription": "Bạn có chắc chắn muốn xóa tin nhắn này không? Thao tác này không thể hoàn tác.",
+      "cancel": "Hủy bỏ",
+      "delete": "Xóa bỏ",
+      "deleting": "Đang xóa..."
     },
     "createConversation": {
-      "title": "Cuộc trò chuyện mới",
+      "title": "Bắt đầu một cuộc trò chuyện",
+      "description": "Tạo tin nhắn trực tiếp hoặc cuộc trò chuyện nhóm",
       "direct": "Tin nhắn trực tiếp",
       "group": "Trò chuyện nhóm",
+      "dmLabel": "Nhập tên người dùng để nhắn tin",
       "searchPlaceholder": "Nhập tên người dùng...",
-      "groupName": "Tên nhóm",
+      "groupNameLabel": "Tên nhóm",
       "groupNamePlaceholder": "Nhập tên nhóm...",
-      "addMembers": "Thêm thành viên",
+      "addMembersLabel": "Thêm thành viên theo tên người dùng",
+      "addButton": "Thêm vào",
+      "selectedUser": "Người dùng được chọn:",
+      "selectedMembers": "Các thành viên được chọn ({count})",
       "cancel": "Hủy bỏ",
       "create": "Tạo nên",
       "creating": "Đang tạo..."
@@ -246,7 +313,7 @@
       "2hours": "2 giờ"
     },
     "descriptionField": "Sự miêu tả",
-    "descriptionPlaceholder": "Mô tả nội dung mà {type} này sẽ bao gồm...",
+    "descriptionPlaceholder": "Mô tả nội dung {type} này sẽ bao gồm những gì...",
     "requirements": "Yêu cầu đặc biệt",
     "requirementsPlaceholder": "Bất kỳ yêu cầu cụ thể, mục tiêu học tập hoặc hạn chế nào...",
     "cancel": "Hủy bỏ",

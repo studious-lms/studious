@@ -9,7 +9,7 @@
     "enrolled": "Înscris",
     "noClassesFound": "Nu s-au găsit cursuri",
     "noTeachingClassesFound": "Nu s-au găsit cursuri de predare care să corespundă cu „{query}”",
-    "noEnrolledClassesFound": "Nu s-au găsit clase înscrise care să corespundă cu „{query}”",
+    "noEnrolledClassesFound": "Nu au fost găsite clase înscrise care să corespundă cu „{query}”",
     "noClassesYet": "Niciun curs încă",
     "noClassesYetDesc": "Creează-ți prima clasă pentru a începe să gestionezi temele, notele și interacțiunile cu elevii.",
     "noEnrolledClasses": "Nicio clasă înscrisă",

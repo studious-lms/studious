@@ -25,9 +25,9 @@
     "members": "Membros",
     "syllabus": "Programa de Estudos",
     "settings": "Configurações",
-    "classNavigation": "Navegação de classe",
-    "switchClass": "Mudar de classe",
-    "classInviteCode": "Código de convite para aula",
+    "classNavigation": "Navegação da turma",
+    "switchClass": "Classe Switch",
+    "classInviteCode": "Código de convite para a aula",
     "copyCode": "Copiar código",
     "regenerateCode": "Regenerar código",
     "toast": {
@@ -37,7 +37,7 @@
     }
   },
   "footer": {
-    "productDescription": "Gestão de aprendizagem moderna para a próxima geração de educação.",
+    "productDescription": "Gestão moderna da aprendizagem para a próxima geração da educação.",
     "product": "Produto",
     "features": "Características",
     "pricing": "Preços",

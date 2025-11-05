@@ -3,15 +3,15 @@
     "title": "Detalhes da tarefa",
     "description": "Descrição",
     "instructions": "Instruções",
-    "dueDate": "Duas datas",
-    "maxPoints": "Pontos máximos",
+    "dueDate": "Dois encontros",
+    "maxPoints": "Pontuação máxima",
     "submissions": "Submissões",
     "submitted": "Enviado",
-    "notSubmitted": "Não enviado",
+    "notSubmitted": "Não submetido",
     "graded": "Classificado",
     "pending": "Pendente",
     "late": "Tarde",
-    "onTime": "Na hora certa",
+    "onTime": "No prazo",
     "attachments": "Anexos",
     "rubric": "Rubrica",
     "gradingBoundary": "Limite de classificação",
@@ -22,18 +22,18 @@
     "feedback": "Opinião",
     "files": "Arquivos",
     "noFiles": "Nenhum arquivo anexado",
-    "noSubmissions": "Nenhuma submissão ainda",
-    "noSubmissionsDescription": "Os envios aparecerão aqui assim que os alunos enviarem seus trabalhos",
+    "noSubmissions": "Ainda não há inscrições.",
+    "noSubmissionsDescription": "Os trabalhos enviados aparecerão aqui assim que os alunos os submeterem.",
     "actions": {
-      "edit": "Editar tarefa",
-      "delete": "Excluir tarefa",
-      "viewSubmission": "Ver Envio",
+      "edit": "Editar Tarefa",
+      "delete": "Excluir atribuição",
+      "viewSubmission": "Ver Submissão",
       "gradeSubmission": "Nota",
       "downloadAll": "Baixar tudo",
-      "exportGrades": "Notas de exportação"
+      "exportGrades": "Graus de exportação"
     },
     "stats": {
-      "totalSubmissions": "Total de envios",
+      "totalSubmissions": "Total de inscrições",
       "averageGrade": "Nota média",
       "submissionRate": "Taxa de submissão",
       "gradedCount": "Classificado"
@@ -47,8 +47,8 @@
     },
     "toasts": {
       "gradeUpdated": "Nota atualizada com sucesso",
-      "deleted": "Tarefa excluída",
-      "error": "Ocorreu um erro"
+      "deleted": "Atribuição excluída",
+      "error": "Ocorreu um erro."
     }
   }
 }

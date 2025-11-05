@@ -1,28 +1,28 @@
 {
   "home": {
-    "welcomeBack": "Bienvenue à nouveau, {name} !",
-    "subtitle": "Voici ce qui se passe dans vos cours aujourd'hui.",
+    "welcomeBack": "Bienvenue à nouveau, {name} !",
+    "subtitle": "Voici le programme de vos cours aujourd'hui.",
     "stats": {
       "totalClasses": "Nombre total de classes",
-      "teachingEnrolled": "{enseignement} enseignement, {inscrit} inscrit",
-      "dueToday": "À rendre aujourd'hui",
+      "teachingEnrolled": "{teaching} enseignement, {enrolled} inscrit",
+      "dueToday": "À payer aujourd'hui",
       "dueTodayDesc": "Devoirs à rendre aujourd'hui",
       "upcoming": "Prochain",
-      "upcomingDesc": "Devoirs à venir",
+      "upcomingDesc": "Des devoirs à venir",
       "thisWeek": "Cette semaine",
-      "totalAssignments": "Nombre total d'affectations"
+      "totalAssignments": "Total des affectations"
     },
     "upcomingAssignments": {
-      "title": "Missions à venir",
+      "title": "Prochains devoirs",
       "subtitle": "Vos prochaines échéances",
-      "allCaughtUp": "Tout rattrapé !",
-      "noUpcoming": "Aucune mission à venir pour le moment.",
-      "viewAgenda": "Voir l'ordre du jour",
-      "dueToday": "À rendre aujourd'hui",
+      "allCaughtUp": "Tout est à jour !",
+      "noUpcoming": "Pas de missions prévues pour le moment.",
+      "viewAgenda": "Consulter l'agenda",
+      "dueToday": "À payer aujourd'hui",
       "dueTomorrow": "À rendre demain",
       "due": "Deux {dates}",
       "teaching": "Enseignement",
-      "viewAllAssignments": "Voir toutes les missions"
+      "viewAllAssignments": "Voir tous les devoirs"
     },
     "notifications": {
       "title": "Notifications récentes",
@@ -38,7 +38,7 @@
       "due": "exigible",
       "noClasses": "Pas encore de cours",
       "browseClasses": "Parcourir les cours",
-      "viewAllClasses": "Voir toutes les classes"
+      "viewAllClasses": "Voir tous les cours"
     }
   }
 }

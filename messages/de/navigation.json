@@ -9,7 +9,7 @@
     "settings": "Einstellungen",
     "signOut": "Abmelden",
     "accountSettings": "Kontoeinstellungen",
-    "pricing": "Preise",
+    "pricing": "Preisgestaltung",
     "schoolProgram": "Schulprogramm",
     "about": "Um",
     "press": "Drücken",
@@ -26,8 +26,8 @@
     "syllabus": "Lehrplan",
     "settings": "Einstellungen",
     "classNavigation": "Klassennavigation",
-    "switchClass": "Switch-Klasse",
-    "classInviteCode": "Klasseneinladungscode",
+    "switchClass": "Schalterklasse",
+    "classInviteCode": "Einladungscode für die Klasse",
     "copyCode": "Code kopieren",
     "regenerateCode": "Code neu generieren",
     "toast": {
@@ -37,10 +37,10 @@
     }
   },
   "footer": {
-    "productDescription": "Modernes Lernmanagement für die nächste Bildungsgeneration.",
+    "productDescription": "Modernes Lernmanagement für die nächste Generation der Bildung.",
     "product": "Produkt",
     "features": "Merkmale",
-    "pricing": "Preise",
+    "pricing": "Preisgestaltung",
     "schoolProgram": "Schulprogramm",
     "company": "Unternehmen",
     "about": "Um",
@@ -48,7 +48,7 @@
     "press": "Drücken",
     "contact": "Kontakt",
     "privacyPolicy": "Datenschutzrichtlinie",
-    "termsOfService": "Servicebedingungen",
+    "termsOfService": "Nutzungsbedingungen",
     "copyright": "© 2025 Studious LMS. Alle Rechte vorbehalten."
   }
 }

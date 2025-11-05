@@ -3,7 +3,7 @@
     "editFolder": "ফোল্ডার সম্পাদনা করুন",
     "renameFile": "ফাইলের নাম পরিবর্তন করুন",
     "name": "নাম",
-    "placeholder": "{টাইপ} নাম লিখুন",
+    "placeholder": "{type} নাম লিখুন",
     "folderColor": "ফোল্ডারের রঙ",
     "folderColorDescription": "এই ফোল্ডারের জন্য একটি রঙ বেছে নিন",
     "cancel": "বাতিল করুন",
@@ -22,12 +22,12 @@
     "finalizing": "চূড়ান্ত করা হচ্ছে...",
     "success": "ফাইলগুলি সফলভাবে আপলোড করা হয়েছে!",
     "error": "ফাইল আপলোড করা যায়নি। অনুগ্রহ করে আবার চেষ্টা করুন।",
-    "errorFile": "{name} আপলোড করা যায়নি",
+    "errorFile": "{name} আপলোড করতে ব্যর্থ হয়েছে",
     "errorMessage": "আপলোড ব্যর্থ হয়েছে: {message}",
     "dropZone": "ফাইলগুলি এখানে ফেলে দিন অথবা ব্রাউজ করতে ক্লিক করুন",
     "dropZoneHint": "ছবি, ডকুমেন্ট, ভিডিও এবং আরও অনেক কিছুর জন্য সমর্থন",
     "selectedFiles": "নির্বাচিত ফাইল ({count})",
-    "filesUploaded": "আপলোড করা {মোট}টি ফাইলের মধ্যে {আপলোড করা}টি ফাইল",
+    "filesUploaded": "{total} এর {uploaded} ফাইল আপলোড করা হয়েছে",
     "uploadingTo": "আপলোড করা হচ্ছে:",
     "homeDirectory": "হোম ডিরেক্টরি",
     "status": {
@@ -37,7 +37,7 @@
       "error": "ত্রুটি"
     },
     "cancel": "বাতিল করুন",
-    "upload": "{count} টি ফাইল আপলোড করুন",
+    "upload": "{count} ফাইল(গুলি) আপলোড করুন",
     "uploading": "আপলোড হচ্ছে..."
   },
   "rubric": {
@@ -81,11 +81,11 @@
     "description": "আপলোড করার জন্য ফাইল নির্বাচন করুন",
     "selectFiles": "ফাইল নির্বাচন করুন",
     "selectedFiles": "নির্বাচিত ফাইল ({count})",
-    "maxFiles": "সর্বাধিক {সর্বোচ্চ} ফাইল। গৃহীত প্রকার: {প্রকার}",
+    "maxFiles": "সর্বাধিক {max} ফাইল। গৃহীত প্রকার: {types}",
     "allFiles": "সকল ফাইল",
-    "progressUploaded": "{প্রগতি}% আপলোড হয়েছে",
+    "progressUploaded": "{progress}% আপলোড হয়েছে",
     "noFilesSelected": "কোনও ফাইল নির্বাচিত হয়নি",
-    "maxFilesExceeded": "সর্বাধিক {max} ফাইল অনুমোদিত",
+    "maxFilesExceeded": "সর্বাধিক {max}টি ফাইল অনুমোদিত",
     "uploadFailed": "আপলোড ব্যর্থ হয়েছে: {error}",
     "uploadFailedGeneric": "আপলোড ব্যর্থ হয়েছে",
     "status": {
@@ -96,28 +96,95 @@
     },
     "cancel": "বাতিল করুন",
     "upload": "{count} ফাইল আপলোড করুন",
-    "uploadPlural": "{গণনা}টি ফাইল আপলোড করুন",
+    "uploadPlural": "{count} ফাইল আপলোড করুন",
     "uploading": "আপলোড হচ্ছে..."
   },
+  "notifications": {
+    "title": "বিজ্ঞপ্তি",
+    "subtitle": "আপনার ক্লাস এবং অ্যাসাইনমেন্ট সম্পর্কে আপডেট থাকুন",
+    "filters": {
+      "label": "ফিল্টার:",
+      "all": "সকল ({count})",
+      "unread": "অপঠিত ({count})",
+      "read": "পড়ুন ({count})"
+    },
+    "badge": {
+      "unread": "{count} নতুন"
+    },
+    "actions": {
+      "viewAll": "সকল বিজ্ঞপ্তি দেখুন",
+      "markAsRead": "পঠিত হিসেবে চিহ্নিত করুন"
+    },
+    "empty": {
+      "all": {
+        "title": "এখনও কোনও বিজ্ঞপ্তি নেই",
+        "description": "আপনি যখন বিজ্ঞপ্তি পাবেন, তখন সেগুলি এখানে প্রদর্শিত হবে।"
+      }
+    }
+  },
   "chat": {
+    "landing": {
+      "pleaseSignIn": "চালিয়ে যেতে সাইন ইন করুন।",
+      "signInRequired": "এই পৃষ্ঠাটি অ্যাক্সেস করতে সাইন ইন করতে হবে",
+      "title": "চ্যাট",
+      "description": "চ্যাট শুরু করতে সাইডবার থেকে একটি কথোপকথন নির্বাচন করুন।"
+    },
+    "page": {
+      "header": {
+        "members": "সদস্যরা",
+        "markMentionsRead": "মার্ক উল্লেখ করেছেন যে পড়েছেন"
+      },
+      "input": {
+        "placeholderPrefix": "বার্তা"
+      },
+      "loading": "কথোপকথন লোড হচ্ছে..."
+    },
     "conversationList": {
-      "searchPlaceholder": "একটি কথোপকথন খুঁজুন বা শুরু করুন"
+      "title": "সরাসরি বার্তা",
+      "searchPlaceholder": "একটি কথোপকথন খুঁজুন বা শুরু করুন",
+      "noConversations": "এখনও কোনও কথোপকথন নেই",
+      "noConversationsDescription": "কারো সাথে চ্যাট শুরু করুন",
+      "noSearchResults": "কোন কথোপকথন পাওয়া যায়নি",
+      "noSearchResultsDescription": "বিভিন্ন অনুসন্ধান পদ ব্যবহার করে দেখুন",
+      "unnamedGroup": "নামহীন গ্রুপ",
+      "unknownUser": "অজানা ব্যবহারকারী"
     },
     "messageList": {
       "noMessagesTitle": "এখনও কোনও বার্তা নেই।",
       "noMessagesDescription": "এটাই তোমার কথোপকথনের শুরু।"
     },
+    "messageInput": {
+      "placeholder": "একটি বার্তা টাইপ করুন..."
+    },
     "messageEdit": {
-      "placeholder": "আপনার বার্তা সম্পাদনা করুন..."
+      "placeholder": "আপনার বার্তা সম্পাদনা করুন...",
+      "hint": "সংরক্ষণ করতে Enter টিপুন • বাতিল করতে Escape টিপুন",
+      "save": "সংরক্ষণ করুন",
+      "saving": "সংরক্ষণ করা হচ্ছে...",
+      "cancel": "বাতিল করুন"
+    },
+    "messageActions": {
+      "editMessage": "বার্তা সম্পাদনা করুন",
+      "deleteMessage": "বার্তা মুছুন",
+      "deleteConfirmTitle": "বার্তা মুছুন",
+      "deleteConfirmDescription": "আপনি কি নিশ্চিত যে আপনি এই বার্তাটি মুছে ফেলতে চান? এই ক্রিয়াটি পূর্বাবস্থায় ফেরানো যাবে না।",
+      "cancel": "বাতিল করুন",
+      "delete": "মুছে ফেলুন",
+      "deleting": "মুছে ফেলা হচ্ছে..."
     },
     "createConversation": {
-      "title": "নতুন কথোপকথন",
+      "title": "একটি কথোপকথন শুরু করুন",
+      "description": "একটি সরাসরি বার্তা বা গ্রুপ কথোপকথন তৈরি করুন",
       "direct": "সরাসরি বার্তা",
       "group": "গ্রুপ চ্যাট",
+      "dmLabel": "মেসেজে ব্যবহারকারীর নাম লিখুন",
       "searchPlaceholder": "ব্যবহারকারীর নাম লিখুন...",
-      "groupName": "গ্রুপের নাম",
+      "groupNameLabel": "গ্রুপের নাম",
       "groupNamePlaceholder": "গ্রুপের নাম লিখুন...",
-      "addMembers": "সদস্য যোগ করুন",
+      "addMembersLabel": "ব্যবহারকারীর নাম অনুসারে সদস্যদের যোগ করুন",
+      "addButton": "যোগ করুন",
+      "selectedUser": "নির্বাচিত ব্যবহারকারী:",
+      "selectedMembers": "নির্বাচিত সদস্য ({count})",
       "cancel": "বাতিল করুন",
       "create": "তৈরি করুন",
       "creating": "তৈরি করা হচ্ছে..."
@@ -207,11 +274,11 @@
     "errorUpdate": "ইভেন্ট আপডেট করতে ব্যর্থ হয়েছে"
   },
   "aiLab": {
-    "title": "{টাইপ} তৈরি করুন",
+    "title": "{type} তৈরি করুন",
     "aiPowered": "এআই চালিত",
     "description": "আমাদের AI আপনার জন্য আরও ভালো কন্টেন্ট তৈরি করতে সাহায্য করার জন্য কিছু মৌলিক তথ্য প্রদান করুন।",
     "titleField": "শিরোনাম *",
-    "titlePlaceholder": "{টাইপ} শিরোনাম লিখুন",
+    "titlePlaceholder": "{type} শিরোনাম লিখুন",
     "subject": "বিষয় *",
     "selectSubject": "বিষয় নির্বাচন করুন",
     "subjects": {
@@ -246,7 +313,7 @@
       "2hours": "২ ঘন্টা"
     },
     "descriptionField": "বিবরণ",
-    "descriptionPlaceholder": "এই {টাইপ} কী কী অন্তর্ভুক্ত করবে তা বর্ণনা করুন...",
+    "descriptionPlaceholder": "এই {type} কী কী বিষয় অন্তর্ভুক্ত করবে তা বর্ণনা করুন...",
     "requirements": "বিশেষ প্রয়োজনীয়তা",
     "requirementsPlaceholder": "কোন নির্দিষ্ট প্রয়োজনীয়তা, শেখার উদ্দেশ্য, বা সীমাবদ্ধতা...",
     "cancel": "বাতিল করুন",

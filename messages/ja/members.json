@@ -36,21 +36,21 @@
     "students": {
       "empty": {
         "title": "生徒が見つかりません",
-        "matchNone": "「{query}」に一致する生徒がいません",
+        "matchNone": "「{query}」に該当する生徒がいません",
         "noStudents": "このクラスにはまだ生徒が参加していません"
       }
     },
     "teachers": {
       "empty": {
         "title": "教師が見つかりません",
-        "matchNone": "「{query}」に一致する教師はいません",
+        "matchNone": "\"{query}\"に一致する教師はいません",
         "noTeachers": "追加の教師は追加されていません"
       }
     },
     "toasts": {
       "inviteRegenerated": "招待コードが正常に再生成されました",
       "copied": "招待コードをクリップボードにコピーしました",
-      "roleChanged": "役割が {role} に変更されました",
+      "roleChanged": "役割が{role}に変更されました",
       "memberRemoved": "メンバーが正常に削除されました"
     },
     "errors": {

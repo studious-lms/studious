@@ -15,7 +15,7 @@
       "totalAssignments": "إجمالي المهام",
       "completionRate": "معدل الإنجاز",
       "totalPoints": "إجمالي النقاط",
-      "upcoming": "قادم"
+      "upcoming": "القادمة"
     },
     "overview": {
       "title": "نظرة عامة على الدورة",
@@ -29,7 +29,7 @@
     "assignments": {
       "title": "مهام الدورة",
       "gradedCount": "{graded} الواجبات المصنفة",
-      "totalPoints": "{total} إجمالي النقاط",
+      "totalPoints": "{total} مجموع النقاط",
       "empty": {
         "title": "لا توجد مهام حتى الآن",
         "description": "ستظهر المهام هنا بمجرد إنشائها."

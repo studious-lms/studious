@@ -1,54 +1,54 @@
 {
   "assignmentDetail": {
-    "title": "Auftragsdetails",
+    "title": "Aufgabendetails",
     "description": "Beschreibung",
     "instructions": "Anweisungen",
-    "dueDate": "Zwei Termine",
-    "maxPoints": "Maximale Punkte",
+    "dueDate": "Zwei Verabredungen",
+    "maxPoints": "Maximale Punktzahl",
     "submissions": "Einreichungen",
-    "submitted": "Gesendet",
-    "notSubmitted": "Nicht übermittelt",
-    "graded": "Benotet",
+    "submitted": "Eingereicht",
+    "notSubmitted": "Nicht eingereicht",
+    "graded": "Bewertet",
     "pending": "Ausstehend",
     "late": "Spät",
     "onTime": "Rechtzeitig",
     "attachments": "Anlagen",
     "rubric": "Rubrik",
-    "gradingBoundary": "Bewertungsgrenze",
-    "submissionDetails": "Details zur Einreichung",
+    "gradingBoundary": "Bodenmarkierungsgrenze",
+    "submissionDetails": "Einreichungsdetails",
     "submittedBy": "Eingereicht von",
     "submittedAt": "Eingereicht am",
     "grade": "Grad",
     "feedback": "Rückmeldung",
     "files": "Dateien",
-    "noFiles": "Keine Dateien angehängt",
-    "noSubmissions": "Noch keine Einreichungen",
-    "noSubmissionsDescription": "Die eingereichten Arbeiten werden hier angezeigt, sobald die Studierenden ihre Arbeit eingereicht haben.",
+    "noFiles": "Es wurden keine Dateien angehängt.",
+    "noSubmissions": "Noch keine Einsendungen",
+    "noSubmissionsDescription": "Die Einreichungen werden hier erscheinen, sobald die Studierenden ihre Arbeiten abgegeben haben.",
     "actions": {
-      "edit": "Zuweisung bearbeiten",
-      "delete": "Zuordnung löschen",
-      "viewSubmission": "Einreichung anzeigen",
+      "edit": "Bearbeitungsaufgabe",
+      "delete": "Aufgabe löschen",
+      "viewSubmission": "Einreichung ansehen",
       "gradeSubmission": "Grad",
-      "downloadAll": "Alles herunterladen",
+      "downloadAll": "Alle herunterladen",
       "exportGrades": "Exportqualitäten"
     },
     "stats": {
-      "totalSubmissions": "Gesamtanzahl der Einreichungen",
+      "totalSubmissions": "Gesamtzahl der Einreichungen",
       "averageGrade": "Durchschnittsnote",
       "submissionRate": "Einreichungsrate",
-      "gradedCount": "Benotet"
+      "gradedCount": "Bewertet"
     },
     "table": {
       "student": "Student",
       "status": "Status",
       "grade": "Grad",
-      "submittedAt": "Gesendet",
+      "submittedAt": "Eingereicht",
       "actions": "Aktionen"
     },
     "toasts": {
       "gradeUpdated": "Note erfolgreich aktualisiert",
-      "deleted": "Zuordnung gelöscht",
-      "error": "Ein Fehler ist aufgetreten"
+      "deleted": "Aufgabe gelöscht",
+      "error": "Es ist ein Fehler aufgetreten"
     }
   }
 }

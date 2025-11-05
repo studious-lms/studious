@@ -17,17 +17,17 @@
     "folderIdMissing": "Отсутствует идентификатор папки. Подождите, пока папка загрузится.",
     "preparing": "Подготовка к загрузке...",
     "gettingUrls": "Получение URL-адресов для загрузки...",
-    "uploadingFile": "Загрузка {имя}...",
-    "confirming": "Подтверждение {имя}...",
+    "uploadingFile": "Загрузка {name}...",
+    "confirming": "Подтверждение {name}...",
     "finalizing": "Завершение...",
     "success": "Файлы успешно загружены!",
     "error": "Не удалось загрузить файлы. Попробуйте ещё раз.",
-    "errorFile": "Не удалось загрузить {имя}",
+    "errorFile": "Не удалось загрузить {name}",
     "errorMessage": "Загрузка не удалась: {message}",
     "dropZone": "Перетащите файлы сюда или нажмите, чтобы просмотреть",
     "dropZoneHint": "Поддержка изображений, документов, видео и многого другого",
-    "selectedFiles": "Выбранные файлы ({count})",
-    "filesUploaded": "{uploaded} из {total} загруженных файлов",
+    "selectedFiles": "Избранные файлы ({count})",
+    "filesUploaded": "Загружено {uploaded} из {total} файлов",
     "uploadingTo": "Загрузка в:",
     "homeDirectory": "Домашний каталог",
     "status": {
@@ -37,7 +37,7 @@
       "error": "Ошибка"
     },
     "cancel": "Отмена",
-    "upload": "Загрузить {count} Файл(ов)",
+    "upload": "Загрузить {count} Файл(ы)",
     "uploading": "Загрузка..."
   },
   "rubric": {
@@ -71,16 +71,16 @@
     "update": "Обновлять",
     "creating": "Создание...",
     "updating": "Обновление...",
-    "created": "Граница градуировки успешно создана",
+    "created": "Граница градуировки создана успешно",
     "updated": "Граница градуировки успешно обновлена",
-    "createFailed": "Не удалось создать границу градирования",
+    "createFailed": "Не удалось создать границу градуировки",
     "updateFailed": "Не удалось обновить границу градуировки"
   },
   "directUpload": {
     "title": "Загрузить файлы",
     "description": "Выберите файлы для загрузки",
     "selectFiles": "Выбрать файлы",
-    "selectedFiles": "Выбранные файлы ({count})",
+    "selectedFiles": "Избранные файлы ({count})",
     "maxFiles": "Максимальное количество файлов: {max}. Допустимые типы: {types}.",
     "allFiles": "Все файлы",
     "progressUploaded": "{progress}% загружено",
@@ -95,29 +95,96 @@
       "failed": "Неуспешный"
     },
     "cancel": "Отмена",
-    "upload": "Загрузить {count} файл",
+    "upload": "Загрузить файл {count}",
     "uploadPlural": "Загрузить {count} файлов",
     "uploading": "Загрузка..."
   },
+  "notifications": {
+    "title": "Уведомления",
+    "subtitle": "Будьте в курсе ваших занятий и заданий",
+    "filters": {
+      "label": "Фильтр:",
+      "all": "Все ({count})",
+      "unread": "Непрочитано ({count})",
+      "read": "Читать ({count})"
+    },
+    "badge": {
+      "unread": "{count} новый"
+    },
+    "actions": {
+      "viewAll": "Просмотреть все уведомления",
+      "markAsRead": "Отметить как прочитанное"
+    },
+    "empty": {
+      "all": {
+        "title": "Пока нет уведомлений",
+        "description": "При получении уведомлений они будут отображаться здесь."
+      }
+    }
+  },
   "chat": {
+    "landing": {
+      "pleaseSignIn": "Пожалуйста, войдите, чтобы продолжить",
+      "signInRequired": "Для доступа к этой странице требуется авторизация",
+      "title": "Чат",
+      "description": "Чтобы начать общение, выберите беседу на боковой панели."
+    },
+    "page": {
+      "header": {
+        "members": "Участники",
+        "markMentionsRead": "Марк упоминает прочитанное"
+      },
+      "input": {
+        "placeholderPrefix": "Сообщение"
+      },
+      "loading": "Загрузка беседы..."
+    },
     "conversationList": {
-      "searchPlaceholder": "Найдите или начните разговор"
+      "title": "Прямые сообщения",
+      "searchPlaceholder": "Найдите или начните разговор",
+      "noConversations": "Пока нет разговоров",
+      "noConversationsDescription": "Начать общение с кем-то",
+      "noSearchResults": "Диалоги не найдены",
+      "noSearchResultsDescription": "Попробуйте другие поисковые запросы",
+      "unnamedGroup": "Безымянная группа",
+      "unknownUser": "Неизвестный пользователь"
     },
     "messageList": {
       "noMessagesTitle": "Пока нет сообщений",
       "noMessagesDescription": "Это начало вашего разговора."
     },
+    "messageInput": {
+      "placeholder": "Введите сообщение..."
+    },
     "messageEdit": {
-      "placeholder": "Редактируйте свое сообщение..."
+      "placeholder": "Редактируйте свое сообщение...",
+      "hint": "Нажмите Enter для сохранения. • Escape для отмены.",
+      "save": "Сохранять",
+      "saving": "Сохранение...",
+      "cancel": "Отмена"
+    },
+    "messageActions": {
+      "editMessage": "Редактировать сообщение",
+      "deleteMessage": "Удалить сообщение",
+      "deleteConfirmTitle": "Удалить сообщение",
+      "deleteConfirmDescription": "Вы уверены, что хотите удалить это сообщение? Это действие не может быть отменено.",
+      "cancel": "Отмена",
+      "delete": "Удалить",
+      "deleting": "Удаление..."
     },
     "createConversation": {
-      "title": "Новый разговор",
+      "title": "Начать разговор",
+      "description": "Создайте личное сообщение или групповую беседу",
       "direct": "Прямое сообщение",
       "group": "Групповой чат",
+      "dmLabel": "Введите имя пользователя для сообщения",
       "searchPlaceholder": "Введите имя пользователя...",
-      "groupName": "Название группы",
+      "groupNameLabel": "Название группы",
       "groupNamePlaceholder": "Введите название группы...",
-      "addMembers": "Добавить участников",
+      "addMembersLabel": "Добавить участников по имени пользователя",
+      "addButton": "Добавлять",
+      "selectedUser": "Выбранный пользователь:",
+      "selectedMembers": "Избранные участники ({count})",
       "cancel": "Отмена",
       "create": "Создавать",
       "creating": "Создание..."
@@ -207,7 +274,7 @@
     "errorUpdate": "Не удалось обновить событие"
   },
   "aiLab": {
-    "title": "Создать {тип}",
+    "title": "Создать {type}",
     "aiPowered": "На базе искусственного интеллекта",
     "description": "Предоставьте базовую информацию, которая поможет нашему ИИ создавать для вас более качественный контент.",
     "titleField": "Заголовок *",
@@ -246,7 +313,7 @@
       "2hours": "2 часа"
     },
     "descriptionField": "Описание",
-    "descriptionPlaceholder": "Опишите, что должен охватывать этот {тип}...",
+    "descriptionPlaceholder": "Опишите, что этот {type} должен охватывать...",
     "requirements": "Особые требования",
     "requirementsPlaceholder": "Любые особые требования, цели обучения или ограничения...",
     "cancel": "Отмена",

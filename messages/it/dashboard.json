@@ -4,7 +4,7 @@
     "subtitle": "Ecco cosa succederà oggi nelle vostre lezioni.",
     "stats": {
       "totalClasses": "Totale classi",
-      "teachingEnrolled": "{insegnamento} insegnamento, {iscritto} iscritto",
+      "teachingEnrolled": "{teaching} insegnamento, {enrolled} iscritto",
       "dueToday": "Scadenza oggi",
       "dueTodayDesc": "Compiti in scadenza oggi",
       "upcoming": "Prossimamente",
@@ -20,7 +20,7 @@
       "viewAgenda": "Visualizza l'agenda",
       "dueToday": "Scadenza oggi",
       "dueTomorrow": "Scadenza domani",
-      "due": "Due {date}",
+      "due": "Due {dates}",
       "teaching": "Insegnamento",
       "viewAllAssignments": "Visualizza tutti gli incarichi"
     },

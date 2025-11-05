@@ -181,7 +181,7 @@
         "button": "Hubungi Jualan"
       },
       "mostPopular": "Paling Popular",
-      "earlyBird": "🎉 Pengguna awal menerima <strong>percuma 3 bulan</strong> pada rancangan tahunan + sokongan onboarding khusus"
+      "earlyBird": "🎉 Pengguna awal menerima 2 bulan percuma untuk rancangan tahunan + sokongan onboarding khusus"
     },
     "schoolProgram": {
       "badge": "Kesan Sosial",
@@ -280,8 +280,8 @@
       },
       "receive": {
         "title": "Perkara yang Anda Akan Terima",
-        "body1": "Sekolah yang diterima menyertai program menerima pengalaman platform Studious penuh—bukan versi terhad atau dilucutkan. Ini termasuk akaun pelajar dan guru tanpa had, semua ciri premium (pembantu AI, analitik lanjutan, kerjasama masa nyata), sokongan teknikal keutamaan, pakar onboarding yang berdedikasi, sumber latihan berterusan dan akses kepada semua kemas kini dan peningkatan masa hadapan.",
-        "body2": "Di luar perisian itu sendiri, kami menyediakan sokongan menyeluruh untuk memastikan sekolah anda dapat memaksimumkan manfaat platform. Pasukan kami akan bekerjasama secara langsung dengan pentadbir dan guru anda untuk menyesuaikan sistem untuk keperluan khusus anda, menyediakan latihan langsung dan kekal tersedia untuk bantuan berterusan sepanjang perjalanan anda."
+        "body1": "Sekolah yang diterima menyertai program ini menerima pengalaman platform Studious penuh—bukan versi terhad atau dilucutkan. Ini termasuk akaun pelajar dan guru tanpa had, semua ciri premium (pembantu AI, analitik lanjutan, kerjasama masa nyata), sokongan teknikal keutamaan, pakar onboarding yang berdedikasi, sumber latihan berterusan dan akses kepada semua kemas kini dan peningkatan masa hadapan.",
+        "body2": "Di luar perisian itu sendiri, kami menyediakan sokongan menyeluruh untuk memastikan sekolah anda dapat memaksimumkan faedah platform. Pasukan kami akan bekerjasama secara langsung dengan pentadbir dan guru anda untuk menyesuaikan sistem untuk keperluan khusus anda, menyediakan latihan langsung dan kekal tersedia untuk bantuan berterusan sepanjang perjalanan anda."
       },
       "qualifies": {
         "title": "Siapa yang Layak",
@@ -368,7 +368,7 @@
     "title": "Agenda",
     "description": "Lihat jadual anda dan acara akan datang dengan paparan kalendar yang komprehensif",
     "addEvent": "Tambah Acara",
-    "untitledEvent": "Acara Tanpa Judul",
+    "untitledEvent": "Peristiwa Tanpa Judul",
     "today": "Hari ini",
     "previous": "Sebelumnya",
     "next": "Seterusnya",
@@ -436,7 +436,7 @@
       "markAsRead": "Tandai sebagai Dibaca"
     },
     "toasts": {
-      "markedAsRead": "Pemberitahuan ditandai sebagai dibaca"
+      "markedAsRead": "Pemberitahuan ditanda sebagai dibaca"
     },
     "meta": {
       "from": "daripada"
@@ -552,7 +552,7 @@
           "title": "Tiada sempadan gred dibuat",
           "description": "Buat sempadan penggredan untuk menentukan julat gred"
         },
-        "previewTitle": "Pratonton Penggredan Sempadan",
+        "previewTitle": "Pratonton Sempadan Penggredan",
         "details": {
           "title": "Butiran Sempadan Penggredan",
           "name": "Nama",
@@ -619,7 +619,7 @@
       "students": {
         "empty": {
           "title": "Tiada pelajar ditemui",
-          "matchNone": "Tiada pelajar yang sepadan dengan \"{query}\"",
+          "matchNone": "Tiada pelajar sepadan dengan \"{query}\"",
           "noStudents": "Belum ada pelajar yang menyertai kelas ini"
         }
       },
@@ -702,7 +702,7 @@
       },
       "empty": {
         "title": "Folder ini kosong",
-        "description": "Muat naik fail atau buat folder untuk mula menyusun bahan kelas anda.",
+        "description": "Muat naik fail atau cipta folder untuk mula menyusun bahan kelas anda.",
         "searchTitle": "Tiada fail ditemui",
         "searchDescription": "Tiada fail sepadan dengan \"{query}\". Cuba istilah carian yang berbeza."
       }
@@ -800,7 +800,7 @@
       },
       "assignments": {
         "title": "Tugasan Kursus",
-        "gradedCount": "{gred} daripada {total} gred",
+        "gradedCount": "{graded} daripada {total} digredkan",
         "totalPoints": "{total} jumlah mata",
         "empty": {
           "title": "Tiada tugasan lagi",
@@ -1125,7 +1125,7 @@
         "uploadButton": "Muat Naik Fail",
         "dropZone": "Letakkan fail di sini atau klik untuk memuat naik",
         "dropZoneHint": "Menyokong semua jenis fail • Maks 50MB setiap fail",
-        "filesUploaded": "{uploaded} daripada {total} fail yang dimuat naik"
+        "filesUploaded": "{uploaded} daripada {total} fail dimuat naik"
       },
       "status": {
         "creating": "Mencipta tugasan...",

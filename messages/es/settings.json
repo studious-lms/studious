@@ -1,6 +1,6 @@
 {
   "settings": {
-    "title": "Configuración de la clase",
+    "title": "Configuración de clase",
     "subtitle": "Configurar detalles y preferencias de la clase",
     "labels": {
       "unsavedChanges": "Cambios no guardados"
@@ -8,7 +8,7 @@
     "actions": {
       "saving": "Ahorro...",
       "saveChanges": "Guardar cambios",
-      "deleting": "Borrando...",
+      "deleting": "Eliminando...",
       "deleteClass": "Eliminar clase",
       "cancel": "Cancelar"
     },
@@ -22,7 +22,7 @@
       },
       "danger": {
         "title": "Zona de peligro",
-        "description": "Una vez que elimines una clase, no hay vuelta atrás. Esto eliminará permanentemente todas las tareas, calificaciones y registros de asistencia, y eliminará a todos los estudiantes de la clase."
+        "description": "Una vez eliminada una clase, no hay vuelta atrás. Esto borrará permanentemente todas las tareas, calificaciones, registros de asistencia y eliminará a todos los estudiantes de la clase."
       }
     },
     "fields": {
@@ -31,9 +31,9 @@
       "subject": "Sujeto"
     },
     "placeholders": {
-      "className": "p. ej., Física Avanzada",
-      "section": "p. ej., AP-101",
-      "subject": "por ejemplo, Física"
+      "className": "Por ejemplo, Física Avanzada",
+      "section": "Por ejemplo, AP-101",
+      "subject": "Por ejemplo, Física"
     },
     "toasts": {
       "updated": {
@@ -47,17 +47,17 @@
     },
     "errors": {
       "updateFailed": {
-        "title": "Actualización fallida",
-        "description": "No se pudo guardar la configuración de la clase. Inténtalo de nuevo."
+        "title": "Error en la actualización",
+        "description": "No se pudieron guardar los ajustes de la clase. Inténtelo de nuevo."
       }
     },
     "confirm": {
       "title": "¿Estás completamente seguro?",
-      "description": "Esta acción no se puede deshacer. Eliminará permanentemente la clase \"{name}\" y todos los datos asociados, incluyendo:",
+      "description": "Esta acción es irreversible. Eliminará permanentemente la clase \"{name}\" y todos los datos asociados, incluyendo:",
       "items": {
         "assignments": "Todas las tareas y entregas",
-        "records": "Todas las calificaciones y registros de asistencia",
-        "students": "Todos los estudiantes serán eliminados de la clase.",
+        "records": "Todos los registros de calificaciones y asistencia",
+        "students": "Todos los alumnos serán retirados de la clase.",
         "events": "Todos los eventos y anuncios de la clase"
       },
       "confirmDelete": "Sí, eliminar clase"

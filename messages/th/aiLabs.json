@@ -40,10 +40,10 @@
       }
     },
     "chats": {
-      "title": "ห้องทดลอง AI ({count})",
+      "title": "ห้องปฏิบัติการ AI ({count})",
       "active": "คล่องแคล่ว",
       "messageCount": "{count} ข้อความ",
-      "createdBy": "สร้างโดย {ชื่อ}",
+      "createdBy": "สร้างโดย {name}",
       "empty": {
         "title": "ยังไม่มี AI Labs",
         "description": "สร้าง AI Lab แห่งแรกของคุณเพื่อเริ่มทำงานร่วมกันกับ AI ในเนื้อหาการศึกษา"

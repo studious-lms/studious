@@ -17,7 +17,7 @@
       "folderCreated": "Dosarul a fost creat cu succes",
       "folderDeleted": "Folderul a fost șters cu succes",
       "folderRenamed": "Dosarul a fost redenumit cu succes",
-      "folderMoved": "Folderul a fost mutat cu succes",
+      "folderMoved": "Dosarul a fost mutat cu succes",
       "filesUploaded": "Fișierele au fost încărcate cu succes",
       "fileDeleted": "Fișierul a fost șters cu succes",
       "fileRenamed": "Fișierul a fost redenumit cu succes",
@@ -37,7 +37,7 @@
     "search": {
       "placeholder": "Căutare în fișiere"
     },
-    "selected": "{count} selectate",
+    "selected": "{count} selectat",
     "filters": {
       "fileType": "Tip de fișier",
       "documents": "Documente",
@@ -78,7 +78,7 @@
     },
     "search": {
       "placeholder": "Căutare în folder",
-      "selected": "{count} selectate"
+      "selected": "{count} selectat"
     },
     "filters": {
       "label": "Filtra",

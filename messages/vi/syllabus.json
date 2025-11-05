@@ -28,8 +28,8 @@
     },
     "assignments": {
       "title": "Bài tập khóa học",
-      "gradedCount": "bài tập được chấm điểm {đã chấm điểm}",
-      "totalPoints": "{tổng} tổng số điểm",
+      "gradedCount": "{graded} bài tập được chấm điểm",
+      "totalPoints": "{total} tổng số điểm",
       "empty": {
         "title": "Chưa có bài tập nào",
         "description": "Bài tập sẽ xuất hiện ở đây sau khi được tạo."

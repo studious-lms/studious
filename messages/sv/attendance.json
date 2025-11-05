@@ -83,7 +83,7 @@
     },
     "deleteDialog": {
       "title": "Ta bort händelse",
-      "description": "Är du säker på att du vill ta bort \"{eventName}\"? Den här åtgärden kan inte ångras och kommer att ta bort alla tillhörande närvarouppgifter.",
+      "description": "Är du säker på att du vill ta bort \"{eventName}\"? Den här åtgärden kan inte ångras och kommer att ta bort alla tillhörande närvaroregister.",
       "deleting": "Tar bort...",
       "deleteButton": "Ta bort händelse"
     },

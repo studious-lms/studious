@@ -4,9 +4,9 @@
     "subtitle": "Sau đây là những thông tin về lớp học của bạn hôm nay.",
     "stats": {
       "totalClasses": "Tổng số lớp học",
-      "teachingEnrolled": "{giảng dạy} giảng dạy, {đăng ký} đã đăng ký",
+      "teachingEnrolled": "{teaching} giảng dạy, {enrolled} ghi danh",
       "dueToday": "Ngày đến hạn",
-      "dueTodayDesc": "Bài tập đến hạn hôm nay",
+      "dueTodayDesc": "Bài tập nộp hôm nay",
       "upcoming": "Sắp tới",
       "upcomingDesc": "Bài tập sắp tới",
       "thisWeek": "Tuần này",
@@ -20,7 +20,7 @@
       "viewAgenda": "Xem Chương trình nghị sự",
       "dueToday": "Ngày đến hạn",
       "dueTomorrow": "Ngày mai đến hạn",
-      "due": "Hai {ngày}",
+      "due": "Hai {dates}",
       "teaching": "Giảng dạy",
       "viewAllAssignments": "Xem tất cả bài tập"
     },

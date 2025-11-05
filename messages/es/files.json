@@ -1,7 +1,7 @@
 {
   "classFiles": {
     "title": "Archivos",
-    "subtitle": "Administrar archivos y recursos de clase",
+    "subtitle": "Gestionar archivos y recursos de clase",
     "actions": {
       "newFolder": "Nueva carpeta",
       "upload": "Subir",
@@ -14,21 +14,21 @@
       "sort": "Clasificar"
     },
     "toasts": {
-      "folderCreated": "Carpeta creada exitosamente",
-      "folderDeleted": "Carpeta eliminada exitosamente",
-      "folderRenamed": "Carpeta renombrada exitosamente",
-      "folderMoved": "La carpeta se movió correctamente",
-      "filesUploaded": "Archivos cargados exitosamente",
-      "fileDeleted": "Archivo eliminado exitosamente",
-      "fileRenamed": "Archivo renombrado exitosamente",
-      "fileMoved": "Archivo movido exitosamente",
-      "downloadStarted": "Descarga iniciada",
-      "shareCopied": "Compartir enlace copiado"
+      "folderCreated": "Carpeta creada correctamente",
+      "folderDeleted": "Carpeta eliminada correctamente",
+      "folderRenamed": "Carpeta renombrada correctamente",
+      "folderMoved": "La carpeta se movió correctamente.",
+      "filesUploaded": "Archivos subidos correctamente",
+      "fileDeleted": "Archivo eliminado correctamente",
+      "fileRenamed": "Archivo renombrado correctamente",
+      "fileMoved": "El archivo se movió correctamente.",
+      "downloadStarted": "La descarga ha comenzado.",
+      "shareCopied": "Enlace para compartir copiado"
     },
     "errors": {
-      "teacherOnly": "Sólo los profesores pueden modificar los archivos.",
-      "downloadFailed": "Descarga fallida",
-      "shareFailed": "Error al compartir",
+      "teacherOnly": "Solo los profesores pueden modificar los archivos.",
+      "downloadFailed": "Falló la descarga",
+      "shareFailed": "Compartir falló",
       "failedToLoad": "No se pudieron cargar los archivos. Inténtelo de nuevo más tarde."
     },
     "breadcrumbs": {
@@ -37,12 +37,12 @@
     "search": {
       "placeholder": "Buscar en archivos"
     },
-    "selected": "{count} seleccionados",
+    "selected": "{count} seleccionado",
     "filters": {
       "fileType": "Tipo de archivo",
       "documents": "Documentos",
       "images": "Imágenes",
-      "videos": "Vídeos",
+      "videos": "Videos",
       "presentations": "Presentaciones"
     },
     "sort": {
@@ -58,9 +58,9 @@
     },
     "empty": {
       "title": "Esta carpeta está vacía",
-      "description": "Sube archivos o crea carpetas para comenzar a organizar los materiales de tu clase.",
+      "description": "Sube archivos o crea carpetas para empezar a organizar el material de tu clase.",
       "searchTitle": "No se encontraron archivos",
-      "searchDescription": "No hay archivos que coincidan con \"{query}\". Prueba con otro término de búsqueda."
+      "searchDescription": "No se encontraron archivos que coincidan con \"{query}\". Intente con otro término de búsqueda."
     }
   },
   "folderView": {
@@ -68,7 +68,7 @@
     "notFound": {
       "title": "Carpeta no encontrada",
       "description": "No se pudo encontrar la carpeta solicitada.",
-      "backButton": "Volver a Archivos"
+      "backButton": "Volver a los archivos"
     },
     "error": {
       "loadFailed": "No se pudo cargar el contenido de la carpeta. Inténtelo de nuevo más tarde."
@@ -78,14 +78,14 @@
     },
     "search": {
       "placeholder": "Buscar en la carpeta",
-      "selected": "{count} seleccionados"
+      "selected": "{count} seleccionado"
     },
     "filters": {
       "label": "Filtrar",
       "fileType": "Tipo de archivo",
       "documents": "Documentos",
       "images": "Imágenes",
-      "videos": "Vídeos",
+      "videos": "Videos",
       "presentations": "Presentaciones"
     },
     "sort": {
@@ -102,7 +102,7 @@
     },
     "empty": {
       "noFilesFound": "No se encontraron archivos",
-      "noFilesFoundDescription": "No hay archivos que coincidan con \"{query}\". Prueba con otro término de búsqueda.",
+      "noFilesFoundDescription": "No se encontraron archivos que coincidan con \"{query}\". Intente con otro término de búsqueda.",
       "folderEmpty": "Esta carpeta está vacía",
       "folderEmptyDescription": "Sube archivos o crea carpetas para organizar tus materiales."
     },
@@ -112,18 +112,18 @@
       "createFolder": "Crear carpeta"
     },
     "toast": {
-      "folderCreated": "Carpeta creada exitosamente",
-      "folderDeleted": "Carpeta eliminada exitosamente",
-      "folderRenamed": "Carpeta renombrada exitosamente",
-      "folderMoved": "La carpeta se movió correctamente",
-      "filesUploaded": "Archivos cargados exitosamente",
-      "fileDeleted": "Archivo eliminado exitosamente",
-      "fileRenamed": "Archivo renombrado exitosamente",
-      "fileMoved": "Archivo movido exitosamente",
-      "downloadStarted": "Descarga iniciada",
-      "downloadFailed": "Descarga fallida",
-      "shareLinkCopied": "Compartir enlace copiado",
-      "shareFailed": "Error al compartir",
+      "folderCreated": "Carpeta creada correctamente",
+      "folderDeleted": "Carpeta eliminada correctamente",
+      "folderRenamed": "Carpeta renombrada correctamente",
+      "folderMoved": "La carpeta se movió correctamente.",
+      "filesUploaded": "Archivos subidos correctamente",
+      "fileDeleted": "Archivo eliminado correctamente",
+      "fileRenamed": "Archivo renombrado correctamente",
+      "fileMoved": "El archivo se movió correctamente.",
+      "downloadStarted": "La descarga ha comenzado.",
+      "downloadFailed": "Falló la descarga",
+      "shareLinkCopied": "Enlace para compartir copiado",
+      "shareFailed": "Compartir falló",
       "permissionDenied": "Permiso denegado"
     }
   }

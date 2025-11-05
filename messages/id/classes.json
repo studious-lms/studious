@@ -9,7 +9,7 @@
     "enrolled": "Terdaftar",
     "noClassesFound": "Tidak ada kelas yang ditemukan",
     "noTeachingClassesFound": "Tidak ditemukan kelas pengajaran yang cocok dengan \"{query}\"",
-    "noEnrolledClassesFound": "Tidak ditemukan kelas terdaftar yang cocok dengan \"{query}\"",
+    "noEnrolledClassesFound": "Tidak ada kelas terdaftar yang ditemukan yang cocok dengan \"{query}\"",
     "noClassesYet": "Belum ada kelas",
     "noClassesYetDesc": "Buat kelas pertama Anda untuk mulai mengelola tugas, nilai, dan interaksi siswa.",
     "noEnrolledClasses": "Tidak ada kelas yang terdaftar",

@@ -43,7 +43,7 @@
     "teachers": {
       "empty": {
         "title": "Geen leraren gevonden",
-        "matchNone": "Geen docenten gevonden die overeenkomen met \"{query}\"",
+        "matchNone": "Er zijn geen docenten die overeenkomen met \"{query}\"",
         "noTeachers": "Er zijn geen extra docenten toegevoegd"
       }
     },

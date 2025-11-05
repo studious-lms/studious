@@ -83,7 +83,7 @@
     },
     "deleteDialog": {
       "title": "Etkinliği Sil",
-      "description": "\"{eventName}\" etkinliğini silmek istediğinizden emin misiniz? Bu işlem geri alınamaz ve ilişkili tüm katılım kayıtlarını silecektir.",
+      "description": "\"{eventName}\" öğesini silmek istediğinizden emin misiniz? Bu işlem geri alınamaz ve ilişkili tüm katılım kayıtlarını silecektir.",
       "deleting": "Siliniyor...",
       "deleteButton": "Etkinliği Sil"
     },

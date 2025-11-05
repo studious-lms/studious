@@ -1,32 +1,32 @@
 {
   "home": {
     "welcomeBack": "欢迎回来，{name}！",
-    "subtitle": "以下是今天课堂上发生的事情。",
+    "subtitle": "以下是您今天课程的安排。",
     "stats": {
-      "totalClasses": "总课程数",
-      "teachingEnrolled": "{teaching} 教学，{enrolled} 报名",
+      "totalClasses": "总班级数",
+      "teachingEnrolled": "{teaching} 教学，{enrolled} 注册",
       "dueToday": "今天到期",
-      "dueTodayDesc": "今天截止的作业",
+      "dueTodayDesc": "今天到期的作业",
       "upcoming": "即将推出",
-      "upcomingDesc": "即将来临的作业",
+      "upcomingDesc": "即将到来的任务",
       "thisWeek": "本星期",
-      "totalAssignments": "总作业数"
+      "totalAssignments": "总任务数"
     },
     "upcomingAssignments": {
-      "title": "即将进行的任务",
+      "title": "即将到来的任务",
       "subtitle": "你的下一个截止日期",
-      "allCaughtUp": "全部抓到啦！",
-      "noUpcoming": "目前没有即将到来的任务。",
+      "allCaughtUp": "全部搞定了！",
+      "noUpcoming": "目前没有即将执行的任务。",
       "viewAgenda": "查看议程",
       "dueToday": "今天到期",
       "dueTomorrow": "明天到期",
-      "due": "两个{日期}",
+      "due": "两个 {dates}",
       "teaching": "教学",
       "viewAllAssignments": "查看所有作业"
     },
     "notifications": {
-      "title": "最近的通知",
-      "subtitle": "最新更新",
+      "title": "最新通知",
+      "subtitle": "最新动态",
       "noNew": "没有新通知",
       "viewAll": "查看所有通知"
     },
@@ -36,7 +36,7 @@
       "teaching": "教学",
       "enrolled": "已注册",
       "due": "到期的",
-      "noClasses": "还没有课程",
+      "noClasses": "目前还没有课程",
       "browseClasses": "浏览课程",
       "viewAllClasses": "查看所有课程"
     }

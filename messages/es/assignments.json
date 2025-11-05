@@ -5,9 +5,9 @@
     "instructions": "Instrucciones",
     "dueDate": "Dos citas",
     "maxPoints": "Puntos máximos",
-    "submissions": "Envíos",
+    "submissions": "Presentaciones",
     "submitted": "Enviado",
-    "notSubmitted": "No enviado",
+    "notSubmitted": "No se ha enviado",
     "graded": "Calificado",
     "pending": "Pendiente",
     "late": "Tarde",
@@ -17,13 +17,13 @@
     "gradingBoundary": "Límite de calificación",
     "submissionDetails": "Detalles de la presentación",
     "submittedBy": "Enviado por",
-    "submittedAt": "Enviado en",
+    "submittedAt": "Presentado en",
     "grade": "Calificación",
     "feedback": "Comentario",
     "files": "Archivos",
-    "noFiles": "No hay archivos adjuntos",
-    "noSubmissions": "No hay envíos todavía",
-    "noSubmissionsDescription": "Los envíos aparecerán aquí una vez que los estudiantes envíen su trabajo.",
+    "noFiles": "No se adjuntan archivos.",
+    "noSubmissions": "Aún no hay envíos.",
+    "noSubmissionsDescription": "Los trabajos entregados aparecerán aquí una vez que los estudiantes los envíen.",
     "actions": {
       "edit": "Editar tarea",
       "delete": "Eliminar asignación",
@@ -33,7 +33,7 @@
       "exportGrades": "Grados de exportación"
     },
     "stats": {
-      "totalSubmissions": "Envíos totales",
+      "totalSubmissions": "Total de envíos",
       "averageGrade": "Calificación promedio",
       "submissionRate": "Tasa de envío",
       "gradedCount": "Calificado"
@@ -46,8 +46,8 @@
       "actions": "Comportamiento"
     },
     "toasts": {
-      "gradeUpdated": "Calificación actualizada exitosamente",
-      "deleted": "Asignación eliminada",
+      "gradeUpdated": "Calificación actualizada correctamente",
+      "deleted": "Tarea eliminada",
       "error": "Se produjo un error"
     }
   }

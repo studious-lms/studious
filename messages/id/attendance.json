@@ -1,7 +1,7 @@
 {
   "attendance": {
     "title": "Acara & Kehadiran Kelas",
-    "subtitle": "Melacak kehadiran siswa untuk setiap acara",
+    "subtitle": "Lacak kehadiran siswa untuk setiap acara",
     "saving": {
       "auto": "Menyimpan otomatis...",
       "unsaved": "Perubahan yang belum disimpan",
@@ -83,7 +83,7 @@
     },
     "deleteDialog": {
       "title": "Hapus Acara",
-      "description": "Yakin ingin menghapus \"{eventName}\"? Tindakan ini tidak dapat dibatalkan dan akan menghapus semua catatan kehadiran terkait.",
+      "description": "Apakah Anda yakin ingin menghapus \"{eventName}\"? Tindakan ini tidak dapat dibatalkan dan akan menghapus semua catatan kehadiran terkait.",
       "deleting": "Menghapus...",
       "deleteButton": "Hapus Acara"
     },

@@ -28,8 +28,8 @@
     },
     "assignments": {
       "title": "Zadania kursowe",
-      "gradedCount": "{ocenione} ocenione zadania",
-      "totalPoints": "{total} całkowita liczba punktów",
+      "gradedCount": "{graded} ocenionych zadań",
+      "totalPoints": "{total} punktów ogółem",
       "empty": {
         "title": "Brak jeszcze zadań",
         "description": "Zadania pojawią się tutaj po ich utworzeniu."

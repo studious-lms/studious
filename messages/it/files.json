@@ -37,7 +37,7 @@
     "search": {
       "placeholder": "Cerca nei file"
     },
-    "selected": "{count} selezionati",
+    "selected": "{count} selezionato",
     "filters": {
       "fileType": "Tipo di file",
       "documents": "Documenti",
@@ -78,7 +78,7 @@
     },
     "search": {
       "placeholder": "Cerca nella cartella",
-      "selected": "{count} selezionati"
+      "selected": "{count} selezionato"
     },
     "filters": {
       "label": "Filtro",

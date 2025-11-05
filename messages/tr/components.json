@@ -18,16 +18,16 @@
     "preparing": "Yükleme hazırlanıyor...",
     "gettingUrls": "Yükleme URL'leri alınıyor...",
     "uploadingFile": "{name} yükleniyor...",
-    "confirming": "{name} doğrulanıyor...",
+    "confirming": "{name} onaylanıyor...",
     "finalizing": "Tamamlanıyor...",
     "success": "Dosyalar başarıyla yüklendi!",
     "error": "Dosyalar yüklenemedi. Lütfen tekrar deneyin.",
     "errorFile": "{name} yüklenemedi",
-    "errorMessage": "Yükleme başarısız oldu: {mesaj}",
+    "errorMessage": "Yükleme başarısız oldu: {message}",
     "dropZone": "Dosyaları buraya bırakın veya göz atmak için tıklayın",
     "dropZoneHint": "Görüntüler, belgeler, videolar ve daha fazlası için destek",
     "selectedFiles": "Seçili Dosyalar ({count})",
-    "filesUploaded": "{toplam} dosyadan {uploaded} tanesi yüklendi",
+    "filesUploaded": "{uploaded} / {total} dosya yüklendi",
     "uploadingTo": "Şuraya yükleniyor:",
     "homeDirectory": "Ana Dizin",
     "status": {
@@ -83,10 +83,10 @@
     "selectedFiles": "Seçili Dosyalar ({count})",
     "maxFiles": "Maksimum {max} dosya. Kabul edilen türler: {types}",
     "allFiles": "Tüm dosyalar",
-    "progressUploaded": "{ilerleme}% yüklendi",
+    "progressUploaded": "{progress}% yüklendi",
     "noFilesSelected": "Hiçbir dosya seçilmedi",
     "maxFilesExceeded": "İzin verilen maksimum {max} dosya",
-    "uploadFailed": "Yükleme başarısız oldu: {hata}",
+    "uploadFailed": "Yükleme başarısız oldu: {error}",
     "uploadFailedGeneric": "Yükleme başarısız oldu",
     "status": {
       "pending": "Askıda olması",
@@ -99,25 +99,92 @@
     "uploadPlural": "{count} dosya yükle",
     "uploading": "Yükleniyor..."
   },
+  "notifications": {
+    "title": "Bildirimler",
+    "subtitle": "Dersleriniz ve ödevleriniz konusunda güncel kalın",
+    "filters": {
+      "label": "Filtre:",
+      "all": "Tümü ({count})",
+      "unread": "Okunmamış ({count})",
+      "read": "Oku ({count})"
+    },
+    "badge": {
+      "unread": "{count} yeni"
+    },
+    "actions": {
+      "viewAll": "Tüm Bildirimleri Görüntüle",
+      "markAsRead": "Okundu Olarak İşaretle"
+    },
+    "empty": {
+      "all": {
+        "title": "Henüz bildirim yok",
+        "description": "Bildirim aldığınızda burada görünecektir."
+      }
+    }
+  },
   "chat": {
+    "landing": {
+      "pleaseSignIn": "Devam etmek için lütfen oturum açın",
+      "signInRequired": "Bu sayfaya erişmek için oturum açmanız gerekiyor",
+      "title": "Sohbet",
+      "description": "Sohbete başlamak için kenar çubuğundan bir konuşma seçin."
+    },
+    "page": {
+      "header": {
+        "members": "Üyeler",
+        "markMentionsRead": "Mark okunduğundan bahsediyor"
+      },
+      "input": {
+        "placeholderPrefix": "Mesaj"
+      },
+      "loading": "Konuşma yükleniyor..."
+    },
     "conversationList": {
-      "searchPlaceholder": "Bir konuşma bulun veya başlatın"
+      "title": "Doğrudan Mesajlar",
+      "searchPlaceholder": "Bir konuşma bulun veya başlatın",
+      "noConversations": "Henüz konuşma yok",
+      "noConversationsDescription": "Birisiyle sohbet etmeye başlayın",
+      "noSearchResults": "Hiçbir konuşma bulunamadı",
+      "noSearchResultsDescription": "Farklı arama terimlerini deneyin",
+      "unnamedGroup": "İsimsiz Grup",
+      "unknownUser": "Bilinmeyen Kullanıcı"
     },
     "messageList": {
       "noMessagesTitle": "Henüz mesaj yok",
       "noMessagesDescription": "Bu, konuşmanızın başlangıcıdır"
     },
+    "messageInput": {
+      "placeholder": "Bir mesaj yazın..."
+    },
     "messageEdit": {
-      "placeholder": "Mesajınızı düzenleyin..."
+      "placeholder": "Mesajınızı düzenleyin...",
+      "hint": "Kaydetmek için Enter'a basın • İptal etmek için Escape'e basın",
+      "save": "Kaydetmek",
+      "saving": "Kaydediliyor...",
+      "cancel": "İptal etmek"
+    },
+    "messageActions": {
+      "editMessage": "Mesajı düzenle",
+      "deleteMessage": "Mesajı sil",
+      "deleteConfirmTitle": "Mesajı Sil",
+      "deleteConfirmDescription": "Bu mesajı silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
+      "cancel": "İptal etmek",
+      "delete": "Silmek",
+      "deleting": "Siliniyor..."
     },
     "createConversation": {
-      "title": "Yeni Konuşma",
+      "title": "Bir konuşma başlatın",
+      "description": "Doğrudan mesaj veya grup sohbeti oluşturun",
       "direct": "Doğrudan Mesaj",
       "group": "Grup Sohbeti",
+      "dmLabel": "Mesaj göndermek için kullanıcı adını girin",
       "searchPlaceholder": "Kullanıcı adınızı girin...",
-      "groupName": "Grup Adı",
+      "groupNameLabel": "Grup adı",
       "groupNamePlaceholder": "Grup adını girin...",
-      "addMembers": "Üye Ekle",
+      "addMembersLabel": "Kullanıcı adına göre üye ekle",
+      "addButton": "Eklemek",
+      "selectedUser": "Seçili kullanıcı:",
+      "selectedMembers": "Seçilmiş üyeler ({count})",
       "cancel": "İptal etmek",
       "create": "Yaratmak",
       "creating": "Oluşturuluyor..."
@@ -246,7 +313,7 @@
       "2hours": "2 saat"
     },
     "descriptionField": "Tanım",
-    "descriptionPlaceholder": "Bu {tip}in neyi kapsaması gerektiğini açıklayın...",
+    "descriptionPlaceholder": "Bu {type}'ın neyi kapsaması gerektiğini açıklayın...",
     "requirements": "Özel Gereksinimler",
     "requirementsPlaceholder": "Herhangi bir özel gereksinim, öğrenme hedefi veya kısıtlama...",
     "cancel": "İptal etmek",

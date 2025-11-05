@@ -5,39 +5,39 @@
     "actions": {
       "saveChanges": "Salvar alterações",
       "cancel": "Cancelar",
-      "edit": "Editar programa"
+      "edit": "Editar programa de estudos"
     },
     "errors": {
-      "failedToLoad": "Falha ao carregar o programa",
-      "tryLater": "Tente novamente mais tarde."
+      "failedToLoad": "Falha ao carregar o programa de estudos.",
+      "tryLater": "Por favor, tente novamente mais tarde."
     },
     "stats": {
-      "totalAssignments": "Total de tarefas",
+      "totalAssignments": "Total de atribuições",
       "completionRate": "Taxa de conclusão",
-      "totalPoints": "Total de pontos",
+      "totalPoints": "Pontuação total",
       "upcoming": "Por vir"
     },
     "overview": {
       "title": "Visão geral do curso",
-      "placeholder": "Insira a visão geral do curso, objetivos e outras informações importantes...",
-      "helper": "Insira as informações do curso, objetivos de aprendizagem, políticas e outros detalhes importantes.",
+      "placeholder": "Insira a visão geral do curso, os objetivos e outras informações importantes...",
+      "helper": "Insira as informações do seu curso, objetivos de aprendizagem, políticas e outros detalhes importantes.",
       "empty": {
-        "title": "Nenhum conteúdo programático ainda",
-        "description": "Clique em \"Editar programa\" para adicionar informações do curso, objetivos de aprendizagem, políticas e muito mais."
+        "title": "Ainda não há conteúdo programático.",
+        "description": "Clique em 'Editar programa' para adicionar informações do curso, objetivos de aprendizagem, políticas e muito mais."
       }
     },
     "assignments": {
-      "title": "Tarefas do curso",
-      "gradedCount": "{graded} tarefas classificadas",
+      "title": "Tarefas do Curso",
+      "gradedCount": "{graded} tarefas avaliadas",
       "totalPoints": "{total} pontos totais",
       "empty": {
-        "title": "Nenhuma tarefa ainda",
-        "description": "As tarefas aparecerão aqui depois de criadas."
+        "title": "Ainda não há tarefas definidas.",
+        "description": "As tarefas aparecerão aqui assim que forem criadas."
       }
     },
     "table": {
       "assignment": "Atribuição",
-      "dueDate": "Duas datas",
+      "dueDate": "Dois encontros",
       "points": "Pontos",
       "weight": "Peso",
       "status": "Status",
@@ -48,18 +48,18 @@
       "pending": "Pendente"
     },
     "courseInfo": {
-      "title": "Informações do curso",
+      "title": "Informações sobre o curso",
       "basic": {
         "title": "Informações básicas",
-        "className": "Nome da classe",
+        "className": "Nome da turma",
         "section": "Seção",
         "subject": "Assunto"
       },
       "stats": {
         "title": "Estatísticas do curso",
-        "totalAssignments": "Total de tarefas",
-        "gradedAssignments": "Tarefas Classificadas",
-        "totalPoints": "Total de pontos"
+        "totalAssignments": "Total de atribuições",
+        "gradedAssignments": "Tarefas avaliadas",
+        "totalPoints": "Pontuação total"
       }
     }
   }

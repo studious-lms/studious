@@ -1,27 +1,27 @@
 {
   "attendance": {
-    "title": "课堂活动与出勤",
-    "subtitle": "跟踪每项活动的学生出勤情况",
+    "title": "课堂活动及出勤情况",
+    "subtitle": "记录学生每次活动的出勤情况",
     "saving": {
-      "auto": "自动保存...",
+      "auto": "自动保存……",
       "unsaved": "未保存的更改",
       "saving": "保存..."
     },
     "table": {
       "date": "日期",
-      "eventName": "活动名称",
-      "attendanceRate": "出勤率",
-      "attendance": "出勤",
+      "eventName": "事件名称",
+      "attendanceRate": "出席率",
+      "attendance": "出勤率",
       "actions": "行动"
     },
     "actions": {
       "viewDetails": "查看详情",
-      "editEvent": "编辑活动",
+      "editEvent": "编辑事件",
       "deleteEvent": "删除事件",
-      "createEvent": "创建活动",
-      "saveAttendance": "保存出勤",
-      "markAllPresent": "标记所有出席者",
-      "markAllAbsent": "标记全部缺席"
+      "createEvent": "创建事件",
+      "saveAttendance": "保存出勤率",
+      "markAllPresent": "标记所有到场人员",
+      "markAllAbsent": "标记所有缺席"
     },
     "allEvents": {
       "title": "所有活动",
@@ -29,68 +29,68 @@
       "searchPlaceholder": "搜索事件...",
       "empty": {
         "title": "未找到任何事件",
-        "description": "创建您的第一个活动以开始跟踪出席情况"
+        "description": "创建您的第一个活动，即可开始跟踪出席情况"
       }
     },
     "eventsList": {
-      "pickDate": "选择日期",
-      "untitled": "无标题活动",
+      "pickDate": "日期",
+      "untitled": "无标题事件",
       "empty": {
-        "noEventsOnDate": "此日期没有活动",
-        "noEventsOnDateDescription": "{date} 没有安排活动。请尝试选择其他日期或创建新活动。",
+        "noEventsOnDate": "当日无活动",
+        "noEventsOnDateDescription": "{date}日没有安排任何活动。请尝试选择其他日期或创建新活动。",
         "noEvents": "未找到任何事件",
-        "noEventsDescription": "创建您的第一个活动以开始跟踪出席情况",
-        "createForDate": "为此日期创建活动",
+        "noEventsDescription": "创建您的第一个活动，即可开始跟踪出席情况",
+        "createForDate": "为该日期创建事件",
         "createFirst": "创建第一个事件"
       }
     },
     "summary": {
-      "title": "活动摘要",
+      "title": "事件概要",
       "selectedEvent": "选定事件",
       "total": "全部的",
-      "attendanceRate": "出勤率"
+      "attendanceRate": "出席率"
     },
     "roster": {
       "title": "学生名册",
-      "description": "单击状态按钮来标记每个学生的出勤情况",
+      "description": "点击状态按钮标记每位学生的出勤情况",
       "empty": {
-        "title": "沒有學生就註冊",
-        "description": "学生加入课程后就会出现在这里"
+        "title": "没有学生注册",
+        "description": "学生加入班级后，将显示在此处。"
       }
     },
     "prompt": {
-      "title": "选择事件",
-      "description": "选择上面的活动来查看和管理学生出勤情况"
+      "title": "选择活动",
+      "description": "选择上方活动即可查看和管理学生出勤情况"
     },
     "status": {
       "present": "展示",
       "late": "晚的",
       "absent": "缺席的",
-      "notTaken": "未拍摄"
+      "notTaken": "未接受"
     },
     "student": {
-      "title": "我的出勤",
-      "subtitle": "跟踪您的 {className} 出勤情况",
-      "attendanceRate": "出勤率",
+      "title": "我的出勤情况",
+      "subtitle": "记录您的出勤情况 {className}",
+      "attendanceRate": "出席率",
       "history": "出勤记录",
       "event": "事件",
       "status": "地位",
       "searchPlaceholder": "搜索事件...",
       "empty": {
         "title": "无出勤记录",
-        "description": "一旦创建活动并记录出席情况，您的出席情况就会显示在这里"
+        "description": "活动创建并完成考勤后，您的考勤信息将显示在此处。"
       }
     },
     "deleteDialog": {
       "title": "删除事件",
-      "description": "您确定要删除“{eventName}”吗？此操作无法撤消，并且会删除所有相关的出勤记录。",
-      "deleting": "正在删除...",
+      "description": "您确定要删除“{eventName}”吗？此操作无法撤销，并将删除所有相关的考勤记录。",
+      "deleting": "正在删除……",
       "deleteButton": "删除事件"
     },
     "toast": {
-      "attendanceSaved": "考勤保存成功",
-      "attendanceSaveFailed": "未能保存出勤情况",
-      "eventDeleted": "活动删除成功",
+      "attendanceSaved": "考勤记录已成功保存",
+      "attendanceSaveFailed": "未能保存考勤记录",
+      "eventDeleted": "事件已成功删除",
       "eventDeleteFailed": "删除事件失败"
     }
   }

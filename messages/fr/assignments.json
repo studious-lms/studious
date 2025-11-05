@@ -4,7 +4,7 @@
     "description": "Description",
     "instructions": "Instructions",
     "dueDate": "Deux rendez-vous",
-    "maxPoints": "Points maximum",
+    "maxPoints": "Points maximums",
     "submissions": "Soumissions",
     "submitted": "Soumis",
     "notSubmitted": "Non soumis",
@@ -14,7 +14,7 @@
     "onTime": "À l'heure",
     "attachments": "Pièces jointes",
     "rubric": "Rubrique",
-    "gradingBoundary": "Limite de classement",
+    "gradingBoundary": "Limite de nivellement",
     "submissionDetails": "Détails de la soumission",
     "submittedBy": "Soumis par",
     "submittedAt": "Soumis à",
@@ -22,18 +22,18 @@
     "feedback": "Retour",
     "files": "Fichiers",
     "noFiles": "Aucun fichier joint",
-    "noSubmissions": "Aucune soumission pour le moment",
-    "noSubmissionsDescription": "Les soumissions apparaîtront ici une fois que les étudiants auront soumis leur travail",
+    "noSubmissions": "Aucune soumission pour l'instant",
+    "noSubmissionsDescription": "Les travaux soumis apparaîtront ici une fois que les étudiants les auront rendus.",
     "actions": {
-      "edit": "Modifier la tâche",
-      "delete": "Supprimer l'affectation",
+      "edit": "Modifier le devoir",
+      "delete": "Supprimer la tâche",
       "viewSubmission": "Voir la soumission",
       "gradeSubmission": "Grade",
-      "downloadAll": "Télécharger tout",
+      "downloadAll": "Tout télécharger",
       "exportGrades": "Qualités d'exportation"
     },
     "stats": {
-      "totalSubmissions": "Total des soumissions",
+      "totalSubmissions": "Nombre total de soumissions",
       "averageGrade": "Note moyenne",
       "submissionRate": "Taux de soumission",
       "gradedCount": "Noté"
@@ -47,8 +47,8 @@
     },
     "toasts": {
       "gradeUpdated": "Note mise à jour avec succès",
-      "deleted": "Affectation supprimée",
-      "error": "Une erreur s'est produite"
+      "deleted": "Devoir supprimé",
+      "error": "Une erreur s'est produite."
     }
   }
 }

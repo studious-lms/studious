@@ -101,7 +101,8 @@ export default function Attendance() {
   const [selectedEvent, setSelectedEvent] = useState<string>("");
   const [attendance, setAttendance] = useState<Record<string, string>>({});
   const [isAutoSaving, setIsAutoSaving] = useState(false);
-  const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
+  const [lastModified, setLastModified] = useState<number>(0);
+  const [lastSaved, setLastSaved] = useState<number>(0);
   // Get class data (students)
   const { data: classData, isLoading: classLoading, refetch: refetchClass } = trpc.class.get.useQuery({ 
     classId: classId as string 
@@ -115,7 +116,11 @@ export default function Attendance() {
   // Update attendance mutation
   const updateAttendanceMutation = trpc.attendance.update.useMutation({
     onSuccess: () => {
-      refetchAttendance();
+      // Only refetch if it's a manual save (not auto-save)
+      // Auto-save already has the correct local state
+      if (!isAutoSaving) {
+        refetchAttendance();
+      }
     }
   });
 
@@ -318,27 +323,6 @@ export default function Attendance() {
       })
     : allEvents;
 
-  // Map attendance status for each event for the current user (if student view) or for management
-  const attendanceStatuses = useMemo(() => {
-    if (!attendanceData) return {};
-    
-    const statusMap: Record<string, AttendanceStatus> = {};
-    for (const record of attendanceData) {
-      if (!record.event) continue;
-      
-      // For now, we'll track the general status - this can be modified based on user role
-      let status: 'present' | 'late' | 'absent' | 'not_taken' = 'not_taken';
-      
-      // Check if attendance has been taken for this event
-      if (record.present.length > 0 || record.late.length > 0 || record.absent.length > 0) {
-        status = 'present'; // Default to present if any attendance taken
-      }
-      
-      statusMap[record.event.id] = { eventId: record.event.id, status };
-    }
-    return statusMap;
-  }, [attendanceData]);
-
   // Initialize attendance when event is selected
   useEffect(() => {
     if (!selectedEvent || !students.length) return;
@@ -381,7 +365,7 @@ export default function Attendance() {
       ...prev,
       [studentId]: status
     }));
-    setHasUnsavedChanges(true); // Mark that user made a change
+    setLastModified(Date.now()); // Track when the last change was made
   };
 
   const getStatusStats = () => {
@@ -401,6 +385,8 @@ export default function Attendance() {
   const saveAttendance = async (showToast = false) => {
     if (!selectedEvent || Object.keys(attendance).length === 0) return;
 
+    const saveTimestamp = Date.now();
+    
     try {
       const present = students.filter(s => attendance[s.id] === "present");
       const late = students.filter(s => attendance[s.id] === "late");
@@ -417,6 +403,10 @@ export default function Attendance() {
         }
       });
 
+      // Only update lastSaved if this save is still the most recent attempt
+      // This prevents race conditions where an older save completes after a newer one
+      setLastSaved(saveTimestamp);
+      
       if (showToast) {
         toast.success(t('toast.attendanceSaved'));
       }
@@ -450,6 +440,9 @@ export default function Attendance() {
   };
 
   // Autosave when user makes changes (not when data is loaded)
+  // Compute if there are unsaved changes
+  const hasUnsavedChanges = lastModified > lastSaved;
+
   useEffect(() => {
     if (!selectedEvent || !hasUnsavedChanges || Object.keys(attendance).length === 0) return;
     
@@ -458,7 +451,6 @@ export default function Attendance() {
     // Debounce the save to avoid too many API calls
     const timeoutId = setTimeout(async () => {
       await saveAttendance();
-      setHasUnsavedChanges(false); // Reset unsaved changes flag
       setIsAutoSaving(false);
     }, 1500); // Save 1.5 seconds after last change
 
@@ -466,7 +458,7 @@ export default function Attendance() {
       clearTimeout(timeoutId);
       setIsAutoSaving(false);
     };
-  }, [hasUnsavedChanges, selectedEvent]);
+  }, [lastModified, selectedEvent]); // Trigger on lastModified changes
   const getStatusIcon = (status: AttendanceStatus['status']) => {
     switch (status) {
       case 'present':
@@ -705,7 +697,7 @@ export default function Attendance() {
             disabled={!showStudentRoster || updateAttendanceMutation.isPending}
             onClick={async () => {
               await saveAttendance(true);
-              setHasUnsavedChanges(false);
+              // lastSaved will be updated by saveAttendance
             }}
           >
             <ClipboardCheck className="h-4 w-4 mr-2" />
@@ -908,7 +900,7 @@ export default function Attendance() {
                       newAttendance[student.id] = "present";
                     });
                     setAttendance(newAttendance);
-                    setHasUnsavedChanges(true);
+                    setLastModified(Date.now());
                   }}
                 >
                   <UserCheck className="h-4 w-4 mr-2" />
@@ -924,7 +916,7 @@ export default function Attendance() {
                       newAttendance[student.id] = "absent";
                     });
                     setAttendance(newAttendance);
-                    setHasUnsavedChanges(true);
+                    setLastModified(Date.now());
                   }}
                 >
                   <UserX className="h-4 w-4 mr-2" />

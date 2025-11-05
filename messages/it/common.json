@@ -181,7 +181,7 @@
         "button": "Contatta le vendite"
       },
       "mostPopular": "I più popolari",
-      "earlyBird": "🎉 I primi utenti riceveranno <strong>3 mesi gratuiti</strong> sui piani annuali + supporto di onboarding dedicato"
+      "earlyBird": "🎉 I primi utenti riceveranno 2 mesi gratuiti sui piani annuali + supporto di onboarding dedicato"
     },
     "schoolProgram": {
       "badge": "Impatto sociale",
@@ -252,7 +252,7 @@
     },
     "contact": {
       "title": "Richieste stampa",
-      "subtitle": "Per richieste di stampa, interviste e richieste dei media",
+      "subtitle": "Per richieste di informazioni alla stampa, interviste e richieste dei media",
       "sl": "Di solito rispondiamo entro 24 ore",
       "general": "Per richieste generali e supporto"
     }
@@ -409,7 +409,7 @@
     "title": "Notifiche",
     "subtitle": "Rimani aggiornato sulle tue lezioni e sui tuoi compiti",
     "badge": {
-      "unread": "{count} non letti"
+      "unread": "{count} non letto"
     },
     "filters": {
       "label": "Filtro:",
@@ -681,7 +681,7 @@
       "search": {
         "placeholder": "Cerca nei file"
       },
-      "selected": "{count} selezionati",
+      "selected": "{count} selezionato",
       "filters": {
         "fileType": "Tipo di file",
         "documents": "Documenti",
@@ -800,8 +800,8 @@
       },
       "assignments": {
         "title": "Compiti del corso",
-        "gradedCount": "{valutato} di {totale} valutati",
-        "totalPoints": "{totale} punti totali",
+        "gradedCount": "{graded} di {total} valutati",
+        "totalPoints": "{total} punti totali",
         "empty": {
           "title": "Nessun incarico ancora",
           "description": "Gli incarichi appariranno qui una volta creati."
@@ -1136,7 +1136,7 @@
         "finalizing": "Completamento dell'incarico in corso...",
         "assigning": "Assegnazione agli studenti...",
         "almostDone": "Quasi finito...",
-        "uploadingFile": "Caricamento di {name}...",
+        "uploadingFile": "Caricamento {name}...",
         "creatingProgress": "Creazione dell'assegnazione",
         "draftStatus": "Verrà salvato come bozza",
         "publishedStatus": "Sarà pubblicato agli studenti"
@@ -1182,7 +1182,7 @@
       "sections": {
         "settings": "Impostazioni",
         "notifications": "Notifiche",
-        "schedule": "Pubblicazione programmata (facoltativa)"
+        "schedule": "Pianifica la pubblicazione (facoltativo)"
       },
       "settings": {
         "pinned": {

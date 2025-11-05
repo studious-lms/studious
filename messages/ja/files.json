@@ -37,7 +37,7 @@
     "search": {
       "placeholder": "ファイル内検索"
     },
-    "selected": "{count} 個選択済み",
+    "selected": "{count} 選択済み",
     "filters": {
       "fileType": "ファイルタイプ",
       "documents": "文書",
@@ -60,7 +60,7 @@
       "title": "このフォルダは空です",
       "description": "ファイルをアップロードするか、フォルダーを作成して、授業の教材の整理を始めましょう。",
       "searchTitle": "ファイルが見つかりません",
-      "searchDescription": "「{query}」に一致するファイルはありません。別の検索語句を試してください。"
+      "searchDescription": "\"{query}\"に一致するファイルはありません。別の検索語を試してください。"
     }
   },
   "folderView": {
@@ -78,7 +78,7 @@
     },
     "search": {
       "placeholder": "フォルダ内を検索",
-      "selected": "{count} 個選択済み"
+      "selected": "{count} 選択済み"
     },
     "filters": {
       "label": "フィルター",
@@ -102,7 +102,7 @@
     },
     "empty": {
       "noFilesFound": "ファイルが見つかりません",
-      "noFilesFoundDescription": "「{query}」に一致するファイルはありません。別の検索語句を試してください。",
+      "noFilesFoundDescription": "\"{query}\"に一致するファイルはありません。別の検索語を試してください。",
       "folderEmpty": "このフォルダは空です",
       "folderEmptyDescription": "ファイルをアップロードするか、フォルダーを作成して資料を整理します。"
     },

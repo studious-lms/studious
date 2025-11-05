@@ -5,7 +5,7 @@
     "actions": {
       "newFolder": "Nouveau dossier",
       "upload": "Télécharger",
-      "uploadFiles": "Télécharger des fichiers",
+      "uploadFiles": "Téléverser des fichiers",
       "createFolder": "Créer un dossier",
       "download": "Télécharger",
       "share": "Partager",
@@ -16,26 +16,26 @@
     "toasts": {
       "folderCreated": "Dossier créé avec succès",
       "folderDeleted": "Dossier supprimé avec succès",
-      "folderRenamed": "Le dossier a été renommé avec succès",
-      "folderMoved": "Le dossier a été déplacé avec succès",
+      "folderRenamed": "Dossier renommé avec succès",
+      "folderMoved": "Dossier déplacé avec succès",
       "filesUploaded": "Fichiers téléchargés avec succès",
       "fileDeleted": "Fichier supprimé avec succès",
       "fileRenamed": "Fichier renommé avec succès",
       "fileMoved": "Fichier déplacé avec succès",
-      "downloadStarted": "Téléchargement commencé",
+      "downloadStarted": "Le téléchargement a commencé.",
       "shareCopied": "Lien de partage copié"
     },
     "errors": {
       "teacherOnly": "Seuls les enseignants peuvent modifier les fichiers.",
       "downloadFailed": "Échec du téléchargement",
-      "shareFailed": "Le partage a échoué",
-      "failedToLoad": "Échec du chargement des fichiers. Veuillez réessayer ultérieurement."
+      "shareFailed": "Échec du partage",
+      "failedToLoad": "Impossible de charger les fichiers. Veuillez réessayer plus tard."
     },
     "breadcrumbs": {
       "classFiles": "Fichiers de classe"
     },
     "search": {
-      "placeholder": "Rechercher dans les fichiers"
+      "placeholder": "Recherche dans les fichiers"
     },
     "selected": "{count} sélectionné",
     "filters": {
@@ -57,8 +57,8 @@
       "fileSize": "Taille du fichier"
     },
     "empty": {
-      "title": "Ce dossier est vide",
-      "description": "Téléchargez des fichiers ou créez des dossiers pour commencer à organiser votre matériel de cours.",
+      "title": "Ce dossier est vide.",
+      "description": "Téléchargez des fichiers ou créez des dossiers pour commencer à organiser vos supports de cours.",
       "searchTitle": "Aucun fichier trouvé",
       "searchDescription": "Aucun fichier ne correspond à « {query} ». Essayez un autre terme de recherche."
     }
@@ -66,12 +66,12 @@
   "folderView": {
     "subtitle": "Contenu du dossier",
     "notFound": {
-      "title": "Dossier non trouvé",
-      "description": "Le dossier demandé n'a pas pu être trouvé.",
+      "title": "Dossier introuvable",
+      "description": "Le dossier demandé est introuvable.",
       "backButton": "Retour aux fichiers"
     },
     "error": {
-      "loadFailed": "Échec du chargement du contenu du dossier. Veuillez réessayer ultérieurement."
+      "loadFailed": "Impossible de charger le contenu du dossier. Veuillez réessayer plus tard."
     },
     "breadcrumbs": {
       "classFiles": "Fichiers de classe"
@@ -103,28 +103,28 @@
     "empty": {
       "noFilesFound": "Aucun fichier trouvé",
       "noFilesFoundDescription": "Aucun fichier ne correspond à « {query} ». Essayez un autre terme de recherche.",
-      "folderEmpty": "Ce dossier est vide",
+      "folderEmpty": "Ce dossier est vide.",
       "folderEmptyDescription": "Téléchargez des fichiers ou créez des dossiers pour organiser vos documents."
     },
     "actions": {
       "newFolder": "Nouveau dossier",
-      "uploadFiles": "Télécharger des fichiers",
+      "uploadFiles": "Téléverser des fichiers",
       "createFolder": "Créer un dossier"
     },
     "toast": {
       "folderCreated": "Dossier créé avec succès",
       "folderDeleted": "Dossier supprimé avec succès",
-      "folderRenamed": "Le dossier a été renommé avec succès",
-      "folderMoved": "Le dossier a été déplacé avec succès",
+      "folderRenamed": "Dossier renommé avec succès",
+      "folderMoved": "Dossier déplacé avec succès",
       "filesUploaded": "Fichiers téléchargés avec succès",
       "fileDeleted": "Fichier supprimé avec succès",
       "fileRenamed": "Fichier renommé avec succès",
       "fileMoved": "Fichier déplacé avec succès",
-      "downloadStarted": "Téléchargement commencé",
+      "downloadStarted": "Le téléchargement a commencé.",
       "downloadFailed": "Échec du téléchargement",
       "shareLinkCopied": "Lien de partage copié",
-      "shareFailed": "Le partage a échoué",
-      "permissionDenied": "Permission refusée"
+      "shareFailed": "Échec du partage",
+      "permissionDenied": "Autorisation refusée"
     }
   }
 }

@@ -42,7 +42,7 @@
     "chats": {
       "title": "এআই ল্যাবস ({count})",
       "active": "সক্রিয়",
-      "messageCount": "{গণনা}টি বার্তা",
+      "messageCount": "{count} বার্তা",
       "createdBy": "{name} দ্বারা তৈরি",
       "empty": {
         "title": "এখনও কোনও এআই ল্যাব নেই।",

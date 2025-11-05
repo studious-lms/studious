@@ -15,29 +15,29 @@
     },
     "toasts": {
       "folderCreated": "文件夹创建成功",
-      "folderDeleted": "文件夹删除成功",
-      "folderRenamed": "文件夹重命名成功",
-      "folderMoved": "文件夹移动成功",
+      "folderDeleted": "文件夹已成功删除",
+      "folderRenamed": "文件夹已成功重命名",
+      "folderMoved": "文件夹已成功移动",
       "filesUploaded": "文件上传成功",
-      "fileDeleted": "文件删除成功",
+      "fileDeleted": "文件已成功删除",
       "fileRenamed": "文件重命名成功",
-      "fileMoved": "文件移动成功",
-      "downloadStarted": "已开始下载",
+      "fileMoved": "文件已成功移动",
+      "downloadStarted": "下载已开始",
       "shareCopied": "分享链接已复制"
     },
     "errors": {
-      "teacherOnly": "只有老师可以修改文件。",
+      "teacherOnly": "只有教师才能修改文件。",
       "downloadFailed": "下载失败",
       "shareFailed": "分享失败",
-      "failedToLoad": "加载文件失败。请稍后重试。"
+      "failedToLoad": "文件加载失败，请稍后再试。"
     },
     "breadcrumbs": {
-      "classFiles": "类文件"
+      "classFiles": "班级文件"
     },
     "search": {
       "placeholder": "在文件中搜索"
     },
-    "selected": "已选择 {count} 个",
+    "selected": "{count} 已选择",
     "filters": {
       "fileType": "文件类型",
       "documents": "文件",
@@ -47,38 +47,38 @@
     },
     "sort": {
       "name": "姓名",
-      "lastModified": "上次修改时间",
+      "lastModified": "最后修改时间",
       "fileSize": "文件大小"
     },
     "table": {
       "name": "姓名",
       "owner": "所有者",
-      "lastModified": "上次修改时间",
+      "lastModified": "最后修改时间",
       "fileSize": "文件大小"
     },
     "empty": {
-      "title": "此文件夹为空",
-      "description": "上传文件或创建文件夹以开始组织您的课堂材料。",
+      "title": "此文件夹为空。",
+      "description": "上传文件或创建文件夹，即可开始整理您的课堂资料。",
       "searchTitle": "未找到文件",
-      "searchDescription": "没有与“{query}”匹配的文件。请尝试其他搜索词。"
+      "searchDescription": "没有找到匹配的文件{query}。请尝试其他搜索词。"
     }
   },
   "folderView": {
     "subtitle": "文件夹内容",
     "notFound": {
-      "title": "未找到文件夹",
+      "title": "找不到文件夹",
       "description": "找不到请求的文件夹。",
       "backButton": "返回文件"
     },
     "error": {
-      "loadFailed": "无法加载文件夹内容。请稍后重试。"
+      "loadFailed": "文件夹内容加载失败，请稍后再试。"
     },
     "breadcrumbs": {
-      "classFiles": "类文件"
+      "classFiles": "班级文件"
     },
     "search": {
       "placeholder": "在文件夹中搜索",
-      "selected": "已选择 {count} 个"
+      "selected": "{count} 已选择"
     },
     "filters": {
       "label": "筛选",
@@ -91,20 +91,20 @@
     "sort": {
       "label": "种类",
       "name": "姓名",
-      "lastModified": "上次修改时间",
+      "lastModified": "最后修改时间",
       "fileSize": "文件大小"
     },
     "table": {
       "name": "姓名",
       "owner": "所有者",
-      "lastModified": "上次修改时间",
+      "lastModified": "最后修改时间",
       "fileSize": "文件大小"
     },
     "empty": {
       "noFilesFound": "未找到文件",
-      "noFilesFoundDescription": "没有与“{query}”匹配的文件。请尝试其他搜索词。",
-      "folderEmpty": "此文件夹为空",
-      "folderEmptyDescription": "上传文件或创建文件夹来组织您的材料。"
+      "noFilesFoundDescription": "没有找到匹配的文件{query}。请尝试其他搜索词。",
+      "folderEmpty": "此文件夹为空。",
+      "folderEmptyDescription": "上传文件或创建文件夹来整理您的资料。"
     },
     "actions": {
       "newFolder": "新建文件夹",
@@ -113,14 +113,14 @@
     },
     "toast": {
       "folderCreated": "文件夹创建成功",
-      "folderDeleted": "文件夹删除成功",
-      "folderRenamed": "文件夹重命名成功",
-      "folderMoved": "文件夹移动成功",
+      "folderDeleted": "文件夹已成功删除",
+      "folderRenamed": "文件夹已成功重命名",
+      "folderMoved": "文件夹已成功移动",
       "filesUploaded": "文件上传成功",
-      "fileDeleted": "文件删除成功",
+      "fileDeleted": "文件已成功删除",
       "fileRenamed": "文件重命名成功",
-      "fileMoved": "文件移动成功",
-      "downloadStarted": "已开始下载",
+      "fileMoved": "文件已成功移动",
+      "downloadStarted": "下载已开始",
       "downloadFailed": "下载失败",
       "shareLinkCopied": "分享链接已复制",
       "shareFailed": "分享失败",

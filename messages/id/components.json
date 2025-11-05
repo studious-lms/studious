@@ -18,7 +18,7 @@
     "preparing": "Mempersiapkan pengunggahan...",
     "gettingUrls": "Mendapatkan URL unggahan...",
     "uploadingFile": "Mengunggah {name}...",
-    "confirming": "Mengonfirmasi {name}...",
+    "confirming": "Konfirmasi {name}...",
     "finalizing": "Menyelesaikan...",
     "success": "File berhasil diunggah!",
     "error": "Gagal mengunggah berkas. Silakan coba lagi.",
@@ -27,7 +27,7 @@
     "dropZone": "Letakkan file di sini atau klik untuk menelusuri",
     "dropZoneHint": "Dukungan untuk gambar, dokumen, video, dan lainnya",
     "selectedFiles": "File yang Dipilih ({count})",
-    "filesUploaded": "{diunggah} dari {total} file yang diunggah",
+    "filesUploaded": "{uploaded} dari {total} file diunggah",
     "uploadingTo": "Mengunggah ke:",
     "homeDirectory": "Direktori Beranda",
     "status": {
@@ -95,32 +95,99 @@
       "failed": "Gagal"
     },
     "cancel": "Membatalkan",
-    "upload": "Unggah {count} file",
-    "uploadPlural": "Unggah {count} file",
+    "upload": "Unggah file {count}",
+    "uploadPlural": "Unggah file {count}",
     "uploading": "Mengunggah..."
   },
+  "notifications": {
+    "title": "Pemberitahuan",
+    "subtitle": "Tetap mengikuti perkembangan kelas dan tugas Anda",
+    "filters": {
+      "label": "Menyaring:",
+      "all": "Semua ({count})",
+      "unread": "Belum dibaca ({count})",
+      "read": "Baca ({count})"
+    },
+    "badge": {
+      "unread": "{count} baru"
+    },
+    "actions": {
+      "viewAll": "Lihat Semua Notifikasi",
+      "markAsRead": "Tandai sebagai Sudah Dibaca"
+    },
+    "empty": {
+      "all": {
+        "title": "Belum ada notifikasi",
+        "description": "Saat Anda menerima pemberitahuan, pemberitahuan tersebut akan muncul di sini."
+      }
+    }
+  },
   "chat": {
+    "landing": {
+      "pleaseSignIn": "Silakan masuk untuk melanjutkan",
+      "signInRequired": "Diperlukan masuk untuk mengakses halaman ini",
+      "title": "Mengobrol",
+      "description": "Pilih percakapan dari bilah sisi untuk memulai mengobrol."
+    },
+    "page": {
+      "header": {
+        "members": "Anggota",
+        "markMentionsRead": "Mark menyebutkan membaca"
+      },
+      "input": {
+        "placeholderPrefix": "Pesan"
+      },
+      "loading": "Memuat percakapan..."
+    },
     "conversationList": {
-      "searchPlaceholder": "Temukan atau mulai percakapan"
+      "title": "Pesan Langsung",
+      "searchPlaceholder": "Temukan atau mulai percakapan",
+      "noConversations": "Belum ada percakapan",
+      "noConversationsDescription": "Mulai mengobrol dengan seseorang",
+      "noSearchResults": "Tidak ada percakapan yang ditemukan",
+      "noSearchResultsDescription": "Coba istilah pencarian yang berbeda",
+      "unnamedGroup": "Grup Tanpa Nama",
+      "unknownUser": "Pengguna Tidak Dikenal"
     },
     "messageList": {
       "noMessagesTitle": "Belum ada pesan",
       "noMessagesDescription": "Ini adalah awal percakapan Anda"
     },
+    "messageInput": {
+      "placeholder": "Ketik pesan..."
+    },
     "messageEdit": {
-      "placeholder": "Edit pesan Anda..."
+      "placeholder": "Edit pesan Anda...",
+      "hint": "Tekan Enter untuk menyimpan • Escape untuk membatalkan",
+      "save": "Menyimpan",
+      "saving": "Penghematan...",
+      "cancel": "Membatalkan"
+    },
+    "messageActions": {
+      "editMessage": "Edit pesan",
+      "deleteMessage": "Hapus pesan",
+      "deleteConfirmTitle": "Hapus Pesan",
+      "deleteConfirmDescription": "Yakin ingin menghapus pesan ini? Tindakan ini tidak dapat dibatalkan.",
+      "cancel": "Membatalkan",
+      "delete": "Menghapus",
+      "deleting": "Menghapus..."
     },
     "createConversation": {
-      "title": "Percakapan Baru",
+      "title": "Memulai percakapan",
+      "description": "Buat pesan langsung atau percakapan grup",
       "direct": "Pesan Langsung",
       "group": "Obrolan Grup",
+      "dmLabel": "Masukkan nama pengguna untuk mengirim pesan",
       "searchPlaceholder": "Masukkan nama pengguna...",
-      "groupName": "Nama Grup",
+      "groupNameLabel": "Nama grup",
       "groupNamePlaceholder": "Masukkan nama grup...",
-      "addMembers": "Tambahkan Anggota",
+      "addMembersLabel": "Tambahkan anggota berdasarkan nama pengguna",
+      "addButton": "Menambahkan",
+      "selectedUser": "Pengguna yang dipilih:",
+      "selectedMembers": "Anggota terpilih ({count})",
       "cancel": "Membatalkan",
       "create": "Membuat",
-      "creating": "Membuat..."
+      "creating": "Menciptakan..."
     }
   },
   "avatarSelector": {

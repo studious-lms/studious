@@ -40,7 +40,7 @@
       }
     },
     "chats": {
-      "title": "AI 랩({count})",
+      "title": "AI 랩스 ({count})",
       "active": "활동적인",
       "messageCount": "{count}개의 메시지",
       "createdBy": "{name}님이 생성함",

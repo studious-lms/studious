@@ -181,7 +181,7 @@
         "button": "Skontaktuj się ze sprzedażą"
       },
       "mostPopular": "Najpopularniejsze",
-      "earlyBird": "🎉 Wcześni użytkownicy otrzymują <strong>3 miesiące gratis</strong> w przypadku planów rocznych + dedykowane wsparcie wdrożeniowe"
+      "earlyBird": "🎉 Wcześni użytkownicy otrzymują 2 miesiące gratis w przypadku planów rocznych + dedykowane wsparcie wdrożeniowe"
     },
     "schoolProgram": {
       "badge": "Wpływ społeczny",
@@ -347,7 +347,7 @@
       "submitted": "Wniosek został wysłany pomyślnie!"
     },
     "errors": {
-      "submitFailed": "Nie udało się wysłać aplikacji: {message}"
+      "submitFailed": "Nie udało się wysłać wniosku: {message}"
     },
     "success": {
       "title": "Wniosek złożony!",
@@ -356,7 +356,7 @@
       "saveId": "Zapisz ten identyfikator, aby sprawdzić status swojej aplikacji",
       "nextSteps": {
         "title": "Co będzie dalej?",
-        "item1": "Otrzymasz wiadomość e-mail z potwierdzeniem na adres {email}",
+        "item1": "Otrzymasz e-mail z potwierdzeniem na adres {email}",
         "item2": "Nasz zespół rozpatrzy Twoją aplikację w ciągu 5-7 dni roboczych",
         "item3": "Powiadomimy Cię e-mailem, gdy zapadnie decyzja"
       },
@@ -413,9 +413,9 @@
     },
     "filters": {
       "label": "Filtr:",
-      "all": "Wszystkie ({count})",
+      "all": "Wszystko ({count})",
       "unread": "Nieprzeczytane ({count})",
-      "read": "Odczyt ({count})"
+      "read": "Przeczytaj ({count})"
     },
     "empty": {
       "unread": {
@@ -626,7 +626,7 @@
       "teachers": {
         "empty": {
           "title": "Nie znaleziono nauczycieli",
-          "matchNone": "Brak nauczycieli odpowiadających zapytaniu „{query}”",
+          "matchNone": "Brak nauczycieli odpowiadających „{query}”",
           "noTeachers": "Nie dodano żadnych dodatkowych nauczycieli"
         }
       },
@@ -704,7 +704,7 @@
         "title": "Ten folder jest pusty",
         "description": "Prześlij pliki lub utwórz foldery, aby rozpocząć porządkowanie materiałów lekcyjnych.",
         "searchTitle": "Nie znaleziono plików",
-        "searchDescription": "Brak plików pasujących do zapytania „{query}”. Spróbuj użyć innego terminu wyszukiwania."
+        "searchDescription": "Brak plików pasujących do „{query}”. Spróbuj użyć innego terminu wyszukiwania."
       }
     },
     "settings": {
@@ -800,8 +800,8 @@
       },
       "assignments": {
         "title": "Zadania kursowe",
-        "gradedCount": "{ocenione} z {całkowitej} oceny",
-        "totalPoints": "{total} całkowita liczba punktów",
+        "gradedCount": "{graded} z {total} oceniono",
+        "totalPoints": "{total} punktów ogółem",
         "empty": {
           "title": "Brak jeszcze zadań",
           "description": "Zadania pojawią się tutaj po ich utworzeniu."
@@ -874,7 +874,7 @@
     "titleStatement2": "Zbudowany z frustracji,",
     "titleStatement3": "przeprojektowane za pomocą sztucznej inteligencji",
     "titleStatement4": "Po latach zmagań z przestarzałymi i rozproszonymi portalami szkolnymi postanowiliśmy stworzyć system zarządzania nauczaniem, o jakim zawsze marzyliśmy.",
-    "problemParagraph1": "Studious rozpoczęło działalność w 2023 roku",
+    "problemParagraph1": "Studious rozpoczęło się w 2023 roku",
     "problemParagraph2": "gdy grupa uczniów i nauczycieli zjednoczyła się we wspólnej frustracji: istniejące portale szkolne były nieporęczne, powolne i dostosowane do innej ery edukacji.",
     "problemDetailParagraph": "Musieliśmy żonglować wieloma platformami – jedną do ocen, drugą do zadań, trzecią do komunikacji. Nauczyciele spędzali więcej czasu na walce z oprogramowaniem niż na nauczaniu. Uczniowie nie dotrzymywali terminów, bo powiadomienia były ukryte w przestarzałych interfejsach.",
     "betterWay": "Wiedzieliśmy, że musi być jakiś lepszy sposób.",
@@ -960,7 +960,7 @@
       },
       "success": {
         "title": "Jesteś na liście!",
-        "description": "Gdy będziemy gotowi, wyślemy Ci wiadomość e-mail na adres {email}."
+        "description": "Wyślemy Ci wiadomość e-mail na adres {email}, gdy będziemy gotowi na Twoją wizytę."
       },
       "toasts": {
         "success": "Pomyślnie dołączono do listy oczekujących!"
@@ -1041,7 +1041,7 @@
       },
       "help": {
         "name": "Wybierz opisową nazwę dla swojego folderu",
-        "description": "{liczba}/500 znaków"
+        "description": "{count}/500 znaków"
       },
       "actions": {
         "cancel": "Anulować",
@@ -1125,7 +1125,7 @@
         "uploadButton": "Prześlij pliki",
         "dropZone": "Upuść pliki tutaj lub kliknij, aby przesłać",
         "dropZoneHint": "Obsługuje wszystkie typy plików • Maksymalnie 50 MB na plik",
-        "filesUploaded": "{uploaded} z {total} przesłanych plików"
+        "filesUploaded": "Przesłano {uploaded} z {total} plików"
       },
       "status": {
         "creating": "Tworzenie zadania...",
@@ -1154,7 +1154,7 @@
         "errorRequired": "Proszę wypełnić wszystkie wymagane pola.",
         "errorFailed": "Nie udało się utworzyć zadania. Spróbuj ponownie.",
         "errorUploadFailed": "Nie udało się przesłać {name}",
-        "sectionCreated": "Sekcja „{name}” została pomyślnie utworzona."
+        "sectionCreated": "Sekcja „{name}” została utworzona pomyślnie."
       }
     },
     "createAnnouncement": {
@@ -1197,7 +1197,7 @@
       "notifications": {
         "email": {
           "label": "Wyślij powiadomienie e-mail",
-          "description": "Powiadom uczniów za pośrednictwem poczty e-mail"
+          "description": "Powiadom uczniów e-mailem"
         },
         "push": {
           "label": "Wyślij powiadomienie push",

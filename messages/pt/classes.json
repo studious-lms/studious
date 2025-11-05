@@ -1,21 +1,21 @@
 {
   "classes": {
     "title": "Aulas",
-    "description": "Gerencie seu ensino e aulas matriculadas",
-    "joinClass": "Junte-se à aula",
+    "description": "Gerencie suas aulas e turmas matriculadas.",
+    "joinClass": "Inscreva-se na turma",
     "createClass": "Criar classe",
-    "searchPlaceholder": "Pesquisar classes...",
+    "searchPlaceholder": "Pesquisar aulas...",
     "teaching": "Ensino",
     "enrolled": "Matriculado",
-    "noClassesFound": "Nenhuma classe encontrada",
-    "noTeachingClassesFound": "Nenhuma aula de ensino encontrada correspondendo a \"{query}\"",
-    "noEnrolledClassesFound": "Nenhuma turma matriculada encontrada correspondendo a \"{query}\"",
-    "noClassesYet": "Nenhuma aula ainda",
-    "noClassesYetDesc": "Crie sua primeira turma para começar a gerenciar tarefas, notas e interações com alunos.",
+    "noClassesFound": "Nenhuma aula encontrada",
+    "noTeachingClassesFound": "Nenhuma aula de ensino encontrada que corresponda a \"{query}\"",
+    "noEnrolledClassesFound": "Nenhuma turma matriculada encontrada que corresponda a \"{query}\"",
+    "noClassesYet": "Ainda não há aulas.",
+    "noClassesYetDesc": "Crie sua primeira turma para começar a gerenciar tarefas, notas e interações com os alunos.",
     "noEnrolledClasses": "Nenhuma turma matriculada",
-    "noEnrolledClassesDesc": "Participe de uma aula usando um código de convite ou link fornecido pelo seu professor.",
-    "classDeleted": "Classe excluída com sucesso",
+    "noEnrolledClassesDesc": "Participe de uma aula usando um código de convite ou um link fornecido pelo seu professor.",
+    "classDeleted": "Aula excluída com sucesso",
     "classDeleteFailed": "Falha ao excluir a classe",
-    "failedToLoad": "Falha ao carregar classes"
+    "failedToLoad": "Falha ao carregar as classes"
   }
 }

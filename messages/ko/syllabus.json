@@ -28,8 +28,8 @@
     },
     "assignments": {
       "title": "과정 과제",
-      "gradedCount": "{채점됨} 채점된 과제",
-      "totalPoints": "{total} 총 포인트",
+      "gradedCount": "{graded}개의 채점된 과제",
+      "totalPoints": "총 {total}점",
       "empty": {
         "title": "아직 과제가 없습니다",
         "description": "과제가 생성되면 여기에 표시됩니다."

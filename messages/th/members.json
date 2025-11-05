@@ -43,14 +43,14 @@
     "teachers": {
       "empty": {
         "title": "ไม่พบครู",
-        "matchNone": "ไม่มีครูที่ตรงกับ \"{query}\"",
+        "matchNone": "ไม่มีครูที่ตรงกัน \"{query}\"",
         "noTeachers": "ไม่มีการเพิ่มครูเพิ่มเติม"
       }
     },
     "toasts": {
       "inviteRegenerated": "สร้างรหัสเชิญใหม่สำเร็จแล้ว",
       "copied": "คัดลอกรหัสเชิญไปยังคลิปบอร์ดแล้ว",
-      "roleChanged": "บทบาทถูกเปลี่ยนเป็น {บทบาท}",
+      "roleChanged": "บทบาทเปลี่ยนเป็น {role}",
       "memberRemoved": "สมาชิกถูกลบออกสำเร็จแล้ว"
     },
     "errors": {

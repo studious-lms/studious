@@ -10,8 +10,8 @@
       "regenerate": "Régénérer",
       "message": "Message",
       "viewProfile": "Voir le profil",
-      "viewGrades": "Voir les notes",
-      "makeTeacher": "Faire un enseignant",
+      "viewGrades": "Afficher les notes",
+      "makeTeacher": "Faire un professeur",
       "makeStudent": "Faire des étudiants",
       "removeFromClass": "Retirer de la classe",
       "removeAccess": "Supprimer l'accès",
@@ -23,8 +23,8 @@
       "you": "Toi"
     },
     "invite": {
-      "title": "Code d'invitation de classe",
-      "description": "Partagez ce code avec les étudiants pour rejoindre la classe"
+      "title": "Code d'invitation au cours",
+      "description": "Partagez ce code avec les élèves pour qu'ils rejoignent le cours."
     },
     "search": {
       "placeholder": "Rechercher des membres..."
@@ -36,25 +36,25 @@
     "students": {
       "empty": {
         "title": "Aucun étudiant trouvé",
-        "matchNone": "Aucun étudiant ne correspond à « {query} »",
-        "noStudents": "Aucun étudiant n'a encore rejoint cette classe"
+        "matchNone": "Aucun étudiant ne correspond à \"{query}\"",
+        "noStudents": "Aucun élève ne s'est encore inscrit à ce cours."
       }
     },
     "teachers": {
       "empty": {
         "title": "Aucun enseignant trouvé",
-        "matchNone": "Aucun enseignant ne correspond à « {query} »",
-        "noTeachers": "Aucun enseignant supplémentaire n'a été ajouté"
+        "matchNone": "Aucun enseignant ne correspond à \"{query}\"",
+        "noTeachers": "Aucun enseignant supplémentaire n'a été ajouté."
       }
     },
     "toasts": {
-      "inviteRegenerated": "Le code d'invitation a été régénéré avec succès",
+      "inviteRegenerated": "Code d'invitation régénéré avec succès",
       "copied": "Code d'invitation copié dans le presse-papiers",
-      "roleChanged": "Rôle changé en {role}",
+      "roleChanged": "Rôle modifié en {role}",
       "memberRemoved": "Membre supprimé avec succès"
     },
     "errors": {
-      "regenerateFailed": "Échec de la régénération du code d'invitation",
+      "regenerateFailed": "Impossible de régénérer le code d'invitation",
       "changeRoleFailed": "Échec du changement de rôle",
       "removeFailed": "Échec de la suppression du membre",
       "failedToLoad": "Échec du chargement des membres"

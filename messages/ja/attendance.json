@@ -37,7 +37,7 @@
       "untitled": "題名のないイベント",
       "empty": {
         "noEventsOnDate": "この日のイベントはありません",
-        "noEventsOnDateDescription": "{date} には予定されているイベントがありません。別の日付を選択するか、新しいイベントを作成してください。",
+        "noEventsOnDateDescription": "{date}には予定されているイベントがありません。別の日付を選択するか、新しいイベントを作成してください。",
         "noEvents": "イベントが見つかりません",
         "noEventsDescription": "最初のイベントを作成して出席状況を追跡しましょう",
         "createForDate": "この日付のイベントを作成",
@@ -70,7 +70,7 @@
     },
     "student": {
       "title": "私の出席",
-      "subtitle": "{className} の出席状況を追跡する",
+      "subtitle": "{className}の出席状況を追跡する",
       "attendanceRate": "出席率",
       "history": "出席履歴",
       "event": "イベント",
@@ -83,7 +83,7 @@
     },
     "deleteDialog": {
       "title": "イベントを削除",
-      "description": "「{eventName}」を削除してもよろしいですか? この操作は元に戻すことができず、関連するすべての出席記録が削除されます。",
+      "description": "\"{eventName}\" を削除してもよろしいですか? この操作は元に戻すことができず、関連するすべての出席記録が削除されます。",
       "deleting": "削除しています...",
       "deleteButton": "イベントを削除"
     },

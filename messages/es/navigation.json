@@ -26,18 +26,18 @@
     "syllabus": "Programa de estudios",
     "settings": "Ajustes",
     "classNavigation": "Navegación de clases",
-    "switchClass": "Clase de conmutación",
+    "switchClass": "Clase de cambio",
     "classInviteCode": "Código de invitación a la clase",
     "copyCode": "Copiar código",
     "regenerateCode": "Regenerar código",
     "toast": {
-      "inviteCodeRegenerated": "Código de invitación regenerado exitosamente",
+      "inviteCodeRegenerated": "El código de invitación se regeneró correctamente.",
       "inviteCodeRegenerateFailed": "No se pudo regenerar el código de invitación",
       "inviteCodeCopied": "Código de invitación copiado al portapapeles"
     }
   },
   "footer": {
-    "productDescription": "Gestión del aprendizaje moderna para la próxima generación de la educación.",
+    "productDescription": "Gestión moderna del aprendizaje para la próxima generación de la educación.",
     "product": "Producto",
     "features": "Características",
     "pricing": "Precios",
@@ -48,7 +48,7 @@
     "press": "Prensa",
     "contact": "Contacto",
     "privacyPolicy": "política de privacidad",
-    "termsOfService": "Condiciones de servicio",
+    "termsOfService": "Condiciones del servicio",
     "copyright": "© 2025 Studious LMS. Todos los derechos reservados."
   }
 }

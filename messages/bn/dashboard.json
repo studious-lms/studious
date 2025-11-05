@@ -1,10 +1,10 @@
 {
   "home": {
-    "welcomeBack": "আবার স্বাগতম, {নাম}!",
+    "welcomeBack": "আবার স্বাগতম, {name}!",
     "subtitle": "আজ তোমাদের ক্লাসগুলোর কী হচ্ছে তা এখানে দেওয়া হল।",
     "stats": {
       "totalClasses": "মোট ক্লাস",
-      "teachingEnrolled": "{শিক্ষাদান} শিক্ষকতা, {নথিভুক্ত} নথিভুক্ত",
+      "teachingEnrolled": "{teaching} শিক্ষকতা, {enrolled} নথিভুক্ত",
       "dueToday": "আজ শেষ",
       "dueTodayDesc": "আজ অ্যাসাইনমেন্ট জমা দেওয়ার কথা",
       "upcoming": "আসন্ন",
@@ -20,7 +20,7 @@
       "viewAgenda": "এজেন্ডা দেখুন",
       "dueToday": "আজ শেষ",
       "dueTomorrow": "আগামীকাল শেষ হবে",
-      "due": "দুটি {তারিখ}",
+      "due": "দুই {dates}",
       "teaching": "শিক্ষাদান",
       "viewAllAssignments": "সমস্ত অ্যাসাইনমেন্ট দেখুন"
     },

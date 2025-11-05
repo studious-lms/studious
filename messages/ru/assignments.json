@@ -27,7 +27,7 @@
     "actions": {
       "edit": "Редактировать задание",
       "delete": "Удалить задание",
-      "viewSubmission": "Просмотреть отправку",
+      "viewSubmission": "Просмотреть подачу",
       "gradeSubmission": "Оценка",
       "downloadAll": "Скачать все",
       "exportGrades": "Экспортные сорта"

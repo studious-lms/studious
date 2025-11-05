@@ -18,11 +18,11 @@
     "preparing": "Se pregătește încărcarea...",
     "gettingUrls": "Se preiau adresele URL de încărcare...",
     "uploadingFile": "Se încarcă {name}...",
-    "confirming": "Se confirmă {name}...",
+    "confirming": "Confirmând {name}...",
     "finalizing": "Se finalizează...",
     "success": "Fișierele au fost încărcate cu succes!",
     "error": "Nu s-au putut încărca fișierele. Vă rugăm să încercați din nou.",
-    "errorFile": "Nu s-a putut încărca {name}",
+    "errorFile": "Încărcarea nu a reușit {name}",
     "errorMessage": "Încărcarea a eșuat: {message}",
     "dropZone": "Plasați fișierele aici sau faceți clic pentru a răsfoi",
     "dropZoneHint": "Suport pentru imagini, documente, videoclipuri și multe altele",
@@ -81,11 +81,11 @@
     "description": "Selectați fișierele de încărcat",
     "selectFiles": "Selectați fișierele",
     "selectedFiles": "Fișiere selectate ({count})",
-    "maxFiles": "Număr maxim de fișiere {max}. Tipuri acceptate: {types}",
+    "maxFiles": "Maxim {max} fișiere. Tipuri acceptate: {types}",
     "allFiles": "Toate fișierele",
     "progressUploaded": "{progress}% încărcat",
     "noFilesSelected": "Niciun fișier selectat",
-    "maxFilesExceeded": "Numărul maxim de fișiere permise este {max}",
+    "maxFilesExceeded": "Numărul maxim de {max} fișiere permise",
     "uploadFailed": "Încărcarea a eșuat: {error}",
     "uploadFailedGeneric": "Încărcarea a eșuat",
     "status": {
@@ -99,25 +99,92 @@
     "uploadPlural": "Încărcați {count} fișiere",
     "uploading": "Se încarcă..."
   },
+  "notifications": {
+    "title": "Notificări",
+    "subtitle": "Rămâi la curent cu cursurile și temele tale",
+    "filters": {
+      "label": "Filtra:",
+      "all": "Toate ({count})",
+      "unread": "Necitit ({count})",
+      "read": "Citire ({count})"
+    },
+    "badge": {
+      "unread": "{count} nou"
+    },
+    "actions": {
+      "viewAll": "Vizualizați toate notificările",
+      "markAsRead": "Marchează ca citit"
+    },
+    "empty": {
+      "all": {
+        "title": "Încă nu există notificări",
+        "description": "Când primiți notificări, acestea vor apărea aici."
+      }
+    }
+  },
   "chat": {
+    "landing": {
+      "pleaseSignIn": "Vă rugăm să vă conectați pentru a continua",
+      "signInRequired": "Este necesară conectarea pentru a accesa această pagină",
+      "title": "Chat",
+      "description": "Selectați o conversație din bara laterală pentru a începe discuția."
+    },
+    "page": {
+      "header": {
+        "members": "Membri",
+        "markMentionsRead": "Marcu menționează că a citit"
+      },
+      "input": {
+        "placeholderPrefix": "Mesaj"
+      },
+      "loading": "Se încarcă conversația..."
+    },
     "conversationList": {
-      "searchPlaceholder": "Găsește sau începe o conversație"
+      "title": "Mesaje directe",
+      "searchPlaceholder": "Găsește sau începe o conversație",
+      "noConversations": "Nicio conversație încă",
+      "noConversationsDescription": "Începe să discuți cu cineva",
+      "noSearchResults": "Nu s-au găsit conversații",
+      "noSearchResultsDescription": "Încercați termeni de căutare diferiți",
+      "unnamedGroup": "Grup fără nume",
+      "unknownUser": "Utilizator necunoscut"
     },
     "messageList": {
       "noMessagesTitle": "Niciun mesaj încă",
       "noMessagesDescription": "Acesta este începutul conversației voastre"
     },
+    "messageInput": {
+      "placeholder": "Scrie un mesaj..."
+    },
     "messageEdit": {
-      "placeholder": "Editează-ți mesajul..."
+      "placeholder": "Editează-ți mesajul...",
+      "hint": "Apăsați Enter pentru a salva • Escape pentru a anula",
+      "save": "Salva",
+      "saving": "Economisire...",
+      "cancel": "Anula"
+    },
+    "messageActions": {
+      "editMessage": "Editați mesajul",
+      "deleteMessage": "Șterge mesajul",
+      "deleteConfirmTitle": "Șterge mesajul",
+      "deleteConfirmDescription": "Sigur doriți să ștergeți acest mesaj? Această acțiune nu poate fi anulată.",
+      "cancel": "Anula",
+      "delete": "Şterge",
+      "deleting": "Se șterge..."
     },
     "createConversation": {
-      "title": "Conversație nouă",
+      "title": "Începeți o conversație",
+      "description": "Creați un mesaj direct sau o conversație de grup",
       "direct": "Mesaj direct",
       "group": "Chat de grup",
+      "dmLabel": "Introduceți numele de utilizator pentru a trimite mesajul.",
       "searchPlaceholder": "Introduceți numele de utilizator...",
-      "groupName": "Numele grupului",
+      "groupNameLabel": "Numele grupului",
       "groupNamePlaceholder": "Introduceți numele grupului...",
-      "addMembers": "Adăugați membri",
+      "addMembersLabel": "Adăugați membri după numele de utilizator",
+      "addButton": "Adăuga",
+      "selectedUser": "Utilizator selectat:",
+      "selectedMembers": "Membri selectați ({count})",
       "cancel": "Anula",
       "create": "Crea",
       "creating": "Se creează..."
@@ -173,7 +240,7 @@
     "updating": "Se actualizează...",
     "creating": "Se creează...",
     "addEvent": "Adăugați eveniment",
-    "eventCreated": "{type} a fost creat cu succes",
+    "eventCreated": "{type} creat cu succes",
     "eventUpdated": "Evenimentul a fost actualizat cu succes",
     "errorRequired": "Vă rugăm să completați toate câmpurile obligatorii",
     "errorSelectClass": "Vă rugăm să selectați o clasă pentru evenimentul clasei",
@@ -207,7 +274,7 @@
     "errorUpdate": "Evenimentul nu a putut fi actualizat"
   },
   "aiLab": {
-    "title": "Creați {tip}",
+    "title": "Creați {type}",
     "aiPowered": "Susținut de inteligență artificială",
     "description": "Oferiți câteva informații de bază pentru a ajuta inteligența artificială să creeze conținut mai bun pentru dvs.",
     "titleField": "Titlu *",
@@ -246,7 +313,7 @@
       "2hours": "2 ore"
     },
     "descriptionField": "Descriere",
-    "descriptionPlaceholder": "Descrieți ce ar trebui să acopere acest {tip}...",
+    "descriptionPlaceholder": "Descrieți ce ar trebui să acopere acest {type}...",
     "requirements": "Cerințe speciale",
     "requirementsPlaceholder": "Orice cerințe specifice, obiective de învățare sau constrângeri...",
     "cancel": "Anula",

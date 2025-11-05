@@ -28,8 +28,8 @@
     },
     "assignments": {
       "title": "Compiti del corso",
-      "gradedCount": "{valutato} compiti valutati",
-      "totalPoints": "{totale} punti totali",
+      "gradedCount": "{graded} compiti valutati",
+      "totalPoints": "{total} punti totali",
       "empty": {
         "title": "Nessun incarico ancora",
         "description": "Gli incarichi appariranno qui una volta creati."

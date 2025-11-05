@@ -37,7 +37,7 @@
       "untitled": "Sự kiện chưa có tiêu đề",
       "empty": {
         "noEventsOnDate": "Không có sự kiện nào vào ngày này",
-        "noEventsOnDateDescription": "Không có sự kiện nào được lên lịch vào ngày {date}. Hãy thử chọn ngày khác hoặc tạo sự kiện mới.",
+        "noEventsOnDateDescription": "Không có sự kiện nào được lên lịch cho {date}. Hãy thử chọn ngày khác hoặc tạo sự kiện mới.",
         "noEvents": "Không tìm thấy sự kiện nào",
         "noEventsDescription": "Tạo sự kiện đầu tiên của bạn để bắt đầu theo dõi lượng người tham dự",
         "createForDate": "Tạo sự kiện cho ngày này",
@@ -70,7 +70,7 @@
     },
     "student": {
       "title": "Sự tham dự của tôi",
-      "subtitle": "Theo dõi sự tham dự của bạn cho {className}",
+      "subtitle": "Theo dõi sự tham dự của bạn trong {className}",
       "attendanceRate": "Tỷ lệ tham dự",
       "history": "Lịch sử tham dự",
       "event": "Sự kiện",
@@ -83,7 +83,7 @@
     },
     "deleteDialog": {
       "title": "Xóa sự kiện",
-      "description": "Bạn có chắc chắn muốn xóa \"{eventName}\" không? Thao tác này không thể hoàn tác và sẽ xóa tất cả hồ sơ tham dự liên quan.",
+      "description": "Bạn có chắc chắn muốn xóa \"{eventName}\" không? Hành động này không thể hoàn tác và sẽ xóa tất cả hồ sơ chấm công liên quan.",
       "deleting": "Đang xóa...",
       "deleteButton": "Xóa sự kiện"
     },

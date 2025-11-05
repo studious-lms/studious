@@ -28,8 +28,8 @@
     },
     "assignments": {
       "title": "কোর্স অ্যাসাইনমেন্ট",
-      "gradedCount": "{graded} গ্রেড করা অ্যাসাইনমেন্ট",
-      "totalPoints": "{মোট} মোট পয়েন্ট",
+      "gradedCount": "{graded} গ্রেডেড অ্যাসাইনমেন্ট",
+      "totalPoints": "{total} মোট পয়েন্ট",
       "empty": {
         "title": "এখনও কোনও অ্যাসাইনমেন্ট নেই।",
         "description": "অ্যাসাইনমেন্ট তৈরি হয়ে গেলে এখানে দেখা যাবে।"

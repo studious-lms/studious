@@ -5,8 +5,8 @@
     "attendance": "Presença",
     "attachFile": "Anexar arquivo",
     "post": "Publicar",
-    "posting": "Postando...",
-    "noPosts": "Nenhuma postagem ainda",
-    "createFirstPost": "Criar primeira postagem"
+    "posting": "Publicando...",
+    "noPosts": "Ainda não há publicações.",
+    "createFirstPost": "Criar primeira publicação"
   }
 }

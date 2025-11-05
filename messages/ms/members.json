@@ -36,7 +36,7 @@
     "students": {
       "empty": {
         "title": "Tiada pelajar ditemui",
-        "matchNone": "Tiada pelajar yang sepadan dengan \"{query}\"",
+        "matchNone": "Tiada pelajar sepadan dengan \"{query}\"",
         "noStudents": "Belum ada pelajar yang menyertai kelas ini"
       }
     },

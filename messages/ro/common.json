@@ -181,7 +181,7 @@
         "button": "Contactați departamentul de vânzări"
       },
       "mostPopular": "Cele mai populare",
-      "earlyBird": "🎉 Primii utilizatori primesc <strong>3 luni gratuite</strong> la abonamentele anuale + asistență dedicată pentru integrare"
+      "earlyBird": "🎉 Primii utilizatori primesc 2 luni gratuite la abonamentele anuale + asistență dedicată pentru integrare"
     },
     "schoolProgram": {
       "badge": "Impact social",
@@ -318,13 +318,13 @@
         "contact": "Contact:",
         "notFound": {
           "title": "Aplicația nu a fost găsită",
-          "body": "Verificați ID-ul aplicației și încercați din nou. Dacă problemele persistă, contactați-ne la impact@studious.sh"
+          "body": "Vă rugăm să verificați ID-ul aplicației și să încercați din nou. Dacă problemele persistă, contactați-ne la impact@studious.sh"
         }
       },
       "cards": {
         "approved": {
           "title": "🎉 Felicitări! Cererea ta a fost aprobată.",
-          "body": "Verifică-ți e-mailul pentru următorii pași pentru configurarea contului tău."
+          "body": "Verifică-ți e-mailul pentru următorii pași pentru configurarea contului."
         },
         "underReview": {
           "title": "⏳ Cererea dumneavoastră este în curs de examinare.",
@@ -409,13 +409,13 @@
     "title": "Notificări",
     "subtitle": "Rămâi la curent cu cursurile și temele tale",
     "badge": {
-      "unread": "{count} necitit(ă)"
+      "unread": "{count} necitit"
     },
     "filters": {
       "label": "Filtra:",
       "all": "Toate ({count})",
       "unread": "Necitit ({count})",
-      "read": "Citit ({count})"
+      "read": "Citire ({count})"
     },
     "empty": {
       "unread": {
@@ -427,7 +427,7 @@
         "description": "Nicio notificare nu a fost marcată încă ca citită."
       },
       "all": {
-        "title": "Nicio notificare încă",
+        "title": "Încă nu există notificări",
         "description": "Când primiți notificări, acestea vor apărea aici."
       }
     },
@@ -626,7 +626,7 @@
       "teachers": {
         "empty": {
           "title": "Nu s-au găsit profesori",
-          "matchNone": "Niciun profesor nu corespunde cu „{query}”",
+          "matchNone": "Niciun profesor nu se potrivește cu „{query}”",
           "noTeachers": "Nu au fost adăugați profesori suplimentari"
         }
       },
@@ -634,7 +634,7 @@
         "inviteRegenerated": "Codul de invitație a fost regenerat cu succes.",
         "copied": "Codul de invitație a fost copiat în clipboard",
         "roleChanged": "Rolul a fost schimbat în {role}",
-        "memberRemoved": "Membru eliminat cu succes"
+        "memberRemoved": "Membrul a fost eliminat cu succes"
       },
       "errors": {
         "regenerateFailed": "Codul de invitație nu a putut fi regenerat.",
@@ -681,7 +681,7 @@
       "search": {
         "placeholder": "Căutare în fișiere"
       },
-      "selected": "{count} selectate",
+      "selected": "{count} selectat",
       "filters": {
         "fileType": "Tip de fișier",
         "documents": "Documente",
@@ -800,7 +800,7 @@
       },
       "assignments": {
         "title": "Teme de curs",
-        "gradedCount": "{notat} din {total} notate",
+        "gradedCount": "{graded} din {total} evaluate",
         "totalPoints": "{total} puncte totale",
         "empty": {
           "title": "Nicio sarcină încă",
@@ -876,7 +876,7 @@
     "titleStatement4": "După ani de zile în care ne-am luptat cu portaluri școlare învechite și fragmentate, am decis să construim sistemul de management al învățării pe care ne-am dorit dintotdeauna să-l avem.",
     "problemParagraph1": "Studious a început în 2023",
     "problemParagraph2": "când un grup de elevi și educatori s-au reunit cu o frustrare comună: portalurile școlare existente erau greoaie, lente și construite pentru o altă eră a educației.",
-    "problemDetailParagraph": "Ne-am trezit jonglând cu mai multe platforme — una pentru note, alta pentru teme, a treia pentru comunicare. Profesorii petreceau mai mult timp luptând cu software-ul decât predând. Elevii ratau termenele limită pentru că notificările erau îngropate în interfețe învechite.",
+    "problemDetailParagraph": "Ne-am trezit jonglând cu mai multe platforme — una pentru note, alta pentru teme, o a treia pentru comunicare. Profesorii petreceau mai mult timp luptând cu software-ul decât predând. Elevii ratau termenele limită pentru că notificările erau îngropate în interfețe învechite.",
     "betterWay": "Știam că trebuie să existe o cale mai bună.",
     "solutionParagraph1": "Inspirându-ne din instrumentele moderne de colaborare precum Linear și Notion, ne-am propus să creăm un sistem de management al învățării care să se simtă...",
     "solutionParagraph2": "rapid, intuitiv și plăcut de utilizat.",
@@ -892,7 +892,7 @@
     "journeyBetaLaunch2": "Lansarea oficială a beta-testării publice a Studious LMS. Accesul anticipat este disponibil pentru școlile din întreaga lume, cu funcționalități complete ale platformei.",
     "journeyPilotSchoolsDate": "Noiembrie 2025",
     "journeyPilotSchools1": "Programul Școlilor Pilot",
-    "journeyPilotSchools2": "Lansarea de parteneriate cu școli pilot pentru a colecta feedback din lumea reală și a rafina platforma pe baza unor nevoi educaționale diverse.",
+    "journeyPilotSchools2": "Lansarea de parteneriate cu școli pilot pentru a colecta feedback din lumea reală și a rafina platforma pe baza diverselor nevoi educaționale.",
     "journeyBetaCompleteDate": "Decembrie 2025",
     "journeyBetaComplete1": "Beta finalizată",
     "journeyBetaComplete2": "Tranziție de la versiunea beta la versiunea completă de producție. Stabilizarea platformei cu toate funcțiile de bază testate și optimizate complet.",
@@ -960,7 +960,7 @@
       },
       "success": {
         "title": "Ești pe listă!",
-        "description": "Îți vom trimite un e-mail la adresa {email} când vom fi gata."
+        "description": "Îți vom trimite un e-mail la adresa {email} când vom fi gata pentru tine."
       },
       "toasts": {
         "success": "Te-ai înscris cu succes pe lista de așteptare!"
@@ -1041,7 +1041,7 @@
       },
       "help": {
         "name": "Alegeți un nume descriptiv pentru folderul dvs.",
-        "description": "{count}/500 caractere"
+        "description": "{count}/500 de caractere"
       },
       "actions": {
         "cancel": "Anula",
@@ -1123,7 +1123,7 @@
       },
       "files": {
         "uploadButton": "Încărcați fișiere",
-        "dropZone": "Plasați fișierele aici sau faceți clic pentru a încărca",
+        "dropZone": "Plasați fișierele aici sau faceți clic pentru a le încărca",
         "dropZoneHint": "Acceptă toate tipurile de fișiere • Maxim 50 MB per fișier",
         "filesUploaded": "{uploaded} din {total} fișiere încărcate"
       },
@@ -1153,7 +1153,7 @@
         "successDraft": "Tema a fost salvată ca schiță.",
         "errorRequired": "Vă rugăm să completați toate câmpurile obligatorii.",
         "errorFailed": "Nu s-a putut crea tema. Vă rugăm să încercați din nou.",
-        "errorUploadFailed": "Nu s-a putut încărca {name}",
+        "errorUploadFailed": "Încărcarea nu a reușit {name}",
         "sectionCreated": "Secțiunea „{name}” a fost creată cu succes."
       }
     },

@@ -28,8 +28,8 @@
     },
     "assignments": {
       "title": "पाठ्यक्रम असाइनमेंट",
-      "gradedCount": "{ग्रेडेड} ग्रेडेड असाइनमेंट",
-      "totalPoints": "{कुल} कुल अंक",
+      "gradedCount": "{graded} ग्रेडेड असाइनमेंट",
+      "totalPoints": "{total} कुल अंक",
       "empty": {
         "title": "अभी तक कोई असाइनमेंट नहीं",
         "description": "असाइनमेंट बनाए जाने के बाद वे यहां दिखाई देंगे."

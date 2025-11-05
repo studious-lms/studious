@@ -9,7 +9,7 @@
     "enrolled": "Ingeschreven",
     "noClassesFound": "Geen klassen gevonden",
     "noTeachingClassesFound": "Er zijn geen lesklassen gevonden die overeenkomen met \"{query}\"",
-    "noEnrolledClassesFound": "Geen ingeschreven klassen gevonden die overeenkomen met \"{query}\"",
+    "noEnrolledClassesFound": "Er zijn geen ingeschreven klassen gevonden die overeenkomen met \"{query}\"",
     "noClassesYet": "Nog geen lessen",
     "noClassesYetDesc": "Maak uw eerste klas aan en begin met het beheren van opdrachten, cijfers en studenteninteracties.",
     "noEnrolledClasses": "Geen ingeschreven klassen",

@@ -4,7 +4,7 @@
     "subtitle": "Iată ce se întâmplă cu cursurile voastre de astăzi.",
     "stats": {
       "totalClasses": "Total clase",
-      "teachingEnrolled": "predare, înscris",
+      "teachingEnrolled": "{teaching} predare, {enrolled} înscriși",
       "dueToday": "Scadent astăzi",
       "dueTodayDesc": "Temele scadente pentru astăzi",
       "upcoming": "Viitoare",
@@ -20,7 +20,7 @@
       "viewAgenda": "Vizualizați agenda",
       "dueToday": "Scadent astăzi",
       "dueTomorrow": "Scadent mâine",
-      "due": "Două {date}",
+      "due": "Două {dates}",
       "teaching": "Predare",
       "viewAllAssignments": "Vezi toate temele"
     },

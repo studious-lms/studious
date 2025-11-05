@@ -3,7 +3,7 @@
     "editFolder": "تحرير المجلد",
     "renameFile": "إعادة تسمية الملف",
     "name": "اسم",
-    "placeholder": "أدخل اسم {النوع}",
+    "placeholder": "أدخل {type} الاسم",
     "folderColor": "لون المجلد",
     "folderColorDescription": "اختر لونًا لهذا المجلد",
     "cancel": "يلغي",
@@ -17,17 +17,17 @@
     "folderIdMissing": "معرف المجلد مفقود. يُرجى الانتظار حتى يتم تحميل المجلد.",
     "preparing": "جاري تحضير التحميل...",
     "gettingUrls": "الحصول على عناوين URL للتحميل...",
-    "uploadingFile": "جاري تحميل {الاسم}...",
-    "confirming": "جاري تأكيد {الاسم}...",
+    "uploadingFile": "جاري التحميل {name}...",
+    "confirming": "جاري التأكيد {name}...",
     "finalizing": "جاري الانتهاء...",
     "success": "تم تحميل الملفات بنجاح!",
     "error": "فشل تحميل الملفات. يُرجى المحاولة مرة أخرى.",
-    "errorFile": "فشل تحميل {الاسم}",
+    "errorFile": "فشل في التحميل {name}",
     "errorMessage": "فشل التحميل: {message}",
     "dropZone": "قم بإفلات الملفات هنا أو انقر للاستعراض",
     "dropZoneHint": "دعم الصور والمستندات ومقاطع الفيديو والمزيد",
     "selectedFiles": "الملفات المحددة ({count})",
-    "filesUploaded": "تم تحميل {uploaded} من إجمالي {total} ملف تم تحميله",
+    "filesUploaded": "{uploaded} من {total} ملف تم تحميله",
     "uploadingTo": "جاري التحميل إلى:",
     "homeDirectory": "الدليل الرئيسي",
     "status": {
@@ -56,7 +56,7 @@
     "updating": "جاري التحديث...",
     "created": "تم إنشاء المعيار بنجاح",
     "updated": "تم تحديث المعيار بنجاح",
-    "createFailed": "فشل في إنشاء معيار التقييم",
+    "createFailed": "فشل إنشاء معيار التقييم",
     "updateFailed": "فشل تحديث المعايير",
     "errorNameRequired": "يرجى تقديم اسم ومعيار واحد على الأقل"
   },
@@ -81,9 +81,9 @@
     "description": "حدد الملفات للتحميل",
     "selectFiles": "تحديد الملفات",
     "selectedFiles": "الملفات المحددة ({count})",
-    "maxFiles": "الحد الأقصى للملفات: {max}. الأنواع المقبولة: {types}",
+    "maxFiles": "الحد الأقصى {max} ملف. الأنواع المقبولة: {types}",
     "allFiles": "جميع الملفات",
-    "progressUploaded": "تم تحميل {progress}%",
+    "progressUploaded": "{progress}% تم تحميلها",
     "noFilesSelected": "لم يتم تحديد أي ملفات",
     "maxFilesExceeded": "الحد الأقصى المسموح به من الملفات {max}",
     "uploadFailed": "فشل التحميل: {error}",
@@ -95,29 +95,96 @@
       "failed": "فشل"
     },
     "cancel": "يلغي",
-    "upload": "تحميل {count} ملف",
-    "uploadPlural": "تحميل {count} ملفًا",
+    "upload": "تحميل الملف {count}",
+    "uploadPlural": "تحميل {count} ملفات",
     "uploading": "جاري التحميل..."
   },
+  "notifications": {
+    "title": "إشعارات",
+    "subtitle": "ابق على اطلاع بأحدث دروسك وواجباتك",
+    "filters": {
+      "label": "فلتر:",
+      "all": "الكل ({count})",
+      "unread": "غير مقروء ({count})",
+      "read": "اقرأ ({count})"
+    },
+    "badge": {
+      "unread": "{count} جديد"
+    },
+    "actions": {
+      "viewAll": "عرض جميع الإشعارات",
+      "markAsRead": "وضع علامة كمقروءة"
+    },
+    "empty": {
+      "all": {
+        "title": "لا يوجد إشعارات حتى الآن",
+        "description": "عندما تتلقى الإشعارات، ستظهر هنا."
+      }
+    }
+  },
   "chat": {
+    "landing": {
+      "pleaseSignIn": "الرجاء تسجيل الدخول للمتابعة",
+      "signInRequired": "تسجيل الدخول مطلوب للوصول إلى هذه الصفحة",
+      "title": "محادثة",
+      "description": "حدد محادثة من الشريط الجانبي لبدء الدردشة."
+    },
+    "page": {
+      "header": {
+        "members": "أعضاء",
+        "markMentionsRead": "يذكر مارك القراءة"
+      },
+      "input": {
+        "placeholderPrefix": "رسالة"
+      },
+      "loading": "جاري تحميل المحادثة..."
+    },
     "conversationList": {
-      "searchPlaceholder": "ابحث عن محادثة أو ابدأ محادثة"
+      "title": "الرسائل المباشرة",
+      "searchPlaceholder": "ابحث عن محادثة أو ابدأ محادثة",
+      "noConversations": "لا توجد محادثات حتى الآن",
+      "noConversationsDescription": "ابدأ الدردشة مع شخص ما",
+      "noSearchResults": "لم يتم العثور على أي محادثات",
+      "noSearchResultsDescription": "جرب مصطلحات بحث مختلفة",
+      "unnamedGroup": "مجموعة غير مسماة",
+      "unknownUser": "مستخدم غير معروف"
     },
     "messageList": {
       "noMessagesTitle": "لا توجد رسائل حتى الآن",
       "noMessagesDescription": "هذه بداية محادثتك"
     },
+    "messageInput": {
+      "placeholder": "اكتب رسالة..."
+    },
     "messageEdit": {
-      "placeholder": "قم بتعديل رسالتك..."
+      "placeholder": "قم بتعديل رسالتك...",
+      "hint": "اضغط على Enter للحفظ • اضغط على Escape للإلغاء",
+      "save": "يحفظ",
+      "saving": "توفير...",
+      "cancel": "يلغي"
+    },
+    "messageActions": {
+      "editMessage": "تعديل الرسالة",
+      "deleteMessage": "حذف الرسالة",
+      "deleteConfirmTitle": "حذف الرسالة",
+      "deleteConfirmDescription": "هل أنت متأكد أنك تريد حذف هذه الرسالة؟ لا يمكن التراجع عن هذا الإجراء.",
+      "cancel": "يلغي",
+      "delete": "يمسح",
+      "deleting": "جاري الحذف..."
     },
     "createConversation": {
-      "title": "محادثة جديدة",
+      "title": "ابدأ محادثة",
+      "description": "إنشاء رسالة مباشرة أو محادثة جماعية",
       "direct": "رسالة مباشرة",
       "group": "الدردشة الجماعية",
+      "dmLabel": "أدخل اسم المستخدم لإرسال الرسالة",
       "searchPlaceholder": "أدخل اسم المستخدم...",
-      "groupName": "اسم المجموعة",
+      "groupNameLabel": "اسم المجموعة",
       "groupNamePlaceholder": "أدخل اسم المجموعة...",
-      "addMembers": "إضافة أعضاء",
+      "addMembersLabel": "إضافة الأعضاء حسب اسم المستخدم",
+      "addButton": "يضيف",
+      "selectedUser": "المستخدم المحدد:",
+      "selectedMembers": "الأعضاء المختارون ({count})",
       "cancel": "يلغي",
       "create": "يخلق",
       "creating": "إنشاء..."
@@ -173,7 +240,7 @@
     "updating": "جاري التحديث...",
     "creating": "إنشاء...",
     "addEvent": "إضافة حدث",
-    "eventCreated": "تم إنشاء {type} بنجاح",
+    "eventCreated": "{type} تم إنشاؤه بنجاح",
     "eventUpdated": "تم تحديث الحدث بنجاح",
     "errorRequired": "يرجى ملء جميع الحقول المطلوبة",
     "errorSelectClass": "الرجاء تحديد الفصل لحدث الفصل",
@@ -207,11 +274,11 @@
     "errorUpdate": "فشل تحديث الحدث"
   },
   "aiLab": {
-    "title": "إنشاء {النوع}",
+    "title": "إنشاء {type}",
     "aiPowered": "مدعوم بالذكاء الاصطناعي",
     "description": "قم بتوفير بعض المعلومات الأساسية لمساعدة الذكاء الاصطناعي الخاص بنا على إنشاء محتوى أفضل لك.",
     "titleField": "عنوان *",
-    "titlePlaceholder": "أدخل {type} العنوان",
+    "titlePlaceholder": "أدخل {type} عنوان",
     "subject": "موضوع *",
     "selectSubject": "اختر الموضوع",
     "subjects": {
@@ -246,7 +313,7 @@
       "2hours": "ساعاتين"
     },
     "descriptionField": "وصف",
-    "descriptionPlaceholder": "صف ما يجب أن يغطيه هذا {النوع}...",
+    "descriptionPlaceholder": "صف ما يجب أن يغطيه هذا {type}...",
     "requirements": "المتطلبات الخاصة",
     "requirementsPlaceholder": "أية متطلبات أو أهداف تعليمية أو قيود محددة...",
     "cancel": "يلغي",

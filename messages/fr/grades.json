@@ -1,17 +1,17 @@
 {
   "classGrades": {
     "title": "Notes",
-    "subtitle": "Afficher et gérer les notes des étudiants",
+    "subtitle": "Consulter et gérer les notes des élèves",
     "columns": {
       "assignment": "Affectation",
-      "maxPoints": "Points maximum",
+      "maxPoints": "Points maximums",
       "weight": "Poids",
       "graded": "Noté",
       "dueDate": "Deux rendez-vous",
       "actions": "Actes",
       "student": "Étudiant",
       "overallGrade": "Note globale",
-      "assignmentsCompleted": "Devoirs terminés",
+      "assignmentsCompleted": "Travaux terminés",
       "trend": "S'orienter"
     },
     "labels": {
@@ -19,7 +19,7 @@
     },
     "actions": {
       "manage": "Gérer",
-      "viewGrades": "Voir les notes",
+      "viewGrades": "Afficher les notes",
       "saving": "Économie...",
       "saveChanges": "Enregistrer les modifications",
       "preview": "Aperçu",
@@ -35,34 +35,34 @@
       "submissionRate": "Taux de soumission"
     },
     "assignmentManagement": {
-      "title": "Gestion des affectations",
+      "title": "Gestion des devoirs",
       "empty": {
-        "title": "Aucune mission trouvée",
-        "description": "Créez des devoirs pour gérer les notes et les paramètres"
+        "title": "Aucun devoir trouvé",
+        "description": "Créer des devoirs pour gérer les notes et les paramètres"
       },
-      "searchPlaceholder": "Rechercher des missions..."
+      "searchPlaceholder": "Missions de recherche..."
     },
     "students": {
       "title": "Étudiants",
       "viewAll": "Voir tous les étudiants",
       "empty": {
         "title": "Aucun étudiant inscrit",
-        "description": "Les étudiants apparaîtront ici une fois qu'ils auront rejoint la classe"
+        "description": "Les élèves apparaîtront ici une fois qu'ils auront rejoint la classe."
       },
       "searchPlaceholder": "Rechercher des étudiants..."
     },
     "gradeBoundaries": {
       "title": "Limites de niveau",
-      "untitled": "Limite de classement sans titre",
+      "untitled": "Limite de nivellement sans titre",
       "empty": {
-        "title": "Aucune limite de niveau créée",
+        "title": "Aucune limite de niveau n'a été créée.",
         "description": "Créer des limites de notation pour définir les plages de notes"
       },
-      "previewTitle": "Aperçu des limites de classement",
+      "previewTitle": "Aperçu des limites de notation",
       "details": {
-        "title": "Détails des limites de classement",
+        "title": "Détails des limites de nivellement",
         "name": "Nom",
-        "noneDefined": "Aucune limite de classement définie"
+        "noneDefined": "Aucune limite de notation définie"
       }
     },
     "rubrics": {
@@ -70,9 +70,9 @@
       "untitled": "Rubrique sans titre",
       "empty": {
         "title": "Aucune rubrique créée",
-        "description": "Créer des rubriques pour définir les critères d'évaluation"
+        "description": "Créer des grilles d'évaluation pour définir les critères d'évaluation"
       },
-      "previewTitle": "Aperçu de la rubrique",
+      "previewTitle": "Aperçu de la grille d'évaluation",
       "details": {
         "title": "Détails de la rubrique",
         "name": "Nom",
@@ -84,13 +84,13 @@
       }
     },
     "confirm": {
-      "deleteRubric": "Êtes-vous sûr de vouloir supprimer ce barème de notation ?",
+      "deleteRubric": "Êtes-vous sûr de vouloir supprimer ce barème de notation ?",
       "deleteGradingBoundary": "Êtes-vous sûr de vouloir supprimer cette limite de notation ?"
     }
   },
   "studentGrades": {
-    "title": "Toutes les classes d'élèves",
-    "allStudents": "Afficher et gérer les notes de tous les élèves de cette classe",
+    "title": "Toutes les notes des élèves",
+    "allStudents": "Consultez et gérez les notes de tous les élèves de cette classe.",
     "students": "Étudiants",
     "noGrades": "Aucun étudiant trouvé",
     "noGradesDescription": "Aucun étudiant n'est encore inscrit à ce cours. Les étudiants apparaîtront ici dès leur inscription.",
@@ -99,24 +99,24 @@
       "actions": "Actes"
     },
     "actions": {
-      "viewSubmission": "Voir les notes"
+      "viewSubmission": "Afficher les notes"
     }
   },
   "individualGrades": {
     "myGrades": "Mes notes",
     "studentGrades": "Notes",
     "viewYourGrades": "Consultez vos notes et vos progrès",
-    "individualManagement": "Gestion des notes individuelles des étudiants",
+    "individualManagement": "Gestion individuelle des notes des élèves",
     "export": "Exporter",
     "back": "Dos",
     "yourPerformance": "Votre performance",
-    "trackProgress": "Suivez vos progrès académiques",
+    "trackProgress": "Suivez vos progrès scolaires",
     "overallGrade": "Note globale",
     "completed": "Complété",
     "trend": "S'orienter",
     "yourGrades": "Vos notes",
     "assignments": "Devoirs",
-    "studentNotFound": "Étudiant non trouvé",
+    "studentNotFound": "Étudiant introuvable",
     "goBack": "Retour",
     "grade": "Grade",
     "table": {
@@ -132,9 +132,9 @@
       "pending": "En attente"
     },
     "empty": {
-      "title": "Aucune mission trouvée",
-      "description": "Cet étudiant n'a aucun devoir à afficher"
+      "title": "Aucun devoir trouvé",
+      "description": "Cet élève n'a aucun devoir à afficher"
     },
-    "searchPlaceholder": "Rechercher des missions..."
+    "searchPlaceholder": "Missions de recherche..."
   }
 }

@@ -1,7 +1,7 @@
 {
   "settings": {
     "title": "Klasseneinstellungen",
-    "subtitle": "Konfigurieren Sie Klassendetails und -einstellungen",
+    "subtitle": "Klassendetails und -einstellungen konfigurieren",
     "labels": {
       "unsavedChanges": "Nicht gespeicherte Änderungen"
     },
@@ -17,12 +17,12 @@
         "title": "Grundlegende Informationen"
       },
       "theme": {
-        "title": "Klassenthema",
-        "description": "Wählen Sie eine Themenfarbe für diese Klasse"
+        "title": "Unterrichtsthema",
+        "description": "Wählen Sie eine Themenfarbe für diesen Kurs."
       },
       "danger": {
         "title": "Gefahrenzone",
-        "description": "Sobald Sie einen Kurs gelöscht haben, können Sie ihn nicht mehr rückgängig machen. Dadurch werden alle Aufgaben, Noten und Anwesenheitslisten dauerhaft gelöscht und alle Schüler aus dem Kurs entfernt."
+        "description": "Sobald Sie einen Kurs löschen, gibt es kein Zurück mehr. Dadurch werden alle Aufgaben, Noten und Anwesenheitslisten endgültig gelöscht und alle Schüler aus dem Kurs entfernt."
       }
     },
     "fields": {
@@ -31,9 +31,9 @@
       "subject": "Thema"
     },
     "placeholders": {
-      "className": "zB Fortgeschrittene Physik",
-      "section": "z. B. AP-101",
-      "subject": "zB Physik"
+      "className": "z.B. Höhere Physik",
+      "section": "z.B. AP-101",
+      "subject": "z.B. Physik"
     },
     "toasts": {
       "updated": {
@@ -42,22 +42,22 @@
       },
       "deleted": {
         "title": "Klasse gelöscht",
-        "description": "Die Klasse wurde dauerhaft gelöscht."
+        "description": "Der Kurs wurde endgültig gelöscht."
       }
     },
     "errors": {
       "updateFailed": {
         "title": "Aktualisierung fehlgeschlagen",
-        "description": "Das Speichern der Klasseneinstellungen ist fehlgeschlagen. Bitte versuchen Sie es erneut."
+        "description": "Die Klasseneinstellungen konnten nicht gespeichert werden. Bitte versuchen Sie es erneut."
       }
     },
     "confirm": {
-      "title": "Sind Sie absolut sicher?",
-      "description": "Diese Aktion kann nicht rückgängig gemacht werden. Dadurch wird die Klasse \"{name}\" dauerhaft gelöscht und alle zugehörigen Daten entfernt, einschließlich:",
+      "title": "Sind Sie sich absolut sicher?",
+      "description": "Diese Aktion kann nicht rückgängig gemacht werden. Dadurch wird die Klasse \"{name}\" endgültig gelöscht und alle zugehörigen Daten entfernt, einschließlich:",
       "items": {
         "assignments": "Alle Aufgaben und Abgaben",
-        "records": "Alle Noten und Anwesenheitsnachweise",
-        "students": "Alle Schüler werden aus der Klasse entfernt",
+        "records": "Alle Noten und Anwesenheitslisten",
+        "students": "Alle Schüler werden aus der Klasse entfernt.",
         "events": "Alle Klassenveranstaltungen und Ankündigungen"
       },
       "confirmDelete": "Ja, Klasse löschen"

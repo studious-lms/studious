@@ -1,45 +1,45 @@
 {
   "attendance": {
-    "title": "Klassenveranstaltungen und Anwesenheit",
-    "subtitle": "Verfolgen Sie die Anwesenheit der Studenten bei jeder Veranstaltung",
+    "title": "Klassenveranstaltungen & Anwesenheit",
+    "subtitle": "Erfassen Sie die Anwesenheit der Studierenden bei jeder Veranstaltung.",
     "saving": {
-      "auto": "Automatisches Speichern...",
+      "auto": "Automatische Speicherung...",
       "unsaved": "Nicht gespeicherte Änderungen",
       "saving": "Speichern..."
     },
     "table": {
       "date": "Datum",
-      "eventName": "Ereignisname",
-      "attendanceRate": "Anwesenheitsrate",
+      "eventName": "Veranstaltungsname",
+      "attendanceRate": "Anwesenheitsquote",
       "attendance": "Teilnahme",
       "actions": "Aktionen"
     },
     "actions": {
       "viewDetails": "Details anzeigen",
       "editEvent": "Ereignis bearbeiten",
-      "deleteEvent": "Ereignis löschen",
+      "deleteEvent": "Löschereignis",
       "createEvent": "Ereignis erstellen",
       "saveAttendance": "Anwesenheit speichern",
       "markAllPresent": "Alle Anwesenden markieren",
-      "markAllAbsent": "Alle Abwesenden markieren"
+      "markAllAbsent": "Alle als abwesend markieren"
     },
     "allEvents": {
       "title": "Alle Veranstaltungen",
-      "description": "Vollständiger Verlauf der Unterrichtsveranstaltungen und Anwesenheitslisten",
-      "searchPlaceholder": "Veranstaltungen suchen...",
+      "description": "Vollständige Historie der Unterrichtsveranstaltungen und Anwesenheitslisten",
+      "searchPlaceholder": "Suchereignisse...",
       "empty": {
-        "title": "Keine Veranstaltungen gefunden",
-        "description": "Erstellen Sie Ihre erste Veranstaltung, um mit der Teilnehmererfassung zu beginnen"
+        "title": "Keine Ereignisse gefunden",
+        "description": "Erstellen Sie Ihre erste Veranstaltung, um die Teilnahme zu erfassen."
       }
     },
     "eventsList": {
-      "pickDate": "Datum auswählen",
+      "pickDate": "Wählen Sie ein Datum",
       "untitled": "Unbenanntes Ereignis",
       "empty": {
-        "noEventsOnDate": "Keine Veranstaltungen an diesem Datum",
-        "noEventsOnDateDescription": "Für {date} sind keine Ereignisse geplant. Wählen Sie ein anderes Datum aus oder erstellen Sie ein neues Ereignis.",
-        "noEvents": "Keine Veranstaltungen gefunden",
-        "noEventsDescription": "Erstellen Sie Ihre erste Veranstaltung, um mit der Teilnehmererfassung zu beginnen",
+        "noEventsOnDate": "An diesem Tag finden keine Veranstaltungen statt.",
+        "noEventsOnDateDescription": "Für {date} sind keine Veranstaltungen geplant. Versuchen Sie, ein anderes Datum auszuwählen oder eine neue Veranstaltung zu erstellen.",
+        "noEvents": "Keine Ereignisse gefunden",
+        "noEventsDescription": "Erstellen Sie Ihre erste Veranstaltung, um die Teilnahme zu erfassen.",
         "createForDate": "Ereignis für dieses Datum erstellen",
         "createFirst": "Erstes Ereignis erstellen"
       }
@@ -48,48 +48,48 @@
       "title": "Veranstaltungszusammenfassung",
       "selectedEvent": "Ausgewähltes Ereignis",
       "total": "Gesamt",
-      "attendanceRate": "Anwesenheitsrate"
+      "attendanceRate": "Anwesenheitsquote"
     },
     "roster": {
-      "title": "Studentenliste",
-      "description": "Klicken Sie auf die Statusschaltflächen, um die Anwesenheit jedes Schülers zu markieren",
+      "title": "Schülerliste",
+      "description": "Klicken Sie auf die Status-Schaltflächen, um die Anwesenheit jedes Schülers zu markieren.",
       "empty": {
         "title": "Keine Studierenden eingeschrieben",
-        "description": "Die Schüler werden hier angezeigt, sobald sie der Klasse beitreten"
+        "description": "Die Studierenden werden hier angezeigt, sobald sie der Klasse beitreten."
       }
     },
     "prompt": {
       "title": "Wählen Sie ein Ereignis aus",
-      "description": "Wählen Sie oben eine Veranstaltung aus, um die Anwesenheit der Studierenden anzuzeigen und zu verwalten"
+      "description": "Wählen Sie oben eine Veranstaltung aus, um die Anwesenheit der Studierenden anzuzeigen und zu verwalten."
     },
     "status": {
       "present": "Gegenwärtig",
       "late": "Spät",
       "absent": "Abwesend",
-      "notTaken": "Nicht genommen"
+      "notTaken": "Nicht vergeben"
     },
     "student": {
       "title": "Meine Anwesenheit",
-      "subtitle": "Verfolgen Sie Ihre Anwesenheit für {className}",
-      "attendanceRate": "Anwesenheitsrate",
-      "history": "Anwesenheitsverlauf",
+      "subtitle": "Erfassen Sie Ihre Anwesenheit für {className}",
+      "attendanceRate": "Anwesenheitsquote",
+      "history": "Anwesenheitsgeschichte",
       "event": "Ereignis",
       "status": "Status",
-      "searchPlaceholder": "Veranstaltungen suchen...",
+      "searchPlaceholder": "Suchereignisse...",
       "empty": {
         "title": "Keine Anwesenheitslisten",
-        "description": "Ihre Anwesenheit wird hier angezeigt, sobald Ereignisse erstellt und die Anwesenheit erfasst wurde"
+        "description": "Ihre Anwesenheit wird hier angezeigt, sobald Veranstaltungen erstellt und die Anwesenheit erfasst wurden."
       }
     },
     "deleteDialog": {
-      "title": "Ereignis löschen",
-      "description": "Möchten Sie „{eventName}“ wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden und entfernt alle zugehörigen Anwesenheitsdatensätze.",
+      "title": "Löschereignis",
+      "description": "Möchten Sie wirklich \"{eventName}\" löschen? Diese Aktion kann nicht rückgängig gemacht werden und entfernt alle zugehörigen Anwesenheitsdatensätze.",
       "deleting": "Löschen...",
-      "deleteButton": "Ereignis löschen"
+      "deleteButton": "Löschereignis"
     },
     "toast": {
       "attendanceSaved": "Anwesenheit erfolgreich gespeichert",
-      "attendanceSaveFailed": "Anwesenheit konnte nicht gespeichert werden",
+      "attendanceSaveFailed": "Die Anwesenheitsliste konnte nicht gespeichert werden",
       "eventDeleted": "Ereignis erfolgreich gelöscht",
       "eventDeleteFailed": "Ereignis konnte nicht gelöscht werden"
     }

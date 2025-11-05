@@ -37,7 +37,7 @@
       "untitled": "Eveniment fără titlu",
       "empty": {
         "noEventsOnDate": "Niciun eveniment în această dată",
-        "noEventsOnDateDescription": "Nu sunt programate evenimente pentru {date}. Încercați să selectați o altă dată sau să creați un eveniment nou.",
+        "noEventsOnDateDescription": "Niciun eveniment programat pentru {date}. Încercați să selectați o altă dată sau să creați un eveniment nou.",
         "noEvents": "Nu s-au găsit evenimente",
         "noEventsDescription": "Creează-ți primul eveniment pentru a începe să urmărești prezența",
         "createForDate": "Creați un eveniment pentru această dată",

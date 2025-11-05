@@ -17,13 +17,13 @@
     "folderIdMissing": "Mapp-ID saknas. Vänta tills mappen laddas.",
     "preparing": "Förbereder uppladdning...",
     "gettingUrls": "Hämtar uppladdnings-URL:er...",
-    "uploadingFile": "Laddar upp {namn}...",
-    "confirming": "Bekräftar {namn}...",
+    "uploadingFile": "Laddar upp {name}...",
+    "confirming": "Bekräftar {name}...",
     "finalizing": "Slutför...",
     "success": "Filerna har laddats upp!",
     "error": "Misslyckades med att ladda upp filer. Försök igen.",
     "errorFile": "Misslyckades med att ladda upp {name}",
-    "errorMessage": "Uppladdning misslyckades: {meddelande}",
+    "errorMessage": "Uppladdning misslyckades: {message}",
     "dropZone": "Släpp filer här eller klicka för att bläddra",
     "dropZoneHint": "Stöd för bilder, dokument, videor och mer",
     "selectedFiles": "Valda filer ({count})",
@@ -41,7 +41,7 @@
     "uploading": "Laddar upp..."
   },
   "rubric": {
-    "title": "Skapa matris",
+    "title": "Skapa bedömningsmatris",
     "titleEdit": "Redigera bedömningsmatris",
     "selectTemplate": "Välj mall",
     "startFromScratch": "Börja från början",
@@ -50,7 +50,7 @@
     "name": "Rubriknamn",
     "placeholder": "Ange rubriknamn",
     "cancel": "Avboka",
-    "create": "Skapa matris",
+    "create": "Skapa bedömningsmatris",
     "update": "Uppdatera bedömningsmatris",
     "creating": "Skapande...",
     "updating": "Uppdaterar...",
@@ -81,12 +81,12 @@
     "description": "Välj filer att ladda upp",
     "selectFiles": "Välj filer",
     "selectedFiles": "Valda filer ({count})",
-    "maxFiles": "Maximalt {max} filer. Godkända typer: {types}",
+    "maxFiles": "Maximalt antal {max} filer. Godkända typer: {types}",
     "allFiles": "Alla filer",
     "progressUploaded": "{progress}% uppladdat",
     "noFilesSelected": "Inga filer valda",
     "maxFilesExceeded": "Maximalt {max} filer tillåtna",
-    "uploadFailed": "Uppladdning misslyckades: {fel}",
+    "uploadFailed": "Uppladdning misslyckades: {error}",
     "uploadFailedGeneric": "Uppladdningen misslyckades",
     "status": {
       "pending": "I avvaktan på",
@@ -99,25 +99,92 @@
     "uploadPlural": "Ladda upp {count} filer",
     "uploading": "Laddar upp..."
   },
+  "notifications": {
+    "title": "Aviseringar",
+    "subtitle": "Håll dig uppdaterad om dina kurser och uppgifter",
+    "filters": {
+      "label": "Filtrera:",
+      "all": "Alla ({count})",
+      "unread": "Oläst ({count})",
+      "read": "Läs ({count})"
+    },
+    "badge": {
+      "unread": "{count} ny"
+    },
+    "actions": {
+      "viewAll": "Visa alla aviseringar",
+      "markAsRead": "Markera som läst"
+    },
+    "empty": {
+      "all": {
+        "title": "Inga aviseringar ännu",
+        "description": "När du får aviseringar visas de här."
+      }
+    }
+  },
   "chat": {
+    "landing": {
+      "pleaseSignIn": "Vänligen logga in för att fortsätta",
+      "signInRequired": "Inloggning krävs för att komma åt den här sidan",
+      "title": "Chatt",
+      "description": "Välj en konversation från sidofältet för att börja chatta."
+    },
+    "page": {
+      "header": {
+        "members": "Medlemmar",
+        "markMentionsRead": "Mark nämner läsning"
+      },
+      "input": {
+        "placeholderPrefix": "Meddelande"
+      },
+      "loading": "Laddar konversation..."
+    },
     "conversationList": {
-      "searchPlaceholder": "Hitta eller starta en konversation"
+      "title": "Direktmeddelanden",
+      "searchPlaceholder": "Hitta eller starta en konversation",
+      "noConversations": "Inga konversationer ännu",
+      "noConversationsDescription": "Börja chatta med någon",
+      "noSearchResults": "Inga konversationer hittades",
+      "noSearchResultsDescription": "Prova olika söktermer",
+      "unnamedGroup": "Namnlös grupp",
+      "unknownUser": "Okänd användare"
     },
     "messageList": {
       "noMessagesTitle": "Inga meddelanden ännu",
       "noMessagesDescription": "Detta är början på er konversation"
     },
+    "messageInput": {
+      "placeholder": "Skriv ett meddelande..."
+    },
     "messageEdit": {
-      "placeholder": "Redigera ditt meddelande..."
+      "placeholder": "Redigera ditt meddelande...",
+      "hint": "Tryck Enter för att spara • Escape för att avbryta",
+      "save": "Spara",
+      "saving": "Sparande...",
+      "cancel": "Avboka"
+    },
+    "messageActions": {
+      "editMessage": "Redigera meddelande",
+      "deleteMessage": "Ta bort meddelande",
+      "deleteConfirmTitle": "Ta bort meddelande",
+      "deleteConfirmDescription": "Är du säker på att du vill ta bort det här meddelandet? Åtgärden kan inte ångras.",
+      "cancel": "Avboka",
+      "delete": "Radera",
+      "deleting": "Tar bort..."
     },
     "createConversation": {
-      "title": "Ny konversation",
+      "title": "Starta en konversation",
+      "description": "Skapa ett direktmeddelande eller en gruppkonversation",
       "direct": "Direktmeddelande",
       "group": "Gruppchatt",
+      "dmLabel": "Ange användarnamn för att skicka meddelande",
       "searchPlaceholder": "Ange användarnamn...",
-      "groupName": "Gruppnamn",
+      "groupNameLabel": "Gruppnamn",
       "groupNamePlaceholder": "Ange gruppnamn...",
-      "addMembers": "Lägg till medlemmar",
+      "addMembersLabel": "Lägg till medlemmar efter användarnamn",
+      "addButton": "Tillägga",
+      "selectedUser": "Vald användare:",
+      "selectedMembers": "Valda medlemmar ({count})",
       "cancel": "Avboka",
       "create": "Skapa",
       "creating": "Skapande..."
@@ -207,11 +274,11 @@
     "errorUpdate": "Misslyckades med att uppdatera händelsen"
   },
   "aiLab": {
-    "title": "Skapa {typ}",
+    "title": "Skapa {type}",
     "aiPowered": "AI-driven",
     "description": "Ge oss lite grundläggande information som hjälper vår AI att skapa bättre innehåll åt dig.",
     "titleField": "Titel *",
-    "titlePlaceholder": "Ange titeln {type}",
+    "titlePlaceholder": "Ange {type} titel",
     "subject": "Ämne *",
     "selectSubject": "Välj ämne",
     "subjects": {
@@ -246,7 +313,7 @@
       "2hours": "2 timmar"
     },
     "descriptionField": "Beskrivning",
-    "descriptionPlaceholder": "Beskriv vad denna {typ} ska omfatta...",
+    "descriptionPlaceholder": "Beskriv vad detta {type} ska omfatta...",
     "requirements": "Särskilda krav",
     "requirementsPlaceholder": "Några specifika krav, lärandemål eller begränsningar...",
     "cancel": "Avboka",

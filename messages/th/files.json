@@ -37,7 +37,7 @@
     "search": {
       "placeholder": "ค้นหาในไฟล์"
     },
-    "selected": "{count} ที่เลือก",
+    "selected": "{count} เลือกแล้ว",
     "filters": {
       "fileType": "ประเภทไฟล์",
       "documents": "เอกสาร",
@@ -78,7 +78,7 @@
     },
     "search": {
       "placeholder": "ค้นหาในโฟลเดอร์",
-      "selected": "{count} ที่เลือก"
+      "selected": "{count} เลือกแล้ว"
     },
     "filters": {
       "label": "กรอง",

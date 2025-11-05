@@ -40,7 +40,7 @@
       }
     },
     "chats": {
-      "title": "Yapay Zeka Laboratuvarları ({count})",
+      "title": "AI Labs ({count})",
       "active": "Aktif",
       "messageCount": "{count} mesaj",
       "createdBy": "{name} tarafından oluşturuldu",

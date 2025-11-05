@@ -28,7 +28,7 @@
     },
     "assignments": {
       "title": "Teme de curs",
-      "gradedCount": "teme notate cu {notă}",
+      "gradedCount": "{graded} teme notate",
       "totalPoints": "{total} puncte totale",
       "empty": {
         "title": "Nicio sarcină încă",

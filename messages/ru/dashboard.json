@@ -1,10 +1,10 @@
 {
   "home": {
-    "welcomeBack": "Добро пожаловать обратно, {имя}!",
+    "welcomeBack": "Добро пожаловать обратно, {name}!",
     "subtitle": "Вот что происходит с вашими занятиями сегодня.",
     "stats": {
       "totalClasses": "Всего классов",
-      "teachingEnrolled": "{преподавание} преподавание, {зачислен} зачислен",
+      "teachingEnrolled": "{teaching} преподает, {enrolled} зачислен",
       "dueToday": "Сдать сегодня",
       "dueTodayDesc": "Задания, которые нужно сдать сегодня",
       "upcoming": "Предстоящие",
@@ -20,8 +20,8 @@
       "viewAgenda": "Просмотреть повестку дня",
       "dueToday": "Срок сдачи сегодня",
       "dueTomorrow": "Завтра",
-      "due": "Две {даты}",
-      "teaching": "Преподавание",
+      "due": "Два {dates}",
+      "teaching": "Обучение",
       "viewAllAssignments": "Просмотреть все задания"
     },
     "notifications": {
@@ -33,7 +33,7 @@
     "classes": {
       "title": "Мои занятия",
       "subtitle": "Быстрый доступ к вашим занятиям",
-      "teaching": "Преподавание",
+      "teaching": "Обучение",
       "enrolled": "Зачислен",
       "due": "должный",
       "noClasses": "Пока нет занятий",

@@ -4,7 +4,7 @@
     "subtitle": "今日の授業の様子をお伝えします。",
     "stats": {
       "totalClasses": "合計クラス数",
-      "teachingEnrolled": "{teaching} 教える、{enrolled} 登録済み",
+      "teachingEnrolled": "{teaching}人の教員、{enrolled}人の登録者",
       "dueToday": "本日期限",
       "dueTodayDesc": "今日提出期限の課題",
       "upcoming": "今後の予定",
@@ -20,7 +20,7 @@
       "viewAgenda": "議題を見る",
       "dueToday": "本日締め切り",
       "dueTomorrow": "明日までに",
-      "due": "2つの{日付}",
+      "due": "2つの{dates}",
       "teaching": "教育",
       "viewAllAssignments": "すべての課題を表示"
     },

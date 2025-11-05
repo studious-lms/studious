@@ -1,12 +1,12 @@
 {
   "home": {
-    "welcomeBack": "ยินดีต้อนรับกลับมา, {name}!",
+    "welcomeBack": "ยินดีต้อนรับกลับมา {name}!",
     "subtitle": "นี่คือสิ่งที่เกิดขึ้นกับชั้นเรียนของคุณวันนี้",
     "stats": {
       "totalClasses": "จำนวนชั้นเรียนทั้งหมด",
-      "teachingEnrolled": "{การสอน} การสอน, {การลงทะเบียน} ลงทะเบียนแล้ว",
+      "teachingEnrolled": "{teaching} สอน, {enrolled} ลงทะเบียน",
       "dueToday": "ครบกำหนดวันนี้",
-      "dueTodayDesc": "งานที่ต้องส่งวันนี้",
+      "dueTodayDesc": "งานที่ต้องส่งภายในวันนี้",
       "upcoming": "กำลังจะมีขึ้น",
       "upcomingDesc": "งานที่กำลังจะมาถึง",
       "thisWeek": "สัปดาห์นี้",
@@ -20,7 +20,7 @@
       "viewAgenda": "ดูวาระการประชุม",
       "dueToday": "ครบกำหนดวันนี้",
       "dueTomorrow": "กำหนดส่งพรุ่งนี้",
-      "due": "สอง {วันที่}",
+      "due": "สอง {dates}",
       "teaching": "การสอน",
       "viewAllAssignments": "ดูงานมอบหมายทั้งหมด"
     },

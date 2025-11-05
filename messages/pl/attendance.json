@@ -70,7 +70,7 @@
     },
     "student": {
       "title": "Moja obecność",
-      "subtitle": "Śledź swoją obecność na zajęciach {className}",
+      "subtitle": "Śledź swoją obecność na {className}",
       "attendanceRate": "Wskaźnik frekwencji",
       "history": "Historia obecności",
       "event": "Wydarzenie",
@@ -83,7 +83,7 @@
     },
     "deleteDialog": {
       "title": "Usuń wydarzenie",
-      "description": "Czy na pewno chcesz usunąć wydarzenie „{eventName}”? Tej czynności nie można cofnąć, a wszystkie powiązane rekordy obecności zostaną usunięte.",
+      "description": "Czy na pewno chcesz usunąć „{eventName}”? Tej czynności nie można cofnąć. Spowoduje ona usunięcie wszystkich powiązanych rekordów obecności.",
       "deleting": "Usuwanie...",
       "deleteButton": "Usuń wydarzenie"
     },

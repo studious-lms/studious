@@ -2,7 +2,7 @@
   "members": {
     "title": "成员",
     "counts": {
-      "totalMembers": "{count} 名成员"
+      "totalMembers": "{count} 成员"
     },
     "actions": {
       "inviteMember": "邀请会员",
@@ -11,11 +11,11 @@
       "message": "信息",
       "viewProfile": "查看个人资料",
       "viewGrades": "查看成绩",
-      "makeTeacher": "任命老师",
-      "makeStudent": "成为学生",
-      "removeFromClass": "从班级中删除",
-      "removeAccess": "删除访问权限",
-      "tryAgain": "再试一次"
+      "makeTeacher": "让老师",
+      "makeStudent": "让学生",
+      "removeFromClass": "从班级中移除",
+      "removeAccess": "移除访问权限",
+      "tryAgain": "重试"
     },
     "labels": {
       "teacher": "老师",
@@ -24,10 +24,10 @@
     },
     "invite": {
       "title": "课程邀请码",
-      "description": "与学生分享此代码以加入课程"
+      "description": "将此代码分享给学生，让他们加入课程。"
     },
     "search": {
-      "placeholder": "搜索会员..."
+      "placeholder": "搜索成员..."
     },
     "tabs": {
       "students": "学生",
@@ -36,28 +36,28 @@
     "students": {
       "empty": {
         "title": "未找到学生",
-        "matchNone": "没有学生符合“{query}”",
-        "noStudents": "尚无学生加入该课程"
+        "matchNone": "没有学生符合条件{query}\"",
+        "noStudents": "目前还没有学生加入这门课。"
       }
     },
     "teachers": {
       "empty": {
-        "title": "未找到老师",
-        "matchNone": "没有符合“{query}”的教师",
-        "noTeachers": "没有增加任何教师"
+        "title": "未找到教师",
+        "matchNone": "没有教师匹配{query}\"",
+        "noTeachers": "没有新增教师。"
       }
     },
     "toasts": {
-      "inviteRegenerated": "邀请码重新生成成功",
+      "inviteRegenerated": "邀请码已成功重新生成",
       "copied": "邀请码已复制到剪贴板",
-      "roleChanged": "角色更改为{role}",
-      "memberRemoved": "已成功移除成员"
+      "roleChanged": "角色已更改为 {role}",
+      "memberRemoved": "成员已成功移除"
     },
     "errors": {
-      "regenerateFailed": "无法重新生成邀请码",
-      "changeRoleFailed": "更改角色失败",
+      "regenerateFailed": "重新生成邀请码失败",
+      "changeRoleFailed": "角色变更失败",
       "removeFailed": "移除成员失败",
-      "failedToLoad": "加载成员失败"
+      "failedToLoad": "成员加载失败"
     }
   }
 }

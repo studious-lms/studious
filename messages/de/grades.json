@@ -1,17 +1,17 @@
 {
   "classGrades": {
     "title": "Noten",
-    "subtitle": "Anzeigen und Verwalten von Schülernoten",
+    "subtitle": "Schülernoten einsehen und verwalten",
     "columns": {
       "assignment": "Abtretung",
-      "maxPoints": "Maximale Punkte",
+      "maxPoints": "Maximale Punktzahl",
       "weight": "Gewicht",
-      "graded": "Benotet",
-      "dueDate": "Zwei Termine",
+      "graded": "Bewertet",
+      "dueDate": "Zwei Verabredungen",
       "actions": "Aktionen",
       "student": "Student",
       "overallGrade": "Gesamtnote",
-      "assignmentsCompleted": "Abgeschlossene Aufgaben",
+      "assignmentsCompleted": "Aufgaben erledigt",
       "trend": "Trend"
     },
     "labels": {
@@ -28,72 +28,72 @@
       "createNew": "Neu erstellen"
     },
     "overview": {
-      "title": "Klassenübersicht",
+      "title": "Kursübersicht",
       "classAverage": "Klassendurchschnitt",
-      "totalStudents": "Studenten insgesamt",
+      "totalStudents": "Gesamtzahl der Studierenden",
       "assignments": "Aufgaben",
       "submissionRate": "Einreichungsrate"
     },
     "assignmentManagement": {
-      "title": "Auftragsverwaltung",
+      "title": "Aufgabenverwaltung",
       "empty": {
-        "title": "Keine Zuordnungen gefunden",
-        "description": "Erstellen Sie Aufgaben, um Noten und Einstellungen zu verwalten"
+        "title": "Keine Aufgaben gefunden",
+        "description": "Erstellen Sie Aufgaben, um Noten und Einstellungen zu verwalten."
       },
-      "searchPlaceholder": "Aufgaben suchen..."
+      "searchPlaceholder": "Suchaufträge..."
     },
     "students": {
       "title": "Studenten",
-      "viewAll": "Alle Studenten anzeigen",
+      "viewAll": "Alle Studierenden anzeigen",
       "empty": {
         "title": "Keine Studierenden eingeschrieben",
-        "description": "Die Schüler werden hier angezeigt, sobald sie der Klasse beitreten"
+        "description": "Die Studierenden werden hier angezeigt, sobald sie der Klasse beitreten."
       },
-      "searchPlaceholder": "Studierende suchen..."
+      "searchPlaceholder": "Studenten suchen..."
     },
     "gradeBoundaries": {
-      "title": "Klassengrenzen",
-      "untitled": "Unbenannte Bewertungsgrenze",
+      "title": "Notengrenzen",
+      "untitled": "Unbenannte Gradierungsgrenze",
       "empty": {
-        "title": "Keine Notengrenzen erstellt",
-        "description": "Erstellen Sie Bewertungsgrenzen, um Bewertungsbereiche zu definieren"
+        "title": "Es wurden keine Notengrenzen erstellt.",
+        "description": "Erstellen Sie Bewertungsgrenzen, um Notenbereiche zu definieren."
       },
       "previewTitle": "Vorschau der Bewertungsgrenzen",
       "details": {
-        "title": "Details zu Bewertungsgrenzen",
+        "title": "Details zur Geländeanpassungsgrenze",
         "name": "Name",
         "noneDefined": "Keine Bewertungsgrenzen definiert"
       }
     },
     "rubrics": {
       "title": "Rubriken",
-      "untitled": "Unbenannte Rubrik",
+      "untitled": "Unbetitelte Rubrik",
       "empty": {
-        "title": "Keine Rubriken erstellt",
-        "description": "Erstellen Sie Rubriken, um Bewertungskriterien zu definieren"
+        "title": "Es wurden keine Bewertungsraster erstellt.",
+        "description": "Erstellen Sie Rubriken zur Definition von Bewertungskriterien"
       },
-      "previewTitle": "Rubrikvorschau",
+      "previewTitle": "Rubrik-Vorschau",
       "details": {
         "title": "Rubrikdetails",
         "name": "Name",
         "category": "Kategorie",
         "description": "Beschreibung",
         "custom": "Brauch",
-        "noDescription": "Keine Beschreibung angegeben",
-        "noCriteria": "Keine Kriterien in dieser Rubrik gefunden"
+        "noDescription": "Keine Beschreibung vorhanden",
+        "noCriteria": "In dieser Rubrik wurden keine Kriterien gefunden."
       }
     },
     "confirm": {
-      "deleteRubric": "Möchten Sie dieses Markierungsschema wirklich löschen?",
+      "deleteRubric": "Möchten Sie dieses Bewertungsschema wirklich löschen?",
       "deleteGradingBoundary": "Möchten Sie diese Bewertungsgrenze wirklich löschen?"
     }
   },
   "studentGrades": {
     "title": "Alle Schülernoten",
-    "allStudents": "Anzeigen und Verwalten der Noten aller Schüler dieser Klasse",
+    "allStudents": "Noten aller Schüler dieser Klasse einsehen und verwalten",
     "students": "Studenten",
     "noGrades": "Keine Schüler gefunden",
-    "noGradesDescription": "Für diesen Kurs sind noch keine Studenten angemeldet. Studenten werden hier angezeigt, sobald sie beitreten.",
+    "noGradesDescription": "Für diesen Kurs sind noch keine Schüler eingeschrieben. Sobald sie beitreten, werden sie hier angezeigt.",
     "table": {
       "student": "Student",
       "actions": "Aktionen"
@@ -105,12 +105,12 @@
   "individualGrades": {
     "myGrades": "Meine Noten",
     "studentGrades": "Noten",
-    "viewYourGrades": "Sehen Sie sich Ihre Noten und Fortschritte an",
+    "viewYourGrades": "Sehen Sie Ihre Noten und Ihren Fortschritt an",
     "individualManagement": "Individuelle Notenverwaltung für Studierende",
     "export": "Export",
     "back": "Zurück",
     "yourPerformance": "Ihre Leistung",
-    "trackProgress": "Verfolgen Sie Ihren akademischen Fortschritt",
+    "trackProgress": "Verfolge deinen akademischen Fortschritt",
     "overallGrade": "Gesamtnote",
     "completed": "Vollendet",
     "trend": "Trend",
@@ -125,16 +125,16 @@
       "total": "Gesamt",
       "percentage": "%",
       "status": "Status",
-      "submitted": "Gesendet"
+      "submitted": "Eingereicht"
     },
     "status": {
-      "graded": "Benotet",
+      "graded": "Bewertet",
       "pending": "Ausstehend"
     },
     "empty": {
-      "title": "Keine Zuordnungen gefunden",
-      "description": "Dieser Student hat keine Aufgaben anzuzeigen"
+      "title": "Keine Aufgaben gefunden",
+      "description": "Dieser Student hat keine Aufgaben vorzuweisen."
     },
-    "searchPlaceholder": "Aufgaben suchen..."
+    "searchPlaceholder": "Suchaufträge..."
   }
 }

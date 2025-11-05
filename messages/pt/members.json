@@ -5,17 +5,17 @@
       "totalMembers": "{count} membros"
     },
     "actions": {
-      "inviteMember": "Convidar Membro",
+      "inviteMember": "Convidar membro",
       "copy": "Cópia",
       "regenerate": "Regenerado",
       "message": "Mensagem",
       "viewProfile": "Ver perfil",
       "viewGrades": "Ver notas",
-      "makeTeacher": "Faça Professor",
-      "makeStudent": "Faça Estudante",
+      "makeTeacher": "Faça do professor",
+      "makeStudent": "Faça do aluno",
       "removeFromClass": "Remover da classe",
       "removeAccess": "Remover acesso",
-      "tryAgain": "Tentar novamente"
+      "tryAgain": "Tente novamente"
     },
     "labels": {
       "teacher": "Professor",
@@ -23,8 +23,8 @@
       "you": "Você"
     },
     "invite": {
-      "title": "Código de convite para aula",
-      "description": "Compartilhe este código com os alunos para participar da aula"
+      "title": "Código de convite para a aula",
+      "description": "Compartilhe este código com os alunos para que eles possam entrar na aula."
     },
     "search": {
       "placeholder": "Pesquisar membros..."
@@ -37,14 +37,14 @@
       "empty": {
         "title": "Nenhum aluno encontrado",
         "matchNone": "Nenhum aluno corresponde a \"{query}\"",
-        "noStudents": "Nenhum aluno ingressou nesta aula ainda"
+        "noStudents": "Nenhum aluno se inscreveu nesta turma ainda."
       }
     },
     "teachers": {
       "empty": {
-        "title": "Nenhum professor encontrado",
+        "title": "Não foram encontrados professores.",
         "matchNone": "Nenhum professor corresponde a \"{query}\"",
-        "noTeachers": "Nenhum professor adicional foi adicionado"
+        "noTeachers": "Nenhum professor adicional foi contratado."
       }
     },
     "toasts": {
@@ -55,7 +55,7 @@
     },
     "errors": {
       "regenerateFailed": "Falha ao regenerar o código de convite",
-      "changeRoleFailed": "Falha ao alterar a função",
+      "changeRoleFailed": "Não foi possível alterar a função",
       "removeFailed": "Falha ao remover membro",
       "failedToLoad": "Falha ao carregar membros"
     }

@@ -37,7 +37,7 @@
       "untitled": "Naamloos evenement",
       "empty": {
         "noEventsOnDate": "Geen evenementen op deze datum",
-        "noEventsOnDateDescription": "Er zijn geen evenementen gepland voor {datum}. Probeer een andere datum te selecteren of maak een nieuw evenement aan.",
+        "noEventsOnDateDescription": "Er zijn geen evenementen gepland voor {date}. Probeer een andere datum te selecteren of maak een nieuw evenement aan.",
         "noEvents": "Geen evenementen gevonden",
         "noEventsDescription": "Maak uw eerste evenement aan om de aanwezigheid bij te houden",
         "createForDate": "Maak een evenement voor deze datum",

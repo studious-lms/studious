@@ -1,10 +1,10 @@
 {
   "home": {
-    "welcomeBack": "Välkommen tillbaka, {namn}!",
+    "welcomeBack": "Välkommen tillbaka, {name}!",
     "subtitle": "Här är vad som händer med era klasser idag.",
     "stats": {
       "totalClasses": "Totalt antal klasser",
-      "teachingEnrolled": "undervisa, inskriven",
+      "teachingEnrolled": "{teaching} undervisning, {enrolled} inskriven",
       "dueToday": "Förfaller idag",
       "dueTodayDesc": "Uppgifter som ska lämnas in idag",
       "upcoming": "Kommande",
@@ -20,7 +20,7 @@
       "viewAgenda": "Visa agenda",
       "dueToday": "Förfaller idag",
       "dueTomorrow": "Förfaller imorgon",
-      "due": "Två {datum}",
+      "due": "Två {dates}",
       "teaching": "Undervisning",
       "viewAllAssignments": "Visa alla uppgifter"
     },

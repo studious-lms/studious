@@ -3,7 +3,7 @@
     "editFolder": "Edytuj folder",
     "renameFile": "Zmień nazwę pliku",
     "name": "Nazwa",
-    "placeholder": "Wpisz nazwę {type}",
+    "placeholder": "Wprowadź nazwę {type}",
     "folderColor": "Kolor folderu",
     "folderColorDescription": "Wybierz kolor dla tego folderu",
     "cancel": "Anulować",
@@ -27,7 +27,7 @@
     "dropZone": "Upuść pliki tutaj lub kliknij, aby przeglądać",
     "dropZoneHint": "Obsługa obrazów, dokumentów, filmów i innych materiałów",
     "selectedFiles": "Wybrane pliki ({count})",
-    "filesUploaded": "{uploaded} z {total} przesłanych plików",
+    "filesUploaded": "Przesłano {uploaded} z {total} plików",
     "uploadingTo": "Przesyłanie do:",
     "homeDirectory": "Katalog domowy",
     "status": {
@@ -37,7 +37,7 @@
       "error": "Błąd"
     },
     "cancel": "Anulować",
-    "upload": "Prześlij {count} plików",
+    "upload": "Prześlij {count} Plik(i)",
     "uploading": "Przesyłanie..."
   },
   "rubric": {
@@ -81,7 +81,7 @@
     "description": "Wybierz pliki do przesłania",
     "selectFiles": "Wybierz pliki",
     "selectedFiles": "Wybrane pliki ({count})",
-    "maxFiles": "Maksymalna liczba plików: {max}. Akceptowane typy: {types}",
+    "maxFiles": "Maksymalna liczba plików: {max}. Akceptowane typy: [[1]",
     "allFiles": "Wszystkie pliki",
     "progressUploaded": "{progress}% przesłano",
     "noFilesSelected": "Nie wybrano plików",
@@ -99,25 +99,92 @@
     "uploadPlural": "Prześlij {count} plików",
     "uploading": "Przesyłanie..."
   },
+  "notifications": {
+    "title": "Powiadomienia",
+    "subtitle": "Bądź na bieżąco ze swoimi zajęciami i zadaniami",
+    "filters": {
+      "label": "Filtr:",
+      "all": "Wszystko ({count})",
+      "unread": "Nieprzeczytane ({count})",
+      "read": "Przeczytaj ({count})"
+    },
+    "badge": {
+      "unread": "{count} nowy"
+    },
+    "actions": {
+      "viewAll": "Wyświetl wszystkie powiadomienia",
+      "markAsRead": "Oznacz jako przeczytane"
+    },
+    "empty": {
+      "all": {
+        "title": "Brak powiadomień",
+        "description": "Otrzymane powiadomienia będą wyświetlane tutaj."
+      }
+    }
+  },
   "chat": {
+    "landing": {
+      "pleaseSignIn": "Zaloguj się, aby kontynuować",
+      "signInRequired": "Aby uzyskać dostęp do tej strony, wymagane jest zalogowanie",
+      "title": "Pogawędzić",
+      "description": "Aby rozpocząć czat, wybierz konwersację z paska bocznego."
+    },
+    "page": {
+      "header": {
+        "members": "Członkowie",
+        "markMentionsRead": "Marek wspomina o czytaniu"
+      },
+      "input": {
+        "placeholderPrefix": "Wiadomość"
+      },
+      "loading": "Ładowanie konwersacji..."
+    },
     "conversationList": {
-      "searchPlaceholder": "Znajdź lub rozpocznij rozmowę"
+      "title": "Wiadomości bezpośrednie",
+      "searchPlaceholder": "Znajdź lub rozpocznij rozmowę",
+      "noConversations": "Brak jeszcze rozmów",
+      "noConversationsDescription": "Zacznij czatować z kimś",
+      "noSearchResults": "Nie znaleziono żadnych konwersacji",
+      "noSearchResultsDescription": "Wypróbuj inne terminy wyszukiwania",
+      "unnamedGroup": "Nienazwana grupa",
+      "unknownUser": "Nieznany użytkownik"
     },
     "messageList": {
       "noMessagesTitle": "Brak wiadomości",
       "noMessagesDescription": "To jest początek waszej rozmowy"
     },
+    "messageInput": {
+      "placeholder": "Wpisz wiadomość..."
+    },
     "messageEdit": {
-      "placeholder": "Edytuj swoją wiadomość..."
+      "placeholder": "Edytuj swoją wiadomość...",
+      "hint": "Naciśnij Enter, aby zapisać • Escape, aby anulować",
+      "save": "Ratować",
+      "saving": "Oszczędność...",
+      "cancel": "Anulować"
+    },
+    "messageActions": {
+      "editMessage": "Edytuj wiadomość",
+      "deleteMessage": "Usuń wiadomość",
+      "deleteConfirmTitle": "Usuń wiadomość",
+      "deleteConfirmDescription": "Czy na pewno chcesz usunąć tę wiadomość? Tej czynności nie można cofnąć.",
+      "cancel": "Anulować",
+      "delete": "Usuwać",
+      "deleting": "Usuwanie..."
     },
     "createConversation": {
-      "title": "Nowa rozmowa",
+      "title": "Rozpocznij rozmowę",
+      "description": "Utwórz wiadomość bezpośrednią lub rozmowę grupową",
       "direct": "Wiadomość bezpośrednia",
       "group": "Czat grupowy",
+      "dmLabel": "Wprowadź nazwę użytkownika, aby wysłać wiadomość",
       "searchPlaceholder": "Podaj nazwę użytkownika...",
-      "groupName": "Nazwa grupy",
+      "groupNameLabel": "Nazwa grupy",
       "groupNamePlaceholder": "Podaj nazwę grupy...",
-      "addMembers": "Dodaj członków",
+      "addMembersLabel": "Dodaj członków według nazwy użytkownika",
+      "addButton": "Dodać",
+      "selectedUser": "Wybrany użytkownik:",
+      "selectedMembers": "Wybrani członkowie ({count})",
       "cancel": "Anulować",
       "create": "Tworzyć",
       "creating": "Tworzenie..."
@@ -139,7 +206,7 @@
     "update": "Sekcja aktualizacji",
     "creating": "Tworzenie...",
     "updating": "Aktualizowanie...",
-    "created": "Sekcja „{name}” została pomyślnie utworzona.",
+    "created": "Sekcja „{name}” została utworzona pomyślnie.",
     "updated": "Sekcja „{name}” została pomyślnie zaktualizowana.",
     "errorEmpty": "Proszę podać nazwę sekcji.",
     "errorCreate": "Nie udało się utworzyć sekcji",
@@ -173,7 +240,7 @@
     "updating": "Aktualizowanie...",
     "creating": "Tworzenie...",
     "addEvent": "Dodaj wydarzenie",
-    "eventCreated": "{type} został pomyślnie utworzony",
+    "eventCreated": "{type} utworzono pomyślnie",
     "eventUpdated": "Wydarzenie zostało pomyślnie zaktualizowane",
     "errorRequired": "Proszę wypełnić wszystkie wymagane pola",
     "errorSelectClass": "Proszę wybrać klasę na wydarzenie klasowe",
@@ -207,11 +274,11 @@
     "errorUpdate": "Nie udało się zaktualizować wydarzenia"
   },
   "aiLab": {
-    "title": "Utwórz {typ}",
+    "title": "Utwórz {type}",
     "aiPowered": "Wspierane przez sztuczną inteligencję",
     "description": "Podaj podstawowe informacje, które pomogą naszej sztucznej inteligencji tworzyć dla Ciebie lepsze treści.",
     "titleField": "Tytuł *",
-    "titlePlaceholder": "Wpisz tytuł {type}",
+    "titlePlaceholder": "Wprowadź tytuł {type}",
     "subject": "Temat *",
     "selectSubject": "Wybierz temat",
     "subjects": {
@@ -246,7 +313,7 @@
       "2hours": "2 godziny"
     },
     "descriptionField": "Opis",
-    "descriptionPlaceholder": "Opisz, co ten {type} powinien obejmować...",
+    "descriptionPlaceholder": "Opisz, co to {type} powinno obejmować...",
     "requirements": "Wymagania specjalne",
     "requirementsPlaceholder": "Jakiekolwiek szczególne wymagania, cele edukacyjne lub ograniczenia...",
     "cancel": "Anulować",

@@ -40,10 +40,10 @@
       }
     },
     "chats": {
-      "title": "AI Labs ({aantal})",
+      "title": "AI-labs ({count})",
       "active": "Actief",
       "messageCount": "{count} berichten",
-      "createdBy": "Gemaakt door {naam}",
+      "createdBy": "Gemaakt door {name}",
       "empty": {
         "title": "Nog geen AI Labs",
         "description": "Richt uw eerste AI Lab op en ga met AI samenwerken aan educatieve content."

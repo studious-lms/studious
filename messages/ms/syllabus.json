@@ -28,7 +28,7 @@
     },
     "assignments": {
       "title": "Tugasan Kursus",
-      "gradedCount": "{gred} tugasan gred",
+      "gradedCount": "{graded} tugasan digredkan",
       "totalPoints": "{total} jumlah mata",
       "empty": {
         "title": "Tiada tugasan lagi",

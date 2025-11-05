@@ -60,7 +60,7 @@
       "title": "Folder ini kosong",
       "description": "Unggah file atau buat folder untuk mulai mengatur materi kelas Anda.",
       "searchTitle": "Tidak ada file yang ditemukan",
-      "searchDescription": "Tidak ada berkas yang cocok dengan \"{query}\". Coba istilah pencarian lain."
+      "searchDescription": "Tidak ada file yang cocok dengan \"{query}\". Coba istilah pencarian lain."
     }
   },
   "folderView": {
@@ -102,7 +102,7 @@
     },
     "empty": {
       "noFilesFound": "Tidak ada file yang ditemukan",
-      "noFilesFoundDescription": "Tidak ada berkas yang cocok dengan \"{query}\". Coba istilah pencarian lain.",
+      "noFilesFoundDescription": "Tidak ada file yang cocok dengan \"{query}\". Coba istilah pencarian lain.",
       "folderEmpty": "Folder ini kosong",
       "folderEmptyDescription": "Unggah file atau buat folder untuk mengatur materi Anda."
     },

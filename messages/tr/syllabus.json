@@ -28,8 +28,8 @@
     },
     "assignments": {
       "title": "Ders Ödevleri",
-      "gradedCount": "{graded} derecelendirilmiş ödevler",
-      "totalPoints": "{toplam} toplam puan",
+      "gradedCount": "{graded} notlandırılmış ödevler",
+      "totalPoints": "{total} toplam puan",
       "empty": {
         "title": "Henüz ödev yok",
         "description": "Ödevler oluşturulduktan sonra burada görünecektir."

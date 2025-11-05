@@ -94,7 +94,7 @@
       "title2": "lärande för moderna skolor",
       "subtitle": "Studious LMS integrerar AI, realtidskalendrar och klasskommunikation i en sammanhängande plattform – utformad för att hjälpa lärare att undervisa och elever att blomstra.",
       "requestEarlyAccess": "Begär tidig åtkomst",
-      "watchDemo": "Titta på demon",
+      "watchDemo": "Titta på demo",
       "altDashboard": "Plattformsöversikt"
     },
     "problem": {
@@ -137,7 +137,7 @@
       }
     },
     "quote": {
-      "text": "Varje funktion i Studious byggdes för att minska friktion – inte lägga till den."
+      "text": "Varje funktion i Studious byggdes för att minska friktion – inte för att lägga till den."
     },
     "pricing": {
       "title": "Välj rätt plan för din institution",
@@ -181,7 +181,7 @@
         "button": "Kontakta försäljning"
       },
       "mostPopular": "Mest populära",
-      "earlyBird": "🎉 Tidiga användare får **3 månader gratis** på årsplaner + dedikerad introduktionssupport"
+      "earlyBird": "🎉 Tidiga användare får 2 månader gratis på årsplaner + dedikerad onboarding-support"
     },
     "schoolProgram": {
       "badge": "Social påverkan",
@@ -347,7 +347,7 @@
       "submitted": "Ansökan skickad!"
     },
     "errors": {
-      "submitFailed": "Misslyckades med att skicka in ansökan: {message}"
+      "submitFailed": "Kunde inte skicka in ansökan: {message}"
     },
     "success": {
       "title": "Ansökan inskickad!",
@@ -409,7 +409,7 @@
     "title": "Aviseringar",
     "subtitle": "Håll dig uppdaterad om dina kurser och uppgifter",
     "badge": {
-      "unread": "{count} olästa"
+      "unread": "{count} oläst"
     },
     "filters": {
       "label": "Filtrera:",
@@ -607,7 +607,7 @@
       },
       "invite": {
         "title": "Kod för klassinbjudan",
-        "description": "Dela den här koden med eleverna för att gå med i klassen"
+        "description": "Dela den här koden med eleverna för att delta i klassen"
       },
       "search": {
         "placeholder": "Sök medlemmar..."
@@ -681,7 +681,7 @@
       "search": {
         "placeholder": "Sök i filer"
       },
-      "selected": "{count} valda",
+      "selected": "{count} valt",
       "filters": {
         "fileType": "Filtyp",
         "documents": "Dokument",
@@ -800,8 +800,8 @@
       },
       "assignments": {
         "title": "Kursuppgifter",
-        "gradedCount": "{graded} av {total} graderade",
-        "totalPoints": "{total} poäng totalt",
+        "gradedCount": "{graded} av {total} betygsatta",
+        "totalPoints": "{total} totala poäng",
         "empty": {
           "title": "Inga uppgifter ännu",
           "description": "Uppgifterna visas här när de har skapats."
@@ -960,7 +960,7 @@
       },
       "success": {
         "title": "Du är med på listan!",
-        "description": "Vi skickar ett e-postmeddelande till dig på {email} när vi är redo att ta emot dig."
+        "description": "Vi skickar ett e-postmeddelande till {email} när vi är redo att ta emot dig."
       },
       "toasts": {
         "success": "Lyckades gå med i väntelistan!"
@@ -1022,7 +1022,7 @@
         "creating": "Skapande..."
       },
       "toasts": {
-        "success": "Klass {namn} har skapats.",
+        "success": "Klass {name} har skapats.",
         "errorRequired": "Vänligen fyll i alla obligatoriska fält.",
         "errorFailed": "Misslyckades med att skapa klassen. Försök igen senare."
       }
@@ -1041,7 +1041,7 @@
       },
       "help": {
         "name": "Välj ett beskrivande namn för din mapp",
-        "description": "500 tecken"
+        "description": "{count}/500 tecken"
       },
       "actions": {
         "cancel": "Avboka",
@@ -1136,7 +1136,7 @@
         "finalizing": "Slutför uppgiften...",
         "assigning": "Tilldela till elever...",
         "almostDone": "Nästan klar...",
-        "uploadingFile": "Laddar upp {namn}...",
+        "uploadingFile": "Laddar upp {name}...",
         "creatingProgress": "Skapar uppgift",
         "draftStatus": "Kommer att sparas som utkast",
         "publishedStatus": "Kommer att publiceras för studenter"

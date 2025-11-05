@@ -4,7 +4,7 @@
     "subtitle": "Oto, co będzie się dzisiaj działo na waszych zajęciach.",
     "stats": {
       "totalClasses": "Całkowita liczba klas",
-      "teachingEnrolled": "{nauczanie} nauczanie, {zapisany} zapisany",
+      "teachingEnrolled": "{teaching} nauczanie, {enrolled} zapisany",
       "dueToday": "Należne dzisiaj",
       "dueTodayDesc": "Zadania do oddania dzisiaj",
       "upcoming": "Nadchodzące",
@@ -20,7 +20,7 @@
       "viewAgenda": "Zobacz agendę",
       "dueToday": "Należne dzisiaj",
       "dueTomorrow": "Termin na jutro",
-      "due": "Dwie daty",
+      "due": "Dwa {dates}",
       "teaching": "Nauczanie",
       "viewAllAssignments": "Wyświetl wszystkie zadania"
     },

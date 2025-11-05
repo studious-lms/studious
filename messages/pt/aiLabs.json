@@ -1,41 +1,41 @@
 {
   "aiLabs": {
     "title": "Laboratórios de IA",
-    "subtitle": "Crie conteúdo educacional com assistência de IA",
-    "aiPowered": "Alimentado por IA",
+    "subtitle": "Crie conteúdo educacional com auxílio de IA.",
+    "aiPowered": "Com inteligência artificial",
     "createNew": "Criar novo conteúdo",
     "aiGenerated": "Gerado por IA",
     "deleteConfirm": "Tem certeza de que deseja excluir este Laboratório de IA? Esta ação não pode ser desfeita.",
     "widgets": {
       "assignment": {
         "title": "Atribuição",
-        "description": "Crie tarefas interativas com assistência de IA"
+        "description": "Crie tarefas interativas com a ajuda da IA."
       },
       "quiz": {
         "title": "Questionário",
-        "description": "Gere questionários com vários tipos de perguntas"
+        "description": "Gere questionários com vários tipos de perguntas."
       },
       "worksheet": {
         "title": "Folha de exercícios",
-        "description": "Crie planilhas e exercícios práticos"
+        "description": "Elabore folhas de exercícios e atividades práticas."
       },
       "lessonPlan": {
         "title": "Plano de aula",
-        "description": "Crie planos de aula abrangentes"
+        "description": "Elabore planos de aula abrangentes."
       },
       "rubric": {
         "title": "Rubrica",
-        "description": "Crie rubricas de classificação detalhadas"
+        "description": "Crie rubricas de avaliação detalhadas."
       }
     },
     "tabs": {
       "drafts": "Laboratórios de rascunho",
-      "chats": "Gatos de IA"
+      "chats": "Gatos com IA"
     },
     "drafts": {
-      "title": "Rascunhos de laboratório ({count})",
+      "title": "Laboratórios de rascunho ({count})",
       "empty": {
-        "title": "Nenhum rascunho de laboratório ainda",
+        "title": "Ainda não há versões preliminares do laboratório.",
         "description": "Crie seu primeiro conteúdo educacional gerado por IA usando os widgets acima."
       }
     },
@@ -45,25 +45,25 @@
       "messageCount": "{count} mensagens",
       "createdBy": "Criado por {name}",
       "empty": {
-        "title": "Ainda não há laboratórios de IA",
-        "description": "Crie seu primeiro Laboratório de IA para começar a colaborar com a IA em conteúdo educacional."
+        "title": "Ainda não há laboratórios de IA.",
+        "description": "Crie seu primeiro laboratório de IA para começar a colaborar com IA em conteúdo educacional."
       }
     },
     "toast": {
       "labCreated": "Laboratório de IA criado com sucesso!",
-      "labCreateFailed": "Falha ao criar o AI Lab:",
+      "labCreateFailed": "Falha na criação do Laboratório de IA:",
       "labDeleted": "Laboratório de IA excluído com sucesso!",
-      "labDeleteFailed": "Falha ao excluir o AI Lab:"
+      "labDeleteFailed": "Falha ao excluir o Laboratório de IA:"
     }
   },
   "aiLabChat": {
-    "backButton": "Voltar para os Laboratórios de IA",
+    "backButton": "Voltar aos Laboratórios de IA",
     "loading": "Carregando...",
-    "aiThinking": "Pensamento em IA...",
+    "aiThinking": "Pensamento de IA...",
     "getAIHelp": "Obtenha ajuda de IA",
     "notFound": {
-      "title": "Bate-papo de laboratório não encontrado",
-      "description": "Este Laboratório de IA pode ter sido excluído ou você não tem acesso a ele."
+      "title": "Chat do laboratório não encontrado",
+      "description": "Este laboratório de IA pode ter sido excluído ou você não tem acesso a ele."
     },
     "toast": {
       "messageFailed": "Falha ao enviar mensagem:"

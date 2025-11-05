@@ -181,7 +181,7 @@
         "button": "Hubungi Penjualan"
       },
       "mostPopular": "Paling Populer",
-      "earlyBird": "🎉 Pengguna awal menerima <strong>3 bulan gratis</strong> untuk paket tahunan + dukungan orientasi khusus"
+      "earlyBird": "🎉 Pengguna awal mendapatkan 2 bulan gratis untuk paket tahunan + dukungan orientasi khusus"
     },
     "schoolProgram": {
       "badge": "Dampak Sosial",
@@ -633,7 +633,7 @@
       "toasts": {
         "inviteRegenerated": "Kode undangan berhasil dibuat ulang",
         "copied": "Kode undangan disalin ke papan klip",
-        "roleChanged": "Peran diubah menjadi {role}",
+        "roleChanged": "Peran berubah menjadi {role}",
         "memberRemoved": "Anggota berhasil dihapus"
       },
       "errors": {
@@ -704,7 +704,7 @@
         "title": "Folder ini kosong",
         "description": "Unggah file atau buat folder untuk mulai mengatur materi kelas Anda.",
         "searchTitle": "Tidak ada file yang ditemukan",
-        "searchDescription": "Tidak ada berkas yang cocok dengan \"{query}\". Coba istilah pencarian lain."
+        "searchDescription": "Tidak ada file yang cocok dengan \"{query}\". Coba istilah pencarian lain."
       }
     },
     "settings": {
@@ -800,7 +800,7 @@
       },
       "assignments": {
         "title": "Tugas Kursus",
-        "gradedCount": "{dinilai} dari {total} yang dinilai",
+        "gradedCount": "{graded} dari {total} dinilai",
         "totalPoints": "{total} total poin",
         "empty": {
           "title": "Belum ada tugas",
@@ -960,7 +960,7 @@
       },
       "success": {
         "title": "Anda ada dalam daftar!",
-        "description": "Kami akan mengirimkan email kepada Anda di {email} saat kami siap melayani Anda."
+        "description": "Kami akan mengirimkan email kepada Anda di {email} saat kami siap menerima Anda."
       },
       "toasts": {
         "success": "Berhasil bergabung dalam daftar tunggu!"
@@ -1047,7 +1047,7 @@
         "cancel": "Membatalkan",
         "create": "Buat Folder",
         "update": "Perbarui Folder",
-        "creating": "Membuat...",
+        "creating": "Menciptakan...",
         "updating": "Memperbarui..."
       },
       "toasts": {
@@ -1125,7 +1125,7 @@
         "uploadButton": "Unggah File",
         "dropZone": "Letakkan file di sini atau klik untuk mengunggah",
         "dropZoneHint": "Mendukung semua jenis file • Maksimal 50MB per file",
-        "filesUploaded": "{diunggah} dari {total} file yang diunggah"
+        "filesUploaded": "{uploaded} dari {total} file diunggah"
       },
       "status": {
         "creating": "Membuat tugas...",
@@ -1145,7 +1145,7 @@
         "cancel": "Membatalkan",
         "create": "Buat Tugas",
         "saveDraft": "Simpan Draf",
-        "creating": "Membuat...",
+        "creating": "Menciptakan...",
         "add": "Menambahkan"
       },
       "toasts": {

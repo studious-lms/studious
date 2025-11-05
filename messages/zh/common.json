@@ -13,7 +13,7 @@
     "filter": "筛选",
     "sort": "种类",
     "viewAll": "查看全部",
-    "noData": "无可用数据",
+    "noData": "暂无数据",
     "export": "出口"
   },
   "time": {
@@ -25,9 +25,9 @@
     "lastWeek": "上星期"
   },
   "errors": {
-    "somethingWentWrong": "出了点问题",
+    "somethingWentWrong": "出问题了",
     "tryAgain": "再试一次",
-    "pageNotFound": "找不到页面",
+    "pageNotFound": "页面未找到",
     "unauthorized": "未经授权的访问"
   },
   "auth": {
@@ -38,15 +38,15 @@
       "password": "密码",
       "forgotPassword": "忘记密码？",
       "signIn": "登入",
-      "signingIn": "正在登录...",
-      "noAccount": "沒有帳戶？",
+      "signingIn": "正在登录……",
+      "noAccount": "还没有账号？",
       "signUp": "报名",
-      "successMessage": "成功登录",
+      "successMessage": "登录成功",
       "cancel": "取消"
     },
     "signup": {
       "title": "创建您的帐户",
-      "subtitle": "加入 Studious 并开始学习",
+      "subtitle": "加入 Studious，开始学习",
       "signUp": "报名",
       "firstName": "名",
       "lastName": "姓",
@@ -55,102 +55,102 @@
       "confirmPassword": "确认密码",
       "firstNamePlaceholder": "名",
       "lastNamePlaceholder": "姓",
-      "emailPlaceholder": "输入您的电子邮件",
+      "emailPlaceholder": "请输入您的电子邮件地址",
       "passwordPlaceholder": "创建密码",
-      "confirmPasswordPlaceholder": "确认您的密码",
+      "confirmPasswordPlaceholder": "确认密码",
       "agreeToTerms": "我同意",
       "termsOfService": "服务条款",
       "and": "和",
       "privacyPolicy": "隐私政策",
       "createAccount": "创建账户",
-      "creatingAccount": "创建帐户...",
-      "alreadyHaveAccount": "已有账户？",
+      "creatingAccount": "正在创建账户...",
+      "alreadyHaveAccount": "已有账号？",
       "signIn": "登入",
       "passwordMismatch": "密码不匹配",
-      "termsRequired": "您必须同意条款",
-      "accountCreated": "帳戶創建成功！",
+      "termsRequired": "您必须同意这些条款。",
+      "accountCreated": "账户创建成功！",
       "signUpFailed": "创建账户失败"
     },
     "verification": {
-      "notVerified": "帐户未验证",
-      "message": "您的帐户需要先验证才能登录。请检查您的电子邮件以获取验证链接。",
+      "notVerified": "账户未验证",
+      "message": "您的账户需要验证才能登录。请查看您的电子邮件，您会收到验证链接。",
       "emailSentTo": "验证邮件已发送至：",
       "resendEmail": "重新发送验证邮件",
-      "backToSignIn": "返回登录",
+      "backToSignIn": "返回登录页面",
       "emailSent": "验证邮件已发送！",
       "checkInbox": "请检查您的收件箱和垃圾邮件文件夹。",
-      "enterEmail": "输入您的电子邮件地址",
+      "enterEmail": "请输入您的电子邮件地址",
       "sending": "正在发送...",
       "sendEmail": "发送电子邮件"
     }
   },
   "marketing": {
     "navbar": {
-      "requestEarlyAccess": "申请早期访问"
+      "requestEarlyAccess": "申请提前访问"
     },
     "hero": {
       "badge": "现代学习平台",
       "title1": "无缝衔接，无干扰",
       "title2": "现代学校的学习",
-      "subtitle": "Studious LMS 将人工智能、实时日历和课堂交流整合到一个统一的平台中，旨在帮助教师教学和学生成长。",
-      "requestEarlyAccess": "申请早期访问",
+      "subtitle": "Studious LMS 将人工智能、实时日历和课堂沟通整合到一个统一的平台中，旨在帮助教师教学，帮助学生取得成功。",
+      "requestEarlyAccess": "申请提前访问",
       "watchDemo": "观看演示",
-      "altDashboard": "平台仪表板"
+      "altDashboard": "平台仪表盘"
     },
     "problem": {
-      "title": "传统学校门户网站碎片化且过时",
-      "issue1": "教师在多种工具之间切换浪费时间",
-      "issue2": "学生在组织和截止日期方面遇到困难",
-      "issue3": "人工智能在实际学校工作流程中的整合程度仍然不足"
+      "title": "传统学校门户网站分散且过时。",
+      "issue1": "教师在多种工具之间切换会浪费时间",
+      "issue2": "学生们在组织安排和按时完成任务方面存在困难。",
+      "issue3": "人工智能在实际学校工作流程中的整合程度仍然很低。"
     },
     "response": {
-      "title1": "Studious LMS 统一了教学、学习、",
-      "title2": "并将沟通整合到单个工作空间中",
-      "subtitle": "它采用尖端框架和以人为本的设计，可以扩展到任何规模的学校。"
+      "title1": "学习管理系统整合了教学、学习等功能。",
+      "title2": "并将沟通整合到一个统一的工作空间中",
+      "subtitle": "它采用尖端框架和以人为本的设计，旨在适用于任何规模的学校。"
     },
     "features": {
       "title": "主要特点",
       "subtitle": "管理现代学习体验所需的一切",
       "ai": {
         "title": "人工智能助手",
-        "description": "帮助生成学习材料、总结内容并协助评分"
+        "description": "有助于生成学习资料、总结内容并辅助评分"
       },
       "classManagement": {
         "title": "班级管理",
-        "description": "轻松组织课程、作业和出勤"
+        "description": "轻松安排课程、作业和考勤"
       },
       "assignments": {
-        "title": "作业",
-        "description": "高效地创建、收集和评分学生提交的内容"
+        "title": "任务",
+        "description": "高效地创建、收集和批改学生作业"
       },
       "calendar": {
         "title": "日历",
-        "description": "实时同步作业、课程和活动"
+        "description": "与作业、课程和活动实时同步"
       },
       "analytics": {
         "title": "分析",
-        "description": "查看有关绩效、参与度和参与度的见解"
+        "description": "查看有关绩效、参与度和互动情况的分析结果"
       },
       "communication": {
         "title": "沟通",
-        "description": "内置消息和公告，实现统一协作"
+        "description": "内置消息和公告功能，实现统一协作"
       }
     },
     "quote": {
-      "text": "Studious 中的每个功能都是为了减少摩擦而设计的，而不是增加摩擦。"
+      "text": "Studious 的每个功能都是为了减少摩擦而设计的，而不是为了增加摩擦。"
     },
     "pricing": {
-      "title": "为您的机构选择合适的计划",
-      "subtitle": "定价简单透明，无任何隐藏费用。所有套餐均包含核心功能，并提供可扩展选项。",
+      "title": "选择适合您机构的方案",
+      "subtitle": "价格简单透明，无任何隐藏费用。所有套餐均包含核心功能，并提供可扩展的选项。",
       "starter": {
         "title": "起动机",
         "price": "自由的",
-        "note": "包含 Beta 版访问权限",
+        "note": "包含 Beta 测试资格",
         "description": "非常适合小班授课和试点项目",
-        "perk1": "最多 30 名学生",
+        "perk1": "最多30名学生",
         "perk2": "无限课程",
         "perk3": "核心功能（作业、日历、成绩）",
-        "perk4": "AI 助手（每月 5 次聊天）",
+        "perk4": "AI助手（每月5次聊天）",
         "perk5": "社区支持",
         "perk6": "5GB存储空间",
         "button": "免费开始"
@@ -158,87 +158,87 @@
       "school": {
         "title": "学校",
         "price": "5美元",
-        "priceUnit": "/用户/月",
-        "note": "按年或每月 6 美元计费",
-        "description": "适用于最多有 1,000 名学生的学校",
-        "perk1": "无限学生",
+        "priceUnit": "用户/月",
+        "note": "按年计费或每月 6 美元",
+        "description": "适用于学生人数不超过1000人的学校",
+        "perk1": "学生人数不限",
         "perk2": "无限课程",
         "perk3": "所有核心功能",
-        "perk4": "AI助手（无限次查询）",
-        "perk5": "率先获得 Studious CMS 测试版访问权限",
-        "button": "开始"
+        "perk4": "人工智能助手（无限次查询）",
+        "perk5": "优先获得 Studious CMS 测试版访问权限",
+        "button": "开始使用"
       },
       "institution": {
         "title": "机构",
         "price": "风俗",
         "note": "根据您的需求量身定制",
-        "description": "适用于大型学校和大学（1,000 名以上学生）",
-        "perk1": "学校计划中的一切",
+        "description": "适用于大型中小学和大学（1000 名以上学生）",
+        "perk1": "学校计划中的所有内容",
         "perk2": "全天候优先支持",
         "perk3": "无限存储空间",
-        "perk4": "定制培训和入职培训",
-        "perk5": "更便宜的每用户费用",
-        "button": "联系销售人员"
+        "perk4": "定制培训和入职指导",
+        "perk5": "更低的单用户费用",
+        "button": "联系销售"
       },
       "mostPopular": "最受欢迎",
-      "earlyBird": "🎉 早期采用者可享受年度计划<strong>3 个月免费</strong> + 专门的入门支持"
+      "earlyBird": "🎉 早期用户可享受年度套餐2个月免费 + 专属新用户指导"
     },
     "schoolProgram": {
       "badge": "社会影响",
-      "title": "勤奋学校发展计划",
-      "subtitle": "我们相信，每个学生都应该有权使用现代学习工具，无论其学校的经济状况如何。",
+      "title": "勤奋的学校发展计划",
+      "subtitle": "我们认为，无论学校的经济状况如何，每个学生都应该有机会使用现代化的学习工具。",
       "feature1Title": "100% 免费访问",
-      "feature1Description": "符合条件的学校可访问具有所有功能的全平台",
+      "feature1Description": "符合条件的学校可完全访问平台所有功能。",
       "feature2Title": "专属支持",
-      "feature2Description": "优先为教师和员工提供入职和培训",
+      "feature2Description": "优先安排教师和员工入职和培训",
       "feature3Title": "教育资源",
       "feature3Description": "免费教学材料和课程支持",
       "applyNow": "立即申请",
       "learnMore": "了解更多",
-      "eligibilityTitle": "计划资格",
+      "eligibilityTitle": "项目资格",
       "qualifyingTitle": "符合资格的学校：",
-      "qualify1": "服务欠缺社区的公立学校",
+      "qualify1": "服务不足社区的公立学校",
       "qualify2": "注册的非营利教育机构",
       "qualify3": "发展中地区的学校",
-      "qualify4": "Title I 学校（美国）或同等学历",
+      "qualify4": "美国第一类学校或同等机构",
       "commitmentTitle": "我们的承诺：",
-      "commitment": "10% 的付费客户支持有需要的学校免费使用。",
+      "commitment": "我们有 10% 的付费客户支持为有需要的学校提供免费访问权限。",
       "launchTitle": "项目启动：",
-      "launch": "2026 年 1 月 • 现已开放申请"
+      "launch": "2026年1月 • 申请现已开放"
     },
     "futureDevelopments": {
       "title": "未来发展",
-      "subtitle": "我们的教育转型路线图",
+      "subtitle": "我们改革教育的路线图",
       "cas": {
         "title": "CAS视角",
-        "description": "通过捐赠和物资支持资金不足的学校，让所有人都能接受优质教育。"
+        "description": "通过捐赠和物资支持资金不足的学校，使所有人都能获得优质教育。"
       },
       "features": {
-        "title": "特色视角",
-        "description": "扩大 AI 学生支持并为全球不同的教育系统构建 API 集成。"
+        "title": "特征视角",
+        "description": "扩大人工智能对学生的支持，并为全球各种教育系统构建API集成。"
       },
       "launch": {
-        "title": "启动视角",
-        "description": "在学校、大学和会议上进行演示，以重塑学习体验。"
+        "title": "发射视角",
+        "description": "在学校、大学和会议上进行演讲，以重塑学习体验。"
       }
     },
     "cta": {
-      "title": "准备好重新定义学校的学习和教学方式了吗？",
-      "subtitle": "与 Studious LMS 携手迈向教育的未来",
+      "title": "准备好重新定义贵校的学习和教学方式了吗？",
+      "subtitle": "加入 Studious LMS，共创教育未来",
       "requestAccess": "请求访问",
       "partnerWithUs": "与我们合作",
-      "tagline": "Studious LMS — 现代学习，简化。"
+      "tagline": "Studious LMS——简化现代学习。"
     }
   },
   "press": {
     "badge": "新闻媒体",
-    "title": "新闻中的Studyus",
+    "title": "新闻中的勤奋",
     "subtitle": "为记者和内容创作者提供媒体资源、品牌资产和公司信息",
     "factsheet": {
       "title": "公司概况",
       "subtitle": "关于 Studious LMS 的简要信息",
       "companyInfo": "公司信息",
-      "founded": "成立",
+      "founded": "创立",
       "hq": "总部",
       "industry": "行业",
       "website": "网站",
@@ -252,123 +252,123 @@
     },
     "contact": {
       "title": "媒体问询",
-      "subtitle": "接受媒体问询、采访和请求",
-      "sl": "我们通常会在 24 小时内回复",
-      "general": "一般咨询和支持"
+      "subtitle": "媒体垂询、采访及其他媒体需求",
+      "sl": "我们通常会在24小时内回复。",
+      "general": "如有任何疑问或需要支持，请联系我们。"
     }
   },
   "program": {
     "hero": {
       "badge": "社会影响力倡议",
-      "title": "勤奋学校发展计划",
-      "subtitle": "为没有经济能力的学校免费提供现代学习技术"
+      "title": "勤奋的学校发展计划",
+      "subtitle": "为缺乏经济资源的学校免费提供现代学习技术"
     },
     "commitment": {
-      "revenue": "承诺收入",
+      "revenue": "已承诺收入",
       "cohort": "首批学员启动",
       "free": "免费访问"
     },
     "about": {
       "mission": {
         "title": "我们的使命",
-        "body1": "思达学校发展计划旨在为贫困学校提供免费且不受限制的学习管理平台使用权。我们深知科技是未来劳动力的主导因素，但许多教育机构却缺乏此类资源。通过该计划，我们将现代化的学习管理技术带给最需要的学校。"
+        "body1": "“勤奋学习学校发展计划”旨在通过为弱势学校提供免费、无限量的学习管理平台访问权限来支持它们。我们认识到，技术是未来劳动力市场的关键因素，但许多教育机构却缺乏此类资源。通过该计划，我们将现代化的学习管理技术带给最需要的学校。"
       },
       "aims": {
         "title": "项目目标",
-        "body1": "通过与教师和教育专业人士的广泛交流，我们发现许多学校的数字化学习基础设施存在重大缺陷。市面上许多学习管理系统缺乏统一、直观的用户体验，而贫困地区的学校往往无力承担现代教育技术的费用。",
-        "body2": "我们的项目直接应对了这些挑战。来自付费机构订阅的收入使我们能够为贫困学校提供全面使用 Studious LMS 及相关教育工具的渠道。这种可持续的模式使我们能够弥合数字鸿沟，同时持续改进平台，服务所有用户。"
+        "body1": "通过与教师和教育专业人士的深入交流，我们发现许多学校可用的数字化学习基础设施存在显著缺陷。市面上许多学习管理系统缺乏统一、直观的用户体验，而贫困地区的学校往往无力负担现代教育技术。",
+        "body2": "我们的项目旨在直接应对这些挑战。通过机构付费订阅获得的收入，我们能够为资源匮乏的学校提供全面的 Studious LMS 学习管理系统及相关教育工具的使用权限。这种可持续的模式使我们能够弥合数字鸿沟，同时不断改进平台，造福所有用户。"
       },
       "receive": {
-        "title": "您将收到什么",
-        "body1": "加入该计划的学校将获得完整的 Studious 平台体验，而非受限或精简的版本。这包括无限数量的学生和教师账户、所有高级功能（AI 助手、高级分析、实时协作）、优先技术支持、专属入职专家、持续的培训资源以及所有未来更新和改进的访问权限。",
-        "body2": "除了软件本身，我们还提供全面的支持，确保您的学校能够最大限度地利用该平台的优势。我们的团队将直接与您的管理员和教师合作，根据您的具体需求定制系统，提供实践培训，并在整个使用过程中持续提供帮助。"
+        "title": "您将收到",
+        "body1": "入选该项目的学校将获得完整的 Studious 平台体验，而非功能受限或精简版。这包括无限量的学生和教师账户、所有高级功能（人工智能助手、高级分析、实时协作）、优先技术支持、专属入职培训专家、持续的培训资源，以及所有未来更新和改进的访问权限。",
+        "body2": "除了软件本身，我们还提供全面的支持，确保您的学校能够最大限度地发挥平台的优势。我们的团队将与您的管理人员和教师直接合作，根据您的具体需求定制系统，提供实践培训，并在整个使用过程中随时为您提供持续的帮助。"
       },
       "qualifies": {
-        "title": "谁有资格",
-        "body1": "我们优先考虑那些服务于最能从改进的教育技术中受益的学生的学校。这包括服务匮乏或经济条件较差的社区的公立学校、经注册但资金有限的非营利性教育机构、发展中地区或国家的学校、美国 Title I 学校及其国际同类学校，以及任何能够证明确实有资金需求并致力于改善学生成绩的教育机构。",
-        "body2": "我们会单独评估每一份申请，不仅考虑财务指标，还会考虑您学校的使命、服务人群以及您利用 Studious 提升教育的计划。我们的目标是与真正受益于并有效利用我们平台的学校合作，以提升学生的学习体验。"
+        "title": "谁有资格？",
+        "body1": "我们优先考虑那些最能从教育技术改进中受益的学生所在的学校。这包括服务不足或经济困难社区的公立学校、面临财务困境的注册非营利教育机构、发展中国家或地区的学校、美国第一类学校及其国际对应学校，以及任何能够证明自身确实存在财务需求并致力于提升学生学习成果的教育机构。",
+        "body2": "我们会对每份申请进行单独评估，不仅考虑财务指标，还会考虑贵校的使命、服务对象以及您利用 Studious 提升教育的计划。我们的目标是与真正能够从我们的平台受益并有效利用该平台来改善学生学习体验的学校合作。"
       },
       "impact": {
-        "title": "我们的影响力愿景",
-        "body1": "通过为学校免费提供现代学习管理技术，我们旨在消除贫困地区教育机构面临的主要障碍之一。我们的方法不仅仅局限于软件——我们致力于提供全面的支持，包括培训资源、入职协助以及电子书和数字文具等教育工具的使用权。",
-        "body2": "学校发展计划将于2025年11月下旬至12月中旬启动，届时将有首批合作学校加入。随着Studious的发展壮大，我们支持更多学校的能力也将不断增强。我们所有付费机构订阅的收入都将重新投资于扩大有需要的学校的入学机会，从而创建一个可持续的、并随着时间的推移不断增强的教育公平模式。"
+        "title": "我们追求影响力的愿景",
+        "body1": "通过为学校免费提供现代化的学习管理技术，我们旨在消除贫困地区教育机构面临的主要障碍之一。我们的方法不仅限于软件——我们致力于提供全面的支持，包括培训资源、新用户指导以及电子书和电子文具等教育工具。",
+        "body2": "学校发展计划将于2025年11月下旬至12月中旬启动，首批合作学校将加入该计划。随着Studious的发展壮大，我们支持更多学校的能力也将随之提升。所有机构付费订阅收入都将重新投入，用于扩大有需要学校的资源，从而创建一个可持续的教育公平模式，并随着时间的推移不断完善。"
       }
     },
     "cta": {
       "apply": {
-        "title": "申请该计划",
-        "description": "准备好将 Studious 引入您的学校了吗？请填写我们的申请表，我们将在 5-7 个工作日内审核。",
-        "item1": "大约需要 10-15 分钟",
+        "title": "申请参加该项目",
+        "description": "准备好将 Studious 引入您的学校了吗？请填写我们的申请表，我们将在 5-7 个工作日内审核通过。",
+        "item1": "大约需要10-15分钟",
         "item2": "无需申请费",
-        "item3": "5-7 个工作日内回复",
+        "item3": "5-7个工作日内回复",
         "button": "开始申请"
       }
     },
     "status": {
       "title": "查看申请状态",
-      "description": "已经申请了吗？输入您的申请编号，查看申请状态。",
+      "description": "已经提交申请了吗？请输入您的申请编号以查询申请状态。",
       "inputLabel": "应用程序 ID",
       "placeholder": "例如，EXA2025-...",
-      "help": "提交申请后，您将通过电子邮件收到您的申请 ID。",
+      "help": "提交申请后，您将通过电子邮件收到您的申请编号。",
       "results": {
         "found": "找到应用程序",
         "school": "学校：",
         "location": "地点：",
-        "submitted": "提交：",
+        "submitted": "已提交：",
         "contact": "接触：",
         "notFound": {
-          "title": "未找到应用程序",
-          "body": "请检查您的应用程序 ID，然后重试。如果您仍然遇到问题，请发送电子邮件至 impact@studious.sh 联系我们。"
+          "title": "应用程序未找到",
+          "body": "请检查您的申请 ID 并重试。如果问题仍然存在，请联系我们：impact@studious.sh"
         }
       },
       "cards": {
         "approved": {
           "title": "🎉 恭喜！您的申请已获批准。",
-          "body": "检查您的电子邮件以了解设置帐户的后续步骤。"
+          "body": "请查看您的电子邮件，了解设置帐户的后续步骤。"
         },
         "underReview": {
-          "title": "⏳ 您的申请目前正在审核中。",
-          "body": "审核完成后，我们将通过电子邮件与您联系。"
+          "title": "⏳ 您的申请正在审核中。",
+          "body": "审核完成后，我们会通过电子邮件与您联系。"
         },
         "pending": {
           "title": "📋 您的申请已收到。",
-          "body": "我们的团队将很快开始审核。预计审核时间：5-7 个工作日。"
+          "body": "我们的团队将尽快开始审核。预计审核时间：5-7个工作日。"
         }
       }
     },
     "contact": {
       "title": "有疑问吗？",
-      "subtitle": "我们的团队将帮助您完成申请流程",
-      "button": "给我们发电子邮件：impact@studious.sh"
+      "subtitle": "我们的团队将全程协助您完成申请流程。",
+      "button": "联系我们：impact@studious.sh"
     }
   },
   "apply": {
     "toasts": {
-      "submitted": "申请提交成功！"
+      "submitted": "申请已成功提交！"
     },
     "errors": {
-      "submitFailed": "提交申请失败：{message}"
+      "submitFailed": "申请提交失败：{message}"
     },
     "success": {
       "title": "申请已提交！",
-      "subtitle": "感谢您申请“勤奋学校发展计划”",
+      "subtitle": "感谢您申请“勤奋好学学校发展计划”。",
       "applicationId": "您的应用程序 ID",
-      "saveId": "保存此 ID 以检查您的申请状态",
+      "saveId": "请保存此 ID 以查看您的申请状态",
       "nextSteps": {
         "title": "接下来会发生什么？",
-        "item1": "您将在 {email} 收到一封确认电子邮件",
-        "item2": "我们的团队将在 5-7 个工作日内审核您的申请",
-        "item3": "一旦做出决定，我们将通过电子邮件通知您"
+        "item1": "您将在 {email} 收到一封确认邮件。",
+        "item2": "我们的团队将在 5-7 个工作日内审核您的申请。",
+        "item3": "一旦做出决定，我们将通过电子邮件通知您。"
       },
-      "backToProgram": "返回程序",
+      "backToProgram": "返回节目单",
       "returnHome": "回家"
     }
   },
   "agenda": {
     "title": "议程",
-    "description": "通过全面的日历视图查看您的日程安排和即将发生的事件",
+    "description": "通过全面的日历视图查看您的日程安排和即将举行的活动。",
     "addEvent": "添加事件",
-    "untitledEvent": "无标题活动",
+    "untitledEvent": "无标题事件",
     "today": "今天",
     "previous": "以前的",
     "next": "下一个",
@@ -381,19 +381,19 @@
   },
   "chat": {
     "landing": {
-      "description": "从侧边栏选择一个对话开始聊天。",
+      "description": "从侧边栏选择一个对话即可开始聊天。",
       "pleaseSignIn": "请登录",
-      "signInRequired": "您需要登录才能访问聊天。",
-      "title": "欢迎聊天"
+      "signInRequired": "您需要登录才能使用聊天功能。",
+      "title": "欢迎来到聊天室"
     },
     "page": {
       "unknown": "未知",
-      "unnamedGroup": "未命名组",
+      "unnamedGroup": "未命名团体",
       "unknownUser": "未知用户",
       "notFound": {
         "title": "未找到对话",
-        "description": "该对话不存在或者您无权访问它。",
-        "backToChat": "返回聊天"
+        "description": "这段对话不存在，或者您没有权限查看。",
+        "backToChat": "返回聊天室"
       },
       "header": {
         "members": "成员",
@@ -407,28 +407,28 @@
   },
   "notifications": {
     "title": "通知",
-    "subtitle": "及时了解课程和作业",
+    "subtitle": "及时完成课程和作业。",
     "badge": {
-      "unread": "{count} 个未读"
+      "unread": "{count} 未读"
     },
     "filters": {
       "label": "筛选：",
-      "all": "全部 ({count})",
-      "unread": "未读（{count}）",
-      "read": "阅读（{count}）"
+      "all": "所有 ({count})",
+      "unread": "未读 ({count})",
+      "read": "读取（{count}）"
     },
     "empty": {
       "unread": {
         "title": "没有未读通知",
-        "description": "全部已读！您没有未读通知。"
+        "description": "已全部阅读完毕！您没有未读通知。"
       },
       "read": {
-        "title": "没有已读通知",
-        "description": "尚未有任何通知被标记为已读。"
+        "title": "无已读通知",
+        "description": "目前还没有任何通知被标记为已读。"
       },
       "all": {
-        "title": "尚未收到任何通知",
-        "description": "当您收到通知时，它们将显示在这里。"
+        "title": "暂无通知",
+        "description": "当您收到通知时，通知将显示在此处。"
       }
     },
     "actions": {
@@ -436,7 +436,7 @@
       "markAsRead": "标记为已读"
     },
     "toasts": {
-      "markedAsRead": "通知标记为已读"
+      "markedAsRead": "通知已读"
     },
     "meta": {
       "from": "从"
@@ -451,65 +451,65 @@
     "student": "学生",
     "personalInformation": {
       "title": "个人信息",
-      "description": "更新您的个人信息和个人资料信息",
+      "description": "更新您的个人信息和个人资料",
       "displayName": "显示名称",
       "displayNamePlaceholder": "输入您的显示名称",
-      "displayNameDescription": "您的名字将会以这样的方式出现在其他人面前",
+      "displayNameDescription": "这就是你的名字在别人眼中的显示方式",
       "location": "地点",
-      "locationPlaceholder": "输入您的位置",
-      "locationDescription": "您的城市、州或国家",
+      "locationPlaceholder": "请输入您的位置",
+      "locationDescription": "您所在的城市、州或国家",
       "bio": "曾是",
-      "bioPlaceholder": "跟我们介绍一下你自己吧……",
-      "bioDescription": "关于您自己的简短描述（最多 500 个字符）",
+      "bioPlaceholder": "请介绍一下你自己……",
+      "bioDescription": "请简要介绍一下你自己（最多500字）",
       "website": "网站",
       "websitePlaceholder": "https://your-website.com",
-      "websiteDescription": "您的个人网站或作品集"
+      "websiteDescription": "你的个人网站或作品集"
     },
     "accountInformation": {
-      "title": "帐户信息",
-      "description": "您的帐户详细信息和登录信息",
+      "title": "账户信息",
+      "description": "您的账户详情和登录信息",
       "username": "用户名",
       "usernameNote": "用户名无法更改",
       "email": "电子邮件",
-      "emailNote": "电子邮件在帐户设置中管理",
+      "emailNote": "电子邮件在帐户设置中进行管理",
       "memberSince": "会员自"
     },
     "messages": {
-      "profileUpdated": "个人资料更新成功",
+      "profileUpdated": "个人资料已成功更新",
       "profileUpdateFailed": "更新个人资料失败",
-      "profilePictureSelected": "已选择个人资料图片。点击“保存更改”进行更新。",
+      "profilePictureSelected": "已选择头像。点击“保存更改”进行更新。",
       "avatarSelected": "已选择头像。点击“保存更改”进行更新。",
       "profilePictureUploadFailed": "上传头像失败",
-      "profilePictureSelectFailed": "无法选择头像",
-      "failedToLoadProfile": "加载个人资料失败。请重试。"
+      "profilePictureSelectFailed": "选择头像失败",
+      "failedToLoadProfile": "加载配置文件失败，请重试。"
     }
   },
   "class": {
-    "assignments": "作业",
+    "assignments": "任务",
     "students": "学生",
-    "attendance": "出勤",
+    "attendance": "出勤率",
     "attachFile": "附加文件",
     "post": "邮政",
-    "posting": "正在发布...",
-    "noPosts": "还没有帖子",
+    "posting": "发布中……",
+    "noPosts": "暂无帖子",
     "createFirstPost": "创建第一篇帖子",
     "grades": {
       "title": "成绩",
       "subtitle": "查看和管理学生成绩",
       "columns": {
         "assignment": "任务",
-        "maxPoints": "最高积分",
+        "maxPoints": "最高分",
         "weight": "重量",
-        "graded": "已分级",
-        "dueDate": "两次约会",
+        "graded": "已评分",
+        "dueDate": "两个日期",
         "actions": "行动",
         "student": "学生",
-        "overallGrade": "总体成绩",
-        "assignmentsCompleted": "已完成的作业",
+        "overallGrade": "总成绩",
+        "assignmentsCompleted": "已完成的任务",
         "trend": "趋势"
       },
       "labels": {
-        "rubric": "评分细则"
+        "rubric": "评分标准"
       },
       "actions": {
         "manage": "管理",
@@ -519,52 +519,52 @@
         "preview": "预览",
         "edit": "编辑",
         "delete": "删除",
-        "createNew": "创建新的"
+        "createNew": "创建新"
       },
       "overview": {
         "title": "课程概述",
         "classAverage": "班级平均分",
         "totalStudents": "学生总数",
-        "assignments": "作业",
+        "assignments": "任务",
         "submissionRate": "提交率"
       },
       "assignmentManagement": {
         "title": "任务管理",
         "empty": {
-          "title": "未找到任何作业",
-          "description": "创建作业来管理成绩和设置"
+          "title": "未找到任何任务",
+          "description": "创建作业以管理成绩和设置"
         },
-        "searchPlaceholder": "搜索任务..."
+        "searchPlaceholder": "搜索任务……"
       },
       "students": {
         "title": "学生",
         "viewAll": "查看所有学生",
         "empty": {
-          "title": "沒有學生就註冊",
-          "description": "学生加入课程后就会出现在这里"
+          "title": "没有学生注册",
+          "description": "学生加入班级后，将显示在此处。"
         },
-        "searchPlaceholder": "搜索学生..."
+        "searchPlaceholder": "搜索学生……"
       },
       "gradeBoundaries": {
-        "title": "等级界限",
+        "title": "年级划分",
         "untitled": "无标题分级边界",
         "empty": {
-          "title": "没有创建等级界限",
-          "description": "创建评分边界来定义评分范围"
+          "title": "未设定年级界限",
+          "description": "建立评分边界以定义评分范围"
         },
-        "previewTitle": "评分边界预览",
+        "previewTitle": "评分范围预览",
         "details": {
-          "title": "分级边界详细信息",
+          "title": "分级边界详情",
           "name": "姓名",
-          "noneDefined": "没有定义评分界限"
+          "noneDefined": "未定义评分标准"
         }
       },
       "rubrics": {
         "title": "评分标准",
-        "untitled": "无标题评分标准",
+        "untitled": "无标题标题",
         "empty": {
-          "title": "未创建评分标准",
-          "description": "创建评估标准来定义评估标准"
+          "title": "未创建任何评分标准",
+          "description": "制定评分细则以定义评估标准"
         },
         "previewTitle": "评分标准预览",
         "details": {
@@ -573,19 +573,19 @@
           "category": "类别",
           "description": "描述",
           "custom": "风俗",
-          "noDescription": "没有提供描述",
-          "noCriteria": "此评分标准中未找到任何标准"
+          "noDescription": "未提供描述",
+          "noCriteria": "此评分标准中未找到任何标准。"
         }
       },
       "confirm": {
-        "deleteRubric": "您确定要删除此标记方案吗？",
-        "deleteGradingBoundary": "您确定要删除此放坡边界吗？"
+        "deleteRubric": "您确定要删除此评分方案吗？",
+        "deleteGradingBoundary": "您确定要删除此评分边界吗？"
       }
     },
     "members": {
       "title": "成员",
       "counts": {
-        "totalMembers": "{count} 名成员"
+        "totalMembers": "{count} 成员"
       },
       "actions": {
         "inviteMember": "邀请会员",
@@ -594,11 +594,11 @@
         "message": "信息",
         "viewProfile": "查看个人资料",
         "viewGrades": "查看成绩",
-        "makeTeacher": "任命老师",
-        "makeStudent": "成为学生",
-        "removeFromClass": "从班级中删除",
-        "removeAccess": "删除访问权限",
-        "tryAgain": "再试一次"
+        "makeTeacher": "让老师",
+        "makeStudent": "让学生",
+        "removeFromClass": "从班级中移除",
+        "removeAccess": "移除访问权限",
+        "tryAgain": "重试"
       },
       "labels": {
         "teacher": "老师",
@@ -607,10 +607,10 @@
       },
       "invite": {
         "title": "课程邀请码",
-        "description": "与学生分享此代码以加入课程"
+        "description": "将此代码分享给学生，让他们加入课程。"
       },
       "search": {
-        "placeholder": "搜索会员..."
+        "placeholder": "搜索成员..."
       },
       "tabs": {
         "students": "学生",
@@ -619,28 +619,28 @@
       "students": {
         "empty": {
           "title": "未找到学生",
-          "matchNone": "没有学生符合“{query}”",
-          "noStudents": "尚无学生加入该课程"
+          "matchNone": "没有学生符合条件{query}\"",
+          "noStudents": "目前还没有学生加入这门课。"
         }
       },
       "teachers": {
         "empty": {
-          "title": "未找到老师",
-          "matchNone": "没有符合“{query}”的教师",
-          "noTeachers": "没有增加任何教师"
+          "title": "未找到教师",
+          "matchNone": "没有教师匹配{query}\"",
+          "noTeachers": "没有新增教师。"
         }
       },
       "toasts": {
-        "inviteRegenerated": "邀请码重新生成成功",
+        "inviteRegenerated": "邀请码已成功重新生成",
         "copied": "邀请码已复制到剪贴板",
-        "roleChanged": "角色更改为{role}",
-        "memberRemoved": "已成功移除成员"
+        "roleChanged": "角色已更改为 {role}",
+        "memberRemoved": "成员已成功移除"
       },
       "errors": {
-        "regenerateFailed": "无法重新生成邀请码",
-        "changeRoleFailed": "更改角色失败",
+        "regenerateFailed": "重新生成邀请码失败",
+        "changeRoleFailed": "角色变更失败",
         "removeFailed": "移除成员失败",
-        "failedToLoad": "加载成员失败"
+        "failedToLoad": "成员加载失败"
       }
     },
     "files": {
@@ -659,29 +659,29 @@
       },
       "toasts": {
         "folderCreated": "文件夹创建成功",
-        "folderDeleted": "文件夹删除成功",
-        "folderRenamed": "文件夹重命名成功",
-        "folderMoved": "文件夹移动成功",
+        "folderDeleted": "文件夹已成功删除",
+        "folderRenamed": "文件夹已成功重命名",
+        "folderMoved": "文件夹已成功移动",
         "filesUploaded": "文件上传成功",
-        "fileDeleted": "文件删除成功",
+        "fileDeleted": "文件已成功删除",
         "fileRenamed": "文件重命名成功",
-        "fileMoved": "文件移动成功",
-        "downloadStarted": "已开始下载",
+        "fileMoved": "文件已成功移动",
+        "downloadStarted": "下载已开始",
         "shareCopied": "分享链接已复制"
       },
       "errors": {
-        "teacherOnly": "只有老师可以修改文件。",
+        "teacherOnly": "只有教师才能修改文件。",
         "downloadFailed": "下载失败",
         "shareFailed": "分享失败",
-        "failedToLoad": "加载文件失败。请稍后重试。"
+        "failedToLoad": "文件加载失败，请稍后再试。"
       },
       "breadcrumbs": {
-        "classFiles": "类文件"
+        "classFiles": "班级文件"
       },
       "search": {
         "placeholder": "在文件中搜索"
       },
-      "selected": "已选择 {count} 个",
+      "selected": "{count} 已选择",
       "filters": {
         "fileType": "文件类型",
         "documents": "文件",
@@ -691,33 +691,33 @@
       },
       "sort": {
         "name": "姓名",
-        "lastModified": "上次修改时间",
+        "lastModified": "最后修改时间",
         "fileSize": "文件大小"
       },
       "table": {
         "name": "姓名",
         "owner": "所有者",
-        "lastModified": "上次修改时间",
+        "lastModified": "最后修改时间",
         "fileSize": "文件大小"
       },
       "empty": {
-        "title": "此文件夹为空",
-        "description": "上传文件或创建文件夹以开始组织您的课堂材料。",
+        "title": "此文件夹为空。",
+        "description": "上传文件或创建文件夹，即可开始整理您的课堂资料。",
         "searchTitle": "未找到文件",
-        "searchDescription": "没有与“{query}”匹配的文件。请尝试其他搜索词。"
+        "searchDescription": "没有找到匹配的文件{query}。请尝试其他搜索词。"
       }
     },
     "settings": {
-      "title": "班级设置",
-      "subtitle": "配置课程详细信息和偏好",
+      "title": "课程设置",
+      "subtitle": "配置课程详情和偏好",
       "labels": {
         "unsavedChanges": "未保存的更改"
       },
       "actions": {
         "saving": "保存...",
         "saveChanges": "保存更改",
-        "deleting": "正在删除...",
-        "deleteClass": "删除班级",
+        "deleting": "正在删除……",
+        "deleteClass": "删除类",
         "cancel": "取消"
       },
       "sections": {
@@ -726,11 +726,11 @@
         },
         "theme": {
           "title": "班级主题",
-          "description": "为该课程选择主题颜色"
+          "description": "为这门课选择一个主题颜色"
         },
         "danger": {
           "title": "危险区域",
-          "description": "课程一旦删除，将无法恢复。这将永久删除所有作业、成绩、出勤记录，并将所有学生从课程中移除。"
+          "description": "删除课程后无法撤销。这将永久删除所有作业、成绩、考勤记录，并将所有学生从课程中移除。"
         }
       },
       "fields": {
@@ -739,14 +739,14 @@
         "subject": "主题"
       },
       "placeholders": {
-        "className": "例如，高级物理学",
-        "section": "例如 AP-101",
-        "subject": "例如物理学"
+        "className": "例如，高等物理学",
+        "section": "例如，AP-101",
+        "subject": "例如，物理学"
       },
       "toasts": {
         "updated": {
           "title": "课程已更新",
-          "description": "班级设置已成功保存。"
+          "description": "课程设置已成功保存。"
         },
         "deleted": {
           "title": "课程已删除",
@@ -756,17 +756,17 @@
       "errors": {
         "updateFailed": {
           "title": "更新失败",
-          "description": "保存课程设置失败。请重试。"
+          "description": "课程设置保存失败，请重试。"
         }
       },
       "confirm": {
-        "title": "你真的确定吗？",
-        "description": "此操作无法撤消。这将永久删除课程“{name}”并移除所有相关数据，包括：",
+        "title": "你确定吗？",
+        "description": "此操作无法撤销。这将永久删除类“{name}”并移除所有关联数据，包括：",
         "items": {
           "assignments": "所有作业和提交",
           "records": "所有成绩和出勤记录",
-          "students": "所有学生将被开除出课堂",
-          "events": "所有班级活动和公告"
+          "students": "所有学生将被带离教室。",
+          "events": "所有课堂活动和通知"
         },
         "confirmDelete": "是的，删除课程"
       }
@@ -780,43 +780,43 @@
         "edit": "编辑教学大纲"
       },
       "errors": {
-        "failedToLoad": "无法加载课程大纲",
-        "tryLater": "请稍后重试。"
+        "failedToLoad": "课程大纲加载失败",
+        "tryLater": "请稍后再试。"
       },
       "stats": {
-        "totalAssignments": "总作业数",
+        "totalAssignments": "总任务数",
         "completionRate": "完成率",
         "totalPoints": "总分",
         "upcoming": "即将推出"
       },
       "overview": {
         "title": "课程概述",
-        "placeholder": "输入课程概述、目标和其他重要信息...",
-        "helper": "输入您的课程信息、学习目标、政策和其他重要细节。",
+        "placeholder": "请填写课程概述、目标及其他重要信息……",
+        "helper": "请输入您的课程信息、学习目标、政策及其他重要细节。",
         "empty": {
-          "title": "尚无教学大纲内容",
-          "description": "单击“编辑课程大纲”以添加课程信息、学习目标、政策等。"
+          "title": "暂无课程大纲内容",
+          "description": "点击“编辑课程大纲”添加课程信息、学习目标、政策等。"
         }
       },
       "assignments": {
         "title": "课程作业",
-        "gradedCount": "已评分 {graded} 人，共 {total} 人",
+        "gradedCount": "{graded} 的 {total} 已评分",
         "totalPoints": "总分 {total}",
         "empty": {
-          "title": "尚无作业",
-          "description": "作业一旦创建就会出现在这里。"
+          "title": "暂无任务",
+          "description": "任务创建完成后将显示在此处。"
         }
       },
       "table": {
         "assignment": "任务",
-        "dueDate": "两次约会",
+        "dueDate": "两个日期",
         "points": "积分",
         "weight": "重量",
         "status": "地位",
         "pts": "点"
       },
       "status": {
-        "graded": "已分级",
+        "graded": "已评分",
         "pending": "待办的"
       },
       "courseInfo": {
@@ -829,7 +829,7 @@
         },
         "stats": {
           "title": "课程统计",
-          "totalAssignments": "总作业数",
+          "totalAssignments": "总任务数",
           "gradedAssignments": "评分作业",
           "totalPoints": "总分"
         }
@@ -837,7 +837,7 @@
     }
   },
   "assignment": {
-    "dueDate": "两次约会",
+    "dueDate": "两个日期",
     "submit": "提交",
     "grade": "年级",
     "feedback": "反馈",
@@ -845,130 +845,130 @@
     "open": "打开",
     "closed": "关闭",
     "assignment": "任务",
-    "assignments": "作业",
+    "assignments": "任务",
     "newAssignment": "新任务",
-    "createAssignment": "创建作业",
-    "viewAssignment": "查看作业",
+    "createAssignment": "创建任务",
+    "viewAssignment": "查看任务",
     "allAssignments": "所有作业",
-    "searchAssignments": "搜索作业...",
-    "noAssignmentsFound": "未找到任何作业",
-    "createFirstAssignment": "创建您的第一个作业以开始",
-    "newSection": "新部分",
+    "searchAssignments": "搜索任务……",
+    "noAssignmentsFound": "未找到任何任务",
+    "createFirstAssignment": "创建你的第一个作业即可开始",
+    "newSection": "新章节",
     "pts": "点",
     "overdue": "（逾期）",
-    "assignmentDrop": "将任务拖放到此处即可移至顶层",
+    "assignmentDrop": "在此处放弃任务即可升至顶层",
     "sectionDeletionConfirmation": "您确定要删除此部分吗？所有作业都将移至顶层。",
-    "assignmentDeletionConfirmation": "您确定要删除此作业吗？此操作无法撤消。",
-    "manageAndTrack": "管理和跟踪课堂作业",
+    "assignmentDeletionConfirmation": "您确定要删除此作业吗？此操作无法撤销。",
+    "manageAndTrack": "管理和跟踪课程作业",
     "filters": "过滤器"
   },
   "pagination": {
     "previous": "以前的",
     "next": "下一个",
-    "goToPreviousPage": "转至上一页",
-    "goToNextPage": "转至下一页",
+    "goToPreviousPage": "返回上一页",
+    "goToNextPage": "前往下一页",
     "morePages": "更多页面"
   },
   "about": {
     "titleStatement1": "我们的故事",
-    "titleStatement2": "因挫折而建立，",
-    "titleStatement3": "用人工智能重新构想",
-    "titleStatement4": "经过多年与过时、分散的学校门户网站的斗争之后，我们决定建立我们一直希望拥有的学习管理系统。",
-    "problemParagraph1": "Studious 于 2023 年开始",
-    "problemParagraph2": "当一群学生和教育工作者因为一个共同的挫败感而聚在一起时：现有的学校门户网站笨重、缓慢，并且是为不同的教育时代而构建的。",
-    "problemDetailParagraph": "我们发现自己得在多个平台上忙碌——一个用来评分，一个用来做作业，还有一个用来沟通。老师们花在与软件斗争上的时间比教学的时间还多。学生们因为通知被埋没在过时的界面里而错过了截止日期。",
-    "betterWay": "我们知道一定有更好的方法。",
-    "solutionParagraph1": "我们从 Linear 和 Notion 等现代协作工具中汲取灵感，着手创建一个感觉",
-    "solutionParagraph2": "快速、直观、使用愉快。",
-    "solutionParagraph3": "人工智能的整合并非作为一种噱头，而是一种真正提高教师和学生生产力的手段。",
-    "launchParagraph": "经过两年的开发，我们于 2025 年 10 月 17 日正式推出 Studious。我们目前处于早期阶段，随时准备帮助世界各地的学校转变他们的学习体验。",
+    "titleStatement2": "源于挫败感，",
+    "titleStatement3": "利用人工智能重新构想",
+    "titleStatement4": "多年来，我们一直苦于使用过时、分散的学校门户网站，因此我们决定构建我们一直梦寐以求的学习管理系统。",
+    "problemParagraph1": "学习始于2023年",
+    "problemParagraph2": "当一群学生和教育工作者因为共同的挫败感而聚集在一起时：现有的学校门户网站笨拙、缓慢，而且是为不同的教育时代而设计的。",
+    "problemDetailParagraph": "我们发现自己需要同时管理多个平台——一个用于成绩，一个用于作业，还有一个用于沟通。老师们花在与软件较劲上的时间比教学时间还多。学生们因为通知被隐藏在过时的界面中而错过截止日期。",
+    "betterWay": "我们知道一定有更好的办法。",
+    "solutionParagraph1": "我们从 Linear 和 Notion 等现代协作工具中汲取灵感，着手创建一个让人感觉舒适的学习管理系统。",
+    "solutionParagraph2": "快速、直观、使用起来令人愉悦。",
+    "solutionParagraph3": "它将人工智能融入教学，不是为了噱头，而是为了真正提高教师和学生的生产力。",
+    "launchParagraph": "经过两年的研发，我们于 2025 年 10 月 17 日正式发布了 Studious。目前我们正处于早期体验阶段，准备帮助全球学校革新学习体验。",
     "journey1": "我们的旅程",
     "journey2": "两年的建设、学习和成长",
     "journeyBeginningDate": "2023",
-    "journeyBeginning1": "开始",
-    "journeyBeginning2": "首个原型已开发完成。核心功能：课程管理、作业和日历集成。",
+    "journeyBeginning1": "开端",
+    "journeyBeginning2": "首个原型已完成。核心功能包括：课程管理、作业布置和日历集成。",
     "journeyBetaLaunchDate": "2025年10月31日",
     "journeyBetaLaunch1": "公开测试版发布",
-    "journeyBetaLaunch2": "Studious LMS 正式开启公测。面向全球学校开放全平台功能抢先体验。",
+    "journeyBetaLaunch2": "Studious LMS正式上线公开测试版。面向全球学校开放，提供完整平台功能的抢先体验。",
     "journeyPilotSchoolsDate": "2025年11月",
     "journeyPilotSchools1": "试点学校计划",
-    "journeyPilotSchools2": "与试点学校建立合作伙伴关系，收集现实世界的反馈并根据不同的教育需求完善平台。",
+    "journeyPilotSchools2": "与试点学校建立合作关系，收集真实世界的反馈，并根据不同的教育需求改进平台。",
     "journeyBetaCompleteDate": "2025年12月",
     "journeyBetaComplete1": "Beta 测试完成",
-    "journeyBetaComplete2": "从测试版过渡到正式版。平台稳定，所有核心功能均经过全面测试和优化。",
+    "journeyBetaComplete2": "从测试版过渡到正式版。平台稳定性已得到提升，所有核心功能均已全面测试和优化。",
     "journeySDPDate": "2026年1月",
     "journeySDP1": "学校发展计划启动",
-    "journeySDP2": "宣布首批被纳入“勤奋学校发展计划”的学校，为符合条件的院校提供免费入学机会。",
-    "missionStatement1": "我们的使命很简单",
-    "missionStatement2": "建立我们（作为学生、教师和终身学习者）每天都想使用的学习管理系统。",
-    "joinAppeal1": "加入我们的旅程",
+    "journeySDP2": "宣布首批入选“勤奋好学学校发展计划”的学校名单，该计划将为符合条件的院校提供免费学习机会。",
+    "missionStatement1": "我们的使命很简单。",
+    "missionStatement2": "构建一个我们——作为学生、教师和终身学习者——每天都想使用的学习管理系统。",
+    "joinAppeal1": "加入我们，一同踏上这段旅程。",
     "joinAppeal2": "成为教育未来的一部分",
-    "requestEarlyAccess": "申请早期访问",
+    "requestEarlyAccess": "申请提前访问",
     "pressKit": "新闻资料包"
   },
   "pricing": {
     "pricingStatement1": "透明定价",
-    "pricingStatement2": "为您的机构选择合适的计划",
-    "pricingStatement3": "定价简单透明，无任何隐藏费用。所有套餐均包含核心功能，并提供可扩展选项。",
+    "pricingStatement2": "选择适合您机构的方案",
+    "pricingStatement3": "价格简单透明，无任何隐藏费用。所有套餐均包含核心功能，并提供可扩展的选项。",
     "mostPopular": "最受欢迎",
-    "priceUnit": "/用户/月",
+    "priceUnit": "用户/月",
     "pricingStarterTitle": "起动机",
     "pricingStarterPrice": "自由的",
-    "pricingStarterNote": "包含 Beta 版访问权限",
+    "pricingStarterNote": "包含 Beta 测试资格",
     "pricingStarterDescription": "非常适合小班授课和试点项目",
-    "pricingStarterPerk1": "最多 30 名学生",
+    "pricingStarterPerk1": "最多30名学生",
     "pricingStarterPerk2": "无限课程",
     "pricingStarterPerk3": "核心功能（作业、日历、成绩）",
-    "pricingStarterPerk4": "AI 助手（每月 5 次聊天）",
+    "pricingStarterPerk4": "AI助手（每月5次聊天）",
     "pricingStarterPerk5": "社区支持",
     "pricingStarterPerk6": "5GB存储空间",
     "pricingStarterLink": "免费开始",
     "pricingSchoolTitle": "学校",
-    "pricingSchoolPriceNote": "按年或每月 6 美元计费",
-    "pricingSchoolNote": "适用于最多有 1,000 名学生的学校",
-    "pricingSchoolPerk1": "无限学生",
+    "pricingSchoolPriceNote": "按年计费或每月 6 美元",
+    "pricingSchoolNote": "适用于学生人数不超过1000人的学校",
+    "pricingSchoolPerk1": "学生人数不限",
     "pricingSchoolPerk2": "无限课程",
     "pricingSchoolPerk3": "所有核心功能",
     "pricingSchoolPerk4": "AI助手（无限次查询）",
-    "pricingSchoolPerk5": "率先获得 Studious CMS 测试版访问权限",
+    "pricingSchoolPerk5": "优先获得 Studious CMS 测试版访问权限",
     "pricingSchoolPerk6": "API 访问",
-    "pricingSchoolLink": "开始"
+    "pricingSchoolLink": "开始使用"
   },
   "components": {
     "earlyAccess": {
-      "title": "申请早期访问",
-      "description": "加入候补名单，成为首批体验 Studious LMS 的用户",
+      "title": "申请提前访问",
+      "description": "加入候补名单，成为首批体验 Studious LMS 的用户。",
       "fields": {
         "email": "电子邮件地址 *",
-        "institutionSize": "机构规模 *"
+        "institutionSize": "机构规模*"
       },
       "placeholders": {
         "email": "you@school.edu",
         "institutionSize": "选择机构规模"
       },
       "sizes": {
-        "tiny": "1-30名学生（个别教师）",
+        "tiny": "1-30名学生（一对一教师授课）",
         "small": "31-100名学生（小型学校）",
-        "medium": "101-500名学生（中型学校）",
-        "large": "501-1,000名学生（大型学校）",
-        "institution": "1,001+ 名学生（机构）"
+        "medium": "101-500名学生（中等规模学校）",
+        "large": "学生人数 501-1000 人（大型学校）",
+        "institution": "1001+名学生（机构）"
       },
       "actions": {
         "submit": "请求访问",
-        "submitting": "正在提交...",
+        "submitting": "正在提交……",
         "done": "完毕"
       },
       "success": {
-        "title": "您在名单上！",
-        "description": "当我们准备好为您服务时，我们会向 {email} 发送电子邮件。"
+        "title": "你上榜了！",
+        "description": "准备就绪后，我们会向您发送一封电子邮件至 {email}。"
       },
       "toasts": {
-        "success": "成功加入候补名单！"
+        "success": "已成功加入候补名单！"
       }
     },
     "joinClass": {
       "title": "加入课程",
-      "buttonLabel": "加入班级",
+      "buttonLabel": "加入课程",
       "fields": {
         "inviteCode": "课程邀请码"
       },
@@ -978,18 +978,18 @@
       "help": "输入老师提供的邀请码",
       "howTo": {
         "title": "如何获取邀请码：",
-        "item1": "向老师索取课程邀请码",
-        "item2": "查看您的电子邮件以获取课程注册说明",
-        "item3": "在你的教学大纲或课程材料上查找代码"
+        "item1": "请向老师索取班级邀请码",
+        "item2": "请查看您的电子邮件以获取课程注册说明",
+        "item3": "请在课程大纲或教材中查找代码。"
       },
       "actions": {
         "cancel": "取消",
-        "join": "加入班级",
-        "joining": "加入..."
+        "join": "加入课程",
+        "joining": "加入……"
       },
       "toasts": {
-        "success": "您已成功加入课程。",
-        "errorInvalid": "邀请码无效或未找到类别。",
+        "success": "你已成功加入课程。",
+        "errorInvalid": "邀请码无效或未找到课程。",
         "errorEmpty": "请输入有效的邀请码。"
       }
     },
@@ -997,34 +997,34 @@
       "title": "创建新类",
       "buttonLabel": "创建类",
       "fields": {
-        "title": "班级名称 *",
+        "title": "课程名称*",
         "section": "部分 *",
         "subject": "主题 *",
         "semester": "学期",
-        "credits": "致谢",
+        "credits": "鸣谢",
         "meetingTime": "会议时间",
         "location": "地点",
         "description": "描述"
       },
       "placeholders": {
-        "title": "例如，高级物理学",
-        "section": "例如 AP-101",
-        "subject": "例如物理学",
-        "semester": "例如，2025 年春季",
+        "title": "例如，高等物理学",
+        "section": "例如，AP-101",
+        "subject": "例如，物理学",
+        "semester": "例如，2025年春季",
         "credits": "例如，3",
-        "meetingTime": "例如，周一至周五 上午 10:00-11:00",
+        "meetingTime": "例如，周一、周三、周五上午 10:00-11:00",
         "location": "例如，科学楼205室",
-        "description": "描述课程内容和目标..."
+        "description": "请描述课程内容和目标……"
       },
       "actions": {
         "cancel": "取消",
         "create": "创建类",
-        "creating": "创建..."
+        "creating": "正在创建……"
       },
       "toasts": {
         "success": "类 {name} 已成功创建。",
-        "errorRequired": "请填写所有必填字段。",
-        "errorFailed": "创建课程失败。请稍后重试。"
+        "errorRequired": "请填写所有必填项。",
+        "errorFailed": "创建类失败，请稍后再试。"
       }
     },
     "createFolder": {
@@ -1037,7 +1037,7 @@
       },
       "placeholders": {
         "name": "输入文件夹名称",
-        "description": "为此文件夹添加描述..."
+        "description": "请为此文件夹添加描述……"
       },
       "help": {
         "name": "为您的文件夹选择一个描述性名称",
@@ -1047,20 +1047,20 @@
         "cancel": "取消",
         "create": "创建文件夹",
         "update": "更新文件夹",
-        "creating": "创建...",
-        "updating": "正在更新..."
+        "creating": "正在创建……",
+        "updating": "正在更新……"
       },
       "toasts": {
         "errorRequired": "文件夹名称为必填项",
         "errorInvalidChars": "文件夹名称包含无效字符",
-        "errorTooLong": "文件夹名称太长（最多 255 个字符）"
+        "errorTooLong": "文件夹名称过长（最多 255 个字符）"
       }
     },
     "createAssignment": {
-      "title": "创建新作业",
-      "buttonLabel": "创建作业",
+      "title": "创建新任务",
+      "buttonLabel": "创建任务",
       "sections": {
-        "details": "作业详情",
+        "details": "任务详情",
         "configuration": "配置",
         "grading": "评分与评估",
         "attachments": "附件"
@@ -1068,24 +1068,24 @@
       "fields": {
         "title": "标题 *",
         "instructions": "指示 *",
-        "dueDate": "两次约会",
-        "type": "作业类型",
+        "dueDate": "两个日期",
+        "type": "任务类型",
         "section": "部分",
-        "rubric": "评分细则",
+        "rubric": "评分标准",
         "gradeScale": "评分标准",
-        "maxPoints": "最高积分",
+        "maxPoints": "最高分",
         "weight": "重量 （％）",
-        "sectionColor": "部分颜色"
+        "sectionColor": "区域颜色"
       },
       "placeholders": {
-        "title": "例如，第 5 章测验、物理实验报告",
-        "instructions": "为学生提供明确的指导...",
+        "title": "例如：第五章测验、物理实验报告",
+        "instructions": "为学生提供清晰的指导……",
         "maxPoints": "100",
         "weight": "1.0",
         "chooseSection": "选择部分",
         "chooseRubric": "选择评分标准",
-        "chooseGradeScale": "选择成绩等级",
-        "newSectionName": "输入部分名称..."
+        "chooseGradeScale": "选择等级标准",
+        "newSectionName": "请输入章节名称..."
       },
       "types": {
         "homework": "家庭作业",
@@ -1101,7 +1101,7 @@
       "options": {
         "graded": {
           "label": "评分作业",
-          "description": "包含在成绩册中"
+          "description": "计入成绩册"
         },
         "draft": {
           "label": "保存为草稿",
@@ -1109,69 +1109,69 @@
         }
       },
       "section": {
-        "none": "无部分",
+        "none": "无章节",
         "createNew": "创建新部分"
       },
       "rubric": {
         "none": "没有评分标准",
-        "untitled": "无标题评分标准",
-        "autoCalculate": "分数将根据所选评分标准自动计算"
+        "untitled": "无标题标题",
+        "autoCalculate": "系统将根据所选评分标准自动计算分数。"
       },
       "gradeScale": {
-        "default": "默认比例",
-        "untitled": "无标题音阶"
+        "default": "默认缩放比例",
+        "untitled": "无题比例"
       },
       "files": {
         "uploadButton": "上传文件",
-        "dropZone": "将文件拖放到此处或单击上传",
+        "dropZone": "将文件拖放到此处或点击上传",
         "dropZoneHint": "支持所有文件类型 • 每个文件最大 50MB",
         "filesUploaded": "已上传 {uploaded} 个文件（共 {total} 个）"
       },
       "status": {
-        "creating": "创建作业...",
-        "settingUp": "正在设置作业详细信息...",
-        "preparing": "准备上传文件...",
-        "uploading": "正在将文件上传至云存储...",
+        "creating": "创建任务...",
+        "settingUp": "正在设置任务详情……",
+        "preparing": "正在准备文件上传……",
+        "uploading": "正在将文件上传到云存储……",
         "processing": "正在处理上传的文件...",
-        "finalizing": "完成任务...",
-        "assigning": "分配给学生...",
-        "almostDone": "快完成了...",
-        "uploadingFile": "正在上传{name}...",
+        "finalizing": "完成任务……",
+        "assigning": "分配给学生……",
+        "almostDone": "快完成了……",
+        "uploadingFile": "正在上传 {name}...",
         "creatingProgress": "创建作业",
-        "draftStatus": "将保存为草稿",
-        "publishedStatus": "将向学生发布"
+        "draftStatus": "将保存为草稿。",
+        "publishedStatus": "将发布给学生"
       },
       "actions": {
         "cancel": "取消",
-        "create": "创建作业",
+        "create": "创建任务",
         "saveDraft": "保存草稿",
-        "creating": "创建...",
+        "creating": "正在创建……",
         "add": "添加"
       },
       "toasts": {
         "successCreated": "作业创建成功。",
         "successDraft": "作业已成功保存为草稿。",
-        "errorRequired": "请填写所有必填字段。",
-        "errorFailed": "无法创建作业。请重试。",
-        "errorUploadFailed": "无法上传{name}",
-        "sectionCreated": "部分“{name}”创建成功。"
+        "errorRequired": "请填写所有必填项。",
+        "errorFailed": "创建作业失败，请重试。",
+        "errorUploadFailed": "上传失败 {name}",
+        "sectionCreated": "章节“[0]]”创建成功。"
       }
     },
     "createAnnouncement": {
       "title": "创建公告",
       "buttonLabel": "发布公告",
       "fields": {
-        "title": "公告标题 *",
+        "title": "公告标题*",
         "content": "内容 *",
         "priority": "优先级",
-        "expiryDate": "到期日（可选）",
+        "expiryDate": "到期日期（可选）",
         "publishDate": "发布日期",
         "publishTime": "发布时间"
       },
       "placeholders": {
-        "title": "例如，实验报告截止周五",
-        "content": "在这里写下您的公告内容...",
-        "publishDate": "如果为空则立即发布"
+        "title": "例如，实验报告周五截止。",
+        "content": "请在此处填写您的公告内容……",
+        "publishDate": "如果为空，则立即发布。"
       },
       "priority": {
         "low": "低的",
@@ -1182,16 +1182,16 @@
       "sections": {
         "settings": "设置",
         "notifications": "通知",
-        "schedule": "安排发布（可选）"
+        "schedule": "发布日程安排（可选）"
       },
       "settings": {
         "pinned": {
-          "label": "固定至顶部",
-          "description": "将此公告置于列表顶部"
+          "label": "置顶",
+          "description": "请将此公告置于列表顶部"
         },
         "urgent": {
           "label": "标记为紧急",
-          "description": "用紧急造型突出"
+          "description": "以紧迫的造型突出重点"
         }
       },
       "notifications": {
@@ -1207,11 +1207,11 @@
       "actions": {
         "cancel": "取消",
         "publishNow": "立即发布",
-        "schedule": "日程公告"
+        "schedule": "日程安排公告"
       },
       "toasts": {
         "success": "公告已创建",
-        "errorRequired": "请填写所有必填字段。"
+        "errorRequired": "请填写所有必填项。"
       }
     }
   }

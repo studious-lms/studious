@@ -2,7 +2,7 @@
   "members": {
     "title": "सदस्यों",
     "counts": {
-      "totalMembers": "{गिनती} सदस्य"
+      "totalMembers": "{count} सदस्य"
     },
     "actions": {
       "inviteMember": "सदस्य को आमंत्रित करें",
@@ -36,21 +36,21 @@
     "students": {
       "empty": {
         "title": "कोई छात्र नहीं मिला",
-        "matchNone": "कोई भी छात्र \"{query}\" से मेल नहीं खाता",
+        "matchNone": "कोई छात्र \"{query}\" से मेल नहीं खाता",
         "noStudents": "अभी तक कोई छात्र इस कक्षा में शामिल नहीं हुआ है"
       }
     },
     "teachers": {
       "empty": {
         "title": "कोई शिक्षक नहीं मिला",
-        "matchNone": "\"{query}\" से कोई शिक्षक मेल नहीं खाता",
+        "matchNone": "कोई शिक्षक मेल नहीं खाता \"{query}\"",
         "noTeachers": "कोई अतिरिक्त शिक्षक नहीं जोड़ा गया है"
       }
     },
     "toasts": {
       "inviteRegenerated": "आमंत्रण कोड सफलतापूर्वक पुनः जनरेट किया गया",
       "copied": "आमंत्रण कोड क्लिपबोर्ड पर कॉपी किया गया",
-      "roleChanged": "भूमिका {भूमिका} में बदली गई",
+      "roleChanged": "भूमिका बदलकर {role} कर दी गई",
       "memberRemoved": "सदस्य सफलतापूर्वक हटा दिया गया"
     },
     "errors": {

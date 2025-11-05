@@ -37,7 +37,7 @@
       "untitled": "Peristiwa Tanpa Judul",
       "empty": {
         "noEventsOnDate": "Tiada acara pada tarikh ini",
-        "noEventsOnDateDescription": "Tiada acara dijadualkan pada {date}. Cuba pilih tarikh lain atau buat acara baharu.",
+        "noEventsOnDateDescription": "Tiada acara dijadualkan untuk {date}. Cuba pilih tarikh lain atau buat acara baharu.",
         "noEvents": "Tiada acara ditemui",
         "noEventsDescription": "Buat acara pertama anda untuk mula menjejaki kehadiran",
         "createForDate": "Buat Acara untuk Tarikh Ini",

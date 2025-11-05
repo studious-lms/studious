@@ -17,8 +17,8 @@
     "folderIdMissing": "ID cartella mancante. Attendi il caricamento della cartella.",
     "preparing": "Preparazione del caricamento...",
     "gettingUrls": "Ottenimento URL di caricamento...",
-    "uploadingFile": "Caricamento di {name}...",
-    "confirming": "Conferma {name}...",
+    "uploadingFile": "Caricamento {name}...",
+    "confirming": "Confermando {name}...",
     "finalizing": "Finalizzazione in corso...",
     "success": "File caricati con successo!",
     "error": "Impossibile caricare i file. Riprova.",
@@ -85,8 +85,8 @@
     "allFiles": "Tutti i file",
     "progressUploaded": "{progress}% caricato",
     "noFilesSelected": "Nessun file selezionato",
-    "maxFilesExceeded": "Numero massimo di file consentiti: {max}",
-    "uploadFailed": "Caricamento non riuscito: {errore}",
+    "maxFilesExceeded": "Numero massimo di file consentiti {max}",
+    "uploadFailed": "Caricamento non riuscito: {error}",
     "uploadFailedGeneric": "Caricamento non riuscito",
     "status": {
       "pending": "In attesa di",
@@ -95,29 +95,96 @@
       "failed": "Fallito"
     },
     "cancel": "Cancellare",
-    "upload": "Carica {count} file",
+    "upload": "Carica il file {count}",
     "uploadPlural": "Carica {count} file",
     "uploading": "Caricamento in corso..."
   },
+  "notifications": {
+    "title": "Notifiche",
+    "subtitle": "Rimani aggiornato sulle tue lezioni e sui tuoi compiti",
+    "filters": {
+      "label": "Filtro:",
+      "all": "Tutti ({count})",
+      "unread": "Non letto ({count})",
+      "read": "Leggi ({count})"
+    },
+    "badge": {
+      "unread": "{count} nuovo"
+    },
+    "actions": {
+      "viewAll": "Visualizza tutte le notifiche",
+      "markAsRead": "Segna come letto"
+    },
+    "empty": {
+      "all": {
+        "title": "Nessuna notifica ancora",
+        "description": "Quando ricevi delle notifiche, queste appariranno qui."
+      }
+    }
+  },
   "chat": {
+    "landing": {
+      "pleaseSignIn": "Accedi per continuare",
+      "signInRequired": "Per accedere a questa pagina è necessario effettuare l'accesso",
+      "title": "Chiacchierata",
+      "description": "Seleziona una conversazione dalla barra laterale per iniziare a chattare."
+    },
+    "page": {
+      "header": {
+        "members": "Membri",
+        "markMentionsRead": "Mark menziona letto"
+      },
+      "input": {
+        "placeholderPrefix": "Messaggio"
+      },
+      "loading": "Caricamento conversazione..."
+    },
     "conversationList": {
-      "searchPlaceholder": "Trova o avvia una conversazione"
+      "title": "Messaggi diretti",
+      "searchPlaceholder": "Trova o avvia una conversazione",
+      "noConversations": "Nessuna conversazione ancora",
+      "noConversationsDescription": "Inizia a chattare con qualcuno",
+      "noSearchResults": "Nessuna conversazione trovata",
+      "noSearchResultsDescription": "Prova termini di ricerca diversi",
+      "unnamedGroup": "Gruppo senza nome",
+      "unknownUser": "Utente sconosciuto"
     },
     "messageList": {
       "noMessagesTitle": "Nessun messaggio ancora",
       "noMessagesDescription": "Questo è l'inizio della tua conversazione"
     },
+    "messageInput": {
+      "placeholder": "Scrivi un messaggio..."
+    },
     "messageEdit": {
-      "placeholder": "Modifica il tuo messaggio..."
+      "placeholder": "Modifica il tuo messaggio...",
+      "hint": "Premi Invio per salvare • Esc per annullare",
+      "save": "Salva",
+      "saving": "Risparmio...",
+      "cancel": "Cancellare"
+    },
+    "messageActions": {
+      "editMessage": "Modifica messaggio",
+      "deleteMessage": "Elimina messaggio",
+      "deleteConfirmTitle": "Elimina messaggio",
+      "deleteConfirmDescription": "Vuoi davvero eliminare questo messaggio? Questa azione non può essere annullata.",
+      "cancel": "Cancellare",
+      "delete": "Eliminare",
+      "deleting": "Eliminazione in corso..."
     },
     "createConversation": {
-      "title": "Nuova conversazione",
+      "title": "Inizia una conversazione",
+      "description": "Crea un messaggio diretto o una conversazione di gruppo",
       "direct": "Messaggio diretto",
       "group": "Chat di gruppo",
+      "dmLabel": "Inserisci il nome utente per inviare il messaggio",
       "searchPlaceholder": "Inserisci il nome utente...",
-      "groupName": "Nome del gruppo",
+      "groupNameLabel": "Nome del gruppo",
       "groupNamePlaceholder": "Inserisci il nome del gruppo...",
-      "addMembers": "Aggiungi membri",
+      "addMembersLabel": "Aggiungi membri tramite nome utente",
+      "addButton": "Aggiungere",
+      "selectedUser": "Utente selezionato:",
+      "selectedMembers": "Membri selezionati ({count})",
       "cancel": "Cancellare",
       "create": "Creare",
       "creating": "Creazione..."
@@ -140,7 +207,7 @@
     "creating": "Creazione...",
     "updating": "Aggiornamento...",
     "created": "Sezione \"{name}\" creata correttamente.",
-    "updated": "Sezione \"{name}\" aggiornata correttamente.",
+    "updated": "Sezione \"{name}\" aggiornata con successo.",
     "errorEmpty": "Inserisci un nome di sezione.",
     "errorCreate": "Impossibile creare la sezione",
     "errorUpdate": "Impossibile aggiornare la sezione"
@@ -173,7 +240,7 @@
     "updating": "Aggiornamento...",
     "creating": "Creazione...",
     "addEvent": "Aggiungi evento",
-    "eventCreated": "{tipo} creato con successo",
+    "eventCreated": "{type} creato con successo",
     "eventUpdated": "Evento aggiornato con successo",
     "errorRequired": "Si prega di compilare tutti i campi obbligatori",
     "errorSelectClass": "Seleziona una classe per l'evento della classe",
@@ -207,7 +274,7 @@
     "errorUpdate": "Impossibile aggiornare l'evento"
   },
   "aiLab": {
-    "title": "Crea {tipo}",
+    "title": "Crea {type}",
     "aiPowered": "Alimentato dall'intelligenza artificiale",
     "description": "Fornisci alcune informazioni di base per aiutare la nostra IA a creare contenuti migliori per te.",
     "titleField": "Titolo *",
@@ -246,7 +313,7 @@
       "2hours": "2 ore"
     },
     "descriptionField": "Descrizione",
-    "descriptionPlaceholder": "Descrivi cosa dovrebbe coprire questo {tipo}...",
+    "descriptionPlaceholder": "Descrivi cosa dovrebbe coprire questo {type}...",
     "requirements": "Requisiti speciali",
     "requirementsPlaceholder": "Eventuali requisiti specifici, obiettivi di apprendimento o vincoli...",
     "cancel": "Cancellare",

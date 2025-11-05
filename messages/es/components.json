@@ -1,33 +1,33 @@
 {
   "rename": {
     "editFolder": "Editar carpeta",
-    "renameFile": "Cambiar el nombre del archivo",
+    "renameFile": "Cambiar nombre del archivo",
     "name": "Nombre",
     "placeholder": "Ingrese el nombre {type}",
     "folderColor": "Color de la carpeta",
-    "folderColorDescription": "Elige un color para esta carpeta",
+    "folderColorDescription": "Elige un color para esta carpeta.",
     "cancel": "Cancelar",
     "saveChanges": "Guardar cambios",
     "rename": "Rebautizar"
   },
   "uploadFiles": {
     "title": "Subir archivos",
-    "noFilesSelected": "No hay archivos seleccionados",
-    "classIdMissing": "Falta el ID de la clase",
-    "folderIdMissing": "Falta el ID de la carpeta. Espere a que se cargue.",
-    "preparing": "Preparando carga...",
-    "gettingUrls": "Obteniendo URL de carga...",
-    "uploadingFile": "Cargando {nombre}...",
-    "confirming": "Confirmando {nombre}...",
+    "noFilesSelected": "No se ha seleccionado ningún archivo.",
+    "classIdMissing": "Falta el ID de clase",
+    "folderIdMissing": "Falta el ID de la carpeta. Espere a que se cargue la carpeta.",
+    "preparing": "Preparando la subida...",
+    "gettingUrls": "Obtención de URLs de carga...",
+    "uploadingFile": "Subiendo {name}...",
+    "confirming": "Confirmando {name}...",
     "finalizing": "Finalizando...",
-    "success": "¡Archivos cargados exitosamente!",
-    "error": "No se pudieron cargar los archivos. Inténtalo de nuevo.",
-    "errorFile": "No se pudo cargar {name}",
-    "errorMessage": "Error en la carga: {message}",
-    "dropZone": "Suelte los archivos aquí o haga clic para buscarlos",
-    "dropZoneHint": "Soporte para imágenes, documentos, vídeos y más",
+    "success": "¡Archivos subidos correctamente!",
+    "error": "No se pudieron cargar los archivos. Inténtelo de nuevo.",
+    "errorFile": "Error al cargar {name}",
+    "errorMessage": "Error al cargar: {message}",
+    "dropZone": "Arrastra los archivos aquí o haz clic para buscar.",
+    "dropZoneHint": "Compatibilidad con imágenes, documentos, vídeos y mucho más",
     "selectedFiles": "Archivos seleccionados ({count})",
-    "filesUploaded": "{subido} de {total} archivos subidos",
+    "filesUploaded": "{uploaded} de {total} archivos subidos",
     "uploadingTo": "Subiendo a:",
     "homeDirectory": "Directorio de inicio",
     "status": {
@@ -46,48 +46,48 @@
     "selectTemplate": "Seleccionar plantilla",
     "startFromScratch": "Empezar desde el principio",
     "editRubric": "Editar rúbrica",
-    "noTemplateSelected": "Seleccione una plantilla o cree una rúbrica personalizada",
+    "noTemplateSelected": "Seleccione una plantilla o cree una rúbrica personalizada.",
     "name": "Nombre de la rúbrica",
-    "placeholder": "Ingrese el nombre de la rúbrica",
+    "placeholder": "Introduzca el nombre de la rúbrica",
     "cancel": "Cancelar",
     "create": "Crear rúbrica",
-    "update": "Actualizar rúbrica",
+    "update": "Actualizar la rúbrica",
     "creating": "Creando...",
     "updating": "Actualizando...",
-    "created": "Rúbrica creada exitosamente",
-    "updated": "Rúbrica actualizada exitosamente",
+    "created": "Rúbrica creada con éxito",
+    "updated": "Rúbrica actualizada correctamente",
     "createFailed": "No se pudo crear la rúbrica",
     "updateFailed": "No se pudo actualizar la rúbrica",
-    "errorNameRequired": "Proporcione un nombre y al menos un criterio."
+    "errorNameRequired": "Por favor, proporcione un nombre y al menos un criterio."
   },
   "gradingBoundaries": {
-    "title": "Crear límite de calificación",
-    "titleEdit": "Editar límite de calificación",
+    "title": "Crear límite de grado",
+    "titleEdit": "Editar límite de grado",
     "selectTemplate": "Seleccionar plantilla",
-    "editGradingScale": "Editar escala de calificación",
-    "noTemplateSelected": "Seleccione una plantilla o cree límites personalizados",
+    "editGradingScale": "Editar escala de calificaciones",
+    "noTemplateSelected": "Seleccione una plantilla o cree límites personalizados.",
     "cancel": "Cancelar",
     "create": "Crear",
     "update": "Actualizar",
     "creating": "Creando...",
     "updating": "Actualizando...",
-    "created": "Límite de calificación creado exitosamente",
-    "updated": "Límite de calificación actualizado exitosamente",
-    "createFailed": "No se pudo crear el límite de calificación",
-    "updateFailed": "No se pudo actualizar el límite de calificación"
+    "created": "Límite de nivelación creado con éxito",
+    "updated": "Límite de clasificación actualizado correctamente",
+    "createFailed": "No se pudo crear el límite de clasificación",
+    "updateFailed": "No se pudo actualizar el límite de clasificación"
   },
   "directUpload": {
     "title": "Subir archivos",
-    "description": "Seleccionar archivos para cargar",
+    "description": "Seleccione los archivos que desea subir",
     "selectFiles": "Seleccionar archivos",
     "selectedFiles": "Archivos seleccionados ({count})",
-    "maxFiles": "Máximo de {max} archivos. Tipos aceptados: {types}",
+    "maxFiles": "Número máximo de archivos: {max}. Tipos aceptados: {types}",
     "allFiles": "Todos los archivos",
     "progressUploaded": "{progress}% subido",
-    "noFilesSelected": "No hay archivos seleccionados",
-    "maxFilesExceeded": "Máximo de {max} archivos permitidos",
-    "uploadFailed": "Error en la carga: {error}",
-    "uploadFailedGeneric": "Error en la carga",
+    "noFilesSelected": "No se ha seleccionado ningún archivo.",
+    "maxFilesExceeded": "Se permite un máximo de {max} archivos.",
+    "uploadFailed": "Error al cargar: {error}",
+    "uploadFailedGeneric": "Falló la carga.",
     "status": {
       "pending": "Pendiente",
       "uploading": "Subiendo",
@@ -95,29 +95,96 @@
       "failed": "Fallido"
     },
     "cancel": "Cancelar",
-    "upload": "Subir {count} archivo",
+    "upload": "Subir archivo {count}",
     "uploadPlural": "Subir {count} archivos",
     "uploading": "Subiendo..."
   },
+  "notifications": {
+    "title": "Notificaciones",
+    "subtitle": "Mantente al día con tus clases y tareas.",
+    "filters": {
+      "label": "Filtrar:",
+      "all": "Todos ({count})",
+      "unread": "No leído ({count})",
+      "read": "Leer ({count})"
+    },
+    "badge": {
+      "unread": "{count} nuevo"
+    },
+    "actions": {
+      "viewAll": "Ver todas las notificaciones",
+      "markAsRead": "Marcar como leído"
+    },
+    "empty": {
+      "all": {
+        "title": "Aún no hay notificaciones.",
+        "description": "Cuando recibas notificaciones, aparecerán aquí."
+      }
+    }
+  },
   "chat": {
+    "landing": {
+      "pleaseSignIn": "Inicia sesión para continuar",
+      "signInRequired": "Se requiere iniciar sesión para acceder a esta página.",
+      "title": "Charlar",
+      "description": "Selecciona una conversación de la barra lateral para empezar a chatear."
+    },
+    "page": {
+      "header": {
+        "members": "Miembros",
+        "markMentionsRead": "Mark menciona que lee"
+      },
+      "input": {
+        "placeholderPrefix": "Mensaje"
+      },
+      "loading": "Cargando conversación..."
+    },
     "conversationList": {
-      "searchPlaceholder": "Encuentra o inicia una conversación"
+      "title": "Mensajes directos",
+      "searchPlaceholder": "Encuentra o inicia una conversación",
+      "noConversations": "Aún no hay conversaciones.",
+      "noConversationsDescription": "Empieza a chatear con alguien",
+      "noSearchResults": "No se encontraron conversaciones",
+      "noSearchResultsDescription": "Prueba con diferentes términos de búsqueda.",
+      "unnamedGroup": "Grupo sin nombre",
+      "unknownUser": "Usuario desconocido"
     },
     "messageList": {
-      "noMessagesTitle": "No hay mensajes todavía",
-      "noMessagesDescription": "Este es el comienzo de tu conversación."
+      "noMessagesTitle": "Aún no hay mensajes.",
+      "noMessagesDescription": "Este es el comienzo de tu conversación"
+    },
+    "messageInput": {
+      "placeholder": "Escribe un mensaje..."
     },
     "messageEdit": {
-      "placeholder": "Editar tu mensaje..."
+      "placeholder": "Edita tu mensaje...",
+      "hint": "Pulse Intro para guardar • Escape para cancelar",
+      "save": "Ahorrar",
+      "saving": "Ahorro...",
+      "cancel": "Cancelar"
+    },
+    "messageActions": {
+      "editMessage": "Editar mensaje",
+      "deleteMessage": "Eliminar mensaje",
+      "deleteConfirmTitle": "Eliminar mensaje",
+      "deleteConfirmDescription": "¿Seguro que quieres borrar este mensaje? Esta acción no se puede deshacer.",
+      "cancel": "Cancelar",
+      "delete": "Borrar",
+      "deleting": "Eliminando..."
     },
     "createConversation": {
-      "title": "Nueva conversación",
+      "title": "Inicia una conversación",
+      "description": "Crea un mensaje directo o una conversación grupal.",
       "direct": "Mensaje directo",
       "group": "Chat grupal",
-      "searchPlaceholder": "Introduzca su nombre de usuario...",
-      "groupName": "Nombre del grupo",
+      "dmLabel": "Introduce tu nombre de usuario para enviar un mensaje.",
+      "searchPlaceholder": "Introduce tu nombre de usuario...",
+      "groupNameLabel": "Nombre del grupo",
       "groupNamePlaceholder": "Introduzca el nombre del grupo...",
-      "addMembers": "Agregar miembros",
+      "addMembersLabel": "Agregar miembros por nombre de usuario",
+      "addButton": "Agregar",
+      "selectedUser": "Usuario seleccionado:",
+      "selectedMembers": "Miembros seleccionados ({count})",
       "cancel": "Cancelar",
       "create": "Crear",
       "creating": "Creando..."
@@ -129,9 +196,9 @@
   "createSection": {
     "buttonLabel": "Nueva sección",
     "titleCreate": "Crear nueva sección",
-    "titleEdit": "Editar sección",
+    "titleEdit": "Sección de edición",
     "name": "Nombre de la sección *",
-    "placeholder": "p. ej., Trimestre 1, Unidad 2, Capítulo 5",
+    "placeholder": "Por ejemplo, Trimestre 1, Unidad 2, Capítulo 5",
     "helper": "Las secciones ayudan a organizar las tareas en grupos o períodos de tiempo.",
     "color": "Color de la sección",
     "cancel": "Cancelar",
@@ -139,18 +206,18 @@
     "update": "Sección de actualización",
     "creating": "Creando...",
     "updating": "Actualizando...",
-    "created": "Sección \"{name}\" creada exitosamente.",
-    "updated": "La sección \"{name}\" se actualizó exitosamente.",
-    "errorEmpty": "Ingrese un nombre de sección.",
+    "created": "Sección \"{name}\" creada correctamente.",
+    "updated": "Sección \"{name}\" actualizada correctamente.",
+    "errorEmpty": "Por favor, introduzca el nombre de una sección.",
     "errorCreate": "No se pudo crear la sección",
-    "errorUpdate": "No se pudo actualizar la sección"
+    "errorUpdate": "Error al actualizar la sección"
   },
   "universalEvent": {
     "titleCreate": "Crear nuevo evento",
     "titleEdit": "Editar evento",
     "classEvent": "Evento de clase",
     "personalEvent": "Evento personal",
-    "isClassEvent": "Este es un evento de clase.",
+    "isClassEvent": "Este es un evento de clase",
     "selectClass": "Seleccionar clase *",
     "chooseClass": "Elige una clase",
     "noTeacherClasses": "No tienes ninguna clase en la que seas profesor.",
@@ -158,27 +225,27 @@
     "eventNamePlaceholder": "Introduzca el nombre del evento",
     "startDateTime": "Fecha y hora de inicio *",
     "endDateTime": "Fecha y hora de finalización *",
-    "pickDate": "Fecha de selección",
+    "pickDate": "Seleccionar fecha",
     "location": "Ubicación",
-    "locationPlaceholder": "Ingrese la ubicación del evento",
+    "locationPlaceholder": "Introduce la ubicación del evento",
     "eventColor": "Color del evento",
     "eventColorDescription": "Elige un color para este evento",
     "remarks": "Observaciones",
     "remarksPlaceholder": "Notas o comentarios adicionales sobre el evento",
     "cancel": "Cancelar",
-    "updateEvent": "Actualizar evento",
+    "updateEvent": "Evento de actualización",
     "createEvent": "Crear evento",
     "createClassEvent": "Crear evento de clase",
-    "createPersonalEvent": "Crear evento personal",
+    "createPersonalEvent": "Crea un evento personal",
     "updating": "Actualizando...",
     "creating": "Creando...",
     "addEvent": "Agregar evento",
-    "eventCreated": "{type} creado exitosamente",
-    "eventUpdated": "Evento actualizado exitosamente",
-    "errorRequired": "Por favor, rellene todos los campos obligatorios",
-    "errorSelectClass": "Seleccione una clase para el evento de clase.",
+    "eventCreated": "{type} creado correctamente",
+    "eventUpdated": "Evento actualizado correctamente",
+    "errorRequired": "Por favor, rellene todos los campos obligatorios.",
+    "errorSelectClass": "Por favor, seleccione una clase para el evento de clase.",
     "errorCreate": "No se pudo crear el evento",
-    "errorUpdate": "No se pudo actualizar el evento"
+    "errorUpdate": "Error al actualizar el evento"
   },
   "classEvent": {
     "titleCreate": "Crear nuevo evento de clase",
@@ -187,33 +254,33 @@
     "eventNamePlaceholder": "Introduzca el nombre del evento",
     "startDateTime": "Fecha y hora de inicio *",
     "endDateTime": "Fecha y hora de finalización *",
-    "pickDate": "Fecha de selección",
+    "pickDate": "Seleccionar fecha",
     "location": "Ubicación",
-    "locationPlaceholder": "Ingrese la ubicación del evento",
+    "locationPlaceholder": "Introduce la ubicación del evento",
     "eventColor": "Color del evento",
     "eventColorDescription": "Elige un color para este evento",
     "remarks": "Observaciones",
     "remarksPlaceholder": "Notas o comentarios adicionales sobre el evento",
     "cancel": "Cancelar",
-    "updateEvent": "Actualizar evento",
+    "updateEvent": "Evento de actualización",
     "createEvent": "Crear evento",
     "updating": "Actualizando...",
     "creating": "Creando...",
     "addClassEvent": "Agregar evento de clase",
-    "eventCreated": "Evento creado exitosamente",
-    "eventUpdated": "Evento actualizado exitosamente",
-    "errorRequired": "Por favor, rellene todos los campos obligatorios",
+    "eventCreated": "Evento creado correctamente",
+    "eventUpdated": "Evento actualizado correctamente",
+    "errorRequired": "Por favor, rellene todos los campos obligatorios.",
     "errorCreate": "No se pudo crear el evento",
-    "errorUpdate": "No se pudo actualizar el evento"
+    "errorUpdate": "Error al actualizar el evento"
   },
   "aiLab": {
-    "title": "Crear {tipo}",
+    "title": "Crear {type}",
     "aiPowered": "Impulsado por IA",
     "description": "Proporcione información básica para ayudar a nuestra IA a crear mejor contenido para usted.",
     "titleField": "Título *",
-    "titlePlaceholder": "Ingrese el título {type}",
+    "titlePlaceholder": "Introduzca el título {type}",
     "subject": "Sujeto *",
-    "selectSubject": "Seleccionar tema",
+    "selectSubject": "Seleccionar asignatura",
     "subjects": {
       "mathematics": "Matemáticas",
       "science": "Ciencia",
@@ -246,11 +313,11 @@
       "2hours": "2 horas"
     },
     "descriptionField": "Descripción",
-    "descriptionPlaceholder": "Describe lo que este {tipo} debería cubrir...",
+    "descriptionPlaceholder": "Describe qué debería abarcar este {type}...",
     "requirements": "Requisitos especiales",
-    "requirementsPlaceholder": "¿Algún requisito específico, objetivo de aprendizaje o restricción...?",
+    "requirementsPlaceholder": "Cualquier requisito específico, objetivo de aprendizaje o limitación...",
     "cancel": "Cancelar",
-    "createLab": "Crear laboratorio de IA",
-    "creatingLab": "Creando Laboratorio..."
+    "createLab": "Crear un laboratorio de IA",
+    "creatingLab": "Creando laboratorio..."
   }
 }
