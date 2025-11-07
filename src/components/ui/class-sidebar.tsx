@@ -329,7 +329,7 @@ export function ClassSidebar({ classId }: ClassSidebarProps) {
       </nav>
       
       {/* Class Invite Code */}
-      {appState.user.teacher && <div className="p-4 border-t mt-auto">
+      {appState.user.teacher && <div className="p-4 pt-3 border-t mt-auto">
         <div className="space-y-2">
           <label className="text-xs font-medium text-muted-foreground">{t('classInviteCode')}</label>
           <div className="flex items-center justify-between p-2 bg-muted rounded-md hover:bg-muted/60 transition-colors duration-200">
