@@ -10,12 +10,6 @@ import { Provider } from "react-redux";
 import { AuthProvider } from "./providers/AuthProvider";
 import { store } from "@/store/store";
 
-// Mock user data - in real app this would come from auth context
-const mockUser = {
-  name: "Alex Johnson",
-  email: "alex@example.com",
-  avatar: undefined
-};
 
 interface ProvidersProps {
   children: React.ReactNode;
@@ -29,7 +23,7 @@ export function Providers({ children }: ProvidersProps) {
           <TooltipProvider>
             <AuthProvider>
             <Sonner />
-            <AppLayout isAuthenticated={true} user={mockUser}>
+            <AppLayout isAuthenticated={true}>
               <ConditionalThemeToggle />
               {children}
             </AppLayout>

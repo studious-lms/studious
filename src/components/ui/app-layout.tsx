@@ -11,14 +11,9 @@ import { useIsMobile } from "@/hooks/use-mobile";
 interface AppLayoutProps {
   children: ReactNode;
   isAuthenticated?: boolean;
-  user?: {
-    name: string;
-    email: string;
-    avatar?: string;
-  };
 }
 
-export function AppLayout({ children, isAuthenticated = false, user }: AppLayoutProps) {
+export function AppLayout({ children, isAuthenticated = false }: AppLayoutProps) {
   const pathname = usePathname();
   const appState = useSelector((state: RootState) => state.app);
   console.log("🔍 AppLayout Debug:");
@@ -40,7 +35,7 @@ export function AppLayout({ children, isAuthenticated = false, user }: AppLayout
   return (
     <div className="min-h-screen bg-background">
       {/* Primary Sidebar */}
-      {appState.user.loggedIn && <PrimarySidebar isAuthenticated={isAuthenticated} user={user} />}
+      {appState.user.loggedIn && <PrimarySidebar isAuthenticated={isAuthenticated} />}
       
       {/* Class Sidebar (only show if in a class route) */}
       {isInClass && appState.user.loggedIn && <ClassSidebar classId={classId!} />}
