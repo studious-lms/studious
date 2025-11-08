@@ -686,7 +686,7 @@ export default function Assignments() {
                 isTeacher={!isStudent}
                 dropMessage={t('assignmentDrop')}
               >
-                <div className="space-y-0">
+                <div className="space-y-3">
                   {/* Top drop zone */}
                   <DropZone 
                     index={0} 
