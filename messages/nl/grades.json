@@ -7,12 +7,12 @@
       "maxPoints": "Maximale punten",
       "weight": "Gewicht",
       "graded": "Gegradeerd",
-      "dueDate": "Twee data",
       "actions": "Acties",
       "student": "Student",
       "overallGrade": "Algemene beoordeling",
       "assignmentsCompleted": "Opdrachten voltooid",
-      "trend": "Trend"
+      "trend": "Trend",
+      "dueDate": "Inleverdatum"
     },
     "labels": {
       "rubric": "Rubriek"

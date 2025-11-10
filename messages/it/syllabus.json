@@ -37,11 +37,11 @@
     },
     "table": {
       "assignment": "Assegnazione",
-      "dueDate": "Due date",
       "points": "Punti",
       "weight": "Peso",
       "status": "Stato",
-      "pts": "punti"
+      "pts": "punti",
+      "dueDate": "Data di Scadenza"
     },
     "status": {
       "graded": "Classificato",

@@ -37,11 +37,11 @@
     },
     "table": {
       "assignment": "Atama",
-      "dueDate": "İki Tarih",
       "points": "Puanlar",
       "weight": "Ağırlık",
       "status": "Durum",
-      "pts": "puanlar"
+      "pts": "puanlar",
+      "dueDate": "Son Teslim Tarihi"
     },
     "status": {
       "graded": "Derecelendirilmiş",

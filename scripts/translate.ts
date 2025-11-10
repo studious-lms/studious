@@ -19,7 +19,7 @@ import fs from 'fs';
 import path from 'path';
 import dotenv from 'dotenv';
 
-import { LANGUAGES_TO_TRANSLATE } from '../src/lib/language';
+import { LANGUAGES_TO_TRANSLATE, LANGUAGES } from '../src/lib/language';
 
 dotenv.config();
 
@@ -27,16 +27,13 @@ interface TranslationObject {
   [key: string]: string | TranslationObject;
 }
 
-const LANGUAGES = {
-  es: 'Spanish',
-  fr: 'French',
-  zh: 'Chinese (Simplified)',
-  de: 'German',
-  ja: 'Japanese',
-  ko: 'Korean',
-  pt: 'Portuguese',
-  ar: 'Arabic',
-};
+/**
+ * Get language name by code
+ */
+function getLanguageName(code: string): string {
+  const language = LANGUAGES.find(lang => lang.code === code);
+  return language?.name || code;
+}
 
 /**
  * Translate using OpenAI GPT-4
@@ -58,7 +55,7 @@ async function translateWithOpenAI(
     }
 
     const openai = new OpenAI({ apiKey });
-    const languageName = LANGUAGES[targetLang as keyof typeof LANGUAGES];
+    const languageName = getLanguageName(targetLang);
 
     console.log(`   🤖 Translating with OpenAI GPT-4 to ${languageName}...`);
 
@@ -234,6 +231,83 @@ function getTranslationFiles(): string[] {
 }
 
 /**
+ * Extract only untranslated keys from English content
+ * A key is considered untranslated if:
+ * 1. It doesn't exist in the target translation, OR
+ * 2. Its value matches the English value (likely not translated)
+ */
+function extractUntranslatedKeys(
+  enContent: TranslationObject,
+  existingContent: TranslationObject
+): TranslationObject {
+  const untranslated: TranslationObject = {};
+
+  function extractRecursive(
+    enObj: TranslationObject,
+    existingObj: TranslationObject,
+    result: TranslationObject
+  ) {
+    for (const [key, value] of Object.entries(enObj)) {
+      if (typeof value === 'string') {
+        // String value: check if missing or matches English
+        const existingValue = existingObj[key];
+        if (!existingValue || existingValue === value) {
+          result[key] = value;
+        }
+      } else if (typeof value === 'object' && value !== null) {
+        // Nested object: recurse
+        const existingNested = existingObj[key] as TranslationObject | undefined;
+        if (!existingNested || typeof existingNested !== 'object') {
+          // Entire nested object is missing, include it
+          result[key] = value;
+        } else {
+          // Nested object exists, check recursively
+          const nestedResult: TranslationObject = {};
+          extractRecursive(value, existingNested, nestedResult);
+          if (Object.keys(nestedResult).length > 0) {
+            result[key] = nestedResult;
+          }
+        }
+      }
+    }
+  }
+
+  extractRecursive(enContent, existingContent, untranslated);
+  return untranslated;
+}
+
+/**
+ * Deep merge two translation objects, preserving existing translations
+ */
+function mergeTranslations(
+  existing: TranslationObject,
+  newTranslations: TranslationObject
+): TranslationObject {
+  const merged = JSON.parse(JSON.stringify(existing)); // Deep clone existing
+
+  function mergeRecursive(
+    target: TranslationObject,
+    source: TranslationObject
+  ) {
+    for (const [key, value] of Object.entries(source)) {
+      if (typeof value === 'string') {
+        // String value: overwrite if it's a new translation
+        target[key] = value;
+      } else if (typeof value === 'object' && value !== null) {
+        // Nested object: merge recursively
+        if (!target[key] || typeof target[key] !== 'object') {
+          target[key] = {};
+        }
+        mergeRecursive(target[key] as TranslationObject, value);
+      }
+    }
+  }
+
+  mergeRecursive(merged, newTranslations);
+  return merged;
+}
+
+/**
  * Translate a single file to target language
  */
 async function translateFile(
@@ -253,19 +327,55 @@ async function translateFile(
   // Read English content
   const enContent = JSON.parse(fs.readFileSync(enPath, 'utf-8'));
 
-  // Translate
-  const translated = useOpenAI
-    ? await translateWithOpenAI(enContent, targetLang, fileName)
-    : await translateWithGoogle(enContent, targetLang);
+  // Check if target file already exists
+  let existingContent: TranslationObject = {};
+  if (fs.existsSync(targetPath)) {
+    try {
+      existingContent = JSON.parse(fs.readFileSync(targetPath, 'utf-8'));
+    } catch (error) {
+      console.warn(`   ⚠️  Could not read existing ${targetLang}/${fileName}, will translate all keys`);
+    }
+  }
 
-  // Write to target language file
+  // Extract only untranslated keys
+  const untranslatedKeys = extractUntranslatedKeys(enContent, existingContent);
+  
+  if (Object.keys(untranslatedKeys).length === 0) {
+    console.log(`   ⏭️  Skipped ${fileName} (all keys already translated)`);
+    return;
+  }
+
+  // Translate only untranslated keys
+  const newTranslations = useOpenAI
+    ? await translateWithOpenAI(untranslatedKeys, targetLang, fileName)
+    : await translateWithGoogle(untranslatedKeys, targetLang);
+
+  // Merge existing translations with new translations
+  const merged = mergeTranslations(existingContent, newTranslations);
+
+  // Write merged content to target language file
   fs.writeFileSync(
     targetPath,
-    JSON.stringify(translated, null, 2),
+    JSON.stringify(merged, null, 2),
     'utf-8'
   );
 
-  console.log(`   ✓ Translated ${fileName}`);
+  // Count string values recursively
+  function countStrings(obj: TranslationObject): number {
+    let count = 0;
+    for (const value of Object.values(obj)) {
+      if (typeof value === 'string') {
+        count++;
+      } else if (typeof value === 'object' && value !== null) {
+        count += countStrings(value);
+      }
+    }
+    return count;
+  }
+
+  const untranslatedCount = countStrings(untranslatedKeys);
+  const totalCount = countStrings(enContent);
+  console.log(`   ✓ Translated ${fileName} (${untranslatedCount}/${totalCount} keys)`);
 }
 
 /**
@@ -288,9 +398,17 @@ async function translateAll() {
   const files = getTranslationFiles();
   console.log(`📁 Found ${files.length} translation files\n`);
 
-  const languagesToProcess = specificLang 
+  let languagesToProcess = specificLang 
     ? [specificLang]
     : LANGUAGES_TO_TRANSLATE;
+
+  // Filter out English (en) since it's the source language
+  languagesToProcess = languagesToProcess.filter(lang => lang !== 'en');
+
+  if (languagesToProcess.length === 0) {
+    console.log('ℹ️  No languages to translate (English is skipped as it\'s the source language)');
+    process.exit(0);
+  }
 
   const startTime = Date.now();
 
@@ -300,7 +418,7 @@ async function translateAll() {
     
     await Promise.all(
       languagesToProcess.map(async (lang) => {
-        const languageName = LANGUAGES[lang as keyof typeof LANGUAGES] || lang;
+        const languageName = getLanguageName(lang);
         console.log(`🌐 Starting ${languageName} (${lang})...`);
         
         // Translate all files for this language in parallel
@@ -318,7 +436,7 @@ async function translateAll() {
   } else {
     // Translate languages sequentially, but files in parallel
     for (const lang of languagesToProcess) {
-      const languageName = LANGUAGES[lang as keyof typeof LANGUAGES] || lang;
+      const languageName = getLanguageName(lang);
       console.log(`\n🌐 Translating to ${languageName} (${lang})...`);
       console.log('─'.repeat(50));
 

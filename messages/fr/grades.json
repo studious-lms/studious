@@ -7,12 +7,12 @@
       "maxPoints": "Points maximums",
       "weight": "Poids",
       "graded": "Noté",
-      "dueDate": "Deux rendez-vous",
       "actions": "Actes",
       "student": "Étudiant",
       "overallGrade": "Note globale",
       "assignmentsCompleted": "Travaux terminés",
-      "trend": "S'orienter"
+      "trend": "S'orienter",
+      "dueDate": "Date d'échéance"
     },
     "labels": {
       "rubric": "Rubrique"
@@ -118,10 +118,10 @@
     "assignments": "Devoirs",
     "studentNotFound": "Étudiant introuvable",
     "goBack": "Retour",
-    "grade": "Grade",
+    "grade": "Note",
     "table": {
       "assignment": "Affectation",
-      "grade": "Grade",
+      "grade": "Note",
       "total": "Total",
       "percentage": "%",
       "status": "Statut",

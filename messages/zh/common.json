@@ -502,12 +502,12 @@
         "maxPoints": "最高分",
         "weight": "重量",
         "graded": "已评分",
-        "dueDate": "两个日期",
         "actions": "行动",
         "student": "学生",
         "overallGrade": "总成绩",
         "assignmentsCompleted": "已完成的任务",
-        "trend": "趋势"
+        "trend": "趋势",
+        "dueDate": "截止日期"
       },
       "labels": {
         "rubric": "评分标准"
@@ -810,11 +810,11 @@
       },
       "table": {
         "assignment": "任务",
-        "dueDate": "两个日期",
         "points": "积分",
         "weight": "重量",
         "status": "地位",
-        "pts": "点"
+        "pts": "点",
+        "dueDate": "截止日期"
       },
       "status": {
         "graded": "已评分",
@@ -838,7 +838,6 @@
     }
   },
   "assignment": {
-    "dueDate": "两个日期",
     "submit": "提交",
     "grade": "年级",
     "feedback": "反馈",
@@ -861,7 +860,8 @@
     "sectionDeletionConfirmation": "您确定要删除此部分吗？所有作业都将移至顶层。",
     "assignmentDeletionConfirmation": "您确定要删除此作业吗？此操作无法撤销。",
     "manageAndTrack": "管理和跟踪课程作业",
-    "filters": "过滤器"
+    "filters": "过滤器",
+    "dueDate": "截止日期"
   },
   "pagination": {
     "previous": "以前的",
@@ -933,7 +933,18 @@
     "pricingSchoolPerk4": "AI助手（无限次查询）",
     "pricingSchoolPerk5": "优先获得 Studious CMS 测试版访问权限",
     "pricingSchoolPerk6": "API 访问",
-    "pricingSchoolLink": "开始使用"
+    "pricingSchoolLink": "开始使用",
+    "pricingInstitutionTitle": "机构",
+    "pricingInstitutionPrice": "自定义",
+    "pricingInstitutionNote": "根据您的需求定制",
+    "pricingInstitutionDescription": "适用于大型学校和大学（1000+学生）",
+    "pricingInstitutionPerk1": "学校计划中的所有内容",
+    "pricingInstitutionPerk2": "24/7优先支持",
+    "pricingInstitutionPerk3": "无限存储",
+    "pricingInstitutionPerk4": "自定义培训和入职",
+    "pricingInstitutionPerk5": "每用户费用更低",
+    "pricingInstitutionLink": "联系销售",
+    "earlyBird": "🎉 早期采用者在年度计划上获得<span class=\"font-semibold text-foreground\">3个月免费</span> + 专 dedicated 的入职支持"
   },
   "components": {
     "earlyAccess": {
@@ -1069,14 +1080,14 @@
       "fields": {
         "title": "标题 *",
         "instructions": "指示 *",
-        "dueDate": "两个日期",
         "type": "任务类型",
         "section": "部分",
         "rubric": "评分标准",
         "gradeScale": "评分标准",
         "maxPoints": "最高分",
         "weight": "重量 （％）",
-        "sectionColor": "区域颜色"
+        "sectionColor": "区域颜色",
+        "dueDate": "截止日期"
       },
       "placeholders": {
         "title": "例如：第五章测验、物理实验报告",

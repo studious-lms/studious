@@ -7,12 +7,12 @@
       "maxPoints": "最大ポイント",
       "weight": "重さ",
       "graded": "段階的",
-      "dueDate": "2つのデート",
       "actions": "アクション",
       "student": "学生",
       "overallGrade": "総合評価",
       "assignmentsCompleted": "課題完了",
-      "trend": "傾向"
+      "trend": "傾向",
+      "dueDate": "期限日"
     },
     "labels": {
       "rubric": "ルーブリック"

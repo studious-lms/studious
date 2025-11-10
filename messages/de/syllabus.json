@@ -37,11 +37,11 @@
     },
     "table": {
       "assignment": "Abtretung",
-      "dueDate": "Zwei Verabredungen",
       "points": "Punkte",
       "weight": "Gewicht",
       "status": "Status",
-      "pts": "Punkte"
+      "pts": "Punkte",
+      "dueDate": "Abgabedatum"
     },
     "status": {
       "graded": "Bewertet",

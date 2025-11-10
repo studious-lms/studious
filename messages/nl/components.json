@@ -29,7 +29,7 @@
     "selectedFiles": "Geselecteerde bestanden ({count})",
     "filesUploaded": "{uploaded} van {total} bestanden geüpload",
     "uploadingTo": "Uploaden naar:",
-    "homeDirectory": "Home Directory",
+    "homeDirectory": "Thuismap",
     "status": {
       "pending": "In behandeling",
       "uploading": "Uploaden",
@@ -68,7 +68,7 @@
     "noTemplateSelected": "Selecteer een sjabloon of maak aangepaste grenzen",
     "cancel": "Annuleren",
     "create": "Creëren",
-    "update": "Update",
+    "update": "Bijwerken",
     "creating": "Creëren...",
     "updating": "Bijwerken...",
     "created": "Gradatiegrens succesvol aangemaakt",

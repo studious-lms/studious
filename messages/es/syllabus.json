@@ -37,11 +37,11 @@
     },
     "table": {
       "assignment": "Asignación",
-      "dueDate": "Dos citas",
       "points": "Agujas",
       "weight": "Peso",
       "status": "Estado",
-      "pts": "puntos"
+      "pts": "puntos",
+      "dueDate": "Fecha de Entrega"
     },
     "status": {
       "graded": "Calificado",

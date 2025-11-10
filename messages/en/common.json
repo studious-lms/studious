@@ -502,7 +502,7 @@
         "maxPoints": "Max Points",
         "weight": "Weight",
         "graded": "Graded",
-        "dueDate": "Two Dates",
+        "dueDate": "Due Date",
         "actions": "Actions",
         "student": "Student",
         "overallGrade": "Overall Grade",
@@ -810,7 +810,7 @@
       },
       "table": {
         "assignment": "Assignment",
-        "dueDate": "Two Dates",
+        "dueDate": "Due Date",
         "points": "Points",
         "weight": "Weight",
         "status": "Status",
@@ -838,7 +838,7 @@
     }
   },
   "assignment": {
-    "dueDate": "Two Dates",
+    "dueDate": "Due Date",
     "submit": "Submit",
     "grade": "Grade",
     "feedback": "Feedback",
@@ -933,7 +933,18 @@
     "pricingSchoolPerk4": "AI assistant (unlimited queries)",
     "pricingSchoolPerk5": "First-in-line for Studious CMS beta access",
     "pricingSchoolPerk6": "API access",
-    "pricingSchoolLink": "Get Started"
+    "pricingSchoolLink": "Get Started",
+    "pricingInstitutionTitle": "Institution",
+    "pricingInstitutionPrice": "Custom",
+    "pricingInstitutionNote": "Tailored to your needs",
+    "pricingInstitutionDescription": "For large schools & universities (1,000+ students)",
+    "pricingInstitutionPerk1": "Everything in School plan",
+    "pricingInstitutionPerk2": "24/7 priority support",
+    "pricingInstitutionPerk3": "Unlimited storage",
+    "pricingInstitutionPerk4": "Custom training & onboarding",
+    "pricingInstitutionPerk5": "Cheaper per-user expenses",
+    "pricingInstitutionLink": "Contact Sales",
+    "earlyBird": "🎉 Early adopters receive <span class=\"font-semibold text-foreground\">3 months free</span> on annual plans + dedicated onboarding support"
   },
   "components": {
     "earlyAccess": {
@@ -1069,7 +1080,7 @@
       "fields": {
         "title": "Title *",
         "instructions": "Instructions *",
-        "dueDate": "Two Dates",
+        "dueDate": "Due Date",
         "type": "Assignment Type",
         "section": "Section",
         "rubric": "Rubric",

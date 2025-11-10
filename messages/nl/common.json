@@ -15,7 +15,7 @@
     "viewAll": "Bekijk alles",
     "noData": "Geen gegevens beschikbaar",
     "export": "Exporteren",
-    "openMenu": "Open menu"
+    "openMenu": "Menu openen"
   },
   "time": {
     "today": "Vandaag",
@@ -459,7 +459,7 @@
       "location": "Locatie",
       "locationPlaceholder": "Voer uw locatie in",
       "locationDescription": "Uw stad, staat of land",
-      "bio": "Was",
+      "bio": "Bio",
       "bioPlaceholder": "Vertel ons iets over jezelf...",
       "bioDescription": "Een korte beschrijving van uzelf (maximaal 500 tekens)",
       "website": "Website",
@@ -502,12 +502,12 @@
         "maxPoints": "Maximale punten",
         "weight": "Gewicht",
         "graded": "Gegradeerd",
-        "dueDate": "Twee data",
         "actions": "Acties",
         "student": "Student",
         "overallGrade": "Algemene beoordeling",
         "assignmentsCompleted": "Opdrachten voltooid",
-        "trend": "Trend"
+        "trend": "Trend",
+        "dueDate": "Inleverdatum"
       },
       "labels": {
         "rubric": "Rubriek"
@@ -652,7 +652,7 @@
         "upload": "Uploaden",
         "uploadFiles": "Bestanden uploaden",
         "createFolder": "Map maken",
-        "download": "Download",
+        "download": "Downloaden",
         "share": "Deel",
         "delete": "Verwijderen",
         "filter": "Filter",
@@ -810,11 +810,11 @@
       },
       "table": {
         "assignment": "Opdracht",
-        "dueDate": "Twee data",
         "points": "Punten",
         "weight": "Gewicht",
         "status": "Status",
-        "pts": "punten"
+        "pts": "punten",
+        "dueDate": "Inleverdatum"
       },
       "status": {
         "graded": "Gegradeerd",
@@ -838,7 +838,6 @@
     }
   },
   "assignment": {
-    "dueDate": "Twee data",
     "submit": "Indienen",
     "grade": "Cijfer",
     "feedback": "Feedback",
@@ -861,7 +860,8 @@
     "sectionDeletionConfirmation": "Weet u zeker dat u deze sectie wilt verwijderen? Alle opdrachten worden naar het hoogste niveau verplaatst.",
     "assignmentDeletionConfirmation": "Weet u zeker dat u deze toewijzing wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt.",
     "manageAndTrack": "Beheer en volg klasopdrachten",
-    "filters": "Filters"
+    "filters": "Filters",
+    "dueDate": "Inleverdatum"
   },
   "pagination": {
     "previous": "Vorig",
@@ -933,7 +933,18 @@
     "pricingSchoolPerk4": "AI-assistent (onbeperkt aantal zoekopdrachten)",
     "pricingSchoolPerk5": "Eerste in de rij voor toegang tot de bètaversie van Studious CMS",
     "pricingSchoolPerk6": "API-toegang",
-    "pricingSchoolLink": "Aan de slag"
+    "pricingSchoolLink": "Aan de slag",
+    "pricingInstitutionTitle": "Instelling",
+    "pricingInstitutionPrice": "Op maat",
+    "pricingInstitutionNote": "Aangepast aan uw behoeften",
+    "pricingInstitutionDescription": "Voor grote scholen & universiteiten (1.000+ studenten)",
+    "pricingInstitutionPerk1": "Alles in het School-pakket",
+    "pricingInstitutionPerk2": "24/7 prioriteitsondersteuning",
+    "pricingInstitutionPerk3": "Onbeperkte opslag",
+    "pricingInstitutionPerk4": "Aangepaste training & onboarding",
+    "pricingInstitutionPerk5": "Goedkoper per gebruiker",
+    "pricingInstitutionLink": "Contact Verkoop",
+    "earlyBird": "🎉 Vroege vogels ontvangen <span class=\"font-semibold text-foreground\">3 maanden gratis</span> op jaarplannen + toegewijde onboarding ondersteuning"
   },
   "components": {
     "earlyAccess": {
@@ -1002,7 +1013,7 @@
         "section": "Sectie *",
         "subject": "Onderwerp *",
         "semester": "Semester",
-        "credits": "Credits",
+        "credits": "Studiepunten",
         "meetingTime": "Vergadertijd",
         "location": "Locatie",
         "description": "Beschrijving"
@@ -1069,14 +1080,14 @@
       "fields": {
         "title": "Titel *",
         "instructions": "Instructies *",
-        "dueDate": "Twee data",
         "type": "Opdrachttype",
         "section": "Sectie",
         "rubric": "Rubriek",
         "gradeScale": "Cijferschaal",
         "maxPoints": "Maximale punten",
         "weight": "Gewicht (%)",
-        "sectionColor": "Sectiekleur"
+        "sectionColor": "Sectiekleur",
+        "dueDate": "Inleverdatum"
       },
       "placeholders": {
         "title": "bijv. Hoofdstuk 5 Quiz, Natuurkunde Lab Rapport",

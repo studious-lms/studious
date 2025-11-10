@@ -502,12 +502,12 @@
         "maxPoints": "Maksimum Puan",
         "weight": "Ağırlık",
         "graded": "Derecelendirilmiş",
-        "dueDate": "İki Tarih",
         "actions": "Eylemler",
         "student": "Öğrenci",
         "overallGrade": "Genel Not",
         "assignmentsCompleted": "Tamamlanan Ödevler",
-        "trend": "Trend"
+        "trend": "Trend",
+        "dueDate": "Son Teslim Tarihi"
       },
       "labels": {
         "rubric": "Rubrik"
@@ -810,11 +810,11 @@
       },
       "table": {
         "assignment": "Atama",
-        "dueDate": "İki Tarih",
         "points": "Puanlar",
         "weight": "Ağırlık",
         "status": "Durum",
-        "pts": "puanlar"
+        "pts": "puanlar",
+        "dueDate": "Son Teslim Tarihi"
       },
       "status": {
         "graded": "Derecelendirilmiş",
@@ -838,7 +838,6 @@
     }
   },
   "assignment": {
-    "dueDate": "İki Tarih",
     "submit": "Göndermek",
     "grade": "Seviye",
     "feedback": "Geri bildirim",
@@ -861,7 +860,8 @@
     "sectionDeletionConfirmation": "Bu bölümü silmek istediğinizden emin misiniz? Tüm ödevler en üst seviyeye taşınacak.",
     "assignmentDeletionConfirmation": "Bu ödevi silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
     "manageAndTrack": "Sınıf ödevlerini yönetin ve takip edin",
-    "filters": "Filtreler"
+    "filters": "Filtreler",
+    "dueDate": "Son Teslim Tarihi"
   },
   "pagination": {
     "previous": "Öncesi",
@@ -933,7 +933,18 @@
     "pricingSchoolPerk4": "Yapay zeka asistanı (sınırsız sorgu)",
     "pricingSchoolPerk5": "Studious CMS beta erişimi için ilk sırada",
     "pricingSchoolPerk6": "API erişimi",
-    "pricingSchoolLink": "Başlayın"
+    "pricingSchoolLink": "Başlayın",
+    "pricingInstitutionTitle": "Kurum",
+    "pricingInstitutionPrice": "Özel",
+    "pricingInstitutionNote": "İhtiyaçlarınıza özel",
+    "pricingInstitutionDescription": "Büyük okullar & üniversiteler için (1,000+ öğrenci)",
+    "pricingInstitutionPerk1": "Okul planındaki her şey",
+    "pricingInstitutionPerk2": "24/7 öncelikli destek",
+    "pricingInstitutionPerk3": "Sınırsız depolama",
+    "pricingInstitutionPerk4": "Özel eğitim & oryantasyon",
+    "pricingInstitutionPerk5": "Daha ucuz kullanıcı başı gider",
+    "pricingInstitutionLink": "Satış ile İletişime Geçin",
+    "earlyBird": "🎉 Erken kabul edenler yıllık planlarda <span class=\"font-semibold text-foreground\">3 ay ücretsiz</span> alır + özel oryantasyon desteği"
   },
   "components": {
     "earlyAccess": {
@@ -1069,14 +1080,14 @@
       "fields": {
         "title": "Başlık *",
         "instructions": "Talimatlar *",
-        "dueDate": "İki Tarih",
         "type": "Görev Türü",
         "section": "Bölüm",
         "rubric": "Rubrik",
         "gradeScale": "Not Ölçeği",
         "maxPoints": "Maksimum Puan",
         "weight": "Ağırlık (%)",
-        "sectionColor": "Bölüm Rengi"
+        "sectionColor": "Bölüm Rengi",
+        "dueDate": "Son Teslim Tarihi"
       },
       "placeholders": {
         "title": "örneğin, Bölüm 5 Sınavı, Fizik Laboratuvar Raporu",

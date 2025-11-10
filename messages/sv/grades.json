@@ -7,12 +7,12 @@
       "maxPoints": "Maxpoäng",
       "weight": "Vikt",
       "graded": "Graderad",
-      "dueDate": "Två datum",
       "actions": "Åtgärder",
       "student": "Student",
       "overallGrade": "Totalbetyg",
       "assignmentsCompleted": "Uppgifter slutförda",
-      "trend": "Trend"
+      "trend": "Trend",
+      "dueDate": "Förfallodatum"
     },
     "labels": {
       "rubric": "Rubrik"
@@ -122,7 +122,7 @@
     "table": {
       "assignment": "Uppdrag",
       "grade": "Kvalitet",
-      "total": "Total",
+      "total": "Totalt",
       "percentage": "%",
       "status": "Status",
       "submitted": "Inskickad"

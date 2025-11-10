@@ -37,11 +37,11 @@
     },
     "table": {
       "assignment": "Atribuição",
-      "dueDate": "Dois encontros",
       "points": "Pontos",
       "weight": "Peso",
       "status": "Status",
-      "pts": "pontos"
+      "pts": "pontos",
+      "dueDate": "Data de Entrega"
     },
     "status": {
       "graded": "Classificado",

@@ -3,7 +3,6 @@
     "title": "任务详情",
     "description": "描述",
     "instructions": "指示",
-    "dueDate": "两个日期",
     "maxPoints": "最高分",
     "submissions": "提交",
     "submitted": "已提交",
@@ -49,6 +48,7 @@
       "gradeUpdated": "成绩已成功更新",
       "deleted": "任务已删除",
       "error": "发生错误"
-    }
+    },
+    "dueDate": "截止日期"
   }
 }

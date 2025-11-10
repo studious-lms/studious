@@ -164,20 +164,20 @@ export default function PricingPage() {
             {/* Institution Plan */}
             <Card className="border-2 border-border hover:border-primary/50 transition-all flex flex-col h-full">
               <CardHeader className="space-y-4">
-                <CardTitle className="text-2xl">Institution</CardTitle>
+                <CardTitle className="text-2xl">{t('pricingInstitutionTitle')}</CardTitle>
                 <div>
-                  <div className="text-5xl font-bold text-foreground">Custom</div>
-                  <p className="text-sm text-muted-foreground mt-2">Tailored to your needs</p>
+                  <div className="text-5xl font-bold text-foreground">{t('pricingInstitutionPrice')}</div>
+                  <p className="text-sm text-muted-foreground mt-2">{t('pricingInstitutionNote')}</p>
                 </div>
                 <p className="text-muted-foreground">
-                  For large schools & universities (1,000+ students)
+                  {t('pricingInstitutionDescription')}
                 </p>
               </CardHeader>
               <CardContent className="flex flex-col flex-1 space-y-6">
                 <ul className="space-y-3 flex-1">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Everything in School plan</span>
+                    <span className="text-sm">{t('pricingInstitutionPerk1')}</span>
                   </li>
                   {/* <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
@@ -189,11 +189,11 @@ export default function PricingPage() {
                   </li> */}
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">24/7 priority support</span>
+                    <span className="text-sm">{t('pricingInstitutionPerk2')}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Unlimited storage</span>
+                    <span className="text-sm">{t('pricingInstitutionPerk3')}</span>
                   </li>
                   {/* <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
@@ -205,23 +205,21 @@ export default function PricingPage() {
                   </li> */}
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Custom training & onboarding</span>
+                    <span className="text-sm">{t('pricingInstitutionPerk4')}</span>
                     </li>
                     <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Cheaper per-user expenses</span>
+                    <span className="text-sm">{t('pricingInstitutionPerk5')}</span>
                     </li>
                 </ul>
                 <Button variant="outline" className="w-full mt-auto" onClick={() => setShowEarlyAccess(true)}>
-                  Contact Sales
+                  {t('pricingInstitutionLink')}
                 </Button>
               </CardContent>
             </Card>
           </div>
 
-          <p className="text-center text-muted-foreground mt-8 sm:mt-10 md:mt-12 text-base sm:text-lg px-4">
-            🎉 Early adopters receive <span className="font-semibold text-foreground">3 months free</span> on annual plans + dedicated onboarding support
-          </p>
+          <p className="text-center text-muted-foreground mt-8 sm:mt-10 md:mt-12 text-base sm:text-lg px-4" dangerouslySetInnerHTML={{ __html: t('earlyBird') }} />
         </div>
       </section>
 

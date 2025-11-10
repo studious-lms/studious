@@ -3,7 +3,6 @@
     "title": "Detail Tugas",
     "description": "Keterangan",
     "instructions": "Instruksi",
-    "dueDate": "Dua Tanggal",
     "maxPoints": "Poin Maksimum",
     "submissions": "Pengajuan",
     "submitted": "Dikirimkan",
@@ -49,6 +48,7 @@
       "gradeUpdated": "Nilai berhasil diperbarui",
       "deleted": "Tugas dihapus",
       "error": "Terjadi kesalahan"
-    }
+    },
+    "dueDate": "Tanggal Jatuh Tempo"
   }
 }

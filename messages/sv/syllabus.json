@@ -37,11 +37,11 @@
     },
     "table": {
       "assignment": "Uppdrag",
-      "dueDate": "Två datum",
       "points": "Poäng",
       "weight": "Vikt",
       "status": "Status",
-      "pts": "poäng"
+      "pts": "poäng",
+      "dueDate": "Förfallodatum"
     },
     "status": {
       "graded": "Graderad",

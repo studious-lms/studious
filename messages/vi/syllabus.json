@@ -37,11 +37,11 @@
     },
     "table": {
       "assignment": "Phân công",
-      "dueDate": "Hai Ngày",
       "points": "Điểm",
       "weight": "Cân nặng",
       "status": "Trạng thái",
-      "pts": "điểm"
+      "pts": "điểm",
+      "dueDate": "Ngày đến hạn"
     },
     "status": {
       "graded": "Đã phân loại",

@@ -7,12 +7,12 @@
       "maxPoints": "अधिकतम अंक",
       "weight": "वज़न",
       "graded": "ग्रेड दिया गया",
-      "dueDate": "दो तिथियाँ",
       "actions": "कार्रवाई",
       "student": "विद्यार्थी",
       "overallGrade": "समग्र ग्रेड",
       "assignmentsCompleted": "पूर्ण किए गए कार्य",
-      "trend": "रुझान"
+      "trend": "रुझान",
+      "dueDate": "नियत तारीख"
     },
     "labels": {
       "rubric": "सरनामा"

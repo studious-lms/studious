@@ -37,11 +37,11 @@
     },
     "table": {
       "assignment": "कार्यभार",
-      "dueDate": "दो तिथियाँ",
       "points": "अंक",
       "weight": "वज़न",
       "status": "स्थिति",
-      "pts": "अंक"
+      "pts": "अंक",
+      "dueDate": "नियत तारीख"
     },
     "status": {
       "graded": "ग्रेड दिया गया",

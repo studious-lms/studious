@@ -502,12 +502,12 @@
         "maxPoints": "Điểm tối đa",
         "weight": "Cân nặng",
         "graded": "Đã phân loại",
-        "dueDate": "Hai Ngày",
         "actions": "Hành động",
         "student": "Học sinh",
         "overallGrade": "Điểm tổng thể",
         "assignmentsCompleted": "Bài tập đã hoàn thành",
-        "trend": "Xu hướng"
+        "trend": "Xu hướng",
+        "dueDate": "Ngày Đáo Hạn"
       },
       "labels": {
         "rubric": "Tiêu chí"
@@ -810,11 +810,11 @@
       },
       "table": {
         "assignment": "Phân công",
-        "dueDate": "Hai Ngày",
         "points": "Điểm",
         "weight": "Cân nặng",
         "status": "Trạng thái",
-        "pts": "điểm"
+        "pts": "điểm",
+        "dueDate": "Ngày Đáo Hạn"
       },
       "status": {
         "graded": "Đã phân loại",
@@ -838,7 +838,6 @@
     }
   },
   "assignment": {
-    "dueDate": "Hai Ngày",
     "submit": "Nộp",
     "grade": "Cấp",
     "feedback": "Nhận xét",
@@ -861,7 +860,8 @@
     "sectionDeletionConfirmation": "Bạn có chắc chắn muốn xóa phần này không? Tất cả bài tập sẽ được chuyển lên cấp cao nhất.",
     "assignmentDeletionConfirmation": "Bạn có chắc chắn muốn xóa bài tập này không? Thao tác này không thể hoàn tác.",
     "manageAndTrack": "Quản lý và theo dõi bài tập trên lớp",
-    "filters": "Bộ lọc"
+    "filters": "Bộ lọc",
+    "dueDate": "Ngày Đáo Hạn"
   },
   "pagination": {
     "previous": "Trước",
@@ -933,7 +933,18 @@
     "pricingSchoolPerk4": "Trợ lý AI (truy vấn không giới hạn)",
     "pricingSchoolPerk5": "Người đầu tiên được truy cập bản beta của Studious CMS",
     "pricingSchoolPerk6": "Truy cập API",
-    "pricingSchoolLink": "Bắt đầu"
+    "pricingSchoolLink": "Bắt đầu",
+    "pricingInstitutionTitle": "Cơ sở",
+    "pricingInstitutionPrice": "Tùy chỉnh",
+    "pricingInstitutionNote": "Được điều chỉnh theo nhu cầu của bạn",
+    "pricingInstitutionDescription": "Dành cho các trường học & đại học lớn (trên 1,000 sinh viên)",
+    "pricingInstitutionPerk1": "Mọi thứ trong gói School",
+    "pricingInstitutionPerk2": "Hỗ trợ ưu tiên 24/7",
+    "pricingInstitutionPerk3": "Bộ nhớ không giới hạn",
+    "pricingInstitutionPerk4": "Đào tạo & hướng dẫn tùy chỉnh",
+    "pricingInstitutionPerk5": "Chi phí mỗi người dùng rẻ hơn",
+    "pricingInstitutionLink": "Liên hệ Bán hàng",
+    "earlyBird": "🎉 Người áp dụng sớm nhận <span class=\"font-semibold text-foreground\">3 tháng miễn phí</span> trên các kế hoạch hàng năm + hỗ trợ hướng dẫn cụ thể"
   },
   "components": {
     "earlyAccess": {
@@ -1069,14 +1080,14 @@
       "fields": {
         "title": "Tiêu đề *",
         "instructions": "Hướng dẫn *",
-        "dueDate": "Hai Ngày",
         "type": "Loại bài tập",
         "section": "Phần",
         "rubric": "Tiêu chí",
         "gradeScale": "Thang điểm",
         "maxPoints": "Điểm tối đa",
         "weight": "Cân nặng (%)",
-        "sectionColor": "Phần màu"
+        "sectionColor": "Phần màu",
+        "dueDate": "Ngày Đáo Hạn"
       },
       "placeholders": {
         "title": "ví dụ, Bài kiểm tra Chương 5, Báo cáo thí nghiệm Vật lý",

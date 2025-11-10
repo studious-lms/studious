@@ -1,6 +1,6 @@
 {
   "aiLabs": {
-    "title": "AI Labs",
+    "title": "AI Laboratuvarları",
     "subtitle": "Yapay zeka yardımıyla eğitim içeriği oluşturun",
     "aiPowered": "Yapay Zeka Destekli",
     "createNew": "Yeni İçerik Oluştur",
@@ -40,7 +40,7 @@
       }
     },
     "chats": {
-      "title": "AI Labs ({count})",
+      "title": "AI Sohbetleri ({count})",
       "active": "Aktif",
       "messageCount": "{count} mesaj",
       "createdBy": "{name} tarafından oluşturuldu",

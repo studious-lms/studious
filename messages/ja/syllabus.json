@@ -37,11 +37,11 @@
     },
     "table": {
       "assignment": "割り当て",
-      "dueDate": "2つのデート",
       "points": "ポイント",
       "weight": "重さ",
       "status": "状態",
-      "pts": "ポイント"
+      "pts": "ポイント",
+      "dueDate": "提出期限"
     },
     "status": {
       "graded": "段階的",

@@ -502,12 +502,12 @@
         "maxPoints": "Maksymalna liczba punktów",
         "weight": "Waga",
         "graded": "Oceniony",
-        "dueDate": "Dwie daty",
         "actions": "Akcje",
         "student": "Student",
         "overallGrade": "Ocena ogólna",
         "assignmentsCompleted": "Zadania ukończone",
-        "trend": "Tendencja"
+        "trend": "Tendencja",
+        "dueDate": "Termin"
       },
       "labels": {
         "rubric": "Rubryka"
@@ -810,11 +810,11 @@
       },
       "table": {
         "assignment": "Zadanie",
-        "dueDate": "Dwie daty",
         "points": "Zwrotnica",
         "weight": "Waga",
         "status": "Status",
-        "pts": "punkty"
+        "pts": "punkty",
+        "dueDate": "Termin"
       },
       "status": {
         "graded": "Oceniony",
@@ -838,7 +838,6 @@
     }
   },
   "assignment": {
-    "dueDate": "Dwie daty",
     "submit": "Składać",
     "grade": "Stopień",
     "feedback": "Informacja zwrotna",
@@ -861,7 +860,8 @@
     "sectionDeletionConfirmation": "Czy na pewno chcesz usunąć tę sekcję? Wszystkie zadania zostaną przeniesione na najwyższy poziom.",
     "assignmentDeletionConfirmation": "Czy na pewno chcesz usunąć to zadanie? Tej czynności nie można cofnąć.",
     "manageAndTrack": "Zarządzaj i śledź zadania klasowe",
-    "filters": "Filtry"
+    "filters": "Filtry",
+    "dueDate": "Termin"
   },
   "pagination": {
     "previous": "Poprzedni",
@@ -933,7 +933,18 @@
     "pricingSchoolPerk4": "Asystent AI (nieograniczona liczba zapytań)",
     "pricingSchoolPerk5": "Pierwszy w kolejce do uzyskania dostępu do wersji beta Studious CMS",
     "pricingSchoolPerk6": "Dostęp do API",
-    "pricingSchoolLink": "Rozpocznij"
+    "pricingSchoolLink": "Rozpocznij",
+    "pricingInstitutionTitle": "Instytucja",
+    "pricingInstitutionPrice": "Niestandardowy",
+    "pricingInstitutionNote": "Dostosowane do Twoich potrzeb",
+    "pricingInstitutionDescription": "Dla dużych szkół i uniwersytetów (1000+ studentów)",
+    "pricingInstitutionPerk1": "Wszystko w planie szkolnym",
+    "pricingInstitutionPerk2": "Wsparcie priorytetowe 24/7",
+    "pricingInstitutionPerk3": "Nieograniczona przestrzeń dyskowa",
+    "pricingInstitutionPerk4": "Niestandardowe szkolenie i wdrożenie",
+    "pricingInstitutionPerk5": "Tańsze koszty na użytkownika",
+    "pricingInstitutionLink": "Kontakt z działem sprzedaży",
+    "earlyBird": "🎉 Pierwsi użytkownicy otrzymują <span class=\"font-semibold text-foreground\">3 miesiące za darmo</span> przy planach rocznych + dedykowane wsparcie wdrożeniowe"
   },
   "components": {
     "earlyAccess": {
@@ -1069,14 +1080,14 @@
       "fields": {
         "title": "Tytuł *",
         "instructions": "Instrukcje *",
-        "dueDate": "Dwie daty",
         "type": "Typ zadania",
         "section": "Sekcja",
         "rubric": "Rubryka",
         "gradeScale": "Skala ocen",
         "maxPoints": "Maksymalna liczba punktów",
         "weight": "Waga (%)",
-        "sectionColor": "Kolor sekcji"
+        "sectionColor": "Kolor sekcji",
+        "dueDate": "Termin"
       },
       "placeholders": {
         "title": "np. Quiz z rozdziału 5, Raport z laboratorium fizycznego",

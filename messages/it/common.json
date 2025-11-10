@@ -502,12 +502,12 @@
         "maxPoints": "Punti massimi",
         "weight": "Peso",
         "graded": "Classificato",
-        "dueDate": "Due date",
         "actions": "Azioni",
         "student": "Studente",
         "overallGrade": "Voto complessivo",
         "assignmentsCompleted": "Incarichi completati",
-        "trend": "Tendenza"
+        "trend": "Tendenza",
+        "dueDate": "Data di Scadenza"
       },
       "labels": {
         "rubric": "Rubrica"
@@ -810,11 +810,11 @@
       },
       "table": {
         "assignment": "Assegnazione",
-        "dueDate": "Due date",
         "points": "Punti",
         "weight": "Peso",
         "status": "Stato",
-        "pts": "punti"
+        "pts": "punti",
+        "dueDate": "Data di Scadenza"
       },
       "status": {
         "graded": "Classificato",
@@ -838,7 +838,6 @@
     }
   },
   "assignment": {
-    "dueDate": "Due date",
     "submit": "Invia",
     "grade": "Grado",
     "feedback": "Feedback",
@@ -861,7 +860,8 @@
     "sectionDeletionConfirmation": "Vuoi davvero eliminare questa sezione? Tutti gli incarichi verranno spostati al livello superiore.",
     "assignmentDeletionConfirmation": "Vuoi davvero eliminare questo incarico? Questa azione non può essere annullata.",
     "manageAndTrack": "Gestire e monitorare i compiti in classe",
-    "filters": "Filtri"
+    "filters": "Filtri",
+    "dueDate": "Data di Scadenza"
   },
   "pagination": {
     "previous": "Precedente",
@@ -933,7 +933,18 @@
     "pricingSchoolPerk4": "Assistente AI (query illimitate)",
     "pricingSchoolPerk5": "Primo in fila per l'accesso alla versione beta di Studious CMS",
     "pricingSchoolPerk6": "Accesso API",
-    "pricingSchoolLink": "Per iniziare"
+    "pricingSchoolLink": "Per iniziare",
+    "pricingInstitutionTitle": "Istituzione",
+    "pricingInstitutionPrice": "Personalizzato",
+    "pricingInstitutionNote": "Su misura per le tue esigenze",
+    "pricingInstitutionDescription": "Per grandi scuole & università (più di 1.000 studenti)",
+    "pricingInstitutionPerk1": "Tutto nel piano Scuola",
+    "pricingInstitutionPerk2": "Supporto prioritario 24/7",
+    "pricingInstitutionPerk3": "Spazio di archiviazione illimitato",
+    "pricingInstitutionPerk4": "Formazione e onboarding personalizzati",
+    "pricingInstitutionPerk5": "Spese per utente più economiche",
+    "pricingInstitutionLink": "Contatta le Vendite",
+    "earlyBird": "🎉 I primi adottanti ricevono <span class=\"font-semibold text-foreground\">3 mesi gratis</span> sui piani annuali + supporto onboarding dedicato"
   },
   "components": {
     "earlyAccess": {
@@ -1069,14 +1080,14 @@
       "fields": {
         "title": "Titolo *",
         "instructions": "Istruzioni *",
-        "dueDate": "Due date",
         "type": "Tipo di assegnazione",
         "section": "Sezione",
         "rubric": "Rubrica",
         "gradeScale": "Scala di valutazione",
         "maxPoints": "Punti massimi",
         "weight": "Peso (%)",
-        "sectionColor": "Colore della sezione"
+        "sectionColor": "Colore della sezione",
+        "dueDate": "Data di Scadenza"
       },
       "placeholders": {
         "title": "ad esempio, Quiz del capitolo 5, Rapporto di laboratorio di fisica",

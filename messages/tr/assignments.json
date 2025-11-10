@@ -3,7 +3,6 @@
     "title": "Görev Ayrıntıları",
     "description": "Tanım",
     "instructions": "Talimatlar",
-    "dueDate": "İki Tarih",
     "maxPoints": "Maksimum Puan",
     "submissions": "Gönderimler",
     "submitted": "Sunuldu",
@@ -49,6 +48,7 @@
       "gradeUpdated": "Not başarıyla güncellendi",
       "deleted": "Ödev silindi",
       "error": "Bir hata oluştu"
-    }
+    },
+    "dueDate": "Son Teslim Tarihi"
   }
 }

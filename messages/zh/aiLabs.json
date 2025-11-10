@@ -29,11 +29,11 @@
       }
     },
     "tabs": {
-      "drafts": "Draft Labs",
+      "drafts": "草稿实验室",
       "chats": "AI猫"
     },
     "drafts": {
-      "title": "Draft Labs ({count})",
+      "title": "草稿实验室 ({count})",
       "empty": {
         "title": "实验室草案尚未出炉",
         "description": "使用上面的组件创建您的第一个 AI 生成的教育内容。"

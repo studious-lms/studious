@@ -37,11 +37,11 @@
     },
     "table": {
       "assignment": "Назначение",
-      "dueDate": "Две даты",
       "points": "Очки",
       "weight": "Масса",
       "status": "Статус",
-      "pts": "очки"
+      "pts": "очки",
+      "dueDate": "Срок сдачи"
     },
     "status": {
       "graded": "Оцененный",

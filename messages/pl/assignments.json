@@ -3,7 +3,6 @@
     "title": "Szczegóły zadania",
     "description": "Opis",
     "instructions": "Instrukcje",
-    "dueDate": "Dwie daty",
     "maxPoints": "Maksymalna liczba punktów",
     "submissions": "Zgłoszenia",
     "submitted": "Złożony",
@@ -49,6 +48,7 @@
       "gradeUpdated": "Ocena zaktualizowana pomyślnie",
       "deleted": "Zadanie usunięte",
       "error": "Wystąpił błąd"
-    }
+    },
+    "dueDate": "Termin oddania"
   }
 }

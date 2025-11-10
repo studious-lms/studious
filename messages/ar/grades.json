@@ -7,12 +7,12 @@
       "maxPoints": "أقصى النقاط",
       "weight": "وزن",
       "graded": "مُصنَّف",
-      "dueDate": "تاريخان",
       "actions": "الإجراءات",
       "student": "طالب",
       "overallGrade": "الدرجة الإجمالية",
       "assignmentsCompleted": "المهام المكتملة",
-      "trend": "اتجاه"
+      "trend": "اتجاه",
+      "dueDate": "تاريخ الاستحقاق"
     },
     "labels": {
       "rubric": "عنوان"

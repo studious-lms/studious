@@ -502,12 +502,12 @@
         "maxPoints": "Pontuação máxima",
         "weight": "Peso",
         "graded": "Classificado",
-        "dueDate": "Dois encontros",
         "actions": "Ações",
         "student": "Estudante",
         "overallGrade": "Nota geral",
         "assignmentsCompleted": "Tarefas concluídas",
-        "trend": "Tendência"
+        "trend": "Tendência",
+        "dueDate": "Data de Entrega"
       },
       "labels": {
         "rubric": "Rubrica"
@@ -652,7 +652,7 @@
         "upload": "Carregar",
         "uploadFiles": "Enviar arquivos",
         "createFolder": "Criar pasta",
-        "download": "Download",
+        "download": "Baixar",
         "share": "Compartilhar",
         "delete": "Excluir",
         "filter": "Filtro",
@@ -810,11 +810,11 @@
       },
       "table": {
         "assignment": "Atribuição",
-        "dueDate": "Dois encontros",
         "points": "Pontos",
         "weight": "Peso",
         "status": "Status",
-        "pts": "pontos"
+        "pts": "pontos",
+        "dueDate": "Data de Entrega"
       },
       "status": {
         "graded": "Classificado",
@@ -838,7 +838,6 @@
     }
   },
   "assignment": {
-    "dueDate": "Dois encontros",
     "submit": "Enviar",
     "grade": "Nota",
     "feedback": "Opinião",
@@ -861,7 +860,8 @@
     "sectionDeletionConfirmation": "Tem certeza de que deseja excluir esta seção? Todas as tarefas serão movidas para o nível superior.",
     "assignmentDeletionConfirmation": "Tem certeza de que deseja excluir esta tarefa? Esta ação não pode ser desfeita.",
     "manageAndTrack": "Gerenciar e acompanhar as tarefas da turma.",
-    "filters": "Filtros"
+    "filters": "Filtros",
+    "dueDate": "Data de Entrega"
   },
   "pagination": {
     "previous": "Anterior",
@@ -933,7 +933,18 @@
     "pricingSchoolPerk4": "Assistente de IA (consultas ilimitadas)",
     "pricingSchoolPerk5": "Seja o primeiro da fila para acesso beta ao Studious CMS.",
     "pricingSchoolPerk6": "Acesso à API",
-    "pricingSchoolLink": "Comece agora"
+    "pricingSchoolLink": "Comece agora",
+    "pricingInstitutionTitle": "Instituição",
+    "pricingInstitutionPrice": "Personalizado",
+    "pricingInstitutionNote": "Adaptado às suas necessidades",
+    "pricingInstitutionDescription": "Para grandes escolas & universidades (mais de 1.000 estudantes)",
+    "pricingInstitutionPerk1": "Tudo no plano Escola",
+    "pricingInstitutionPerk2": "Suporte prioritário 24/7",
+    "pricingInstitutionPerk3": "Armazenamento ilimitado",
+    "pricingInstitutionPerk4": "Treinamento e integração personalizados",
+    "pricingInstitutionPerk5": "Despesas por usuário mais baratas",
+    "pricingInstitutionLink": "Contatar Vendas",
+    "earlyBird": "🎉 Os primeiros adotantes recebem <span class=\"font-semibold text-foreground\">3 meses grátis</span> em planos anuais + suporte de integração dedicado"
   },
   "components": {
     "earlyAccess": {
@@ -1069,14 +1080,14 @@
       "fields": {
         "title": "Título *",
         "instructions": "Instruções *",
-        "dueDate": "Dois encontros",
         "type": "Tipo de atribuição",
         "section": "Seção",
         "rubric": "Rubrica",
         "gradeScale": "Escala de notas",
         "maxPoints": "Pontuação máxima",
         "weight": "Peso (%)",
-        "sectionColor": "Cor da seção"
+        "sectionColor": "Cor da seção",
+        "dueDate": "Data de Entrega"
       },
       "placeholders": {
         "title": "Por exemplo, Questionário do Capítulo 5, Relatório de Laboratório de Física",

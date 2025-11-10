@@ -37,11 +37,11 @@
     },
     "table": {
       "assignment": "Zadanie",
-      "dueDate": "Dwie daty",
       "points": "Zwrotnica",
       "weight": "Waga",
       "status": "Status",
-      "pts": "punkty"
+      "pts": "punkty",
+      "dueDate": "Termin"
     },
     "status": {
       "graded": "Oceniony",

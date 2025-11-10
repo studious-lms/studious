@@ -7,12 +7,12 @@
       "maxPoints": "সর্বোচ্চ পয়েন্ট",
       "weight": "ওজন",
       "graded": "গ্রেড করা হয়েছে",
-      "dueDate": "দুটি তারিখ",
       "actions": "কর্ম",
       "student": "ছাত্র",
       "overallGrade": "সামগ্রিক গ্রেড",
       "assignmentsCompleted": "অ্যাসাইনমেন্ট সম্পন্ন হয়েছে",
-      "trend": "ট্রেন্ড"
+      "trend": "ট্রেন্ড",
+      "dueDate": "জমা দেওয়ার তারিখ"
     },
     "labels": {
       "rubric": "রুব্রিক"

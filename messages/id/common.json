@@ -144,7 +144,7 @@
       "title": "Pilih paket yang tepat untuk institusi Anda",
       "subtitle": "Harga yang sederhana dan transparan tanpa biaya tersembunyi. Semua paket mencakup fitur-fitur inti dengan opsi yang dapat disesuaikan.",
       "starter": {
-        "title": "Starter",
+        "title": "Pemula",
         "price": "Bebas",
         "note": "Akses beta disertakan",
         "description": "Sempurna untuk kelas kecil & program percontohan",
@@ -502,12 +502,12 @@
         "maxPoints": "Poin Maksimum",
         "weight": "Berat",
         "graded": "Bertingkat",
-        "dueDate": "Dua Tanggal",
         "actions": "Tindakan",
         "student": "Murid",
         "overallGrade": "Nilai Keseluruhan",
         "assignmentsCompleted": "Tugas Selesai",
-        "trend": "Kecenderungan"
+        "trend": "Kecenderungan",
+        "dueDate": "Tanggal Jatuh Tempo"
       },
       "labels": {
         "rubric": "Rubrik"
@@ -810,11 +810,11 @@
       },
       "table": {
         "assignment": "Penugasan",
-        "dueDate": "Dua Tanggal",
         "points": "Poin",
         "weight": "Berat",
         "status": "Status",
-        "pts": "poin"
+        "pts": "poin",
+        "dueDate": "Tanggal Jatuh Tempo"
       },
       "status": {
         "graded": "Bertingkat",
@@ -838,7 +838,6 @@
     }
   },
   "assignment": {
-    "dueDate": "Dua Tanggal",
     "submit": "Kirim",
     "grade": "Nilai",
     "feedback": "Masukan",
@@ -861,7 +860,8 @@
     "sectionDeletionConfirmation": "Yakin ingin menghapus bagian ini? Semua tugas akan dipindahkan ke tingkat teratas.",
     "assignmentDeletionConfirmation": "Yakin ingin menghapus tugas ini? Tindakan ini tidak dapat dibatalkan.",
     "manageAndTrack": "Kelola dan lacak tugas kelas",
-    "filters": "Filter"
+    "filters": "Filter",
+    "dueDate": "Tanggal Jatuh Tempo"
   },
   "pagination": {
     "previous": "Sebelumnya",
@@ -913,7 +913,7 @@
     "pricingStatement3": "Harga yang sederhana dan transparan tanpa biaya tersembunyi. Semua paket mencakup fitur-fitur inti dengan opsi yang dapat disesuaikan.",
     "mostPopular": "Paling Populer",
     "priceUnit": "/pengguna/bulan",
-    "pricingStarterTitle": "Starter",
+    "pricingStarterTitle": "Pemula",
     "pricingStarterPrice": "Bebas",
     "pricingStarterNote": "Akses beta disertakan",
     "pricingStarterDescription": "Sempurna untuk kelas kecil & program percontohan",
@@ -933,7 +933,18 @@
     "pricingSchoolPerk4": "Asisten AI (pertanyaan tak terbatas)",
     "pricingSchoolPerk5": "Yang pertama dalam antrean untuk akses beta Studious CMS",
     "pricingSchoolPerk6": "Akses API",
-    "pricingSchoolLink": "Memulai"
+    "pricingSchoolLink": "Memulai",
+    "pricingInstitutionTitle": "Institusi",
+    "pricingInstitutionPrice": "Khusus",
+    "pricingInstitutionNote": "Disesuaikan dengan kebutuhan Anda",
+    "pricingInstitutionDescription": "Untuk sekolah & universitas besar (1.000+ siswa)",
+    "pricingInstitutionPerk1": "Semua dalam rencana Sekolah",
+    "pricingInstitutionPerk2": "Dukungan prioritas 24/7",
+    "pricingInstitutionPerk3": "Penyimpanan tak terbatas",
+    "pricingInstitutionPerk4": "Pelatihan & onboarding khusus",
+    "pricingInstitutionPerk5": "Biaya per-pengguna lebih murah",
+    "pricingInstitutionLink": "Hubungi Penjualan",
+    "earlyBird": "🎉 Pengguna awal menerima <span class=\"font-semibold text-foreground\">3 bulan gratis</span> pada rencana tahunan + dukungan onboarding khusus"
   },
   "components": {
     "earlyAccess": {
@@ -1069,14 +1080,14 @@
       "fields": {
         "title": "Judul *",
         "instructions": "Instruksi *",
-        "dueDate": "Dua Tanggal",
         "type": "Jenis Tugas",
         "section": "Bagian",
         "rubric": "Rubrik",
         "gradeScale": "Skala Nilai",
         "maxPoints": "Poin Maksimum",
         "weight": "Berat (%)",
-        "sectionColor": "Bagian Warna"
+        "sectionColor": "Bagian Warna",
+        "dueDate": "Tanggal Jatuh Tempo"
       },
       "placeholders": {
         "title": "misalnya, Kuis Bab 5, Laporan Praktikum Fisika",

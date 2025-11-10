@@ -7,12 +7,12 @@
       "maxPoints": "Puncte maxime",
       "weight": "Greutate",
       "graded": "Gradat",
-      "dueDate": "Două întâlniri",
       "actions": "Acțiuni",
       "student": "Student",
       "overallGrade": "Nota generală",
       "assignmentsCompleted": "Sarcini finalizate",
-      "trend": "Tendinţă"
+      "trend": "Tendinţă",
+      "dueDate": "Data limită"
     },
     "labels": {
       "rubric": "Rubrică"

@@ -7,12 +7,12 @@
       "maxPoints": "Điểm tối đa",
       "weight": "Cân nặng",
       "graded": "Đã phân loại",
-      "dueDate": "Hai Ngày",
       "actions": "Hành động",
       "student": "Học sinh",
       "overallGrade": "Điểm tổng thể",
       "assignmentsCompleted": "Bài tập đã hoàn thành",
-      "trend": "Xu hướng"
+      "trend": "Xu hướng",
+      "dueDate": "Ngày hết hạn"
     },
     "labels": {
       "rubric": "Tiêu chí"

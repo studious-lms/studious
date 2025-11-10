@@ -14,7 +14,7 @@
     "sort": "Sortieren",
     "viewAll": "Alle anzeigen",
     "noData": "Keine Daten verfügbar",
-    "export": "Export",
+    "export": "Exportieren",
     "openMenu": "Menü öffnen"
   },
   "time": {
@@ -159,7 +159,7 @@
       "school": {
         "title": "Schule",
         "price": "5 US-Dollar",
-        "priceUnit": "/user/month",
+        "priceUnit": "/Benutzer/Monat",
         "note": "Jährliche Abrechnung oder 6 $/Monat",
         "description": "Für Schulen mit bis zu 1.000 Schülern",
         "perk1": "Unbegrenzte Studenten",
@@ -463,7 +463,7 @@
       "bioPlaceholder": "Erzählen Sie uns etwas über sich selbst...",
       "bioDescription": "Eine kurze Beschreibung Ihrer Person (maximal 500 Zeichen)",
       "website": "Webseite",
-      "websitePlaceholder": "https://your-website.com",
+      "websitePlaceholder": "https://ihre-website.com",
       "websiteDescription": "Ihre persönliche Website oder Ihr Portfolio"
     },
     "accountInformation": {
@@ -490,7 +490,7 @@
     "students": "Studenten",
     "attendance": "Teilnahme",
     "attachFile": "Datei anhängen",
-    "post": "Post",
+    "post": "Beitrag",
     "posting": "Veröffentlichung...",
     "noPosts": "Noch keine Beiträge",
     "createFirstPost": "Ersten Beitrag erstellen",
@@ -502,12 +502,12 @@
         "maxPoints": "Maximale Punktzahl",
         "weight": "Gewicht",
         "graded": "Bewertet",
-        "dueDate": "Zwei Verabredungen",
         "actions": "Aktionen",
         "student": "Student",
         "overallGrade": "Gesamtnote",
         "assignmentsCompleted": "Aufgaben erledigt",
-        "trend": "Trend"
+        "trend": "Trend",
+        "dueDate": "Fälligkeitsdatum"
       },
       "labels": {
         "rubric": "Rubrik"
@@ -810,11 +810,11 @@
       },
       "table": {
         "assignment": "Abtretung",
-        "dueDate": "Zwei Verabredungen",
         "points": "Punkte",
         "weight": "Gewicht",
         "status": "Status",
-        "pts": "Punkte"
+        "pts": "Punkte",
+        "dueDate": "Fälligkeitsdatum"
       },
       "status": {
         "graded": "Bewertet",
@@ -838,7 +838,6 @@
     }
   },
   "assignment": {
-    "dueDate": "Zwei Verabredungen",
     "submit": "Einreichen",
     "grade": "Grad",
     "feedback": "Rückmeldung",
@@ -861,7 +860,8 @@
     "sectionDeletionConfirmation": "Möchten Sie diesen Abschnitt wirklich löschen? Alle Aufgaben werden in die oberste Ebene verschoben.",
     "assignmentDeletionConfirmation": "Möchten Sie diese Aufgabe wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden.",
     "manageAndTrack": "Klassenaufgaben verwalten und verfolgen",
-    "filters": "Filter"
+    "filters": "Filter",
+    "dueDate": "Fälligkeitsdatum"
   },
   "pagination": {
     "previous": "Vorherige",
@@ -912,7 +912,7 @@
     "pricingStatement2": "Wählen Sie den passenden Tarif für Ihre Einrichtung.",
     "pricingStatement3": "Einfache und transparente Preisgestaltung ohne versteckte Kosten. Alle Pakete beinhalten Kernfunktionen mit skalierbaren Optionen.",
     "mostPopular": "Am beliebtesten",
-    "priceUnit": "/user/month",
+    "priceUnit": "/Benutzer/Monat",
     "pricingStarterTitle": "Anlasser",
     "pricingStarterPrice": "Frei",
     "pricingStarterNote": "Beta-Zugang inklusive",
@@ -933,7 +933,18 @@
     "pricingSchoolPerk4": "KI-Assistent (unbegrenzte Abfragen)",
     "pricingSchoolPerk5": "Als Erster Zugang zur Studious CMS-Beta erhalten",
     "pricingSchoolPerk6": "API-Zugriff",
-    "pricingSchoolLink": "Los geht's"
+    "pricingSchoolLink": "Los geht's",
+    "pricingInstitutionTitle": "Institution",
+    "pricingInstitutionPrice": "Individuell",
+    "pricingInstitutionNote": "An Ihre Bedürfnisse angepasst",
+    "pricingInstitutionDescription": "Für große Schulen & Universitäten (1.000+ Studenten)",
+    "pricingInstitutionPerk1": "Alles im Schulplan",
+    "pricingInstitutionPerk2": "24/7 Prioritätssupport",
+    "pricingInstitutionPerk3": "Unbegrenzter Speicher",
+    "pricingInstitutionPerk4": "Individuelles Training & Einarbeitung",
+    "pricingInstitutionPerk5": "Günstigere Kosten pro Benutzer",
+    "pricingInstitutionLink": "Vertrieb kontaktieren",
+    "earlyBird": "🎉 Frühbucher erhalten <span class=\"font-semibold text-foreground\">3 Monate kostenlos</span> bei Jahresplänen + dedizierte Einarbeitungsunterstützung"
   },
   "components": {
     "earlyAccess": {
@@ -944,7 +955,7 @@
         "institutionSize": "Institutionsgröße *"
       },
       "placeholders": {
-        "email": "you@school.edu",
+        "email": "sie@schule.edu",
         "institutionSize": "Institutionsgröße auswählen"
       },
       "sizes": {
@@ -1069,14 +1080,14 @@
       "fields": {
         "title": "Titel *",
         "instructions": "Anweisungen *",
-        "dueDate": "Zwei Verabredungen",
         "type": "Aufgabentyp",
         "section": "Abschnitt",
         "rubric": "Rubrik",
         "gradeScale": "Notenskala",
         "maxPoints": "Maximale Punktzahl",
         "weight": "Gewicht (%)",
-        "sectionColor": "Abschnittsfarbe"
+        "sectionColor": "Abschnittsfarbe",
+        "dueDate": "Fälligkeitsdatum"
       },
       "placeholders": {
         "title": "z. B. Quiz zu Kapitel 5, Physiklaborbericht",

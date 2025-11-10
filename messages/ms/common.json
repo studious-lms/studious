@@ -502,12 +502,12 @@
         "maxPoints": "Mata Maks",
         "weight": "Berat badan",
         "graded": "Digredkan",
-        "dueDate": "Dua Kurma",
         "actions": "Tindakan",
         "student": "Pelajar",
         "overallGrade": "Gred Keseluruhan",
         "assignmentsCompleted": "Tugasan Selesai",
-        "trend": "Trend"
+        "trend": "Trend",
+        "dueDate": "Tarikh Akhir"
       },
       "labels": {
         "rubric": "Rubrik"
@@ -810,11 +810,11 @@
       },
       "table": {
         "assignment": "Tugasan",
-        "dueDate": "Dua Kurma",
         "points": "mata",
         "weight": "Berat badan",
         "status": "Status",
-        "pts": "mata"
+        "pts": "mata",
+        "dueDate": "Tarikh Akhir"
       },
       "status": {
         "graded": "Digredkan",
@@ -838,7 +838,6 @@
     }
   },
   "assignment": {
-    "dueDate": "Dua Kurma",
     "submit": "Hantar",
     "grade": "Gred",
     "feedback": "Maklum balas",
@@ -861,7 +860,8 @@
     "sectionDeletionConfirmation": "Adakah anda pasti mahu memadamkan bahagian ini? Semua tugasan akan dipindahkan ke peringkat atas.",
     "assignmentDeletionConfirmation": "Adakah anda pasti mahu memadamkan tugasan ini? Tindakan ini tidak boleh dibuat asal.",
     "manageAndTrack": "Urus dan jejak tugasan kelas",
-    "filters": "Penapis"
+    "filters": "Penapis",
+    "dueDate": "Tarikh Akhir"
   },
   "pagination": {
     "previous": "Sebelumnya",
@@ -933,7 +933,18 @@
     "pricingSchoolPerk4": "Pembantu AI (pertanyaan tanpa had)",
     "pricingSchoolPerk5": "Barisan pertama untuk akses beta Studious CMS",
     "pricingSchoolPerk6": "Akses API",
-    "pricingSchoolLink": "Mulakan"
+    "pricingSchoolLink": "Mulakan",
+    "pricingInstitutionTitle": "Institusi",
+    "pricingInstitutionPrice": "Khusus",
+    "pricingInstitutionNote": "Disesuaikan dengan keperluan anda",
+    "pricingInstitutionDescription": "Untuk sekolah & universiti besar (1,000+ pelajar)",
+    "pricingInstitutionPerk1": "Semua dalam pelan Sekolah",
+    "pricingInstitutionPerk2": "Sokongan keutamaan 24/7",
+    "pricingInstitutionPerk3": "Penyimpanan tanpa had",
+    "pricingInstitutionPerk4": "Latihan & penerimaan khusus",
+    "pricingInstitutionPerk5": "Perbelanjaan per-pengguna yang lebih murah",
+    "pricingInstitutionLink": "Hubungi Jualan",
+    "earlyBird": "🎉 Pengguna awal menerima <span class=\"font-semibold text-foreground\">3 bulan percuma</span> pada pelan tahunan + sokongan penerimaan khusus"
   },
   "components": {
     "earlyAccess": {
@@ -1069,14 +1080,14 @@
       "fields": {
         "title": "Tajuk *",
         "instructions": "Arahan *",
-        "dueDate": "Dua Kurma",
         "type": "Jenis Tugasan",
         "section": "Bahagian",
         "rubric": "Rubrik",
         "gradeScale": "Skala Gred",
         "maxPoints": "Mata Maks",
         "weight": "Berat (%)",
-        "sectionColor": "Warna Bahagian"
+        "sectionColor": "Warna Bahagian",
+        "dueDate": "Tarikh Akhir"
       },
       "placeholders": {
         "title": "cth., Kuiz Bab 5, Laporan Makmal Fizik",

@@ -7,12 +7,12 @@
       "maxPoints": "Mata Maks",
       "weight": "Berat badan",
       "graded": "Digredkan",
-      "dueDate": "Dua Kurma",
       "actions": "Tindakan",
       "student": "Pelajar",
       "overallGrade": "Gred Keseluruhan",
       "assignmentsCompleted": "Tugasan Selesai",
-      "trend": "Trend"
+      "trend": "Trend",
+      "dueDate": "Tarikh Akhir"
     },
     "labels": {
       "rubric": "Rubrik"

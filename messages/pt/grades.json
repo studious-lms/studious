@@ -7,12 +7,12 @@
       "maxPoints": "Pontuação máxima",
       "weight": "Peso",
       "graded": "Classificado",
-      "dueDate": "Dois encontros",
       "actions": "Ações",
       "student": "Estudante",
       "overallGrade": "Nota geral",
       "assignmentsCompleted": "Tarefas concluídas",
-      "trend": "Tendência"
+      "trend": "Tendência",
+      "dueDate": "Data de Entrega"
     },
     "labels": {
       "rubric": "Rubrica"

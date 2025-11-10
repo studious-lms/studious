@@ -3,7 +3,6 @@
     "title": "Uppgiftsdetaljer",
     "description": "Beskrivning",
     "instructions": "Instruktioner",
-    "dueDate": "Två datum",
     "maxPoints": "Maxpoäng",
     "submissions": "Inskickade bidrag",
     "submitted": "Inskickad",
@@ -49,6 +48,7 @@
       "gradeUpdated": "Betyget har uppdaterats",
       "deleted": "Uppgift raderad",
       "error": "Ett fel uppstod"
-    }
+    },
+    "dueDate": "Förfallodatum"
   }
 }

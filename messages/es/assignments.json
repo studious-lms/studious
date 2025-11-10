@@ -3,7 +3,6 @@
     "title": "Detalles de la tarea",
     "description": "Descripción",
     "instructions": "Instrucciones",
-    "dueDate": "Dos citas",
     "maxPoints": "Puntos máximos",
     "submissions": "Presentaciones",
     "submitted": "Enviado",
@@ -49,6 +48,7 @@
       "gradeUpdated": "Calificación actualizada correctamente",
       "deleted": "Tarea eliminada",
       "error": "Se produjo un error"
-    }
+    },
+    "dueDate": "Fecha de entrega"
   }
 }
