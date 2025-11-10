@@ -32,51 +32,109 @@ type Section = RouterOutputs['class']['get']['class']['sections'][number];
 type Folder = {
   id: string;
   name: string;
-  isOpen: boolean;
   color: string;
   assignments: Assignment[];
-  order: number;
+  order: number | null;
 };
+// Drop zone that appears between items when dragging
+function DropZone({ 
+  index, 
+  onMoveItem,
+  onMoveAssignment,
+  isTeacher = true
+}: { 
+  index: number;
+  onMoveItem: (draggedId: string, draggedType: string, targetIndex: number) => void;
+  onMoveAssignment: (assignmentId: string, targetFolderId: string | null, targetIndex?: number) => void;
+  isTeacher?: boolean;
+}) {
+  const [{ isOver, draggedItem, canDrop }, drop] = useDrop({
+    accept: ["assignment", "folder"],
+    canDrop: () => {
+      // Allow drop if it's a teacher
+      // Works for both assignments and sections (folders)
+      return isTeacher;
+    },
+    drop: (item: { id: string; type?: string, index?: number }, monitor: DropTargetMonitor) => {
+      if (monitor.didDrop()) return;
+      const itemType = item.type || "assignment";
+      
+      // If it's an assignment, check if it needs to be moved to root first
+      // Assignments from sections won't be in topLevelItems, so we need to use moveAssignment
+      if (itemType === "assignment") {
+        // For assignments, use moveAssignment to handle both root and section moves
+        // targetIndex in the unified list corresponds to the position between items
+        onMoveAssignment(item.id, null, index);
+      } else {
+        // For folders/sections, use moveItem (they're always top-level)
+        onMoveItem(item.id, itemType, index);
+      }
+    },
+    collect: (monitor: DropTargetMonitor) => ({
+      isOver: monitor.isOver({ shallow: true }),
+      canDrop: monitor.canDrop(),
+      draggedItem: monitor.getItem() as { id: string; type?: string; index?: number } | null,
+    }),
+  });
+
+  // Only show drop zone when something is being dragged and it's a valid drop target
+  // Works for both assignments and sections (folders)
+  const isDragging = !!draggedItem;
+  const isDraggingSection = draggedItem?.type === "folder";
+  const shouldShow = isDragging && canDrop;
+  const isActive = isOver && shouldShow;
+
+  if (!shouldShow) {
+    return <div className="h-1" />; // Minimal spacer when not dragging
+  }
+
+  return (
+    <div 
+      ref={drop as unknown as React.Ref<HTMLDivElement>}
+      className={`transition-all duration-200 relative ${
+        isActive 
+          ? 'h-8 my-2' 
+          : shouldShow
+          ? 'h-3 my-1'
+          : 'h-1 my-0.5'
+      }`}
+    >
+      <div 
+        className={`absolute inset-x-0 top-1/2 -translate-y-1/2 transition-all duration-200 ${
+          isActive
+            ? `h-1.5 ${isDraggingSection ? 'bg-purple-500' : 'bg-primary'} rounded-full shadow-lg ${isDraggingSection ? 'shadow-purple-500/50' : 'shadow-primary/50'} opacity-100`
+            : shouldShow
+            ? `h-0.5 ${isDraggingSection ? 'bg-purple-400/40' : 'bg-primary/30'} rounded-full opacity-60`
+            : 'h-0 opacity-0'
+        }`}
+      />
+      {isActive && (
+        <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-none z-20">
+          <div className={`${isDraggingSection ? 'bg-purple-500/10 text-purple-600 border-purple-500/30' : 'bg-primary/10 text-primary border-primary/30'} text-xs px-3 py-1 rounded-full border backdrop-blur-sm`}>
+            {isDraggingSection ? 'Drop section here' : 'Drop here'}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 // Unified droppable slot component for both assignments and folders
 function DroppableItemSlot({ 
   children, 
   index, 
   onMoveItem,
-  isTeacher = true
+  isTeacher = true,
+  slotType
 }: { 
   children?: React.ReactNode;
   index: number;
   onMoveItem: (draggedId: string, draggedType: string, targetIndex: number) => void;
   isTeacher?: boolean;
+  slotType?: 'assignment' | 'folder';
 }) {
-
-  const [{ isOver, draggedItem }, drop] = useDrop({
-    accept: ["assignment", "folder"],
-    canDrop: (item: { id: string; type?: string, index?: number }) => {
-      // Don't allow dropping for students or on the same position
-      return isTeacher && item.index !== index;
-    },
-    drop: (item: { id: string; type?: string, index?: number }, monitor: DropTargetMonitor) => {
-      if (monitor.didDrop()) return;
-      const itemType = item.type || "assignment";
-      onMoveItem(item.id, itemType, index);
-    },
-    collect: (monitor: DropTargetMonitor) => ({
-      isOver: monitor.isOver({ shallow: true }),
-      draggedItem: monitor.getItem() as { id: string; type?: string; index?: number } | null,
-    }),
-  });
-
-  // Determine drop indicator position based on dragged item's current index
-  const shouldShowTopIndicator = draggedItem && draggedItem.index !== undefined 
-    ? draggedItem.index > index 
-    : true; // Default to top if no index info
   return (
-    <div ref={drop as unknown as React.Ref<HTMLDivElement>} className="relative">
-      {isOver && (
-        <div className={`absolute ${shouldShowTopIndicator ? '-top-1' : 'bottom-1'} left-0 right-0 h-0.5 bg-primary rounded-full z-10`} />
-      )}
-      
+    <div className="relative">
       {children}
     </div>
   );
@@ -143,14 +201,22 @@ export default function Assignments() {
 
   // API queries
   const { data: classData, isLoading, refetch } = trpc.class.get.useQuery({ classId });
-    const mutateAssignmentOrder = trpc.assignment.order.useMutation({
+    const reorderAssignmentMutation = trpc.assignment.reorder.useMutation({
+      onSuccess: () => {
+        refetch();
+      },
       onError: (error) => {
-        console.error('Assignment order mutation failed:', error);
+        console.error('Assignment reorder mutation failed:', error);
+        toast.error("Failed to reorder assignment");
       }
     });
-    const mutateSectionOrder = trpc.section.reOrder.useMutation({
+    const reorderSectionMutation = trpc.section.reorder.useMutation({
+      onSuccess: () => {
+        refetch();
+      },
       onError: (error) => {
-        console.error('Section order mutation failed:', error);
+        console.error('Section reorder mutation failed:', error);
+        toast.error("Failed to reorder section");
       }
     });
     const deleteAssignmentMutation = trpc.assignment.delete.useMutation({
@@ -197,7 +263,7 @@ export default function Assignments() {
     });
   };
   
-  // Initialize topLevelItems with real data from API
+  // Initialize unified mixed list (all assignments + sections sorted by unified order)
   useEffect(() => {
     if (classData?.class) {
       let assignments = classData.class.assignments || [];
@@ -208,80 +274,57 @@ export default function Assignments() {
       }
       const sections = classData.class.sections || [];
       
-      // Create folder items from sections with their assignments
-      const folderItems = sections.map(section => {
-        const sectionAssignments = assignments
-          .filter(assignment => assignment.section && assignment.section.id === section.id)
-          .sort((a, b) => a.order - b.order)
-          .map(assignment => ({
-            id: assignment.id,
-            title: assignment.title,
-            type: assignment.type?.toLowerCase() || 'homework',
-            dueDate: assignment.dueDate ? new Date(assignment.dueDate).toLocaleDateString() : null,
-            status: assignment.graded ? 'graded' : 'pending',
-            submissions: assignment.submissions.filter(submission => submission.submitted),
-            totalStudents: assignment.submissions?.length,
-            hasAttachments: (assignment.attachments?.length || 0) > 0,
-            inProgress: assignment.inProgress,
-            points: assignment.maxGrade || 0,
-            description: assignment.instructions || ''
-          }));
-
-        return { 
-          type: 'folder' as const, 
-          data: {
-            id: section.id,
-            name: section.name,
-            color: section.color,
-            assignments: sectionAssignments,
-            order: section.order
-          }
-        };
-      });
-      
-      // Get assignments not in any section (top-level)
-      const topLevelAssignments = assignments.filter(assignment => !assignment.section);
-      const assignmentItems = topLevelAssignments.map(assignment => ({ 
-        type: 'assignment' as const, 
-        data: {
-          id: assignment.id,
-          title: assignment.title,
-          type: assignment.type?.toLowerCase() || 'homework',
-          dueDate: assignment.dueDate ? new Date(assignment.dueDate).toLocaleDateString() : null,
-          status: assignment.graded ? 'graded' : 'pending',
-          submissions: assignment.submissions.filter(submission => submission.submitted),
-          totalStudents: assignment.submissions?.length,
-          hasAttachments: (assignment.attachments?.length || 0) > 0,
-          inProgress: assignment.inProgress,
-          points: assignment.maxGrade || 0,
-          description: assignment.instructions || '',
-          order: assignment.order
-        }
+      // Build folders with assignments per section (for display purposes)
+      const folderItems: Folder[] = sections.map(section => ({
+        id: section.id,
+        name: section.name,
+        color: section.color ?? '',
+        order: section.order ?? 0,
+        assignments: assignments
+          .filter(a => a.section && a.section.id === section.id)
+          .sort((a, b) => (a.order ?? 0) - (b.order ?? 0))
+          .map(a => a as unknown as Assignment)
       }));
-      
-      // Combine and sort by order
-      const allItems = [...assignmentItems, ...folderItems];
-      allItems.sort((a, b) => (a.data.order || 0) - (b.data.order || 0));
-      
+
+      // Root assignments (tasks without sections)
+      const rootAssignments = assignments
+        .filter(a => !a.section)
+        .map(a => ({ type: 'assignment' as const, data: a as unknown as Assignment }));
+
+      // Sections as folder items
+      const sectionItems = folderItems.map(f => ({ type: 'folder' as const, data: f }));
+
+      // Combine all items (assignments and sections) and sort by unified order
+      // The backend maintains a single order sequence for both types
+      const allItems = [...rootAssignments, ...sectionItems];
+      allItems.sort((a, b) => {
+        const orderA = a.data.order ?? 0;
+        const orderB = b.data.order ?? 0;
+        return orderA - orderB;
+      });
+
       setTopLevelItems(allItems);
     }
-  }, [classData]);
+  }, [classData, isStudent]);
 
-  const filteredTopLevelItems = topLevelItems.filter(item => {
-    if (item.type === 'folder') {
-      const folder = item.data;
-      return folder.assignments.some((assignment: Assignment) =>
-        assignment.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        assignment.type.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        assignment.description.toLowerCase().includes(searchQuery.toLowerCase())
-      ) || folder.name.toLowerCase().includes(searchQuery.toLowerCase());
-    } else {
-      const assignment = item.data as Assignment;
-      return assignment.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        assignment.type.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        assignment.instructions.toLowerCase().includes(searchQuery.toLowerCase());
-    }
-  });
+  // Filtering unified list with preserved original indices
+  const filteredWithOriginalIndex = topLevelItems
+    .map((item, originalIndex) => ({ item, originalIndex }))
+    .filter(({ item }) => {
+      if (item.type === 'folder') {
+        const folder = item.data as Folder;
+        return folder.assignments.some((assignment: Assignment) =>
+          assignment.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          assignment.type.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          assignment.instructions.toLowerCase().includes(searchQuery.toLowerCase())
+        ) || folder.name.toLowerCase().includes(searchQuery.toLowerCase());
+      } else {
+        const assignment = item.data as Assignment;
+        return assignment.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          assignment.type.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          assignment.instructions.toLowerCase().includes(searchQuery.toLowerCase());
+      }
+    });
 
   const toggleSection = (sectionId: string) => {
     setOpenSections(prev => ({
@@ -290,82 +333,70 @@ export default function Assignments() {
     }));
   };
 
+  // Reorder within unified list (assignments and sections can be interleaved)
   const moveItem = async (draggedId: string, draggedType: string, targetIndex: number) => {
-    // Find current position
     const currentIndex = topLevelItems.findIndex(item => 
       item.data.id === draggedId && item.type === draggedType
     );
-    
-    if (currentIndex === -1 || currentIndex === targetIndex) {
-      return; // Nothing to move
+    if (currentIndex === -1 || currentIndex === targetIndex) return;
+
+    // Check if inserting at end before accessing targetItem
+    const insertingAtEnd = targetIndex >= topLevelItems.length;
+    const targetItem = insertingAtEnd ? null : topLevelItems[targetIndex];
+    if (!insertingAtEnd && !targetItem) return;
+
+    // Determine position and targetId based on drop position
+    let position: 'start' | 'end' | 'before' | 'after';
+    let targetId: string | undefined = undefined;
+
+    if (targetIndex === 0) {
+      position = 'start';
+    } else if (insertingAtEnd) {
+      position = 'end';
+    } else if (currentIndex < targetIndex) {
+      // Moving down: place after the item before target
+      const beforeTarget = topLevelItems[targetIndex - 1];
+      position = 'after';
+      targetId = beforeTarget.data.id;
+    } else {
+      // Moving up: place before the target item
+      // targetItem is guaranteed to exist here since we checked !insertingAtEnd && !targetItem above
+      position = 'before';
+      targetId = targetItem!.data.id;
     }
 
-    // Store original state for rollback
-    const originalItems = [...topLevelItems];
-
-    // Optimistically update UI
-    const newItems = [...topLevelItems];
-    const [movedItem] = newItems.splice(currentIndex, 1);
-    newItems.splice(targetIndex, 0, movedItem);
-    
-    // Update the order field in the data to match new positions
-    newItems.forEach((item, index) => {
-      item.data.order = index;
-    });
-    
-    setTopLevelItems(newItems);
+    const original = [...topLevelItems];
+    const next = [...topLevelItems];
+    const [moved] = next.splice(currentIndex, 1);
+    // Use safe insertion index for end-of-list drops
+    next.splice(Math.min(targetIndex, next.length), 0, moved);
+    setTopLevelItems(next);
 
     try {
-      // Only update the items that actually changed order
-      const updates: Promise<RouterOutputs['assignment']['order']>[] = [];
-      
-      // Determine the range of items that need order updates
-      const minIndex = Math.min(currentIndex, targetIndex);
-      const maxIndex = Math.max(currentIndex, targetIndex);
-      
-      for (let i = minIndex; i <= maxIndex; i++) {
-        const item = newItems[i];
-        const newOrder = i;
-        
-        if (item.type === 'assignment') {
-          updates.push(mutateAssignmentOrder.mutateAsync({ 
-            classId, 
-            id: item.data.id, 
-            order: newOrder 
-          }));
-        } else {
-          updates.push(mutateSectionOrder.mutateAsync({ 
-            classId, 
-            id: item.data.id, 
-            order: newOrder 
-          }));
-        }
+      if (draggedType === 'assignment') {
+        // targetId can be either a section ID or assignment ID
+        await reorderAssignmentMutation.mutateAsync({ 
+          classId, 
+          movedId: draggedId, 
+          position, 
+          ...(targetId ? { targetId } : {}) 
+        });
+      } else if (draggedType === 'folder') {
+        // targetId can be either a section ID or assignment ID
+        await reorderSectionMutation.mutateAsync({ 
+          classId, 
+          movedId: draggedId, 
+          position, 
+          ...(targetId ? { targetId } : {}) 
+        });
       }
-      
-      // Wait for all updates to complete
-      const results = await Promise.allSettled(updates);
-      
-      // Check if any mutations failed
-      const failures = results.filter(result => result.status === 'rejected');
-      
-      if (failures.length > 0) {
-        console.error('Some mutations failed:', failures);
-        // Rollback to original state
-        setTopLevelItems(originalItems);
-        // Refetch to get correct server state
-        refetch();
-        return;
-      }
-      
-      // All mutations succeeded - optimistic update was correct
-      
-    } catch (error) {
-      console.error('Failed to update order:', error);
-      // Rollback to original state
-      setTopLevelItems(originalItems);
+    } catch (e) {
+      setTopLevelItems(original);
       refetch();
     }
   };
+
+  
 
   const handleEditSection = (section: { id: string; name: string; color: string }) => {
     setEditingSection(section);
@@ -407,49 +438,54 @@ export default function Assignments() {
   };
 
   const reorderAssignmentInSection = async (assignmentId: string, sectionId: string, targetIndex: number) => {
-    // Find the current assignment and its current index within the section
-    const sectionItem = topLevelItems.find(item => 
-      item.type === 'folder' && item.data.id === sectionId
-    );
-    
+    const sectionItem = topLevelItems.find(item => item.type === 'folder' && item.data.id === sectionId);
     if (!sectionItem || sectionItem.type !== 'folder') return;
     
-    const currentIndex = sectionItem.data.assignments.findIndex(
-      (assignment: Assignment) => assignment.id === assignmentId
-    );
-    
+    const section = sectionItem.data as Folder;
+    const currentIndex = section.assignments.findIndex(a => a.id === assignmentId);
     if (currentIndex === -1 || currentIndex === targetIndex) return;
 
-    // Optimistically update UI
-    setTopLevelItems(prev => 
-      prev.map(item => {
-        if (item.type === 'folder' && item.data.id === sectionId) {
-          const newAssignments = [...item.data.assignments];
-          const [movedAssignment] = newAssignments.splice(currentIndex, 1);
-          newAssignments.splice(targetIndex, 0, movedAssignment);
-          
-          return {
-            ...item,
-            data: {
-              ...item.data,
-              assignments: newAssignments
-            }
-          };
-        }
-        return item;
-      })
-    );
+    // Determine position and targetId using unified ordering
+    // targetId can be either a section ID or assignment ID
+    let position: 'start' | 'end' | 'before' | 'after';
+    let targetId: string | undefined = undefined;
+    
+    if (targetIndex <= 0) {
+      position = 'start';
+      // If moving to start of section, targetId should be the section itself
+      targetId = sectionId;
+    } else if (targetIndex >= section.assignments.length - 1) {
+      position = 'end';
+    } else if (currentIndex < targetIndex) {
+      position = 'after';
+      targetId = section.assignments[targetIndex - 1].id;
+    } else {
+      position = 'before';
+      targetId = section.assignments[targetIndex].id;
+    }
 
-    // Save the reorder to server
+    const original = [...topLevelItems];
+    setTopLevelItems(prev => prev.map(item => {
+      if (item.type === 'folder' && item.data.id === sectionId) {
+        const next = [...(item.data as Folder).assignments];
+        const [m] = next.splice(currentIndex, 1);
+        next.splice(targetIndex, 0, m);
+        return { ...item, data: { ...item.data, assignments: next } };
+      }
+      return item;
+    }));
+
     try {
-      await mutateAssignmentOrder.mutateAsync({
-        classId,
-        id: assignmentId,
-        order: targetIndex
+      await reorderAssignmentMutation.mutateAsync({ 
+        classId, 
+        movedId: assignmentId, 
+        position, 
+        ...(targetId ? { targetId } : {}) 
       });
-    } catch (error) {
-      console.error('Failed to reorder assignment in section:', error);
-      refetch(); // Rollback on error
+    } catch (e) {
+      console.error('Reorder in section failed', e);
+      setTopLevelItems(original);
+      refetch();
     }
   };
 
@@ -464,29 +500,24 @@ export default function Assignments() {
   }
 
   const moveAssignment = async (assignmentId: string, targetFolderId: string | null, targetIndex?: number) => {
-    // Find the assignment in top-level items or folders
+    // Find assignment in mixed list
     let assignment: Assignment | null = null;
-    let sourceLocation: 'toplevel' | 'folder' | null = null;
-    let sourceFolderId = null;
+    let sourceSectionId: string | null = null;
+    let currentIndex: number = -1;
     
-    // Check top-level items first
-    const topLevelAssignment = topLevelItems.find(item => 
-      item.type === 'assignment' && item.data.id === assignmentId
-    );
-    if (topLevelAssignment) {
-      assignment = topLevelAssignment.data;
-      sourceLocation = 'toplevel';
-    }
-    
-    // Check folders if not found in top-level
-    if (!assignment) {
+    // Check root assignments
+    const rootItem = topLevelItems.find(item => item.type === 'assignment' && item.data.id === assignmentId);
+    if (rootItem) {
+      assignment = rootItem.data as Assignment;
+    } else {
+      // Check sections
       for (const item of topLevelItems) {
         if (item.type === 'folder') {
-          const found = item.data.assignments.find((a: Assignment) => a.id === assignmentId);
-          if (found) {
-            assignment = found;
-            sourceLocation = 'folder';
-            sourceFolderId = item.data.id;
+          const foundIndex = (item.data as Folder).assignments.findIndex(a => a.id === assignmentId);
+          if (foundIndex !== -1) {
+            assignment = (item.data as Folder).assignments[foundIndex];
+            sourceSectionId = item.data.id;
+            currentIndex = foundIndex;
             break;
           }
         }
@@ -494,109 +525,101 @@ export default function Assignments() {
     }
     
     if (!assignment) return;
-    
-    // If moving to top-level (targetFolderId is null)
-    if (targetFolderId === null) {
-      if (sourceLocation === 'toplevel') {
-        // Already at top-level, just reorder if targetIndex is provided
-        if (targetIndex !== undefined) {
-          setTopLevelItems(prev => {
-            const items = [...prev];
-            const currentIndex = items.findIndex(item => 
-              item.type === 'assignment' && item.data.id === assignmentId
-            );
-            if (currentIndex !== -1) {
-              const [movedItem] = items.splice(currentIndex, 1);
-              items.splice(targetIndex, 0, movedItem);
-            }
-            return items;
-          });
-        }
-        return;
-      }
-      
-      // Moving from folder to top-level
-      if (sourceLocation === 'folder') {
-        // Remove from folder
-        setTopLevelItems(prev => 
-          prev.map(item => 
-            item.type === 'folder' && item.data.id === sourceFolderId
-              ? { 
-                  ...item, 
-                  data: { 
-                    ...item.data, 
-                    assignments: item.data.assignments.filter((a: Assignment) => a.id !== assignmentId) 
-                  }
-                }
-              : item
-          )
-        );
-        
-        // Add to top-level
-        const newItem = { type: 'assignment' as const, data: assignment };
-        if (targetIndex !== undefined) {
-          setTopLevelItems(prev => {
-            const items = [...prev];
-            items.splice(targetIndex, 0, newItem);
-            return items;
-          });
-        } else {
-          setTopLevelItems(prev => [...prev, newItem]);
-        }
-      }
-      return;
-    }
-    
-    // Moving to a folder
-    if (sourceLocation === 'toplevel') {
-      // Remove from top-level
-      setTopLevelItems(prev => prev.filter(item => 
-        !(item.type === 'assignment' && item.data.id === assignmentId)
-      ));
-    } else if (sourceLocation === 'folder') {
-      // Remove from source folder
-      setTopLevelItems(prev => 
-        prev.map(item => 
-          item.type === 'folder' && item.data.id === sourceFolderId
-            ? { 
-                ...item, 
-                data: { 
-                  ...item.data, 
-                  assignments: item.data.assignments.filter((a: Assignment) => a.id !== assignmentId) 
-                }
-              }
-            : item
-        )
-      );
-    }
-    
-    // Add to target folder
-    setTopLevelItems(prev => 
-      prev.map(item => 
-        item.type === 'folder' && item.data.id === targetFolderId
-          ? { 
-              ...item, 
-              data: { 
-                ...item.data, 
-                assignments: targetIndex !== undefined 
-                  ? [...item.data.assignments.slice(0, targetIndex), assignment, ...item.data.assignments.slice(targetIndex)]
-                  : [...item.data.assignments, assignment]
-              }
-            }
-          : item
-      )
-    );
 
-    // Save the move to the server
+    // First, move the assignment to the target section (or root)
+    const targetSectionId = targetFolderId || '';
+    
     try {
-      await moveAssignmentMutation.mutateAsync({
-        classId,
-        id: assignmentId,
-        targetSectionId: targetFolderId,
+      // If targetIndex is provided, calculate position BEFORE moving (using current state)
+      let position: 'start' | 'end' | 'before' | 'after' | undefined;
+      let targetId: string | undefined = undefined;
+
+      if (targetIndex !== undefined) {
+        if (targetFolderId === null) {
+          // Moving to root - find position in unified list using current topLevelItems
+          // targetIndex is the position between items (0 = before first, 1 = between first and second, etc.)
+          if (targetIndex === 0) {
+            position = 'start';
+          } else if (targetIndex >= topLevelItems.length) {
+            position = 'end';
+          } else {
+            // Place before the item at targetIndex
+            const targetItem = topLevelItems[targetIndex];
+            if (targetItem) {
+              position = 'before';
+              targetId = targetItem.data.id; // Can be section or assignment ID
+            } else {
+              position = 'end';
+            }
+          }
+        } else if (targetFolderId) {
+          // Moving to a section - calculate position within section
+          const destSectionItem = topLevelItems.find(it => it.type === 'folder' && it.data.id === targetFolderId);
+          if (destSectionItem && destSectionItem.type === 'folder') {
+            const destSection = destSectionItem.data as Folder;
+            const isMovingFromSameSection = sourceSectionId === targetFolderId;
+            
+            if (targetIndex === 0) {
+              position = 'start';
+              targetId = targetFolderId; // Use section ID as target
+            } else if (targetIndex !== undefined) {
+              // Calculate the correct anchor assignment
+              // If moving within same section, we need to account for the item being removed
+              let anchorIndex = targetIndex - 1;
+              if (isMovingFromSameSection && currentIndex < targetIndex) {
+                // Moving down: anchor is at targetIndex - 1 (item hasn't been removed yet)
+                anchorIndex = targetIndex - 1;
+              } else if (isMovingFromSameSection && currentIndex >= targetIndex) {
+                // Moving up: anchor is at targetIndex (item will be removed before this position)
+                anchorIndex = targetIndex;
+              }
+              
+              const anchor = destSection.assignments[anchorIndex];
+              if (anchor && anchor.id !== assignmentId) {
+                position = anchorIndex < targetIndex ? 'after' : 'before';
+                targetId = anchor.id;
+              } else if (destSection.assignments.length > 0) {
+                // Fallback: use last assignment
+                const lastAssignment = destSection.assignments[destSection.assignments.length - 1];
+                position = 'after';
+                targetId = lastAssignment.id;
+              } else {
+                position = 'start';
+                targetId = targetFolderId;
+              }
+            }
+          } else {
+            position = 'end';
+          }
+        }
+      }
+
+      // Update the section assignment (this doesn't change order, just section membership)
+      await moveAssignmentMutation.mutateAsync({ 
+        classId, 
+        id: assignmentId, 
+        targetSectionId 
       });
-    } catch (error) {
-      console.error('Failed to save assignment move:', error);
-      // Revert the optimistic update by refetching
+
+      // If targetIndex is provided, reorder using unified ordering
+      if (targetIndex !== undefined && position) {
+        // Reorder using unified ordering API (targetId can be section or assignment ID)
+        await reorderAssignmentMutation.mutateAsync({ 
+          classId, 
+          movedId: assignmentId, 
+          position, 
+          ...(targetId ? { targetId } : {}) 
+        });
+      } else {
+        // No specific position, just move to end
+        await reorderAssignmentMutation.mutateAsync({ 
+          classId, 
+          movedId: assignmentId, 
+          position: 'end' 
+        });
+      }
+    } catch (e) {
+      console.error('Move assignment failed', e);
       refetch();
     }
   };
@@ -660,50 +683,65 @@ export default function Assignments() {
           </TabsList>
 
           <TabsContent value={activeTab} className="space-y-6">
-            {filteredTopLevelItems.length > 0 ? (
+            {filteredWithOriginalIndex.length > 0 ? (
               <MainDropZone 
                 onMoveAssignment={moveAssignment} 
                 isTeacher={!isStudent}
                 dropMessage={t('assignmentDrop')}
               >
-                <div className="space-y-6">
-                  {filteredTopLevelItems.map((item, index) => (
-                    <DroppableItemSlot 
-                      key={`${item.type}-${item.data.id}`}
-                      index={index}
-                      onMoveItem={moveItem}
-                      isTeacher={!isStudent}
-                    >
-                      {item.type === 'assignment' ? (
-                        <DraggableAssignment
-                          assignment={item.data as Assignment}
-                          classId={classId!}
-                          index={index}
-                          onDelete={handleDeleteAssignment}
-                          onPublish={handlePublishAssignment}
-                          isTeacher={!isStudent}
-                        />
-                      ) : (
-                        <AssignmentFolder
-                          folder={item.data as Folder}
-                          classId={classId!}
-                          isOpen={openSections[item.data.id]}
-                          onToggle={() => toggleSection(item.data.id)}
-                          onMoveAssignment={moveAssignment}
-                          onReorderAssignmentInSection={reorderAssignmentInSection}
-                          onEditSection={handleEditSection}
-                          onDeleteSection={handleDeleteSection}
-                          onDeleteAssignment={handleDeleteAssignment}
-                          onPublishAssignment={handlePublishAssignment}
-                          isTeacher={!isStudent}
-                          index={index}
-                        />
-                      )}
-                    </DroppableItemSlot>
+                <div className="space-y-3">
+                  {/* Top drop zone */}
+                  <DropZone 
+                    index={0} 
+                    onMoveItem={moveItem}
+                    onMoveAssignment={moveAssignment}
+                    isTeacher={!isStudent}
+                  />
+                  
+                  {filteredWithOriginalIndex.map(({ item, originalIndex }) => (
+                    <div key={`${item.type}-${item.data.id}`}>
+                      <DroppableItemSlot 
+                        index={originalIndex}
+                        onMoveItem={moveItem}
+                        isTeacher={!isStudent}
+                        slotType={item.type}
+                      >
+                        {item.type === 'assignment' ? (
+                          <DraggableAssignment
+                            assignment={item.data as Assignment}
+                            classId={classId!}
+                            index={originalIndex}
+                            onDelete={handleDeleteAssignment}
+                            onPublish={handlePublishAssignment}
+                            isTeacher={!isStudent}
+                          />
+                        ) : (
+                          <AssignmentFolder
+                            folder={item.data as Folder}
+                            classId={classId!}
+                            isOpen={openSections[item.data.id]}
+                            onToggle={() => toggleSection(item.data.id)}
+                            onMoveAssignment={moveAssignment}
+                            onReorderAssignmentInSection={reorderAssignmentInSection}
+                            onEditSection={handleEditSection}
+                            onDeleteSection={handleDeleteSection}
+                            onDeleteAssignment={handleDeleteAssignment}
+                            onPublishAssignment={handlePublishAssignment}
+                            isTeacher={!isStudent}
+                            index={originalIndex}
+                          />
+                        )}
+                      </DroppableItemSlot>
+                      
+                      {/* Drop zone after each item */}
+                      <DropZone 
+                        index={originalIndex + 1} 
+                        onMoveItem={moveItem}
+                        onMoveAssignment={moveAssignment}
+                        isTeacher={!isStudent}
+                      />
+                    </div>
                   ))}
-                  <DroppableItemSlot index={0} onMoveItem={moveItem} isTeacher={!isStudent}>
-                    {/* bottommost item */}
-                  </DroppableItemSlot>
                 </div>
               </MainDropZone>
             ) : (

@@ -1,5 +1,5 @@
 import { useDrop, useDrag } from "react-dnd";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ChevronDown, ChevronRight, Folder, FolderOpen, MoreHorizontal, Edit, Trash2 } from "lucide-react";
@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { DraggableAssignment } from "./DraggableAssignment";
-import { DroppableAssignmentSlot } from "./DroppableAssignmentSlot";
+import { DroppableAssignmentSlot, SectionDropZone } from "./DroppableAssignmentSlot";
 import { RouterOutputs } from "@/lib/trpc";
 
 type Assignment = RouterOutputs['assignment']['get'];
@@ -50,16 +50,30 @@ export function AssignmentFolder({
   isTeacher,
   index
 }: AssignmentFolderProps) {
-  const [{ isOver }, drop] = useDrop({
+  // Make the card droppable for visual feedback and as fallback drop target
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [{ isOver, draggedItem, canDrop }, dropCard] = useDrop({
     accept: "assignment",
     drop: (item: { id: string }, monitor) => {
-      if (monitor.didDrop()) return; // Already handled by child
+      // Only handle if not already handled by a child drop zone (SectionDropZone)
+      if (monitor.didDrop()) return;
+      // Move to section (default position) - fallback for drops on card/header
       onMoveAssignment(item.id, folder.id);
     },
     collect: (monitor) => ({
+      // Show visual feedback when over the card
       isOver: monitor.isOver(),
+      canDrop: monitor.canDrop(),
+      draggedItem: monitor.getItem() as { id: string; type?: string; index?: number } | null,
     }),
   });
+
+  // Auto-expand section when dragging assignment over it
+  useEffect(() => {
+    if (isOver && canDrop && !isOpen && draggedItem) {
+      onToggle();
+    }
+  }, [isOver, canDrop, isOpen, draggedItem, onToggle]);
 
   const [{ isDragging }, drag] = useDrag({
     type: "folder",
@@ -71,26 +85,30 @@ export function AssignmentFolder({
   });
 
   const handleAssignmentMove = (assignmentId: string, targetFolderId: string | null, targetIndex?: number) => {
-    // If target folder is the same as current folder, it's a reorder within section
-    if (targetFolderId === folder.id && onReorderAssignmentInSection && targetIndex !== undefined) {
-      onReorderAssignmentInSection(assignmentId, folder.id, targetIndex);
-    } else {
-      // Otherwise, it's a move between sections
-      onMoveAssignment(assignmentId, targetFolderId, targetIndex);
-    }
+    // Always use the parent's move handler which handles both moving and reordering
+    // It will check if the assignment is already in this section and handle accordingly
+    onMoveAssignment(assignmentId, targetFolderId, targetIndex);
   };
 
   const ref = useRef<HTMLDivElement>(null);
   if (isTeacher) {
-    drag(drop(ref));
-  } else {
-    drop(ref);
+    drag(ref);
   }
+  dropCard(cardRef);
 
   return (
     <div ref={ref} className={`transition-opacity ${isDragging ? 'opacity-50' : 'opacity-100'}`}>
       <Collapsible open={isOpen} onOpenChange={onToggle}>
-        <Card className={`transition-all duration-200 bg-card ${isTeacher ? 'cursor-move' : ''} ${isOver ? 'ring-2 ring-primary shadow-lg' : ''}`}>
+        <Card 
+          ref={cardRef as unknown as React.Ref<HTMLDivElement>}
+          className={`transition-all duration-200 bg-card ${isTeacher ? 'cursor-move' : ''} ${
+            isOver && canDrop 
+              ? 'ring-2 ring-primary shadow-lg bg-primary/5 border-primary' 
+              : isOver 
+              ? 'ring-1 ring-muted' 
+              : ''
+          }`}
+        >
           <CollapsibleTrigger asChild>
             <CardHeader className="cursor-pointer hover:bg-muted/50 transition-colors py-3 px-4">
               <div className="flex items-center justify-between">
@@ -162,25 +180,43 @@ export function AssignmentFolder({
           </CollapsibleTrigger>
           <CollapsibleContent>
             <CardContent className="pt-0 px-4 pb-3">
-              <div className="space-y-2">
-                {folder.assignments.map((assignment, index) => (
-                  <DroppableAssignmentSlot
-                    key={assignment.id}
-                    index={index}
-                    folderId={folder.id}
-                    onMoveAssignment={handleAssignmentMove}
-                  >
-                    <DraggableAssignment
-                      assignment={assignment}
-                      classId={classId}
-                      index={index}
-                      onDelete={onDeleteAssignment}
-                      onPublish={onPublishAssignment}
-                      isTeacher={isTeacher}
-                    />
-                  </DroppableAssignmentSlot>
-                ))}
-                {folder.assignments.length === 0 && (
+              <div className="space-y-0">
+                {/* Top drop zone for section */}
+                <SectionDropZone
+                  index={0}
+                  folderId={folder.id}
+                  onMoveAssignment={handleAssignmentMove}
+                  isTeacher={isTeacher}
+                />
+                
+                {folder.assignments.length > 0 ? (
+                  folder.assignments.map((assignment, index) => (
+                    <div key={assignment.id}>
+                      <DroppableAssignmentSlot
+                        index={index}
+                        folderId={folder.id}
+                        onMoveAssignment={handleAssignmentMove}
+                      >
+                        <DraggableAssignment
+                          assignment={assignment}
+                          classId={classId}
+                          index={index}
+                          onDelete={onDeleteAssignment}
+                          onPublish={onPublishAssignment}
+                          isTeacher={isTeacher}
+                        />
+                      </DroppableAssignmentSlot>
+                      
+                      {/* Drop zone after each assignment */}
+                      <SectionDropZone
+                        index={index + 1}
+                        folderId={folder.id}
+                        onMoveAssignment={handleAssignmentMove}
+                        isTeacher={isTeacher}
+                      />
+                    </div>
+                  ))
+                ) : (
                   <div className="text-center py-4 text-muted-foreground">
                     <Folder className="h-8 w-8 mx-auto mb-2 opacity-50" />
                     <p className="text-sm">Empty folder - drag assignments here</p>
