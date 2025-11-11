@@ -1,7 +1,7 @@
 "use client";
 
 import { useParams, useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { PageLayout } from "@/components/ui/page-layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -9,23 +9,28 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Textarea } from "@/components/ui/textarea";
 import { Separator } from "@/components/ui/separator";
+import { Progress } from "@/components/ui/progress";
 import { 
   MessageSquare, 
   Send, 
   FileText, 
   Calendar,
-  Clock,
   Users,
-  MoreVertical,
   BookOpen,
-  Paperclip
+  Paperclip,
+  X,
+  Loader2,
+  MoreVertical,
+  Clock,
 } from "lucide-react";
 import { trpc, type RouterOutputs } from "@/lib/trpc";
 import { toast } from "sonner";
-import { format } from "date-fns";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
-import { useTranslations } from "next-intl"
+import { useTranslations } from "next-intl";
+import { fixUploadUrl } from "@/lib/directUpload";
+import { AnnouncementCard } from "@/components/announcements/AnnouncementCard";
+import { format } from "date-fns";
 
 type Class = RouterOutputs['class']['get']['class'];
 type Announcement = RouterOutputs['class']['get']['class']['announcements'][number];
@@ -40,25 +45,140 @@ export default function ClassFeed() {
   
   const [newPost, setNewPost] = useState("");
   const [isPosting, setIsPosting] = useState(false);
+  const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
+  const [uploadProgress, setUploadProgress] = useState(0);
+  const [uploadStatus, setUploadStatus] = useState("");
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const t = useTranslations('overview');
+
+  // Get tRPC utils for cache invalidation
+  const utils = trpc.useUtils();
 
   // Get class data
   const { data: classData, isLoading, refetch } = trpc.class.get.useQuery({ 
     classId 
   });
 
-  // Create announcement mutation
+  // Fetch announcements separately using dedicated endpoint (includes attachments)
+  const { data: announcementsData, refetch: refetchAnnouncements } = trpc.announcement.getAll.useQuery({
+    classId,
+  });
+
+  // File upload mutation
+  const confirmAnnouncementUpload = trpc.announcement.confirmAnnouncementUpload.useMutation();
+
+  // Create announcement mutation (Approach 1: Single-step with files)
   const createAnnouncementMutation = trpc.announcement.create.useMutation({
-    onSuccess: () => {
+    onSuccess: async (result) => {
+      // Check if upload URLs were returned in the response
+      const uploadFiles = (result as any).uploadFiles || [];
+      
+      // If there are files to upload, handle them
+      if (selectedFiles.length > 0 && uploadFiles.length > 0) {
+        try {
+          setUploadStatus("Uploading files...");
+          setUploadProgress(10);
+
+          // Upload each file to its signed URL
+          for (let i = 0; i < uploadFiles.length; i++) {
+            const uploadFile = uploadFiles[i];
+            const file = selectedFiles.find(f => f.name === uploadFile.name);
+            
+            if (!file) {
+              console.warn(`File ${uploadFile.name} not found in selected files`);
+              continue;
+            }
+
+            try {
+              setUploadStatus(`Uploading ${file.name}...`);
+              const fileProgress = 10 + ((i / uploadFiles.length) * 80);
+              setUploadProgress(fileProgress);
+
+              // Fix upload URL
+              const uploadUrl = fixUploadUrl(uploadFile.uploadUrl);
+              console.log(`Uploading ${file.name} to ${uploadUrl}`);
+
+              // Upload to signed URL using PUT (as per guide)
+              const response = await fetch(uploadUrl, {
+                method: 'PUT',
+                body: file,
+                headers: {
+                  'Content-Type': uploadFile.type,
+                },
+              });
+
+              if (!response.ok) {
+                const errorText = await response.text().catch(() => response.statusText);
+                console.error(`Upload failed for ${file.name}:`, {
+                  status: response.status,
+                  statusText: response.statusText,
+                  error: errorText
+                });
+                throw new Error(`Upload failed: ${response.status} ${response.statusText}`);
+              }
+
+              console.log(`File ${file.name} uploaded successfully, confirming...`);
+
+              // Confirm upload
+              await confirmAnnouncementUpload.mutateAsync({
+                fileId: uploadFile.id,
+                uploadSuccess: true,
+                classId: classId,
+              });
+
+              console.log(`File ${file.name} confirmed successfully`);
+            } catch (error) {
+              console.error(`Error uploading file ${file.name}:`, error);
+              // Report error to backend
+              try {
+                await confirmAnnouncementUpload.mutateAsync({
+                  fileId: uploadFile.id,
+                  uploadSuccess: false,
+                  errorMessage: error instanceof Error ? error.message : 'Unknown error',
+                  classId: classId,
+                });
+              } catch (confirmError) {
+                console.error('Failed to confirm upload error:', confirmError);
+              }
+              throw error;
+            }
+          }
+
+          setUploadProgress(100);
+          setUploadStatus("Complete!");
+          
+          // Wait a bit for backend to process and link files
+          await new Promise(resolve => setTimeout(resolve, 1000));
+        } catch (error) {
+          console.error('File upload error:', error);
+          const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+          toast.error(`Announcement created but file upload failed: ${errorMessage}`);
+        }
+      }
+
       toast.success("Your announcement has been shared with the class.");
       setNewPost("");
+      setSelectedFiles([]);
       setIsPosting(false);
-      // Refetch class data to show new announcement
-      refetch();
+      setUploadProgress(0);
+      setUploadStatus("");
+      
+      // Wait a moment for backend to process and link files
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      // Invalidate queries to clear cache
+      utils.announcement.getAll.invalidate({ classId }).catch(console.error);
+      utils.class.get.invalidate({ classId }).catch(console.error);
+      
+      // Refetch to get fresh data with attachments
+      await refetchAnnouncements();
+      await refetch();
     },
     onError: (error) => {
       toast.error(error.message);
       setIsPosting(false);
+      setUploadProgress(0);
+      setUploadStatus("");
     },
   });
 
@@ -66,10 +186,32 @@ export default function ClassFeed() {
     if (!newPost.trim()) return;
     
     setIsPosting(true);
+    setUploadStatus("Creating announcement...");
+    
+    // Prepare file metadata if files are selected
+    const fileMetadata = selectedFiles.length > 0
+      ? selectedFiles.map(file => ({
+          name: file.name,
+          type: file.type,
+          size: file.size,
+        }))
+      : undefined;
+
+    // Use Approach 1: Create with files (recommended)
     createAnnouncementMutation.mutate({
       classId,
       remarks: newPost.trim(),
+      files: fileMetadata,
     });
+  };
+
+  const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const files = Array.from(event.target.files || []);
+    setSelectedFiles(prev => [...prev, ...files]);
+  };
+
+  const removeFile = (index: number) => {
+    setSelectedFiles(prev => prev.filter((_, i) => i !== index));
   };
 
   const isTeacher = appState.user.teacher;
@@ -84,9 +226,11 @@ export default function ClassFeed() {
     createdAt: string;
   }> = [];
   
-  // Add announcements
-  if (classInfo?.announcements) {
-    feedItems.push(...classInfo.announcements.map(announcement => ({
+  // Add announcements from dedicated endpoint (includes attachments)
+  const announcements = announcementsData?.announcements || [];
+  
+  if (announcements.length > 0) {
+    feedItems.push(...announcements.map(announcement => ({
       id: announcement.id,
       type: 'announcement' as const,
       data: announcement,
@@ -174,12 +318,65 @@ export default function ClassFeed() {
                     onChange={(e) => setNewPost(e.target.value)}
                     className="min-h-[80px] resize-none border-border bg-background focus-visible:ring-2 focus-visible:ring-primary/20 focus-visible:border-primary transition-all duration-200 placeholder:text-muted-foreground/60"
                   />
+                  
+                  {/* Selected Files */}
+                  {selectedFiles.length > 0 && (
+                    <div className="space-y-2">
+                      {selectedFiles.map((file, index) => (
+                        <div key={index} className="flex items-center gap-2 p-2 bg-muted/50 rounded-md text-sm">
+                          <Paperclip className="h-4 w-4 text-muted-foreground" />
+                          <span className="flex-1 truncate">{file.name}</span>
+                          <span className="text-xs text-muted-foreground">
+                            {(file.size / 1024).toFixed(2)} KB
+                          </span>
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            className="h-6 w-6 p-0"
+                            onClick={() => removeFile(index)}
+                          >
+                            <X className="h-3 w-3" />
+                          </Button>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Upload Progress */}
+                  {isPosting && uploadStatus && (
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between text-xs">
+                        <span className="text-muted-foreground">{uploadStatus}</span>
+                        <span className="text-muted-foreground">{Math.round(uploadProgress)}%</span>
+                      </div>
+                      <Progress value={uploadProgress} className="h-2" />
+                    </div>
+                  )}
+
                   <div className="flex items-center justify-between pt-1">
                     <div className="flex items-center space-x-2">
-                      <Button variant="ghost" size="sm" className="h-9 px-3 text-muted-foreground hover:text-foreground hover:bg-muted/50">
+                      <input
+                        ref={fileInputRef}
+                        type="file"
+                        multiple
+                        onChange={handleFileSelect}
+                        className="hidden"
+                      />
+                      <Button 
+                        variant="ghost" 
+                        size="sm" 
+                        className="h-9 px-3 text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                        onClick={() => fileInputRef.current?.click()}
+                        disabled={isPosting}
+                      >
                         <Paperclip className="h-4 w-4 mr-2" />
                         {t('attachFile')}
                       </Button>
+                      {selectedFiles.length > 0 && (
+                        <span className="text-xs text-muted-foreground">
+                          {selectedFiles.length} file{selectedFiles.length !== 1 ? 's' : ''} selected
+                        </span>
+                      )}
                     </div>
                     <Button 
                       onClick={handlePost}
@@ -189,7 +386,7 @@ export default function ClassFeed() {
                     >
                       {isPosting ? (
                         <>
-                          <div className="animate-spin h-3 w-3 border border-white border-t-transparent rounded-full mr-2" />
+                          <Loader2 className="h-4 w-4 mr-2 animate-spin" />
                           {t('posting')}
                         </>
                       ) : (
@@ -229,13 +426,14 @@ export default function ClassFeed() {
             </Card>
           ) : (
             feedItems.filter((item) => item.type === "announcement").map((item) => (
-              <Card key={`${item.type}-${item.id}`} className="border-border shadow-sm hover:shadow-md transition-shadow">
-                <CardContent className="p-6">
-                  {item.type === 'announcement' && (
-                    <AnnouncementItem announcement={item.data as Announcement} />
-                  )}
-                </CardContent>
-              </Card>
+              item.type === 'announcement' ? (
+                <AnnouncementCard
+                  key={`announcement-${item.id}`}
+                  announcement={item.data as Announcement}
+                  classId={classId}
+                  onUpdate={refetch}
+                />
+              ) : null
             ))
           )}
         </div>
@@ -244,43 +442,6 @@ export default function ClassFeed() {
   );
 }
 
-// Announcement Item Component
-function AnnouncementItem({ announcement }: { announcement: Announcement }) {
-  console.log(announcement);
-  return (
-    <div className="space-y-3">
-      {/* Header */}
-      <div className="flex items-start justify-between">
-        <div className="flex items-start space-x-3">
-          <Avatar className="h-8 w-8 flex-shrink-0">
-            <AvatarImage src={announcement.teacher.profile?.profilePicture || ""} />
-            <AvatarFallback>
-              {announcement.teacher.username.substring(0, 2).toUpperCase()}
-            </AvatarFallback>
-          </Avatar>
-          <div className="min-w-0">
-            <p className="font-medium text-sm">{announcement.teacher.username}</p>
-            <p className="text-xs text-muted-foreground flex items-center">
-              <Clock className="h-3 w-3 mr-1" />
-              {format(new Date(announcement.createdAt), 'MMM d, yyyy \'at\' h:mm a')}
-            </p>
-          </div>
-        </div>
-        <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
-          <MoreVertical className="h-4 w-4" />
-        </Button>
-      </div>
-
-      {/* Content */}
-      <div className="ml-11">
-        <div className="text-sm text-foreground whitespace-pre-wrap leading-relaxed">
-          {announcement.remarks}
-        </div>
-      </div>
-
-    </div>
-  );
-}
 
 // Assignment Item Component  
 function AssignmentItem({ assignment }: { assignment: Assignment }) {
@@ -301,7 +462,7 @@ function AssignmentItem({ assignment }: { assignment: Assignment }) {
             <p className="font-medium text-sm">{t('newAssignment')}</p>
             <p className="text-xs text-muted-foreground flex items-center">
               <Clock className="h-3 w-3 mr-1" />
-              {format(new Date(assignment.createdAt), 'MMM d, yyyy \'at\' h:mm a')}
+              {format(new Date(assignment.modifiedAt || assignment.createdAt), 'MMM d, yyyy \'at\' h:mm a')}
             </p>
           </div>
         </div>

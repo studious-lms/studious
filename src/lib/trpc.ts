@@ -50,8 +50,16 @@ export type AssignmentUpdateSubmissionAsTeacherInput = RouterInputs['assignment'
 
 // ===== ANNOUNCEMENT TYPES =====
 export type AnnouncementGetAllOutput = RouterOutputs['announcement']['getAll'];
+export type AnnouncementGetOutput = RouterOutputs['announcement']['get'];
 export type AnnouncementCreateInput = RouterInputs['announcement']['create'];
 export type AnnouncementUpdateInput = RouterInputs['announcement']['update'];
+export type AnnouncementGetCommentsOutput = RouterOutputs['announcement']['getComments'];
+export type AnnouncementAddCommentInput = RouterInputs['announcement']['addComment'];
+export type AnnouncementUpdateCommentInput = RouterInputs['announcement']['updateComment'];
+export type AnnouncementDeleteCommentInput = RouterInputs['announcement']['deleteComment'];
+export type AnnouncementGetUploadUrlsInput = RouterInputs['announcement']['getAnnouncementUploadUrls'];
+export type AnnouncementGetUploadUrlsOutput = RouterOutputs['announcement']['getAnnouncementUploadUrls'];
+export type AnnouncementConfirmUploadInput = RouterInputs['announcement']['confirmAnnouncementUpload'];
 
 // ===== FILE TYPES =====
 export type FileGetSignedUrlInput = RouterInputs['file']['getSignedUrl'];
