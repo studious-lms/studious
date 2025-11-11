@@ -124,7 +124,7 @@
       "grade": "Nota",
       "total": "Total",
       "percentage": "%",
-      "status": "Status",
+      "status": "Estado",
       "submitted": "Enviado"
     },
     "status": {

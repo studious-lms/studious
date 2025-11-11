@@ -687,7 +687,7 @@
         "fileType": "Tipo de archivo",
         "documents": "Documentos",
         "images": "Imágenes",
-        "videos": "Videos",
+        "videos": "Vídeos",
         "presentations": "Presentaciones"
       },
       "sort": {
@@ -944,7 +944,7 @@
     "pricingInstitutionPerk4": "Formación y onboarding personalizados",
     "pricingInstitutionPerk5": "Gastos por usuario más económicos",
     "pricingInstitutionLink": "Contactar Ventas",
-    "earlyBird": "🎉 Los primeros adoptantes reciben <span class=\"font-semibold text-foreground\">3 meses gratis</span> en planes anuales + soporte de onboarding dedicado"
+    "earlyBird": "🎉 Los primeros adoptantes reciben 2 meses gratis en planes anuales + soporte de incorporación dedicado"
   },
   "components": {
     "earlyAccess": {

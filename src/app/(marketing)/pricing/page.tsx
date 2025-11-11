@@ -219,7 +219,7 @@ export default function PricingPage() {
             </Card>
           </div>
 
-          <p className="text-center text-muted-foreground mt-8 sm:mt-10 md:mt-12 text-base sm:text-lg px-4" dangerouslySetInnerHTML={{ __html: t('earlyBird') }} />
+          <p className="text-center text-muted-foreground mt-8 sm:mt-10 md:mt-12 text-base sm:text-lg px-4"> { t('earlyBird') } </p>
         </div>
       </section>
 

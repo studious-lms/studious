@@ -943,8 +943,7 @@
     "pricingInstitutionPerk3": "无限存储",
     "pricingInstitutionPerk4": "自定义培训和入职",
     "pricingInstitutionPerk5": "每用户费用更低",
-    "pricingInstitutionLink": "联系销售",
-    "earlyBird": "🎉 早期采用者在年度计划上获得<span class=\"font-semibold text-foreground\">3个月免费</span> + 专 dedicated 的入职支持"
+    "pricingInstitutionLink": "联系销售"
   },
   "components": {
     "earlyAccess": {

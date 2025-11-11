@@ -8,7 +8,7 @@
       "weight": "Vikt",
       "graded": "Graderad",
       "actions": "Åtgärder",
-      "student": "Student",
+      "student": "Elev",
       "overallGrade": "Totalbetyg",
       "assignmentsCompleted": "Uppgifter slutförda",
       "trend": "Trend",
@@ -95,7 +95,7 @@
     "noGrades": "Inga elever hittades",
     "noGradesDescription": "Inga elever är ännu inskrivna i den här kursen. Eleverna kommer att visas här när de går med.",
     "table": {
-      "student": "Student",
+      "student": "Elev",
       "actions": "Åtgärder"
     },
     "actions": {

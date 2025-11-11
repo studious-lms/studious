@@ -8,8 +8,18 @@
  * 1. Set up your API key: export SERVICE_TRANSLATION_KEY="your-google-translate-api-key"
  * 2. Run: npx tsx scripts/translate.ts
  * 
- * Or manually translate specific language:
+ * Options:
+ * --lang=<code>     Translate specific language (e.g., --lang=es)
+ * --openai          Use OpenAI GPT-4 instead of Google Translate
+ * --parallel-langs  Translate all languages in parallel (faster but uses more API quota)
+ * --force           Force translate all keys, even if already translated
+ * --force-all       Alias for --force
+ * 
+ * Examples:
  * npx tsx scripts/translate.ts --lang es
+ * npx tsx scripts/translate.ts --force
+ * npx tsx scripts/translate.ts --lang es --force
+ * npx tsx scripts/translate.ts --openai --force
  * 
  * Install dependencies:
  * npm install @google-cloud/translate
@@ -313,7 +323,8 @@ function mergeTranslations(
 async function translateFile(
   fileName: string,
   targetLang: string,
-  useOpenAI: boolean
+  useOpenAI: boolean,
+  force: boolean = false
 ): Promise<void> {
   const enPath = path.join(process.cwd(), 'messages', 'en', fileName);
   const targetDir = path.join(process.cwd(), 'messages', targetLang);
@@ -329,7 +340,7 @@ async function translateFile(
 
   // Check if target file already exists
   let existingContent: TranslationObject = {};
-  if (fs.existsSync(targetPath)) {
+  if (fs.existsSync(targetPath) && !force) {
     try {
       existingContent = JSON.parse(fs.readFileSync(targetPath, 'utf-8'));
     } catch (error) {
@@ -337,26 +348,26 @@ async function translateFile(
     }
   }
 
-  // Extract only untranslated keys
-  const untranslatedKeys = extractUntranslatedKeys(enContent, existingContent);
+  // If force is enabled, translate all keys; otherwise extract only untranslated keys
+  const keysToTranslate = force ? enContent : extractUntranslatedKeys(enContent, existingContent);
   
-  if (Object.keys(untranslatedKeys).length === 0) {
+  if (!force && Object.keys(keysToTranslate).length === 0) {
     console.log(`   ⏭️  Skipped ${fileName} (all keys already translated)`);
     return;
   }
 
-  // Translate only untranslated keys
+  // Translate keys
   const newTranslations = useOpenAI
-    ? await translateWithOpenAI(untranslatedKeys, targetLang, fileName)
-    : await translateWithGoogle(untranslatedKeys, targetLang);
+    ? await translateWithOpenAI(keysToTranslate, targetLang, fileName)
+    : await translateWithGoogle(keysToTranslate, targetLang);
 
-  // Merge existing translations with new translations
-  const merged = mergeTranslations(existingContent, newTranslations);
+  // If force is enabled, use new translations directly; otherwise merge with existing
+  const finalContent = force ? newTranslations : mergeTranslations(existingContent, newTranslations);
 
-  // Write merged content to target language file
+  // Write content to target language file
   fs.writeFileSync(
     targetPath,
-    JSON.stringify(merged, null, 2),
+    JSON.stringify(finalContent, null, 2),
     'utf-8'
   );
 
@@ -373,9 +384,10 @@ async function translateFile(
     return count;
   }
 
-  const untranslatedCount = countStrings(untranslatedKeys);
+  const translatedCount = countStrings(keysToTranslate);
   const totalCount = countStrings(enContent);
-  console.log(`   ✓ Translated ${fileName} (${untranslatedCount}/${totalCount} keys)`);
+  const status = force ? 're-translated' : 'translated';
+  console.log(`   ✓ ${status.charAt(0).toUpperCase() + status.slice(1)} ${fileName} (${translatedCount}/${totalCount} keys)`);
 }
 
 /**
@@ -386,10 +398,12 @@ async function translateAll() {
   const specificLang = args.find(arg => arg.startsWith('--lang='))?.split('=')[1];
   const useOpenAI = args.includes('--openai') || !!process.env.OPENAI_API_KEY;
   const parallelLanguages = args.includes('--parallel-langs'); // Translate all languages at once
+  const force = args.includes('--force') || args.includes('--force-all'); // Force translate all keys
 
   console.log('🌍 Starting translation process...\n');
   console.log(`📝 Translation method: ${useOpenAI ? 'OpenAI GPT-4' : 'Google Translate (BATCHED)'}`);
   console.log(`⚡ Parallel processing: ${parallelLanguages ? 'ALL LANGUAGES' : 'FILES ONLY'}`);
+  console.log(`🔄 Force mode: ${force ? 'ENABLED (all keys will be re-translated)' : 'DISABLED (only untranslated keys)'}`);
   
   if (useOpenAI && !process.env.OPENAI_API_KEY) {
     console.log('\n⚠️  OPENAI_API_KEY not set, will use Google Translate as fallback');
@@ -424,7 +438,7 @@ async function translateAll() {
         // Translate all files for this language in parallel
         await Promise.all(
           files.map(file => 
-            translateFile(file, lang, useOpenAI).catch(error => {
+            translateFile(file, lang, useOpenAI, force).catch(error => {
               console.error(`   ❌ ${lang}/${file}:`, error.message);
             })
           )
@@ -443,7 +457,7 @@ async function translateAll() {
       // Translate all files in parallel (much faster!)
       await Promise.all(
         files.map(file => 
-          translateFile(file, lang, useOpenAI).catch(error => {
+          translateFile(file, lang, useOpenAI, force).catch(error => {
             console.error(`   ❌ Error translating ${file}:`, error.message);
           })
         )
