@@ -3,7 +3,6 @@
     "title": "Chi tiết bài tập",
     "description": "Sự miêu tả",
     "instructions": "Hướng dẫn",
-    "dueDate": "Hai Ngày",
     "maxPoints": "Điểm tối đa",
     "submissions": "Đệ trình",
     "submitted": "Đã nộp",
@@ -49,6 +48,7 @@
       "gradeUpdated": "Đã cập nhật điểm thành công",
       "deleted": "Bài tập đã xóa",
       "error": "Đã xảy ra lỗi"
-    }
+    },
+    "dueDate": "Ngày hết hạn"
   }
 }

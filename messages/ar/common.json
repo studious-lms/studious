@@ -502,12 +502,12 @@
         "maxPoints": "أقصى النقاط",
         "weight": "وزن",
         "graded": "مُصنَّف",
-        "dueDate": "تاريخان",
         "actions": "الإجراءات",
         "student": "طالب",
         "overallGrade": "الدرجة الإجمالية",
         "assignmentsCompleted": "المهام المكتملة",
-        "trend": "اتجاه"
+        "trend": "اتجاه",
+        "dueDate": "تاريخ الاستحقاق"
       },
       "labels": {
         "rubric": "عنوان"
@@ -810,11 +810,11 @@
       },
       "table": {
         "assignment": "تكليف",
-        "dueDate": "تاريخان",
         "points": "نقاط",
         "weight": "وزن",
         "status": "حالة",
-        "pts": "نقاط"
+        "pts": "نقاط",
+        "dueDate": "تاريخ الاستحقاق"
       },
       "status": {
         "graded": "مُصنَّف",
@@ -838,7 +838,6 @@
     }
   },
   "assignment": {
-    "dueDate": "تاريخان",
     "submit": "يُقدِّم",
     "grade": "درجة",
     "feedback": "تعليق",
@@ -861,7 +860,8 @@
     "sectionDeletionConfirmation": "هل أنت متأكد من حذف هذا القسم؟ سيتم نقل جميع الواجبات إلى المستوى الأعلى.",
     "assignmentDeletionConfirmation": "هل أنت متأكد أنك تريد حذف هذه المهمة؟ لا يمكن التراجع عن هذا الإجراء.",
     "manageAndTrack": "إدارة وتتبع مهام الفصل الدراسي",
-    "filters": "المرشحات"
+    "filters": "المرشحات",
+    "dueDate": "تاريخ الاستحقاق"
   },
   "pagination": {
     "previous": "سابق",
@@ -933,7 +933,18 @@
     "pricingSchoolPerk4": "مساعد الذكاء الاصطناعي (استعلامات غير محدودة)",
     "pricingSchoolPerk5": "أول من يحصل على إمكانية الوصول إلى النسخة التجريبية من Studious CMS",
     "pricingSchoolPerk6": "الوصول إلى واجهة برمجة التطبيقات",
-    "pricingSchoolLink": "البدء"
+    "pricingSchoolLink": "البدء",
+    "pricingInstitutionTitle": "مؤسسة",
+    "pricingInstitutionPrice": "مخصص",
+    "pricingInstitutionNote": "مصممة خصيصًا لاحتياجاتك",
+    "pricingInstitutionDescription": "للمدارس والجامعات الكبيرة (أكثر من 1000 طالب)",
+    "pricingInstitutionPerk1": "كل شيء في خطة المدرسة",
+    "pricingInstitutionPerk2": "دعم أولوية على مدار الساعة طوال أيام الأسبوع",
+    "pricingInstitutionPerk3": "تخزين غير محدود",
+    "pricingInstitutionPerk4": "تدريب وتهيئة مخصصة",
+    "pricingInstitutionPerk5": "مصاريف أقل لكل مستخدم",
+    "pricingInstitutionLink": "اتصل بالمبيعات",
+    "earlyBird": "🎉 المشتركون المبكرون يحصلون على شهرين مجاناً في الخطط السنوية + دعم توجيهي مخصص"
   },
   "components": {
     "earlyAccess": {
@@ -1069,14 +1080,14 @@
       "fields": {
         "title": "عنوان *",
         "instructions": "تعليمات *",
-        "dueDate": "تاريخان",
         "type": "نوع المهمة",
         "section": "قسم",
         "rubric": "عنوان",
         "gradeScale": "مقياس الدرجات",
         "maxPoints": "أقصى النقاط",
         "weight": "وزن (٪)",
-        "sectionColor": "لون القسم"
+        "sectionColor": "لون القسم",
+        "dueDate": "تاريخ الاستحقاق"
       },
       "placeholders": {
         "title": "على سبيل المثال، اختبار الفصل الخامس، تقرير مختبر الفيزياء",

@@ -3,7 +3,6 @@
     "title": "Détails de la mission",
     "description": "Description",
     "instructions": "Instructions",
-    "dueDate": "Deux rendez-vous",
     "maxPoints": "Points maximums",
     "submissions": "Soumissions",
     "submitted": "Soumis",
@@ -18,7 +17,7 @@
     "submissionDetails": "Détails de la soumission",
     "submittedBy": "Soumis par",
     "submittedAt": "Soumis à",
-    "grade": "Grade",
+    "grade": "Note",
     "feedback": "Retour",
     "files": "Fichiers",
     "noFiles": "Aucun fichier joint",
@@ -28,7 +27,7 @@
       "edit": "Modifier le devoir",
       "delete": "Supprimer la tâche",
       "viewSubmission": "Voir la soumission",
-      "gradeSubmission": "Grade",
+      "gradeSubmission": "Noter",
       "downloadAll": "Tout télécharger",
       "exportGrades": "Qualités d'exportation"
     },
@@ -41,7 +40,7 @@
     "table": {
       "student": "Étudiant",
       "status": "Statut",
-      "grade": "Grade",
+      "grade": "Note",
       "submittedAt": "Soumis",
       "actions": "Actes"
     },
@@ -49,6 +48,7 @@
       "gradeUpdated": "Note mise à jour avec succès",
       "deleted": "Devoir supprimé",
       "error": "Une erreur s'est produite."
-    }
+    },
+    "dueDate": "Date d'échéance"
   }
 }

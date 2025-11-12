@@ -3,7 +3,6 @@
     "title": "Detalhes da tarefa",
     "description": "Descrição",
     "instructions": "Instruções",
-    "dueDate": "Dois encontros",
     "maxPoints": "Pontuação máxima",
     "submissions": "Submissões",
     "submitted": "Enviado",
@@ -49,6 +48,7 @@
       "gradeUpdated": "Nota atualizada com sucesso",
       "deleted": "Atribuição excluída",
       "error": "Ocorreu um erro."
-    }
+    },
+    "dueDate": "Data de Entrega"
   }
 }

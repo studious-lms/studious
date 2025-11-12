@@ -7,12 +7,12 @@
       "maxPoints": "Maxpoäng",
       "weight": "Vikt",
       "graded": "Graderad",
-      "dueDate": "Två datum",
       "actions": "Åtgärder",
-      "student": "Student",
+      "student": "Elev",
       "overallGrade": "Totalbetyg",
       "assignmentsCompleted": "Uppgifter slutförda",
-      "trend": "Trend"
+      "trend": "Trend",
+      "dueDate": "Förfallodatum"
     },
     "labels": {
       "rubric": "Rubrik"
@@ -95,7 +95,7 @@
     "noGrades": "Inga elever hittades",
     "noGradesDescription": "Inga elever är ännu inskrivna i den här kursen. Eleverna kommer att visas här när de går med.",
     "table": {
-      "student": "Student",
+      "student": "Elev",
       "actions": "Åtgärder"
     },
     "actions": {
@@ -122,7 +122,7 @@
     "table": {
       "assignment": "Uppdrag",
       "grade": "Kvalitet",
-      "total": "Total",
+      "total": "Totalt",
       "percentage": "%",
       "status": "Status",
       "submitted": "Inskickad"

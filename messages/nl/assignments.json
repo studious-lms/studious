@@ -3,7 +3,6 @@
     "title": "Opdrachtdetails",
     "description": "Beschrijving",
     "instructions": "Instructies",
-    "dueDate": "Twee data",
     "maxPoints": "Maximale punten",
     "submissions": "Inzendingen",
     "submitted": "Ingediend",
@@ -49,6 +48,7 @@
       "gradeUpdated": "Cijfer succesvol bijgewerkt",
       "deleted": "Opdracht verwijderd",
       "error": "Er is een fout opgetreden"
-    }
+    },
+    "dueDate": "Inleverdatum"
   }
 }

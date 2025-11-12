@@ -37,11 +37,11 @@
     },
     "table": {
       "assignment": "Sarcină",
-      "dueDate": "Două întâlniri",
       "points": "Puncte",
       "weight": "Greutate",
       "status": "Stare",
-      "pts": "puncte"
+      "pts": "puncte",
+      "dueDate": "Data limită"
     },
     "status": {
       "graded": "Gradat",

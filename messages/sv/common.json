@@ -144,7 +144,7 @@
       "title": "Välj rätt plan för din institution",
       "subtitle": "Enkel, transparent prissättning utan dolda avgifter. Alla planer inkluderar kärnfunktioner med skalbara alternativ.",
       "starter": {
-        "title": "Starter",
+        "title": "Start",
         "price": "Gratis",
         "note": "Betaåtkomst ingår",
         "description": "Perfekt för små klasser och pilotprogram",
@@ -502,12 +502,12 @@
         "maxPoints": "Maxpoäng",
         "weight": "Vikt",
         "graded": "Graderad",
-        "dueDate": "Två datum",
         "actions": "Åtgärder",
         "student": "Student",
         "overallGrade": "Totalbetyg",
         "assignmentsCompleted": "Uppgifter slutförda",
-        "trend": "Trend"
+        "trend": "Trend",
+        "dueDate": "Inlämningsdatum"
       },
       "labels": {
         "rubric": "Rubrik"
@@ -810,11 +810,11 @@
       },
       "table": {
         "assignment": "Uppdrag",
-        "dueDate": "Två datum",
         "points": "Poäng",
         "weight": "Vikt",
         "status": "Status",
-        "pts": "poäng"
+        "pts": "poäng",
+        "dueDate": "Inlämningsdatum"
       },
       "status": {
         "graded": "Graderad",
@@ -838,7 +838,6 @@
     }
   },
   "assignment": {
-    "dueDate": "Två datum",
     "submit": "Överlämna",
     "grade": "Kvalitet",
     "feedback": "Feed-back",
@@ -861,7 +860,8 @@
     "sectionDeletionConfirmation": "Är du säker på att du vill ta bort det här avsnittet? Alla uppgifter kommer att flyttas till den översta nivån.",
     "assignmentDeletionConfirmation": "Är du säker på att du vill ta bort den här uppgiften? Åtgärden kan inte ångras.",
     "manageAndTrack": "Hantera och spåra klassuppgifter",
-    "filters": "Filter"
+    "filters": "Filter",
+    "dueDate": "Inlämningsdatum"
   },
   "pagination": {
     "previous": "Tidigare",
@@ -913,7 +913,7 @@
     "pricingStatement3": "Enkel, transparent prissättning utan dolda avgifter. Alla planer inkluderar kärnfunktioner med skalbara alternativ.",
     "mostPopular": "Mest populära",
     "priceUnit": "/användare/månad",
-    "pricingStarterTitle": "Starter",
+    "pricingStarterTitle": "Start",
     "pricingStarterPrice": "Gratis",
     "pricingStarterNote": "Betaåtkomst ingår",
     "pricingStarterDescription": "Perfekt för små klasser och pilotprogram",
@@ -933,7 +933,18 @@
     "pricingSchoolPerk4": "AI-assistent (obegränsade frågor)",
     "pricingSchoolPerk5": "Först i kön för betaversionen av Studious CMS",
     "pricingSchoolPerk6": "API-åtkomst",
-    "pricingSchoolLink": "Kom igång"
+    "pricingSchoolLink": "Kom igång",
+    "pricingInstitutionTitle": "Institution",
+    "pricingInstitutionPrice": "Anpassad",
+    "pricingInstitutionNote": "Anpassad till dina behov",
+    "pricingInstitutionDescription": "För stora skolor & universitet (1 000+ studenter)",
+    "pricingInstitutionPerk1": "Allt i Skolplanen",
+    "pricingInstitutionPerk2": "24/7 prioriterad support",
+    "pricingInstitutionPerk3": "Obegränsad lagring",
+    "pricingInstitutionPerk4": "Anpassad utbildning & introduktion",
+    "pricingInstitutionPerk5": "Billigare per-användare kostnad",
+    "pricingInstitutionLink": "Kontakta försäljning",
+    "earlyBird": "🎉 Tidiga adopterare får 2 månader gratis på årsplaner + dedikerat onboardingsstöd"
   },
   "components": {
     "earlyAccess": {
@@ -1069,14 +1080,14 @@
       "fields": {
         "title": "Titel *",
         "instructions": "Instruktioner *",
-        "dueDate": "Två datum",
         "type": "Uppgiftstyp",
         "section": "Avsnitt",
         "rubric": "Rubrik",
         "gradeScale": "Betygsskala",
         "maxPoints": "Maxpoäng",
         "weight": "Vikt (%)",
-        "sectionColor": "Sektionsfärg"
+        "sectionColor": "Sektionsfärg",
+        "dueDate": "Inlämningsdatum"
       },
       "placeholders": {
         "title": "t.ex. kapitel 5 Quiz, fysiklabbrapport",

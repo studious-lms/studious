@@ -7,12 +7,12 @@
       "maxPoints": "最高分",
       "weight": "重量",
       "graded": "已评分",
-      "dueDate": "两个日期",
       "actions": "行动",
       "student": "学生",
       "overallGrade": "总成绩",
       "assignmentsCompleted": "已完成的任务",
-      "trend": "趋势"
+      "trend": "趋势",
+      "dueDate": "截止日期"
     },
     "labels": {
       "rubric": "评分标准"

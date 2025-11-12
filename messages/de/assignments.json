@@ -3,7 +3,6 @@
     "title": "Aufgabendetails",
     "description": "Beschreibung",
     "instructions": "Anweisungen",
-    "dueDate": "Zwei Verabredungen",
     "maxPoints": "Maximale Punktzahl",
     "submissions": "Einreichungen",
     "submitted": "Eingereicht",
@@ -49,6 +48,7 @@
       "gradeUpdated": "Note erfolgreich aktualisiert",
       "deleted": "Aufgabe gelöscht",
       "error": "Es ist ein Fehler aufgetreten"
-    }
+    },
+    "dueDate": "Abgabedatum"
   }
 }

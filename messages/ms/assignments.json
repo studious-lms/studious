@@ -3,7 +3,6 @@
     "title": "Butiran Tugasan",
     "description": "Penerangan",
     "instructions": "Arahan",
-    "dueDate": "Dua Kurma",
     "maxPoints": "Mata Maks",
     "submissions": "Penyerahan",
     "submitted": "diserahkan",
@@ -49,6 +48,7 @@
       "gradeUpdated": "Gred berjaya dikemas kini",
       "deleted": "Tugasan dipadamkan",
       "error": "Ralat berlaku"
-    }
+    },
+    "dueDate": "Tarikh Akhir"
   }
 }

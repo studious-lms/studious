@@ -37,11 +37,11 @@
     },
     "table": {
       "assignment": "Penugasan",
-      "dueDate": "Dua Tanggal",
       "points": "Poin",
       "weight": "Berat",
       "status": "Status",
-      "pts": "poin"
+      "pts": "poin",
+      "dueDate": "Tanggal Jatuh Tempo"
     },
     "status": {
       "graded": "Bertingkat",

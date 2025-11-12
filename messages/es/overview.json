@@ -4,9 +4,9 @@
     "students": "estudiantes",
     "attendance": "Asistencia",
     "attachFile": "Adjuntar archivo",
-    "post": "Correo",
-    "posting": "Destino...",
-    "noPosts": "Aún no hay publicaciones.",
+    "post": "Publicar",
+    "posting": "Publicando...",
+    "noPosts": "Aún no hay publicaciones",
     "createFirstPost": "Crear primera publicación"
   }
 }

@@ -113,7 +113,7 @@
       "title": "Caracteristici cheie",
       "subtitle": "Tot ce ai nevoie pentru a gestiona experiențe de învățare moderne",
       "ai": {
-        "title": "AI Assistant",
+        "title": "Asistent AI",
         "description": "Ajută la generarea materialelor de studiu, la rezumarea conținutului și la notare"
       },
       "classManagement": {
@@ -144,7 +144,7 @@
       "title": "Alegeți planul potrivit pentru instituția dumneavoastră",
       "subtitle": "Prețuri simple și transparente, fără taxe ascunse. Toate abonamentele includ funcții de bază cu opțiuni scalabile.",
       "starter": {
-        "title": "Starter",
+        "title": "Începător",
         "price": "Gratuit",
         "note": "Acces beta inclus",
         "description": "Perfect pentru clase mici și programe pilot",
@@ -490,7 +490,7 @@
     "students": "studenți",
     "attendance": "Prezență",
     "attachFile": "Atașați fișierul",
-    "post": "Post",
+    "post": "Postare",
     "posting": "Se postează...",
     "noPosts": "Nicio postare încă",
     "createFirstPost": "Creează prima postare",
@@ -502,12 +502,12 @@
         "maxPoints": "Puncte maxime",
         "weight": "Greutate",
         "graded": "Gradat",
-        "dueDate": "Două întâlniri",
         "actions": "Acțiuni",
         "student": "Student",
         "overallGrade": "Nota generală",
         "assignmentsCompleted": "Sarcini finalizate",
-        "trend": "Tendinţă"
+        "trend": "Tendinţă",
+        "dueDate": "Data limită"
       },
       "labels": {
         "rubric": "Rubrică"
@@ -810,11 +810,11 @@
       },
       "table": {
         "assignment": "Sarcină",
-        "dueDate": "Două întâlniri",
         "points": "Puncte",
         "weight": "Greutate",
         "status": "Stare",
-        "pts": "puncte"
+        "pts": "puncte",
+        "dueDate": "Data limită"
       },
       "status": {
         "graded": "Gradat",
@@ -838,7 +838,6 @@
     }
   },
   "assignment": {
-    "dueDate": "Două întâlniri",
     "submit": "Trimite",
     "grade": "Grad",
     "feedback": "Feedback",
@@ -861,7 +860,8 @@
     "sectionDeletionConfirmation": "Sigur doriți să ștergeți această secțiune? Toate sarcinile vor fi mutate la nivelul superior.",
     "assignmentDeletionConfirmation": "Sigur vrei să ștergi această sarcină? Această acțiune nu poate fi anulată.",
     "manageAndTrack": "Gestionați și urmăriți temele pentru curs",
-    "filters": "Filtre"
+    "filters": "Filtre",
+    "dueDate": "Data limită"
   },
   "pagination": {
     "previous": "Anterior",
@@ -913,7 +913,7 @@
     "pricingStatement3": "Prețuri simple și transparente, fără taxe ascunse. Toate abonamentele includ funcții de bază cu opțiuni scalabile.",
     "mostPopular": "Cele mai populare",
     "priceUnit": "/utilizator/lună",
-    "pricingStarterTitle": "Starter",
+    "pricingStarterTitle": "Începător",
     "pricingStarterPrice": "Gratuit",
     "pricingStarterNote": "Acces beta inclus",
     "pricingStarterDescription": "Perfect pentru clase mici și programe pilot",
@@ -933,7 +933,18 @@
     "pricingSchoolPerk4": "Asistent AI (interogări nelimitate)",
     "pricingSchoolPerk5": "Primii în listă pentru acces beta la Studious CMS",
     "pricingSchoolPerk6": "Acces API",
-    "pricingSchoolLink": "Începeți"
+    "pricingSchoolLink": "Începeți",
+    "pricingInstitutionTitle": "Instituție",
+    "pricingInstitutionPrice": "Personalizat",
+    "pricingInstitutionNote": "Adaptat nevoilor tale",
+    "pricingInstitutionDescription": "Pentru școli mari & universități (peste 1,000 de studenți)",
+    "pricingInstitutionPerk1": "Totul în planul Școală",
+    "pricingInstitutionPerk2": "Suport prioritar 24/7",
+    "pricingInstitutionPerk3": "Stocare nelimitată",
+    "pricingInstitutionPerk4": "Instruire și integrare personalizată",
+    "pricingInstitutionPerk5": "Cheltuieli per utilizator mai mici",
+    "pricingInstitutionLink": "Contactați Vânzările",
+    "earlyBird": "🎉 Adoptatorii timpurii primesc 2 luni gratuite la planurile anuale + suport dedicat pentru onboardare"
   },
   "components": {
     "earlyAccess": {
@@ -944,7 +955,7 @@
         "institutionSize": "Mărimea instituției *"
       },
       "placeholders": {
-        "email": "you@school.edu",
+        "email": "tu@scoala.edu",
         "institutionSize": "Selectați dimensiunea instituției"
       },
       "sizes": {
@@ -1069,14 +1080,14 @@
       "fields": {
         "title": "Titlu *",
         "instructions": "Instrucțiuni *",
-        "dueDate": "Două întâlniri",
         "type": "Tipul de sarcină",
         "section": "Secțiune",
         "rubric": "Rubrică",
         "gradeScale": "Scala de notare",
         "maxPoints": "Puncte maxime",
         "weight": "Greutate (%)",
-        "sectionColor": "Culoarea secțiunii"
+        "sectionColor": "Culoarea secțiunii",
+        "dueDate": "Data limită"
       },
       "placeholders": {
         "title": "de exemplu, Chestionar Capitolul 5, Raport de laborator de fizică",

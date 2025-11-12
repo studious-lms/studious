@@ -3,7 +3,6 @@
     "title": "과제 세부 정보",
     "description": "설명",
     "instructions": "지침",
-    "dueDate": "두 날짜",
     "maxPoints": "최대 포인트",
     "submissions": "제출물",
     "submitted": "제출된",
@@ -49,6 +48,7 @@
       "gradeUpdated": "등급이 성공적으로 업데이트되었습니다.",
       "deleted": "할당이 삭제되었습니다",
       "error": "오류가 발생했습니다"
-    }
+    },
+    "dueDate": "마감일"
   }
 }

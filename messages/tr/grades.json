@@ -7,12 +7,12 @@
       "maxPoints": "Maksimum Puan",
       "weight": "Ağırlık",
       "graded": "Derecelendirilmiş",
-      "dueDate": "İki Tarih",
       "actions": "Eylemler",
       "student": "Öğrenci",
       "overallGrade": "Genel Not",
       "assignmentsCompleted": "Tamamlanan Ödevler",
-      "trend": "Trend"
+      "trend": "Eğilim",
+      "dueDate": "Son Teslim Tarihi"
     },
     "labels": {
       "rubric": "Rubrik"
@@ -113,7 +113,7 @@
     "trackProgress": "Akademik ilerlemenizi takip edin",
     "overallGrade": "Genel Not",
     "completed": "Tamamlanmış",
-    "trend": "Trend",
+    "trend": "Eğilim",
     "yourGrades": "Notlarınız",
     "assignments": "Atamalar",
     "studentNotFound": "Öğrenci bulunamadı",

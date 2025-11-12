@@ -37,11 +37,11 @@
     },
     "table": {
       "assignment": "任务",
-      "dueDate": "两个日期",
       "points": "积分",
       "weight": "重量",
       "status": "地位",
-      "pts": "点"
+      "pts": "点",
+      "dueDate": "截止日期"
     },
     "status": {
       "graded": "已评分",

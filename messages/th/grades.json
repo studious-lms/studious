@@ -7,12 +7,12 @@
       "maxPoints": "คะแนนสูงสุด",
       "weight": "น้ำหนัก",
       "graded": "เกรด",
-      "dueDate": "สองวันที่",
       "actions": "การกระทำ",
       "student": "นักเรียน",
       "overallGrade": "เกรดรวม",
       "assignmentsCompleted": "งานที่มอบหมายเสร็จสมบูรณ์",
-      "trend": "แนวโน้ม"
+      "trend": "แนวโน้ม",
+      "dueDate": "วันที่กำหนด"
     },
     "labels": {
       "rubric": "หัวข้อ"

@@ -502,12 +502,12 @@
         "maxPoints": "คะแนนสูงสุด",
         "weight": "น้ำหนัก",
         "graded": "เกรด",
-        "dueDate": "สองวันที่",
         "actions": "การกระทำ",
         "student": "นักเรียน",
         "overallGrade": "เกรดรวม",
         "assignmentsCompleted": "งานที่มอบหมายเสร็จสมบูรณ์",
-        "trend": "แนวโน้ม"
+        "trend": "แนวโน้ม",
+        "dueDate": "วันที่ส่ง"
       },
       "labels": {
         "rubric": "หัวข้อ"
@@ -810,11 +810,11 @@
       },
       "table": {
         "assignment": "งานที่มอบหมาย",
-        "dueDate": "สองวันที่",
         "points": "คะแนน",
         "weight": "น้ำหนัก",
         "status": "สถานะ",
-        "pts": "คะแนน"
+        "pts": "คะแนน",
+        "dueDate": "วันที่ส่ง"
       },
       "status": {
         "graded": "เกรด",
@@ -838,7 +838,6 @@
     }
   },
   "assignment": {
-    "dueDate": "สองวันที่",
     "submit": "ส่ง",
     "grade": "ระดับ",
     "feedback": "ข้อเสนอแนะ",
@@ -861,7 +860,8 @@
     "sectionDeletionConfirmation": "คุณแน่ใจหรือไม่ว่าต้องการลบส่วนนี้? งานทั้งหมดจะถูกย้ายไปยังระดับบนสุด",
     "assignmentDeletionConfirmation": "คุณแน่ใจหรือไม่ว่าต้องการลบงานนี้? การดำเนินการนี้ไม่สามารถย้อนกลับได้",
     "manageAndTrack": "จัดการและติดตามงานที่ได้รับมอบหมายในชั้นเรียน",
-    "filters": "ตัวกรอง"
+    "filters": "ตัวกรอง",
+    "dueDate": "วันที่ส่ง"
   },
   "pagination": {
     "previous": "ก่อนหน้า",
@@ -933,7 +933,18 @@
     "pricingSchoolPerk4": "ผู้ช่วย AI (สอบถามได้ไม่จำกัด)",
     "pricingSchoolPerk5": "รายชื่อผู้มีสิทธิ์เข้าใช้ Studious CMS เบต้า",
     "pricingSchoolPerk6": "การเข้าถึง API",
-    "pricingSchoolLink": "เริ่มต้นใช้งาน"
+    "pricingSchoolLink": "เริ่มต้นใช้งาน",
+    "pricingInstitutionTitle": "สถาบัน",
+    "pricingInstitutionPrice": "กำหนดเอง",
+    "pricingInstitutionNote": "ปรับให้เหมาะกับความต้องการของคุณ",
+    "pricingInstitutionDescription": "สำหรับโรงเรียนและมหาวิทยาลัยขนาดใหญ่ (นักเรียน 1,000+ คน)",
+    "pricingInstitutionPerk1": "ทุกอย่างในแผนโรงเรียน",
+    "pricingInstitutionPerk2": "การสนับสนุนลำดับความสำคัญ 24/7",
+    "pricingInstitutionPerk3": "พื้นที่เก็บข้อมูลไม่จำกัด",
+    "pricingInstitutionPerk4": "การฝึกอบรมและการปฐมนิเทศที่กำหนดเอง",
+    "pricingInstitutionPerk5": "ค่าใช้จ่ายต่อผู้ใช้ถูกลง",
+    "pricingInstitutionLink": "ติดต่อฝ่ายขาย",
+    "earlyBird": "🎉 ผู้ที่ใช้บริการแรกๆ จะได้รับ 2 เดือนฟรีสำหรับแผนประจำปี + การสนับสนุนการเริ่มใช้งานอย่างเฉพาะเจาะจง"
   },
   "components": {
     "earlyAccess": {
@@ -1069,14 +1080,14 @@
       "fields": {
         "title": "ชื่อ *",
         "instructions": "คำแนะนำ *",
-        "dueDate": "สองวันที่",
         "type": "ประเภทงานมอบหมาย",
         "section": "ส่วน",
         "rubric": "หัวข้อ",
         "gradeScale": "ระดับชั้น",
         "maxPoints": "คะแนนสูงสุด",
         "weight": "น้ำหนัก (%)",
-        "sectionColor": "สีของส่วน"
+        "sectionColor": "สีของส่วน",
+        "dueDate": "วันที่ส่ง"
       },
       "placeholders": {
         "title": "เช่น แบบทดสอบบทที่ 5, รายงานการทดลองฟิสิกส์",

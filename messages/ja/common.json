@@ -502,12 +502,12 @@
         "maxPoints": "最大ポイント",
         "weight": "重さ",
         "graded": "段階的",
-        "dueDate": "2つのデート",
         "actions": "アクション",
         "student": "学生",
         "overallGrade": "総合評価",
         "assignmentsCompleted": "課題完了",
-        "trend": "傾向"
+        "trend": "傾向",
+        "dueDate": "提出期限"
       },
       "labels": {
         "rubric": "ルーブリック"
@@ -810,11 +810,11 @@
       },
       "table": {
         "assignment": "割り当て",
-        "dueDate": "2つのデート",
         "points": "ポイント",
         "weight": "重さ",
         "status": "状態",
-        "pts": "ポイント"
+        "pts": "ポイント",
+        "dueDate": "提出期限"
       },
       "status": {
         "graded": "段階的",
@@ -838,7 +838,6 @@
     }
   },
   "assignment": {
-    "dueDate": "2つのデート",
     "submit": "提出する",
     "grade": "学年",
     "feedback": "フィードバック",
@@ -861,7 +860,8 @@
     "sectionDeletionConfirmation": "このセクションを削除してもよろしいですか? すべての割り当ては最上位レベルに移動されます。",
     "assignmentDeletionConfirmation": "この割り当てを削除してもよろしいですか? この操作は元に戻せません。",
     "manageAndTrack": "授業の課題を管理および追跡する",
-    "filters": "フィルター"
+    "filters": "フィルター",
+    "dueDate": "提出期限"
   },
   "pagination": {
     "previous": "前の",
@@ -933,7 +933,18 @@
     "pricingSchoolPerk4": "AIアシスタント（クエリ無制限）",
     "pricingSchoolPerk5": "Studious CMS ベータ版への最優先アクセス",
     "pricingSchoolPerk6": "APIアクセス",
-    "pricingSchoolLink": "始める"
+    "pricingSchoolLink": "始める",
+    "pricingInstitutionTitle": "機関",
+    "pricingInstitutionPrice": "カスタム",
+    "pricingInstitutionNote": "あなたのニーズに合わせて",
+    "pricingInstitutionDescription": "大規模な学校＆大学向け（1,000人以上の学生）",
+    "pricingInstitutionPerk1": "スクールプランの全て",
+    "pricingInstitutionPerk2": "24/7 優先サポート",
+    "pricingInstitutionPerk3": "無制限のストレージ",
+    "pricingInstitutionPerk4": "カスタムトレーニング＆オンボーディング",
+    "pricingInstitutionPerk5": "ユーザーごとの費用が安い",
+    "pricingInstitutionLink": "セールスに連絡",
+    "earlyBird": "🎉 早期採用者は年間プランで2ヶ月無料 + 専用オンボーディングサポートを受けられます"
   },
   "components": {
     "earlyAccess": {
@@ -1069,14 +1080,14 @@
       "fields": {
         "title": "タイトル *",
         "instructions": "説明書 *",
-        "dueDate": "2つのデート",
         "type": "割り当てタイプ",
         "section": "セクション",
         "rubric": "ルーブリック",
         "gradeScale": "グレードスケール",
         "maxPoints": "最大ポイント",
         "weight": "重さ （％）",
-        "sectionColor": "セクションの色"
+        "sectionColor": "セクションの色",
+        "dueDate": "提出期限"
       },
       "placeholders": {
         "title": "例：第5章のクイズ、物理学実験レポート",

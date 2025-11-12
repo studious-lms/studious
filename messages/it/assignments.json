@@ -3,7 +3,6 @@
     "title": "Dettagli dell'incarico",
     "description": "Descrizione",
     "instructions": "Istruzioni",
-    "dueDate": "Due date",
     "maxPoints": "Punti massimi",
     "submissions": "Invii",
     "submitted": "Inviato",
@@ -49,6 +48,7 @@
       "gradeUpdated": "Grado aggiornato con successo",
       "deleted": "Assegnazione eliminata",
       "error": "Si è verificato un errore"
-    }
+    },
+    "dueDate": "Data di Scadenza"
   }
 }

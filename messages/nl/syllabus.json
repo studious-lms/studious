@@ -37,11 +37,11 @@
     },
     "table": {
       "assignment": "Opdracht",
-      "dueDate": "Twee data",
       "points": "Punten",
       "weight": "Gewicht",
       "status": "Status",
-      "pts": "punten"
+      "pts": "punten",
+      "dueDate": "Inleverdatum"
     },
     "status": {
       "graded": "Gegradeerd",

@@ -3,7 +3,6 @@
     "title": "Detalii despre sarcină",
     "description": "Descriere",
     "instructions": "Instrucţiuni",
-    "dueDate": "Două întâlniri",
     "maxPoints": "Puncte maxime",
     "submissions": "Trimiteri",
     "submitted": "Trimis",
@@ -49,6 +48,7 @@
       "gradeUpdated": "Nota a fost actualizată cu succes",
       "deleted": "Tema a fost ștearsă",
       "error": "A apărut o eroare"
-    }
+    },
+    "dueDate": "Data limită"
   }
 }

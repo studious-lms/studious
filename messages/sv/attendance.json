@@ -47,7 +47,7 @@
     "summary": {
       "title": "Händelsesammanfattning",
       "selectedEvent": "Vald händelse",
-      "total": "Total",
+      "total": "Totalt",
       "attendanceRate": "Närvarofrekvens"
     },
     "roster": {

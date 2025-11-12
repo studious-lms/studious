@@ -502,12 +502,12 @@
         "maxPoints": "अधिकतम अंक",
         "weight": "वज़न",
         "graded": "ग्रेड दिया गया",
-        "dueDate": "दो तिथियाँ",
         "actions": "कार्रवाई",
         "student": "विद्यार्थी",
         "overallGrade": "समग्र ग्रेड",
         "assignmentsCompleted": "पूर्ण किए गए कार्य",
-        "trend": "रुझान"
+        "trend": "रुझान",
+        "dueDate": "नियत तारीख"
       },
       "labels": {
         "rubric": "सरनामा"
@@ -741,7 +741,7 @@
       },
       "placeholders": {
         "className": "उदाहरण के लिए, उन्नत भौतिकी",
-        "section": "e.g., AP-101",
+        "section": "उदाहरण के लिए, AP-101",
         "subject": "उदाहरण के लिए, भौतिकी"
       },
       "toasts": {
@@ -810,11 +810,11 @@
       },
       "table": {
         "assignment": "कार्यभार",
-        "dueDate": "दो तिथियाँ",
         "points": "अंक",
         "weight": "वज़न",
         "status": "स्थिति",
-        "pts": "अंक"
+        "pts": "अंक",
+        "dueDate": "नियत तारीख"
       },
       "status": {
         "graded": "ग्रेड दिया गया",
@@ -838,7 +838,6 @@
     }
   },
   "assignment": {
-    "dueDate": "दो तिथियाँ",
     "submit": "जमा करना",
     "grade": "श्रेणी",
     "feedback": "प्रतिक्रिया",
@@ -861,7 +860,8 @@
     "sectionDeletionConfirmation": "क्या आप वाकई इस सेक्शन को हटाना चाहते हैं? सभी असाइनमेंट ऊपरी स्तर पर ले जाए जाएँगे।",
     "assignmentDeletionConfirmation": "क्या आप वाकई इस असाइनमेंट को हटाना चाहते हैं? इस कार्रवाई को पूर्ववत नहीं किया जा सकता।",
     "manageAndTrack": "कक्षा असाइनमेंट प्रबंधित करें और ट्रैक करें",
-    "filters": "फिल्टर"
+    "filters": "फिल्टर",
+    "dueDate": "नियत तारीख"
   },
   "pagination": {
     "previous": "पहले का",
@@ -933,7 +933,18 @@
     "pricingSchoolPerk4": "AI सहायक (असीमित प्रश्न)",
     "pricingSchoolPerk5": "स्टूडियोस सीएमएस बीटा एक्सेस के लिए प्रथम पंक्ति में",
     "pricingSchoolPerk6": "API एक्सेस",
-    "pricingSchoolLink": "शुरू हो जाओ"
+    "pricingSchoolLink": "शुरू हो जाओ",
+    "pricingInstitutionTitle": "संस्थान",
+    "pricingInstitutionPrice": "कस्टम",
+    "pricingInstitutionNote": "आपकी जरूरतों के अनुसार",
+    "pricingInstitutionDescription": "बड़े स्कूलों और विश्वविद्यालयों के लिए (1,000+ छात्र)",
+    "pricingInstitutionPerk1": "स्कूल योजना में सब कुछ",
+    "pricingInstitutionPerk2": "24/7 प्राथमिकता सहायता",
+    "pricingInstitutionPerk3": "असीमित संग्रहण",
+    "pricingInstitutionPerk4": "कस्टम प्रशिक्षण और ऑनबोर्डिंग",
+    "pricingInstitutionPerk5": "प्रति-उपयोगकर्ता खर्च में सस्ता",
+    "pricingInstitutionLink": "बिक्री से संपर्क करें",
+    "earlyBird": "🎉 प्रारंभिक अपनाने वालों को वार्षिक योजनाओं पर 2 महीने मुफ्त मिलते हैं + समर्पित ऑनबोर्डिंग समर्थन"
   },
   "components": {
     "earlyAccess": {
@@ -1009,7 +1020,7 @@
       },
       "placeholders": {
         "title": "उदाहरण के लिए, उन्नत भौतिकी",
-        "section": "e.g., AP-101",
+        "section": "उदाहरण के लिए, AP-101",
         "subject": "उदाहरण के लिए, भौतिकी",
         "semester": "उदाहरण के लिए, वसंत 2025",
         "credits": "उदाहरणार्थ, 3",
@@ -1069,14 +1080,14 @@
       "fields": {
         "title": "शीर्षक *",
         "instructions": "निर्देश *",
-        "dueDate": "दो तिथियाँ",
         "type": "असाइनमेंट का प्रकार",
         "section": "अनुभाग",
         "rubric": "सरनामा",
         "gradeScale": "ग्रेड स्केल",
         "maxPoints": "अधिकतम अंक",
         "weight": "वज़न (%)",
-        "sectionColor": "अनुभाग का रंग"
+        "sectionColor": "अनुभाग का रंग",
+        "dueDate": "नियत तारीख"
       },
       "placeholders": {
         "title": "उदाहरण के लिए, अध्याय 5 प्रश्नोत्तरी, भौतिकी प्रयोगशाला रिपोर्ट",

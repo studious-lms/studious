@@ -3,7 +3,6 @@
     "title": "課題の詳細",
     "description": "説明",
     "instructions": "説明書",
-    "dueDate": "2つのデート",
     "maxPoints": "最大ポイント",
     "submissions": "提出物",
     "submitted": "提出済み",
@@ -49,6 +48,7 @@
       "gradeUpdated": "成績が正常に更新されました",
       "deleted": "割り当てを削除しました",
       "error": "エラーが発生しました"
-    }
+    },
+    "dueDate": "締切日"
   }
 }

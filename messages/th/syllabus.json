@@ -37,11 +37,11 @@
     },
     "table": {
       "assignment": "งานที่มอบหมาย",
-      "dueDate": "สองวันที่",
       "points": "คะแนน",
       "weight": "น้ำหนัก",
       "status": "สถานะ",
-      "pts": "คะแนน"
+      "pts": "คะแนน",
+      "dueDate": "วันที่กำหนด"
     },
     "status": {
       "graded": "เกรด",

@@ -37,11 +37,11 @@
     },
     "table": {
       "assignment": "Tugasan",
-      "dueDate": "Dua Kurma",
       "points": "mata",
       "weight": "Berat badan",
       "status": "Status",
-      "pts": "mata"
+      "pts": "mata",
+      "dueDate": "Tarikh Akhir"
     },
     "status": {
       "graded": "Digredkan",

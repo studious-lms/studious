@@ -33,7 +33,7 @@
       "chats": "Chats IA"
     },
     "drafts": {
-      "title": "Draft Labs ({count})",
+      "title": "Brouillons Labs ({count})",
       "empty": {
         "title": "Pas encore de brouillons de laboratoire",
         "description": "Créez votre premier contenu éducatif généré par l'IA en utilisant les widgets ci-dessus."

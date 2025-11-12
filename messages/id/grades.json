@@ -7,12 +7,12 @@
       "maxPoints": "Poin Maksimum",
       "weight": "Berat",
       "graded": "Bertingkat",
-      "dueDate": "Dua Tanggal",
       "actions": "Tindakan",
       "student": "Murid",
       "overallGrade": "Nilai Keseluruhan",
       "assignmentsCompleted": "Tugas Selesai",
-      "trend": "Kecenderungan"
+      "trend": "Kecenderungan",
+      "dueDate": "Tanggal Jatuh Tempo"
     },
     "labels": {
       "rubric": "Rubrik"

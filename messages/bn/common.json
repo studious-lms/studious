@@ -502,12 +502,12 @@
         "maxPoints": "সর্বোচ্চ পয়েন্ট",
         "weight": "ওজন",
         "graded": "গ্রেড করা হয়েছে",
-        "dueDate": "দুটি তারিখ",
         "actions": "কর্ম",
         "student": "ছাত্র",
         "overallGrade": "সামগ্রিক গ্রেড",
         "assignmentsCompleted": "অ্যাসাইনমেন্ট সম্পন্ন হয়েছে",
-        "trend": "ট্রেন্ড"
+        "trend": "ট্রেন্ড",
+        "dueDate": "জমা দেওয়ার তারিখ"
       },
       "labels": {
         "rubric": "রুব্রিক"
@@ -810,11 +810,11 @@
       },
       "table": {
         "assignment": "অ্যাসাইনমেন্ট",
-        "dueDate": "দুটি তারিখ",
         "points": "পয়েন্ট",
         "weight": "ওজন",
         "status": "অবস্থা",
-        "pts": "পয়েন্ট"
+        "pts": "পয়েন্ট",
+        "dueDate": "জমা দেওয়ার তারিখ"
       },
       "status": {
         "graded": "গ্রেড করা হয়েছে",
@@ -838,7 +838,6 @@
     }
   },
   "assignment": {
-    "dueDate": "দুটি তারিখ",
     "submit": "জমা দিন",
     "grade": "শ্রেণী",
     "feedback": "প্রতিক্রিয়া",
@@ -861,7 +860,8 @@
     "sectionDeletionConfirmation": "আপনি কি নিশ্চিত যে আপনি এই বিভাগটি মুছে ফেলতে চান? সমস্ত অ্যাসাইনমেন্ট শীর্ষ স্তরে সরানো হবে।",
     "assignmentDeletionConfirmation": "আপনি কি নিশ্চিত যে আপনি এই অ্যাসাইনমেন্টটি মুছে ফেলতে চান? এই কাজটি পূর্বাবস্থায় ফেরানো যাবে না।",
     "manageAndTrack": "ক্লাস অ্যাসাইনমেন্ট পরিচালনা এবং ট্র্যাক করুন",
-    "filters": "ফিল্টার"
+    "filters": "ফিল্টার",
+    "dueDate": "জমা দেওয়ার তারিখ"
   },
   "pagination": {
     "previous": "পূর্ববর্তী",
@@ -933,7 +933,18 @@
     "pricingSchoolPerk4": "এআই সহকারী (সীমাহীন প্রশ্ন)",
     "pricingSchoolPerk5": "স্টুডিয়াস সিএমএস বিটা অ্যাক্সেসের জন্য প্রথম সারির",
     "pricingSchoolPerk6": "এপিআই অ্যাক্সেস",
-    "pricingSchoolLink": "শুরু করুন"
+    "pricingSchoolLink": "শুরু করুন",
+    "pricingInstitutionTitle": "প্রতিষ্ঠান",
+    "pricingInstitutionPrice": "কাস্টম",
+    "pricingInstitutionNote": "আপনার প্রয়োজন অনুযায়ী",
+    "pricingInstitutionDescription": "বড় স্কুল এবং বিশ্ববিদ্যালয়ের জন্য (১,০০০+ শিক্ষার্থী)",
+    "pricingInstitutionPerk1": "স্কুল প্ল্যানে থাকা সবকিছু",
+    "pricingInstitutionPerk2": "২৪/৭ অগ্রাধিকার সাপোর্ট",
+    "pricingInstitutionPerk3": "আনলিমিটেড স্টোরেজ",
+    "pricingInstitutionPerk4": "কাস্টম প্রশিক্ষণ এবং অনবোর্ডিং",
+    "pricingInstitutionPerk5": "প্রতি-ব্যবহারকারী খরচ কম",
+    "pricingInstitutionLink": "বিক্রয় দলের সাথে যোগাযোগ করুন",
+    "earlyBird": "🎉 প্রাথমিক গ্রাহকরা বার্ষিক পরিকল্পনায় ২ মাসের জন্য ফ্রি পাবেন + নিবেদিত অনবোর্ডিং সাপোর্ট"
   },
   "components": {
     "earlyAccess": {
@@ -1069,14 +1080,14 @@
       "fields": {
         "title": "শিরোনাম *",
         "instructions": "নির্দেশনা *",
-        "dueDate": "দুটি তারিখ",
         "type": "অ্যাসাইনমেন্টের ধরণ",
         "section": "বিভাগ",
         "rubric": "রুব্রিক",
         "gradeScale": "গ্রেড স্কেল",
         "maxPoints": "সর্বোচ্চ পয়েন্ট",
         "weight": "ওজন (%)",
-        "sectionColor": "বিভাগের রঙ"
+        "sectionColor": "বিভাগের রঙ",
+        "dueDate": "জমা দেওয়ার তারিখ"
       },
       "placeholders": {
         "title": "যেমন, ৫ম অধ্যায়ের কুইজ, পদার্থবিদ্যা ল্যাব রিপোর্ট",

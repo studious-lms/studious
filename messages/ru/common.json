@@ -502,12 +502,12 @@
         "maxPoints": "Макс. баллы",
         "weight": "Масса",
         "graded": "Оцененный",
-        "dueDate": "Две даты",
         "actions": "Действия",
         "student": "Студент",
         "overallGrade": "Общая оценка",
         "assignmentsCompleted": "Задания выполнены",
-        "trend": "Тренд"
+        "trend": "Тренд",
+        "dueDate": "Срок сдачи"
       },
       "labels": {
         "rubric": "Рубрика"
@@ -810,11 +810,11 @@
       },
       "table": {
         "assignment": "Назначение",
-        "dueDate": "Две даты",
         "points": "Очки",
         "weight": "Масса",
         "status": "Статус",
-        "pts": "очки"
+        "pts": "очки",
+        "dueDate": "Срок сдачи"
       },
       "status": {
         "graded": "Оцененный",
@@ -838,7 +838,6 @@
     }
   },
   "assignment": {
-    "dueDate": "Две даты",
     "submit": "Представлять на рассмотрение",
     "grade": "Оценка",
     "feedback": "Обратная связь",
@@ -861,7 +860,8 @@
     "sectionDeletionConfirmation": "Вы уверены, что хотите удалить этот раздел? Все задания будут перенесены на верхний уровень.",
     "assignmentDeletionConfirmation": "Вы уверены, что хотите удалить это задание? Это действие не может быть отменено.",
     "manageAndTrack": "Управление и отслеживание заданий класса",
-    "filters": "Фильтры"
+    "filters": "Фильтры",
+    "dueDate": "Срок сдачи"
   },
   "pagination": {
     "previous": "Предыдущий",
@@ -933,7 +933,18 @@
     "pricingSchoolPerk4": "Помощник ИИ (неограниченное количество запросов)",
     "pricingSchoolPerk5": "Первый в очереди на бета-доступ к Studious CMS",
     "pricingSchoolPerk6": "API-доступ",
-    "pricingSchoolLink": "Начать"
+    "pricingSchoolLink": "Начать",
+    "pricingInstitutionTitle": "Учреждение",
+    "pricingInstitutionPrice": "Индивидуально",
+    "pricingInstitutionNote": "Настроено под ваши нужды",
+    "pricingInstitutionDescription": "Для крупных школ и университетов (более 1000 студентов)",
+    "pricingInstitutionPerk1": "Всё, что в плане для Школы",
+    "pricingInstitutionPerk2": "Приоритетная поддержка 24/7",
+    "pricingInstitutionPerk3": "Неограниченное хранилище",
+    "pricingInstitutionPerk4": "Индивидуальное обучение и ввод в курс дела",
+    "pricingInstitutionPerk5": "Дешевле на пользователя",
+    "pricingInstitutionLink": "Связаться с отделом продаж",
+    "earlyBird": "🎉 Ранние подписчики получают 2 месяца бесплатно при годовом плане + персонализированная поддержка на борту"
   },
   "components": {
     "earlyAccess": {
@@ -1069,14 +1080,14 @@
       "fields": {
         "title": "Заголовок *",
         "instructions": "Инструкции *",
-        "dueDate": "Две даты",
         "type": "Тип задания",
         "section": "Раздел",
         "rubric": "Рубрика",
         "gradeScale": "Шкала оценок",
         "maxPoints": "Макс. баллы",
         "weight": "Масса (%)",
-        "sectionColor": "Цвет раздела"
+        "sectionColor": "Цвет раздела",
+        "dueDate": "Срок сдачи"
       },
       "placeholders": {
         "title": "например, Тест по Главе 5, Отчет о лабораторной работе по физике",

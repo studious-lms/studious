@@ -7,12 +7,12 @@
       "maxPoints": "Maksymalna liczba punktów",
       "weight": "Waga",
       "graded": "Oceniony",
-      "dueDate": "Dwie daty",
       "actions": "Akcje",
-      "student": "Student",
+      "student": "Uczeń",
       "overallGrade": "Ocena ogólna",
       "assignmentsCompleted": "Zadania ukończone",
-      "trend": "Tendencja"
+      "trend": "Tendencja",
+      "dueDate": "Termin"
     },
     "labels": {
       "rubric": "Rubryka"
@@ -95,7 +95,7 @@
     "noGrades": "Nie znaleziono żadnych uczniów",
     "noGradesDescription": "Na te zajęcia nie ma jeszcze żadnych studentów. Studenci pojawią się tutaj, gdy dołączą.",
     "table": {
-      "student": "Student",
+      "student": "Uczeń",
       "actions": "Akcje"
     },
     "actions": {

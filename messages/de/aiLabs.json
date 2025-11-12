@@ -40,7 +40,7 @@
       }
     },
     "chats": {
-      "title": "AI Labs ({count})",
+      "title": "KI-Labore ({count})",
       "active": "Aktiv",
       "messageCount": "{count} Nachrichten",
       "createdBy": "Erstellt von {name}",

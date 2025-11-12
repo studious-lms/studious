@@ -7,12 +7,12 @@
       "maxPoints": "최대 포인트",
       "weight": "무게",
       "graded": "등급",
-      "dueDate": "두 날짜",
       "actions": "행위",
       "student": "학생",
       "overallGrade": "전체 등급",
       "assignmentsCompleted": "완료된 과제",
-      "trend": "경향"
+      "trend": "경향",
+      "dueDate": "마감일"
     },
     "labels": {
       "rubric": "표제"

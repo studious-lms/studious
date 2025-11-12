@@ -3,7 +3,6 @@
     "title": "تفاصيل المهمة",
     "description": "وصف",
     "instructions": "تعليمات",
-    "dueDate": "تاريخان",
     "maxPoints": "أقصى النقاط",
     "submissions": "التقديمات",
     "submitted": "مُقَدَّم",
@@ -49,6 +48,7 @@
       "gradeUpdated": "تم تحديث الدرجة بنجاح",
       "deleted": "تم حذف المهمة",
       "error": "حدث خطأ"
-    }
+    },
+    "dueDate": "تاريخ الاستحقاق"
   }
 }

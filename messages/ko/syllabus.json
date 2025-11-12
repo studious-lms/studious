@@ -37,11 +37,11 @@
     },
     "table": {
       "assignment": "과제",
-      "dueDate": "두 날짜",
       "points": "전철기",
       "weight": "무게",
       "status": "상태",
-      "pts": "포인트"
+      "pts": "포인트",
+      "dueDate": "마감일"
     },
     "status": {
       "graded": "등급",

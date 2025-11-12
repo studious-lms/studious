@@ -37,11 +37,11 @@
     },
     "table": {
       "assignment": "تكليف",
-      "dueDate": "تاريخان",
       "points": "نقاط",
       "weight": "وزن",
       "status": "حالة",
-      "pts": "نقاط"
+      "pts": "نقاط",
+      "dueDate": "تاريخ الاستحقاق"
     },
     "status": {
       "graded": "مُصنَّف",

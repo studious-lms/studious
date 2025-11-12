@@ -502,12 +502,12 @@
         "maxPoints": "최대 포인트",
         "weight": "무게",
         "graded": "등급",
-        "dueDate": "두 날짜",
         "actions": "행위",
         "student": "학생",
         "overallGrade": "전체 등급",
         "assignmentsCompleted": "완료된 과제",
-        "trend": "경향"
+        "trend": "경향",
+        "dueDate": "마감 날짜"
       },
       "labels": {
         "rubric": "표제"
@@ -810,11 +810,11 @@
       },
       "table": {
         "assignment": "과제",
-        "dueDate": "두 날짜",
         "points": "전철기",
         "weight": "무게",
         "status": "상태",
-        "pts": "포인트"
+        "pts": "포인트",
+        "dueDate": "마감 날짜"
       },
       "status": {
         "graded": "등급",
@@ -838,7 +838,6 @@
     }
   },
   "assignment": {
-    "dueDate": "두 날짜",
     "submit": "제출하다",
     "grade": "등급",
     "feedback": "피드백",
@@ -861,7 +860,8 @@
     "sectionDeletionConfirmation": "이 섹션을 삭제하시겠습니까? 모든 과제가 최상위 수준으로 이동됩니다.",
     "assignmentDeletionConfirmation": "이 과제를 삭제하시겠습니까? 이 작업은 실행 취소할 수 없습니다.",
     "manageAndTrack": "수업 과제 관리 및 추적",
-    "filters": "필터"
+    "filters": "필터",
+    "dueDate": "마감 날짜"
   },
   "pagination": {
     "previous": "이전의",
@@ -933,7 +933,18 @@
     "pricingSchoolPerk4": "AI 어시스턴트(무제한 쿼리)",
     "pricingSchoolPerk5": "Studious CMS 베타 액세스를 위한 첫 번째 줄",
     "pricingSchoolPerk6": "API 접근",
-    "pricingSchoolLink": "시작하기"
+    "pricingSchoolLink": "시작하기",
+    "pricingInstitutionTitle": "기관",
+    "pricingInstitutionPrice": "맞춤형",
+    "pricingInstitutionNote": "귀하의 요구에 맞춤",
+    "pricingInstitutionDescription": "대규모 학교 및 대학교를 위한 (학생 1,000명 이상)",
+    "pricingInstitutionPerk1": "학교 플랜의 모든 것",
+    "pricingInstitutionPerk2": "24/7 우선 지원",
+    "pricingInstitutionPerk3": "무제한 저장 공간",
+    "pricingInstitutionPerk4": "맞춤형 교육 및 온보딩",
+    "pricingInstitutionPerk5": "사용자 당 더 저렴한 비용",
+    "pricingInstitutionLink": "영업 팀에 문의",
+    "earlyBird": "🎉 조기 채택자는 연간 플랜에 2개월 무료 제공 + 전담 온보딩 지원을 받습니다"
   },
   "components": {
     "earlyAccess": {
@@ -1069,14 +1080,14 @@
       "fields": {
         "title": "제목 *",
         "instructions": "지침 *",
-        "dueDate": "두 날짜",
         "type": "과제 유형",
         "section": "부분",
         "rubric": "표제",
         "gradeScale": "등급 척도",
         "maxPoints": "최대 포인트",
         "weight": "무게 (%)",
-        "sectionColor": "섹션 색상"
+        "sectionColor": "섹션 색상",
+        "dueDate": "마감 날짜"
       },
       "placeholders": {
         "title": "예: 5장 퀴즈, 물리학 실험 보고서",

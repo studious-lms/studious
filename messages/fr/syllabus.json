@@ -37,11 +37,11 @@
     },
     "table": {
       "assignment": "Affectation",
-      "dueDate": "Deux rendez-vous",
       "points": "Points",
       "weight": "Poids",
       "status": "Statut",
-      "pts": "points"
+      "pts": "points",
+      "dueDate": "Date d'échéance"
     },
     "status": {
       "graded": "Noté",

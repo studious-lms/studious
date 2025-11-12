@@ -74,7 +74,7 @@
       "attendanceRate": "Taxa de frequência",
       "history": "Histórico de frequência",
       "event": "Evento",
-      "status": "Status",
+      "status": "Estado",
       "searchPlaceholder": "Pesquisar eventos...",
       "empty": {
         "title": "Não há registros de frequência.",

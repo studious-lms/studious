@@ -7,12 +7,12 @@
       "maxPoints": "Maximale Punktzahl",
       "weight": "Gewicht",
       "graded": "Bewertet",
-      "dueDate": "Zwei Verabredungen",
       "actions": "Aktionen",
       "student": "Student",
       "overallGrade": "Gesamtnote",
       "assignmentsCompleted": "Aufgaben erledigt",
-      "trend": "Trend"
+      "trend": "Trend",
+      "dueDate": "Fälligkeitsdatum"
     },
     "labels": {
       "rubric": "Rubrik"
@@ -107,7 +107,7 @@
     "studentGrades": "Noten",
     "viewYourGrades": "Sehen Sie Ihre Noten und Ihren Fortschritt an",
     "individualManagement": "Individuelle Notenverwaltung für Studierende",
-    "export": "Export",
+    "export": "Exportieren",
     "back": "Zurück",
     "yourPerformance": "Ihre Leistung",
     "trackProgress": "Verfolge deinen akademischen Fortschritt",

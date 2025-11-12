@@ -7,10 +7,10 @@
       "upload": "Uploaden",
       "uploadFiles": "Bestanden uploaden",
       "createFolder": "Map maken",
-      "download": "Download",
+      "download": "Downloaden",
       "share": "Deel",
       "delete": "Verwijderen",
-      "filter": "Filter",
+      "filter": "Filteren",
       "sort": "Soort"
     },
     "toasts": {

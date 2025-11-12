@@ -316,7 +316,7 @@
         "school": "École:",
         "location": "Emplacement:",
         "submitted": "Soumis :",
-        "contact": "Contact:",
+        "contact": "Contact :",
         "notFound": {
           "title": "Application introuvable",
           "body": "Veuillez vérifier votre identifiant d'application et réessayer. Si le problème persiste, contactez-nous à l'adresse impact@studious.sh"
@@ -502,12 +502,12 @@
         "maxPoints": "Points maximums",
         "weight": "Poids",
         "graded": "Noté",
-        "dueDate": "Deux rendez-vous",
         "actions": "Actes",
         "student": "Étudiant",
         "overallGrade": "Note globale",
         "assignmentsCompleted": "Travaux terminés",
-        "trend": "S'orienter"
+        "trend": "S'orienter",
+        "dueDate": "Date d'échéance"
       },
       "labels": {
         "rubric": "Rubrique"
@@ -810,11 +810,11 @@
       },
       "table": {
         "assignment": "Affectation",
-        "dueDate": "Deux rendez-vous",
         "points": "Points",
         "weight": "Poids",
         "status": "Statut",
-        "pts": "points"
+        "pts": "points",
+        "dueDate": "Date d'échéance"
       },
       "status": {
         "graded": "Noté",
@@ -838,9 +838,8 @@
     }
   },
   "assignment": {
-    "dueDate": "Deux rendez-vous",
     "submit": "Soumettre",
-    "grade": "Grade",
+    "grade": "Note",
     "feedback": "Retour",
     "submissions": "Soumissions",
     "open": "Ouvrir",
@@ -861,7 +860,8 @@
     "sectionDeletionConfirmation": "Êtes-vous sûr de vouloir supprimer cette section ? Tous les devoirs seront déplacés au niveau supérieur.",
     "assignmentDeletionConfirmation": "Êtes-vous sûr de vouloir supprimer ce devoir ? Cette action est irréversible.",
     "manageAndTrack": "Gérer et suivre les devoirs de classe",
-    "filters": "Filtres"
+    "filters": "Filtres",
+    "dueDate": "Date d'échéance"
   },
   "pagination": {
     "previous": "Précédent",
@@ -933,7 +933,18 @@
     "pricingSchoolPerk4": "Assistant IA (requêtes illimitées)",
     "pricingSchoolPerk5": "Premier sur la liste pour l'accès bêta à Studious CMS",
     "pricingSchoolPerk6": "accès API",
-    "pricingSchoolLink": "Commencer"
+    "pricingSchoolLink": "Commencer",
+    "pricingInstitutionTitle": "Institution",
+    "pricingInstitutionPrice": "Personnalisé",
+    "pricingInstitutionNote": "Adapté à vos besoins",
+    "pricingInstitutionDescription": "Pour les grandes écoles & universités (plus de 1 000 étudiants)",
+    "pricingInstitutionPerk1": "Tout dans le plan École",
+    "pricingInstitutionPerk2": "Support prioritaire 24/7",
+    "pricingInstitutionPerk3": "Stockage illimité",
+    "pricingInstitutionPerk4": "Formation & intégration personnalisées",
+    "pricingInstitutionPerk5": "Dépenses par utilisateur moins élevées",
+    "pricingInstitutionLink": "Contacter les ventes",
+    "earlyBird": "🎉 Les premiers adoptants reçoivent 2 mois gratuits sur les plans annuels + support d'onboarding dédié"
   },
   "components": {
     "earlyAccess": {
@@ -1069,14 +1080,14 @@
       "fields": {
         "title": "Titre *",
         "instructions": "Instructions *",
-        "dueDate": "Deux rendez-vous",
         "type": "Type de devoir",
         "section": "Section",
         "rubric": "Rubrique",
         "gradeScale": "Échelle de notation",
         "maxPoints": "Points maximums",
         "weight": "Poids (%)",
-        "sectionColor": "Couleur de la section"
+        "sectionColor": "Couleur de la section",
+        "dueDate": "Date d'échéance"
       },
       "placeholders": {
         "title": "Par exemple, le questionnaire du chapitre 5, le rapport de laboratoire de physique",

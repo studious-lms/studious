@@ -7,12 +7,12 @@
       "maxPoints": "Макс. баллы",
       "weight": "Масса",
       "graded": "Оцененный",
-      "dueDate": "Две даты",
       "actions": "Действия",
       "student": "Студент",
       "overallGrade": "Общая оценка",
       "assignmentsCompleted": "Задания выполнены",
-      "trend": "Тренд"
+      "trend": "Тренд",
+      "dueDate": "Срок сдачи"
     },
     "labels": {
       "rubric": "Рубрика"
