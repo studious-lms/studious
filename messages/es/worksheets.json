@@ -1,0 +1,118 @@
+{
+  "worksheets": {
+    "title": "Hojas de trabajo",
+    "subtitle": "Gestionar y distribuir hojas de ejercicios de práctica",
+    "list": {
+      "title": "Todas las hojas de trabajo"
+    },
+    "columns": {
+      "title": "Título",
+      "questionCount": "Número de preguntas",
+      "lastUpdated": "Última actualización",
+      "actions": "Comportamiento"
+    },
+    "status": {
+      "draft": "Borrador",
+      "published": "Publicado",
+      "archived": "Archivado"
+    },
+    "actions": {
+      "create": "Crear hoja de trabajo",
+      "view": "Vista",
+      "edit": "Editar",
+      "delete": "Borrar",
+      "download": "Descargar",
+      "share": "Compartir",
+      "back": "Atrás",
+      "save": "Ahorrar",
+      "cancel": "Cancelar",
+      "select": "Seleccionar",
+      "attachMarkscheme": "Adjuntar esquema de calificación",
+      "detach": "Detalles"
+    },
+    "search": {
+      "placeholder": "Buscar hojas de trabajo..."
+    },
+    "empty": {
+      "title": "No se encontraron hojas de trabajo.",
+      "description": "Empieza creando tu primera hoja de cálculo o utiliza la búsqueda para encontrar hojas ya existentes."
+    },
+    "confirm": {
+      "delete": "¿Seguro que quieres borrar esta hoja de cálculo? Esta acción no se puede deshacer."
+    },
+    "toasts": {
+      "created": "Hoja de cálculo creada correctamente",
+      "updated": "Hoja de cálculo actualizada correctamente",
+      "deleted": "Hoja de cálculo eliminada correctamente",
+      "error": "Se produjo un error"
+    },
+    "create": {
+      "title": "Crear hoja de trabajo",
+      "subtitle": "Crea una nueva hoja de trabajo con varios tipos de preguntas.",
+      "worksheetInfo": "Información de la hoja de trabajo",
+      "actions": {
+        "save": "Ahorrar",
+        "cancel": "Cancelar",
+        "preview": "Avance"
+      },
+      "fields": {
+        "title": "Título",
+        "titlePlaceholder": "Introduzca el título de la hoja de cálculo",
+        "description": "Descripción",
+        "descriptionPlaceholder": "Introduzca la descripción de la hoja de cálculo (opcional)",
+        "dueDate": "Dos citas",
+        "totalQuestions": "Total de preguntas"
+      },
+      "questions": {
+        "title": "Preguntas",
+        "addQuestion": "Agregar pregunta",
+        "noQuestions": "Aún no se han añadido preguntas.",
+        "addFirstQuestion": "Utilice el menú desplegable de arriba para añadir su primera pregunta.",
+        "questionNumber": "Pregunta {number}",
+        "points": "Agujas",
+        "questionText": "Texto de la pregunta",
+        "questionTextPlaceholder": "Introduce tu pregunta aquí.",
+        "options": "Opciones",
+        "optionPlaceholder": "Opción {number}",
+        "addOption": "Agregar opción",
+        "correctAnswer": "Respuesta correcta",
+        "true": "Verdadero",
+        "false": "FALSO",
+        "mathExpression": "Expresión matemática esperada",
+        "mathExpressionPlaceholder": "Por ejemplo, x² + 5x + 6 = 0",
+        "sampleAnswer": "Ejemplo de respuesta",
+        "sampleAnswerPlaceholder": "Introduzca un ejemplo de respuesta o explicación",
+        "markscheme": "Plan de marketing",
+        "markschemeAttached": "Esquema de calificación adjunto"
+      },
+      "questionTypes": {
+        "multipleChoice": "Opción múltiple",
+        "longForm": "Respuesta larga",
+        "math": "Respuesta matemática",
+        "trueFalse": "Verdadero/Falso"
+      },
+      "markschemeDialog": {
+        "title": "Seleccionar esquema de calificación",
+        "noMarkschemes": "No hay esquemas de calificación disponibles. Primero crea uno en la sección de Calificaciones.",
+        "untitled": "Esquema de calificación sin título",
+        "custom": "Costumbre"
+      },
+      "errors": {
+        "titleRequired": "Se requiere título",
+        "atLeastOneQuestion": "Por favor, añade al menos una pregunta.",
+        "questionTextRequired": "Todas las preguntas deben tener texto.",
+        "multipleChoiceOptions": "Las preguntas de opción múltiple necesitan al menos 2 opciones.",
+        "multipleChoiceCorrectAnswer": "Las preguntas de opción múltiple necesitan al menos una respuesta correcta.",
+        "teacherOnly": "Solo los profesores pueden crear hojas de trabajo."
+      },
+      "toasts": {
+        "created": "Hoja de cálculo creada correctamente",
+        "markschemeAttached": "El esquema de calificación se adjuntó correctamente.",
+        "markschemeDetached": "Esquema de calificación separado con éxito",
+        "updated": "Hoja de cálculo actualizada correctamente",
+        "saving": "Ahorro...",
+        "saved": "Guardado"
+      }
+    }
+  }
+}

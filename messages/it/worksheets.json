@@ -1,0 +1,118 @@
+{
+  "worksheets": {
+    "title": "Fogli di lavoro",
+    "subtitle": "Gestire e distribuire fogli di lavoro di pratica",
+    "list": {
+      "title": "Tutti i fogli di lavoro"
+    },
+    "columns": {
+      "title": "Titolo",
+      "questionCount": "Numero di domande",
+      "lastUpdated": "Ultimo aggiornamento",
+      "actions": "Azioni"
+    },
+    "status": {
+      "draft": "Bozza",
+      "published": "Pubblicato",
+      "archived": "Archiviato"
+    },
+    "actions": {
+      "create": "Crea foglio di lavoro",
+      "view": "Visualizzazione",
+      "edit": "Modificare",
+      "delete": "Eliminare",
+      "download": "Scaricamento",
+      "share": "Condividere",
+      "back": "Indietro",
+      "save": "Salva",
+      "cancel": "Cancellare",
+      "select": "Selezionare",
+      "attachMarkscheme": "Allega schema di valutazione",
+      "detach": "Dettagli"
+    },
+    "search": {
+      "placeholder": "Cerca fogli di lavoro..."
+    },
+    "empty": {
+      "title": "Nessun foglio di lavoro trovato",
+      "description": "Inizia creando il tuo primo foglio di lavoro oppure usa la ricerca per trovarne di esistenti."
+    },
+    "confirm": {
+      "delete": "Vuoi davvero eliminare questo foglio di lavoro? Questa azione non può essere annullata."
+    },
+    "toasts": {
+      "created": "Foglio di lavoro creato con successo",
+      "updated": "Foglio di lavoro aggiornato con successo",
+      "deleted": "Foglio di lavoro eliminato con successo",
+      "error": "Si è verificato un errore"
+    },
+    "create": {
+      "title": "Crea foglio di lavoro",
+      "subtitle": "Crea un nuovo foglio di lavoro con più tipi di domande",
+      "worksheetInfo": "Informazioni sul foglio di lavoro",
+      "actions": {
+        "save": "Salva",
+        "cancel": "Cancellare",
+        "preview": "Anteprima"
+      },
+      "fields": {
+        "title": "Titolo",
+        "titlePlaceholder": "Inserisci il titolo del foglio di lavoro",
+        "description": "Descrizione",
+        "descriptionPlaceholder": "Inserisci la descrizione del foglio di lavoro (facoltativo)",
+        "dueDate": "Due date",
+        "totalQuestions": "Totale domande"
+      },
+      "questions": {
+        "title": "Domande",
+        "addQuestion": "Aggiungi domanda",
+        "noQuestions": "Nessuna domanda aggiunta ancora",
+        "addFirstQuestion": "Utilizza il menu a discesa qui sopra per aggiungere la tua prima domanda",
+        "questionNumber": "Domanda {number}",
+        "points": "Punti",
+        "questionText": "Testo della domanda",
+        "questionTextPlaceholder": "Inserisci qui la tua domanda",
+        "options": "Opzioni",
+        "optionPlaceholder": "Opzione {number}",
+        "addOption": "Aggiungi opzione",
+        "correctAnswer": "Risposta corretta",
+        "true": "VERO",
+        "false": "Falso",
+        "mathExpression": "Espressione matematica prevista",
+        "mathExpressionPlaceholder": "ad esempio, x^2 + 5x + 6 = 0",
+        "sampleAnswer": "Risposta di esempio",
+        "sampleAnswerPlaceholder": "Inserisci una risposta di esempio o una spiegazione",
+        "markscheme": "Schema di marketing",
+        "markschemeAttached": "Schema di valutazione allegato"
+      },
+      "questionTypes": {
+        "multipleChoice": "Scelta multipla",
+        "longForm": "Risposta in forma estesa",
+        "math": "Risposta matematica",
+        "trueFalse": "Vero/Falso"
+      },
+      "markschemeDialog": {
+        "title": "Seleziona schema di valutazione",
+        "noMarkschemes": "Non sono disponibili schemi di valutazione. Creane uno nella sezione Voti.",
+        "untitled": "Schema di valutazione senza titolo",
+        "custom": "Costume"
+      },
+      "errors": {
+        "titleRequired": "Il titolo è obbligatorio",
+        "atLeastOneQuestion": "Per favore aggiungi almeno una domanda",
+        "questionTextRequired": "Tutte le domande devono avere del testo",
+        "multipleChoiceOptions": "Le domande a risposta multipla richiedono almeno 2 opzioni",
+        "multipleChoiceCorrectAnswer": "Le domande a risposta multipla richiedono almeno una risposta corretta",
+        "teacherOnly": "Solo gli insegnanti possono creare fogli di lavoro"
+      },
+      "toasts": {
+        "created": "Foglio di lavoro creato con successo",
+        "markschemeAttached": "Schema di valutazione allegato con successo",
+        "markschemeDetached": "Schema di valutazione staccato con successo",
+        "updated": "Foglio di lavoro aggiornato con successo",
+        "saving": "Risparmio...",
+        "saved": "Salvato"
+      }
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "worksheets": {
+    "title": "工作表",
+    "subtitle": "管理和分发练习题",
+    "list": {
+      "title": "所有工作表"
+    },
+    "columns": {
+      "title": "标题",
+      "questionCount": "问题数",
+      "lastUpdated": "最后更新时间",
+      "actions": "行动"
+    },
+    "status": {
+      "draft": "草稿",
+      "published": "已发布",
+      "archived": "已存档"
+    },
+    "actions": {
+      "create": "创建工作表",
+      "view": "看法",
+      "edit": "编辑",
+      "delete": "删除",
+      "download": "下载",
+      "share": "分享",
+      "back": "后退",
+      "save": "节省",
+      "cancel": "取消",
+      "select": "选择",
+      "attachMarkscheme": "附上评分标准",
+      "detach": "细节"
+    },
+    "search": {
+      "placeholder": "搜索工作表……"
+    },
+    "empty": {
+      "title": "未找到工作表",
+      "description": "首先，您可以创建自己的第一个工作表，或者使用搜索功能查找现有的工作表。"
+    },
+    "confirm": {
+      "delete": "您确定要删除此工作表吗？此操作无法撤销。"
+    },
+    "toasts": {
+      "created": "工作表已成功创建",
+      "updated": "工作表已成功更新",
+      "deleted": "工作表已成功删除",
+      "error": "发生错误"
+    },
+    "create": {
+      "title": "创建工作表",
+      "subtitle": "创建包含多种题型的新工作表",
+      "worksheetInfo": "工作表信息",
+      "actions": {
+        "save": "节省",
+        "cancel": "取消",
+        "preview": "预览"
+      },
+      "fields": {
+        "title": "标题",
+        "titlePlaceholder": "输入工作表标题",
+        "description": "描述",
+        "descriptionPlaceholder": "输入工作表描述（可选）",
+        "dueDate": "两个日期",
+        "totalQuestions": "总问题数"
+      },
+      "questions": {
+        "title": "问题",
+        "addQuestion": "添加问题",
+        "noQuestions": "目前还没有添加问题。",
+        "addFirstQuestion": "请使用上方的下拉菜单添加您的第一个问题。",
+        "questionNumber": "问题 {number}",
+        "points": "积分",
+        "questionText": "问题文本",
+        "questionTextPlaceholder": "请在此处输入您的问题",
+        "options": "选项",
+        "optionPlaceholder": "选项 {number}",
+        "addOption": "添加选项",
+        "correctAnswer": "正确答案",
+        "true": "真的",
+        "false": "错误的",
+        "mathExpression": "预期数学表达式",
+        "mathExpressionPlaceholder": "例如，x² + 5x + 6 = 0",
+        "sampleAnswer": "示例答案",
+        "sampleAnswerPlaceholder": "请提供示例答案或解释",
+        "markscheme": "营销方案",
+        "markschemeAttached": "评分标准附后"
+      },
+      "questionTypes": {
+        "multipleChoice": "多项选择题",
+        "longForm": "长答案",
+        "math": "数学答案",
+        "trueFalse": "真/假"
+      },
+      "markschemeDialog": {
+        "title": "选择评分方案",
+        "noMarkschemes": "暂无评分标准。请先在“成绩”部分创建评分标准。",
+        "untitled": "无标题评分方案",
+        "custom": "风俗"
+      },
+      "errors": {
+        "titleRequired": "标题为必填项",
+        "atLeastOneQuestion": "请至少添加一个问题",
+        "questionTextRequired": "所有问题都必须包含文本。",
+        "multipleChoiceOptions": "多项选择题至少需要两个选项",
+        "multipleChoiceCorrectAnswer": "选择题至少需要一个正确答案",
+        "teacherOnly": "只有教师才能创建练习题。"
+      },
+      "toasts": {
+        "created": "工作表已成功创建",
+        "markschemeAttached": "评分方案已成功附加",
+        "markschemeDetached": "评分方案已成功分离",
+        "updated": "工作表已成功更新",
+        "saving": "保存...",
+        "saved": "已保存"
+      }
+    }
+  }
+}

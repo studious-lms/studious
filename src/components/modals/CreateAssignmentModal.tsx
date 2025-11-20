@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useMemo } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -11,6 +11,8 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Separator } from "@/components/ui/separator";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Progress } from "@/components/ui/progress";
+import { Badge } from "@/components/ui/badge";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { toast } from "sonner";
 import ColorPicker from "@/components/ui/color-picker";
 import {
@@ -25,11 +27,14 @@ import {
   BookOpen,
   Trash2,
   Loader2,
-  CheckCircle,
-  FileUp
+  FileUp,
+  Search,
+  Users,
+  ChevronDown
 } from "lucide-react";
 import { useParams } from "next/navigation";
 import {
+  RouterInputs,
   trpc,
 } from "@/lib/trpc";
 import { fixUploadUrl } from "@/lib/directUpload";
@@ -58,6 +63,33 @@ interface AssignmentFormData {
   gradingBoundaryId?: string | null;
   inProgress: boolean;
   files: FileData[];
+  aiPolicyLevel: number;
+  /**
+   *   classId: z.string(),
+  title: z.string(),
+  instructions: z.string(),
+  dueDate: z.string(),
+  files: z.array(directFileSchema).optional(), // Use direct file schema
+  existingFileIds: z.array(z.string()).optional(),
+  acceptFiles: z.boolean().optional(),
+  acceptExtendedResponse: z.boolean().optional(),
+  acceptWorksheet: z.boolean().optional(),
+  gradeWithAI: z.boolean().optional(),
+  maxGrade: z.number().optional(),
+  graded: z.boolean().optional(),
+  weight: z.number().optional(),
+  sectionId: z.string().optional(),
+  type: z.enum(['HOMEWORK', 'QUIZ', 'TEST', 'PROJECT', 'ESSAY', 'DISCUSSION', 'PRESENTATION', 'LAB', 'OTHER']).optional(),
+  markSchemeId: z.string().optional(),
+  gradingBoundaryId: z.string().optional(),
+  inProgress: z.boolean().optional(),
+   */
+  worksheetIds?: string[];
+  acceptFiles?: boolean;
+  acceptExtendedResponse?: boolean;
+  acceptWorksheet?: boolean;
+  gradeWithAI?: boolean;
+  studentIds?: string[]; // Empty array means "All"
 }
 
 interface CreateAssignmentModalProps {
@@ -77,7 +109,14 @@ const defaultFormData: AssignmentFormData = {
   markSchemeId: null,
   gradingBoundaryId: null,
   inProgress: false,
-  files: []
+  files: [],
+  studentIds: [], // Empty means "All"
+  acceptFiles: false,
+  acceptExtendedResponse: false,
+  acceptWorksheet: false,
+  worksheetIds: [],
+  gradeWithAI: false,
+  aiPolicyLevel: 4 // Default to Level 4 Co-Creation
 };
 
 export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateAssignmentModalProps) {
@@ -108,6 +147,9 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
   const [uploadedFiles, setUploadedFiles] = useState(0);
   const [totalFiles, setTotalFiles] = useState(0);
 
+  // New state for deliverables and AI policy
+  const [worksheetSearchQuery, setWorksheetSearchQuery] = useState('');
+
   const { id: classId } = useParams();
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -115,6 +157,7 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
   const { data: classData } = trpc.class.get.useQuery({ classId: classId as string });
   const { data: markSchemes } = trpc.class.listMarkSchemes.useQuery({ classId: classId as string });
   const { data: gradingBoundaries } = trpc.class.listGradingBoundaries.useQuery({ classId: classId as string });
+  const { data: worksheetsData } = trpc.worksheet.listWorksheets.useQuery({ classId: classId as string });
 
   // Mutations
   const utils = trpc.useUtils();
@@ -143,6 +186,65 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
   });
 
   const sections = classData?.class?.sections || [];
+  const students = classData?.class?.students || [];
+
+  // Filter worksheets based on search
+  const filteredWorksheets = useMemo(() => {
+    if (!worksheetsData) return [];
+    if (!worksheetSearchQuery.trim()) return worksheetsData;
+    return worksheetsData.filter(worksheet =>
+      worksheet.name.toLowerCase().includes(worksheetSearchQuery.toLowerCase())
+    );
+  }, [worksheetsData, worksheetSearchQuery]);
+
+  // AI Policy levels configuration
+  const aiPolicyLevels = [
+    {
+      level: 1,
+      title: t('aiPolicy.level1.title'),
+      description: t('aiPolicy.level1.description'),
+      useCases: t('aiPolicy.level1.useCases'),
+      studentResponsibilities: t('aiPolicy.level1.studentResponsibilities'),
+      disclosureRequirements: t('aiPolicy.level1.disclosureRequirements'),
+      color: 'bg-red-500'
+    },
+    {
+      level: 2,
+      title: t('aiPolicy.level2.title'),
+      description: t('aiPolicy.level2.description'),
+      useCases: t('aiPolicy.level2.useCases'),
+      studentResponsibilities: t('aiPolicy.level2.studentResponsibilities'),
+      disclosureRequirements: t('aiPolicy.level2.disclosureRequirements'),
+      color: 'bg-orange-500'
+    },
+    {
+      level: 3,
+      title: t('aiPolicy.level3.title'),
+      description: t('aiPolicy.level3.description'),
+      useCases: t('aiPolicy.level3.useCases'),
+      studentResponsibilities: t('aiPolicy.level3.studentResponsibilities'),
+      disclosureRequirements: t('aiPolicy.level3.disclosureRequirements'),
+      color: 'bg-yellow-500'
+    },
+    {
+      level: 4,
+      title: t('aiPolicy.level4.title'),
+      description: t('aiPolicy.level4.description'),
+      useCases: t('aiPolicy.level4.useCases'),
+      studentResponsibilities: t('aiPolicy.level4.studentResponsibilities'),
+      disclosureRequirements: t('aiPolicy.level4.disclosureRequirements'),
+      color: 'bg-green-500'
+    },
+    {
+      level: 5,
+      title: t('aiPolicy.level5.title'),
+      description: t('aiPolicy.level5.description'),
+      useCases: t('aiPolicy.level5.useCases'),
+      studentResponsibilities: t('aiPolicy.level5.studentResponsibilities'),
+      disclosureRequirements: t('aiPolicy.level5.disclosureRequirements'),
+      color: 'bg-green-500'
+    }
+  ];
 
   const resetForm = () => {
     setFormData(defaultFormData);
@@ -154,6 +256,7 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
     setCurrentStatus('');
     setUploadedFiles(0);
     setTotalFiles(0);
+    setWorksheetSearchQuery('');
   };
 
   // Status messages for different stages
@@ -214,7 +317,7 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
       setCurrentStatus(statusMessages[1]);
       setProgress(20);
       
-      const assignmentData = {
+      const assignmentData: RouterInputs['assignment']['create'] = {
         classId: classId as string,
         title: formData.title,
         instructions: formData.instructions,
@@ -223,6 +326,13 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
         graded: formData.graded,
         weight: formData.graded ? formData.weight : undefined,
         sectionId: formData.sectionId || undefined,
+        acceptFiles: formData.acceptFiles,
+        acceptExtendedResponse: formData.acceptExtendedResponse,
+        acceptWorksheet: formData.acceptWorksheet,
+        worksheetIds: formData.worksheetIds,
+        gradeWithAI: formData.gradeWithAI,
+        aiPolicyLevel: formData.aiPolicyLevel,
+        studentIds: formData.studentIds || undefined,
         type: formData.type,
         markSchemeId: formData.markSchemeId === "none" || formData.markSchemeId === null ? undefined : formData.markSchemeId,
         gradingBoundaryId: formData.gradingBoundaryId === "none" || formData.gradingBoundaryId === null ? undefined : formData.gradingBoundaryId,
@@ -467,6 +577,63 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
                       </SelectContent>
                     </Select>
                   </div>
+
+                  {/* Students */}
+                  <div className="space-y-2">
+                    <Label className="text-sm font-medium">{t('fields.students')}</Label>
+                    <div className="flex flex-wrap gap-2 p-2 min-h-[42px] border rounded-md">
+                      {(!formData.studentIds || formData.studentIds.length === 0) ? (
+                        <Badge variant="secondary" className="flex items-center gap-1">
+                          <Users className="h-3 w-3" />
+                          {t('students.all')}
+                        </Badge>
+                      ) : (
+                        formData.studentIds.map((studentId) => {
+                          const student = students.find(s => s.id === studentId);
+                          return student ? (
+                            <Badge key={studentId} variant="secondary" className="flex items-center gap-1">
+                              {student.username}
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  const newIds = formData.studentIds?.filter(id => id !== studentId) || [];
+                                  setFormData({ ...formData, studentIds: newIds });
+                                }}
+                                className="ml-1 hover:bg-muted rounded-full p-0.5"
+                              >
+                                <X className="h-3 w-3" />
+                              </button>
+                            </Badge>
+                          ) : null;
+                        })
+                      )}
+                      <Select
+                        value=""
+                        onValueChange={(value) => {
+                          if (value === 'all') {
+                            setFormData({ ...formData, studentIds: [] });
+                          } else {
+                            const currentIds = formData.studentIds || [];
+                            if (!currentIds.includes(value)) {
+                              setFormData({ ...formData, studentIds: [...currentIds, value] });
+                            }
+                          }
+                        }}
+                      >
+                        <SelectTrigger className="h-8 w-auto border-0 shadow-none focus:ring-0">
+                          <SelectValue placeholder={t('students.selectPlaceholder')} />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="all">{t('students.all')}</SelectItem>
+                          {students.map((student) => (
+                            <SelectItem key={student.id} value={student.id}>
+                              {student.username}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Right Side - Advanced Settings */}
@@ -703,6 +870,203 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
                 )}
               </div>
             )}
+
+            {/* 📦 Deliverables Section */}
+            <div className="space-y-6">
+              <div className="text-lg font-semibold">
+                {t('sections.deliverables')}
+              </div>
+
+              <div className="space-y-3">
+                {/* File Upload */}
+                <div className="flex items-center space-x-3 p-3 rounded-lg border">
+                  <Checkbox
+                    id="fileUpload"
+                    checked={formData.acceptFiles}
+                    onCheckedChange={(checked) => setFormData({ ...formData, acceptFiles: !!checked })}
+                  />
+                  <div className="flex-1">
+                    <Label htmlFor="fileUpload" className="text-sm font-medium cursor-pointer">
+                      {t('deliverables.fileUpload.label')}
+                    </Label>
+                    <p className="text-xs text-muted-foreground">{t('deliverables.fileUpload.description')}</p>
+                  </div>
+                </div>
+
+                {/* Extended Response */}
+                <div className="flex items-center space-x-3 p-3 rounded-lg border">
+                  <Checkbox
+                    id="extendedResponse"
+                    checked={formData.acceptExtendedResponse}
+                    onCheckedChange={(checked) => setFormData({ ...formData, acceptExtendedResponse: !!checked })}
+                  />
+                  <div className="flex-1">
+                    <Label htmlFor="extendedResponse" className="text-sm font-medium cursor-pointer">
+                      {t('deliverables.extendedResponse.label')}
+                    </Label>
+                    <p className="text-xs text-muted-foreground">{t('deliverables.extendedResponse.description')}</p>
+                  </div>
+                </div>
+
+                {/* Worksheet Submission */}
+                <div
+                  className={`w-full rounded-lg border transition-all overflow-hidden ${
+                    formData.acceptWorksheet ? 'border-primary bg-primary/5 dark:bg-primary/10' : ''
+                  }`}
+                >
+                  <div className="flex items-center space-x-3 p-3">
+                    <Checkbox
+                      id="worksheetSubmission"
+                      checked={formData.acceptWorksheet}
+                      onCheckedChange={(checked) => {
+                        setFormData(prev => ({ ...prev, acceptWorksheet: !!checked }));
+                      }}
+                    />
+                    <div className="flex-1">
+                      <Label htmlFor="worksheetSubmission" className="text-sm font-medium cursor-pointer">
+                        {t('deliverables.worksheetSubmission.label')}
+                      </Label>
+                      <p className="text-xs text-muted-foreground">{t('deliverables.worksheetSubmission.description')}</p>
+                    </div>
+                    <ChevronDown className={`h-4 w-4 transition-transform ${formData.acceptWorksheet ? 'rotate-180' : ''}`} />
+                  </div>
+                  {formData.acceptWorksheet && (
+                    <div className="px-3 pb-3 pt-0 space-y-3 animate-in slide-in-from-top-2 duration-200">
+                      <div className="relative">
+                        <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+                        <Input
+                          placeholder={t('deliverables.worksheetSubmission.searchPlaceholder')}
+                          value={worksheetSearchQuery}
+                          onChange={(e) => setWorksheetSearchQuery(e.target.value)}
+                          className="pl-10"
+                        />
+                      </div>
+                      {filteredWorksheets.length > 0 && (
+                        <div className="text-xs text-muted-foreground mb-2">
+                          {t('deliverables.worksheetSubmission.found', { count: filteredWorksheets.length })}
+                        </div>
+                      )}
+                      <div className="space-y-2 max-h-48 overflow-y-auto">
+                        {filteredWorksheets.map((worksheet) => {
+                          const isSelected = formData.worksheetIds?.includes(worksheet.id);
+                          return (
+                            <div
+                              key={worksheet.id}
+                              className={`flex items-center space-x-3 p-3 rounded-lg border cursor-pointer transition-colors ${
+                                isSelected ? 'bg-primary/10 dark:bg-primary/20 border-primary/20' : 'hover:bg-muted/50'
+                              }`}
+                              // onClick={() => {
+                              //   const newIds = isSelected
+                              //     ? formData.selectedWorksheetIds.filter(id => id !== worksheet.id)
+                              //     : [...formData.selectedWorksheetIds, worksheet.id];
+                              //   setFormData(prev => ({ ...prev, selectedWorksheetIds: newIds }));
+                              // }}
+                            >
+                              <Checkbox
+                                checked={isSelected}
+                                onCheckedChange={(checked) => {
+                                  setFormData(prev => {
+                                    const currentIds = prev.worksheetIds || [];
+                                    const newIds = checked
+                                      ? (currentIds.includes(worksheet.id) ? currentIds : [...currentIds, worksheet.id])
+                                      : currentIds.filter(id => id !== worksheet.id);
+                                    return { ...prev, worksheetIds: newIds };
+                                  });
+                                }}
+                                onClick={(e) => e.stopPropagation()}
+                              />
+                              <FileText className="h-4 w-4 text-muted-foreground" />
+                              <span className="text-sm flex-1">{worksheet.name}</span>
+                            </div>
+                          );
+                        })}
+                      </div>
+                      {filteredWorksheets.length === 0 && worksheetSearchQuery && (
+                        <div className="text-sm text-muted-foreground text-center py-4">
+                          {t('deliverables.worksheetSubmission.noResults')}
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
+
+                {/* Grade and feedback with AI */}
+                <div className="flex items-center space-x-3 p-3 rounded-lg border">
+                  <Checkbox
+                    id="aiGrading"
+                    checked={formData.gradeWithAI}
+                    onCheckedChange={(checked) => setFormData({ ...formData, gradeWithAI: !!checked })}
+                  />
+                  <div className="flex-1">
+                    <Label htmlFor="gradeWithAI" className="text-sm font-medium cursor-pointer">
+                      {t('deliverables.aiGrading.label')}
+                    </Label>
+                    <p className="text-xs text-muted-foreground">{t('deliverables.aiGrading.description')}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 🤖 AI Policy Section */}
+            <div className="space-y-6">
+              <div className="text-lg font-semibold">
+                {t('sections.aiPolicy')}
+              </div>
+
+              <div className="space-y-3">
+                {aiPolicyLevels.map((policy) => {
+                  const isSelected = formData.aiPolicyLevel === policy.level;
+                  return (
+                    <Collapsible
+                      key={policy.level}
+                      open={isSelected}
+                      onOpenChange={(open) => {
+                        if (open) {
+                          setFormData({ ...formData, aiPolicyLevel: policy.level });
+                        }
+                      }}
+                    >
+                      <div
+                        className={`w-full rounded-lg border cursor-pointer transition-all ${
+                          isSelected ? 'border-primary bg-primary/5 dark:bg-primary/10' : 'hover:bg-muted/50'
+                        }`}
+                      >
+                        <CollapsibleTrigger asChild>
+                          <div className="p-4">
+                            <div className="flex items-start gap-3">
+                              <div className={`w-3 h-3 rounded-full ${policy.color} mt-1.5 flex-shrink-0`} />
+                              <div className="flex-1">
+                                <div className="flex items-center gap-2 mb-1">
+                                  <h4 className="font-medium text-sm">{policy.title}</h4>
+                                  <ChevronDown className={`h-4 w-4 ml-auto transition-transform ${isSelected ? 'rotate-180' : ''}`} />
+                                </div>
+                                <p className="text-xs text-muted-foreground">{policy.description}</p>
+                              </div>
+                            </div>
+                          </div>
+                        </CollapsibleTrigger>
+                        <CollapsibleContent>
+                          <div className="px-4 pb-4 pt-0 space-y-3 text-sm">
+                            <div>
+                              <div className="font-medium text-foreground mb-1">{t('aiPolicy.useCases')}</div>
+                              <div className="text-muted-foreground">{policy.useCases}</div>
+                            </div>
+                            <div>
+                              <div className="font-medium text-foreground mb-1">{t('aiPolicy.studentResponsibilities')}</div>
+                              <div className="text-muted-foreground">{policy.studentResponsibilities}</div>
+                            </div>
+                            <div>
+                              <div className="font-medium text-foreground mb-1">{t('aiPolicy.disclosureRequirements')}</div>
+                              <div className="text-muted-foreground">{policy.disclosureRequirements}</div>
+                            </div>
+                          </div>
+                        </CollapsibleContent>
+                      </div>
+                    </Collapsible>
+                  );
+                })}
+              </div>
+            </div>
 
             {/* 📎 File Attachments */}
             <div className="space-y-6">

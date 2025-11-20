@@ -81,7 +81,7 @@
       "emailSent": "Bestätigungs-E-Mail versendet!",
       "checkInbox": "Bitte überprüfen Sie Ihren Posteingang und Ihren Spam-Ordner.",
       "enterEmail": "Geben Sie Ihre E-Mail-Adresse ein.",
-      "sending": "Senden...",
+      "sending": "Wird gesendet...",
       "sendEmail": "E-Mail senden"
     }
   },
@@ -276,8 +276,8 @@
       },
       "aims": {
         "title": "Programmziele",
-        "body1": "Durch intensive Gespräche mit Lehrkräften und pädagogischen Fachkräften haben wir erhebliche Lücken in der digitalen Lerninfrastruktur vieler Schulen festgestellt. Vielen auf dem Markt erhältlichen Lernmanagementsystemen fehlt eine einheitliche und intuitive Benutzerführung, und Schulen in sozial benachteiligten Gebieten können sich den Zugang zu moderner Bildungstechnologie oft nicht leisten.",
-        "body2": "Unser Programm begegnet diesen Herausforderungen direkt. Die Einnahmen aus unseren kostenpflichtigen institutionellen Abonnements ermöglichen es uns, benachteiligten Schulen umfassenden Zugang zu Studious LMS und verwandten Lernwerkzeugen zu bieten. Dieses nachhaltige Modell hilft uns, die digitale Kluft zu überbrücken und gleichzeitig unsere Plattform für alle Nutzer kontinuierlich zu verbessern."
+        "body1": "Durch intensive Gespräche mit Lehrkräften und Bildungsexperten haben wir erhebliche Lücken in der digitalen Lerninfrastruktur vieler Schulen festgestellt. Vielen auf dem Markt erhältlichen Lernmanagementsystemen fehlt eine einheitliche und intuitive Benutzerführung, und Schulen in sozial benachteiligten Gebieten können sich den Zugang zu moderner Bildungstechnologie oft nicht leisten.",
+        "body2": "Unser Programm begegnet diesen Herausforderungen direkt. Die Einnahmen aus unseren kostenpflichtigen institutionellen Abonnements ermöglichen es uns, benachteiligten Schulen umfassenden Zugang zu Studious LMS und verwandten Lernwerkzeugen zu bieten. Dieses nachhaltige Modell hilft uns, die digitale Kluft zu überbrücken und unsere Plattform kontinuierlich für alle Nutzer zu verbessern."
       },
       "receive": {
         "title": "Was Sie erhalten",
@@ -860,7 +860,7 @@
     "assignmentDrop": "Aufgabe hier ablegen, um zur obersten Ebene zu gelangen",
     "sectionDeletionConfirmation": "Möchten Sie diesen Abschnitt wirklich löschen? Alle Aufgaben werden in die oberste Ebene verschoben.",
     "assignmentDeletionConfirmation": "Möchten Sie diese Aufgabe wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden.",
-    "manageAndTrack": "Klassenaufgaben verwalten und verfolgen",
+    "manageAndTrack": "Kursaufgaben verwalten und verfolgen",
     "filters": "Filter"
   },
   "pagination": {
@@ -948,7 +948,7 @@
         "institutionSize": "Institutionsgröße auswählen"
       },
       "sizes": {
-        "tiny": "1-30 Schüler (Einzellehrer)",
+        "tiny": "1-30 Schüler (Einzelunterricht)",
         "small": "31-100 Schüler (Kleine Schule)",
         "medium": "101-500 Schüler (Mittelgroße Schule)",
         "large": "501-1.000 Schüler (Große Schule)",
@@ -1064,6 +1064,8 @@
         "details": "Aufgabendetails",
         "configuration": "Konfiguration",
         "grading": "Benotung und Bewertung",
+        "deliverables": "Ergebnisse",
+        "aiPolicy": "KI-Politik",
         "attachments": "Anlagen"
       },
       "fields": {
@@ -1071,6 +1073,7 @@
         "instructions": "Anweisungen *",
         "dueDate": "Zwei Verabredungen",
         "type": "Aufgabentyp",
+        "students": "Studenten",
         "section": "Abschnitt",
         "rubric": "Rubrik",
         "gradeScale": "Notenskala",
@@ -1119,7 +1122,7 @@
         "autoCalculate": "Die Punkte werden automatisch anhand der ausgewählten Bewertungskriterien berechnet."
       },
       "gradeScale": {
-        "default": "Standardskalierung",
+        "default": "Standardmaßstab",
         "untitled": "Unbenannter Maßstab"
       },
       "files": {
@@ -1148,6 +1151,71 @@
         "saveDraft": "Entwurf speichern",
         "creating": "Wird erstellt...",
         "add": "Hinzufügen"
+      },
+      "students": {
+        "all": "Alle",
+        "selectPlaceholder": "Schüler auswählen..."
+      },
+      "deliverables": {
+        "fileUpload": {
+          "label": "Datei hochladen",
+          "description": "Studierende können PDF-, Bild- und Videodateien hochladen."
+        },
+        "extendedResponse": {
+          "label": "Erweiterte Antwort",
+          "description": "Die Studierenden können ausführliche Antworten eingeben."
+        },
+        "worksheetSubmission": {
+          "label": "Einreichung des Arbeitsblatts",
+          "description": "Die Studierenden können Arbeitsblätter zur integrierten Benotung einreichen.",
+          "searchPlaceholder": "Hier finden Sie Arbeitsblätter...",
+          "found": "{count} gefunden",
+          "noResults": "Keine Arbeitsblätter gefunden"
+        },
+        "aiGrading": {
+          "label": "Bewertung und Feedback mit KI",
+          "description": "Bieten Sie mithilfe von KI eine vorläufige und sofortige Bewertung und Feedback."
+        }
+      },
+      "aiPolicy": {
+        "useCases": "Anwendungsfälle",
+        "studentResponsibilities": "Verantwortlichkeiten der Studierenden",
+        "disclosureRequirements": "Offenlegungspflichten",
+        "level1": {
+          "title": "Stufe 1 Selbstständiges Arbeiten (ohne KI)",
+          "description": "Keine. Einfache Rechtschreib- und Grammatikprüfungen sind ausreichend.",
+          "useCases": "Verlassen Sie sich ausschließlich auf Ihr persönliches Wissen, Ihr Denkvermögen und Ihre Anstrengungen.",
+          "studentResponsibilities": "Keine. Einfache Rechtschreib- und Grammatikprüfungen sind ausreichend.",
+          "disclosureRequirements": "Keine Offenlegung der KI erforderlich (KI-Nutzung verboten)."
+        },
+        "level2": {
+          "title": "Stufe 2 Ideenerkundung",
+          "description": "Bitten Sie KI, Ideen zu erklären, Texte zusammenzufassen, Lösungsansätze zu entwickeln oder grundlegende Grammatik und Verständlichkeit zu überprüfen.",
+          "useCases": "Bitten Sie KI, Ideen zu erklären, Texte zusammenzufassen, Lösungsansätze zu entwickeln oder grundlegende Grammatik und Verständlichkeit zu überprüfen.",
+          "studentResponsibilities": "Bewerten Sie die Ergebnisse der KI kritisch; stellen Sie sicher, dass die Arbeit Ihre eigene Argumentation und Ihr eigenes Verständnis widerspiegelt.",
+          "disclosureRequirements": "Vermerken Sie kurz den Einsatz von KI (z. B. „ChatGPT wurde verwendet, um die Essaystruktur zu skizzieren“)."
+        },
+        "level3": {
+          "title": "Bearbeitungsunterstützung der Stufe 3",
+          "description": "Stellen Sie sicher, dass alle Ideen, die Struktur und die Inhalte von Ihnen selbst stammen; prüfen Sie die Vorschläge der KI sorgfältig.",
+          "useCases": "Bitten Sie KI, Grammatik, Zeichensetzung, Ausdrucksweise und Lesbarkeit zu verbessern.",
+          "studentResponsibilities": "Stellen Sie sicher, dass alle Ideen, die Struktur und die Inhalte von Ihnen selbst stammen; prüfen Sie die Vorschläge der KI sorgfältig.",
+          "disclosureRequirements": "Vermerken Sie kurz den Einsatz von KI (z. B. „ChatGPT wurde für Grammatik- und Verständlichkeitskorrekturen verwendet“)."
+        },
+        "level4": {
+          "title": "Stufe 4 Co-Kreation",
+          "description": "Nutzen Sie KI, um kreative Inhalte zu entwerfen, zu gestalten, zu codieren, zu analysieren, zu simulieren oder zu generieren und behalten Sie dabei die Kontrolle.",
+          "useCases": "Nutzen Sie KI, um kreative Inhalte zu entwerfen, zu gestalten, zu codieren, zu analysieren, zu simulieren oder zu generieren und behalten Sie dabei die Kontrolle.",
+          "studentResponsibilities": "KI-Ergebnisse kritisch bewerten; überarbeiten und anpassen, um Originalität und schlüssige Argumentation zu gewährleisten.",
+          "disclosureRequirements": "Reichen Sie eine detaillierte Offenlegung über die Beiträge der KI und Ihre Überarbeitungen ein."
+        },
+        "level5": {
+          "title": "Stufe 5 Co-Innovation",
+          "description": "KI wird zur Generierung von Inhalten, zur Durchführung von Analysen, zum Erstellen von Modellen, zum kreativen Schreiben, zur Übersetzung oder zur Datenvisualisierung eingesetzt, wobei die menschliche Autorschaft und Reflexion explizit berücksichtigt werden.",
+          "useCases": "KI wird zur Generierung von Inhalten, zur Durchführung von Analysen, zum Erstellen von Modellen, zum kreativen Schreiben, zur Übersetzung oder zur Datenvisualisierung eingesetzt, wobei die menschliche Autorschaft und Reflexion explizit berücksichtigt werden.",
+          "studentResponsibilities": "KI ethisch und zielgerichtet integrieren; ihre Rolle bei der Förderung von Lernen oder Kreativität begründen.",
+          "disclosureRequirements": "Alle Beiträge der KI und alle menschlichen Überarbeitungen müssen klar und deutlich angegeben werden."
+        }
       },
       "toasts": {
         "successCreated": "Aufgabe erfolgreich erstellt.",

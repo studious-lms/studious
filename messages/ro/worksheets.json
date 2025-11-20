@@ -1,0 +1,118 @@
+{
+  "worksheets": {
+    "title": "Fișe de lucru",
+    "subtitle": "Gestionarea și distribuirea fișelor de lucru pentru exerciții",
+    "list": {
+      "title": "Toate foile de lucru"
+    },
+    "columns": {
+      "title": "Titlu",
+      "questionCount": "Număr de întrebări",
+      "lastUpdated": "Ultima actualizare",
+      "actions": "Acțiuni"
+    },
+    "status": {
+      "draft": "Proiect",
+      "published": "Publicat",
+      "archived": "Arhivat"
+    },
+    "actions": {
+      "create": "Creați o foaie de lucru",
+      "view": "Vedere",
+      "edit": "Edita",
+      "delete": "Şterge",
+      "download": "Descărcare",
+      "share": "Distribuie",
+      "back": "Spate",
+      "save": "Salva",
+      "cancel": "Anula",
+      "select": "Selecta",
+      "attachMarkscheme": "Atașați schema de marcare",
+      "detach": "Detalii"
+    },
+    "search": {
+      "placeholder": "Căutați foi de lucru..."
+    },
+    "empty": {
+      "title": "Nu au fost găsite foi de lucru",
+      "description": "Începeți prin a crea prima foaie de lucru sau utilizați căutarea pentru a găsi cele existente."
+    },
+    "confirm": {
+      "delete": "Sigur doriți să ștergeți această foaie de lucru? Această acțiune nu poate fi anulată."
+    },
+    "toasts": {
+      "created": "Foaia de lucru a fost creată cu succes",
+      "updated": "Foaia de lucru a fost actualizată cu succes",
+      "deleted": "Foaia de lucru a fost ștearsă cu succes",
+      "error": "A apărut o eroare"
+    },
+    "create": {
+      "title": "Creați o foaie de lucru",
+      "subtitle": "Creați o nouă foaie de lucru cu mai multe tipuri de întrebări",
+      "worksheetInfo": "Informații despre fișa de lucru",
+      "actions": {
+        "save": "Salva",
+        "cancel": "Anula",
+        "preview": "Previzualizare"
+      },
+      "fields": {
+        "title": "Titlu",
+        "titlePlaceholder": "Introduceți titlul foii de lucru",
+        "description": "Descriere",
+        "descriptionPlaceholder": "Introduceți descrierea foii de lucru (opțional)",
+        "dueDate": "Două întâlniri",
+        "totalQuestions": "Întrebări totale"
+      },
+      "questions": {
+        "title": "Întrebări",
+        "addQuestion": "Adăugați o întrebare",
+        "noQuestions": "Nicio întrebare adăugată încă",
+        "addFirstQuestion": "Folosește meniul derulant de mai sus pentru a adăuga prima întrebare",
+        "questionNumber": "Întrebarea {number}",
+        "points": "Puncte",
+        "questionText": "Textul întrebării",
+        "questionTextPlaceholder": "Introduceți întrebarea dvs. aici",
+        "options": "Opțiuni",
+        "optionPlaceholder": "Opțiunea {number}",
+        "addOption": "Adăugați o opțiune",
+        "correctAnswer": "Răspuns corect",
+        "true": "Adevărat",
+        "false": "Fals",
+        "mathExpression": "Expresie matematică așteptată",
+        "mathExpressionPlaceholder": "de exemplu, x^2 + 5x + 6 = 0",
+        "sampleAnswer": "Exemplu de răspuns",
+        "sampleAnswerPlaceholder": "Introduceți un exemplu de răspuns sau o explicație",
+        "markscheme": "Schema de marketing",
+        "markschemeAttached": "Schema de marcare atașată"
+      },
+      "questionTypes": {
+        "multipleChoice": "Alegere multiplă",
+        "longForm": "Răspuns în formă lungă",
+        "math": "Răspuns la matematică",
+        "trueFalse": "Adevărat/Fals"
+      },
+      "markschemeDialog": {
+        "title": "Selectați schema de marcare",
+        "noMarkschemes": "Nu există scheme de notare disponibile. Creați mai întâi una în secțiunea Note.",
+        "untitled": "Schemă de marcare fără titlu",
+        "custom": "Personalizat"
+      },
+      "errors": {
+        "titleRequired": "Titlul este obligatoriu",
+        "atLeastOneQuestion": "Vă rugăm să adăugați cel puțin o întrebare",
+        "questionTextRequired": "Toate întrebările trebuie să conțină text",
+        "multipleChoiceOptions": "Întrebările cu variante multiple de răspuns necesită cel puțin 2 variante",
+        "multipleChoiceCorrectAnswer": "Întrebările cu variante multiple de răspuns necesită cel puțin un răspuns corect",
+        "teacherOnly": "Doar profesorii pot crea fișe de lucru"
+      },
+      "toasts": {
+        "created": "Foaia de lucru a fost creată cu succes",
+        "markschemeAttached": "Schema de marcare atașată cu succes",
+        "markschemeDetached": "Schema de marcare detașată cu succes",
+        "updated": "Foaia de lucru a fost actualizată cu succes",
+        "saving": "Economisire...",
+        "saved": "Salvat"
+      }
+    }
+  }
+}

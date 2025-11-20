@@ -166,7 +166,7 @@
         "perk2": "Obegränsade klasser",
         "perk3": "Alla kärnfunktioner",
         "perk4": "AI-assistent (obegränsade frågor)",
-        "perk5": "Först i kön för betaåtkomst till Studious CMS",
+        "perk5": "Först i kön för betaversionen av Studious CMS",
         "button": "Kom igång"
       },
       "institution": {
@@ -267,7 +267,7 @@
     "commitment": {
       "revenue": "Intäkter som beviljats",
       "cohort": "Första kohortlanseringen",
-      "free": "Fri åtkomst"
+      "free": "Fri tillgång"
     },
     "about": {
       "mission": {
@@ -877,12 +877,12 @@
     "titleStatement4": "Efter år av att ha kämpat med föråldrade, fragmenterade skolportaler bestämde vi oss för att bygga det lärplattformssystem vi alltid önskat att vi hade.",
     "problemParagraph1": "Studious startade 2023",
     "problemParagraph2": "när en grupp elever och lärare samlades med en gemensam frustration: befintliga skolportaler var klumpiga, långsamma och byggda för en annan era av utbildning.",
-    "problemDetailParagraph": "Vi jonglerade med flera plattformar – en för betyg, en annan för uppgifter och en tredje för kommunikation. Lärare lade ner mer tid på att kämpa med programvara än på att undervisa. Eleverna missade deadlines eftersom aviseringar var begravda i föråldrade gränssnitt.",
+    "problemDetailParagraph": "Vi jonglerade med flera plattformar – en för betyg, en annan för uppgifter och en tredje för kommunikation. Lärare lade mer tid på att kämpa med programvara än att undervisa. Eleverna missade deadlines eftersom aviseringar var begravda i föråldrade gränssnitt.",
     "betterWay": "Vi visste att det måste finnas ett bättre sätt.",
     "solutionParagraph1": "Med inspiration från moderna samarbetsverktyg som Linear och Notion bestämde vi oss för att skapa ett lärplattformssystem som kändes",
     "solutionParagraph2": "snabb, intuitiv och trevlig att använda.",
     "solutionParagraph3": "En som integrerade AI inte som en gimmick, utan som en genuin produktivitetsmultiplikator för både lärare och elever.",
-    "launchParagraph": "Efter två års utveckling lanserade vi officiellt Studious den 17 oktober 2025. Vi är nu i tidig åtkomst, redo att hjälpa skolor världen över att transformera sin lärandeupplevelse.",
+    "launchParagraph": "Efter två års utveckling lanserade vi officiellt Studious den 17 oktober 2025. Vi är nu i tidig åtkomst, redo att hjälpa skolor över hela världen att transformera sin lärandeupplevelse.",
     "journey1": "Vår resa",
     "journey2": "Två år av att bygga, lära och växa",
     "journeyBeginningDate": "2023",
@@ -931,7 +931,7 @@
     "pricingSchoolPerk2": "Obegränsade klasser",
     "pricingSchoolPerk3": "Alla kärnfunktioner",
     "pricingSchoolPerk4": "AI-assistent (obegränsade frågor)",
-    "pricingSchoolPerk5": "Först i kön för betaversionen av Studious CMS",
+    "pricingSchoolPerk5": "Först i kön för betaåtkomst till Studious CMS",
     "pricingSchoolPerk6": "API-åtkomst",
     "pricingSchoolLink": "Kom igång"
   },
@@ -1064,6 +1064,8 @@
         "details": "Uppgiftsdetaljer",
         "configuration": "Konfiguration",
         "grading": "Betygsättning och bedömning",
+        "deliverables": "Leveranser",
+        "aiPolicy": "AI-policy",
         "attachments": "Bilagor"
       },
       "fields": {
@@ -1071,6 +1073,7 @@
         "instructions": "Instruktioner *",
         "dueDate": "Två datum",
         "type": "Uppgiftstyp",
+        "students": "Studenter",
         "section": "Avsnitt",
         "rubric": "Rubrik",
         "gradeScale": "Betygsskala",
@@ -1148,6 +1151,71 @@
         "saveDraft": "Spara utkast",
         "creating": "Skapande...",
         "add": "Tillägga"
+      },
+      "students": {
+        "all": "Alla",
+        "selectPlaceholder": "Välj elever..."
+      },
+      "deliverables": {
+        "fileUpload": {
+          "label": "Filuppladdning",
+          "description": "Studenter kan ladda upp PDF-, bild- och videofiler."
+        },
+        "extendedResponse": {
+          "label": "Utökat svar",
+          "description": "Eleverna får skriva in långa svar."
+        },
+        "worksheetSubmission": {
+          "label": "Inlämning av arbetsblad",
+          "description": "Eleverna kan lämna in arbetsblad för integrerad betygsättning.",
+          "searchPlaceholder": "Sök arbetsblad här...",
+          "found": "{count} hittades",
+          "noResults": "Inga arbetsblad hittades"
+        },
+        "aiGrading": {
+          "label": "Betygsätt och ge feedback med AI",
+          "description": "Ge preliminär och omedelbar betygsättning och feedback med AI."
+        }
+      },
+      "aiPolicy": {
+        "useCases": "Användningsfall",
+        "studentResponsibilities": "Studentansvar",
+        "disclosureRequirements": "Upplysningskrav",
+        "level1": {
+          "title": "Nivå 1 Självständigt arbete (Ingen AI)",
+          "description": "Inga. Grundläggande stavnings- och grammatikkontroller är acceptabla.",
+          "useCases": "Förlita dig helt på personlig kunskap, resonemang och ansträngning.",
+          "studentResponsibilities": "Inga. Grundläggande stavnings- och grammatikkontroller är acceptabla.",
+          "disclosureRequirements": "Ingen AI-upplysning krävs (AI-användning förbjuden)."
+        },
+        "level2": {
+          "title": "Nivå 2 Idéutforskning",
+          "description": "Be AI att förklara idéer, sammanfatta läsningar, brainstorma tillvägagångssätt eller kontrollera grundläggande grammatik och tydlighet.",
+          "useCases": "Be AI att förklara idéer, sammanfatta läsningar, brainstorma tillvägagångssätt eller kontrollera grundläggande grammatik och tydlighet.",
+          "studentResponsibilities": "Utvärdera AI-resultat kritiskt; se till att arbetet återspeglar ditt eget resonemang och din förståelse.",
+          "disclosureRequirements": "Notera kortfattat användningen av AI (t.ex. \"Använde ChatGPT för att skissera uppsatsstrukturen\")."
+        },
+        "level3": {
+          "title": "Nivå 3 redigeringsstöd",
+          "description": "Se till att alla idéer, strukturer och innehåll är dina egna; granska AI-förslag noggrant.",
+          "useCases": "Be AI att förbättra grammatik, interpunktion, frasering och läsbarhet.",
+          "studentResponsibilities": "Se till att alla idéer, strukturer och innehåll är dina egna; granska AI-förslag noggrant.",
+          "disclosureRequirements": "Notera kortfattat användningen av AI (t.ex. \"Använde ChatGPT för grammatik- och tydlighetsredigeringar\")."
+        },
+        "level4": {
+          "title": "Nivå 4 Samskapande",
+          "description": "Använd AI för att utarbeta, designa, koda, analysera, simulera eller generera kreativt innehåll samtidigt som du bibehåller överblick.",
+          "useCases": "Använd AI för att utarbeta, designa, koda, analysera, simulera eller generera kreativt innehåll samtidigt som du bibehåller överblick.",
+          "studentResponsibilities": "Kritiskt utvärdera AI-resultat; revidera och anpassa för att säkerställa originalitet och sunda resonemang.",
+          "disclosureRequirements": "Skicka in en detaljerad redogörelse för AI:s bidrag och dina ändringar."
+        },
+        "level5": {
+          "title": "Nivå 5 Saminnovation",
+          "description": "Använd AI för att generera innehåll, köra analyser, bygga modeller, kreativt skrivande, översätta eller datavisualisering, med explicit mänskligt författarskap och reflektion.",
+          "useCases": "Använd AI för att generera innehåll, köra analyser, bygga modeller, kreativt skrivande, översätta eller datavisualisering, med explicit mänskligt författarskap och reflektion.",
+          "studentResponsibilities": "Integrera AI etiskt och målmedvetet; motivera dess roll i att främja lärande eller kreativitet.",
+          "disclosureRequirements": "Ge ett tydligt erkännande av alla AI-bidrag och mänskliga revideringar."
+        }
       },
       "toasts": {
         "successCreated": "Uppgiften har skapats.",

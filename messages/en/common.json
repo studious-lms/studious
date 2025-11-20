@@ -1064,6 +1064,8 @@
         "details": "Assignment Details",
         "configuration": "Configuration",
         "grading": "Grading & Assessment",
+        "deliverables": "Deliverables",
+        "aiPolicy": "AI Policy",
         "attachments": "Attachments"
       },
       "fields": {
@@ -1071,6 +1073,7 @@
         "instructions": "Instructions *",
         "dueDate": "Two Dates",
         "type": "Assignment Type",
+        "students": "Students",
         "section": "Section",
         "rubric": "Rubric",
         "gradeScale": "Grade Scale",
@@ -1148,6 +1151,71 @@
         "saveDraft": "Save Draft",
         "creating": "Creating...",
         "add": "Add"
+      },
+      "students": {
+        "all": "All",
+        "selectPlaceholder": "Select students..."
+      },
+      "deliverables": {
+        "fileUpload": {
+          "label": "File Upload",
+          "description": "Students may upload PDF, Image, and Video files."
+        },
+        "extendedResponse": {
+          "label": "Extended response",
+          "description": "Students may type in long-form answers."
+        },
+        "worksheetSubmission": {
+          "label": "Worksheet Submission",
+          "description": "Students may submit worksheets for integrated grading.",
+          "searchPlaceholder": "Search worksheets here...",
+          "found": "{count} found",
+          "noResults": "No worksheets found"
+        },
+        "aiGrading": {
+          "label": "Grade and feedback with AI",
+          "description": "Provide preliminary and instant grading and feedback with AI."
+        }
+      },
+      "aiPolicy": {
+        "useCases": "Use Cases",
+        "studentResponsibilities": "Student Responsibilities",
+        "disclosureRequirements": "Disclosure Requirements",
+        "level1": {
+          "title": "Level 1 Independent Work (No AI)",
+          "description": "None. Basic spelling and grammar checkers are acceptable.",
+          "useCases": "Rely entirely on personal knowledge, reasoning, and effort.",
+          "studentResponsibilities": "None. Basic spelling and grammar checkers are acceptable.",
+          "disclosureRequirements": "No AI disclosure needed (AI use prohibited)."
+        },
+        "level2": {
+          "title": "Level 2 Idea Exploration",
+          "description": "Ask AI to explain ideas, summarize readings, brainstorm approaches, or check basic grammar and clarity.",
+          "useCases": "Ask AI to explain ideas, summarize readings, brainstorm approaches, or check basic grammar and clarity.",
+          "studentResponsibilities": "Evaluate AI outputs critically; ensure the work reflects your own reasoning and understanding.",
+          "disclosureRequirements": "Briefly note AI use (e.g., \"Used ChatGPT to outline essay structure\")."
+        },
+        "level3": {
+          "title": "Level 3 Editing Support",
+          "description": "Ensure all ideas, structure, and content are your own; review AI suggestions carefully.",
+          "useCases": "Ask AI to improve grammar, punctuation, phrasing, and readability.",
+          "studentResponsibilities": "Ensure all ideas, structure, and content are your own; review AI suggestions carefully.",
+          "disclosureRequirements": "Briefly note AI use (e.g., \"Used ChatGPT for grammar and clarity edits\")."
+        },
+        "level4": {
+          "title": "Level 4 Co-Creation",
+          "description": "Use AI to draft, design, code, analyze, simulate, or generate creative content while maintaining oversight.",
+          "useCases": "Use AI to draft, design, code, analyze, simulate, or generate creative content while maintaining oversight.",
+          "studentResponsibilities": "Critically assess AI outputs; revise and adapt to ensure originality and sound reasoning.",
+          "disclosureRequirements": "Submit a detailed disclosure about AI's contributions and your revisions."
+        },
+        "level5": {
+          "title": "Level 5 Co-Innovation",
+          "description": "Use AI for generating content, running analyses, building models, creative writing, translation, or data visualization, with explicit human authorship and reflection.",
+          "useCases": "Use AI for generating content, running analyses, building models, creative writing, translation, or data visualization, with explicit human authorship and reflection.",
+          "studentResponsibilities": "Integrate AI ethically and purposefully; justify its role in advancing learning or creativity.",
+          "disclosureRequirements": "Provide a clear acknowledgment of all AI contributions and human revisions."
+        }
       },
       "toasts": {
         "successCreated": "Assignment created successfully.",

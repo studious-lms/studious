@@ -66,7 +66,7 @@
       "present": "Hadiah",
       "late": "Terlambat",
       "absent": "Absen",
-      "notTaken": "Tidak Diambil"
+      "notTaken": "Belum Diambil"
     },
     "student": {
       "title": "Kehadiran Saya",

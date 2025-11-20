@@ -1,0 +1,118 @@
+{
+  "worksheets": {
+    "title": "Feuilles de travail",
+    "subtitle": "Gérer et distribuer les feuilles d'exercices pratiques",
+    "list": {
+      "title": "Toutes les feuilles de travail"
+    },
+    "columns": {
+      "title": "Titre",
+      "questionCount": "Nombre de questions",
+      "lastUpdated": "Dernière mise à jour",
+      "actions": "Actes"
+    },
+    "status": {
+      "draft": "Brouillon",
+      "published": "Publié",
+      "archived": "Archivé"
+    },
+    "actions": {
+      "create": "Créer une feuille de calcul",
+      "view": "Voir",
+      "edit": "Modifier",
+      "delete": "Supprimer",
+      "download": "Télécharger",
+      "share": "Partager",
+      "back": "Dos",
+      "save": "Sauvegarder",
+      "cancel": "Annuler",
+      "select": "Sélectionner",
+      "attachMarkscheme": "Joindre le barème de notation",
+      "detach": "Détails"
+    },
+    "search": {
+      "placeholder": "Rechercher des feuilles de travail..."
+    },
+    "empty": {
+      "title": "Aucune feuille de travail trouvée",
+      "description": "Commencez par créer votre première feuille de calcul ou utilisez la recherche pour en trouver des existantes."
+    },
+    "confirm": {
+      "delete": "Êtes-vous sûr de vouloir supprimer cette feuille de calcul ? Cette action est irréversible."
+    },
+    "toasts": {
+      "created": "Feuille de calcul créée avec succès",
+      "updated": "Feuille de calcul mise à jour avec succès",
+      "deleted": "Feuille de calcul supprimée avec succès",
+      "error": "Une erreur s'est produite."
+    },
+    "create": {
+      "title": "Créer une feuille de calcul",
+      "subtitle": "Créez une nouvelle feuille de calcul avec plusieurs types de questions",
+      "worksheetInfo": "Informations sur la feuille de travail",
+      "actions": {
+        "save": "Sauvegarder",
+        "cancel": "Annuler",
+        "preview": "Aperçu"
+      },
+      "fields": {
+        "title": "Titre",
+        "titlePlaceholder": "Saisissez le titre de la feuille de calcul",
+        "description": "Description",
+        "descriptionPlaceholder": "Saisissez la description de la feuille de calcul (facultatif)",
+        "dueDate": "Deux rendez-vous",
+        "totalQuestions": "Nombre total de questions"
+      },
+      "questions": {
+        "title": "Questions",
+        "addQuestion": "Ajouter une question",
+        "noQuestions": "Aucune question n'a encore été ajoutée",
+        "addFirstQuestion": "Utilisez le menu déroulant ci-dessus pour ajouter votre première question.",
+        "questionNumber": "Question {number}",
+        "points": "Points",
+        "questionText": "Texte de la question",
+        "questionTextPlaceholder": "Saisissez votre question ici",
+        "options": "Options",
+        "optionPlaceholder": "Option {number}",
+        "addOption": "Ajouter une option",
+        "correctAnswer": "Réponse correcte",
+        "true": "Vrai",
+        "false": "FAUX",
+        "mathExpression": "Expression mathématique attendue",
+        "mathExpressionPlaceholder": "Par exemple, x^2 + 5x + 6 = 0",
+        "sampleAnswer": "Exemple de réponse",
+        "sampleAnswerPlaceholder": "Saisissez un exemple de réponse ou une explication",
+        "markscheme": "Stratégie marketing",
+        "markschemeAttached": "Barème de notation ci-joint"
+      },
+      "questionTypes": {
+        "multipleChoice": "Choix multiple",
+        "longForm": "Réponse longue",
+        "math": "Réponse mathématique",
+        "trueFalse": "Vrai/Faux"
+      },
+      "markschemeDialog": {
+        "title": "Sélectionner le barème de notation",
+        "noMarkschemes": "Aucun barème de notation disponible. Veuillez en créer un dans la section Notes.",
+        "untitled": "Barème de notation sans titre",
+        "custom": "Coutume"
+      },
+      "errors": {
+        "titleRequired": "Le titre est requis.",
+        "atLeastOneQuestion": "Veuillez ajouter au moins une question",
+        "questionTextRequired": "Toutes les questions doivent comporter du texte.",
+        "multipleChoiceOptions": "Les questions à choix multiples nécessitent au moins 2 options.",
+        "multipleChoiceCorrectAnswer": "Les questions à choix multiples nécessitent au moins une réponse correcte.",
+        "teacherOnly": "Seuls les enseignants peuvent créer des feuilles de travail."
+      },
+      "toasts": {
+        "created": "Feuille de calcul créée avec succès",
+        "markschemeAttached": "Barème de notation joint avec succès",
+        "markschemeDetached": "Barème de notation détaché avec succès",
+        "updated": "Feuille de calcul mise à jour avec succès",
+        "saving": "Économie...",
+        "saved": "Enregistré"
+      }
+    }
+  }
+}

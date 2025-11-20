@@ -542,7 +542,7 @@
         "viewAll": "Zobacz wszystkich uczniów",
         "empty": {
           "title": "Brak zapisanych studentów",
-          "description": "Uczniowie pojawią się tutaj po dołączeniu do klasy"
+          "description": "Uczniowie będą tu wyświetlani po dołączeniu do klasy"
         },
         "searchPlaceholder": "Wyszukaj studentów..."
       },
@@ -1064,6 +1064,8 @@
         "details": "Szczegóły zadania",
         "configuration": "Konfiguracja",
         "grading": "Ocenianie i ocenianie",
+        "deliverables": "Produkty dostarczane",
+        "aiPolicy": "Polityka AI",
         "attachments": "Załączniki"
       },
       "fields": {
@@ -1071,6 +1073,7 @@
         "instructions": "Instrukcje *",
         "dueDate": "Dwie daty",
         "type": "Typ zadania",
+        "students": "Studenci",
         "section": "Sekcja",
         "rubric": "Rubryka",
         "gradeScale": "Skala ocen",
@@ -1149,6 +1152,71 @@
         "creating": "Tworzenie...",
         "add": "Dodać"
       },
+      "students": {
+        "all": "Wszystko",
+        "selectPlaceholder": "Wybierz uczniów..."
+      },
+      "deliverables": {
+        "fileUpload": {
+          "label": "Przesyłanie plików",
+          "description": "Studenci mogą przesyłać pliki PDF, obrazy i wideo."
+        },
+        "extendedResponse": {
+          "label": "Rozszerzona odpowiedź",
+          "description": "Uczniowie mogą wpisać dłuższe odpowiedzi."
+        },
+        "worksheetSubmission": {
+          "label": "Złożenie arkusza roboczego",
+          "description": "Uczniowie mogą przesłać arkusze robocze do oceniania zintegrowanego.",
+          "searchPlaceholder": "Wyszukaj arkusze tutaj...",
+          "found": "Znaleziono {count}",
+          "noResults": "Nie znaleziono arkuszy roboczych"
+        },
+        "aiGrading": {
+          "label": "Ocenianie i przekazywanie opinii za pomocą sztucznej inteligencji",
+          "description": "Zapewnij wstępną i natychmiastową ocenę oraz informację zwrotną dzięki sztucznej inteligencji."
+        }
+      },
+      "aiPolicy": {
+        "useCases": "Przypadki użycia",
+        "studentResponsibilities": "Obowiązki ucznia",
+        "disclosureRequirements": "Wymagania dotyczące ujawniania informacji",
+        "level1": {
+          "title": "Praca samodzielna poziomu 1 (bez sztucznej inteligencji)",
+          "description": "Brak. Podstawowe sprawdzanie pisowni i gramatyki jest dopuszczalne.",
+          "useCases": "Polegaj całkowicie na własnej wiedzy, rozumowaniu i wysiłku.",
+          "studentResponsibilities": "Brak. Podstawowe sprawdzanie pisowni i gramatyki jest dopuszczalne.",
+          "disclosureRequirements": "Ujawnianie informacji o sztucznej inteligencji nie jest wymagane (użycie sztucznej inteligencji jest zabronione)."
+        },
+        "level2": {
+          "title": "Eksploracja pomysłów poziomu 2",
+          "description": "Poproś sztuczną inteligencję o wyjaśnienie pomysłów, podsumowanie lektur, burzę mózgów lub sprawdzenie podstawowej gramatyki i przejrzystości.",
+          "useCases": "Poproś sztuczną inteligencję o wyjaśnienie pomysłów, podsumowanie lektur, burzę mózgów lub sprawdzenie podstawowej gramatyki i przejrzystości.",
+          "studentResponsibilities": "Krytycznie oceniaj wyniki sztucznej inteligencji; upewnij się, że praca odzwierciedla Twoje własne rozumowanie i zrozumienie.",
+          "disclosureRequirements": "Krótko zanotuj wykorzystanie sztucznej inteligencji (np. „Użyłem ChatGPT do nakreślenia struktury eseju”)."
+        },
+        "level3": {
+          "title": "Wsparcie edycji poziomu 3",
+          "description": "Upewnij się, że wszystkie pomysły, struktura i treść są Twoje; zapoznaj się uważnie z sugestiami dotyczącymi sztucznej inteligencji.",
+          "useCases": "Poproś sztuczną inteligencję o poprawienie gramatyki, interpunkcji, frazeologii i czytelności.",
+          "studentResponsibilities": "Upewnij się, że wszystkie pomysły, struktura i treść są Twoje; zapoznaj się uważnie z sugestiami dotyczącymi sztucznej inteligencji.",
+          "disclosureRequirements": "Krótko zanotuj użycie sztucznej inteligencji (np. „Użyłem ChatGPT do edycji gramatyki i przejrzystości”)."
+        },
+        "level4": {
+          "title": "Poziom 4 Współtworzenie",
+          "description": "Korzystaj ze sztucznej inteligencji do tworzenia, projektowania, kodowania, analizowania, symulowania i generowania kreatywnych treści, zachowując przy tym nadzór.",
+          "useCases": "Korzystaj ze sztucznej inteligencji do tworzenia, projektowania, kodowania, analizowania, symulowania i generowania kreatywnych treści, zachowując przy tym nadzór.",
+          "studentResponsibilities": "Krytycznie oceniaj wyniki sztucznej inteligencji; popraw je i dostosuj, aby zapewnić oryginalność i solidne uzasadnienie.",
+          "disclosureRequirements": "Prześlij szczegółowe informacje na temat wkładu AI i swoich zmian."
+        },
+        "level5": {
+          "title": "Współinnowacja poziomu 5",
+          "description": "Wykorzystaj sztuczną inteligencję do generowania treści, przeprowadzania analiz, budowania modeli, kreatywnego pisania, tłumaczeń lub wizualizacji danych, z wyraźnym ludzkim autorstwem i refleksją.",
+          "useCases": "Wykorzystaj sztuczną inteligencję do generowania treści, przeprowadzania analiz, budowania modeli, kreatywnego pisania, tłumaczeń lub wizualizacji danych, z wyraźnym ludzkim autorstwem i refleksją.",
+          "studentResponsibilities": "Wdrażaj sztuczną inteligencję w sposób etyczny i celowy; uzasadnij jej rolę w rozwijaniu uczenia się i kreatywności.",
+          "disclosureRequirements": "Należy wyraźnie zaznaczyć cały wkład sztucznej inteligencji i wszystkie zmiany wprowadzone przez człowieka."
+        }
+      },
       "toasts": {
         "successCreated": "Zadanie zostało pomyślnie utworzone.",
         "successDraft": "Zadanie zostało pomyślnie zapisane jako wersja robocza.",
@@ -1198,7 +1266,7 @@
       "notifications": {
         "email": {
           "label": "Wyślij powiadomienie e-mail",
-          "description": "Powiadom uczniów za pośrednictwem poczty e-mail"
+          "description": "Powiadom uczniów e-mailem"
         },
         "push": {
           "label": "Wyślij powiadomienie push",

@@ -6,7 +6,7 @@
       "totalClasses": "จำนวนชั้นเรียนทั้งหมด",
       "teachingEnrolled": "{teaching} สอน, {enrolled} ลงทะเบียน",
       "dueToday": "ครบกำหนดวันนี้",
-      "dueTodayDesc": "งานที่ต้องส่งวันนี้",
+      "dueTodayDesc": "งานที่ต้องส่งภายในวันนี้",
       "upcoming": "กำลังจะมีขึ้น",
       "upcomingDesc": "งานที่กำลังจะมาถึง",
       "thisWeek": "สัปดาห์นี้",

@@ -1,0 +1,118 @@
+{
+  "worksheets": {
+    "title": "Arkusze robocze",
+    "subtitle": "Zarządzanie i dystrybucja arkuszy ćwiczeń",
+    "list": {
+      "title": "Wszystkie arkusze robocze"
+    },
+    "columns": {
+      "title": "Tytuł",
+      "questionCount": "Liczba pytań",
+      "lastUpdated": "Ostatnia aktualizacja",
+      "actions": "Akcje"
+    },
+    "status": {
+      "draft": "Projekt",
+      "published": "Opublikowany",
+      "archived": "Zarchiwizowane"
+    },
+    "actions": {
+      "create": "Utwórz arkusz kalkulacyjny",
+      "view": "Pogląd",
+      "edit": "Redagować",
+      "delete": "Usuwać",
+      "download": "Pobierać",
+      "share": "Udział",
+      "back": "Z powrotem",
+      "save": "Ratować",
+      "cancel": "Anulować",
+      "select": "Wybierać",
+      "attachMarkscheme": "Dołącz schemat ocen",
+      "detach": "Bliższe dane"
+    },
+    "search": {
+      "placeholder": "Wyszukaj arkusze..."
+    },
+    "empty": {
+      "title": "Nie znaleziono arkuszy roboczych",
+      "description": "Zacznij od utworzenia pierwszego arkusza kalkulacyjnego lub skorzystaj z wyszukiwarki, aby znaleźć istniejące."
+    },
+    "confirm": {
+      "delete": "Czy na pewno chcesz usunąć ten arkusz? Tej czynności nie można cofnąć."
+    },
+    "toasts": {
+      "created": "Arkusz roboczy został pomyślnie utworzony",
+      "updated": "Arkusz roboczy został pomyślnie zaktualizowany",
+      "deleted": "Arkusz roboczy został pomyślnie usunięty",
+      "error": "Wystąpił błąd"
+    },
+    "create": {
+      "title": "Utwórz arkusz kalkulacyjny",
+      "subtitle": "Utwórz nowy arkusz kalkulacyjny z wieloma typami pytań",
+      "worksheetInfo": "Informacje o arkuszu roboczym",
+      "actions": {
+        "save": "Ratować",
+        "cancel": "Anulować",
+        "preview": "Zapowiedź"
+      },
+      "fields": {
+        "title": "Tytuł",
+        "titlePlaceholder": "Wprowadź tytuł arkusza roboczego",
+        "description": "Opis",
+        "descriptionPlaceholder": "Wprowadź opis arkusza kalkulacyjnego (opcjonalnie)",
+        "dueDate": "Dwie daty",
+        "totalQuestions": "Łączna liczba pytań"
+      },
+      "questions": {
+        "title": "Pytania",
+        "addQuestion": "Dodaj pytanie",
+        "noQuestions": "Nie dodano jeszcze żadnych pytań",
+        "addFirstQuestion": "Użyj listy rozwijanej powyżej, aby dodać swoje pierwsze pytanie",
+        "questionNumber": "Pytanie {number}",
+        "points": "Zwrotnica",
+        "questionText": "Tekst pytania",
+        "questionTextPlaceholder": "Wpisz tutaj swoje pytanie",
+        "options": "Opcje",
+        "optionPlaceholder": "Opcja {number}",
+        "addOption": "Dodaj opcję",
+        "correctAnswer": "Poprawna odpowiedź",
+        "true": "PRAWDA",
+        "false": "FAŁSZ",
+        "mathExpression": "Oczekiwane wyrażenie matematyczne",
+        "mathExpressionPlaceholder": "np. x^2 + 5x + 6 = 0",
+        "sampleAnswer": "Przykładowa odpowiedź",
+        "sampleAnswerPlaceholder": "Wprowadź przykładową odpowiedź lub wyjaśnienie",
+        "markscheme": "Schemat marketingowy",
+        "markschemeAttached": "Załączony schemat oceny"
+      },
+      "questionTypes": {
+        "multipleChoice": "Wielokrotny wybór",
+        "longForm": "Odpowiedź w formie długiej",
+        "math": "Odpowiedź matematyczna",
+        "trueFalse": "Prawda/Fałsz"
+      },
+      "markschemeDialog": {
+        "title": "Wybierz schemat znakowania",
+        "noMarkschemes": "Brak dostępnych schematów oceniania. Najpierw utwórz go w sekcji Oceny.",
+        "untitled": "Niezatytułowany schemat znakowania",
+        "custom": "Zwyczaj"
+      },
+      "errors": {
+        "titleRequired": "Tytuł jest wymagany",
+        "atLeastOneQuestion": "Proszę dodać co najmniej jedno pytanie",
+        "questionTextRequired": "Wszystkie pytania muszą zawierać tekst",
+        "multipleChoiceOptions": "Pytania wielokrotnego wyboru wymagają co najmniej 2 odpowiedzi",
+        "multipleChoiceCorrectAnswer": "Pytania wielokrotnego wyboru wymagają co najmniej jednej poprawnej odpowiedzi",
+        "teacherOnly": "Tylko nauczyciele mogą tworzyć arkusze robocze"
+      },
+      "toasts": {
+        "created": "Arkusz roboczy został pomyślnie utworzony",
+        "markschemeAttached": "Schemat znakowania został pomyślnie dołączony",
+        "markschemeDetached": "Schemat znakowania został pomyślnie odłączony",
+        "updated": "Arkusz roboczy został pomyślnie zaktualizowany",
+        "saving": "Oszczędność...",
+        "saved": "Zapisano"
+      }
+    }
+  }
+}

@@ -12,10 +12,12 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { 
   ArrowLeft,
   Save,
-  Upload
+  Upload,
+  ChevronDown
 } from "lucide-react";
 import { format } from "date-fns";
 import { trpc, type RouterOutputs, type RouterInputs } from "@/lib/trpc";
@@ -46,6 +48,9 @@ import {
 import { RootState } from "@/store/store";
 import { useSelector } from "react-redux";
 import { baseFileHandler } from "@/lib/fileHandler";
+import { getStatusColor, getStudentAssignmentStatus } from "@/lib/getStudentAssignmentStatus";
+import { WorksheetViewer } from "@/components/worksheets/worksheet-viewer";
+import { ExtendedResponse } from "@/components/submissions/ExtendedResponse";
 
 type AssignmentUpdateSubmissionAsTeacherInput = RouterInputs['assignment']['updateSubmissionAsTeacher'];
 
@@ -63,6 +68,35 @@ type RubricCriterion = {
 };
 
 // RubricGrade type is now imported from @/lib/types/assignment
+
+// Component to fetch and display a worksheet
+function WorksheetDisplay({ 
+  worksheetId, 
+  submissionId,
+  worksheetName,
+}: { 
+  worksheetId: string; 
+  submissionId: string;
+  worksheetName: string;
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <Collapsible open={isOpen} onOpenChange={setIsOpen}>
+      <CollapsibleTrigger className="w-full py-3 px-4 border rounded-md hover:bg-muted/50 flex items-center justify-between text-left">
+        <span className="font-medium">{worksheetName}</span>
+        <ChevronDown className={`h-4 w-4 shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+      </CollapsibleTrigger>
+      <CollapsibleContent className="py-4">
+        <WorksheetViewer
+          submissionId={submissionId}
+          worksheetId={worksheetId}
+          
+        />
+      </CollapsibleContent>
+    </Collapsible>
+  );
+}
 
 function SubmissionDetailSkeleton() {
   return (
@@ -472,21 +506,6 @@ export default function SubmissionDetailPage() {
     }
   };
 
-  const getStatusBadge = () => {
-    if (!submission) return null;
-
-    if (submission.returned) {
-      return <Badge variant="default">Returned</Badge>;
-    }
-    if (submission.submitted && (submission).late) {
-      return <Badge variant="destructive">Late Submission</Badge>;
-    }
-    if (submission.submitted) {
-      return <Badge variant="secondary">Submitted</Badge>;
-    }
-    return <Badge variant="outline">Not Submitted</Badge>;
-  };
-
   const updateRubricGrade = (criteriaId: string, levelId: string, points: number, comments?: string) => {
     setRubricGrades(prev => {
       const existing = prev.find(g => g.criteriaId === criteriaId);
@@ -547,46 +566,68 @@ export default function SubmissionDetailPage() {
               <p className="text-muted-foreground">Submission by {submission.student.username}</p>
             </div>
           </div>
-          
-          <div className="flex items-center space-x-2">
-            {getStatusBadge()}
-          </div>
         </div>
 
         {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Left Column - Submission Content */}
           <div className="lg:col-span-2 space-y-6">
-            {/* Student Attachments */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Student Submission</CardTitle>
-              </CardHeader>
-              <CardContent>
-                {submission.attachments.length > 0 ? (
-                  <DndProvider backend={HTML5Backend}>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                      {convertAttachmentsToFileItems(submission.attachments).map((fileItem) => (
-                        <DraggableFileItem
-                          key={fileItem.id}
-                          item={fileItem}
-                          classId={classId}
-                          readonly={true}
-                          handlers={fileHandlers}
-                          getFileIcon={getFileIcon}
-                        />
-                      ))}
-                    </div>
-                  </DndProvider>
-                ) : (
-                  <EmptyState
-                    icon={FileText}
-                    title="No files submitted"
-                    description="The student hasn't submitted any files for this assignment."
-                  />
-                )}
-              </CardContent>
-            </Card>
+            {/* Student Attachments - Only show if acceptFiles is true */}
+            {assignment?.acceptFiles && (
+              <Card>
+                <CardHeader>
+                  <CardTitle>Student Submission Files</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  {submission.attachments.length > 0 ? (
+                    <DndProvider backend={HTML5Backend}>
+                      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                        {convertAttachmentsToFileItems(submission.attachments).map((fileItem) => (
+                          <DraggableFileItem
+                            key={fileItem.id}
+                            item={fileItem}
+                            classId={classId}
+                            readonly={true}
+                            handlers={fileHandlers}
+                            getFileIcon={getFileIcon}
+                          />
+                        ))}
+                      </div>
+                    </DndProvider>
+                  ) : (
+                    <EmptyState
+                      icon={FileText}
+                      title="No files submitted"
+                      description="The student hasn't submitted any files for this assignment."
+                    />
+                  )}
+                </CardContent>
+              </Card>
+            )}
+
+            {/* Extended Response - Only show if acceptExtendedResponse is true */}
+            {assignment?.acceptExtendedResponse && (
+              <ExtendedResponse extendedResponse={(submission as any).extendedResponse} />
+            )}
+
+            {/* Worksheet Submission - Only show if acceptWorksheet is true */}
+            {assignment?.acceptWorksheet && assignment.worksheets && assignment.worksheets.length > 0 && (
+              <div className="space-y-2">
+                <h3 className="text-lg font-semibold mb-3">Worksheets</h3>
+                <div className="space-y-2">
+                  {assignment.worksheets.map((worksheet: any) => {
+                    return (
+                      <WorksheetDisplay
+                        key={worksheet.id}
+                        worksheetId={worksheet.id}
+                        submissionId={submissionId}
+                        worksheetName={worksheet.name || `Worksheet ${worksheet.id}`}
+                      />
+                    );
+                  })}
+                </div>
+              </div>
+            )}
 
             {/* Grade & Feedback - Teacher Only */}
             {isTeacher && (
@@ -828,7 +869,13 @@ export default function SubmissionDetailPage() {
               <CardContent className="space-y-4">
                 <div className="flex items-center justify-between">
                   <span className="text-sm font-medium">Status</span>
-                  {getStatusBadge()}
+                  <div className="flex items-center space-x-2">
+                    {getStudentAssignmentStatus(submission).map((status) => (
+                    <Badge className={getStatusColor(status)} key={status}>
+                      {status}
+                    </Badge>
+                  ))}
+                  </div>
                 </div>
                 
                 {submission.submittedAt && (

@@ -1,0 +1,118 @@
+{
+  "worksheets": {
+    "title": "Arbetsblad",
+    "subtitle": "Hantera och distribuera övningsblad",
+    "list": {
+      "title": "Alla arbetsblad"
+    },
+    "columns": {
+      "title": "Titel",
+      "questionCount": "Antal frågor",
+      "lastUpdated": "Senast uppdaterad",
+      "actions": "Åtgärder"
+    },
+    "status": {
+      "draft": "Förslag",
+      "published": "Publicerad",
+      "archived": "Arkiverad"
+    },
+    "actions": {
+      "create": "Skapa arbetsblad",
+      "view": "Se",
+      "edit": "Redigera",
+      "delete": "Radera",
+      "download": "Ladda ner",
+      "share": "Dela",
+      "back": "Tillbaka",
+      "save": "Spara",
+      "cancel": "Avboka",
+      "select": "Välja",
+      "attachMarkscheme": "Bifoga bedömningsschema",
+      "detach": "Detaljer"
+    },
+    "search": {
+      "placeholder": "Sök i arbetsblad..."
+    },
+    "empty": {
+      "title": "Inga arbetsblad hittades",
+      "description": "Börja med att skapa ditt första arbetsblad eller använd sökfunktionen för att hitta befintliga."
+    },
+    "confirm": {
+      "delete": "Är du säker på att du vill ta bort det här kalkylbladet? Åtgärden kan inte ångras."
+    },
+    "toasts": {
+      "created": "Arbetsbladet skapades",
+      "updated": "Arbetsbladet har uppdaterats",
+      "deleted": "Arbetsbladet har raderats",
+      "error": "Ett fel uppstod"
+    },
+    "create": {
+      "title": "Skapa arbetsblad",
+      "subtitle": "Skapa ett nytt arbetsblad med flera frågetyper",
+      "worksheetInfo": "Arbetsbladsinformation",
+      "actions": {
+        "save": "Spara",
+        "cancel": "Avboka",
+        "preview": "Förhandsvisning"
+      },
+      "fields": {
+        "title": "Titel",
+        "titlePlaceholder": "Ange kalkylbladets titel",
+        "description": "Beskrivning",
+        "descriptionPlaceholder": "Ange beskrivning av arbetsbladet (valfritt)",
+        "dueDate": "Två datum",
+        "totalQuestions": "Totalt antal frågor"
+      },
+      "questions": {
+        "title": "Frågor",
+        "addQuestion": "Lägg till fråga",
+        "noQuestions": "Inga frågor tillagda än",
+        "addFirstQuestion": "Använd rullgardinsmenyn ovan för att lägga till din första fråga",
+        "questionNumber": "Fråga {number}",
+        "points": "Poäng",
+        "questionText": "Frågetext",
+        "questionTextPlaceholder": "Skriv din fråga här",
+        "options": "Alternativ",
+        "optionPlaceholder": "Alternativ {number}",
+        "addOption": "Lägg till alternativ",
+        "correctAnswer": "Rätt svar",
+        "true": "Sann",
+        "false": "Falsk",
+        "mathExpression": "Förväntat matematiskt uttryck",
+        "mathExpressionPlaceholder": "t.ex. x^2 + 5x + 6 = 0",
+        "sampleAnswer": "Exempelsvar",
+        "sampleAnswerPlaceholder": "Ange ett exempelsvar eller en förklaring",
+        "markscheme": "Marknadsföringsprogram",
+        "markschemeAttached": "Bifogat bedömningsschema"
+      },
+      "questionTypes": {
+        "multipleChoice": "Flervalsfrågor",
+        "longForm": "Långt svar",
+        "math": "Mattesvar",
+        "trueFalse": "Sant/Falskt"
+      },
+      "markschemeDialog": {
+        "title": "Välj märkningsschema",
+        "noMarkschemes": "Inga bedömningssystem tillgängliga. Skapa ett i avsnittet Betyg först.",
+        "untitled": "Namnlöst märkningsschema",
+        "custom": "Beställnings"
+      },
+      "errors": {
+        "titleRequired": "Titel krävs",
+        "atLeastOneQuestion": "Vänligen lägg till minst en fråga",
+        "questionTextRequired": "Alla frågor måste ha text",
+        "multipleChoiceOptions": "Flervalsfrågor behöver minst två alternativ",
+        "multipleChoiceCorrectAnswer": "Flervalsfrågor behöver minst ett rätt svar",
+        "teacherOnly": "Endast lärare kan skapa arbetsblad"
+      },
+      "toasts": {
+        "created": "Arbetsbladet skapades",
+        "markschemeAttached": "Markeringsschemat har bifogats",
+        "markschemeDetached": "Markeringsschemat har kopplats bort",
+        "updated": "Arbetsbladet har uppdaterats",
+        "saving": "Sparande...",
+        "saved": "Sparad"
+      }
+    }
+  }
+}

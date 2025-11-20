@@ -82,7 +82,7 @@
       "checkInbox": "Veuillez vérifier votre boîte de réception et votre dossier de courriers indésirables.",
       "enterEmail": "Saisissez votre adresse e-mail",
       "sending": "Envoi...",
-      "sendEmail": "Envoyer un e-mail"
+      "sendEmail": "Envoyer un courriel"
     }
   },
   "marketing": {
@@ -525,7 +525,7 @@
       "overview": {
         "title": "Aperçu du cours",
         "classAverage": "Moyenne de la classe",
-        "totalStudents": "Nombre total d'élèves",
+        "totalStudents": "Nombre total d'étudiants",
         "assignments": "Devoirs",
         "submissionRate": "Taux de soumission"
       },
@@ -847,7 +847,7 @@
     "closed": "Fermé",
     "assignment": "Affectation",
     "assignments": "Devoirs",
-    "newAssignment": "Nouvelle affectation",
+    "newAssignment": "Nouvelle mission",
     "createAssignment": "Créer un devoir",
     "viewAssignment": "Voir le devoir",
     "allAssignments": "Tous les devoirs",
@@ -961,7 +961,7 @@
       },
       "success": {
         "title": "Vous êtes sur la liste !",
-        "description": "Nous vous enverrons un courriel à {email} lorsque nous serons prêts pour vous."
+        "description": "Nous vous enverrons un e-mail à {email} lorsque nous serons prêts pour vous."
       },
       "toasts": {
         "success": "Inscription réussie sur la liste d'attente !"
@@ -1064,6 +1064,8 @@
         "details": "Détails de la mission",
         "configuration": "Configuration",
         "grading": "Évaluation et notation",
+        "deliverables": "Livrables",
+        "aiPolicy": "Politique en matière d'IA",
         "attachments": "Pièces jointes"
       },
       "fields": {
@@ -1071,6 +1073,7 @@
         "instructions": "Instructions *",
         "dueDate": "Deux rendez-vous",
         "type": "Type de devoir",
+        "students": "Étudiants",
         "section": "Section",
         "rubric": "Rubrique",
         "gradeScale": "Échelle de notation",
@@ -1148,6 +1151,71 @@
         "saveDraft": "Enregistrer le brouillon",
         "creating": "Création...",
         "add": "Ajouter"
+      },
+      "students": {
+        "all": "Tous",
+        "selectPlaceholder": "Sélectionner les étudiants..."
+      },
+      "deliverables": {
+        "fileUpload": {
+          "label": "Téléchargement de fichier",
+          "description": "Les étudiants peuvent télécharger des fichiers PDF, image et vidéo."
+        },
+        "extendedResponse": {
+          "label": "Réponse étendue",
+          "description": "Les étudiants peuvent saisir des réponses longues."
+        },
+        "worksheetSubmission": {
+          "label": "Soumission de la feuille de travail",
+          "description": "Les élèves peuvent soumettre des feuilles de travail pour une évaluation intégrée.",
+          "searchPlaceholder": "Recherchez des feuilles de travail ici...",
+          "found": "{count} trouvé",
+          "noResults": "Aucune feuille de travail trouvée"
+        },
+        "aiGrading": {
+          "label": "Évaluation et commentaires avec l'IA",
+          "description": "Fournir une évaluation et un retour d'information préliminaires et instantanés grâce à l'IA."
+        }
+      },
+      "aiPolicy": {
+        "useCases": "Cas d'utilisation",
+        "studentResponsibilities": "Responsabilités des étudiants",
+        "disclosureRequirements": "Exigences de divulgation",
+        "level1": {
+          "title": "Travail indépendant de niveau 1 (sans IA)",
+          "description": "Aucun. Les correcteurs d'orthographe et de grammaire de base sont acceptables.",
+          "useCases": "S'appuyer entièrement sur ses connaissances personnelles, son raisonnement et ses efforts.",
+          "studentResponsibilities": "Aucun. Les correcteurs d'orthographe et de grammaire de base sont acceptables.",
+          "disclosureRequirements": "Aucune déclaration relative à l'IA n'est requise (utilisation de l'IA interdite)."
+        },
+        "level2": {
+          "title": "Exploration d'idées de niveau 2",
+          "description": "Demandez à l'IA d'expliquer des idées, de résumer des lectures, de proposer des pistes de réflexion ou de vérifier la grammaire et la clarté de base.",
+          "useCases": "Demandez à l'IA d'expliquer des idées, de résumer des lectures, de proposer des pistes de réflexion ou de vérifier la grammaire et la clarté de base.",
+          "studentResponsibilities": "Évaluez de manière critique les résultats de l'IA ; assurez-vous que le travail reflète votre propre raisonnement et votre compréhension.",
+          "disclosureRequirements": "Mentionnez brièvement l'utilisation de l'IA (par exemple : « Utilisation de ChatGPT pour structurer l'essai »)."
+        },
+        "level3": {
+          "title": "Assistance à la correction de niveau 3",
+          "description": "Assurez-vous que toutes les idées, la structure et le contenu soient les vôtres ; examinez attentivement les suggestions de l’IA.",
+          "useCases": "Demandez à l'IA d'améliorer la grammaire, la ponctuation, le phrasé et la lisibilité.",
+          "studentResponsibilities": "Assurez-vous que toutes les idées, la structure et le contenu soient les vôtres ; examinez attentivement les suggestions de l’IA.",
+          "disclosureRequirements": "Mentionnez brièvement l'utilisation de l'IA (par exemple : « Utilisation de ChatGPT pour la correction grammaticale et l'amélioration de la clarté »)."
+        },
+        "level4": {
+          "title": "Co-création de niveau 4",
+          "description": "Utilisez l'IA pour rédiger, concevoir, coder, analyser, simuler ou générer du contenu créatif tout en conservant un contrôle.",
+          "useCases": "Utilisez l'IA pour rédiger, concevoir, coder, analyser, simuler ou générer du contenu créatif tout en conservant un contrôle.",
+          "studentResponsibilities": "Évaluer de manière critique les résultats de l'IA ; les réviser et les adapter afin d'en garantir l'originalité et la pertinence.",
+          "disclosureRequirements": "Veuillez soumettre une déclaration détaillée concernant les contributions de l'IA et vos modifications."
+        },
+        "level5": {
+          "title": "Co-innovation de niveau 5",
+          "description": "Utilisez l'IA pour générer du contenu, effectuer des analyses, construire des modèles, rédiger des textes créatifs, traduire ou visualiser des données, avec une contribution et une réflexion humaines explicites.",
+          "useCases": "Utilisez l'IA pour générer du contenu, effectuer des analyses, construire des modèles, rédiger des textes créatifs, traduire ou visualiser des données, avec une contribution et une réflexion humaines explicites.",
+          "studentResponsibilities": "Intégrer l'IA de manière éthique et ciblée ; justifier son rôle dans le développement de l'apprentissage ou de la créativité.",
+          "disclosureRequirements": "Mentionner clairement toutes les contributions de l'IA et les corrections humaines."
+        }
       },
       "toasts": {
         "successCreated": "Devoir créé avec succès.",

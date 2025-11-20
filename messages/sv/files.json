@@ -124,7 +124,7 @@
       "downloadFailed": "Nedladdningen misslyckades",
       "shareLinkCopied": "Delningslänk kopierad",
       "shareFailed": "Delningen misslyckades",
-      "permissionDenied": "Tillåtelse nekad"
+      "permissionDenied": "Tillstånd nekad"
     }
   }
 }

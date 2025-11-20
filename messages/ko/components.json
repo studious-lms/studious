@@ -51,7 +51,7 @@
     "placeholder": "루브릭 이름을 입력하세요",
     "cancel": "취소",
     "create": "루브릭 만들기",
-    "update": "업데이트 루브릭",
+    "update": "루브릭 업데이트",
     "creating": "생성 중...",
     "updating": "업데이트 중...",
     "created": "루브릭이 성공적으로 생성되었습니다.",
@@ -209,7 +209,7 @@
     "created": "섹션 \"{name}\"이 성공적으로 생성되었습니다.",
     "updated": "섹션 \"{name}\"이 성공적으로 업데이트되었습니다.",
     "errorEmpty": "섹션 이름을 입력하세요.",
-    "errorCreate": "섹션을 만들지 못했습니다",
+    "errorCreate": "섹션을 만들지 못했습니다.",
     "errorUpdate": "섹션을 업데이트하지 못했습니다."
   },
   "universalEvent": {

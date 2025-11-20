@@ -1,0 +1,118 @@
+{
+  "worksheets": {
+    "title": "ใบงาน",
+    "subtitle": "จัดการและแจกจ่ายใบงานฝึกหัด",
+    "list": {
+      "title": "ใบงานทั้งหมด"
+    },
+    "columns": {
+      "title": "ชื่อ",
+      "questionCount": "จำนวนคำถาม",
+      "lastUpdated": "อัปเดตล่าสุด",
+      "actions": "การกระทำ"
+    },
+    "status": {
+      "draft": "ร่าง",
+      "published": "ที่ตีพิมพ์",
+      "archived": "เก็บถาวรแล้ว"
+    },
+    "actions": {
+      "create": "สร้างแผ่นงาน",
+      "view": "ดู",
+      "edit": "แก้ไข",
+      "delete": "ลบ",
+      "download": "ดาวน์โหลด",
+      "share": "แบ่งปัน",
+      "back": "กลับ",
+      "save": "บันทึก",
+      "cancel": "ยกเลิก",
+      "select": "เลือก",
+      "attachMarkscheme": "แนบ Markscheme",
+      "detach": "รายละเอียด"
+    },
+    "search": {
+      "placeholder": "ค้นหาใบงาน..."
+    },
+    "empty": {
+      "title": "ไม่พบแผ่นงาน",
+      "description": "เริ่มต้นด้วยการสร้างเวิร์กชีตแรกของคุณหรือใช้การค้นหาเพื่อค้นหาเวิร์กชีตที่มีอยู่"
+    },
+    "confirm": {
+      "delete": "คุณแน่ใจหรือไม่ว่าต้องการลบแผ่นงานนี้? การดำเนินการนี้ไม่สามารถย้อนกลับได้"
+    },
+    "toasts": {
+      "created": "สร้างแผ่นงานสำเร็จแล้ว",
+      "updated": "อัปเดตแผ่นงานสำเร็จแล้ว",
+      "deleted": "ลบแผ่นงานสำเร็จแล้ว",
+      "error": "เกิดข้อผิดพลาด"
+    },
+    "create": {
+      "title": "สร้างแผ่นงาน",
+      "subtitle": "สร้างแผ่นงานใหม่ที่มีประเภทคำถามหลายประเภท",
+      "worksheetInfo": "ข้อมูลใบงาน",
+      "actions": {
+        "save": "บันทึก",
+        "cancel": "ยกเลิก",
+        "preview": "ตัวอย่าง"
+      },
+      "fields": {
+        "title": "ชื่อ",
+        "titlePlaceholder": "ป้อนชื่อแผ่นงาน",
+        "description": "คำอธิบาย",
+        "descriptionPlaceholder": "ป้อนคำอธิบายแผ่นงาน (ไม่บังคับ)",
+        "dueDate": "สองวันที่",
+        "totalQuestions": "คำถามทั้งหมด"
+      },
+      "questions": {
+        "title": "คำถาม",
+        "addQuestion": "เพิ่มคำถาม",
+        "noQuestions": "ยังไม่มีคำถามเพิ่ม",
+        "addFirstQuestion": "ใช้เมนูแบบดรอปดาวน์ด้านบนเพื่อเพิ่มคำถามแรกของคุณ",
+        "questionNumber": "คำถาม {number}",
+        "points": "คะแนน",
+        "questionText": "ข้อความคำถาม",
+        "questionTextPlaceholder": "กรอกคำถามของคุณที่นี่",
+        "options": "ตัวเลือก",
+        "optionPlaceholder": "ตัวเลือก {number}",
+        "addOption": "เพิ่มตัวเลือก",
+        "correctAnswer": "คำตอบที่ถูกต้อง",
+        "true": "จริง",
+        "false": "เท็จ",
+        "mathExpression": "นิพจน์ทางคณิตศาสตร์ที่คาดหวัง",
+        "mathExpressionPlaceholder": "เช่น x^2 + 5x + 6 = 0",
+        "sampleAnswer": "ตัวอย่างคำตอบ",
+        "sampleAnswerPlaceholder": "กรอกตัวอย่างคำตอบหรือคำอธิบาย",
+        "markscheme": "แผนการตลาด",
+        "markschemeAttached": "แนบแผนการคะแนน"
+      },
+      "questionTypes": {
+        "multipleChoice": "ตัวเลือกหลายตัว",
+        "longForm": "คำตอบแบบยาว",
+        "math": "คำตอบคณิตศาสตร์",
+        "trueFalse": "จริง/เท็จ"
+      },
+      "markschemeDialog": {
+        "title": "เลือกแผนการเรียน",
+        "noMarkschemes": "ไม่มีแผนการให้คะแนน โปรดสร้างในส่วนเกรดก่อน",
+        "untitled": "แผนการทำเครื่องหมายที่ไม่มีชื่อ",
+        "custom": "กำหนดเอง"
+      },
+      "errors": {
+        "titleRequired": "จำเป็นต้องมีชื่อเรื่อง",
+        "atLeastOneQuestion": "กรุณาเพิ่มคำถามอย่างน้อยหนึ่งข้อ",
+        "questionTextRequired": "คำถามทั้งหมดต้องมีข้อความ",
+        "multipleChoiceOptions": "คำถามแบบเลือกตอบต้องมีอย่างน้อย 2 ตัวเลือก",
+        "multipleChoiceCorrectAnswer": "คำถามแบบเลือกตอบต้องมีคำตอบที่ถูกต้องอย่างน้อยหนึ่งข้อ",
+        "teacherOnly": "เฉพาะครูเท่านั้นที่สามารถสร้างแผ่นงานได้"
+      },
+      "toasts": {
+        "created": "สร้างแผ่นงานสำเร็จแล้ว",
+        "markschemeAttached": "แนบ Markscheme สำเร็จแล้ว",
+        "markschemeDetached": "Markscheme แยกออกสำเร็จแล้ว",
+        "updated": "อัปเดตแผ่นงานสำเร็จแล้ว",
+        "saving": "ประหยัด...",
+        "saved": "บันทึกแล้ว"
+      }
+    }
+  }
+}

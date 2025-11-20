@@ -930,7 +930,7 @@
     "pricingSchoolPerk1": "学生人数不限",
     "pricingSchoolPerk2": "无限课程",
     "pricingSchoolPerk3": "所有核心功能",
-    "pricingSchoolPerk4": "AI助手（无限次查询）",
+    "pricingSchoolPerk4": "人工智能助手（无限次查询）",
     "pricingSchoolPerk5": "优先获得 Studious CMS 测试版访问权限",
     "pricingSchoolPerk6": "API 访问",
     "pricingSchoolLink": "开始使用"
@@ -960,7 +960,7 @@
         "done": "完毕"
       },
       "success": {
-        "title": "你上名单了！",
+        "title": "你上榜了！",
         "description": "准备就绪后，我们会向您发送一封电子邮件至 {email}。"
       },
       "toasts": {
@@ -1064,6 +1064,8 @@
         "details": "任务详情",
         "configuration": "配置",
         "grading": "评分与评估",
+        "deliverables": "交付成果",
+        "aiPolicy": "人工智能政策",
         "attachments": "附件"
       },
       "fields": {
@@ -1071,6 +1073,7 @@
         "instructions": "指示 *",
         "dueDate": "两个日期",
         "type": "任务类型",
+        "students": "学生",
         "section": "部分",
         "rubric": "评分标准",
         "gradeScale": "评分标准",
@@ -1149,6 +1152,71 @@
         "creating": "正在创建……",
         "add": "添加"
       },
+      "students": {
+        "all": "全部",
+        "selectPlaceholder": "部分学生……"
+      },
+      "deliverables": {
+        "fileUpload": {
+          "label": "文件上传",
+          "description": "学生可以上传PDF、图片和视频文件。"
+        },
+        "extendedResponse": {
+          "label": "扩展响应",
+          "description": "学生可以输入完整答案。"
+        },
+        "worksheetSubmission": {
+          "label": "工作表提交",
+          "description": "学生可以提交作业纸进行综合评分。",
+          "searchPlaceholder": "在这里搜索工作表……",
+          "found": "找到 {count}",
+          "noResults": "未找到工作表"
+        },
+        "aiGrading": {
+          "label": "利用人工智能进行评分和反馈",
+          "description": "利用人工智能提供初步和即时评分及反馈。"
+        }
+      },
+      "aiPolicy": {
+        "useCases": "用例",
+        "studentResponsibilities": "学生责任",
+        "disclosureRequirements": "信息披露要求",
+        "level1": {
+          "title": "一级独立作业（无人工智能）",
+          "description": "没有。基本的拼写和语法检查器即可。",
+          "useCases": "完全依靠个人知识、推理和努力。",
+          "studentResponsibilities": "没有。基本的拼写和语法检查器即可。",
+          "disclosureRequirements": "无需披露人工智能信息（禁止使用人工智能）。"
+        },
+        "level2": {
+          "title": "二级创意探索",
+          "description": "让 AI 解释概念、总结阅读材料、集思广益提出方法，或检查基本的语法和清晰度。",
+          "useCases": "让 AI 解释概念、总结阅读材料、集思广益提出方法，或检查基本的语法和清晰度。",
+          "studentResponsibilities": "对人工智能的输出结果进行批判性评估；确保评估结果反映出你自己的推理和理解。",
+          "disclosureRequirements": "简要说明人工智能的使用情况（例如，“使用 ChatGPT 来概述文章结构”）。"
+        },
+        "level3": {
+          "title": "三级编辑支持",
+          "description": "确保所有想法、结构和内容均为原创；认真审核人工智能建议。",
+          "useCases": "让人工智能改进语法、标点、措辞和可读性。",
+          "studentResponsibilities": "确保所有想法、结构和内容均为原创；认真审核人工智能建议。",
+          "disclosureRequirements": "简要说明 AI 的使用情况（例如，“使用 ChatGPT 进行语法和清晰度编辑”）。"
+        },
+        "level4": {
+          "title": "第四级共同创造",
+          "description": "利用人工智能进行草拟、设计、编码、分析、模拟或生成创意内容，同时保持监督。",
+          "useCases": "利用人工智能进行草拟、设计、编码、分析、模拟或生成创意内容，同时保持监督。",
+          "studentResponsibilities": "对人工智能的输出结果进行批判性评估；修改和调整，以确保其原创性和合理的推理。",
+          "disclosureRequirements": "请提交一份关于人工智能贡献和您修改内容的详细披露文件。"
+        },
+        "level5": {
+          "title": "第五级协同创新",
+          "description": "利用人工智能生成内容、运行分析、构建模型、创意写作、翻译或数据可视化，并明确强调人类的创作和思考。",
+          "useCases": "利用人工智能生成内容、运行分析、构建模型、创意写作、翻译或数据可视化，并明确强调人类的创作和思考。",
+          "studentResponsibilities": "以合乎伦理且有目的的方式整合人工智能；证明其在促进学习或创造力方面的作用。",
+          "disclosureRequirements": "明确注明所有人工智能贡献和人工修改。"
+        }
+      },
       "toasts": {
         "successCreated": "作业创建成功。",
         "successDraft": "作业已成功保存为草稿。",
@@ -1188,7 +1256,7 @@
       "settings": {
         "pinned": {
           "label": "置顶",
-          "description": "请将此公告置顶。"
+          "description": "请将此公告置于列表顶部"
         },
         "urgent": {
           "label": "标记为紧急",

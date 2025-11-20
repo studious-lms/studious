@@ -1,0 +1,118 @@
+{
+  "worksheets": {
+    "title": "Folhas de exercícios",
+    "subtitle": "Gerenciar e distribuir folhas de exercícios práticos.",
+    "list": {
+      "title": "Todas as folhas de exercícios"
+    },
+    "columns": {
+      "title": "Título",
+      "questionCount": "Contagem de perguntas",
+      "lastUpdated": "Última atualização",
+      "actions": "Ações"
+    },
+    "status": {
+      "draft": "Rascunho",
+      "published": "Publicado",
+      "archived": "Arquivado"
+    },
+    "actions": {
+      "create": "Criar planilha",
+      "view": "Visualizar",
+      "edit": "Editar",
+      "delete": "Excluir",
+      "download": "Download",
+      "share": "Compartilhar",
+      "back": "Voltar",
+      "save": "Salvar",
+      "cancel": "Cancelar",
+      "select": "Selecione",
+      "attachMarkscheme": "Anexe o esquema de avaliação.",
+      "detach": "Detalhes"
+    },
+    "search": {
+      "placeholder": "Pesquisar planilhas..."
+    },
+    "empty": {
+      "title": "Nenhuma planilha encontrada",
+      "description": "Comece criando sua primeira planilha ou use a busca para encontrar planilhas já existentes."
+    },
+    "confirm": {
+      "delete": "Tem certeza de que deseja excluir esta planilha? Esta ação não pode ser desfeita."
+    },
+    "toasts": {
+      "created": "Planilha criada com sucesso",
+      "updated": "Planilha atualizada com sucesso",
+      "deleted": "Planilha excluída com sucesso",
+      "error": "Ocorreu um erro."
+    },
+    "create": {
+      "title": "Criar planilha",
+      "subtitle": "Crie uma nova planilha com vários tipos de perguntas.",
+      "worksheetInfo": "Informações da folha de exercícios",
+      "actions": {
+        "save": "Salvar",
+        "cancel": "Cancelar",
+        "preview": "Pré-visualização"
+      },
+      "fields": {
+        "title": "Título",
+        "titlePlaceholder": "Insira o título da planilha",
+        "description": "Descrição",
+        "descriptionPlaceholder": "Insira a descrição da planilha (opcional)",
+        "dueDate": "Dois encontros",
+        "totalQuestions": "Total de perguntas"
+      },
+      "questions": {
+        "title": "Questões",
+        "addQuestion": "Adicionar pergunta",
+        "noQuestions": "Nenhuma pergunta foi adicionada ainda.",
+        "addFirstQuestion": "Use o menu suspenso acima para adicionar sua primeira pergunta.",
+        "questionNumber": "Pergunta {number}",
+        "points": "Pontos",
+        "questionText": "Texto da pergunta",
+        "questionTextPlaceholder": "Insira sua pergunta aqui.",
+        "options": "Opções",
+        "optionPlaceholder": "Opção {number}",
+        "addOption": "Adicionar opção",
+        "correctAnswer": "Resposta correta",
+        "true": "Verdadeiro",
+        "false": "Falso",
+        "mathExpression": "Expressão matemática esperada",
+        "mathExpressionPlaceholder": "Por exemplo, x² + 5x + 6 = 0",
+        "sampleAnswer": "Exemplo de resposta",
+        "sampleAnswerPlaceholder": "Insira uma resposta ou explicação de exemplo.",
+        "markscheme": "Esquema de marketing",
+        "markschemeAttached": "Esquema de correção em anexo"
+      },
+      "questionTypes": {
+        "multipleChoice": "Múltipla escolha",
+        "longForm": "Resposta longa",
+        "math": "Resposta matemática",
+        "trueFalse": "Verdadeiro/Falso"
+      },
+      "markschemeDialog": {
+        "title": "Selecione o esquema de avaliação",
+        "noMarkschemes": "Não há critérios de avaliação disponíveis. Crie um primeiro na seção Notas.",
+        "untitled": "Esquema de avaliação sem título",
+        "custom": "Personalizado"
+      },
+      "errors": {
+        "titleRequired": "É necessário ter um título.",
+        "atLeastOneQuestion": "Por favor, adicione pelo menos uma pergunta.",
+        "questionTextRequired": "Todas as perguntas devem conter texto.",
+        "multipleChoiceOptions": "Questões de múltipla escolha precisam de pelo menos 2 opções.",
+        "multipleChoiceCorrectAnswer": "Questões de múltipla escolha precisam de pelo menos uma resposta correta.",
+        "teacherOnly": "Somente os professores podem criar fichas de exercícios."
+      },
+      "toasts": {
+        "created": "Planilha criada com sucesso",
+        "markschemeAttached": "Esquema de correção anexado com sucesso",
+        "markschemeDetached": "Esquema de correção destacado com sucesso",
+        "updated": "Planilha atualizada com sucesso",
+        "saving": "Salvando...",
+        "saved": "Salvo"
+      }
+    }
+  }
+}

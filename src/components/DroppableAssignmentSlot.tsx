@@ -44,29 +44,30 @@ export function SectionDropZone({
   const shouldShow = isDragging && canDrop;
   const isActive = isOver && shouldShow;
 
-  if (!shouldShow) {
-    return <div className="h-1" />; // Minimal spacer when not dragging
-  }
-
+  // Always render the drop zone with a larger hit area, but only show indicator when dragging
   return (
     <div 
       ref={drop as unknown as React.Ref<HTMLDivElement>}
       className={`transition-all duration-200 relative ${
         isActive 
-          ? 'h-6 my-1' 
-          : 'h-1.5 my-0.5'
+          ? 'h-10 my-2' 
+          : shouldShow
+          ? 'h-6 my-1'
+          : 'h-3 my-0.5'
       }`}
     >
       <div 
         className={`absolute inset-x-0 top-1/2 -translate-y-1/2 transition-all duration-200 ${
           isActive
-            ? 'h-1.5 bg-primary rounded-full shadow-lg shadow-primary/50 opacity-100'
-            : 'h-0.5 bg-primary/30 rounded-full opacity-50'
+            ? 'h-2 bg-primary rounded-full shadow-lg shadow-primary/50 opacity-100'
+            : shouldShow
+            ? 'h-1 bg-primary/40 rounded-full opacity-70'
+            : 'h-0 bg-transparent opacity-0'
         }`}
       />
       {isActive && (
         <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-none z-20">
-          <div className="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full border border-primary/30 backdrop-blur-sm">
+          <div className="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full border border-primary/30 backdrop-blur-sm">
             Drop here
           </div>
         </div>

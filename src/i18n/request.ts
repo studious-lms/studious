@@ -13,6 +13,7 @@ async function loadMessages(locale: string) {
     import(`../../messages/${locale}/aiLabs.json`),
     import(`../../messages/${locale}/files.json`),
     import(`../../messages/${locale}/assignments.json`),
+    import(`../../messages/${locale}/worksheets.json`),
     import(`../../messages/${locale}/announcements.json`),
     import(`../../messages/${locale}/modals.json`),
     import(`../../messages/${locale}/members.json`),

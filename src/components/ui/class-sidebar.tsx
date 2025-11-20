@@ -59,6 +59,7 @@ export function ClassSidebar({ classId }: ClassSidebarProps) {
   const classNavigationItems = [
     { href: "", label: t('overview'), icon: BookOpen },
     { href: "/assignments", label: t('assignments'), icon: FileText },
+    { href: "/worksheets", label: t('worksheets'), icon: FileText },
     { href: "/grades", label: t('grades'), icon: BarChart3 },
     { href: "/files", label: t('files'), icon: FolderOpen },
     { href: "/attendance", label: t('attendance'), icon: UserCheck },
@@ -301,7 +302,8 @@ export function ClassSidebar({ classId }: ClassSidebarProps) {
         {classNavigationItems
           .filter((item) => {
             // Hide Settings for students
-            if (item.href === "/settings" && appState.user.student) {
+            console.log(item.href);
+            if ((item.href === "/settings" || item.href === "/ai-labs" || item.href === "/attendance" || item.href === "/worksheets") && appState.user.student) {
               return false;
             }
             return true;

@@ -1,0 +1,118 @@
+{
+  "worksheets": {
+    "title": "Worksheets",
+    "subtitle": "Manage and distribute practice worksheets",
+    "list": {
+      "title": "All Worksheets"
+    },
+    "columns": {
+      "title": "Title",
+      "questionCount": "Question Count",
+      "lastUpdated": "Last Updated",
+      "actions": "Actions"
+    },
+    "status": {
+      "draft": "Draft",
+      "published": "Published",
+      "archived": "Archived"
+    },
+    "actions": {
+      "create": "Create Worksheet",
+      "view": "View",
+      "edit": "Edit",
+      "delete": "Delete",
+      "download": "Download",
+      "share": "Share",
+      "back": "Back",
+      "save": "Save",
+      "cancel": "Cancel",
+      "select": "Select",
+      "attachMarkscheme": "Attach Markscheme",
+      "detach": "Details"
+    },
+    "search": {
+      "placeholder": "Search worksheets..."
+    },
+    "empty": {
+      "title": "No worksheets found",
+      "description": "Get started by creating your first worksheet or use the search to find existing ones."
+    },
+    "confirm": {
+      "delete": "Are you sure you want to delete this worksheet? This action cannot be undone."
+    },
+    "toasts": {
+      "created": "Worksheet created successfully",
+      "updated": "Worksheet updated successfully",
+      "deleted": "Worksheet deleted successfully",
+      "error": "An error occurred"
+    },
+    "create": {
+      "title": "Create Worksheet",
+      "subtitle": "Build a new worksheet with multiple question types",
+      "worksheetInfo": "Worksheet Information",
+      "actions": {
+        "save": "Save",
+        "cancel": "Cancel",
+        "preview": "Preview"
+      },
+      "fields": {
+        "title": "Title",
+        "titlePlaceholder": "Enter worksheet title",
+        "description": "Description",
+        "descriptionPlaceholder": "Enter worksheet description (optional)",
+        "dueDate": "Two Dates",
+        "totalQuestions": "Total Questions"
+      },
+      "questions": {
+        "title": "Questions",
+        "addQuestion": "Add Question",
+        "noQuestions": "No questions added yet",
+        "addFirstQuestion": "Use the dropdown above to add your first question",
+        "questionNumber": "Question {number}",
+        "points": "Points",
+        "questionText": "Question Text",
+        "questionTextPlaceholder": "Enter your question here",
+        "options": "Options",
+        "optionPlaceholder": "Option {number}",
+        "addOption": "Add Option",
+        "correctAnswer": "Correct Answer",
+        "true": "True",
+        "false": "False",
+        "mathExpression": "Expected Math Expression",
+        "mathExpressionPlaceholder": "e.g., x^2 + 5x + 6 = 0",
+        "sampleAnswer": "Sample Answer",
+        "sampleAnswerPlaceholder": "Enter a sample answer or explanation",
+        "markscheme": "Marketing scheme",
+        "markschemeAttached": "Markscheme Attached"
+      },
+      "questionTypes": {
+        "multipleChoice": "Multiple Choice",
+        "longForm": "Long Form Answer",
+        "math": "Math Answer",
+        "trueFalse": "True/False"
+      },
+      "markschemeDialog": {
+        "title": "Select Markscheme",
+        "noMarkschemes": "No markschemes available. Create one in the Grades section first.",
+        "untitled": "Untitled Markscheme",
+        "custom": "Custom"
+      },
+      "errors": {
+        "titleRequired": "Title is required",
+        "atLeastOneQuestion": "Please add at least one question",
+        "questionTextRequired": "All questions must have text",
+        "multipleChoiceOptions": "Multiple choice questions need at least 2 options",
+        "multipleChoiceCorrectAnswer": "Multiple choice questions need at least one correct answer",
+        "teacherOnly": "Only teachers can create worksheets"
+      },
+      "toasts": {
+        "created": "Worksheet created successfully",
+        "markschemeAttached": "Markscheme attached successfully",
+        "markschemeDetached": "Markscheme detached successfully",
+        "updated": "Worksheet updated successfully",
+        "saving": "Saving...",
+        "saved": "Saved"
+      }
+    }
+  }
+}

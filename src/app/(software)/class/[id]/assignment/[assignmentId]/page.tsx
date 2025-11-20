@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { PageLayout } from "@/components/ui/page-layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -49,6 +49,12 @@ import {  parseMarkScheme,
   parseGradingBoundary} from "@/lib/types/assignment";
 import { baseFileHandler } from "@/lib/fileHandler";
 import { Progress } from "@/components/ui/progress";
+import { getStatusColor, getStudentAssignmentStatus } from "@/lib/getStudentAssignmentStatus";
+import { WorksheetDoer } from "@/components/worksheets/worksheetdoer/WorksheetDoer";
+import { Textarea } from "@/components/ui/textarea";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { ChevronDown } from "lucide-react";
+import { WorksheetViewer } from "@/components/worksheets/worksheet-viewer";
 
 type Submissions = RouterOutputs['assignment']['getSubmissions'];
 type Submission = Submissions[number];
@@ -61,6 +67,50 @@ type FileItem = {
   size?: string;
   uploadedAt?: string;
 };
+
+// Component to fetch and display a worksheet for students
+function WorksheetFetcher({ 
+  worksheetId, 
+  submissionId,
+  readonly,
+  showFeedback = false
+}: { 
+  worksheetId: string; 
+  submissionId: string;
+  readonly: boolean;
+  showFeedback: boolean;
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+  
+  // Fetch worksheet to get the name
+  const { data: worksheet, isLoading: isWorksheetLoading } = trpc.worksheet.getWorksheet.useQuery({
+    worksheetId,
+  });
+
+  return (
+    <Collapsible open={isOpen} onOpenChange={setIsOpen}>
+      <CollapsibleTrigger className="w-full py-3 px-4 border rounded-md hover:bg-muted/50 flex items-center justify-between text-left">
+        <span className="font-medium">{isWorksheetLoading ? <Skeleton className="h-4 w-20" /> : worksheet?.name}</span>
+        <ChevronDown className={`h-4 w-4 shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+      </CollapsibleTrigger>
+      <CollapsibleContent className="py-4">
+      {readonly ? (
+        <WorksheetViewer
+          submissionId={submissionId}
+          worksheetId={worksheetId}
+          showFeedback={showFeedback}
+        />
+      ) : (
+        <WorksheetDoer
+          readonly={readonly}
+          submissionId={submissionId}
+          worksheetId={worksheetId}
+        />
+      )}
+      </CollapsibleContent>
+    </Collapsible>
+  );
+}
 
 function AssignmentDetailSkeleton() {
   return (
@@ -128,6 +178,21 @@ export default function AssignmentDetailPage() {
     enabled: isStudent,
   });
 
+  // Initialize extended response and worksheet answers from submission
+  useEffect(() => {
+    if (studentSubmission) {
+      if ((studentSubmission as any).extendedResponse) {
+        setExtendedResponse((studentSubmission as any).extendedResponse);
+      }
+      if ((studentSubmission as any).worksheetAnswers) {
+        const answers = typeof (studentSubmission as any).worksheetAnswers === 'string'
+          ? JSON.parse((studentSubmission as any).worksheetAnswers)
+          : (studentSubmission as any).worksheetAnswers;
+        setWorksheetAnswers(answers || {});
+      }
+    }
+  }, [studentSubmission]);
+
   // Student submission upload mutation
   const updateStudentSubmissionMutation = trpc.assignment.updateSubmission.useMutation({
     onSuccess: () => {
@@ -138,6 +203,38 @@ export default function AssignmentDetailPage() {
       toast.error(error.message || "There was a problem updating your submission. Please try again.");
     },
   });
+
+  // Debounce timer ref for extended response auto-save
+  const extendedResponseSaveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Debounced save function for extended response
+  const debouncedSaveExtendedResponse = useCallback((value: string) => {
+    // Clear existing timeout
+    if (extendedResponseSaveTimeoutRef.current) {
+      clearTimeout(extendedResponseSaveTimeoutRef.current);
+    }
+
+    // Set new timeout to save after user stops typing (1.5 seconds)
+    extendedResponseSaveTimeoutRef.current = setTimeout(() => {
+      if (studentSubmission && value.trim()) {
+        updateStudentSubmissionMutation.mutate({
+          assignmentId,
+          classId,
+          submissionId: studentSubmission.id,
+          extendedResponse: value,
+        });
+      }
+    }, 5000);
+  }, [studentSubmission, assignmentId, classId, updateStudentSubmissionMutation]);
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (extendedResponseSaveTimeoutRef.current) {
+        clearTimeout(extendedResponseSaveTimeoutRef.current);
+      }
+    };
+  }, []);
 
   // Direct upload functions using proper TRPC hooks
   const getSubmissionUploadUrls = trpc.assignment.getSubmissionUploadUrls.useMutation();
@@ -157,6 +254,12 @@ export default function AssignmentDetailPage() {
   const [currentUploadStatus, setCurrentUploadStatus] = useState('');
   const [uploadedFiles, setUploadedFiles] = useState(0);
   const [totalFiles, setTotalFiles] = useState(0);
+
+  // Extended response state
+  const [extendedResponse, setExtendedResponse] = useState("");
+
+  // Worksheet answers state
+  const [worksheetAnswers, setWorksheetAnswers] = useState<Record<string, Record<string, any>>>({});
 
   // Status messages for different upload stages
   const uploadStatusMessages = [
@@ -431,13 +534,50 @@ export default function AssignmentDetailPage() {
   const handleSubmitToggle = () => {
     if (!studentSubmission) return;
     
-    updateStudentSubmissionMutation.mutate({
+    const updateData: any = {
       assignmentId,
       classId,
       submissionId: studentSubmission.id,
       submit: !studentSubmission.submitted,
-    });
+    };
+
+    // Include extended response if assignment accepts it
+    if (assignment?.acceptExtendedResponse && extendedResponse) {
+      updateData.extendedResponse = extendedResponse;
+    }
+
+    // Include worksheet answers if assignment accepts worksheets
+    if (assignment?.acceptWorksheet && Object.keys(worksheetAnswers).length > 0) {
+      updateData.worksheetAnswers = JSON.stringify(worksheetAnswers);
+    }
+    
+    updateStudentSubmissionMutation.mutate(updateData);
   };
+
+  // // Handle worksheet answer submission (called on both auto-save and manual save)
+  // const handleWorksheetSubmit = (worksheetId: string, answers: Record<string, any>) => {
+  //   // Update local state
+
+  //   console.log('werhee')
+  //   setWorksheetAnswers(prev => {
+  //     const updated = {
+  //       ...prev,
+  //       [worksheetId]: answers
+  //     };
+      
+  //     // Save to backend
+  //     if (studentSubmission) {
+  //       updateStudentSubmissionMutation.mutate({
+  //         assignmentId,
+  //         classId,
+  //         submissionId: studentSubmission.id,
+  //         worksheetAnswers: JSON.stringify(updated),
+  //       });
+  //     }
+      
+  //     return updated;
+  //   });
+  // };
 
   const submissionColumns = [
     {
@@ -458,14 +598,18 @@ export default function AssignmentDetailPage() {
     {
       accessorKey: "status",
       header: "Status",
-      cell: ({ row }: { row: { original: Submission } }) => getStatusBadge(row.original),
+      cell: ({ row }: { row: { original: Submission } }) => <div className="flex items-center space-x-2">{getStudentAssignmentStatus(row.original).map((status) => (
+        <Badge className={getStatusColor(status)} key={status}>
+          {status}
+        </Badge>
+      ))}</div>
     },
     {
       accessorKey: "gradeReceived",
       header: "Grade",
       cell: ({ row }: { row: { original: Submission } }) => (
         <span>
-          {row.original.gradeReceived !== undefined 
+          {row.original.gradeReceived 
             ? `${row.original.gradeReceived}/${assignment.maxGrade}` 
             : '—'}
         </span>
@@ -570,79 +714,124 @@ export default function AssignmentDetailPage() {
                 <CardHeader>
                   <CardTitle>My Submission</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium">Status</span>
-                    <Badge variant={studentSubmission.submitted ? "default" : "outline"}>
-                      {studentSubmission.submitted ? "Submitted" : "Not Submitted"}
-                    </Badge>
-                  </div>
+                <CardContent className="space-y-6">
                   
-                  {studentSubmission.attachments.length > 0 ? (
-                    <div className="space-y-3">
-                      <span className="text-sm font-medium">Attached Files</span>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        {convertAttachmentsToFileItems(studentSubmission.attachments).map((fileItem) => (
-                          <DraggableFileItem
-                            key={fileItem.id}
-                            item={fileItem}
-                            classId={classId}
-                            readonly={studentSubmission.submitted || false}
-                            handlers={fileHandlers}
-                            getFileIcon={getFileIcon}
-                          />
-                        ))}
-                      </div>
-                    </div>
-                  ) : (
-                    <EmptyState
-                      icon={FileText}
-                      title="No files attached"
-                      description="Upload files for your submission."
-                    />
-                  )}
-                  
-                  {!studentSubmission.submitted && (
-                    <div className="space-y-3">
-                      {/* Upload Progress */}
-                      {isUploading && (
-                        <div className="space-y-2 p-4 bg-muted rounded-lg">
-                          <div className="flex justify-between text-sm">
-                            <span className="font-medium">{currentUploadStatus}</span>
-                            <span>{Math.round(uploadProgress)}%</span>
+                  {/* File Upload Section - Only show if acceptFiles is true */}
+                  {assignment?.acceptFiles && (
+                    <div className="space-y-4">
+                      {studentSubmission.attachments.length > 0 ? (
+                        <div className="space-y-3">
+                          <span className="text-sm font-medium">Attached Files</span>
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            {convertAttachmentsToFileItems(studentSubmission.attachments).map((fileItem) => (
+                              <DraggableFileItem
+                                key={fileItem.id}
+                                item={fileItem}
+                                classId={classId}
+                                readonly={studentSubmission.submitted || false}
+                                handlers={fileHandlers}
+                                getFileIcon={getFileIcon}
+                              />
+                            ))}
                           </div>
-                          <Progress value={uploadProgress} className="h-2" />
-                          {totalFiles > 0 && (
-                            <p className="text-xs text-muted-foreground text-center">
-                              {uploadedFiles} of {totalFiles} files uploaded
-                            </p>
+                        </div>
+                      ) : (
+                        !studentSubmission.submitted && (
+                          <EmptyState
+                            icon={FileText}
+                            title="No files attached"
+                            description="Upload files for your submission."
+                          />
+                        )
+                      )}
+                      
+                      {!studentSubmission.submitted && (
+                        <div className="space-y-3">
+                          {/* Upload Progress */}
+                          {isUploading && (
+                            <div className="space-y-2 p-4 bg-muted rounded-lg">
+                              <div className="flex justify-between text-sm">
+                                <span className="font-medium">{currentUploadStatus}</span>
+                                <span>{Math.round(uploadProgress)}%</span>
+                              </div>
+                              <Progress value={uploadProgress} className="h-2" />
+                              {totalFiles > 0 && (
+                                <p className="text-xs text-muted-foreground text-center">
+                                  {uploadedFiles} of {totalFiles} files uploaded
+                                </p>
+                              )}
+                            </div>
                           )}
+                          <div>
+                            <Label htmlFor="student-file-upload" className="cursor-pointer">
+                              <div className="flex items-center justify-center w-full p-4 border-2 border-dashed border-muted-foreground/25 rounded-lg hover:border-muted-foreground/50 transition-colors">
+                                <div className="text-center">
+                                  <Upload className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
+                                  <p className="text-sm font-medium">{isUploading ? 'Uploading...' : 'Upload files'}</p>
+                                  <p className="text-xs text-muted-foreground">Click to select files or drag and drop</p>
+                                </div>
+                              </div>
+                            </Label>
+                          </div>
+                          <Input
+                            id="student-file-upload"
+                            type="file"
+                            multiple
+                            onChange={handleStudentFileUpload}
+                            className="hidden"
+                            accept="*/*"
+                            disabled={isUploading}
+                          />
                         </div>
                       )}
-                      <div>
-                      <Label htmlFor="student-file-upload" className="cursor-pointer">
-                        <div className="flex items-center justify-center w-full p-4 border-2 border-dashed border-muted-foreground/25 rounded-lg hover:border-muted-foreground/50 transition-colors">
-                          <div className="text-center">
-                            <Upload className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
-                            <p className="text-sm font-medium">{isUploading ? 'Uploading...' : 'Upload files'}</p>
-                            <p className="text-xs text-muted-foreground">Click to select files or drag and drop</p>
-                          </div>
-                        </div>
-                      </Label>
-                      </div>
-                      <Input
-                        id="student-file-upload"
-                        type="file"
-                        multiple
-                        onChange={handleStudentFileUpload}
-                        className="hidden"
-                        accept="*/*"
-                        disabled={isUploading}
+                    </div>
+                  )}
+
+                  {/* Extended Response Section - Only show if acceptExtendedResponse is true */}
+                  {assignment?.acceptExtendedResponse && (
+                    <div className="space-y-2">
+                      <Label htmlFor="extended-response">Extended Response</Label>
+                      <Textarea
+                        id="extended-response"
+                        value={extendedResponse}
+                        onChange={(e) => {
+                          const value = e.target.value;
+                          setExtendedResponse(value);
+                          // Debounced auto-save extended response (saves after 1.5s of no typing)
+                          debouncedSaveExtendedResponse(value);
+                        }}
+                        placeholder="Enter your response here..."
+                        rows={8}
+                        disabled={studentSubmission.submitted || false}
+                        className={studentSubmission.submitted ? "bg-muted cursor-not-allowed" : ""}
                       />
                     </div>
                   )}
+
+                  {/* Worksheet Submission Section - Only show if acceptWorksheet is true */}
+                  {assignment?.acceptWorksheet && assignment.worksheets && assignment.worksheets.length > 0 && (
+                    <div className="space-y-2">
+                      <h3 className="text-lg font-semibold mb-3">Worksheets</h3>
+                      <div className="space-y-2">
+                        {assignment.worksheets.map((worksheet: any) => {
+                          const currentAnswers = worksheetAnswers[worksheet.id] || {};
+
+                          // Always fetch worksheet since assignment.worksheets only contains IDs
+                          return (
+                            <WorksheetFetcher
+                              key={worksheet.id}
+                              submissionId={studentSubmission.id}
+                              worksheetId={worksheet.id}
+                              showFeedback={studentSubmission.returned || false}
+                              readonly={studentSubmission.submitted || false}
+                            />
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
                   
-                  <div className="flex justify-end">
+                  <div className="flex justify-end pt-4 border-t">
                     <Button
                       onClick={handleSubmitToggle}
                       disabled={updateStudentSubmissionMutation.isPending}
@@ -661,7 +850,7 @@ export default function AssignmentDetailPage() {
             )}
 
             {/* Student View - Feedback (when submission is returned) */}
-            {isStudent && studentSubmission && studentSubmission.returned && (
+            {isStudent && assignment.graded && studentSubmission && studentSubmission.returned && (
               <Card>
                 <CardHeader>
                   <CardTitle>Teacher Feedback</CardTitle>
@@ -824,8 +1013,8 @@ export default function AssignmentDetailPage() {
                 <Separator />
                 
                 <div className="space-y-2">
-                  <span className="text-sm font-medium">Submission Status</span>
-                  <div className="grid grid-cols-2 gap-2">
+                  <span className="text-sm font-semibold">{isTeacher ? 'Assignment' : 'Submission'} Status</span>
+                  {/* <div className="grid grid-cols-2 gap-2">
                     <div className="text-center p-2 bg-green-50 dark:bg-green-900/20 rounded-lg">
                       <div className="text-lg font-semibold text-green-700 dark:text-green-400">
                         {submissions?.filter(s => s.submitted && !s.late).length || 0}
@@ -850,7 +1039,33 @@ export default function AssignmentDetailPage() {
                       </div>
                       <div className="text-xs text-blue-600 dark:text-blue-500">Returned</div>
                     </div>
+                  </div> */}
+                  {isTeacher ? (
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-medium">Status</span>
+                    <div className="flex items-center space-x-2">
+                      {getStudentAssignmentStatus(assignment).map((status) => (
+                        <Badge className={getStatusColor(status)} key={status}>
+                          {status}
+                        </Badge>
+                      ))}
+                    </div>
                   </div>
+                  ):
+                  (
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">Status</span>
+                      <div className="flex items-center space-x-2">
+                        {studentSubmission && getStudentAssignmentStatus(studentSubmission).map((status) => (
+                          <Badge className={getStatusColor(status)} key={status}>
+                            {status}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  )
+                }
+                  
                 </div>
               </CardContent>
             </Card>

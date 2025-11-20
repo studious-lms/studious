@@ -51,7 +51,7 @@
     "placeholder": "Saisir le nom de la rubrique",
     "cancel": "Annuler",
     "create": "Créer une grille d'évaluation",
-    "update": "Rubrique de mise à jour",
+    "update": "Mise à jour de la grille d'évaluation",
     "creating": "Création...",
     "updating": "Mise à jour en cours...",
     "created": "Rubrique créée avec succès",
@@ -145,7 +145,7 @@
       "noConversations": "Aucune conversation pour l'instant",
       "noConversationsDescription": "Commencez à discuter avec quelqu'un",
       "noSearchResults": "Aucune conversation trouvée",
-      "noSearchResultsDescription": "Essayez différents termes de recherche",
+      "noSearchResultsDescription": "Essayez d'autres termes de recherche",
       "unnamedGroup": "Groupe non identifié",
       "unknownUser": "Utilisateur inconnu"
     },
@@ -209,7 +209,7 @@
     "created": "Section \"{name}\" créée avec succès.",
     "updated": "La section « {name} » a été mise à jour avec succès.",
     "errorEmpty": "Veuillez saisir un nom de section.",
-    "errorCreate": "Échec de la création de la section",
+    "errorCreate": "Impossible de créer la section",
     "errorUpdate": "Échec de la mise à jour de la section"
   },
   "universalEvent": {

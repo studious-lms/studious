@@ -8,7 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
-import { Avatar } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { EmptyState } from "@/components/ui/empty-state";
 import { DataTable } from "@/components/ui/data-table";
 import { 
@@ -17,9 +17,6 @@ import {
   Edit,
   CheckCircle,
   X,
-  TrendingUp,
-  TrendingDown,
-  Minus,
   ClipboardList,
   ExternalLink
 } from "lucide-react";
@@ -27,6 +24,7 @@ import type { ColumnDef } from "@tanstack/react-table";
 import { RouterOutputs, trpc } from "@/lib/trpc";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
+import { calculateTrend, getTrendIcon } from "@/lib/utils";
 
 export default function StudentGrades() {
   const params = useParams();
@@ -322,13 +320,6 @@ export default function StudentGrades() {
     return "text-red-600 font-semibold";
   };
 
-  const getTrendIcon = (trend: string) => {
-    switch (trend) {
-      case "up": return <TrendingUp className="h-4 w-4 text-green-600" />;
-      case "down": return <TrendingDown className="h-4 w-4 text-red-600" />;
-      default: return <Minus className="h-4 w-4 text-muted-foreground" />;
-    }
-  };
 
   // Calculate overall grade
   let totalWeighted = 0;
@@ -342,6 +333,8 @@ export default function StudentGrades() {
   const overallGrade = totalWeight > 0 ? (totalWeighted / totalWeight) * 100 : 0;
   const completedAssignments = grades.filter(g => g.gradeReceived != null).length;
   const totalAssignments = grades.length;
+
+  const trend = calculateTrend(grades);
 
   return (
     <PageLayout>
@@ -371,7 +364,10 @@ export default function StudentGrades() {
         <CardContent className="pt-6">
           <div className="flex items-center space-x-4">
             <Avatar className="h-16 w-16">
-              <img src={student.profile?.profilePicture || ""} alt={student.username} />
+              <AvatarImage src={student.profile?.profilePicture || ""} />
+              <AvatarFallback>
+                {student.username.substring(0, 2).toUpperCase()}
+              </AvatarFallback>
             </Avatar>
             <div className="flex-1">
               <h2 className="text-2xl font-bold">
@@ -395,8 +391,8 @@ export default function StudentGrades() {
                 <p className="text-sm text-muted-foreground">{t('completed')}</p>
               </div>
               <div>
-                <div className="flex items-center justify-center">
-                  {getTrendIcon("up")}
+                <div className="flex items-center justify-center text-2xl">
+                  {getTrendIcon(trend)}
                 </div>
                 <p className="text-sm text-muted-foreground">{t('trend')}</p>
               </div>

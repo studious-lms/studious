@@ -75,7 +75,7 @@
     "verification": {
       "notVerified": "Tài khoản chưa được xác minh",
       "message": "Tài khoản của bạn cần được xác minh trước khi có thể đăng nhập. Vui lòng kiểm tra email để biết liên kết xác minh.",
-      "emailSentTo": "Email xác minh đã được gửi đến:",
+      "emailSentTo": "Email xác minh đã được gửi tới:",
       "resendEmail": "Gửi lại email xác minh",
       "backToSignIn": "Quay lại Đăng nhập",
       "emailSent": "Đã gửi email xác minh!",
@@ -186,7 +186,7 @@
     },
     "schoolProgram": {
       "badge": "Tác động xã hội",
-      "title": "Chương trình phát triển trường học hiếu học",
+      "title": "Chương trình Phát triển Trường học Hiếu học",
       "subtitle": "Chúng tôi tin rằng mọi học sinh đều xứng đáng được tiếp cận với các công cụ học tập hiện đại, bất kể tình hình kinh tế của trường.",
       "feature1Title": "Truy cập miễn phí 100%",
       "feature1Description": "Truy cập toàn bộ nền tảng với tất cả các tính năng dành cho các trường đủ điều kiện",
@@ -215,7 +215,7 @@
         "description": "Hỗ trợ các trường học thiếu kinh phí thông qua các khoản quyên góp và vật liệu, giúp mọi người đều có thể tiếp cận được nền giáo dục chất lượng."
       },
       "features": {
-        "title": "Tính năng Phối cảnh",
+        "title": "Tính năng Góc nhìn",
         "description": "Mở rộng hỗ trợ sinh viên AI và xây dựng tích hợp API cho nhiều hệ thống giáo dục khác nhau trên toàn thế giới."
       },
       "launch": {
@@ -277,7 +277,7 @@
       "aims": {
         "title": "Mục tiêu của chương trình",
         "body1": "Qua nhiều cuộc trao đổi sâu rộng với giáo viên và chuyên gia giáo dục, chúng tôi đã xác định được những khoảng trống đáng kể trong cơ sở hạ tầng học tập kỹ thuật số hiện có tại nhiều trường học. Nhiều hệ thống quản lý học tập trên thị trường thiếu trải nghiệm người dùng trực quan, gắn kết, và các trường học ở những khu vực khó khăn thường không đủ khả năng tiếp cận công nghệ giáo dục hiện đại.",
-        "body2": "Chương trình của chúng tôi giải quyết trực tiếp những thách thức này. Doanh thu từ các gói đăng ký trả phí cho phép chúng tôi cung cấp cho các trường học khó khăn quyền truy cập toàn diện vào Studious LMS và các công cụ giáo dục liên quan. Mô hình bền vững này cho phép chúng tôi thu hẹp khoảng cách kỹ thuật số, đồng thời liên tục cải thiện nền tảng của mình cho tất cả người dùng."
+        "body2": "Chương trình của chúng tôi giải quyết trực tiếp những thách thức này. Doanh thu từ các gói đăng ký trả phí của chúng tôi cho phép chúng tôi cung cấp cho các trường học có hoàn cảnh khó khăn quyền truy cập toàn diện vào Studious LMS và các công cụ giáo dục liên quan. Mô hình bền vững này cho phép chúng tôi thu hẹp khoảng cách kỹ thuật số, đồng thời liên tục cải thiện nền tảng của mình cho tất cả người dùng."
       },
       "receive": {
         "title": "Những gì bạn sẽ nhận được",
@@ -1064,6 +1064,8 @@
         "details": "Chi tiết bài tập",
         "configuration": "Cấu hình",
         "grading": "Xếp loại và Đánh giá",
+        "deliverables": "Sản phẩm giao",
+        "aiPolicy": "Chính sách AI",
         "attachments": "Tệp đính kèm"
       },
       "fields": {
@@ -1071,6 +1073,7 @@
         "instructions": "Hướng dẫn *",
         "dueDate": "Hai Ngày",
         "type": "Loại bài tập",
+        "students": "Học sinh",
         "section": "Phần",
         "rubric": "Tiêu chí",
         "gradeScale": "Thang điểm",
@@ -1149,12 +1152,77 @@
         "creating": "Đang tạo...",
         "add": "Thêm vào"
       },
+      "students": {
+        "all": "Tất cả",
+        "selectPlaceholder": "Chọn học sinh..."
+      },
+      "deliverables": {
+        "fileUpload": {
+          "label": "Tải tệp lên",
+          "description": "Học sinh có thể tải lên các tệp PDF, Hình ảnh và Video."
+        },
+        "extendedResponse": {
+          "label": "Phản hồi mở rộng",
+          "description": "Học sinh có thể nhập câu trả lời dài."
+        },
+        "worksheetSubmission": {
+          "label": "Nộp bài tập",
+          "description": "Học sinh có thể nộp bài tập để chấm điểm tích hợp.",
+          "searchPlaceholder": "Tìm kiếm bài tập ở đây...",
+          "found": "{count} đã tìm thấy",
+          "noResults": "Không tìm thấy bài tập nào"
+        },
+        "aiGrading": {
+          "label": "Đánh giá và phản hồi bằng AI",
+          "description": "Cung cấp điểm số và phản hồi sơ bộ và tức thời bằng AI."
+        }
+      },
+      "aiPolicy": {
+        "useCases": "Các trường hợp sử dụng",
+        "studentResponsibilities": "Trách nhiệm của sinh viên",
+        "disclosureRequirements": "Yêu cầu tiết lộ",
+        "level1": {
+          "title": "Công việc độc lập cấp độ 1 (Không có AI)",
+          "description": "Không có. Có thể chấp nhận trình kiểm tra chính tả và ngữ pháp cơ bản.",
+          "useCases": "Hoàn toàn dựa vào kiến thức, lý luận và nỗ lực cá nhân.",
+          "studentResponsibilities": "Không có. Có thể chấp nhận trình kiểm tra chính tả và ngữ pháp cơ bản.",
+          "disclosureRequirements": "Không cần tiết lộ AI (cấm sử dụng AI)."
+        },
+        "level2": {
+          "title": "Khám phá ý tưởng cấp độ 2",
+          "description": "Yêu cầu AI giải thích ý tưởng, tóm tắt bài đọc, đưa ra ý tưởng tiếp cận hoặc kiểm tra ngữ pháp cơ bản và tính rõ ràng.",
+          "useCases": "Yêu cầu AI giải thích ý tưởng, tóm tắt bài đọc, đưa ra ý tưởng tiếp cận hoặc kiểm tra ngữ pháp cơ bản và tính rõ ràng.",
+          "studentResponsibilities": "Đánh giá đầu ra của AI một cách nghiêm túc; đảm bảo công việc phản ánh lý luận và hiểu biết của riêng bạn.",
+          "disclosureRequirements": "Ghi chú ngắn gọn về việc sử dụng AI (ví dụ: \"Sử dụng ChatGPT để phác thảo cấu trúc bài luận\")."
+        },
+        "level3": {
+          "title": "Hỗ trợ chỉnh sửa cấp độ 3",
+          "description": "Đảm bảo mọi ý tưởng, cấu trúc và nội dung đều là của riêng bạn; xem xét kỹ lưỡng các đề xuất về AI.",
+          "useCases": "Yêu cầu AI cải thiện ngữ pháp, dấu câu, cách diễn đạt và khả năng đọc.",
+          "studentResponsibilities": "Đảm bảo mọi ý tưởng, cấu trúc và nội dung đều là của riêng bạn; xem xét kỹ lưỡng các đề xuất về AI.",
+          "disclosureRequirements": "Ghi chú ngắn gọn về việc sử dụng AI (ví dụ: \"Sử dụng ChatGPT để chỉnh sửa ngữ pháp và độ rõ ràng\")."
+        },
+        "level4": {
+          "title": "Đồng sáng tạo cấp độ 4",
+          "description": "Sử dụng AI để soạn thảo, thiết kế, mã hóa, phân tích, mô phỏng hoặc tạo nội dung sáng tạo trong khi vẫn duy trì giám sát.",
+          "useCases": "Sử dụng AI để soạn thảo, thiết kế, mã hóa, phân tích, mô phỏng hoặc tạo nội dung sáng tạo trong khi vẫn duy trì giám sát.",
+          "studentResponsibilities": "Đánh giá một cách phê phán các kết quả đầu ra của AI; sửa đổi và điều chỉnh để đảm bảo tính độc đáo và lý luận hợp lý.",
+          "disclosureRequirements": "Gửi thông tin chi tiết về những đóng góp của AI và bản sửa đổi của bạn."
+        },
+        "level5": {
+          "title": "Đồng sáng tạo cấp độ 5",
+          "description": "Sử dụng AI để tạo nội dung, chạy phân tích, xây dựng mô hình, viết sáng tạo, dịch thuật hoặc trực quan hóa dữ liệu, với sự phản ánh và tác giả rõ ràng của con người.",
+          "useCases": "Sử dụng AI để tạo nội dung, chạy phân tích, xây dựng mô hình, viết sáng tạo, dịch thuật hoặc trực quan hóa dữ liệu, với sự phản ánh và tác giả rõ ràng của con người.",
+          "studentResponsibilities": "Tích hợp AI một cách có đạo đức và có mục đích; chứng minh vai trò của AI trong việc thúc đẩy việc học hoặc sáng tạo.",
+          "disclosureRequirements": "Cung cấp lời xác nhận rõ ràng về mọi đóng góp của AI và bản sửa đổi của con người."
+        }
+      },
       "toasts": {
         "successCreated": "Bài tập đã được tạo thành công.",
         "successDraft": "Bài tập đã được lưu thành bản nháp.",
         "errorRequired": "Vui lòng điền vào tất cả các trường bắt buộc.",
         "errorFailed": "Không tạo được bài tập. Vui lòng thử lại.",
-        "errorUploadFailed": "Không tải lên được {name}",
+        "errorUploadFailed": "Không thể tải lên {name}",
         "sectionCreated": "Phần \"{name}\" đã được tạo thành công."
       }
     },

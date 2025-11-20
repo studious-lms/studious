@@ -84,28 +84,25 @@ function DropZone({
   const shouldShow = isDragging && canDrop;
   const isActive = isOver && shouldShow;
 
-  if (!shouldShow) {
-    return <div className="h-1" />; // Minimal spacer when not dragging
-  }
-
+  // Always render the drop zone with a larger hit area, but only show indicator when dragging
   return (
     <div 
       ref={drop as unknown as React.Ref<HTMLDivElement>}
       className={`transition-all duration-200 relative ${
         isActive 
-          ? 'h-8 my-2' 
+          ? 'h-10 my-2' 
           : shouldShow
-          ? 'h-3 my-1'
-          : 'h-1 my-0.5'
+          ? 'h-6 my-1'
+          : 'h-3 my-0.5'
       }`}
     >
       <div 
         className={`absolute inset-x-0 top-1/2 -translate-y-1/2 transition-all duration-200 ${
           isActive
-            ? `h-1.5 ${isDraggingSection ? 'bg-purple-500' : 'bg-primary'} rounded-full shadow-lg ${isDraggingSection ? 'shadow-purple-500/50' : 'shadow-primary/50'} opacity-100`
+            ? `h-2 ${isDraggingSection ? 'bg-purple-500' : 'bg-primary'} rounded-full shadow-lg ${isDraggingSection ? 'shadow-purple-500/50' : 'shadow-primary/50'} opacity-100`
             : shouldShow
-            ? `h-0.5 ${isDraggingSection ? 'bg-purple-400/40' : 'bg-primary/30'} rounded-full opacity-60`
-            : 'h-0 opacity-0'
+            ? `h-1 ${isDraggingSection ? 'bg-purple-400/50' : 'bg-primary/40'} rounded-full opacity-70`
+            : 'h-0 bg-transparent opacity-0'
         }`}
       />
       {isActive && (
@@ -171,7 +168,7 @@ function MainDropZone({
   return (
     <div 
       ref={drop as unknown as React.Ref<HTMLDivElement>} 
-      className={`relative min-h-[400px] py-4 transition-all duration-200 ${
+      className={`relative min-h-[400px] transition-all duration-200 ${
         isOver ? 'bg-muted/20 border-2 border-dashed border-primary rounded-lg' : ''
       }`}
     >
@@ -267,6 +264,23 @@ export default function Assignments() {
   useEffect(() => {
     if (classData?.class) {
       let assignments = classData.class.assignments || [];
+
+      // Filter assignments based on active tab
+      if (activeTab === 'open') {
+        assignments = assignments.filter(assignment => assignment.inProgress);
+      } else if (activeTab === 'closed') {
+        assignments = assignments.filter(assignment => !assignment.inProgress);
+        // Additional filtering for closed assignments
+        assignments = assignments.filter(assignment => 
+          assignment.submitted || 
+          (assignment.submission && assignment.submission.length > 0 && 
+           assignment.submission.filter(sub => sub.returned).length === assignment.submission.length)
+        );
+      } else if (activeTab === 'all') {
+        // Show all assignments, no additional filtering needed
+      } else if (assignments.length > 0) {
+        assignments = assignments.filter(assignment => assignment?.submissions?.some(submission => submission.submitted));
+      }
       
       // Filter out draft assignments for students
       if (isStudent) {
@@ -305,7 +319,7 @@ export default function Assignments() {
 
       setTopLevelItems(allItems);
     }
-  }, [classData, isStudent]);
+  }, [classData, isStudent, activeTab]);
 
   // Filtering unified list with preserved original indices
   const filteredWithOriginalIndex = topLevelItems
@@ -642,10 +656,11 @@ export default function Assignments() {
           </div>
           
           <div className="flex items-center space-x-2">
-            <Button variant="outline" size="sm">
+            {/* <Button variant="outline" size="sm">
               <Filter className="h-4 w-4 mr-2" />
               {t('filters')}
-            </Button>
+            </Button> */}
+            {appState.user.teacher && (<>
             <CreateSectionModal classId={classId} onSectionCreated={handleSectionCreated}>
               <Button variant="outline" size="sm">
                 <Folder className="h-4 w-4 mr-2" />
@@ -657,7 +672,7 @@ export default function Assignments() {
                 <Plus className="h-4 w-4 mr-2" />
                 {t('createAssignment')}
               </Button>
-            </CreateAssignmentModal>
+            </CreateAssignmentModal></>)}
           </div>
         </div>
 
@@ -675,7 +690,7 @@ export default function Assignments() {
         </div>
 
         {/* Assignments Tabs */}
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-2">
           <TabsList>
             <TabsTrigger value="all">{t('allAssignments')}</TabsTrigger>
             <TabsTrigger value="open">{t('open')}</TabsTrigger>

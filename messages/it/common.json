@@ -238,7 +238,7 @@
     "factsheet": {
       "title": "Scheda informativa aziendale",
       "subtitle": "Informazioni rapide su Studious LMS",
-      "companyInfo": "Informazioni aziendali",
+      "companyInfo": "Informazioni sulla società",
       "founded": "Fondato",
       "hq": "Sede centrale",
       "industry": "Industria",
@@ -429,7 +429,7 @@
       },
       "all": {
         "title": "Nessuna notifica ancora",
-        "description": "Quando ricevi le notifiche, queste appariranno qui."
+        "description": "Quando ricevi delle notifiche, queste appariranno qui."
       }
     },
     "actions": {
@@ -498,7 +498,7 @@
       "title": "Gradi",
       "subtitle": "Visualizza e gestisci i voti degli studenti",
       "columns": {
-        "assignment": "Assegnazione",
+        "assignment": "Incarico",
         "maxPoints": "Punti massimi",
         "weight": "Peso",
         "graded": "Classificato",
@@ -809,7 +809,7 @@
         }
       },
       "table": {
-        "assignment": "Assegnazione",
+        "assignment": "Incarico",
         "dueDate": "Due date",
         "points": "Punti",
         "weight": "Peso",
@@ -845,7 +845,7 @@
     "submissions": "Invii",
     "open": "Aprire",
     "closed": "Chiuso",
-    "assignment": "Assegnazione",
+    "assignment": "Incarico",
     "assignments": "Incarichi",
     "newAssignment": "Nuovo incarico",
     "createAssignment": "Crea assegnazione",
@@ -1064,6 +1064,8 @@
         "details": "Dettagli dell'incarico",
         "configuration": "Configurazione",
         "grading": "Valutazione e valutazione",
+        "deliverables": "Risultati finali",
+        "aiPolicy": "Politica sull'intelligenza artificiale",
         "attachments": "Allegati"
       },
       "fields": {
@@ -1071,6 +1073,7 @@
         "instructions": "Istruzioni *",
         "dueDate": "Due date",
         "type": "Tipo di assegnazione",
+        "students": "studenti",
         "section": "Sezione",
         "rubric": "Rubrica",
         "gradeScale": "Scala di valutazione",
@@ -1149,6 +1152,71 @@
         "creating": "Creazione...",
         "add": "Aggiungere"
       },
+      "students": {
+        "all": "Tutto",
+        "selectPlaceholder": "Seleziona studenti..."
+      },
+      "deliverables": {
+        "fileUpload": {
+          "label": "Caricamento file",
+          "description": "Gli studenti possono caricare file PDF, immagini e video."
+        },
+        "extendedResponse": {
+          "label": "Risposta estesa",
+          "description": "Gli studenti possono digitare risposte più lunghe."
+        },
+        "worksheetSubmission": {
+          "label": "Invio del foglio di lavoro",
+          "description": "Gli studenti possono inviare fogli di lavoro per una valutazione integrata.",
+          "searchPlaceholder": "Cerca qui i fogli di lavoro...",
+          "found": "{count} trovato",
+          "noResults": "Nessun foglio di lavoro trovato"
+        },
+        "aiGrading": {
+          "label": "Valutazione e feedback con l'intelligenza artificiale",
+          "description": "Fornisci valutazioni e feedback preliminari e immediati tramite intelligenza artificiale."
+        }
+      },
+      "aiPolicy": {
+        "useCases": "Casi d'uso",
+        "studentResponsibilities": "Responsabilità degli studenti",
+        "disclosureRequirements": "Requisiti di divulgazione",
+        "level1": {
+          "title": "Lavoro indipendente di livello 1 (senza IA)",
+          "description": "Nessuno. Sono accettabili i correttori ortografici e grammaticali di base.",
+          "useCases": "Affidatevi esclusivamente alla conoscenza personale, al ragionamento e allo sforzo.",
+          "studentResponsibilities": "Nessuno. Sono accettabili i correttori ortografici e grammaticali di base.",
+          "disclosureRequirements": "Non è richiesta alcuna divulgazione dell'IA (uso dell'IA vietato)."
+        },
+        "level2": {
+          "title": "Esplorazione delle idee di livello 2",
+          "description": "Chiedi all'intelligenza artificiale di spiegare idee, riassumere letture, fare brainstorming su approcci o controllare la grammatica di base e la chiarezza.",
+          "useCases": "Chiedi all'intelligenza artificiale di spiegare idee, riassumere letture, fare brainstorming su approcci o controllare la grammatica di base e la chiarezza.",
+          "studentResponsibilities": "Valutare criticamente i risultati dell'IA; assicurarsi che il lavoro rifletta il proprio ragionamento e la propria comprensione.",
+          "disclosureRequirements": "Descrivi brevemente l'uso dell'intelligenza artificiale (ad esempio, \"Ho utilizzato ChatGPT per delineare la struttura del saggio\")."
+        },
+        "level3": {
+          "title": "Supporto di modifica di livello 3",
+          "description": "Assicurati che tutte le idee, la struttura e i contenuti siano tuoi; esamina attentamente i suggerimenti dell'IA.",
+          "useCases": "Chiedi all'intelligenza artificiale di migliorare grammatica, punteggiatura, formulazione e leggibilità.",
+          "studentResponsibilities": "Assicurati che tutte le idee, la struttura e i contenuti siano tuoi; esamina attentamente i suggerimenti dell'IA.",
+          "disclosureRequirements": "Descrivi brevemente l'uso dell'intelligenza artificiale (ad esempio, \"Utilizzato ChatGPT per modifiche grammaticali e di chiarezza\")."
+        },
+        "level4": {
+          "title": "Co-creazione di livello 4",
+          "description": "Utilizza l'intelligenza artificiale per elaborare, progettare, codificare, analizzare, simulare o generare contenuti creativi mantenendo la supervisione.",
+          "useCases": "Utilizza l'intelligenza artificiale per elaborare, progettare, codificare, analizzare, simulare o generare contenuti creativi mantenendo la supervisione.",
+          "studentResponsibilities": "Valutare criticamente i risultati dell'IA; rivederli e adattarli per garantire originalità e ragionamento sensato.",
+          "disclosureRequirements": "Invia una descrizione dettagliata dei contributi dell'IA e delle tue revisioni."
+        },
+        "level5": {
+          "title": "Co-innovazione di livello 5",
+          "description": "Utilizzare l'intelligenza artificiale per generare contenuti, eseguire analisi, creare modelli, scrivere in modo creativo, tradurre o visualizzare dati, con esplicita paternità e riflessione umana.",
+          "useCases": "Utilizzare l'intelligenza artificiale per generare contenuti, eseguire analisi, creare modelli, scrivere in modo creativo, tradurre o visualizzare dati, con esplicita paternità e riflessione umana.",
+          "studentResponsibilities": "Integrare l'intelligenza artificiale in modo etico e mirato; giustificarne il ruolo nel promuovere l'apprendimento o la creatività.",
+          "disclosureRequirements": "Fornire un chiaro riconoscimento di tutti i contributi dell'IA e delle revisioni umane."
+        }
+      },
       "toasts": {
         "successCreated": "Assegnazione creata con successo.",
         "successDraft": "Compito salvato come bozza correttamente.",
@@ -1183,7 +1251,7 @@
       "sections": {
         "settings": "Impostazioni",
         "notifications": "Notifiche",
-        "schedule": "Pubblicazione programmata (facoltativa)"
+        "schedule": "Pianifica la pubblicazione (facoltativo)"
       },
       "settings": {
         "pinned": {

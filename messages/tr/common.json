@@ -13,7 +13,7 @@
     "filter": "Filtre",
     "sort": "Düzenlemek",
     "viewAll": "Tümünü Görüntüle",
-    "noData": "Veri mevcut değil",
+    "noData": "Veri yok",
     "export": "İhracat",
     "openMenu": "Menüyü aç"
   },
@@ -384,7 +384,7 @@
     "landing": {
       "description": "Sohbete başlamak için kenar çubuğundan bir konuşma seçin.",
       "pleaseSignIn": "Lütfen giriş yapın",
-      "signInRequired": "Sohbete erişmek için oturum açmanız gerekir.",
+      "signInRequired": "Sohbete erişmek için oturum açmanız gerekiyor.",
       "title": "Sohbete Hoş Geldiniz"
     },
     "page": {
@@ -398,7 +398,7 @@
       },
       "header": {
         "members": "üyeler",
-        "markMentionsRead": "Mark okunduğundan bahsediyor"
+        "markMentionsRead": "Mark okunduğunu belirtiyor"
       },
       "input": {
         "placeholderPrefix": "Mesaj"
@@ -877,7 +877,7 @@
     "titleStatement4": "Yıllarca güncelliğini yitirmiş, parçalanmış okul portallarıyla boğuştuktan sonra, her zaman sahip olmayı dilediğimiz öğrenme yönetim sistemini kurmaya karar verdik.",
     "problemParagraph1": "Studious 2023'te başladı",
     "problemParagraph2": "Bir grup öğrenci ve eğitimci ortak bir hayal kırıklığıyla bir araya geldiğinde: Mevcut okul portalları hantal, yavaştı ve farklı bir eğitim dönemi için tasarlanmıştı.",
-    "problemDetailParagraph": "Kendimizi birden fazla platform arasında mekik dokurken bulduk: biri notlar, diğeri ödevler, üçüncüsü de iletişim için. Öğretmenler, öğretmekten çok yazılımla boğuşmakla vakit geçiriyordu. Öğrenciler, bildirimler eski arayüzlerde kaybolduğu için teslim tarihlerini kaçırıyordu.",
+    "problemDetailParagraph": "Kendimizi birden fazla platform arasında mekik dokurken bulduk: biri notlar, diğeri ödevler, üçüncüsü iletişim için. Öğretmenler öğretmekten çok yazılımla boğuşmakla vakit geçiriyordu. Öğrenciler, bildirimler eski arayüzlerde kaybolduğu için teslim tarihlerini kaçırıyordu.",
     "betterWay": "Daha iyi bir yolun olması gerektiğini biliyorduk.",
     "solutionParagraph1": "Linear ve Notion gibi modern iş birliği araçlarından ilham alarak, kullanıcı dostu bir öğrenme yönetim sistemi yaratmaya koyulduk.",
     "solutionParagraph2": "hızlı, sezgisel ve kullanımı keyifli.",
@@ -893,7 +893,7 @@
     "journeyBetaLaunch2": "Studious LMS'nin resmi beta testi lansmanı yapıldı. Tüm platform özellikleriyle dünya çapındaki okullarda erken erişime açıldı.",
     "journeyPilotSchoolsDate": "Kasım 2025",
     "journeyPilotSchools1": "Pilot Okullar Programı",
-    "journeyPilotSchools2": "Gerçek dünyadan geri bildirim toplamak ve platformu çeşitli eğitim ihtiyaçlarına göre geliştirmek için pilot okullarla ortaklıklar başlatmak.",
+    "journeyPilotSchools2": "Gerçek dünyadan geri bildirim toplamak ve platformu çeşitli eğitim ihtiyaçlarına göre geliştirmek için pilot okullarla ortaklıklar başlatıyoruz.",
     "journeyBetaCompleteDate": "Aralık 2025",
     "journeyBetaComplete1": "Beta Tamamlandı",
     "journeyBetaComplete2": "Beta sürümünden tam üretim sürümüne geçiş. Tüm temel özelliklerin tamamen test edilip optimize edildiği platform stabilizasyonu.",
@@ -901,7 +901,7 @@
     "journeySDP1": "Okul Geliştirme Programı Lansmanı",
     "journeySDP2": "Nitelikli kurumlara ücretsiz erişim sağlayan Çalışkan Okul Gelişim Programı'na kabul edilen ilk okul grubunu duyuruyoruz.",
     "missionStatement1": "Misyonumuz basit",
-    "missionStatement2": "Öğrenciler, öğretmenler ve yaşam boyu öğrenenler olarak her gün kullanmak isteyeceğimiz öğrenme yönetim sistemini oluşturmak.",
+    "missionStatement2": "Öğrenciler, öğretmenler ve yaşam boyu öğrenenler olarak her gün kullanmak isteyeceğimiz öğrenme yönetim sistemini kurmak.",
     "joinAppeal1": "Bu yolculuğa bize katılın",
     "joinAppeal2": "Eğitimin geleceğinin bir parçası olun",
     "requestEarlyAccess": "Erken Erişim Talebinde Bulunun",
@@ -1064,6 +1064,8 @@
         "details": "Görev Ayrıntıları",
         "configuration": "Yapılandırma",
         "grading": "Notlandırma ve Değerlendirme",
+        "deliverables": "Teslimatlar",
+        "aiPolicy": "Yapay Zeka Politikası",
         "attachments": "Ekler"
       },
       "fields": {
@@ -1071,6 +1073,7 @@
         "instructions": "Talimatlar *",
         "dueDate": "İki Tarih",
         "type": "Görev Türü",
+        "students": "Öğrenciler",
         "section": "Bölüm",
         "rubric": "Rubrik",
         "gradeScale": "Not Ölçeği",
@@ -1148,6 +1151,71 @@
         "saveDraft": "Taslağı Kaydet",
         "creating": "Oluşturuluyor...",
         "add": "Eklemek"
+      },
+      "students": {
+        "all": "Tüm",
+        "selectPlaceholder": "Öğrencileri seçin..."
+      },
+      "deliverables": {
+        "fileUpload": {
+          "label": "Dosya Yükleme",
+          "description": "Öğrenciler PDF, Resim ve Video dosyalarını yükleyebilirler."
+        },
+        "extendedResponse": {
+          "label": "Genişletilmiş yanıt",
+          "description": "Öğrenciler uzun formdaki cevapları yazabilirler."
+        },
+        "worksheetSubmission": {
+          "label": "Çalışma Sayfası Gönderimi",
+          "description": "Öğrenciler bütünleşik notlandırma için çalışma kağıtları sunabilirler.",
+          "searchPlaceholder": "Çalışma kağıtlarını burada arayın...",
+          "found": "{count} bulundu",
+          "noResults": "Hiçbir çalışma sayfası bulunamadı"
+        },
+        "aiGrading": {
+          "label": "Yapay zeka ile notlandırma ve geri bildirim",
+          "description": "Yapay zeka ile ön ve anında notlandırma ve geri bildirim sağlayın."
+        }
+      },
+      "aiPolicy": {
+        "useCases": "Kullanım Örnekleri",
+        "studentResponsibilities": "Öğrenci Sorumlulukları",
+        "disclosureRequirements": "Açıklama Gereksinimleri",
+        "level1": {
+          "title": "Seviye 1 Bağımsız Çalışma (Yapay Zeka Yok)",
+          "description": "Hiçbiri. Temel yazım ve dil bilgisi denetleyicileri kabul edilebilir.",
+          "useCases": "Tamamen kişisel bilgi, akıl yürütme ve çabaya güvenin.",
+          "studentResponsibilities": "Hiçbiri. Temel yazım ve dil bilgisi denetleyicileri kabul edilebilir.",
+          "disclosureRequirements": "Yapay zekanın ifşasına gerek yok (Yapay zeka kullanımı yasaktır)."
+        },
+        "level2": {
+          "title": "Seviye 2 Fikir Araştırması",
+          "description": "Yapay zekadan fikirleri açıklamasını, okumaları özetlemesini, yaklaşımlar üzerinde beyin fırtınası yapmasını veya temel dil bilgisi ve anlaşılırlığı kontrol etmesini isteyin.",
+          "useCases": "Yapay zekadan fikirleri açıklamasını, okumaları özetlemesini, yaklaşımlar üzerinde beyin fırtınası yapmasını veya temel dil bilgisi ve anlaşılırlığı kontrol etmesini isteyin.",
+          "studentResponsibilities": "Yapay zeka çıktılarını eleştirel bir şekilde değerlendirin; çalışmanın kendi akıl yürütmenizi ve anlayışınızı yansıttığından emin olun.",
+          "disclosureRequirements": "Yapay zeka kullanımını kısaca açıklayın (örneğin, \"Makale yapısını ana hatlarıyla belirtmek için ChatGPT kullanıldı\")."
+        },
+        "level3": {
+          "title": "3. Seviye Düzenleme Desteği",
+          "description": "Tüm fikirlerin, yapıların ve içeriklerin size ait olduğundan emin olun; AI önerilerini dikkatlice inceleyin.",
+          "useCases": "Yapay zekadan dil bilgisi, noktalama, ifade ve okunabilirliği iyileştirmesini isteyin.",
+          "studentResponsibilities": "Tüm fikirlerin, yapıların ve içeriklerin size ait olduğundan emin olun; AI önerilerini dikkatlice inceleyin.",
+          "disclosureRequirements": "Yapay zeka kullanımını kısaca açıklayın (örneğin, \"Dil bilgisi ve anlaşılırlık düzenlemeleri için ChatGPT kullanıldı\")."
+        },
+        "level4": {
+          "title": "4. Seviye Ortak Yaratım",
+          "description": "Gözetimi sürdürürken yaratıcı içerik taslağı oluşturmak, tasarlamak, kodlamak, analiz etmek, simüle etmek veya üretmek için yapay zekayı kullanın.",
+          "useCases": "Gözetimi sürdürürken yaratıcı içerik taslağı oluşturmak, tasarlamak, kodlamak, analiz etmek, simüle etmek veya üretmek için yapay zekayı kullanın.",
+          "studentResponsibilities": "Yapay zeka çıktılarını eleştirel bir şekilde değerlendirin; özgünlüğü ve sağlam muhakemeyi sağlamak için gözden geçirin ve uyarlayın.",
+          "disclosureRequirements": "Yapay zekanın katkıları ve düzeltmeleriniz hakkında detaylı bir açıklama gönderin."
+        },
+        "level5": {
+          "title": "Seviye 5 Ortak İnovasyon",
+          "description": "İçerik üretmek, analizler çalıştırmak, modeller oluşturmak, yaratıcı yazı yazmak, çeviri yapmak veya veri görselleştirmek için yapay zekayı, açıkça insan yazarlığı ve yansımasıyla kullanın.",
+          "useCases": "İçerik üretmek, analizler çalıştırmak, modeller oluşturmak, yaratıcı yazı yazmak, çeviri yapmak veya veri görselleştirmek için yapay zekayı, açıkça insan yazarlığı ve yansımasıyla kullanın.",
+          "studentResponsibilities": "Yapay zekayı etik ve amaçlı bir şekilde entegre edin; öğrenmeyi veya yaratıcılığı ilerletmedeki rolünü gerekçelendirin.",
+          "disclosureRequirements": "Tüm yapay zeka katkılarının ve insan kaynaklı düzeltmelerin açıkça kabul edildiğini belirtin."
+        }
       },
       "toasts": {
         "successCreated": "Ödev başarıyla oluşturuldu.",
