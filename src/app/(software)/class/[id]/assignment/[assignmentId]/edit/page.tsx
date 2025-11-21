@@ -343,13 +343,13 @@ export default function AssignmentEditPage() {
         sectionId: assignment.section?.id,
         markSchemeId: assignment.markScheme?.id,
         gradingBoundaryId: assignment.gradingBoundary?.id,
-        acceptFiles: (assignment as any).acceptFiles ?? false,
-        acceptExtendedResponse: (assignment as any).acceptExtendedResponse ?? false,
-        acceptWorksheet: (assignment as any).acceptWorksheet ?? false,
-        gradeWithAI: (assignment as any).gradeWithAI ?? false,
-        aiPolicyLevel: (assignment as any).aiPolicyLevel ?? 4,
-        worksheetIds: (assignment as any).worksheets?.map((w: any) => w.id) || [],
-        studentIds: (assignment as any).studentIds || [],
+        acceptFiles: assignment.acceptFiles ?? false,
+        acceptExtendedResponse: assignment.acceptExtendedResponse ?? false,
+        acceptWorksheet: assignment.acceptWorksheet ?? false,
+        gradeWithAI: assignment.gradeWithAI ?? false,
+        aiPolicyLevel: assignment.aiPolicyLevel ?? 4,
+        worksheetIds: assignment.worksheets?.map((w: RouterOutputs['assignment']['get']['worksheets'][number]) => w.id) || [],
+        studentIds: assignment.studentIds || [],
       });
     }
   }, [assignment]);
@@ -383,7 +383,7 @@ export default function AssignmentEditPage() {
       studentIds: formData.studentIds?.length === 0 ? undefined : formData.studentIds,
     };
     
-    updateAssignmentMutation.mutate(updateData as any);
+    updateAssignmentMutation.mutate(updateData);
   };
 
   const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -454,7 +454,6 @@ export default function AssignmentEditPage() {
 
           // Update progress
           setUploadedFiles(i + 1);
-          console.log(`File ${file.name} uploaded successfully`);
         } catch (error) {
           // Report error to backend
           await confirmAssignmentUpload.mutateAsync({
@@ -464,7 +463,6 @@ export default function AssignmentEditPage() {
             classId
           });
 
-          console.error(`Upload failed for ${file.name}:`, error);
           toast.error(`Failed to upload ${file.name}`);
         }
       }
@@ -492,7 +490,6 @@ export default function AssignmentEditPage() {
         setTotalFiles(0);
       }, 1000);
     } catch (error) {
-      console.error('File upload error:', error);
       toast.error('Failed to upload files');
       setIsUploading(false);
       setUploadProgress(0);
@@ -910,10 +907,12 @@ export default function AssignmentEditPage() {
                           {markSchemes?.map((markScheme) => {
                             let name = t('rubric.untitled');
                             try {
-                              const parsed = JSON.parse(markScheme.structured);
-                              name = parsed.name || t('rubric.untitled');
-                            } catch (error) {
-                              console.error("Error parsing markscheme:", error);
+                              if (markScheme.structured && markScheme.structured.trim()) {
+                                const parsed = JSON.parse(markScheme.structured);
+                                name = parsed.name || t('rubric.untitled');
+                              }
+                            } catch {
+                              name = t('rubric.untitled');
                             }
                             return (
                               <SelectItem key={markScheme.id} value={markScheme.id}>
@@ -951,10 +950,12 @@ export default function AssignmentEditPage() {
                           {gradingBoundaries?.map((boundary) => {
                             let name = t('gradeScale.untitled');
                             try {
-                              const parsed = JSON.parse(boundary.structured);
-                              name = parsed.name || t('gradeScale.untitled');
-                            } catch (error) {
-                              console.error("Error parsing grading boundary:", error);
+                              if (boundary.structured && boundary.structured.trim()) {
+                                const parsed = JSON.parse(boundary.structured);
+                                name = parsed.name || t('gradeScale.untitled');
+                              }
+                            } catch {
+                              name = t('gradeScale.untitled');
                             }
                             return (
                               <SelectItem key={boundary.id} value={boundary.id}>

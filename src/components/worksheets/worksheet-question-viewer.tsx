@@ -19,7 +19,7 @@ import {
     Loader2,
     MessageCircle
 } from "lucide-react";
-import { trpc } from "@/lib/trpc";
+import { RouterOutputs, trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { WorksheetTeacherFeedback } from "./worksheet-teacher-feedback";
 import Comment from "../comments/Comment";
@@ -33,10 +33,19 @@ interface WorksheetQuestionViewerProps {
     showFeedback?: boolean;
     isTeacher: boolean;
     submissionId?: string;
-    worksheetResponse?: any;
+    worksheetResponse?: RouterOutputs['worksheet']['getWorksheetSubmission'];
     worksheetId: string;
     onChangeComment: (comment: string) => void;
 }
+
+
+type FeedbackState = {
+    responseId: string;
+    isCorrect: boolean | null;
+    feedback: string;
+    points: number | null;
+    markschemeState: any;
+};
 
 export function WorksheetQuestionViewer({
     question,
@@ -65,8 +74,8 @@ export function WorksheetQuestionViewer({
         },
     });
 
-    const initializeFeedback = useCallback(() => {
-        const response = worksheetResponse?.responses?.find((r: any) => r.questionId === question.id);
+    const initializeFeedback = useCallback((): FeedbackState => {
+        const response = worksheetResponse?.responses.find((r) => r.questionId === question.id); 
 
         if (!response) {
             return {
@@ -91,7 +100,7 @@ export function WorksheetQuestionViewer({
             responseId: response.id,
             isCorrect: response.isCorrect ?? null,
             feedback: response.feedback || '',
-            points: response.points ?? null,
+            points: response.points || null,
             markschemeState: markschemeState,
         };
     }, [question.id, worksheetResponse]);
@@ -119,10 +128,10 @@ export function WorksheetQuestionViewer({
                 submissionId: submissionId!,
             });
             if (result) {
-                const updatedResponse: any = result.responses?.find((r: any) => r.questionId === question.id);
+                const updatedResponse = result.responses?.find((r: RouterOutputs['worksheet']['getWorksheetSubmission']['responses'][number]) => r.questionId === question.id);
                 if (updatedResponse) {
-                    const rawMarkschemeState: any = updatedResponse.markschemeState;
-                    let processedMarkschemeState: any = null;
+                    const rawMarkschemeState = updatedResponse.markschemeState;
+                    let processedMarkschemeState: string | null = null;
                     
                     if (rawMarkschemeState) {
                         if (typeof rawMarkschemeState === 'string') {
@@ -132,7 +141,7 @@ export function WorksheetQuestionViewer({
                                 processedMarkschemeState = rawMarkschemeState;
                             }
                         } else {
-                            processedMarkschemeState = rawMarkschemeState;
+                            processedMarkschemeState = rawMarkschemeState.toString();
                         }
                     }
                     
@@ -151,14 +160,14 @@ export function WorksheetQuestionViewer({
         },
     });
 
-    const handleGradeChange = (field: 'isCorrect' | 'feedback' | 'points' | 'markschemeState', value: any) => {
+    const handleGradeChange = (field: 'isCorrect' | 'feedback' | 'points' | 'markschemeState', value: boolean | string | Record<string, boolean>) => {
         setFeedback(prev => {
             // If updating markschemeState, also update points automatically
             let updatedPoints = prev.points;
             if (field === 'markschemeState' && value && question.markScheme) {
                 const checkedKeys = Array.isArray(value) ? value : Object.keys(value).filter(key => value[key]);
                 updatedPoints = question.markScheme
-                    .map((item: any, index: number) => {
+                    .map((item: { id: string; points: number }, index: number) => {
                         const itemKey = item.id || `item-${index}`;
                         return checkedKeys.includes(itemKey) ? (item.points || 0) : 0;
                     })
@@ -174,15 +183,17 @@ export function WorksheetQuestionViewer({
     };
 
     const handleSaveFeedback = () => {
-        gradeAnswerMutation.mutate({
-            questionId: question.id,
-            submissionId: submissionId!,
-            studentWorksheetResponseId: worksheetResponse?.id,
-            isCorrect: feedback?.isCorrect ?? false,
-            ...(feedback?.feedback && { feedback: feedback.feedback }),
-            ...(feedback?.points !== null && feedback?.points !== undefined && { points: feedback.points }),
-            ...(feedback?.markschemeState && { markschemeState: feedback.markschemeState }),
-        });
+        if (worksheetResponse?.id) {
+            gradeAnswerMutation.mutate({
+                questionId: question.id,
+                responseId: feedback?.responseId,
+                studentWorksheetResponseId: worksheetResponse.id,
+                isCorrect: feedback?.isCorrect ?? false,
+                ...(feedback?.feedback && { feedback: feedback.feedback }),
+                ...(feedback?.points !== null && feedback?.points !== undefined && { points: feedback.points }),
+                ...(feedback?.markschemeState && { markschemeState: feedback.markschemeState }),
+            });
+        }
     };
 
     const isAnswerCorrect = (): boolean | null => {
@@ -271,7 +282,8 @@ export function WorksheetQuestionViewer({
         }
     };
 
-    const comments = worksheetResponse?.responses?.find((r: any) => r.questionId === question.id)?.comments;
+    // @ts-expect-error - worksheetResponse is typed as RouterOutputs['worksheet']['getWorksheetSubmission'], issues with JsonValue.
+    const comments = worksheetResponse?.responses?.find((r) => r.questionId === question.id)?.comments;
 
 
     const [newComment, setNewComment] = useState("");

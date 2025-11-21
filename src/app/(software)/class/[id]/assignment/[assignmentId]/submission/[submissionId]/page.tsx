@@ -607,7 +607,7 @@ export default function SubmissionDetailPage() {
 
             {/* Extended Response - Only show if acceptExtendedResponse is true */}
             {assignment?.acceptExtendedResponse && (
-              <ExtendedResponse extendedResponse={(submission as any).extendedResponse} />
+              <ExtendedResponse extendedResponse={submission.extendedResponse} />
             )}
 
             {/* Worksheet Submission - Only show if acceptWorksheet is true */}
@@ -615,7 +615,7 @@ export default function SubmissionDetailPage() {
               <div className="space-y-2">
                 <h3 className="text-lg font-semibold mb-3">Worksheets</h3>
                 <div className="space-y-2">
-                  {assignment.worksheets.map((worksheet: any) => {
+                  {assignment.worksheets.map((worksheet) => {
                     return (
                       <WorksheetDisplay
                         key={worksheet.id}

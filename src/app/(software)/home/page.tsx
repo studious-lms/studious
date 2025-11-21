@@ -19,7 +19,8 @@ import {
   Users,
   Bell,
   ChevronRight,
-  GraduationCap
+  GraduationCap,
+  LucideIcon
 } from "lucide-react";
 import Link from "next/link";
 import { format, isToday, isTomorrow, parseISO } from "date-fns";
@@ -94,7 +95,7 @@ function StatsCard({
 }: { 
   title: string; 
   value: string | number; 
-  icon: any; 
+  icon: LucideIcon; 
   description?: string;
   trend?: { value: string; isPositive: boolean };
 }) {

@@ -5,6 +5,7 @@ import { httpBatchLink } from '@trpc/client';
 import { useState } from 'react';
 import { trpc } from '@/lib/trpc';
 import { getCookie } from 'cookies-next';
+import { errorLink } from './api/errorLink';
 
 const TRPC_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/trpc';
 
@@ -30,6 +31,7 @@ export function TRPCProvider({ children }: { children: React.ReactNode }) {
   const [trpcClient] = useState(() =>
     trpc.createClient({
       links: [
+        errorLink(),
         httpBatchLink({
           url: TRPC_URL,
           headers() {

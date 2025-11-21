@@ -29,10 +29,9 @@ import { RootState } from "@/store/store";
 import { ReactionButton } from "@/components/reactions/ReactionButton";
 
 interface CommentProps {
-  comment: RouterOutputs['comment']['get'];
+  comment: { id: string; };
   onUpdate?: () => void;
   showReplies?: boolean;
-  classId?: string; // Needed for ReactionButton
 }
 
 function formatDate(date: string | Date | null | undefined): string {
@@ -49,7 +48,6 @@ export default memo(function Comment({
   comment,
   onUpdate,
   showReplies: initialShowReplies = false,
-  classId,
 }: CommentProps) {
   const currentUserId = useSelector((state: RootState) => state.app.user.id);
   const isTeacher = useSelector((state: RootState) => state.app.user.teacher);
@@ -74,9 +72,13 @@ export default memo(function Comment({
   );
 
   // Use fetched comment data if available, otherwise fall back to prop
-  const currentComment = commentData || comment;
-  const replies = (currentComment as any).replies || [];
-  const replyCount = replies.length;
+  const currentComment = commentData;
+ 
+  const replies = trpc.comment.getReplies.useQuery({
+    commentId: comment.id,
+  });
+
+  const replyCount = replies.data?.length || 0;
 
   // Mutations
   
@@ -141,42 +143,42 @@ export default memo(function Comment({
     },
   });
 
-  const canEdit = currentComment.author.id === currentUserId;
-  const canDelete = currentComment.author.id === currentUserId || isTeacher;
+  const canEdit = currentComment && currentComment.author.id === currentUserId;
+  const canDelete = currentComment && currentComment.author.id === currentUserId || isTeacher;
   // Handle different comment type structures - some have createdAt, some don't
   const createdAt = (currentComment as any).createdAt || (currentComment as any).created_at;
-  const modifiedAt = currentComment.modifiedAt || (currentComment as any).updatedAt;
+  const modifiedAt = currentComment && currentComment.modifiedAt || (currentComment as any).updatedAt;
   const isModified = modifiedAt && createdAt && 
     new Date(modifiedAt).getTime() !== new Date(createdAt).getTime();
 
   const handleStartEdit = useCallback(() => {
-    setEditText(currentComment.content || "");
+    setEditText(currentComment && currentComment.content || "");
     setIsEditing(true);
-  }, [currentComment.content]);
+  }, [currentComment && currentComment.content]);
 
   const handleSaveEdit = useCallback(() => {
-    if (!editText.trim()) return;
+    if (!editText.trim() || !currentComment || !currentComment.id) return;
     updateCommentMutation.mutate({
       id: currentComment.id,
       content: editText.trim(),
     });
-  }, [editText, updateCommentMutation, currentComment.id]);
+  }, [editText, updateCommentMutation, currentComment && currentComment.id]);
 
   const handleDelete = useCallback(() => {
-    if (confirm("Are you sure you want to delete this comment?")) {
+    if (confirm("Are you sure you want to delete this comment?") && currentComment && currentComment.id) {
       deleteCommentMutation.mutate({ 
         id: currentComment.id,
       });
     }
-  }, [deleteCommentMutation, currentComment.id]);
+  }, [deleteCommentMutation, currentComment && currentComment.id]);
 
   const handleAddReply = useCallback(() => {
-    if (!replyText.trim()) return;
+    if (!replyText.trim() || !currentComment || !currentComment.id) return;
     addReplyMutation.mutate({
       content: replyText.trim(),
       parentCommentId: currentComment.id,
     });
-  }, [replyText, addReplyMutation, currentComment.id]);
+  }, [replyText, addReplyMutation, currentComment && currentComment.id]);
 
   const handleStartEditReply = useCallback((replyId: string, content: string) => {
     setEditingReplyId(replyId);
@@ -203,15 +205,15 @@ export default memo(function Comment({
     <div className="space-y-2">
       <div className="flex items-start gap-2">
         <Avatar className="h-7 w-7 flex-shrink-0">
-          <AvatarImage src={currentComment.author?.profile?.profilePicture || ""} />
+          <AvatarImage src={currentComment && currentComment.author?.profile?.profilePicture || ""} />
           <AvatarFallback className="text-xs">
-            {currentComment.author?.username?.substring(0, 2).toUpperCase() || "U"}
+            {currentComment && currentComment.author?.username?.substring(0, 2).toUpperCase() || "U"}
           </AvatarFallback>
         </Avatar>
         <div className="flex-1 min-w-0">
           <div className="flex items-center justify-between mb-1">
             <div className="flex items-center gap-2">
-              <p className="text-xs font-medium">{currentComment.author?.username || "Unknown"}</p>
+              <p className="text-xs font-medium">{currentComment && currentComment.author?.username || "Unknown"}</p>
               <p className="text-xs text-muted-foreground">
                 {formatDate(createdAt)}
               </p>
@@ -272,10 +274,10 @@ export default memo(function Comment({
             </div>
           ) : (
             <>
-              <p className="text-xs whitespace-pre-wrap leading-relaxed">{currentComment.content}</p>
+              <p className="text-xs whitespace-pre-wrap leading-relaxed">{currentComment && currentComment.content}</p>
               <div className="flex items-center gap-2 mt-1">
                   <ReactionButton
-                    commentId={currentComment.id}
+                    commentId={currentComment && currentComment.id}
                     size="sm"
                   />
                 <Button
@@ -348,11 +350,11 @@ export default memo(function Comment({
       {/* Nested Replies */}
       {showReplies && replyCount > 0 && (
         <div className="ml-9 mt-2 space-y-3 border-l-2 border-muted pl-4">
-          {replies.map((reply) => {
+          {replies.data?.map((reply) => {
             const canEditReply = reply.author.id === currentUserId;
-            const canDeleteReply = reply.author.id === currentUserId || isTeacher;
-            const replyCreatedAt = (reply as any).createdAt || (reply as any).created_at;
-            const replyModifiedAt = reply.modifiedAt || (reply as any).updatedAt;
+            const canDeleteReply = reply && reply.author.id === currentUserId || isTeacher;
+            const replyCreatedAt = reply && reply.createdAt || (reply as any).created_at;
+            const replyModifiedAt = reply && reply.modifiedAt || (reply as any).updatedAt;
             const isReplyModified = replyModifiedAt && replyCreatedAt && 
               new Date(replyModifiedAt).getTime() !== new Date(replyCreatedAt).getTime();
             const isEditingThisReply = editingReplyId === reply.id;

@@ -55,6 +55,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { ChevronDown } from "lucide-react";
 import { WorksheetViewer } from "@/components/worksheets/worksheet-viewer";
+import type { RouterInputs } from "@/lib/trpc";
 
 type Submissions = RouterOutputs['assignment']['getSubmissions'];
 type Submission = Submissions[number];
@@ -181,14 +182,8 @@ export default function AssignmentDetailPage() {
   // Initialize extended response and worksheet answers from submission
   useEffect(() => {
     if (studentSubmission) {
-      if ((studentSubmission as any).extendedResponse) {
-        setExtendedResponse((studentSubmission as any).extendedResponse);
-      }
-      if ((studentSubmission as any).worksheetAnswers) {
-        const answers = typeof (studentSubmission as any).worksheetAnswers === 'string'
-          ? JSON.parse((studentSubmission as any).worksheetAnswers)
-          : (studentSubmission as any).worksheetAnswers;
-        setWorksheetAnswers(answers || {});
+      if (studentSubmission.extendedResponse) {
+        setExtendedResponse(studentSubmission.extendedResponse);
       }
     }
   }, [studentSubmission]);
@@ -258,9 +253,6 @@ export default function AssignmentDetailPage() {
   // Extended response state
   const [extendedResponse, setExtendedResponse] = useState("");
 
-  // Worksheet answers state
-  const [worksheetAnswers, setWorksheetAnswers] = useState<Record<string, Record<string, any>>>({});
-
   // Status messages for different upload stages
   const uploadStatusMessages = [
     "Preparing files for upload...",
@@ -294,19 +286,6 @@ export default function AssignmentDetailPage() {
       </PageLayout>
     );
   }
-
-  const getStatusBadge = (submission: Submission) => {
-    if (submission.returned) {
-      return <Badge variant="default">Returned</Badge>;
-    }
-    if (submission.submitted && submission.late) {
-      return <Badge variant="destructive">Late</Badge>;
-    }
-    if (submission.submitted) {
-      return <Badge variant="secondary">Submitted</Badge>;
-    }
-    return <Badge variant="outline">Missing</Badge>;
-  };
 
   const formatFileSize = (bytes: number) => {
     if (bytes === 0) return '0 Bytes';
@@ -374,8 +353,7 @@ export default function AssignmentDetailPage() {
           removedAttachments: [file.id]
         });
         toast.success("File deleted successfully");
-      } catch (error) {
-        console.error('Failed to delete file:', error);
+      } catch {
         toast.error("Failed to delete file");
       }
     },
@@ -396,14 +374,6 @@ export default function AssignmentDetailPage() {
   const handleStudentFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;
     if (!files || !studentSubmission) return;
-
-    // Debug logging
-    console.log('Upload parameters:', {
-      assignmentId,
-      classId,
-      submissionId: studentSubmission?.id,
-      filesCount: files.length
-    });
 
     // Validate required parameters
     if (!classId || !assignmentId || !studentSubmission?.id) {
@@ -437,10 +407,6 @@ export default function AssignmentDetailPage() {
         files: fileMetadata
       });
 
-      // Debug the response structure
-      console.log('Upload response:', uploadResponse);
-      console.log('Upload files array:', uploadResponse.uploadFiles);
-
       // 2. Upload files through backend proxy (not direct to GCS)
       setCurrentUploadStatus(uploadStatusMessages[2]);
       setUploadProgress(30);
@@ -452,8 +418,6 @@ export default function AssignmentDetailPage() {
           throw new Error(`No upload data for file ${file.name} at index ${index}`);
         }
         
-        // Backend returns 'id' not 'fileId'
-        console.log('Upload file object:', uploadFile);
         
         const { uploadUrl, id } = uploadFile;
         
@@ -534,7 +498,7 @@ export default function AssignmentDetailPage() {
   const handleSubmitToggle = () => {
     if (!studentSubmission) return;
     
-    const updateData: any = {
+    const updateData: RouterInputs['assignment']['updateSubmission'] = {
       assignmentId,
       classId,
       submissionId: studentSubmission.id,
@@ -546,38 +510,8 @@ export default function AssignmentDetailPage() {
       updateData.extendedResponse = extendedResponse;
     }
 
-    // Include worksheet answers if assignment accepts worksheets
-    if (assignment?.acceptWorksheet && Object.keys(worksheetAnswers).length > 0) {
-      updateData.worksheetAnswers = JSON.stringify(worksheetAnswers);
-    }
-    
     updateStudentSubmissionMutation.mutate(updateData);
   };
-
-  // // Handle worksheet answer submission (called on both auto-save and manual save)
-  // const handleWorksheetSubmit = (worksheetId: string, answers: Record<string, any>) => {
-  //   // Update local state
-
-  //   console.log('werhee')
-  //   setWorksheetAnswers(prev => {
-  //     const updated = {
-  //       ...prev,
-  //       [worksheetId]: answers
-  //     };
-      
-  //     // Save to backend
-  //     if (studentSubmission) {
-  //       updateStudentSubmissionMutation.mutate({
-  //         assignmentId,
-  //         classId,
-  //         submissionId: studentSubmission.id,
-  //         worksheetAnswers: JSON.stringify(updated),
-  //       });
-  //     }
-      
-  //     return updated;
-  //   });
-  // };
 
   const submissionColumns = [
     {
@@ -813,20 +747,15 @@ export default function AssignmentDetailPage() {
                     <div className="space-y-2">
                       <h3 className="text-lg font-semibold mb-3">Worksheets</h3>
                       <div className="space-y-2">
-                        {assignment.worksheets.map((worksheet: any) => {
-                          const currentAnswers = worksheetAnswers[worksheet.id] || {};
-
-                          // Always fetch worksheet since assignment.worksheets only contains IDs
-                          return (
-                            <WorksheetFetcher
-                              key={worksheet.id}
-                              submissionId={studentSubmission.id}
-                              worksheetId={worksheet.id}
-                              showFeedback={studentSubmission.returned || false}
-                              readonly={studentSubmission.submitted || false}
-                            />
-                          );
-                        })}
+                        {assignment.worksheets.map((worksheet: RouterOutputs['assignment']['get']['worksheets'][number]) => (
+                          <WorksheetFetcher
+                            key={worksheet.id}
+                            submissionId={studentSubmission.id}
+                            worksheetId={worksheet.id}
+                            showFeedback={studentSubmission.returned || false}
+                            readonly={studentSubmission.submitted || false}
+                          />
+                        ))}
                       </div>
                     </div>
                   )}

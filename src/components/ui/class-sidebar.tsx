@@ -86,11 +86,8 @@ export function ClassSidebar({ classId }: ClassSidebarProps) {
   });
 
   if (!classId) {
-    console.log("❌ No classId - returning null");
     return null;
   }
-
-  console.log("✅ ClassSidebar will render");
 
   const handleClassChange = (newClassId: string) => {
     router.push(`/class/${newClassId}`);
@@ -302,7 +299,6 @@ export function ClassSidebar({ classId }: ClassSidebarProps) {
         {classNavigationItems
           .filter((item) => {
             // Hide Settings for students
-            console.log(item.href);
             if ((item.href === "/settings" || item.href === "/ai-labs" || item.href === "/attendance" || item.href === "/worksheets") && appState.user.student) {
               return false;
             }

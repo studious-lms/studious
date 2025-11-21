@@ -40,11 +40,6 @@ export const LANGUAGES = [
     flag: '🇵🇹'
 },
 {
-    code: 'ar',
-    name: 'Arabic',
-    flag: '🇸🇦'
-},
-{
     code: 'ru',
     name: 'Russian',
     flag: '🇷🇺'

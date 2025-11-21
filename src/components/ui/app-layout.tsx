@@ -16,8 +16,6 @@ interface AppLayoutProps {
 export function AppLayout({ children, isAuthenticated = false }: AppLayoutProps) {
   const pathname = usePathname();
   const appState = useSelector((state: RootState) => state.app);
-  console.log("🔍 AppLayout Debug:");
-  console.log("  Current pathname:", pathname);
   
   // Check if we're in a class route - updated for Next.js routes
   const classMatch = pathname.match(/^\/class\/([^\/]+)(?:\/|$)/);

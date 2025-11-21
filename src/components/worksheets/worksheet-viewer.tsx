@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { useSelector } from "react-redux";
-import { trpc } from "@/lib/trpc";
+import { RouterOutputs, trpc } from "@/lib/trpc";
 import { RootState } from "@/store/store";
 import { WorksheetQuestionViewer } from "./worksheet-question-viewer";
 
@@ -41,11 +41,11 @@ export function WorksheetViewer({
 
   // Initialize answers from student responses if in submission mode
   const initializeAnswers = useCallback(() => {
-    const initial: Record<string, any> = {};
+    const initial: Record<string, string | string[]> = {};
     
     if (worksheetResponse && worksheetResponse.responses && questions.length > 0) {
-      worksheetResponse.responses.forEach((response: any) => {
-        const question = questions.find((q: any) => q.id === response.questionId);
+      worksheetResponse.responses.forEach((response: RouterOutputs['worksheet']['getWorksheetSubmission']['responses'][number]) => {
+        const question = questions.find((q) => q.id === response.questionId);
         if (question && question.type === "MULTIPLE_CHOICE" && typeof response.response === 'string') {
           try {
             const parsed = JSON.parse(response.response);
@@ -62,7 +62,7 @@ export function WorksheetViewer({
     return initial;
   }, [questions, worksheetResponse]);
 
-  const [answers, setAnswers] = useState<Record<string, any>>(initializeAnswers());
+  const [answers, setAnswers] = useState<Record<string, string | string[]>>(initializeAnswers());
 
   useEffect(() => {
     setAnswers(initializeAnswers());
@@ -102,7 +102,8 @@ export function WorksheetViewer({
               isTeacher={isTeacher}
               
               submissionId={submissionId}
-                      worksheetResponse={worksheetResponse}
+                  // @ts-expect-error - worksheetResponse is typed as RouterOutputs['worksheet']['getWorksheetSubmission'], issues with JsonValue.
+                      worksheetResponse={worksheetResponse as WorksheetSubmissionResponse}
               worksheetId={worksheetId}
               onChangeComment={() => {
                 refetchWorksheetResponse();

@@ -50,12 +50,6 @@ export default function Classes() {
     try {
       await deleteClassMutation.mutateAsync({ classId, id: classId });
       toast.success(t('classDeleted'));
-
-      // Update local state
-      // setClasses(prev: { teacherInClass: any[]; studentInClass: any[]; }) => ({
-      //   ...prev,
-      //   teacherInClass: prev.teacherInClass.filter(cls => cls.id !== classId)
-      // }));
     } catch (err) {
       console.error("Failed to delete class:", err);
       toast.error(t('classDeleteFailed'));

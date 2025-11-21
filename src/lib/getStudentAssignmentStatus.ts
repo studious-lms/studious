@@ -4,7 +4,6 @@ export type Status = 'Late' | 'Submitted' | 'Returned' | 'Pending' | 'Missing' |
 
 export const getStudentAssignmentStatus = (assignment: AssignmentGetOutput): Status[] => {
     const result: Status[] = [];
-    console.log(assignment);
     const late = assignment.late;
 
     if (assignment.late) {
@@ -17,7 +16,6 @@ export const getStudentAssignmentStatus = (assignment: AssignmentGetOutput): Sta
         result.push("Returned");
     }
 
-    console.log(result);
     if (result.length == 0 && !late) {
         return ["Pending"];
     } else if (result.length == 0
