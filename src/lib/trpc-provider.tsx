@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { trpc } from '@/lib/trpc';
 import { getCookie } from 'cookies-next';
 import { errorLink } from './api/errorLink';
+import { toast } from 'sonner';
 
 const TRPC_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/trpc';
 
@@ -34,6 +35,16 @@ export function TRPCProvider({ children }: { children: React.ReactNode }) {
         errorLink(),
         httpBatchLink({
           url: TRPC_URL,
+          fetch: (url, options) => {
+            return fetch(url, options)
+              .then(response => {
+                const cloned = response.clone();
+              if (cloned.status === 429) {
+                toast.error(`Too many requests. Please wait a moment and try again.`);
+              }
+              return response;
+            })
+          },
           headers() {
             const userCookie = getCookie('token');
             return {
