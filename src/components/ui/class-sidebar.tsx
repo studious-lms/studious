@@ -71,7 +71,7 @@ export function ClassSidebar({ classId }: ClassSidebarProps) {
 
   const { data: allClasses, isLoading, error } = trpc.class.getAll.useQuery();
   const classes = allClasses?.teacherInClass.concat(allClasses?.studentInClass);
-  const {data: inviteCodeData, isLoading: isInviteCodeLoading, error: isInviteCodeError, refetch: refetchInviteCode } = trpc.class.getInviteCode.useQuery({ classId: classId! }, { enabled: !!classId });
+  const {data: inviteCodeData, isLoading: isInviteCodeLoading, error: isInviteCodeError, refetch: refetchInviteCode } = trpc.class.getInviteCode.useQuery({ classId: classId! }, { enabled: !!appState.user.teacher });
   const inviteCode = inviteCodeData?.code;
   const { data: classData, isLoading: isClassLoading, error: isClassError } = trpc.class.get.useQuery({ classId: classId! });
   const className = classData?.class;
