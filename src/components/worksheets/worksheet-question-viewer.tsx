@@ -564,7 +564,7 @@ export function WorksheetQuestionViewer({
                     )}
                 </CardContent>
             </Card>
-            {showFeedback && (<Button variant="outline" onClick={() => setIsActive(!isActive)} className="absolute left-[87%] top-12 z-50">
+            {(showFeedback || isTeacher) && (<Button variant="outline" onClick={() => setIsActive(!isActive)} className="absolute left-[87%] top-12 z-50">
                 <MessageCircle className="h-4 w-4" />
                 {comments && comments.length > 0 ? comments.length : 0}
             </Button>)}

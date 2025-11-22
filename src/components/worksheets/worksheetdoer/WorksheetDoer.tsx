@@ -91,19 +91,6 @@ export function WorksheetDoer({
 
   const [answers, setAnswers] = useState<Record<string, any>>(initializeAnswers());
 
-  // Submit worksheet mutation
-  const submitWorksheetMutation = trpc.worksheet.submitWorksheet.useMutation({
-    onSuccess: () => {
-      toast.success("Worksheet submitted successfully!");
-      if (onSubmit) {
-        onSubmit(answers);
-      }
-    },
-    onError: (error: { message: string }) => {
-      toast.error(`Failed to submit worksheet: ${error.message}`);
-    },
-  });
-
   // Update answers when worksheet or worksheetResponse changes
   useEffect(() => {
     if (!worksheet) return;
