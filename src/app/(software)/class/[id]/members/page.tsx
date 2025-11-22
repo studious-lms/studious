@@ -233,11 +233,6 @@ export default function Members() {
             {t('counts.totalMembers', { count: members.teachers.length + members.students.length })}
           </p>
         </div>
-        
-        <Button>
-          <UserPlus className="h-4 w-4 mr-2" />
-          {t('actions.inviteMember')}
-        </Button>
       </div>
 
       {/* Invite Code Section */}

@@ -37,7 +37,7 @@ export default function Agenda() {
     return startOfWeek.toISOString();
   }, []);
 
-  const { data: events } = trpc.agenda.get.useQuery({
+  const { data: events, refetch } = trpc.agenda.get.useQuery({
     weekStart,
   });
 
@@ -105,7 +105,9 @@ export default function Agenda() {
               <span className="sr-only">{t('next')}</span>
             </CalendarNextTrigger>
 
-            <CreateEventButton>
+            <CreateEventButton onEventCreated={() => {
+              refetch();
+            }}>
               <Button size="sm">
                 <Plus className="h-4 w-4 mr-2" />
                 {t('addEvent')}
