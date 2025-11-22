@@ -548,7 +548,7 @@ export default function Grades() {
               <p className="text-sm text-muted-foreground">{t("overview.assignments")}</p>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold">{submissionRate}%</div>
+              <div className="text-2xl font-bold">{submissionRate.toFixed(1)}%</div>
               <p className="text-sm text-muted-foreground">{t("overview.submissionRate")}</p>
             </div>
           </div>
