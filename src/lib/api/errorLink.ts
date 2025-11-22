@@ -29,24 +29,11 @@ export const errorLink = (): TRPCLink<AppRouter> => {
                         const error = err as TRPCClientError<AppRouter>;
                         const severity = getErrorSeverity(error.data?.code, error.data?.httpStatus);
                         
-                        // Log all errors to Sentry with appropriate severity
-                        Sentry.captureException(error, {
-                            level: severity,
-                            tags: {
-                                path: op.path,
-                                code: error.data?.code,
-                                httpStatus: error.data?.httpStatus,
-                            },
-                            extra: {
-                                message: error.message,
-                                data: error.data,
-                            },
-                        });
-                        
                         // Check both error code and HTTP status for 401
                         const isUnauthorized = error.data?.code === 'UNAUTHORIZED' || error.data?.httpStatus === 401;
                         const isForbidden = error.data?.code === 'FORBIDDEN' || error.data?.httpStatus === 403;
                         const isNotFound = error.data?.code === 'NOT_FOUND' || error.data?.httpStatus === 404;
+                        const isRateLimited = error.data?.code === 'TOO_MANY_REQUESTS' || error.data?.httpStatus === 429;
 
                         switch (true) {
                             case isUnauthorized:
@@ -61,7 +48,22 @@ export const errorLink = (): TRPCLink<AppRouter> => {
                             case isNotFound:
                                 toast.error("The requested resource was not found.");
                                 break;
+                            case isRateLimited:
+                                toast.error("Too many requests. Please wait a moment and try again.");
+                                // pass through to log to Sentry
                             default:
+                                Sentry.captureException(error, {
+                                    level: severity,
+                                    tags: {
+                                        path: op.path,
+                                        code: error.data?.code,
+                                        httpStatus: error.data?.httpStatus,
+                                    },
+                                    extra: {
+                                        message: error.message,
+                                        data: error.data,
+                                    },
+                                });
                                 toast.error("An error occurred, please try again later.");
                                 break;
                         }
