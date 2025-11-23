@@ -13,7 +13,7 @@
   "uploadFiles": {
     "title": "Subir archivos",
     "noFilesSelected": "No se ha seleccionado ningún archivo.",
-    "classIdMissing": "Falta el ID de la clase.",
+    "classIdMissing": "Falta el ID de clase",
     "folderIdMissing": "Falta el ID de la carpeta. Espere a que se cargue la carpeta.",
     "preparing": "Preparando la subida...",
     "gettingUrls": "Obtención de URLs de carga...",
@@ -132,7 +132,7 @@
     "page": {
       "header": {
         "members": "Miembros",
-        "markMentionsRead": "Mark menciona que leyó"
+        "markMentionsRead": "Mark menciona que lee"
       },
       "input": {
         "placeholderPrefix": "Mensaje"
@@ -141,7 +141,7 @@
     },
     "conversationList": {
       "title": "Mensajes directos",
-      "searchPlaceholder": "Encuentra o inicia una conversación",
+      "searchPlaceholder": "Busca o inicia una conversación",
       "noConversations": "Aún no hay conversaciones.",
       "noConversationsDescription": "Empieza a chatear con alguien",
       "noSearchResults": "No se encontraron conversaciones",
@@ -318,6 +318,6 @@
     "requirementsPlaceholder": "Cualquier requisito específico, objetivo de aprendizaje o limitación...",
     "cancel": "Cancelar",
     "createLab": "Crear un laboratorio de IA",
-    "creatingLab": "Creando un laboratorio..."
+    "creatingLab": "Creando laboratorio..."
   }
 }

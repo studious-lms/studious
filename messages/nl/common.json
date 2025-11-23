@@ -245,7 +245,7 @@
       "website": "Website",
       "status": "Status",
       "currentStatus": "Huidige status",
-      "launchDate": "Lanceerdatum",
+      "launchDate": "Lanceringsdatum",
       "currentPhase": "Huidige fase",
       "targetMarkets": "Doelmarkten",
       "teamSize": "Teamgrootte",
@@ -339,7 +339,7 @@
     },
     "contact": {
       "title": "Heeft u vragen?",
-      "subtitle": "Ons team staat klaar om u te helpen tijdens het aanvraagproces",
+      "subtitle": "Ons team staat voor u klaar om u te helpen bij het aanvraagproces",
       "button": "Stuur ons een e-mail: impact@studious.sh"
     }
   },
@@ -496,7 +496,7 @@
     "createFirstPost": "Eerste bericht maken",
     "grades": {
       "title": "Cijfers",
-      "subtitle": "Bekijk en beheer de cijfers van studenten",
+      "subtitle": "Bekijk en beheer studentencijfers",
       "columns": {
         "assignment": "Opdracht",
         "maxPoints": "Maximale punten",
@@ -781,7 +781,7 @@
         "edit": "Syllabus bewerken"
       },
       "errors": {
-        "failedToLoad": "Het is niet gelukt om het leerplan te laden",
+        "failedToLoad": "Het is niet gelukt om de syllabus te laden",
         "tryLater": "Probeer het later opnieuw."
       },
       "stats": {
@@ -964,7 +964,7 @@
         "description": "Zodra we klaar voor u zijn, sturen we u een e-mail op {email}"
       },
       "toasts": {
-        "success": "U bent succesvol toegevoegd aan de wachtlijst!"
+        "success": "Met succes toegevoegd aan de wachtlijst!"
       }
     },
     "joinClass": {
@@ -1064,6 +1064,8 @@
         "details": "Opdrachtdetails",
         "configuration": "Configuratie",
         "grading": "Beoordeling en beoordeling",
+        "deliverables": "Leveringen",
+        "aiPolicy": "AI-beleid",
         "attachments": "Bijlagen"
       },
       "fields": {
@@ -1071,6 +1073,7 @@
         "instructions": "Instructies *",
         "dueDate": "Twee data",
         "type": "Opdrachttype",
+        "students": "Studenten",
         "section": "Sectie",
         "rubric": "Rubriek",
         "gradeScale": "Cijferschaal",
@@ -1149,6 +1152,71 @@
         "creating": "Creëren...",
         "add": "Toevoegen"
       },
+      "students": {
+        "all": "Alle",
+        "selectPlaceholder": "Selecteer studenten..."
+      },
+      "deliverables": {
+        "fileUpload": {
+          "label": "Bestand uploaden",
+          "description": "Studenten kunnen PDF-, afbeelding- en videobestanden uploaden."
+        },
+        "extendedResponse": {
+          "label": "Uitgebreide reactie",
+          "description": "Studenten mogen langere antwoorden typen."
+        },
+        "worksheetSubmission": {
+          "label": "Werkblad inleveren",
+          "description": "Studenten kunnen werkbladen inleveren voor geïntegreerde beoordeling.",
+          "searchPlaceholder": "Zoek hier naar werkbladen...",
+          "found": "{count} gevonden",
+          "noResults": "Geen werkbladen gevonden"
+        },
+        "aiGrading": {
+          "label": "Beoordelen en feedback geven met AI",
+          "description": "Geef voorlopige en directe beoordelingen en feedback met AI."
+        }
+      },
+      "aiPolicy": {
+        "useCases": "Gebruiksscenario's",
+        "studentResponsibilities": "Verantwoordelijkheden van studenten",
+        "disclosureRequirements": "Openbaarmakingsvereisten",
+        "level1": {
+          "title": "Niveau 1 Zelfstandig Werk (Geen AI)",
+          "description": "Geen. Basis spelling- en grammaticacontrole is acceptabel.",
+          "useCases": "Vertrouw volledig op persoonlijke kennis, redenering en inspanning.",
+          "studentResponsibilities": "Geen. Basis spelling- en grammaticacontrole is acceptabel.",
+          "disclosureRequirements": "Er is geen openbaarmaking van AI nodig (AI-gebruik is verboden)."
+        },
+        "level2": {
+          "title": "Idee-exploratie niveau 2",
+          "description": "Vraag AI om ideeën uit te leggen, leesstukken samen te vatten, te brainstormen over aanpakken of de basisgrammatica en duidelijkheid te controleren.",
+          "useCases": "Vraag AI om ideeën uit te leggen, leesstukken samen te vatten, te brainstormen over aanpakken of de basisgrammatica en duidelijkheid te controleren.",
+          "studentResponsibilities": "Evalueer AI-resultaten kritisch. Zorg ervoor dat het werk uw eigen redenering en begrip weerspiegelt.",
+          "disclosureRequirements": "Geef kort aan hoe AI wordt gebruikt (bijv. 'ChatGPT gebruikt om de structuur van het essay te schetsen')."
+        },
+        "level3": {
+          "title": "Ondersteuning voor bewerking op niveau 3",
+          "description": "Zorg ervoor dat alle ideeën, structuren en inhoud van uzelf zijn. Bekijk AI-suggesties zorgvuldig.",
+          "useCases": "Vraag AI om de grammatica, interpunctie, zinsbouw en leesbaarheid te verbeteren.",
+          "studentResponsibilities": "Zorg ervoor dat alle ideeën, structuren en inhoud van uzelf zijn. Bekijk AI-suggesties zorgvuldig.",
+          "disclosureRequirements": "Geef kort aan hoe AI wordt gebruikt (bijv. 'ChatGPT gebruikt voor grammaticale en duidelijke bewerkingen')."
+        },
+        "level4": {
+          "title": "Co-creatie niveau 4",
+          "description": "Gebruik AI om creatieve content te bedenken, ontwerpen, coderen, analyseren, simuleren of genereren, terwijl u tegelijkertijd toezicht houdt.",
+          "useCases": "Gebruik AI om creatieve content te bedenken, ontwerpen, coderen, analyseren, simuleren of genereren, terwijl u tegelijkertijd toezicht houdt.",
+          "studentResponsibilities": "Beoordeel AI-resultaten kritisch; herzie en pas ze aan om originaliteit en gefundeerde redeneringen te garanderen.",
+          "disclosureRequirements": "Dien een gedetailleerde openbaarmaking in over de bijdragen van AI en uw herzieningen."
+        },
+        "level5": {
+          "title": "Co-innovatie niveau 5",
+          "description": "Gebruik AI voor het genereren van content, het uitvoeren van analyses, het bouwen van modellen, creatief schrijven, vertalen of visualiseren van data, met expliciet menselijk auteurschap en reflectie.",
+          "useCases": "Gebruik AI voor het genereren van content, het uitvoeren van analyses, het bouwen van modellen, creatief schrijven, vertalen of visualiseren van data, met expliciet menselijk auteurschap en reflectie.",
+          "studentResponsibilities": "Integreer AI op ethische en doelgerichte wijze; rechtvaardig de rol ervan in het bevorderen van leren of creativiteit.",
+          "disclosureRequirements": "Geef een duidelijke erkenning van alle AI-bijdragen en menselijke revisies."
+        }
+      },
       "toasts": {
         "successCreated": "Opdracht succesvol aangemaakt.",
         "successDraft": "Opdracht succesvol opgeslagen als concept.",
@@ -1172,7 +1240,7 @@
       "placeholders": {
         "title": "bijv. labrapport inleveren op vrijdag",
         "content": "Schrijf hier de inhoud van uw aankondiging...",
-        "publishDate": "Onmiddellijk publiceren indien leeg"
+        "publishDate": "Direct publiceren indien leeg"
       },
       "priority": {
         "low": "Laag",

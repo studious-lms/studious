@@ -513,7 +513,7 @@
         "rubric": "Rubrik"
       },
       "actions": {
-        "manage": "Uruskan",
+        "manage": "Urus",
         "viewGrades": "Lihat Gred",
         "saving": "Menyimpan...",
         "saveChanges": "Simpan Perubahan",
@@ -703,7 +703,7 @@
       },
       "empty": {
         "title": "Folder ini kosong",
-        "description": "Muat naik fail atau cipta folder untuk mula menyusun bahan kelas anda.",
+        "description": "Muat naik fail atau buat folder untuk mula menyusun bahan kelas anda.",
         "searchTitle": "Tiada fail ditemui",
         "searchDescription": "Tiada fail sepadan dengan \"{query}\". Cuba istilah carian yang berbeza."
       }
@@ -1013,7 +1013,7 @@
         "subject": "cth., Fizik",
         "semester": "cth., Musim bunga 2025",
         "credits": "cth., 3",
-        "meetingTime": "cth., MWF 10:00-11:00 PG",
+        "meetingTime": "mis., MWF 10:00-11:00 PG",
         "location": "cth., Bilik 205, Bangunan Sains",
         "description": "Huraikan kandungan dan objektif kelas..."
       },
@@ -1064,6 +1064,8 @@
         "details": "Butiran Tugasan",
         "configuration": "Konfigurasi",
         "grading": "Penggredan & Penilaian",
+        "deliverables": "Boleh dihantar",
+        "aiPolicy": "Dasar AI",
         "attachments": "Lampiran"
       },
       "fields": {
@@ -1071,6 +1073,7 @@
         "instructions": "Arahan *",
         "dueDate": "Dua Kurma",
         "type": "Jenis Tugasan",
+        "students": "pelajar",
         "section": "Bahagian",
         "rubric": "Rubrik",
         "gradeScale": "Skala Gred",
@@ -1148,6 +1151,71 @@
         "saveDraft": "Simpan Draf",
         "creating": "Mencipta...",
         "add": "Tambah"
+      },
+      "students": {
+        "all": "Semua",
+        "selectPlaceholder": "Pilih pelajar..."
+      },
+      "deliverables": {
+        "fileUpload": {
+          "label": "Muat Naik Fail",
+          "description": "Pelajar boleh memuat naik fail PDF, Imej dan Video."
+        },
+        "extendedResponse": {
+          "label": "Sambutan lanjutan",
+          "description": "Pelajar boleh menaip jawapan dalam bentuk panjang."
+        },
+        "worksheetSubmission": {
+          "label": "Penyerahan Lembaran Kerja",
+          "description": "Pelajar boleh menyerahkan lembaran kerja untuk penggredan bersepadu.",
+          "searchPlaceholder": "Cari lembaran kerja di sini...",
+          "found": "{count} ditemui",
+          "noResults": "Tiada lembaran kerja ditemui"
+        },
+        "aiGrading": {
+          "label": "Gred dan maklum balas dengan AI",
+          "description": "Menyediakan penggredan dan maklum balas awal dan segera dengan AI."
+        }
+      },
+      "aiPolicy": {
+        "useCases": "Kes Penggunaan",
+        "studentResponsibilities": "Tanggungjawab Pelajar",
+        "disclosureRequirements": "Keperluan Pendedahan",
+        "level1": {
+          "title": "Kerja Bebas Tahap 1 (Tiada AI)",
+          "description": "tiada. Penyemak ejaan dan tatabahasa asas boleh diterima.",
+          "useCases": "Bergantung sepenuhnya pada pengetahuan peribadi, penaakulan, dan usaha.",
+          "studentResponsibilities": "tiada. Penyemak ejaan dan tatabahasa asas boleh diterima.",
+          "disclosureRequirements": "Tiada pendedahan AI diperlukan (penggunaan AI dilarang)."
+        },
+        "level2": {
+          "title": "Penerokaan Idea Tahap 2",
+          "description": "Minta AI untuk menerangkan idea, meringkaskan bacaan, pendekatan sumbang saran, atau menyemak tatabahasa dan kejelasan asas.",
+          "useCases": "Minta AI untuk menerangkan idea, meringkaskan bacaan, pendekatan sumbang saran, atau menyemak tatabahasa dan kejelasan asas.",
+          "studentResponsibilities": "Menilai output AI secara kritikal; pastikan kerja itu mencerminkan penaakulan dan pemahaman anda sendiri.",
+          "disclosureRequirements": "Perhatikan secara ringkas penggunaan AI (cth., \"Digunakan ChatGPT untuk menggariskan struktur esei\")."
+        },
+        "level3": {
+          "title": "Sokongan Penyuntingan Tahap 3",
+          "description": "Pastikan semua idea, struktur dan kandungan adalah milik anda sendiri; semak cadangan AI dengan teliti.",
+          "useCases": "Minta AI untuk meningkatkan tatabahasa, tanda baca, frasa dan kebolehbacaan.",
+          "studentResponsibilities": "Pastikan semua idea, struktur dan kandungan adalah milik anda sendiri; semak cadangan AI dengan teliti.",
+          "disclosureRequirements": "Perhatikan secara ringkas penggunaan AI (cth., \"Digunakan ChatGPT untuk tatabahasa dan pengeditan kejelasan\")."
+        },
+        "level4": {
+          "title": "Penciptaan Bersama Tahap 4",
+          "description": "Gunakan AI untuk merangka, mereka bentuk, mengekod, menganalisis, mensimulasikan atau menjana kandungan kreatif sambil mengekalkan pengawasan.",
+          "useCases": "Gunakan AI untuk merangka, mereka bentuk, mengekod, menganalisis, mensimulasikan atau menjana kandungan kreatif sambil mengekalkan pengawasan.",
+          "studentResponsibilities": "Menilai output AI secara kritis; menyemak dan menyesuaikan untuk memastikan keaslian dan penaakulan yang kukuh.",
+          "disclosureRequirements": "Hantarkan pendedahan terperinci tentang sumbangan AI dan semakan anda."
+        },
+        "level5": {
+          "title": "Inovasi Bersama Tahap 5",
+          "description": "Gunakan AI untuk menjana kandungan, menjalankan analisis, membina model, penulisan kreatif, terjemahan atau visualisasi data, dengan kepengarangan dan refleksi manusia yang eksplisit.",
+          "useCases": "Gunakan AI untuk menjana kandungan, menjalankan analisis, membina model, penulisan kreatif, terjemahan atau visualisasi data, dengan kepengarangan dan refleksi manusia yang eksplisit.",
+          "studentResponsibilities": "Mengintegrasikan AI secara beretika dan bertujuan; mewajarkan peranannya dalam memajukan pembelajaran atau kreativiti.",
+          "disclosureRequirements": "Berikan pengakuan yang jelas tentang semua sumbangan AI dan semakan manusia."
+        }
       },
       "toasts": {
         "successCreated": "Tugasan berjaya dibuat.",

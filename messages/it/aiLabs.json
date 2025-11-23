@@ -8,7 +8,7 @@
     "deleteConfirm": "Vuoi davvero eliminare questo laboratorio di intelligenza artificiale? Questa azione non può essere annullata.",
     "widgets": {
       "assignment": {
-        "title": "Assegnazione",
+        "title": "Incarico",
         "description": "Crea compiti interattivi con l'assistenza dell'intelligenza artificiale"
       },
       "quiz": {

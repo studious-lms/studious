@@ -22,7 +22,7 @@
     "finalizing": "Đang hoàn thiện...",
     "success": "Đã tải tệp lên thành công!",
     "error": "Không tải được tệp lên. Vui lòng thử lại.",
-    "errorFile": "Không tải lên được {name}",
+    "errorFile": "Không thể tải lên {name}",
     "errorMessage": "Tải lên không thành công: {message}",
     "dropZone": "Thả tập tin vào đây hoặc nhấp để duyệt",
     "dropZoneHint": "Hỗ trợ hình ảnh, tài liệu, video và nhiều nội dung khác",
@@ -56,7 +56,7 @@
     "updating": "Đang cập nhật...",
     "created": "Tiêu chí đã được tạo thành công",
     "updated": "Tiêu chí đã được cập nhật thành công",
-    "createFailed": "Không tạo được tiêu chí",
+    "createFailed": "Không tạo được tiêu chí chấm điểm",
     "updateFailed": "Không cập nhật được tiêu chí",
     "errorNameRequired": "Vui lòng cung cấp tên và ít nhất một tiêu chí"
   },
@@ -71,7 +71,7 @@
     "update": "Cập nhật",
     "creating": "Đang tạo...",
     "updating": "Đang cập nhật...",
-    "created": "Ranh giới phân loại đã được tạo thành công",
+    "created": "Đã tạo ranh giới phân loại thành công",
     "updated": "Đã cập nhật ranh giới phân loại thành công",
     "createFailed": "Không tạo được ranh giới phân loại",
     "updateFailed": "Không cập nhật được ranh giới phân loại"

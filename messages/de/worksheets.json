@@ -1,0 +1,118 @@
+{
+  "worksheets": {
+    "title": "Arbeitsblätter",
+    "subtitle": "Übungsblätter verwalten und verteilen",
+    "list": {
+      "title": "Alle Arbeitsblätter"
+    },
+    "columns": {
+      "title": "Titel",
+      "questionCount": "Anzahl der Fragen",
+      "lastUpdated": "Letzte Aktualisierung",
+      "actions": "Aktionen"
+    },
+    "status": {
+      "draft": "Entwurf",
+      "published": "Veröffentlicht",
+      "archived": "Archiviert"
+    },
+    "actions": {
+      "create": "Arbeitsblatt erstellen",
+      "view": "Sicht",
+      "edit": "Bearbeiten",
+      "delete": "Löschen",
+      "download": "Herunterladen",
+      "share": "Aktie",
+      "back": "Zurück",
+      "save": "Speichern",
+      "cancel": "Stornieren",
+      "select": "Wählen",
+      "attachMarkscheme": "Attach Markscheme",
+      "detach": "Details"
+    },
+    "search": {
+      "placeholder": "Arbeitsblätter suchen..."
+    },
+    "empty": {
+      "title": "Keine Arbeitsblätter gefunden",
+      "description": "Beginnen Sie, indem Sie Ihr erstes Arbeitsblatt erstellen, oder nutzen Sie die Suchfunktion, um bereits vorhandene zu finden."
+    },
+    "confirm": {
+      "delete": "Möchten Sie dieses Arbeitsblatt wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden."
+    },
+    "toasts": {
+      "created": "Arbeitsblatt erfolgreich erstellt",
+      "updated": "Arbeitsblatt erfolgreich aktualisiert",
+      "deleted": "Arbeitsblatt erfolgreich gelöscht",
+      "error": "Es ist ein Fehler aufgetreten"
+    },
+    "create": {
+      "title": "Arbeitsblatt erstellen",
+      "subtitle": "Erstellen Sie ein neues Arbeitsblatt mit verschiedenen Fragetypen",
+      "worksheetInfo": "Informationen zum Arbeitsblatt",
+      "actions": {
+        "save": "Speichern",
+        "cancel": "Stornieren",
+        "preview": "Vorschau"
+      },
+      "fields": {
+        "title": "Titel",
+        "titlePlaceholder": "Geben Sie den Titel des Arbeitsblatts ein.",
+        "description": "Beschreibung",
+        "descriptionPlaceholder": "Arbeitsblattbeschreibung eingeben (optional)",
+        "dueDate": "Zwei Verabredungen",
+        "totalQuestions": "Gesamtzahl der Fragen"
+      },
+      "questions": {
+        "title": "Fragen",
+        "addQuestion": "Frage hinzufügen",
+        "noQuestions": "Bisher wurden keine Fragen hinzugefügt.",
+        "addFirstQuestion": "Nutzen Sie das Dropdown-Menü oben, um Ihre erste Frage hinzuzufügen.",
+        "questionNumber": "Frage {number}",
+        "points": "Punkte",
+        "questionText": "Fragetext",
+        "questionTextPlaceholder": "Geben Sie hier Ihre Frage ein.",
+        "options": "Optionen",
+        "optionPlaceholder": "Option {number}",
+        "addOption": "Option hinzufügen",
+        "correctAnswer": "Richtige Antwort",
+        "true": "WAHR",
+        "false": "FALSCH",
+        "mathExpression": "Erwarteter mathematischer Ausdruck",
+        "mathExpressionPlaceholder": "z. B. x² + 5x + 6 = 0",
+        "sampleAnswer": "Musterantwort",
+        "sampleAnswerPlaceholder": "Geben Sie eine Musterantwort oder Erklärung ein.",
+        "markscheme": "Marketingprogramm",
+        "markschemeAttached": "Bewertungsschema beigefügt"
+      },
+      "questionTypes": {
+        "multipleChoice": "Multiple Choice",
+        "longForm": "Langform-Antwort",
+        "math": "Mathe-Antwort",
+        "trueFalse": "Wahr/Falsch"
+      },
+      "markschemeDialog": {
+        "title": "Bewertungsschema auswählen",
+        "noMarkschemes": "Es sind keine Bewertungsschemata verfügbar. Erstellen Sie zuerst eines im Bereich „Noten“.",
+        "untitled": "Unbenanntes Bewertungsschema",
+        "custom": "Brauch"
+      },
+      "errors": {
+        "titleRequired": "Ein Titel ist erforderlich",
+        "atLeastOneQuestion": "Bitte fügen Sie mindestens eine Frage hinzu.",
+        "questionTextRequired": "Alle Fragen müssen einen Text enthalten.",
+        "multipleChoiceOptions": "Multiple-Choice-Fragen benötigen mindestens 2 Antwortmöglichkeiten.",
+        "multipleChoiceCorrectAnswer": "Multiple-Choice-Fragen erfordern mindestens eine richtige Antwort.",
+        "teacherOnly": "Nur Lehrer können Arbeitsblätter erstellen."
+      },
+      "toasts": {
+        "created": "Arbeitsblatt erfolgreich erstellt",
+        "markschemeAttached": "Bewertungsschema erfolgreich angehängt",
+        "markschemeDetached": "Markscheme erfolgreich abgetrennt",
+        "updated": "Arbeitsblatt erfolgreich aktualisiert",
+        "saving": "Speichern...",
+        "saved": "Gespeichert"
+      }
+    }
+  }
+}

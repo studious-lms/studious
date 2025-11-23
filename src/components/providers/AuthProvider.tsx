@@ -2,22 +2,16 @@
 
 import { trpc } from "@/lib/trpc";
 import { setAuth } from "@/store/appSlice";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Spinner } from "../ui/spinner";
-import { usePathname, useRouter } from "next/navigation";
 
 import '../../app/branding.css';
 
-const AUTHED_PATHS = ['/home', '/class', '/profile', '/agenda', '/chat']
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
-    const [loading, setLoading] = useState(true);
     const { data: user, isLoading } = trpc.auth.check.useQuery();
     const dispatch = useDispatch();
-    const pathname = usePathname();
-    const router = useRouter();
-
     useEffect(() => {
     if (user && user.user.id) {
         dispatch(setAuth({
@@ -33,12 +27,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         }));
     }
 }, [user]);
-
-    // useEffect(() => {
-    //     if (!user && !isLoading && AUTHED_PATHS.some(path => pathname.includes(path))) {
-    //         router.push('/login');
-    //     }
-    // }, [user, isLoading, pathname]);
 
     if (isLoading) {
         return <div className="flex h-[calc(100vh)] w-screen items-center justify-center">

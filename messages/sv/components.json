@@ -41,7 +41,7 @@
     "uploading": "Laddar upp..."
   },
   "rubric": {
-    "title": "Skapa matris",
+    "title": "Skapa bedömningsmatris",
     "titleEdit": "Redigera bedömningsmatris",
     "selectTemplate": "Välj mall",
     "startFromScratch": "Börja från början",
@@ -50,12 +50,12 @@
     "name": "Rubriknamn",
     "placeholder": "Ange rubriknamn",
     "cancel": "Avboka",
-    "create": "Skapa matris",
+    "create": "Skapa bedömningsmatris",
     "update": "Uppdatera bedömningsmatris",
     "creating": "Skapande...",
     "updating": "Uppdaterar...",
     "created": "Matris skapad",
-    "updated": "Matris uppdaterad",
+    "updated": "Matrisen har uppdaterats",
     "createFailed": "Misslyckades med att skapa bedömningsmatris",
     "updateFailed": "Misslyckades med att uppdatera bedömningsmatrisen",
     "errorNameRequired": "Ange ett namn och minst ett kriterium"
@@ -268,7 +268,7 @@
     "creating": "Skapande...",
     "addClassEvent": "Lägg till klasshändelse",
     "eventCreated": "Händelsen skapades",
-    "eventUpdated": "Händelsen uppdaterades",
+    "eventUpdated": "Händelsen har uppdaterats",
     "errorRequired": "Vänligen fyll i alla obligatoriska fält",
     "errorCreate": "Misslyckades med att skapa händelsen",
     "errorUpdate": "Misslyckades med att uppdatera händelsen"

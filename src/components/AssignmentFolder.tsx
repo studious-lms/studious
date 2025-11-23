@@ -129,7 +129,7 @@ export function AssignmentFolder({
                   )}
                   
                   {/* Section Actions */}
-                  {(onEditSection || onDeleteSection) && (
+                  {isTeacher && (onEditSection || onDeleteSection) && (
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
                         <Button
@@ -180,7 +180,7 @@ export function AssignmentFolder({
           </CollapsibleTrigger>
           <CollapsibleContent>
             <CardContent className="pt-0 px-4 pb-3">
-              <div className="space-y-0">
+              <div className="space-y-2">
                 {/* Top drop zone for section */}
                 <SectionDropZone
                   index={0}

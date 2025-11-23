@@ -9,6 +9,9 @@ import { TRPCProvider } from "@/lib/trpc-provider";
 import { Provider } from "react-redux";
 import { AuthProvider } from "./providers/AuthProvider";
 import { store } from "@/store/store";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
+import { setupGlobalErrorHandlers } from "@/lib/error-handler";
+import { useEffect } from "react";
 
 
 interface ProvidersProps {
@@ -16,18 +19,24 @@ interface ProvidersProps {
 }
 
 export function Providers({ children }: ProvidersProps) {
+  useEffect(() => {
+    setupGlobalErrorHandlers();
+  }, []);
+
   return (
     <Provider store={store}>
       <TRPCProvider>
         <ThemeProvider defaultDarkMode="system" defaultColorTheme="default" storageKey="vite-ui-theme">
           <TooltipProvider>
-            <AuthProvider>
-            <Sonner />
-            <AppLayout isAuthenticated={true}>
-              <ConditionalThemeToggle />
-              {children}
-            </AppLayout>
-            </AuthProvider>
+            <ErrorBoundary>
+              <AuthProvider>
+                <Sonner />
+                <AppLayout isAuthenticated={true}>
+                  <ConditionalThemeToggle />
+                  {children}
+                </AppLayout>
+              </AuthProvider>
+            </ErrorBoundary>
           </TooltipProvider>
         </ThemeProvider>
       </TRPCProvider>

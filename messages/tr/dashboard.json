@@ -3,7 +3,7 @@
     "welcomeBack": "Tekrar hoş geldin, {name}!",
     "subtitle": "İşte bugün derslerinizde neler oluyor.",
     "stats": {
-      "totalClasses": "Toplam Sınıflar",
+      "totalClasses": "Toplam Sınıf Sayısı",
       "teachingEnrolled": "{teaching} öğretim, {enrolled} kayıtlı",
       "dueToday": "Bugün Son Ödeme Tarihi",
       "dueTodayDesc": "Bugün teslim edilmesi gereken ödevler",

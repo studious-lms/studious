@@ -5,7 +5,7 @@
     "name": "姓名",
     "placeholder": "输入 {type} 名称",
     "folderColor": "文件夹颜色",
-    "folderColorDescription": "请为该文件夹选择颜色",
+    "folderColorDescription": "请为这个文件夹选择一个颜色",
     "cancel": "取消",
     "saveChanges": "保存更改",
     "rename": "重命名"
@@ -206,7 +206,7 @@
     "update": "更新部分",
     "creating": "正在创建……",
     "updating": "正在更新……",
-    "created": "章节“{name}”创建成功。",
+    "created": "章节“[0]]”创建成功。",
     "updated": "第 \"{name}\" 部分已成功更新。",
     "errorEmpty": "请输入章节名称。",
     "errorCreate": "创建部分失败",

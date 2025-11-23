@@ -1,0 +1,118 @@
+{
+  "worksheets": {
+    "title": "Werkbladen",
+    "subtitle": "Oefenwerkbladen beheren en verspreiden",
+    "list": {
+      "title": "Alle werkbladen"
+    },
+    "columns": {
+      "title": "Titel",
+      "questionCount": "Aantal vragen",
+      "lastUpdated": "Laatst bijgewerkt",
+      "actions": "Acties"
+    },
+    "status": {
+      "draft": "Voorlopige versie",
+      "published": "Gepubliceerd",
+      "archived": "Gearchiveerd"
+    },
+    "actions": {
+      "create": "Werkblad maken",
+      "view": "Weergave",
+      "edit": "Bewerking",
+      "delete": "Verwijderen",
+      "download": "Download",
+      "share": "Deel",
+      "back": "Rug",
+      "save": "Redden",
+      "cancel": "Annuleren",
+      "select": "Selecteer",
+      "attachMarkscheme": "Markschema bijvoegen",
+      "detach": "Details"
+    },
+    "search": {
+      "placeholder": "Zoek werkbladen..."
+    },
+    "empty": {
+      "title": "Geen werkbladen gevonden",
+      "description": "Begin met het maken van uw eerste werkblad of gebruik de zoekfunctie om bestaande werkbladen te vinden."
+    },
+    "confirm": {
+      "delete": "Weet u zeker dat u dit werkblad wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt."
+    },
+    "toasts": {
+      "created": "Werkblad succesvol aangemaakt",
+      "updated": "Werkblad succesvol bijgewerkt",
+      "deleted": "Werkblad succesvol verwijderd",
+      "error": "Er is een fout opgetreden"
+    },
+    "create": {
+      "title": "Werkblad maken",
+      "subtitle": "Maak een nieuw werkblad met meerdere vraagtypen",
+      "worksheetInfo": "Werkbladinformatie",
+      "actions": {
+        "save": "Redden",
+        "cancel": "Annuleren",
+        "preview": "Voorvertoning"
+      },
+      "fields": {
+        "title": "Titel",
+        "titlePlaceholder": "Voer de titel van het werkblad in",
+        "description": "Beschrijving",
+        "descriptionPlaceholder": "Voer een beschrijving van het werkblad in (optioneel)",
+        "dueDate": "Twee data",
+        "totalQuestions": "Totaal aantal vragen"
+      },
+      "questions": {
+        "title": "Vragen",
+        "addQuestion": "Vraag toevoegen",
+        "noQuestions": "Nog geen vragen toegevoegd",
+        "addFirstQuestion": "Gebruik de dropdown hierboven om uw eerste vraag toe te voegen",
+        "questionNumber": "Vraag {number}",
+        "points": "Punten",
+        "questionText": "Vraagtekst",
+        "questionTextPlaceholder": "Vul hier uw vraag in",
+        "options": "Opties",
+        "optionPlaceholder": "Optie {number}",
+        "addOption": "Optie toevoegen",
+        "correctAnswer": "Juiste antwoord",
+        "true": "WAAR",
+        "false": "Onwaar",
+        "mathExpression": "Verwachte wiskundige uitdrukking",
+        "mathExpressionPlaceholder": "bijvoorbeeld x^2 + 5x + 6 = 0",
+        "sampleAnswer": "Voorbeeldantwoord",
+        "sampleAnswerPlaceholder": "Voer een voorbeeldantwoord of -uitleg in",
+        "markscheme": "Marketingplan",
+        "markschemeAttached": "Markschema bijgevoegd"
+      },
+      "questionTypes": {
+        "multipleChoice": "Meerkeuzevragen",
+        "longForm": "Lange vorm antwoord",
+        "math": "Wiskunde antwoord",
+        "trueFalse": "Waar/Niet waar"
+      },
+      "markschemeDialog": {
+        "title": "Selecteer Markschema",
+        "noMarkschemes": "Er zijn geen beoordelingsschema's beschikbaar. Maak er eerst een aan in het gedeelte 'Cijfers'.",
+        "untitled": "Ongetiteld Markscheme",
+        "custom": "Aangepast"
+      },
+      "errors": {
+        "titleRequired": "Titel is vereist",
+        "atLeastOneQuestion": "Voeg minimaal één vraag toe",
+        "questionTextRequired": "Alle vragen moeten tekst bevatten",
+        "multipleChoiceOptions": "Meerkeuzevragen hebben minimaal 2 opties nodig",
+        "multipleChoiceCorrectAnswer": "Bij meerkeuzevragen is minimaal één correct antwoord vereist",
+        "teacherOnly": "Alleen docenten kunnen werkbladen maken"
+      },
+      "toasts": {
+        "created": "Werkblad succesvol aangemaakt",
+        "markschemeAttached": "Markschema succesvol gekoppeld",
+        "markschemeDetached": "Markscheme succesvol losgemaakt",
+        "updated": "Werkblad succesvol bijgewerkt",
+        "saving": "Besparing...",
+        "saved": "Opgeslagen"
+      }
+    }
+  }
+}

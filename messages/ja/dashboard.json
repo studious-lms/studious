@@ -1,7 +1,7 @@
 {
   "home": {
     "welcomeBack": "おかえりなさい、{name}さん！",
-    "subtitle": "今日の授業の様子をお知らせします。",
+    "subtitle": "今日の授業の様子をお伝えします。",
     "stats": {
       "totalClasses": "合計クラス数",
       "teachingEnrolled": "{teaching}人の教員、{enrolled}人の登録者",
@@ -18,7 +18,7 @@
       "allCaughtUp": "全員追いつきました！",
       "noUpcoming": "現時点では今後の課題はありません。",
       "viewAgenda": "議題を見る",
-      "dueToday": "本日期限",
+      "dueToday": "本日締め切り",
       "dueTomorrow": "明日までに",
       "due": "2つの{dates}",
       "teaching": "教育",

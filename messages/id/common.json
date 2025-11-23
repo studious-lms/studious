@@ -233,7 +233,7 @@
   },
   "press": {
     "badge": "Pers & Media",
-    "title": "Rajin membaca berita",
+    "title": "Rajin dalam berita",
     "subtitle": "Sumber daya media, aset merek, dan informasi perusahaan untuk jurnalis dan pembuat konten",
     "factsheet": {
       "title": "Lembar Fakta Perusahaan",
@@ -1064,6 +1064,8 @@
         "details": "Detail Tugas",
         "configuration": "Konfigurasi",
         "grading": "Penilaian & Pemeringkatan",
+        "deliverables": "Hasil yang diharapkan",
+        "aiPolicy": "Kebijakan AI",
         "attachments": "Lampiran"
       },
       "fields": {
@@ -1071,6 +1073,7 @@
         "instructions": "Instruksi *",
         "dueDate": "Dua Tanggal",
         "type": "Jenis Tugas",
+        "students": "Siswa",
         "section": "Bagian",
         "rubric": "Rubrik",
         "gradeScale": "Skala Nilai",
@@ -1148,6 +1151,71 @@
         "saveDraft": "Simpan Draf",
         "creating": "Menciptakan...",
         "add": "Menambahkan"
+      },
+      "students": {
+        "all": "Semua",
+        "selectPlaceholder": "Pilih siswa..."
+      },
+      "deliverables": {
+        "fileUpload": {
+          "label": "Unggah Berkas",
+          "description": "Siswa dapat mengunggah file PDF, Gambar, dan Video."
+        },
+        "extendedResponse": {
+          "label": "Respons yang diperluas",
+          "description": "Siswa dapat mengetik jawaban yang panjang."
+        },
+        "worksheetSubmission": {
+          "label": "Penyerahan Lembar Kerja",
+          "description": "Siswa dapat menyerahkan lembar kerja untuk penilaian terpadu.",
+          "searchPlaceholder": "Cari lembar kerja di sini...",
+          "found": "{count} ditemukan",
+          "noResults": "Tidak ada lembar kerja yang ditemukan"
+        },
+        "aiGrading": {
+          "label": "Nilai dan umpan balik dengan AI",
+          "description": "Berikan penilaian dan umpan balik awal dan instan dengan AI."
+        }
+      },
+      "aiPolicy": {
+        "useCases": "Kasus Penggunaan",
+        "studentResponsibilities": "Tanggung Jawab Siswa",
+        "disclosureRequirements": "Persyaratan Pengungkapan",
+        "level1": {
+          "title": "Pekerjaan Mandiri Level 1 (Tanpa AI)",
+          "description": "Tidak ada. Pemeriksa ejaan dan tata bahasa dasar dapat diterima.",
+          "useCases": "Mengandalkan sepenuhnya pada pengetahuan, penalaran, dan usaha pribadi.",
+          "studentResponsibilities": "Tidak ada. Pemeriksa ejaan dan tata bahasa dasar dapat diterima.",
+          "disclosureRequirements": "Tidak diperlukan pengungkapan AI (penggunaan AI dilarang)."
+        },
+        "level2": {
+          "title": "Eksplorasi Ide Level 2",
+          "description": "Minta AI untuk menjelaskan ide, meringkas bacaan, melakukan curah pendapat mengenai pendekatan, atau memeriksa tata bahasa dasar dan kejelasan.",
+          "useCases": "Minta AI untuk menjelaskan ide, meringkas bacaan, melakukan curah pendapat mengenai pendekatan, atau memeriksa tata bahasa dasar dan kejelasan.",
+          "studentResponsibilities": "Evaluasi keluaran AI secara kritis; pastikan pekerjaan tersebut mencerminkan alasan dan pemahaman Anda sendiri.",
+          "disclosureRequirements": "Catat secara singkat penggunaan AI (misalnya, \"Menggunakan ChatGPT untuk menguraikan struktur esai\")."
+        },
+        "level3": {
+          "title": "Dukungan Pengeditan Level 3",
+          "description": "Pastikan semua ide, struktur, dan konten adalah milik Anda sendiri; tinjau saran AI dengan cermat.",
+          "useCases": "Minta AI untuk meningkatkan tata bahasa, tanda baca, frasa, dan keterbacaan.",
+          "studentResponsibilities": "Pastikan semua ide, struktur, dan konten adalah milik Anda sendiri; tinjau saran AI dengan cermat.",
+          "disclosureRequirements": "Catat secara singkat penggunaan AI (misalnya, \"Menggunakan ChatGPT untuk pengeditan tata bahasa dan kejelasan\")."
+        },
+        "level4": {
+          "title": "Kreasi Bersama Tingkat 4",
+          "description": "Gunakan AI untuk menyusun, mendesain, membuat kode, menganalisis, mensimulasikan, atau menghasilkan konten kreatif sambil tetap menjaga pengawasan.",
+          "useCases": "Gunakan AI untuk menyusun, mendesain, membuat kode, menganalisis, mensimulasikan, atau menghasilkan konten kreatif sambil tetap menjaga pengawasan.",
+          "studentResponsibilities": "Menilai keluaran AI secara kritis; merevisi dan menyesuaikan untuk memastikan orisinalitas dan penalaran yang masuk akal.",
+          "disclosureRequirements": "Kirimkan pengungkapan terperinci tentang kontribusi AI dan revisi Anda."
+        },
+        "level5": {
+          "title": "Ko-Inovasi Tingkat 5",
+          "description": "Gunakan AI untuk menghasilkan konten, menjalankan analisis, membangun model, penulisan kreatif, penerjemahan, atau visualisasi data, dengan kepengarangan dan refleksi manusia yang eksplisit.",
+          "useCases": "Gunakan AI untuk menghasilkan konten, menjalankan analisis, membangun model, penulisan kreatif, penerjemahan, atau visualisasi data, dengan kepengarangan dan refleksi manusia yang eksplisit.",
+          "studentResponsibilities": "Integrasikan AI secara etis dan terarah; jelaskan perannya dalam memajukan pembelajaran atau kreativitas.",
+          "disclosureRequirements": "Berikan pengakuan yang jelas atas semua kontribusi AI dan revisi manusia."
+        }
       },
       "toasts": {
         "successCreated": "Tugas berhasil dibuat.",

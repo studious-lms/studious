@@ -20,9 +20,6 @@ import { Rubric } from "@/components/rubric";
 
 import {
   BarChart3,
-  TrendingUp,
-  TrendingDown,
-  Minus,
   Settings,
   FileText,
   Edit,
@@ -35,6 +32,7 @@ import {
   ExternalLink
 } from "lucide-react";
 import { trpc, type RouterOutputs } from "@/lib/trpc";
+import { calculateTrend, getTrendIcon } from "@/lib/utils";
 
 import type {
   MarkScheme,
@@ -157,14 +155,6 @@ export default function Grades() {
   };
 
   // Remove duplicate declarations - these are already defined above
-
-  const getTrendIcon = (trend: string) => {
-    switch (trend) {
-      case "up": return <TrendingUp className="h-4 w-4 text-accent" />;
-      case "down": return <TrendingDown className="h-4 w-4 text-destructive" />;
-      default: return <Minus className="h-4 w-4 text-muted-foreground" />;
-    }
-  };
 
   const getGradeColor = (grade: number | null, status: string) => {
     if (!grade) {
@@ -370,7 +360,10 @@ export default function Grades() {
         const hasRubric = assignment.markScheme !== null;
         
         if (!hasRubric) {
-          return null;
+          return <Button size="sm" variant="outline" onClick={() => ('@todo: this!')} className="h-8 px-3 text-xs">
+            <ExternalLink className="h-3 w-3 mr-1" />
+            {t("actions.edit")}
+          </Button>;
         }
         
         return (
@@ -462,9 +455,16 @@ export default function Grades() {
       accessorKey: "trend",
       header: t("columns.trend"),
       cell: ({ row }) => {
+        const student = row.original;
+        const index = students.findIndex(s => s.id === student.id);
+        const studentGradesQuery = studentGradesQueries[index];
+        const studentGrades = studentGradesQuery?.data?.grades || [];
+        
+        const trend = calculateTrend(studentGrades);
+        
         return (
           <div className="flex justify-center">
-            {getTrendIcon("up")}
+            {getTrendIcon(trend)}
           </div>
         );
       },
@@ -548,7 +548,7 @@ export default function Grades() {
               <p className="text-sm text-muted-foreground">{t("overview.assignments")}</p>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold">{submissionRate}%</div>
+              <div className="text-2xl font-bold">{submissionRate.toFixed(1)}%</div>
               <p className="text-sm text-muted-foreground">{t("overview.submissionRate")}</p>
             </div>
           </div>

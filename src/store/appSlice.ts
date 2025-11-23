@@ -1,10 +1,8 @@
-import { AlertLevel } from '@/lib/alertLevel';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 type UserRole = 'STUDENT' | 'TEACHER' | 'ADMIN' | 'NONE';
 
 export interface Alert {
-    level: AlertLevel;
     remark: string;
 }
 
@@ -67,23 +65,6 @@ const appSlice = createSlice({
                 ...action.payload
             }
         },
-        addAlert: (state, action) => {
-            state.alerts.push({
-                level: action.payload.level,
-                remark: action.payload.remark
-            })
-        },
-        removeAlert: (state, action) => {
-            const id = action.payload;
-
-            state.alerts = state.alerts.filter((_, index) => index !== id);
-        },
-        openModal: (state, action: PayloadAction<ModalState>) => {
-            state.modal = action.payload;
-        },
-        closeModal: (state) => {
-            state.modal = initialState.modal;
-        },
         setRefetch: (state, action) => {
             state.refetch = action.payload;
         },
@@ -97,5 +78,5 @@ const appSlice = createSlice({
     },
 });
 
-export const { setAuth, addAlert, removeAlert, openModal, closeModal, setRefetch, setTeacher } = appSlice.actions;
+export const { setAuth, setRefetch, setTeacher } = appSlice.actions;
 export default appSlice.reducer;

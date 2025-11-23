@@ -345,7 +345,7 @@
   },
   "apply": {
     "toasts": {
-      "submitted": "Cerere trimisă cu succes!"
+      "submitted": "Aplicație trimisă cu succes!"
     },
     "errors": {
       "submitFailed": "Nu s-a putut trimite aplicația: {message}"
@@ -428,7 +428,7 @@
         "description": "Nicio notificare nu a fost marcată încă ca citită."
       },
       "all": {
-        "title": "Nicio notificare încă",
+        "title": "Încă nu există notificări",
         "description": "Când primiți notificări, acestea vor apărea aici."
       }
     },
@@ -635,7 +635,7 @@
         "inviteRegenerated": "Codul de invitație a fost regenerat cu succes.",
         "copied": "Codul de invitație a fost copiat în clipboard",
         "roleChanged": "Rolul a fost schimbat în {role}",
-        "memberRemoved": "Membru eliminat cu succes"
+        "memberRemoved": "Membrul a fost eliminat cu succes"
       },
       "errors": {
         "regenerateFailed": "Codul de invitație nu a putut fi regenerat.",
@@ -651,7 +651,7 @@
         "newFolder": "Dosar nou",
         "upload": "Încărcare",
         "uploadFiles": "Încărcați fișiere",
-        "createFolder": "Creați folderul",
+        "createFolder": "Creați un folder",
         "download": "Descărcare",
         "share": "Distribuie",
         "delete": "Şterge",
@@ -704,7 +704,7 @@
       "empty": {
         "title": "Acest folder este gol",
         "description": "Încărcați fișiere sau creați foldere pentru a începe să vă organizați materialele pentru clasă.",
-        "searchTitle": "Nu au fost găsite fișiere",
+        "searchTitle": "Nu s-au găsit fișiere",
         "searchDescription": "Niciun fișier nu corespunde cu „{query}”. Încercați un alt termen de căutare."
       }
     },
@@ -964,7 +964,7 @@
         "description": "Îți vom trimite un e-mail la adresa {email} când vom fi gata pentru tine."
       },
       "toasts": {
-        "success": "Înscris cu succes pe lista de așteptare!"
+        "success": "Te-ai înscris cu succes pe lista de așteptare!"
       }
     },
     "joinClass": {
@@ -1046,7 +1046,7 @@
       },
       "actions": {
         "cancel": "Anula",
-        "create": "Creați folderul",
+        "create": "Creați un folder",
         "update": "Actualizare folder",
         "creating": "Se creează...",
         "updating": "Se actualizează..."
@@ -1064,6 +1064,8 @@
         "details": "Detalii despre sarcină",
         "configuration": "Configurare",
         "grading": "Notare și evaluare",
+        "deliverables": "Rezultate livrabile",
+        "aiPolicy": "AI Policy",
         "attachments": "Atașamente"
       },
       "fields": {
@@ -1071,6 +1073,7 @@
         "instructions": "Instrucțiuni *",
         "dueDate": "Două întâlniri",
         "type": "Tipul de sarcină",
+        "students": "Studenți",
         "section": "Secțiune",
         "rubric": "Rubrică",
         "gradeScale": "Scala de notare",
@@ -1148,6 +1151,71 @@
         "saveDraft": "Salvați schița",
         "creating": "Se creează...",
         "add": "Adăuga"
+      },
+      "students": {
+        "all": "Toate",
+        "selectPlaceholder": "Selectați studenții..."
+      },
+      "deliverables": {
+        "fileUpload": {
+          "label": "Încărcare fișier",
+          "description": "Studenții pot încărca fișiere PDF, imagini și video."
+        },
+        "extendedResponse": {
+          "label": "Răspuns extins",
+          "description": "Elevii pot tasta răspunsuri lungi."
+        },
+        "worksheetSubmission": {
+          "label": "Trimiterea fișei de lucru",
+          "description": "Elevii pot trimite fișe de lucru pentru notare integrată.",
+          "searchPlaceholder": "Caută fișe de lucru aici...",
+          "found": "{count} găsite",
+          "noResults": "Nu au fost găsite foi de lucru"
+        },
+        "aiGrading": {
+          "label": "Notare și feedback cu ajutorul inteligenței artificiale",
+          "description": "Oferiți notare și feedback preliminar și instantaneu cu ajutorul inteligenței artificiale."
+        }
+      },
+      "aiPolicy": {
+        "useCases": "Cazuri de utilizare",
+        "studentResponsibilities": "Responsabilitățile studenților",
+        "disclosureRequirements": "Cerințe de divulgare",
+        "level1": {
+          "title": "Nivelul 1 Muncă independentă (fără inteligență artificială)",
+          "description": "Niciunul. Se acceptă și corectoare ortografice și gramaticale de bază.",
+          "useCases": "Bazează-te în întregime pe cunoștințele personale, raționament și efort.",
+          "studentResponsibilities": "Niciunul. Se acceptă și corectoare ortografice și gramaticale de bază.",
+          "disclosureRequirements": "Nu este necesară divulgarea informațiilor despre IA (utilizarea IA este interzisă)."
+        },
+        "level2": {
+          "title": "Explorarea ideilor de nivel 2",
+          "description": "Cereți inteligenței artificiale să explice idei, să rezume lecturile, să facă brainstorming cu abordări sau să verifice gramatica și claritatea de bază.",
+          "useCases": "Cereți inteligenței artificiale să explice idei, să rezume lecturile, să facă brainstorming cu abordări sau să verifice gramatica și claritatea de bază.",
+          "studentResponsibilities": "Evaluați critic rezultatele inteligenței artificiale; asigurați-vă că munca reflectă propriul raționament și înțelegere.",
+          "disclosureRequirements": "Menționați pe scurt utilizarea inteligenței artificiale (de exemplu, „Am folosit ChatGPT pentru a contura structura eseului”)."
+        },
+        "level3": {
+          "title": "Suport de editare de nivel 3",
+          "description": "Asigurați-vă că toate ideile, structura și conținutul vă aparțin; examinați cu atenție sugestiile privind inteligența artificială.",
+          "useCases": "Cereți inteligenței artificiale să îmbunătățească gramatica, punctuația, formularea și lizibilitatea.",
+          "studentResponsibilities": "Asigurați-vă că toate ideile, structura și conținutul vă aparțin; examinați cu atenție sugestiile privind inteligența artificială.",
+          "disclosureRequirements": "Menționați pe scurt utilizarea inteligenței artificiale (de exemplu, „Am folosit ChatGPT pentru modificări gramaticale și clarificări”)."
+        },
+        "level4": {
+          "title": "Co-creație de Nivel 4",
+          "description": "Folosește inteligența artificială pentru a redacta, proiecta, codifica, analiza, simula sau genera conținut creativ, menținând în același timp supravegherea.",
+          "useCases": "Folosește inteligența artificială pentru a redacta, proiecta, codifica, analiza, simula sau genera conținut creativ, menținând în același timp supravegherea.",
+          "studentResponsibilities": "Evaluați critic rezultatele inteligenței artificiale; revizuiți și adaptați pentru a asigura originalitatea și raționamentul solid.",
+          "disclosureRequirements": "Trimiteți o declarație detaliată despre contribuțiile AI și revizuirile dvs."
+        },
+        "level5": {
+          "title": "Coinovație de Nivel 5",
+          "description": "Folosește inteligența artificială pentru generarea de conținut, rularea de analize, construirea de modele, scriere creativă, traducere sau vizualizarea datelor, cu autoritate și reflecție umană explicite.",
+          "useCases": "Folosește inteligența artificială pentru generarea de conținut, rularea de analize, construirea de modele, scriere creativă, traducere sau vizualizarea datelor, cu autoritate și reflecție umană explicite.",
+          "studentResponsibilities": "Integrați IA în mod etic și cu un scop precis; justificați rolul acesteia în promovarea învățării sau a creativității.",
+          "disclosureRequirements": "Menționați clar toate contribuțiile inteligenței artificiale și revizuirile umane."
+        }
       },
       "toasts": {
         "successCreated": "Tema a fost creată cu succes.",

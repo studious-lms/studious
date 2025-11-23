@@ -741,7 +741,7 @@
       },
       "placeholders": {
         "className": "예를 들어, 고급 물리학",
-        "section": "예를 들어, AP-101",
+        "section": "예: AP-101",
         "subject": "예를 들어, 물리학"
       },
       "toasts": {
@@ -1064,6 +1064,8 @@
         "details": "과제 세부 정보",
         "configuration": "구성",
         "grading": "등급 및 평가",
+        "deliverables": "성과물",
+        "aiPolicy": "AI 정책",
         "attachments": "첨부 파일"
       },
       "fields": {
@@ -1071,6 +1073,7 @@
         "instructions": "지침 *",
         "dueDate": "두 날짜",
         "type": "과제 유형",
+        "students": "재학생",
         "section": "부분",
         "rubric": "표제",
         "gradeScale": "등급 척도",
@@ -1129,7 +1132,7 @@
         "filesUploaded": "{total}개 파일 중 {uploaded}개가 업로드되었습니다."
       },
       "status": {
-        "creating": "과제를 생성하는 중...",
+        "creating": "과제 생성 중...",
         "settingUp": "과제 세부정보 설정 중...",
         "preparing": "파일 업로드 준비 중...",
         "uploading": "클라우드 저장소에 파일을 업로드하는 중...",
@@ -1148,6 +1151,71 @@
         "saveDraft": "초안 저장",
         "creating": "생성 중...",
         "add": "추가하다"
+      },
+      "students": {
+        "all": "모두",
+        "selectPlaceholder": "학생을 선택하세요..."
+      },
+      "deliverables": {
+        "fileUpload": {
+          "label": "파일 업로드",
+          "description": "학생들은 PDF, 이미지, 비디오 파일을 업로드할 수 있습니다."
+        },
+        "extendedResponse": {
+          "label": "확장된 응답",
+          "description": "학생들은 긴 형식의 답변을 입력할 수 있습니다."
+        },
+        "worksheetSubmission": {
+          "label": "워크시트 제출",
+          "description": "학생들은 통합 평가를 위해 워크시트를 제출할 수 있습니다.",
+          "searchPlaceholder": "여기서 워크시트를 검색하세요...",
+          "found": "{count}개 발견됨",
+          "noResults": "워크시트를 찾을 수 없습니다"
+        },
+        "aiGrading": {
+          "label": "AI를 통한 등급 및 피드백",
+          "description": "AI를 통해 사전 및 즉각적인 평가와 피드백을 제공합니다."
+        }
+      },
+      "aiPolicy": {
+        "useCases": "사용 사례",
+        "studentResponsibilities": "학생의 책임",
+        "disclosureRequirements": "공개 요구 사항",
+        "level1": {
+          "title": "레벨 1 독립 작업(AI 없음)",
+          "description": "없음. 기본적인 맞춤법 및 문법 검사기는 허용됩니다.",
+          "useCases": "전적으로 개인의 지식, 추론, 노력에 의존하세요.",
+          "studentResponsibilities": "없음. 기본적인 맞춤법 및 문법 검사기는 허용됩니다.",
+          "disclosureRequirements": "AI 공개가 필요하지 않습니다(AI 사용 금지)."
+        },
+        "level2": {
+          "title": "레벨 2 아이디어 탐색",
+          "description": "AI에게 아이디어를 설명하고, 읽은 내용을 요약하고, 접근 방식에 대한 브레인스토밍을 하거나, 기본적인 문법과 명확성을 확인하도록 요청하세요.",
+          "useCases": "AI에게 아이디어를 설명하고, 읽은 내용을 요약하고, 접근 방식에 대한 브레인스토밍을 하거나, 기본적인 문법과 명확성을 확인하도록 요청하세요.",
+          "studentResponsibilities": "AI의 결과물을 비판적으로 평가하고, 작업이 자신의 추론과 이해를 반영하는지 확인하세요.",
+          "disclosureRequirements": "AI 사용에 대해 간략히 설명하세요(예: \"ChatGPT를 사용하여 에세이 구조를 설명했습니다\")."
+        },
+        "level3": {
+          "title": "레벨 3 편집 지원",
+          "description": "모든 아이디어, 구조, 내용이 본인의 것인지 확인하세요. AI 제안을 주의 깊게 검토하세요.",
+          "useCases": "AI에게 문법, 구두점, 표현, 가독성을 개선해 달라고 요청하세요.",
+          "studentResponsibilities": "모든 아이디어, 구조, 내용이 본인의 것인지 확인하세요. AI 제안을 주의 깊게 검토하세요.",
+          "disclosureRequirements": "AI 사용에 대해 간략하게 설명합니다(예: \"문법 및 명확성 편집을 위해 ChatGPT를 사용했습니다\")."
+        },
+        "level4": {
+          "title": "레벨 4 공동 창조",
+          "description": "AI를 활용해 창의적인 콘텐츠를 초안하고, 디자인하고, 코딩하고, 분석하고, 시뮬레이션하고, 생성하는 동시에 감독도 유지합니다.",
+          "useCases": "AI를 활용해 창의적인 콘텐츠를 초안하고, 디자인하고, 코딩하고, 분석하고, 시뮬레이션하고, 생성하는 동시에 감독도 유지합니다.",
+          "studentResponsibilities": "AI 결과물을 비판적으로 평가하고, 독창성과 타당한 추론을 보장하기 위해 수정하고 조정합니다.",
+          "disclosureRequirements": "AI의 기여와 귀하의 수정 사항에 대한 자세한 내용을 제출하세요."
+        },
+        "level5": {
+          "title": "레벨 5 공동 혁신",
+          "description": "AI를 사용하여 콘텐츠 생성, 분석 실행, 모델 구축, 창의적 글쓰기, 번역 또는 데이터 시각화를 수행하며, 명시적으로 인간의 저작과 성찰을 포함합니다.",
+          "useCases": "AI를 사용하여 콘텐츠 생성, 분석 실행, 모델 구축, 창의적 글쓰기, 번역 또는 데이터 시각화를 수행하며, 명시적으로 인간의 저작과 성찰을 포함합니다.",
+          "studentResponsibilities": "AI를 윤리적이고 목적의식적으로 통합하고, 학습이나 창의성을 발전시키는 데 있어서 AI의 역할을 정당화하세요.",
+          "disclosureRequirements": "모든 AI 기여와 인간의 수정 사항을 명확하게 인정합니다."
+        }
       },
       "toasts": {
         "successCreated": "과제가 성공적으로 생성되었습니다.",
@@ -1198,7 +1266,7 @@
       "notifications": {
         "email": {
           "label": "이메일 알림 보내기",
-          "description": "학생들에게 이메일을 통해 알림"
+          "description": "이메일을 통해 학생들에게 알림"
         },
         "push": {
           "label": "푸시 알림 보내기",

@@ -6,7 +6,7 @@
       "newFolder": "Dosar nou",
       "upload": "Încărcare",
       "uploadFiles": "Încărcați fișiere",
-      "createFolder": "Creați folderul",
+      "createFolder": "Creați un folder",
       "download": "Descărcare",
       "share": "Distribuie",
       "delete": "Şterge",
@@ -17,7 +17,7 @@
       "folderCreated": "Dosarul a fost creat cu succes",
       "folderDeleted": "Folderul a fost șters cu succes",
       "folderRenamed": "Dosarul a fost redenumit cu succes",
-      "folderMoved": "Dosarul a fost mutat cu succes",
+      "folderMoved": "Folderul a fost mutat cu succes",
       "filesUploaded": "Fișierele au fost încărcate cu succes",
       "fileDeleted": "Fișierul a fost șters cu succes",
       "fileRenamed": "Fișierul a fost redenumit cu succes",
@@ -59,7 +59,7 @@
     "empty": {
       "title": "Acest folder este gol",
       "description": "Încărcați fișiere sau creați foldere pentru a începe să vă organizați materialele pentru clasă.",
-      "searchTitle": "Nu au fost găsite fișiere",
+      "searchTitle": "Nu s-au găsit fișiere",
       "searchDescription": "Niciun fișier nu corespunde cu „{query}”. Încercați un alt termen de căutare."
     }
   },
@@ -101,7 +101,7 @@
       "fileSize": "Dimensiunea fișierului"
     },
     "empty": {
-      "noFilesFound": "Nu au fost găsite fișiere",
+      "noFilesFound": "Nu s-au găsit fișiere",
       "noFilesFoundDescription": "Niciun fișier nu corespunde cu „{query}”. Încercați un alt termen de căutare.",
       "folderEmpty": "Acest folder este gol",
       "folderEmptyDescription": "Încărcați fișiere sau creați foldere pentru a vă organiza materialele."
@@ -109,13 +109,13 @@
     "actions": {
       "newFolder": "Dosar nou",
       "uploadFiles": "Încărcați fișiere",
-      "createFolder": "Creați folderul"
+      "createFolder": "Creați un folder"
     },
     "toast": {
       "folderCreated": "Dosarul a fost creat cu succes",
       "folderDeleted": "Folderul a fost șters cu succes",
       "folderRenamed": "Dosarul a fost redenumit cu succes",
-      "folderMoved": "Dosarul a fost mutat cu succes",
+      "folderMoved": "Folderul a fost mutat cu succes",
       "filesUploaded": "Fișierele au fost încărcate cu succes",
       "fileDeleted": "Fișierul a fost șters cu succes",
       "fileRenamed": "Fișierul a fost redenumit cu succes",

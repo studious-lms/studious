@@ -398,7 +398,7 @@
       },
       "header": {
         "members": "miembros",
-        "markMentionsRead": "Mark menciona que leyó"
+        "markMentionsRead": "Mark menciona que lee"
       },
       "input": {
         "placeholderPrefix": "Mensaje"
@@ -477,7 +477,7 @@
     },
     "messages": {
       "profileUpdated": "Perfil actualizado correctamente",
-      "profileUpdateFailed": "No se pudo actualizar el perfil",
+      "profileUpdateFailed": "Error al actualizar el perfil",
       "profilePictureSelected": "Foto de perfil seleccionada. Haz clic en \"Guardar cambios\" para actualizar.",
       "avatarSelected": "Avatar seleccionado. Haz clic en \"Guardar cambios\" para actualizar.",
       "profilePictureUploadFailed": "No se pudo subir la foto de perfil",
@@ -1064,6 +1064,8 @@
         "details": "Detalles de la tarea",
         "configuration": "Configuración",
         "grading": "Calificación y evaluación",
+        "deliverables": "Entregables",
+        "aiPolicy": "Política de IA",
         "attachments": "Archivos adjuntos"
       },
       "fields": {
@@ -1071,6 +1073,7 @@
         "instructions": "Instrucciones *",
         "dueDate": "Dos citas",
         "type": "Tipo de asignación",
+        "students": "Estudiantes",
         "section": "Sección",
         "rubric": "Rúbrica",
         "gradeScale": "Escala de calificaciones",
@@ -1148,6 +1151,71 @@
         "saveDraft": "Guardar borrador",
         "creating": "Creando...",
         "add": "Agregar"
+      },
+      "students": {
+        "all": "Todo",
+        "selectPlaceholder": "Seleccionar estudiantes..."
+      },
+      "deliverables": {
+        "fileUpload": {
+          "label": "Subida de archivos",
+          "description": "Los estudiantes pueden subir archivos PDF, de imagen y de vídeo."
+        },
+        "extendedResponse": {
+          "label": "Respuesta extendida",
+          "description": "Los estudiantes pueden escribir respuestas largas."
+        },
+        "worksheetSubmission": {
+          "label": "Entrega de la hoja de trabajo",
+          "description": "Los estudiantes pueden entregar hojas de trabajo para su calificación integrada.",
+          "searchPlaceholder": "Busque hojas de trabajo aquí...",
+          "found": "{count} encontrado",
+          "noResults": "No se encontraron hojas de trabajo"
+        },
+        "aiGrading": {
+          "label": "Califica y proporciona comentarios con IA",
+          "description": "Proporcionar calificaciones y comentarios preliminares e instantáneos mediante IA."
+        }
+      },
+      "aiPolicy": {
+        "useCases": "Casos de uso",
+        "studentResponsibilities": "Responsabilidades del estudiante",
+        "disclosureRequirements": "Requisitos de divulgación",
+        "level1": {
+          "title": "Nivel 1 Trabajo independiente (sin IA)",
+          "description": "Ninguno. Se aceptan correctores ortográficos y gramaticales básicos.",
+          "useCases": "Confía plenamente en tu conocimiento personal, tu razonamiento y tu esfuerzo.",
+          "studentResponsibilities": "Ninguno. Se aceptan correctores ortográficos y gramaticales básicos.",
+          "disclosureRequirements": "No se requiere divulgación de información sobre IA (el uso de IA está prohibido)."
+        },
+        "level2": {
+          "title": "Exploración de ideas de nivel 2",
+          "description": "Pídele a la IA que explique ideas, resuma lecturas, genere ideas para nuevos enfoques o revise la gramática básica y la claridad.",
+          "useCases": "Pídele a la IA que explique ideas, resuma lecturas, genere ideas para nuevos enfoques o revise la gramática básica y la claridad.",
+          "studentResponsibilities": "Evalúe críticamente los resultados de la IA; asegúrese de que el trabajo refleje su propio razonamiento y comprensión.",
+          "disclosureRequirements": "Mencione brevemente el uso de IA (por ejemplo, \"Se utilizó ChatGPT para delinear la estructura del ensayo\")."
+        },
+        "level3": {
+          "title": "Soporte de edición de nivel 3",
+          "description": "Asegúrese de que todas las ideas, la estructura y el contenido sean de su autoría; revise cuidadosamente las sugerencias de la IA.",
+          "useCases": "Solicita a la IA que mejore la gramática, la puntuación, la redacción y la legibilidad.",
+          "studentResponsibilities": "Asegúrese de que todas las ideas, la estructura y el contenido sean de su autoría; revise cuidadosamente las sugerencias de la IA.",
+          "disclosureRequirements": "Indique brevemente el uso de IA (por ejemplo, \"Se utilizó ChatGPT para correcciones gramaticales y de claridad\")."
+        },
+        "level4": {
+          "title": "Co-creación de nivel 4",
+          "description": "Utilizar la IA para redactar, diseñar, codificar, analizar, simular o generar contenido creativo manteniendo el control.",
+          "useCases": "Utilizar la IA para redactar, diseñar, codificar, analizar, simular o generar contenido creativo manteniendo el control.",
+          "studentResponsibilities": "Evaluar críticamente los resultados de la IA; revisarlos y adaptarlos para garantizar la originalidad y un razonamiento sólido.",
+          "disclosureRequirements": "Presente un informe detallado sobre las contribuciones de la IA y sus revisiones."
+        },
+        "level5": {
+          "title": "Co-innovación de nivel 5",
+          "description": "Utilice la IA para generar contenido, realizar análisis, construir modelos, escribir textos creativos, traducir o visualizar datos, con autoría y reflexión humanas explícitas.",
+          "useCases": "Utilice la IA para generar contenido, realizar análisis, construir modelos, escribir textos creativos, traducir o visualizar datos, con autoría y reflexión humanas explícitas.",
+          "studentResponsibilities": "Integrar la IA de forma ética y con un propósito claro; justificar su papel en el avance del aprendizaje o la creatividad.",
+          "disclosureRequirements": "Reconozca claramente todas las contribuciones de la IA y las revisiones humanas."
+        }
       },
       "toasts": {
         "successCreated": "Tarea creada correctamente.",

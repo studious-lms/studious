@@ -109,10 +109,10 @@ export default function Profile() {
   React.useEffect(() => {
     if (profile) {
       form.reset({
-        displayName: (profile.profile as any)?.displayName || "",
-        bio: (profile.profile as any)?.bio || "",
-        location: (profile.profile as any)?.location || "",
-        website: (profile.profile as any)?.website || "",
+        displayName: profile.profile?.displayName || "",
+        bio: profile.profile?.bio || "",
+        location: profile.profile?.location || "",
+        website: profile.profile?.website || "",
       });
     }
   }, [profile, form]);
@@ -187,10 +187,10 @@ export default function Profile() {
 
   const handleCancel = () => {
     form.reset({
-      displayName: (profile?.profile as any)?.displayName || "",
-      bio: (profile?.profile as any)?.bio || "",
-      location: (profile?.profile as any)?.location || "",
-      website: (profile?.profile as any)?.website || "",
+      displayName: profile?.profile?.displayName || "",
+      bio: profile?.profile?.bio || "",
+      location: profile?.profile?.location || "",
+      website: profile?.profile?.website || "",
     });
     setIsEditing(false);
     setPendingProfilePicture(null);
@@ -215,8 +215,7 @@ export default function Profile() {
         setPendingProfilePicture(null); // Clear any pending file upload
         toast.success(tMessages('avatarSelected'));
       }
-    } catch (error: any) {
-      console.error("Failed to select profile picture:", error);
+    } catch {
       toast.error(tMessages('profilePictureSelectFailed'));
     }
   };
@@ -318,7 +317,7 @@ export default function Profile() {
                       ? (profilePicturePreviewUrl ?? undefined)
                       : pendingDicebearAvatar 
                         ? pendingDicebearAvatar
-                        : (profile?.profile as any)?.profilePicture || appState.user.profilePicture
+                        : profile?.profile?.profilePicture || appState.user.profilePicture
                   }
                   onAvatarSelect={handleAvatarSelect}
                   disabled={!isEditing}
@@ -333,7 +332,7 @@ export default function Profile() {
               <div className="space-y-2">
                 <div className="flex items-center space-x-2">
                   <h2 className="text-2xl font-bold">
-                    {(profile?.profile as any)?.displayName || profile?.username}
+                    {profile?.profile?.displayName || profile?.username}
                   </h2>
                   <Badge variant="secondary" className="flex items-center space-x-1">
                     <GraduationCap className="h-3 w-3" />
@@ -341,8 +340,8 @@ export default function Profile() {
                   </Badge>
                 </div>
                 <p className="text-muted-foreground">@{profile?.username}</p>
-                {(profile?.profile as any)?.bio && (
-                  <p className="text-sm">{(profile?.profile as any)?.bio}</p>
+                {profile?.profile?.bio && (
+                  <p className="text-sm">{profile?.profile?.bio}</p>
                 )}
               </div>
             </div>

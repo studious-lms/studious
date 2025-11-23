@@ -1,0 +1,118 @@
+{
+  "worksheets": {
+    "title": "Lembaran kerja",
+    "subtitle": "Mengurus dan mengedarkan lembaran kerja latihan",
+    "list": {
+      "title": "Semua Lembaran Kerja"
+    },
+    "columns": {
+      "title": "Tajuk",
+      "questionCount": "Kiraan Soalan",
+      "lastUpdated": "Kemas Kini Terakhir",
+      "actions": "Tindakan"
+    },
+    "status": {
+      "draft": "Draf",
+      "published": "Diterbitkan",
+      "archived": "Diarkibkan"
+    },
+    "actions": {
+      "create": "Buat Lembaran Kerja",
+      "view": "Lihat",
+      "edit": "Sunting",
+      "delete": "Padam",
+      "download": "Muat turun",
+      "share": "Kongsi",
+      "back": "belakang",
+      "save": "Jimat",
+      "cancel": "Batal",
+      "select": "Pilih",
+      "attachMarkscheme": "Lampirkan Markscheme",
+      "detach": "Butiran"
+    },
+    "search": {
+      "placeholder": "Cari lembaran kerja..."
+    },
+    "empty": {
+      "title": "Tiada lembaran kerja ditemui",
+      "description": "Bermula dengan membuat lembaran kerja pertama anda atau gunakan carian untuk mencari yang sedia ada."
+    },
+    "confirm": {
+      "delete": "Adakah anda pasti mahu memadamkan lembaran kerja ini? Tindakan ini tidak boleh dibuat asal."
+    },
+    "toasts": {
+      "created": "Lembaran kerja berjaya dibuat",
+      "updated": "Lembaran kerja berjaya dikemas kini",
+      "deleted": "Lembaran kerja berjaya dipadamkan",
+      "error": "Ralat berlaku"
+    },
+    "create": {
+      "title": "Buat Lembaran Kerja",
+      "subtitle": "Bina lembaran kerja baharu dengan pelbagai jenis soalan",
+      "worksheetInfo": "Maklumat Lembaran Kerja",
+      "actions": {
+        "save": "Jimat",
+        "cancel": "Batal",
+        "preview": "Pratonton"
+      },
+      "fields": {
+        "title": "Tajuk",
+        "titlePlaceholder": "Masukkan tajuk lembaran kerja",
+        "description": "Penerangan",
+        "descriptionPlaceholder": "Masukkan perihalan lembaran kerja (pilihan)",
+        "dueDate": "Dua Kurma",
+        "totalQuestions": "Jumlah Soalan"
+      },
+      "questions": {
+        "title": "Soalan",
+        "addQuestion": "Tambah Soalan",
+        "noQuestions": "Tiada soalan ditambahkan lagi",
+        "addFirstQuestion": "Gunakan menu lungsur di atas untuk menambah soalan pertama anda",
+        "questionNumber": "Soalan {number}",
+        "points": "mata",
+        "questionText": "Teks Soalan",
+        "questionTextPlaceholder": "Masukkan soalan anda di sini",
+        "options": "Pilihan",
+        "optionPlaceholder": "Pilihan {number}",
+        "addOption": "Tambah Pilihan",
+        "correctAnswer": "Jawapan yang betul",
+        "true": "betul",
+        "false": "palsu",
+        "mathExpression": "Ekspresi Matematik yang Diharapkan",
+        "mathExpressionPlaceholder": "cth., x^2 + 5x + 6 = 0",
+        "sampleAnswer": "Contoh Jawapan",
+        "sampleAnswerPlaceholder": "Masukkan contoh jawapan atau penjelasan",
+        "markscheme": "Skim pemasaran",
+        "markschemeAttached": "Markscheme Dilampirkan"
+      },
+      "questionTypes": {
+        "multipleChoice": "Pelbagai Pilihan",
+        "longForm": "Jawapan Bentuk Panjang",
+        "math": "Jawapan Matematik",
+        "trueFalse": "Betul/Salah"
+      },
+      "markschemeDialog": {
+        "title": "Pilih Markscheme",
+        "noMarkschemes": "Tiada skema markah tersedia. Buat satu dalam bahagian Gred dahulu.",
+        "untitled": "Untitled Markscheme",
+        "custom": "Adat"
+      },
+      "errors": {
+        "titleRequired": "Tajuk diperlukan",
+        "atLeastOneQuestion": "Sila tambahkan sekurang-kurangnya satu soalan",
+        "questionTextRequired": "Semua soalan mesti ada teks",
+        "multipleChoiceOptions": "Soalan aneka pilihan memerlukan sekurang-kurangnya 2 pilihan",
+        "multipleChoiceCorrectAnswer": "Soalan aneka pilihan memerlukan sekurang-kurangnya satu jawapan yang betul",
+        "teacherOnly": "Hanya guru boleh membuat lembaran kerja"
+      },
+      "toasts": {
+        "created": "Lembaran kerja berjaya dibuat",
+        "markschemeAttached": "Markscheme berjaya dilampirkan",
+        "markschemeDetached": "Markscheme berjaya ditanggalkan",
+        "updated": "Lembaran kerja berjaya dikemas kini",
+        "saving": "Menyimpan...",
+        "saved": "Disimpan"
+      }
+    }
+  }
+}

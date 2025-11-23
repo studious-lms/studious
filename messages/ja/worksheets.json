@@ -1,0 +1,118 @@
+{
+  "worksheets": {
+    "title": "ワークシート",
+    "subtitle": "練習用ワークシートの管理と配布",
+    "list": {
+      "title": "すべてのワークシート"
+    },
+    "columns": {
+      "title": "タイトル",
+      "questionCount": "質問数",
+      "lastUpdated": "最終更新日",
+      "actions": "アクション"
+    },
+    "status": {
+      "draft": "下書き",
+      "published": "出版",
+      "archived": "アーカイブ済み"
+    },
+    "actions": {
+      "create": "ワークシートを作成する",
+      "view": "ビュー",
+      "edit": "編集",
+      "delete": "消去",
+      "download": "ダウンロード",
+      "share": "共有",
+      "back": "戻る",
+      "save": "保存",
+      "cancel": "キャンセル",
+      "select": "選択",
+      "attachMarkscheme": "マークスキームを添付",
+      "detach": "詳細"
+    },
+    "search": {
+      "placeholder": "ワークシートを検索..."
+    },
+    "empty": {
+      "title": "ワークシートが見つかりません",
+      "description": "最初のワークシートを作成するか、検索を使用して既存のワークシートを見つけることから始めます。"
+    },
+    "confirm": {
+      "delete": "このワークシートを削除してもよろしいですか? この操作は元に戻せません。"
+    },
+    "toasts": {
+      "created": "ワークシートが正常に作成されました",
+      "updated": "ワークシートが正常に更新されました",
+      "deleted": "ワークシートが正常に削除されました",
+      "error": "エラーが発生しました"
+    },
+    "create": {
+      "title": "ワークシートを作成する",
+      "subtitle": "複数の質問タイプを含む新しいワークシートを作成する",
+      "worksheetInfo": "ワークシート情報",
+      "actions": {
+        "save": "保存",
+        "cancel": "キャンセル",
+        "preview": "プレビュー"
+      },
+      "fields": {
+        "title": "タイトル",
+        "titlePlaceholder": "ワークシートのタイトルを入力",
+        "description": "説明",
+        "descriptionPlaceholder": "ワークシートの説明を入力してください（オプション）",
+        "dueDate": "2つのデート",
+        "totalQuestions": "質問総数"
+      },
+      "questions": {
+        "title": "質問",
+        "addQuestion": "質問を追加",
+        "noQuestions": "まだ質問は追加されていません",
+        "addFirstQuestion": "上のドロップダウンを使用して最初の質問を追加してください",
+        "questionNumber": "質問 {number}",
+        "points": "ポイント",
+        "questionText": "質問テキスト",
+        "questionTextPlaceholder": "ここに質問を入力してください",
+        "options": "オプション",
+        "optionPlaceholder": "オプション{number}",
+        "addOption": "オプションを追加",
+        "correctAnswer": "正解",
+        "true": "真実",
+        "false": "間違い",
+        "mathExpression": "期待される数式",
+        "mathExpressionPlaceholder": "例えば、x^2 + 5x + 6 = 0",
+        "sampleAnswer": "回答例",
+        "sampleAnswerPlaceholder": "サンプルの回答または説明を入力してください",
+        "markscheme": "マーケティングスキーム",
+        "markschemeAttached": "マークスキーム添付"
+      },
+      "questionTypes": {
+        "multipleChoice": "複数選択問題",
+        "longForm": "長文回答",
+        "math": "数学の答え",
+        "trueFalse": "真偽"
+      },
+      "markschemeDialog": {
+        "title": "マークスキームを選択",
+        "noMarkschemes": "利用できるマークスキームがありません。まずは成績セクションでマークスキームを作成してください。",
+        "untitled": "無題のマークスキーム",
+        "custom": "カスタム"
+      },
+      "errors": {
+        "titleRequired": "タイトルは必須です",
+        "atLeastOneQuestion": "少なくとも1つの質問を追加してください",
+        "questionTextRequired": "すべての質問にはテキストが必要です",
+        "multipleChoiceOptions": "複数選択問題には少なくとも2つの選択肢が必要です",
+        "multipleChoiceCorrectAnswer": "複数選択問題には少なくとも1つの正解が必要です",
+        "teacherOnly": "ワークシートを作成できるのは教師のみです"
+      },
+      "toasts": {
+        "created": "ワークシートが正常に作成されました",
+        "markschemeAttached": "マークスキームが正常に添付されました",
+        "markschemeDetached": "マークスキームが正常に切り離されました",
+        "updated": "ワークシートが正常に更新されました",
+        "saving": "保存中...",
+        "saved": "保存されました"
+      }
+    }
+  }
+}

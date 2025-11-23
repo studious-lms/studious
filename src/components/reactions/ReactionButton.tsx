@@ -31,7 +31,7 @@ export const REACTION_LABELS: Record<ReactionType, string> = {
 interface ReactionButtonProps {
   announcementId?: string;
   commentId?: string;
-  classId: string;
+  classId?: string; // Only needed for announcements
   size?: 'sm' | 'md' | 'lg';
   variant?: 'default' | 'compact';
 }
@@ -47,22 +47,46 @@ export function ReactionButton({
   const holdTimerRef = useRef<NodeJS.Timeout | null>(null);
   const isHoldingRef = useRef(false);
 
+  // Use comment endpoints if commentId is provided, otherwise use announcement endpoints
+  const isComment = !!commentId;
+
   // Get reactions
-  const { data: reactionData, refetch } = trpc.announcement.getReactions.useQuery(
+  const announcementReactions = trpc.announcement.getReactions.useQuery(
     {
       announcementId,
       commentId,
-      classId,
+      classId: classId!,
     },
     {
-      enabled: !!(announcementId || commentId),
+      enabled: !isComment && !!(announcementId || commentId) && !!classId,
     }
   );
 
+  const commentReactions = trpc.comment.getReactions.useQuery(
+    {
+      commentId: commentId!,
+    },
+    {
+      enabled: isComment && !!commentId,
+    }
+  );
+
+  const reactionData = isComment ? commentReactions.data : announcementReactions.data;
+  const refetch = isComment ? commentReactions.refetch : announcementReactions.refetch;
+
   // Add/Update reaction mutation
-  const addReaction = trpc.announcement.addReaction.useMutation({
+  const addAnnouncementReaction = trpc.announcement.addReaction.useMutation({
     onSuccess: () => {
-      refetch();
+      announcementReactions.refetch();
+    },
+    onError: (error) => {
+      console.error("Failed to add reaction:", error);
+    },
+  });
+
+  const addCommentReaction = trpc.comment.addReaction.useMutation({
+    onSuccess: () => {
+      commentReactions.refetch();
     },
     onError: (error) => {
       console.error("Failed to add reaction:", error);
@@ -70,9 +94,18 @@ export function ReactionButton({
   });
 
   // Remove reaction mutation
-  const removeReaction = trpc.announcement.removeReaction.useMutation({
+  const removeAnnouncementReaction = trpc.announcement.removeReaction.useMutation({
     onSuccess: () => {
-      refetch();
+      announcementReactions.refetch();
+    },
+    onError: (error) => {
+      console.error("Failed to remove reaction:", error);
+    },
+  });
+
+  const removeCommentReaction = trpc.comment.removeReaction.useMutation({
+    onSuccess: () => {
+      commentReactions.refetch();
     },
     onError: (error) => {
       console.error("Failed to remove reaction:", error);
@@ -87,18 +120,31 @@ export function ReactionButton({
 
     if (reactionData?.userReaction) {
       // If user has a reaction, remove it
-      removeReaction.mutate({
-        announcementId,
-        commentId,
-      });
+      if (isComment) {
+        removeCommentReaction.mutate({
+          commentId: commentId!,
+        });
+      } else {
+        removeAnnouncementReaction.mutate({
+          announcementId,
+          commentId,
+        });
+      }
     } else {
       // Add default reaction (THUMBSUP)
-      addReaction.mutate({
-        announcementId,
-        commentId,
-        classId,
-        type: 'THUMBSUP',
-      });
+      if (isComment) {
+        addCommentReaction.mutate({
+          id: commentId!,
+          type: 'THUMBSUP',
+        });
+      } else {
+        addAnnouncementReaction.mutate({
+          announcementId,
+          commentId,
+          classId: classId!,
+          type: 'THUMBSUP',
+        });
+      }
     }
   };
 
@@ -135,24 +181,39 @@ export function ReactionButton({
   const handleSelectReaction = (type: ReactionType) => {
     if (reactionData?.userReaction === type) {
       // Remove if clicking same reaction
-      removeReaction.mutate({
-        announcementId,
-        commentId,
-      });
+      if (isComment) {
+        removeCommentReaction.mutate({
+          commentId: commentId!,
+        });
+      } else {
+        removeAnnouncementReaction.mutate({
+          announcementId,
+          commentId,
+        });
+      }
     } else {
       // Add/update reaction
-      addReaction.mutate({
-        announcementId,
-        commentId,
-        classId,
-        type,
-      });
+      if (isComment) {
+        addCommentReaction.mutate({
+          id: commentId!,
+          type,
+        });
+      } else {
+        addAnnouncementReaction.mutate({
+          announcementId,
+          commentId,
+          classId: classId!,
+          type,
+        });
+      }
     }
     setIsPickerOpen(false);
     isHoldingRef.current = false;
   };
 
-  const isLoading = addReaction.isPending || removeReaction.isPending;
+  const isLoading = isComment 
+    ? (addCommentReaction.isPending || removeCommentReaction.isPending)
+    : (addAnnouncementReaction.isPending || removeAnnouncementReaction.isPending);
   const userReaction = reactionData?.userReaction;
   const total = reactionData?.total || 0;
   const hasReaction = !!userReaction;

@@ -5,7 +5,7 @@
     "instructions": "تعليمات",
     "dueDate": "تاريخان",
     "maxPoints": "أقصى النقاط",
-    "submissions": "التقديمات",
+    "submissions": "الإرساليات",
     "submitted": "مُقَدَّم",
     "notSubmitted": "لم يتم تقديمه",
     "graded": "مُصنَّف",
@@ -33,7 +33,7 @@
       "exportGrades": "درجات التصدير"
     },
     "stats": {
-      "totalSubmissions": "إجمالي الإرساليات",
+      "totalSubmissions": "إجمالي المشاركات",
       "averageGrade": "متوسط الدرجة",
       "submissionRate": "معدل الإرسال",
       "gradedCount": "مُصنَّف"

@@ -1,0 +1,118 @@
+{
+  "worksheets": {
+    "title": "أوراق العمل",
+    "subtitle": "إدارة وتوزيع أوراق العمل التدريبية",
+    "list": {
+      "title": "جميع أوراق العمل"
+    },
+    "columns": {
+      "title": "عنوان",
+      "questionCount": "عدد الأسئلة",
+      "lastUpdated": "آخر تحديث",
+      "actions": "الإجراءات"
+    },
+    "status": {
+      "draft": "مسودة",
+      "published": "نُشرت",
+      "archived": "مؤرشفة"
+    },
+    "actions": {
+      "create": "إنشاء ورقة عمل",
+      "view": "منظر",
+      "edit": "يحرر",
+      "delete": "يمسح",
+      "download": "تحميل",
+      "share": "يشارك",
+      "back": "خلف",
+      "save": "يحفظ",
+      "cancel": "يلغي",
+      "select": "يختار",
+      "attachMarkscheme": "إرفاق مخطط العلامات",
+      "detach": "تفاصيل"
+    },
+    "search": {
+      "placeholder": "بحث أوراق العمل..."
+    },
+    "empty": {
+      "title": "لم يتم العثور على أوراق عمل",
+      "description": "ابدأ بإنشاء ورقة العمل الأولى الخاصة بك أو استخدم البحث للعثور على أوراق العمل الموجودة."
+    },
+    "confirm": {
+      "delete": "هل أنت متأكد أنك تريد حذف ورقة العمل هذه؟ لا يمكن التراجع عن هذا الإجراء."
+    },
+    "toasts": {
+      "created": "تم إنشاء ورقة العمل بنجاح",
+      "updated": "تم تحديث ورقة العمل بنجاح",
+      "deleted": "تم حذف ورقة العمل بنجاح",
+      "error": "حدث خطأ"
+    },
+    "create": {
+      "title": "إنشاء ورقة عمل",
+      "subtitle": "إنشاء ورقة عمل جديدة تحتوي على أنواع متعددة من الأسئلة",
+      "worksheetInfo": "معلومات ورقة العمل",
+      "actions": {
+        "save": "يحفظ",
+        "cancel": "يلغي",
+        "preview": "معاينة"
+      },
+      "fields": {
+        "title": "عنوان",
+        "titlePlaceholder": "أدخل عنوان ورقة العمل",
+        "description": "وصف",
+        "descriptionPlaceholder": "أدخل وصف ورقة العمل (اختياري)",
+        "dueDate": "تاريخان",
+        "totalQuestions": "مجموع الأسئلة"
+      },
+      "questions": {
+        "title": "أسئلة",
+        "addQuestion": "أضف سؤالاً",
+        "noQuestions": "لم تتم إضافة أي أسئلة بعد",
+        "addFirstQuestion": "استخدم القائمة المنسدلة أعلاه لإضافة سؤالك الأول",
+        "questionNumber": "السؤال {number}",
+        "points": "نقاط",
+        "questionText": "نص السؤال",
+        "questionTextPlaceholder": "أدخل سؤالك هنا",
+        "options": "خيارات",
+        "optionPlaceholder": "الخيار {number}",
+        "addOption": "إضافة خيار",
+        "correctAnswer": "الإجابة الصحيحة",
+        "true": "حقيقي",
+        "false": "خطأ شنيع",
+        "mathExpression": "تعبير رياضي متوقع",
+        "mathExpressionPlaceholder": "على سبيل المثال، x^2 + 5x + 6 = 0",
+        "sampleAnswer": "إجابة نموذجية",
+        "sampleAnswerPlaceholder": "أدخل إجابة نموذجية أو شرحًا",
+        "markscheme": "مخطط التسويق",
+        "markschemeAttached": "مخطط العلامات المرفق"
+      },
+      "questionTypes": {
+        "multipleChoice": "اختيار من متعدد",
+        "longForm": "إجابة طويلة",
+        "math": "إجابة الرياضيات",
+        "trueFalse": "صواب/خطأ"
+      },
+      "markschemeDialog": {
+        "title": "حدد مخطط العلامات",
+        "noMarkschemes": "لا توجد مخططات درجات متاحة. أنشئ مخططًا في قسم الدرجات أولًا.",
+        "untitled": "مخطط ماركس بدون عنوان",
+        "custom": "مخصص"
+      },
+      "errors": {
+        "titleRequired": "العنوان مطلوب",
+        "atLeastOneQuestion": "الرجاء إضافة سؤال واحد على الأقل",
+        "questionTextRequired": "يجب أن تحتوي جميع الأسئلة على نص",
+        "multipleChoiceOptions": "أسئلة الاختيار من متعدد تحتاج إلى خيارين على الأقل",
+        "multipleChoiceCorrectAnswer": "تتطلب أسئلة الاختيار من متعدد إجابة صحيحة واحدة على الأقل",
+        "teacherOnly": "المعلمون فقط هم من يمكنهم إنشاء أوراق العمل"
+      },
+      "toasts": {
+        "created": "تم إنشاء ورقة العمل بنجاح",
+        "markschemeAttached": "تم إرفاق المخطط بنجاح",
+        "markschemeDetached": "تم فصل المخطط بنجاح",
+        "updated": "تم تحديث ورقة العمل بنجاح",
+        "saving": "توفير...",
+        "saved": "أنقذ"
+      }
+    }
+  }
+}
