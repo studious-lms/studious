@@ -19,8 +19,9 @@ export function NavbarPopup({ backToHome = false }: { backToHome?: boolean }) {
                         size="sm"
                         onClick={() => backToHome ? router.push('/') : router.back()}
                         className="flex items-center gap-2 hover:bg-muted transition-colors"
+                        aria-label={t('goBack')}
                     >
-                        <ArrowLeft className="h-4 w-4" />
+                        <ArrowLeft className="h-4 w-4" aria-hidden="true" />
                         <span className="hidden sm:inline">{t('goBack')}</span>
                     </Button>
                     <Button
@@ -28,8 +29,9 @@ export function NavbarPopup({ backToHome = false }: { backToHome?: boolean }) {
                         size="sm"
                         onClick={() => router.push('/')}
                         className="flex items-center gap-2 hover:bg-muted transition-colors"
+                        aria-label={t('home')}
                     >
-                        <Home className="h-4 w-4" />
+                        <Home className="h-4 w-4" aria-hidden="true" />
                         <span className="hidden sm:inline">{t('home')}</span>
                     </Button>
                 </div>

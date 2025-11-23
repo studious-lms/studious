@@ -215,11 +215,11 @@ export default function Signup() {
                   className="text-sm text-muted-foreground leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                 >
                   {t('agreeToTerms')}{" "}
-                  <Button variant="link" className="px-0 h-auto text-sm">
+                  <Button variant="link" className="px-0 h-auto text-sm asChild">
                     <a href="/terms-of-service">{t('termsOfService')}</a>
                   </Button>{" "}
                   {t('and')}{" "}
-                  <Button variant="link" className="px-0 h-auto text-sm">
+                  <Button variant="link" className="px-0 h-auto text-sm asChild">
                     <a href="/privacy-policy">{t('privacyPolicy')}</a>
                   </Button>
                 </label>
