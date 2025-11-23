@@ -20,8 +20,7 @@ export default function VerifyEmail() {
   const [isVerified, setIsVerified] = useState(false);
   const [isError, setIsError] = useState(false);
   const [isVerifying, setIsVerifying] = useState(false);
-
-  // Placeholder for the actual API call
+  
   const verifyEmailMutation = (trpc.auth as any).verify.useMutation({
     onSuccess: () => {
       setIsVerified(true);
