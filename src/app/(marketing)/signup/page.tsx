@@ -12,6 +12,7 @@ import { Eye, EyeOff, Mail, Lock, User } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useTranslations } from "next-intl";
 import { trpc } from "@/lib/trpc";
+import { NavbarPopup } from "@/components/marketing/NavbarPopup";
 
 export default function Signup() {
   const t = useTranslations('auth.signup');
@@ -81,8 +82,15 @@ export default function Signup() {
   };
 
   return (
-    <PageLayout className="min-h-screen flex items-center justify-center px-4 py-8 sm:px-6">
-      <div className="w-full max-w-md space-y-6 sm:space-y-8">
+    <PageLayout className="min-h-screen bg-background">
+      {/* Navigation Bar - Full Width at Top */}
+      <div className="w-full px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 pb-4">
+        <NavbarPopup backToHome={true} />
+      </div>
+
+      {/* Centered Content */}
+      <div className="flex items-center justify-center px-4 py-8 sm:px-6">
+        <div className="w-full max-w-md space-y-6 sm:space-y-8">
         {/* Logo and Title */}
         <div className="text-center space-y-3 sm:space-y-4">
           <div className="flex justify-center">
@@ -208,11 +216,11 @@ export default function Signup() {
                 >
                   {t('agreeToTerms')}{" "}
                   <Button variant="link" className="px-0 h-auto text-sm">
-                    {t('termsOfService')}
+                    <a href="/terms-of-service">{t('termsOfService')}</a>
                   </Button>{" "}
                   {t('and')}{" "}
                   <Button variant="link" className="px-0 h-auto text-sm">
-                    {t('privacyPolicy')}
+                    <a href="/privacy-policy">{t('privacyPolicy')}</a>
                   </Button>
                 </label>
               </div>
@@ -231,6 +239,7 @@ export default function Signup() {
           <Button variant="link" className="px-0 text-sm" asChild>
             <a href="/login">{t('signIn')}</a>
           </Button>
+        </div>
         </div>
       </div>
     </PageLayout>

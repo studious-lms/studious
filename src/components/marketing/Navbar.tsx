@@ -42,15 +42,15 @@ export function Navbar() {
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="container mx-auto px-6">
-          <div className="flex items-center justify-between h-16">
+          <div className="relative flex items-center justify-between h-16">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2">
+            <Link href="/" className="flex items-center gap-2 flex-shrink-0">
               <img src="/logo.png" alt="Studious" className="w-7 h-7" />
               <span className="text-lg font-semibold text-foreground">Studious</span>
             </Link>
             
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-8">
+            {/* Desktop Navigation - Centered */}
+            <div className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
               <Link href="/pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 {t('pricing')}
               </Link>
@@ -63,59 +63,64 @@ export function Navbar() {
               <Link href="/press" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 {t('press')}
               </Link>
-              <div className="flex items-center gap-2">
-                {/* Theme Toggle */}
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  onClick={toggleDarkMode}
-                >
-                  {darkMode === "dark" ? (
-                    <Moon className="h-4 w-4" />
-                  ) : (
-                    <Sun className="h-4 w-4" />
-                  )}
-                </Button>
-
-                {/* Language Selector */}
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button variant="ghost" size="sm" className="h-9 gap-1">
-                      <span className="text-sm">{currentLang.flag}</span>
-                      <span className="px-1.5 py-0.5 text-xs bg-primary/10 text-primary rounded-md font-medium">
-                        BETA
-                      </span>
-                      <ChevronDown className="h-3 w-3" />
-                    </Button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent align="end" className="w-48 max-h-96 overflow-y-auto">
-                    {languages.map((language) => (
-                      <DropdownMenuItem
-                        key={language.code}
-                        onClick={() => handleLanguageChange(language.code)}
-                        className="flex items-center gap-2 cursor-pointer"
-                      >
-                        <span>{language.flag}</span>
-                        <span className="flex-1">{language.name}</span>
-                        {locale === language.code && (
-                          <Check className="h-4 w-4" />
-                        )}
-                      </DropdownMenuItem>
-                    ))}
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              </div>
-
-              <Link href="/login" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                {t('signIn')}
-              </Link>
-              <Button 
-                size="sm" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground"
-                onClick={() => setShowEarlyAccess(true)}
+            </div>
+            
+            {/* Right Side Controls */}
+            <div className="hidden md:flex items-center gap-2 flex-shrink-0">
+              {/* Theme Toggle */}
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={toggleDarkMode}
               >
-                {tMarketing('requestEarlyAccess')}
+                {darkMode === "dark" ? (
+                  <Moon className="h-4 w-4" />
+                ) : (
+                  <Sun className="h-4 w-4" />
+                )}
               </Button>
+
+              {/* Language Selector */}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" size="sm" className="h-9 gap-1">
+                    <span className="text-sm">{currentLang.flag}</span>
+                    <span className="px-1.5 py-0.5 text-xs bg-primary/10 text-primary rounded-md font-medium">
+                      BETA
+                    </span>
+                    <ChevronDown className="h-3 w-3" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-48 max-h-96 overflow-y-auto">
+                  {languages.map((language) => (
+                    <DropdownMenuItem
+                      key={language.code}
+                      onClick={() => handleLanguageChange(language.code)}
+                      className="flex items-center gap-2 cursor-pointer"
+                    >
+                      <span>{language.flag}</span>
+                      <span className="flex-1">{language.name}</span>
+                      {locale === language.code && (
+                        <Check className="h-4 w-4" />
+                      )}
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+              
+              {/* Login and Early Access Buttons */}
+              <div className="flex items-center gap-6">
+                <Link href="/login" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  {t('signIn')}
+                </Link>
+                <Button 
+                  size="sm" 
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                  onClick={() => setShowEarlyAccess(true)}
+                >
+                  {tMarketing('requestEarlyAccess')}
+                </Button>
+              </div>
             </div>
             
             {/* Mobile Menu Button */}

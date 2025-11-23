@@ -9,6 +9,8 @@ import { toast } from "sonner";
 import { useTranslations } from "next-intl";
 import { CheckCircle, XCircle, Mail } from "lucide-react";
 import { trpc } from "@/lib/trpc";
+import { PageLayout } from "@/components/ui/page-layout";
+import { NavbarPopup } from "@/components/marketing/NavbarPopup";
 
 export default function VerifyEmail() {
   const t = useTranslations('auth.verification');
@@ -49,8 +51,15 @@ export default function VerifyEmail() {
   };
 
   return (
-    <div className="min-h-screen w-full flex flex-col justify-center items-center bg-background-subtle px-4 py-8 sm:px-6">
-      <div className="w-full max-w-md">
+    <PageLayout className="min-h-screen bg-background">
+      {/* Navigation Bar - Full Width at Top */}
+      <div className="w-full px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 pb-4">
+        <NavbarPopup backToHome={true} />
+      </div>
+
+      {/* Centered Content */}
+      <div className="flex items-center justify-center px-4 py-8 sm:px-6">
+        <div className="w-full max-w-md">
         {/* Header */}
         <div className="text-center mb-6 sm:mb-8">
           <div className="flex justify-center mb-3 sm:mb-4">
@@ -158,7 +167,8 @@ export default function VerifyEmail() {
             </div>
           </Card>
         )}
+        </div>
       </div>
-    </div>
+    </PageLayout>
   );
 }

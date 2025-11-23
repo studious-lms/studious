@@ -8,12 +8,17 @@ export function ConditionalThemeToggle() {
   
   // Hide theme toggle on marketing pages
   const isMarketingPage = pathname === "/" || 
-    pathname.startsWith("/pricing") || 
     pathname.startsWith("/about") || 
+    pathname.startsWith("/forgot-password") ||
+    pathname.startsWith("/login") ||
     pathname.startsWith("/press") || 
+    pathname.startsWith("/pricing") || 
+    pathname.startsWith("/privacy-policy") ||
     pathname.startsWith("/program") ||
-    pathname === "/login" ||
-    pathname === "/signup";
+    pathname.startsWith("/reset-password") ||
+    pathname.startsWith("/signup") ||
+    pathname.startsWith("/terms-of-service") ||
+    pathname.startsWith("/verify");
   
   if (isMarketingPage) {
     return null;
