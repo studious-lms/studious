@@ -11,12 +11,12 @@ import { toast } from "sonner";
 import { Eye, EyeOff, Mail, Lock, User } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useTranslations } from "next-intl";
+import { trpc } from "@/lib/trpc";
 
 export default function Signup() {
   const t = useTranslations('auth.signup');
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    username: "",
     email: "",
     password: "",
     confirmPassword: "",
@@ -26,6 +26,21 @@ export default function Signup() {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
+
+  const registerMutation = (trpc.auth as any).register.useMutation({
+    onSuccess: () => {
+      toast.success(t('verificationEmailSent'));
+      router.push("/login?verificationEmailSent=true");
+      setIsLoading(false);
+      return;
+    },
+    onError: (error: any) => {
+      console.log(error);
+      toast.error(error.message || t('signUpFailed'));
+      setIsLoading(false);
+      return;
+    }
+  });
 
   const handleInputChange = (field: string, value: string | boolean) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -43,6 +58,13 @@ export default function Signup() {
       return;
     }
 
+    if (formData.password.length < 6) {
+      toast.error(t('passwordTooShort'));
+
+      setIsLoading(false);
+      return;
+    }
+
     if (!formData.agreeToTerms) {
       toast.error(t('termsRequired'));
 
@@ -50,19 +72,12 @@ export default function Signup() {
       return;
     }
 
-    // Mock signup logic - replace with real authentication
-    try {
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API call
-      
-      toast.success(t('accountCreated'));
-
-      router.push("/verify/mock-token");
-    } catch {
-      toast.error(t('signUpFailed'));
-
-    } finally {
-      setIsLoading(false);
-    }
+    registerMutation.mutate({
+      username: formData.username,
+      email: formData.email,
+      password: formData.password,
+      confirmPassword: formData.confirmPassword,
+    });
   };
 
   return (
@@ -86,31 +101,18 @@ export default function Signup() {
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
-              {/* Name Fields */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="firstName" className="text-sm">{t('firstName')}</Label>
-                  <div className="relative">
-                    <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                    <Input
-                      id="firstName"
-                      type="text"
-                      placeholder={t('firstNamePlaceholder')}
-                      value={formData.firstName}
-                      onChange={(e) => handleInputChange("firstName", e.target.value)}
-                      className="pl-10"
-                      required
-                    />
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="lastName" className="text-sm">{t('lastName')}</Label>
+              {/* Username Field */}
+              <div className="space-y-2">
+                <Label htmlFor="username" className="text-sm">{t('username')}</Label>
+                <div className="relative">
+                  <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                   <Input
-                    id="lastName"
+                    id="username"
                     type="text"
-                    placeholder={t('lastNamePlaceholder')}
-                    value={formData.lastName}
-                    onChange={(e) => handleInputChange("lastName", e.target.value)}
+                    placeholder={t('usernamePlaceholder')}
+                    value={formData.username}
+                    onChange={(e) => handleInputChange("username", e.target.value)}
+                    className="pl-10"
                     required
                   />
                 </div>
@@ -220,16 +222,16 @@ export default function Signup() {
                 {isLoading ? t('creatingAccount') : t('createAccount')}
               </Button>
             </form>
-
-            {/* Sign In Link */}
-            <div className="mt-4 sm:mt-6 text-center text-sm">
-              <span className="text-muted-foreground">{t('alreadyHaveAccount')} </span>
-              <Button variant="link" className="px-0 text-sm" asChild>
-                <a href="/login">{t('signIn')}</a>
-              </Button>
-            </div>
           </CardContent>
         </Card>
+
+        {/* Sign In Link */}
+        <div className="mt-4 sm:mt-6 text-center text-sm">
+          <span className="text-muted-foreground">{t('alreadyHaveAccount')} </span>
+          <Button variant="link" className="px-0 text-sm" asChild>
+            <a href="/login">{t('signIn')}</a>
+          </Button>
+        </div>
       </div>
     </PageLayout>
   );
