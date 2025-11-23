@@ -21,10 +21,10 @@ export default function ForgotPassword() {
   const requestPasswordResetMutation = (trpc.auth as any).requestPasswordReset.useMutation({
     onSuccess: () => {
       setEmailSent(true);
-      toast.success("Password reset link sent!");
+      toast.success(t('successMessage'));
     },
     onError: (error: any) => {
-      toast.error(error.message || "Failed to send reset link. Please try again.");
+      toast.error(error.message || t('errorMessage'));
     }
   });
 
@@ -33,7 +33,7 @@ export default function ForgotPassword() {
 
     // Basic email validation
     if (!email || !email.includes("@")) {
-      toast.error("Please enter a valid email address");
+      toast.error(t('invalidEmail'));
       return;
     }
 

@@ -37,7 +37,7 @@ export default function VerifyEmail() {
 
   const handleVerify = () => {
     if (!token) {
-      toast.error("Invalid verification token");
+      toast.error(t('invalidToken'));
       return;
     }
 
@@ -47,14 +47,6 @@ export default function VerifyEmail() {
     verifyEmailMutation.mutate({
       token: token,
     });
-    
-    // Placeholder: Simulate API call
-    setTimeout(() => {
-      // For now, just show success (remove this when implementing actual API)
-      setIsVerified(true);
-      setIsVerifying(false);
-      toast.success(t('successTitle'));
-    }, 1000);
   };
 
   return (
