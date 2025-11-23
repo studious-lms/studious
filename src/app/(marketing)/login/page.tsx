@@ -244,15 +244,13 @@ export default function Login() {
                   />
                 </div>
 
-                {/* Remember Me */}
-                <div className="flex items-center justify-between w-full">
-                  <Checkbox
-                    checked={true}
-                    onChange={() => {}}
-                  />
-                  <Link href="/forgot-password" className="text-sm text-primary-500 hover:underline">
-                    {t('forgotPassword')}
-                  </Link>
+                {/* Possibly add a remember me checkbox here */}
+
+                {/* Forgot Password */}
+                <div className="flex items-left justify-left w-full">
+                  <Button variant="link" className="px-0 text-sm" asChild>
+                    <a href="/forgot-password">{t('forgotPassword')}</a>
+                  </Button>
               </div>
 
                 {/* Submit Button */}
@@ -267,12 +265,12 @@ export default function Login() {
         </Card>
 
             {/* Signup Link */}
-            <div className="text-center mt-6">
-              <p className="text-sm sm:text-base text-foreground-muted">
+            <div className="mt-4 sm:mt-6 text-center text-sm">
+              <p className="text-muted-foreground">
                 {t('noAccount')}{' '}
-                <Link href="/signup" className="text-primary-500 hover:underline font-medium">
-                  {t('signUp')}
-                </Link>
+                <Button variant="link" className="px-0 text-sm" asChild>
+                  <a href="/signup">{t('signUp')}</a>
+                </Button>
               </p>
             </div>
           </>

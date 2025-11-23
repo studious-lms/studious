@@ -37,7 +37,7 @@
     },
     "table": {
       "assignment": "Assignment",
-      "dueDate": "Two Dates",
+      "dueDate": "Due Date",
       "points": "Points",
       "weight": "Weight",
       "status": "Status",
