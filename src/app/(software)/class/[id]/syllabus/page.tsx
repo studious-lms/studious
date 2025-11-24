@@ -108,7 +108,9 @@ export default function Syllabus() {
   const params = useParams();
   const classId = params.id as string;
   const t = useTranslations('syllabus');
-  
+  const appState = useSelector((state: RootState) => state.app);
+  const isStudentRole = appState.user?.student;
+
   const [isEditing, setIsEditing] = useState(false);
   const [syllabusContent, setSyllabusContent] = useState("");
   const [originalContent, setOriginalContent] = useState("");
@@ -226,6 +228,7 @@ export default function Syllabus() {
               <Button
                 onClick={handleEdit}
                 className="flex items-center space-x-2"
+                disabled={isStudentRole}
               >
                 <Edit className="w-4 h-4" />
                 <span>{t('actions.edit')}</span>
