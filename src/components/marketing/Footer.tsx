@@ -55,10 +55,10 @@ export function Footer() {
                             {t('copyright')}
                         </p>
                         <div className="flex gap-6">
-                        <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                        <Link href="/privacy-policy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                             {t('privacyPolicy')}
                         </Link>
-                        <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                        <Link href="/terms-of-service" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                             {t('termsOfService')}
                         </Link>
                         </div>

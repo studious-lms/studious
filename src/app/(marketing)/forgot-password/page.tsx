@@ -10,6 +10,8 @@ import { toast } from "sonner";
 import { useTranslations } from "next-intl";
 import { Mail } from "lucide-react";
 import { trpc } from "@/lib/trpc";
+import { PageLayout } from "@/components/ui/page-layout";
+import { NavbarPopup } from "@/components/marketing/NavbarPopup";
 
 export default function ForgotPassword() {
   const t = useTranslations('auth.forgotPassword');
@@ -43,8 +45,15 @@ export default function ForgotPassword() {
   };
 
   return (
-    <div className="min-h-screen w-full flex flex-col justify-center items-center bg-background-subtle px-4 py-8 sm:px-6">
-      <div className="w-full max-w-md">
+    <PageLayout className="min-h-screen bg-background">
+      {/* Navigation Bar - Full Width at Top */}
+      <div className="w-full px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 pb-4">
+        <NavbarPopup />
+      </div>
+
+      {/* Centered Content */}
+      <div className="flex items-center justify-center px-4 py-8 sm:px-6">
+        <div className="w-full max-w-md">
         {/* Header */}
         <div className="text-center mb-6 sm:mb-8">
           <div className="flex justify-center mb-3 sm:mb-4">
@@ -78,16 +87,6 @@ export default function ForgotPassword() {
               >
                 {requestPasswordResetMutation.isPending ? t('sending') : t('sendResetLink')}
               </Button>
-
-              {/* Back to Sign In Link */}
-              <div className="text-center">
-                <Link 
-                  href="/login" 
-                  className="text-sm text-primary-500 hover:underline"
-                >
-                  {t('backToSignIn')}
-                </Link>
-              </div>
             </form>
           </Card>
         ) : (
@@ -110,16 +109,18 @@ export default function ForgotPassword() {
                   {t('checkInbox')}
                 </p>
               </div>
-
-              {/* Back to Sign In Button */}
-              <Button variant="link" className="px-0 mt-4 sm:mt-6 text-sm" asChild>
-                <a href="/login">{t('backToSignIn')}</a>
-              </Button>
             </div>
           </Card>
         )}
+        {/* Back to Sign In Button */}
+        <div className="mt-4 sm:mt-6 text-center text-sm">
+          <Button variant="link" className="px-0 text-sm" asChild>
+            <a href="/login">{t('backToSignIn')}</a>
+          </Button>
+        </div>
+        </div>
       </div>
-    </div>
+    </PageLayout>
   );
 }
 
