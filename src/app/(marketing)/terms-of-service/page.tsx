@@ -53,13 +53,6 @@ export default function TermsOfService() {
 
             <div className="w-full py-8 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-8">
                 <div className="container mx-auto max-w-4xl">
-                    {/* Title */}
-                    <div id="top" className="text-center space-y-4 sm:space-y-6 mb-8 sm:mb-12">
-                        <div className="space-y-2">
-                            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">{t('title')}</h1>
-                        </div>
-                    </div>
-
                     {/* Terms of Service Content */}
                     <Card className="p-6 sm:p-8 md:p-10 shadow-sm">
                         <CardHeader className="pb-6 sm:pb-8 border-b">

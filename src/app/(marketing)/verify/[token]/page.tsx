@@ -74,8 +74,8 @@ export default function VerifyEmail() {
             <div className="text-center space-y-4 sm:space-y-6">
               {/* Success Icon */}
               <div className="flex justify-center">
-                <div className="p-3 sm:p-4 bg-green-100 rounded-full">
-                  <CheckCircle className="w-7 h-7 sm:w-8 sm:h-8 text-green-600" />
+                <div className="p-3 sm:p-4 bg-primary/10 rounded-full">
+                  <CheckCircle className="w-7 h-7 sm:w-8 sm:h-8 text-primary" />
                 </div>
               </div>
 
