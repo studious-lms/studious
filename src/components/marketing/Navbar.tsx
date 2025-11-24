@@ -72,6 +72,8 @@ export function Navbar() {
                 variant="ghost"
                 size="icon"
                 onClick={toggleDarkMode}
+                aria-label={darkMode === "dark" ? t('lightMode') : t('darkMode')}
+                title={darkMode === "dark" ? t('lightMode') : t('darkMode')}
               >
                 {darkMode === "dark" ? (
                   <Moon className="h-4 w-4" />
@@ -83,7 +85,7 @@ export function Navbar() {
               {/* Language Selector */}
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" size="sm" className="h-9 gap-1">
+                  <Button variant="ghost" size="sm" className="h-9 gap-1" aria-label={t('languageSelector')} title={t('languageSelector')}>
                     <span className="text-sm">{currentLang.flag}</span>
                     <span className="px-1.5 py-0.5 text-xs bg-primary/10 text-primary rounded-md font-medium">
                       BETA

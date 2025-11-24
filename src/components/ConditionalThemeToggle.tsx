@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import { FloatingThemeToggle } from "@/components/ui/floating-theme-toggle";
 
 export function ConditionalThemeToggle() {
-  const pathname = usePathname();
+  const pathname = usePathname() || "";
   
   // Hide theme toggle on marketing pages
   const isMarketingPage = pathname === "/" || 

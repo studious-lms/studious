@@ -158,7 +158,8 @@ export default function PrivacyPolicy() {
                 <button
                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                     className="fixed bottom-6 left-1/2 -translate-x-1/2 sm:bottom-8 bg-primary text-primary-foreground rounded-full p-3 shadow-lg hover:shadow-xl transition-all hover:scale-110 z-50"
-                    aria-label="Back to top"
+                    aria-label={t('backToTop')}
+                    title={t('backToTop')}
                 >
                     <ArrowUp className="w-5 h-5" />
                 </button>

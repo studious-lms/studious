@@ -124,7 +124,10 @@
   },
   "marketing": {
     "navbar": {
-      "requestEarlyAccess": "Request Early Access"
+      "requestEarlyAccess": "Request Early Access",
+      "lightMode": "Switch to light mode",
+      "darkMode": "Switch to dark mode",
+      "languageSelector": "Select language"
     },
     "hero": {
       "badge": "Modern Learning Platform",
@@ -317,7 +320,8 @@
         }
       },
       "goToTop": "Go to Top",
-      "tableOfContents": "Table of Contents"
+      "tableOfContents": "Table of Contents",
+      "backToTop": "Back to Top"
     },
     "termsOfService": {
       "title": "Terms of Service",
@@ -385,7 +389,8 @@
         }
       },
       "goToTop": "Go to Top",
-      "tableOfContents": "Table of Contents"
+      "tableOfContents": "Table of Contents",
+      "backToTop": "Back to Top"
     },
     "navbarPopup": {
       "goBack": "Go Back",
