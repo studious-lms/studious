@@ -6,6 +6,7 @@ import { useRouter, usePathname } from "next/navigation";
 import { RootState } from "@/store/store";
 import { useChat } from "@/hooks/useChat";
 import { ConversationList, CreateConversationModal } from "@/components/chat";
+import { toast } from "sonner";
 
 export default function ChatLayout({
   children,
@@ -23,15 +24,37 @@ export default function ChatLayout({
     conversations,
     createConversation,
     isLoadingConversations,
+    refetchConversations,
   } = useChat(user.loggedIn ? user.id : "");
 
   const handleSelectConversation = (conversationId: string) => {
     router.push(`/chat/${conversationId}`);
   };
 
+  const handleCreateConversation = async (
+    type: 'DM' | 'GROUP',
+    memberUsernames: string[],
+    name?: string
+  ) => {
+    try {
+      const newConversation = await createConversation(type, memberUsernames, name);
+      // Success - refresh conversations and navigate to new conversation
+      await refetchConversations();
+      router.push(`/chat/${newConversation.id}`);
+      // Close modal
+      setShowCreateModal(false);
+      toast.success('Conversation created successfully');
+    } catch (error: any) {
+      // Show error message
+      const errorMessage = error?.message || 'Failed to create conversation';
+      toast.error(errorMessage);
+      // Don't close modal on error, let user retry
+    }
+  };
+
   // Extract conversation ID from pathname for highlighting
-  const currentConversationId = pathname.startsWith('/chat/') && pathname !== '/chat' 
-    ? pathname.split('/chat/')[1] 
+  const currentConversationId = pathname.startsWith('/chat/') && pathname !== '/chat'
+    ? pathname.split('/chat/')[1]
     : null;
 
   if (!user.loggedIn) {
@@ -61,7 +84,7 @@ export default function ChatLayout({
       <CreateConversationModal
         open={showCreateModal}
         onOpenChange={setShowCreateModal}
-        onCreateConversation={createConversation}
+        onCreateConversation={handleCreateConversation}
         availableUsers={[]} // No user list for privacy
         isLoading={false}
       />

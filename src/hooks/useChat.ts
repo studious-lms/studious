@@ -246,12 +246,12 @@ export function useChat(currentUserId: string) {
     setMessagesData({ messages: [] }); // Clear previous messages
   }, []);
 
-  const createConversation = useCallback((
+  const createConversation = useCallback(async (
     type: 'DM' | 'GROUP',
     memberIds: string[],
     name?: string
   ) => {
-    createConversationMutation.mutate({
+    return await createConversationMutation.mutateAsync({
       type,
       memberIds,
       name,
