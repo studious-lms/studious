@@ -47,7 +47,7 @@ export default function PrivacyPolicy() {
                 <NavbarPopup />
             </div>
 
-            <div className="w-full py-8 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-8">
+            <div className="w-full px-4 sm:px-6 lg:px-8">
                 <div className="container mx-auto max-w-4xl">
                     {/* Privacy Policy Content */}
                     <Card className="p-6 sm:p-8 md:p-10 shadow-sm">
