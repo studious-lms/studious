@@ -44,6 +44,7 @@ export const errorLink = (): TRPCLink<AppRouter> => {
                                 break;
                             case isForbidden:
                                 toast.error("The requested resource is forbidden.");
+                                toast.error(error.data?.path);
                                 break;
                             case isNotFound:
                                 toast.error("The requested resource was not found.");

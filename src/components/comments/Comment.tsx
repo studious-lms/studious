@@ -27,6 +27,7 @@ import { toast } from "sonner";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { ReactionButton } from "@/components/reactions/ReactionButton";
+import { Skeleton } from "../ui/skeleton";
 
 interface CommentProps {
   comment: { id: string; };
@@ -146,8 +147,8 @@ export default memo(function Comment({
   const canEdit = currentComment && currentComment.author.id === currentUserId;
   const canDelete = currentComment && currentComment.author.id === currentUserId || isTeacher;
   // Handle different comment type structures - some have createdAt, some don't
-  const createdAt = (currentComment as any).createdAt || (currentComment as any).created_at;
-  const modifiedAt = currentComment && currentComment.modifiedAt || (currentComment as any).updatedAt;
+  const createdAt = currentComment?.createdAt;
+  const modifiedAt = currentComment && currentComment.modifiedAt;
   const isModified = modifiedAt && createdAt && 
     new Date(modifiedAt).getTime() !== new Date(createdAt).getTime();
 
@@ -200,12 +201,13 @@ export default memo(function Comment({
       });
     }
   }, [deleteReplyMutation]);
+  if (!currentComment) return <Skeleton className="h-7 w-7 flex-shrink-0" />;
 
   return (
     <div className="space-y-2">
       <div className="flex items-start gap-2">
         <Avatar className="h-7 w-7 flex-shrink-0">
-          <AvatarImage src={currentComment && currentComment.author?.profile?.profilePicture || ""} />
+          <AvatarImage src={currentComment.author.id === 'AI_ASSISTANT' ? '/ai-icon.png' : (currentComment && currentComment.author?.profile?.profilePicture || "")} />
           <AvatarFallback className="text-xs">
             {currentComment && currentComment.author?.username?.substring(0, 2).toUpperCase() || "U"}
           </AvatarFallback>
@@ -213,7 +215,7 @@ export default memo(function Comment({
         <div className="flex-1 min-w-0">
           <div className="flex items-center justify-between mb-1">
             <div className="flex items-center gap-2">
-              <p className="text-xs font-medium">{currentComment && currentComment.author?.username || "Unknown"}</p>
+              <p className="text-xs font-medium">{currentComment && currentComment.author?.profile?.displayName || currentComment && currentComment.author?.username || "Unknown"}</p>
               <p className="text-xs text-muted-foreground">
                 {formatDate(createdAt)}
               </p>
@@ -353,8 +355,8 @@ export default memo(function Comment({
           {replies.data?.map((reply) => {
             const canEditReply = reply.author.id === currentUserId;
             const canDeleteReply = reply && reply.author.id === currentUserId || isTeacher;
-            const replyCreatedAt = reply && reply.createdAt || (reply as any).created_at;
-            const replyModifiedAt = reply && reply.modifiedAt || (reply as any).updatedAt;
+            const replyCreatedAt = reply && reply.createdAt;
+            const replyModifiedAt = reply && reply.modifiedAt;
             const isReplyModified = replyModifiedAt && replyCreatedAt && 
               new Date(replyModifiedAt).getTime() !== new Date(replyCreatedAt).getTime();
             const isEditingThisReply = editingReplyId === reply.id;
@@ -365,15 +367,15 @@ export default memo(function Comment({
                   <Avatar className="h-6 w-6 flex-shrink-0">
                     <AvatarImage src={reply.author?.profile?.profilePicture || ""} />
                     <AvatarFallback className="text-xs">
-                      {reply.author?.username?.substring(0, 2).toUpperCase() || "U"}
+                      {reply.author?.profile?.displayName?.substring(0, 2).toUpperCase() || "U"}
                     </AvatarFallback>
                   </Avatar>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between mb-1">
                       <div className="flex items-center gap-2">
-                        <p className="text-xs font-medium">{reply.author?.username || "Unknown"}</p>
+                        <p className="text-xs font-medium">{reply.author.profile?.displayName || reply.author?.username}</p>
                         <p className="text-xs text-muted-foreground">
-                          {formatDate((reply as any).createdAt || (reply as any).created_at)}
+                          {formatDate(reply.createdAt)}
                         </p>
                         {isReplyModified && (
                           <span className="text-xs text-muted-foreground">(edited)</span>
