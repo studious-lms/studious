@@ -66,8 +66,30 @@ export function useChat(currentUserId: string) {
 
   // Mutations
   const sendMessageMutation = trpc.message.send.useMutation({
-    onSuccess: () => {
-      // Optimistically handled by real-time events
+    onSuccess: (newMessage) => {
+      // Replace temporary message with real message from server
+      setMessagesData(prev => ({
+        ...prev,
+        messages: prev.messages.map(msg =>
+          msg.id.startsWith('temp-') && msg.content === newMessage.content
+            ? {
+                ...msg,
+                id: newMessage.id,
+                createdAt: typeof newMessage.createdAt === 'string'
+                  ? newMessage.createdAt
+                  : newMessage.createdAt.toISOString(),
+                sender: newMessage.sender,
+              }
+            : msg
+        ),
+      }));
+    },
+    onError: (error) => {
+      // Remove optimistic message on error
+      setMessagesData(prev => ({
+        ...prev,
+        messages: prev.messages.filter(msg => !msg.id.startsWith('temp-')),
+      }));
     },
   });
 
@@ -87,13 +109,21 @@ export function useChat(currentUserId: string) {
 
   const updateMessageMutation = trpc.message.update.useMutation({
     onSuccess: () => {
-      // Message will be updated via Pusher event
+      // Message already updated optimistically
+    },
+    onError: (error, variables) => {
+      // Revert optimistic update on error
+      messagesQuery.refetch();
     },
   });
 
   const deleteMessageMutation = trpc.message.delete.useMutation({
     onSuccess: () => {
-      // Message will be removed via Pusher event
+      // Message already removed optimistically
+    },
+    onError: (error, variables) => {
+      // Revert optimistic deletion on error
+      messagesQuery.refetch();
     },
   });
 
@@ -150,10 +180,31 @@ export function useChat(currentUserId: string) {
   const handleNewMessage = useCallback((data: NewMessageEvent) => {
     // Add message to current conversation if it matches
     if (data.conversationId === selectedConversationId) {
-      setMessagesData(prev => ({
-        ...prev,
-        messages: [...prev.messages, mapToMessage(data)],
-      }));
+      setMessagesData(prev => {
+        // Check if message already exists (avoid duplicates from optimistic update)
+        const messageExists = prev.messages.some(msg =>
+          msg.id === data.id ||
+          (msg.senderId === data.senderId && msg.content === data.content && msg.id.startsWith('temp-'))
+        );
+
+        if (messageExists) {
+          // Update temp message with real data from server
+          return {
+            ...prev,
+            messages: prev.messages.map(msg =>
+              msg.id.startsWith('temp-') && msg.senderId === data.senderId && msg.content === data.content
+                ? mapToMessage(data)
+                : msg
+            ),
+          };
+        }
+
+        // Add new message (from other users)
+        return {
+          ...prev,
+          messages: [...prev.messages, mapToMessage(data)],
+        };
+      });
 
       // Mark as read if user is actively viewing this conversation
       if (document.visibilityState === 'visible') {
@@ -178,14 +229,23 @@ export function useChat(currentUserId: string) {
   const handleMessageUpdated = useCallback((data: MessageUpdatedEvent) => {
     // Update message in current conversation if it matches
     if (data.conversationId === selectedConversationId) {
-      setMessagesData(prev => ({
-        ...prev,
-        messages: prev.messages.map(msg => 
-          msg.id === data.id 
-            ? { ...msg, content: data.content }
-            : msg
-        ),
-      }));
+      setMessagesData(prev => {
+        // Check if message needs updating (avoid unnecessary re-renders)
+        const existingMsg = prev.messages.find(msg => msg.id === data.id);
+        if (existingMsg && existingMsg.content === data.content) {
+          // Message already up to date (from optimistic update)
+          return prev;
+        }
+
+        return {
+          ...prev,
+          messages: prev.messages.map(msg =>
+            msg.id === data.id
+              ? { ...msg, content: data.content }
+              : msg
+          ),
+        };
+      });
     }
 
     // Refresh conversations to update last message if needed
@@ -195,10 +255,19 @@ export function useChat(currentUserId: string) {
   const handleMessageDeleted = useCallback((data: MessageDeletedEvent) => {
     // Remove message from current conversation if it matches
     if (data.conversationId === selectedConversationId) {
-      setMessagesData(prev => ({
-        ...prev,
-        messages: prev.messages.filter(msg => msg.id !== data.messageId),
-      }));
+      setMessagesData(prev => {
+        // Check if message still exists (might already be removed optimistically)
+        const messageExists = prev.messages.some(msg => msg.id === data.messageId);
+        if (!messageExists) {
+          // Message already removed (from optimistic delete)
+          return prev;
+        }
+
+        return {
+          ...prev,
+          messages: prev.messages.filter(msg => msg.id !== data.messageId),
+        };
+      });
     }
 
     // Refresh conversations to update last message if needed
@@ -232,26 +301,55 @@ export function useChat(currentUserId: string) {
 
   // Actions
   const sendMessage = useCallback((content: string, mentionedUserIds: string[] = []) => {
-    if (!selectedConversationId) return;
+    if (!selectedConversationId || !currentUserId) return;
 
+    // Get current user info from conversation members
+    const currentUserMember = selectedConversationQuery.data?.members.find(
+      m => m.userId === currentUserId
+    );
+
+    // Optimistic update: Add message immediately with temporary ID
+    const tempId = `temp-${Date.now()}`;
+    const optimisticMessage: MessageListOutput['messages'][number] = {
+      id: tempId,
+      content,
+      senderId: currentUserId,
+      conversationId: selectedConversationId,
+      createdAt: new Date().toISOString(),
+      sender: currentUserMember?.user || {
+        id: currentUserId,
+        username: '',
+        profile: null,
+      },
+      attachments: [],
+      mentions: [],
+      mentionsMe: false,
+    };
+
+    setMessagesData(prev => ({
+      ...prev,
+      messages: [...prev.messages, optimisticMessage],
+    }));
+
+    // Send to server
     sendMessageMutation.mutate({
       conversationId: selectedConversationId,
       content,
       mentionedUserIds,
     });
-  }, [selectedConversationId, sendMessageMutation]);
+  }, [selectedConversationId, currentUserId, selectedConversationQuery.data, sendMessageMutation]);
 
   const selectConversation = useCallback((conversationId: string) => {
     setSelectedConversationId(conversationId);
     setMessagesData({ messages: [] }); // Clear previous messages
   }, []);
 
-  const createConversation = useCallback((
+  const createConversation = useCallback(async (
     type: 'DM' | 'GROUP',
     memberIds: string[],
     name?: string
   ) => {
-    createConversationMutation.mutate({
+    return await createConversationMutation.mutateAsync({
       type,
       memberIds,
       name,
@@ -264,6 +362,17 @@ export function useChat(currentUserId: string) {
   }, [selectedConversationId, markMentionsAsReadMutation]);
 
   const updateMessage = useCallback((messageId: string, content: string, mentionedUserIds: string[] = []) => {
+    // Optimistic update: Update message immediately in UI
+    setMessagesData(prev => ({
+      ...prev,
+      messages: prev.messages.map(msg =>
+        msg.id === messageId
+          ? { ...msg, content }
+          : msg
+      ),
+    }));
+
+    // Send update to server
     updateMessageMutation.mutate({
       messageId,
       content,
@@ -272,6 +381,13 @@ export function useChat(currentUserId: string) {
   }, [updateMessageMutation]);
 
   const deleteMessage = useCallback((messageId: string) => {
+    // Optimistic update: Remove message immediately from UI
+    setMessagesData(prev => ({
+      ...prev,
+      messages: prev.messages.filter(msg => msg.id !== messageId),
+    }));
+
+    // Send delete request to server
     deleteMessageMutation.mutate({
       messageId,
     });

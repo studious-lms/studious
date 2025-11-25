@@ -34,6 +34,7 @@ export default function ClassSettings() {
   const { id: classId } = useParams();
   const router = useRouter();
   const t = useTranslations('settings');
+  const utils = trpc.useUtils();
   const [isLoading, setIsLoading] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
   const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
@@ -50,8 +51,8 @@ export default function ClassSettings() {
   });
 
   // Get class data
-  const { data: classData, isLoading: classLoading, refetch } = trpc.class.get.useQuery({ 
-    classId: classId as string 
+  const { data: classData, isLoading: classLoading, refetch } = trpc.class.get.useQuery({
+    classId: classId as string
   });
 
   // Mutations
@@ -121,16 +122,19 @@ export default function ClassSettings() {
 
     try {
       setIsDeleting(true);
-      
+
       await deleteClassMutation.mutateAsync({
         classId: classId as string,
         id: classId as string // API expects both parameters
       });
-      
+
+      // Invalidate classes list cache to refresh the data
+      await utils.class.getAll.invalidate();
+
       toast.success(t('toasts.deleted.title'), {
         description: t('toasts.deleted.description')
       });
-      
+
       // Redirect to classes page
       router.push("/classes");
     } catch (error) {

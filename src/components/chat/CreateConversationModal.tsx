@@ -23,7 +23,7 @@ import { useTranslations } from "next-intl";
 interface CreateConversationModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  onCreateConversation: (type: 'DM' | 'GROUP', memberUsernames: string[], name?: string) => void;
+  onCreateConversation: (type: 'DM' | 'GROUP', memberUsernames: string[], name?: string) => Promise<any>;
   availableUsers: never[]; // Not used anymore for privacy
   isLoading?: boolean;
 }
@@ -64,18 +64,23 @@ export function CreateConversationModal({
     }
   };
 
-  const handleCreate = () => {
-    if (activeTab === "dm" && selectedUsernames.length === 1) {
-      onCreateConversation("DM", selectedUsernames);
-    } else if (activeTab === "group" && selectedUsernames.length >= 1 && groupName.trim()) {
-      onCreateConversation("GROUP", selectedUsernames, groupName.trim());
+  const handleCreate = async () => {
+    try {
+      if (activeTab === "dm" && selectedUsernames.length === 1) {
+        await onCreateConversation("DM", selectedUsernames);
+      } else if (activeTab === "group" && selectedUsernames.length >= 1 && groupName.trim()) {
+        await onCreateConversation("GROUP", selectedUsernames, groupName.trim());
+      }
+
+      // Reset form only after success
+      setSelectedUsernames([]);
+      setGroupName("");
+      setUsernameInput("");
+      setActiveTab("dm");
+    } catch (error) {
+      // Error is handled in parent component
+      // Don't reset form on error so user can retry
     }
-    
-    // Reset form
-    setSelectedUsernames([]);
-    setGroupName("");
-    setUsernameInput("");
-    setActiveTab("dm");
   };
 
   const handleClose = () => {
