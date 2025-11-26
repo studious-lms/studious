@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { PageLayout } from "@/components/ui/page-layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -140,6 +140,9 @@ export default function SubmissionDetailPage() {
   const [grade, setGrade] = useState<number | undefined>(undefined);
   const [rubricGrades, setRubricGrades] = useState<RubricGrade[]>([]);
 
+  // Track if form data has been initialized to prevent overwriting user input on refetch
+  const isFormInitialized = useRef(false);
+
   // File upload state for annotations
   const [isUploading, setIsUploading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
@@ -195,19 +198,19 @@ export default function SubmissionDetailPage() {
   }, [assignment?.markScheme]);
 
 
-  // Initialize form data from submission
+  // Initialize form data from submission (only on first load to prevent overwriting user input)
   useEffect(() => {
-    if (submission) {
+    if (submission && !isFormInitialized.current) {
       setFeedback((submission).teacherComments || "");
-      
+
       // Parse rubric grades if they exist
       if (submission.rubricState) {
         try {
           const existingGrades = JSON.parse(submission.rubricState);
           if (Array.isArray(existingGrades) && existingGrades.length > 0) {
             // Check if existing grades are compatible with current rubric criteria
-            const isCompatible = existingGrades.every(grade => 
-              rubricCriteria.some(criterion => 
+            const isCompatible = existingGrades.every(grade =>
+              rubricCriteria.some(criterion =>
                 criterion.id === grade.criteriaId &&
                 criterion.levels.some(level => level.id === grade.selectedLevelId)
               )
@@ -216,6 +219,7 @@ export default function SubmissionDetailPage() {
             if (isCompatible && existingGrades.length === rubricCriteria.length) {
               // Rubric state is compatible, use existing grades
               setRubricGrades(existingGrades);
+              isFormInitialized.current = true;
             } else {
               // Rubric state is incompatible, reset and initialize new grades
               console.log("Rubric state incompatible with current criteria, resetting...");
@@ -227,8 +231,10 @@ export default function SubmissionDetailPage() {
                   comments: ''
                 }));
                 setRubricGrades(initialGrades);
+                isFormInitialized.current = true;
               } else {
                 setGrade(submission.gradeReceived || undefined);
+                isFormInitialized.current = true;
               }
             }
           } else {
@@ -241,8 +247,10 @@ export default function SubmissionDetailPage() {
                 comments: ''
               }));
               setRubricGrades(initialGrades);
+              isFormInitialized.current = true;
             } else {
               setGrade(submission.gradeReceived || undefined);
+              isFormInitialized.current = true;
             }
           }
         } catch (error) {
@@ -250,6 +258,7 @@ export default function SubmissionDetailPage() {
           // Reset to manual grading on parse error
           setGrade(submission.gradeReceived || undefined);
           setRubricGrades([]);
+          isFormInitialized.current = true;
         }
       } else {
         // No rubric state, check if we need to initialize rubric or use manual grade
@@ -261,8 +270,10 @@ export default function SubmissionDetailPage() {
             comments: ''
           }));
           setRubricGrades(initialGrades);
+          isFormInitialized.current = true;
         } else {
           setGrade(submission.gradeReceived || undefined);
+          isFormInitialized.current = true;
         }
       }
     }

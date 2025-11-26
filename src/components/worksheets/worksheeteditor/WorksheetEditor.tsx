@@ -2,10 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
+import { useRouter } from "next/navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { 
+import {
   Plus,
   CheckCircle,
   FileText,
@@ -14,6 +15,7 @@ import {
   Save,
   Eye,
   Loader2,
+  ArrowLeft,
 } from "lucide-react";
 import { toast } from "sonner";
 import {
@@ -39,6 +41,7 @@ import { EmptyState } from "@/components/ui/empty-state";
 
 interface WorksheetEditorProps {
   worksheetId?: string;
+  classId?: string;
   initialTitle?: string;
   initialQuestions?: Question[];
 }
@@ -111,8 +114,9 @@ const convertQuestionToBackend = (q: Question): { answer: string; markScheme: an
   return { answer, markScheme };
 };
 
-export function WorksheetEditor({ worksheetId: propWorksheetId, initialTitle = "", initialQuestions = [] }: WorksheetEditorProps) {
+export function WorksheetEditor({ worksheetId: propWorksheetId, classId, initialTitle = "", initialQuestions = [] }: WorksheetEditorProps) {
   const t = useTranslations('worksheets');
+  const router = useRouter();
 
   // Load worksheet data if worksheetId is provided
   const worksheetQuery = propWorksheetId ? trpc.worksheet.getWorksheet.useQuery({
@@ -563,6 +567,16 @@ export function WorksheetEditor({ worksheetId: propWorksheetId, initialTitle = "
         <div className="flex flex-col gap-3">
           {/* Title Row */}
           <div className="flex items-center justify-between gap-4">
+            {classId && (
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => router.push(`/class/${classId}/worksheets`)}
+                className="flex-shrink-0"
+              >
+                <ArrowLeft className="h-4 w-4" />
+              </Button>
+            )}
             <div className="flex-1 min-w-0">
               <Input
                 value={title}
