@@ -312,7 +312,7 @@ export default function Grades() {
           <Input
             type="number"
             value={effectiveWeight}
-            onChange={(e) => setEdit(assignment.id, "weight", parseInt(e.target.value) || 0)}
+            onChange={(e) => setEdit(assignment.id, "weight", parseFloat(e.target.value) || 0)}
             className="w-16 text-center border-0 bg-transparent hover:bg-muted/50 focus:bg-background focus:border-input"
             min="0"
             step="0.1"
