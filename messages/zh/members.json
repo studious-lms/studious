@@ -58,6 +58,13 @@
       "changeRoleFailed": "角色变更失败",
       "removeFailed": "移除成员失败",
       "failedToLoad": "成员加载失败"
+    },
+    "profile": {
+      "title": "用户资料",
+      "description": "查看成员资料信息",
+      "information": "资料信息",
+      "location": "位置",
+      "website": "网站"
     }
   }
 }

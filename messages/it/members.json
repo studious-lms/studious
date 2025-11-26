@@ -58,6 +58,13 @@
       "changeRoleFailed": "Impossibile cambiare ruolo",
       "removeFailed": "Impossibile rimuovere il membro",
       "failedToLoad": "Impossibile caricare i membri"
+    },
+    "profile": {
+      "title": "Profilo Utente",
+      "description": "Visualizza le informazioni del profilo del membro",
+      "information": "Informazioni Profilo",
+      "location": "Posizione",
+      "website": "Sito Web"
     }
   }
 }

@@ -83,8 +83,16 @@ export default function Grades() {
     }, { enabled: !!student.id })
   );
 
-  const deleteMarkscheme = trpc.class.deleteMarkScheme.useMutation();
-  const deleteGradingBoundary = trpc.class.deleteGradingBoundary.useMutation();
+  const deleteMarkscheme = trpc.class.deleteMarkScheme.useMutation({
+    onSuccess: () => {
+      refetchMarkschemes();
+    },
+  });
+  const deleteGradingBoundary = trpc.class.deleteGradingBoundary.useMutation({
+    onSuccess: () => {
+      refetchGrading();
+    },
+  });
 
   // Preview handlers
   const handlePreviewMarkscheme = (markscheme: MarkScheme) => {
@@ -312,7 +320,7 @@ export default function Grades() {
           <Input
             type="number"
             value={effectiveWeight}
-            onChange={(e) => setEdit(assignment.id, "weight", parseInt(e.target.value) || 0)}
+            onChange={(e) => setEdit(assignment.id, "weight", parseFloat(e.target.value) || 0)}
             className="w-16 text-center border-0 bg-transparent hover:bg-muted/50 focus:bg-background focus:border-input"
             min="0"
             step="0.1"
@@ -660,7 +668,6 @@ export default function Grades() {
                       <Button size="sm" variant="ghost" onClick={() => {
                         if (confirm(t("confirm.deleteGradingBoundary"))) {
                           deleteGradingBoundary.mutate({ classId: classId as string, gradingBoundaryId: boundary.id });
-                          refetchGrading();
                         }
                       }} disabled={deleteGradingBoundary.isPending} title={t("actions.delete")}>
                         <Trash2 className="h-4 w-4" />
@@ -714,7 +721,6 @@ export default function Grades() {
                       <Button size="sm" variant="ghost" onClick={() => {
                         if (confirm(t("confirm.deleteRubric"))) {
                           deleteMarkscheme.mutate({ classId: classId as string, markSchemeId: markscheme.id });
-                          refetchMarkschemes();
                         }
                       }} disabled={deleteMarkscheme.isPending} title={t("actions.delete")}>
                         <Trash2 className="h-4 w-4" />

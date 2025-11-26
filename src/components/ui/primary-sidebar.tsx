@@ -25,7 +25,9 @@ import {
 import { NotificationBell } from "@/components/notifications";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { deleteCookie } from "cookies-next";
+import { setAuth } from "@/store/appSlice";
 import { RootState } from "@/store/store";
 import { trpc } from "@/lib/trpc";
 import { useChat } from "@/hooks/useChat";
@@ -66,15 +68,47 @@ export function PrimarySidebar({ isAuthenticated = false, user }: PrimarySidebar
   const t = useTranslations('navigation');
   const pathname = usePathname();
   const appState = useSelector((state: RootState) => state.app);
+  const dispatch = useDispatch();
   const [showChatServers, setShowChatServers] = useState(false);
   const [profileMenuOpen, setProfileMenuOpen] = useState(false);
   const router = useRouter();
   const isMobile = useIsMobile();
-  const logoutMutation = trpc.auth.logout.useMutation({
-    onSuccess: () => {
-      router.push("/login");
+  const utils = trpc.useUtils();
+
+  const handleLogout = async () => {
+    try {
+      await logoutMutation.mutateAsync();
+    } catch (error) {
+      // Continue with logout even if the API call fails
+      console.error('Logout API error:', error);
     }
-  });
+
+    // Clear the token cookie
+    deleteCookie('token');
+
+    // Reset Redux store
+    dispatch(setAuth({
+      loggedIn: false,
+      teacher: false,
+      student: false,
+      role: 'NONE',
+      username: '',
+      displayName: '',
+      location: '',
+      website: '',
+      id: '',
+      bio: '',
+      profilePicture: '',
+    }));
+
+    // Clear all tRPC query cache
+    utils.invalidate();
+
+    // Navigate to login page
+    router.push("/login");
+  };
+
+  const logoutMutation = trpc.auth.logout.useMutation();
   
   const navigationItems = getNavigationItems(t);
 
@@ -261,8 +295,8 @@ export function PrimarySidebar({ isAuthenticated = false, user }: PrimarySidebar
               <div className="p-2 border-t">
                 <button
                   onClick={() => {
-                    logoutMutation.mutate();
                     setProfileMenuOpen(false);
+                    handleLogout();
                   }}
                   className="w-full flex items-center gap-3 px-3 py-2 rounded-md text-sm hover:bg-destructive/10 transition-colors text-destructive"
                 >
@@ -446,10 +480,8 @@ export function PrimarySidebar({ isAuthenticated = false, user }: PrimarySidebar
               </div>
               <DropdownMenuSeparator />
               <div className="p-1">
-                <DropdownMenuItem 
-                  onClick={() => {
-                    logoutMutation.mutate();
-                  }}
+                <DropdownMenuItem
+                  onClick={() => handleLogout()}
                   className="cursor-pointer text-destructive focus:text-destructive focus:bg-destructive/10"
                 >
                   <LogOut className="mr-3 h-4 w-4" />

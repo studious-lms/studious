@@ -23,9 +23,12 @@ export default function CreateWorksheet() {
   const [worksheetName, setWorksheetName] = useState("");
   const [isCreating, setIsCreating] = useState(false);
 
+  const utils = trpc.useUtils();
   const createWorksheetMutation = trpc.worksheet.create.useMutation({
     onSuccess: (data) => {
       toast.success(t('create.toasts.created'));
+      // Invalidate the worksheets list cache so the new worksheet shows up
+      utils.worksheet.listWorksheets.invalidate({ classId: classId as string });
       router.push(`/class/${classId}/worksheets/edit/${data.id}`);
     },
     onError: (error) => {

@@ -58,6 +58,13 @@
       "changeRoleFailed": "ไม่สามารถเปลี่ยนบทบาทได้",
       "removeFailed": "ไม่สามารถลบสมาชิกได้",
       "failedToLoad": "ไม่สามารถโหลดสมาชิกได้"
+    },
+    "profile": {
+      "title": "โปรไฟล์ผู้ใช้",
+      "description": "ดูข้อมูลโปรไฟล์สมาชิก",
+      "information": "ข้อมูลโปรไฟล์",
+      "location": "ที่ตั้ง",
+      "website": "เว็บไซต์"
     }
   }
 }

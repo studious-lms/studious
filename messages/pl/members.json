@@ -58,6 +58,13 @@
       "changeRoleFailed": "Nie udało się zmienić roli",
       "removeFailed": "Nie udało się usunąć członka",
       "failedToLoad": "Nie udało się załadować członków"
+    },
+    "profile": {
+      "title": "Profil Użytkownika",
+      "description": "Wyświetl informacje o profilu członka",
+      "information": "Informacje o Profilu",
+      "location": "Lokalizacja",
+      "website": "Strona Internetowa"
     }
   }
 }

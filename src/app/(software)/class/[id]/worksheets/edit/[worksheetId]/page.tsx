@@ -62,7 +62,7 @@ export default function EditWorksheet() {
   }
 
   return (
-    <WorksheetEditor worksheetId={worksheetId as string} />
+    <WorksheetEditor worksheetId={worksheetId as string} classId={classId as string} />
   );
 }
 

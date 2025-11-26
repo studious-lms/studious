@@ -70,7 +70,7 @@ export default function Worksheets() {
   // Worksheet table columns
   const worksheetColumns: ColumnDef<Worksheet>[] = [
     {
-      accessorKey: "title",
+      accessorKey: "name",
       header: t('columns.title'),
       cell: ({ row }) => {
         const worksheet = row.original;
@@ -190,7 +190,7 @@ export default function Worksheets() {
             <DataTable
               columns={worksheetColumns}
               data={filteredWorksheets || []}
-              searchKey="title"
+              searchKey="name"
               searchPlaceholder={t('search.placeholder')}
             />
           ) : (
