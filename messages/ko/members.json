@@ -58,6 +58,13 @@
       "changeRoleFailed": "역할 변경에 실패했습니다",
       "removeFailed": "회원 삭제에 실패했습니다",
       "failedToLoad": "멤버를 불러오지 못했습니다."
+    },
+    "profile": {
+      "title": "사용자 프로필",
+      "description": "회원 프로필 정보 보기",
+      "information": "프로필 정보",
+      "location": "위치",
+      "website": "웹사이트"
     }
   }
 }

@@ -58,6 +58,13 @@
       "changeRoleFailed": "Não foi possível alterar a função",
       "removeFailed": "Falha ao remover membro",
       "failedToLoad": "Falha ao carregar membros"
+    },
+    "profile": {
+      "title": "Perfil do Usuário",
+      "description": "Ver informações do perfil do membro",
+      "information": "Informações do Perfil",
+      "location": "Localização",
+      "website": "Site"
     }
   }
 }

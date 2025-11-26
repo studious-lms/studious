@@ -8,11 +8,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Skeleton } from "@/components/ui/skeleton";
 import { EmptyState } from "@/components/ui/empty-state";
 import { 
-  UserPlus, 
   Search, 
   Copy, 
   MoreHorizontal,
@@ -20,7 +20,9 @@ import {
   UserX,
   Shield,
   User, 
-  RefreshCcw
+  RefreshCcw,
+  MapPin,
+  Globe
 } from "lucide-react";
 import {
   DropdownMenu,
@@ -29,13 +31,24 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { RouterOutputs, trpc } from "@/lib/trpc";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { toast } from "sonner";
+<<<<<<< HEAD
 import { useParams, useRouter } from "next/navigation";
 import { useChat } from "@/hooks/useChat";
 type MemberFilter = 'all' | 'teachers' | 'students';
+=======
+import { useParams } from "next/navigation";
+>>>>>>> 7058d5b (fix: No.26,27,28,30 issues)
 
 // Skeleton component for member cards
 const MemberCardSkeleton = () => (
@@ -106,6 +119,19 @@ export default function Members() {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
   const [activeTab, setActiveTab] = useState("students");
+  const [selectedUser, setSelectedUser] = useState<{
+    id: string;
+    username: string;
+    profile?: {
+      displayName?: string | null;
+      bio?: string | null;
+      location?: string | null;
+      website?: string | null;
+      profilePicture?: string | null;
+    } | null;
+    type: 'teacher' | 'student';
+  } | null>(null);
+  const [isProfileDialogOpen, setIsProfileDialogOpen] = useState(false);
   
   const appState = useSelector((state: RootState) => state.app);
   const user = appState.user;
@@ -220,6 +246,16 @@ export default function Members() {
       default:
         return <Badge variant="outline">{t('labels.student')}</Badge>;
     }
+  };
+
+  const handleViewProfile = (member: RouterOutputs["class"]["get"]['class']['students'][number] | RouterOutputs["class"]["get"]['class']['teachers'][number], type: 'teacher' | 'student') => {
+    setSelectedUser({
+      id: member.id,
+      username: member.username,
+      profile: member.profile,
+      type,
+    });
+    setIsProfileDialogOpen(true);
   };
 
   // Show skeleton loading
@@ -361,6 +397,16 @@ export default function Members() {
                               </Button>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent align="end">
+<<<<<<< HEAD
+=======
+                              <DropdownMenuItem onClick={() => handleViewProfile(student, 'student')}>
+                                <User className="mr-2 h-4 w-4" />
+                                {t('actions.viewProfile')}
+                              </DropdownMenuItem>
+                              <DropdownMenuItem>
+                                {t('actions.viewGrades')}
+                              </DropdownMenuItem>
+>>>>>>> 7058d5b (fix: No.26,27,28,30 issues)
                               <DropdownMenuItem
                                 onClick={() => handleRoleChange(student.id, 'teacher')}
                               >
@@ -439,6 +485,13 @@ export default function Members() {
                               </Button>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent align="end">
+<<<<<<< HEAD
+=======
+                              <DropdownMenuItem onClick={() => handleViewProfile(teacher, 'teacher')}>
+                                <User className="mr-2 h-4 w-4" />
+                                {t('actions.viewProfile')}
+                              </DropdownMenuItem>
+>>>>>>> 7058d5b (fix: No.26,27,28,30 issues)
                               <DropdownMenuItem
                                 onClick={() => handleRoleChange(teacher.id, 'student')}
                               >
@@ -476,6 +529,76 @@ export default function Members() {
           )}
         </TabsContent>
       </Tabs>
+
+      {/* Profile Dialog */}
+      <Dialog open={isProfileDialogOpen} onOpenChange={setIsProfileDialogOpen}>
+        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle>{t('profile.title')}</DialogTitle>
+            <DialogDescription>
+              {t('profile.description')}
+            </DialogDescription>
+          </DialogHeader>
+          
+          {selectedUser && (
+            <div className="space-y-6">
+              {/* Profile Header */}
+              <div className="flex items-center space-x-4">
+                <Avatar className="h-20 w-20">
+                  <AvatarImage src={selectedUser.profile?.profilePicture || ""} />
+                  <AvatarFallback>
+                    {selectedUser.username.split(' ').map(n => n[0]).join('').toUpperCase()}
+                  </AvatarFallback>
+                </Avatar>
+                <div className="space-y-2">
+                  <div className="flex items-center space-x-3">
+                    <h3 className="text-2xl font-bold">
+                      {selectedUser.profile?.displayName || selectedUser.username}
+                    </h3>
+                    {getRoleBadge(selectedUser.type)}
+                  </div>
+                  <p className="text-muted-foreground">@{selectedUser.username}</p>
+                  {selectedUser.profile?.bio && (
+                    <p className="text-sm">{selectedUser.profile.bio}</p>
+                  )}
+                </div>
+              </div>
+
+              <Separator />
+
+              {/* Profile Information */}
+              <div className="space-y-4">
+                <h4 className="font-semibold">{t('profile.information')}</h4>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {selectedUser.profile?.location && (
+                    <div className="flex items-center space-x-2 text-sm">
+                      <MapPin className="h-4 w-4 text-muted-foreground" />
+                      <span className="text-muted-foreground">{t('profile.location')}:</span>
+                      <span>{selectedUser.profile.location}</span>
+                    </div>
+                  )}
+                  
+                  {selectedUser.profile?.website && (
+                    <div className="flex items-center space-x-2 text-sm">
+                      <Globe className="h-4 w-4 text-muted-foreground" />
+                      <span className="text-muted-foreground">{t('profile.website')}:</span>
+                      <a 
+                        href={selectedUser.profile.website} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-primary hover:underline"
+                      >
+                        {selectedUser.profile.website}
+                      </a>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </PageLayout>
   );
 }

@@ -58,6 +58,13 @@
       "changeRoleFailed": "No se pudo cambiar el rol",
       "removeFailed": "No se pudo eliminar el miembro",
       "failedToLoad": "No se pudieron cargar los miembros"
+    },
+    "profile": {
+      "title": "Perfil de Usuario",
+      "description": "Ver información del perfil del miembro",
+      "information": "Información del Perfil",
+      "location": "Ubicación",
+      "website": "Sitio Web"
     }
   }
 }

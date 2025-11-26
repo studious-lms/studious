@@ -58,6 +58,13 @@
       "changeRoleFailed": "Gagal menukar peranan",
       "removeFailed": "Gagal mengalih keluar ahli",
       "failedToLoad": "Gagal memuatkan ahli"
+    },
+    "profile": {
+      "title": "Profil Pengguna",
+      "description": "Lihat maklumat profil ahli",
+      "information": "Maklumat Profil",
+      "location": "Lokasi",
+      "website": "Laman Web"
     }
   }
 }

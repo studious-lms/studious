@@ -58,6 +58,13 @@
       "changeRoleFailed": "فشل في تغيير الدور",
       "removeFailed": "فشل في إزالة العضو",
       "failedToLoad": "فشل تحميل الأعضاء"
+    },
+    "profile": {
+      "title": "الملف الشخصي للمستخدم",
+      "description": "عرض معلومات ملف العضو الشخصي",
+      "information": "معلومات الملف الشخصي",
+      "location": "الموقع",
+      "website": "الموقع الإلكتروني"
     }
   }
 }

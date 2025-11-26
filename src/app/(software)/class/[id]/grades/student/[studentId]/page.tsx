@@ -48,6 +48,7 @@ export default function StudentGrades() {
   // Grade table columns
   const gradeColumns: ColumnDef<RouterOutputs["class"]["getGrades"]["grades"][number]>[] = [
     {
+      id: "assignmentTitle",
       accessorKey: "assignment.title",
       header: t('table.assignment'),
       cell: ({ row }) => {
@@ -57,6 +58,12 @@ export default function StudentGrades() {
             {grade.assignment.title}
           </div>
         );
+      },
+      filterFn: (row, id, value) => {
+        const searchValue = String(value || '').toLowerCase().trim();
+        if (!searchValue) return true;
+        const assignmentTitle = row.original.assignment.title?.toLowerCase() || '';
+        return assignmentTitle.includes(searchValue);
       },
     },
     {
@@ -418,7 +425,7 @@ export default function StudentGrades() {
             <DataTable
               columns={gradeColumns}
               data={grades}
-              searchKey="assignment.title"
+              searchKey="assignmentTitle"
               searchPlaceholder={t('searchPlaceholder')}
             />
           )}

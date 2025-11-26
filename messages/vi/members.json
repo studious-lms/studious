@@ -58,6 +58,13 @@
       "changeRoleFailed": "Không thể thay đổi vai trò",
       "removeFailed": "Không xóa được thành viên",
       "failedToLoad": "Không tải được thành viên"
+    },
+    "profile": {
+      "title": "Hồ sơ Người dùng",
+      "description": "Xem thông tin hồ sơ thành viên",
+      "information": "Thông tin Hồ sơ",
+      "location": "Vị trí",
+      "website": "Trang Web"
     }
   }
 }

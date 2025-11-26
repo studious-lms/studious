@@ -58,6 +58,13 @@
       "changeRoleFailed": "Misslyckades med att byta roll",
       "removeFailed": "Misslyckades med att ta bort medlem",
       "failedToLoad": "Misslyckades med att ladda medlemmar"
+    },
+    "profile": {
+      "title": "Användarprofil",
+      "description": "Visa medlemsprofilinformation",
+      "information": "Profilinformation",
+      "location": "Plats",
+      "website": "Webbplats"
     }
   }
 }

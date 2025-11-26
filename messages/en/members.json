@@ -58,6 +58,13 @@
       "changeRoleFailed": "Failed to change role",
       "removeFailed": "Failed to remove member",
       "failedToLoad": "Failed to load members"
+    },
+    "profile": {
+      "title": "User Profile",
+      "description": "View member profile information",
+      "information": "Profile Information",
+      "location": "Location",
+      "website": "Website"
     }
   }
 }

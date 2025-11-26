@@ -58,6 +58,13 @@
       "changeRoleFailed": "Échec du changement de rôle",
       "removeFailed": "Échec de la suppression du membre",
       "failedToLoad": "Échec du chargement des membres"
+    },
+    "profile": {
+      "title": "Profil Utilisateur",
+      "description": "Voir les informations du profil du membre",
+      "information": "Informations du Profil",
+      "location": "Localisation",
+      "website": "Site Web"
     }
   }
 }

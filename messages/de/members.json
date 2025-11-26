@@ -58,6 +58,13 @@
       "changeRoleFailed": "Rollenwechsel fehlgeschlagen",
       "removeFailed": "Mitglied konnte nicht entfernt werden",
       "failedToLoad": "Mitglieder konnten nicht geladen werden"
+    },
+    "profile": {
+      "title": "Benutzerprofil",
+      "description": "Mitgliedsprofilinformationen anzeigen",
+      "information": "Profilinformationen",
+      "location": "Standort",
+      "website": "Website"
     }
   }
 }

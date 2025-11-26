@@ -58,6 +58,13 @@
       "changeRoleFailed": "Het is niet gelukt om de rol te veranderen",
       "removeFailed": "Lid verwijderen mislukt",
       "failedToLoad": "Het laden van leden is mislukt"
+    },
+    "profile": {
+      "title": "Gebruikersprofiel",
+      "description": "Bekijk lid profielinformatie",
+      "information": "Profielinformatie",
+      "location": "Locatie",
+      "website": "Website"
     }
   }
 }

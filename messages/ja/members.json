@@ -58,6 +58,13 @@
       "changeRoleFailed": "役割の変更に失敗しました",
       "removeFailed": "メンバーの削除に失敗しました",
       "failedToLoad": "メンバーの読み込みに失敗しました"
+    },
+    "profile": {
+      "title": "ユーザープロフィール",
+      "description": "メンバーのプロフィール情報を表示",
+      "information": "プロフィール情報",
+      "location": "場所",
+      "website": "ウェブサイト"
     }
   }
 }
