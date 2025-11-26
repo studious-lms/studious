@@ -334,10 +334,10 @@ export default function Profile() {
                   <h2 className="text-2xl font-bold">
                     {profile?.profile?.displayName || profile?.username}
                   </h2>
-                  <Badge variant="secondary" className="flex items-center space-x-1">
+                  {/* <Badge variant="secondary" className="flex items-center space-x-1">
                     <GraduationCap className="h-3 w-3" />
                     <span>{t('student')}</span>
-                  </Badge>
+                  </Badge> */}
                 </div>
                 <p className="text-muted-foreground">@{profile?.username}</p>
                 {profile?.profile?.bio && (

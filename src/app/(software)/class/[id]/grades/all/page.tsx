@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
-import { Avatar } from "@/components/ui/avatar";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { EmptyState } from "@/components/ui/empty-state";
 import { 
   ArrowLeft,
@@ -49,7 +49,10 @@ export default function AllStudentsGrades() {
         return (
           <div className="flex items-center space-x-3">
             <Avatar className="h-8 w-8">
-              <img src={student.profile?.profilePicture || ""} alt={student.username} />
+              <AvatarImage src={student.profile?.profilePicture || ""} alt={student.username} />
+              <AvatarFallback>
+                {student.username.split(' ').map(n => n[0]).join('').toUpperCase() || student.username.charAt(0).toUpperCase()}
+              </AvatarFallback>
             </Avatar>
             <span className="font-medium">{student.username}</span>
           </div>

@@ -58,6 +58,13 @@
       "changeRoleFailed": "Nu s-a putut schimba rolul",
       "removeFailed": "Nu s-a putut elimina membrul",
       "failedToLoad": "Nu s-au putut încărca membrii"
+    },
+    "profile": {
+      "title": "Profil Utilizator",
+      "description": "Vizualizați informațiile profilului membrului",
+      "information": "Informații Profil",
+      "location": "Locație",
+      "website": "Site Web"
     }
   }
 }

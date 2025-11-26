@@ -77,7 +77,7 @@ export function useChat(currentUserId: string) {
                 id: newMessage.id,
                 createdAt: typeof newMessage.createdAt === 'string'
                   ? newMessage.createdAt
-                  : newMessage.createdAt.toISOString(),
+                  : (newMessage.createdAt as Date).toISOString(),
                 sender: newMessage.sender,
               }
             : msg

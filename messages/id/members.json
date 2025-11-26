@@ -58,6 +58,13 @@
       "changeRoleFailed": "Gagal mengubah peran",
       "removeFailed": "Gagal menghapus anggota",
       "failedToLoad": "Gagal memuat anggota"
+    },
+    "profile": {
+      "title": "Profil Pengguna",
+      "description": "Lihat informasi profil anggota",
+      "information": "Informasi Profil",
+      "location": "Lokasi",
+      "website": "Situs Web"
     }
   }
 }

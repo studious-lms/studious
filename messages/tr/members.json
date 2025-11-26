@@ -58,6 +58,13 @@
       "changeRoleFailed": "Rol değiştirilemedi",
       "removeFailed": "Üye kaldırılamadı",
       "failedToLoad": "Üyeler yüklenemedi"
+    },
+    "profile": {
+      "title": "Kullanıcı Profili",
+      "description": "Üye profil bilgilerini görüntüle",
+      "information": "Profil Bilgileri",
+      "location": "Konum",
+      "website": "Web Sitesi"
     }
   }
 }
