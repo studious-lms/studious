@@ -109,7 +109,8 @@ export function useChat(currentUserId: string) {
 
   const updateMessageMutation = trpc.message.update.useMutation({
     onSuccess: () => {
-      // Message already updated optimistically
+      // Invalidate message cache to ensure updated content persists across navigation
+      utils.message.list.invalidate({ conversationId: selectedConversationId! });
     },
     onError: (error, variables) => {
       // Revert optimistic update on error
@@ -119,7 +120,8 @@ export function useChat(currentUserId: string) {
 
   const deleteMessageMutation = trpc.message.delete.useMutation({
     onSuccess: () => {
-      // Message already removed optimistically
+      // Invalidate message cache to ensure deletion persists across navigation
+      utils.message.list.invalidate({ conversationId: selectedConversationId! });
     },
     onError: (error, variables) => {
       // Revert optimistic deletion on error
