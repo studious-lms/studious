@@ -55,7 +55,7 @@
     "creating": "Skapande...",
     "updating": "Uppdaterar...",
     "created": "Matris skapad",
-    "updated": "Matrisen har uppdaterats",
+    "updated": "Matris uppdaterad",
     "createFailed": "Misslyckades med att skapa bedömningsmatris",
     "updateFailed": "Misslyckades med att uppdatera bedömningsmatrisen",
     "errorNameRequired": "Ange ett namn och minst ett kriterium"

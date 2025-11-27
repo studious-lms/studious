@@ -36,8 +36,8 @@
       }
     },
     "table": {
-      "assignment": "Incarico",
-      "dueDate": "Due date",
+      "assignment": "Assegnazione",
+      "dueDate": "Due Date",
       "points": "Punti",
       "weight": "Peso",
       "status": "Stato",

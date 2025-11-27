@@ -6,7 +6,7 @@
     "attachFile": "Adjuntar archivo",
     "post": "Correo",
     "posting": "Destino...",
-    "noPosts": "Aún no hay publicaciones.",
-    "createFirstPost": "Crear primera publicación"
+    "noPosts": "No hay publicaciones todavía",
+    "createFirstPost": "Crear la primera publicación"
   }
 }

@@ -142,7 +142,7 @@
     "conversationList": {
       "title": "Direktnachrichten",
       "searchPlaceholder": "Finden oder beginnen Sie ein Gespräch",
-      "noConversations": "Bisher keine Konversationen.",
+      "noConversations": "Bisher keine Konversationen",
       "noConversationsDescription": "Beginne ein Gespräch mit jemandem",
       "noSearchResults": "Keine Konversationen gefunden",
       "noSearchResultsDescription": "Probieren Sie andere Suchbegriffe.",
@@ -222,7 +222,7 @@
     "chooseClass": "Wähle einen Kurs",
     "noTeacherClasses": "Sie haben keine Kurse, in denen Sie als Lehrer tätig sind.",
     "eventName": "Veranstaltungsname *",
-    "eventNamePlaceholder": "Geben Sie den Veranstaltungsnamen ein.",
+    "eventNamePlaceholder": "Geben Sie den Veranstaltungsnamen ein",
     "startDateTime": "Startdatum und -uhrzeit *",
     "endDateTime": "Enddatum und -uhrzeit *",
     "pickDate": "Wählen Sie ein Datum",

@@ -13,7 +13,7 @@
     "filter": "Filtre",
     "sort": "Düzenlemek",
     "viewAll": "Tümünü Görüntüle",
-    "noData": "Veri yok",
+    "noData": "Veri mevcut değil",
     "export": "İhracat",
     "openMenu": "Menüyü aç"
   },
@@ -49,13 +49,11 @@
       "title": "Hesabınızı oluşturun",
       "subtitle": "Studious'a katılın ve öğrenmeye başlayın",
       "signUp": "Üye olmak",
-      "firstName": "İlk adı",
-      "lastName": "Soy isim",
+      "username": "Kullanıcı adı",
       "email": "E-posta",
       "password": "Şifre",
       "confirmPassword": "Şifreyi Onayla",
-      "firstNamePlaceholder": "İlk adı",
-      "lastNamePlaceholder": "Soy isim",
+      "usernamePlaceholder": "Kullanıcı adınızı girin",
       "emailPlaceholder": "E-postanızı girin",
       "passwordPlaceholder": "Bir şifre oluşturun",
       "confirmPasswordPlaceholder": "Şifrenizi onaylayın",
@@ -68,9 +66,10 @@
       "alreadyHaveAccount": "Zaten bir hesabınız var mı?",
       "signIn": "Giriş yap",
       "passwordMismatch": "Şifreler eşleşmiyor",
+      "passwordTooShort": "Şifre en az 6 karakter uzunluğunda olmalıdır",
       "termsRequired": "Şartları kabul etmelisiniz",
-      "accountCreated": "Hesap başarıyla oluşturuldu!",
-      "signUpFailed": "Hesap oluşturulamadı"
+      "verificationEmailSent": "Doğrulama e-postası gönderildi!",
+      "signUpFailed": "Hesap oluşturulamadı. Lütfen tekrar deneyin."
     },
     "verification": {
       "notVerified": "Hesap Doğrulanmadı",
@@ -82,12 +81,53 @@
       "checkInbox": "Lütfen gelen kutunuzu ve spam klasörünüzü kontrol edin.",
       "enterEmail": "E-posta adresinizi girin",
       "sending": "Gönderiliyor...",
-      "sendEmail": "E-posta gönder"
+      "sendEmail": "E-posta gönder",
+      "title": "E-postanızı Doğrulayın",
+      "subtitle": "E-posta adresinizi doğrulamak için aşağıdaki butona tıklayın",
+      "verifying": "Doğrulanıyor...",
+      "verifyEmail": "E-postayı Doğrula",
+      "successTitle": "E-posta Başarıyla Doğrulandı",
+      "successMessage": "E-postanız doğrulandı. Artık hesabınıza giriş yapabilirsiniz.",
+      "errorTitle": "Doğrulama Başarısız Oldu",
+      "errorMessage": "Doğrulama bağlantısı geçersiz veya süresi dolmuş. Lütfen yeni bir doğrulama e-postası talep edin.",
+      "invalidToken": "Geçersiz doğrulama belirteci"
+    },
+    "forgotPassword": {
+      "title": "Şifrenizi Sıfırlayın",
+      "subtitle": "E-posta adresinizi girin, size şifrenizi sıfırlamanız için bir bağlantı gönderelim",
+      "email": "E-posta",
+      "emailPlaceholder": "E-posta adresinizi girin",
+      "sendResetLink": "Sıfırlama Bağlantısını Gönder",
+      "sending": "Gönderiliyor...",
+      "backToSignIn": "Oturum Açmaya Geri Dön",
+      "successTitle": "E-postanızı Kontrol Edin",
+      "successMessage": "Eğer bu e-postayla bir hesabınız varsa, size bir şifre sıfırlama bağlantısı gönderdik.",
+      "checkInbox": "Lütfen sıfırlama bağlantısı için gelen kutunuzu ve spam klasörünüzü kontrol edin.",
+      "errorMessage": "Sıfırlama bağlantısı gönderilemedi. Lütfen tekrar deneyin.",
+      "invalidEmail": "Geçerli bir e"
+    },
+    "resetPassword": {
+      "title": "Şifrenizi Sıfırlayın",
+      "subtitle": "Yeni şifrenizi aşağıya girin",
+      "password": "Yeni Şifre",
+      "passwordPlaceholder": "Yeni şifrenizi girin",
+      "confirmPassword": "Şifreyi Onayla",
+      "confirmPasswordPlaceholder": "Yeni şifrenizi onaylayın",
+      "resetPassword": "Şifreyi Sıfırla",
+      "resetting": "Sıfırlanıyor...",
+      "passwordTooShort": "Şifre en az 6 karakter uzunluğunda olmalıdır",
+      "passwordsDoNotMatch": "Şifreler eşleşmiyor",
+      "successTitle": "Şifre Sıfırlama Başarılı",
+      "successMessage": "Şifreniz başarıyla sıfırlandı. Artık yeni şifrenizle oturum açabilirsiniz.",
+      "backToSignIn": "Oturum Açmaya Geri Dön"
     }
   },
   "marketing": {
     "navbar": {
-      "requestEarlyAccess": "Erken Erişim Talebinde Bulunun"
+      "requestEarlyAccess": "Erken Erişim Talebinde Bulunun",
+      "lightMode": "Açık moda geç",
+      "darkMode": "Karanlık moda geç",
+      "languageSelector": "Dil seçin"
     },
     "hero": {
       "badge": "Modern Öğrenme Platformu",
@@ -229,6 +269,132 @@
       "requestAccess": "Erişim Talebinde Bulunun",
       "partnerWithUs": "Bizimle Ortak Olun",
       "tagline": "Çalışkan Öğrenme Yönetim Sistemi (LMS) — Modern Öğrenme, Basitleştirildi."
+    },
+    "privacyPolicy": {
+      "title": "Gizlilik Politikası",
+      "lastUpdated": "Son Güncelleme: Kasım 2025",
+      "sections": {
+        "introduction": {
+          "title": "1. Giriş",
+          "content": "Studious LMS ('biz', 'bizim' veya 'bize'), gizliliğinizi korumayı taahhüt eder. Bu Gizlilik Politikası, öğrenme yönetim sistemimizi ve ilgili hizmetleri (toplu olarak 'Hizmet') kullandığınızda bilgilerinizi nasıl topladığımızı, kullandığımızı, ifşa ettiğimizi ve koruduğumuzu açıklamaktadır. Lütfen bu Gizlilik Politikasını dikkatlice okuyun. Hizmetimizi kullanarak, bilgilerin bu politikaya uygun olarak toplanmasını ve kullanılmasını kabul etmiş olursunuz."
+        },
+        "informationWeCollect": {
+          "title": "2. Topladığımız Bilgiler",
+          "content": "Doğrudan bize sağladığınız bilgileri topluyoruz. Bunlara şunlar dahildir:\n\n• Hesap Bilgileri: Kullanıcı adı, e-posta adresi, şifre ve profil bilgileri\n• Eğitim Verileri: Sınıf kayıtları, ödevler, notlar, devam kayıtları ve akademik ilerleme\n• İletişim Verileri: Platform içindeki mesajlar, duyurular ve diğer iletişimler\n• Kullanım Verileri: Ziyaret edilen sayfalar ve kullanılan özellikler dahil olmak üzere Hizmetimizle nasıl etkileşim kurduğunuza ilişkin bilgiler\n• Cihaz Bilgileri: IP adresi, tarayıcı türü, cihaz tanımlayıcıları ve işletim sistemi\n• Çerezler ve İzleme Teknolojileri: Deneyiminizi geliştirmek ve kullanım kalıplarını analiz etmek için çerezler ve benzer teknolojiler kullanıyoruz"
+        },
+        "howWeUseInformation": {
+          "title": "3. Bilgilerinizi Nasıl Kullanıyoruz?",
+          "content": "Topladığımız bilgileri şu amaçlarla kullanıyoruz:\n\n• Hizmetimizi sağlamak, sürdürmek ve iyileştirmek\n• İşlemleri gerçekleştirmek ve hesabınızı yönetmek\n• Öğretmenler, öğrenciler ve yöneticiler arasındaki iletişimi kolaylaştırmak\n• Eğitim içeriği, ödevler ve notlar oluşturmak ve yönetmek\n• Hesabınız ve Hizmet hakkında önemli bildirimler göndermek\n• Kullanıcı deneyimini iyileştirmek için kullanım modellerini analiz etmek\n• Güvenliği sağlamak ve dolandırıcılığı önlemek\n• Yasal yükümlülüklere uymak ve haklarımızı korumak"
+        },
+        "informationSharing": {
+          "title": "4. Bilgi Paylaşımı ve Açıklaması",
+          "content": "Kişisel bilgilerinizi satmıyoruz. Bilgilerinizi aşağıdaki durumlarda paylaşabiliriz:\n\n• Eğitim Kurumlarıyla: Bilgiler, eğitim amaçlı olarak okulunuz veya eğitim kurumunuzla paylaşılabilir.\n• Hizmet Sağlayıcılarıyla: Hizmetimizin yürütülmesine yardımcı olan üçüncü taraf hizmet sağlayıcılarıyla bilgi paylaşabiliriz.\n• Yasal Uyumluluk İçin: Yasalarca gerekli olması veya haklarımızı ve güvenliğimizi korumak için bilgileri ifşa edebiliriz.\n• İzninizle: Açık izninizle bilgi paylaşabiliriz.\n• Birleşme Durumunda: Bilgiler, bir ticari işlemle bağlantılı olarak aktarılabilir."
+        },
+        "dataSecurity": {
+          "title": "5. Veri Güvenliği",
+          "content": "Kişisel bilgilerinizi yetkisiz erişime, değişikliğe, ifşaya veya imhaya karşı korumak için uygun teknik ve organizasyonel güvenlik önlemlerini uyguluyoruz. Ancak, internet üzerinden hiçbir aktarım veya elektronik depolama yöntemi %100 güvenli değildir. Bilgilerinizi korumak için ticari olarak kabul edilebilir yöntemler kullanmaya çalışsak da, mutlak güvenliği garanti edemeyiz."
+        },
+        "dataRetention": {
+          "title": "6. Veri Saklama",
+          "content": "Kişisel bilgilerinizi, Hizmetimizi sunmak ve bu Gizlilik Politikası'nda belirtilen amaçları yerine getirmek için gerekli olduğu sürece saklarız; ancak yasalarca daha uzun bir saklama süresi gerekli veya izin verilen durumlar söz konusu olduğunda, bilgilerinizi güvenli bir şekilde siler veya anonimleştiririz."
+        },
+        "yourRights": {
+          "title": "7. Haklarınız",
+          "content": "Bulunduğunuz yere bağlı olarak, kişisel bilgilerinizle ilgili olarak aşağıdakiler de dahil olmak üzere belirli haklara sahip olabilirsiniz:\n\n• Erişim: Kişisel bilgilerinize erişim talebinde bulunma\n• Düzeltme: Yanlış bilgilerin düzeltilmesini talep etme\n• Silme: Kişisel bilgilerinizin silinmesini talep etme\n• Taşınabilirlik: Verilerinizin aktarılmasını talep etme\n• İtiraz: Belirli işleme faaliyetlerine itiraz etme\n• Onayı Geri Çekme: İşlemenin onaya dayalı olduğu durumlarda onayı geri çekme\n\nBu hakları kullanmak için lütfen \"Bize Ulaşın\" bölümünde verilen bilgileri kullanarak bizimle iletişime geçin."
+        },
+        "childrenPrivacy": {
+          "title": "8. Çocukların Gizliliği",
+          "content": "Hizmetimiz eğitim amaçlı tasarlanmıştır ve 18 yaşın altındaki öğrenciler tarafından kullanılabilir. Amerika Birleşik Devletleri'ndeki Aile Eğitim Hakları ve Gizlilik Yasası (FERPA) da dahil olmak üzere çocukların gizliliğiyle ilgili yürürlükteki yasalara uyuyoruz. Ebeveynlerden veya eğitim kurumlarından uygun izin alınmadan çocuklardan bilerek kişisel bilgi toplamıyoruz. Bir çocuktan uygunsuz bir şekilde bilgi topladığımızı düşünüyorsanız, lütfen hemen bizimle iletişime geçin."
+        },
+        "internationalTransfers": {
+          "title": "9. Uluslararası Veri Transferleri",
+          "content": "Bilgileriniz, ikamet ettiğiniz ülke dışındaki ülkelere aktarılabilir ve bu ülkelerde işlenebilir. Bu ülkelerin veri koruma yasaları, ülkenizdekilerden farklı olabilir. Hizmetimizi kullanarak, bilgilerinizin bu ülkelere aktarılmasına izin vermiş olursunuz."
+        },
+        "changesToPolicy": {
+          "title": "10. Bu Gizlilik Politikasındaki Değişiklikler",
+          "content": "Bu Gizlilik Politikası'nı zaman zaman güncelleyebiliriz. Yeni Gizlilik Politikası'nı bu sayfada yayınlayarak ve \"Son Güncelleme\" tarihini güncelleyerek herhangi bir değişiklik olması durumunda sizi bilgilendireceğiz. Herhangi bir değişiklik olup olmadığını görmek için bu Gizlilik Politikası'nı düzenli olarak incelemeniz önerilir."
+        },
+        "contactUs": {
+          "title": "11. Bize Ulaşın",
+          "content": "Bu Gizlilik Politikası veya gizlilik uygulamalarımız hakkında herhangi bir sorunuz varsa, lütfen bizimle şu adresten iletişime geçin:\n\nE-posta: privacy@studious.sh\n\nSorunuza makul bir süre içinde yanıt vereceğiz."
+        }
+      },
+      "goToTop": "Başa Dön",
+      "tableOfContents": "İçindekiler",
+      "backToTop": "Başa Dön"
+    },
+    "termsOfService": {
+      "title": "Hizmet Şartları",
+      "lastUpdated": "Son Güncelleme: Kasım 2025",
+      "sections": {
+        "acceptance": {
+          "title": "1. Şartların Kabulü",
+          "content": "Studious LMS'ye ('Hizmet') erişerek veya kullanarak, bu Hizmet Şartları'na ('Şartlar') bağlı kalmayı kabul etmiş olursunuz. Bu Şartları kabul etmiyorsanız, Hizmete erişemez veya Hizmeti kullanamazsınız. Bu Şartlar, öğrenciler, öğretmenler, yöneticiler ve eğitim kurumları dahil olmak üzere Hizmetin tüm kullanıcıları için geçerlidir."
+        },
+        "descriptionOfService": {
+          "title": "2. Hizmetin Tanımı",
+          "content": "Studious LMS, eğitim kurumlarına, öğretmenlere ve öğrencilere dersleri, ödevleri, notları, devamsızlıkları, iletişimi ve diğer eğitim faaliyetlerini yönetmeleri için araçlar sağlayan bir öğrenme yönetim sistemidir. Hizmet, web tabanlı ve mobil uygulamaları, yapay zeka destekli özellikleri ve ilgili hizmetleri içerir."
+        },
+        "userAccounts": {
+          "title": "3. Kullanıcı Hesapları",
+          "content": "Hizmeti kullanmak için bir hesap oluşturmanız ve doğru, güncel ve eksiksiz bilgiler sağlamanız gerekmektedir. Hesap bilgilerinizin ve hesabınız altında gerçekleşen tüm faaliyetlerin gizliliğini korumaktan siz sorumlusunuz. Şunları kabul edersiniz:\n\n• Güçlü ve benzersiz bir parola kullanın\n• Hesap bilgilerinizi başkalarıyla paylaşmayın\n• Yetkisiz erişim durumunda bizi derhal bilgilendirin\n• Doğru hesap bilgilerini koruyun\n• Hesabınız altındaki tüm faaliyetlerden sorumlu olun"
+        },
+        "acceptableUse": {
+          "title": "4. Kabul Edilebilir Kullanım Politikası",
+          "content": "Hizmeti yalnızca yasal amaçlar için ve bu Şartlar'a uygun olarak kullanmayı kabul edersiniz. Aşağıdakileri YAPMAMAYI kabul edersiniz:\n\n• Geçerli yasa veya yönetmelikleri ihlal etmek\n• Fikri mülkiyet haklarını ihlal etmek\n• Zararlı, saldırgan veya uygunsuz içerik iletmek\n• Diğer kullanıcıları taciz etmek, kötüye kullanmak veya onlara zarar vermek\n• Hizmete yetkisiz erişim sağlamaya çalışmak\n• Hizmete veya sunuculara müdahale etmek veya bunları kesintiye uğratmak\n• İzinsiz olarak Hizmete erişmek için otomatik sistemler kullanmak\n• Herhangi bir kişi veya kuruluşu taklit etmek\n• İzinsiz olarak diğer kullanıcılar hakkında kişisel veri toplamak veya saklamak"
+        },
+        "educationalContent": {
+          "title": "5. Eğitim İçeriği ve Fikri Mülkiyet",
+          "content": "Hizmet, kullanıcıların eğitim içeriği oluşturmasına, yüklemesine ve paylaşmasına olanak tanır. Oluşturduğunuz içeriğin mülkiyeti size aittir; ancak Hizmeti kullanarak, Hizmeti sağlamak için gerekli olduğu şekilde içeriğinizi kullanma, saklama ve görüntüleme lisansı vermiş olursunuz. Yüklediğiniz her türlü içeriği kullanma ve paylaşma hakkına sahip olduğunuzdan emin olmak sizin sorumluluğunuzdadır. Fikri mülkiyet haklarına saygı duyuyoruz ve geçerli telif hakkı ihlali bildirimlerine yanıt veriyoruz."
+        },
+        "aiFeatures": {
+          "title": "6. Yapay Zeka Destekli Özellikler",
+          "content": "Hizmetimiz, notlandırma yardımı, içerik oluşturma ve eğitim desteği gibi yapay zeka destekli özellikler içerir. Bu özellikler \"olduğu gibi\" sağlanır ve tamamlayıcı araçlar olarak kullanılmalıdır. Yapay zeka tarafından oluşturulan içeriği incelemek ve doğrulamak kullanıcıların sorumluluğundadır. Yapay zeka tarafından oluşturulan içeriğin doğruluğunu, eksiksizliğini veya uygunluğunu garanti etmiyoruz."
+        },
+        "privacy": {
+          "title": "7. Gizlilik",
+          "content": "Hizmeti kullanımınız, bilgilerinizi nasıl topladığımızı, kullandığımızı ve koruduğumuzu açıklayan Gizlilik Politikamız tarafından da yönetilir. Hizmeti kullanarak, Gizlilik Politikamızda açıklandığı şekilde bilgilerin toplanmasına ve kullanılmasına izin vermiş olursunuz."
+        },
+        "feesAndPayment": {
+          "title": "8. Ücretler ve Ödeme",
+          "content": "Hizmetin bazı özellikleri ödeme gerektirebilir. Abonelik veya ücretli özellikler satın alırsanız:\n\n• Ücretler, satın alma sırasında belirtildiği gibidir.\n• Ödemeler, güvenli üçüncü taraf ödeme işlemcileri aracılığıyla işlenir.\n• Abonelikler iptal edilmediği sürece otomatik olarak yenilenir.\n• İadeler, iade politikamıza tabidir.\n• Fiyatlandırmayı bildirimde bulunarak değiştirme hakkımız saklıdır."
+        },
+        "termination": {
+          "title": "9. Fesih",
+          "content": "Bu Şartları ihlal ettiğine veya diğer kullanıcılara, bize veya üçüncü taraflara zarar verdiğine inandığımız davranışlar nedeniyle, hesabınızı ve Hizmete erişiminizi önceden bildirimde bulunmaksızın derhal sonlandırabilir veya askıya alabiliriz. Hesabınızı istediğiniz zaman bizimle iletişime geçerek sonlandırabilirsiniz. Hesabınızın feshedilmesi durumunda, Hizmeti kullanma hakkınız derhal sona erecektir."
+        },
+        "disclaimers": {
+          "title": "10. Sorumluluk Reddi Beyanları",
+          "content": "HİZMET, AÇIK VEYA ZIMNİ HİÇBİR GARANTİ OLMADAN \"OLDUĞU GİBİ\" VE \"MEVCUT OLDUĞU GİBİ\" SAĞLANMAKTADIR. HİZMETİN KESİNTİSİZ, GÜVENLİ VEYA HATASIZ OLACAĞINI GARANTİ ETMİYORUZ. SATILABİLİRLİK, BELİRLİ BİR AMACA UYGUNLUK VE İHLAL ETMEME GARANTİLERİ DAHİL OLMAK ÜZERE TÜM GARANTİLERİ REDDEDERİZ."
+        },
+        "limitationOfLiability": {
+          "title": "11. Sorumluluğun Sınırlandırılması",
+          "content": "YASALARIN İZİN VERDİĞİ AZAMİ ÖLÇÜDE, HİZMETİ KULLANIMINIZDAN KAYNAKLANAN HERHANGİ BİR DOLAYLI, ARIZİ, ÖZEL, SONUÇ OLARAK OLUŞAN VEYA CEZAİ ZARARDAN VEYA DOĞRUDAN VEYA DOLAYLI OLARAK MEYDANA GELEN HERHANGİ BİR KÂR VEYA GELİR KAYBINDAN VEYA HERHANGİ BİR VERİ, KULLANIM, ŞEREF VEYA DİĞER SOMUT OLMAYAN KAYIPLARDAN SORUMLU TUTULMAYACAĞIZ."
+        },
+        "indemnification": {
+          "title": "12. Tazminat",
+          "content": "Hizmete erişiminiz veya Hizmeti kullanımınızdan, bu Şartları ihlal etmenizden veya başkasının haklarını ihlal etmenizden kaynaklanan veya herhangi bir şekilde bunlarla bağlantılı olan her türlü talep, yükümlülük, zarar, kayıp ve masraftan Studious LMS'yi ve yöneticilerini, müdürlerini, çalışanlarını ve temsilcilerini tazmin etmeyi, savunmayı ve zarar görmemelerini sağlamayı kabul edersiniz."
+        },
+        "governingLaw": {
+          "title": "13. Geçerli Kanun",
+          "content": "Bu Şartlar, Studious LMS'nin faaliyet gösterdiği yargı bölgesinin kanunlarına tabi olacak ve bu kanunlara göre yorumlanacaktır; kanunlar ihtilafı hükümleri dikkate alınmayacaktır. Bu Şartlar veya Hizmet'ten kaynaklanan her türlü uyuşmazlık, ilgili yargı bölgesinin ilgili mahkemelerinde çözülecektir."
+        },
+        "changesToTerms": {
+          "title": "14. Şartlarda Değişiklikler",
+          "content": "Bu Şartları herhangi bir zamanda değiştirme hakkımızı saklı tutuyoruz. Güncellenen Şartları web sitemizde yayınlayarak ve \"Son Güncelleme\" tarihini güncelleyerek kullanıcıları önemli değişikliklerden haberdar edeceğiz. Bu tür değişikliklerden sonra Hizmeti kullanmaya devam etmeniz, değiştirilen Şartları kabul ettiğiniz anlamına gelir."
+        },
+        "contactUs": {
+          "title": "15. Bizimle İletişime Geçin",
+          "content": "Bu Hizmet Şartları hakkında herhangi bir sorunuz varsa, lütfen bizimle şu adresten iletişime geçin:\n\nE-posta: legal@studious.sh\n\nSorunuza makul bir süre içinde yanıt vereceğiz."
+        }
+      },
+      "goToTop": "Başa Dön",
+      "tableOfContents": "İçindekiler",
+      "backToTop": "Başa Dön"
+    },
+    "navbarPopup": {
+      "goBack": "Geri gitmek",
+      "home": "Ev"
     }
   },
   "press": {
@@ -384,7 +550,7 @@
     "landing": {
       "description": "Sohbete başlamak için kenar çubuğundan bir konuşma seçin.",
       "pleaseSignIn": "Lütfen giriş yapın",
-      "signInRequired": "Sohbete erişmek için oturum açmanız gerekiyor.",
+      "signInRequired": "Sohbete erişmek için oturum açmanız gerekir.",
       "title": "Sohbete Hoş Geldiniz"
     },
     "page": {
@@ -398,7 +564,7 @@
       },
       "header": {
         "members": "üyeler",
-        "markMentionsRead": "Mark okunduğunu belirtiyor"
+        "markMentionsRead": "Mark okunduğundan bahsediyor"
       },
       "input": {
         "placeholderPrefix": "Mesaj"
@@ -877,7 +1043,7 @@
     "titleStatement4": "Yıllarca güncelliğini yitirmiş, parçalanmış okul portallarıyla boğuştuktan sonra, her zaman sahip olmayı dilediğimiz öğrenme yönetim sistemini kurmaya karar verdik.",
     "problemParagraph1": "Studious 2023'te başladı",
     "problemParagraph2": "Bir grup öğrenci ve eğitimci ortak bir hayal kırıklığıyla bir araya geldiğinde: Mevcut okul portalları hantal, yavaştı ve farklı bir eğitim dönemi için tasarlanmıştı.",
-    "problemDetailParagraph": "Kendimizi birden fazla platform arasında mekik dokurken bulduk: biri notlar, diğeri ödevler, üçüncüsü iletişim için. Öğretmenler öğretmekten çok yazılımla boğuşmakla vakit geçiriyordu. Öğrenciler, bildirimler eski arayüzlerde kaybolduğu için teslim tarihlerini kaçırıyordu.",
+    "problemDetailParagraph": "Kendimizi birden fazla platform arasında mekik dokurken bulduk: biri notlar, diğeri ödevler, üçüncüsü de iletişim için. Öğretmenler, öğretmekten çok yazılımla boğuşmakla vakit geçiriyordu. Öğrenciler, bildirimler eski arayüzlerde kaybolduğu için teslim tarihlerini kaçırıyordu.",
     "betterWay": "Daha iyi bir yolun olması gerektiğini biliyorduk.",
     "solutionParagraph1": "Linear ve Notion gibi modern iş birliği araçlarından ilham alarak, kullanıcı dostu bir öğrenme yönetim sistemi yaratmaya koyulduk.",
     "solutionParagraph2": "hızlı, sezgisel ve kullanımı keyifli.",
@@ -893,7 +1059,7 @@
     "journeyBetaLaunch2": "Studious LMS'nin resmi beta testi lansmanı yapıldı. Tüm platform özellikleriyle dünya çapındaki okullarda erken erişime açıldı.",
     "journeyPilotSchoolsDate": "Kasım 2025",
     "journeyPilotSchools1": "Pilot Okullar Programı",
-    "journeyPilotSchools2": "Gerçek dünyadan geri bildirim toplamak ve platformu çeşitli eğitim ihtiyaçlarına göre geliştirmek için pilot okullarla ortaklıklar başlatıyoruz.",
+    "journeyPilotSchools2": "Gerçek dünyadan geri bildirim toplamak ve platformu çeşitli eğitim ihtiyaçlarına göre geliştirmek için pilot okullarla ortaklıklar başlatmak.",
     "journeyBetaCompleteDate": "Aralık 2025",
     "journeyBetaComplete1": "Beta Tamamlandı",
     "journeyBetaComplete2": "Beta sürümünden tam üretim sürümüne geçiş. Tüm temel özelliklerin tamamen test edilip optimize edildiği platform stabilizasyonu.",

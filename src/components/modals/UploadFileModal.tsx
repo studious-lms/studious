@@ -52,8 +52,7 @@ export function UploadFileModal({ children, onFilesUploaded, currentFolder = "/"
   const fileInputRef = useRef<HTMLInputElement>(null);
   const appState = useSelector((state: RootState) => state.app);
 
-  const  { data: folderInformation, isLoading: folderInformationLoading }  = trpc.folder.get.useQuery({ classId: classId!, folderId: currentFolder! }, { enabled: !!currentFolder && !!classId });
-
+  const  { data: folderInformation, isLoading: folderInformationLoading }  = trpc.folder.get.useQuery({ classId: classId!, folderId: currentFolder! }, { enabled: !!currentFolder && currentFolder !== "root" && !!classId });
   // Overall upload progress state
   const [uploadProgress, setUploadProgress] = useState(0);
   const [currentUploadStatus, setCurrentUploadStatus] = useState('');

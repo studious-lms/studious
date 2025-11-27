@@ -52,10 +52,10 @@
     },
     "roster": {
       "title": "Lista studentów",
-      "description": "Kliknij przyciski statusu, aby zaznaczyć obecność każdego ucznia",
+      "description": "Kliknij przyciski statusu, aby oznaczyć obecność każdego ucznia",
       "empty": {
         "title": "Brak zapisanych studentów",
-        "description": "Uczniowie będą tu wyświetlani po dołączeniu do klasy"
+        "description": "Uczniowie pojawią się tutaj po dołączeniu do klasy"
       }
     },
     "prompt": {

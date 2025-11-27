@@ -111,7 +111,7 @@ export function DraggableAssignment({ assignment, classId, index, onDelete, onPu
                 </div>
 
                 {isTeacher && (
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-x-4 gap-y-1 flex-wrap">
                     <div className="flex items-center space-x-4">
                       <span className="text-sm">
                         <strong>{totalSubmissions}</strong> of <strong>{totalStudents}</strong> submitted
@@ -166,11 +166,6 @@ export function DraggableAssignment({ assignment, classId, index, onDelete, onPu
 
               {isTeacher && (
                 <>
-                  <Button variant="outline" size="sm" asChild>
-                    <Link href={`/class/${classId}/assignment/${assignment.id}`}>
-                      View Details
-                    </Link>
-                  </Button>
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                       <Button variant="ghost" size="sm">
@@ -178,15 +173,9 @@ export function DraggableAssignment({ assignment, classId, index, onDelete, onPu
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
-                      <DropdownMenuItem>
+                      <DropdownMenuItem onClick={() => router.push(`/class/${classId}/assignment/${assignment.id}/edit`)}>
                         <Edit className="mr-2 h-4 w-4" />
                         Edit Assignment
-                      </DropdownMenuItem>
-                      <DropdownMenuItem>
-                        View Submissions
-                      </DropdownMenuItem>
-                      <DropdownMenuItem>
-                        Export Grades
                       </DropdownMenuItem>
                       <DropdownMenuSeparator />
                       <DropdownMenuItem

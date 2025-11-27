@@ -707,14 +707,9 @@ export default function Attendance() {
       </div>
       <div className="flex flex-col lg:flex-row gap-6">
       {/* All Events Table */}
-      <Card className="mb-6">
-        <CardHeader>
-          <CardTitle>{t('allEvents.title')}</CardTitle>
-          <p className="text-sm text-muted-foreground">
-            {t('allEvents.description')}
-          </p>
-        </CardHeader>
-        <CardContent>
+      <div className="mb-6 flex flex-col gap-2">
+        {/* <h2 className="text-lg font-bold">{t('allEvents.title')}</h2>
+        <p className="text-sm text-muted-foreground">{t('allEvents.description')}</p> */}
           {tableData.length === 0 ? (
             <EmptyState
               icon={CalendarIcon}
@@ -738,10 +733,10 @@ export default function Attendance() {
               pageSize={10}
             />
           )}
-        </CardContent>
-      </Card>
+        </div> 
       {/* Events List with inline date picker */}
-      <Card className="mb-6">
+      <div>
+        <Card className="mb-6">
         <CardHeader>
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="flex items-center gap-3">
@@ -844,6 +839,7 @@ export default function Attendance() {
             )}
           </CardContent>
         </Card>
+        </div>
       </div>
 
       {/* Event Summary and Student Roster */}

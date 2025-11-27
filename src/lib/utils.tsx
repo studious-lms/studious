@@ -83,10 +83,76 @@ export function calculateTrend(
 export function getTrendIcon(trend: "up" | "down" | "neutral"): JSX.Element {
   switch (trend) {
     case "up":
-      return <TrendingUp className="h-4 w-4 text-green-600" />;
+      return <TrendingUp className="text-green-600" />;
     case "down":
-      return <TrendingDown className="h-4 w-4 text-red-600" />;
+      return <TrendingDown className="text-red-600" />;
     default:
-      return <Minus className="h-4 w-4 text-muted-foreground" />;
+      return <Minus className="text-muted-foreground" />;
   }
+}
+
+/**
+ * Configuration options for grade color calculation
+ */
+export interface GradeColorOptions {
+  /** Custom thresholds for grade ranges (default: 90, 80, 70) */
+  thresholds?: {
+    excellent: number;
+    good: number;
+    passing: number;
+  };
+  /** Whether to include font weight classes (default: true) */
+  includeFontWeight?: boolean;
+}
+
+/**
+ * Returns Tailwind CSS classes for styling grades based on percentage thresholds.
+ * Uses semantic colors (green, yellow, orange, red) that work in both light and dark modes.
+ * 
+ * @param grade - The grade percentage (0-100) or null if not graded
+ * @param options - Optional configuration for custom thresholds and styling
+ * @returns Tailwind CSS class string for text color and font weight
+ * 
+ * @example
+ * ```tsx
+ * <div className={getGradeColor(95)}>95%</div>
+ * <div className={getGradeColor(null)}>Not graded</div>
+ * <div className={getGradeColor(85, { thresholds: { excellent: 95, good: 85, passing: 75 } })}>85%</div>
+ * ```
+ */
+export function getGradeColor(
+  grade: number | null,
+  options: GradeColorOptions = {}
+): string {
+  const {
+    thresholds = { excellent: 90, good: 80, passing: 70 },
+    includeFontWeight = true,
+  } = options;
+
+  // Handle missing or ungraded assignments
+  if (grade === null || grade === undefined) {
+    return cn("text-muted-foreground", includeFontWeight ? "font-medium" : "");
+  }
+
+  // Ensure grade is within valid range
+  const clampedGrade = Math.max(0, Math.min(100, grade));
+  const fontWeight = includeFontWeight ? "font-semibold" : "";
+
+  // Excellent grade (A range) - Green
+  if (clampedGrade >= thresholds.excellent) {
+    return cn("text-green-600 dark:text-green-400", fontWeight);
+  }
+
+  // Good grade (B range) - Yellow
+  if (clampedGrade >= thresholds.good) {
+    return cn("text-yellow-600 dark:text-yellow-400", includeFontWeight ? "font-medium" : "");
+  }
+
+  // Passing grade (C range) - Orange
+  if (clampedGrade >= thresholds.passing) {
+    return cn("text-orange-600 dark:text-orange-400", includeFontWeight ? "font-medium" : "");
+  }
+
+  // Failing grade (below passing threshold) - Red
+  return cn("text-red-600 dark:text-red-400", fontWeight);
 }

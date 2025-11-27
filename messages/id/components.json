@@ -52,7 +52,7 @@
     "cancel": "Membatalkan",
     "create": "Buat Rubrik",
     "update": "Perbarui Rubrik",
-    "creating": "Menciptakan...",
+    "creating": "Membuat...",
     "updating": "Memperbarui...",
     "created": "Rubrik berhasil dibuat",
     "updated": "Rubrik berhasil diperbarui",
@@ -69,7 +69,7 @@
     "cancel": "Membatalkan",
     "create": "Membuat",
     "update": "Memperbarui",
-    "creating": "Menciptakan...",
+    "creating": "Membuat...",
     "updating": "Memperbarui...",
     "created": "Batasan penilaian berhasil dibuat",
     "updated": "Batasan penilaian berhasil diperbarui",
@@ -187,7 +187,7 @@
       "selectedMembers": "Anggota terpilih ({count})",
       "cancel": "Membatalkan",
       "create": "Membuat",
-      "creating": "Menciptakan..."
+      "creating": "Membuat..."
     }
   },
   "avatarSelector": {
@@ -204,7 +204,7 @@
     "cancel": "Membatalkan",
     "create": "Buat Bagian",
     "update": "Bagian Pembaruan",
-    "creating": "Menciptakan...",
+    "creating": "Membuat...",
     "updating": "Memperbarui...",
     "created": "Bagian \"{name}\" berhasil dibuat.",
     "updated": "Bagian \"{name}\" berhasil diperbarui.",
@@ -238,7 +238,7 @@
     "createClassEvent": "Buat Acara Kelas",
     "createPersonalEvent": "Buat Acara Pribadi",
     "updating": "Memperbarui...",
-    "creating": "Menciptakan...",
+    "creating": "Membuat...",
     "addEvent": "Tambahkan Acara",
     "eventCreated": "{type} berhasil dibuat",
     "eventUpdated": "Acara berhasil diperbarui",
@@ -265,7 +265,7 @@
     "updateEvent": "Perbarui Acara",
     "createEvent": "Buat Acara",
     "updating": "Memperbarui...",
-    "creating": "Menciptakan...",
+    "creating": "Membuat...",
     "addClassEvent": "Tambahkan Acara Kelas",
     "eventCreated": "Acara berhasil dibuat",
     "eventUpdated": "Acara berhasil diperbarui",

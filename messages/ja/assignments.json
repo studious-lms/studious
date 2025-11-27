@@ -23,7 +23,7 @@
     "files": "ファイル",
     "noFiles": "添付ファイルはありません",
     "noSubmissions": "まだ提出はありません",
-    "noSubmissionsDescription": "生徒が作品を提出すると、ここに提出物が表示されます。",
+    "noSubmissionsDescription": "生徒が提出した作品はここに表示されます",
     "actions": {
       "edit": "割り当てを編集",
       "delete": "割り当てを削除",

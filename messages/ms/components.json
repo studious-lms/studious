@@ -313,7 +313,7 @@
       "2hours": "2 jam"
     },
     "descriptionField": "Penerangan",
-    "descriptionPlaceholder": "Terangkan perkara yang {type} ini perlu dilindungi...",
+    "descriptionPlaceholder": "Terangkan perkara yang perlu {type} ini meliputi...",
     "requirements": "Keperluan Khas",
     "requirementsPlaceholder": "Sebarang keperluan khusus, objektif pembelajaran atau kekangan...",
     "cancel": "Batal",

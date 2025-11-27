@@ -1,7 +1,7 @@
 {
   "classGrades": {
     "title": "Calificaciones",
-    "subtitle": "Ver y gestionar las calificaciones de los estudiantes",
+    "subtitle": "Ver y administrar las calificaciones de los estudiantes",
     "columns": {
       "assignment": "Asignación",
       "maxPoints": "Puntos máximos",
@@ -35,10 +35,10 @@
       "submissionRate": "Tasa de envío"
     },
     "assignmentManagement": {
-      "title": "Gestión de tareas",
+      "title": "Gestión de asignaciones",
       "empty": {
-        "title": "No se encontraron tareas.",
-        "description": "Crea tareas para gestionar calificaciones y configuraciones."
+        "title": "No se encontraron tareas",
+        "description": "Crear tareas para administrar calificaciones y configuraciones"
       },
       "searchPlaceholder": "Buscar asignaciones..."
     },
@@ -46,23 +46,23 @@
       "title": "Estudiantes",
       "viewAll": "Ver todos los estudiantes",
       "empty": {
-        "title": "No hay estudiantes matriculados",
+        "title": "No hay estudiantes inscritos",
         "description": "Los estudiantes aparecerán aquí una vez que se unan a la clase."
       },
       "searchPlaceholder": "Buscar estudiantes..."
     },
     "gradeBoundaries": {
-      "title": "Límites de grado",
+      "title": "Límites de calificación",
       "untitled": "Límite de calificación sin título",
       "empty": {
-        "title": "No se crearon límites de grado",
-        "description": "Crea límites de calificación para definir rangos de calificaciones."
+        "title": "No se crearon límites de calificación",
+        "description": "Crear límites de calificación para definir rangos de calificación"
       },
       "previewTitle": "Vista previa de los límites de calificación",
       "details": {
-        "title": "Detalles del límite de calificación",
+        "title": "Detalles de los límites de calificación",
         "name": "Nombre",
-        "noneDefined": "No se definieron límites de calificación"
+        "noneDefined": "No hay límites de calificación definidos"
       }
     },
     "rubrics": {
@@ -70,7 +70,7 @@
       "untitled": "Rúbrica sin título",
       "empty": {
         "title": "No se crearon rúbricas",
-        "description": "Crear rúbricas para definir los criterios de evaluación"
+        "description": "Crear rúbricas para definir criterios de evaluación"
       },
       "previewTitle": "Vista previa de la rúbrica",
       "details": {
@@ -79,21 +79,21 @@
         "category": "Categoría",
         "description": "Descripción",
         "custom": "Costumbre",
-        "noDescription": "No se proporcionó ninguna descripción.",
-        "noCriteria": "No se encontraron criterios en esta rúbrica."
+        "noDescription": "No se proporcionó ninguna descripción",
+        "noCriteria": "No se encontraron criterios en esta rúbrica"
       }
     },
     "confirm": {
-      "deleteRubric": "¿Estás seguro de que quieres eliminar este esquema de calificación?",
-      "deleteGradingBoundary": "¿Estás seguro de que quieres eliminar este límite de calificación?"
+      "deleteRubric": "¿Está seguro que desea eliminar este esquema de calificación?",
+      "deleteGradingBoundary": "¿Está seguro de que desea eliminar este límite de calificación?"
     }
   },
   "studentGrades": {
-    "title": "Todas las calificaciones de los estudiantes",
-    "allStudents": "Consulta y gestiona las calificaciones de todos los alumnos de esta clase.",
+    "title": "Todos los grados de los estudiantes",
+    "allStudents": "Ver y administrar las calificaciones de todos los estudiantes de esta clase",
     "students": "Estudiantes",
     "noGrades": "No se encontraron estudiantes",
-    "noGradesDescription": "Todavía no hay estudiantes matriculados en esta clase. Los estudiantes aparecerán aquí una vez que se unan.",
+    "noGradesDescription": "Todavía no hay estudiantes inscritos en esta clase. Los estudiantes aparecerán aquí una vez que se unan.",
     "table": {
       "student": "Alumno",
       "actions": "Comportamiento"
@@ -105,12 +105,12 @@
   "individualGrades": {
     "myGrades": "Mis calificaciones",
     "studentGrades": "Calificaciones",
-    "viewYourGrades": "Consulta tus calificaciones y tu progreso",
-    "individualManagement": "Gestión individual de calificaciones de estudiantes",
+    "viewYourGrades": "Ver tus calificaciones y progreso",
+    "individualManagement": "Gestión de calificaciones individuales de los estudiantes",
     "export": "Exportar",
     "back": "Atrás",
-    "yourPerformance": "Tu desempeño",
-    "trackProgress": "Sigue tu progreso académico",
+    "yourPerformance": "Tu rendimiento",
+    "trackProgress": "Realice un seguimiento de su progreso académico",
     "overallGrade": "Calificación general",
     "completed": "Terminado",
     "trend": "Tendencia",
@@ -132,8 +132,8 @@
       "pending": "Pendiente"
     },
     "empty": {
-      "title": "No se encontraron tareas.",
-      "description": "Este estudiante no tiene tareas para mostrar."
+      "title": "No se encontraron tareas",
+      "description": "Este estudiante no tiene tareas para mostrar"
     },
     "searchPlaceholder": "Buscar asignaciones..."
   }

@@ -33,7 +33,8 @@ import { RouterOutputs, trpc } from "@/lib/trpc";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { toast } from "sonner";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
+import { useChat } from "@/hooks/useChat";
 type MemberFilter = 'all' | 'teachers' | 'students';
 
 // Skeleton component for member cards
@@ -102,14 +103,19 @@ const MembersPageSkeleton = () => (
 export default function Members() {
   const t = useTranslations('members');
   const { id: classId } = useParams();
+  const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
   const [activeTab, setActiveTab] = useState("students");
   
   const appState = useSelector((state: RootState) => state.app);
+  const user = appState.user;
+  
+  // Chat hook for creating conversations
+  const { createConversation, refetchConversations } = useChat(user?.loggedIn ? user.id : "");
 
   // API hooks
   const { data: classData, isLoading, error, refetch } = trpc.class.get.useQuery({ classId: classId as string });
-  const { data: inviteCodeData, isLoading: inviteCodeLoading, refetch: refetchInviteCode } = trpc.class.getInviteCode.useQuery({ classId: classId as string });
+  const { data: inviteCodeData, isLoading: inviteCodeLoading, refetch: refetchInviteCode } = trpc.class.getInviteCode.useQuery({ classId: classId as string }, { enabled: !!user?.teacher });
   const changeRoleMutation = trpc.class.changeRole.useMutation();
   const removeMemberMutation = trpc.class.removeMember.useMutation();
   const regenerateInviteCodeMutation = trpc.class.createInviteCode.useMutation({
@@ -195,6 +201,18 @@ export default function Members() {
     });
     toast.success(t('toasts.inviteRegenerated'));
   };
+
+  const handleMessage = async (userId: string) => {
+    try {
+      const newConversation = await createConversation('DM', [userId]);
+      await refetchConversations();
+      router.push(`/chat/${newConversation.id}`);
+      toast.success('Conversation created');
+    } catch (error: any) {
+      const errorMessage = error?.message || 'Failed to create conversation';
+      toast.error(errorMessage);
+    }
+  };
   const getRoleBadge = (type: string) => {
     switch (type) {
       case "teacher":
@@ -236,7 +254,7 @@ export default function Members() {
       </div>
 
       {/* Invite Code Section */}
-      <Card className="mb-6">
+      {user?.teacher && <Card className="mb-6">
         <CardHeader>
           <CardTitle>{t('invite.title')}</CardTitle>
           <p className="text-sm text-muted-foreground">
@@ -272,7 +290,7 @@ export default function Members() {
             </div>
           )}
         </CardContent>
-      </Card>
+      </Card>}
 
       {/* Search */}
       <div className="relative max-w-md mb-6">
@@ -307,7 +325,7 @@ export default function Members() {
             <div className="space-y-4">
               {filteredMembers.students.map((student) => (
                 <Card key={student.id}>
-                  <CardContent className="p-6">
+                  <CardContent className="p-3">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4">
                         <Avatar className="h-12 w-12">
@@ -326,7 +344,12 @@ export default function Members() {
                       </div>
 
                       <div className="flex items-center space-x-2">
-                        <Button variant="outline" size="sm">
+                        <Button 
+                          variant="outline" 
+                          size="sm"
+                          onClick={() => handleMessage(student.id)}
+                          disabled={student.id === user?.id}
+                        >
                           <Mail className="h-4 w-4 mr-2" />
                           {t('actions.message')}
                         </Button>
@@ -338,13 +361,6 @@ export default function Members() {
                               </Button>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent align="end">
-                              <DropdownMenuItem>
-                                <User className="mr-2 h-4 w-4" />
-                                {t('actions.viewProfile')}
-                              </DropdownMenuItem>
-                              <DropdownMenuItem>
-                                {t('actions.viewGrades')}
-                              </DropdownMenuItem>
                               <DropdownMenuItem
                                 onClick={() => handleRoleChange(student.id, 'teacher')}
                               >
@@ -387,7 +403,7 @@ export default function Members() {
             <div className="space-y-4">
               {filteredMembers.teachers.map((teacher) => (
                 <Card key={teacher.id}>
-                  <CardContent className="p-6">
+                  <CardContent className="p-3">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4">
                         <Avatar className="h-12 w-12">
@@ -406,7 +422,12 @@ export default function Members() {
                       </div>
 
                       <div className="flex items-center space-x-2">
-                        <Button variant="outline" size="sm">
+                        <Button 
+                          variant="outline" 
+                          size="sm"
+                          onClick={() => handleMessage(teacher.id)}
+                          disabled={teacher.id === user?.id}
+                        >
                           <Mail className="h-4 w-4 mr-2" />
                           {t('actions.message')}
                         </Button>
@@ -418,10 +439,6 @@ export default function Members() {
                               </Button>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent align="end">
-                              <DropdownMenuItem>
-                                <User className="mr-2 h-4 w-4" />
-                                {t('actions.viewProfile')}
-                              </DropdownMenuItem>
                               <DropdownMenuItem
                                 onClick={() => handleRoleChange(teacher.id, 'student')}
                               >
