@@ -42,13 +42,10 @@ import { RouterOutputs, trpc } from "@/lib/trpc";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { toast } from "sonner";
-<<<<<<< HEAD
+
 import { useParams, useRouter } from "next/navigation";
 import { useChat } from "@/hooks/useChat";
 type MemberFilter = 'all' | 'teachers' | 'students';
-=======
-import { useParams } from "next/navigation";
->>>>>>> 7058d5b (fix: No.26,27,28,30 issues)
 
 // Skeleton component for member cards
 const MemberCardSkeleton = () => (
@@ -397,16 +394,6 @@ export default function Members() {
                               </Button>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent align="end">
-<<<<<<< HEAD
-=======
-                              <DropdownMenuItem onClick={() => handleViewProfile(student, 'student')}>
-                                <User className="mr-2 h-4 w-4" />
-                                {t('actions.viewProfile')}
-                              </DropdownMenuItem>
-                              <DropdownMenuItem>
-                                {t('actions.viewGrades')}
-                              </DropdownMenuItem>
->>>>>>> 7058d5b (fix: No.26,27,28,30 issues)
                               <DropdownMenuItem
                                 onClick={() => handleRoleChange(student.id, 'teacher')}
                               >
@@ -485,13 +472,6 @@ export default function Members() {
                               </Button>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent align="end">
-<<<<<<< HEAD
-=======
-                              <DropdownMenuItem onClick={() => handleViewProfile(teacher, 'teacher')}>
-                                <User className="mr-2 h-4 w-4" />
-                                {t('actions.viewProfile')}
-                              </DropdownMenuItem>
->>>>>>> 7058d5b (fix: No.26,27,28,30 issues)
                               <DropdownMenuItem
                                 onClick={() => handleRoleChange(teacher.id, 'student')}
                               >
