@@ -49,9 +49,9 @@ export default function AllStudentsGrades() {
         return (
           <div className="flex items-center space-x-3">
             <Avatar className="h-8 w-8">
-              <AvatarImage src={student.profile?.profilePicture || ""} alt={student.username} />
+              <AvatarImage src={student.profile?.profilePicture || ""} />
               <AvatarFallback>
-                {student.username.split(' ').map(n => n[0]).join('').toUpperCase() || student.username.charAt(0).toUpperCase()}
+                {student.profile?.displayName?.substring(0, 2).toUpperCase() || student.username.substring(0, 2).toUpperCase()}
               </AvatarFallback>
             </Avatar>
             <span className="font-medium">{student.username}</span>

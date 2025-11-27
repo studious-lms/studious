@@ -34,6 +34,7 @@ export const errorLink = (): TRPCLink<AppRouter> => {
                         const isForbidden = error.data?.code === 'FORBIDDEN' || error.data?.httpStatus === 403;
                         const isNotFound = error.data?.code === 'NOT_FOUND' || error.data?.httpStatus === 404;
                         const isRateLimited = error.data?.code === 'TOO_MANY_REQUESTS' || error.data?.httpStatus === 429;
+                        const isBadRequest = error.data?.code === 'BAD_REQUEST' || error.data?.httpStatus === 400;
 
                         switch (true) {
                             case isUnauthorized:
@@ -52,6 +53,8 @@ export const errorLink = (): TRPCLink<AppRouter> => {
                             case isRateLimited:
                                 toast.error("Too many requests. Please wait a moment and try again.");
                                 // pass through to log to Sentry
+                            case isBadRequest:
+                                break;
                             default:
                                 Sentry.captureException(error, {
                                     level: severity,

@@ -53,7 +53,7 @@
       "labCreated": "Laboratorul de inteligență artificială a fost creat cu succes!",
       "labCreateFailed": "Nu s-a putut crea Laboratorul de Inteligență Artificială:",
       "labDeleted": "Laboratorul de inteligență artificială a fost șters cu succes!",
-      "labDeleteFailed": "Nu s-a putut șterge Laboratorul de Inteligență Artificială:"
+      "labDeleteFailed": "Nu s-a putut șterge Laboratorul de inteligență artificială:"
     }
   },
   "aiLabChat": {

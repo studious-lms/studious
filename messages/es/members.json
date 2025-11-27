@@ -24,7 +24,7 @@
     },
     "invite": {
       "title": "Código de invitación a la clase",
-      "description": "Comparte este código con los estudiantes para que se unan a la clase."
+      "description": "Comparte este código con los estudiantes para unirse a la clase."
     },
     "search": {
       "placeholder": "Buscar miembros..."
@@ -37,26 +37,26 @@
       "empty": {
         "title": "No se encontraron estudiantes",
         "matchNone": "Ningún estudiante coincide con \"{query}\"",
-        "noStudents": "Todavía no se ha unido ningún estudiante a esta clase."
+        "noStudents": "Ningún estudiante se ha unido a esta clase todavía"
       }
     },
     "teachers": {
       "empty": {
         "title": "No se encontraron profesores",
         "matchNone": "Ningún profesor coincide con \"{query}\"",
-        "noTeachers": "No se han añadido profesores adicionales."
+        "noTeachers": "No se han añadido profesores adicionales"
       }
     },
     "toasts": {
-      "inviteRegenerated": "El código de invitación se regeneró correctamente.",
+      "inviteRegenerated": "Código de invitación regenerado exitosamente",
       "copied": "Código de invitación copiado al portapapeles",
-      "roleChanged": "El rol cambió a {role}",
-      "memberRemoved": "Miembro expulsado con éxito"
+      "roleChanged": "Rol cambiado a {role}",
+      "memberRemoved": "Miembro eliminado exitosamente"
     },
     "errors": {
       "regenerateFailed": "No se pudo regenerar el código de invitación",
-      "changeRoleFailed": "Fracasó en el cambio de rol",
-      "removeFailed": "No se pudo eliminar al miembro",
+      "changeRoleFailed": "No se pudo cambiar el rol",
+      "removeFailed": "No se pudo eliminar el miembro",
       "failedToLoad": "No se pudieron cargar los miembros"
     },
     "profile": {

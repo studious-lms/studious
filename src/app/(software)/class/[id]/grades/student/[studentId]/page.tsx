@@ -24,7 +24,7 @@ import type { ColumnDef } from "@tanstack/react-table";
 import { RouterOutputs, trpc } from "@/lib/trpc";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
-import { calculateTrend, getTrendIcon } from "@/lib/utils";
+import { calculateTrend, getTrendIcon, getGradeColor } from "@/lib/utils";
 
 export default function StudentGrades() {
   const params = useParams();
@@ -76,10 +76,13 @@ export default function StudentGrades() {
         
         // Read-only view for students
         if (isStudent) {
+          const percentage = grade.gradeReceived && grade.assignment.maxGrade
+            ? (grade.gradeReceived / grade.assignment.maxGrade) * 100
+            : null;
           return (
-            <div className="text-center">
+            <div className="w-24 text-center">
               {grade.gradeReceived ? (
-                <div className={`font-medium ${getGradeColor(grade.gradeReceived, "graded")}`}>
+                <div className={`font-medium ${getGradeColor(percentage)}`}>
                   {grade.gradeReceived}
                 </div>
               ) : (
@@ -91,11 +94,14 @@ export default function StudentGrades() {
         
         // If assignment has a rubric, show grade with button to open assignment
         if (hasRubric) {
+          const percentage = grade.gradeReceived && grade.assignment.maxGrade
+            ? (grade.gradeReceived / grade.assignment.maxGrade) * 100
+            : null;
           return (
-            <div className="flex items-center justify-center space-x-2">
-              <div className="text-center">
+            <div className="flex items-center justify-center gap-2">
+              <div className="w-16 text-center">
                 {grade.gradeReceived ? (
-                  <div className={`font-medium ${getGradeColor(grade.gradeReceived, "graded")}`}>
+                  <div className={`font-medium ${getGradeColor(percentage)}`}>
                     {grade.gradeReceived}
                   </div>
                 ) : (
@@ -106,7 +112,7 @@ export default function StudentGrades() {
                 size="sm"
                 variant="outline"
                 onClick={() => router.push(`/class/${classId}/assignment/${grade.assignment.id}`)}
-                className="h-6 px-2 text-xs"
+                className="h-6 px-2 text-xs shrink-0"
               >
                 <ExternalLink className="h-3 w-3 mr-1" />
                 {t('grade')}
@@ -118,7 +124,7 @@ export default function StudentGrades() {
         // Editable view for teachers (no rubric)
         if (isEditing) {
           return (
-            <div className="flex items-center justify-center space-x-1">
+            <div className="flex items-center justify-center gap-1 w-32">
               <Input
                 type="number"
                 value={editingGrades[grade.assignment.id]}
@@ -133,6 +139,7 @@ export default function StudentGrades() {
                 variant="ghost"
                 onClick={() => saveGrade(grade.assignment.id, grade.id)}
                 disabled={updateGrade.isPending}
+                className="h-6 w-6 p-0 shrink-0"
               >
                 <CheckCircle className="h-4 w-4 text-green-600" />
               </Button>
@@ -140,6 +147,7 @@ export default function StudentGrades() {
                 size="sm"
                 variant="ghost"
                 onClick={() => cancelEditing(grade.assignment.id)}
+                className="h-6 w-6 p-0 shrink-0"
               >
                 <X className="h-4 w-4 text-red-600" />
               </Button>
@@ -147,21 +155,24 @@ export default function StudentGrades() {
           );
         }
 
+        const percentage = grade.gradeReceived && grade.assignment.maxGrade
+          ? (grade.gradeReceived / grade.assignment.maxGrade) * 100
+          : null;
         return (
-          <div className="group relative">
+          <div className="w-24 text-center group relative">
             {grade.gradeReceived ? (
               <div 
-                className="cursor-pointer hover:bg-muted/50 p-1 rounded border border-transparent hover:border-border" 
+                className="cursor-pointer hover:bg-muted/50 p-1 rounded border border-transparent hover:border-border inline-block"
                 onClick={() => startEditing(grade.assignment.id, grade.gradeReceived?.toString() || '')}
               >
-                <div className={`font-medium ${getGradeColor(grade.gradeReceived, "graded")}`}>
+                <div className={`font-medium ${getGradeColor(percentage)}`}>
                   {grade.gradeReceived}
                 </div>
                 <Edit className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity absolute -top-1 -right-1" />
               </div>
             ) : (
               <div 
-                className="cursor-pointer hover:bg-muted/50 p-1 rounded border border-transparent hover:border-border" 
+                className="cursor-pointer hover:bg-muted/50 p-1 rounded border border-transparent hover:border-border inline-block"
                 onClick={() => startEditing(grade.assignment.id, '')}
               >
                 <span className="text-muted-foreground">-</span>
@@ -178,7 +189,7 @@ export default function StudentGrades() {
       cell: ({ row }) => {
         const grade = row.original;
         return (
-          <div className="text-center text-muted-foreground">
+          <div className="w-20 text-center text-muted-foreground">
             {grade.assignment.maxGrade || "—"}
           </div>
         );
@@ -193,7 +204,7 @@ export default function StudentGrades() {
           (grade.gradeReceived / (grade.assignment.maxGrade || 1) * 100).toFixed(1) : null;
         
         return (
-          <div className="text-center">
+          <div className="w-24 text-center">
             {percentage ? `${percentage}%` : (
               <span className="text-muted-foreground">-</span>
             )}
@@ -207,7 +218,7 @@ export default function StudentGrades() {
       cell: ({ row }) => {
         const grade = row.original;
         return (
-          <div className="flex justify-center">
+          <div className="w-28 flex justify-center">
             <Badge variant={
               grade.gradeReceived !== null ? "default" : "secondary"
             }>
@@ -223,7 +234,7 @@ export default function StudentGrades() {
       cell: ({ row }) => {
         const grade = row.original;
         return (
-          <div className="text-center">
+          <div className="w-32 text-center">
             <span className="text-sm text-muted-foreground">
               {grade.submittedAt ? new Date(grade.submittedAt).toLocaleDateString() : '—'}
             </span>
@@ -317,16 +328,6 @@ export default function StudentGrades() {
     });
   };
 
-  const getGradeColor = (grade: number | null, status: string) => {
-    if (!grade) {
-      return status === "missing" ? "text-destructive font-semibold" : "text-warning font-medium";
-    }
-    if (grade >= 90) return "text-green-600 font-semibold";
-    if (grade >= 80) return "text-blue-600 font-medium";
-    if (grade >= 70) return "text-yellow-600 font-medium";
-    return "text-red-600 font-semibold";
-  };
-
 
   // Calculate overall grade
   let totalWeighted = 0;
@@ -346,7 +347,7 @@ export default function StudentGrades() {
   return (
     <PageLayout>
       <PageHeader 
-        title={isStudent ? t('myGrades') : `${student.username} - ${t('studentGrades')}`}
+        title={isStudent ? t('myGrades') : `${student.profile?.displayName || student.username} - ${t('studentGrades')}`}
         description={isStudent ? t('viewYourGrades') : t('individualManagement')}
       >
         <div className="flex items-center space-x-2">
@@ -373,7 +374,7 @@ export default function StudentGrades() {
             <Avatar className="h-16 w-16">
               <AvatarImage src={student.profile?.profilePicture || ""} />
               <AvatarFallback>
-                {student.username.substring(0, 2).toUpperCase()}
+                {student.profile?.displayName?.substring(0, 2).toUpperCase() || student.username.substring(0, 2).toUpperCase()}
               </AvatarFallback>
             </Avatar>
             <div className="flex-1">
@@ -386,19 +387,19 @@ export default function StudentGrades() {
             </div>
             <div className="grid grid-cols-3 gap-6 text-center">
               <div>
-                <div className={`text-2xl font-bold ${getGradeColor(overallGrade, "graded")}`}>
+                <div className={`text-2xl font-bold ${getGradeColor(overallGrade)} h-8`}>
                   {overallGrade.toFixed(1)}%
                 </div>
                 <p className="text-sm text-muted-foreground">{t('overallGrade')}</p>
               </div>
               <div>
-                <div className="text-2xl font-bold text-foreground">
+                <div className="text-2xl font-bold text-foreground h-8">
                   {completedAssignments}/{totalAssignments}
                 </div>
                 <p className="text-sm text-muted-foreground">{t('completed')}</p>
               </div>
               <div>
-                <div className="flex items-center justify-center text-2xl">
+                <div className="flex items-center justify-center text-2xl h-8">
                   {getTrendIcon(trend)}
                 </div>
                 <p className="text-sm text-muted-foreground">{t('trend')}</p>

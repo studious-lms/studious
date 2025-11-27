@@ -28,7 +28,6 @@ import { toast } from "sonner";
 import { useTranslations } from "next-intl";
 
 type Assignment = RouterOutputs['assignment']['get'];
-type Section = RouterOutputs['class']['get']['class']['sections'][number];
 type Folder = {
   id: string;
   name: string;
@@ -649,7 +648,7 @@ export default function Assignments() {
   return (
     <DndProvider backend={HTML5Backend}>
       <PageLayout>
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center justify-between mb-6 space-y-4 flex-wrap">
           <div>
             <h1 className="text-2xl font-bold">{t('assignments')}</h1>
             <p className="text-muted-foreground">{t('manageAndTrack')}</p>

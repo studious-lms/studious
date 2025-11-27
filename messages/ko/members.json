@@ -51,7 +51,7 @@
       "inviteRegenerated": "초대 코드가 성공적으로 재생성되었습니다.",
       "copied": "초대 코드가 클립보드에 복사되었습니다.",
       "roleChanged": "역할이 {role}으로 변경되었습니다.",
-      "memberRemoved": "회원이 성공적으로 제거되었습니다"
+      "memberRemoved": "회원이 성공적으로 제거되었습니다."
     },
     "errors": {
       "regenerateFailed": "초대 코드를 다시 생성하지 못했습니다.",

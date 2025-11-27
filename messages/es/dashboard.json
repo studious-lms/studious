@@ -1,25 +1,25 @@
 {
   "home": {
     "welcomeBack": "¡Bienvenido de nuevo, {name}!",
-    "subtitle": "Esto es lo que sucederá hoy con tus clases.",
+    "subtitle": "Esto es lo que está pasando con tus clases hoy.",
     "stats": {
-      "totalClasses": "Clases totales",
-      "teachingEnrolled": "{teaching} enseñanza, {enrolled} matriculado",
-      "dueToday": "Con vencimiento hoy",
-      "dueTodayDesc": "Tareas para entregar hoy",
+      "totalClasses": "Total de clases",
+      "teachingEnrolled": "{teaching} enseñando, {enrolled} matriculado",
+      "dueToday": "Vencimiento hoy",
+      "dueTodayDesc": "Tareas que deben entregarse hoy",
       "upcoming": "Próximamente",
-      "upcomingDesc": "Próximas tareas",
+      "upcomingDesc": "Tareas próximas",
       "thisWeek": "Esta semana",
       "totalAssignments": "Asignaciones totales"
     },
     "upcomingAssignments": {
       "title": "Próximas tareas",
       "subtitle": "Tus próximos plazos",
-      "allCaughtUp": "¡Todo al día!",
-      "noUpcoming": "Por el momento no hay asignaciones pendientes.",
+      "allCaughtUp": "¡Todos atrapados!",
+      "noUpcoming": "No hay tareas próximas en este momento.",
       "viewAgenda": "Ver agenda",
-      "dueToday": "Con vencimiento hoy",
-      "dueTomorrow": "Se entrega mañana",
+      "dueToday": "Vencimiento hoy",
+      "dueTomorrow": "Vencimiento mañana",
       "due": "Dos {dates}",
       "teaching": "Enseñanza",
       "viewAllAssignments": "Ver todas las tareas"
@@ -27,7 +27,7 @@
     "notifications": {
       "title": "Notificaciones recientes",
       "subtitle": "Últimas actualizaciones",
-      "noNew": "No hay notificaciones nuevas",
+      "noNew": "No hay nuevas notificaciones",
       "viewAll": "Ver todas las notificaciones"
     },
     "classes": {
@@ -36,7 +36,7 @@
       "teaching": "Enseñanza",
       "enrolled": "Inscrito",
       "due": "pendiente",
-      "noClasses": "Aún no hay clases.",
+      "noClasses": "No hay clases todavía",
       "browseClasses": "Explorar clases",
       "viewAllClasses": "Ver todas las clases"
     }

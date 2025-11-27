@@ -49,13 +49,11 @@
       "title": "Buat akaun anda",
       "subtitle": "Sertai Studious dan mula belajar",
       "signUp": "Daftar",
-      "firstName": "Nama Pertama",
-      "lastName": "Nama Akhir",
+      "username": "Nama pengguna",
       "email": "E-mel",
       "password": "Kata laluan",
       "confirmPassword": "Sahkan Kata Laluan",
-      "firstNamePlaceholder": "nama pertama",
-      "lastNamePlaceholder": "nama keluarga",
+      "usernamePlaceholder": "Masukkan nama pengguna anda",
       "emailPlaceholder": "Masukkan e-mel anda",
       "passwordPlaceholder": "Buat kata laluan",
       "confirmPasswordPlaceholder": "Sahkan kata laluan anda",
@@ -68,9 +66,10 @@
       "alreadyHaveAccount": "Sudah mempunyai akaun?",
       "signIn": "Log masuk",
       "passwordMismatch": "Kata laluan tidak sepadan",
+      "passwordTooShort": "Kata laluan mestilah sekurang-kurangnya 6 aksara panjang",
       "termsRequired": "Anda mesti bersetuju dengan terma",
-      "accountCreated": "Akaun berjaya dibuat!",
-      "signUpFailed": "Gagal membuat akaun"
+      "verificationEmailSent": "E-mel pengesahan dihantar!",
+      "signUpFailed": "Gagal membuat akaun. Sila cuba lagi."
     },
     "verification": {
       "notVerified": "Akaun Tidak Disahkan",
@@ -82,12 +81,53 @@
       "checkInbox": "Sila semak peti masuk dan folder spam anda.",
       "enterEmail": "Masukkan alamat e-mel anda",
       "sending": "Menghantar...",
-      "sendEmail": "Hantar E-mel"
+      "sendEmail": "Hantar E-mel",
+      "title": "Sahkan E-mel Anda",
+      "subtitle": "Klik butang di bawah untuk mengesahkan alamat e-mel anda",
+      "verifying": "Mengesahkan...",
+      "verifyEmail": "Sahkan E-mel",
+      "successTitle": "E-mel Berjaya Disahkan",
+      "successMessage": "E-mel anda telah disahkan. Anda kini boleh log masuk ke akaun anda.",
+      "errorTitle": "Pengesahan Gagal",
+      "errorMessage": "Pautan pengesahan tidak sah atau telah tamat tempoh. Sila minta e-mel pengesahan baharu.",
+      "invalidToken": "Token pengesahan tidak sah"
+    },
+    "forgotPassword": {
+      "title": "Tetapkan Semula Kata Laluan Anda",
+      "subtitle": "Masukkan alamat e-mel anda dan kami akan menghantar pautan kepada anda untuk menetapkan semula kata laluan anda",
+      "email": "E-mel",
+      "emailPlaceholder": "Masukkan alamat e-mel anda",
+      "sendResetLink": "Hantar Pautan Tetapan Semula",
+      "sending": "Menghantar...",
+      "backToSignIn": "Kembali ke Log Masuk",
+      "successTitle": "Semak E-mel Anda",
+      "successMessage": "Jika akaun wujud dengan e-mel itu, kami telah menghantar pautan tetapan semula kata laluan kepada anda.",
+      "checkInbox": "Sila semak peti masuk dan folder spam anda untuk pautan tetapan semula.",
+      "errorMessage": "Gagal menghantar pautan tetapan semula. Sila cuba lagi.",
+      "invalidEmail": "Sila masukkan alamat e-mel yang sah"
+    },
+    "resetPassword": {
+      "title": "Tetapkan Semula Kata Laluan Anda",
+      "subtitle": "Masukkan kata laluan baharu anda di bawah",
+      "password": "Kata Laluan Baharu",
+      "passwordPlaceholder": "Masukkan kata laluan baharu anda",
+      "confirmPassword": "Sahkan Kata Laluan",
+      "confirmPasswordPlaceholder": "Sahkan kata laluan baharu anda",
+      "resetPassword": "Tetapkan Semula Kata Laluan",
+      "resetting": "Menetapkan semula...",
+      "passwordTooShort": "Kata laluan mestilah sekurang-kurangnya 6 aksara panjang",
+      "passwordsDoNotMatch": "Kata laluan tidak sepadan",
+      "successTitle": "Berjaya Tetapan Semula Kata Laluan",
+      "successMessage": "Kata laluan anda telah berjaya ditetapkan semula. Anda kini boleh log masuk dengan kata laluan baharu anda.",
+      "backToSignIn": "Kembali ke Log Masuk"
     }
   },
   "marketing": {
     "navbar": {
-      "requestEarlyAccess": "Minta Akses Awal"
+      "requestEarlyAccess": "Minta Akses Awal",
+      "lightMode": "Tukar kepada mod cahaya",
+      "darkMode": "Tukar kepada mod gelap",
+      "languageSelector": "Pilih bahasa"
     },
     "hero": {
       "badge": "Platform Pembelajaran Moden",
@@ -138,7 +178,7 @@
       }
     },
     "quote": {
-      "text": "Setiap ciri dalam Studious dibina untuk mengurangkan geseran — bukan menambahnya."
+      "text": "Setiap ciri dalam Studious telah dibina untuk mengurangkan geseran — bukan menambahnya."
     },
     "pricing": {
       "title": "Pilih pelan yang sesuai untuk institusi anda",
@@ -229,6 +269,132 @@
       "requestAccess": "Minta Akses",
       "partnerWithUs": "Rakan Kongsi dengan Kami",
       "tagline": "Studious LMS — Pembelajaran Moden, Dipermudahkan."
+    },
+    "privacyPolicy": {
+      "title": "Dasar Privasi",
+      "lastUpdated": "Kemas Kini Terakhir: November 2025",
+      "sections": {
+        "introduction": {
+          "title": "1. Pengenalan",
+          "content": "LMS Studious ('kami', 'kami' atau 'kami') komited untuk melindungi privasi anda. Dasar Privasi ini menerangkan cara kami mengumpul, menggunakan, mendedahkan dan melindungi maklumat anda apabila anda menggunakan sistem pengurusan pembelajaran kami dan perkhidmatan berkaitan (secara kolektif, 'Perkhidmatan'). Sila baca Dasar Privasi ini dengan teliti. Dengan menggunakan Perkhidmatan kami, anda bersetuju menerima pengumpulan dan penggunaan maklumat mengikut dasar ini."
+        },
+        "informationWeCollect": {
+          "title": "2. Maklumat yang Kami Kumpul",
+          "content": "Kami mengumpul maklumat yang anda berikan terus kepada kami, termasuk:\n\n• Maklumat Akaun: Nama pengguna, alamat e-mel, kata laluan dan maklumat profil\n• Data Pendidikan: Pendaftaran kelas, tugasan, gred, rekod kehadiran dan kemajuan akademik\n• Data Komunikasi: Mesej, pengumuman dan komunikasi lain dalam platform\n• Data Penggunaan: Maklumat tentang cara anda berinteraksi dengan Perkhidmatan kami, termasuk halaman yang dilawati dan ciri yang digunakan\n• Maklumat Peranti: Alamat IP, jenis penyemak imbas, pengecam peranti dan sistem pengendalian\n• Teknologi Kuki dan Penjejakan: Kami menggunakan kuki dan teknologi serupa untuk meningkatkan pengalaman anda dan menganalisis corak penggunaan"
+        },
+        "howWeUseInformation": {
+          "title": "3. Bagaimana Kami Menggunakan Maklumat Anda",
+          "content": "Kami menggunakan maklumat yang kami kumpulkan untuk:\n\n• Menyediakan, mengekalkan dan menambah baik Perkhidmatan kami\n• Memproses transaksi dan mengurus akaun anda\n• Memudahkan komunikasi antara guru, pelajar dan pentadbir\n• Menjana dan mengurus kandungan pendidikan, tugasan dan gred\n• Hantar pemberitahuan penting tentang akaun anda dan Perkhidmatan\n• Menganalisis corak penggunaan untuk meningkatkan pengalaman pengguna\n• Memastikan keselamatan dan mencegah penipuan\n• Mematuhi kewajipan undang-undang dan melindungi hak kita"
+        },
+        "informationSharing": {
+          "title": "4. Perkongsian dan Pendedahan Maklumat",
+          "content": "Kami tidak menjual maklumat peribadi anda. Kami mungkin berkongsi maklumat anda dalam keadaan berikut:\n\n• Dengan Institusi Pendidikan: Maklumat boleh dikongsi dengan sekolah atau institusi pendidikan anda untuk tujuan pendidikan\n• Dengan Pembekal Perkhidmatan: Kami mungkin berkongsi maklumat dengan pembekal perkhidmatan pihak ketiga yang membantu dalam mengendalikan Perkhidmatan kami\n• Untuk Pematuhan Undang-undang: Kami mungkin mendedahkan maklumat jika dikehendaki oleh undang-undang atau untuk melindungi hak dan keselamatan kami\n• Dengan Persetujuan Anda: Kami mungkin berkongsi maklumat dengan persetujuan jelas anda\n• Dalam Kes Penggabungan: Maklumat mungkin dipindahkan berkaitan dengan transaksi perniagaan"
+        },
+        "dataSecurity": {
+          "title": "5. Keselamatan Data",
+          "content": "Kami melaksanakan langkah keselamatan teknikal dan organisasi yang sesuai untuk melindungi maklumat peribadi anda daripada akses, pengubahan, pendedahan atau pemusnahan yang tidak dibenarkan. Walau bagaimanapun, tiada kaedah penghantaran melalui Internet atau storan elektronik adalah 100% selamat. Walaupun kami berusaha untuk menggunakan cara yang boleh diterima secara komersial untuk melindungi maklumat anda, kami tidak dapat menjamin keselamatan mutlak."
+        },
+        "dataRetention": {
+          "title": "6. Pengekalan Data",
+          "content": "Kami menyimpan maklumat peribadi anda selama yang diperlukan untuk menyediakan Perkhidmatan kami dan memenuhi tujuan yang digariskan dalam Dasar Privasi ini, melainkan tempoh pengekalan yang lebih lama diperlukan atau dibenarkan oleh undang-undang. Apabila kami tidak lagi memerlukan maklumat anda, kami akan memadamkan atau menamakannya dengan selamat."
+        },
+        "yourRights": {
+          "title": "7. Hak Anda",
+          "content": "Bergantung pada lokasi anda, anda mungkin mempunyai hak tertentu mengenai maklumat peribadi anda, termasuk:\n\n• Akses: Minta akses kepada maklumat peribadi anda\n• Pembetulan: Minta pembetulan maklumat yang tidak tepat\n• Pemadaman: Minta pemadaman maklumat peribadi anda\n• Kemudahalihan: Minta pemindahan data anda\n• Bantahan: Bantah aktiviti pemprosesan tertentu\n• Penarikan Balik Persetujuan: Tarik balik persetujuan di mana pemprosesan adalah berdasarkan persetujuan\n\nUntuk menggunakan hak ini, sila hubungi kami menggunakan maklumat yang diberikan dalam bahagian 'Hubungi Kami'."
+        },
+        "childrenPrivacy": {
+          "title": "8. Privasi Kanak-kanak",
+          "content": "Perkhidmatan kami direka bentuk untuk kegunaan pendidikan dan boleh digunakan oleh pelajar di bawah umur 18 tahun. Kami mematuhi undang-undang berkenaan privasi kanak-kanak, termasuk Akta Hak dan Privasi Pendidikan Keluarga (FERPA) di Amerika Syarikat. Kami tidak sengaja mengumpul maklumat peribadi daripada kanak-kanak tanpa kebenaran yang sewajarnya daripada ibu bapa atau institusi pendidikan. Jika anda percaya kami telah mengumpul maklumat daripada kanak-kanak secara tidak wajar, sila hubungi kami dengan segera."
+        },
+        "internationalTransfers": {
+          "title": "9. Pemindahan Data Antarabangsa",
+          "content": "Maklumat anda mungkin dipindahkan ke dan diproses di negara selain negara tempat tinggal anda. Negara-negara ini mungkin mempunyai undang-undang perlindungan data yang berbeza daripada undang-undang di negara anda. Dengan menggunakan Perkhidmatan kami, anda bersetuju dengan pemindahan maklumat anda ke negara-negara ini."
+        },
+        "changesToPolicy": {
+          "title": "10. Perubahan kepada Dasar Privasi Ini",
+          "content": "Kami mungkin mengemas kini Dasar Privasi ini dari semasa ke semasa. Kami akan memberitahu anda tentang sebarang perubahan dengan menyiarkan Dasar Privasi baharu pada halaman ini dan mengemas kini tarikh 'Terakhir Dikemas Kini'. Anda dinasihatkan untuk menyemak Dasar Privasi ini secara berkala untuk sebarang perubahan."
+        },
+        "contactUs": {
+          "title": "11. Hubungi Kami",
+          "content": "Jika anda mempunyai sebarang soalan tentang Dasar Privasi ini atau amalan privasi kami, sila hubungi kami di:\n\nE-mel: privacy@studious.sh\n\nKami akan menjawab pertanyaan anda dalam jangka masa yang munasabah."
+        }
+      },
+      "goToTop": "Pergi ke Atas",
+      "tableOfContents": "Jadual Kandungan",
+      "backToTop": "Kembali ke Atas"
+    },
+    "termsOfService": {
+      "title": "Syarat Perkhidmatan",
+      "lastUpdated": "Kemas Kini Terakhir: November 2025",
+      "sections": {
+        "acceptance": {
+          "title": "1. Penerimaan Terma",
+          "content": "Dengan mengakses atau menggunakan Studious LMS ('Perkhidmatan'), anda bersetuju untuk terikat dengan Syarat Perkhidmatan ini ('Syarat'). Jika anda tidak bersetuju dengan Terma ini, anda tidak boleh mengakses atau menggunakan Perkhidmatan. Syarat ini dikenakan kepada semua pengguna Perkhidmatan, termasuk pelajar, guru, pentadbir dan institusi pendidikan."
+        },
+        "descriptionOfService": {
+          "title": "2. Penerangan Perkhidmatan",
+          "content": "Studious LMS ialah sistem pengurusan pembelajaran yang menyediakan institusi pendidikan, guru dan pelajar dengan alatan untuk mengurus kelas, tugasan, gred, kehadiran, komunikasi dan aktiviti pendidikan yang lain. Perkhidmatan ini termasuk aplikasi berasaskan web dan mudah alih, ciri dikuasakan AI dan perkhidmatan berkaitan."
+        },
+        "userAccounts": {
+          "title": "3. Akaun Pengguna",
+          "content": "Untuk menggunakan Perkhidmatan, anda mesti membuat akaun dan memberikan maklumat yang tepat, terkini dan lengkap. Anda bertanggungjawab untuk mengekalkan kerahsiaan bukti kelayakan akaun anda dan untuk semua aktiviti yang berlaku di bawah akaun anda. Anda bersetuju untuk:\n\n• Gunakan kata laluan yang kukuh dan unik\n• Tidak berkongsi kelayakan akaun anda dengan orang lain\n• Beritahu kami dengan segera tentang sebarang akses yang tidak dibenarkan\n• Mengekalkan maklumat akaun yang tepat\n• Bertanggungjawab untuk semua aktiviti di bawah akaun anda"
+        },
+        "acceptableUse": {
+          "title": "4. Polisi Penggunaan Boleh Diterima",
+          "content": "Anda bersetuju untuk menggunakan Perkhidmatan hanya untuk tujuan yang sah dan menurut Terma ini. Anda bersetuju TIDAK untuk:\n\n• Melanggar mana-mana undang-undang atau peraturan yang berkenaan\n• Melanggar hak harta intelek\n• Hantar kandungan yang berbahaya, menyinggung perasaan atau tidak sesuai\n• Mengganggu, menyalahgunakan atau membahayakan pengguna lain\n• Percubaan untuk mendapatkan akses tanpa kebenaran kepada Perkhidmatan\n• Mengganggu atau mengganggu Perkhidmatan atau pelayan\n• Gunakan sistem automatik untuk mengakses Perkhidmatan tanpa kebenaran\n• Menyamar sebagai mana-mana orang atau entiti\n• Mengumpul atau menyimpan data peribadi tentang pengguna lain tanpa kebenaran"
+        },
+        "educationalContent": {
+          "title": "5. Kandungan Pendidikan dan Harta Intelek",
+          "content": "Perkhidmatan ini membenarkan pengguna membuat, memuat naik dan berkongsi kandungan pendidikan. Anda mengekalkan pemilikan kandungan yang anda buat, tetapi dengan menggunakan Perkhidmatan, anda memberi kami lesen untuk menggunakan, menyimpan dan memaparkan kandungan anda sebagaimana yang diperlukan untuk menyediakan Perkhidmatan. Anda bertanggungjawab untuk memastikan anda mempunyai hak untuk menggunakan dan berkongsi sebarang kandungan yang anda muat naik. Kami menghormati hak harta intelek dan akan bertindak balas terhadap notis pelanggaran hak cipta yang sah."
+        },
+        "aiFeatures": {
+          "title": "6. Ciri Dikuasakan AI",
+          "content": "Perkhidmatan kami termasuk ciri dikuasakan AI seperti bantuan penggredan, penjanaan kandungan dan sokongan pendidikan. Ciri-ciri ini disediakan 'seadanya' dan harus digunakan sebagai alat tambahan. Pengguna bertanggungjawab untuk menyemak dan mengesahkan kandungan yang dijana AI. Kami tidak menjamin ketepatan, kesempurnaan atau kesesuaian kandungan yang dijana AI."
+        },
+        "privacy": {
+          "title": "7. Privasi",
+          "content": "Penggunaan Perkhidmatan anda juga dikawal oleh Dasar Privasi kami, yang menerangkan cara kami mengumpul, menggunakan dan melindungi maklumat anda. Dengan menggunakan Perkhidmatan, anda bersetuju dengan pengumpulan dan penggunaan maklumat seperti yang diterangkan dalam Dasar Privasi kami."
+        },
+        "feesAndPayment": {
+          "title": "8. Yuran dan Bayaran",
+          "content": "Sesetengah ciri Perkhidmatan mungkin memerlukan pembayaran. Jika anda membeli langganan atau ciri berbayar:\n\n• Yuran adalah seperti yang dinyatakan semasa pembelian\n• Pembayaran diproses melalui pemproses pembayaran pihak ketiga yang selamat\n• Langganan diperbaharui secara automatik melainkan dibatalkan\n• Bayaran balik adalah tertakluk kepada dasar bayaran balik kami\n• Kami berhak untuk menukar harga dengan notis"
+        },
+        "termination": {
+          "title": "9. Penamatan",
+          "content": "Kami boleh menamatkan atau menggantung akaun anda dan akses kepada Perkhidmatan dengan serta-merta, tanpa notis awal, kerana kelakuan yang kami percaya melanggar Syarat ini atau berbahaya kepada pengguna lain, kami atau pihak ketiga. Anda boleh menamatkan akaun anda pada bila-bila masa dengan menghubungi kami. Selepas penamatan, hak anda untuk menggunakan Perkhidmatan akan dihentikan serta-merta."
+        },
+        "disclaimers": {
+          "title": "10. Penafian",
+          "content": "PERKHIDMATAN DISEDIAKAN 'SEBAGAIMANA ADANYA' DAN 'SEBAGAIMANA TERSEDIA' TANPA SEBARANG JENIS WARANTI, SAMA ADA TERSURAT ATAU TERSIRAT. KAMI TIDAK MENJAMIN BAHAWA PERKHIDMATAN INI AKAN TIDAK TERGANGGU, SELAMAT ATAU BEBAS RALAT. KAMI MENAFIKAN SEMUA WARANTI, TERMASUK WARANTI KEBOLEHPERDAGANGAN, KESESUAIAN UNTUK TUJUAN TERTENTU DAN TANPA PELANGGARAN."
+        },
+        "limitationOfLiability": {
+          "title": "11. Had Liabiliti",
+          "content": "SEJAUH MAKSIMUM YANG DIBENARKAN OLEH UNDANG-UNDANG, KAMI TIDAK AKAN BERTANGGUNGJAWAB ATAS SEBARANG KERUGIAN TIDAK LANGSUNG, SAMPINGAN, KHAS, AKIBAT, ATAU PIHAK, ATAU SEBARANG KEHILANGAN KEUNTUNGAN ATAU HASIL, SAMA ADA DITANGGUNG JAWAB SECARA LANGSUNG ATAU TIDAK LANGSUNG, KERUGIAN SECARA LANGSUNG ATAU TIDAK LANGSUNG, LAIN-LAIN KERUGIAN TIDAK KETARA AKIBAT PENGGUNAAN PERKHIDMATAN ANDA."
+        },
+        "indemnification": {
+          "title": "12. Ganti rugi",
+          "content": "Anda bersetuju untuk menanggung rugi, mempertahankan, dan tidak memudaratkan Studious LMS dan pegawai, pengarah, pekerja, dan ejennya daripada dan terhadap sebarang tuntutan, liabiliti, kerosakan, kerugian dan perbelanjaan yang timbul daripada atau dalam apa-apa cara berkaitan dengan akses anda kepada atau penggunaan Perkhidmatan, pelanggaran anda terhadap Syarat ini, atau pelanggaran anda terhadap mana-mana hak orang lain."
+        },
+        "governingLaw": {
+          "title": "13. Undang-undang yang Mentadbir",
+          "content": "Terma ini akan ditadbir oleh dan ditafsirkan mengikut undang-undang bidang kuasa di mana Studious LMS beroperasi, tanpa mengambil kira percanggahan peruntukan undang-undangnya. Sebarang pertikaian yang timbul daripada Terma atau Perkhidmatan ini akan diselesaikan di mahkamah yang sesuai dalam bidang kuasa tersebut."
+        },
+        "changesToTerms": {
+          "title": "14. Perubahan kepada Syarat",
+          "content": "Kami berhak untuk mengubah suai Terma ini pada bila-bila masa. Kami akan memberitahu pengguna tentang perubahan penting dengan menyiarkan Syarat yang dikemas kini di tapak web kami dan mengemas kini tarikh 'Terakhir Dikemas Kini'. Penggunaan berterusan Perkhidmatan anda selepas perubahan tersebut merupakan penerimaan Terma yang diubah suai."
+        },
+        "contactUs": {
+          "title": "15. Hubungi Kami",
+          "content": "Jika anda mempunyai sebarang pertanyaan tentang Syarat Perkhidmatan ini, sila hubungi kami di:\n\nE-mel: legal@studious.sh\n\nKami akan menjawab pertanyaan anda dalam jangka masa yang munasabah."
+        }
+      },
+      "goToTop": "Pergi ke Atas",
+      "tableOfContents": "Jadual Kandungan",
+      "backToTop": "Kembali ke Atas"
+    },
+    "navbarPopup": {
+      "goBack": "Pergi Balik",
+      "home": "Rumah"
     }
   },
   "press": {
@@ -1013,7 +1179,7 @@
         "subject": "cth., Fizik",
         "semester": "cth., Musim bunga 2025",
         "credits": "cth., 3",
-        "meetingTime": "mis., MWF 10:00-11:00 PG",
+        "meetingTime": "cth., MWF 10:00-11:00 PG",
         "location": "cth., Bilik 205, Bangunan Sains",
         "description": "Huraikan kandungan dan objektif kelas..."
       },
@@ -1211,8 +1377,8 @@
         },
         "level5": {
           "title": "Inovasi Bersama Tahap 5",
-          "description": "Gunakan AI untuk menjana kandungan, menjalankan analisis, membina model, penulisan kreatif, terjemahan atau visualisasi data, dengan kepengarangan dan refleksi manusia yang eksplisit.",
-          "useCases": "Gunakan AI untuk menjana kandungan, menjalankan analisis, membina model, penulisan kreatif, terjemahan atau visualisasi data, dengan kepengarangan dan refleksi manusia yang eksplisit.",
+          "description": "Gunakan AI untuk menjana kandungan, menjalankan analisis, membina model, penulisan kreatif, terjemahan atau visualisasi data, dengan kepengarangan dan refleksi manusia yang jelas.",
+          "useCases": "Gunakan AI untuk menjana kandungan, menjalankan analisis, membina model, penulisan kreatif, terjemahan atau visualisasi data, dengan kepengarangan dan refleksi manusia yang jelas.",
           "studentResponsibilities": "Mengintegrasikan AI secara beretika dan bertujuan; mewajarkan peranannya dalam memajukan pembelajaran atau kreativiti.",
           "disclosureRequirements": "Berikan pengakuan yang jelas tentang semua sumbangan AI dan semakan manusia."
         }

@@ -104,7 +104,7 @@ export default function Classes() {
         title={t('title')}
         description={t('description')}
       >
-        <div className="flex flex-col sm:flex-row gap-2">
+        <div className="flex flex-row gap-2">
           <JoinClassModal onClassJoined={handleClassJoined}>
             <Button variant="outline" className="flex items-center space-x-2">
               <UserPlus className="h-4 w-4" />
@@ -157,7 +157,7 @@ export default function Classes() {
             </div>
           )}
           {filteredTeaching.length > 0 ? (
-            <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-8 gap-3">
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-8 gap-3">
               {filteredTeaching.map((classItem) => (
                 <ClassCard
                   key={classItem.id}

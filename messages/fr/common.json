@@ -49,13 +49,11 @@
       "title": "Créez votre compte",
       "subtitle": "Rejoignez Studious et commencez à apprendre",
       "signUp": "S'inscrire",
-      "firstName": "Prénom",
-      "lastName": "Nom de famille",
+      "username": "Nom d'utilisateur",
       "email": "E-mail",
       "password": "Mot de passe",
       "confirmPassword": "Confirmez le mot de passe",
-      "firstNamePlaceholder": "Prénom",
-      "lastNamePlaceholder": "Nom de famille",
+      "usernamePlaceholder": "Saisissez votre nom d'utilisateur",
       "emailPlaceholder": "Saisissez votre adresse e-mail",
       "passwordPlaceholder": "Créer un mot de passe",
       "confirmPasswordPlaceholder": "Confirmez votre mot de passe",
@@ -68,9 +66,10 @@
       "alreadyHaveAccount": "Vous avez déjà un compte ?",
       "signIn": "Se connecter",
       "passwordMismatch": "Les mots de passe ne correspondent pas.",
+      "passwordTooShort": "Le mot de passe doit comporter au moins 6 caractères.",
       "termsRequired": "Vous devez accepter les conditions",
-      "accountCreated": "Compte créé avec succès !",
-      "signUpFailed": "Impossible de créer le compte"
+      "verificationEmailSent": "Courriel de vérification envoyé !",
+      "signUpFailed": "Impossible de créer le compte. Veuillez réessayer."
     },
     "verification": {
       "notVerified": "Compte non vérifié",
@@ -82,12 +81,53 @@
       "checkInbox": "Veuillez vérifier votre boîte de réception et votre dossier de courriers indésirables.",
       "enterEmail": "Saisissez votre adresse e-mail",
       "sending": "Envoi...",
-      "sendEmail": "Envoyer un courriel"
+      "sendEmail": "Envoyer un e-mail",
+      "title": "Vérifiez votre courriel",
+      "subtitle": "Cliquez sur le bouton ci-dessous pour vérifier votre adresse e-mail",
+      "verifying": "Vérification en cours...",
+      "verifyEmail": "Vérifier l'adresse e-mail",
+      "successTitle": "Adresse e-mail vérifiée avec succès",
+      "successMessage": "Votre adresse e-mail a été vérifiée. Vous pouvez maintenant vous connecter à votre compte.",
+      "errorTitle": "Échec de la vérification",
+      "errorMessage": "Le lien de vérification est invalide ou a expiré. Veuillez demander un nouvel e-mail de vérification.",
+      "invalidToken": "Jeton de vérification invalide"
+    },
+    "forgotPassword": {
+      "title": "Réinitialiser votre mot de passe",
+      "subtitle": "Saisissez votre adresse e-mail et nous vous enverrons un lien pour réinitialiser votre mot de passe.",
+      "email": "E-mail",
+      "emailPlaceholder": "Saisissez votre adresse e-mail",
+      "sendResetLink": "Envoyer le lien de réinitialisation",
+      "sending": "Envoi...",
+      "backToSignIn": "Retour à la page de connexion",
+      "successTitle": "Consultez votre boîte mail",
+      "successMessage": "Si un compte existe avec cette adresse e-mail, nous vous avons envoyé un lien de réinitialisation de mot de passe.",
+      "checkInbox": "Veuillez vérifier votre boîte de réception et votre dossier de courriers indésirables pour le lien de réinitialisation.",
+      "errorMessage": "Impossible d'envoyer le lien de réinitialisation. Veuillez réessayer.",
+      "invalidEmail": "S'il vous plaît, mettez une adresse email valide"
+    },
+    "resetPassword": {
+      "title": "Réinitialiser votre mot de passe",
+      "subtitle": "Saisissez votre nouveau mot de passe ci-dessous",
+      "password": "Nouveau mot de passe",
+      "passwordPlaceholder": "Saisissez votre nouveau mot de passe",
+      "confirmPassword": "Confirmez le mot de passe",
+      "confirmPasswordPlaceholder": "Confirmez votre nouveau mot de passe",
+      "resetPassword": "Réinitialiser le mot de passe",
+      "resetting": "Réinitialisation...",
+      "passwordTooShort": "Le mot de passe doit comporter au moins 6 caractères.",
+      "passwordsDoNotMatch": "Les mots de passe ne correspondent pas.",
+      "successTitle": "Réinitialisation du mot de passe réussie",
+      "successMessage": "Votre mot de passe a été réinitialisé avec succès. Vous pouvez maintenant vous connecter avec votre nouveau mot de passe.",
+      "backToSignIn": "Retour à la page de connexion"
     }
   },
   "marketing": {
     "navbar": {
-      "requestEarlyAccess": "Demander un accès anticipé"
+      "requestEarlyAccess": "Demander un accès anticipé",
+      "lightMode": "Passer en mode clair",
+      "darkMode": "Passer en mode sombre",
+      "languageSelector": "Sélectionnez la langue"
     },
     "hero": {
       "badge": "Plateforme d'apprentissage moderne",
@@ -229,6 +269,132 @@
       "requestAccess": "Demande d'accès",
       "partnerWithUs": "Devenez partenaire avec nous",
       "tagline": "Studious LMS — L'apprentissage moderne, simplifié."
+    },
+    "privacyPolicy": {
+      "title": "politique de confidentialité",
+      "lastUpdated": "Dernière mise à jour : novembre 2025",
+      "sections": {
+        "introduction": {
+          "title": "1. Introduction",
+          "content": "Studious LMS (« nous », « notre » ou « nos ») s'engage à protéger votre vie privée. La présente Politique de confidentialité explique comment nous recueillons, utilisons, divulguons et protégeons vos informations lorsque vous utilisez notre système de gestion de l'apprentissage et les services associés (collectivement, le « Service »). Veuillez lire attentivement cette Politique de confidentialité. En utilisant notre Service, vous acceptez la collecte et l'utilisation de vos informations conformément à la présente politique."
+        },
+        "informationWeCollect": {
+          "title": "2. Informations que nous recueillons",
+          "content": "Nous collectons les informations que vous nous fournissez directement, notamment :\n\n• Informations de compte : nom d’utilisateur, adresse e-mail, mot de passe et informations de profil\n\n• Données scolaires : inscriptions aux cours, devoirs, notes, relevés de présence et progression scolaire\n\n• Données de communication : messages, annonces et autres communications sur la plateforme\n\n• Données d’utilisation : informations sur votre interaction avec notre service, y compris les pages consultées et les fonctionnalités utilisées\n\n• Informations sur l’appareil : adresse IP, type de navigateur, identifiants de l’appareil et système d’exploitation\n\n• Cookies et technologies de suivi : nous utilisons des cookies et des technologies similaires pour améliorer votre expérience et analyser les habitudes d’utilisation."
+        },
+        "howWeUseInformation": {
+          "title": "3. Comment nous utilisons vos informations",
+          "content": "Nous utilisons les informations que nous recueillons pour :\n\n• Fournir, maintenir et améliorer notre Service\n• Traiter les transactions et gérer votre compte\n• Faciliter la communication entre les enseignants, les élèves et l’administration\n• Créer et gérer les contenus pédagogiques, les devoirs et les notes\n• Vous envoyer des notifications importantes concernant votre compte et le Service\n• Analyser les habitudes d’utilisation afin d’améliorer l’expérience utilisateur\n• Garantir la sécurité et prévenir la fraude\n• Respecter nos obligations légales et protéger nos droits"
+        },
+        "informationSharing": {
+          "title": "4. Partage et divulgation d'informations",
+          "content": "Nous ne vendons pas vos informations personnelles. Nous pouvons les partager dans les circonstances suivantes :\n\n• Avec les établissements d’enseignement : vos informations peuvent être partagées avec votre école ou établissement d’enseignement à des fins pédagogiques.\n\n• Avec les prestataires de services : nous pouvons partager vos informations avec les prestataires de services tiers qui nous aident à exploiter notre service.\n\n• Pour des raisons légales : nous pouvons divulguer des informations si la loi l’exige ou pour protéger nos droits et notre sécurité.\n\n• Avec votre consentement : nous pouvons partager vos informations avec votre consentement explicite.\n\n• En cas de fusion : vos informations peuvent être transférées dans le cadre d’une transaction commerciale."
+        },
+        "dataSecurity": {
+          "title": "5. Sécurité des données",
+          "content": "Nous mettons en œuvre des mesures de sécurité techniques et organisationnelles appropriées afin de protéger vos informations personnelles contre tout accès, modification, divulgation ou destruction non autorisés. Cependant, aucune méthode de transmission sur Internet ni de stockage électronique n'est sûre à 100 %. Bien que nous nous efforcions d'utiliser des moyens commercialement acceptables pour protéger vos informations, nous ne pouvons garantir une sécurité absolue."
+        },
+        "dataRetention": {
+          "title": "6. Conservation des données",
+          "content": "Nous conservons vos données personnelles aussi longtemps que nécessaire pour vous fournir notre Service et atteindre les objectifs décrits dans la présente Politique de confidentialité, sauf si la loi exige ou autorise une durée de conservation plus longue. Lorsque nous n'aurons plus besoin de vos données, nous les supprimerons ou les anonymiserons de manière sécurisée."
+        },
+        "yourRights": {
+          "title": "7. Vos droits",
+          "content": "Selon votre lieu de résidence, vous pouvez disposer de certains droits concernant vos données personnelles, notamment :\n\n• Accès : Demander l’accès à vos données personnelles\n\n• Rectification : Demander la rectification de données inexactes\n\n• Effacement : Demander l’effacement de vos données personnelles\n\n• Portabilité : Demander le transfert de vos données\n\n• Opposition : Vous opposer à certains traitements de vos données\n\n• Retrait du consentement : Retirer votre consentement lorsque le traitement est fondé sur celui-ci\n\nPour exercer ces droits, veuillez nous contacter en utilisant les informations fournies dans la section « Nous contacter »."
+        },
+        "childrenPrivacy": {
+          "title": "8. Protection de la vie privée des enfants",
+          "content": "Notre service est conçu à des fins éducatives et peut être utilisé par les élèves de moins de 18 ans. Nous respectons la législation en vigueur relative à la protection de la vie privée des enfants, notamment la loi américaine FERPA (Family Educational Rights and Privacy Act). Nous ne recueillons pas sciemment d'informations personnelles auprès d'enfants sans le consentement explicite de leurs parents ou des établissements scolaires concernés. Si vous pensez que nous avons recueilli des informations concernant un enfant de manière inappropriée, veuillez nous contacter immédiatement."
+        },
+        "internationalTransfers": {
+          "title": "9. Transferts internationaux de données",
+          "content": "Vos données peuvent être transférées et traitées dans des pays autres que votre pays de résidence. Les lois relatives à la protection des données dans ces pays peuvent différer de celles de votre pays. En utilisant notre Service, vous consentez au transfert de vos données vers ces pays."
+        },
+        "changesToPolicy": {
+          "title": "10. Modifications de la présente politique de confidentialité",
+          "content": "Nous pouvons être amenés à modifier la présente Politique de confidentialité. Nous vous informerons de toute modification en publiant la nouvelle Politique de confidentialité sur cette page et en actualisant la date de « Dernière mise à jour ». Nous vous recommandons de consulter régulièrement cette Politique de confidentialité afin de prendre connaissance des éventuelles modifications."
+        },
+        "contactUs": {
+          "title": "11. Contactez-nous",
+          "content": "Pour toute question concernant cette politique de confidentialité ou nos pratiques en matière de protection des données, veuillez nous contacter à l'adresse suivante :\n\nCourriel : privacy@studious.sh\n\nNous répondrons à votre demande dans un délai raisonnable."
+        }
+      },
+      "goToTop": "Retour en haut",
+      "tableOfContents": "Table des matières",
+      "backToTop": "Retour en haut de page"
+    },
+    "termsOfService": {
+      "title": "Conditions d'utilisation",
+      "lastUpdated": "Dernière mise à jour : novembre 2025",
+      "sections": {
+        "acceptance": {
+          "title": "1. Acceptation des conditions",
+          "content": "En accédant à Studious LMS ou en l'utilisant (« le Service »), vous acceptez d'être lié par les présentes Conditions d'utilisation (« Conditions »). Si vous n'acceptez pas ces Conditions, vous ne pouvez pas accéder au Service ni l'utiliser. Ces Conditions s'appliquent à tous les utilisateurs du Service, y compris les étudiants, les enseignants, les administrateurs et les établissements d'enseignement."
+        },
+        "descriptionOfService": {
+          "title": "2. Description du service",
+          "content": "Studious LMS est un système de gestion de l'apprentissage qui fournit aux établissements d'enseignement, aux enseignants et aux étudiants des outils pour gérer les cours, les devoirs, les notes, les présences, la communication et d'autres activités pédagogiques. Le service comprend des applications web et mobiles, des fonctionnalités basées sur l'intelligence artificielle et des services associés."
+        },
+        "userAccounts": {
+          "title": "3. Comptes utilisateurs",
+          "content": "Pour utiliser le Service, vous devez créer un compte et fournir des informations exactes, à jour et complètes. Vous êtes responsable de la confidentialité de vos identifiants de connexion et de toutes les activités effectuées sur votre compte. Vous vous engagez à :\n\n• Utiliser un mot de passe fort et unique\n• Ne pas partager vos identifiants de connexion\n• Nous signaler immédiatement tout accès non autorisé\n• Maintenir l’exactitude des informations de votre compte\n• Être responsable de toutes les activités effectuées sur votre compte"
+        },
+        "acceptableUse": {
+          "title": "4. Politique d'utilisation acceptable",
+          "content": "Vous acceptez d'utiliser le Service uniquement à des fins licites et conformément aux présentes Conditions. Vous vous engagez à NE PAS :\n\n• Violer les lois et réglementations applicables\n\n• Porter atteinte aux droits de propriété intellectuelle\n\n• Transmettre du contenu nuisible, offensant ou inapproprié\n\n• Harceler, abuser ou nuire à d'autres utilisateurs\n\n• Tenter d'accéder sans autorisation au Service\n\n• Perturber ou interrompre le fonctionnement du Service ou des serveurs\n\n• Utiliser des systèmes automatisés pour accéder au Service sans autorisation\n\n• Usurper l'identité d'une personne ou d'une entité\n\n• Collecter ou stocker des données personnelles concernant d'autres utilisateurs sans leur consentement"
+        },
+        "educationalContent": {
+          "title": "5. Contenu pédagogique et propriété intellectuelle",
+          "content": "Le Service permet aux utilisateurs de créer, de télécharger et de partager du contenu éducatif. Vous conservez la propriété du contenu que vous créez, mais en utilisant le Service, vous nous accordez une licence d'utilisation, de stockage et d'affichage de votre contenu, dans la mesure nécessaire à la fourniture du Service. Il vous incombe de vous assurer que vous disposez des droits d'utilisation et de partage pour tout contenu que vous téléchargez. Nous respectons les droits de propriété intellectuelle et répondrons aux notifications valides d'atteinte aux droits d'auteur."
+        },
+        "aiFeatures": {
+          "title": "6. Fonctionnalités basées sur l'IA",
+          "content": "Notre service inclut des fonctionnalités basées sur l'IA, telles que l'aide à la notation, la génération de contenu et le soutien pédagogique. Ces fonctionnalités sont fournies « en l'état » et doivent être utilisées comme outils complémentaires. Il incombe aux utilisateurs de vérifier et de valider le contenu généré par l'IA. Nous ne garantissons ni l'exactitude, ni l'exhaustivité, ni la pertinence de ce contenu."
+        },
+        "privacy": {
+          "title": "7. Confidentialité",
+          "content": "Votre utilisation du Service est également régie par notre Politique de confidentialité, qui explique comment nous recueillons, utilisons et protégeons vos informations. En utilisant le Service, vous consentez à la collecte et à l'utilisation de vos informations conformément à notre Politique de confidentialité."
+        },
+        "feesAndPayment": {
+          "title": "8. Frais et paiement",
+          "content": "Certaines fonctionnalités du Service peuvent être payantes. Si vous souscrivez un abonnement ou utilisez des fonctionnalités payantes :\n\n• Les tarifs sont ceux indiqués au moment de l’achat.\n\n• Les paiements sont traités par des prestataires de paiement tiers sécurisés.\n\n• Les abonnements sont automatiquement renouvelés, sauf annulation.\n\n• Les remboursements sont soumis à notre politique de remboursement.\n\n• Nous nous réservons le droit de modifier les prix, moyennant un préavis."
+        },
+        "termination": {
+          "title": "9. Résiliation",
+          "content": "Nous pouvons résilier ou suspendre votre compte et votre accès au Service immédiatement, sans préavis, en cas de comportement que nous jugeons contraire aux présentes Conditions ou préjudiciable aux autres utilisateurs, à nous-mêmes ou à des tiers. Vous pouvez résilier votre compte à tout moment en nous contactant. Dès la résiliation, votre droit d'utiliser le Service cessera immédiatement."
+        },
+        "disclaimers": {
+          "title": "10. Clauses de non-responsabilité",
+          "content": "LE SERVICE EST FOURNI « EN L’ÉTAT » ET « SELON DISPONIBILITÉ », SANS AUCUNE GARANTIE, EXPRESSE OU IMPLICITE. NOUS NE GARANTISSONS PAS QUE LE SERVICE SERA ININTERROMPU, SÉCURISÉ OU EXEMPT D’ERREURS. NOUS EXCLUONS TOUTE GARANTIE, Y COMPRIS LES GARANTIES DE QUALITÉ MARCHANDE, D’ADÉQUATION À UN USAGE PARTICULIER ET D’ABSENCE DE CONTREFAÇON."
+        },
+        "limitationOfLiability": {
+          "title": "11. Limitation de responsabilité",
+          "content": "DANS LA MESURE MAXIMALE PERMISE PAR LA LOI, NOUS NE SERONS PAS RESPONSABLES DES DOMMAGES INDIRECTS, ACCESSOIRES, SPÉCIAUX, CONSÉCUTIFS OU PUNITIFS, NI DES PERTES DE PROFITS OU DE REVENUS, QU'ILS SOIENT DIRECTS OU INDIRECTS, NI DES PERTES DE DONNÉES, D'UTILISATION, DE CLIENTÈLE OU AUTRES PERTES IMMATÉRIELLES RÉSULTANT DE VOTRE UTILISATION DU SERVICE."
+        },
+        "indemnification": {
+          "title": "12. Indemnisation",
+          "content": "Vous acceptez d'indemniser, de défendre et de tenir indemnes Studious LMS et ses dirigeants, administrateurs, employés et agents contre toute réclamation, responsabilité, dommage, perte et dépense découlant de votre accès au Service ou de son utilisation, de votre violation des présentes Conditions ou de votre atteinte aux droits d'autrui."
+        },
+        "governingLaw": {
+          "title": "13. Droit applicable",
+          "content": "Les présentes Conditions générales sont régies et interprétées conformément au droit applicable dans le pays où Studious LMS exerce ses activités, sans égard aux règles relatives aux conflits de lois. Tout litige découlant des présentes Conditions générales ou du Service sera soumis aux tribunaux compétents de ce pays."
+        },
+        "changesToTerms": {
+          "title": "14. Modifications des conditions",
+          "content": "Nous nous réservons le droit de modifier les présentes Conditions à tout moment. Nous informerons les utilisateurs des modifications importantes en publiant les Conditions mises à jour sur notre site web et en actualisant la date de « Dernière mise à jour ». En continuant d'utiliser le Service après ces modifications, vous acceptez les Conditions modifiées."
+        },
+        "contactUs": {
+          "title": "15. Contactez-nous",
+          "content": "Pour toute question concernant les présentes Conditions d'utilisation, veuillez nous contacter à l'adresse suivante :\n\nCourriel : legal@studious.sh\n\nNous répondrons à votre demande dans un délai raisonnable."
+        }
+      },
+      "goToTop": "Retour en haut",
+      "tableOfContents": "Table des matières",
+      "backToTop": "Retour en haut de page"
+    },
+    "navbarPopup": {
+      "goBack": "Retour",
+      "home": "Maison"
     }
   },
   "press": {
@@ -879,7 +1045,7 @@
     "problemParagraph2": "lorsqu'un groupe d'élèves et d'enseignants s'est réuni autour d'une frustration commune : les portails scolaires existants étaient lourds, lents et conçus pour une autre époque de l'éducation.",
     "problemDetailParagraph": "Nous nous sommes retrouvés à jongler avec plusieurs plateformes : une pour les notes, une autre pour les devoirs, une troisième pour la communication. Les enseignants passaient plus de temps à se battre avec les logiciels qu’à enseigner. Les élèves ont manqué des échéances car les notifications étaient noyées dans des interfaces obsolètes.",
     "betterWay": "Nous savions qu'il devait y avoir une meilleure solution.",
-    "solutionParagraph1": "S'inspirant d'outils de collaboration modernes comme Linear et Notion, nous avons entrepris de créer un système de gestion de l'apprentissage qui soit convivial et intuitif.",
+    "solutionParagraph1": "S'inspirant d'outils de collaboration modernes comme Linear et Notion, nous avons entrepris de créer un système de gestion de l'apprentissage qui soit agréable à utiliser.",
     "solutionParagraph2": "Rapide, intuitif et agréable à utiliser.",
     "solutionParagraph3": "Une entreprise qui intègre l'IA non pas comme un gadget, mais comme un véritable multiplicateur de productivité pour les enseignants et les élèves.",
     "launchParagraph": "Après deux ans de développement, nous avons officiellement lancé Studious le 17 octobre 2025. Nous sommes désormais en accès anticipé, prêts à aider les écoles du monde entier à transformer leur expérience d'apprentissage.",

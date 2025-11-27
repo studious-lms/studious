@@ -5,10 +5,10 @@
     "actions": {
       "saveChanges": "Guardar cambios",
       "cancel": "Cancelar",
-      "edit": "Editar programa de estudios"
+      "edit": "Editar el programa de estudios"
     },
     "errors": {
-      "failedToLoad": "No se pudo cargar el programa de estudios.",
+      "failedToLoad": "No se pudo cargar el programa de estudios",
       "tryLater": "Por favor, inténtelo de nuevo más tarde."
     },
     "stats": {
@@ -18,12 +18,12 @@
       "upcoming": "Próximamente"
     },
     "overview": {
-      "title": "Descripción general del curso",
+      "title": "Descripción del curso",
       "placeholder": "Ingrese la descripción general del curso, los objetivos y otra información importante...",
       "helper": "Ingrese la información de su curso, los objetivos de aprendizaje, las políticas y otros detalles importantes.",
       "empty": {
-        "title": "Aún no hay contenido del programa.",
-        "description": "Haz clic en 'Editar programa' para añadir información del curso, objetivos de aprendizaje, políticas y más."
+        "title": "Aún no hay contenido del programa de estudios",
+        "description": "Haga clic en “Editar programa de estudios” para agregar información del curso, objetivos de aprendizaje, políticas y más."
       }
     },
     "assignments": {
@@ -31,7 +31,7 @@
       "gradedCount": "{graded} tareas calificadas",
       "totalPoints": "{total} puntos totales",
       "empty": {
-        "title": "Aún no hay tareas.",
+        "title": "No hay tareas todavía",
         "description": "Las tareas aparecerán aquí una vez creadas."
       }
     },

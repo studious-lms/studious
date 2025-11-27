@@ -9,7 +9,7 @@
     "widgets": {
       "assignment": {
         "title": "任务",
-        "description": "借助人工智能创建交互式作业"
+        "description": "创建借助人工智能辅助的交互式作业"
       },
       "quiz": {
         "title": "测验",

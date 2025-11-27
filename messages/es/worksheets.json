@@ -1,7 +1,7 @@
 {
   "worksheets": {
     "title": "Hojas de trabajo",
-    "subtitle": "Gestionar y distribuir hojas de ejercicios de práctica",
+    "subtitle": "Administrar y distribuir hojas de trabajo de práctica",
     "list": {
       "title": "Todas las hojas de trabajo"
     },
@@ -34,21 +34,21 @@
       "placeholder": "Buscar hojas de trabajo..."
     },
     "empty": {
-      "title": "No se encontraron hojas de trabajo.",
-      "description": "Empieza creando tu primera hoja de cálculo o utiliza la búsqueda para encontrar hojas ya existentes."
+      "title": "No se encontraron hojas de trabajo",
+      "description": "Comience creando su primera hoja de trabajo o utilice la búsqueda para encontrar las existentes."
     },
     "confirm": {
-      "delete": "¿Seguro que quieres borrar esta hoja de cálculo? Esta acción no se puede deshacer."
+      "delete": "¿Seguro que desea eliminar esta hoja de cálculo? Esta acción no se puede deshacer."
     },
     "toasts": {
-      "created": "Hoja de cálculo creada correctamente",
-      "updated": "Hoja de cálculo actualizada correctamente",
-      "deleted": "Hoja de cálculo eliminada correctamente",
+      "created": "Hoja de trabajo creada exitosamente",
+      "updated": "Hoja de trabajo actualizada exitosamente",
+      "deleted": "Hoja de trabajo eliminada exitosamente",
       "error": "Se produjo un error"
     },
     "create": {
       "title": "Crear hoja de trabajo",
-      "subtitle": "Crea una nueva hoja de trabajo con varios tipos de preguntas.",
+      "subtitle": "Crea una nueva hoja de trabajo con múltiples tipos de preguntas",
       "worksheetInfo": "Información de la hoja de trabajo",
       "actions": {
         "save": "Ahorrar",
@@ -57,59 +57,59 @@
       },
       "fields": {
         "title": "Título",
-        "titlePlaceholder": "Introduzca el título de la hoja de cálculo",
+        "titlePlaceholder": "Introduzca el título de la hoja de trabajo",
         "description": "Descripción",
-        "descriptionPlaceholder": "Introduzca la descripción de la hoja de cálculo (opcional)",
+        "descriptionPlaceholder": "Ingrese la descripción de la hoja de trabajo (opcional)",
         "dueDate": "Dos citas",
-        "totalQuestions": "Total de preguntas"
+        "totalQuestions": "Preguntas totales"
       },
       "questions": {
         "title": "Preguntas",
         "addQuestion": "Agregar pregunta",
-        "noQuestions": "Aún no se han añadido preguntas.",
-        "addFirstQuestion": "Utilice el menú desplegable de arriba para añadir su primera pregunta.",
+        "noQuestions": "No hay preguntas añadidas todavía",
+        "addFirstQuestion": "Utilice el menú desplegable de arriba para agregar su primera pregunta",
         "questionNumber": "Pregunta {number}",
         "points": "Agujas",
         "questionText": "Texto de la pregunta",
-        "questionTextPlaceholder": "Introduce tu pregunta aquí.",
+        "questionTextPlaceholder": "Ingrese su pregunta aquí",
         "options": "Opciones",
         "optionPlaceholder": "Opción {number}",
-        "addOption": "Agregar opción",
+        "addOption": "Añadir opción",
         "correctAnswer": "Respuesta correcta",
         "true": "Verdadero",
         "false": "FALSO",
         "mathExpression": "Expresión matemática esperada",
-        "mathExpressionPlaceholder": "Por ejemplo, x² + 5x + 6 = 0",
-        "sampleAnswer": "Ejemplo de respuesta",
-        "sampleAnswerPlaceholder": "Introduzca un ejemplo de respuesta o explicación",
+        "mathExpressionPlaceholder": "p. ej., x^2 + 5x + 6 = 0",
+        "sampleAnswer": "Respuesta de muestra",
+        "sampleAnswerPlaceholder": "Ingrese una respuesta de muestra o una explicación",
         "markscheme": "Plan de marketing",
         "markschemeAttached": "Esquema de calificación adjunto"
       },
       "questionTypes": {
         "multipleChoice": "Opción múltiple",
-        "longForm": "Respuesta larga",
-        "math": "Respuesta matemática",
+        "longForm": "Respuesta de formato largo",
+        "math": "Respuesta de matemáticas",
         "trueFalse": "Verdadero/Falso"
       },
       "markschemeDialog": {
         "title": "Seleccionar esquema de calificación",
-        "noMarkschemes": "No hay esquemas de calificación disponibles. Primero crea uno en la sección de Calificaciones.",
+        "noMarkschemes": "No hay esquemas de calificación disponibles. Cree uno primero en la sección Calificaciones.",
         "untitled": "Esquema de calificación sin título",
         "custom": "Costumbre"
       },
       "errors": {
         "titleRequired": "Se requiere título",
-        "atLeastOneQuestion": "Por favor, añade al menos una pregunta.",
+        "atLeastOneQuestion": "Por favor agregue al menos una pregunta",
         "questionTextRequired": "Todas las preguntas deben tener texto.",
-        "multipleChoiceOptions": "Las preguntas de opción múltiple necesitan al menos 2 opciones.",
-        "multipleChoiceCorrectAnswer": "Las preguntas de opción múltiple necesitan al menos una respuesta correcta.",
-        "teacherOnly": "Solo los profesores pueden crear hojas de trabajo."
+        "multipleChoiceOptions": "Las preguntas de opción múltiple necesitan al menos 2 opciones",
+        "multipleChoiceCorrectAnswer": "Las preguntas de opción múltiple necesitan al menos una respuesta correcta",
+        "teacherOnly": "Sólo los profesores pueden crear hojas de trabajo"
       },
       "toasts": {
-        "created": "Hoja de cálculo creada correctamente",
-        "markschemeAttached": "El esquema de calificación se adjuntó correctamente.",
+        "created": "Hoja de trabajo creada exitosamente",
+        "markschemeAttached": "Esquema de calificación adjunto exitosamente",
         "markschemeDetached": "Esquema de calificación separado con éxito",
-        "updated": "Hoja de cálculo actualizada correctamente",
+        "updated": "Hoja de trabajo actualizada exitosamente",
         "saving": "Ahorro...",
         "saved": "Guardado"
       }

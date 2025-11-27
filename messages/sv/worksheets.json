@@ -94,7 +94,7 @@
       "markschemeDialog": {
         "title": "Välj märkningsschema",
         "noMarkschemes": "Inga bedömningssystem tillgängliga. Skapa ett i avsnittet Betyg först.",
-        "untitled": "Namnlöst märkningsschema",
+        "untitled": "Namnlöst märkesschema",
         "custom": "Beställnings"
       },
       "errors": {

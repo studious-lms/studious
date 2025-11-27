@@ -49,13 +49,11 @@
       "title": "Maak uw account aan",
       "subtitle": "Sluit je aan bij Studious en begin met leren",
       "signUp": "Aanmelden",
-      "firstName": "Voornaam",
-      "lastName": "Achternaam",
+      "username": "Gebruikersnaam",
       "email": "E-mail",
       "password": "Wachtwoord",
       "confirmPassword": "Bevestig wachtwoord",
-      "firstNamePlaceholder": "Voornaam",
-      "lastNamePlaceholder": "Achternaam",
+      "usernamePlaceholder": "Voer uw gebruikersnaam in",
       "emailPlaceholder": "Voer uw e-mailadres in",
       "passwordPlaceholder": "Maak een wachtwoord aan",
       "confirmPasswordPlaceholder": "Bevestig uw wachtwoord",
@@ -68,9 +66,10 @@
       "alreadyHaveAccount": "Heeft u al een account?",
       "signIn": "Aanmelden",
       "passwordMismatch": "Wachtwoorden komen niet overeen",
+      "passwordTooShort": "Het wachtwoord moet minimaal 6 tekens lang zijn",
       "termsRequired": "U moet akkoord gaan met de voorwaarden",
-      "accountCreated": "Account succesvol aangemaakt!",
-      "signUpFailed": "Account aanmaken mislukt"
+      "verificationEmailSent": "Verificatie-e-mail verzonden!",
+      "signUpFailed": "Account aanmaken mislukt. Probeer het opnieuw."
     },
     "verification": {
       "notVerified": "Account niet geverifieerd",
@@ -82,12 +81,53 @@
       "checkInbox": "Controleer uw inbox en spamfolder.",
       "enterEmail": "Voer uw e-mailadres in",
       "sending": "Verzenden...",
-      "sendEmail": "E-mail verzenden"
+      "sendEmail": "E-mail verzenden",
+      "title": "Verifieer uw e-mailadres",
+      "subtitle": "Klik op de onderstaande knop om uw e-mailadres te verifiëren",
+      "verifying": "Verifiëren...",
+      "verifyEmail": "E-mailadres verifiëren",
+      "successTitle": "E-mail succesvol geverifieerd",
+      "successMessage": "Je e-mailadres is geverifieerd. Je kunt nu inloggen op je account.",
+      "errorTitle": "Verificatie mislukt",
+      "errorMessage": "De verificatielink is ongeldig of verlopen. Vraag een nieuwe verificatiemail aan.",
+      "invalidToken": "Ongeldig verificatietoken"
+    },
+    "forgotPassword": {
+      "title": "Uw wachtwoord opnieuw instellen",
+      "subtitle": "Vul uw e-mailadres in en wij sturen u een link om uw wachtwoord opnieuw in te stellen",
+      "email": "E-mail",
+      "emailPlaceholder": "Voer uw e-mailadres in",
+      "sendResetLink": "Resetlink verzenden",
+      "sending": "Verzenden...",
+      "backToSignIn": "Terug naar Aanmelden",
+      "successTitle": "Controleer uw e-mail",
+      "successMessage": "Als er al een account met dat e-mailadres bestaat, hebben we u een link gestuurd om uw wachtwoord opnieuw in te stellen.",
+      "checkInbox": "Controleer uw inbox en spamfolder voor de resetlink.",
+      "errorMessage": "Resetlink verzenden mislukt. Probeer het opnieuw.",
+      "invalidEmail": "Voer een geldig e-mailadres in"
+    },
+    "resetPassword": {
+      "title": "Uw wachtwoord opnieuw instellen",
+      "subtitle": "Voer hieronder uw nieuwe wachtwoord in",
+      "password": "Nieuw wachtwoord",
+      "passwordPlaceholder": "Voer uw nieuwe wachtwoord in",
+      "confirmPassword": "Bevestig wachtwoord",
+      "confirmPasswordPlaceholder": "Bevestig uw nieuwe wachtwoord",
+      "resetPassword": "Wachtwoord opnieuw instellen",
+      "resetting": "Opnieuw instellen...",
+      "passwordTooShort": "Het wachtwoord moet minimaal 6 tekens lang zijn",
+      "passwordsDoNotMatch": "Wachtwoorden komen niet overeen",
+      "successTitle": "Wachtwoord opnieuw instellen succesvol",
+      "successMessage": "Je wachtwoord is succesvol gereset. Je kunt nu inloggen met je nieuwe wachtwoord.",
+      "backToSignIn": "Terug naar Aanmelden"
     }
   },
   "marketing": {
     "navbar": {
-      "requestEarlyAccess": "Vroegtijdige toegang aanvragen"
+      "requestEarlyAccess": "Vroegtijdige toegang aanvragen",
+      "lightMode": "Overschakelen naar de lichtmodus",
+      "darkMode": "Overschakelen naar donkere modus",
+      "languageSelector": "Selecteer taal"
     },
     "hero": {
       "badge": "Modern leerplatform",
@@ -229,6 +269,132 @@
       "requestAccess": "Toegang aanvragen",
       "partnerWithUs": "Werk samen met ons",
       "tagline": "Studious LMS — Modern leren, vereenvoudigd."
+    },
+    "privacyPolicy": {
+      "title": "Privacybeleid",
+      "lastUpdated": "Laatst bijgewerkt: november 2025",
+      "sections": {
+        "introduction": {
+          "title": "1. Inleiding",
+          "content": "Studious LMS ('wij', 'ons' of 'onze') zet zich in voor de bescherming van uw privacy. Dit privacybeleid legt uit hoe wij uw gegevens verzamelen, gebruiken, openbaar maken en beschermen wanneer u ons leermanagementsysteem en gerelateerde diensten (gezamenlijk de 'Service') gebruikt. Lees dit privacybeleid aandachtig door. Door onze Service te gebruiken, stemt u in met het verzamelen en gebruiken van gegevens in overeenstemming met dit beleid."
+        },
+        "informationWeCollect": {
+          "title": "2. Informatie die we verzamelen",
+          "content": "We verzamelen informatie die u rechtstreeks aan ons verstrekt, waaronder:\n\n• Accountgegevens: Gebruikersnaam, e-mailadres, wachtwoord en profielgegevens\n• Onderwijsgegevens: Cursusinschrijvingen, opdrachten, cijfers, aanwezigheidsgegevens en academische voortgang\n• Communicatiegegevens: Berichten, aankondigingen en andere communicatie binnen het platform\n• Gebruiksgegevens: Informatie over hoe u met onze Service omgaat, inclusief bezochte pagina's en gebruikte functies\n• Apparaatgegevens: IP-adres, browsertype, apparaat-ID's en besturingssysteem\n• Cookies en trackingtechnologieën: We gebruiken cookies en vergelijkbare technologieën om uw ervaring te verbeteren en gebruikspatronen te analyseren"
+        },
+        "howWeUseInformation": {
+          "title": "3. Hoe wij uw gegevens gebruiken",
+          "content": "We gebruiken de informatie die we verzamelen om:\n\n• Onze Service te leveren, te onderhouden en te verbeteren\n• Transacties te verwerken en uw account te beheren\n• De communicatie tussen docenten, studenten en beheerders te vergemakkelijken\n• Educatieve content, opdrachten en cijfers te genereren en te beheren\n• Belangrijke meldingen over uw account en de Service te verzenden\n• Gebruikspatronen te analyseren om de gebruikerservaring te verbeteren\n• Beveiliging te waarborgen en fraude te voorkomen\n• Te voldoen aan wettelijke verplichtingen en onze rechten te beschermen"
+        },
+        "informationSharing": {
+          "title": "4. Informatiedeling en openbaarmaking",
+          "content": "Wij verkopen uw persoonsgegevens niet. Wij kunnen uw gegevens delen in de volgende omstandigheden:\n\n• Met onderwijsinstellingen: Informatie kan worden gedeeld met uw school of onderwijsinstelling voor educatieve doeleinden.\n• Met dienstverleners: Wij kunnen informatie delen met externe dienstverleners die ons helpen bij de uitvoering van onze dienst.\n• Voor wettelijke naleving: Wij kunnen informatie vrijgeven indien wettelijk vereist of om onze rechten en veiligheid te beschermen.\n• Met uw toestemming: Wij kunnen informatie delen met uw uitdrukkelijke toestemming.\n• In geval van een fusie: Informatie kan worden overgedragen in verband met een zakelijke transactie."
+        },
+        "dataSecurity": {
+          "title": "5. Gegevensbeveiliging",
+          "content": "Wij implementeren passende technische en organisatorische beveiligingsmaatregelen om uw persoonsgegevens te beschermen tegen ongeautoriseerde toegang, wijziging, openbaarmaking of vernietiging. Geen enkele methode van overdracht via internet of elektronische opslag is echter 100% veilig. Hoewel wij ernaar streven om commercieel aanvaardbare middelen te gebruiken om uw gegevens te beschermen, kunnen wij geen absolute veiligheid garanderen."
+        },
+        "dataRetention": {
+          "title": "6. Gegevensretentie",
+          "content": "Wij bewaren uw persoonsgegevens zo lang als nodig is om onze Dienst te leveren en de in dit Privacybeleid beschreven doeleinden te vervullen, tenzij een langere bewaartermijn wettelijk vereist of toegestaan is. Wanneer we uw gegevens niet langer nodig hebben, zullen we deze veilig verwijderen of anonimiseren."
+        },
+        "yourRights": {
+          "title": "7. Uw rechten",
+          "content": "Afhankelijk van uw locatie heeft u mogelijk bepaalde rechten met betrekking tot uw persoonsgegevens, waaronder:\n\n• Toegang: Verzoek om toegang tot uw persoonsgegevens\n• Correctie: Verzoek om correctie van onjuiste informatie\n• Verwijdering: Verzoek om verwijdering van uw persoonsgegevens\n• Overdraagbaarheid: Verzoek om overdracht van uw gegevens\n• Bezwaar: Bezwaar maken tegen bepaalde verwerkingsactiviteiten\n• Intrekking van toestemming: Toestemming intrekken wanneer de verwerking is gebaseerd op toestemming\n\nOm deze rechten uit te oefenen, kunt u contact met ons opnemen via de informatie in het gedeelte 'Contact'."
+        },
+        "childrenPrivacy": {
+          "title": "8. Privacy van kinderen",
+          "content": "Onze dienst is bedoeld voor educatief gebruik en kan worden gebruikt door studenten jonger dan 18 jaar. Wij houden ons aan de toepasselijke wetgeving met betrekking tot de privacy van kinderen, waaronder de Family Educational Rights and Privacy Act (FERPA) in de Verenigde Staten. Wij verzamelen niet bewust persoonsgegevens van kinderen zonder de juiste toestemming van ouders of onderwijsinstellingen. Als u denkt dat wij op ongepaste wijze informatie van een kind hebben verzameld, neem dan onmiddellijk contact met ons op."
+        },
+        "internationalTransfers": {
+          "title": "9. Internationale gegevensoverdrachten",
+          "content": "Uw gegevens kunnen worden overgedragen naar en verwerkt in andere landen dan uw land van verblijf. Deze landen kunnen andere wetgeving inzake gegevensbescherming hebben dan uw land. Door onze Service te gebruiken, stemt u in met de overdracht van uw gegevens naar deze landen."
+        },
+        "changesToPolicy": {
+          "title": "10. Wijzigingen in dit privacybeleid",
+          "content": "We kunnen dit privacybeleid van tijd tot tijd bijwerken. We zullen u op de hoogte stellen van eventuele wijzigingen door het nieuwe privacybeleid op deze pagina te plaatsen en de datum 'Laatst bijgewerkt' aan te passen. U wordt geadviseerd dit privacybeleid regelmatig te controleren op eventuele wijzigingen."
+        },
+        "contactUs": {
+          "title": "11. Neem contact met ons op",
+          "content": "Als u vragen heeft over dit privacybeleid of onze privacyprocedures, kunt u contact met ons opnemen via:\n\nE-mail: privacy@studious.sh\n\nWe zullen uw vraag binnen een redelijke termijn beantwoorden."
+        }
+      },
+      "goToTop": "Ga naar boven",
+      "tableOfContents": "Inhoudsopgave",
+      "backToTop": "Terug naar boven"
+    },
+    "termsOfService": {
+      "title": "Servicevoorwaarden",
+      "lastUpdated": "Laatst bijgewerkt: november 2025",
+      "sections": {
+        "acceptance": {
+          "title": "1. Aanvaarding van de voorwaarden",
+          "content": "Door Studious LMS ('de Service') te openen of te gebruiken, gaat u akkoord met deze Servicevoorwaarden ('Voorwaarden'). Indien u niet akkoord gaat met deze Voorwaarden, mag u de Service niet openen of gebruiken. Deze Voorwaarden zijn van toepassing op alle gebruikers van de Service, waaronder studenten, docenten, beheerders en onderwijsinstellingen."
+        },
+        "descriptionOfService": {
+          "title": "2. Omschrijving van de dienst",
+          "content": "Studious LMS is een leermanagementsysteem dat onderwijsinstellingen, docenten en studenten tools biedt voor het beheren van lessen, opdrachten, cijfers, aanwezigheid, communicatie en andere educatieve activiteiten. De service omvat webgebaseerde en mobiele applicaties, AI-gestuurde functies en gerelateerde diensten."
+        },
+        "userAccounts": {
+          "title": "3. Gebruikersaccounts",
+          "content": "Om de Service te gebruiken, moet u een account aanmaken en nauwkeurige, actuele en volledige informatie verstrekken. U bent verantwoordelijk voor de vertrouwelijkheid van uw accountgegevens en voor alle activiteiten die onder uw account plaatsvinden. U stemt ermee in om:\n\n• Een sterk, uniek wachtwoord te gebruiken\n• Uw accountgegevens niet met anderen te delen\n• Ons onmiddellijk op de hoogte te stellen van ongeautoriseerde toegang\n• Uw accountgegevens correct te beheren\n• Verantwoordelijk te zijn voor alle activiteiten onder uw account"
+        },
+        "acceptableUse": {
+          "title": "4. Beleid voor acceptabel gebruik",
+          "content": "U stemt ermee in de Service uitsluitend te gebruiken voor rechtmatige doeleinden en in overeenstemming met deze Voorwaarden. U stemt ermee in om NIET:\n\n• Toepasselijke wet- en regelgeving te schenden\n• Intellectuele-eigendomsrechten te schenden\n• Schadelijke, aanstootgevende of ongepaste content te verzenden\n• Andere gebruikers lastig te vallen, te misbruiken of te schaden\n• Te proberen ongeautoriseerde toegang tot de Service te verkrijgen\n• De Service of servers te verstoren of te verstoren\n• Geautomatiseerde systemen te gebruiken om zonder toestemming toegang te krijgen tot de Service\n• Zich voor te doen als een andere persoon of entiteit\n• Persoonsgegevens van andere gebruikers te verzamelen of op te slaan zonder toestemming"
+        },
+        "educationalContent": {
+          "title": "5. Educatieve inhoud en intellectueel eigendom",
+          "content": "Met de Service kunnen gebruikers educatieve content creëren, uploaden en delen. U behoudt het eigendom van de content die u creëert, maar door de Service te gebruiken, verleent u ons een licentie om uw content te gebruiken, op te slaan en weer te geven zoals nodig is om de Service te leveren. U bent er zelf verantwoordelijk voor dat u het recht hebt om de content die u uploadt te gebruiken en te delen. Wij respecteren intellectuele-eigendomsrechten en zullen reageren op geldige meldingen van inbreuk op het auteursrecht."
+        },
+        "aiFeatures": {
+          "title": "6. AI-aangedreven functies",
+          "content": "Onze service omvat AI-gestuurde functies zoals beoordelingshulp, contentgeneratie en educatieve ondersteuning. Deze functies worden 'as is' aangeboden en dienen als aanvullende tools. Gebruikers zijn verantwoordelijk voor het beoordelen en valideren van door AI gegenereerde content. Wij garanderen niet de juistheid, volledigheid of geschiktheid van door AI gegenereerde content."
+        },
+        "privacy": {
+          "title": "7. Privacy",
+          "content": "Uw gebruik van de Service wordt ook beheerst door ons Privacybeleid, waarin wordt uitgelegd hoe wij uw gegevens verzamelen, gebruiken en beschermen. Door de Service te gebruiken, stemt u in met het verzamelen en gebruiken van gegevens zoals beschreven in ons Privacybeleid."
+        },
+        "feesAndPayment": {
+          "title": "8. Kosten en betaling",
+          "content": "Voor sommige functies van de Service kan betaling vereist zijn. Als u een abonnement of betaalde functies aanschaft:\n\n• De kosten zijn zoals vermeld op het moment van aankoop\n• Betalingen worden verwerkt via beveiligde externe betalingsverwerkers\n• Abonnementen worden automatisch verlengd, tenzij ze worden geannuleerd\n• Terugbetalingen zijn onderworpen aan ons restitutiebeleid\n• We behouden ons het recht voor om prijzen met voorafgaande kennisgeving te wijzigen"
+        },
+        "termination": {
+          "title": "9. Beëindiging",
+          "content": "Wij kunnen uw account en toegang tot de Dienst onmiddellijk en zonder voorafgaande kennisgeving beëindigen of opschorten voor gedrag waarvan wij van mening zijn dat het in strijd is met deze Voorwaarden of schadelijk is voor andere gebruikers, ons of derden. U kunt uw account te allen tijde beëindigen door contact met ons op te nemen. Na beëindiging vervalt uw recht om de Dienst te gebruiken onmiddellijk."
+        },
+        "disclaimers": {
+          "title": "10. Vrijwaringen",
+          "content": "DE SERVICE WORDT GELEVERD 'ZOALS DEZE IS' EN 'ZOALS BESCHIKBAAR', ZONDER ENIGE GARANTIE, EXPLICIET OF IMPLICIET. WIJ GARANDEREN NIET DAT DE SERVICE ONONDERBROKEN, VEILIG OF VRIJ VAN FOUTEN ZAL ZIJN. WIJ WIJZEN ALLE GARANTIES AF, MET INBEGRIP VAN GARANTIES VAN VERKOOPBAARHEID, GESCHIKTHEID VOOR EEN BEPAALD DOEL EN NIET-INBREUK."
+        },
+        "limitationOfLiability": {
+          "title": "11. Beperking van aansprakelijkheid",
+          "content": "VOOR ZOVER MAXIMAAL TOEGESTAAN DOOR DE WET, ZIJN WIJ NIET AANSPRAKELIJK VOOR ENIGE INDIRECTE, INCIDENTELE, SPECIALE, GEVOLG- OF STRAFRECHTELIJKE SCHADE, OF ENIG VERLIES VAN WINST OF INKOMSTEN, HETZIJ DIRECT OF INDIRECT, OF ENIG VERLIES VAN GEGEVENS, GEBRUIK, GOODWILL OF ANDERE IMMATERIËLE VERLIEZEN ALS GEVOLG VAN UW GEBRUIK VAN DE SERVICE."
+        },
+        "indemnification": {
+          "title": "12. Schadeloosstelling",
+          "content": "U stemt ermee in om Studious LMS en haar functionarissen, directeuren, werknemers en agenten te vrijwaren, te verdedigen en schadeloos te stellen tegen alle claims, aansprakelijkheden, schade, verliezen en kosten die voortvloeien uit of op enigerlei wijze verband houden met uw toegang tot of gebruik van de Service, uw schending van deze Voorwaarden of uw inbreuk op de rechten van een ander."
+        },
+        "governingLaw": {
+          "title": "13. Toepasselijk recht",
+          "content": "Deze Voorwaarden worden beheerst door en geïnterpreteerd in overeenstemming met de wetten van het rechtsgebied waarin Studious LMS actief is, zonder rekening te houden met de bepalingen inzake wetsconflicten. Alle geschillen die voortvloeien uit deze Voorwaarden of de Service zullen worden beslecht door de bevoegde rechtbanken van dat rechtsgebied."
+        },
+        "changesToTerms": {
+          "title": "14. Wijzigingen in de voorwaarden",
+          "content": "Wij behouden ons het recht voor deze Voorwaarden te allen tijde te wijzigen. Wij zullen gebruikers op de hoogte stellen van materiële wijzigingen door de bijgewerkte Voorwaarden op onze website te plaatsen en de datum 'Laatst bijgewerkt' aan te passen. Uw voortgezette gebruik van de Dienst na dergelijke wijzigingen houdt in dat u akkoord gaat met de gewijzigde Voorwaarden."
+        },
+        "contactUs": {
+          "title": "15. Neem contact met ons op",
+          "content": "Als u vragen heeft over deze Servicevoorwaarden, kunt u contact met ons opnemen via:\n\nE-mail: legal@studious.sh\n\nWe zullen binnen een redelijke termijn op uw vraag reageren."
+        }
+      },
+      "goToTop": "Ga naar boven",
+      "tableOfContents": "Inhoudsopgave",
+      "backToTop": "Terug naar boven"
+    },
+    "navbarPopup": {
+      "goBack": "Ga terug",
+      "home": "Thuis"
     }
   },
   "press": {
@@ -245,7 +411,7 @@
       "website": "Website",
       "status": "Status",
       "currentStatus": "Huidige status",
-      "launchDate": "Lanceringsdatum",
+      "launchDate": "Lanceerdatum",
       "currentPhase": "Huidige fase",
       "targetMarkets": "Doelmarkten",
       "teamSize": "Teamgrootte",
@@ -496,7 +662,7 @@
     "createFirstPost": "Eerste bericht maken",
     "grades": {
       "title": "Cijfers",
-      "subtitle": "Bekijk en beheer studentencijfers",
+      "subtitle": "Bekijk en beheer de cijfers van studenten",
       "columns": {
         "assignment": "Opdracht",
         "maxPoints": "Maximale punten",
@@ -998,7 +1164,7 @@
       "title": "Nieuwe klasse maken",
       "buttonLabel": "Klasse maken",
       "fields": {
-        "title": "Klastitel *",
+        "title": "Klassetitel *",
         "section": "Sectie *",
         "subject": "Onderwerp *",
         "semester": "Semester",
@@ -1240,7 +1406,7 @@
       "placeholders": {
         "title": "bijv. labrapport inleveren op vrijdag",
         "content": "Schrijf hier de inhoud van uw aankondiging...",
-        "publishDate": "Direct publiceren indien leeg"
+        "publishDate": "Onmiddellijk publiceren indien leeg"
       },
       "priority": {
         "low": "Laag",

@@ -49,13 +49,11 @@
       "title": "Buat akun Anda",
       "subtitle": "Bergabunglah dengan Studious dan mulai belajar",
       "signUp": "Mendaftar",
-      "firstName": "Nama depan",
-      "lastName": "Nama Belakang",
+      "username": "Nama belakang",
       "email": "E-mail",
       "password": "Kata sandi",
       "confirmPassword": "Konfirmasi Kata Sandi",
-      "firstNamePlaceholder": "Nama depan",
-      "lastNamePlaceholder": "Nama belakang",
+      "usernamePlaceholder": "Masukkan nama pengguna Anda",
       "emailPlaceholder": "Masukkan email Anda",
       "passwordPlaceholder": "Buat kata sandi",
       "confirmPasswordPlaceholder": "Konfirmasikan kata sandi Anda",
@@ -68,9 +66,10 @@
       "alreadyHaveAccount": "Sudah punya akun?",
       "signIn": "Masuk",
       "passwordMismatch": "Kata sandi tidak cocok",
+      "passwordTooShort": "Kata sandi harus minimal 6 karakter",
       "termsRequired": "Anda harus menyetujui persyaratannya",
-      "accountCreated": "Akun berhasil dibuat!",
-      "signUpFailed": "Gagal membuat akun"
+      "verificationEmailSent": "Email verifikasi telah terkirim!",
+      "signUpFailed": "Gagal membuat akun. Silakan coba lagi."
     },
     "verification": {
       "notVerified": "Akun Belum Diverifikasi",
@@ -82,12 +81,53 @@
       "checkInbox": "Silakan periksa kotak masuk dan folder spam Anda.",
       "enterEmail": "Masukkan alamat email Anda",
       "sending": "Mengirim...",
-      "sendEmail": "Kirim Email"
+      "sendEmail": "Kirim Email",
+      "title": "Verifikasi Email Anda",
+      "subtitle": "Klik tombol di bawah ini untuk memverifikasi alamat email Anda",
+      "verifying": "Memverifikasi...",
+      "verifyEmail": "Verifikasi Email",
+      "successTitle": "Email Terverifikasi Berhasil",
+      "successMessage": "Email Anda telah diverifikasi. Anda sekarang dapat masuk ke akun Anda.",
+      "errorTitle": "Verifikasi Gagal",
+      "errorMessage": "Tautan verifikasi tidak valid atau telah kedaluwarsa. Silakan minta email verifikasi baru.",
+      "invalidToken": "Token verifikasi tidak valid"
+    },
+    "forgotPassword": {
+      "title": "Setel Ulang Kata Sandi Anda",
+      "subtitle": "Masukkan alamat email Anda dan kami akan mengirimkan tautan untuk mengatur ulang kata sandi Anda",
+      "email": "E-mail",
+      "emailPlaceholder": "Masukkan alamat email Anda",
+      "sendResetLink": "Kirim Tautan Reset",
+      "sending": "Mengirim...",
+      "backToSignIn": "Kembali ke Masuk",
+      "successTitle": "Periksa Email Anda",
+      "successMessage": "Jika ada akun dengan email tersebut, kami telah mengirimi Anda tautan untuk mengatur ulang kata sandi.",
+      "checkInbox": "Silakan periksa kotak masuk dan folder spam Anda untuk tautan pengaturan ulang.",
+      "errorMessage": "Gagal mengirim tautan reset. Silakan coba lagi.",
+      "invalidEmail": "Silakan masukkan alamat email yang valid"
+    },
+    "resetPassword": {
+      "title": "Setel Ulang Kata Sandi Anda",
+      "subtitle": "Masukkan kata sandi baru Anda di bawah ini",
+      "password": "Kata Sandi Baru",
+      "passwordPlaceholder": "Masukkan kata sandi baru Anda",
+      "confirmPassword": "Konfirmasi Kata Sandi",
+      "confirmPasswordPlaceholder": "Konfirmasikan kata sandi baru Anda",
+      "resetPassword": "Setel Ulang Kata Sandi",
+      "resetting": "Mengatur ulang...",
+      "passwordTooShort": "Kata sandi harus minimal 6 karakter",
+      "passwordsDoNotMatch": "Kata sandi tidak cocok",
+      "successTitle": "Reset Kata Sandi Berhasil",
+      "successMessage": "Kata sandi Anda telah berhasil direset. Anda sekarang dapat masuk dengan kata sandi baru Anda.",
+      "backToSignIn": "Kembali ke Masuk"
     }
   },
   "marketing": {
     "navbar": {
-      "requestEarlyAccess": "Minta Akses Awal"
+      "requestEarlyAccess": "Minta Akses Awal",
+      "lightMode": "Beralih ke mode terang",
+      "darkMode": "Beralih ke mode gelap",
+      "languageSelector": "Pilih bahasa"
     },
     "hero": {
       "badge": "Platform Pembelajaran Modern",
@@ -229,6 +269,132 @@
       "requestAccess": "Minta Akses",
       "partnerWithUs": "Bermitra dengan Kami",
       "tagline": "Studious LMS — Pembelajaran Modern, Sederhana."
+    },
+    "privacyPolicy": {
+      "title": "Kebijakan Privasi",
+      "lastUpdated": "Terakhir Diperbarui: November 2025",
+      "sections": {
+        "introduction": {
+          "title": "1. Pendahuluan",
+          "content": "Studious LMS ('kami') berkomitmen untuk melindungi privasi Anda. Kebijakan Privasi ini menjelaskan cara kami mengumpulkan, menggunakan, mengungkapkan, dan melindungi informasi Anda saat Anda menggunakan sistem manajemen pembelajaran dan layanan terkait kami (secara kolektif, 'Layanan'). Harap baca Kebijakan Privasi ini dengan saksama. Dengan menggunakan Layanan kami, Anda menyetujui pengumpulan dan penggunaan informasi sesuai dengan kebijakan ini."
+        },
+        "informationWeCollect": {
+          "title": "2. Informasi yang Kami Kumpulkan",
+          "content": "Kami mengumpulkan informasi yang Anda berikan langsung kepada kami, termasuk:\n\n• Informasi Akun: Nama pengguna, alamat email, kata sandi, dan informasi profil\n• Data Pendidikan: Pendaftaran kelas, tugas, nilai, catatan kehadiran, dan kemajuan akademik\n• Data Komunikasi: Pesan, pengumuman, dan komunikasi lainnya dalam platform\n• Data Penggunaan: Informasi tentang bagaimana Anda berinteraksi dengan Layanan kami, termasuk halaman yang dikunjungi dan fitur yang digunakan\n• Informasi Perangkat: Alamat IP, jenis peramban, pengenal perangkat, dan sistem operasi\n• Kuki dan Teknologi Pelacakan: Kami menggunakan kuki dan teknologi serupa untuk meningkatkan pengalaman Anda dan menganalisis pola penggunaan"
+        },
+        "howWeUseInformation": {
+          "title": "3. Bagaimana Kami Menggunakan Informasi Anda",
+          "content": "Kami menggunakan informasi yang kami kumpulkan untuk:\n\n• Menyediakan, memelihara, dan meningkatkan Layanan kami\n• Memproses transaksi dan mengelola akun Anda\n• Memfasilitasi komunikasi antara pengajar, siswa, dan administrator\n• Membuat dan mengelola konten pendidikan, tugas, dan nilai\n• Mengirim notifikasi penting tentang akun Anda dan Layanan\n• Menganalisis pola penggunaan untuk meningkatkan pengalaman pengguna\n• Memastikan keamanan dan mencegah penipuan\n• Mematuhi kewajiban hukum dan melindungi hak-hak kami"
+        },
+        "informationSharing": {
+          "title": "4. Pembagian dan Pengungkapan Informasi",
+          "content": "Kami tidak menjual informasi pribadi Anda. Kami dapat membagikan informasi Anda dalam situasi berikut:\n\n• Dengan Lembaga Pendidikan: Informasi dapat dibagikan dengan sekolah atau lembaga pendidikan Anda untuk tujuan pendidikan\n• Dengan Penyedia Layanan: Kami dapat membagikan informasi dengan penyedia layanan pihak ketiga yang membantu dalam pengoperasian Layanan kami\n• Untuk Kepatuhan Hukum: Kami dapat mengungkapkan informasi jika diwajibkan oleh hukum atau untuk melindungi hak dan keamanan kami\n• Dengan Persetujuan Anda: Kami dapat membagikan informasi dengan persetujuan tegas Anda\n• Dalam Kasus Penggabungan: Informasi dapat ditransfer sehubungan dengan transaksi bisnis"
+        },
+        "dataSecurity": {
+          "title": "5. Keamanan Data",
+          "content": "Kami menerapkan langkah-langkah keamanan teknis dan organisasional yang tepat untuk melindungi informasi pribadi Anda dari akses, perubahan, pengungkapan, atau penghancuran yang tidak sah. Namun, tidak ada metode transmisi melalui internet atau penyimpanan elektronik yang 100% aman. Meskipun kami berupaya menggunakan cara-cara yang dapat diterima secara komersial untuk melindungi informasi Anda, kami tidak dapat menjamin keamanan mutlak."
+        },
+        "dataRetention": {
+          "title": "6. Retensi Data",
+          "content": "Kami menyimpan informasi pribadi Anda selama diperlukan untuk menyediakan Layanan kami dan memenuhi tujuan yang diuraikan dalam Kebijakan Privasi ini, kecuali jika periode penyimpanan yang lebih lama diwajibkan atau diizinkan oleh hukum. Ketika kami tidak lagi membutuhkan informasi Anda, kami akan menghapusnya dengan aman atau menganonimkannya."
+        },
+        "yourRights": {
+          "title": "7. Hak Anda",
+          "content": "Tergantung pada lokasi Anda, Anda mungkin memiliki hak tertentu terkait informasi pribadi Anda, termasuk:\n\n• Akses: Meminta akses ke informasi pribadi Anda\n• Koreksi: Meminta koreksi atas informasi yang tidak akurat\n• Penghapusan: Meminta penghapusan informasi pribadi Anda\n• Portabilitas: Meminta transfer data Anda\n• Keberatan: Menolak aktivitas pemrosesan tertentu\n• Penarikan Persetujuan: Menarik persetujuan jika pemrosesan didasarkan pada persetujuan\n\nUntuk menggunakan hak-hak ini, silakan hubungi kami menggunakan informasi yang tersedia di bagian 'Hubungi Kami'."
+        },
+        "childrenPrivacy": {
+          "title": "8. Privasi Anak",
+          "content": "Layanan kami dirancang untuk keperluan pendidikan dan dapat digunakan oleh siswa di bawah usia 18 tahun. Kami mematuhi hukum yang berlaku terkait privasi anak, termasuk Undang-Undang Hak Pendidikan dan Privasi Keluarga (FERPA) di Amerika Serikat. Kami tidak dengan sengaja mengumpulkan informasi pribadi dari anak-anak tanpa persetujuan yang sesuai dari orang tua atau lembaga pendidikan. Jika Anda yakin kami telah mengumpulkan informasi dari seorang anak secara tidak pantas, harap segera hubungi kami."
+        },
+        "internationalTransfers": {
+          "title": "9. Transfer Data Internasional",
+          "content": "Informasi Anda dapat ditransfer dan diproses di negara selain negara tempat tinggal Anda. Negara-negara ini mungkin memiliki undang-undang perlindungan data yang berbeda dengan negara Anda. Dengan menggunakan Layanan kami, Anda menyetujui transfer informasi Anda ke negara-negara ini."
+        },
+        "changesToPolicy": {
+          "title": "10. Perubahan pada Kebijakan Privasi Ini",
+          "content": "Kami dapat memperbarui Kebijakan Privasi ini sewaktu-waktu. Kami akan memberi tahu Anda tentang perubahan apa pun dengan memposting Kebijakan Privasi baru di halaman ini dan memperbarui tanggal 'Terakhir Diperbarui'. Anda disarankan untuk meninjau Kebijakan Privasi ini secara berkala untuk mengetahui perubahan apa pun."
+        },
+        "contactUs": {
+          "title": "11. Hubungi Kami",
+          "content": "Jika Anda memiliki pertanyaan tentang Kebijakan Privasi ini atau praktik privasi kami, silakan hubungi kami di:\n\nEmail: privacy@studious.sh\n\nKami akan menanggapi pertanyaan Anda dalam jangka waktu yang wajar."
+        }
+      },
+      "goToTop": "Ke Atas",
+      "tableOfContents": "Daftar isi",
+      "backToTop": "Kembali ke Atas"
+    },
+    "termsOfService": {
+      "title": "Ketentuan Layanan",
+      "lastUpdated": "Terakhir Diperbarui: November 2025",
+      "sections": {
+        "acceptance": {
+          "title": "1. Penerimaan Ketentuan",
+          "content": "Dengan mengakses atau menggunakan Studious LMS (\"Layanan\"), Anda setuju untuk terikat oleh Ketentuan Layanan ini (\"Ketentuan\"). Jika Anda tidak menyetujui Ketentuan ini, Anda tidak boleh mengakses atau menggunakan Layanan. Ketentuan ini berlaku untuk semua pengguna Layanan, termasuk siswa, guru, administrator, dan institusi pendidikan."
+        },
+        "descriptionOfService": {
+          "title": "2. Deskripsi Layanan",
+          "content": "Studious LMS adalah sistem manajemen pembelajaran yang menyediakan alat bagi institusi pendidikan, guru, dan siswa untuk mengelola kelas, tugas, nilai, kehadiran, komunikasi, dan aktivitas pendidikan lainnya. Layanan ini mencakup aplikasi berbasis web dan seluler, fitur-fitur berbasis AI, dan layanan terkait."
+        },
+        "userAccounts": {
+          "title": "3. Akun Pengguna",
+          "content": "Untuk menggunakan Layanan, Anda harus membuat akun dan memberikan informasi yang akurat, terkini, dan lengkap. Anda bertanggung jawab untuk menjaga kerahasiaan kredensial akun Anda dan semua aktivitas yang terjadi dalam akun Anda. Anda setuju untuk:\n\n• Menggunakan kata sandi yang kuat dan unik\n• Tidak membagikan kredensial akun Anda dengan orang lain\n• Segera memberi tahu kami jika ada akses yang tidak sah\n• Menjaga keakuratan informasi akun\n• Bertanggung jawab atas semua aktivitas dalam akun Anda"
+        },
+        "acceptableUse": {
+          "title": "4. Kebijakan Penggunaan yang Dapat Diterima",
+          "content": "Anda setuju untuk menggunakan Layanan hanya untuk tujuan yang sah dan sesuai dengan Ketentuan ini. Anda setuju untuk TIDAK:\n\n• Melanggar hukum atau peraturan yang berlaku\n• Melanggar hak kekayaan intelektual\n• Mengirimkan konten yang berbahaya, menyinggung, atau tidak pantas\n• Melecehkan, menyalahgunakan, atau merugikan pengguna lain\n• Mencoba mendapatkan akses tidak sah ke Layanan\n• Mengganggu atau mengacaukan Layanan atau server\n• Menggunakan sistem otomatis untuk mengakses Layanan tanpa izin\n• Meniru identitas orang atau entitas lain\n• Mengumpulkan atau menyimpan data pribadi pengguna lain tanpa izin"
+        },
+        "educationalContent": {
+          "title": "5. Konten Pendidikan dan Kekayaan Intelektual",
+          "content": "Layanan ini memungkinkan pengguna untuk membuat, mengunggah, dan membagikan konten edukasi. Anda tetap memiliki hak kepemilikan atas konten yang Anda buat, tetapi dengan menggunakan Layanan ini, Anda memberi kami lisensi untuk menggunakan, menyimpan, dan menampilkan konten Anda sebagaimana diperlukan untuk menyediakan Layanan. Anda bertanggung jawab untuk memastikan Anda memiliki hak untuk menggunakan dan membagikan konten apa pun yang Anda unggah. Kami menghormati hak kekayaan intelektual dan akan menanggapi pemberitahuan pelanggaran hak cipta yang sah."
+        },
+        "aiFeatures": {
+          "title": "6. Fitur Bertenaga AI",
+          "content": "Layanan kami mencakup fitur-fitur berbasis AI seperti bantuan penilaian, pembuatan konten, dan dukungan pendidikan. Fitur-fitur ini disediakan 'apa adanya' dan harus digunakan sebagai alat tambahan. Pengguna bertanggung jawab untuk meninjau dan memvalidasi konten yang dihasilkan AI. Kami tidak menjamin keakuratan, kelengkapan, atau kesesuaian konten yang dihasilkan AI."
+        },
+        "privacy": {
+          "title": "7. Privasi",
+          "content": "Penggunaan Layanan oleh Anda juga diatur oleh Kebijakan Privasi kami, yang menjelaskan cara kami mengumpulkan, menggunakan, dan melindungi informasi Anda. Dengan menggunakan Layanan, Anda menyetujui pengumpulan dan penggunaan informasi sebagaimana dijelaskan dalam Kebijakan Privasi kami."
+        },
+        "feesAndPayment": {
+          "title": "8. Biaya dan Pembayaran",
+          "content": "Beberapa fitur Layanan mungkin memerlukan pembayaran. Jika Anda membeli langganan atau fitur berbayar:\n\n• Biaya berlaku seperti yang tertera pada saat pembelian\n• Pembayaran diproses melalui pemroses pembayaran pihak ketiga yang aman\n• Langganan diperpanjang secara otomatis kecuali dibatalkan\n• Pengembalian dana tunduk pada kebijakan pengembalian dana kami\n• Kami berhak mengubah harga dengan pemberitahuan sebelumnya"
+        },
+        "termination": {
+          "title": "9. Pemutusan",
+          "content": "Kami dapat segera menghentikan atau menangguhkan akun dan akses Anda ke Layanan, tanpa pemberitahuan sebelumnya, atas perilaku yang kami yakini melanggar Ketentuan ini atau merugikan pengguna lain, kami, atau pihak ketiga. Anda dapat menghentikan akun Anda kapan saja dengan menghubungi kami. Setelah penghentian, hak Anda untuk menggunakan Layanan akan segera berakhir."
+        },
+        "disclaimers": {
+          "title": "10. Penyangkalan",
+          "content": "LAYANAN INI DISEDIAKAN 'SEBAGAIMANA ADANYA' DAN 'SEBAGAIMANA TERSEDIA' TANPA JAMINAN APA PUN, BAIK TERSURAT MAUPUN TERSIRAT. KAMI TIDAK MENJAMIN BAHWA LAYANAN INI AKAN BEBAS GANGGUAN, AMAN, ATAU TANPA KESALAHAN. KAMI MENYANGKAL SEMUA JAMINAN, TERMASUK JAMINAN ATAS KELAYAKAN UNTUK DIPERDAGANGKAN, KESESUAIAN UNTUK TUJUAN TERTENTU, DAN TANPA PELANGGARAN."
+        },
+        "limitationOfLiability": {
+          "title": "11. Batasan Tanggung Jawab",
+          "content": "HINGGA BATAS MAKSIMUM YANG DIIZINKAN OLEH HUKUM, KAMI TIDAK AKAN BERTANGGUNG JAWAB ATAS SEGALA KERUGIAN TIDAK LANGSUNG, INSIDENTAL, KHUSUS, KONSEKUENSIAL, ATAU HUKUMAN, ATAU SEGALA HILANGNYA KEUNTUNGAN ATAU PENDAPATAN, BAIK YANG TIMBUL SECARA LANGSUNG ATAU TIDAK LANGSUNG, ATAU SEGALA HILANGNYA DATA, PENGGUNAAN, GOODWILL, ATAU KERUGIAN TIDAK BERWUJUD LAINNYA YANG TIMBUL DARI PENGGUNAAN LAYANAN OLEH ANDA."
+        },
+        "indemnification": {
+          "title": "12. Ganti Rugi",
+          "content": "Anda setuju untuk mengganti rugi, membela, dan membebaskan Studious LMS dan para pejabat, direktur, karyawan, dan agennya dari dan terhadap segala klaim, tanggung jawab, kerusakan, kerugian, dan biaya yang timbul dari atau dengan cara apa pun terkait dengan akses atau penggunaan Layanan oleh Anda, pelanggaran Anda terhadap Ketentuan ini, atau pelanggaran Anda terhadap hak apa pun milik orang lain."
+        },
+        "governingLaw": {
+          "title": "13. Hukum yang Mengatur",
+          "content": "Ketentuan ini diatur dan ditafsirkan sesuai dengan hukum di yurisdiksi tempat Studious LMS beroperasi, tanpa memperhatikan ketentuan hukum yang bertentangan. Segala perselisihan yang timbul dari Ketentuan ini atau Layanan akan diselesaikan di pengadilan yang berwenang di yurisdiksi tersebut."
+        },
+        "changesToTerms": {
+          "title": "14. Perubahan Ketentuan",
+          "content": "Kami berhak mengubah Ketentuan ini kapan saja. Kami akan memberi tahu pengguna tentang perubahan materi dengan memposting Ketentuan yang diperbarui di situs web kami dan memperbarui tanggal 'Terakhir Diperbarui'. Penggunaan Layanan Anda yang berkelanjutan setelah perubahan tersebut merupakan penerimaan atas Ketentuan yang telah diubah."
+        },
+        "contactUs": {
+          "title": "15. Hubungi Kami",
+          "content": "Jika Anda memiliki pertanyaan tentang Ketentuan Layanan ini, silakan hubungi kami di:\n\nEmail: legal@studious.sh\n\nKami akan menanggapi pertanyaan Anda dalam jangka waktu yang wajar."
+        }
+      },
+      "goToTop": "Ke Atas",
+      "tableOfContents": "Daftar isi",
+      "backToTop": "Kembali ke Atas"
+    },
+    "navbarPopup": {
+      "goBack": "Kembali",
+      "home": "Rumah"
     }
   },
   "press": {
@@ -1020,7 +1186,7 @@
       "actions": {
         "cancel": "Membatalkan",
         "create": "Buat Kelas",
-        "creating": "Menciptakan..."
+        "creating": "Membuat..."
       },
       "toasts": {
         "success": "Kelas {name} telah berhasil dibuat.",
@@ -1048,7 +1214,7 @@
         "cancel": "Membatalkan",
         "create": "Buat Folder",
         "update": "Perbarui Folder",
-        "creating": "Menciptakan...",
+        "creating": "Membuat...",
         "updating": "Memperbarui..."
       },
       "toasts": {
@@ -1149,7 +1315,7 @@
         "cancel": "Membatalkan",
         "create": "Buat Tugas",
         "saveDraft": "Simpan Draf",
-        "creating": "Menciptakan...",
+        "creating": "Membuat...",
         "add": "Menambahkan"
       },
       "students": {

@@ -8,7 +8,7 @@
       "edit": "Syllabus bewerken"
     },
     "errors": {
-      "failedToLoad": "Het is niet gelukt om het leerplan te laden",
+      "failedToLoad": "Het is niet gelukt om de syllabus te laden",
       "tryLater": "Probeer het later opnieuw."
     },
     "stats": {

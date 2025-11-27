@@ -49,13 +49,11 @@
       "title": "Skapa ditt konto",
       "subtitle": "Gå med i Studious och börja lära dig",
       "signUp": "Registrera dig",
-      "firstName": "Förnamn",
-      "lastName": "Efternamn",
+      "username": "Användarnamn",
       "email": "E-post",
       "password": "Lösenord",
       "confirmPassword": "Bekräfta lösenord",
-      "firstNamePlaceholder": "Förnamn",
-      "lastNamePlaceholder": "Efternamn",
+      "usernamePlaceholder": "Ange ditt användarnamn",
       "emailPlaceholder": "Ange din e-postadress",
       "passwordPlaceholder": "Skapa ett lösenord",
       "confirmPasswordPlaceholder": "Bekräfta ditt lösenord",
@@ -68,9 +66,10 @@
       "alreadyHaveAccount": "Har du redan ett konto?",
       "signIn": "Logga in",
       "passwordMismatch": "Lösenorden matchar inte",
+      "passwordTooShort": "Lösenordet måste vara minst 6 tecken långt",
       "termsRequired": "Du måste godkänna villkoren",
-      "accountCreated": "Konto skapat!",
-      "signUpFailed": "Misslyckades med att skapa konto"
+      "verificationEmailSent": "Verifieringsmejl skickat!",
+      "signUpFailed": "Misslyckades med att skapa kontot. Försök igen."
     },
     "verification": {
       "notVerified": "Konto inte verifierat",
@@ -82,12 +81,53 @@
       "checkInbox": "Kontrollera din inkorg och skräppostmapp.",
       "enterEmail": "Ange din e-postadress",
       "sending": "Sändning...",
-      "sendEmail": "Skicka e-post"
+      "sendEmail": "Skicka e-post",
+      "title": "Verifiera din e-postadress",
+      "subtitle": "Klicka på knappen nedan för att verifiera din e-postadress",
+      "verifying": "Verifierar...",
+      "verifyEmail": "Verifiera e-postadress",
+      "successTitle": "E-postadressen har verifierats",
+      "successMessage": "Din e-postadress har verifierats. Du kan nu logga in på ditt konto.",
+      "errorTitle": "Verifieringen misslyckades",
+      "errorMessage": "Verifieringslänken är ogiltig eller har gått ut. Begär ett nytt verifieringsmeddelande.",
+      "invalidToken": "Ogiltig verifieringstoken"
+    },
+    "forgotPassword": {
+      "title": "Återställ ditt lösenord",
+      "subtitle": "Ange din e-postadress så skickar vi en länk för att återställa ditt lösenord",
+      "email": "E-post",
+      "emailPlaceholder": "Ange din e-postadress",
+      "sendResetLink": "Skicka återställningslänk",
+      "sending": "Sändning...",
+      "backToSignIn": "Tillbaka till inloggning",
+      "successTitle": "Kontrollera din e-post",
+      "successMessage": "Om det finns ett konto med den e-postadressen har vi skickat en länk för lösenordsåterställning till dig.",
+      "checkInbox": "Kontrollera din inkorg och skräppostmapp för återställningslänken.",
+      "errorMessage": "Misslyckades med att skicka återställningslänken. Försök igen.",
+      "invalidEmail": "Ange en giltig e-postadress"
+    },
+    "resetPassword": {
+      "title": "Återställ ditt lösenord",
+      "subtitle": "Ange ditt nya lösenord nedan",
+      "password": "Nytt lösenord",
+      "passwordPlaceholder": "Ange ditt nya lösenord",
+      "confirmPassword": "Bekräfta lösenord",
+      "confirmPasswordPlaceholder": "Bekräfta ditt nya lösenord",
+      "resetPassword": "Återställ lösenord",
+      "resetting": "Återställer...",
+      "passwordTooShort": "Lösenordet måste vara minst 6 tecken långt",
+      "passwordsDoNotMatch": "Lösenorden matchar inte",
+      "successTitle": "Lösenordsåterställning lyckades",
+      "successMessage": "Ditt lösenord har återställts. Du kan nu logga in med ditt nya lösenord.",
+      "backToSignIn": "Tillbaka till inloggning"
     }
   },
   "marketing": {
     "navbar": {
-      "requestEarlyAccess": "Begär tidig åtkomst"
+      "requestEarlyAccess": "Begär tidig åtkomst",
+      "lightMode": "Växla till ljusläge",
+      "darkMode": "Växla till mörkt läge",
+      "languageSelector": "Välj språk"
     },
     "hero": {
       "badge": "Modern lärplattform",
@@ -95,7 +135,7 @@
       "title2": "lärande för moderna skolor",
       "subtitle": "Studious LMS integrerar AI, realtidskalendrar och klasskommunikation i en sammanhängande plattform – utformad för att hjälpa lärare att undervisa och elever att blomstra.",
       "requestEarlyAccess": "Begär tidig åtkomst",
-      "watchDemo": "Titta på demon",
+      "watchDemo": "Titta på demo",
       "altDashboard": "Plattformsöversikt"
     },
     "problem": {
@@ -166,7 +206,7 @@
         "perk2": "Obegränsade klasser",
         "perk3": "Alla kärnfunktioner",
         "perk4": "AI-assistent (obegränsade frågor)",
-        "perk5": "Först i kön för betaversionen av Studious CMS",
+        "perk5": "Först i kön för betaåtkomst till Studious CMS",
         "button": "Kom igång"
       },
       "institution": {
@@ -229,6 +269,132 @@
       "requestAccess": "Begär åtkomst",
       "partnerWithUs": "Samarbeta med oss",
       "tagline": "Studious LMS — Modernt lärande, förenklat."
+    },
+    "privacyPolicy": {
+      "title": "Integritetspolicy",
+      "lastUpdated": "Senast uppdaterad: november 2025",
+      "sections": {
+        "introduction": {
+          "title": "1. Introduktion",
+          "content": "Studious LMS (”vi”, ”vår” eller ”oss”) har åtagit sig att skydda din integritet. Denna integritetspolicy förklarar hur vi samlar in, använder, lämnar ut och skyddar din information när du använder vårt lärplattform och relaterade tjänster (gemensamt kallade ”Tjänsten”). Läs denna integritetspolicy noggrant. Genom att använda vår tjänst samtycker du till insamling och användning av information i enlighet med denna policy."
+        },
+        "informationWeCollect": {
+          "title": "2. Information vi samlar in",
+          "content": "Vi samlar in information som du lämnar direkt till oss, inklusive:\n\n• Kontoinformation: Användarnamn, e-postadress, lösenord och profilinformation\n• Utbildningsdata: Kursinskrivningar, uppgifter, betyg, närvarohistorik och akademiska framsteg\n• Kommunikationsdata: Meddelanden, tillkännagivanden och annan kommunikation inom plattformen\n• Användningsdata: Information om hur du interagerar med vår tjänst, inklusive besökta sidor och använda funktioner\n• Enhetsinformation: IP-adress, webbläsartyp, enhetsidentifierare och operativsystem\n• Cookies och spårningstekniker: Vi använder cookies och liknande tekniker för att förbättra din upplevelse och analysera användningsmönster"
+        },
+        "howWeUseInformation": {
+          "title": "3. Hur vi använder din information",
+          "content": "Vi använder informationen vi samlar in för att:\n\n• Tillhandahålla, underhålla och förbättra vår tjänst\n• Behandla transaktioner och hantera ditt konto\n• Underlätta kommunikationen mellan lärare, elever och administratörer\n• Generera och hantera utbildningsinnehåll, uppgifter och betyg\n• Skicka viktiga meddelanden om ditt konto och tjänsten\n• Analysera användningsmönster för att förbättra användarupplevelsen\n• Säkerställa säkerhet och förhindra bedrägerier\n• Följa juridiska skyldigheter och skydda våra rättigheter"
+        },
+        "informationSharing": {
+          "title": "4. Informationsdelning och utlämnande",
+          "content": "Vi säljer inte dina personuppgifter. Vi kan komma att dela dina uppgifter under följande omständigheter:\n\n• Med utbildningsinstitutioner: Information kan komma att delas med din skola eller utbildningsinstitution för utbildningsändamål\n• Med tjänsteleverantörer: Vi kan komma att dela information med tredjepartsleverantörer som hjälper till att driva vår tjänst\n• För juridisk efterlevnad: Vi kan komma att lämna ut information om det krävs enligt lag eller för att skydda våra rättigheter och vår säkerhet\n• Med ditt samtycke: Vi kan komma att dela information med ditt uttryckliga samtycke\n• Vid fusion: Information kan komma att överföras i samband med en affärstransaktion"
+        },
+        "dataSecurity": {
+          "title": "5. Datasäkerhet",
+          "content": "Vi implementerar lämpliga tekniska och organisatoriska säkerhetsåtgärder för att skydda dina personuppgifter mot obehörig åtkomst, ändring, avslöjande eller förstörelse. Ingen metod för överföring via internet eller elektronisk lagring är dock 100 % säker. Även om vi strävar efter att använda kommersiellt acceptabla metoder för att skydda din information, kan vi inte garantera absolut säkerhet."
+        },
+        "dataRetention": {
+          "title": "6. Datalagring",
+          "content": "Vi sparar dina personuppgifter så länge som det är nödvändigt för att tillhandahålla vår tjänst och uppfylla de syften som anges i denna integritetspolicy, såvida inte en längre lagringsperiod krävs eller tillåts enligt lag. När vi inte längre behöver dina uppgifter kommer vi att radera eller anonymisera dem på ett säkert sätt."
+        },
+        "yourRights": {
+          "title": "7. Dina rättigheter",
+          "content": "Beroende på var du befinner dig kan du ha vissa rättigheter gällande dina personuppgifter, inklusive:\n\n• Åtkomst: Begära åtkomst till dina personuppgifter\n• Rättelse: Begära rättelse av felaktig information\n• Radering: Begära radering av dina personuppgifter\n• Portabilitet: Begära överföring av dina uppgifter\n• Invändning: Invända mot vissa behandlingsaktiviteter\n• Återkallande av samtycke: Återkalla samtycke där behandlingen baseras på samtycke\n\nFör att utöva dessa rättigheter, vänligen kontakta oss med hjälp av informationen i avsnittet \"Kontakta oss\"."
+        },
+        "childrenPrivacy": {
+          "title": "8. Barns integritet",
+          "content": "Vår tjänst är utformad för utbildningsändamål och får användas av elever under 18 år. Vi följer gällande lagar om barns integritet, inklusive Family Educational Rights and Privacy Act (FERPA) i USA. Vi samlar inte medvetet in personlig information från barn utan lämpligt samtycke från föräldrar eller utbildningsinstitutioner. Om du tror att vi har samlat in information från ett barn på ett olämpligt sätt, vänligen kontakta oss omedelbart."
+        },
+        "internationalTransfers": {
+          "title": "9. Internationella dataöverföringar",
+          "content": "Din information kan komma att överföras till och behandlas i andra länder än ditt hemland. Dessa länder kan ha dataskyddslagar som skiljer sig från de i ditt land. Genom att använda vår tjänst samtycker du till överföring av din information till dessa länder."
+        },
+        "changesToPolicy": {
+          "title": "10. Ändringar i denna integritetspolicy",
+          "content": "Vi kan komma att uppdatera denna integritetspolicy då och då. Vi kommer att meddela dig om eventuella ändringar genom att publicera den nya integritetspolicyn på den här sidan och uppdatera datumet för \"Senast uppdaterad\". Du rekommenderas att granska denna integritetspolicy regelbundet för att se om det finns några ändringar."
+        },
+        "contactUs": {
+          "title": "11. Kontakta oss",
+          "content": "Om du har några frågor om denna integritetspolicy eller våra integritetsrutiner, vänligen kontakta oss på:\n\nE-post: privacy@studious.sh\n\nVi kommer att svara på din förfrågan inom rimlig tid."
+        }
+      },
+      "goToTop": "Gå till toppen",
+      "tableOfContents": "Innehållsförteckning",
+      "backToTop": "Tillbaka till toppen"
+    },
+    "termsOfService": {
+      "title": "Användarvillkor",
+      "lastUpdated": "Senast uppdaterad: november 2025",
+      "sections": {
+        "acceptance": {
+          "title": "1. Godkännande av villkor",
+          "content": "Genom att besöka eller använda Studious LMS (”Tjänsten”) godkänner du att vara bunden av dessa Användarvillkor (”Villkor”). Om du inte godkänner dessa Villkor får du inte besöka eller använda Tjänsten. Dessa Villkor gäller för alla användare av Tjänsten, inklusive studenter, lärare, administratörer och utbildningsinstitutioner."
+        },
+        "descriptionOfService": {
+          "title": "2. Beskrivning av tjänsten",
+          "content": "Studious LMS är ett lärplattformssystem som förser utbildningsinstitutioner, lärare och elever med verktyg för att hantera lektioner, uppgifter, betyg, närvaro, kommunikation och andra utbildningsaktiviteter. Tjänsten inkluderar webbaserade och mobila applikationer, AI-drivna funktioner och relaterade tjänster."
+        },
+        "userAccounts": {
+          "title": "3. Användarkonton",
+          "content": "För att använda Tjänsten måste du skapa ett konto och lämna korrekt, aktuell och fullständig information. Du ansvarar för att upprätthålla sekretessen för dina kontouppgifter och för alla aktiviteter som sker under ditt konto. Du samtycker till att:\n\n• Använda ett starkt, unikt lösenord\n• Inte dela dina kontouppgifter med andra\n• Meddela oss omedelbart om obehörig åtkomst\n• Upprätthålla korrekt kontoinformation\n• Vara ansvarig för alla aktiviteter under ditt konto"
+        },
+        "acceptableUse": {
+          "title": "4. Policy för godtagbar användning",
+          "content": "Du samtycker till att endast använda Tjänsten för lagliga ändamål och i enlighet med dessa Villkor. Du samtycker till att INTE:\n\n• Bryta mot tillämpliga lagar eller förordningar\n• Inkräkta på immateriella rättigheter\n• Överföra skadligt, stötande eller olämpligt innehåll\n• Trakassera, missbruka eller skada andra användare\n• Försöka få obehörig åtkomst till Tjänsten\n• Störa eller avbryta Tjänsten eller servrarna\n• Använda automatiserade system för att få åtkomst till Tjänsten utan tillstånd\n• Utge dig för att vara någon annan person eller enhet\n• Samla in eller lagra personuppgifter om andra användare utan samtycke"
+        },
+        "educationalContent": {
+          "title": "5. Utbildningsinnehåll och immateriella rättigheter",
+          "content": "Tjänsten låter användare skapa, ladda upp och dela utbildningsinnehåll. Du behåller äganderätten till innehållet du skapar, men genom att använda Tjänsten ger du oss en licens att använda, lagra och visa ditt innehåll i den utsträckning det är nödvändigt för att tillhandahålla Tjänsten. Du ansvarar för att du har rätt att använda och dela allt innehåll du laddar upp. Vi respekterar immateriella rättigheter och kommer att svara på giltiga meddelanden om upphovsrättsintrång."
+        },
+        "aiFeatures": {
+          "title": "6. AI-drivna funktioner",
+          "content": "Vår tjänst inkluderar AI-drivna funktioner som betygshantering, innehållsgenerering och utbildningsstöd. Dessa funktioner tillhandahålls \"i befintligt skick\" och bör användas som kompletterande verktyg. Användare ansvarar för att granska och validera AI-genererat innehåll. Vi garanterar inte riktigheten, fullständigheten eller lämpligheten hos AI-genererat innehåll."
+        },
+        "privacy": {
+          "title": "7. Sekretess",
+          "content": "Din användning av Tjänsten regleras också av vår integritetspolicy, som förklarar hur vi samlar in, använder och skyddar din information. Genom att använda Tjänsten samtycker du till insamling och användning av information enligt beskrivningen i vår integritetspolicy."
+        },
+        "feesAndPayment": {
+          "title": "8. Avgifter och betalning",
+          "content": "Vissa funktioner i tjänsten kan kräva betalning. Om du köper en prenumeration eller betalda funktioner:\n\n• Avgifterna anges vid köptillfället\n• Betalningar behandlas via säkra tredjepartsbetalningsleverantörer\n• Prenumerationer förnyas automatiskt om de inte sägs upp\n• Återbetalningar omfattas av vår återbetalningspolicy\n• Vi förbehåller oss rätten att ändra priserna med föregående meddelande"
+        },
+        "termination": {
+          "title": "9. Uppsägning",
+          "content": "Vi kan säga upp eller stänga av ditt konto och din åtkomst till Tjänsten omedelbart, utan föregående meddelande, för beteende som vi anser bryter mot dessa Villkor eller är skadligt för andra användare, oss eller tredje part. Du kan säga upp ditt konto när som helst genom att kontakta oss. Vid uppsägning upphör din rätt att använda Tjänsten omedelbart."
+        },
+        "disclaimers": {
+          "title": "10. Friskrivningsklausuler",
+          "content": "TJÄNSTEN TILLHANDAHÅLLS \"I BEFINTLIGT SKICK\" OCH \"I SOM TILLGÄNGLIG\" UTAN NÅGOT SLAG FÖR GARANTIER, VARE SIG UTTRYCKLIGA ELLER UNDERFÖRSTÅDDA. VI GARANTERAR INTE ATT TJÄNSTEN KOMMER ATT VARA OAVBRUTEN, SÄKER ELLER FELFRI. VI FRÅNSÄGER OSS ALLA GARANTIER, INKLUSIVE GARANTIER OM SÄLJBARHET, LÄMPLIGHET FÖR ETT SÄRSKILT ÄNDAMÅL OCH ICKE-INTRÅNG."
+        },
+        "limitationOfLiability": {
+          "title": "11. Ansvarsbegränsning",
+          "content": "I DEN UTSTRÄCKNING DET ÄR TILLÅTET ENLIGT LAG SKA VI INTE VARA ANSVARIGA FÖR NÅGRA INDIREKTA, TILLFÄLLIGA, SÄRSKILDA, FÖLJDSKADOR ELLER STRAFFSKADOR, ELLER NÅGON FÖRLUST AV VINST ELLER INTÄKTER, OAVSETT OM DEN UPPSTÅR DIREKT ELLER INDIREKT, ELLER NÅGON FÖRLUST AV DATA, ANVÄNDNING, GOODWILL ELLER ANDRA IMMATERIELLA FÖRLUSTER SOM UPPSTÅR TILL FÖLJD AV DIN ANVÄNDNING AV TJÄNSTEN."
+        },
+        "indemnification": {
+          "title": "12. Skadeersättning",
+          "content": "Du samtycker till att gottgöra, försvara och hålla Studious LMS och dess tjänstemän, styrelseledamöter, anställda och ombud skadeslösa från och mot alla anspråk, skulder, skador, förluster och utgifter som uppstår på grund av eller på något sätt är kopplade till din åtkomst till eller användning av Tjänsten, ditt brott mot dessa Villkor eller ditt intrång i någon annans rättigheter."
+        },
+        "governingLaw": {
+          "title": "13. Tillämplig lag",
+          "content": "Dessa villkor ska regleras av och tolkas i enlighet med lagarna i den jurisdiktion där Studious LMS är verksamt, utan hänsyn till dess bestämmelser om lagval. Eventuella tvister som uppstår till följd av dessa villkor eller Tjänsten ska lösas i lämplig domstol i den jurisdiktionen."
+        },
+        "changesToTerms": {
+          "title": "14. Ändringar av villkoren",
+          "content": "Vi förbehåller oss rätten att ändra dessa villkor när som helst. Vi kommer att meddela användare om väsentliga ändringar genom att publicera de uppdaterade villkoren på vår webbplats och uppdatera datumet för \"Senast uppdaterad\". Din fortsatta användning av Tjänsten efter sådana ändringar innebär att du godkänner de ändrade villkoren."
+        },
+        "contactUs": {
+          "title": "15. Kontakta oss",
+          "content": "Om du har några frågor om dessa användarvillkor, vänligen kontakta oss på:\n\nE-post: legal@studious.sh\n\nVi kommer att svara på din förfrågan inom rimlig tid."
+        }
+      },
+      "goToTop": "Gå till toppen",
+      "tableOfContents": "Innehållsförteckning",
+      "backToTop": "Tillbaka till toppen"
+    },
+    "navbarPopup": {
+      "goBack": "Gå tillbaka",
+      "home": "Hem"
     }
   },
   "press": {
@@ -267,7 +433,7 @@
     "commitment": {
       "revenue": "Intäkter som beviljats",
       "cohort": "Första kohortlanseringen",
-      "free": "Fri tillgång"
+      "free": "Fri åtkomst"
     },
     "about": {
       "mission": {
@@ -877,7 +1043,7 @@
     "titleStatement4": "Efter år av att ha kämpat med föråldrade, fragmenterade skolportaler bestämde vi oss för att bygga det lärplattformssystem vi alltid önskat att vi hade.",
     "problemParagraph1": "Studious startade 2023",
     "problemParagraph2": "när en grupp elever och lärare samlades med en gemensam frustration: befintliga skolportaler var klumpiga, långsamma och byggda för en annan era av utbildning.",
-    "problemDetailParagraph": "Vi jonglerade med flera plattformar – en för betyg, en annan för uppgifter och en tredje för kommunikation. Lärare lade mer tid på att kämpa med programvara än att undervisa. Eleverna missade deadlines eftersom aviseringar var begravda i föråldrade gränssnitt.",
+    "problemDetailParagraph": "Vi jonglerade med flera plattformar – en för betyg, en annan för uppgifter och en tredje för kommunikation. Lärare lade ner mer tid på att kämpa med programvara än på att undervisa. Eleverna missade deadlines eftersom aviseringar var begravda i föråldrade gränssnitt.",
     "betterWay": "Vi visste att det måste finnas ett bättre sätt.",
     "solutionParagraph1": "Med inspiration från moderna samarbetsverktyg som Linear och Notion bestämde vi oss för att skapa ett lärplattformssystem som kändes",
     "solutionParagraph2": "snabb, intuitiv och trevlig att använda.",

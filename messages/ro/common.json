@@ -49,13 +49,11 @@
       "title": "Creează-ți contul",
       "subtitle": "Alătură-te Studious și începe să înveți",
       "signUp": "Înregistrare",
-      "firstName": "Prenume",
-      "lastName": "Nume",
+      "username": "Nume de utilizator",
       "email": "E-mail",
       "password": "Parolă",
       "confirmPassword": "Confirmați parola",
-      "firstNamePlaceholder": "Prenume",
-      "lastNamePlaceholder": "Nume",
+      "usernamePlaceholder": "Introduceți numele dvs. de utilizator",
       "emailPlaceholder": "Introdu adresa ta de e-mail",
       "passwordPlaceholder": "Creați o parolă",
       "confirmPasswordPlaceholder": "Confirmați parola",
@@ -68,9 +66,10 @@
       "alreadyHaveAccount": "Ai deja un cont?",
       "signIn": "Conectare",
       "passwordMismatch": "Parolele nu se potrivesc",
+      "passwordTooShort": "Parola trebuie să aibă cel puțin 6 caractere",
       "termsRequired": "Trebuie să fiți de acord cu termenii și condițiile",
-      "accountCreated": "Cont creat cu succes!",
-      "signUpFailed": "Nu s-a putut crea contul"
+      "verificationEmailSent": "E-mail de verificare trimis!",
+      "signUpFailed": "Nu s-a putut crea contul. Vă rugăm să încercați din nou."
     },
     "verification": {
       "notVerified": "Cont neverificat",
@@ -82,12 +81,53 @@
       "checkInbox": "Vă rugăm să verificați inbox-ul și folderul de spam.",
       "enterEmail": "Introdu adresa ta de e-mail",
       "sending": "Se trimite...",
-      "sendEmail": "Trimiteți e-mail"
+      "sendEmail": "Trimiteți e-mail",
+      "title": "Verificați-vă adresa de e-mail",
+      "subtitle": "Faceți clic pe butonul de mai jos pentru a vă verifica adresa de e-mail",
+      "verifying": "Se verifică...",
+      "verifyEmail": "Verificați adresa de e-mail",
+      "successTitle": "Adresa de e-mail a fost verificată cu succes",
+      "successMessage": "Adresa ta de e-mail a fost verificată. Acum te poți conecta la contul tău.",
+      "errorTitle": "Verificare eșuată",
+      "errorMessage": "Linkul de verificare este invalid sau a expirat. Solicitați o nouă adresă de e-mail de verificare.",
+      "invalidToken": "Jeton de verificare nevalid"
+    },
+    "forgotPassword": {
+      "title": "Resetează-ți parola",
+      "subtitle": "Introdu adresa ta de e-mail și îți vom trimite un link pentru a reseta parola",
+      "email": "E-mail",
+      "emailPlaceholder": "Introdu adresa ta de e-mail",
+      "sendResetLink": "Trimite link de resetare",
+      "sending": "Se trimite...",
+      "backToSignIn": "Înapoi la Conectare",
+      "successTitle": "Verificați-vă e-mailul",
+      "successMessage": "Dacă există un cont cu adresa de e-mail respectivă, v-am trimis un link de resetare a parolei.",
+      "checkInbox": "Te rugăm să verifici inbox-ul și folderul de spam pentru linkul de resetare.",
+      "errorMessage": "Nu s-a putut trimite linkul de resetare. Vă rugăm să încercați din nou.",
+      "invalidEmail": "Vă rugăm să introduceți o adresă de email validă"
+    },
+    "resetPassword": {
+      "title": "Resetează-ți parola",
+      "subtitle": "Introduceți noua parolă mai jos",
+      "password": "Parolă Nouă",
+      "passwordPlaceholder": "Introduceți noua parolă",
+      "confirmPassword": "Confirmați parola",
+      "confirmPasswordPlaceholder": "Confirmați noua parolă",
+      "resetPassword": "Resetare parolă",
+      "resetting": "Resetare...",
+      "passwordTooShort": "Parola trebuie să aibă cel puțin 6 caractere",
+      "passwordsDoNotMatch": "Parolele nu se potrivesc",
+      "successTitle": "Resetare parolă reușită",
+      "successMessage": "Parola a fost resetată cu succes. Acum vă puteți conecta cu noua parolă.",
+      "backToSignIn": "Înapoi la Conectare"
     }
   },
   "marketing": {
     "navbar": {
-      "requestEarlyAccess": "Solicitați acces anticipat"
+      "requestEarlyAccess": "Solicitați acces anticipat",
+      "lightMode": "Comutare la modul luminos",
+      "darkMode": "Comutați la modul întunecat",
+      "languageSelector": "Selectați limba"
     },
     "hero": {
       "badge": "Platformă modernă de învățare",
@@ -229,6 +269,132 @@
       "requestAccess": "Solicitați acces",
       "partnerWithUs": "Parteneriat cu noi",
       "tagline": "Studious LMS — Învățare modernă, simplificată."
+    },
+    "privacyPolicy": {
+      "title": "Politica de confidențialitate",
+      "lastUpdated": "Ultima actualizare: noiembrie 2025",
+      "sections": {
+        "introduction": {
+          "title": "1. Introducere",
+          "content": "Studious LMS („noi”, „al nostru/a noastră/ai noștri/ale noastre” sau „nouă”) se angajează să vă protejeze confidențialitatea. Această Politică de confidențialitate explică modul în care colectăm, utilizăm, divulgăm și protejăm informațiile dvs. atunci când utilizați sistemul nostru de gestionare a învățării și serviciile aferente (denumite colectiv „Serviciul”). Vă rugăm să citiți cu atenție această Politică de confidențialitate. Prin utilizarea Serviciului nostru, sunteți de acord cu colectarea și utilizarea informațiilor în conformitate cu această politică."
+        },
+        "informationWeCollect": {
+          "title": "2. Informațiile pe care le colectăm",
+          "content": "Colectăm informații pe care ni le furnizați direct, inclusiv:\n\n• Informații despre cont: Nume de utilizator, adresă de e-mail, parolă și informații despre profil\n• Date educaționale: Înscrieri la cursuri, teme, note, evidențe de prezență și progres academic\n• Date de comunicare: Mesaje, anunțuri și alte comunicări în cadrul platformei\n• Date de utilizare: Informații despre modul în care interacționați cu Serviciul nostru, inclusiv paginile vizitate și funcțiile utilizate\n• Informații despre dispozitiv: Adresă IP, tip de browser, identificatori de dispozitiv și sistem de operare\n• Cookie-uri și tehnologii de urmărire: Folosim cookie-uri și tehnologii similare pentru a vă îmbunătăți experiența și a analiza modelele de utilizare"
+        },
+        "howWeUseInformation": {
+          "title": "3. Cum utilizăm informațiile dumneavoastră",
+          "content": "Folosim informațiile pe care le colectăm pentru:\n\n• Furnizarea, întreținerea și îmbunătățirea Serviciului nostru\n• Procesarea tranzacțiilor și gestionarea contului dvs.\n• Facilitarea comunicării dintre profesori, elevi și administratori\n• Generarea și gestionarea conținutului educațional, a temelor și a notelor\n• Trimiterea de notificări importante despre contul dvs. și despre Serviciu\n• Analizarea modelelor de utilizare pentru a îmbunătăți experiența utilizatorului\n• Asigurarea securității și prevenirea fraudei\n• Respectarea obligațiilor legale și protejarea drepturilor noastre"
+        },
+        "informationSharing": {
+          "title": "4. Schimbul și divulgarea informațiilor",
+          "content": "Nu vindem informațiile dumneavoastră personale. Este posibil să vă partajăm informațiile în următoarele circumstanțe:\n\n• Cu instituții de învățământ: Informațiile pot fi partajate cu școala sau instituția dumneavoastră de învățământ în scopuri educaționale\n• Cu furnizori de servicii: Este posibil să partajăm informații cu furnizori de servicii terți care ne ajută la operarea Serviciului nostru\n• Pentru conformitate legală: Este posibil să divulgăm informații dacă acest lucru este impus de lege sau pentru a ne proteja drepturile și siguranța\n• Cu consimțământul dumneavoastră: Este posibil să partajăm informații cu consimțământul dumneavoastră explicit\n• În caz de fuziune: Informațiile pot fi transferate în legătură cu o tranzacție comercială"
+        },
+        "dataSecurity": {
+          "title": "5. Securitatea datelor",
+          "content": "Implementăm măsuri tehnice și organizatorice de securitate adecvate pentru a vă proteja informațiile personale împotriva accesului, modificării, divulgării sau distrugerii neautorizate. Cu toate acestea, nicio metodă de transmitere prin internet sau stocare electronică nu este 100% sigură. Deși ne străduim să folosim mijloace acceptabile din punct de vedere comercial pentru a vă proteja informațiile, nu putem garanta securitatea absolută."
+        },
+        "dataRetention": {
+          "title": "6. Păstrarea datelor",
+          "content": "Păstrăm informațiile dumneavoastră personale atât timp cât este necesar pentru a furniza Serviciul nostru și pentru a îndeplini scopurile descrise în această Politică de confidențialitate, cu excepția cazului în care o perioadă de păstrare mai lungă este impusă sau permisă de lege. Când nu mai avem nevoie de informațiile dumneavoastră, le vom șterge sau anonimiza în siguranță."
+        },
+        "yourRights": {
+          "title": "7. Drepturile dumneavoastră",
+          "content": "În funcție de locația dvs., este posibil să aveți anumite drepturi cu privire la informațiile dvs. personale, inclusiv:\n\n• Acces: Solicitați acces la informațiile dvs. personale\n• Corectare: Solicitați corectarea informațiilor inexacte\n• Ștergere: Solicitați ștergerea informațiilor dvs. personale\n• Portabilitate: Solicitați transferul datelor dvs.\n• Obiecție: Opuneți-vă anumitor activități de prelucrare\n• Retragerea consimțământului: Retrageți consimțământul în cazul în care prelucrarea se bazează pe consimțământ\n\nPentru a exercita aceste drepturi, vă rugăm să ne contactați folosind informațiile furnizate în secțiunea „Contactați-ne”."
+        },
+        "childrenPrivacy": {
+          "title": "8. Confidențialitatea copiilor",
+          "content": "Serviciul nostru este conceput pentru uz educațional și poate fi utilizat de elevi sub vârsta de 18 ani. Respectăm legile aplicabile privind confidențialitatea copiilor, inclusiv Legea privind drepturile educaționale ale familiei și confidențialitatea (FERPA) din Statele Unite. Nu colectăm în mod conștient informații personale de la copii fără consimțământul adecvat al părinților sau al instituțiilor de învățământ. Dacă considerați că am colectat informații de la un copil în mod necorespunzător, vă rugăm să ne contactați imediat."
+        },
+        "internationalTransfers": {
+          "title": "9. Transferuri internaționale de date",
+          "content": "Informațiile dumneavoastră pot fi transferate și prelucrate în alte țări decât țara dumneavoastră de reședință. Aceste țări pot avea legi privind protecția datelor diferite de cele din țara dumneavoastră. Prin utilizarea Serviciului nostru, sunteți de acord cu transferul informațiilor dumneavoastră către aceste țări."
+        },
+        "changesToPolicy": {
+          "title": "10. Modificări ale acestei Politici de confidențialitate",
+          "content": "Este posibil să actualizăm această Politică de confidențialitate din când în când. Vă vom notifica despre orice modificări prin publicarea noii Politici de confidențialitate pe această pagină și actualizarea datei „Ultima actualizare”. Vă recomandăm să revizuiți periodic această Politică de confidențialitate pentru orice modificări."
+        },
+        "contactUs": {
+          "title": "11. Contactați-ne",
+          "content": "Dacă aveți întrebări despre această Politică de confidențialitate sau despre practicile noastre de confidențialitate, vă rugăm să ne contactați la:\n\nEmail: privacy@studious.sh\n\nVom răspunde solicitării dumneavoastră într-un interval de timp rezonabil."
+        }
+      },
+      "goToTop": "Mergi sus",
+      "tableOfContents": "Cuprins",
+      "backToTop": "Înapoi sus"
+    },
+    "termsOfService": {
+      "title": "Termeni și condiții",
+      "lastUpdated": "Ultima actualizare: noiembrie 2025",
+      "sections": {
+        "acceptance": {
+          "title": "1. Acceptarea Termenilor",
+          "content": "Prin accesarea sau utilizarea Studious LMS („Serviciul”), sunteți de acord să respectați acești Termeni și condiții („Termeni”). Dacă nu sunteți de acord cu acești Termeni, nu aveți dreptul să accesați sau să utilizați Serviciul. Acești Termeni se aplică tuturor utilizatorilor Serviciului, inclusiv studenților, profesorilor, administratorilor și instituțiilor de învățământ."
+        },
+        "descriptionOfService": {
+          "title": "2. Descrierea Serviciului",
+          "content": "Studious LMS este un sistem de gestionare a învățării care oferă instituțiilor de învățământ, profesorilor și studenților instrumente pentru gestionarea cursurilor, temelor, notelor, prezenței, comunicării și a altor activități educaționale. Serviciul include aplicații web și mobile, funcții bazate pe inteligență artificială și servicii conexe."
+        },
+        "userAccounts": {
+          "title": "3. Conturi de utilizator",
+          "content": "Pentru a utiliza Serviciul, trebuie să creați un cont și să furnizați informații corecte, actuale și complete. Sunteți responsabil pentru menținerea confidențialității datelor de autentificare ale contului dvs. și pentru toate activitățile care au loc în cadrul contului dvs. Sunteți de acord să:\n\n• Utilizați o parolă puternică și unică\n• Nu partajați datele de autentificare ale contului dvs. cu alte persoane\n• Ne notificați imediat despre orice acces neautorizat\n• Mențineți informații corecte despre cont\n• Fiți responsabil pentru toate activitățile din cadrul contului dvs."
+        },
+        "acceptableUse": {
+          "title": "4. Politica de utilizare acceptabilă",
+          "content": "Sunteți de acord să utilizați Serviciul numai în scopuri legale și în conformitate cu acești Termeni. Sunteți de acord să NU:\n\n• Încălcați nicio lege sau reglementare aplicabilă\n• Încălcați drepturile de proprietate intelectuală\n• Transmiteți conținut dăunător, ofensator sau neadecvat\n• Hărțuiți, abuzați sau vătămați alți utilizatori\n• Încercați să obțineți acces neautorizat la Serviciu\n• Interferați cu Serviciul sau serverele sau să le perturbați\n• Utilizați sisteme automate pentru a accesa Serviciul fără permisiune\n• Împersonați orice persoană sau entitate\n• Colectați sau stocați date personale despre alți utilizatori fără consimțământ"
+        },
+        "educationalContent": {
+          "title": "5. Conținut educațional și proprietate intelectuală",
+          "content": "Serviciul permite utilizatorilor să creeze, să încarce și să partajeze conținut educațional. Vă păstrați dreptul de proprietate asupra conținutului pe care îl creați, dar prin utilizarea Serviciului, ne acordați o licență pentru a utiliza, stoca și afișa conținutul dvs., după cum este necesar pentru a furniza Serviciul. Sunteți responsabil pentru a vă asigura că aveți dreptul de a utiliza și partaja orice conținut pe care îl încărcați. Respectăm drepturile de proprietate intelectuală și vom răspunde notificărilor valide de încălcare a drepturilor de autor."
+        },
+        "aiFeatures": {
+          "title": "6. Funcții bazate pe inteligență artificială",
+          "content": "Serviciul nostru include funcții bazate pe inteligență artificială, cum ar fi asistență pentru notare, generare de conținut și asistență educațională. Aceste funcții sunt furnizate „ca atare” și ar trebui utilizate ca instrumente suplimentare. Utilizatorii sunt responsabili pentru revizuirea și validarea conținutului generat de inteligență artificială. Nu garantăm acuratețea, caracterul complet sau caracterul adecvat al conținutului generat de inteligență artificială."
+        },
+        "privacy": {
+          "title": "7. Confidențialitate",
+          "content": "Utilizarea Serviciului de către dvs. este, de asemenea, guvernată de Politica noastră de confidențialitate, care explică modul în care colectăm, utilizăm și protejăm informațiile dvs. Prin utilizarea Serviciului, sunteți de acord cu colectarea și utilizarea informațiilor așa cum este descris în Politica noastră de confidențialitate."
+        },
+        "feesAndPayment": {
+          "title": "8. Taxe și plată",
+          "content": "Unele funcții ale Serviciului pot necesita plată. Dacă achiziționați un abonament sau funcții plătite:\n\n• Taxele sunt cele menționate la momentul achiziției\n• Plățile sunt procesate prin intermediul unor procesoare de plăți terțe securizate\n• Abonamentele se reînnoiesc automat, cu excepția cazului în care sunt anulate\n• Rambursările sunt supuse politicii noastre de rambursare\n• Ne rezervăm dreptul de a modifica prețurile cu notificare prealabilă"
+        },
+        "termination": {
+          "title": "9. Rezilierea",
+          "content": "Putem rezilia sau suspenda contul dumneavoastră și accesul la Serviciu imediat, fără notificare prealabilă, pentru un comportament pe care îl considerăm a încălca acești Termeni sau a fi dăunător pentru alți utilizatori, pentru noi sau pentru terți. Vă puteți rezilia contul în orice moment, contactându-ne. La reziliere, dreptul dumneavoastră de a utiliza Serviciul va înceta imediat."
+        },
+        "disclaimers": {
+          "title": "10. Declinarea responsabilității",
+          "content": "SERVICIUL ESTE FURNIZAT „CA ATARE” ȘI „AȘA CUM ESTE DISPONIBIL”, FĂRĂ NICIO GARANȚIE DE NICIUN FEL, EXPRESĂ, FIE IMPLICITĂ. NU GARANTĂM CĂ SERVICIUL VA FI NEÎNTRERUPT, SIGUR SAU FĂRĂ ERORI. DECLAGĂM TOATE GARANȚIILE, INCLUSIV GARANȚIILE DE VANDABILITATE, POTRIVIRE PENTRU UN ANUMIT SCOP ȘI NEÎNCĂLCARE A DREPTURILOR DE AUTOR."
+        },
+        "limitationOfLiability": {
+          "title": "11. Limitarea răspunderii",
+          "content": "ÎN MĂSURA MAXIMĂ PERMISĂ DE LEGE, NU VOM FI RĂSPUNDERI PENTRU DAUNE INDIRECTE, INCIDENTALE, SPECIALE, CONSECUTIVE SAU PUNITIVE SAU PIERDERI DE PROFITURI SAU VENITURI, INDIFERENT DACĂ SUNT SUCURSALE DIRECT SAU INDIRECT, SAU PIERDERI DE DATE, UTILIZARE, GOODFIND SAU ALTE PIERDERI INTANGIBILE REZULTATE DIN UTILIZAREA SERVICIULUI DE CĂTRE DVS."
+        },
+        "indemnification": {
+          "title": "12. Despăgubire",
+          "content": "Sunteți de acord să despăgubiți, să apărați și să exonerați de răspundere Studious LMS și directorii, administratorii, angajații și agenții săi de și împotriva oricăror pretenții, răspunderi, daune, pierderi și cheltuieli care decurg din sau sunt legate în vreun fel de accesarea sau utilizarea Serviciului de către dvs., încălcarea acestor Termeni sau încălcarea oricăror drepturi ale altei persoane."
+        },
+        "governingLaw": {
+          "title": "13. Legea aplicabilă",
+          "content": "Prezentele Condiții vor fi guvernate și interpretate în conformitate cu legile jurisdicției în care Studious LMS operează, fără a ține cont de prevederile sale privind conflictul de legi. Orice litigii care decurg din prezentele Condiții sau din Serviciu vor fi soluționate de instanțele corespunzătoare din jurisdicția respectivă."
+        },
+        "changesToTerms": {
+          "title": "14. Modificări ale Termenilor",
+          "content": "Ne rezervăm dreptul de a modifica acești Termeni în orice moment. Vom notifica utilizatorii cu privire la modificările semnificative prin publicarea Termenilor actualizați pe site-ul nostru web și actualizarea datei „Ultima actualizare”. Utilizarea în continuare a Serviciului după astfel de modificări constituie acceptarea Termenilor modificați."
+        },
+        "contactUs": {
+          "title": "15. Contactați-ne",
+          "content": "Dacă aveți întrebări despre acești Termeni și condiții, vă rugăm să ne contactați la:\n\nEmail: legal@studious.sh\n\nVom răspunde solicitării dumneavoastră într-un interval de timp rezonabil."
+        }
+      },
+      "goToTop": "Mergi sus",
+      "tableOfContents": "Cuprins",
+      "backToTop": "Înapoi sus"
+    },
+    "navbarPopup": {
+      "goBack": "Întoarce-te",
+      "home": "Acasă"
     }
   },
   "press": {
@@ -319,7 +485,7 @@
         "contact": "Contact:",
         "notFound": {
           "title": "Aplicația nu a fost găsită",
-          "body": "Verificați ID-ul aplicației și încercați din nou. Dacă problemele persistă, contactați-ne la impact@studious.sh"
+          "body": "Vă rugăm să verificați ID-ul aplicației și să încercați din nou. Dacă problemele persistă, contactați-ne la impact@studious.sh"
         }
       },
       "cards": {
@@ -428,7 +594,7 @@
         "description": "Nicio notificare nu a fost marcată încă ca citită."
       },
       "all": {
-        "title": "Încă nu există notificări",
+        "title": "Nicio notificare încă",
         "description": "Când primiți notificări, acestea vor apărea aici."
       }
     },
@@ -635,7 +801,7 @@
         "inviteRegenerated": "Codul de invitație a fost regenerat cu succes.",
         "copied": "Codul de invitație a fost copiat în clipboard",
         "roleChanged": "Rolul a fost schimbat în {role}",
-        "memberRemoved": "Membrul a fost eliminat cu succes"
+        "memberRemoved": "Membru eliminat cu succes"
       },
       "errors": {
         "regenerateFailed": "Codul de invitație nu a putut fi regenerat.",
@@ -964,7 +1130,7 @@
         "description": "Îți vom trimite un e-mail la adresa {email} când vom fi gata pentru tine."
       },
       "toasts": {
-        "success": "Te-ai înscris cu succes pe lista de așteptare!"
+        "success": "Înscris cu succes pe lista de așteptare!"
       }
     },
     "joinClass": {
@@ -1127,7 +1293,7 @@
       },
       "files": {
         "uploadButton": "Încărcați fișiere",
-        "dropZone": "Plasați fișierele aici sau faceți clic pentru a le încărca",
+        "dropZone": "Plasați fișierele aici sau faceți clic pentru a încărca",
         "dropZoneHint": "Acceptă toate tipurile de fișiere • Maxim 50 MB per fișier",
         "filesUploaded": "{uploaded} din {total} fișiere încărcate"
       },
@@ -1190,8 +1356,8 @@
         },
         "level2": {
           "title": "Explorarea ideilor de nivel 2",
-          "description": "Cereți inteligenței artificiale să explice idei, să rezume lecturile, să facă brainstorming cu abordări sau să verifice gramatica și claritatea de bază.",
-          "useCases": "Cereți inteligenței artificiale să explice idei, să rezume lecturile, să facă brainstorming cu abordări sau să verifice gramatica și claritatea de bază.",
+          "description": "Cereți inteligenței artificiale să explice idei, să rezume lecturile, să facă brainstorming pentru abordări sau să verifice gramatica și claritatea de bază.",
+          "useCases": "Cereți inteligenței artificiale să explice idei, să rezume lecturile, să facă brainstorming pentru abordări sau să verifice gramatica și claritatea de bază.",
           "studentResponsibilities": "Evaluați critic rezultatele inteligenței artificiale; asigurați-vă că munca reflectă propriul raționament și înțelegere.",
           "disclosureRequirements": "Menționați pe scurt utilizarea inteligenței artificiale (de exemplu, „Am folosit ChatGPT pentru a contura structura eseului”)."
         },

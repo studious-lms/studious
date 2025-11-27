@@ -1,10 +1,5 @@
 export const LANGUAGES = [
 {
-    code: 'en',
-    name: 'English',
-    flag: '🇺🇸'
-},
-{
     code: 'es',
     name: 'Spanish',
     flag: '🇪🇸'

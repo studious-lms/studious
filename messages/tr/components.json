@@ -132,7 +132,7 @@
     "page": {
       "header": {
         "members": "Üyeler",
-        "markMentionsRead": "Mark okunduğunu belirtiyor"
+        "markMentionsRead": "Mark okunduğundan bahsediyor"
       },
       "input": {
         "placeholderPrefix": "Mesaj"

@@ -13,7 +13,10 @@
     "schoolProgram": "School Program",
     "about": "About",
     "press": "Press",
-    "signIn": "Sign In"
+    "signIn": "Sign In",
+    "lightMode": "Light Mode",
+    "darkMode": "Dark Mode",
+    "languageSelector": "Language Selector"
   },
   "classSidebar": {
     "overview": "Overview",

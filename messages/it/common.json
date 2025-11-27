@@ -49,13 +49,11 @@
       "title": "Crea il tuo account",
       "subtitle": "Unisciti a Studious e inizia a imparare",
       "signUp": "Iscrizione",
-      "firstName": "Nome di battesimo",
-      "lastName": "Cognome",
+      "username": "Nome utente",
       "email": "E-mail",
       "password": "Password",
       "confirmPassword": "Conferma password",
-      "firstNamePlaceholder": "Nome di battesimo",
-      "lastNamePlaceholder": "Cognome",
+      "usernamePlaceholder": "Inserisci il tuo nome utente",
       "emailPlaceholder": "Inserisci la tua email",
       "passwordPlaceholder": "Crea una password",
       "confirmPasswordPlaceholder": "Conferma la tua password",
@@ -68,9 +66,10 @@
       "alreadyHaveAccount": "Hai già un account?",
       "signIn": "Registrazione",
       "passwordMismatch": "Le password non corrispondono",
+      "passwordTooShort": "La password deve essere lunga almeno 6 caratteri",
       "termsRequired": "Devi accettare i termini",
-      "accountCreated": "Account creato con successo!",
-      "signUpFailed": "Impossibile creare l'account"
+      "verificationEmailSent": "Email di verifica inviata!",
+      "signUpFailed": "Impossibile creare l'account. Riprova."
     },
     "verification": {
       "notVerified": "Account non verificato",
@@ -82,12 +81,53 @@
       "checkInbox": "Controlla la tua posta in arrivo e la cartella spam.",
       "enterEmail": "Inserisci il tuo indirizzo email",
       "sending": "Invio in corso...",
-      "sendEmail": "Invia email"
+      "sendEmail": "Invia email",
+      "title": "Verifica la tua email",
+      "subtitle": "Clicca sul pulsante qui sotto per verificare il tuo indirizzo email",
+      "verifying": "Verifica in corso...",
+      "verifyEmail": "Verifica email",
+      "successTitle": "Email verificata con successo",
+      "successMessage": "Il tuo indirizzo email è stato verificato. Ora puoi accedere al tuo account.",
+      "errorTitle": "Verifica fallita",
+      "errorMessage": "Il link di verifica non è valido o è scaduto. Richiedi una nuova email di verifica.",
+      "invalidToken": "Token di verifica non valido"
+    },
+    "forgotPassword": {
+      "title": "Reimposta la tua password",
+      "subtitle": "Inserisci il tuo indirizzo email e ti invieremo un link per reimpostare la password",
+      "email": "E-mail",
+      "emailPlaceholder": "Inserisci il tuo indirizzo email",
+      "sendResetLink": "Invia collegamento di reimpostazione",
+      "sending": "Invio in corso...",
+      "backToSignIn": "Torna ad Accedi",
+      "successTitle": "Controlla la tua email",
+      "successMessage": "Se esiste un account con quell'indirizzo email, ti abbiamo inviato un link per reimpostare la password.",
+      "checkInbox": "Controlla la posta in arrivo e la cartella spam per trovare il link per il ripristino.",
+      "errorMessage": "Impossibile inviare il link di reimpostazione. Riprova.",
+      "invalidEmail": "Si prega di inserire un indirizzo email valido"
+    },
+    "resetPassword": {
+      "title": "Reimposta la tua password",
+      "subtitle": "Inserisci la tua nuova password qui sotto",
+      "password": "Nuova password",
+      "passwordPlaceholder": "Inserisci la tua nuova password",
+      "confirmPassword": "Conferma password",
+      "confirmPasswordPlaceholder": "Conferma la tua nuova password",
+      "resetPassword": "Reimposta password",
+      "resetting": "Reimpostazione in corso...",
+      "passwordTooShort": "La password deve essere lunga almeno 6 caratteri",
+      "passwordsDoNotMatch": "Le password non corrispondono",
+      "successTitle": "Reimpostazione password riuscita",
+      "successMessage": "La tua password è stata reimpostata correttamente. Ora puoi accedere con la tua nuova password.",
+      "backToSignIn": "Torna ad Accedi"
     }
   },
   "marketing": {
     "navbar": {
-      "requestEarlyAccess": "Richiedi l'accesso anticipato"
+      "requestEarlyAccess": "Richiedi l'accesso anticipato",
+      "lightMode": "Passa alla modalità luce",
+      "darkMode": "Passa alla modalità scura",
+      "languageSelector": "Seleziona la lingua"
     },
     "hero": {
       "badge": "Piattaforma di apprendimento moderna",
@@ -229,6 +269,132 @@
       "requestAccess": "Richiedi accesso",
       "partnerWithUs": "Collabora con noi",
       "tagline": "Studious LMS: apprendimento moderno, semplificato."
+    },
+    "privacyPolicy": {
+      "title": "politica sulla riservatezza",
+      "lastUpdated": "Ultimo aggiornamento: novembre 2025",
+      "sections": {
+        "introduction": {
+          "title": "1. Introduzione",
+          "content": "Studious LMS ('noi', 'nostro' o 'ci') si impegna a proteggere la tua privacy. La presente Informativa sulla privacy spiega come raccogliamo, utilizziamo, divulghiamo e tuteliamo le tue informazioni quando utilizzi il nostro sistema di gestione dell'apprendimento e i servizi correlati (collettivamente, il 'Servizio'). Ti preghiamo di leggere attentamente la presente Informativa sulla privacy. Utilizzando il nostro Servizio, acconsenti alla raccolta e all'utilizzo delle informazioni in conformità con la presente informativa."
+        },
+        "informationWeCollect": {
+          "title": "2. Informazioni che raccogliamo",
+          "content": "Raccogliamo le informazioni che ci fornisci direttamente, tra cui:\n\n• Informazioni sull'account: nome utente, indirizzo email, password e informazioni sul profilo\n• Dati didattici: iscrizioni ai corsi, compiti, voti, registri delle presenze e progressi accademici\n• Dati di comunicazione: messaggi, annunci e altre comunicazioni all'interno della piattaforma\n• Dati di utilizzo: informazioni su come interagisci con il nostro Servizio, incluse le pagine visitate e le funzionalità utilizzate\n• Informazioni sul dispositivo: indirizzo IP, tipo di browser, identificativi del dispositivo e sistema operativo\n• Cookie e tecnologie di tracciamento: utilizziamo cookie e tecnologie simili per migliorare la tua esperienza e analizzare i modelli di utilizzo"
+        },
+        "howWeUseInformation": {
+          "title": "3. Come utilizziamo le tue informazioni",
+          "content": "Utilizziamo le informazioni che raccogliamo per:\n\n• Fornire, gestire e migliorare il nostro Servizio\n• Elaborare le transazioni e gestire il tuo account\n• Facilitare la comunicazione tra insegnanti, studenti e amministratori\n• Generare e gestire contenuti didattici, compiti e voti\n• Inviare notifiche importanti sul tuo account e sul Servizio\n• Analizzare i modelli di utilizzo per migliorare l'esperienza utente\n• Garantire la sicurezza e prevenire le frodi\n• Adempiere agli obblighi di legge e proteggere i nostri diritti"
+        },
+        "informationSharing": {
+          "title": "4. Condivisione e divulgazione delle informazioni",
+          "content": "Non vendiamo i tuoi dati personali. Potremmo condividere le tue informazioni nelle seguenti circostanze:\n\n• Con istituti scolastici: le informazioni potrebbero essere condivise con la tua scuola o istituto scolastico per scopi didattici.\n• Con fornitori di servizi: potremmo condividere informazioni con fornitori di servizi terzi che ci assistono nella gestione del nostro Servizio.\n• Per conformità legale: potremmo divulgare informazioni se richiesto dalla legge o per proteggere i nostri diritti e la nostra sicurezza.\n• Con il tuo consenso: potremmo condividere informazioni con il tuo esplicito consenso.\n• In caso di fusione: le informazioni potrebbero essere trasferite in relazione a una transazione commerciale."
+        },
+        "dataSecurity": {
+          "title": "5. Sicurezza dei dati",
+          "content": "Implementiamo misure di sicurezza tecniche e organizzative adeguate per proteggere i tuoi dati personali da accessi non autorizzati, alterazioni, divulgazioni o distruzioni. Tuttavia, nessun metodo di trasmissione via Internet o di archiviazione elettronica è sicuro al 100%. Sebbene ci impegniamo a utilizzare mezzi commercialmente accettabili per proteggere i tuoi dati, non possiamo garantire la sicurezza assoluta."
+        },
+        "dataRetention": {
+          "title": "6. Conservazione dei dati",
+          "content": "Conserviamo i tuoi dati personali per tutto il tempo necessario a fornire il nostro Servizio e a soddisfare le finalità descritte nella presente Informativa sulla Privacy, a meno che un periodo di conservazione più lungo non sia richiesto o consentito dalla legge. Quando non avremo più bisogno dei tuoi dati, li elimineremo o li renderemo anonimi in modo sicuro."
+        },
+        "yourRights": {
+          "title": "7. I tuoi diritti",
+          "content": "A seconda della tua posizione, potresti avere determinati diritti in merito ai tuoi dati personali, tra cui:\n\n• Accesso: richiedere l'accesso ai tuoi dati personali\n• Rettifica: richiedere la correzione di informazioni inesatte\n• Cancellazione: richiedere la cancellazione dei tuoi dati personali\n• Portabilità: richiedere il trasferimento dei tuoi dati\n• Opposizione: opporsi a determinate attività di trattamento\n• Revoca del consenso: revocare il consenso laddove il trattamento sia basato sul consenso\n\nPer esercitare questi diritti, ti preghiamo di contattarci utilizzando le informazioni fornite nella sezione \"Contatti\"."
+        },
+        "childrenPrivacy": {
+          "title": "8. Privacy dei bambini",
+          "content": "Il nostro Servizio è progettato per uso didattico e può essere utilizzato da studenti di età inferiore ai 18 anni. Rispettiamo le leggi applicabili in materia di privacy dei minori, incluso il Family Educational Rights and Privacy Act (FERPA) negli Stati Uniti. Non raccogliamo consapevolmente informazioni personali da minori senza il consenso dei genitori o degli istituti scolastici. Se ritieni che abbiamo raccolto informazioni da un minore in modo inappropriato, ti preghiamo di contattarci immediatamente."
+        },
+        "internationalTransfers": {
+          "title": "9. Trasferimenti internazionali di dati",
+          "content": "Le tue informazioni potrebbero essere trasferite ed elaborate in Paesi diversi dal tuo Paese di residenza. Questi Paesi potrebbero avere leggi sulla protezione dei dati diverse da quelle del tuo Paese. Utilizzando il nostro Servizio, acconsenti al trasferimento delle tue informazioni in questi Paesi."
+        },
+        "changesToPolicy": {
+          "title": "10. Modifiche alla presente Informativa sulla privacy",
+          "content": "Potremmo aggiornare periodicamente la presente Informativa sulla privacy. Ti informeremo di eventuali modifiche pubblicando la nuova Informativa sulla privacy su questa pagina e aggiornando la data di \"Ultimo aggiornamento\". Ti consigliamo di consultare periodicamente la presente Informativa sulla privacy per eventuali modifiche."
+        },
+        "contactUs": {
+          "title": "11. Contattaci",
+          "content": "Per qualsiasi domanda sulla presente Informativa sulla privacy o sulle nostre pratiche in materia di privacy, contattateci all'indirizzo:\n\nEmail: privacy@studious.sh\n\nRisponderemo alla vostra richiesta entro un lasso di tempo ragionevole."
+        }
+      },
+      "goToTop": "Vai in alto",
+      "tableOfContents": "Sommario",
+      "backToTop": "Torna all'inizio"
+    },
+    "termsOfService": {
+      "title": "Termini di servizio",
+      "lastUpdated": "Ultimo aggiornamento: novembre 2025",
+      "sections": {
+        "acceptance": {
+          "title": "1. Accettazione dei Termini",
+          "content": "Accedendo o utilizzando Studious LMS (\"il Servizio\"), accetti di essere vincolato dai presenti Termini di Servizio (\"Termini\"). Se non accetti i presenti Termini, non potrai accedere o utilizzare il Servizio. I presenti Termini si applicano a tutti gli utenti del Servizio, inclusi studenti, insegnanti, amministratori e istituti scolastici."
+        },
+        "descriptionOfService": {
+          "title": "2. Descrizione del servizio",
+          "content": "Studious LMS è un sistema di gestione dell'apprendimento che fornisce a istituti scolastici, insegnanti e studenti strumenti per la gestione di lezioni, compiti, voti, presenze, comunicazioni e altre attività didattiche. Il servizio include applicazioni web e mobili, funzionalità basate sull'intelligenza artificiale e servizi correlati."
+        },
+        "userAccounts": {
+          "title": "3. Account utente",
+          "content": "Per utilizzare il Servizio, è necessario creare un account e fornire informazioni accurate, aggiornate e complete. L'utente è responsabile del mantenimento della riservatezza delle credenziali del proprio account e di tutte le attività che si svolgono tramite il proprio account. L'utente accetta di:\n\n• Utilizzare una password complessa e univoca\n• Non condividere le credenziali del proprio account con altri\n• Segnalarci immediatamente qualsiasi accesso non autorizzato\n• Mantenere accurate le informazioni del proprio account\n• Essere responsabile di tutte le attività svolte tramite il proprio account"
+        },
+        "acceptableUse": {
+          "title": "4. Politica di utilizzo accettabile",
+          "content": "L'utente accetta di utilizzare il Servizio solo per scopi leciti e in conformità con i presenti Termini. L'utente accetta di NON:\n\n• Violare leggi o regolamenti applicabili\n• Violare i diritti di proprietà intellettuale\n• Trasmettere contenuti dannosi, offensivi o inappropriati\n• Molestare, abusare o danneggiare altri utenti\n• Tentare di ottenere l'accesso non autorizzato al Servizio\n• Interferire o interrompere il Servizio o i server\n• Utilizzare sistemi automatizzati per accedere al Servizio senza autorizzazione\n• Impersonare qualsiasi persona o entità\n• Raccogliere o archiviare dati personali di altri utenti senza consenso"
+        },
+        "educationalContent": {
+          "title": "5. Contenuto educativo e proprietà intellettuale",
+          "content": "Il Servizio consente agli utenti di creare, caricare e condividere contenuti didattici. L'utente mantiene la proprietà dei contenuti creati, ma utilizzando il Servizio ci concede la licenza per utilizzare, archiviare e visualizzare i propri contenuti secondo quanto necessario per fornire il Servizio. L'utente è responsabile di garantire di avere il diritto di utilizzare e condividere qualsiasi contenuto caricato. Rispettiamo i diritti di proprietà intellettuale e risponderemo alle notifiche di violazione del copyright valide."
+        },
+        "aiFeatures": {
+          "title": "6. Funzionalità basate sull'intelligenza artificiale",
+          "content": "Il nostro Servizio include funzionalità basate sull'intelligenza artificiale, come l'assistenza alla valutazione, la generazione di contenuti e il supporto didattico. Queste funzionalità sono fornite \"così come sono\" e devono essere utilizzate come strumenti supplementari. Gli utenti sono responsabili della revisione e della convalida dei contenuti generati dall'intelligenza artificiale. Non garantiamo l'accuratezza, la completezza o l'appropriatezza dei contenuti generati dall'intelligenza artificiale."
+        },
+        "privacy": {
+          "title": "7. Riservatezza",
+          "content": "L'utilizzo del Servizio è regolato anche dalla nostra Informativa sulla Privacy, che spiega come raccogliamo, utilizziamo e proteggiamo le tue informazioni. Utilizzando il Servizio, acconsenti alla raccolta e all'utilizzo delle informazioni come descritto nella nostra Informativa sulla Privacy."
+        },
+        "feesAndPayment": {
+          "title": "8. Tariffe e pagamento",
+          "content": "Alcune funzionalità del Servizio potrebbero essere a pagamento. Se acquisti un abbonamento o funzionalità a pagamento:\n\n• Le tariffe sono quelle indicate al momento dell'acquisto\n• I pagamenti vengono elaborati tramite processori di pagamento terzi sicuri\n• Gli abbonamenti si rinnovano automaticamente salvo disdetta\n• I rimborsi sono soggetti alla nostra politica sui rimborsi\n• Ci riserviamo il diritto di modificare i prezzi con preavviso"
+        },
+        "termination": {
+          "title": "9. Risoluzione",
+          "content": "Potremmo chiudere o sospendere il tuo account e l'accesso al Servizio immediatamente, senza preavviso, per comportamenti che riteniamo violino i presenti Termini o siano dannosi per altri utenti, per noi o per terze parti. Puoi chiudere il tuo account in qualsiasi momento contattandoci. In caso di chiusura, il tuo diritto di utilizzare il Servizio cesserà immediatamente."
+        },
+        "disclaimers": {
+          "title": "10. Dichiarazioni di non responsabilità",
+          "content": "IL SERVIZIO VIENE FORNITO \"COSÌ COM'È\" E \"COME DISPONIBILE\" SENZA GARANZIE DI ALCUN TIPO, ESPLICITE O IMPLICITE. NON GARANTIAMO CHE IL SERVIZIO SARÀ ININTERROTTO, SICURO O PRIVO DI ERRORI. DECLINIAMO OGNI GARANZIA, COMPRESE LE GARANZIE DI COMMERCIABILITÀ, IDONEITÀ PER UNO SCOPO PARTICOLARE E NON VIOLAZIONE."
+        },
+        "limitationOfLiability": {
+          "title": "11. Limitazione di responsabilità",
+          "content": "NELLA MISURA MASSIMA CONSENTITA DALLA LEGGE, NON SAREMO RESPONSABILI PER ALCUN DANNO INDIRETTO, ACCIDENTALE, SPECIALE, CONSEQUENZIALE O PUNITIVO, O PER QUALSIASI PERDITA DI PROFITTI O RICAVI, SUBITA DIRETTAMENTE O INDIRETTAMENTE, O PER QUALSIASI PERDITA DI DATI, UTILIZZO, AVVIAMENTO O ALTRE PERDITE IMMATERIALI RISULTANTI DALL'UTILIZZO DEL SERVIZIO."
+        },
+        "indemnification": {
+          "title": "12. Indennizzo",
+          "content": "Accetti di indennizzare, difendere e tenere indenni Studious LMS e i suoi funzionari, direttori, dipendenti e agenti da e contro qualsiasi reclamo, responsabilità, danno, perdita e spesa derivanti da o in qualsiasi modo connessi al tuo accesso o utilizzo del Servizio, alla tua violazione dei presenti Termini o alla tua violazione di qualsiasi diritto di terzi."
+        },
+        "governingLaw": {
+          "title": "13. Legge applicabile",
+          "content": "I presenti Termini saranno regolati e interpretati in conformità con le leggi della giurisdizione in cui opera Studious LMS, indipendentemente dalle disposizioni in materia di conflitto di leggi. Qualsiasi controversia derivante dai presenti Termini o dal Servizio sarà risolta nei tribunali competenti di tale giurisdizione."
+        },
+        "changesToTerms": {
+          "title": "14. Modifiche ai Termini",
+          "content": "Ci riserviamo il diritto di modificare i presenti Termini in qualsiasi momento. Informeremo gli utenti di eventuali modifiche sostanziali pubblicando i Termini aggiornati sul nostro sito web e aggiornando la data di \"Ultimo aggiornamento\". L'utilizzo continuato del Servizio dopo tali modifiche costituisce accettazione dei Termini modificati."
+        },
+        "contactUs": {
+          "title": "15. Contattaci",
+          "content": "Per qualsiasi domanda sui presenti Termini di servizio, contattaci all'indirizzo:\n\nEmail: legal@studious.sh\n\nRisponderemo alla tua richiesta entro un lasso di tempo ragionevole."
+        }
+      },
+      "goToTop": "Vai in alto",
+      "tableOfContents": "Sommario",
+      "backToTop": "Torna all'inizio"
+    },
+    "navbarPopup": {
+      "goBack": "Torna indietro",
+      "home": "Casa"
     }
   },
   "press": {
@@ -498,11 +664,11 @@
       "title": "Gradi",
       "subtitle": "Visualizza e gestisci i voti degli studenti",
       "columns": {
-        "assignment": "Incarico",
+        "assignment": "Assegnazione",
         "maxPoints": "Punti massimi",
         "weight": "Peso",
         "graded": "Classificato",
-        "dueDate": "Due date",
+        "dueDate": "Due Date",
         "actions": "Azioni",
         "student": "Studente",
         "overallGrade": "Voto complessivo",
@@ -589,7 +755,7 @@
         "totalMembers": "{count} membri"
       },
       "actions": {
-        "inviteMember": "Invita un membro",
+        "inviteMember": "Invita membro",
         "copy": "Copia",
         "regenerate": "Rigenerare",
         "message": "Messaggio",
@@ -809,8 +975,8 @@
         }
       },
       "table": {
-        "assignment": "Incarico",
-        "dueDate": "Due date",
+        "assignment": "Assegnazione",
+        "dueDate": "Due Date",
         "points": "Punti",
         "weight": "Peso",
         "status": "Stato",
@@ -838,14 +1004,14 @@
     }
   },
   "assignment": {
-    "dueDate": "Due date",
+    "dueDate": "Due Date",
     "submit": "Invia",
     "grade": "Grado",
     "feedback": "Feedback",
     "submissions": "Invii",
     "open": "Aprire",
     "closed": "Chiuso",
-    "assignment": "Incarico",
+    "assignment": "Assegnazione",
     "assignments": "Incarichi",
     "newAssignment": "Nuovo incarico",
     "createAssignment": "Crea assegnazione",
@@ -1071,7 +1237,7 @@
       "fields": {
         "title": "Titolo *",
         "instructions": "Istruzioni *",
-        "dueDate": "Due date",
+        "dueDate": "Due Date",
         "type": "Tipo di assegnazione",
         "students": "studenti",
         "section": "Sezione",

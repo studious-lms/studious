@@ -49,13 +49,11 @@
       "title": "Erstellen Sie Ihr Konto",
       "subtitle": "Melde dich bei Studious an und fang an zu lernen",
       "signUp": "Melden Sie sich an",
-      "firstName": "Vorname",
-      "lastName": "Nachname",
+      "username": "Benutzername",
       "email": "E-Mail",
       "password": "Passwort",
       "confirmPassword": "Passwort bestätigen",
-      "firstNamePlaceholder": "Vorname",
-      "lastNamePlaceholder": "Nachname",
+      "usernamePlaceholder": "Geben Sie Ihren Benutzernamen ein",
       "emailPlaceholder": "Geben Sie Ihre E-Mail-Adresse ein",
       "passwordPlaceholder": "Erstellen Sie ein Passwort",
       "confirmPasswordPlaceholder": "Bestätigen Sie Ihr Passwort",
@@ -68,9 +66,10 @@
       "alreadyHaveAccount": "Sie haben bereits ein Konto?",
       "signIn": "anmelden",
       "passwordMismatch": "Die Passwörter stimmen nicht überein.",
+      "passwordTooShort": "Das Passwort muss mindestens 6 Zeichen lang sein.",
       "termsRequired": "Sie müssen den Bedingungen zustimmen.",
-      "accountCreated": "Konto erfolgreich erstellt!",
-      "signUpFailed": "Konto konnte nicht erstellt werden"
+      "verificationEmailSent": "Bestätigungs-E-Mail versendet!",
+      "signUpFailed": "Das Konto konnte nicht erstellt werden. Bitte versuchen Sie es erneut."
     },
     "verification": {
       "notVerified": "Konto nicht verifiziert",
@@ -82,12 +81,53 @@
       "checkInbox": "Bitte überprüfen Sie Ihren Posteingang und Ihren Spam-Ordner.",
       "enterEmail": "Geben Sie Ihre E-Mail-Adresse ein.",
       "sending": "Wird gesendet...",
-      "sendEmail": "E-Mail senden"
+      "sendEmail": "E-Mail senden",
+      "title": "Bestätigen Sie Ihre E-Mail-Adresse",
+      "subtitle": "Klicken Sie unten auf die Schaltfläche, um Ihre E-Mail-Adresse zu bestätigen.",
+      "verifying": "Überprüfung läuft...",
+      "verifyEmail": "E-Mail-Adresse bestätigen",
+      "successTitle": "E-Mail-Adresse erfolgreich verifiziert",
+      "successMessage": "Ihre E-Mail-Adresse wurde bestätigt. Sie können sich nun in Ihr Konto einloggen.",
+      "errorTitle": "Überprüfung fehlgeschlagen",
+      "errorMessage": "Der Bestätigungslink ist ungültig oder abgelaufen. Bitte fordern Sie eine neue Bestätigungs-E-Mail an.",
+      "invalidToken": "Ungültiges Verifizierungstoken"
+    },
+    "forgotPassword": {
+      "title": "Setzen Sie Ihr Passwort zurück",
+      "subtitle": "Geben Sie Ihre E-Mail-Adresse ein und wir senden Ihnen einen Link zum Zurücksetzen Ihres Passworts.",
+      "email": "E-Mail",
+      "emailPlaceholder": "Geben Sie Ihre E-Mail-Adresse ein.",
+      "sendResetLink": "Link zum Zurücksetzen senden",
+      "sending": "Wird gesendet...",
+      "backToSignIn": "Zurück zur Anmeldeseite",
+      "successTitle": "Prüfen Sie Ihre E-Mails",
+      "successMessage": "Falls mit dieser E-Mail-Adresse bereits ein Konto existiert, haben wir Ihnen einen Link zum Zurücksetzen Ihres Passworts gesendet.",
+      "checkInbox": "Bitte prüfen Sie Ihren Posteingang und Ihren Spam-Ordner auf den Link zum Zurücksetzen der E-Mails.",
+      "errorMessage": "Der Link zum Zurücksetzen konnte nicht gesendet werden. Bitte versuchen Sie es erneut.",
+      "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein"
+    },
+    "resetPassword": {
+      "title": "Setzen Sie Ihr Passwort zurück",
+      "subtitle": "Geben Sie unten Ihr neues Passwort ein.",
+      "password": "Neues Passwort",
+      "passwordPlaceholder": "Geben Sie Ihr neues Passwort ein",
+      "confirmPassword": "Passwort bestätigen",
+      "confirmPasswordPlaceholder": "Bestätigen Sie Ihr neues Passwort",
+      "resetPassword": "Passwort zurücksetzen",
+      "resetting": "Zurücksetzen...",
+      "passwordTooShort": "Das Passwort muss mindestens 6 Zeichen lang sein.",
+      "passwordsDoNotMatch": "Die Passwörter stimmen nicht überein.",
+      "successTitle": "Passwort erfolgreich zurückgesetzt",
+      "successMessage": "Ihr Passwort wurde erfolgreich zurückgesetzt. Sie können sich nun mit Ihrem neuen Passwort anmelden.",
+      "backToSignIn": "Zurück zur Anmeldeseite"
     }
   },
   "marketing": {
     "navbar": {
-      "requestEarlyAccess": "Frühzeitigen Zugriff anfordern"
+      "requestEarlyAccess": "Frühzeitigen Zugriff anfordern",
+      "lightMode": "In den Lichtmodus wechseln",
+      "darkMode": "In den Dunkelmodus wechseln",
+      "languageSelector": "Sprache auswählen"
     },
     "hero": {
       "badge": "Moderne Lernplattform",
@@ -229,6 +269,132 @@
       "requestAccess": "Zugriff anfordern",
       "partnerWithUs": "Werden Sie unser Partner",
       "tagline": "Studious LMS – Modernes Lernen, vereinfacht."
+    },
+    "privacyPolicy": {
+      "title": "Datenschutzrichtlinie",
+      "lastUpdated": "Letzte Aktualisierung: November 2025",
+      "sections": {
+        "introduction": {
+          "title": "1. Einleitung",
+          "content": "Studious LMS („wir“, „unser“ oder „uns“) legt großen Wert auf den Schutz Ihrer Daten. Diese Datenschutzerklärung erläutert, wie wir Ihre Daten erfassen, verwenden, weitergeben und schützen, wenn Sie unser Lernmanagementsystem und die zugehörigen Dienste (zusammen der „Dienst“) nutzen. Bitte lesen Sie diese Datenschutzerklärung sorgfältig durch. Mit der Nutzung unseres Dienstes erklären Sie sich mit der Erfassung und Verwendung Ihrer Daten gemäß dieser Datenschutzerklärung einverstanden."
+        },
+        "informationWeCollect": {
+          "title": "2. Informationen, die wir sammeln",
+          "content": "Wir erfassen Informationen, die Sie uns direkt bereitstellen, darunter:\n\n• Kontoinformationen: Benutzername, E-Mail-Adresse, Passwort und Profilinformationen\n• Bildungsdaten: Kurseinschreibungen, Aufgaben, Noten, Anwesenheitslisten und Studienfortschritte\n• Kommunikationsdaten: Nachrichten, Ankündigungen und sonstige Kommunikation innerhalb der Plattform\n• Nutzungsdaten: Informationen darüber, wie Sie mit unserem Dienst interagieren, einschließlich besuchter Seiten und genutzter Funktionen\n• Geräteinformationen: IP-Adresse, Browsertyp, Geräte-IDs und Betriebssystem\n• Cookies und Tracking-Technologien: Wir verwenden Cookies und ähnliche Technologien, um Ihre Benutzererfahrung zu verbessern und Nutzungsmuster zu analysieren"
+        },
+        "howWeUseInformation": {
+          "title": "3. Wie wir Ihre Daten verwenden",
+          "content": "Wir nutzen die von uns erfassten Informationen, um:\n\n• unseren Service bereitzustellen, zu warten und zu verbessern\n• Transaktionen abzuwickeln und Ihr Konto zu verwalten\n• die Kommunikation zwischen Lehrkräften, Schülern und Administratoren zu erleichtern\n• Lerninhalte, Aufgaben und Noten zu erstellen und zu verwalten\n• Ihnen wichtige Benachrichtigungen zu Ihrem Konto und dem Service zu senden\n• Nutzungsmuster zu analysieren, um die Benutzerfreundlichkeit zu verbessern\n• die Sicherheit zu gewährleisten und Betrug vorzubeugen\n• gesetzliche Verpflichtungen zu erfüllen und unsere Rechte zu schützen"
+        },
+        "informationSharing": {
+          "title": "4. Informationsaustausch und Offenlegung",
+          "content": "Wir verkaufen Ihre personenbezogenen Daten nicht. Wir können Ihre Daten unter folgenden Umständen weitergeben:\n\n• An Bildungseinrichtungen: Ihre Daten können zu Bildungszwecken an Ihre Schule oder Bildungseinrichtung weitergegeben werden.\n\n• An Dienstleister: Wir können Ihre Daten an Drittanbieter weitergeben, die uns beim Betrieb unseres Dienstes unterstützen.\n\n• Zur Einhaltung gesetzlicher Bestimmungen: Wir können Ihre Daten offenlegen, wenn dies gesetzlich vorgeschrieben ist oder um unsere Rechte und unsere Sicherheit zu schützen.\n\n• Mit Ihrer Einwilligung: Wir können Ihre Daten mit Ihrer ausdrücklichen Einwilligung weitergeben.\n\n• Im Falle einer Fusion: Ihre Daten können im Zusammenhang mit einer Unternehmenstransaktion übertragen werden."
+        },
+        "dataSecurity": {
+          "title": "5. Datensicherheit",
+          "content": "Wir setzen angemessene technische und organisatorische Sicherheitsmaßnahmen ein, um Ihre personenbezogenen Daten vor unbefugtem Zugriff, Veränderung, Offenlegung oder Zerstörung zu schützen. Allerdings ist keine Methode der Datenübertragung über das Internet oder der elektronischen Speicherung hundertprozentig sicher. Obwohl wir uns bemühen, Ihre Daten mit wirtschaftlich vertretbaren Mitteln zu schützen, können wir keine absolute Sicherheit garantieren."
+        },
+        "dataRetention": {
+          "title": "6. Datenaufbewahrung",
+          "content": "Wir speichern Ihre personenbezogenen Daten so lange, wie es für die Bereitstellung unserer Dienste und die Erfüllung der in dieser Datenschutzerklärung beschriebenen Zwecke erforderlich ist, es sei denn, eine längere Speicherdauer ist gesetzlich vorgeschrieben oder zulässig. Sobald wir Ihre Daten nicht mehr benötigen, werden wir sie sicher löschen oder anonymisieren."
+        },
+        "yourRights": {
+          "title": "7. Ihre Rechte",
+          "content": "Je nach Ihrem Standort haben Sie möglicherweise bestimmte Rechte in Bezug auf Ihre personenbezogenen Daten, darunter:\n\n• Auskunft: Fordern Sie Auskunft über Ihre personenbezogenen Daten an.\n\n• Berichtigung: Verlangen Sie die Berichtigung unrichtiger Daten.\n\n• Löschung: Verlangen Sie die Löschung Ihrer personenbezogenen Daten.\n\n• Datenübertragbarkeit: Verlangen Sie die Übertragung Ihrer Daten.\n\n• Widerspruch: Widersprechen Sie bestimmten Verarbeitungsvorgängen.\n\n• Widerruf der Einwilligung: Widerrufen Sie Ihre Einwilligung, sofern die Verarbeitung auf Ihrer Einwilligung beruht.\n\nUm diese Rechte auszuüben, kontaktieren Sie uns bitte über die Angaben im Abschnitt „Kontakt“."
+        },
+        "childrenPrivacy": {
+          "title": "8. Datenschutz für Kinder",
+          "content": "Unser Service ist für Bildungszwecke konzipiert und kann von Schülern unter 18 Jahren genutzt werden. Wir halten uns an die geltenden Gesetze zum Schutz der Privatsphäre von Kindern, einschließlich des Family Educational Rights and Privacy Act (FERPA) in den Vereinigten Staaten. Wir erheben wissentlich keine personenbezogenen Daten von Kindern ohne die entsprechende Einwilligung der Eltern oder der Bildungseinrichtung. Sollten Sie der Ansicht sein, dass wir unrechtmäßig Daten eines Kindes erhoben haben, kontaktieren Sie uns bitte umgehend."
+        },
+        "internationalTransfers": {
+          "title": "9. Internationale Datenübermittlung",
+          "content": "Ihre Daten können in andere Länder als Ihr Wohnsitzland übermittelt und dort verarbeitet werden. Die Datenschutzgesetze dieser Länder können von denen Ihres Landes abweichen. Durch die Nutzung unseres Dienstes stimmen Sie der Übermittlung Ihrer Daten in diese Länder zu."
+        },
+        "changesToPolicy": {
+          "title": "10. Änderungen dieser Datenschutzrichtlinie",
+          "content": "Wir können diese Datenschutzrichtlinie von Zeit zu Zeit aktualisieren. Wir werden Sie über alle Änderungen informieren, indem wir die neue Datenschutzrichtlinie auf dieser Seite veröffentlichen und das Datum der letzten Aktualisierung anpassen. Wir empfehlen Ihnen, diese Datenschutzrichtlinie regelmäßig auf Änderungen zu überprüfen."
+        },
+        "contactUs": {
+          "title": "11. Kontaktieren Sie uns",
+          "content": "Bei Fragen zu dieser Datenschutzerklärung oder unseren Datenschutzpraktiken kontaktieren Sie uns bitte unter:\n\nE-Mail: privacy@studious.sh\n\nWir werden Ihre Anfrage innerhalb eines angemessenen Zeitraums beantworten."
+        }
+      },
+      "goToTop": "Nach oben",
+      "tableOfContents": "Inhaltsverzeichnis",
+      "backToTop": "Zurück zum Seitenanfang"
+    },
+    "termsOfService": {
+      "title": "Nutzungsbedingungen",
+      "lastUpdated": "Letzte Aktualisierung: November 2025",
+      "sections": {
+        "acceptance": {
+          "title": "1. Annahme der Bedingungen",
+          "content": "Durch den Zugriff auf oder die Nutzung von Studious LMS („der Dienst“) erklären Sie sich mit diesen Nutzungsbedingungen („Bedingungen“) einverstanden. Wenn Sie diesen Bedingungen nicht zustimmen, dürfen Sie nicht auf den Dienst zugreifen oder ihn nutzen. Diese Bedingungen gelten für alle Nutzer des Dienstes, einschließlich Studierende, Lehrende, Administratoren und Bildungseinrichtungen."
+        },
+        "descriptionOfService": {
+          "title": "2. Leistungsbeschreibung",
+          "content": "Studious LMS ist ein Lernmanagementsystem, das Bildungseinrichtungen, Lehrkräften und Studierenden Werkzeuge zur Verwaltung von Kursen, Aufgaben, Noten, Anwesenheit, Kommunikation und anderen Bildungsaktivitäten bietet. Der Service umfasst webbasierte und mobile Anwendungen, KI-gestützte Funktionen und zugehörige Dienstleistungen."
+        },
+        "userAccounts": {
+          "title": "3. Benutzerkonten",
+          "content": "Um den Dienst nutzen zu können, müssen Sie ein Konto erstellen und korrekte, aktuelle und vollständige Angaben machen. Sie sind für die Geheimhaltung Ihrer Zugangsdaten und alle Aktivitäten verantwortlich, die über Ihr Konto erfolgen. Sie stimmen Folgendem zu:\n\n• Verwendung eines sicheren, einzigartigen Passworts\n\n• Weitergabe Ihrer Zugangsdaten an Dritte\n\n• Unverzügliche Benachrichtigung über jeden unbefugten Zugriff\n\n• Aktualisierung Ihrer Kontoinformationen\n\n• Verantwortung für alle Aktivitäten über Ihr Konto"
+        },
+        "acceptableUse": {
+          "title": "4. Richtlinie zur akzeptablen Nutzung",
+          "content": "Sie stimmen zu, den Dienst ausschließlich für rechtmäßige Zwecke und gemäß diesen Nutzungsbedingungen zu nutzen. Sie stimmen insbesondere Folgendem zu:\n\n• Verstoß gegen geltende Gesetze oder Vorschriften\n• Verletzung von Rechten an geistigem Eigentum\n• Übermittlung schädlicher, beleidigender oder unangemessener Inhalte\n• Belästigung, Missbrauch oder Schädigung anderer Nutzer\n• Versuch, sich unbefugten Zugriff auf den Dienst zu verschaffen\n• Störung oder Beeinträchtigung des Dienstes oder der Server\n• Nutzung automatisierter Systeme für den unbefugten Zugriff auf den Dienst\n• Vortäuschung der Identität einer anderen Person oder Organisation\n• Erhebung oder Speicherung personenbezogener Daten anderer Nutzer ohne deren Einwilligung"
+        },
+        "educationalContent": {
+          "title": "5. Bildungsinhalte und geistiges Eigentum",
+          "content": "Der Dienst ermöglicht es Nutzern, Lerninhalte zu erstellen, hochzuladen und zu teilen. Sie behalten das Eigentum an Ihren erstellten Inhalten, erteilen uns jedoch durch die Nutzung des Dienstes eine Lizenz zur Nutzung, Speicherung und Anzeige Ihrer Inhalte, soweit dies für die Bereitstellung des Dienstes erforderlich ist. Sie sind dafür verantwortlich, dass Sie die Rechte zur Nutzung und Weitergabe der von Ihnen hochgeladenen Inhalte besitzen. Wir respektieren geistige Eigentumsrechte und reagieren auf berechtigte Urheberrechtsverletzungen."
+        },
+        "aiFeatures": {
+          "title": "6. KI-gestützte Funktionen",
+          "content": "Unser Service umfasst KI-gestützte Funktionen wie Bewertungshilfe, Inhaltsgenerierung und pädagogische Unterstützung. Diese Funktionen werden ohne Gewähr bereitgestellt und sollten als ergänzende Werkzeuge verwendet werden. Nutzer sind selbst dafür verantwortlich, KI-generierte Inhalte zu überprüfen und zu validieren. Wir übernehmen keine Gewähr für die Richtigkeit, Vollständigkeit oder Eignung der KI-generierten Inhalte."
+        },
+        "privacy": {
+          "title": "7. Datenschutz",
+          "content": "Ihre Nutzung des Dienstes unterliegt auch unserer Datenschutzrichtlinie, in der erläutert wird, wie wir Ihre Daten erfassen, verwenden und schützen. Durch die Nutzung des Dienstes stimmen Sie der Erfassung und Verwendung von Daten gemäß unserer Datenschutzrichtlinie zu."
+        },
+        "feesAndPayment": {
+          "title": "8. Gebühren und Zahlung",
+          "content": "Einige Funktionen des Dienstes sind möglicherweise kostenpflichtig. Wenn Sie ein Abonnement oder kostenpflichtige Funktionen erwerben:\n\n• Die Gebühren entsprechen den Angaben zum Zeitpunkt des Kaufs.\n• Zahlungen werden über sichere Zahlungsdienstleister abgewickelt.\n• Abonnements verlängern sich automatisch, sofern sie nicht gekündigt werden.\n\n• Rückerstattungen unterliegen unseren Rückerstattungsrichtlinien.\n• Wir behalten uns das Recht vor, die Preise nach vorheriger Ankündigung zu ändern."
+        },
+        "termination": {
+          "title": "9. Kündigung",
+          "content": "Wir können Ihr Konto und Ihren Zugang zum Dienst ohne vorherige Ankündigung sofort kündigen oder sperren, wenn wir der Ansicht sind, dass Ihr Verhalten gegen diese Nutzungsbedingungen verstößt oder anderen Nutzern, uns oder Dritten schadet. Sie können Ihr Konto jederzeit kündigen, indem Sie uns kontaktieren. Mit der Kündigung erlischt Ihr Recht zur Nutzung des Dienstes unverzüglich."
+        },
+        "disclaimers": {
+          "title": "10. Haftungsausschlüsse",
+          "content": "Der Dienst wird „wie besehen“ und „wie verfügbar“ ohne jegliche Gewährleistung, weder ausdrücklich noch stillschweigend, bereitgestellt. Wir gewährleisten nicht, dass der Dienst ununterbrochen, sicher oder fehlerfrei funktioniert. Wir schließen jegliche Gewährleistung aus, insbesondere die Gewährleistung der Marktgängigkeit, der Eignung für einen bestimmten Zweck und der Nichtverletzung von Rechten Dritter."
+        },
+        "limitationOfLiability": {
+          "title": "11. Haftungsbeschränkung",
+          "content": "Soweit gesetzlich zulässig, haften wir nicht für indirekte, zufällige, besondere, Folge- oder Strafschäden oder für entgangenen Gewinn oder Umsatz, unabhängig davon, ob diese direkt oder indirekt entstanden sind, oder für Datenverlust, Nutzungsausfall, Verlust des Firmenwerts oder sonstige immaterielle Verluste, die sich aus Ihrer Nutzung des Dienstes ergeben."
+        },
+        "indemnification": {
+          "title": "12. Entschädigung",
+          "content": "Sie verpflichten sich, Studious LMS und seine leitenden Angestellten, Direktoren, Mitarbeiter und Vertreter von allen Ansprüchen, Haftungen, Schäden, Verlusten und Ausgaben freizustellen, zu verteidigen und schadlos zu halten, die sich aus Ihrem Zugriff auf oder Ihrer Nutzung des Dienstes, Ihrem Verstoß gegen diese Bedingungen oder Ihrer Verletzung von Rechten Dritter ergeben oder in irgendeiner Weise damit zusammenhängen."
+        },
+        "governingLaw": {
+          "title": "13. Anwendbares Recht",
+          "content": "Diese Nutzungsbedingungen unterliegen dem Recht des Landes, in dem Studious LMS seinen Sitz hat, und sind nach diesem auszulegen, ohne Berücksichtigung der kollisionsrechtlichen Bestimmungen. Alle Streitigkeiten, die sich aus diesen Nutzungsbedingungen oder dem Dienst ergeben, werden vor den zuständigen Gerichten dieses Landes verhandelt."
+        },
+        "changesToTerms": {
+          "title": "14. Änderungen der Nutzungsbedingungen",
+          "content": "Wir behalten uns das Recht vor, diese Nutzungsbedingungen jederzeit zu ändern. Wesentliche Änderungen werden wir den Nutzern mitteilen, indem wir die aktualisierten Nutzungsbedingungen auf unserer Website veröffentlichen und das Datum der letzten Aktualisierung entsprechend anpassen. Ihre fortgesetzte Nutzung des Dienstes nach solchen Änderungen gilt als Zustimmung zu den geänderten Nutzungsbedingungen."
+        },
+        "contactUs": {
+          "title": "15. Kontaktieren Sie uns",
+          "content": "Bei Fragen zu diesen Nutzungsbedingungen kontaktieren Sie uns bitte unter:\n\nE-Mail: legal@studious.sh\n\nWir werden Ihre Anfrage innerhalb eines angemessenen Zeitraums beantworten."
+        }
+      },
+      "goToTop": "Nach oben",
+      "tableOfContents": "Inhaltsverzeichnis",
+      "backToTop": "Zurück zum Seitenanfang"
+    },
+    "navbarPopup": {
+      "goBack": "Geh zurück",
+      "home": "Heim"
     }
   },
   "press": {
@@ -276,8 +442,8 @@
       },
       "aims": {
         "title": "Programmziele",
-        "body1": "Durch intensive Gespräche mit Lehrkräften und Bildungsexperten haben wir erhebliche Lücken in der digitalen Lerninfrastruktur vieler Schulen festgestellt. Vielen auf dem Markt erhältlichen Lernmanagementsystemen fehlt eine einheitliche und intuitive Benutzerführung, und Schulen in sozial benachteiligten Gebieten können sich den Zugang zu moderner Bildungstechnologie oft nicht leisten.",
-        "body2": "Unser Programm begegnet diesen Herausforderungen direkt. Die Einnahmen aus unseren kostenpflichtigen institutionellen Abonnements ermöglichen es uns, benachteiligten Schulen umfassenden Zugang zu Studious LMS und verwandten Lernwerkzeugen zu bieten. Dieses nachhaltige Modell hilft uns, die digitale Kluft zu überbrücken und unsere Plattform kontinuierlich für alle Nutzer zu verbessern."
+        "body1": "Durch intensive Gespräche mit Lehrkräften und pädagogischen Fachkräften haben wir erhebliche Lücken in der digitalen Lerninfrastruktur vieler Schulen festgestellt. Vielen auf dem Markt erhältlichen Lernmanagementsystemen fehlt eine einheitliche und intuitive Benutzerführung, und Schulen in sozial benachteiligten Gebieten können sich den Zugang zu moderner Bildungstechnologie oft nicht leisten.",
+        "body2": "Unser Programm begegnet diesen Herausforderungen direkt. Die Einnahmen aus unseren kostenpflichtigen institutionellen Abonnements ermöglichen es uns, benachteiligten Schulen umfassenden Zugang zu Studious LMS und verwandten Lernwerkzeugen zu bieten. Dieses nachhaltige Modell hilft uns, die digitale Kluft zu überbrücken und gleichzeitig unsere Plattform für alle Nutzer kontinuierlich zu verbessern."
       },
       "receive": {
         "title": "Was Sie erhalten",
@@ -948,7 +1114,7 @@
         "institutionSize": "Institutionsgröße auswählen"
       },
       "sizes": {
-        "tiny": "1-30 Schüler (Einzelunterricht)",
+        "tiny": "1-30 Schüler (Einzellehrer)",
         "small": "31-100 Schüler (Kleine Schule)",
         "medium": "101-500 Schüler (Mittelgroße Schule)",
         "large": "501-1.000 Schüler (Große Schule)",
