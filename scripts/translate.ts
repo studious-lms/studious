@@ -300,6 +300,7 @@ async function translateAll() {
     
     await Promise.all(
       languagesToProcess.map(async (lang) => {
+        if (lang === 'en') return;
         const languageName = LANGUAGES[lang as keyof typeof LANGUAGES] || lang;
         console.log(`🌐 Starting ${languageName} (${lang})...`);
         
@@ -318,6 +319,7 @@ async function translateAll() {
   } else {
     // Translate languages sequentially, but files in parallel
     for (const lang of languagesToProcess) {
+      if (lang === 'en') continue;
       const languageName = LANGUAGES[lang as keyof typeof LANGUAGES] || lang;
       console.log(`\n🌐 Translating to ${languageName} (${lang})...`);
       console.log('─'.repeat(50));
