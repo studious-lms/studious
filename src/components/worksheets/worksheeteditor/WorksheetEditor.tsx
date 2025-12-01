@@ -2,11 +2,13 @@
 
 import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
-import { useRouter } from "next/navigation";
+
+import { useRouter, useParams } from "next/navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import {
+import { Skeleton } from "@/components/ui/skeleton";
+import { 
   Plus,
   CheckCircle,
   FileText,
@@ -16,6 +18,8 @@ import {
   Eye,
   Loader2,
   ArrowLeft,
+  ChevronRight,
+  Sparkles,
 } from "lucide-react";
 import { toast } from "sonner";
 import {
@@ -37,7 +41,6 @@ import { WorksheetBlockEditor, type Question, type QuestionType, type MultipleCh
 import { WorksheetViewer } from "../worksheet-viewer";
 import { QuestionListItem, DropZone } from "../question-list-item";
 import { trpc } from "@/lib/trpc";
-import { EmptyState } from "@/components/ui/empty-state";
 
 interface WorksheetEditorProps {
   worksheetId?: string;
@@ -549,95 +552,181 @@ export function WorksheetEditor({ worksheetId: propWorksheetId, classId, initial
     }
   };
 
-  // Show loading state
+  // Navigate back to worksheets list
+  const handleBack = () => {
+    if (classId) {
+      router.push(`/class/${classId}/worksheets`);
+    } else {
+      router.back();
+    }
+  };
+
+  // Show loading state with skeleton
   if (isLoading) {
     return (
-      <div className="flex items-center justify-center h-[calc(100vh-3rem)]">
-        <div className="text-center">
-          <p className="text-sm text-muted-foreground">Loading worksheet...</p>
+      <div className="flex flex-col h-[calc(100vh-3rem)] gap-4 px-4 pt-4">
+        {/* Header Card Skeleton */}
+        <Card className="flex-shrink-0">
+          <CardContent className="p-4">
+            <div className="flex flex-col gap-4">
+              {/* Breadcrumb Skeleton */}
+              <div className="flex items-center gap-2">
+                <Skeleton className="h-8 w-8 rounded-md" />
+                <Skeleton className="h-4 w-24" />
+                <ChevronRight className="h-4 w-4 text-muted-foreground/40" />
+                <Skeleton className="h-4 w-32" />
+              </div>
+              {/* Title Row Skeleton */}
+              <div className="flex items-center justify-between gap-4">
+                <Skeleton className="h-10 w-64" />
+                <div className="flex items-center gap-2">
+                  <Skeleton className="h-8 w-24" />
+                  <Skeleton className="h-8 w-20" />
+                </div>
+              </div>
+              {/* Stats Row Skeleton */}
+              <div className="flex items-center gap-3">
+                <Skeleton className="h-6 w-24 rounded-full" />
+                <Skeleton className="h-6 w-20 rounded-full" />
+                <Skeleton className="h-6 w-16 rounded-full" />
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Content Skeleton */}
+        <div className="flex-1 min-h-0 grid grid-cols-1 lg:grid-cols-3 gap-4 overflow-hidden">
+          <div className="lg:col-span-1">
+            <Card className="h-full">
+              <CardHeader className="pb-0">
+                <div className="flex items-center justify-between">
+                  <Skeleton className="h-5 w-28" />
+                  <Skeleton className="h-8 w-16" />
+                </div>
+              </CardHeader>
+              <CardContent className="pt-4 space-y-2">
+                {[1, 2, 3].map((i) => (
+                  <Skeleton key={i} className="h-16 w-full rounded-lg" />
+                ))}
+              </CardContent>
+            </Card>
+          </div>
+          <div className="lg:col-span-2">
+            <Card className="h-full">
+              <CardHeader>
+                <Skeleton className="h-6 w-32" />
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <Skeleton className="h-24 w-full" />
+                <Skeleton className="h-12 w-full" />
+                <Skeleton className="h-12 w-full" />
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="flex flex-col h-[calc(100vh-3rem)] -mx-4">
-      {/* Header */}
-      <div className="flex-shrink-0 bg-background/95 backdrop-blur-sm border-b border-border px-4 pb-3 mb-3 pt-4">
-        <div className="flex flex-col gap-3">
-          {/* Title Row */}
-          <div className="flex items-center justify-between gap-4">
-            {classId && (
+    <div className="flex flex-col h-[calc(100vh-3rem)] gap-4 px-4 pt-4">
+      {/* Header Card */}
+      <Card className="flex-shrink-0">
+        <CardContent className="p-4">
+          <div className="flex flex-col gap-4">
+            {/* Breadcrumb Navigation */}
+            <div className="flex items-center gap-2">
               <Button
                 variant="ghost"
-                size="sm"
-                onClick={() => router.push(`/class/${classId}/worksheets`)}
-                className="flex-shrink-0"
+                size="icon"
+                onClick={handleBack}
+                className="h-8 w-8 hover:bg-muted"
               >
                 <ArrowLeft className="h-4 w-4" />
               </Button>
-            )}
-            <div className="flex-1 min-w-0">
-              <Input
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                placeholder={t('create.fields.titlePlaceholder')}
-                className="text-2xl md:text-2xl font-semibold border-0 shadow-none px-0 h-auto py-1 focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground/40 bg-transparent"
-              />
+              <nav className="flex items-center text-sm text-muted-foreground">
+                <button 
+                  onClick={handleBack}
+                  className="hover:text-foreground transition-colors"
+                >
+                  Worksheets
+                </button>
+                <ChevronRight className="h-4 w-4 mx-1.5" />
+                <span className="text-foreground font-medium truncate max-w-[200px]">
+                  {title || "Untitled Worksheet"}
+                </span>
+              </nav>
             </div>
-            <div className="flex items-center gap-2 flex-shrink-0">
-              <Button 
-                variant="ghost" 
-                size="sm"
-                onClick={() => setPreviewOpen(true)}
-                className="gap-2"
-              >
-                <Eye className="h-4 w-4" />
-                <span className="hidden sm:inline">Preview</span>
-              </Button>
-              <Button 
-                onClick={handleSave} 
-                size="sm"
-                className="gap-2"
-                disabled={isSaving || updateWorksheetMutation.isPending || addQuestionMutation.isPending || updateQuestionMutation.isPending}
-              >
-                {isSaving || updateWorksheetMutation.isPending || addQuestionMutation.isPending || updateQuestionMutation.isPending ? (
-                  <>
-                    <Loader2 className="h-4 w-4 animate-spin" />
-                    <span className="hidden sm:inline">Saving...</span>
-                  </>
-                ) : (
-                  <>
-                    <Save className="h-4 w-4" />
-                    <span className="hidden sm:inline">{t('create.actions.save')}</span>
-                  </>
-                )}
-              </Button>
-            </div>
-          </div>
 
-          {/* Stats Row */}
-          <div className="flex items-center gap-6 text-xs text-muted-foreground">
-            <div className="flex items-center gap-1.5">
-              <div className="h-1.5 w-1.5 rounded-full bg-muted-foreground" />
-              <span>{questions.length} {questions.length === 1 ? 'question' : 'questions'}</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <div className="h-1.5 w-1.5 rounded-full bg-muted-foreground" />
-              <span>{questions.reduce((sum, q) => sum + q.points, 0)} points</span>
-            </div>
-            {questions.length > 0 && (
-              <div className="flex items-center gap-1.5">
-                <div className="h-1.5 w-1.5 rounded-full bg-muted-foreground" />
-                <span>~{questions.reduce((sum, q) => sum + (q.estimationTime || 0), 0)} min</span>
+            {/* Title Row */}
+            <div className="flex items-center justify-between gap-4">
+              <div className="flex-1 min-w-0">
+                <Input
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                  placeholder={t('create.fields.titlePlaceholder')}
+                  className="text-2xl md:text-2xl font-semibold border-0 shadow-none px-0 h-auto py-1 focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground/40 bg-transparent"
+                />
               </div>
-            )}
+              <div className="flex items-center gap-2 flex-shrink-0">
+                <Button 
+                  variant="ghost" 
+                  size="sm"
+                  onClick={() => setPreviewOpen(true)}
+                  className="gap-2"
+                >
+                  <Eye className="h-4 w-4" />
+                  <span className="hidden sm:inline">Preview</span>
+                </Button>
+                <Button 
+                  onClick={handleSave} 
+                  size="sm"
+                  className="gap-2"
+                  disabled={isSaving || updateWorksheetMutation.isPending || addQuestionMutation.isPending || updateQuestionMutation.isPending}
+                >
+                  {isSaving || updateWorksheetMutation.isPending || addQuestionMutation.isPending || updateQuestionMutation.isPending ? (
+                    <>
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                      <span className="hidden sm:inline">Saving...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Save className="h-4 w-4" />
+                      <span className="hidden sm:inline">{t('create.actions.save')}</span>
+                    </>
+                  )}
+                </Button>
+              </div>
+            </div>
+
+            {/* Stats Row */}
+            <div className="flex items-center gap-3 text-xs">
+              <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-muted/60">
+                <FileText className="h-3 w-3 text-muted-foreground" />
+                <span className="text-muted-foreground">
+                  {questions.length} {questions.length === 1 ? 'question' : 'questions'}
+                </span>
+              </div>
+              <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-muted/60">
+                <Sparkles className="h-3 w-3 text-muted-foreground" />
+                <span className="text-muted-foreground">
+                  {questions.reduce((sum, q) => sum + q.points, 0)} points
+                </span>
+              </div>
+              {questions.length > 0 && (
+                <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-muted/60">
+                  <span className="text-muted-foreground">
+                    ~{questions.reduce((sum, q) => sum + (q.estimationTime || 0), 0)} min
+                  </span>
+                </div>
+              )}
+            </div>
           </div>
-        </div>
-      </div>
+        </CardContent>
+      </Card>
 
       {/* Content Area */}
-      <div className="flex-1 min-h-0 grid grid-cols-1 lg:grid-cols-3 gap-6 px-4 overflow-hidden">
+      <div className="flex-1 min-h-0 grid grid-cols-1 lg:grid-cols-3 gap-4 overflow-hidden">
         {/* Left Sidebar - Question List */}
         <div className="lg:col-span-1 flex flex-col min-h-0">
           <Card className="flex flex-col h-full">
@@ -678,20 +767,44 @@ export function WorksheetEditor({ worksheetId: propWorksheetId, classId, initial
               <DndProvider backend={HTML5Backend}>
                 <div className="space-y-1 h-full overflow-y-auto">
                   {questions.length === 0 ? (
-                    <div className="text-center py-12">
-                      <FileText className="h-12 w-12 mx-auto mb-3 text-muted-foreground opacity-50" />
+                    <div className="text-center py-8 px-4">
+                      <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center">
+                        <FileText className="h-8 w-8 text-primary/60" />
+                      </div>
                       <p className="text-sm font-medium text-foreground mb-1">No questions yet</p>
-                      <p className="text-xs text-muted-foreground mb-4">
-                        Add your first question to get started
+                      <p className="text-xs text-muted-foreground mb-5 max-w-[200px] mx-auto">
+                        Add your first question to start building your worksheet
                       </p>
-                      <Button 
-                        variant="outline" 
-                        size="sm"
-                        onClick={() => addQuestion("multiple_choice")}
-                      >
-                        <Plus className="h-4 w-4 mr-2" />
-                        Add Question
-                      </Button>
+                      <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                          <Button 
+                            variant="default" 
+                            size="sm"
+                            className="gap-2"
+                          >
+                            <Plus className="h-4 w-4" />
+                            Add First Question
+                          </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent align="center">
+                          <DropdownMenuItem onClick={() => addQuestion("multiple_choice")}>
+                            <CheckCircle className="h-4 w-4 mr-2" />
+                            {t('create.questionTypes.multipleChoice')}
+                          </DropdownMenuItem>
+                          <DropdownMenuItem onClick={() => addQuestion("long_form")}>
+                            <FileText className="h-4 w-4 mr-2" />
+                            {t('create.questionTypes.longForm')}
+                          </DropdownMenuItem>
+                          <DropdownMenuItem onClick={() => addQuestion("math")}>
+                            <Calculator className="h-4 w-4 mr-2" />
+                            {t('create.questionTypes.math')}
+                          </DropdownMenuItem>
+                          <DropdownMenuItem onClick={() => addQuestion("true_false")}>
+                            <ToggleLeft className="h-4 w-4 mr-2" />
+                            {t('create.questionTypes.trueFalse')}
+                          </DropdownMenuItem>
+                        </DropdownMenuContent>
+                      </DropdownMenu>
                     </div>
                   ) : (
                     <>
@@ -730,11 +843,47 @@ export function WorksheetEditor({ worksheetId: propWorksheetId, classId, initial
                 onToggleCorrectAnswer={(optionId) => toggleCorrectAnswer(selectedQuestion.id, optionId)}
               />
           ) : (
-            <EmptyState
-              icon={FileText}
-              title="No question yet"
-              description="Select a question from the list or add a new one to get started"
-            />
+            <Card className="h-full flex items-center justify-center">
+              <div className="text-center px-8 py-16">
+                <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-muted to-muted/50 flex items-center justify-center">
+                  <FileText className="h-10 w-10 text-muted-foreground/50" />
+                </div>
+                <h3 className="text-lg font-medium text-foreground mb-2">No question selected</h3>
+                <p className="text-sm text-muted-foreground max-w-[280px] mx-auto mb-6">
+                  Select a question from the list on the left, or add a new question to get started editing
+                </p>
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button 
+                      variant="outline" 
+                      size="sm"
+                      className="gap-2"
+                    >
+                      <Plus className="h-4 w-4" />
+                      Add Question
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="center">
+                    <DropdownMenuItem onClick={() => addQuestion("multiple_choice")}>
+                      <CheckCircle className="h-4 w-4 mr-2" />
+                      {t('create.questionTypes.multipleChoice')}
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => addQuestion("long_form")}>
+                      <FileText className="h-4 w-4 mr-2" />
+                      {t('create.questionTypes.longForm')}
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => addQuestion("math")}>
+                      <Calculator className="h-4 w-4 mr-2" />
+                      {t('create.questionTypes.math')}
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => addQuestion("true_false")}>
+                      <ToggleLeft className="h-4 w-4 mr-2" />
+                      {t('create.questionTypes.trueFalse')}
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </div>
+            </Card>
           )}
         </div>
       </div>

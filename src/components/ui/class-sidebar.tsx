@@ -188,7 +188,9 @@ export function ClassSidebar({ classId }: ClassSidebarProps) {
 
                 {/* Navigation Items */}
                 <nav className="space-y-2">
-                  {classNavigationItems
+                  {isClassLoading ? Array.from({ length: 3 }).map((_, index) => (
+                    <Skeleton key={index} className="w-full h-8 rounded-md" />
+                  )) : classNavigationItems
                     .filter((item) => {
                       if (item.href === "/settings" && appState.user.student) {
                         return false;
@@ -296,10 +298,12 @@ export function ClassSidebar({ classId }: ClassSidebarProps) {
 
       {/* Class Navigation */}
       <nav className="flex-1 p-4 space-y-1">
-        {classNavigationItems
+        {isClassLoading ? Array.from({ length: 3 }).map((_, index) => (
+          <Skeleton key={index} className="w-full h-8 rounded-md" />
+        )) : classNavigationItems
           .filter((item) => {
             // Hide Settings for students
-            if ((item.href === "/settings" || item.href === "/ai-labs" || item.href === "/attendance" || item.href === "/worksheets") && appState.user.student) {
+            if ((item.href === "/settings" || item.href === "/ai-labs" || item.href === "/worksheets") && appState.user.student) {
               return false;
             }
             return true;

@@ -12,12 +12,11 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { 
   ArrowLeft,
   Save,
   Upload,
-  ChevronDown
+  ChevronDown,
 } from "lucide-react";
 import { format } from "date-fns";
 import { trpc, type RouterOutputs, type RouterInputs } from "@/lib/trpc";
@@ -49,7 +48,6 @@ import { RootState } from "@/store/store";
 import { useSelector } from "react-redux";
 import { baseFileHandler } from "@/lib/fileHandler";
 import { getStatusColor, getStudentAssignmentStatus } from "@/lib/getStudentAssignmentStatus";
-import { WorksheetViewer } from "@/components/worksheets/worksheet-viewer";
 import { ExtendedResponse } from "@/components/submissions/ExtendedResponse";
 
 type AssignmentUpdateSubmissionAsTeacherInput = RouterInputs['assignment']['updateSubmissionAsTeacher'];
@@ -69,32 +67,40 @@ type RubricCriterion = {
 
 // RubricGrade type is now imported from @/lib/types/assignment
 
-// Component to fetch and display a worksheet
-function WorksheetDisplay({ 
+// Component to display a worksheet card that navigates to the worksheet page
+function WorksheetCard({ 
   worksheetId, 
   submissionId,
   worksheetName,
+  classId,
 }: { 
   worksheetId: string; 
   submissionId: string;
   worksheetName: string;
+  classId: string;
 }) {
-  const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push(`/class/${classId}/worksheets/${worksheetId}/submission/${submissionId}`);
+  };
 
   return (
-    <Collapsible open={isOpen} onOpenChange={setIsOpen}>
-      <CollapsibleTrigger className="w-full py-3 px-4 border rounded-md hover:bg-muted/50 flex items-center justify-between text-left">
-        <span className="font-medium">{worksheetName}</span>
-        <ChevronDown className={`h-4 w-4 shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
-      </CollapsibleTrigger>
-      <CollapsibleContent className="py-4">
-        <WorksheetViewer
-          submissionId={submissionId}
-          worksheetId={worksheetId}
-          
-        />
-      </CollapsibleContent>
-    </Collapsible>
+    <button
+      onClick={handleClick}
+      className="w-full py-4 px-4 border rounded-lg hover:bg-muted/50 hover:border-primary/30 flex items-center justify-between text-left transition-all group"
+    >
+      <div className="flex items-center gap-3">
+        <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary">
+          <FileText className="h-5 w-5" />
+        </div>
+        <div>
+          <span className="font-medium block">{worksheetName}</span>
+          <span className="text-xs text-muted-foreground">View student&apos;s answers</span>
+        </div>
+      </div>
+      <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground group-hover:text-foreground -rotate-90 transition-colors" />
+    </button>
   );
 }
 
@@ -627,16 +633,17 @@ export default function SubmissionDetailPage() {
 
             {/* Worksheet Submission - Only show if acceptWorksheet is true */}
             {assignment?.acceptWorksheet && assignment.worksheets && assignment.worksheets.length > 0 && (
-              <div className="space-y-2">
-                <h3 className="text-lg font-semibold mb-3">Worksheets</h3>
+              <div className="space-y-3">
+                <h3 className="text-lg font-semibold">Worksheets</h3>
                 <div className="space-y-2">
                   {assignment.worksheets.map((worksheet) => {
                     return (
-                      <WorksheetDisplay
+                      <WorksheetCard
                         key={worksheet.id}
                         worksheetId={worksheet.id}
                         submissionId={submissionId}
                         worksheetName={worksheet.name || `Worksheet ${worksheet.id}`}
+                        classId={classId}
                       />
                     );
                   })}

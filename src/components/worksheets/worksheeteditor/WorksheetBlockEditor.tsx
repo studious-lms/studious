@@ -21,7 +21,6 @@ import {
   Gem,
   Pencil,
 } from "lucide-react";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { toast } from "sonner";
 import {
   Dialog,
@@ -132,21 +131,47 @@ export function WorksheetBlockEditor({
     onUpdate({ markschemeItems: updatedItems });
   };
 
+  const getQuestionTypeIcon = (type: QuestionType) => {
+    switch (type) {
+      case "multiple_choice":
+        return <CheckCircle className="h-4 w-4" />;
+      case "long_form":
+        return <FileText className="h-4 w-4" />;
+      case "math":
+        return <Calculator className="h-4 w-4" />;
+      case "true_false":
+        return <ToggleLeft className="h-4 w-4" />;
+    }
+  };
+
   return (
     <>
       <Card className="h-full overflow-y-auto">
-        <CardHeader>
-          <div className="flex items-center justify-between">
-            <CardTitle className="text-lg">
-              Question {questionIndex + 1}
-            </CardTitle>
-            <div className="flex items-center gap-4">
+        <CardHeader className="border-b border-border pb-4">
+          <div className="flex items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary/10 text-primary font-medium text-sm">
+                {questionIndex + 1}
+              </div>
+              <div>
+                <CardTitle className="text-lg">
+                  Question {questionIndex + 1}
+                </CardTitle>
+                <p className="text-xs text-muted-foreground mt-0.5">
+                  {question.points} {question.points === 1 ? 'point' : 'points'} • {question.estimationTime || 2} min
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
               <Select
                 value={question.type}
                 onValueChange={(value) => onUpdate({ type: value as QuestionType })}
               >
                 <SelectTrigger className="w-[180px] text-nowrap">
-                  <SelectValue />
+                  <div className="flex items-center gap-2">
+                    {getQuestionTypeIcon(question.type)}
+                    <SelectValue />
+                  </div>
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="multiple_choice">

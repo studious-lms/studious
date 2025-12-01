@@ -25,10 +25,13 @@ export function AppLayout({ children, isAuthenticated = false }: AppLayoutProps)
 
   const isMobile = useIsMobile();
 
+  const showClassSidebar = isInClass && !pathname.includes('/worksheets/edit') && appState.user.loggedIn;
+
   // Don't show sidebars for auth pages
   if (!isAuthenticated || ["/login", "/signup", "/pricing"].includes(pathname)) {
     return <div className="min-h-screen bg-background">{children}</div>;
   }
+
 
   return (
     <div className="min-h-screen bg-background">
@@ -36,11 +39,11 @@ export function AppLayout({ children, isAuthenticated = false }: AppLayoutProps)
       {appState.user.loggedIn && <PrimarySidebar isAuthenticated={isAuthenticated} />}
       
       {/* Class Sidebar (only show if in a class route) */}
-      {isInClass && appState.user.loggedIn && <ClassSidebar classId={classId!} />}
+      {showClassSidebar && <ClassSidebar classId={classId!} />}
       
       {/* Main Content */}
       <main className={`min-h-screen overflow-auto transition-all duration-200 ${
-        isInClass && !isMobile ? 'ml-80' : (appState.user.loggedIn && !isMobile ? 'ml-16' : 'ml-0')
+        showClassSidebar && !isMobile ? 'ml-80' : (appState.user.loggedIn && !isMobile ? 'ml-16' : 'ml-0')
       }`}>
         {children}
       </main>

@@ -50,11 +50,8 @@ import {  parseMarkScheme,
 import { baseFileHandler } from "@/lib/fileHandler";
 import { Progress } from "@/components/ui/progress";
 import { getStatusColor, getStudentAssignmentStatus } from "@/lib/getStudentAssignmentStatus";
-import { WorksheetDoer } from "@/components/worksheets/worksheetdoer/WorksheetDoer";
 import { Textarea } from "@/components/ui/textarea";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { ChevronDown } from "lucide-react";
-import { WorksheetViewer } from "@/components/worksheets/worksheet-viewer";
 import type { RouterInputs } from "@/lib/trpc";
 
 type Submissions = RouterOutputs['assignment']['getSubmissions'];
@@ -69,48 +66,49 @@ type FileItem = {
   uploadedAt?: string;
 };
 
-// @todo: when pressnig submit after editing worksheet worksheeteditor -> worksheetviewer fetches it before answer saves
-// Component to fetch and display a worksheet for students
-function WorksheetFetcher({ 
+// Component to display a worksheet card that navigates to the worksheet page
+function WorksheetCard({ 
   worksheetId, 
   submissionId,
+  classId,
   readonly,
-  showFeedback = false
 }: { 
   worksheetId: string; 
   submissionId: string;
+  classId: string;
   readonly: boolean;
-  showFeedback: boolean;
 }) {
-  const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
   
   // Fetch worksheet to get the name
   const { data: worksheet, isLoading: isWorksheetLoading } = trpc.worksheet.getWorksheet.useQuery({
     worksheetId,
   });
 
+  const handleClick = () => {
+    router.push(`/class/${classId}/worksheets/${worksheetId}/submission/${submissionId}`);
+  };
+
   return (
-    <Collapsible open={isOpen} onOpenChange={setIsOpen}>
-      <CollapsibleTrigger className="w-full py-3 px-4 border rounded-md hover:bg-muted/50 flex items-center justify-between text-left">
-        <span className="font-medium">{isWorksheetLoading ? <Skeleton className="h-4 w-20" /> : worksheet?.name}</span>
-        <ChevronDown className={`h-4 w-4 shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
-      </CollapsibleTrigger>
-      <CollapsibleContent className="py-4">
-      {readonly ? (
-        <WorksheetViewer
-          submissionId={submissionId}
-          worksheetId={worksheetId}
-          showFeedback={showFeedback}
-        />
-      ) : (
-        <WorksheetDoer
-          readonly={readonly}
-          submissionId={submissionId}
-          worksheetId={worksheetId}
-        />
-      )}
-      </CollapsibleContent>
-    </Collapsible>
+    <button
+      onClick={handleClick}
+      className="w-full py-4 px-4 border rounded-lg hover:bg-muted/50 hover:border-primary/30 flex items-center justify-between text-left transition-all group"
+    >
+      <div className="flex items-center gap-3">
+        <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary">
+          <FileText className="h-5 w-5" />
+        </div>
+        <div>
+          <span className="font-medium block">
+            {isWorksheetLoading ? <Skeleton className="h-4 w-24" /> : worksheet?.name}
+          </span>
+          <span className="text-xs text-muted-foreground">
+            {readonly ? "View your answers" : "Continue working"}
+          </span>
+        </div>
+      </div>
+      <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground group-hover:text-foreground -rotate-90 transition-colors" />
+    </button>
   );
 }
 
@@ -745,15 +743,15 @@ export default function AssignmentDetailPage() {
 
                   {/* Worksheet Submission Section - Only show if acceptWorksheet is true */}
                   {assignment?.acceptWorksheet && assignment.worksheets && assignment.worksheets.length > 0 && (
-                    <div className="space-y-2">
-                      <h3 className="text-lg font-semibold mb-3">Worksheets</h3>
+                    <div className="space-y-3">
+                      <h3 className="text-lg font-semibold">Worksheets</h3>
                       <div className="space-y-2">
                         {assignment.worksheets.map((worksheet: RouterOutputs['assignment']['get']['worksheets'][number]) => (
-                          <WorksheetFetcher
+                          <WorksheetCard
                             key={worksheet.id}
                             submissionId={studentSubmission.id}
                             worksheetId={worksheet.id}
-                            showFeedback={studentSubmission.returned || false}
+                            classId={classId}
                             readonly={studentSubmission.submitted || false}
                           />
                         ))}
