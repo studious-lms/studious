@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { PageLayout } from "@/components/ui/page-layout";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
@@ -12,9 +12,9 @@ import {
   Calendar, 
   Edit, 
   FileText, 
-  Users,
   CheckCircle,
   Upload,
+  ArrowLeft,
 } from "lucide-react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -50,7 +50,10 @@ import {  parseMarkScheme,
 import { baseFileHandler } from "@/lib/fileHandler";
 import { Progress } from "@/components/ui/progress";
 import { getStatusColor, getStudentAssignmentStatus } from "@/lib/getStudentAssignmentStatus";
+import { AI_POLICY_LEVELS, getAIPolicyColor } from "@/lib/aiPolicy";
 import { Textarea } from "@/components/ui/textarea";
+import { useTranslations } from "next-intl";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { ChevronDown } from "lucide-react";
 import type { RouterInputs } from "@/lib/trpc";
 
@@ -114,33 +117,63 @@ function WorksheetCard({
 
 function AssignmentDetailSkeleton() {
   return (
-    <div className="space-y-6">
+    <div className="max-w-4xl mx-auto space-y-8">
+      {/* Header skeleton */}
+      <div className="space-y-4">
       <div className="flex items-center justify-between">
-        <div className="space-y-2">
-          <Skeleton className="h-8 w-64" />
-          <Skeleton className="h-4 w-48" />
+          <Skeleton className="h-4 w-16" />
+          <Skeleton className="h-8 w-20" />
         </div>
-        <Skeleton className="h-10 w-20" />
+        <Skeleton className="h-8 w-72" />
+        <div className="flex flex-wrap gap-2">
+          <Skeleton className="h-7 w-28 rounded-full" />
+          <Skeleton className="h-7 w-20 rounded-full" />
+          <Skeleton className="h-7 w-24 rounded-full" />
+          <Skeleton className="h-7 w-24 rounded-full" />
+        </div>
       </div>
       
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div className="lg:col-span-2 space-y-6">
-          <Card>
-            <CardContent className="p-6 space-y-4">
+      {/* Instructions skeleton */}
+      <div className="space-y-3">
+        <Skeleton className="h-4 w-24" />
+        <Skeleton className="h-4 w-full" />
               <Skeleton className="h-4 w-full" />
               <Skeleton className="h-4 w-3/4" />
-              <Skeleton className="h-4 w-1/2" />
-            </CardContent>
-          </Card>
         </div>
         
-        <div className="space-y-6">
-          <Card>
-            <CardContent className="p-6">
-              <Skeleton className="h-32 w-full" />
-            </CardContent>
-          </Card>
+      {/* Attachments skeleton */}
+      <div className="space-y-3">
+        <Skeleton className="h-4 w-28" />
+        <div className="flex gap-2">
+          <Skeleton className="h-10 w-36 rounded-lg" />
+          <Skeleton className="h-10 w-36 rounded-lg" />
         </div>
+      </div>
+
+      {/* Worksheets skeleton */}
+      <div className="space-y-3">
+        <Skeleton className="h-4 w-32" />
+        <div className="grid gap-2 sm:grid-cols-2">
+          <Skeleton className="h-16 w-full rounded-lg" />
+        </div>
+      </div>
+
+      <Separator />
+      
+      {/* Statistics skeleton */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        {[1, 2, 3, 4].map((i) => (
+          <Skeleton key={i} className="h-24 w-full rounded-lg" />
+        ))}
+      </div>
+
+      {/* Table skeleton */}
+      <div className="space-y-3">
+        <div className="flex items-center justify-between">
+          <Skeleton className="h-6 w-40" />
+          <Skeleton className="h-4 w-24" />
+        </div>
+        <Skeleton className="h-64 w-full rounded-lg" />
       </div>
     </div>
   );
@@ -149,12 +182,32 @@ function AssignmentDetailSkeleton() {
 export default function AssignmentDetailPage() {
   const params = useParams();
   const router = useRouter();
+  // @todo: move this outside of components.createAssignment
+  const t = useTranslations('components.createAssignment');
 
   const appState = useSelector((state: RootState) => state.app);
   const classId = params.id as string;
   const assignmentId = params.assignmentId as string;
   const isTeacher = appState.user.teacher;
   const isStudent = !isTeacher; // If not a teacher, assume student role
+
+  // Build translated AI policy levels from shared config
+  const getAIPolicy = (level: number) => {
+    const policy = AI_POLICY_LEVELS.find(p => p.level === level);
+    if (!policy) return null;
+    return {
+      level: policy.level,
+      title: t(policy.titleKey),
+      description: t(policy.descriptionKey),
+      useCases: t(policy.useCasesKey),
+      studentResponsibilities: t(policy.studentResponsibilitiesKey),
+      disclosureRequirements: t(policy.disclosureRequirementsKey),
+      color: policy.color,
+    };
+  };
+
+  // State for AI policy collapsible
+  const [aiPolicyExpanded, setAiPolicyExpanded] = useState(false);
 
   // Get assignment data
   const { data: assignment, isLoading: assignmentLoading } = trpc.assignment.get.useQuery({
@@ -560,69 +613,236 @@ export default function AssignmentDetailPage() {
   return (
     <DndProvider backend={HTML5Backend}>
       <PageLayout>
-        <div className="space-y-6">
+        <div className="max-w-4xl mx-auto space-y-8">
         {/* Header */}
+          <div className="space-y-4">
+            {/* Back + Edit Row */}
         <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-3xl font-bold">{assignment.title}</h1>
-            <div className="flex items-center space-x-4 mt-2 text-muted-foreground">
-              <div className="flex items-center space-x-1">
-                <Calendar className="h-4 w-4" />
+              <button 
+                onClick={() => router.back()}
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <ArrowLeft className="h-4 w-4" />
+                Back
+              </button>
+              {appState.user.teacher && (
+                <Button 
+                  variant="outline"
+                  size="sm"
+                  onClick={() => router.push(`/class/${classId}/assignment/${assignmentId}/edit`)}
+                >
+                  <Edit className="h-4 w-4 mr-2" />
+                  Edit
+                </Button>
+              )}
+            </div>
+
+            {/* Title */}
+            <h1 className="text-2xl font-bold flex items-center gap-4">
+              {assignment.title}
+              {isTeacher ? (
+                getStudentAssignmentStatus(assignment).map((status) => (
+                  <Badge className={getStatusColor(status)} key={status}>
+                    {status}
+                  </Badge>
+                ))
+              ) : studentSubmission && (
+                getStudentAssignmentStatus(studentSubmission).map((status) => (
+                  <Badge className={getStatusColor(status)} key={status}>
+                    {status}
+                  </Badge>
+                ))
+              )}
+            </h1>
+            
+            {/* Metadata badges */}
+            <div className="flex flex-wrap items-center gap-2">
+              {/* Due Date */}
+              <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-muted text-sm">
+                <Calendar className="h-3.5 w-3.5 text-muted-foreground" />
                 <span>
-                  Due {assignment.dueDate 
-                    ? format(new Date(assignment.dueDate), 'MMM d, yyyy \'at\' h:mm a')
+                  {assignment.dueDate 
+                    ? format(new Date(assignment.dueDate), 'MMM d, h:mm a')
                     : 'No due date'}
                 </span>
               </div>
+              
+              {/* Points */}
               {assignment.graded && (
-                <div className="flex items-center space-x-1">
-                  <CheckCircle className="h-4 w-4" />
-                  <span>{assignment.maxGrade} points</span>
+                <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-muted text-sm">
+                  <CheckCircle className="h-3.5 w-3.5 text-muted-foreground" />
+                  <span>{assignment.maxGrade} pts</span>
                 </div>
               )}
+              
             </div>
           </div>
-          {appState.user.teacher && (
-          <Button 
-            onClick={() => router.push(`/class/${classId}/assignment/${assignmentId}/edit`)}
-            className="flex items-center space-x-2"
-          >
-            <Edit className="h-4 w-4" />
-            <span>Edit</span>
-          </Button>
-          )}
-        </div>
 
-        {/* Main Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Left Column - Instructions and Submissions/Student Work */}
-          <div className="lg:col-span-2 space-y-6">
-            {/* Instructions */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Instructions</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="prose prose-sm max-w-none">
-                  <p className="whitespace-pre-wrap">{assignment.instructions}</p>
+          {/* Instructions */}
+          <div className="space-y-3">
+            <h2 className="text-sm font-medium text-muted-foreground">Instructions</h2>
+            <div className="prose prose-sm max-w-none">
+              <p className="whitespace-pre-wrap text-foreground leading-relaxed">{assignment.instructions}</p>
+            </div>
+          </div>
+
+          {/* AI Policy */}
+          {assignment.aiPolicyLevel && getAIPolicy(assignment.aiPolicyLevel) && (() => {
+            const policy = getAIPolicy(assignment.aiPolicyLevel)!;
+            return (
+              <Collapsible open={aiPolicyExpanded} onOpenChange={setAiPolicyExpanded}>
+                <div className={`w-full rounded-lg border transition-all ${getAIPolicyColor(assignment.aiPolicyLevel)}`}>
+                  <CollapsibleTrigger asChild>
+                    <div className="p-4 cursor-pointer">
+                      <div className="flex items-start gap-3">
+                        <div className={`w-3 h-3 rounded-full ${policy.color} mt-1.5 flex-shrink-0`} />
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2 mb-1">
+                            <h4 className="font-medium text-sm">{policy.title}</h4>
+                            <ChevronDown className={`h-4 w-4 ml-auto transition-transform ${aiPolicyExpanded ? 'rotate-180' : ''}`} />
+                          </div>
+                          <p className="text-xs text-muted-foreground">{policy.description}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </CollapsibleTrigger>
+                  <CollapsibleContent>
+                    <div className="px-4 pb-4 pt-0 space-y-3 text-sm">
+                      <div>
+                        <div className="font-medium text-foreground mb-1">{t('aiPolicy.useCases')}</div>
+                        <div className="text-muted-foreground">{policy.useCases}</div>
+                      </div>
+                      <div>
+                        <div className="font-medium text-foreground mb-1">{t('aiPolicy.studentResponsibilities')}</div>
+                        <div className="text-muted-foreground">{policy.studentResponsibilities}</div>
+                      </div>
+                      <div>
+                        <div className="font-medium text-foreground mb-1">{t('aiPolicy.disclosureRequirements')}</div>
+                        <div className="text-muted-foreground">{policy.disclosureRequirements}</div>
+                      </div>
+                    </div>
+                  </CollapsibleContent>
                 </div>
-              </CardContent>
-            </Card>
+              </Collapsible>
+            );
+          })()}
 
-            {/* Teacher View - Submissions */}
-            {isTeacher && (
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center space-x-2">
-                    <Users className="h-5 w-5" />
-                    <span>Submissions</span>
-                    <Badge variant="outline">
-                      {submissions?.filter(s => s.submitted).length || 0} / {submissions?.length || 0}
-                    </Badge>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  {submissions && submissions.length > 0 ? (
+          {/* Attachments - inline style */}
+          {assignment.attachments.length > 0 && (
+            <div className="space-y-3">
+              <h2 className="text-sm font-medium text-muted-foreground">Attachments</h2>
+              <div className="flex flex-wrap gap-2">
+                {convertAttachmentsToFileItems(assignment.attachments).map((fileItem) => (
+                  <button
+                    key={fileItem.id}
+                    onClick={() => {
+                      setPreviewFile(fileItem);
+                      setIsPreviewOpen(true);
+                    }}
+                    className="flex items-center gap-2 px-3 py-2 rounded-lg border bg-muted/30 hover:bg-muted/60 transition-colors text-sm"
+                  >
+                    {getFileIcon(fileItem.fileType || 'file')}
+                    <span className="max-w-[150px] truncate">{fileItem.name}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Worksheets - Show if assignment has worksheets */}
+          {assignment?.worksheets && assignment.worksheets.length > 0 && (
+            <div className="space-y-3">
+              <h2 className="text-sm font-medium text-muted-foreground">Worksheets</h2>
+              <div className="grid gap-2 sm:grid-cols-2">
+                {assignment.worksheets.map((worksheet) => (
+                  <button
+                    key={worksheet.id}
+                    onClick={() => {
+                      if (isTeacher) {
+                        router.push(`/class/${classId}/worksheets/edit/${worksheet.id}`);
+                      } else if (studentSubmission) {
+                        router.push(`/class/${classId}/worksheets/${worksheet.id}/submission/${studentSubmission.id}`);
+                      }
+                    }}
+                    className="flex items-center justify-between px-4 py-3 rounded-lg border hover:bg-muted/50 transition-colors text-left group"
+                  >
+                    <span className="font-medium truncate">{worksheet.name}</span>
+                    <ChevronDown className="h-4 w-4 text-muted-foreground -rotate-90 group-hover:text-foreground transition-colors flex-shrink-0" />
+                  </button>
+                ))}
+        </div>
+            </div>
+          )}
+
+          <Separator />
+
+          {/* Teacher View - Statistics & Submissions */}
+          {isTeacher && submissions && (
+            <div className="space-y-6">
+              {/* Statistics Bars */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <div className="p-4 rounded-lg bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-900">
+                  <span className="text-xs font-medium text-green-700 dark:text-green-300">Submitted</span>
+                  <div className="text-2xl font-bold text-green-700 dark:text-green-400 mt-1">
+                    {submissions.filter(s => s.submitted).length}
+                </div>
+                  <div className="mt-2 h-1.5 bg-green-200 dark:bg-green-900 rounded-full overflow-hidden">
+                    <div 
+                      className="h-full bg-green-500 rounded-full transition-all" 
+                      style={{ width: `${submissions.length > 0 ? (submissions.filter(s => s.submitted).length / submissions.length) * 100 : 0}%` }}
+                    />
+                  </div>
+                </div>
+                
+                <div className="p-4 rounded-lg bg-yellow-50 dark:bg-yellow-950/30 border border-yellow-200 dark:border-yellow-900">
+                  <span className="text-xs font-medium text-yellow-700 dark:text-yellow-300">Late</span>
+                  <div className="text-2xl font-bold text-yellow-700 dark:text-yellow-400 mt-1">
+                    {submissions.filter(s => s.submitted && s.late).length}
+                  </div>
+                  <div className="mt-2 h-1.5 bg-yellow-200 dark:bg-yellow-900 rounded-full overflow-hidden">
+                    <div 
+                      className="h-full bg-yellow-500 rounded-full transition-all" 
+                      style={{ width: `${submissions.length > 0 ? (submissions.filter(s => s.submitted && s.late).length / submissions.length) * 100 : 0}%` }}
+                    />
+                  </div>
+                </div>
+                
+                <div className="p-4 rounded-lg bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-900">
+                  <span className="text-xs font-medium text-red-700 dark:text-red-300">Missing</span>
+                  <div className="text-2xl font-bold text-red-700 dark:text-red-400 mt-1">
+                    {submissions.filter(s => !s.submitted).length}
+                  </div>
+                  <div className="mt-2 h-1.5 bg-red-200 dark:bg-red-900 rounded-full overflow-hidden">
+                    <div 
+                      className="h-full bg-red-500 rounded-full transition-all" 
+                      style={{ width: `${submissions.length > 0 ? (submissions.filter(s => !s.submitted).length / submissions.length) * 100 : 0}%` }}
+                    />
+                  </div>
+                </div>
+                
+                <div className="p-4 rounded-lg bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-900">
+                  <span className="text-xs font-medium text-blue-700 dark:text-blue-300">Graded</span>
+                  <div className="text-2xl font-bold text-blue-700 dark:text-blue-400 mt-1">
+                    {submissions.filter(s => s.returned).length}
+                  </div>
+                  <div className="mt-2 h-1.5 bg-blue-200 dark:bg-blue-900 rounded-full overflow-hidden">
+                    <div 
+                      className="h-full bg-blue-500 rounded-full transition-all" 
+                      style={{ width: `${submissions.length > 0 ? (submissions.filter(s => s.returned).length / submissions.length) * 100 : 0}%` }}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Submissions Table */}
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <h2 className="text-lg font-semibold">Submissions</h2>
+                  <span className="text-sm text-muted-foreground">
+                    {submissions.filter(s => s.submitted).length} of {submissions.length} submitted
+                  </span>
+                </div>
+                {submissions.length > 0 ? (
                     <DataTable
                       columns={submissionColumns}
                       data={submissions}
@@ -631,31 +851,26 @@ export default function AssignmentDetailPage() {
                       }
                     />
                   ) : (
-                    <EmptyState
-                      icon={Users}
-                      title="No submissions yet"
-                      description="Students haven't submitted their work for this assignment."
-                    />
-                  )}
-                </CardContent>
-              </Card>
+                  <div className="text-center py-12 text-muted-foreground">
+                    <p className="font-medium">No students enrolled</p>
+                    <p className="text-sm">Add students to your class to see submissions.</p>
+                  </div>
+                )}
+              </div>
+            </div>
             )}
 
             {/* Student View - My Submission */}
             {isStudent && studentSubmission && (
-              <Card>
-                <CardHeader>
-                  <CardTitle>My Submission</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-6">
+            <div className="space-y-6">
+              <h2 className="text-lg font-semibold">Your Work</h2>
                   
                   {/* File Upload Section - Only show if acceptFiles is true */}
                   {assignment?.acceptFiles && (
                     <div className="space-y-4">
-                      {studentSubmission.attachments.length > 0 ? (
-                        <div className="space-y-3">
-                          <span className="text-sm font-medium">Attached Files</span>
-                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <h3 className="text-sm font-medium text-muted-foreground">File Attachments</h3>
+                  {studentSubmission.attachments.length > 0 && (
+                    <div className="flex flex-wrap gap-2">
                             {convertAttachmentsToFileItems(studentSubmission.attachments).map((fileItem) => (
                               <DraggableFileItem
                                 key={fileItem.id}
@@ -667,19 +882,10 @@ export default function AssignmentDetailPage() {
                               />
                             ))}
                           </div>
-                        </div>
-                      ) : (
-                        !studentSubmission.submitted && (
-                          <EmptyState
-                            icon={FileText}
-                            title="No files attached"
-                            description="Upload files for your submission."
-                          />
-                        )
                       )}
                       
                       {!studentSubmission.submitted && (
-                        <div className="space-y-3">
+                    <>
                           {/* Upload Progress */}
                           {isUploading && (
                             <div className="space-y-2 p-4 bg-muted rounded-lg">
@@ -695,17 +901,14 @@ export default function AssignmentDetailPage() {
                               )}
                             </div>
                           )}
-                          <div>
-                            <Label htmlFor="student-file-upload" className="cursor-pointer">
-                              <div className="flex items-center justify-center w-full p-4 border-2 border-dashed border-muted-foreground/25 rounded-lg hover:border-muted-foreground/50 transition-colors">
+                      <Label htmlFor="student-file-upload" className="cursor-pointer block">
+                        <div className="flex items-center justify-center w-full py-6 border-2 border-dashed border-muted-foreground/25 rounded-lg hover:border-muted-foreground/50 transition-colors">
                                 <div className="text-center">
-                                  <Upload className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
-                                  <p className="text-sm font-medium">{isUploading ? 'Uploading...' : 'Upload files'}</p>
-                                  <p className="text-xs text-muted-foreground">Click to select files or drag and drop</p>
+                            <Upload className="h-6 w-6 mx-auto mb-2 text-muted-foreground" />
+                            <p className="text-sm">{isUploading ? 'Uploading...' : 'Upload files'}</p>
                                 </div>
                               </div>
                             </Label>
-                          </div>
                           <Input
                             id="student-file-upload"
                             type="file"
@@ -715,7 +918,7 @@ export default function AssignmentDetailPage() {
                             accept="*/*"
                             disabled={isUploading}
                           />
-                        </div>
+                    </>
                       )}
                     </div>
                   )}
@@ -723,18 +926,17 @@ export default function AssignmentDetailPage() {
                   {/* Extended Response Section - Only show if acceptExtendedResponse is true */}
                   {assignment?.acceptExtendedResponse && (
                     <div className="space-y-2">
-                      <Label htmlFor="extended-response">Extended Response</Label>
+                  <Label htmlFor="extended-response" className="text-sm font-medium text-muted-foreground">Written Response</Label>
                       <Textarea
                         id="extended-response"
                         value={extendedResponse}
                         onChange={(e) => {
                           const value = e.target.value;
                           setExtendedResponse(value);
-                          // Debounced auto-save extended response (saves after 1.5s of no typing)
                           debouncedSaveExtendedResponse(value);
                         }}
                         placeholder="Enter your response here..."
-                        rows={8}
+                    rows={6}
                         disabled={studentSubmission.submitted || false}
                         className={studentSubmission.submitted ? "bg-muted cursor-not-allowed" : ""}
                       />
@@ -743,15 +945,15 @@ export default function AssignmentDetailPage() {
 
                   {/* Worksheet Submission Section - Only show if acceptWorksheet is true */}
                   {assignment?.acceptWorksheet && assignment.worksheets && assignment.worksheets.length > 0 && (
-                    <div className="space-y-3">
-                      <h3 className="text-lg font-semibold">Worksheets</h3>
+                <div className="space-y-3">
+                  <h3 className="text-sm font-medium text-muted-foreground">Worksheets</h3>
                       <div className="space-y-2">
                         {assignment.worksheets.map((worksheet: RouterOutputs['assignment']['get']['worksheets'][number]) => (
-                          <WorksheetCard
+                      <WorksheetCard
                             key={worksheet.id}
                             submissionId={studentSubmission.id}
                             worksheetId={worksheet.id}
-                            classId={classId}
+                        classId={classId}
                             readonly={studentSubmission.submitted || false}
                           />
                         ))}
@@ -759,11 +961,13 @@ export default function AssignmentDetailPage() {
                     </div>
                   )}
                   
-                  <div className="flex justify-end pt-4 border-t">
+              {/* Submit Button */}
+              <div className="flex justify-end pt-4">
                     <Button
                       onClick={handleSubmitToggle}
                       disabled={updateStudentSubmissionMutation.isPending}
                       variant={studentSubmission.submitted ? "outline" : "default"}
+                  size="lg"
                     >
                       {updateStudentSubmissionMutation.isPending 
                         ? "Updating..." 
@@ -773,26 +977,20 @@ export default function AssignmentDetailPage() {
                       }
                     </Button>
                   </div>
-                </CardContent>
-              </Card>
+            </div>
             )}
 
             {/* Student View - Feedback (when submission is returned) */}
             {isStudent && assignment.graded && studentSubmission && studentSubmission.returned && (
-              <Card>
-                <CardHeader>
-                  <CardTitle>Teacher Feedback</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
+            <Card className="border-green-200 dark:border-green-800 bg-green-50/50 dark:bg-green-900/10">
+              <CardContent className="pt-6 space-y-4">
                   {/* Grade Display */}
-                  {assignment.graded && studentSubmission.gradeReceived !== undefined && (
-                    <div className="p-4 bg-muted rounded-lg">
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-sm font-medium">Grade</span>
-                        <span className="text-lg font-bold">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-lg font-semibold">Your Grade</h3>
+                  <div className="text-right">
+                    <span className="text-2xl font-bold">
                           {studentSubmission.gradeReceived ?? 0} / {assignment.maxGrade}
                         </span>
-                      </div>
                       {assignment.gradingBoundary && (
                         <div className="text-sm text-muted-foreground">
                           {(() => {
@@ -813,60 +1011,47 @@ export default function AssignmentDetailPage() {
                         </div>
                       )}
                     </div>
-                  )}
+                </div>
 
                   {/* Rubric Feedback Display */}
                   {studentSubmission.rubricState?.trim() && (
-                    <div className="space-y-4">
-                      <div className="text-sm font-medium">Rubric Feedback</div>
+                  <div className="space-y-3">
+                    <div className="text-sm font-medium">Rubric Breakdown</div>
                       {(() => {
                         try {
                           const rubricGrades = JSON.parse(studentSubmission.rubricState) as StoredRubricItem[];
-                          // Get actual rubric criteria from assignment's mark scheme
                           let rubricCriteria: ParsedMarkScheme['criteria'] = [];
                           
                           if (assignment?.markScheme?.structured) {
                             const parsedMarkScheme = parseMarkScheme(assignment.markScheme.structured);
                             rubricCriteria = parsedMarkScheme?.criteria || [];
                           }
-                          
 
                           return rubricCriteria.map((criterion) => {
                             const grade = rubricGrades.find((g) => g.criteriaId === criterion.id);
-
                             if (!grade) return null;
-
-                            
                             const selectedLevel = criterion.levels.find(l => l.id === grade.selectedLevelId);
                             
                             return (
-                              <div key={criterion.id} className="p-3 border rounded-lg">
-                                <div className="flex items-start justify-between mb-2">
+                            <div key={criterion.id} className="p-3 bg-background rounded-lg border">
+                              <div className="flex items-start justify-between gap-2">
                                   <div className="flex-1">
-                                    <h4 className="font-medium">{criterion.title}</h4>
-                                    {criterion.description && (
-                                      <p className="text-sm text-muted-foreground">{criterion.description}</p>
-                                    )}
+                                  <h4 className="font-medium text-sm">{criterion.title}</h4>
                                   </div>
                                   <div className="flex items-center gap-2">
                                     <span className="text-sm font-medium">{grade.points} pts</span>
                                     {selectedLevel && (
                                       <Badge 
-                                        style={{
-                                          backgroundColor: selectedLevel.color,
-                                          color: 'white'
-                                        }}
+                                      style={{ backgroundColor: selectedLevel.color, color: 'white' }}
+                                      className="text-xs"
                                       >
                                         {selectedLevel.name}
                                       </Badge>
                                     )}
                                   </div>
                                 </div>
-                                
                                 {grade.comments && (
-                                  <div className="mt-2 p-2 bg-muted rounded text-sm">
-                                    <strong>Comments:</strong> {grade.comments}
-                                  </div>
+                                <p className="mt-2 text-sm text-muted-foreground">{grade.comments}</p>
                                 )}
                               </div>
                             );
@@ -882,26 +1067,29 @@ export default function AssignmentDetailPage() {
                   {(studentSubmission).teacherComments && (
                     <div className="space-y-2">
                       <div className="text-sm font-medium">Teacher Comments</div>
-                      <div className="p-3 bg-muted rounded-lg">
-                        <p className="text-sm">{(studentSubmission).teacherComments}</p>
-                      </div>
+                    <p className="text-sm text-muted-foreground bg-background p-3 rounded-lg border">
+                      {(studentSubmission).teacherComments}
+                    </p>
                     </div>
                   )}
 
                   {/* Annotations/Teacher Files */}
                   {studentSubmission.annotations && studentSubmission.annotations.length > 0 && (
                     <div className="space-y-2">
-                      <div className="text-sm font-medium">Teacher Annotations</div>
-                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                    <div className="text-sm font-medium">Feedback Files</div>
+                    <div className="flex flex-wrap gap-2">
                         {convertAttachmentsToFileItems(studentSubmission.annotations).map((fileItem) => (
-                          <DraggableFileItem
+                        <button
                             key={fileItem.id}
-                            item={fileItem}
-                            classId={classId}
-                            readonly={true}
-                            handlers={fileHandlers}
-                            getFileIcon={getFileIcon}
-                          />
+                          onClick={() => {
+                            setPreviewFile(fileItem);
+                            setIsPreviewOpen(true);
+                          }}
+                          className="flex items-center gap-2 px-3 py-2 rounded-lg border bg-background hover:bg-muted/60 transition-colors text-sm"
+                        >
+                          {getFileIcon(fileItem.fileType || 'file')}
+                          <span className="max-w-[120px] truncate">{fileItem.name}</span>
+                        </button>
                         ))}
                       </div>
                     </div>
@@ -909,126 +1097,7 @@ export default function AssignmentDetailPage() {
                 </CardContent>
               </Card>
             )}
-          </div>
 
-          {/* Right Column - Sidebar */}
-          <div className="space-y-6">
-            {/* Assignment Details */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Assignment Details</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium">Type</span>
-                  <Badge variant="outline">{assignment.type}</Badge>
-                </div>
-                
-                <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium">Graded</span>
-                  <Badge variant={assignment.graded ? "default" : "secondary"}>
-                    {assignment.graded ? "Yes" : "No"}
-                  </Badge>
-                </div>
-                
-                {assignment.graded && (
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium">Points</span>
-                    <span className="text-sm">{assignment.maxGrade}</span>
-                  </div>
-                )}
-                
-                <Separator />
-                
-                <div className="space-y-2">
-                  <span className="text-sm font-semibold">{isTeacher ? 'Assignment' : 'Submission'} Status</span>
-                  {/* <div className="grid grid-cols-2 gap-2">
-                    <div className="text-center p-2 bg-green-50 dark:bg-green-900/20 rounded-lg">
-                      <div className="text-lg font-semibold text-green-700 dark:text-green-400">
-                        {submissions?.filter(s => s.submitted && !s.late).length || 0}
-                      </div>
-                      <div className="text-xs text-green-600 dark:text-green-500">On Time</div>
-                    </div>
-                    <div className="text-center p-2 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg">
-                      <div className="text-lg font-semibold text-yellow-700 dark:text-yellow-400">
-                        {submissions?.filter(s => s.submitted && s.late).length || 0}
-                      </div>
-                      <div className="text-xs text-yellow-600 dark:text-yellow-500">Late</div>
-                    </div>
-                    <div className="text-center p-2 bg-red-50 dark:bg-red-900/20 rounded-lg">
-                      <div className="text-lg font-semibold text-red-700 dark:text-red-400">
-                        {submissions?.filter(s => !s.submitted).length || 0}
-                      </div>
-                      <div className="text-xs text-red-600 dark:text-red-500">Missing</div>
-                    </div>
-                    <div className="text-center p-2 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-                      <div className="text-lg font-semibold text-blue-700 dark:text-blue-400">
-                        {submissions?.filter(s => s.returned).length || 0}
-                      </div>
-                      <div className="text-xs text-blue-600 dark:text-blue-500">Returned</div>
-                    </div>
-                  </div> */}
-                  {isTeacher ? (
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium">Status</span>
-                    <div className="flex items-center space-x-2">
-                      {getStudentAssignmentStatus(assignment).map((status) => (
-                        <Badge className={getStatusColor(status)} key={status}>
-                          {status}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                  ):
-                  (
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium">Status</span>
-                      <div className="flex items-center space-x-2">
-                        {studentSubmission && getStudentAssignmentStatus(studentSubmission).map((status) => (
-                          <Badge className={getStatusColor(status)} key={status}>
-                            {status}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-                  )
-                }
-                  
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Attachments */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Attachments</CardTitle>
-              </CardHeader>
-              <CardContent>
-                {assignment.attachments.length > 0 ? (
-                  <DndProvider backend={HTML5Backend}>
-                    <div className="grid grid-cols-3">
-                      {convertAttachmentsToFileItems(assignment.attachments).map((fileItem) => (
-                        <DraggableFileItem
-                          key={fileItem.id}
-                          item={fileItem}
-                          classId={classId}
-                          readonly={true}
-                          handlers={fileHandlers}
-                          getFileIcon={getFileIcon}
-                        />
-                      ))}
-                    </div>
-                  </DndProvider>
-                ) : (
-                  <EmptyState
-                    icon={FileText}
-                    title="No attachments"
-                    description="No files have been attached to this assignment."
-                  />
-                )}
-              </CardContent>
-            </Card>
-          </div>
         </div>
 
         {/* File Preview Modal */}
@@ -1054,7 +1123,6 @@ export default function AssignmentDetailPage() {
             return result.url;
           }}
         />
-        </div>
       </PageLayout>
     </DndProvider>
   );

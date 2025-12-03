@@ -154,9 +154,9 @@ export function WorksheetBlockEditor({
                 {questionIndex + 1}
               </div>
               <div>
-                <CardTitle className="text-lg">
-                  Question {questionIndex + 1}
-                </CardTitle>
+            <CardTitle className="text-lg">
+              Question {questionIndex + 1}
+            </CardTitle>
                 <p className="text-xs text-muted-foreground mt-0.5">
                   {question.points} {question.points === 1 ? 'point' : 'points'} • {question.estimationTime || 2} min
                 </p>
@@ -170,7 +170,7 @@ export function WorksheetBlockEditor({
                 <SelectTrigger className="w-[180px] text-nowrap">
                   <div className="flex items-center gap-2">
                     {getQuestionTypeIcon(question.type)}
-                    <SelectValue />
+                  <SelectValue />
                   </div>
                 </SelectTrigger>
                 <SelectContent>

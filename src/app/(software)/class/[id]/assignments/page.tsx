@@ -259,6 +259,9 @@ export default function Assignments() {
     });
   };
   
+
+  console.log(classData?.class?.assignments);
+
   // Initialize unified mixed list (all assignments + sections sorted by unified order)
   useEffect(() => {
     if (classData?.class) {

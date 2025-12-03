@@ -39,6 +39,7 @@ import {
 } from "@/lib/trpc";
 import { fixUploadUrl } from "@/lib/directUpload";
 import { useTranslations } from "next-intl";
+import { AI_POLICY_LEVELS } from "@/lib/aiPolicy";
 
 
 type FileData = {
@@ -197,54 +198,16 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
     );
   }, [worksheetsData, worksheetSearchQuery]);
 
-  // AI Policy levels configuration
-  const aiPolicyLevels = [
-    {
-      level: 1,
-      title: t('aiPolicy.level1.title'),
-      description: t('aiPolicy.level1.description'),
-      useCases: t('aiPolicy.level1.useCases'),
-      studentResponsibilities: t('aiPolicy.level1.studentResponsibilities'),
-      disclosureRequirements: t('aiPolicy.level1.disclosureRequirements'),
-      color: 'bg-red-500'
-    },
-    {
-      level: 2,
-      title: t('aiPolicy.level2.title'),
-      description: t('aiPolicy.level2.description'),
-      useCases: t('aiPolicy.level2.useCases'),
-      studentResponsibilities: t('aiPolicy.level2.studentResponsibilities'),
-      disclosureRequirements: t('aiPolicy.level2.disclosureRequirements'),
-      color: 'bg-orange-500'
-    },
-    {
-      level: 3,
-      title: t('aiPolicy.level3.title'),
-      description: t('aiPolicy.level3.description'),
-      useCases: t('aiPolicy.level3.useCases'),
-      studentResponsibilities: t('aiPolicy.level3.studentResponsibilities'),
-      disclosureRequirements: t('aiPolicy.level3.disclosureRequirements'),
-      color: 'bg-yellow-500'
-    },
-    {
-      level: 4,
-      title: t('aiPolicy.level4.title'),
-      description: t('aiPolicy.level4.description'),
-      useCases: t('aiPolicy.level4.useCases'),
-      studentResponsibilities: t('aiPolicy.level4.studentResponsibilities'),
-      disclosureRequirements: t('aiPolicy.level4.disclosureRequirements'),
-      color: 'bg-green-500'
-    },
-    {
-      level: 5,
-      title: t('aiPolicy.level5.title'),
-      description: t('aiPolicy.level5.description'),
-      useCases: t('aiPolicy.level5.useCases'),
-      studentResponsibilities: t('aiPolicy.level5.studentResponsibilities'),
-      disclosureRequirements: t('aiPolicy.level5.disclosureRequirements'),
-      color: 'bg-green-500'
-    }
-  ];
+  // Build translated AI policy levels from shared config
+  const aiPolicyLevels = AI_POLICY_LEVELS.map(policy => ({
+    level: policy.level,
+    title: t(policy.titleKey),
+    description: t(policy.descriptionKey),
+    useCases: t(policy.useCasesKey),
+    studentResponsibilities: t(policy.studentResponsibilitiesKey),
+    disclosureRequirements: t(policy.disclosureRequirementsKey),
+    color: policy.color,
+  }));
 
   const resetForm = () => {
     setFormData(defaultFormData);

@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { PageLayout } from "@/components/ui/page-layout";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -36,7 +35,7 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 import { FilePreviewModal } from "@/components/modals";
 import {
   FileText,
-  Image,
+  Image as ImageIcon,
   FileVideo,
   Music,
   Archive,
@@ -49,6 +48,9 @@ import { useSelector } from "react-redux";
 import { baseFileHandler } from "@/lib/fileHandler";
 import { getStatusColor, getStudentAssignmentStatus } from "@/lib/getStudentAssignmentStatus";
 import { ExtendedResponse } from "@/components/submissions/ExtendedResponse";
+import { AI_POLICY_LEVELS, getAIPolicyColor } from "@/lib/aiPolicy";
+import { useTranslations } from "next-intl";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
 type AssignmentUpdateSubmissionAsTeacherInput = RouterInputs['assignment']['updateSubmissionAsTeacher'];
 
@@ -106,28 +108,41 @@ function WorksheetCard({
 
 function SubmissionDetailSkeleton() {
   return (
-    <div className="space-y-6">
-      <div className="flex items-center space-x-4">
-        <Skeleton className="h-10 w-10" />
-        <Skeleton className="h-8 w-64" />
+    <div className="max-w-4xl mx-auto space-y-8">
+      {/* Header skeleton */}
+      <div className="space-y-4">
+        <div className="flex items-center justify-between">
+          <Skeleton className="h-4 w-16" />
+        </div>
+        <div className="flex items-center gap-4">
+          <Skeleton className="h-12 w-12 rounded-full" />
+          <div className="space-y-2">
+            <Skeleton className="h-8 w-72" />
+            <Skeleton className="h-4 w-48" />
+          </div>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          <Skeleton className="h-7 w-28 rounded-full" />
+          <Skeleton className="h-7 w-20 rounded-full" />
+          <Skeleton className="h-7 w-24 rounded-full" />
+        </div>
       </div>
       
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div className="lg:col-span-2 space-y-6">
-          <Card>
-            <CardContent className="p-6 space-y-4">
-              <Skeleton className="h-32 w-full" />
-            </CardContent>
-          </Card>
+      <Separator />
+
+      {/* Files skeleton */}
+      <div className="space-y-3">
+        <Skeleton className="h-4 w-32" />
+        <div className="flex gap-2">
+          <Skeleton className="h-10 w-36 rounded-lg" />
+          <Skeleton className="h-10 w-36 rounded-lg" />
         </div>
-        
-        <div className="space-y-6">
-          <Card>
-            <CardContent className="p-6">
-              <Skeleton className="h-48 w-full" />
-            </CardContent>
-          </Card>
-        </div>
+      </div>
+
+      {/* Grading skeleton */}
+      <div className="space-y-3">
+        <Skeleton className="h-4 w-24" />
+        <Skeleton className="h-32 w-full rounded-lg" />
       </div>
     </div>
   );
@@ -136,11 +151,31 @@ function SubmissionDetailSkeleton() {
 export default function SubmissionDetailPage() {
   const params = useParams();
   const router = useRouter();
+  // @todo: move this outside of components.createAssignment
+  const t = useTranslations('components.createAssignment');
   const appState = useSelector((state: RootState) => state.app);
   const classId = params.id as string;
   const assignmentId = params.assignmentId as string;
   const submissionId = params.submissionId as string;
   const isTeacher = appState.user.teacher;
+
+  // Build translated AI policy from shared config
+  const getAIPolicy = (level: number) => {
+    const policy = AI_POLICY_LEVELS.find(p => p.level === level);
+    if (!policy) return null;
+    return {
+      level: policy.level,
+      title: t(policy.titleKey),
+      description: t(policy.descriptionKey),
+      useCases: t(policy.useCasesKey),
+      studentResponsibilities: t(policy.studentResponsibilitiesKey),
+      disclosureRequirements: t(policy.disclosureRequirementsKey),
+      color: policy.color,
+    };
+  };
+
+  // State for AI policy collapsible
+  const [aiPolicyExpanded, setAiPolicyExpanded] = useState(false);
 
   const [feedback, setFeedback] = useState("");
   const [grade, setGrade] = useState<number | undefined>(undefined);
@@ -372,7 +407,7 @@ export default function SubmissionDetailPage() {
       case "jpg":
       case "png":
       case "gif":
-        return <Image className={`${iconSize} text-emerald-500`} />;
+        return <ImageIcon className={`${iconSize} text-emerald-500`} />;
       default:
         return <File className={`${iconSize} text-slate-500`} />;
     }
@@ -418,12 +453,6 @@ export default function SubmissionDetailPage() {
       setPreviewFile(file);
       setIsPreviewOpen(true);
     }
-  };
-
-  const handleFileClick = (file: FileItem) => {
-    // Handle file click - open preview
-    setPreviewFile(file);
-    setIsPreviewOpen(true);
   };
 
   // Direct upload functions using proper TRPC hooks for annotations (teacher uploads)
@@ -571,98 +600,231 @@ export default function SubmissionDetailPage() {
   return (
     <DndProvider backend={HTML5Backend}>
       <PageLayout>
-        <div className="space-y-6">
-        {/* Header */}
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-4">
-            <Button 
-              variant="ghost" 
-              size="sm"
-              onClick={() => router.back()}
-            >
-              <ArrowLeft className="h-4 w-4" />
-            </Button>
-            <div>
-              <h1 className="text-2xl font-bold">{submission.assignment.title}</h1>
-              <p className="text-muted-foreground">Submission by {submission.student.username}</p>
+        <div className="max-w-4xl mx-auto space-y-8">
+          {/* Header */}
+          <div className="space-y-4">
+            {/* Back button */}
+            <div className="flex items-center justify-between">
+              <button 
+                onClick={() => router.back()}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                ← Back
+              </button>
+            </div>
+            
+            {/* Student Info + Title */}
+            <div className="flex items-center gap-4">
+              <Avatar className="h-12 w-12">
+                <AvatarImage src={submission.student?.profile?.profilePicture || ""} alt="" />
+                <AvatarFallback>
+                  {submission.student.username.substring(0, 2).toUpperCase()}
+                </AvatarFallback>
+              </Avatar>
+              <div>
+                <h1 className="text-2xl font-bold flex items-center gap-3">
+                  {submission.assignment.title}
+                  {getStudentAssignmentStatus(submission).map((status) => (
+                    <Badge className={getStatusColor(status)} key={status}>
+                      {status}
+                    </Badge>
+                  ))}
+                </h1>
+                <p className="text-muted-foreground">
+                  Submission by <span className="font-medium text-foreground">{submission.student.username}</span>
+                </p>
+              </div>
+            </div>
+
+            {/* Metadata badges */}
+            <div className="flex flex-wrap items-center gap-3 text-sm">
+              {submission.submittedAt && (
+                <div className="flex items-center gap-1.5 text-muted-foreground">
+                  <span>Submitted {format(new Date(submission.submittedAt), 'MMM d, yyyy \'at\' h:mm a')}</span>
+                </div>
+              )}
+              
+              {submission.assignment.dueDate && (
+                <Badge variant="secondary">
+                  <div className="flex items-center gap-1.5 text-muted-foreground">
+                    <span>Due {format(new Date(submission.assignment.dueDate), 'MMM d, yyyy')}</span>
+                  </div>
+                </Badge>
+              )}
+
+              {submission.gradeReceived !== undefined && submission.gradeReceived !== null && (
+                <Badge variant="secondary">
+                  <div className="font-medium">
+                    {submission.gradeReceived} / {submission.assignment.maxGrade} pts
+                  </div>
+                </Badge>
+              )}
             </div>
           </div>
-        </div>
 
-        {/* Main Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Left Column - Submission Content */}
-          <div className="lg:col-span-2 space-y-6">
-            {/* Student Attachments - Only show if acceptFiles is true */}
-            {assignment?.acceptFiles && (
-              <Card>
-                <CardHeader>
-                  <CardTitle>Student Submission Files</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  {submission.attachments.length > 0 ? (
-                    <DndProvider backend={HTML5Backend}>
-                      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                        {convertAttachmentsToFileItems(submission.attachments).map((fileItem) => (
-                          <DraggableFileItem
-                            key={fileItem.id}
-                            item={fileItem}
-                            classId={classId}
-                            readonly={true}
-                            handlers={fileHandlers}
-                            getFileIcon={getFileIcon}
-                          />
-                        ))}
+          {/* AI Policy */}
+          {assignment?.aiPolicyLevel && getAIPolicy(assignment.aiPolicyLevel) && (() => {
+            const policy = getAIPolicy(assignment.aiPolicyLevel)!;
+            return (
+              <Collapsible open={aiPolicyExpanded} onOpenChange={setAiPolicyExpanded}>
+                <div className={`w-full rounded-lg border transition-all ${getAIPolicyColor(assignment.aiPolicyLevel)}`}>
+                  <CollapsibleTrigger asChild>
+                    <div className="p-4 cursor-pointer">
+                      <div className="flex items-start gap-3">
+                        <div className={`w-3 h-3 rounded-full ${policy.color} mt-1.5 flex-shrink-0`} />
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2 mb-1">
+                            <h4 className="font-medium text-sm">{policy.title}</h4>
+                            <ChevronDown className={`h-4 w-4 ml-auto transition-transform ${aiPolicyExpanded ? 'rotate-180' : ''}`} />
+                          </div>
+                          <p className="text-xs text-muted-foreground">{policy.description}</p>
+                        </div>
                       </div>
-                    </DndProvider>
-                  ) : (
-                    <EmptyState
-                      icon={FileText}
-                      title="No files submitted"
-                      description="The student hasn't submitted any files for this assignment."
-                    />
-                  )}
-                </CardContent>
-              </Card>
-            )}
-
-            {/* Extended Response - Only show if acceptExtendedResponse is true */}
-            {assignment?.acceptExtendedResponse && (
-              <ExtendedResponse extendedResponse={submission.extendedResponse} />
-            )}
-
-            {/* Worksheet Submission - Only show if acceptWorksheet is true */}
-            {assignment?.acceptWorksheet && assignment.worksheets && assignment.worksheets.length > 0 && (
-              <div className="space-y-3">
-                <h3 className="text-lg font-semibold">Worksheets</h3>
-                <div className="space-y-2">
-                  {assignment.worksheets.map((worksheet) => {
-                    return (
-                      <WorksheetCard
-                        key={worksheet.id}
-                        worksheetId={worksheet.id}
-                        submissionId={submissionId}
-                        worksheetName={worksheet.name || `Worksheet ${worksheet.id}`}
-                        classId={classId}
-                      />
-                    );
-                  })}
+                    </div>
+                  </CollapsibleTrigger>
+                  <CollapsibleContent>
+                    <div className="px-4 pb-4 pt-0 space-y-3 text-sm">
+                      <div>
+                        <div className="font-medium text-foreground mb-1">{t('aiPolicy.useCases')}</div>
+                        <div className="text-muted-foreground">{policy.useCases}</div>
+                      </div>
+                      <div>
+                        <div className="font-medium text-foreground mb-1">{t('aiPolicy.studentResponsibilities')}</div>
+                        <div className="text-muted-foreground">{policy.studentResponsibilities}</div>
+                      </div>
+                      <div>
+                        <div className="font-medium text-foreground mb-1">{t('aiPolicy.disclosureRequirements')}</div>
+                        <div className="text-muted-foreground">{policy.disclosureRequirements}</div>
+                      </div>
+                    </div>
+                  </CollapsibleContent>
                 </div>
-              </div>
-            )}
+              </Collapsible>
+            );
+          })()}
 
-            {/* Grade & Feedback - Teacher Only */}
-            {isTeacher && (
-              <Card>
-                <CardHeader>
-                  <CardTitle>
-                    {rubricCriteria.length > 0 ? 'Rubric Grading & Feedback' : 'Grade & Feedback'}
-                    {submission.returned && (
-                      <Badge variant="secondary" className="ml-2">Returned - Read Only</Badge>
-                    )}
-                  </CardTitle>
-                </CardHeader>
-              <CardContent className="space-y-6">
+          <Separator />
+
+          {/* Student Attachments - Only show if acceptFiles is true */}
+          {assignment?.acceptFiles && (
+            <div className="space-y-3">
+              <h2 className="text-sm font-medium text-muted-foreground">Submitted Files</h2>
+              {submission.attachments.length > 0 ? (
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                  {convertAttachmentsToFileItems(submission.attachments).map((fileItem) => (
+                    <DraggableFileItem
+                      key={fileItem.id}
+                      item={fileItem}
+                      classId={classId}
+                      readonly={true}
+                      handlers={fileHandlers}
+                      getFileIcon={getFileIcon}
+                    />
+                  ))}
+                </div>
+              ) : (
+                <EmptyState
+                  icon={FileText}
+                  title="No files submitted"
+                  description="The student hasn't submitted any files."
+                  className="border rounded-lg border-dashed"
+                />
+              )}
+            </div>
+          )}
+
+          {/* Extended Response - Only show if acceptExtendedResponse is true */}
+          {assignment?.acceptExtendedResponse && (
+            <ExtendedResponse extendedResponse={submission.extendedResponse} />
+          )}
+
+          {/* Worksheet Submission - Only show if acceptWorksheet is true */}
+          {assignment?.acceptWorksheet && assignment.worksheets && assignment.worksheets.length > 0 && (
+            <div className="space-y-3">
+              <h2 className="text-sm font-medium text-muted-foreground">Worksheets</h2>
+              <div className="grid gap-2 sm:grid-cols-2">
+                {assignment.worksheets.map((worksheet) => (
+                  <WorksheetCard
+                    key={worksheet.id}
+                    worksheetId={worksheet.id}
+                    submissionId={submissionId}
+                    worksheetName={worksheet.name || `Worksheet ${worksheet.id}`}
+                    classId={classId}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Teacher Annotations */}
+          {isTeacher && (
+            <div className="space-y-3">
+              <h2 className="text-sm font-medium text-muted-foreground">Annotations & Feedback Files</h2>
+              {submission.annotations.length > 0 ? (
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                  {convertAttachmentsToFileItems(submission.annotations).map((fileItem) => (
+                    <DraggableFileItem
+                      key={fileItem.id}
+                      item={fileItem}
+                      classId={classId}
+                      readonly={false}
+                      handlers={fileHandlers}
+                      getFileIcon={getFileIcon}
+                    />
+                  ))}
+                </div>
+              ) : null}
+
+              {/* Upload Progress */}
+              {isUploading && (
+                <div className="space-y-2 p-4 bg-muted rounded-lg">
+                  <div className="flex justify-between text-sm">
+                    <span className="font-medium">{currentUploadStatus}</span>
+                    <span>{Math.round(uploadProgress)}%</span>
+                  </div>
+                  <Progress value={uploadProgress} className="h-2" />
+                  {totalFiles > 0 && (
+                    <p className="text-xs text-muted-foreground text-center">
+                      {uploadedFiles} of {totalFiles} annotations uploaded
+                    </p>
+                  )}
+                </div>
+              )}
+
+              <Label htmlFor="annotation-upload" className="cursor-pointer">
+                <div className="flex items-center justify-center w-full p-4 border-2 border-dashed border-muted-foreground/25 rounded-lg hover:border-muted-foreground/50 transition-colors">
+                  <div className="text-center">
+                    <Upload className="h-6 w-6 mx-auto mb-2 text-muted-foreground" />
+                    <p className="text-sm font-medium">{isUploading ? 'Uploading...' : 'Upload Annotations'}</p>
+                    <p className="text-xs text-muted-foreground">Provide files as feedback to the student</p>
+                  </div>
+                </div>
+              </Label>
+              <Input
+                id="annotation-upload"
+                type="file"
+                multiple
+                onChange={handleAnnotationUpload}
+                className="hidden"
+                accept="*/*"
+                disabled={isUploading}
+              />
+            </div>
+          )}
+
+          <Separator />
+
+          {/* Grade & Feedback - Teacher Only */}
+          {isTeacher && (
+            <div className="space-y-6">
+              <div className="flex items-center justify-between">
+                <h2 className="text-sm font-medium text-muted-foreground">
+                  {rubricCriteria.length > 0 ? 'Rubric Grading' : 'Grading'}
+                </h2>
+                {submission.returned && (
+                  <Badge variant="secondary">Returned - Read Only</Badge>
+                )}
+              </div>
                 {/* Rubric Grading Section */}
                 {rubricCriteria.length > 0 && (
                   <div className="space-y-6">
@@ -826,15 +988,14 @@ export default function SubmissionDetailPage() {
                   />
                 </div>
 
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center gap-3 pt-4">
                   {!submission.returned && (
                     <Button 
                       onClick={handleSaveGrade}
                       disabled={updateSubmissionMutation.isPending}
-                      className="flex items-center space-x-2"
                     >
-                      <Save className="h-4 w-4" />
-                      <span>{updateSubmissionMutation.isPending ? "Saving..." : "Save Grade"}</span>
+                      <Save className="h-4 w-4 mr-2" />
+                      {updateSubmissionMutation.isPending ? "Saving..." : "Save Grade"}
                     </Button>
                   )}
                   
@@ -846,165 +1007,16 @@ export default function SubmissionDetailPage() {
                   >
                     {submission.returned ? "Unreturn Submission" : "Return to Student"}
                   </Button>
-                  
-                  {submission.returned && (
-                    <div className="text-sm text-muted-foreground">
-                      Grade and feedback have been returned to the student
-                    </div>
-                  )}
                 </div>
-                </div>
-              </CardContent>
-              </Card>
-            )}
 
-          </div>
-
-          {/* Right Column - Sidebar */}
-          <div className="space-y-6">
-            {/* Student Info */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Student</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex items-center space-x-3">
-                  <Avatar className="h-12 w-12">
-                    <AvatarImage src={submission.student?.profile?.profilePicture || ""} />
-                    <AvatarFallback>
-                      {submission.student.username.substring(0, 2).toUpperCase()}
-                    </AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <p className="font-semibold">{submission.student.username}</p>
-                    <p className="text-sm text-muted-foreground">Student</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Submission Details */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Submission Details</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium">Status</span>
-                  <div className="flex items-center space-x-2">
-                    {getStudentAssignmentStatus(submission).map((status) => (
-                    <Badge className={getStatusColor(status)} key={status}>
-                      {status}
-                    </Badge>
-                  ))}
-                  </div>
-                </div>
-                
-                {submission.submittedAt && (
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium">Submitted</span>
-                    <span className="text-sm text-muted-foreground">
-                      {format(new Date(submission.submittedAt), 'MMM d, yyyy \'at\' h:mm a')}
-                    </span>
-                  </div>
+                {submission.returned && (
+                  <p className="text-sm text-muted-foreground">
+                    Grade and feedback have been returned to the student.
+                  </p>
                 )}
-                
-                {submission.assignment.dueDate && (
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium">Due Date</span>
-                    <span className="text-sm text-muted-foreground">
-                      {format(new Date(submission.assignment.dueDate), 'MMM d, yyyy \'at\' h:mm a')}
-                    </span>
-                  </div>
-                )}
-                
-                <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium">Files</span>
-                  <span className="text-sm">{submission.attachments.length}</span>
-                </div>
-                
-                {submission.gradeReceived !== undefined && (
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium">Grade</span>
-                    <span className="text-sm font-semibold">
-                      {submission.gradeReceived} / {submission.assignment.maxGrade}
-                    </span>
-                  </div>
-                )}
-              </CardContent>
-            </Card>
-
-            {/* Teacher Annotations */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Annotations & Files</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                {submission.annotations.length > 0 ? (
-                  <DndProvider backend={HTML5Backend}>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      {convertAttachmentsToFileItems(submission.annotations).map((fileItem) => (
-                        <DraggableFileItem
-                          key={fileItem.id}
-                          item={fileItem}
-                          classId={classId}
-                          readonly={false}
-                          handlers={fileHandlers}
-                          getFileIcon={getFileIcon}
-                        />
-                      ))}
-                    </div>
-                  </DndProvider>
-                ) : (
-                  <div className="text-center py-4">
-                    <Upload className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
-                    <p className="text-sm font-medium mb-1">No annotations</p>
-                    <p className="text-xs text-muted-foreground mb-3">Upload files to provide additional feedback to the student.</p>
-                  </div>
-                )}
-
-                {isTeacher && (
-                  <div className="space-y-4">
-                    {/* Upload Progress */}
-                    {isUploading && (
-                      <div className="space-y-2 p-4 bg-muted rounded-lg">
-                        <div className="flex justify-between text-sm">
-                          <span className="font-medium">{currentUploadStatus}</span>
-                          <span>{Math.round(uploadProgress)}%</span>
-                        </div>
-                        <Progress value={uploadProgress} className="h-2" />
-                        {totalFiles > 0 && (
-                          <p className="text-xs text-muted-foreground text-center">
-                            {uploadedFiles} of {totalFiles} annotations uploaded
-                          </p>
-                        )}
-                      </div>
-                    )}
-
-                    <Label htmlFor="annotation-upload" className="cursor-pointer">
-                      <div className="flex items-center justify-center w-full p-4 border-2 border-dashed border-muted-foreground/25 rounded-lg hover:border-muted-foreground/50 transition-colors">
-                        <div className="text-center">
-                          <Upload className="h-6 w-6 mx-auto mb-2 text-muted-foreground" />
-                          <p className="text-sm font-medium">{isUploading ? 'Uploading...' : 'Upload Annotations'}</p>
-                          <p className="text-xs text-muted-foreground">Click to select files or drag and drop</p>
-                        </div>
-                      </div>
-                    </Label>
-                    <Input
-                      id="annotation-upload"
-                      type="file"
-                      multiple
-                      onChange={handleAnnotationUpload}
-                      className="hidden"
-                      accept="*/*"
-                      disabled={isUploading}
-                    />
-                  </div>
-                )}
-              </CardContent>
-            </Card>
-          </div>
-        </div>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* File Preview Modal */}
