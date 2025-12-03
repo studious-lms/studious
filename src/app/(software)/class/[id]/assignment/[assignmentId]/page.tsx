@@ -567,6 +567,7 @@ export default function AssignmentDetailPage() {
 
   const submissionColumns = [
     {
+      id: "student",
       accessorKey: "student.username",
       header: "Student",
       cell: ({ row }: { row: { original: Submission } }) => (
@@ -845,6 +846,9 @@ export default function AssignmentDetailPage() {
                 {submissions.length > 0 ? (
                     <DataTable
                       columns={submissionColumns}
+                      searchPlaceholder="Search submissions..."
+                      showSearch={true}
+                      searchKey="student"
                       data={submissions}
                       onRowClick={(row) => 
                         router.push(`/class/${classId}/assignment/${assignmentId}/submission/${row.id}`)
