@@ -16,6 +16,8 @@
     "noEnrolledClassesDesc": "선생님이 제공한 초대 코드나 링크를 사용하여 수업에 참여하세요.",
     "classDeleted": "클래스가 성공적으로 삭제되었습니다.",
     "classDeleteFailed": "클래스 삭제에 실패했습니다",
-    "failedToLoad": "클래스를 로드하는 데 실패했습니다"
+    "failedToLoad": "클래스를 로드하는 데 실패했습니다",
+    "classLeft": "수업을 성공적으로 나갔습니다",
+    "classLeaveFailed": "수업을 나가지 못했습니다"
   }
 }

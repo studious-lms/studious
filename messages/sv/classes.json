@@ -16,6 +16,8 @@
     "noEnrolledClassesDesc": "Gå med i en kurs med en inbjudningskod eller länk som din lärare har gett dig.",
     "classDeleted": "Klassen har raderats",
     "classDeleteFailed": "Misslyckades med att ta bort klassen",
-    "failedToLoad": "Misslyckades med att ladda klasser"
+    "failedToLoad": "Misslyckades med att ladda klasser",
+    "classLeft": "Du har lämnat klassen",
+    "classLeaveFailed": "Kunde inte lämna klassen"
   }
 }

@@ -16,6 +16,8 @@
     "noEnrolledClassesDesc": "Participe de uma aula usando um código de convite ou um link fornecido pelo seu professor.",
     "classDeleted": "Aula excluída com sucesso",
     "classDeleteFailed": "Falha ao excluir a classe",
-    "failedToLoad": "Falha ao carregar as classes"
+    "failedToLoad": "Falha ao carregar as classes",
+    "classLeft": "Saiu da turma com sucesso",
+    "classLeaveFailed": "Falha ao sair da turma"
   }
 }

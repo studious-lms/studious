@@ -16,6 +16,8 @@
     "noEnrolledClassesDesc": "Rejoignez un cours en utilisant un code d'invitation ou un lien fourni par votre professeur.",
     "classDeleted": "Classe supprimée avec succès",
     "classDeleteFailed": "Échec de la suppression de la classe",
-    "failedToLoad": "Échec du chargement des classes"
+    "failedToLoad": "Échec du chargement des classes",
+    "classLeft": "Vous avez quitté le cours avec succès",
+    "classLeaveFailed": "Échec de la sortie du cours"
   }
 }

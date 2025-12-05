@@ -16,6 +16,8 @@
     "noEnrolledClassesDesc": "انضم إلى الفصل الدراسي باستخدام رمز الدعوة أو الرابط الذي قدمه معلمك.",
     "classDeleted": "تم حذف الفصل بنجاح",
     "classDeleteFailed": "فشل في حذف الفصل",
-    "failedToLoad": "فشل تحميل الفصول الدراسية"
+    "failedToLoad": "فشل تحميل الفصول الدراسية",
+    "classLeft": "تم مغادرة الصف بنجاح",
+    "classLeaveFailed": "فشل في مغادرة الصف"
   }
 }

@@ -16,6 +16,8 @@
     "noEnrolledClassesDesc": "講師から提供された招待コードまたはリンクを使用してクラスに参加します。",
     "classDeleted": "クラスは正常に削除されました",
     "classDeleteFailed": "クラスの削除に失敗しました",
-    "failedToLoad": "クラスの読み込みに失敗しました"
+    "failedToLoad": "クラスの読み込みに失敗しました",
+    "classLeft": "クラスを退出しました",
+    "classLeaveFailed": "クラスの退出に失敗しました"
   }
 }
