@@ -16,6 +16,8 @@
     "noEnrolledClassesDesc": "Alătură-te unui curs folosind un cod de invitație sau un link furnizat de profesorul tău.",
     "classDeleted": "Cursul a fost șters cu succes",
     "classDeleteFailed": "Nu s-a putut șterge clasa",
-    "failedToLoad": "Nu s-au putut încărca clasele"
+    "failedToLoad": "Nu s-au putut încărca clasele",
+    "classLeft": "Ați părăsit clasa cu succes",
+    "classLeaveFailed": "Nu s-a putut părăsi clasa"
   }
 }

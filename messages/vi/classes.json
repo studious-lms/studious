@@ -16,6 +16,8 @@
     "noEnrolledClassesDesc": "Tham gia lớp học bằng mã mời hoặc liên kết do giáo viên cung cấp.",
     "classDeleted": "Lớp đã xóa thành công",
     "classDeleteFailed": "Không xóa được lớp",
-    "failedToLoad": "Không tải được lớp học"
+    "failedToLoad": "Không tải được lớp học",
+    "classLeft": "Đã rời khỏi lớp thành công",
+    "classLeaveFailed": "Rời khỏi lớp thất bại"
   }
 }

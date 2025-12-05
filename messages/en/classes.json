@@ -16,6 +16,8 @@
     "noEnrolledClassesDesc": "Join a class using an invite code or link provided by your teacher.",
     "classDeleted": "Class deleted successfully",
     "classDeleteFailed": "Failed to delete class",
-    "failedToLoad": "Failed to load classes"
+    "failedToLoad": "Failed to load classes",
+    "classLeft": "Successfully left the class",
+    "classLeaveFailed": "Failed to leave class"
   }
 }

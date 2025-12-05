@@ -16,6 +16,8 @@
     "noEnrolledClassesDesc": "Bergabunglah dengan kelas menggunakan kode undangan atau tautan yang disediakan oleh guru Anda.",
     "classDeleted": "Kelas berhasil dihapus",
     "classDeleteFailed": "Gagal menghapus kelas",
-    "failedToLoad": "Gagal memuat kelas"
+    "failedToLoad": "Gagal memuat kelas",
+    "classLeft": "Berhasil keluar dari kelas",
+    "classLeaveFailed": "Gagal keluar dari kelas"
   }
 }

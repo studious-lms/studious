@@ -16,6 +16,8 @@
     "noEnrolledClassesDesc": "Neem deel aan een les met behulp van de uitnodigingscode of link die u van uw docent hebt ontvangen.",
     "classDeleted": "Klasse succesvol verwijderd",
     "classDeleteFailed": "Het is niet gelukt om de klas te verwijderen",
-    "failedToLoad": "Het laden van klassen is mislukt"
+    "failedToLoad": "Het laden van klassen is mislukt",
+    "classLeft": "Klas succesvol verlaten",
+    "classLeaveFailed": "Kan klas niet verlaten"
   }
 }

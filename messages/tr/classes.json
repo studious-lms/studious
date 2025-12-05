@@ -16,6 +16,8 @@
     "noEnrolledClassesDesc": "Öğretmeninizin sağladığı davet kodunu veya bağlantıyı kullanarak bir sınıfa katılın.",
     "classDeleted": "Sınıf başarıyla silindi",
     "classDeleteFailed": "Sınıf silinemedi",
-    "failedToLoad": "Sınıflar yüklenemedi"
+    "failedToLoad": "Sınıflar yüklenemedi",
+    "classLeft": "Sınıftan başarıyla ayrıldınız",
+    "classLeaveFailed": "Sınıftan ayrılma başarısız"
   }
 }

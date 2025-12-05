@@ -16,6 +16,8 @@
     "noEnrolledClassesDesc": "Nehmen Sie über einen Einladungscode oder Link, den Ihr Lehrer Ihnen zur Verfügung gestellt hat, an einem Kurs teil.",
     "classDeleted": "Klasse erfolgreich gelöscht",
     "classDeleteFailed": "Klasse konnte nicht gelöscht werden",
-    "failedToLoad": "Klassen konnten nicht geladen werden"
+    "failedToLoad": "Klassen konnten nicht geladen werden",
+    "classLeft": "Kurs erfolgreich verlassen",
+    "classLeaveFailed": "Kurs konnte nicht verlassen werden"
   }
 }

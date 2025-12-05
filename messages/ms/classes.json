@@ -16,6 +16,8 @@
     "noEnrolledClassesDesc": "Sertai kelas menggunakan kod jemputan atau pautan yang diberikan oleh guru anda.",
     "classDeleted": "Kelas berjaya dipadamkan",
     "classDeleteFailed": "Gagal memadamkan kelas",
-    "failedToLoad": "Gagal memuatkan kelas"
+    "failedToLoad": "Gagal memuatkan kelas",
+    "classLeft": "Berjaya meninggalkan kelas",
+    "classLeaveFailed": "Gagal meninggalkan kelas"
   }
 }

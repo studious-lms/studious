@@ -2,12 +2,13 @@
 import Link from "next/link";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { 
-  MoreHorizontal, 
-  BookOpen, 
-  Users, 
+import {
+  MoreHorizontal,
+  BookOpen,
+  Users,
   Trash2,
-  Settings
+  Settings,
+  LogOut
 } from "lucide-react";
 import {
   DropdownMenu,
@@ -29,6 +30,7 @@ interface ClassCardProps {
   dueTodayAssignments: Assignment[];
   role: "teacher" | "student";
   onDelete?: () => void;
+  onLeave?: () => void;
 }
 
 export function ClassCard({
@@ -39,7 +41,8 @@ export function ClassCard({
   color,
   dueTodayAssignments,
   role,
-  onDelete
+  onDelete,
+  onLeave
 }: ClassCardProps) {
   return (
     <Card className="group overflow-hidden transition-all hover:shadow-sm hover:scale-105 bg-card border-border">
@@ -109,7 +112,11 @@ export function ClassCard({
               </>
             )}
             {role === "student" && (
-              <DropdownMenuItem className="cursor-pointer">
+              <DropdownMenuItem
+                className="text-destructive focus:text-destructive cursor-pointer"
+                onClick={onLeave}
+              >
+                <LogOut className="mr-2 h-4 w-4" />
                 Leave Class
               </DropdownMenuItem>
             )}

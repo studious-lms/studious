@@ -16,6 +16,8 @@
     "noEnrolledClassesDesc": "Partecipa a una lezione utilizzando un codice invito o un link fornito dal tuo insegnante.",
     "classDeleted": "Classe eliminata con successo",
     "classDeleteFailed": "Impossibile eliminare la classe",
-    "failedToLoad": "Impossibile caricare le classi"
+    "failedToLoad": "Impossibile caricare le classi",
+    "classLeft": "Hai lasciato il corso con successo",
+    "classLeaveFailed": "Impossibile lasciare il corso"
   }
 }

@@ -31,6 +31,7 @@ export default function Classes() {
   const { data: classes, isLoading, error, refetch } = trpc.class.getAll.useQuery();
   const deleteClassMutation = trpc.class.delete.useMutation();
   const createClassMutation = trpc.class.create.useMutation();
+  const leaveClassMutation = trpc.class.leaveClass.useMutation();
 
   // React Query handles loading automatically, no useEffect needed!
 
@@ -58,6 +59,17 @@ export default function Classes() {
 
   const handleClassCreated = () => {
     refetch();
+  };
+
+  const handleLeaveClass = async (classId: string) => {
+    try {
+      await leaveClassMutation.mutateAsync({ classId });
+      toast.success(t('classLeft'));
+      refetch();
+    } catch (err) {
+      console.error('Failed to leave class:', err);
+      toast.error(t('classLeaveFailed'));
+    }
   };
 
   const handleClassJoined = () => {
@@ -207,6 +219,7 @@ export default function Classes() {
                   color={classItem.color || "#3b82f6"}
                   dueTodayAssignments={classItem.dueToday || []}
                   role="student"
+                  onLeave={() => handleLeaveClass(classItem.id)}
                 />
               ))}
             </div>
