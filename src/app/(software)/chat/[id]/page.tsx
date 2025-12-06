@@ -18,6 +18,8 @@ import { useTranslations } from "next-intl";
 
 export default function ConversationPage() {
   const t = useTranslations('chat.page');
+
+  console.log(t)
   const params = useParams();
   const router = useRouter();
   const appState = useSelector((state: RootState) => state.app);
@@ -76,6 +78,7 @@ export default function ConversationPage() {
           <Button onClick={() => router.push('/chat')}>
             <ArrowLeft className="h-4 w-4 mr-2" />
             {t('notFound.backToChat')}
+            {t('header.members')}
           </Button>
         </div>
       </div>

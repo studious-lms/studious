@@ -31,7 +31,9 @@
       "detach": "Details"
     },
     "search": {
-      "placeholder": "Search worksheets..."
+      "placeholder": "Search worksheets...",
+      "noResults": "No worksheets found",
+      "noResultsDesc": "Try a different search term or clear your search."
     },
     "empty": {
       "title": "No worksheets found",

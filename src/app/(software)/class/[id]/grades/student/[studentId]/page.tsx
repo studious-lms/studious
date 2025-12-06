@@ -3,28 +3,77 @@
 import { useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
-import { PageLayout, PageHeader } from "@/components/ui/page-layout";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { PageLayout } from "@/components/ui/page-layout";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
+import { Separator } from "@/components/ui/separator";
+import { Skeleton } from "@/components/ui/skeleton";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { EmptyState } from "@/components/ui/empty-state";
 import { DataTable } from "@/components/ui/data-table";
 import { 
-  ArrowLeft,
   Download,
   Edit,
   CheckCircle,
   X,
   ClipboardList,
-  ExternalLink
+  ExternalLink,
+  TrendingUp,
+  TrendingDown,
+  Minus,
+  GraduationCap,
+  BookOpen,
 } from "lucide-react";
 import type { ColumnDef } from "@tanstack/react-table";
 import { RouterOutputs, trpc } from "@/lib/trpc";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
-import { calculateTrend, getTrendIcon, getGradeColor } from "@/lib/utils";
+import { calculateTrend, getTrendIcon, getGradeColor, cn, getGradeBorderAndBackground } from "@/lib/utils";
+
+function StudentGradesSkeleton() {
+  return (
+    <div className="max-w-4xl mx-auto space-y-8">
+      {/* Header skeleton */}
+      <div className="space-y-4">
+        <Skeleton className="h-4 w-16" />
+        <div className="flex items-center gap-4">
+          <Skeleton className="h-14 w-14 rounded-full" />
+          <div className="space-y-2 flex-1">
+            <Skeleton className="h-7 w-64" />
+            <Skeleton className="h-4 w-40" />
+          </div>
+        </div>
+      </div>
+
+      {/* Stats skeleton */}
+      <div className="grid grid-cols-3 gap-4">
+        <div className="p-4 bg-muted/30 rounded-lg space-y-2">
+          <Skeleton className="h-8 w-20 mx-auto" />
+          <Skeleton className="h-3 w-24 mx-auto" />
+        </div>
+        <div className="p-4 bg-muted/30 rounded-lg space-y-2">
+          <Skeleton className="h-8 w-16 mx-auto" />
+          <Skeleton className="h-3 w-20 mx-auto" />
+        </div>
+        <div className="p-4 bg-muted/30 rounded-lg space-y-2">
+          <Skeleton className="h-8 w-8 mx-auto" />
+          <Skeleton className="h-3 w-12 mx-auto" />
+        </div>
+      </div>
+
+      <Separator />
+
+      {/* Table skeleton */}
+      <div className="space-y-3">
+        <Skeleton className="h-4 w-32" />
+        <Skeleton className="h-10 w-full" />
+        <Skeleton className="h-64 w-full rounded-lg" />
+      </div>
+    </div>
+  );
+}
 
 export default function StudentGrades() {
   const params = useParams();
@@ -33,7 +82,6 @@ export default function StudentGrades() {
   const studentId = params.studentId as string;
   const [editingGrades, setEditingGrades] = useState<{[key: string]: string}>({});
   const t = useTranslations('individualGrades');
-  const tCommon = useTranslations('common');
   
   const appState = useSelector((state: RootState) => state.app);
   const isStudent = appState.user.student;
@@ -45,6 +93,45 @@ export default function StudentGrades() {
   const student = classData?.class?.students.find(s => s.id === studentId);
   const grades = studentGrades?.grades ?? [];
 
+  const startEditing = (assignmentId: string, currentValue: string) => {
+    setEditingGrades(prev => ({
+      ...prev,
+      [assignmentId]: currentValue
+    }));
+  };
+
+  const handleGradeChange = (assignmentId: string, value: string) => {
+    setEditingGrades(prev => ({
+      ...prev,
+      [assignmentId]: value
+    }));
+  };
+
+  const saveGrade = async (assignmentId: string, submissionId: string) => {
+    const editedValue = editingGrades[assignmentId];
+    if (editedValue !== undefined) {
+      await updateGrade.mutateAsync({
+        classId,
+        assignmentId,
+        submissionId,
+        gradeReceived: editedValue === "" ? null : Number(editedValue)
+      });
+      setEditingGrades(prev => {
+        const newState = { ...prev };
+        delete newState[assignmentId];
+        return newState;
+      });
+    }
+  };
+
+  const cancelEditing = (assignmentId: string) => {
+    setEditingGrades(prev => {
+      const newState = { ...prev };
+      delete newState[assignmentId];
+      return newState;
+    });
+  };
+
   // Grade table columns
   const gradeColumns: ColumnDef<RouterOutputs["class"]["getGrades"]["grades"][number]>[] = [
     {
@@ -53,9 +140,13 @@ export default function StudentGrades() {
       header: t('table.assignment'),
       cell: ({ row }) => {
         const grade = row.original;
+        const hasRubric = grade.assignment.markScheme !== null;
         return (
-          <div className="font-medium">
-            {grade.assignment.title}
+          <div className="flex items-center gap-2">
+            <span className="font-medium">{grade.assignment.title}</span>
+            {hasRubric && (
+              <Badge variant="secondary" className="text-[10px]">Rubric</Badge>
+            )}
           </div>
         );
       },
@@ -86,7 +177,7 @@ export default function StudentGrades() {
                   {grade.gradeReceived}
                 </div>
               ) : (
-                <span className="text-muted-foreground">-</span>
+                <span className="text-muted-foreground">—</span>
               )}
             </div>
           );
@@ -105,7 +196,7 @@ export default function StudentGrades() {
                     {grade.gradeReceived}
                   </div>
                 ) : (
-                  <span className="text-muted-foreground">-</span>
+                  <span className="text-muted-foreground">—</span>
                 )}
               </div>
               <Button
@@ -175,7 +266,7 @@ export default function StudentGrades() {
                 className="cursor-pointer hover:bg-muted/50 p-1 rounded border border-transparent hover:border-border inline-block"
                 onClick={() => startEditing(grade.assignment.id, '')}
               >
-                <span className="text-muted-foreground">-</span>
+                <span className="text-muted-foreground">—</span>
                 <Edit className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity absolute -top-1 -right-1" />
               </div>
             )}
@@ -205,8 +296,10 @@ export default function StudentGrades() {
         
         return (
           <div className="w-24 text-center">
-            {percentage ? `${percentage}%` : (
-              <span className="text-muted-foreground">-</span>
+            {percentage ? (
+              <span className={getGradeColor(parseFloat(percentage))}>{percentage}%</span>
+            ) : (
+              <span className="text-muted-foreground">—</span>
             )}
           </div>
         );
@@ -219,9 +312,7 @@ export default function StudentGrades() {
         const grade = row.original;
         return (
           <div className="w-28 flex justify-center">
-            <Badge variant={
-              grade.gradeReceived !== null ? "default" : "secondary"
-            }>
+            <Badge variant={grade.gradeReceived !== null ? "default" : "secondary"}>
               {grade.gradeReceived !== null ? t('status.graded') : t('status.pending')}
             </Badge>
           </div>
@@ -247,28 +338,7 @@ export default function StudentGrades() {
   if (classLoading || gradesLoading) {
     return (
       <PageLayout>
-        <div className="space-y-4">
-          <div className="h-8 w-48 bg-muted rounded" />
-          <Card className="mb-6">
-            <CardContent className="pt-6">
-              <div className="flex items-center space-x-4">
-                <div className="h-16 w-16 bg-muted rounded-full" />
-                <div className="flex-1 space-y-2">
-                  <div className="h-6 w-64 bg-muted rounded" />
-                  <div className="h-4 w-48 bg-muted rounded" />
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <div className="h-5 w-40 bg-muted rounded" />
-            </CardHeader>
-            <CardContent>
-              <div className="h-40 w-full bg-muted rounded" />
-            </CardContent>
-          </Card>
-        </div>
+        <StudentGradesSkeleton />
       </PageLayout>
     );
   }
@@ -276,58 +346,21 @@ export default function StudentGrades() {
   if (!student) {
     return (
       <PageLayout>
-        <div className="text-center py-8">
-          <h2 className="text-2xl font-bold text-muted-foreground">{t('studentNotFound')}</h2>
-          <Button 
-            className="mt-4"
-            onClick={() => window.history.back()}
-          >
-            {t('goBack')}
-          </Button>
+        <div className="max-w-4xl mx-auto">
+          <div className="flex flex-col items-center justify-center min-h-[400px] space-y-4">
+            <EmptyState
+              icon={GraduationCap}
+              title={t('studentNotFound')}
+              description="The student you're looking for doesn't exist or has been removed."
+            />
+            <Button onClick={() => router.back()}>
+              {t('goBack')}
+            </Button>
+          </div>
         </div>
       </PageLayout>
     );
   }
-
-  const startEditing = (assignmentId: string, currentValue: string) => {
-    setEditingGrades(prev => ({
-      ...prev,
-      [assignmentId]: currentValue
-    }));
-  };
-
-  const handleGradeChange = (assignmentId: string, value: string) => {
-    setEditingGrades(prev => ({
-      ...prev,
-      [assignmentId]: value
-    }));
-  };
-
-  const saveGrade = async (assignmentId: string, submissionId: string) => {
-    const editedValue = editingGrades[assignmentId];
-    if (editedValue !== undefined) {
-      await updateGrade.mutateAsync({
-        classId,
-        assignmentId,
-        submissionId,
-        gradeReceived: editedValue === "" ? null : Number(editedValue)
-      });
-      setEditingGrades(prev => {
-        const newState = { ...prev };
-        delete newState[assignmentId];
-        return newState;
-      });
-    }
-  };
-
-  const cancelEditing = (assignmentId: string) => {
-    setEditingGrades(prev => {
-      const newState = { ...prev };
-      delete newState[assignmentId];
-      return newState;
-    });
-  };
-
 
   // Calculate overall grade
   let totalWeighted = 0;
@@ -341,85 +374,109 @@ export default function StudentGrades() {
   const overallGrade = totalWeight > 0 ? (totalWeighted / totalWeight) * 100 : 0;
   const completedAssignments = grades.filter(g => g.gradeReceived != null).length;
   const totalAssignments = grades.length;
-
   const trend = calculateTrend(grades);
+
+  // Get trend details for display
+  const getTrendDetails = (trend: number) => {
+    if (trend > 5) return { icon: <TrendingUp className="h-6 w-6 text-green-500" />, label: "Improving", color: "text-green-500" };
+    if (trend < -5) return { icon: <TrendingDown className="h-6 w-6 text-red-500" />, label: "Declining", color: "text-red-500" };
+    return { icon: <Minus className="h-6 w-6 text-muted-foreground" />, label: "Stable", color: "text-muted-foreground" };
+  };
+
+  const trendDetails = getTrendDetails(Number(trend));
 
   return (
     <PageLayout>
-      <PageHeader 
-        title={isStudent ? t('myGrades') : `${student.profile?.displayName || student.username} - ${t('studentGrades')}`}
-        description={isStudent ? t('viewYourGrades') : t('individualManagement')}
-      >
-        <div className="flex items-center space-x-2">
-          {!isStudent && (
-            <Button variant="outline" size="sm">
-              <Download className="h-4 w-4 mr-2" />
-              {t('export')}
-            </Button>
-          )}
-          <Button 
-            variant="outline" 
-            onClick={() => window.history.back()}
+      <div className="max-w-4xl mx-auto space-y-8">
+        {/* Header */}
+        <div className="space-y-4">
+          {/* Back button */}
+          <button 
+            onClick={() => router.back()}
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
-            <ArrowLeft className="h-4 w-4 mr-2" />
-            {t('back')}
-          </Button>
-        </div>
-      </PageHeader>
+            ← Back
+          </button>
 
-      {/* Student Info */}
-      <Card className="mb-6">
-        <CardContent className="pt-6">
-          <div className="flex items-center space-x-4">
-            <Avatar className="h-16 w-16">
-              <AvatarImage src={student.profile?.profilePicture || ""} />
-              <AvatarFallback>
+          {/* Student Info */}
+          <div className="flex items-center gap-4">
+            <Avatar className="h-14 w-14">
+              <AvatarImage src={student.profile?.profilePicture || ""} alt="" />
+              <AvatarFallback className="text-lg">
                 {student.profile?.displayName?.substring(0, 2).toUpperCase() || student.username.substring(0, 2).toUpperCase()}
               </AvatarFallback>
             </Avatar>
             <div className="flex-1">
-              <h2 className="text-2xl font-bold">
-                {isStudent ? t('yourPerformance') : student.username}
-              </h2>
-              {isStudent && (
-                <p className="text-muted-foreground">{t('trackProgress')}</p>
-              )}
+              <h1 className="text-2xl font-bold">
+                {isStudent ? t('myGrades') : student.profile?.displayName || student.username}
+              </h1>
+              <p className="text-muted-foreground">
+                {isStudent ? t('trackProgress') : t('individualManagement')}
+              </p>
             </div>
-            <div className="grid grid-cols-3 gap-6 text-center">
-              <div>
-                <div className={`text-2xl font-bold ${getGradeColor(overallGrade)} h-8`}>
+            {!isStudent && (
+              <Button variant="outline" size="sm">
+                <Download className="h-4 w-4 mr-2" />
+                {t('export')}
+              </Button>
+            )}
+          </div>
+        </div>
+
+        {/* Stats Cards */}
+        <div className="grid grid-cols-3 gap-4">
+          <Card className={getGradeBorderAndBackground(overallGrade)}>
+            <CardContent className="pt-6">
+              <div className="text-center">
+                <div className={`text-3xl font-bold ${getGradeColor(overallGrade)}`}>
                   {overallGrade.toFixed(1)}%
                 </div>
-                <p className="text-sm text-muted-foreground">{t('overallGrade')}</p>
+                <p className="text-sm text-muted-foreground mt-1">{t('overallGrade')}</p>
               </div>
-              <div>
-                <div className="text-2xl font-bold text-foreground h-8">
-                  {completedAssignments}/{totalAssignments}
+            </CardContent>
+          </Card>
+          
+          <Card>
+            <CardContent className="pt-6">
+              <div className="text-center">
+                <div className="text-3xl font-bold">
+                  <span className="text-foreground">{completedAssignments}</span>
+                  <span className="text-muted-foreground text-xl">/{totalAssignments}</span>
                 </div>
-                <p className="text-sm text-muted-foreground">{t('completed')}</p>
+                <p className="text-sm text-muted-foreground mt-1">{t('completed')}</p>
               </div>
-              <div>
-                <div className="flex items-center justify-center text-2xl h-8">
-                  {getTrendIcon(trend)}
+            </CardContent>
+          </Card>
+          
+          <Card>
+            <CardContent className="pt-6">
+              <div className="text-center">
+                <div className="flex justify-center mb-1">
+                  {trendDetails.icon}
                 </div>
-                <p className="text-sm text-muted-foreground">{t('trend')}</p>
+                <p className={`text-sm font-medium ${trendDetails.color}`}>{trendDetails.label}</p>
+                <p className="text-xs text-muted-foreground">{t('trend')}</p>
               </div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
+            </CardContent>
+          </Card>
+        </div>
 
-      {/* Assignments Table */}
-      <Card>
-        <CardHeader>
-          <CardTitle>{isStudent ? t('yourGrades') : t('assignments')}</CardTitle>
-        </CardHeader>
-        <CardContent>
+        <Separator />
+
+        {/* Assignments Table */}
+        <div className="space-y-4">
+          <div className="flex items-center gap-2">
+            <h2 className="text-lg font-semibold">
+              {isStudent ? t('yourGrades') : t('assignments')}
+            </h2>
+          </div>
+
           {grades.length === 0 ? (
             <EmptyState
               icon={ClipboardList}
               title={t('empty.title')}
               description={t('empty.description')}
+              className="border rounded-lg"
             />
           ) : (
             <DataTable
@@ -429,8 +486,8 @@ export default function StudentGrades() {
               searchPlaceholder={t('searchPlaceholder')}
             />
           )}
-        </CardContent>
-      </Card>
+        </div>
+      </div>
     </PageLayout>
   );
 }

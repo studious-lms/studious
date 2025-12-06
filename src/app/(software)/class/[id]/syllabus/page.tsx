@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { useParams } from "next/navigation";
 import { PageLayout } from "@/components/ui/page-layout";
@@ -8,8 +8,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
-import { Spinner } from "@/components/ui/spinner";
 import { Skeleton } from "@/components/ui/skeleton";
+import { StatsCard } from "@/components/ui/stats-card";
 import { 
   Table,
   TableBody,
@@ -22,11 +22,8 @@ import {
   Save, 
   Edit, 
   FileText,
-  Download,
-  BookOpen,
   Target,
   Calendar,
-  GraduationCap,
   CheckCircle,
   AlertCircle,
   Clock,
@@ -34,14 +31,11 @@ import {
   TrendingUp,
   X,
   School,
-  ClipboardCheck,
-  ClipboardList
 } from "lucide-react";
 import { 
   trpc, 
 } from "@/lib/trpc";
 import { RouterOutputs } from "@/lib/trpc";
-import { GradingBoundary, RubricCriteria } from "@/lib/types/rubric";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 
@@ -62,9 +56,10 @@ const StatisticsCardSkeleton = () => (
     <div className="flex items-center justify-between">
       <div>
         <Skeleton className="h-4 w-24 mb-2" />
-        <Skeleton className="h-8 w-12" />
+        <Skeleton className="h-8 w-16" />
+        <Skeleton className="h-3 w-20 mt-1" />
       </div>
-      <Skeleton className="h-10 w-10 rounded-full" />
+      <Skeleton className="h-12 w-12 rounded-xl" />
     </div>
   </Card>
 );
@@ -239,53 +234,34 @@ export default function Syllabus() {
 
         {/* Statistics Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
-          <Card className="p-4">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm font-medium text-muted-foreground">{t('stats.totalAssignments')}</p>
-                <p className="text-2xl font-bold mt-1">{assignments.length}</p>
-              </div>
-              <div className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center">
-                <Target className="w-5 h-5 text-muted-foreground" />
-              </div>
-            </div>
-          </Card>
-
-          <Card className="p-4">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm font-medium text-muted-foreground">{t('stats.completionRate')}</p>
-                <p className="text-2xl font-bold mt-1">{completionRate}%</p>
-              </div>
-              <div className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center">
-                <BarChart3 className="w-5 h-5 text-muted-foreground" />
-              </div>
-            </div>
-          </Card>
-
-          <Card className="p-4">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm font-medium text-muted-foreground">{t('stats.totalPoints')}</p>
-                <p className="text-2xl font-bold mt-1">{totalPoints}</p>
-              </div>
-              <div className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center">
-                <TrendingUp className="w-5 h-5 text-muted-foreground" />
-              </div>
-            </div>
-          </Card>
-
-          <Card className="p-4">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm font-medium text-muted-foreground">{t('stats.upcoming')}</p>
-                <p className="text-2xl font-bold mt-1">{upcomingAssignments}</p>
-              </div>
-              <div className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center">
-                <Clock className="w-5 h-5 text-muted-foreground" />
-              </div>
-            </div>
-          </Card>
+          <StatsCard
+            title={t('stats.totalAssignments')}
+            value={assignments.length}
+            icon={Target}
+            description={t('stats.totalAssignmentsDesc')}
+            color="#4E81EE"
+          />
+          <StatsCard
+            title={t('stats.completionRate')}
+            value={`${completionRate}%`}
+            icon={BarChart3}
+            description={t('stats.completionRateDesc')}
+            color="#96C84D"
+          />
+          <StatsCard
+            title={t('stats.totalPoints')}
+            value={totalPoints}
+            icon={TrendingUp}
+            description={t('stats.totalPointsDesc')}
+            color="#FFB500"
+          />
+          <StatsCard
+            title={t('stats.upcoming')}
+            value={upcomingAssignments}
+            icon={Clock}
+            description={t('stats.upcomingDesc')}
+            color="#FE7F7F"
+          />
         </div>
 
         {/* Course Overview */}
@@ -346,7 +322,7 @@ export default function Syllabus() {
                           <TableHead>{t('table.dueDate')}</TableHead>
                           <TableHead className="text-right">{t('table.points')}</TableHead>
                           <TableHead>{t('table.weight')}</TableHead>
-                          <TableHead>{t('table.status')}</TableHead>
+                          <TableHead>{t('table.type')}</TableHead>
                         </TableRow>
                       </TableHeader>
                       <TableBody>
@@ -355,11 +331,7 @@ export default function Syllabus() {
                           .map((assignment) => (
                           <TableRow key={assignment.id}>
                             <TableCell>
-                              <div className="flex items-center space-x-3">
-                                <div className="w-8 h-8 bg-muted rounded-lg flex items-center justify-center">
-                                  <Target className="w-4 h-4 text-muted-foreground" />
-                                </div>
-                                <div>
+                              <div className="flex items-center space-x-3">                                <div>
                                   <span className="font-medium block">
                                     {assignment.title}
                                   </span>
@@ -399,7 +371,7 @@ export default function Syllabus() {
                                 </Badge>
                               ) : (
                                 <Badge variant="secondary">
-                                  {t('status.pending')}
+                                  {t('status.ungraded')}
                                 </Badge>
                               )}
                             </TableCell>
@@ -436,15 +408,15 @@ export default function Syllabus() {
                   {t('courseInfo.basic.title')}
                 </h3>
               <div className="space-y-3">
-                  <div className="bg-muted p-3 rounded-lg">
+                  <div className="p-4 rounded-xl" style={{ backgroundColor: '#4E81EE15', borderColor: '#4E81EE30', borderWidth: 1 }}>
                     <label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">{t('courseInfo.basic.className')}</label>
                     <p className="font-medium mt-1">{classData.class.name}</p>
                   </div>
-                  <div className="bg-muted p-3 rounded-lg">
+                  <div className="p-4 rounded-xl" style={{ backgroundColor: '#96C84D15', borderColor: '#96C84D30', borderWidth: 1 }}>
                     <label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">{t('courseInfo.basic.section')}</label>
                     <p className="mt-1">{classData.class.section || 'Not specified'}</p>
                   </div>
-                  <div className="bg-muted p-3 rounded-lg">
+                  <div className="p-4 rounded-xl" style={{ backgroundColor: '#FFB50015', borderColor: '#FFB50030', borderWidth: 1 }}>
                     <label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">{t('courseInfo.basic.subject')}</label>
                     <p className="mt-1">{classData.class.subject || 'Not specified'}</p>
                   </div>
@@ -457,31 +429,37 @@ export default function Syllabus() {
                   {t('courseInfo.stats.title')}
                 </h3>
                 <div className="space-y-3">
-                  <div className="bg-muted p-3 rounded-lg">
+                  <div className="p-4 rounded-xl" style={{ backgroundColor: '#4E81EE15', borderColor: '#4E81EE30', borderWidth: 1 }}>
                     <div className="flex items-center justify-between">
                       <div>
                         <label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">{t('courseInfo.stats.totalAssignments')}</label>
                         <p className="text-xl font-bold mt-1">{assignments.length}</p>
                       </div>
-                      <Target className="w-6 h-6 text-muted-foreground" />
+                      <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#4E81EE25' }}>
+                        <Target className="w-5 h-5" style={{ color: '#4E81EE' }} />
+                      </div>
                     </div>
                   </div>
-                  <div className="bg-muted p-3 rounded-lg">
+                  <div className="p-4 rounded-xl" style={{ backgroundColor: '#96C84D15', borderColor: '#96C84D30', borderWidth: 1 }}>
                     <div className="flex items-center justify-between">
                       <div>
                         <label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">{t('courseInfo.stats.gradedAssignments')}</label>
                         <p className="text-xl font-bold mt-1">{assignments.filter(a => a.graded).length}</p>
                       </div>
-                      <CheckCircle className="w-6 h-6 text-muted-foreground" />
+                      <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#96C84D25' }}>
+                        <CheckCircle className="w-5 h-5" style={{ color: '#96C84D' }} />
+                      </div>
                     </div>
                   </div>
-                  <div className="bg-muted p-3 rounded-lg">
+                  <div className="p-4 rounded-xl" style={{ backgroundColor: '#FFB50015', borderColor: '#FFB50030', borderWidth: 1 }}>
                     <div className="flex items-center justify-between">
                       <div>
                         <label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">{t('courseInfo.stats.totalPoints')}</label>
                         <p className="text-xl font-bold mt-1">{totalPoints}</p>
                       </div>
-                      <TrendingUp className="w-6 h-6 text-muted-foreground" />
+                      <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#FFB50025' }}>
+                        <TrendingUp className="w-5 h-5" style={{ color: '#FFB500' }} />
+                      </div>
                     </div>
                   </div>
                 </div>

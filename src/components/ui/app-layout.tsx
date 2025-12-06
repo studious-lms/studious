@@ -32,6 +32,13 @@ export function AppLayout({ children, isAuthenticated = false }: AppLayoutProps)
     return <div className="min-h-screen bg-background">{children}</div>;
   }
 
+  // Calculate main content margin based on visible sidebars
+  const getMainMargin = () => {
+    if (isMobile) return 'ml-0';
+    if (showClassSidebar) return 'ml-80'; // Class sidebar (20rem)
+    if (appState.user.loggedIn) return 'ml-16'; // Primary sidebar only (4rem)
+    return 'ml-0';
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -42,9 +49,7 @@ export function AppLayout({ children, isAuthenticated = false }: AppLayoutProps)
       {showClassSidebar && <ClassSidebar classId={classId!} />}
       
       {/* Main Content */}
-      <main className={`min-h-screen overflow-auto transition-all duration-200 ${
-        showClassSidebar && !isMobile ? 'ml-80' : (appState.user.loggedIn && !isMobile ? 'ml-16' : 'ml-0')
-      }`}>
+      <main className={`min-h-screen overflow-auto transition-all duration-200 ${getMainMargin()}`}>
         {children}
       </main>
     </div>

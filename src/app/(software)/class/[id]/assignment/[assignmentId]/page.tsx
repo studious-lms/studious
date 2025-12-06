@@ -15,6 +15,7 @@ import {
   CheckCircle,
   Upload,
   ArrowLeft,
+  Sparkles,
 } from "lucide-react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -48,6 +49,7 @@ import type {
 import {  parseMarkScheme,
   parseGradingBoundary} from "@/lib/types/assignment";
 import { baseFileHandler } from "@/lib/fileHandler";
+import Link from "next/link";
 import { Progress } from "@/components/ui/progress";
 import { getStatusColor, getStudentAssignmentStatus } from "@/lib/getStudentAssignmentStatus";
 import { AI_POLICY_LEVELS, getAIPolicyColor } from "@/lib/aiPolicy";
@@ -859,7 +861,7 @@ export default function AssignmentDetailPage() {
                     <p className="font-medium">No students enrolled</p>
                     <p className="text-sm">Add students to your class to see submissions.</p>
                   </div>
-                )}
+                  )}
               </div>
             </div>
             )}
@@ -867,6 +869,29 @@ export default function AssignmentDetailPage() {
             {/* Student View - My Submission */}
             {isStudent && studentSubmission && (
             <div className="space-y-6">
+              {/* Newton Tutor Button */}
+              <Link href={`/class/${classId}/assignment/${assignmentId}/tutor`}>
+                <div className="p-4 rounded-xl bg-gradient-to-r from-violet-500/10 via-purple-500/10 to-fuchsia-500/10 border border-violet-500/20 hover:border-violet-500/40 transition-colors cursor-pointer group">
+                  <div className="flex items-center gap-4">
+                    <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-violet-500 via-purple-500 to-fuchsia-500 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+                      <Sparkles className="h-6 w-6 text-white" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-semibold text-sm flex items-center gap-2">
+                        Newton Tutor
+                        <Badge variant="secondary" className="bg-violet-500/10 text-violet-600 dark:text-violet-400 border-0 text-[10px]">
+                          AI
+                        </Badge>
+                      </h3>
+                      <p className="text-xs text-muted-foreground">
+                        Get help understanding concepts, hints, and guidance for this assignment
+                      </p>
+                    </div>
+                    <ArrowLeft className="h-4 w-4 text-muted-foreground rotate-180 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </Link>
+
               <h2 className="text-lg font-semibold">Your Work</h2>
                   
                   {/* File Upload Section - Only show if acceptFiles is true */}
@@ -1102,7 +1127,8 @@ export default function AssignmentDetailPage() {
               </Card>
             )}
 
-        </div>
+                </div>
+                
 
         {/* File Preview Modal */}
         <FilePreviewModal

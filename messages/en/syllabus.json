@@ -13,9 +13,13 @@
     },
     "stats": {
       "totalAssignments": "Total Assignments",
+      "totalAssignmentsDesc": "All course work",
       "completionRate": "Completion Rate",
+      "completionRateDesc": "Graded vs total",
       "totalPoints": "Total Points",
-      "upcoming": "Upcoming"
+      "totalPointsDesc": "Maximum achievable",
+      "upcoming": "Upcoming",
+      "upcomingDesc": "Due assignments"
     },
     "overview": {
       "title": "Course Overview",
@@ -40,12 +44,12 @@
       "dueDate": "Due Date",
       "points": "Points",
       "weight": "Weight",
-      "status": "Status",
-      "pts": "pts"
+      "pts": "pts",
+      "type": "Type"
     },
     "status": {
       "graded": "Graded",
-      "pending": "Pending"
+      "ungraded": "Ungraded"
     },
     "courseInfo": {
       "title": "Course Information",

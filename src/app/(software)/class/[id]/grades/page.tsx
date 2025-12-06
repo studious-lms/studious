@@ -557,10 +557,6 @@ export default function Grades() {
             <TabsTrigger value="assignments">{t("assignmentManagement.title")}</TabsTrigger>
             <TabsTrigger value="students">{t("students.title")}</TabsTrigger>
           </TabsList>
-          <Button variant="ghost" onClick={() => window.location.href = `/class/${classId}/grades/all`}>
-            <Settings className="h-4 w-4 mr-2" />
-            {t("students.viewAll")}
-          </Button>
         </div>
         <TabsContent value="assignments" className="mt-4">
           {assignments.length === 0 ? (
