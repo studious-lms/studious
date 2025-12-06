@@ -282,7 +282,6 @@ export function WorksheetQuestionViewer({
         }
     };
 
-    // @ts-expect-error - worksheetResponse is typed as RouterOutputs['worksheet']['getWorksheetSubmission'], issues with JsonValue.
     const comments = worksheetResponse?.responses?.find((r) => r.questionId === question.id)?.comments;
 
 

@@ -407,6 +407,7 @@ export const AnnouncementCard = memo(function AnnouncementCard({ announcement, c
     }
 
     updateAnnouncementMutation.mutate({
+      classId: classId,
       id: announcement.id,
       data: updateData,
     });

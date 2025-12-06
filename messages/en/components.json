@@ -130,6 +130,11 @@
       "description": "Select a conversation from the sidebar to start chatting."
     },
     "page": {
+      "notFound": {
+        "title": "Conversation Not Found",
+        "description": "This conversation doesn't exist or you don't have access to it.",
+        "backToChat": "Back to Chat"
+      },
       "header": {
         "members": "Members",
         "markMentionsRead": "Mark mentions read"

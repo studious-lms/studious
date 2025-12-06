@@ -156,3 +156,53 @@ export function getGradeColor(
   // Failing grade (below passing threshold) - Red
   return cn("text-red-600 dark:text-red-400", fontWeight);
 }
+
+
+/**
+ * Returns Tailwind CSS classes for border and background styling based on grade percentage.
+ * Creates a subtle gradient background effect that works in both light and dark modes.
+ * 
+ * @param grade - The grade percentage (0-100) or null if not graded
+ * @param options - Optional configuration for custom thresholds
+ * @returns Tailwind CSS class string for border and background colors
+ * 
+ * @example
+ * ```tsx
+ * <Card className={getGradeBorderAndBackground(95)}>Excellent!</Card>
+ * <div className={getGradeBorderAndBackground(null)}>Not graded</div>
+ * ```
+ */
+export function getGradeBorderAndBackground(
+  grade: number | null,
+  options: GradeColorOptions = {}
+): string {
+  const {
+    thresholds = { excellent: 90, good: 80, passing: 70 },
+  } = options;
+
+  // Handle missing or ungraded assignments
+  if (grade === null || grade === undefined) {
+    return "border-border bg-muted/30";
+  }
+
+  // Ensure grade is within valid range
+  const clampedGrade = Math.max(0, Math.min(100, grade));
+
+  // Excellent grade (A range) - Green
+  if (clampedGrade >= thresholds.excellent) {
+    return "border-green-500/30 bg-gradient-to-br from-green-500/5 to-green-500/10";
+  }
+
+  // Good grade (B range) - Yellow
+  if (clampedGrade >= thresholds.good) {
+    return "border-yellow-500/30 bg-gradient-to-br from-yellow-500/5 to-yellow-500/10";
+  }
+
+  // Passing grade (C range) - Orange
+  if (clampedGrade >= thresholds.passing) {
+    return "border-orange-500/30 bg-gradient-to-br from-orange-500/5 to-orange-500/10";
+  }
+
+  // Failing grade (below passing threshold) - Red
+  return "border-red-500/30 bg-gradient-to-br from-red-500/5 to-red-500/10";
+}

@@ -13,6 +13,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { EmptyState } from "@/components/ui/empty-state";
+import { StatsCard } from "@/components/ui/stats-card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { DraggableAssignment } from "@/components/DraggableAssignment";
 import { trpc } from "@/lib/trpc";
@@ -30,7 +31,8 @@ import {
   MessageSquare,
   Eye,
   Clock,
-  Trash2
+  Trash2,
+  PenTool
 } from "lucide-react";
 import { formatDistanceToNow } from "date-fns";
 
@@ -121,40 +123,35 @@ export default function ClassAILabs() {
       title: t('widgets.assignment.title'),
       description: t('widgets.assignment.description'),
       icon: FileText,
-      bgColor: "bg-primary/10",
-      textColor: "text-primary"
+      color: "#4E81EE" // Blue
     },
     {
       id: "quiz", 
       title: t('widgets.quiz.title'),
       description: t('widgets.quiz.description'),
       icon: Brain,
-      bgColor: "bg-primary/10",
-      textColor: "text-primary"
+      color: "#FE7F7F" // Red
     },
     {
       id: "worksheet",
       title: t('widgets.worksheet.title'),
       description: t('widgets.worksheet.description'),
       icon: ClipboardList,
-      bgColor: "bg-primary/10",
-      textColor: "text-primary"
+      color: "#FFB500" // Yellow
     },
     {
       id: "lesson-plan",
       title: t('widgets.lessonPlan.title'),
       description: t('widgets.lessonPlan.description'),
       icon: GraduationCap,
-      bgColor: "bg-primary/10",
-      textColor: "text-primary"
+      color: "#96C84D" // Green
     },
     {
       id: "rubric",
       title: t('widgets.rubric.title'),
       description: t('widgets.rubric.description'),
       icon: Target,
-      bgColor: "bg-primary/10",
-      textColor: "text-primary"
+      color: "#A855F7" // Purple
     }
   ];
 
@@ -177,6 +174,11 @@ export default function ClassAILabs() {
   };
 
 
+  // Calculate stats
+  const totalDrafts = sortedDrafts.length;
+  const totalChats = sortedChats.length;
+  const totalMessages = sortedChats.reduce((sum, chat) => sum + (chat.messageCount || 0), 0);
+
   return (
     <DndProvider backend={HTML5Backend}>
       <PageLayout>
@@ -189,10 +191,42 @@ export default function ClassAILabs() {
                 {t('subtitle')}
               </p>
             </div>
-            <Badge className="bg-primary text-primary-foreground">
+            <Badge className="bg-gradient-to-r from-violet-500 to-purple-600 text-white border-0">
               <Sparkles className="h-3 w-3 mr-1" />
               {t('aiPowered')}
             </Badge>
+          </div>
+
+          {/* Stats Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <StatsCard
+              title={t('stats.drafts')}
+              value={totalDrafts}
+              icon={PenTool}
+              description={t('stats.draftsDesc')}
+              color="#4E81EE"
+            />
+            <StatsCard
+              title={t('stats.chats')}
+              value={totalChats}
+              icon={MessageSquare}
+              description={t('stats.chatsDesc')}
+              color="#A855F7"
+            />
+            <StatsCard
+              title={t('stats.messages')}
+              value={totalMessages}
+              icon={Brain}
+              description={t('stats.messagesDesc')}
+              color="#96C84D"
+            />
+            <StatsCard
+              title={t('stats.generated')}
+              value={totalDrafts + totalChats}
+              icon={Sparkles}
+              description={t('stats.generatedDesc')}
+              color="#FFB500"
+            />
           </div>
 
           {/* Creation Widgets - Only show for teachers */}
@@ -202,31 +236,39 @@ export default function ClassAILabs() {
                 <h2 className="text-xl font-semibold">{t('createNew')}</h2>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 pt-4">
                 {creationWidgets.map((widget) => {
                   const IconComponent = widget.icon;
                   return (
-                    <Card 
+                    <button 
                       key={widget.id}
-                      className="cursor-pointer hover:shadow-md transition-all duration-200 group hover:border-primary/30"
+                      className="relative p-5 rounded-xl border text-left transition-all duration-200 group hover:shadow-lg"
+                      style={{ 
+                        backgroundColor: `${widget.color}10`,
+                        borderColor: `${widget.color}30`
+                      }}
                       onClick={() => handleWidgetClick(widget.id)}
                     >
-                      <CardContent className="p-6 text-center space-y-3">
-                        <div className={`p-3 ${widget.bgColor} rounded-lg mx-auto w-fit group-hover:scale-105 transition-transform`}>
-                          <IconComponent className={`h-6 w-6 ${widget.textColor}`} />
-                        </div>
-    <div>
-                          <h3 className="font-semibold">{widget.title}</h3>
-                          <p className="text-sm text-muted-foreground">
-                            {widget.description}
-                          </p>
-                        </div>
-                        <div className="flex items-center justify-center gap-1 text-xs text-muted-foreground">
+                      {/* Icon badge - top right */}
+                      <div 
+                        className="absolute -top-3 -right-3 p-2.5 rounded-full shadow-md group-hover:scale-110 transition-transform"
+                        style={{ backgroundColor: widget.color }}
+                      >
+                        <IconComponent className="h-5 w-5 text-white" />
+                      </div>
+                      
+                      {/* Content */}
+                      <div className="pr-6">
+                        <h3 className="font-semibold text-foreground">{widget.title}</h3>
+                        <p className="text-sm text-muted-foreground mt-1 line-clamp-2">
+                          {widget.description}
+                        </p>
+                        <div className="flex items-center gap-1 text-xs text-muted-foreground mt-3">
                           <Zap className="h-3 w-3" />
                           {t('aiGenerated')}
                         </div>
-                      </CardContent>
-                    </Card>
+                      </div>
+                    </button>
                   );
                 })}
               </div>
@@ -333,59 +375,31 @@ export default function ClassAILabs() {
                         {t('chats.active')}
                       </Badge>
                     </div>
-                    <div className="grid gap-4">
+                    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                       {sortedChats.map((labChat) => {
-                        // Note: context is not included in the list response
-                        // We'll show basic info and get context when opening the chat
-                        const context = { topic: 'AI Lab', subject: 'General', difficulty: 'intermediate' };
-                        
                         return (
                           <Card 
                             key={labChat.id}
-                            className="cursor-pointer hover:shadow-md transition-all duration-200 hover:border-primary/30"
+                            className="cursor-pointer hover:shadow-lg transition-all duration-200 group"
+                            style={{ 
+                              backgroundColor: '#A855F715',
+                              borderColor: '#A855F730'
+                            }}
                             onClick={() => handleLabChatClick(labChat.id)}
                           >
-                            <CardContent className="p-4">
-                              <div className="flex items-start justify-between">
-                                <div className="flex items-start gap-3">
-                                  <div className="p-2 bg-primary/10 rounded-lg">
-                                    <Brain className="h-5 w-5 text-primary" />
-                                  </div>
-                                  <div className="flex-1">
-                                    <h4 className="font-semibold text-base">{labChat.title}</h4>
-                                    <div className="flex items-center gap-2 mt-1">
-                                      <Badge variant="outline" className="text-xs">
-                                        {context.topic || 'AI Lab'}
-                                      </Badge>
-                                      <Badge variant="outline" className="text-xs">
-                                        {context.subject || 'General'}
-                                      </Badge>
-                                      {context.difficulty && (
-                                        <Badge variant="outline" className="text-xs">
-                                          {context.difficulty}
-                                        </Badge>
-                                      )}
-                                    </div>
-                                    <div className="flex items-center gap-4 mt-2 text-sm text-muted-foreground">
-                                      <div className="flex items-center gap-1">
-                                        <MessageSquare className="h-3 w-3" />
-                                        {t('chats.messageCount', { count: labChat.messageCount || 0 })}
-                                      </div>
-                                      <div className="flex items-center gap-1">
-                                        <Clock className="h-3 w-3" />
-                                        {formatDistanceToNow(new Date(labChat.updatedAt), { addSuffix: true })}
-                                      </div>
-                                      <div className="flex items-center gap-1">
-                                        <Users className="h-3 w-3" />
-                                        {t('chats.createdBy', { name: labChat.createdBy.profile?.displayName || labChat.createdBy.username })}
-                                      </div>
-                                    </div>
-                                  </div>
+                            <CardContent className="p-5">
+                              <div className="flex items-start justify-between mb-3">
+                                <div 
+                                  className="p-2.5 rounded-xl group-hover:scale-105 transition-transform"
+                                  style={{ backgroundColor: '#A855F725' }}
+                                >
+                                  <Brain className="h-5 w-5" style={{ color: '#A855F7' }} />
                                 </div>
-                                <div className="flex items-center gap-2">
+                                <div className="flex items-center gap-1">
                                   <Button 
                                     variant="ghost" 
                                     size="sm"
+                                    className="h-8 w-8 p-0"
                                     onClick={(e) => {
                                       e.stopPropagation();
                                       handleLabChatClick(labChat.id);
@@ -397,16 +411,34 @@ export default function ClassAILabs() {
                                     <Button 
                                       variant="ghost" 
                                       size="sm"
+                                      className="h-8 w-8 p-0 text-red-600 hover:text-red-700 hover:bg-red-50"
                                       onClick={(e) => {
                                         e.stopPropagation();
                                         handleDeleteLabChat(labChat.id);
                                       }}
-                                      className="text-red-600 hover:text-red-700 hover:bg-red-50"
                                     >
                                       <Trash2 className="h-4 w-4" />
                                     </Button>
                                   )}
                                 </div>
+                              </div>
+                              
+                              <h4 className="font-semibold text-base mb-2 line-clamp-1">{labChat.title}</h4>
+                              
+                              <div className="flex items-center gap-3 text-xs text-muted-foreground">
+                                <div className="flex items-center gap-1">
+                                  <MessageSquare className="h-3 w-3" />
+                                  {labChat.messageCount || 0}
+                                </div>
+                                <div className="flex items-center gap-1">
+                                  <Clock className="h-3 w-3" />
+                                  {formatDistanceToNow(new Date(labChat.updatedAt), { addSuffix: true })}
+                                </div>
+                              </div>
+                              
+                              <div className="flex items-center gap-1 text-xs text-muted-foreground mt-2">
+                                <Users className="h-3 w-3" />
+                                {labChat.createdBy.profile?.displayName || labChat.createdBy.username}
                               </div>
                             </CardContent>
                           </Card>

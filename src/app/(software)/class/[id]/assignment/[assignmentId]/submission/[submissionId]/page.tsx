@@ -113,7 +113,7 @@ function SubmissionDetailSkeleton() {
       <div className="space-y-4">
         <div className="flex items-center justify-between">
           <Skeleton className="h-4 w-16" />
-        </div>
+      </div>
         <div className="flex items-center gap-4">
           <Skeleton className="h-12 w-12 rounded-full" />
           <div className="space-y-2">
@@ -126,8 +126,8 @@ function SubmissionDetailSkeleton() {
           <Skeleton className="h-7 w-20 rounded-full" />
           <Skeleton className="h-7 w-24 rounded-full" />
         </div>
-      </div>
-      
+        </div>
+        
       <Separator />
 
       {/* Files skeleton */}
@@ -215,7 +215,7 @@ export default function SubmissionDetailPage() {
   const utils = trpc.useUtils();
   const updateSubmissionMutation = trpc.assignment.updateSubmissionAsTeacher.useMutation({
     onSuccess: () => {
-      toast.success("Grade saved");
+        toast.success("Grade saved");
       // Invalidate submissions list cache to update grades display
       utils.assignment.getSubmissions.invalidate({ assignmentId: assignmentId as string });
       // Navigate back to assignment detail page
@@ -247,15 +247,15 @@ export default function SubmissionDetailPage() {
   useEffect(() => {
     if (submission && !isFormInitialized.current) {
       setFeedback((submission).teacherComments || "");
-
+      
       // Parse rubric grades if they exist
       if (submission.rubricState) {
         try {
           const existingGrades = JSON.parse(submission.rubricState);
           if (Array.isArray(existingGrades) && existingGrades.length > 0) {
             // Check if existing grades are compatible with current rubric criteria
-            const isCompatible = existingGrades.every(grade =>
-              rubricCriteria.some(criterion =>
+            const isCompatible = existingGrades.every(grade => 
+              rubricCriteria.some(criterion => 
                 criterion.id === grade.criteriaId &&
                 criterion.levels.some(level => level.id === grade.selectedLevelId)
               )
@@ -601,12 +601,12 @@ export default function SubmissionDetailPage() {
     <DndProvider backend={HTML5Backend}>
       <PageLayout>
         <div className="max-w-4xl mx-auto space-y-8">
-          {/* Header */}
+        {/* Header */}
           <div className="space-y-4">
             {/* Back button */}
-            <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between">
               <button 
-                onClick={() => router.back()}
+              onClick={() => router.back()}
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 ← Back
@@ -621,7 +621,7 @@ export default function SubmissionDetailPage() {
                   {submission.student.username.substring(0, 2).toUpperCase()}
                 </AvatarFallback>
               </Avatar>
-              <div>
+            <div>
                 <h1 className="text-2xl font-bold flex items-center gap-3">
                   {submission.assignment.title}
                   {getStudentAssignmentStatus(submission).map((status) => (
@@ -633,15 +633,15 @@ export default function SubmissionDetailPage() {
                 <p className="text-muted-foreground">
                   Submission by <span className="font-medium text-foreground">{submission.student.username}</span>
                 </p>
-              </div>
             </div>
+          </div>
 
             {/* Metadata badges */}
             <div className="flex flex-wrap items-center gap-3 text-sm">
               {submission.submittedAt && (
                 <div className="flex items-center gap-1.5 text-muted-foreground">
                   <span>Submitted {format(new Date(submission.submittedAt), 'MMM d, yyyy \'at\' h:mm a')}</span>
-                </div>
+        </div>
               )}
               
               {submission.assignment.dueDate && (
@@ -705,56 +705,56 @@ export default function SubmissionDetailPage() {
 
           <Separator />
 
-          {/* Student Attachments - Only show if acceptFiles is true */}
-          {assignment?.acceptFiles && (
+            {/* Student Attachments - Only show if acceptFiles is true */}
+            {assignment?.acceptFiles && (
             <div className="space-y-3">
               <h2 className="text-sm font-medium text-muted-foreground">Submitted Files</h2>
-              {submission.attachments.length > 0 ? (
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                  {convertAttachmentsToFileItems(submission.attachments).map((fileItem) => (
-                    <DraggableFileItem
-                      key={fileItem.id}
-                      item={fileItem}
-                      classId={classId}
-                      readonly={true}
-                      handlers={fileHandlers}
-                      getFileIcon={getFileIcon}
-                    />
-                  ))}
-                </div>
-              ) : (
-                <EmptyState
-                  icon={FileText}
-                  title="No files submitted"
+                  {submission.attachments.length > 0 ? (
+                      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                        {convertAttachmentsToFileItems(submission.attachments).map((fileItem) => (
+                          <DraggableFileItem
+                            key={fileItem.id}
+                            item={fileItem}
+                            classId={classId}
+                            readonly={true}
+                            handlers={fileHandlers}
+                            getFileIcon={getFileIcon}
+                          />
+                        ))}
+                      </div>
+                  ) : (
+                    <EmptyState
+                      icon={FileText}
+                      title="No files submitted"
                   description="The student hasn't submitted any files."
                   className="border rounded-lg border-dashed"
-                />
-              )}
+                    />
+                  )}
             </div>
-          )}
+            )}
 
-          {/* Extended Response - Only show if acceptExtendedResponse is true */}
-          {assignment?.acceptExtendedResponse && (
-            <ExtendedResponse extendedResponse={submission.extendedResponse} />
-          )}
+            {/* Extended Response - Only show if acceptExtendedResponse is true */}
+            {assignment?.acceptExtendedResponse && (
+              <ExtendedResponse extendedResponse={submission.extendedResponse} />
+            )}
 
-          {/* Worksheet Submission - Only show if acceptWorksheet is true */}
-          {assignment?.acceptWorksheet && assignment.worksheets && assignment.worksheets.length > 0 && (
+            {/* Worksheet Submission - Only show if acceptWorksheet is true */}
+            {assignment?.acceptWorksheet && assignment.worksheets && assignment.worksheets.length > 0 && (
             <div className="space-y-3">
               <h2 className="text-sm font-medium text-muted-foreground">Worksheets</h2>
               <div className="grid gap-2 sm:grid-cols-2">
                 {assignment.worksheets.map((worksheet) => (
                   <WorksheetCard
-                    key={worksheet.id}
-                    worksheetId={worksheet.id}
-                    submissionId={submissionId}
-                    worksheetName={worksheet.name || `Worksheet ${worksheet.id}`}
+                        key={worksheet.id}
+                        worksheetId={worksheet.id}
+                        submissionId={submissionId}
+                        worksheetName={worksheet.name || `Worksheet ${worksheet.id}`}
                     classId={classId}
-                  />
+                      />
                 ))}
+                </div>
               </div>
-            </div>
-          )}
+            )}
 
           {/* Teacher Annotations */}
           {isTeacher && (
@@ -814,16 +814,16 @@ export default function SubmissionDetailPage() {
 
           <Separator />
 
-          {/* Grade & Feedback - Teacher Only */}
-          {isTeacher && (
+            {/* Grade & Feedback - Teacher Only */}
+            {isTeacher && (
             <div className="space-y-6">
               <div className="flex items-center justify-between">
                 <h2 className="text-sm font-medium text-muted-foreground">
                   {rubricCriteria.length > 0 ? 'Rubric Grading' : 'Grading'}
                 </h2>
-                {submission.returned && (
+                    {submission.returned && (
                   <Badge variant="secondary">Returned - Read Only</Badge>
-                )}
+                    )}
               </div>
                 {/* Rubric Grading Section */}
                 {rubricCriteria.length > 0 && (
@@ -1007,16 +1007,16 @@ export default function SubmissionDetailPage() {
                   >
                     {submission.returned ? "Unreturn Submission" : "Return to Student"}
                   </Button>
-                </div>
+                    </div>
 
                 {submission.returned && (
                   <p className="text-sm text-muted-foreground">
                     Grade and feedback have been returned to the student.
-                  </p>
+                          </p>
+                        )}
+                      </div>
+                  </div>
                 )}
-              </div>
-            </div>
-          )}
         </div>
 
         {/* File Preview Modal */}

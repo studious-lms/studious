@@ -153,7 +153,7 @@ export function ClassSidebar({ classId }: ClassSidebarProps) {
                     handleClassChange(newClassId);
                     setMobileMenuOpen(false);
                   }}>
-                    <SelectTrigger className="w-full">
+                    <SelectTrigger className="w-full bg-none">
                       <SelectValue>
                         {isClassLoading && <Skeleton className="w-32 h-4" />}
                         {className && !isClassLoading && (

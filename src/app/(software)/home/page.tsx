@@ -1,11 +1,10 @@
 "use client";
-
-import { AppLayout } from "@/components/ui/app-layout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { EmptyState } from "@/components/ui/empty-state";
+import { StatsCard } from "@/components/ui/stats-card";
 import { trpc, type RouterOutputs } from "@/lib/trpc";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
@@ -15,12 +14,10 @@ import {
   BookOpen, 
   CheckCircle, 
   AlertCircle,
-  TrendingUp,
   Users,
   Bell,
   ChevronRight,
   GraduationCap,
-  LucideIcon
 } from "lucide-react";
 import Link from "next/link";
 import { format, isToday, isTomorrow, parseISO } from "date-fns";
@@ -83,41 +80,6 @@ function DashboardSkeleton() {
         </div>
       </div>
     </div>
-  );
-}
-
-function StatsCard({ 
-  title, 
-  value, 
-  icon: Icon, 
-  description, 
-  trend 
-}: { 
-  title: string; 
-  value: string | number; 
-  icon: LucideIcon; 
-  description?: string;
-  trend?: { value: string; isPositive: boolean };
-}) {
-  return (
-    <Card>
-      <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-        <CardTitle className="text-sm font-medium">{title}</CardTitle>
-        <Icon className="h-4 w-4 text-muted-foreground" />
-      </CardHeader>
-      <CardContent>
-        <div className="text-2xl font-bold">{value}</div>
-        {description && (
-          <p className="text-xs text-muted-foreground">{description}</p>
-        )}
-        {trend && (
-          <div className={`flex items-center text-xs ${trend.isPositive ? 'text-green-600' : 'text-red-600'} mt-1`}>
-            <TrendingUp className="h-3 w-3 mr-1" />
-            {trend.value}
-          </div>
-        )}
-      </CardContent>
-    </Card>
   );
 }
 
@@ -362,7 +324,6 @@ export default function HomePage() {
 
   if (isLoading) {
     return (
-      <AppLayout isAuthenticated={appState.user.loggedIn}>
         <div className="container mx-auto px-4 py-8">
           <div className="mb-8">
             <Skeleton className="h-8 w-64 mb-2" />
@@ -370,7 +331,6 @@ export default function HomePage() {
           </div>
           <DashboardSkeleton />
         </div>
-      </AppLayout>
     );
   }
 
@@ -387,7 +347,6 @@ export default function HomePage() {
   const dueTodayCount = allAssignments.filter(a => isToday(parseISO(a.dueDate))).length;
 
   return (
-    <AppLayout isAuthenticated={appState.user.loggedIn}>
       <div className="container mx-auto px-4 py-8 space-y-8">
         {/* Header */}
         <div className="space-y-2">
@@ -406,24 +365,28 @@ export default function HomePage() {
             value={totalClasses}
             icon={BookOpen}
             description={tStats('teachingEnrolled', { teaching: teachingClasses.length, enrolled: enrolledClasses.length })}
+            color="#4E81EE"
           />
           <StatsCard
             title={tStats('dueToday')}
             value={dueTodayCount}
             icon={AlertCircle}
             description={tStats('dueTodayDesc')}
+            color="#FE7F7F"
           />
           <StatsCard
             title={tStats('upcoming')}
             value={upcomingCount}
             icon={Clock}
             description={tStats('upcomingDesc')}
+            color="#96C84D"
           />
           <StatsCard
             title={tStats('thisWeek')}
             value={allAssignments.length}
             icon={Calendar}
             description={tStats('totalAssignments')}
+            color="#FFB500"
           />
         </div>
 
@@ -439,8 +402,7 @@ export default function HomePage() {
             <ClassOverview classes={classes || { teacherInClass: [], studentInClass: [] }} />
             <RecentNotifications />
           </div>
-        </div>
       </div>
-    </AppLayout>
+    </div>
   );
 }

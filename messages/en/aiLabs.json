@@ -6,6 +6,16 @@
     "createNew": "Create New Content",
     "aiGenerated": "AI Generated",
     "deleteConfirm": "Are you sure you want to delete this AI Lab? This action cannot be undone.",
+    "stats": {
+      "drafts": "Drafts",
+      "draftsDesc": "Content in progress",
+      "chats": "AI Chats",
+      "chatsDesc": "Active conversations",
+      "messages": "Messages",
+      "messagesDesc": "Total AI interactions",
+      "generated": "Generated",
+      "generatedDesc": "Total content created"
+    },
     "widgets": {
       "assignment": {
         "title": "Assignment",
@@ -30,7 +40,7 @@
     },
     "tabs": {
       "drafts": "Draft Labs",
-      "chats": "AI Cats"
+      "chats": "AI Chats"
     },
     "drafts": {
       "title": "Draft Labs ({count})",
