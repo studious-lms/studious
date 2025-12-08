@@ -8,7 +8,8 @@ export interface AIPolicyLevel {
   useCasesKey: string;
   studentResponsibilitiesKey: string;
   disclosureRequirementsKey: string;
-  color: string;
+  color: string; // Tailwind class
+  hexColor: string; // Hex color for dynamic styling
 }
 
 // AI Policy levels configuration with translation keys
@@ -20,7 +21,8 @@ export const AI_POLICY_LEVELS: AIPolicyLevel[] = [
     useCasesKey: 'aiPolicy.level1.useCases',
     studentResponsibilitiesKey: 'aiPolicy.level1.studentResponsibilities',
     disclosureRequirementsKey: 'aiPolicy.level1.disclosureRequirements',
-    color: 'bg-red-500'
+    color: 'bg-red-500',
+    hexColor: '#EF4444'
   },
   {
     level: 2,
@@ -29,7 +31,8 @@ export const AI_POLICY_LEVELS: AIPolicyLevel[] = [
     useCasesKey: 'aiPolicy.level2.useCases',
     studentResponsibilitiesKey: 'aiPolicy.level2.studentResponsibilities',
     disclosureRequirementsKey: 'aiPolicy.level2.disclosureRequirements',
-    color: 'bg-orange-500'
+    color: 'bg-orange-500',
+    hexColor: '#F97316'
   },
   {
     level: 3,
@@ -38,7 +41,8 @@ export const AI_POLICY_LEVELS: AIPolicyLevel[] = [
     useCasesKey: 'aiPolicy.level3.useCases',
     studentResponsibilitiesKey: 'aiPolicy.level3.studentResponsibilities',
     disclosureRequirementsKey: 'aiPolicy.level3.disclosureRequirements',
-    color: 'bg-yellow-500'
+    color: 'bg-yellow-500',
+    hexColor: '#EAB308'
   },
   {
     level: 4,
@@ -47,7 +51,8 @@ export const AI_POLICY_LEVELS: AIPolicyLevel[] = [
     useCasesKey: 'aiPolicy.level4.useCases',
     studentResponsibilitiesKey: 'aiPolicy.level4.studentResponsibilities',
     disclosureRequirementsKey: 'aiPolicy.level4.disclosureRequirements',
-    color: 'bg-green-500'
+    color: 'bg-green-500',
+    hexColor: '#22C55E'
   },
   {
     level: 5,
@@ -56,7 +61,8 @@ export const AI_POLICY_LEVELS: AIPolicyLevel[] = [
     useCasesKey: 'aiPolicy.level5.useCases',
     studentResponsibilitiesKey: 'aiPolicy.level5.studentResponsibilities',
     disclosureRequirementsKey: 'aiPolicy.level5.disclosureRequirements',
-    color: 'bg-green-500'
+    color: 'bg-green-500',
+    hexColor: '#22C55E'
   }
 ];
 

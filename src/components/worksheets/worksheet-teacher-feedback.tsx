@@ -35,12 +35,13 @@ export function WorksheetTeacherFeedback({
 }: TeacherFeedbackProps) {
   const handleMarkschemeItemToggle = (itemId: string, itemIndex: number) => {
     const currentState = questionFeedback?.markschemeState || {};
-    const key = itemId || `item-${itemIndex}`;
+    const key = `item-${itemId}`;
     const newState = {
       ...currentState,
       [key]: !currentState[key],
     };
     onFeedbackChange(question.id, 'markschemeState', newState);
+    onFeedbackChange(question.id, 'points', Object.values(newState).reduce((sum: number, value: any) => sum + (value ? 1 : 0), 0));
   };
 
   const handleCorrectChange = (checked: boolean) => {

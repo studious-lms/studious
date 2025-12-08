@@ -532,6 +532,7 @@ export function WorksheetQuestionViewer({
                                                     <p className="text-sm font-medium mb-2">Markscheme Items Achieved:</p>
                                                     <div className="space-y-2">
                                                         {question.markScheme.map((item: any, itemIndex: number) => {
+                                                            console.log('test');
                                                             const itemId = item.id;
                                                             const key = `item-${itemId}`;
                                                             const isChecked = feedback.markschemeState?.[key] || false;

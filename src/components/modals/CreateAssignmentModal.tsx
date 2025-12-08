@@ -9,10 +9,11 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Separator } from "@/components/ui/separator";
+import { OptionCard, ExpandableOptionCard } from "@/components/ui/option-card";
+import { AIPolicySelector } from "@/components/ui/ai-policy-card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { toast } from "sonner";
 import ColorPicker from "@/components/ui/color-picker";
 import {
@@ -30,7 +31,7 @@ import {
   FileUp,
   Search,
   Users,
-  ChevronDown
+  Sparkles,
 } from "lucide-react";
 import { useParams } from "next/navigation";
 import {
@@ -39,7 +40,6 @@ import {
 } from "@/lib/trpc";
 import { fixUploadUrl } from "@/lib/directUpload";
 import { useTranslations } from "next-intl";
-import { AI_POLICY_LEVELS } from "@/lib/aiPolicy";
 
 
 type FileData = {
@@ -199,16 +199,6 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
   }, [worksheetsData, worksheetSearchQuery]);
 
   // Build translated AI policy levels from shared config
-  const aiPolicyLevels = AI_POLICY_LEVELS.map(policy => ({
-    level: policy.level,
-    title: t(policy.titleKey),
-    description: t(policy.descriptionKey),
-    useCases: t(policy.useCasesKey),
-    studentResponsibilities: t(policy.studentResponsibilitiesKey),
-    disclosureRequirements: t(policy.disclosureRequirementsKey),
-    color: policy.color,
-  }));
-
   const resetForm = () => {
     setFormData(defaultFormData);
     setShowNewSection(false);
@@ -686,33 +676,18 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
 
                   {/* Assignment Options */}
                   <div className="space-y-3">
-                    <div className="flex items-center space-x-3 p-3 rounded-lg border">
-                      <Checkbox
-                        id="graded"
-                        checked={formData.graded}
-                        onCheckedChange={(checked) => setFormData({ ...formData, graded: !!checked })}
-                      />
-                      <div className="flex-1">
-                        <Label htmlFor="graded" className="text-sm font-medium cursor-pointer">
-                          {t('options.graded.label')}
-                        </Label>
-                        <p className="text-xs text-muted-foreground">{t('options.graded.description')}</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center space-x-3 p-3 rounded-lg border">
-                      <Checkbox
-                        id="inProgress"
-                        checked={formData.inProgress}
-                        onCheckedChange={(checked) => setFormData({ ...formData, inProgress: !!checked })}
-                      />
-                      <div className="flex-1">
-                        <Label htmlFor="inProgress" className="text-sm font-medium cursor-pointer">
-                          {t('options.draft.label')}
-                        </Label>
-                        <p className="text-xs text-muted-foreground">{t('options.draft.description')}</p>
-                      </div>
-                    </div>
+                    <OptionCard
+                      checked={formData.graded}
+                      onCheckedChange={(checked) => setFormData({ ...formData, graded: checked })}
+                      title={t('options.graded.label')}
+                      description={t('options.graded.description')}
+                    />
+                    <OptionCard
+                      checked={formData.inProgress}
+                      onCheckedChange={(checked) => setFormData({ ...formData, inProgress: checked })}
+                      title={t('options.draft.label')}
+                      description={t('options.draft.description')}
+                    />
                   </div>
                 </div>
               </div>
@@ -841,60 +816,30 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
               </div>
 
               <div className="space-y-3">
-                {/* File Upload */}
-                <div className="flex items-center space-x-3 p-3 rounded-lg border">
-                  <Checkbox
-                    id="fileUpload"
-                    checked={formData.acceptFiles}
-                    onCheckedChange={(checked) => setFormData({ ...formData, acceptFiles: !!checked })}
-                  />
-                  <div className="flex-1">
-                    <Label htmlFor="fileUpload" className="text-sm font-medium cursor-pointer">
-                      {t('deliverables.fileUpload.label')}
-                    </Label>
-                    <p className="text-xs text-muted-foreground">{t('deliverables.fileUpload.description')}</p>
-                  </div>
-                </div>
+                <OptionCard
+                  checked={formData.acceptFiles || false}
+                  onCheckedChange={(checked) => setFormData({ ...formData, acceptFiles: checked })}
+                  title={t('deliverables.fileUpload.label')}
+                  description={t('deliverables.fileUpload.description')}
+                  icon={FileUp}
+                />
 
-                {/* Extended Response */}
-                <div className="flex items-center space-x-3 p-3 rounded-lg border">
-                  <Checkbox
-                    id="extendedResponse"
-                    checked={formData.acceptExtendedResponse}
-                    onCheckedChange={(checked) => setFormData({ ...formData, acceptExtendedResponse: !!checked })}
-                  />
-                  <div className="flex-1">
-                    <Label htmlFor="extendedResponse" className="text-sm font-medium cursor-pointer">
-                      {t('deliverables.extendedResponse.label')}
-                    </Label>
-                    <p className="text-xs text-muted-foreground">{t('deliverables.extendedResponse.description')}</p>
-                  </div>
-                </div>
+                <OptionCard
+                  checked={formData.acceptExtendedResponse || false}
+                  onCheckedChange={(checked) => setFormData({ ...formData, acceptExtendedResponse: checked })}
+                  title={t('deliverables.extendedResponse.label')}
+                  description={t('deliverables.extendedResponse.description')}
+                  icon={FileText}
+                />
 
-                {/* Worksheet Submission */}
-                <div
-                  className={`w-full rounded-lg border transition-all overflow-hidden ${
-                    formData.acceptWorksheet ? 'border-primary bg-primary/5 dark:bg-primary/10' : ''
-                  }`}
-                >
-                  <div className="flex items-center space-x-3 p-3">
-                    <Checkbox
-                      id="worksheetSubmission"
-                      checked={formData.acceptWorksheet}
-                      onCheckedChange={(checked) => {
-                        setFormData(prev => ({ ...prev, acceptWorksheet: !!checked }));
-                      }}
-                    />
-                    <div className="flex-1">
-                      <Label htmlFor="worksheetSubmission" className="text-sm font-medium cursor-pointer">
-                        {t('deliverables.worksheetSubmission.label')}
-                      </Label>
-                      <p className="text-xs text-muted-foreground">{t('deliverables.worksheetSubmission.description')}</p>
-                    </div>
-                    <ChevronDown className={`h-4 w-4 transition-transform ${formData.acceptWorksheet ? 'rotate-180' : ''}`} />
-                  </div>
-                  {formData.acceptWorksheet && (
-                    <div className="px-3 pb-3 pt-0 space-y-3 animate-in slide-in-from-top-2 duration-200">
+                <ExpandableOptionCard
+                  checked={formData.acceptWorksheet || false}
+                  onCheckedChange={(checked) => setFormData({ ...formData, acceptWorksheet: checked })}
+                  title={t('deliverables.worksheetSubmission.label')}
+                  description={t('deliverables.worksheetSubmission.description')}
+                  icon={ClipboardList}
+                  expandedContent={
+                    <div className="space-y-3">
                       <div className="relative">
                         <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                         <Input
@@ -915,29 +860,18 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
                           return (
                             <div
                               key={worksheet.id}
-                              className={`flex items-center space-x-3 p-3 rounded-lg border cursor-pointer transition-colors ${
-                                isSelected ? 'bg-primary/10 dark:bg-primary/20 border-primary/20' : 'hover:bg-muted/50'
+                              className={`flex items-center gap-3 p-3 rounded-lg border cursor-pointer transition-colors ${
+                                isSelected ? 'bg-primary/10 border-primary' : 'hover:bg-muted/50'
                               }`}
-                              // onClick={() => {
-                              //   const newIds = isSelected
-                              //     ? formData.selectedWorksheetIds.filter(id => id !== worksheet.id)
-                              //     : [...formData.selectedWorksheetIds, worksheet.id];
-                              //   setFormData(prev => ({ ...prev, selectedWorksheetIds: newIds }));
-                              // }}
+                              onClick={() => {
+                                const currentIds = formData.worksheetIds || [];
+                                const newIds = isSelected
+                                  ? currentIds.filter(id => id !== worksheet.id)
+                                  : [...currentIds, worksheet.id];
+                                setFormData({ ...formData, worksheetIds: newIds });
+                              }}
                             >
-                              <Checkbox
-                                checked={isSelected}
-                                onCheckedChange={(checked) => {
-                                  setFormData(prev => {
-                                    const currentIds = prev.worksheetIds || [];
-                                    const newIds = checked
-                                      ? (currentIds.includes(worksheet.id) ? currentIds : [...currentIds, worksheet.id])
-                                      : currentIds.filter(id => id !== worksheet.id);
-                                    return { ...prev, worksheetIds: newIds };
-                                  });
-                                }}
-                                onClick={(e) => e.stopPropagation()}
-                              />
+                              <Checkbox checked={isSelected} onClick={(e) => e.stopPropagation()} />
                               <FileText className="h-4 w-4 text-muted-foreground" />
                               <span className="text-sm flex-1">{worksheet.name}</span>
                             </div>
@@ -950,23 +884,16 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
                         </div>
                       )}
                     </div>
-                  )}
-                </div>
+                  }
+                />
 
-                {/* Grade and feedback with AI */}
-                <div className="flex items-center space-x-3 p-3 rounded-lg border">
-                  <Checkbox
-                    id="aiGrading"
-                    checked={formData.gradeWithAI}
-                    onCheckedChange={(checked) => setFormData({ ...formData, gradeWithAI: !!checked })}
-                  />
-                  <div className="flex-1">
-                    <Label htmlFor="gradeWithAI" className="text-sm font-medium cursor-pointer">
-                      {t('deliverables.aiGrading.label')}
-                    </Label>
-                    <p className="text-xs text-muted-foreground">{t('deliverables.aiGrading.description')}</p>
-                  </div>
-                </div>
+                <OptionCard
+                  checked={formData.gradeWithAI || false}
+                  onCheckedChange={(checked) => setFormData({ ...formData, gradeWithAI: checked })}
+                  title={t('deliverables.aiGrading.label')}
+                  description={t('deliverables.aiGrading.description')}
+                  icon={Sparkles}
+                />
               </div>
             </div>
 
@@ -976,59 +903,10 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
                 {t('sections.aiPolicy')}
               </div>
 
-              <div className="space-y-3">
-                {aiPolicyLevels.map((policy) => {
-                  const isSelected = formData.aiPolicyLevel === policy.level;
-                  return (
-                    <Collapsible
-                      key={policy.level}
-                      open={isSelected}
-                      onOpenChange={(open) => {
-                        if (open) {
-                          setFormData({ ...formData, aiPolicyLevel: policy.level });
-                        }
-                      }}
-                    >
-                      <div
-                        className={`w-full rounded-lg border cursor-pointer transition-all ${
-                          isSelected ? 'border-primary bg-primary/5 dark:bg-primary/10' : 'hover:bg-muted/50'
-                        }`}
-                      >
-                        <CollapsibleTrigger asChild>
-                          <div className="p-4">
-                            <div className="flex items-start gap-3">
-                              <div className={`w-3 h-3 rounded-full ${policy.color} mt-1.5 flex-shrink-0`} />
-                              <div className="flex-1">
-                                <div className="flex items-center gap-2 mb-1">
-                                  <h4 className="font-medium text-sm">{policy.title}</h4>
-                                  <ChevronDown className={`h-4 w-4 ml-auto transition-transform ${isSelected ? 'rotate-180' : ''}`} />
-                                </div>
-                                <p className="text-xs text-muted-foreground">{policy.description}</p>
-                              </div>
-                            </div>
-                          </div>
-                        </CollapsibleTrigger>
-                        <CollapsibleContent>
-                          <div className="px-4 pb-4 pt-0 space-y-3 text-sm">
-                            <div>
-                              <div className="font-medium text-foreground mb-1">{t('aiPolicy.useCases')}</div>
-                              <div className="text-muted-foreground">{policy.useCases}</div>
-                            </div>
-                            <div>
-                              <div className="font-medium text-foreground mb-1">{t('aiPolicy.studentResponsibilities')}</div>
-                              <div className="text-muted-foreground">{policy.studentResponsibilities}</div>
-                            </div>
-                            <div>
-                              <div className="font-medium text-foreground mb-1">{t('aiPolicy.disclosureRequirements')}</div>
-                              <div className="text-muted-foreground">{policy.disclosureRequirements}</div>
-                            </div>
-                          </div>
-                        </CollapsibleContent>
-                      </div>
-                    </Collapsible>
-                  );
-                })}
-              </div>
+              <AIPolicySelector
+                selectedLevel={formData.aiPolicyLevel}
+                onSelectLevel={(level) => setFormData({ ...formData, aiPolicyLevel: level })}
+              />
             </div>
 
             {/* 📎 File Attachments */}

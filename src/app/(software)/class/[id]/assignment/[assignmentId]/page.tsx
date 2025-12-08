@@ -16,6 +16,7 @@ import {
   Upload,
   ArrowLeft,
   Sparkles,
+  ChevronDown,
 } from "lucide-react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -52,11 +53,9 @@ import { baseFileHandler } from "@/lib/fileHandler";
 import Link from "next/link";
 import { Progress } from "@/components/ui/progress";
 import { getStatusColor, getStudentAssignmentStatus } from "@/lib/getStudentAssignmentStatus";
-import { AI_POLICY_LEVELS, getAIPolicyColor } from "@/lib/aiPolicy";
 import { Textarea } from "@/components/ui/textarea";
 import { useTranslations } from "next-intl";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { ChevronDown } from "lucide-react";
+import { AIPolicyDisplay } from "@/components/ui/ai-policy-card";
 import type { RouterInputs } from "@/lib/trpc";
 
 type Submissions = RouterOutputs['assignment']['getSubmissions'];
@@ -194,22 +193,6 @@ export default function AssignmentDetailPage() {
   const isStudent = !isTeacher; // If not a teacher, assume student role
 
   // Build translated AI policy levels from shared config
-  const getAIPolicy = (level: number) => {
-    const policy = AI_POLICY_LEVELS.find(p => p.level === level);
-    if (!policy) return null;
-    return {
-      level: policy.level,
-      title: t(policy.titleKey),
-      description: t(policy.descriptionKey),
-      useCases: t(policy.useCasesKey),
-      studentResponsibilities: t(policy.studentResponsibilitiesKey),
-      disclosureRequirements: t(policy.disclosureRequirementsKey),
-      color: policy.color,
-    };
-  };
-
-  // State for AI policy collapsible
-  const [aiPolicyExpanded, setAiPolicyExpanded] = useState(false);
 
   // Get assignment data
   const { data: assignment, isLoading: assignmentLoading } = trpc.assignment.get.useQuery({
@@ -690,45 +673,9 @@ export default function AssignmentDetailPage() {
           </div>
 
           {/* AI Policy */}
-          {assignment.aiPolicyLevel && getAIPolicy(assignment.aiPolicyLevel) && (() => {
-            const policy = getAIPolicy(assignment.aiPolicyLevel)!;
-            return (
-              <Collapsible open={aiPolicyExpanded} onOpenChange={setAiPolicyExpanded}>
-                <div className={`w-full rounded-lg border transition-all ${getAIPolicyColor(assignment.aiPolicyLevel)}`}>
-                  <CollapsibleTrigger asChild>
-                    <div className="p-4 cursor-pointer">
-                      <div className="flex items-start gap-3">
-                        <div className={`w-3 h-3 rounded-full ${policy.color} mt-1.5 flex-shrink-0`} />
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2 mb-1">
-                            <h4 className="font-medium text-sm">{policy.title}</h4>
-                            <ChevronDown className={`h-4 w-4 ml-auto transition-transform ${aiPolicyExpanded ? 'rotate-180' : ''}`} />
-                          </div>
-                          <p className="text-xs text-muted-foreground">{policy.description}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </CollapsibleTrigger>
-                  <CollapsibleContent>
-                    <div className="px-4 pb-4 pt-0 space-y-3 text-sm">
-                      <div>
-                        <div className="font-medium text-foreground mb-1">{t('aiPolicy.useCases')}</div>
-                        <div className="text-muted-foreground">{policy.useCases}</div>
-                      </div>
-                      <div>
-                        <div className="font-medium text-foreground mb-1">{t('aiPolicy.studentResponsibilities')}</div>
-                        <div className="text-muted-foreground">{policy.studentResponsibilities}</div>
-                      </div>
-                      <div>
-                        <div className="font-medium text-foreground mb-1">{t('aiPolicy.disclosureRequirements')}</div>
-                        <div className="text-muted-foreground">{policy.disclosureRequirements}</div>
-                      </div>
-                    </div>
-                  </CollapsibleContent>
-                </div>
-              </Collapsible>
-            );
-          })()}
+          {assignment.aiPolicyLevel && (
+            <AIPolicyDisplay level={assignment.aiPolicyLevel} />
+          )}
 
           {/* Attachments - inline style */}
           {assignment.attachments.length > 0 && (

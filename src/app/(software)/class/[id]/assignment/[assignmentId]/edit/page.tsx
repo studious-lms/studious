@@ -13,8 +13,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import ColorPicker from "@/components/ui/color-picker";
+import { OptionCard, ExpandableOptionCard } from "@/components/ui/option-card";
+import { AIPolicySelector } from "@/components/ui/ai-policy-card";
 import { useTranslations } from "next-intl";
 import { 
   ArrowLeft,
@@ -25,10 +26,9 @@ import {
   Plus,
   X,
   Users,
-  ChevronDown,
   Search,
   FileText,
-  Image,
+  Image as ImageIcon,
   FileVideo,
   Music,
   Archive,
@@ -239,13 +239,6 @@ export default function AssignmentEditPage() {
   }, [worksheetsData, worksheetSearchQuery]);
 
   // AI Policy levels
-  const aiPolicyLevels = [
-    { level: 1, title: t('aiPolicy.level1.title'), description: t('aiPolicy.level1.description'), useCases: t('aiPolicy.level1.useCases'), studentResponsibilities: t('aiPolicy.level1.studentResponsibilities'), disclosureRequirements: t('aiPolicy.level1.disclosureRequirements'), color: '#EF4444' },
-    { level: 2, title: t('aiPolicy.level2.title'), description: t('aiPolicy.level2.description'), useCases: t('aiPolicy.level2.useCases'), studentResponsibilities: t('aiPolicy.level2.studentResponsibilities'), disclosureRequirements: t('aiPolicy.level2.disclosureRequirements'), color: '#F97316' },
-    { level: 3, title: t('aiPolicy.level3.title'), description: t('aiPolicy.level3.description'), useCases: t('aiPolicy.level3.useCases'), studentResponsibilities: t('aiPolicy.level3.studentResponsibilities'), disclosureRequirements: t('aiPolicy.level3.disclosureRequirements'), color: '#EAB308' },
-    { level: 4, title: t('aiPolicy.level4.title'), description: t('aiPolicy.level4.description'), useCases: t('aiPolicy.level4.useCases'), studentResponsibilities: t('aiPolicy.level4.studentResponsibilities'), disclosureRequirements: t('aiPolicy.level4.disclosureRequirements'), color: '#22C55E' },
-    { level: 5, title: t('aiPolicy.level5.title'), description: t('aiPolicy.level5.description'), useCases: t('aiPolicy.level5.useCases'), studentResponsibilities: t('aiPolicy.level5.studentResponsibilities'), disclosureRequirements: t('aiPolicy.level5.disclosureRequirements'), color: '#22C55E' },
-  ];
 
   const updateAssignmentMutation = trpc.assignment.update.useMutation({
     onSuccess: () => {
@@ -429,7 +422,7 @@ export default function AssignmentEditPage() {
       case "mp4": return <FileVideo className={`${iconSize} text-purple-500`} />;
       case "mp3": return <Music className={`${iconSize} text-pink-500`} />;
       case "zip": return <Archive className={`${iconSize} text-gray-500`} />;
-      case "jpg": case "png": case "gif": return <Image className={`${iconSize} text-emerald-500`} />;
+      case "jpg": case "png": case "gif": return <ImageIcon className={`${iconSize} text-emerald-500`} />;
       default: return <File className={`${iconSize} text-slate-500`} />;
     }
   };
@@ -727,41 +720,18 @@ export default function AssignmentEditPage() {
                 <h2 className="text-lg font-semibold">Options</h2>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  {/* Graded */}
-                  <div 
-                    className={`flex items-center gap-3 p-4 rounded-xl border cursor-pointer transition-all ${
-                      formData.graded ? 'bg-green-50 dark:bg-green-950/20 border-green-200 dark:border-green-800' : 'hover:bg-muted/50'
-                    }`}
-                    onClick={() => updateFormData({ graded: !formData.graded })}
-                  >
-                    <Checkbox
-                      checked={formData.graded || false}
-                      onCheckedChange={(checked) => updateFormData({ graded: !!checked })}
-                      onClick={(e) => e.stopPropagation()}
-                    />
-                    <div className="flex-1">
-                      <p className="font-medium text-sm">{t('options.graded.label')}</p>
-                      <p className="text-xs text-muted-foreground">{t('options.graded.description')}</p>
-                    </div>
-                  </div>
-
-                  {/* Draft */}
-                  <div 
-                    className={`flex items-center gap-3 p-4 rounded-xl border cursor-pointer transition-all ${
-                      formData.inProgress ? 'bg-yellow-50 dark:bg-yellow-950/20 border-yellow-200 dark:border-yellow-800' : 'hover:bg-muted/50'
-                    }`}
-                    onClick={() => updateFormData({ inProgress: !formData.inProgress })}
-                  >
-                    <Checkbox
-                      checked={formData.inProgress || false}
-                      onCheckedChange={(checked) => updateFormData({ inProgress: !!checked })}
-                      onClick={(e) => e.stopPropagation()}
-                    />
-                    <div className="flex-1">
-                      <p className="font-medium text-sm">{t('options.draft.label')}</p>
-                      <p className="text-xs text-muted-foreground">{t('options.draft.description')}</p>
-                    </div>
-                  </div>
+                  <OptionCard
+                    checked={formData.graded || false}
+                    onCheckedChange={(checked) => updateFormData({ graded: checked })}
+                    title={t('options.graded.label')}
+                    description={t('options.graded.description')}
+                  />
+                  <OptionCard
+                    checked={formData.inProgress || false}
+                    onCheckedChange={(checked) => updateFormData({ inProgress: checked })}
+                    title={t('options.draft.label')}
+                    description={t('options.draft.description')}
+                  />
                 </div>
               </div>
 
@@ -896,65 +866,30 @@ export default function AssignmentEditPage() {
                 <h2 className="text-lg font-semibold">{t('sections.deliverables')}</h2>
                 
                 <div className="space-y-3">
-                  {/* File Upload */}
-                  <div 
-                    className={`flex items-center gap-3 p-4 rounded-xl border cursor-pointer transition-all ${
-                      formData.acceptFiles ? 'bg-blue-50 dark:bg-blue-950/20 border-blue-200 dark:border-blue-800' : 'hover:bg-muted/50'
-                    }`}
-                    onClick={() => updateFormData({ acceptFiles: !formData.acceptFiles })}
-                  >
-                    <Checkbox
-                      checked={formData.acceptFiles || false}
-                      onCheckedChange={(checked) => updateFormData({ acceptFiles: !!checked })}
-                      onClick={(e) => e.stopPropagation()}
-                    />
-                    <FileUp className="h-5 w-5 text-blue-600" />
-                    <div className="flex-1">
-                      <p className="font-medium text-sm">{t('deliverables.fileUpload.label')}</p>
-                      <p className="text-xs text-muted-foreground">{t('deliverables.fileUpload.description')}</p>
-                    </div>
-                  </div>
+                  <OptionCard
+                    checked={formData.acceptFiles || false}
+                    onCheckedChange={(checked) => updateFormData({ acceptFiles: checked })}
+                    title={t('deliverables.fileUpload.label')}
+                    description={t('deliverables.fileUpload.description')}
+                    icon={FileUp}
+                  />
 
-                  {/* Extended Response */}
-                  <div 
-                    className={`flex items-center gap-3 p-4 rounded-xl border cursor-pointer transition-all ${
-                      formData.acceptExtendedResponse ? 'bg-purple-50 dark:bg-purple-950/20 border-purple-200 dark:border-purple-800' : 'hover:bg-muted/50'
-                    }`}
-                    onClick={() => updateFormData({ acceptExtendedResponse: !formData.acceptExtendedResponse })}
-                  >
-                    <Checkbox
-                      checked={formData.acceptExtendedResponse || false}
-                      onCheckedChange={(checked) => updateFormData({ acceptExtendedResponse: !!checked })}
-                      onClick={(e) => e.stopPropagation()}
-                    />
-                    <FileText className="h-5 w-5 text-purple-600" />
-                    <div className="flex-1">
-                      <p className="font-medium text-sm">{t('deliverables.extendedResponse.label')}</p>
-                      <p className="text-xs text-muted-foreground">{t('deliverables.extendedResponse.description')}</p>
-                    </div>
-                  </div>
+                  <OptionCard
+                    checked={formData.acceptExtendedResponse || false}
+                    onCheckedChange={(checked) => updateFormData({ acceptExtendedResponse: checked })}
+                    title={t('deliverables.extendedResponse.label')}
+                    description={t('deliverables.extendedResponse.description')}
+                    icon={FileText}
+                  />
 
-                  {/* Worksheet */}
-                  <div className={`rounded-xl border transition-all ${formData.acceptWorksheet ? 'bg-green-50 dark:bg-green-950/20 border-green-200 dark:border-green-800' : ''}`}>
-                    <div 
-                      className={`flex items-center gap-3 p-4 cursor-pointer ${!formData.acceptWorksheet ? 'hover:bg-muted/50 rounded-xl' : ''}`}
-                      onClick={() => updateFormData({ acceptWorksheet: !formData.acceptWorksheet })}
-                    >
-                      <Checkbox
-                        checked={formData.acceptWorksheet || false}
-                        onCheckedChange={(checked) => updateFormData({ acceptWorksheet: !!checked })}
-                        onClick={(e) => e.stopPropagation()}
-                      />
-                      <ClipboardList className="h-5 w-5 text-green-600" />
-                      <div className="flex-1">
-                        <p className="font-medium text-sm">{t('deliverables.worksheetSubmission.label')}</p>
-                        <p className="text-xs text-muted-foreground">{t('deliverables.worksheetSubmission.description')}</p>
-                      </div>
-                      <ChevronDown className={`h-4 w-4 transition-transform ${formData.acceptWorksheet ? 'rotate-180' : ''}`} />
-                    </div>
-                    
-                    {formData.acceptWorksheet && (
-                      <div className="px-4 pb-4 space-y-3">
+                  <ExpandableOptionCard
+                    checked={formData.acceptWorksheet || false}
+                    onCheckedChange={(checked) => updateFormData({ acceptWorksheet: checked })}
+                    title={t('deliverables.worksheetSubmission.label')}
+                    description={t('deliverables.worksheetSubmission.description')}
+                    icon={ClipboardList}
+                    expandedContent={
+                      <div className="space-y-3">
                         <div className="relative">
                           <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                           <Input
@@ -971,7 +906,7 @@ export default function AssignmentEditPage() {
                               <div
                                 key={worksheet.id}
                                 className={`flex items-center gap-3 p-3 rounded-lg border cursor-pointer transition-colors ${
-                                  isSelected ? 'bg-green-100 dark:bg-green-900/30 border-green-300' : 'hover:bg-muted/50'
+                                  isSelected ? 'bg-primary/10 border-primary' : 'hover:bg-muted/50'
                                 }`}
                                 onClick={() => {
                                   const currentIds = formData.worksheetIds || [];
@@ -994,27 +929,16 @@ export default function AssignmentEditPage() {
                           )}
                         </div>
                       </div>
-                    )}
-                  </div>
+                    }
+                  />
 
-                  {/* AI Grading */}
-                  <div 
-                    className={`flex items-center gap-3 p-4 rounded-xl border cursor-pointer transition-all ${
-                      formData.gradeWithAI ? 'bg-amber-50 dark:bg-amber-950/20 border-amber-200 dark:border-amber-800' : 'hover:bg-muted/50'
-                    }`}
-                    onClick={() => updateFormData({ gradeWithAI: !formData.gradeWithAI })}
-                  >
-                    <Checkbox
-                      checked={formData.gradeWithAI || false}
-                      onCheckedChange={(checked) => updateFormData({ gradeWithAI: !!checked })}
-                      onClick={(e) => e.stopPropagation()}
-                    />
-                    <Sparkles className="h-5 w-5 text-amber-600" />
-                    <div className="flex-1">
-                      <p className="font-medium text-sm">{t('deliverables.aiGrading.label')}</p>
-                      <p className="text-xs text-muted-foreground">{t('deliverables.aiGrading.description')}</p>
-                    </div>
-                  </div>
+                  <OptionCard
+                    checked={formData.gradeWithAI || false}
+                    onCheckedChange={(checked) => updateFormData({ gradeWithAI: checked })}
+                    title={t('deliverables.aiGrading.label')}
+                    description={t('deliverables.aiGrading.description')}
+                    icon={Sparkles}
+                  />
                 </div>
               </div>
 
@@ -1024,61 +948,10 @@ export default function AssignmentEditPage() {
               <div className="space-y-4">
                 <h2 className="text-lg font-semibold">{t('sections.aiPolicy')}</h2>
                 
-                <div className="space-y-2">
-                  {aiPolicyLevels.map((policy) => {
-                    const isSelected = formData.aiPolicyLevel === policy.level;
-                    return (
-                      <Collapsible
-                        key={policy.level}
-                        open={isSelected}
-                        onOpenChange={(open) => {
-                          if (open) updateFormData({ aiPolicyLevel: policy.level });
-                        }}
-                      >
-                        <div
-                          className={`rounded-xl border cursor-pointer transition-all ${
-                            isSelected ? 'border-2' : 'hover:bg-muted/50'
-                          }`}
-                          style={isSelected ? { borderColor: policy.color, backgroundColor: `${policy.color}10` } : {}}
-                        >
-                          <CollapsibleTrigger asChild>
-                            <div className="p-4">
-                              <div className="flex items-start gap-3">
-                                <div 
-                                  className="w-3 h-3 rounded-full mt-1.5 flex-shrink-0" 
-                                  style={{ backgroundColor: policy.color }}
-                                />
-                                <div className="flex-1">
-                                  <div className="flex items-center gap-2 mb-1">
-                                    <h4 className="font-medium text-sm">{policy.title}</h4>
-                                    <ChevronDown className={`h-4 w-4 ml-auto transition-transform ${isSelected ? 'rotate-180' : ''}`} />
-                                  </div>
-                                  <p className="text-xs text-muted-foreground">{policy.description}</p>
-                                </div>
-                              </div>
-                            </div>
-                          </CollapsibleTrigger>
-                          <CollapsibleContent>
-                            <div className="px-4 pb-4 pt-0 space-y-3 text-sm ml-6">
-                              <div>
-                                <p className="font-medium mb-1">{t('aiPolicy.useCases')}</p>
-                                <p className="text-muted-foreground">{policy.useCases}</p>
-                              </div>
-                              <div>
-                                <p className="font-medium mb-1">{t('aiPolicy.studentResponsibilities')}</p>
-                                <p className="text-muted-foreground">{policy.studentResponsibilities}</p>
-                              </div>
-                              <div>
-                                <p className="font-medium mb-1">{t('aiPolicy.disclosureRequirements')}</p>
-                                <p className="text-muted-foreground">{policy.disclosureRequirements}</p>
-                              </div>
-                            </div>
-                          </CollapsibleContent>
-                        </div>
-                      </Collapsible>
-                    );
-                  })}
-                </div>
+                <AIPolicySelector
+                  selectedLevel={formData.aiPolicyLevel || 4}
+                  onSelectLevel={(level) => updateFormData({ aiPolicyLevel: level })}
+                />
               </div>
             </div>
 
