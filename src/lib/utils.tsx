@@ -179,7 +179,7 @@ export function getGradeBorderAndBackground(
   const {
     thresholds = { excellent: 90, good: 80, passing: 70 },
   } = options;
-
+  
   // Handle missing or ungraded assignments
   if (grade === null || grade === undefined) {
     return "border-border bg-muted/30";

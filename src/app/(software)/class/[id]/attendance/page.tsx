@@ -238,20 +238,20 @@ export default function Attendance() {
               onClick={(e) => {
                 e.stopPropagation();
                 router.push(`/class/${classId}/attendance/${row.original.id}`);
-              }}
-            >
+                }}
+              >
               <Eye className="h-4 w-4 mr-1" />
-              {t('actions.viewDetails')}
+                {t('actions.viewDetails')}
             </Button>
             <Button
               variant="ghost"
               size="sm"
               onClick={(e) => {
                 e.stopPropagation();
-                setEventToEdit(event as Event);
-                setEventModalOpen(true);
-              }}
-            >
+                  setEventToEdit(event as Event);
+                  setEventModalOpen(true);
+                }}
+              >
               <Edit className="h-4 w-4" />
             </Button>
             <Button
@@ -260,10 +260,10 @@ export default function Attendance() {
               className="text-destructive hover:text-destructive"
               onClick={(e) => {
                 e.stopPropagation();
-                setEventToDelete({id: event!.id, name: event!.name || ""});
-                setDeleteConfirmOpen(true);
-              }}
-            >
+                  setEventToDelete({id: event!.id, name: event!.name || ""});
+                  setDeleteConfirmOpen(true);
+                }}
+              >
               <Trash2 className="h-4 w-4" />
             </Button>
           </div>
@@ -524,20 +524,20 @@ export default function Attendance() {
           </div>
 
           {/* Attendance History */}
-          {studentAttendanceData.length === 0 ? (
-            <EmptyState
-              icon={ClipboardCheck}
-              title={t('student.empty.title')}
-              description={t('student.empty.description')}
-            />
-          ) : (
-            <DataTable
-              columns={studentAttendanceColumns}
-              data={studentAttendanceData}
-              searchKey="name"
-              searchPlaceholder={t('student.searchPlaceholder')}
-            />
-          )}
+              {studentAttendanceData.length === 0 ? (
+                <EmptyState
+                  icon={ClipboardCheck}
+                  title={t('student.empty.title')}
+                  description={t('student.empty.description')}
+                />
+              ) : (
+                <DataTable
+                  columns={studentAttendanceColumns}
+                  data={studentAttendanceData}
+                  searchKey="name"
+                  searchPlaceholder={t('student.searchPlaceholder')}
+                />
+              )}
         </div>
       </PageLayout>
     );
@@ -549,11 +549,11 @@ export default function Attendance() {
       <div className="space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-2xl font-bold">{t('title')}</h1>
-            <p className="text-muted-foreground">{t('subtitle')}</p>
-          </div>
-          
+        <div>
+          <h1 className="text-2xl font-bold">{t('title')}</h1>
+          <p className="text-muted-foreground">{t('subtitle')}</p>
+        </div>
+        
           <Button onClick={() => {
             setEventToEdit(null);
             setEventModalOpen(true);
@@ -590,9 +590,9 @@ export default function Attendance() {
                   />
                 </PopoverContent>
               </Popover>
-            </div>
-          </CardHeader>
-          <CardContent>
+          </div>
+        </CardHeader>
+        <CardContent>
             {eventsForDate.length === 0 ? (
               <div className="space-y-4">
                 <EmptyState
@@ -652,12 +652,12 @@ export default function Attendance() {
 
         {/* All Events Table */}
         {tableData.length === 0 ? (
-          <EmptyState
+                <EmptyState
             icon={CalendarIcon}
             title={t('allEvents.empty.title')}
             description={t('allEvents.empty.description')}
-          />
-        ) : (
+                />
+              ) : (
           <DataTable
             columns={columns}
             data={tableData}
@@ -668,8 +668,8 @@ export default function Attendance() {
             }}
             pageSize={10}
           />
-        )}
-      </div>
+                          )}
+                      </div>
 
       {/* Class Event Modal (Create/Edit) */}
       <ClassEventModal

@@ -40,19 +40,17 @@ type Worksheet = RouterOutputs['worksheet']['listWorksheets'][number];
 function WorksheetCard({ 
   worksheet, 
   isTeacher, 
-  onView, 
   onEdit, 
   onDelete 
 }: { 
   worksheet: Worksheet;
   isTeacher: boolean;
-  onView: () => void;
   onEdit: () => void;
   onDelete: () => void;
 }) {
   return (
     <div
-      onClick={onView}
+      onClick={onEdit}
       className="group relative w-full text-left p-5 rounded-xl border bg-card hover:shadow-lg hover:border-primary/30 transition-all duration-200"
     >
       {/* Top row: Icon + Actions */}
@@ -238,7 +236,6 @@ export default function Worksheets() {
                 key={worksheet.id}
                 worksheet={worksheet}
                 isTeacher={isTeacher}
-                onView={() => router.push(`/class/${classId}/worksheets/${worksheet.id}`)}
                 onEdit={() => router.push(`/class/${classId}/worksheets/edit/${worksheet.id}`)}
                 onDelete={() => handleDelete(worksheet.id)}
               />

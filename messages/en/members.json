@@ -4,6 +4,11 @@
     "counts": {
       "totalMembers": "{count} members"
     },
+    "stats": {
+      "totalMembers": "Total Members",
+      "teachers": "Teachers",
+      "students": "Students"
+    },
     "actions": {
       "inviteMember": "Invite Member",
       "copy": "Copy",

@@ -146,13 +146,6 @@ export default function ClassAILabs() {
       icon: GraduationCap,
       color: "#96C84D" // Green
     },
-    {
-      id: "rubric",
-      title: t('widgets.rubric.title'),
-      description: t('widgets.rubric.description'),
-      icon: Target,
-      color: "#A855F7" // Purple
-    }
   ];
 
   const handleWidgetClick = (widgetId: string) => {
@@ -255,14 +248,14 @@ export default function ClassAILabs() {
                         style={{ backgroundColor: widget.color }}
                       >
                         <IconComponent className="h-5 w-5 text-white" />
-                      </div>
+                        </div>
                       
                       {/* Content */}
                       <div className="pr-6">
                         <h3 className="font-semibold text-foreground">{widget.title}</h3>
                         <p className="text-sm text-muted-foreground mt-1 line-clamp-2">
-                          {widget.description}
-                        </p>
+                            {widget.description}
+                          </p>
                         <div className="flex items-center gap-1 text-xs text-muted-foreground mt-3">
                           <Zap className="h-3 w-3" />
                           {t('aiGenerated')}

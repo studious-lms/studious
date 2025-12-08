@@ -532,8 +532,8 @@ export function WorksheetQuestionViewer({
                                                     <p className="text-sm font-medium mb-2">Markscheme Items Achieved:</p>
                                                     <div className="space-y-2">
                                                         {question.markScheme.map((item: any, itemIndex: number) => {
-                                                            const itemId = item.id || `item-${itemIndex}`;
-                                                            const key = itemId || `item-${itemIndex}`;
+                                                            const itemId = item.id;
+                                                            const key = `item-${itemId}`;
                                                             const isChecked = feedback.markschemeState?.[key] || false;
                                                             return isChecked ? (
                                                                 <div key={itemId || itemIndex} className="flex items-start gap-2 text-sm">

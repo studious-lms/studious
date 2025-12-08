@@ -12,6 +12,7 @@ import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Skeleton } from "@/components/ui/skeleton";
 import { EmptyState } from "@/components/ui/empty-state";
+import { StatsCard } from "@/components/ui/stats-card";
 import { 
   Search, 
   Copy, 
@@ -22,7 +23,9 @@ import {
   User, 
   RefreshCcw,
   MapPin,
-  Globe
+  Globe,
+  Users,
+  GraduationCap,
 } from "lucide-react";
 import {
   DropdownMenu,
@@ -45,29 +48,6 @@ import { toast } from "sonner";
 
 import { useParams, useRouter } from "next/navigation";
 import { useChat } from "@/hooks/useChat";
-type MemberFilter = 'all' | 'teachers' | 'students';
-
-// Skeleton component for member cards
-const MemberCardSkeleton = () => (
-  <Card>
-    <CardContent className="p-6">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-4">
-          <Skeleton className="h-12 w-12 rounded-full" />
-          <div className="space-y-2">
-            <Skeleton className="h-4 w-32" />
-            <Skeleton className="h-3 w-48" />
-            <Skeleton className="h-3 w-24" />
-          </div>
-        </div>
-        <div className="flex items-center space-x-2">
-          <Skeleton className="h-8 w-20" />
-          <Skeleton className="h-8 w-8" />
-        </div>
-      </div>
-    </CardContent>
-  </Card>
-);
 
 // Skeleton for the entire members page
 const MembersPageSkeleton = () => (
@@ -79,31 +59,25 @@ const MembersPageSkeleton = () => (
           <Skeleton className="h-8 w-32" />
           <Skeleton className="h-4 w-48" />
         </div>
-        <Skeleton className="h-10 w-32" />
+      </div>
+
+      {/* Stats skeleton */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {[1, 2, 3].map((i) => (
+          <Skeleton key={i} className="h-24 w-full rounded-lg" />
+        ))}
       </div>
 
       {/* Invite code skeleton */}
-      <Card>
-        <CardHeader>
-          <Skeleton className="h-6 w-40" />
-          <Skeleton className="h-4 w-64" />
-        </CardHeader>
-        <CardContent>
-          <div className="flex items-center space-x-2">
-            <Skeleton className="h-10 w-48" />
-            <Skeleton className="h-10 w-20" />
-            <Skeleton className="h-10 w-24" />
-          </div>
-        </CardContent>
-      </Card>
+      <Skeleton className="h-20 w-full rounded-lg" />
 
       {/* Search skeleton */}
       <Skeleton className="h-10 w-96" />
 
       {/* Members list skeleton */}
-      <div className="space-y-4">
-        {Array.from({ length: 3 }).map((_, index) => (
-          <MemberCardSkeleton key={index} />
+      <div className="grid md:grid-cols-2 gap-4">
+        {Array.from({ length: 4 }).map((_, index) => (
+          <Skeleton key={index} className="h-20 w-full rounded-lg" />
         ))}
       </div>
     </div>
@@ -150,6 +124,7 @@ export default function Members() {
       toast.error(t('errors.regenerateFailed'));
     }
   });
+
   // Process members data
   const members = useMemo(() => {
     if (!classData?.class) return { teachers: [], students: [] };
@@ -172,7 +147,8 @@ export default function Members() {
 
     const filterMembers = (memberList: RouterOutputs["class"]["get"]['class']['students']| RouterOutputs["class"]["get"]['class']['teachers']) => {
       return memberList.filter(member => 
-        member.username.toLowerCase().includes(searchQuery.toLowerCase())      );
+        member.username.toLowerCase().includes(searchQuery.toLowerCase())
+      );
     };
 
     return {
@@ -181,7 +157,7 @@ export default function Members() {
     };
   }, [members, searchQuery]);
 
-  const inviteCode = inviteCodeData?.code  || "Loading...";
+  const inviteCode = inviteCodeData?.code || "Loading...";
 
   const copyInviteCode = () => {
     if (inviteCode && inviteCode !== "Loading...") {
@@ -217,7 +193,6 @@ export default function Members() {
     }
   };
 
-
   const regenerateInviteCode = async () => {
     await regenerateInviteCodeMutation.mutateAsync({
       classId: classId as string,
@@ -236,23 +211,14 @@ export default function Members() {
       toast.error(errorMessage);
     }
   };
+
   const getRoleBadge = (type: string) => {
     switch (type) {
       case "teacher":
-        return <Badge variant="secondary">{t('labels.teacher')}</Badge>;
+        return <Badge className="bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300 border-0">{t('labels.teacher')}</Badge>;
       default:
-        return <Badge variant="outline">{t('labels.student')}</Badge>;
+        return <Badge variant="secondary">{t('labels.student')}</Badge>;
     }
-  };
-
-  const handleViewProfile = (member: RouterOutputs["class"]["get"]['class']['students'][number] | RouterOutputs["class"]["get"]['class']['teachers'][number], type: 'teacher' | 'student') => {
-    setSelectedUser({
-      id: member.id,
-      username: member.username,
-      profile: member.profile,
-      type,
-    });
-    setIsProfileDialogOpen(true);
   };
 
   // Show skeleton loading
@@ -260,8 +226,6 @@ export default function Members() {
     return <MembersPageSkeleton />;
   }
 
-
-  console.log(appState.user);
   // Show error state
   if (error) {
     return (
@@ -275,310 +239,328 @@ export default function Members() {
     );
   }
 
+  const totalMembers = members.teachers.length + members.students.length;
+
   return (
     <PageLayout>
-      <div className="flex items-center justify-between mb-6">
+      <div className="space-y-6">
+        {/* Header */}
         <div>
           <h1 className="text-2xl font-bold">{t('title')}</h1>
           <p className="text-muted-foreground">
-            {t('counts.totalMembers', { count: members.teachers.length + members.students.length })}
+            {t('counts.totalMembers', { count: totalMembers })}
           </p>
         </div>
-      </div>
 
-      {/* Invite Code Section */}
-      {user?.teacher && <Card className="mb-6">
-        <CardHeader>
-          <CardTitle>{t('invite.title')}</CardTitle>
-          <p className="text-sm text-muted-foreground">
-            {t('invite.description')}
-          </p>
-        </CardHeader>
-        <CardContent>
-          {inviteCodeLoading ? (
-            <div className="flex items-center space-x-2">
-              <Skeleton className="h-10 w-48 font-mono" />
-              <Skeleton className="h-10 w-20" />
-              <Skeleton className="h-10 w-24" />
-            </div>
-          ) : (
-            <div className="flex items-center space-x-2">
-              <Input 
-                value={inviteCode} 
-                readOnly 
-                className="font-mono max-w-xs"
-              />
-              <Button 
-                variant="outline" 
-                onClick={copyInviteCode}
-                disabled={inviteCode === "Loading..."}
-              >
-                <Copy className="h-4 w-4 mr-2" />
-                {t('actions.copy')}
-              </Button>
-              <Button variant="outline" onClick={regenerateInviteCode}>
-                <RefreshCcw className="h-4 w-4 mr-2" />
-                {t('actions.regenerate')}
-              </Button>
-            </div>
-          )}
-        </CardContent>
-      </Card>}
+        {/* Stats Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <StatsCard
+            title={t('stats.totalMembers')}
+            value={totalMembers}
+            icon={Users}
+            color="#4E81EE"
+          />
+          <StatsCard
+            title={t('stats.teachers')}
+            value={members.teachers.length}
+            icon={Shield}
+            color="#9333EA"
+          />
+          <StatsCard
+            title={t('stats.students')}
+            value={members.students.length}
+            icon={GraduationCap}
+            color="#96C84D"
+          />
+        </div>
 
-      {/* Search */}
-      <div className="relative max-w-md mb-6">
-        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-        <Input
-          placeholder={t('search.placeholder')}
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          className="pl-10"
-        />
-      </div>
-
-      {/* Members Tabs */}
-      <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-        <TabsList>
-          <TabsTrigger value="students" className="flex items-center space-x-2">
-            <span>{t('tabs.students')}</span>
-            <span className="bg-muted text-muted-foreground px-2 py-1 rounded-full text-xs">
-              {filteredMembers.students.length}
-            </span>
-          </TabsTrigger>
-          <TabsTrigger value="teachers" className="flex items-center space-x-2">
-            <span>{t('tabs.teachers')}</span>
-            <span className="bg-muted text-muted-foreground px-2 py-1 rounded-full text-xs">
-              {filteredMembers.teachers.length}
-            </span>
-          </TabsTrigger>
-        </TabsList>
-
-        <TabsContent value="students" className="space-y-4">
-          {filteredMembers.students.length > 0 ? (
-            <div className="space-y-4">
-              {filteredMembers.students.map((student) => (
-                <Card key={student.id}>
-                  <CardContent className="p-3">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-4">
-                        <Avatar className="h-12 w-12">
-                          <AvatarImage src={student.profile?.profilePicture || ""} />
-                          <AvatarFallback>
-                            {student.username.split(' ').map(n => n[0]).join('').toUpperCase()}
-                          </AvatarFallback>
-                        </Avatar>
-                        
-                        <div className="space-y-1">
-                          <div className="flex items-center space-x-3">
-                            <h4 className="font-medium">{student.username}</h4>
-                            {getRoleBadge(student.type)}
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="flex items-center space-x-2">
-                        <Button 
-                          variant="outline" 
-                          size="sm"
-                          onClick={() => handleMessage(student.id)}
-                          disabled={student.id === user?.id}
-                        >
-                          <Mail className="h-4 w-4 mr-2" />
-                          {t('actions.message')}
-                        </Button>
-                        {appState.user?.teacher && student.id !== appState.user?.id && (
-                          <DropdownMenu>
-                            <DropdownMenuTrigger asChild>
-                              <Button variant="ghost" size="sm">
-                                <MoreHorizontal className="h-4 w-4" />
-                              </Button>
-                            </DropdownMenuTrigger>
-                            <DropdownMenuContent align="end">
-                              <DropdownMenuItem
-                                onClick={() => handleRoleChange(student.id, 'teacher')}
-                              >
-                                <Shield className="mr-2 h-4 w-4" />
-                                {t('actions.makeTeacher')}
-                              </DropdownMenuItem>
-                              <DropdownMenuSeparator />
-                              <DropdownMenuItem 
-                                className="text-destructive"
-                                onClick={() => handleRemoveMember(student.id)}
-                              >
-                                <UserX className="mr-2 h-4 w-4" />
-                                {t('actions.removeFromClass')}
-                              </DropdownMenuItem>
-                            </DropdownMenuContent>
-                          </DropdownMenu>
-                        )}
-                        {student.id === appState.user?.id && (
-                          <div className="text-sm text-muted-foreground bg-muted px-2 py-1 rounded-full">
-                            {t('labels.you')}
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          ) : (
-            <EmptyState
-              icon={User}
-              title={t('students.empty.title')}
-              description={searchQuery ? t('students.empty.matchNone', { query: searchQuery }) : t('students.empty.noStudents')}
-            />
-          )}
-        </TabsContent>
-
-        <TabsContent value="teachers" className="space-y-4">
-          {filteredMembers.teachers.length > 0 ? (
-            <div className="space-y-4">
-              {filteredMembers.teachers.map((teacher) => (
-                <Card key={teacher.id}>
-                  <CardContent className="p-3">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-4">
-                        <Avatar className="h-12 w-12">
-                          <AvatarImage src={teacher.profile?.profilePicture || ""} />
-                          <AvatarFallback>
-                            {teacher.username.split(' ').map(n => n[0]).join('').toUpperCase()}
-                          </AvatarFallback>
-                        </Avatar>
-                        
-                        <div className="space-y-1">
-                          <div className="flex items-center space-x-3">
-                            <h4 className="font-medium">{teacher.username}</h4>
-                            {getRoleBadge(teacher.type)}
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="flex items-center space-x-2">
-                        <Button 
-                          variant="outline" 
-                          size="sm"
-                          onClick={() => handleMessage(teacher.id)}
-                          disabled={teacher.id === user?.id}
-                        >
-                          <Mail className="h-4 w-4 mr-2" />
-                          {t('actions.message')}
-                        </Button>
-                        {appState.user?.teacher && teacher.id !== appState.user?.id && (
-                          <DropdownMenu>
-                            <DropdownMenuTrigger asChild>
-                              <Button variant="ghost" size="sm">
-                                <MoreHorizontal className="h-4 w-4" />
-                              </Button>
-                            </DropdownMenuTrigger>
-                            <DropdownMenuContent align="end">
-                              <DropdownMenuItem
-                                onClick={() => handleRoleChange(teacher.id, 'student')}
-                              >
-                                <User className="mr-2 h-4 w-4" />
-                                {t('actions.makeStudent')}
-                              </DropdownMenuItem>
-                              <DropdownMenuSeparator />
-                              <DropdownMenuItem 
-                                className="text-destructive"
-                                onClick={() => handleRemoveMember(teacher.id)}
-                              >
-                                <UserX className="mr-2 h-4 w-4" />
-                                {t('actions.removeAccess')}
-                              </DropdownMenuItem>
-                            </DropdownMenuContent>
-                          </DropdownMenu>
-                        )}
-                        {teacher.id === appState.user?.id && (
-                          <div className="text-sm text-muted-foreground bg-muted px-2 py-1 rounded-full">
-                            {t('labels.you')}
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          ) : (
-            <EmptyState
-              icon={Shield}
-              title={t('teachers.empty.title')}
-              description={searchQuery ? t('teachers.empty.matchNone', { query: searchQuery }) : t('teachers.empty.noTeachers')}
-            />
-          )}
-        </TabsContent>
-      </Tabs>
-
-      {/* Profile Dialog */}
-      <Dialog open={isProfileDialogOpen} onOpenChange={setIsProfileDialogOpen}>
-        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
-          <DialogHeader>
-            <DialogTitle>{t('profile.title')}</DialogTitle>
-            <DialogDescription>
-              {t('profile.description')}
-            </DialogDescription>
-          </DialogHeader>
-          
-          {selectedUser && (
-            <div className="space-y-6">
-              {/* Profile Header */}
-              <div className="flex items-center space-x-4">
-                <Avatar className="h-20 w-20">
-                  <AvatarImage src={selectedUser.profile?.profilePicture || ""} />
-                  <AvatarFallback>
-                    {selectedUser.username.split(' ').map(n => n[0]).join('').toUpperCase()}
-                  </AvatarFallback>
-                </Avatar>
-                <div className="space-y-2">
-                  <div className="flex items-center space-x-3">
-                    <h3 className="text-2xl font-bold">
-                      {selectedUser.profile?.displayName || selectedUser.username}
-                    </h3>
-                    {getRoleBadge(selectedUser.type)}
-                  </div>
-                  <p className="text-muted-foreground">@{selectedUser.username}</p>
-                  {selectedUser.profile?.bio && (
-                    <p className="text-sm">{selectedUser.profile.bio}</p>
-                  )}
-                </div>
+        {/* Invite Code Section */}
+        {user?.teacher && (
+          <div className="flex items-center justify-between p-4 rounded-xl border bg-muted/30">
+            <div className="flex items-center gap-4">
+              <div>
+                <p className="text-sm font-medium">{t('invite.title')}</p>
+                <p className="text-xs text-muted-foreground">{t('invite.description')}</p>
               </div>
+            </div>
+            {inviteCodeLoading ? (
+              <Skeleton className="h-10 w-48" />
+            ) : (
+              <div className="flex items-center gap-2">
+                <code className="px-3 py-2 rounded-lg bg-background border font-mono text-sm">
+                  {inviteCode}
+                </code>
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  onClick={copyInviteCode}
+                  disabled={inviteCode === "Loading..."}
+                >
+                  <Copy className="h-4 w-4" />
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  onClick={regenerateInviteCode}
+                >
+                  <RefreshCcw className="h-4 w-4" />
+                </Button>
+              </div>
+            )}
+          </div>
+        )}
 
-              <Separator />
+        {/* Search */}
+        <div className="relative max-w-md">
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+          <Input
+            placeholder={t('search.placeholder')}
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="pl-10"
+          />
+        </div>
 
-              {/* Profile Information */}
-              <div className="space-y-4">
-                <h4 className="font-semibold">{t('profile.information')}</h4>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {selectedUser.profile?.location && (
-                    <div className="flex items-center space-x-2 text-sm">
-                      <MapPin className="h-4 w-4 text-muted-foreground" />
-                      <span className="text-muted-foreground">{t('profile.location')}:</span>
-                      <span>{selectedUser.profile.location}</span>
+        {/* Members Tabs */}
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-4">
+          <TabsList>
+            <TabsTrigger value="students" className="flex items-center gap-2">
+              <GraduationCap className="h-4 w-4" />
+              <span>{t('tabs.students')}</span>
+              <Badge variant="secondary" className="ml-1">
+                {filteredMembers.students.length}
+              </Badge>
+            </TabsTrigger>
+            <TabsTrigger value="teachers" className="flex items-center gap-2">
+              <Shield className="h-4 w-4" />
+              <span>{t('tabs.teachers')}</span>
+              <Badge variant="secondary" className="ml-1">
+                {filteredMembers.teachers.length}
+              </Badge>
+            </TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="students">
+            {filteredMembers.students.length > 0 ? (
+              <div className="grid md:grid-cols-2 gap-3">
+                {filteredMembers.students.map((student) => (
+                  <div 
+                    key={student.id} 
+                    className="flex items-center justify-between p-4 rounded-xl border hover:bg-muted/30 transition-colors"
+                  >
+                    <div className="flex items-center gap-3">
+                      <Avatar className="h-10 w-10">
+                        <AvatarImage src={student.profile?.profilePicture || ""} />
+                        <AvatarFallback>
+                          {student.username.substring(0, 2).toUpperCase()}
+                        </AvatarFallback>
+                      </Avatar>
+                      
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <h4 className="font-medium">{student.profile?.displayName || student.username}</h4>
+                          {student.id === appState.user?.id && (
+                            <Badge variant="outline" className="text-xs">{t('labels.you')}</Badge>
+                          )}
+                        </div>
+                        <p className="text-sm text-muted-foreground">@{student.username}</p>
+                      </div>
                     </div>
-                  )}
-                  
-                  {selectedUser.profile?.website && (
-                    <div className="flex items-center space-x-2 text-sm">
-                      <Globe className="h-4 w-4 text-muted-foreground" />
-                      <span className="text-muted-foreground">{t('profile.website')}:</span>
-                      <a 
-                        href={selectedUser.profile.website} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-primary hover:underline"
+
+                    <div className="flex items-center gap-2">
+                      <Button 
+                        variant="ghost" 
+                        size="sm"
+                        onClick={() => handleMessage(student.id)}
+                        disabled={student.id === user?.id}
                       >
-                        {selectedUser.profile.website}
-                      </a>
+                        <Mail className="h-4 w-4" />
+                      </Button>
+                      {appState.user?.teacher && student.id !== appState.user?.id && (
+                        <DropdownMenu>
+                          <DropdownMenuTrigger asChild>
+                            <Button variant="ghost" size="sm">
+                              <MoreHorizontal className="h-4 w-4" />
+                            </Button>
+                          </DropdownMenuTrigger>
+                          <DropdownMenuContent align="end">
+                            <DropdownMenuItem
+                              onClick={() => handleRoleChange(student.id, 'teacher')}
+                            >
+                              <Shield className="mr-2 h-4 w-4" />
+                              {t('actions.makeTeacher')}
+                            </DropdownMenuItem>
+                            <DropdownMenuSeparator />
+                            <DropdownMenuItem 
+                              className="text-destructive"
+                              onClick={() => handleRemoveMember(student.id)}
+                            >
+                              <UserX className="mr-2 h-4 w-4" />
+                              {t('actions.removeFromClass')}
+                            </DropdownMenuItem>
+                          </DropdownMenuContent>
+                        </DropdownMenu>
+                      )}
                     </div>
-                  )}
-                </div>
+                  </div>
+                ))}
               </div>
-            </div>
-          )}
-        </DialogContent>
-      </Dialog>
+            ) : (
+              <EmptyState
+                icon={User}
+                title={t('students.empty.title')}
+                description={searchQuery ? t('students.empty.matchNone', { query: searchQuery }) : t('students.empty.noStudents')}
+              />
+            )}
+          </TabsContent>
+
+          <TabsContent value="teachers">
+            {filteredMembers.teachers.length > 0 ? (
+              <div className="grid md:grid-cols-2 gap-3">
+                {filteredMembers.teachers.map((teacher) => (
+                  <div 
+                    key={teacher.id} 
+                    className="flex items-center justify-between p-4 rounded-xl border hover:bg-muted/30 transition-colors"
+                  >
+                    <div className="flex items-center gap-3">
+                      <Avatar className="h-10 w-10">
+                        <AvatarImage src={teacher.profile?.profilePicture || ""} />
+                        <AvatarFallback>
+                          {teacher.username.substring(0, 2).toUpperCase()}
+                        </AvatarFallback>
+                      </Avatar>
+                      
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <h4 className="font-medium">{teacher.profile?.displayName || teacher.username}</h4>
+                          {getRoleBadge(teacher.type)}
+                          {teacher.id === appState.user?.id && (
+                            <Badge variant="outline" className="text-xs">{t('labels.you')}</Badge>
+                          )}
+                        </div>
+                        <p className="text-sm text-muted-foreground">@{teacher.username}</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-2">
+                      <Button 
+                        variant="ghost" 
+                        size="sm"
+                        onClick={() => handleMessage(teacher.id)}
+                        disabled={teacher.id === user?.id}
+                      >
+                        <Mail className="h-4 w-4" />
+                      </Button>
+                      {appState.user?.teacher && teacher.id !== appState.user?.id && (
+                        <DropdownMenu>
+                          <DropdownMenuTrigger asChild>
+                            <Button variant="ghost" size="sm">
+                              <MoreHorizontal className="h-4 w-4" />
+                            </Button>
+                          </DropdownMenuTrigger>
+                          <DropdownMenuContent align="end">
+                            <DropdownMenuItem
+                              onClick={() => handleRoleChange(teacher.id, 'student')}
+                            >
+                              <User className="mr-2 h-4 w-4" />
+                              {t('actions.makeStudent')}
+                            </DropdownMenuItem>
+                            <DropdownMenuSeparator />
+                            <DropdownMenuItem 
+                              className="text-destructive"
+                              onClick={() => handleRemoveMember(teacher.id)}
+                            >
+                              <UserX className="mr-2 h-4 w-4" />
+                              {t('actions.removeAccess')}
+                            </DropdownMenuItem>
+                          </DropdownMenuContent>
+                        </DropdownMenu>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <EmptyState
+                icon={Shield}
+                title={t('teachers.empty.title')}
+                description={searchQuery ? t('teachers.empty.matchNone', { query: searchQuery }) : t('teachers.empty.noTeachers')}
+              />
+            )}
+          </TabsContent>
+        </Tabs>
+
+        {/* Profile Dialog */}
+        <Dialog open={isProfileDialogOpen} onOpenChange={setIsProfileDialogOpen}>
+          <DialogContent className="max-w-md">
+            <DialogHeader>
+              <DialogTitle>{t('profile.title')}</DialogTitle>
+              <DialogDescription>
+                {t('profile.description')}
+              </DialogDescription>
+            </DialogHeader>
+            
+            {selectedUser && (
+              <div className="space-y-6">
+                {/* Profile Header */}
+                <div className="flex items-center gap-4">
+                  <Avatar className="h-16 w-16">
+                    <AvatarImage src={selectedUser.profile?.profilePicture || ""} />
+                    <AvatarFallback>
+                      {selectedUser.username.substring(0, 2).toUpperCase()}
+                    </AvatarFallback>
+                  </Avatar>
+                  <div className="space-y-1">
+                    <div className="flex items-center gap-2">
+                      <h3 className="text-lg font-semibold">
+                        {selectedUser.profile?.displayName || selectedUser.username}
+                      </h3>
+                      {getRoleBadge(selectedUser.type)}
+                    </div>
+                    <p className="text-sm text-muted-foreground">@{selectedUser.username}</p>
+                  </div>
+                </div>
+
+                {selectedUser.profile?.bio && (
+                  <>
+                    <Separator />
+                    <p className="text-sm">{selectedUser.profile.bio}</p>
+                  </>
+                )}
+
+                {/* Profile Information */}
+                {(selectedUser.profile?.location || selectedUser.profile?.website) && (
+                  <>
+                    <Separator />
+                    <div className="space-y-3">
+                      {selectedUser.profile?.location && (
+                        <div className="flex items-center gap-2 text-sm">
+                          <MapPin className="h-4 w-4 text-muted-foreground" />
+                          <span>{selectedUser.profile.location}</span>
+                        </div>
+                      )}
+                      
+                      {selectedUser.profile?.website && (
+                        <div className="flex items-center gap-2 text-sm">
+                          <Globe className="h-4 w-4 text-muted-foreground" />
+                          <a 
+                            href={selectedUser.profile.website} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-primary hover:underline"
+                          >
+                            {selectedUser.profile.website}
+                          </a>
+                        </div>
+                      )}
+                    </div>
+                  </>
+                )}
+              </div>
+            )}
+          </DialogContent>
+        </Dialog>
+      </div>
     </PageLayout>
   );
 }

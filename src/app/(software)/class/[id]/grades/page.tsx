@@ -27,11 +27,15 @@ import {
   ClipboardCheck,
   ClipboardList,
   Eye,
-  Edit3,
   Users,
-  ExternalLink
+  ExternalLink,
+  TrendingUp,
+  GraduationCap,
+  BookOpen,
+  BarChart3,
 } from "lucide-react";
 import { trpc, type RouterOutputs } from "@/lib/trpc";
+import { StatsCard } from "@/components/ui/stats-card";
 import { calculateTrend, getTrendIcon, getGradeColor } from "@/lib/utils";
 
 import type {
@@ -516,38 +520,30 @@ export default function Grades() {
 
       {/* Class Stats */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-        <Card>
-          <CardContent className="pt-6">
-            <div className="text-center">
-              <div className="text-2xl font-bold">{classAverage.toFixed(1)}%</div>
-              <p className="text-sm text-muted-foreground">{t("overview.classAverage")}</p>
-            </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent className="pt-6">
-            <div className="text-center">
-              <div className="text-2xl font-bold">{students.length}</div>
-              <p className="text-sm text-muted-foreground">{t("overview.totalStudents")}</p>
-            </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent className="pt-6">
-            <div className="text-center">
-              <div className="text-2xl font-bold">{assignments.length}</div>
-              <p className="text-sm text-muted-foreground">{t("overview.assignments")}</p>
-            </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent className="pt-6">
-            <div className="text-center">
-              <div className="text-2xl font-bold">{submissionRate.toFixed(1)}%</div>
-              <p className="text-sm text-muted-foreground">{t("overview.submissionRate")}</p>
-            </div>
-          </CardContent>
-        </Card>
+        <StatsCard
+          title={t("overview.classAverage")}
+          value={`${classAverage.toFixed(1)}%`}
+          icon={TrendingUp}
+          color="#4E81EE"
+        />
+        <StatsCard
+          title={t("overview.totalStudents")}
+          value={students.length}
+          icon={GraduationCap}
+          color="#96C84D"
+        />
+        <StatsCard
+          title={t("overview.assignments")}
+          value={assignments.length}
+          icon={BookOpen}
+          color="#FFB500"
+        />
+        <StatsCard
+          title={t("overview.submissionRate")}
+          value={`${submissionRate.toFixed(1)}%`}
+          icon={BarChart3}
+          color="#FE7F7F"
+        />
       </div>
 
       {/* Tables with Tabs */}

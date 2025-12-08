@@ -55,8 +55,9 @@ export function WorksheetTeacherFeedback({
         <div className="space-y-3">
           <Label className="text-sm font-medium">Mark Achieved Items:</Label>
           {question.markScheme.map((item: any, itemIndex: number) => {
-            const itemId = item.id || `item-${itemIndex}`;
-            const key = itemId || `item-${itemIndex}`;
+            console.log(item);
+            const itemId = item.id;
+            const key = `item-${itemId}`;
             const isChecked = questionFeedback?.markschemeState?.[key] || false;
             return (
               <div

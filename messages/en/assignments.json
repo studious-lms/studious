@@ -29,6 +29,7 @@
       "delete": "Delete Assignment",
       "viewSubmission": "View Submission",
       "gradeSubmission": "Grade",
+      "back": "Back",
       "downloadAll": "Download All",
       "exportGrades": "Export Grades"
     },
