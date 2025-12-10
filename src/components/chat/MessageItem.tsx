@@ -8,6 +8,7 @@ import type { MessageListOutput } from "@/lib/trpc";
 import { MessageActions } from "./MessageActions";
 import { MessageEdit } from "./MessageEdit";
 import { AIMarkdown } from "./AIMarkdown";
+import { AISuggestedContent } from "./AISuggestedContent";
 import { DraggableFileItem } from "@/components/DraggableFileItem";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
@@ -21,12 +22,12 @@ import {
   Music,
   Archive,
   Image as ImageIcon,
-  Presentation
+  Presentation,
 } from "lucide-react";
-import Image from "next/image";
 import type { FileItem, FileHandlers } from "@/lib/types/file";
 import { baseFileHandler } from "@/lib/fileHandler";
 import { trpc } from "@/lib/trpc";
+import { useParams } from "next/navigation";
 
 type Message = MessageListOutput['messages'][number];
 
@@ -99,11 +100,14 @@ export function MessageItem({
   isUpdatingMessage = false,
   isDeletingMessage = false,
 }: MessageItemProps) {
+  const params = useParams();
+  const classId = params.id as string;
+  
   const [isEditing, setIsEditing] = useState(false);
   const [previewFile, setPreviewFile] = useState<FileItem | null>(null);
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
+  
   const getSignedUrlMutation = trpc.file.getSignedUrl.useMutation();
-
 
   const isMentioned = message.mentionsMe;
   const isAIAssistant = message.senderId === 'AI_ASSISTANT';
@@ -357,20 +361,10 @@ export function MessageItem({
           </div>
         )}
         
-        {/* Mentions List (if any) @note: i don't think this is necessary */}
-        {/* {message.mentions && message.mentions.length > 0 && (
-          <div className="flex flex-wrap gap-1 mt-1">
-            {message.mentions.map((mention) => (
-              <Badge
-                key={mention.user.id}
-                variant="outline"
-                className="text-xs h-4 px-1 bg-primary/10 text-primary border-primary/20"
-              >
-                @{mention.user.profile?.displayName || mention.user.username}
-              </Badge>
-            ))}
-          </div>
-        )} */}
+        {/* AI Suggested Content (Assignments, Worksheets, Sections) */}
+        {isAIAssistant && (
+          <AISuggestedContent meta={message.meta} classId={classId} />
+        )}
       </div>
       
       {/* File Preview Modal */}

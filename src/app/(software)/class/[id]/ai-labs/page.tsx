@@ -86,6 +86,8 @@ export default function ClassAILabs() {
     }
   });
 
+
+
   // Sort chats by most recent first
   const sortedChats = labChats?.sort((a, b) => 
     new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime()

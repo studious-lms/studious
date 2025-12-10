@@ -14,6 +14,7 @@ export interface NewMessageEvent {
   conversationId: string;
   attachments: any[];
   createdAt: Date;
+  meta: Record<string, any>;
   sender: {
     id: string;
     username: string;

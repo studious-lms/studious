@@ -145,6 +145,7 @@ export function useChat(currentUserId: string) {
     conversationId: data.conversationId,
     attachments: data.attachments,
     createdAt: typeof data.createdAt === 'string' ? data.createdAt : data.createdAt.toISOString(),
+    meta: data.meta || null,
     sender: {
       ...data.sender,
       profile: data.sender.profile ? {

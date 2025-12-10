@@ -55,6 +55,8 @@ export default function AILabChatPage() {
     }
   }, [labChat?.conversationId, chat.selectedConversationId, chat.selectConversation]);
 
+  console.log(chat.messages);
+  
   // Parse lab chat context
   const labContext = labChat ? (() => {
     try {
