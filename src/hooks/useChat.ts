@@ -315,6 +315,7 @@ export function useChat(currentUserId: string) {
     const tempId = `temp-${Date.now()}`;
     const optimisticMessage: MessageListOutput['messages'][number] = {
       id: tempId,
+      meta: {},
       content,
       senderId: currentUserId,
       conversationId: selectedConversationId,
