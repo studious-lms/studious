@@ -677,13 +677,13 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
                   {/* Assignment Options */}
                   <div className="space-y-3">
                     <OptionCard
-                      checked={formData.graded}
+                        checked={formData.graded}
                       onCheckedChange={(checked) => setFormData({ ...formData, graded: checked })}
                       title={t('options.graded.label')}
                       description={t('options.graded.description')}
                     />
                     <OptionCard
-                      checked={formData.inProgress}
+                        checked={formData.inProgress}
                       onCheckedChange={(checked) => setFormData({ ...formData, inProgress: checked })}
                       title={t('options.draft.label')}
                       description={t('options.draft.description')}

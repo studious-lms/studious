@@ -70,18 +70,18 @@ function AssignmentEditSkeleton() {
         <Skeleton className="h-8 w-48" />
         <Skeleton className="h-10 w-32" />
       </div>
-
+      
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
         <div className="xl:col-span-2 space-y-6">
           {/* Details section */}
           <div className="space-y-4">
             <Skeleton className="h-5 w-32" />
-            <Skeleton className="h-10 w-full" />
+              <Skeleton className="h-10 w-full" />
             <Skeleton className="h-24 w-full" />
-            <div className="grid grid-cols-2 gap-4">
-              <Skeleton className="h-10 w-full" />
-              <Skeleton className="h-10 w-full" />
-            </div>
+              <div className="grid grid-cols-2 gap-4">
+                <Skeleton className="h-10 w-full" />
+                <Skeleton className="h-10 w-full" />
+              </div>
           </div>
           
           {/* Options */}
@@ -478,40 +478,40 @@ export default function AssignmentEditPage() {
         <div className="space-y-6">
           {/* Back button */}
           <button 
-            onClick={() => router.back()}
+              onClick={() => router.back()}
             className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
-          >
-            <ArrowLeft className="h-4 w-4" />
+            >
+              <ArrowLeft className="h-4 w-4" />
             {tAssignments('actions.back')}
           </button>
 
           {/* Header */}
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-2xl font-bold">{tAssignments('actions.edit')}</h1>
+            <h1 className="text-2xl font-bold">{tAssignments('actions.edit')}</h1>
               <p className="text-muted-foreground text-sm">{assignment.title}</p>
-            </div>
-            
+          </div>
+          
             <div className="flex items-center gap-2">
-              {hasChanges && (
+            {hasChanges && (
                 <Badge variant="secondary" className="bg-orange-100 text-orange-700 dark:bg-orange-900 dark:text-orange-300 border-0">
                   Unsaved changes
                 </Badge>
-              )}
-              <Button 
-                onClick={handleSave}
-                disabled={!hasChanges || updateAssignmentMutation.isPending}
-              >
+            )}
+            <Button 
+              onClick={handleSave}
+              disabled={!hasChanges || updateAssignmentMutation.isPending}
+            >
                 <Save className="h-4 w-4 mr-2" />
                 {updateAssignmentMutation.isPending ? "Saving..." : "Save Changes"}
-              </Button>
-            </div>
+            </Button>
           </div>
+        </div>
 
-          {/* Main Content */}
-          <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
+        {/* Main Content */}
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
             {/* Left Column */}
-            <div className="xl:col-span-2 space-y-6">
+          <div className="xl:col-span-2 space-y-6">
               
               {/* Details Section */}
               <div className="space-y-4">
@@ -520,25 +520,25 @@ export default function AssignmentEditPage() {
                 {/* Title */}
                 <div className="space-y-2">
                   <Label htmlFor="title">{t('fields.title')}</Label>
-                  <Input
-                    id="title"
-                    value={formData.title || ''}
-                    onChange={(e) => updateFormData({ title: e.target.value })}
-                    placeholder={t('placeholders.title')}
-                  />
+                    <Input
+                      id="title"
+                      value={formData.title || ''}
+                      onChange={(e) => updateFormData({ title: e.target.value })}
+                      placeholder={t('placeholders.title')}
+                    />
                 </div>
 
                 {/* Instructions */}
                 <div className="space-y-2">
                   <Label htmlFor="instructions">{t('fields.instructions')}</Label>
-                  <Textarea
-                    id="instructions"
-                    value={formData.instructions || ''}
-                    onChange={(e) => updateFormData({ instructions: e.target.value })}
-                    placeholder={t('placeholders.instructions')}
-                    rows={4}
-                    className="resize-none"
-                  />
+                    <Textarea
+                      id="instructions"
+                      value={formData.instructions || ''}
+                      onChange={(e) => updateFormData({ instructions: e.target.value })}
+                      placeholder={t('placeholders.instructions')}
+                      rows={4}
+                      className="resize-none"
+                    />
                 </div>
 
                 {/* Due Date and Type */}
@@ -648,11 +648,11 @@ export default function AssignmentEditPage() {
                           <X className="h-4 w-4" />
                         </Button>
                       </div>
-                      <ColorPicker
-                        value={newSectionColor}
-                        onChange={setNewSectionColor}
-                        label={t('fields.sectionColor')}
-                      />
+                        <ColorPicker
+                          value={newSectionColor}
+                          onChange={setNewSectionColor}
+                          label={t('fields.sectionColor')}
+                        />
                     </div>
                   )}
                 </div>
@@ -710,8 +710,8 @@ export default function AssignmentEditPage() {
                       </SelectContent>
                     </Select>
                   </div>
-                </div>
-              </div>
+                    </div>
+                  </div>
 
               <Separator />
 
@@ -727,137 +727,137 @@ export default function AssignmentEditPage() {
                     description={t('options.graded.description')}
                   />
                   <OptionCard
-                    checked={formData.inProgress || false}
+                      checked={formData.inProgress || false}
                     onCheckedChange={(checked) => updateFormData({ inProgress: checked })}
                     title={t('options.draft.label')}
                     description={t('options.draft.description')}
-                  />
-                </div>
-              </div>
+                    />
+                    </div>
+                  </div>
 
               {/* Grading Section */}
-              {formData.graded && (
+            {formData.graded && (
                 <>
                   <Separator />
                   <div className="space-y-4">
                     <h2 className="text-lg font-semibold">{t('sections.grading')}</h2>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       {/* Rubric */}
-                      <div className="space-y-2">
+                    <div className="space-y-2">
                         <Label>{t('fields.rubric')}</Label>
-                        <Select
-                          value={formData.markSchemeId || 'none'}
-                          onValueChange={(value) => {
-                            if (value === 'none') {
+                      <Select
+                        value={formData.markSchemeId || 'none'}
+                        onValueChange={(value) => {
+                          if (value === 'none') {
                               if (formData.markSchemeId) detachMarkSchemeMutation.mutate({ classId, assignmentId });
-                            } else {
-                              attachMarkSchemeMutation.mutate({ classId, assignmentId, markSchemeId: value });
-                            }
-                          }}
-                        >
-                          <SelectTrigger>
-                            <SelectValue placeholder={t('placeholders.chooseRubric')} />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="none">{t('rubric.none')}</SelectItem>
-                            {markSchemes?.map((markScheme) => {
-                              let name = t('rubric.untitled');
-                              try {
+                          } else {
+                            attachMarkSchemeMutation.mutate({ classId, assignmentId, markSchemeId: value });
+                          }
+                        }}
+                      >
+                        <SelectTrigger>
+                          <SelectValue placeholder={t('placeholders.chooseRubric')} />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="none">{t('rubric.none')}</SelectItem>
+                          {markSchemes?.map((markScheme) => {
+                            let name = t('rubric.untitled');
+                            try {
                                 if (markScheme.structured?.trim()) {
-                                  const parsed = JSON.parse(markScheme.structured);
-                                  name = parsed.name || t('rubric.untitled');
-                                }
+                                const parsed = JSON.parse(markScheme.structured);
+                                name = parsed.name || t('rubric.untitled');
+                              }
                               } catch { name = t('rubric.untitled'); }
-                              return (
-                                <SelectItem key={markScheme.id} value={markScheme.id}>
-                                  <div className="flex items-center gap-2">
-                                    <ClipboardCheck className="h-3 w-3" />
-                                    {name}
-                                  </div>
-                                </SelectItem>
-                              );
-                            })}
-                          </SelectContent>
-                        </Select>
-                      </div>
+                            return (
+                              <SelectItem key={markScheme.id} value={markScheme.id}>
+                                <div className="flex items-center gap-2">
+                                  <ClipboardCheck className="h-3 w-3" />
+                                  {name}
+                                </div>
+                              </SelectItem>
+                            );
+                          })}
+                        </SelectContent>
+                      </Select>
+                    </div>
 
                       {/* Grade Scale */}
-                      <div className="space-y-2">
+                    <div className="space-y-2">
                         <Label>{t('fields.gradeScale')}</Label>
-                        <Select
-                          value={formData.gradingBoundaryId || 'none'}
-                          onValueChange={(value) => {
-                            if (value === 'none') {
+                      <Select
+                        value={formData.gradingBoundaryId || 'none'}
+                        onValueChange={(value) => {
+                          if (value === 'none') {
                               if (formData.gradingBoundaryId) detachGradingBoundaryMutation.mutate({ classId, assignmentId });
-                            } else {
-                              attachGradingBoundaryMutation.mutate({ classId, assignmentId, gradingBoundaryId: value });
-                            }
-                          }}
-                        >
-                          <SelectTrigger>
-                            <SelectValue placeholder={t('placeholders.chooseGradeScale')} />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="none">{t('gradeScale.default')}</SelectItem>
-                            {gradingBoundaries?.map((boundary) => {
-                              let name = t('gradeScale.untitled');
-                              try {
+                          } else {
+                            attachGradingBoundaryMutation.mutate({ classId, assignmentId, gradingBoundaryId: value });
+                          }
+                        }}
+                      >
+                        <SelectTrigger>
+                          <SelectValue placeholder={t('placeholders.chooseGradeScale')} />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="none">{t('gradeScale.default')}</SelectItem>
+                          {gradingBoundaries?.map((boundary) => {
+                            let name = t('gradeScale.untitled');
+                            try {
                                 if (boundary.structured?.trim()) {
-                                  const parsed = JSON.parse(boundary.structured);
-                                  name = parsed.name || t('gradeScale.untitled');
-                                }
+                                const parsed = JSON.parse(boundary.structured);
+                                name = parsed.name || t('gradeScale.untitled');
+                              }
                               } catch { name = t('gradeScale.untitled'); }
-                              return (
-                                <SelectItem key={boundary.id} value={boundary.id}>
-                                  <div className="flex items-center gap-2">
-                                    <ClipboardList className="h-3 w-3" />
-                                    {name}
-                                  </div>
-                                </SelectItem>
-                              );
-                            })}
-                          </SelectContent>
-                        </Select>
-                      </div>
+                            return (
+                              <SelectItem key={boundary.id} value={boundary.id}>
+                                <div className="flex items-center gap-2">
+                                  <ClipboardList className="h-3 w-3" />
+                                  {name}
+                                </div>
+                              </SelectItem>
+                            );
+                          })}
+                        </SelectContent>
+                      </Select>
                     </div>
+                  </div>
 
                     {/* Points & Weight */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {!formData.markSchemeId && (
-                        <div className="space-y-2">
-                          <Label htmlFor="maxGrade">{t('fields.maxPoints')}</Label>
-                          <Input
-                            id="maxGrade"
-                            type="number"
-                            value={formData.maxGrade || 0}
-                            onChange={(e) => updateFormData({ maxGrade: parseInt(e.target.value) || 0 })}
-                            min="0"
-                          />
-                        </div>
-                      )}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {!formData.markSchemeId && (
                       <div className="space-y-2">
-                        <Label htmlFor="weight">{t('fields.weight')}</Label>
+                          <Label htmlFor="maxGrade">{t('fields.maxPoints')}</Label>
                         <Input
-                          id="weight"
+                          id="maxGrade"
                           type="number"
-                          value={formData.weight || 0}
-                          onChange={(e) => updateFormData({ weight: parseInt(e.target.value) || 0 })}
+                          value={formData.maxGrade || 0}
+                          onChange={(e) => updateFormData({ maxGrade: parseInt(e.target.value) || 0 })}
                           min="0"
-                          step="0.1"
                         />
                       </div>
-                    </div>
-
-                    {formData.markSchemeId && (
-                      <div className="flex items-center gap-2 p-3 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                        <ClipboardCheck className="h-4 w-4 text-blue-600" />
-                        <span className="text-sm text-blue-700 dark:text-blue-300">{t('rubric.autoCalculate')}</span>
-                      </div>
                     )}
+                    <div className="space-y-2">
+                        <Label htmlFor="weight">{t('fields.weight')}</Label>
+                      <Input
+                        id="weight"
+                        type="number"
+                        value={formData.weight || 0}
+                        onChange={(e) => updateFormData({ weight: parseInt(e.target.value) || 0 })}
+                        min="0"
+                        step="0.1"
+                      />
+                    </div>
+                  </div>
+
+                  {formData.markSchemeId && (
+                    <div className="flex items-center gap-2 p-3 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
+                      <ClipboardCheck className="h-4 w-4 text-blue-600" />
+                        <span className="text-sm text-blue-700 dark:text-blue-300">{t('rubric.autoCalculate')}</span>
+                    </div>
+                  )}
                   </div>
                 </>
-              )}
+            )}
 
               <Separator />
 
@@ -883,31 +883,31 @@ export default function AssignmentEditPage() {
                   />
 
                   <ExpandableOptionCard
-                    checked={formData.acceptWorksheet || false}
+                      checked={formData.acceptWorksheet || false}
                     onCheckedChange={(checked) => updateFormData({ acceptWorksheet: checked })}
                     title={t('deliverables.worksheetSubmission.label')}
                     description={t('deliverables.worksheetSubmission.description')}
                     icon={ClipboardList}
                     expandedContent={
                       <div className="space-y-3">
-                        <div className="relative">
-                          <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-                          <Input
-                            placeholder={t('deliverables.worksheetSubmission.searchPlaceholder')}
-                            value={worksheetSearchQuery}
-                            onChange={(e) => setWorksheetSearchQuery(e.target.value)}
-                            className="pl-10"
-                          />
-                        </div>
-                        <div className="space-y-2 max-h-48 overflow-y-auto">
-                          {filteredWorksheets.map((worksheet) => {
-                            const isSelected = formData.worksheetIds?.includes(worksheet.id);
-                            return (
-                              <div
-                                key={worksheet.id}
+                      <div className="relative">
+                        <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+                        <Input
+                          placeholder={t('deliverables.worksheetSubmission.searchPlaceholder')}
+                          value={worksheetSearchQuery}
+                          onChange={(e) => setWorksheetSearchQuery(e.target.value)}
+                          className="pl-10"
+                        />
+                      </div>
+                      <div className="space-y-2 max-h-48 overflow-y-auto">
+                        {filteredWorksheets.map((worksheet) => {
+                          const isSelected = formData.worksheetIds?.includes(worksheet.id);
+                          return (
+                            <div
+                              key={worksheet.id}
                                 className={`flex items-center gap-3 p-3 rounded-lg border cursor-pointer transition-colors ${
                                   isSelected ? 'bg-primary/10 border-primary' : 'hover:bg-muted/50'
-                                }`}
+                              }`}
                                 onClick={() => {
                                   const currentIds = formData.worksheetIds || [];
                                   const newIds = isSelected
@@ -917,18 +917,18 @@ export default function AssignmentEditPage() {
                                 }}
                               >
                                 <Checkbox checked={isSelected} onClick={(e) => e.stopPropagation()} />
-                                <FileText className="h-4 w-4 text-muted-foreground" />
-                                <span className="text-sm flex-1">{worksheet.name}</span>
-                              </div>
-                            );
-                          })}
+                              <FileText className="h-4 w-4 text-muted-foreground" />
+                              <span className="text-sm flex-1">{worksheet.name}</span>
+                            </div>
+                          );
+                        })}
                           {filteredWorksheets.length === 0 && (
                             <p className="text-sm text-muted-foreground text-center py-4">
                               {worksheetSearchQuery ? t('deliverables.worksheetSubmission.noResults') : 'No worksheets available'}
                             </p>
-                          )}
-                        </div>
-                      </div>
+                      )}
+                    </div>
+                </div>
                     }
                   />
 
@@ -939,8 +939,8 @@ export default function AssignmentEditPage() {
                     description={t('deliverables.aiGrading.description')}
                     icon={Sparkles}
                   />
+                  </div>
                 </div>
-              </div>
 
               <Separator />
 
@@ -952,18 +952,18 @@ export default function AssignmentEditPage() {
                   selectedLevel={formData.aiPolicyLevel || 4}
                   onSelectLevel={(level) => updateFormData({ aiPolicyLevel: level })}
                 />
-              </div>
-            </div>
+                                </div>
+          </div>
 
-            {/* Right Column - Sidebar */}
-            <div className="space-y-6">
-              {/* Attachments */}
-              <Card>
+          {/* Right Column - Sidebar */}
+          <div className="space-y-6">
+            {/* Attachments */}
+            <Card>
                 <CardHeader className="pb-3">
                   <CardTitle className="text-base">Attachments</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  {assignment.attachments.length > 0 ? (
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {assignment.attachments.length > 0 ? (
                     <div className="grid grid-cols-2 gap-3">
                       {convertAttachmentsToFileItems(assignment.attachments).map((fileItem: FileItem) => (
                         <DraggableFileItem
@@ -976,27 +976,27 @@ export default function AssignmentEditPage() {
                         />
                       ))}
                     </div>
-                  ) : (
+                ) : (
                     <div className="text-center py-4 text-muted-foreground text-sm">
                       No attachments yet
                     </div>
-                  )}
+                )}
 
-                  {/* Upload Progress */}
-                  {isUploading && (
+                {/* Upload Progress */}
+                {isUploading && (
                     <div className="space-y-2 p-3 bg-muted rounded-lg">
                       <div className="flex justify-between text-xs">
                         <span>{currentUploadStatus}</span>
-                        <span>{Math.round(uploadProgress)}%</span>
-                      </div>
-                      <Progress value={uploadProgress} className="h-1.5" />
-                      {totalFiles > 0 && (
-                        <p className="text-xs text-muted-foreground text-center">
-                          {uploadedFiles} of {totalFiles} files
-                        </p>
-                      )}
+                      <span>{Math.round(uploadProgress)}%</span>
                     </div>
-                  )}
+                      <Progress value={uploadProgress} className="h-1.5" />
+                    {totalFiles > 0 && (
+                      <p className="text-xs text-muted-foreground text-center">
+                          {uploadedFiles} of {totalFiles} files
+                      </p>
+                    )}
+                  </div>
+                )}
 
                   <Label htmlFor="file-upload" className="cursor-pointer block">
                     <div className="flex items-center justify-center p-4 border-2 border-dashed rounded-lg hover:border-primary/50 transition-colors">
@@ -1016,72 +1016,72 @@ export default function AssignmentEditPage() {
                     accept="*/*"
                     disabled={isUploading}
                   />
-                </CardContent>
-              </Card>
+              </CardContent>
+            </Card>
 
-              {/* Event Attachment */}
-              <Card>
+            {/* Event Attachment */}
+            <Card>
                 <CardHeader className="pb-3">
                   <CardTitle className="text-base flex items-center gap-2">
                     <Link2 className="h-4 w-4" />
                     Linked Event
                   </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  {assignment.eventAttached ? (
+              </CardHeader>
+              <CardContent>
+                {assignment.eventAttached ? (
                     <div className="p-3 rounded-lg border bg-muted/30">
-                      <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center justify-between mb-2">
                         <h4 className="font-medium text-sm">{assignment.eventAttached.name}</h4>
-                        <Button
+                      <Button
                           variant="ghost"
-                          size="sm"
+                        size="sm"
                           className="h-7 text-xs"
                           onClick={() => detachEventMutation.mutate({ classId, assignmentId })}
-                        >
-                          Detach
-                        </Button>
-                      </div>
-                      <p className="text-xs text-muted-foreground">
-                        {format(new Date(assignment.eventAttached.startTime), 'MMM d, yyyy \'at\' h:mm a')}
-                      </p>
-                      {assignment.eventAttached.location && (
-                        <p className="text-xs text-muted-foreground mt-1">
-                          📍 {assignment.eventAttached.location}
-                        </p>
-                      )}
+                      >
+                        Detach
+                      </Button>
                     </div>
-                  ) : (
-                    <Select
-                      value="none"
-                      onValueChange={(value) => {
-                        if (value !== 'none') {
-                          attachToEventMutation.mutate({ classId, assignmentId, eventId: value });
-                        }
-                      }}
-                    >
-                      <SelectTrigger>
+                      <p className="text-xs text-muted-foreground">
+                      {format(new Date(assignment.eventAttached.startTime), 'MMM d, yyyy \'at\' h:mm a')}
+                    </p>
+                    {assignment.eventAttached.location && (
+                      <p className="text-xs text-muted-foreground mt-1">
+                        📍 {assignment.eventAttached.location}
+                      </p>
+                    )}
+                  </div>
+                ) : (
+                      <Select
+                        value="none"
+                        onValueChange={(value) => {
+                          if (value !== 'none') {
+                            attachToEventMutation.mutate({ classId, assignmentId, eventId: value });
+                          }
+                        }}
+                      >
+                        <SelectTrigger>
                         <SelectValue placeholder="Attach to event" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="none">No event</SelectItem>
-                        {availableEvents?.events.map((event) => (
-                          <SelectItem key={event.id} value={event.id}>
-                            <div className="flex items-center gap-2">
-                              <Calendar className="h-3 w-3" />
-                              <span>{event.name}</span>
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="none">No event</SelectItem>
+                          {availableEvents?.events.map((event) => (
+                            <SelectItem key={event.id} value={event.id}>
+                              <div className="flex items-center gap-2">
+                                <Calendar className="h-3 w-3" />
+                                <span>{event.name}</span>
                               <span className="text-xs text-muted-foreground">
-                                {format(new Date(event.startTime), 'MMM d')}
-                              </span>
-                            </div>
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  )}
-                </CardContent>
-              </Card>
-            </div>
+                                  {format(new Date(event.startTime), 'MMM d')}
+                                </span>
+                              </div>
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                )}
+              </CardContent>
+            </Card>
           </div>
+        </div>
         </div>
 
         {/* File Preview Modal */}

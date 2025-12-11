@@ -1,10 +1,14 @@
 "use client";
 
 import * as React from "react";
-import { Checkbox } from "@/components/ui/checkbox";
+import { Check } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+
+// @todo: remove the custom component for radix-ui when they fix the component
+//        there is an issue with the checkbox when inside of an dialog
+//        (more like a checkbox inside a like dropdown select menu inside of a dialog window)
 interface OptionCardProps {
   checked: boolean;
   onCheckedChange: (checked: boolean) => void;
@@ -57,12 +61,15 @@ export function OptionCard({
       )}
       onClick={handleClick}
     >
-      <Checkbox
-        checked={checked}
-        onCheckedChange={onCheckedChange}
-        onClick={(e) => e.stopPropagation()}
-        disabled={disabled}
-      />
+      <div
+        className={cn(
+          "h-4 w-4 shrink-0 rounded-sm border border-primary flex items-center justify-center",
+          checked && "bg-primary text-primary-foreground",
+          disabled && "opacity-50"
+        )}
+      >
+        {checked && <Check className="h-3 w-3" />}
+      </div>
       {Icon && <Icon className="h-5 w-5 text-muted-foreground flex-shrink-0" />}
       <div className="flex-1 min-w-0">
         <p className="font-medium text-sm">{title}</p>
@@ -132,12 +139,15 @@ export function ExpandableOptionCard({
         )}
         onClick={handleClick}
       >
-        <Checkbox
-          checked={checked}
-          onCheckedChange={onCheckedChange}
-          onClick={(e) => e.stopPropagation()}
-          disabled={disabled}
-        />
+        <div
+          className={cn(
+            "h-4 w-4 shrink-0 rounded-sm border border-primary flex items-center justify-center",
+            checked && "bg-primary text-primary-foreground",
+            disabled && "opacity-50"
+          )}
+        >
+          {checked && <Check className="h-3 w-3" />}
+        </div>
         {Icon && <Icon className="h-5 w-5 text-muted-foreground flex-shrink-0" />}
         <div className="flex-1 min-w-0">
           <p className="font-medium text-sm">{title}</p>
