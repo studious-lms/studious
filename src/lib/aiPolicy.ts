@@ -15,7 +15,7 @@ export interface AIPolicyLevel {
 // AI Policy levels configuration with translation keys
 export const AI_POLICY_LEVELS: AIPolicyLevel[] = [
   {
-    level: 1,
+    level: 0,
     titleKey: 'aiPolicy.level1.title',
     descriptionKey: 'aiPolicy.level1.description',
     useCasesKey: 'aiPolicy.level1.useCases',
@@ -25,7 +25,7 @@ export const AI_POLICY_LEVELS: AIPolicyLevel[] = [
     hexColor: '#EF4444'
   },
   {
-    level: 2,
+    level: 1,
     titleKey: 'aiPolicy.level2.title',
     descriptionKey: 'aiPolicy.level2.description',
     useCasesKey: 'aiPolicy.level2.useCases',
@@ -35,7 +35,7 @@ export const AI_POLICY_LEVELS: AIPolicyLevel[] = [
     hexColor: '#F97316'
   },
   {
-    level: 3,
+    level: 2,
     titleKey: 'aiPolicy.level3.title',
     descriptionKey: 'aiPolicy.level3.description',
     useCasesKey: 'aiPolicy.level3.useCases',
@@ -45,7 +45,7 @@ export const AI_POLICY_LEVELS: AIPolicyLevel[] = [
     hexColor: '#EAB308'
   },
   {
-    level: 4,
+    level: 3,
     titleKey: 'aiPolicy.level4.title',
     descriptionKey: 'aiPolicy.level4.description',
     useCasesKey: 'aiPolicy.level4.useCases',
@@ -55,7 +55,7 @@ export const AI_POLICY_LEVELS: AIPolicyLevel[] = [
     hexColor: '#22C55E'
   },
   {
-    level: 5,
+    level: 4,
     titleKey: 'aiPolicy.level5.title',
     descriptionKey: 'aiPolicy.level5.description',
     useCasesKey: 'aiPolicy.level5.useCases',
@@ -68,6 +68,8 @@ export const AI_POLICY_LEVELS: AIPolicyLevel[] = [
 
 // Get AI policy level by number
 export function getAIPolicyLevel(level: number): AIPolicyLevel | undefined {
+  console.log('getAIPolicyLevel', level);
+  console.log('AI_POLICY_LEVELS', AI_POLICY_LEVELS);
   return AI_POLICY_LEVELS.find(p => p.level === level);
 }
 

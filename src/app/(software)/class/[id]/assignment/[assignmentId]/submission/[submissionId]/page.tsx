@@ -48,7 +48,7 @@ import { useSelector } from "react-redux";
 import { baseFileHandler } from "@/lib/fileHandler";
 import { getStatusColor, getStudentAssignmentStatus } from "@/lib/getStudentAssignmentStatus";
 import { ExtendedResponse } from "@/components/submissions/ExtendedResponse";
-import { AI_POLICY_LEVELS, getAIPolicyColor } from "@/lib/aiPolicy";
+import { AIPolicyDisplay } from "@/components/ui/ai-policy-card";
 import { useTranslations } from "next-intl";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
@@ -158,24 +158,6 @@ export default function SubmissionDetailPage() {
   const assignmentId = params.assignmentId as string;
   const submissionId = params.submissionId as string;
   const isTeacher = appState.user.teacher;
-
-  // Build translated AI policy from shared config
-  const getAIPolicy = (level: number) => {
-    const policy = AI_POLICY_LEVELS.find(p => p.level === level);
-    if (!policy) return null;
-    return {
-      level: policy.level,
-      title: t(policy.titleKey),
-      description: t(policy.descriptionKey),
-      useCases: t(policy.useCasesKey),
-      studentResponsibilities: t(policy.studentResponsibilitiesKey),
-      disclosureRequirements: t(policy.disclosureRequirementsKey),
-      color: policy.color,
-    };
-  };
-
-  // State for AI policy collapsible
-  const [aiPolicyExpanded, setAiPolicyExpanded] = useState(false);
 
   const [feedback, setFeedback] = useState("");
   const [grade, setGrade] = useState<number | undefined>(undefined);
@@ -663,7 +645,7 @@ export default function SubmissionDetailPage() {
           </div>
 
           {/* AI Policy */}
-          {assignment?.aiPolicyLevel && getAIPolicy(assignment.aiPolicyLevel) && (() => {
+          {/* { getAIPolicy(assignment?.aiPolicyLevel) && (() => {
             const policy = getAIPolicy(assignment.aiPolicyLevel)!;
             return (
               <Collapsible open={aiPolicyExpanded} onOpenChange={setAiPolicyExpanded}>
@@ -701,7 +683,8 @@ export default function SubmissionDetailPage() {
                 </div>
               </Collapsible>
             );
-          })()}
+          })()} */}
+          <AIPolicyDisplay level={assignment?.aiPolicyLevel} />
 
           <Separator />
 

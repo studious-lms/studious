@@ -33,7 +33,7 @@ export function AIPolicyDisplay({
   const [isExpanded, setIsExpanded] = useState(defaultExpanded);
   
   const policyConfig = getAIPolicyLevel(level);
-  if (!policyConfig) return null;
+  if (!policyConfig) return 'skibidi wip wip';
 
   const policy = {
     level: policyConfig.level,

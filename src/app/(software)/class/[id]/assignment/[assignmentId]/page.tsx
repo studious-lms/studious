@@ -673,9 +673,7 @@ export default function AssignmentDetailPage() {
           </div>
 
           {/* AI Policy */}
-          {assignment.aiPolicyLevel && (
-            <AIPolicyDisplay level={assignment.aiPolicyLevel} />
-          )}
+          <AIPolicyDisplay level={assignment.aiPolicyLevel} />
 
           {/* Attachments - inline style */}
           {assignment.attachments.length > 0 && (
