@@ -38,6 +38,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import UserProfilePicture from "../UserProfilePicture";
 
 interface PrimarySidebarProps {
   isAuthenticated?: boolean;
@@ -246,12 +247,7 @@ export function PrimarySidebar({ isAuthenticated = false, user }: PrimarySidebar
                     ? "bg-accent text-accent-foreground"
                     : "text-muted-foreground"
                 )}>
-                  <Avatar className="h-6 w-6">
-                    <AvatarImage src={appState.user.profilePicture} alt={appState.user.displayName} />
-                    <AvatarFallback className="text-[10px]">
-                      {appState.user.displayName?.charAt(0).toUpperCase() || "U"}
-                    </AvatarFallback>
-                  </Avatar>
+                  <UserProfilePicture profilePicture={appState.user.profilePicture} username={appState.user.username} />
                 </div>
                 <span className={cn(
                   "text-[10px] mt-0.5 font-medium",
@@ -263,12 +259,7 @@ export function PrimarySidebar({ isAuthenticated = false, user }: PrimarySidebar
             </PopoverTrigger>
             <PopoverContent className="w-64 p-0 mb-2" align="center" side="top" sideOffset={8}>
               <div className="flex items-center gap-3 p-3 border-b">
-                <Avatar className="h-10 w-10">
-                  <AvatarImage src={appState.user.profilePicture} alt={appState.user.displayName} />
-                  <AvatarFallback>
-                    {appState.user.displayName?.charAt(0).toUpperCase() || "U"}
-                  </AvatarFallback>
-                </Avatar>
+                <UserProfilePicture profilePicture={appState.user.profilePicture} username={appState.user.username} />
                 <div className="flex flex-col space-y-0.5 flex-1 min-w-0">
                   <p className="text-sm font-semibold leading-none truncate">{appState.user.displayName}</p>
                   <p className="text-xs leading-none text-muted-foreground truncate">
@@ -442,22 +433,12 @@ export function PrimarySidebar({ isAuthenticated = false, user }: PrimarySidebar
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="sm" className="h-10 w-10 rounded-md p-0 hover:bg-accent focus-visible:ring-0 focus-visible:ring-offset-0">
-                <Avatar className="h-7 w-7">
-                  <AvatarImage src={appState.user.profilePicture} alt={appState.user.displayName} />
-                  <AvatarFallback className="text-xs">
-                    {appState.user.displayName?.charAt(0).toUpperCase() || "U"}
-                  </AvatarFallback>
-                </Avatar>
+                <UserProfilePicture profilePicture={appState.user.profilePicture} username={appState.user.username} />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-64 mb-2" align="start" side="right" alignOffset={-8} sideOffset={8}>
               <div className="flex items-center gap-3 p-3">
-                <Avatar className="h-10 w-10">
-                  <AvatarImage src={appState.user.profilePicture} alt={appState.user.displayName} />
-                  <AvatarFallback>
-                    {appState.user.displayName?.charAt(0).toUpperCase() || "U"}
-                  </AvatarFallback>
-                </Avatar>
+                <UserProfilePicture profilePicture={appState.user.profilePicture} username={appState.user.username} />
                 <div className="flex flex-col space-y-0.5 flex-1 min-w-0">
                   <p className="text-sm font-semibold leading-none truncate">{appState.user.displayName}</p>
                   <p className="text-xs leading-none text-muted-foreground truncate">

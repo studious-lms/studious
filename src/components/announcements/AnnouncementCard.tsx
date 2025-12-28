@@ -5,7 +5,6 @@
 import { useState, useRef, useMemo, useCallback, memo } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Textarea } from "@/components/ui/textarea";
 import { Progress } from "@/components/ui/progress";
 import {
@@ -65,6 +64,7 @@ import { baseFileHandler } from "@/lib/file/fileHandler";
 import Attachment from "../Attachment";
 import { transformFileToFileItem } from "@/lib/file/file";
 import AttachmentPreview from "../AttachmentPreview";
+import UserProfilePicture from "../UserProfilePicture";
 
 type Announcement = RouterOutputs['class']['get']['class']['announcements'][number];
 
@@ -642,12 +642,7 @@ export const AnnouncementCard = memo(function AnnouncementCard({ announcement, c
           {/* Header */}
           <div className="flex items-start justify-between mb-4">
             <div className="flex items-start space-x-3 flex-1">
-              <Avatar className="h-8 w-8 flex-shrink-0">
-                <AvatarImage src={announcement.teacher?.profile?.profilePicture || ""} />
-                <AvatarFallback>
-                  {announcement.teacher?.username?.substring(0, 2).toUpperCase() || "AN"}
-                </AvatarFallback>
-              </Avatar>
+              <UserProfilePicture profilePicture={announcement.teacher?.profile?.profilePicture || ""} username={announcement.teacher?.username || "Unknown"} />
               <div className="min-w-0 flex-1">
                 <p className="font-medium text-sm">{announcement.teacher?.username || "Unknown"}</p>
                 <div className="flex items-center gap-2 flex-wrap">
@@ -1156,12 +1151,7 @@ const CommentItem = memo(function CommentItem({
   return (
     <div className="space-y-2">
       <div className="flex items-start gap-2">
-        <Avatar className="h-7 w-7 flex-shrink-0">
-          <AvatarImage src={comment.author?.profile?.profilePicture || ""} />
-          <AvatarFallback className="text-xs">
-            {comment.author?.username?.substring(0, 2).toUpperCase() || "U"}
-          </AvatarFallback>
-        </Avatar>
+        <UserProfilePicture profilePicture={comment.author?.profile?.profilePicture || ""} username={comment.author?.username || "Unknown"} />
         <div className="flex-1 min-w-0">
           <div className="flex items-center justify-between mb-1">
             <div className="flex items-center gap-2">
@@ -1301,12 +1291,7 @@ const CommentItem = memo(function CommentItem({
                 return (
                   <div key={reply.id} className="space-y-1">
                     <div className="flex items-start gap-2">
-                      <Avatar className="h-6 w-6 flex-shrink-0">
-                        <AvatarImage src={reply.author?.profile?.profilePicture || ""} />
-                        <AvatarFallback className="text-xs">
-                          {reply.author?.username?.substring(0, 2).toUpperCase() || "U"}
-                        </AvatarFallback>
-                      </Avatar>
+                      <UserProfilePicture profilePicture={reply.author?.profile?.profilePicture || ""} username={reply.author?.username || "Unknown"} />
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center justify-between mb-0.5">
                           <div className="flex items-center gap-2">

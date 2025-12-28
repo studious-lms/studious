@@ -52,6 +52,7 @@ import { useTranslations } from "next-intl";
 import { convertAttachmentsToFileItems } from "@/lib/file/file";
 import AttachmentPreview from "@/components/AttachmentPreview";
 import Attachment from "@/components/Attachment";
+import UserProfilePicture from "@/components/UserProfilePicture";
 
 type AssignmentUpdateSubmissionAsTeacherInput = RouterInputs['assignment']['updateSubmissionAsTeacher'];
 
@@ -537,12 +538,7 @@ export default function SubmissionDetailPage() {
             
             {/* Student Info + Title */}
             <div className="flex items-center gap-4">
-              <Avatar className="h-12 w-12">
-                <AvatarImage src={submission.student?.profile?.profilePicture || ""} alt="" />
-                <AvatarFallback>
-                  {submission.student.username.substring(0, 2).toUpperCase()}
-                </AvatarFallback>
-              </Avatar>
+              <UserProfilePicture profilePicture={submission.student?.profile?.profilePicture || ""} username={submission.student.username} />
             <div>
                 <h1 className="text-2xl font-bold flex items-center gap-3">
                   {submission.assignment.title}

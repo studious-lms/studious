@@ -9,7 +9,6 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { GradingBoundariesModal, RubricModal } from "@/components/modals";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -45,6 +44,7 @@ import type {
   GradeBoundary,
 } from "@/lib/types/rubric";
 import type { ColumnDef } from "@tanstack/react-table";
+import UserProfilePicture from "@/components/UserProfilePicture";
 
 
 export default function Grades() {
@@ -385,12 +385,7 @@ export default function Grades() {
         const student = row.original;
         return (
           <div className="flex items-center space-x-3">
-            <Avatar className="h-8 w-8">
-              <AvatarImage src={student.profile?.profilePicture || ""} />
-              <AvatarFallback>
-                {student.username.substring(0, 2).toUpperCase()}
-              </AvatarFallback>
-            </Avatar>
+            <UserProfilePicture profilePicture={student.profile?.profilePicture || ""} username={student.username} />
 
             <span className="font-medium">{student.username}</span>
           </div>

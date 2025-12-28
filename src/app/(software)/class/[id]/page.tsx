@@ -26,6 +26,7 @@ import { fixUploadUrl } from "@/lib/directUpload";
 import { AnnouncementCard } from "@/components/announcements/AnnouncementCard";
 import { EmptyState } from "@/components/ui/empty-state";
 import ClassFeedLoading from "./loading";
+import UserProfilePicture from "@/components/UserProfilePicture";
 
 type Class = RouterOutputs['class']['get']['class'];
 type Announcement = RouterOutputs['class']['get']['class']['announcements'][number];
@@ -266,12 +267,7 @@ export default function ClassFeed() {
           <Card className="border-border shadow-sm hover:shadow-md transition-shadow">
             <CardContent className="p-6">
               <div className="flex items-start space-x-4">
-                <Avatar className="h-10 w-10 flex-shrink-0">
-                  <AvatarImage src={appState.user.profilePicture || ""} />
-                  <AvatarFallback className="bg-primary/10 text-primary font-medium">
-                    {appState.user.username?.substring(0, 2).toUpperCase()}
-                  </AvatarFallback>
-                </Avatar>
+                <UserProfilePicture profilePicture={appState.user.profilePicture || ""} username={appState.user.username} />
                 <div className="flex-1 space-y-4">
                   <Textarea
                     placeholder="Share something with your class..."

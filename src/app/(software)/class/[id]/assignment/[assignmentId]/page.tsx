@@ -54,6 +54,7 @@ import AssignmentDetailSkeleton from "./loading";
 import { StatsCard } from "@/components/ui/stats-card";
 import { convertAttachmentsToFileItems } from "@/lib/file/file";
 import AttachmentPreview from "@/components/AttachmentPreview";
+import UserProfilePicture from "@/components/UserProfilePicture";
 
 type Submissions = RouterOutputs['assignment']['getSubmissions'];
 type Submission = Submissions[number];
@@ -396,12 +397,7 @@ export default function AssignmentDetailPage() {
       header: "Student",
       cell: ({ row }: { row: { original: Submission } }) => (
         <div className="flex items-center space-x-3">
-          <Avatar className="h-8 w-8">
-            <AvatarImage src="" alt="Student avatar" />
-            <AvatarFallback>
-              {row.original.student.username.substring(0, 2).toUpperCase()}
-            </AvatarFallback>
-          </Avatar>
+          <UserProfilePicture profilePicture={row.original.student.profile?.profilePicture || ""} username={row.original.student.username} />
           <span>{row.original.student.username}</span>
         </div>
       ),

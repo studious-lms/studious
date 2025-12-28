@@ -25,6 +25,7 @@ import { trpc, type RouterOutputs } from "@/lib/trpc";
 import { toast } from "sonner";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
+import UserProfilePicture from "@/components/UserProfilePicture";
 
 type AttendanceRecord = RouterOutputs["attendance"]["get"][number];
 
@@ -430,12 +431,7 @@ export default function EventAttendance() {
                 {students.map((student) => (
                   <div key={student.id} className="p-4 rounded-xl border hover:shadow-sm transition-shadow">
                     <div className="flex items-center space-x-3 mb-3">
-                      <Avatar className="h-10 w-10">
-                        <AvatarImage src={student.profile?.profilePicture || ""} alt={student.username} />
-                        <AvatarFallback>
-                          {student.username.substring(0, 2).toUpperCase()}
-                        </AvatarFallback>
-                      </Avatar>
+                      <UserProfilePicture profilePicture={student.profile?.profilePicture || ""} username={student.username} />
                       <div className="flex-1 min-w-0">
                         <h4 className="font-medium truncate">{student.profile?.displayName || student.username}</h4>
                         <p className="text-xs text-muted-foreground truncate">{student.username}</p>

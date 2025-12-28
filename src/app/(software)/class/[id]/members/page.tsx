@@ -48,6 +48,7 @@ import { toast } from "sonner";
 
 import { useParams, useRouter } from "next/navigation";
 import { useChat } from "@/hooks/useChat";
+import UserProfilePicture from "@/components/UserProfilePicture";
 
 // Skeleton for the entire members page
 const MembersPageSkeleton = () => (
@@ -349,12 +350,7 @@ export default function Members() {
                     className="flex items-center justify-between p-4 rounded-xl border hover:bg-muted/30 transition-colors"
                   >
                     <div className="flex items-center gap-3">
-                      <Avatar className="h-10 w-10">
-                        <AvatarImage src={student.profile?.profilePicture || ""} />
-                        <AvatarFallback>
-                          {student.username.substring(0, 2).toUpperCase()}
-                        </AvatarFallback>
-                      </Avatar>
+                      <UserProfilePicture profilePicture={student.profile?.profilePicture || ""} username={student.username} />
                       
                       <div>
                         <div className="flex items-center gap-2">
@@ -423,12 +419,7 @@ export default function Members() {
                     className="flex items-center justify-between p-4 rounded-xl border hover:bg-muted/30 transition-colors"
                   >
                     <div className="flex items-center gap-3">
-                      <Avatar className="h-10 w-10">
-                        <AvatarImage src={teacher.profile?.profilePicture || ""} />
-                        <AvatarFallback>
-                          {teacher.username.substring(0, 2).toUpperCase()}
-                        </AvatarFallback>
-                      </Avatar>
+                      <UserProfilePicture profilePicture={teacher.profile?.profilePicture || ""} username={teacher.username} />
                       
                       <div>
                         <div className="flex items-center gap-2">
@@ -504,12 +495,7 @@ export default function Members() {
               <div className="space-y-6">
                 {/* Profile Header */}
                 <div className="flex items-center gap-4">
-                  <Avatar className="h-16 w-16">
-                    <AvatarImage src={selectedUser.profile?.profilePicture || ""} />
-                    <AvatarFallback>
-                      {selectedUser.username.substring(0, 2).toUpperCase()}
-                    </AvatarFallback>
-                  </Avatar>
+                  <UserProfilePicture profilePicture={selectedUser.profile?.profilePicture || ""} username={selectedUser.username} />
                   <div className="space-y-1">
                     <div className="flex items-center gap-2">
                       <h3 className="text-lg font-semibold">

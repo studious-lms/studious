@@ -4,10 +4,10 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { X, Check, AtSign as At } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
+import UserProfilePicture from "../UserProfilePicture";
 
 interface MentionSuggestion {
   userId: string;
@@ -189,12 +189,8 @@ export function MessageEdit({
               )}
               onClick={() => insertMention(user)}
             >
-              <Avatar className="h-6 w-6">
-                <AvatarImage src={user.profilePicture} />
-                <AvatarFallback className="text-xs bg-primary text-primary-foreground">
-                  {(user.displayName || user.username).charAt(0).toUpperCase()}
-                </AvatarFallback>
-              </Avatar>
+              <UserProfilePicture profilePicture={user.profilePicture} username={user.username} />
+
               <div className="flex-1 min-w-0">
                 <div className="font-medium text-sm text-foreground">
                   {user.displayName || user.username}

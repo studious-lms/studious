@@ -10,7 +10,6 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { EmptyState } from "@/components/ui/empty-state";
 import { DataTable } from "@/components/ui/data-table";
 import { 
@@ -31,6 +30,7 @@ import { RouterOutputs, trpc } from "@/lib/trpc";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { calculateTrend, getTrendIcon, getGradeColor, cn, getGradeBorderAndBackground } from "@/lib/utils";
+import UserProfilePicture from "@/components/UserProfilePicture";
 
 function StudentGradesSkeleton() {
   return (
@@ -400,12 +400,7 @@ export default function StudentGrades() {
 
           {/* Student Info */}
           <div className="flex items-center gap-4">
-            <Avatar className="h-14 w-14">
-              <AvatarImage src={student.profile?.profilePicture || ""} alt="" />
-              <AvatarFallback className="text-lg">
-                {student.profile?.displayName?.substring(0, 2).toUpperCase() || student.username.substring(0, 2).toUpperCase()}
-              </AvatarFallback>
-            </Avatar>
+            <UserProfilePicture profilePicture={student.profile?.profilePicture || ""} username={student.username} />
             <div className="flex-1">
               <h1 className="text-2xl font-bold">
                 {isStudent ? t('myGrades') : student.profile?.displayName || student.username}

@@ -12,6 +12,7 @@ import type { ConversationListOutput } from "@/lib/trpc";
 import { ConversationListSkeleton } from "./ChatSkeletons";
 import { EmptyState } from "@/components/ui/empty-state";
 import { useTranslations } from "next-intl";
+import UserProfilePicture, { GroupProfilePicture } from "../UserProfilePicture";
 
 type Conversation = ConversationListOutput[number];
 
@@ -139,7 +140,16 @@ export function ConversationList({
                 >
                   <div className="flex items-center gap-3 min-w-0 flex-1">
                     <div className="relative flex-shrink-0">
-                      <Avatar className="h-8 w-8">
+                      {conversation.type === 'GROUP' ? (
+                        <GroupProfilePicture users={conversation.members.map(member => ({
+                          id: member.userId,
+                          profilePicture: member.user.profile?.profilePicture || "",
+                          username: member.user.username,
+                        }))} />
+                      ) : (
+                        <UserProfilePicture profilePicture={conversation.members.find(m => m.userId !== currentUserId)?.user.profile?.profilePicture || ""} username={conversation.members.find(m => m.userId !== currentUserId)?.user.username || "Unknown"} />
+                      )}
+                      {/* <Avatar className="h-8 w-8">
                         <AvatarImage src={conversation.type === 'DM' ? 
                           conversation.members.find(m => m.userId !== currentUserId)?.user.profile?.profilePicture 
                           // @TODO: Fix this
@@ -155,7 +165,7 @@ export function ConversationList({
                             avatarText
                           )}
                         </AvatarFallback>
-                      </Avatar>
+                      </Avatar> */}
                       {conversation.unreadCount > 0 && (
                         <div className="absolute -bottom-1 -right-1 h-4 w-4 bg-destructive rounded-full flex items-center justify-center">
                           <span className="text-xs font-medium text-destructive-foreground">

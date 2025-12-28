@@ -28,6 +28,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { ReactionButton } from "@/components/reactions/ReactionButton";
 import { Skeleton } from "../ui/skeleton";
+import UserProfilePicture from "../UserProfilePicture";
 
 interface CommentProps {
   comment: { id: string; };
@@ -206,12 +207,11 @@ export default memo(function Comment({
   return (
     <div className="space-y-2">
       <div className="flex items-start gap-2">
-        <Avatar className="h-7 w-7 flex-shrink-0">
-          <AvatarImage src={currentComment.author.id === 'AI_ASSISTANT' ? '/ai-icon.png' : (currentComment && currentComment.author?.profile?.profilePicture || "")} />
-          <AvatarFallback className="text-xs">
-            {currentComment && currentComment.author?.username?.substring(0, 2).toUpperCase() || "U"}
-          </AvatarFallback>
-        </Avatar>
+        {currentComment.author.id === 'AI_ASSISTANT' ? (
+          <UserProfilePicture profilePicture="/ai-icon.png" username="AI Assistant" />
+        ) : (
+          <UserProfilePicture profilePicture={currentComment.author?.profile?.profilePicture || ""} username={currentComment.author?.username || "Unknown"} />
+        )}
         <div className="flex-1 min-w-0">
           <div className="flex items-center justify-between mb-1">
             <div className="flex items-center gap-2">
@@ -364,12 +364,7 @@ export default memo(function Comment({
             return (
               <div key={reply.id} className="space-y-2">
                 <div className="flex items-start gap-2">
-                  <Avatar className="h-6 w-6 flex-shrink-0">
-                    <AvatarImage src={reply.author?.profile?.profilePicture || ""} />
-                    <AvatarFallback className="text-xs">
-                      {reply.author?.profile?.displayName?.substring(0, 2).toUpperCase() || "U"}
-                    </AvatarFallback>
-                  </Avatar>
+                  <UserProfilePicture profilePicture={reply.author?.profile?.profilePicture || ""} username={reply.author?.username || "Unknown"} />
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between mb-1">
                       <div className="flex items-center gap-2">

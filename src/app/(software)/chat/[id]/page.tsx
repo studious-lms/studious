@@ -15,6 +15,7 @@ import {
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { ConversationPageSkeleton } from "@/components/chat/ChatSkeletons";
 import { useTranslations } from "next-intl";
+import UserProfilePicture, { GroupProfilePicture } from "@/components/UserProfilePicture";
 
 export default function ConversationPage() {
   const t = useTranslations('chat.page');
@@ -93,18 +94,18 @@ export default function ConversationPage() {
           <div className="h-12 border-b border-border px-4 flex items-center justify-between bg-background flex-shrink-0">
             <div className="flex items-center space-x-3">
               <div className="flex items-center space-x-2">
-                <Avatar className="h-8 w-8">
-                  <AvatarImage 
-                    src={selectedConversation.type === 'DM' ? 
-                      selectedConversation.members.find(m => m.userId !== user.id)?.user.profile?.profilePicture 
-                      // @TODO: Fix this
-                      : selectedConversation.members.find(m => m.userId !== user.id)?.user.profile?.profilePicture || ""
-                    }
-                  />
-                  <AvatarFallback>
-                    {getConversationDisplayName().charAt(0).toUpperCase()}
-                  </AvatarFallback>
-                </Avatar>
+                {
+                  selectedConversation.type === 'DM' ? (
+                    <UserProfilePicture profilePicture={selectedConversation.members.find(m => m.userId !== user.id)?.user.profile?.profilePicture || ""} username={selectedConversation.members.find(m => m.userId !== user.id)?.user.username || "Unknown"} />
+                  ) : (
+                    <GroupProfilePicture users={selectedConversation.members.map(m => ({
+                      id: m.userId,
+                      profilePicture: m.user.profile?.profilePicture || "",
+                      username: m.user.username,
+                    }))} />
+                  )
+                }
+
                 <span className="font-semibold text-foreground">
                   {getConversationDisplayName()}
                 </span>
