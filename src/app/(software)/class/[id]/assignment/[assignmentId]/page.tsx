@@ -55,6 +55,8 @@ import { StatsCard } from "@/components/ui/stats-card";
 import { convertAttachmentsToFileItems } from "@/lib/file/file";
 import AttachmentPreview from "@/components/AttachmentPreview";
 import UserProfilePicture from "@/components/UserProfilePicture";
+import WorksheetCard from "@/components/WorksheetCard";
+import WorksheetAttachment from "@/components/WorksheetAttachment";
 
 type Submissions = RouterOutputs['assignment']['getSubmissions'];
 type Submission = Submissions[number];
@@ -67,52 +69,6 @@ type FileItem = {
   size?: string;
   uploadedAt?: string;
 };
-
-// Component to display a worksheet card that navigates to the worksheet page
-function WorksheetCard({
-  worksheetId,
-  submissionId,
-  classId,
-  readonly,
-}: {
-  worksheetId: string;
-  submissionId: string;
-  classId: string;
-  readonly: boolean;
-}) {
-  const router = useRouter();
-
-  // Fetch worksheet to get the name
-  const { data: worksheet, isLoading: isWorksheetLoading } = trpc.worksheet.getWorksheet.useQuery({
-    worksheetId,
-  });
-
-  const handleClick = () => {
-    router.push(`/class/${classId}/worksheets/${worksheetId}/submission/${submissionId}`);
-  };
-
-  return (
-    <button
-      onClick={handleClick}
-      className="w-full py-4 px-4 border rounded-lg hover:bg-muted/50 hover:border-primary/30 flex items-center justify-between text-left transition-all group"
-    >
-      <div className="flex items-center gap-3">
-        <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary">
-          <FileText className="h-5 w-5" />
-        </div>
-        <div>
-          <span className="font-medium block">
-            {isWorksheetLoading ? <Skeleton className="h-4 w-24" /> : worksheet?.name}
-          </span>
-          <span className="text-xs text-muted-foreground">
-            {readonly ? "View your answers" : "Continue working"}
-          </span>
-        </div>
-      </div>
-      <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground group-hover:text-foreground -rotate-90 transition-colors" />
-    </button>
-  );
-}
 
 export default function AssignmentDetailPage() {
   const params = useParams();
@@ -528,20 +484,25 @@ export default function AssignmentDetailPage() {
               <h2 className="text-sm font-medium text-muted-foreground">Worksheets</h2>
               <div className="grid gap-2 sm:grid-cols-2">
                 {assignment.worksheets.map((worksheet) => (
-                  <button
+                  // <button
+                  //   key={worksheet.id}
+                  //   onClick={() => {
+                  //     if (isTeacher) {
+                  //       router.push(`/class/${classId}/worksheets/edit/${worksheet.id}`);
+                  //     } else if (studentSubmission) {
+                  //       router.push(`/class/${classId}/worksheets/${worksheet.id}/submission/${studentSubmission.id}`);
+                  //     }
+                  //   }}
+                  //   className="flex items-center justify-between px-4 py-3 rounded-lg border hover:bg-muted/50 transition-colors text-left group"
+                  // >
+                  //   <span className="font-medium truncate">{worksheet.name}</span>
+                  //   <ChevronDown className="h-4 w-4 text-muted-foreground -rotate-90 group-hover:text-foreground transition-colors flex-shrink-0" />
+                  // </button>
+                  <WorksheetAttachment
                     key={worksheet.id}
-                    onClick={() => {
-                      if (isTeacher) {
-                        router.push(`/class/${classId}/worksheets/edit/${worksheet.id}`);
-                      } else if (studentSubmission) {
-                        router.push(`/class/${classId}/worksheets/${worksheet.id}/submission/${studentSubmission.id}`);
-                      }
-                    }}
-                    className="flex items-center justify-between px-4 py-3 rounded-lg border hover:bg-muted/50 transition-colors text-left group"
-                  >
-                    <span className="font-medium truncate">{worksheet.name}</span>
-                    <ChevronDown className="h-4 w-4 text-muted-foreground -rotate-90 group-hover:text-foreground transition-colors flex-shrink-0" />
-                  </button>
+                    worksheet={worksheet}
+                    classId={classId}
+                  />
                 ))}
               </div>
             </div>
@@ -729,12 +690,11 @@ export default function AssignmentDetailPage() {
                   <h3 className="text-sm font-medium text-muted-foreground">Worksheets</h3>
                   <div className="space-y-2">
                     {assignment.worksheets.map((worksheet: RouterOutputs['assignment']['get']['worksheets'][number]) => (
-                      <WorksheetCard
+                      <WorksheetAttachment
                         key={worksheet.id}
+                        worksheet={worksheet}
                         submissionId={studentSubmission.id}
-                        worksheetId={worksheet.id}
                         classId={classId}
-                        readonly={studentSubmission.submitted || false}
                       />
                     ))}
                   </div>

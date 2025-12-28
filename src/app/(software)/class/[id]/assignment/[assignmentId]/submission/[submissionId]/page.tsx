@@ -53,6 +53,7 @@ import { convertAttachmentsToFileItems } from "@/lib/file/file";
 import AttachmentPreview from "@/components/AttachmentPreview";
 import Attachment from "@/components/Attachment";
 import UserProfilePicture from "@/components/UserProfilePicture";
+import WorksheetAttachment from "@/components/WorksheetAttachment";
 
 type AssignmentUpdateSubmissionAsTeacherInput = RouterInputs['assignment']['updateSubmissionAsTeacher'];
 
@@ -68,45 +69,6 @@ type RubricCriterion = {
     description?: string;
   }>;
 };
-
-// RubricGrade type is now imported from @/lib/types/assignment
-
-// Component to display a worksheet card that navigates to the worksheet page
-function WorksheetCard({ 
-  worksheetId, 
-  submissionId,
-  worksheetName,
-  classId,
-}: { 
-  worksheetId: string; 
-  submissionId: string;
-  worksheetName: string;
-  classId: string;
-}) {
-  const router = useRouter();
-
-  const handleClick = () => {
-    router.push(`/class/${classId}/worksheets/${worksheetId}/submission/${submissionId}`);
-  };
-
-  return (
-    <button
-      onClick={handleClick}
-      className="w-full py-4 px-4 border rounded-lg hover:bg-muted/50 hover:border-primary/30 flex items-center justify-between text-left transition-all group"
-    >
-      <div className="flex items-center gap-3">
-        <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary">
-          <FileText className="h-5 w-5" />
-        </div>
-        <div>
-          <span className="font-medium block">{worksheetName}</span>
-          <span className="text-xs text-muted-foreground">View student&apos;s answers</span>
-        </div>
-      </div>
-      <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground group-hover:text-foreground -rotate-90 transition-colors" />
-    </button>
-  );
-}
 
 function SubmissionDetailSkeleton() {
   return (
@@ -666,13 +628,12 @@ export default function SubmissionDetailPage() {
               <h2 className="text-sm font-medium text-muted-foreground">Worksheets</h2>
               <div className="grid gap-2 sm:grid-cols-2">
                 {assignment.worksheets.map((worksheet) => (
-                  <WorksheetCard
-                        key={worksheet.id}
-                        worksheetId={worksheet.id}
-                        submissionId={submissionId}
-                        worksheetName={worksheet.name || `Worksheet ${worksheet.id}`}
+                  <WorksheetAttachment
+                    key={worksheet.id}
+                    worksheet={worksheet}
                     classId={classId}
-                      />
+                    submissionId={submissionId}
+                  />
                 ))}
                 </div>
               </div>
