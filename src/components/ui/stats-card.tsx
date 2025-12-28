@@ -61,7 +61,9 @@ export function StatsCard({
           </div>
         )}
         {progress !== undefined && (
-          <div className="mt-2 h-1.5 bg-muted rounded-full overflow-hidden">
+          <div className="mt-2 h-1.5 rounded-full overflow-hidden" style={{
+            backgroundColor: color ? `${color}20` : 'hsl(var(--muted))'
+          }}>
             <div 
               className="h-full rounded-full transition-all" 
               style={{ 
