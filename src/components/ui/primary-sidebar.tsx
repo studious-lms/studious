@@ -39,6 +39,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import UserProfilePicture from "../UserProfilePicture";
+import { Badge } from "./badge";
 
 interface PrimarySidebarProps {
   isAuthenticated?: boolean;
@@ -178,10 +179,11 @@ export function PrimarySidebar({ isAuthenticated = false, user }: PrimarySidebar
                     )}
                   </div>
                   <span className={cn(
-                    "text-[10px] mt-0.5 font-medium",
+                    "text-[10px] mt-0.5 font-medium flex items-center",
                     isItemActive ? "text-foreground" : "text-muted-foreground"
                   )}>
-                    {item.label}
+                    <span>{item.label}</span>
+                    <Badge variant="default" className="ml-2 text-[9px] pt-0 bg-primary/10 text-primary border-primary/20">Beta</Badge>
                   </span>
                 </Link>
               );
@@ -335,8 +337,11 @@ export function PrimarySidebar({ isAuthenticated = false, user }: PrimarySidebar
                 >
                   <Icon className="h-4 w-4" />
                   {/* Tooltip */}
-                  <div className="absolute left-full ml-2 px-2 py-1 bg-popover text-popover-foreground text-xs rounded border opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity whitespace-nowrap z-50">
-                    {item.label}
+                  <div className="absolute left-full ml-2 px-2 py-1 bg-popover text-popover-foreground text-xs rounded border opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 flex items-center">
+                    <span>{item.label}</span>  
+                    {item.href == "/chat" && (
+                      <Badge variant="default" className="ml-2 font-xs pt-0 bg-primary/10 text-primary border-primary/20">Beta</Badge>
+                    )}
                   </div>
                 </Button>
                 
