@@ -26,6 +26,7 @@ import { toast } from "sonner";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import UserProfilePicture from "@/components/UserProfilePicture";
+import ResponsivePageHeader from "@/components/ResponsiveClassPageHeader";
 
 type AttendanceRecord = RouterOutputs["attendance"]["get"][number];
 
@@ -297,8 +298,8 @@ export default function EventAttendance() {
         </button>
 
         {/* Header */}
-        <div className="flex items-center justify-between">
-          <h1 className="text-2xl font-bold">{t('eventDetail.title')}</h1>
+        <div className="flex items-center flex-wrap gap-y-2 justify-between">
+          <ResponsivePageHeader title={t('eventDetail.title')} description={t('eventDetail.description')} />
           
           {!isStudent && (
             <Button 

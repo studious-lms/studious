@@ -26,6 +26,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { toast } from "sonner";
 import { useTranslations } from "next-intl";
+import ResponsivePageHeader from "@/components/ResponsiveClassPageHeader";
 
 type Assignment = RouterOutputs['assignment']['get'];
 type Folder = {
@@ -649,11 +650,8 @@ export default function Assignments() {
   return (
     <DndProvider backend={HTML5Backend}>
       <PageLayout>
-        <div className="flex items-center justify-between mb-6 space-y-4 flex-wrap">
-          <div>
-            <h1 className="text-xl sm:text-2xl font-bold">{t('assignments')}</h1>
-            <p className="text-muted-foreground">{t('manageAndTrack')}</p>
-          </div>
+        <div className="flex items-center justify-between mb-6 gap-y-2 flex-wrap">
+          <ResponsivePageHeader title={t('assignments')} description={t('manageAndTrack')} />
           
           <div className="flex items-center sm:space-x-2 gap-2 flex-wrap">
             {/* <Button variant="outline" size="sm">

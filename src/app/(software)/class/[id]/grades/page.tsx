@@ -45,6 +45,7 @@ import type {
 } from "@/lib/types/rubric";
 import type { ColumnDef } from "@tanstack/react-table";
 import UserProfilePicture from "@/components/UserProfilePicture";
+import ResponsivePageHeader from "@/components/ResponsiveClassPageHeader";
 
 
 export default function Grades() {
@@ -505,16 +506,10 @@ export default function Grades() {
 
   return (
     <PageLayout>
-      <div className="flex items-center justify-between mb-6">
-        <div>
-          <h1 className="text-2xl font-bold">{t("title")}</h1>
-          <p className="text-muted-foreground">{t("subtitle")}</p>
-        </div>
-
-      </div>
+      <ResponsivePageHeader title={t("title")} description={t("subtitle")} />
 
       {/* Class Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6 mt-4">
         <StatsCard
           title={t("overview.classAverage")}
           value={`${classAverage.toFixed(1)}%`}

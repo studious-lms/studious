@@ -33,6 +33,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { toast } from "sonner";
 import WorksheetCard from "@/components/WorksheetCard";
+import ResponsivePageHeader from "@/components/ResponsiveClassPageHeader";
 
 // Loading skeleton
 function WorksheetsSkeleton() {
@@ -121,11 +122,8 @@ export default function Worksheets() {
     <PageLayout>
       <div className="space-y-6">
         {/* Header */}
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-2xl font-bold">{t('title')}</h1>
-            <p className="text-muted-foreground">{t('subtitle')}</p>
-          </div>
+        <div className="flex items-center flex-wrap gap-y-2 justify-between">
+          <ResponsivePageHeader title={t('title')} description={t('subtitle')} />
           
           {isTeacher && (
             <Button onClick={() => router.push(`/class/${classId}/worksheets/create`)}>

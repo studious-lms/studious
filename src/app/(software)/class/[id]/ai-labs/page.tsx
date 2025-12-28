@@ -35,6 +35,7 @@ import {
   PenTool
 } from "lucide-react";
 import { formatDistanceToNow } from "date-fns";
+import ResponsivePageHeader from "@/components/ResponsiveClassPageHeader";
 
 
 
@@ -179,7 +180,7 @@ export default function ClassAILabs() {
       <PageLayout>
         <div className="space-y-8">
           {/* Header */}
-          <div className="flex items-center justify-between">
+          {/* <div className="flex items-center justify-between">
             <div>
               <h1 className="text-3xl font-bold">{t('title')}</h1>
               <p className="text-muted-foreground mt-2">
@@ -190,7 +191,8 @@ export default function ClassAILabs() {
               <Sparkles className="h-3 w-3 mr-1" />
               {t('aiPowered')}
             </Badge>
-          </div>
+          </div> */}
+          <ResponsivePageHeader title={t('title')} description={t('subtitle')} />
 
           {/* Stats Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">

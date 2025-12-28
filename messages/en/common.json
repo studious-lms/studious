@@ -1,5 +1,6 @@
 {
   "common": {
+    "upload": "Upload",
     "save": "Save",
     "cancel": "Cancel",
     "delete": "Delete",

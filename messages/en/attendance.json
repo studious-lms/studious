@@ -10,6 +10,7 @@
     "eventDetail": {
       "title": "Event Details",
       "basicInfo": "Basic Information",
+      "description": "Handle event details and student attendance",
       "address": "Address",
       "date": "Date",
       "time": "Time",
@@ -27,6 +28,7 @@
     },
     "actions": {
       "back": "Back",
+      "export": "Export",
       "viewDetails": "View Details",
       "editEvent": "Edit Event",
       "deleteEvent": "Delete Event",

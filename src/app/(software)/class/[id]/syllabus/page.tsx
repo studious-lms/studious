@@ -38,6 +38,7 @@ import {
 import { RouterOutputs } from "@/lib/trpc";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
+import ResponsivePageHeader from "@/components/ResponsiveClassPageHeader";
 
 // Types
 type Assignment = {
@@ -192,13 +193,8 @@ export default function Syllabus() {
     <PageLayout>
       <div className="flex flex-col space-y-6">
         {/* Header */}
-        <div className="flex items-center justify-between">
-        <div>
-            <h1 className="font-semibold text-xl">{t('title')}</h1>
-            <p className="text-sm text-muted-foreground mt-1">
-              {classData.class.name} • {t('subtitle')}
-            </p>
-        </div>
+        <div className="flex items-center flex-wrap gap-y-2 justify-between">
+        <ResponsivePageHeader title={t('title')} description={t('subtitle')} />
           <div className="flex items-center space-x-3">
             {isEditing ? (
               <>

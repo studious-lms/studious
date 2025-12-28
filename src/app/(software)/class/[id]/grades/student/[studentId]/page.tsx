@@ -143,7 +143,7 @@ export default function StudentGrades() {
         const hasRubric = grade.assignment.markScheme !== null;
         return (
           <div className="flex items-center gap-2">
-            <span className="font-medium">{grade.assignment.title}</span>
+            <span className="font-medium truncate">{grade.assignment.title}</span>
             {hasRubric && (
               <Badge variant="secondary" className="text-[10px]">Rubric</Badge>
             )}
@@ -189,7 +189,7 @@ export default function StudentGrades() {
             ? (grade.gradeReceived / grade.assignment.maxGrade) * 100
             : null;
           return (
-            <div className="flex items-center justify-center gap-2">
+            <div className="flex items-center justify-center">
               <div className="w-16 text-center">
                 {grade.gradeReceived ? (
                   <div className={`font-medium ${getGradeColor(percentage)}`}>
@@ -409,12 +409,6 @@ export default function StudentGrades() {
                 {isStudent ? t('trackProgress') : t('individualManagement')}
               </p>
             </div>
-            {!isStudent && (
-              <Button variant="outline" size="sm">
-                <Download className="h-4 w-4 mr-2" />
-                {t('export')}
-              </Button>
-            )}
           </div>
         </div>
 
@@ -479,6 +473,52 @@ export default function StudentGrades() {
               data={grades}
               searchKey="assignmentTitle"
               searchPlaceholder={t('searchPlaceholder')}
+              allowDownload={!isStudent}
+              downloadFileName={`${student.username}_grades`}
+              getRawValue={(column, row) => {
+                const grade = row;
+                const columnDef = column.columnDef as any;
+                const accessorKey = columnDef.accessorKey;
+                const columnId = column.id;
+                
+                // Handle by column ID first
+                if (columnId === 'assignmentTitle') {
+                  return grade.assignment.title;
+                }
+                
+                // Handle by accessorKey
+                if (accessorKey === 'grade') {
+                  return grade.gradeReceived ?? '';
+                }
+                
+                if (accessorKey === 'assignment.maxGrade') {
+                  return grade.assignment.maxGrade ?? '';
+                }
+                
+                if (accessorKey === 'percentage') {
+                  const percentage = grade.gradeReceived && grade.assignment.maxGrade
+                    ? (grade.gradeReceived / grade.assignment.maxGrade * 100).toFixed(1)
+                    : null;
+                  return percentage ? `${percentage}%` : '';
+                }
+                
+                if (accessorKey === 'status') {
+                  return grade.gradeReceived !== null ? t('status.graded') : t('status.pending');
+                }
+                
+                if (accessorKey === 'submitted') {
+                  return grade.submittedAt ? new Date(grade.submittedAt).toLocaleDateString() : '';
+                }
+                
+                // Fallback: try to get value using accessorKey with nested properties
+                if (accessorKey && accessorKey.includes('.')) {
+                  const keys = accessorKey.split('.');
+                  const value = keys.reduce((obj: any, key: string) => obj?.[key], grade);
+                  return value ?? '';
+                }
+                
+                return undefined; // Let default behavior handle it
+              }}
             />
           )}
         </div>

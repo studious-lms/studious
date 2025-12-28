@@ -29,6 +29,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
+import ResponsivePageHeader from "@/components/ResponsiveClassPageHeader";
 
 export default function ClassSettings() {
   const { id: classId } = useParams();
@@ -164,11 +165,8 @@ export default function ClassSettings() {
 
   return (
     <PageLayout>
-      <div className="flex items-center justify-between mb-6">
-        <div>
-          <h1 className="text-xl font-bold">{t('title')}</h1>
-          <p className="text-muted-foreground">{t('subtitle')}</p>
-        </div>
+      <div className="flex items-center flex-wrap gap-y-2 justify-between mb-6">
+        <ResponsivePageHeader title={t('title')} description={t('subtitle')} />
         
         <div className="flex items-center gap-2">
           {hasUnsavedChanges && (

@@ -41,14 +41,16 @@ import {
   Edit,
   ArrowUpDown,
   Trash2,
-  Eye
+  Eye,
+  Download
 } from "lucide-react";
 import { trpc, type RouterOutputs } from "@/lib/trpc";
-import { ClassEventModal } from "@/components/modals";
+import { ClassEventModal, ExportAttendanceModal } from "@/components/modals";
 import type { ColumnDef } from "@tanstack/react-table";
 import { toast } from "sonner";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
+import ResponsivePageHeader from "@/components/ResponsiveClassPageHeader";
 
 type AttendanceRecord = RouterOutputs["attendance"]["get"][number];
 type Event = RouterOutputs["event"]["get"]["event"];
@@ -116,6 +118,7 @@ export default function Attendance() {
   const [eventToEdit, setEventToEdit] = useState<Event | null>(null);
   const [deleteConfirmOpen, setDeleteConfirmOpen] = useState(false);
   const [eventToDelete, setEventToDelete] = useState<{ id: string; name: string; } | null>(null);
+  const [exportModalOpen, setExportModalOpen] = useState(false);
 
   // Get class data (students)
   const { data: classData, isLoading: classLoading, refetch: refetchClass } = trpc.class.get.useQuery({ 
@@ -396,6 +399,7 @@ export default function Attendance() {
     }
   };
 
+
   // Student attendance table columns
   const studentAttendanceColumns: ColumnDef<typeof studentAttendanceData[number]>[] = [
     {
@@ -457,12 +461,8 @@ export default function Attendance() {
       <PageLayout>
         <div className="space-y-6">
           {/* Header */}
-          <div>
-            <h1 className="text-2xl font-bold">{t('student.title')}</h1>
-            <p className="text-muted-foreground">
-              {t('student.subtitle', { className: classData?.class?.name || tCommon('class') })}
-            </p>
-          </div>
+
+          <ResponsivePageHeader title={t('student.title')} description={t('student.subtitle', { className: classData?.class?.name || tCommon('class') })} />
 
           {/* Student Stats */}
           <div className="grid gap-4 md:grid-cols-4">
@@ -548,12 +548,20 @@ export default function Attendance() {
     <PageLayout>
       <div className="space-y-6">
         {/* Header */}
-        <div className="flex items-center justify-between">
+        <div className="flex items-center flex-wrap justify-between gap-y-2">
         <div>
           <h1 className="text-2xl font-bold">{t('title')}</h1>
           <p className="text-muted-foreground">{t('subtitle')}</p>
         </div>
         
+        <div className="flex items-center gap-2">
+          <Button 
+            variant="outline"
+            onClick={() => setExportModalOpen(true)}
+          >
+            <Download className="h-4 w-4 mr-2" />
+            {t('actions.export') || 'Export Attendance'}
+          </Button>
           <Button onClick={() => {
             setEventToEdit(null);
             setEventModalOpen(true);
@@ -561,6 +569,7 @@ export default function Attendance() {
             <Plus className="h-4 w-4 mr-2" />
             {t('actions.createEvent')}
           </Button>
+        </div>
         </div>
 
         {/* Date Picker Card */}
@@ -713,6 +722,16 @@ export default function Attendance() {
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
+
+      {/* Export Attendance Modal */}
+      <ExportAttendanceModal
+        open={exportModalOpen}
+        onOpenChange={setExportModalOpen}
+        students={students}
+        events={allEvents as Event[]}
+        attendanceData={attendanceData}
+        className={classData?.class?.name}
+      />
     </PageLayout>
   );
 }

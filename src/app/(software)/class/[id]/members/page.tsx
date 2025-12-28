@@ -49,6 +49,7 @@ import { toast } from "sonner";
 import { useParams, useRouter } from "next/navigation";
 import { useChat } from "@/hooks/useChat";
 import UserProfilePicture from "@/components/UserProfilePicture";
+import ResponsivePageHeader from "@/components/ResponsiveClassPageHeader";
 
 // Skeleton for the entire members page
 const MembersPageSkeleton = () => (
@@ -246,12 +247,7 @@ export default function Members() {
     <PageLayout>
       <div className="space-y-6">
         {/* Header */}
-        <div>
-          <h1 className="text-2xl font-bold">{t('title')}</h1>
-          <p className="text-muted-foreground">
-            {t('counts.totalMembers', { count: totalMembers })}
-          </p>
-        </div>
+        <ResponsivePageHeader title={t('title')} description={t('counts.totalMembers', { count: totalMembers })} />
 
         {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

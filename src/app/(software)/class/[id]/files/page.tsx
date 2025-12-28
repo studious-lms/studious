@@ -64,6 +64,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { toast } from "sonner";
 import { transformFileToFileItem, transformFolderToFileItem } from "@/lib/file/file";
+import ResponsivePageHeader from "@/components/ResponsiveClassPageHeader";
 
 export default function Files() {
   const params = useParams();
@@ -339,11 +340,8 @@ export default function Files() {
     <DndProvider backend={HTML5Backend}>
       <PageLayout>
         {/* Header */}
-      <div className="flex items-center justify-between mb-6">
-        <div>
-          <h1 className="text-2xl font-bold">{t('title')}</h1>
-          <p className="text-muted-foreground">{t('subtitle')}</p>
-        </div>
+      <div className="flex items-center flex-wrap gap-y-2 justify-between mb-6">
+        <ResponsivePageHeader title={t('title')} description={t('subtitle')} />
         
         {isTeacher && (
           <div className="flex items-center space-x-2">

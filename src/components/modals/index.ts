@@ -13,3 +13,4 @@ export { RubricModal } from './RubricModal';
 export { CreateFolderModal } from './CreateFolderModal';
 export { CreateSectionModal, SectionModal } from './CreateSectionModal';
 export { AILabModal } from './AILabModal';
+export { ExportAttendanceModal } from './ExportAttendanceModal';

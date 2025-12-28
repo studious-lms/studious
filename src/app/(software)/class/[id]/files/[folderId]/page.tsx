@@ -64,6 +64,7 @@ import {
 import { FileItem, FileHandlers, ApiFolderGetFile, ApiFolderGetFolder } from "@/lib/types/file";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
+import ResponsivePageHeader from "@/components/ResponsiveClassPageHeader";
 
 
 export default function FolderPage() {
@@ -434,11 +435,8 @@ export default function FolderPage() {
     <DndProvider backend={HTML5Backend}>
       <PageLayout>
         {/* Header */}
-        <div className="flex items-center justify-between mb-6">
-          <div>
-            <h1 className="text-2xl font-bold">{currentFolder?.name || tCommon('loading')}</h1>
-            <p className="text-muted-foreground">{t('subtitle')}</p>
-          </div>
+        <div className="flex items-center flex-wrap gap-y-2 justify-between mb-6">
+          <ResponsivePageHeader title={currentFolder?.name || tCommon('loading')} description={t('subtitle')} />
           
           {isTeacher && (
             <div className="flex items-center space-x-2">
