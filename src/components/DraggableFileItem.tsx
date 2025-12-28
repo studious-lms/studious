@@ -16,11 +16,11 @@ import {
   Trash2,
   Eye,
   GripVertical,
-  Star,
-  Move
 } from "lucide-react";
-import { GridFileComponentProps } from "@/lib/types/file";
 import { MoveItemDropdown } from "@/components/MoveItemDropdown";
+import { getFileIcon, getFilePreviewHandlers } from "@/lib/file/file";
+import { BaseFileComponentProps } from "@/lib/types/file";
+import { FilePreviewModal } from "@/components/modals/FilePreviewModal";
 
 export function DraggableFileItem({ 
   item, 
@@ -28,9 +28,7 @@ export function DraggableFileItem({
   currentFolderId,
   readonly = false,
   handlers,
-  getFileIcon,
-  getFolderColor
-}: GridFileComponentProps) {
+}: BaseFileComponentProps) {
   const [{ isDragging }, drag] = useDrag({
     type: "file",
     item: { id: item.id, name: item.name, type: item.type },
@@ -42,6 +40,7 @@ export function DraggableFileItem({
 
   
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [previewOpen, setPreviewOpen] = useState(false);
 
   const handleAction = async (action: string, e?: React.MouseEvent) => {
     e?.stopPropagation();
@@ -62,16 +61,6 @@ export function DraggableFileItem({
         case "delete":
           await handlers.onDelete(item);
           break;
-        case "star":
-          if (handlers.onStar) {
-            await handlers.onStar(item);
-          }
-          break;
-        case "preview":
-          if (handlers.onPreview) {
-            handlers.onPreview(item);
-          }
-          break;
       }
     } catch (error) {
       // Error handling is done by the handlers
@@ -86,9 +75,7 @@ export function DraggableFileItem({
         isDragging ? 'opacity-50' : 'opacity-100'
       }`}
       onDoubleClick={() => {
-        if (item.type === "file" && handlers.onPreview) {
-          handlers.onPreview(item);
-        }
+        setPreviewOpen(true);
       }}
     >
       <div className="p-3 flex flex-col items-center">
@@ -105,9 +92,6 @@ export function DraggableFileItem({
             <div className="mb-2">
               {getFileIcon(item.fileType!, "lg")}
             </div>
-            {item.starred && (
-              <Star className="h-3 w-3 text-yellow-500 fill-current absolute -top-0.5 -right-0.5" />
-            )}
           </div>
         </div>
         
@@ -145,7 +129,7 @@ export function DraggableFileItem({
                   <Download className="mr-2 h-4 w-4" />
                   Download
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={(e) => handleAction("preview", e)}>
+                <DropdownMenuItem onClick={(e) => setPreviewOpen(true)}>
                   <Eye className="mr-2 h-4 w-4" />
                   Preview
                 </DropdownMenuItem>
@@ -174,12 +158,6 @@ export function DraggableFileItem({
                     }
                   }}
                 />
-                {handlers.onStar && (
-                  <DropdownMenuItem onClick={(e) => handleAction("star", e)}>
-                    <Star className="mr-2 h-4 w-4" />
-                    {item.starred ? "Remove star" : "Add star"}
-                  </DropdownMenuItem>
-                )}
                 <DropdownMenuSeparator />
                 <DropdownMenuItem 
                   onClick={(e) => handleAction("delete", e)}
@@ -192,6 +170,14 @@ export function DraggableFileItem({
             )}
           </DropdownMenuContent>
         </DropdownMenu>
+        {previewOpen && (
+          <FilePreviewModal
+            file={item}
+            isOpen={previewOpen}
+            onClose={() => setPreviewOpen(false)}
+            onAction={getFilePreviewHandlers}
+          />
+        )}
       </div>
     </div>
   );

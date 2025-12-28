@@ -1,4 +1,4 @@
-import { AssignmentGetOutput } from "./types";
+import { AssignmentGetOutput } from "../types";
 
 export type Status = 'Late' | 'Submitted' | 'Returned' | 'Pending' | 'Missing' | 'Graded';
 

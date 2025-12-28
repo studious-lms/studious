@@ -25,7 +25,7 @@ import {
   Presentation,
 } from "lucide-react";
 import type { FileItem, FileHandlers } from "@/lib/types/file";
-import { baseFileHandler } from "@/lib/fileHandler";
+import { baseFileHandler } from "@/lib/file/fileHandler";
 import { trpc } from "@/lib/trpc";
 import { useParams } from "next/navigation";
 

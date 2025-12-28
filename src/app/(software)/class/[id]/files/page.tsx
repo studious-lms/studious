@@ -59,10 +59,11 @@ import {
   trpc,
   FolderUploadFilesInput
 } from "@/lib/trpc";
-import { FileItem, FileHandlers, ApiFile, ApiFolder } from "@/lib/types/file";
+import { FileItem, FileHandlers, ApiFolder } from "@/lib/types/file";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { toast } from "sonner";
+import { transformFileToFileItem, transformFolderToFileItem } from "@/lib/file/file";
 
 export default function Files() {
   const params = useParams();
@@ -76,8 +77,6 @@ export default function Files() {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [selectedItems] = useState<string[]>([]);
   const [sortBy, setSortBy] = useState<"name" | "modified" | "size">("name");
-  const [previewFile, setPreviewFile] = useState<FileItem | null>(null);
-  const [isPreviewOpen, setIsPreviewOpen] = useState(false);
   const [renameItem, setRenameItem] = useState<FileItem | null>(null);
   const [isRenameOpen, setIsRenameOpen] = useState(false);
   const [createFolderModalOpen, setCreateFolderModalOpen] = useState(false);
@@ -174,34 +173,13 @@ export default function Files() {
   
   // Check if user is teacher
   const isTeacher = appState.user.teacher;
-
-  // Transform API data to FileItem format
-  const transformFolderToFileItem = (folder: ApiFolder): FileItem => ({
-    id: folder.id,
-    name: folder.name,
-    type: "folder" as const,
-    itemCount: (folder.childFolders?.length || 0) + (folder.files?.length || 0),
-    color: folder?.color || "#3b82f6",
-    lastModified: new Date().toISOString(), // API doesn't provide this, using current date
-    readonly: !isTeacher, // Students can't edit folders
-  });
   
-  const transformFileToFileItem = (file: ApiFile): FileItem => ({
-    id: file.id,
-    name: file.name,
-    type: "file" as const,
-    fileType: file.type.split('/')[1] || file.name.split('.').pop(),
-    size: formatFileSize(file.size || 0),
-    uploadedBy: "Unknown", // API doesn't provide this in folder context
-    uploadedAt: new Date().toISOString(), // API doesn't provide this
-    readonly: !isTeacher, // Students can't edit files
-  });
   
   // Get current folder content
   const getCurrentFolderContent = (): FileItem[] => {
     // Root folder only
-    const folders = rootFolder?.childFolders?.map(transformFolderToFileItem) || [];
-    const files = rootFolder?.files?.map(transformFileToFileItem) || [];
+    const folders = rootFolder?.childFolders?.map((folder => transformFolderToFileItem(folder, isTeacher))) || [];
+    const files = rootFolder?.files?.map((file) => transformFileToFileItem(file, isTeacher)) || [];
     return [...folders, ...files];
   };
 
@@ -211,65 +189,6 @@ export default function Files() {
     item.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  // Helper function to format file size
-  function formatFileSize(bytes: number): string {
-    if (bytes === 0) return '0 Bytes';
-    const k = 1024;
-    const sizes = ['Bytes', 'KB', 'MB', 'GB'];
-    const i = Math.floor(Math.log(bytes) / Math.log(k));
-    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
-  }
-
-  const getFileIcon = (fileType: string, size: "sm" | "lg" = "sm") => {
-    const iconSize = size === "sm" ? "h-4 w-4" : "h-8 w-8";
-    
-    switch (fileType) {
-      case "pdf":
-        return <FileText className={`${iconSize} text-red-500`} />;
-      case "docx":
-        return <FileText className={`${iconSize} text-blue-500`} />;
-      case "pptx":
-        return <Presentation className={`${iconSize} text-orange-500`} />;
-      case "xlsx":
-        return <FileSpreadsheet className={`${iconSize} text-green-500`} />;
-      case "mp4":
-        return <FileVideo className={`${iconSize} text-purple-500`} />;
-      case "mp3":
-        return <Music className={`${iconSize} text-pink-500`} />;
-      case "zip":
-        return <Archive className={`${iconSize} text-gray-500`} />;
-      case "jpg":
-      case "png":
-      case "gif":
-        return <Image className={`${iconSize} text-emerald-500`} />;
-      default:
-        return <File className={`${iconSize} text-slate-500`} />;
-    }
-  };
-
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
-      month: 'short',
-      day: 'numeric',
-      year: 'numeric'
-    });
-  };
-
-
-  const getFolderColor = (folderId: string) => {
-    const colors = [
-      "text-blue-500",
-      "text-green-500", 
-      "text-purple-500",
-      "text-orange-500",
-      "text-pink-500",
-      "text-indigo-500",
-      "text-teal-500",
-      "text-red-500"
-    ];
-    const index = parseInt(folderId) % colors.length;
-    return colors[index];
-  };
 
   // External handlers for all file/folder operations
   const fileHandlers: FileHandlers = {
@@ -279,13 +198,6 @@ export default function Files() {
       if (folder) {
         // Navigate to the folder page using Next.js routing
         router.push(`/class/${classId}/files/${folder.id}`);
-      }
-    },
-
-    onFileClick: (file: FileItem) => {
-      if (file.type === "file") {
-        setPreviewFile(file);
-        setIsPreviewOpen(true);
       }
     },
 
@@ -336,7 +248,7 @@ export default function Files() {
             classId, 
             folderId: item.id, 
             name: newName,
-            color: color || item.color || getFolderColor(item.id)
+            color: color || item.color
           });
         } else {
           // For files, only rename (no color)
@@ -390,12 +302,6 @@ export default function Files() {
         throw error;
       }
     },
-
-    onPreview: (file: FileItem) => {
-      setPreviewFile(file);
-      setIsPreviewOpen(true);
-    },
-
     onRefresh: () => {
       refetch();
     }
@@ -614,8 +520,6 @@ export default function Files() {
                   classId={classId}
                   readonly={item.readonly}
                   handlers={fileHandlers}
-                  getFolderColor={getFolderColor}
-                  getFileIcon={getFileIcon}
                 />
               ) : (
                 <DraggableFileItem
@@ -624,7 +528,6 @@ export default function Files() {
                   classId={classId}
                   readonly={item.readonly}
                   handlers={fileHandlers}
-                  getFileIcon={getFileIcon}
                 />
               )
             ))}
@@ -650,9 +553,6 @@ export default function Files() {
                       classId={classId}
                       readonly={item.readonly}
                       handlers={fileHandlers}
-                      getFolderColor={getFolderColor}
-                      getFileIcon={getFileIcon}
-                      formatDate={formatDate}
                     />
                  ))}
               </TableBody>
@@ -703,33 +603,6 @@ export default function Files() {
           )}
         </div>
       )}
-
-        {/* File Preview Modal */}
-        <FilePreviewModal
-          file={previewFile}
-          isOpen={isPreviewOpen}
-          onClose={() => setIsPreviewOpen(false)}
-          onAction={async (action: string, item: FileItem) => {
-            switch (action) {
-              case "download":
-                await fileHandlers.onDownload(item);
-                break;
-              case "share":
-                await fileHandlers.onShare(item);
-                break;
-              case "modify":
-                await fileHandlers.onRename(item, item.name);
-                break;
-              case "delete":
-                await fileHandlers.onDelete(item);
-                break;
-            }
-          }}
-          getPreviewUrl={async (fileId: string) => {
-            const result = await getSignedUrlMutation.mutateAsync({ fileId });
-            return result.url;
-          }}
-        />
 
         {/* Rename Modal */}
         <RenameModal

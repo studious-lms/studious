@@ -177,6 +177,7 @@ export default function Classes() {
                   title={classItem.name}
                   section={classItem.section}
                   subject={classItem.subject}
+                  users={classItem.members}
                   color={classItem.color || "#3b82f6"}
                   dueTodayAssignments={classItem.dueToday || []}
                   role="teacher"
@@ -216,6 +217,7 @@ export default function Classes() {
                   title={classItem.name}
                   section={classItem.section}
                   subject={classItem.subject}
+                  users={classItem.members}
                   color={classItem.color || "#3b82f6"}
                   dueTodayAssignments={classItem.dueToday || []}
                   role="student"

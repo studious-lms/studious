@@ -7,6 +7,13 @@
     "post": "Post",
     "posting": "Posting...",
     "noPosts": "No posts yet",
-    "createFirstPost": "Create first post"
+    "noPostsDescription": "Share announcements, assignments, and updates with your class.",
+    "createFirstPost": "Create first post",
+    "messages": {
+      "uploadFailed": "Failed to create announcement, file upload failed",
+      "createFailed": "Failed to create announcement",
+      "createSuccess": "Announcement created successfully",
+      "creating": "Creating announcement..."
+    }
   }
 }

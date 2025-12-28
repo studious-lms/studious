@@ -3,26 +3,19 @@
 import { useParams, useRouter } from "next/navigation";
 import { useState, useRef } from "react";
 import { PageLayout } from "@/components/ui/page-layout";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Textarea } from "@/components/ui/textarea";
-import { Separator } from "@/components/ui/separator";
 import { Progress } from "@/components/ui/progress";
 import { 
   MessageSquare, 
   Send, 
-  FileText, 
-  Calendar,
   Users,
   BookOpen,
   Paperclip,
   X,
   Loader2,
-  MoreVertical,
-  Clock,
 } from "lucide-react";
 import { trpc, type RouterOutputs } from "@/lib/trpc";
 import { toast } from "sonner";
@@ -31,7 +24,8 @@ import { RootState } from "@/store/store";
 import { useTranslations } from "next-intl";
 import { fixUploadUrl } from "@/lib/directUpload";
 import { AnnouncementCard } from "@/components/announcements/AnnouncementCard";
-import { format } from "date-fns";
+import { EmptyState } from "@/components/ui/empty-state";
+import ClassFeedLoading from "./loading";
 
 type Class = RouterOutputs['class']['get']['class'];
 type Announcement = RouterOutputs['class']['get']['class']['announcements'][number];
@@ -51,6 +45,7 @@ export default function ClassFeed() {
   const [uploadStatus, setUploadStatus] = useState("");
   const fileInputRef = useRef<HTMLInputElement>(null);
   const t = useTranslations('overview');
+  const tComponents = useTranslations('');
 
   // Get tRPC utils for cache invalidation
   const utils = trpc.useUtils();
@@ -61,7 +56,7 @@ export default function ClassFeed() {
   });
 
   // Fetch announcements separately using dedicated endpoint (includes attachments)
-  const { data: announcementsData, refetch: refetchAnnouncements } = trpc.announcement.getAll.useQuery({
+  const { data: announcementsData, refetch: refetchAnnouncements, isLoading: isLoadingAnnouncements } = trpc.announcement.getAll.useQuery({
     classId,
   });
 
@@ -77,7 +72,7 @@ export default function ClassFeed() {
       // If there are files to upload, handle them
       if (selectedFiles.length > 0 && uploadFiles.length > 0) {
         try {
-          setUploadStatus("Uploading files...");
+          setUploadStatus(tComponents('uploadFiles.progress.uploadingFiles'));
           setUploadProgress(10);
 
           // Upload each file to its signed URL
@@ -91,15 +86,12 @@ export default function ClassFeed() {
             }
 
             try {
-              setUploadStatus(`Uploading ${file.name}...`);
+              setUploadStatus(tComponents('uploadFiles.progress.uploadingFile', { name: file.name }));
               const fileProgress = 10 + ((i / uploadFiles.length) * 80);
               setUploadProgress(fileProgress);
 
-              // Fix upload URL
               const uploadUrl = fixUploadUrl(uploadFile.uploadUrl);
-              console.log(`Uploading ${file.name} to ${uploadUrl}`);
 
-              // Upload to signed URL using PUT (as per guide)
               const response = await fetch(uploadUrl, {
                 method: 'PUT',
                 body: file,
@@ -110,15 +102,9 @@ export default function ClassFeed() {
 
               if (!response.ok) {
                 const errorText = await response.text().catch(() => response.statusText);
-                console.error(`Upload failed for ${file.name}:`, {
-                  status: response.status,
-                  statusText: response.statusText,
-                  error: errorText
-                });
+                toast.error(t('messages.uploadFailed'));
                 throw new Error(`Upload failed: ${response.status} ${response.statusText}`);
               }
-
-              console.log(`File ${file.name} uploaded successfully, confirming...`);
 
               // Confirm upload
               await confirmAnnouncementUpload.mutateAsync({
@@ -127,10 +113,8 @@ export default function ClassFeed() {
                 classId: classId,
               });
 
-              console.log(`File ${file.name} confirmed successfully`);
             } catch (error) {
-              console.error(`Error uploading file ${file.name}:`, error);
-              // Report error to backend
+              toast.error(t('messages.uploadFailed'));
               try {
                 await confirmAnnouncementUpload.mutateAsync({
                   fileId: uploadFile.id,
@@ -146,18 +130,16 @@ export default function ClassFeed() {
           }
 
           setUploadProgress(100);
-          setUploadStatus("Complete!");
+          setUploadStatus(tComponents('uploadFiles.progress.completed'));
           
           // Wait a bit for backend to process and link files
           await new Promise(resolve => setTimeout(resolve, 1000));
         } catch (error) {
-          console.error('File upload error:', error);
-          const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-          toast.error(`Announcement created but file upload failed: ${errorMessage}`);
+          toast.error(t('messages.createFailed'));
         }
       }
 
-      toast.success("Your announcement has been shared with the class.");
+      toast.success(t('messages.createSuccess'));
       setNewPost("");
       setSelectedFiles([]);
       setIsPosting(false);
@@ -187,7 +169,7 @@ export default function ClassFeed() {
     if (!newPost.trim()) return;
     
     setIsPosting(true);
-    setUploadStatus("Creating announcement...");
+    setUploadStatus(t('messages.creating'));
     
     // Prepare file metadata if files are selected
     const fileMetadata = selectedFiles.length > 0
@@ -240,80 +222,12 @@ export default function ClassFeed() {
     })));
   }
 
-  // Add assignments as feed items
-  if (classInfo?.assignments) {
-    feedItems.push(...classInfo.assignments.map(assignment => ({
-      id: assignment.id,
-      type: 'assignment' as const,
-      data: assignment,
-      createdAt: assignment.createdAt,
-      teacher: assignment.teacher,
-    })));
-  }
-
   // Sort by creation date (newest first)
   feedItems.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
 
-  if (isLoading) {
+  if (isLoading || isLoadingAnnouncements) {
     return (
-      <PageLayout>
-        <div className="max-w-4xl mx-auto space-y-6">
-          {/* Class Header Skeleton */}
-          <Card className="relative overflow-hidden border-0">
-            <div className="h-32 relative">
-              <Skeleton className="absolute inset-0 rounded-lg" />
-              <div className="absolute bottom-0 left-0 right-0 p-6">
-                <Skeleton className="h-7 w-48 mb-2" />
-                <div className="flex items-center gap-4">
-                  <Skeleton className="h-4 w-24" />
-                  <Skeleton className="h-4 w-20" />
-                </div>
-              </div>
-            </div>
-          </Card>
-
-          {/* New Post Card Skeleton */}
-          <Card className="border-border shadow-sm">
-            <CardContent className="p-6">
-              <div className="flex items-start space-x-4">
-                <Skeleton className="h-10 w-10 rounded-full flex-shrink-0" />
-                <div className="flex-1 space-y-4">
-                  <Skeleton className="h-20 w-full rounded-md" />
-                  <div className="flex items-center justify-between">
-                    <Skeleton className="h-9 w-28" />
-                    <Skeleton className="h-9 w-20" />
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Feed Items Skeleton */}
-          <div className="space-y-6">
-            {[1, 2, 3].map((i) => (
-              <Card key={i} className="border-border shadow-sm">
-                <CardContent className="p-6">
-                  <div className="flex items-start space-x-4">
-                    <Skeleton className="h-10 w-10 rounded-full flex-shrink-0" />
-                    <div className="flex-1 space-y-3">
-                      <div className="flex items-center justify-between">
-                        <div className="space-y-1">
-                          <Skeleton className="h-4 w-32" />
-                          <Skeleton className="h-3 w-24" />
-                        </div>
-                        <Skeleton className="h-6 w-6 rounded" />
-                      </div>
-                      <Skeleton className="h-4 w-full" />
-                      <Skeleton className="h-4 w-3/4" />
-                      <Skeleton className="h-4 w-1/2" />
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </PageLayout>
+      <ClassFeedLoading />
     );
   }
 
@@ -453,24 +367,11 @@ export default function ClassFeed() {
         {/* Feed Items */}
         <div className="space-y-6">
           {feedItems.length === 0 ? (
-            <Card className="border-border shadow-sm">
-              <CardContent className="py-12 text-center">
-                <MessageSquare className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                <h3 className="text-lg font-semibold mb-2">{t('noPosts')}</h3>
-                <p className="text-muted-foreground mb-4">
-                  {isTeacher 
-                    ? "Share announcements, assignments, and updates with your class."
-                    : "Your teacher hasn't posted anything yet."
-                  }
-                </p>
-                {isTeacher && (
-                  <Button onClick={() => setNewPost("Share something with your class...")}>
-                    <MessageSquare className="h-4 w-4 mr-2" />
-                    {t('createFirstPost')}
-                  </Button>
-                )}
-              </CardContent>
-            </Card>
+            <EmptyState
+              icon={MessageSquare}
+              title={t('noPosts')}
+              description={t('noPostsDescription')}
+            />
           ) : (
             feedItems.filter((item) => item.type === "announcement").map((item) => (
               item.type === 'announcement' ? (
@@ -486,92 +387,5 @@ export default function ClassFeed() {
         </div>
       </div>
     </PageLayout>
-  );
-}
-
-
-// Assignment Item Component  
-function AssignmentItem({ assignment }: { assignment: Assignment }) {
-  const router = useRouter();
-  const isOverdue = assignment.dueDate && new Date(assignment.dueDate) < new Date();
-  const dueDate = assignment.dueDate ? new Date(assignment.dueDate) : null;
-  const t = useTranslations('assignment');
-
-  return (
-    <div className="space-y-3">
-      {/* Header */}
-      <div className="flex items-start justify-between">
-        <div className="flex items-start space-x-3">
-          <div className="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
-            <FileText className="h-4 w-4 text-blue-600" />
-          </div>
-          <div className="min-w-0">
-            <p className="font-medium text-sm">{t('newAssignment')}</p>
-            <p className="text-xs text-muted-foreground flex items-center">
-              <Clock className="h-3 w-3 mr-1" />
-              {format(new Date(assignment.modifiedAt || assignment.createdAt), 'MMM d, yyyy \'at\' h:mm a')}
-            </p>
-          </div>
-        </div>
-        <div className="flex items-center space-x-2">
-          {assignment.graded && (
-            <Badge variant="secondary" className="text-xs">
-              {assignment.maxGrade} {t('pts')}
-            </Badge>
-          )}
-          <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
-            <MoreVertical className="h-4 w-4" />
-          </Button>
-        </div>
-      </div>
-
-      {/* Content */}
-      <div className="ml-11">
-        <div className="space-y-2">
-          <h3 className="text-base font-semibold">{assignment.title}</h3>
-          {assignment.instructions && (
-            <div className="text-sm text-muted-foreground whitespace-pre-wrap leading-relaxed">
-              {assignment.instructions.length > 200 
-                ? `${assignment.instructions.substring(0, 200)}...` 
-                : assignment.instructions
-              }
-            </div>
-          )}
-          
-          {/* Due Date */}
-          {dueDate && (
-            <div className="flex items-center space-x-2">
-              <Calendar className="h-4 w-4 text-muted-foreground" />
-              <span className={`text-sm ${isOverdue ? 'text-red-600 font-medium' : 'text-muted-foreground'}`}>
-                Due {format(dueDate, 'EEE, MMM d \'at\' h:mm a')}
-                {isOverdue && (' ' + t('overdue'))}
-              </span>
-            </div>
-          )}
-
-          {/* Attachments */}
-          {assignment.attachments && assignment.attachments.length > 0 && (
-            <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <Paperclip className="h-4 w-4" />
-              <span>{assignment.attachments.length} attachment{assignment.attachments.length !== 1 ? 's' : ''}</span>
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* Actions */}
-      <div className="ml-11 pt-2">
-        <Separator className="mb-3" />
-        <div className="flex items-center justify-end">
-          <Button 
-            size="sm" 
-            className="h-8"
-            onClick={() => router.push(`/class/${assignment.classId}/assignment/${assignment.id}`)}
-          >
-            {t('viewAssignment')}
-          </Button>
-        </div>
-      </div>
-    </div>
   );
 }

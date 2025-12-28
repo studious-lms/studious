@@ -34,8 +34,6 @@ export interface FileHandlers {
   onRename: (item: FileItem, newName: string, color?: string) => Promise<void>;
   onDelete: (item: FileItem) => Promise<void>;
   onMove: (draggedItemId: string, targetFolderId: string, draggedItemType: string) => Promise<void>;
-  onStar?: (item: FileItem) => Promise<void>;
-  onPreview?: (file: FileItem) => void;
   onRefresh?: () => void;
 }
 
@@ -46,15 +44,4 @@ export interface BaseFileComponentProps {
   currentFolderId?: string;
   readonly?: boolean;
   handlers: FileHandlers;
-}
-
-export interface GridFileComponentProps extends BaseFileComponentProps {
-  getFileIcon: (fileType: string, size?: "sm" | "lg") => React.ReactNode;
-  getFolderColor?: (folderId: string) => string;
-}
-
-export interface TableFileComponentProps extends BaseFileComponentProps {
-  getFileIcon: (fileType: string, size?: "sm" | "lg") => React.ReactNode;
-  getFolderColor: (folderId: string) => string;
-  formatDate: (dateString: string) => string;
 }

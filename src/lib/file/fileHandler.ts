@@ -1,4 +1,4 @@
-import { FileHandlers, FileItem } from "./types/file";
+import { FileHandlers, FileItem } from "../types/file";
 import { getCookie } from "cookies-next";
 
 /**
@@ -84,15 +84,6 @@ export const baseFileHandler: FileHandlers = {
 
   onFileClick: (file: FileItem) => {
     console.log("File clicked:", file.name);
-  },
-
-  onStar: async (item: FileItem) => {
-    console.log("Star:", item.name);
-    // TODO: Implement star/favorite logic
-  },
-
-  onPreview: (file: FileItem) => {
-    console.log("Preview:", file.name);
   },
 
   onRefresh: () => {

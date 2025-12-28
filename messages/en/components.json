@@ -11,6 +11,11 @@
     "rename": "Rename"
   },
   "uploadFiles": {
+    "progress": {
+      "uploadingFiles": "Uploading files...",
+      "uploadingFile": "Uploading {name}...",
+      "completed": "Completed"
+    },
     "title": "Upload Files",
     "noFilesSelected": "No Files Selected",
     "classIdMissing": "Class ID is missing",

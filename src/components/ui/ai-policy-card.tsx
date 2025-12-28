@@ -6,7 +6,7 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/component
 import { cn } from "@/lib/utils";
 import { ChevronDown } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { AI_POLICY_LEVELS, getAIPolicyLevel } from "@/lib/aiPolicy";
+import { AI_POLICY_LEVELS, getAIPolicyLevel } from "@/lib/assignment/aiPolicy";
 
 interface AIPolicyDisplayProps {
   level: number;

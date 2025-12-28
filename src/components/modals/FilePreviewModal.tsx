@@ -28,6 +28,7 @@ import {
   Maximize,
   Minimize
 } from "lucide-react";
+import { trpc } from "@/lib/trpc";
 
 interface FileItem {
   id: string;
@@ -43,16 +44,17 @@ interface FilePreviewModalProps {
   file: FileItem | null;
   isOpen: boolean;
   onClose: () => void;
-  onAction: (action: string, file: FileItem) => void;
-  getPreviewUrl?: (fileId: string) => Promise<string>;
+  onAction: (action: string, file: FileItem) => Promise<void>;
 }
 
-export function FilePreviewModal({ file, isOpen, onClose, onAction, getPreviewUrl }: FilePreviewModalProps) {
+export function FilePreviewModal({ file, isOpen, onClose, onAction }: FilePreviewModalProps) {
 
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [isLoadingPreview, setIsLoadingPreview] = useState(false);
   const [previewError, setPreviewError] = useState<string | null>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
+
+  const getSignedUrlMutation = trpc.file.getSignedUrl.useMutation();
 
   // Generate preview URL when file changes
   useEffect(() => {
@@ -142,17 +144,13 @@ export function FilePreviewModal({ file, isOpen, onClose, onAction, getPreviewUr
     setPreviewError(null);
     
     try {
-      if (getPreviewUrl) {
         // Use the provided function to get the actual preview URL
-        const url = await getPreviewUrl(file.id);
-        setPreviewUrl(url);
-      } else {
-        // Fallback to placeholder for demo
-        const mockUrl = `https://via.placeholder.com/800x600/e5e7eb/6b7280?text=${encodeURIComponent(file.name)}`;
-        setPreviewUrl(mockUrl);
-      }
+        // const url = await getPreviewUrl(file.id);
+      const signedPath = await getSignedUrlMutation.mutateAsync({ fileId: file.id });
+      setPreviewUrl(signedPath.url);
     } catch (error) {
       setPreviewError("Failed to load preview");
+      console.error(error);
     } finally {
       setIsLoadingPreview(false);
     }
@@ -422,7 +420,7 @@ export function FilePreviewModal({ file, isOpen, onClose, onAction, getPreviewUr
                   <Button
                     variant="outline"
                     size="sm"
-                    onClick={() => onAction("download", file)}
+                    onClick={async () => await onAction("download", file)}
                   >
                     <Download className="h-4 w-4 mr-2" />
                     Download
@@ -430,7 +428,7 @@ export function FilePreviewModal({ file, isOpen, onClose, onAction, getPreviewUr
                   <Button
                     variant="outline"
                     size="sm"
-                    onClick={() => onAction("share", file)}
+                    onClick={async () => await onAction("share", file)}
                   >
                     <Share className="h-4 w-4 mr-2" />
                     Share

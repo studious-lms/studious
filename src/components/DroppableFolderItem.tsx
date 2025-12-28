@@ -12,12 +12,11 @@ import {
   MoreHorizontal,
   Share,
   Edit,
-  Star,
   Trash2,
   Folder,
   GripVertical,
 } from "lucide-react";
-import { GridFileComponentProps } from "@/lib/types/file";
+import { BaseFileComponentProps } from "@/lib/types/file";
 import { MoveItemDropdown } from "@/components/MoveItemDropdown";
 
 export function DroppableFolderItem({ 
@@ -26,8 +25,7 @@ export function DroppableFolderItem({
   currentFolderId,
   readonly = false,
   handlers,
-  getFolderColor
-}: GridFileComponentProps) {
+  }: BaseFileComponentProps) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const handleAction = async (action: string, e?: React.MouseEvent) => {
@@ -45,11 +43,6 @@ export function DroppableFolderItem({
           break;
         case "delete":
           await handlers.onDelete(item);
-          break;
-        case "star":
-          if (handlers.onStar) {
-            await handlers.onStar(item);
-          }
           break;
       }
     } catch (error) {
@@ -126,11 +119,8 @@ export function DroppableFolderItem({
           <div className="relative">
             <Folder 
               className="h-8 w-8 fill-current drop-shadow-sm" 
-              style={{ color: item.color || (getFolderColor ? getFolderColor(item.id) : "#3b82f6") }} 
+              style={{ color: item.color }} 
             />
-            {item.starred && (
-              <Star className="h-3 w-3 text-yellow-500 fill-current absolute -top-0.5 -right-0.5" />
-            )}
           </div>
         </div>
         
@@ -182,12 +172,6 @@ export function DroppableFolderItem({
                     }
                   }}
                 />
-                {handlers.onStar && (
-                  <DropdownMenuItem onClick={(e) => handleAction("star", e)}>
-                    <Star className="mr-2 h-4 w-4" />
-                    {item.starred ? "Remove star" : "Add star"}
-                  </DropdownMenuItem>
-                )}
                 <DropdownMenuSeparator />
                 <DropdownMenuItem 
                   onClick={(e) => handleAction("delete", e)}

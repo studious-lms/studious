@@ -18,8 +18,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { RouterOutputs } from "@/lib/trpc";
+import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 
 type Assignment = RouterOutputs['assignment']['get']['assignments'];
+type User = RouterOutputs['class']['get']['class']['students'][number];
 
 interface ClassCardProps {
   id: string;
@@ -28,6 +30,7 @@ interface ClassCardProps {
   subject: string;
   color: string;
   dueTodayAssignments: Assignment[];
+  users: User[];
   role: "teacher" | "student";
   onDelete?: () => void;
   onLeave?: () => void;
@@ -40,6 +43,7 @@ export function ClassCard({
   subject,
   color,
   dueTodayAssignments,
+  users,
   role,
   onDelete,
   onLeave
@@ -60,12 +64,21 @@ export function ClassCard({
           </div>
           
           {/* Profile Pictures */}
-          <div className="absolute bottom-2 left-2 flex -space-x-1">
+          <div className="absolute bottom-2 left-2 flex -space-x-2">
             <div className="w-6 h-6 rounded-full bg-white/20 border border-white/30 flex items-center justify-center">
               <Users className="h-3 w-3 text-white" />
             </div>
-            <div className="w-6 h-6 rounded-full bg-white/20 border border-white/30"></div>
-            <div className="w-6 h-6 rounded-full bg-white/20 border border-white/30"></div>
+            {users.slice(0, 3).map((user) => (
+              <div key={user.id} className="w-6 h-6 rounded-full bg-white/20 border border-white/30">
+                <Avatar>
+                  <AvatarImage src={user.profile?.profilePicture || ""} />
+                  <AvatarFallback>
+                    {user.username.substring(0, 2).toUpperCase()}
+                  </AvatarFallback>
+                </Avatar>
+              </div>
+            ))}
+            {/* <div className="w-6 h-6 rounded-full bg-white/20 border border-white/30"></div> */}
           </div>
         </div>
 

@@ -40,6 +40,7 @@ import {
 } from "@/lib/trpc";
 import { fixUploadUrl } from "@/lib/directUpload";
 import { useTranslations } from "next-intl";
+import AttachmentPreview from "../AttachmentPreview";
 
 
 type FileData = {
@@ -938,28 +939,33 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
               {formData.files.length > 0 ? (
                 <div className="grid gap-3">
                   {formData.files.map((file, index) => (
-                    <div key={index} className="flex items-center justify-between p-4 bg-muted/50 rounded-lg border">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                          <FileText className="h-5 w-5 text-primary" />
-                        </div>
-                        <div>
-                          <p className="text-sm font-medium">{file.name}</p>
-                          <p className="text-xs text-muted-foreground">
-                            {(file.size / 1024 / 1024).toFixed(2)} MB • {file.type}
-                          </p>
-                        </div>
-                      </div>
-                      <Button
-                        type="button"
-                        variant="ghost"
-                        size="sm"
-                        onClick={() => removeFile(index)}
-                        className="text-destructive hover:text-destructive"
-                      >
-                        <Trash2 className="h-4 w-4" />
-                      </Button>
-                    </div>
+                    // <div key={index} className="flex items-center justify-between p-4 bg-muted/50 rounded-lg border">
+                    //   <div className="flex items-center gap-3">
+                    //     <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                    //       <FileText className="h-5 w-5 text-primary" />
+                    //     </div>
+                    //     <div>
+                    //       <p className="text-sm font-medium">{file.name}</p>
+                    //       <p className="text-xs text-muted-foreground">
+                    //         {(file.size / 1024 / 1024).toFixed(2)} MB • {file.type}
+                    //       </p>
+                    //     </div>
+                    //   </div>
+                    //   <Button
+                    //     type="button"
+                    //     variant="ghost"
+                    //     size="sm"
+                    //     onClick={() => removeFile(index)}
+                    //     className="text-destructive hover:text-destructive"
+                    //   >
+                    //     <Trash2 className="h-4 w-4" />
+                    //   </Button>
+                    // </div>
+                    <AttachmentPreview
+                      key={index}
+                      fileItem={file.file!}
+                      onRemove={() => removeFile(index)}
+                    />
                   ))}
                 </div>
               ) : (
@@ -979,12 +985,10 @@ export function CreateAssignmentModal({ children, onAssignmentCreated }: CreateA
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 {formData.inProgress ? (
                   <>
-                    <FileText className="h-4 w-4" />
                     <span>{t('status.draftStatus')}</span>
                   </>
                 ) : (
                   <>
-                    <Target className="h-4 w-4" />
                     <span>{t('status.publishedStatus')}</span>
                   </>
                 )}

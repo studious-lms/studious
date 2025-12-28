@@ -53,7 +53,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { toast } from "sonner";
-import { UploadFileModal, FilePreviewModal, RenameModal, CreateFolderModal } from "@/components/modals";
+import { UploadFileModal, RenameModal, CreateFolderModal } from "@/components/modals";
 import { DraggableFileItem } from "@/components/DraggableFileItem";
 import { DroppableFolderItem } from "@/components/DroppableFolderItem";
 import { DraggableTableRow } from "@/components/DraggableTableRow";
@@ -81,8 +81,6 @@ export default function FolderPage() {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [sortBy, setSortBy] = useState<"name" | "modified" | "size">("name");
   const [selectedItems] = useState<string[]>([]);
-  const [previewFile, setPreviewFile] = useState<FileItem | null>(null);
-  const [isPreviewOpen, setIsPreviewOpen] = useState(false);
   const [renameItem, setRenameItem] = useState<FileItem | null>(null);
   const [isRenameOpen, setIsRenameOpen] = useState(false);
   const [createFolderModalOpen, setCreateFolderModalOpen] = useState(false);
@@ -284,13 +282,6 @@ export default function FolderPage() {
       }
     },
 
-    onFileClick: (file: FileItem) => {
-      if (file.type === "file") {
-        setPreviewFile(file);
-        setIsPreviewOpen(true);
-      }
-    },
-
     onDownload: async (item: FileItem) => {
       if (!isTeacher && ["modify", "delete", "move"].includes("download")) {
         toast.error(t('toast.permissionDenied'));
@@ -392,12 +383,6 @@ export default function FolderPage() {
         throw error;
       }
     },
-
-    onPreview: (file: FileItem) => {
-      setPreviewFile(file);
-      setIsPreviewOpen(true);
-    },
-
     onRefresh: () => {
       refetch();
     }
@@ -634,8 +619,6 @@ export default function FolderPage() {
                     classId={classId}
                     readonly={item.readonly}
                     handlers={fileHandlers}
-                    getFolderColor={getFolderColor}
-                    getFileIcon={getFileIcon}
                     currentFolderId={folderId}
                   />
                 ) : (
@@ -645,7 +628,6 @@ export default function FolderPage() {
                     classId={classId}
                     readonly={item.readonly}
                     handlers={fileHandlers}
-                    getFileIcon={getFileIcon}
                     currentFolderId={folderId}
                   />
                 )
@@ -672,9 +654,6 @@ export default function FolderPage() {
                       classId={classId}
                       readonly={item.readonly}
                       handlers={fileHandlers}
-                      getFolderColor={getFolderColor}
-                      getFileIcon={getFileIcon}
-                      formatDate={formatDate}
                       currentFolderId={folderId}
                     />
                   ))}
@@ -726,33 +705,6 @@ export default function FolderPage() {
             )}
           </div>
         )}
-
-        {/* File Preview Modal */}
-        <FilePreviewModal
-          file={previewFile}
-          isOpen={isPreviewOpen}
-          onClose={() => setIsPreviewOpen(false)}
-          onAction={async (action: string, item: FileItem) => {
-            switch (action) {
-              case "download":
-                await fileHandlers.onDownload(item);
-                break;
-              case "share":
-                await fileHandlers.onShare(item);
-                break;
-              case "modify":
-                await fileHandlers.onRename(item, item.name);
-                break;
-              case "delete":
-                await fileHandlers.onDelete(item);
-                break;
-            }
-          }}
-          getPreviewUrl={async (fileId: string) => {
-            const result = await getSignedUrlMutation.mutateAsync({ fileId });
-            return result.url;
-          }}
-        />
 
         {/* Rename Modal */}
         <RenameModal

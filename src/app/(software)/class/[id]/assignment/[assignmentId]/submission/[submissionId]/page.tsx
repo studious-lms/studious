@@ -28,7 +28,6 @@ import {  parseMarkScheme,
 import { Skeleton } from "@/components/ui/skeleton";
 import { EmptyState } from "@/components/ui/empty-state";
 import { toast } from "sonner";
-import { DraggableFileItem } from "@/components/DraggableFileItem";
 import { FileItem, FileHandlers } from "@/lib/types/file";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
@@ -45,12 +44,14 @@ import {
 } from "lucide-react";
 import { RootState } from "@/store/store";
 import { useSelector } from "react-redux";
-import { baseFileHandler } from "@/lib/fileHandler";
-import { getStatusColor, getStudentAssignmentStatus } from "@/lib/getStudentAssignmentStatus";
+import { baseFileHandler } from "@/lib/file/fileHandler";
+import { getStatusColor, getStudentAssignmentStatus } from "@/lib/assignment/getStudentAssignmentStatus";
 import { ExtendedResponse } from "@/components/submissions/ExtendedResponse";
 import { AIPolicyDisplay } from "@/components/ui/ai-policy-card";
 import { useTranslations } from "next-intl";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { convertAttachmentsToFileItems } from "@/lib/file/file";
+import AttachmentPreview from "@/components/AttachmentPreview";
+import Attachment from "@/components/Attachment";
 
 type AssignmentUpdateSubmissionAsTeacherInput = RouterInputs['assignment']['updateSubmissionAsTeacher'];
 
@@ -172,13 +173,6 @@ export default function SubmissionDetailPage() {
   const [currentUploadStatus, setCurrentUploadStatus] = useState('');
   const [uploadedFiles, setUploadedFiles] = useState(0);
   const [totalFiles, setTotalFiles] = useState(0);
-
-  // File preview state
-  const [previewFile, setPreviewFile] = useState<FileItem | null>(null);
-  const [isPreviewOpen, setIsPreviewOpen] = useState(false);
-
-  // Get signed URL mutation for file preview
-  const getSignedUrlMutation = trpc.file.getSignedUrl.useMutation();
 
   // Get submission data
   const { data: submission, isLoading, refetch: refetchSubmission } = trpc.assignment.getSubmissionById.useQuery({
@@ -359,53 +353,7 @@ export default function SubmissionDetailPage() {
 
     updateSubmissionMutation.mutate(updateData);
   };
-
-  const formatFileSize = (bytes: number) => {
-    if (bytes === 0) return '0 Bytes';
-    const k = 1024;
-    const sizes = ['Bytes', 'KB', 'MB', 'GB'];
-    const i = Math.floor(Math.log(bytes) / Math.log(k));
-    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
-  };
-
-  const getFileIcon = (fileType: string, size: "sm" | "lg" = "sm") => {
-    const iconSize = size === "sm" ? "h-4 w-4" : "h-8 w-8";
-    
-    switch (fileType) {
-      case "pdf":
-        return <FileText className={`${iconSize} text-red-500`} />;
-      case "docx":
-        return <FileText className={`${iconSize} text-blue-500`} />;
-      case "pptx":
-        return <Presentation className={`${iconSize} text-orange-500`} />;
-      case "xlsx":
-        return <FileSpreadsheet className={`${iconSize} text-green-500`} />;
-      case "mp4":
-        return <FileVideo className={`${iconSize} text-purple-500`} />;
-      case "mp3":
-        return <Music className={`${iconSize} text-pink-500`} />;
-      case "zip":
-        return <Archive className={`${iconSize} text-gray-500`} />;
-      case "jpg":
-      case "png":
-      case "gif":
-        return <ImageIcon className={`${iconSize} text-emerald-500`} />;
-      default:
-        return <File className={`${iconSize} text-slate-500`} />;
-    }
-  };
-
-  const convertAttachmentsToFileItems = (attachments: RouterOutputs['assignment']['getSubmission']['attachments']) => {
-    return attachments.map(attachment => ({
-      id: attachment.id,
-      name: attachment.name,
-      type: "file" as const,
-      fileType: attachment.type.split('/')[1] || attachment.type,
-      size: formatFileSize(attachment.size || 0),
-      uploadedAt: attachment.uploadedAt || undefined,
-    }));
-  };
-
+  
   // File handlers for submission files
   const fileHandlers: FileHandlers = {
     ...baseFileHandler,
@@ -427,14 +375,6 @@ export default function SubmissionDetailPage() {
     onMove: async () => {
       // Not applicable for submission files
     },
-    onPreview: (file: FileItem) => {
-      setPreviewFile(file);
-      setIsPreviewOpen(true);
-    },
-    onFileClick: (file: FileItem) => {
-      setPreviewFile(file);
-      setIsPreviewOpen(true);
-    }
   };
 
   // Direct upload functions using proper TRPC hooks for annotations (teacher uploads)
@@ -693,15 +633,18 @@ export default function SubmissionDetailPage() {
             <div className="space-y-3">
               <h2 className="text-sm font-medium text-muted-foreground">Submitted Files</h2>
                   {submission.attachments.length > 0 ? (
-                      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                      <div className="flex flex-wrap gap-2">
                         {convertAttachmentsToFileItems(submission.attachments).map((fileItem) => (
-                          <DraggableFileItem
+                          // <DraggableFileItem
+                          //   key={fileItem.id}
+                          //   item={fileItem}
+                          //   classId={classId}
+                          //   readonly={true}
+                          //   handlers={fileHandlers}
+                          // />
+                          <Attachment
                             key={fileItem.id}
-                            item={fileItem}
-                            classId={classId}
-                            readonly={true}
-                            handlers={fileHandlers}
-                            getFileIcon={getFileIcon}
+                            fileItem={fileItem}
                           />
                         ))}
                       </div>
@@ -746,14 +689,25 @@ export default function SubmissionDetailPage() {
               {submission.annotations.length > 0 ? (
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                   {convertAttachmentsToFileItems(submission.annotations).map((fileItem) => (
-                    <DraggableFileItem
-                      key={fileItem.id}
-                      item={fileItem}
-                      classId={classId}
-                      readonly={false}
-                      handlers={fileHandlers}
-                      getFileIcon={getFileIcon}
-                    />
+                    // <DraggableFileItem
+                    //   key={fileItem.id}
+                    //   item={fileItem}
+                    //   classId={classId}
+                    //   readonly={false}
+                      // handlers={fileHandlers}
+                    // />
+                    <AttachmentPreview
+                    key={fileItem.id}
+                      fileItem={fileItem}
+                      onRemove={() => {
+                        updateSubmissionMutation.mutate({
+                          assignmentId,
+                          classId,
+                          submissionId,
+                          removedAttachments: [fileItem.id],
+                        });
+                      }}
+                      />
                   ))}
                 </div>
               ) : null}
@@ -1001,33 +955,6 @@ export default function SubmissionDetailPage() {
                   </div>
                 )}
         </div>
-
-        {/* File Preview Modal */}
-        <FilePreviewModal
-          file={previewFile}
-          isOpen={isPreviewOpen}
-          onClose={() => setIsPreviewOpen(false)}
-          onAction={async (action: string, item: FileItem) => {
-            switch (action) {
-              case "download":
-                await fileHandlers.onDownload(item);
-                break;
-              case "share":
-                await fileHandlers.onShare(item);
-                break;
-              case "delete":
-                await fileHandlers.onDelete(item);
-                break;
-              case "preview":
-                fileHandlers.onPreview?.(item);
-                break;
-            }
-          }}
-          getPreviewUrl={async (fileId: string) => {
-            const result = await getSignedUrlMutation.mutateAsync({ fileId });
-            return result.url;
-          }}
-        />
       </PageLayout>
     </DndProvider>
   );

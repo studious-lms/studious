@@ -13,6 +13,7 @@ interface StatsCardProps {
     value: string; 
     isPositive: boolean; 
   };
+  progress?: number; // Progress percentage (0-100)
 }
 
 /**
@@ -36,6 +37,7 @@ export function StatsCard({
   description,
   color,
   trend,
+  progress,
 }: StatsCardProps) {
   return (
     <Card 
@@ -56,6 +58,17 @@ export function StatsCard({
         {trend && (
           <div className={`flex items-center text-xs mt-1 ${trend.isPositive ? 'text-green-600' : 'text-red-600'}`}>
             {trend.value}
+          </div>
+        )}
+        {progress !== undefined && (
+          <div className="mt-2 h-1.5 bg-muted rounded-full overflow-hidden">
+            <div 
+              className="h-full rounded-full transition-all" 
+              style={{ 
+                width: `${Math.min(100, Math.max(0, progress))}%`,
+                backgroundColor: color || 'hsl(var(--primary))'
+              }}
+            />
           </div>
         )}
       </CardContent>

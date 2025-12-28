@@ -45,79 +45,80 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-20 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6 bg-gradient-to-b from-background via-secondary/30 to-background relative overflow-hidden">
-        {/* Grid Background */}
-        <div className="absolute inset-0 bg-grid-pattern opacity-30"></div>
+      <section className="pt-24 sm:pt-32 md:pt-40 pb-16 sm:pb-20 md:pb-28 px-4 sm:px-6 bg-background relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
         
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center">
-            <Badge variant="outline" className="mb-4 sm:mb-6 px-3 sm:px-4 py-1 sm:py-1.5 border-primary/20 text-primary text-xs sm:text-sm">
+            <Badge variant="outline" className="mb-6 sm:mb-8 px-4 py-1.5 border-primary/30 text-primary text-sm font-medium">
               {t('hero.badge')}
             </Badge>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-foreground mb-4 sm:mb-6 tracking-tight px-2">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold text-foreground mb-6 sm:mb-8 tracking-tight leading-[1.1]">
               {t('hero.title1')}
-                <br className="hidden sm:block" />
-              <span className="text-primary"> {t('hero.title2')}</span>
-              </h1>
+              <br />
+              <span className="text-primary">{t('hero.title2')}</span>
+            </h1>
             
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed px-4">
+            <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-10 sm:mb-12 max-w-3xl mx-auto leading-relaxed">
               {t('hero.subtitle')}
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center px-4 sm:px-0">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center">
               <Button 
                 size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 sm:px-8 h-11 sm:h-12 text-sm sm:text-base font-medium w-full sm:w-auto"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 sm:px-10 h-12 sm:h-14 text-base sm:text-lg font-semibold w-full sm:w-auto shadow-lg shadow-primary/20"
                 onClick={() => setShowEarlyAccess(true)}
               >
                 {t('hero.requestEarlyAccess')}
-                <ArrowRight className="ml-2 h-4 w-4" />
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline" className="border-border hover:bg-secondary px-6 sm:px-8 h-11 sm:h-12 text-sm sm:text-base font-medium w-full sm:w-auto" onClick={() => router.push('https://www.youtube.com/watch?v=RYae8MkEEjI')}>
-                <Play className="mr-2 h-4 w-4" />
+              <Button size="lg" variant="outline" className="border-2 border-border hover:bg-secondary px-8 sm:px-10 h-12 sm:h-14 text-base sm:text-lg font-medium w-full sm:w-auto" onClick={() => router.push('https://www.youtube.com/watch?v=RYae8MkEEjI')}>
+                <Play className="mr-2 h-5 w-5" />
                 {t('hero.watchDemo')}
               </Button>
             </div>
           </div>
           
           {/* Hero Image */}
-          <div className="mt-12 sm:mt-16 md:mt-20 rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden shadow-2xl border border-border relative">
+          <div className="mt-16 sm:mt-20 md:mt-24 rounded-xl sm:rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border-2 border-border/50 relative">
             <img src="/hero-light.png" alt={t('hero.altDashboard')} className="w-full h-auto block dark:hidden" />
             <img src="/hero-dark.png" alt={t('hero.altDashboard')} className="w-full h-auto hidden dark:block" />
-            <div className="absolute inset-x-0 bottom-0 h-20 sm:h-32 bg-gradient-to-t from-background to-transparent pointer-events-none"></div>
+            <div className="absolute inset-x-0 bottom-0 h-24 sm:h-40 bg-gradient-to-t from-background to-transparent pointer-events-none"></div>
           </div>
         </div>
       </section>
 
       {/* The Problem Section */}
-      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-secondary/50">
+      <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-secondary/30 border-y border-border">
         <div className="container mx-auto max-w-5xl">
-          <div className="text-center space-y-4 sm:space-y-6">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground px-4">
+          <div className="text-center space-y-6 sm:space-y-8">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground">
               {t('problem.title')}
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mt-8 sm:mt-12 px-4 sm:px-0">
-              <div className="space-y-3">
-                <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center mx-auto">
-                  <Zap className="h-6 w-6 text-muted-foreground" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10 mt-10 sm:mt-14">
+              <div className="space-y-4 p-6 rounded-2xl bg-background border border-border">
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto">
+                  <Zap className="h-7 w-7 text-primary" />
                 </div>
-                <p className="text-muted-foreground text-base sm:text-lg">
+                <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
                   {t('problem.issue1')}
                 </p>
               </div>
-              <div className="space-y-3">
-                <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center mx-auto">
-                  <Users className="h-6 w-6 text-muted-foreground" />
+              <div className="space-y-4 p-6 rounded-2xl bg-background border border-border">
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto">
+                  <Users className="h-7 w-7 text-primary" />
                 </div>
-                <p className="text-muted-foreground text-base sm:text-lg">
+                <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
                   {t('problem.issue2')}
                 </p>
               </div>
-              <div className="space-y-3 sm:col-span-2 md:col-span-1">
-                <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center mx-auto">
-                  <Bot className="h-6 w-6 text-muted-foreground" />
+              <div className="space-y-4 p-6 rounded-2xl bg-background border border-border sm:col-span-2 md:col-span-1">
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto">
+                  <Bot className="h-7 w-7 text-primary" />
                 </div>
-                <p className="text-muted-foreground text-base sm:text-lg">
+                <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
                   {t('problem.issue3')}
                 </p>
               </div>
@@ -127,14 +128,14 @@ export default function Home() {
       </section>
 
       {/* Our Response Section */}
-      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-background">
-        <div className="container mx-auto max-w-5xl text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 sm:mb-6 px-4 leading-tight">
+      <section className="py-20 sm:py-24 md:py-32 px-4 sm:px-6 bg-background">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 sm:mb-8 leading-tight">
             {t('response.title1')}
-            <br className="hidden sm:block" />
-            <span className="block sm:inline"> {t('response.title2')}</span>
+            <br />
+            <span className="text-primary">{t('response.title2')}</span>
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4">
+          <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             {t('response.subtitle')}
           </p>
         </div>
@@ -241,12 +242,16 @@ export default function Home() {
       </section>
 
       {/* Quote Section */}
-      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-primary">
-        <div className="container mx-auto max-w-4xl text-center">
-          <blockquote className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-primary-foreground leading-relaxed px-4">
+      <section className="py-20 sm:py-24 md:py-32 px-4 sm:px-6 bg-primary relative overflow-hidden">
+        {/* Decorative quote marks */}
+        <div className="absolute top-8 left-8 text-primary-foreground/10 text-[12rem] font-serif leading-none select-none">"</div>
+        <div className="absolute bottom-8 right-8 text-primary-foreground/10 text-[12rem] font-serif leading-none select-none rotate-180">"</div>
+        
+        <div className="container mx-auto max-w-4xl text-center relative z-10">
+          <blockquote className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-primary-foreground leading-snug">
             {t('quote.text')}
           </blockquote>
-              </div>
+        </div>
       </section>
 
       {/* Pricing Section */}

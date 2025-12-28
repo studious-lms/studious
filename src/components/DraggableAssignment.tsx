@@ -26,11 +26,13 @@ import {
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { RouterOutputs } from "@/lib/trpc";
 import { useRouter } from "next/navigation";
-import { getStudentAssignmentStatus, getStatusColor, Status } from "@/lib/getStudentAssignmentStatus";
+import { getStudentAssignmentStatus, getStatusColor, Status } from "@/lib/assignment/getStudentAssignmentStatus";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
-import getGradeDisplay from "@/lib/getGradeDisplay";
-import { getAIPolicyShortLabel, getAIPolicyColor } from "@/lib/aiPolicy";
+import getGradeDisplay from "@/lib/assignment/getGradeDisplay";
+import { getAIPolicyShortLabel, getAIPolicyColor } from "@/lib/assignment/aiPolicy";
+import Attachment from "./Attachment";
+import { convertAttachmentsToFileItems } from "@/lib/file/file";
 interface DraggableAssignmentProps {
   assignment: RouterOutputs['assignment']['get'];
   classId: string;
@@ -65,38 +67,46 @@ export function DraggableAssignment({ assignment, classId, index, onDelete, onPu
   const router = useRouter();
 
   return (
-    <div ref={isTeacher ? drag as unknown as React.Ref<HTMLDivElement> : null} className={`transition-opacity ${isDragging ? 'opacity-50' : 'opacity-100'}`}>
+    <div className={`transition-opacity ${isDragging ? 'opacity-50' : 'opacity-100'}`}>
       <Collapsible open={isExpanded} onOpenChange={setIsExpanded}>
-        <Card className={`hover:shadow-md transition-all duration-200 border-l-4 border-l-primary group ${isTeacher ? 'cursor-move' : ''}`}>
-          <CardContent className="p-4">
-            <div className="flex items-start justify-between">
-              <div className="flex items-start space-x-3 flex-1">
+        <Card className={`hover:shadow-md transition-all duration-200 border-l-4 border-l-primary group`}>
+          <CardContent className="p-3 md:p-4">
+            <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 md:gap-0">
+              <div className="flex items-start space-x-2 md:space-x-3 flex-1 min-w-0">
                 {isTeacher && (
-                  <GripVertical className="h-5 w-5 text-muted-foreground mt-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div 
+                    ref={drag as unknown as React.Ref<HTMLDivElement>}
+                    className="mt-1 cursor-grab active:cursor-grabbing touch-none select-none flex-shrink-0"
+                    onClick={(e) => e.stopPropagation()}
+                    onTouchStart={(e) => e.stopPropagation()}
+                  >
+                    <GripVertical className="h-5 w-5 text-muted-foreground opacity-60 md:opacity-0 md:group-hover:opacity-100 transition-opacity" />
+                  </div>
                 ) }
-                <div className="flex-1 space-y-3">
-                  <div className="flex items-center space-x-3">
+                <div className="flex-1 space-y-3 min-w-0">
+                  <div className="flex flex-wrap items-center gap-2 md:gap-3">
                     <Link
                       href={`/class/${classId}/assignment/${assignment.id}`}
-                      className="text-sm font-medium text-primary hover:underline"
+                      className="text-sm font-medium text-primary hover:underline break-words"
                       onClick={(e) => e.stopPropagation()}
                     >
                       {assignment.title}
                     </Link>
                     {assignment.inProgress && (
-                      <Badge variant="outline" className="bg-yellow-50 text-yellow-700 border-yellow-200">
+                      <Badge variant="outline" className="bg-yellow-50 text-yellow-700 border-yellow-200 flex-shrink-0">
                         Draft
                       </Badge>
                     )}
                     {status.map((s) => (
-                      <Badge className={getStatusColor(s)} key={s}>
+                      <Badge className={`${getStatusColor(s)} flex-shrink-0`} key={s}>
                         {s}
                       </Badge>
                     ))}
                   </div>
 
-                  <div className="flex items-center space-x-6 text-sm text-muted-foreground">
-                    <div className="flex items-center space-x-1">
+                  <div className="flex flex-wrap items-center sm:gap-6 gap-3 text-sm text-muted-foreground">
+                    {/* @note: hide assignment type on mobile – not very useful... */}
+                    <div className="items-center space-x-1 hidden sm:flex">
                       <FileText className="h-4 w-4" />
                       <span className="font-medium">{assignment.type.charAt(0).toUpperCase() + assignment.type.slice(1).toLowerCase()}</span>
                     </div>
@@ -110,23 +120,23 @@ export function DraggableAssignment({ assignment, classId, index, onDelete, onPu
                   </div>
 
                   {isTeacher && (
-                    <div className="flex items-center gap-x-4 gap-y-1 flex-wrap">
-                      <div className="flex items-center space-x-4">
-                        <span className="text-sm">
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-x-4">
+                      <div className="flex items-center gap-2 sm:space-x-4">
+                        <span className="text-sm whitespace-nowrap">
                           <strong>{totalSubmissions}</strong> of <strong>{totalStudents}</strong> submitted
                         </span>
-                        <div className="w-32 bg-muted rounded-full h-2">
+                        <div className="w-24 sm:w-32 bg-muted rounded-full h-2 flex-shrink-0">
                           <div
                             className="bg-primary h-2 rounded-full transition-all"
                             style={{ width: `${totalStudents > 0 ? (totalSubmissions / totalStudents) * 100 : 0}%` }}
                           />
                         </div>
                       </div>
-                      <div className="flex items-center space-x-4">
-                        <span className="text-sm">
+                      <div className="flex items-center gap-2 sm:space-x-4">
+                        <span className="text-sm whitespace-nowrap">
                           <strong>{gradedSubmissions}</strong> of <strong>{totalStudents}</strong> returned
                         </span>
-                        <div className="w-32 bg-muted rounded-full h-2">
+                        <div className="w-24 sm:w-32 bg-muted rounded-full h-2 flex-shrink-0">
                           <div
                             className="bg-primary h-2 rounded-full transition-all"
                             style={{ width: `${totalStudents > 0 ? (gradedSubmissions / totalStudents) * 100 : 0}%` }}
@@ -138,7 +148,7 @@ export function DraggableAssignment({ assignment, classId, index, onDelete, onPu
                 </div>
               </div>
 
-              <div className="flex items-center space-x-2" onClick={(e) => e.stopPropagation()}>
+              <div className="flex items-center justify-end md:justify-start space-x-2 flex-shrink-0 flex-wrap" onClick={(e) => e.stopPropagation()}>
                 {assignment.inProgress && isTeacher && (
                   <Button
                     variant="default"
@@ -156,7 +166,7 @@ export function DraggableAssignment({ assignment, classId, index, onDelete, onPu
                     <div className="flex items-center space-x-2">
                       <span className="text-lg font-bold">{assignment.submissions?.find(submission => submission.studentId === appState.user.id)?.gradeReceived} </span>
                       <span className="text-xs text-muted-foreground">/ {assignment.maxGrade}</span>
-                      <span className="text-xs text-muted-foreground flex items-center">
+                      <span className="text-xs text-muted-foreground hidden sm:flex items-center">
                         ({getGradeDisplay(assignment.submissions?.find(submission => submission.studentId === appState.user.id)?.gradeReceived, assignment.maxGrade, assignment.gradingBoundary)})
                       </span>
                     </div>
@@ -246,7 +256,7 @@ export function DraggableAssignment({ assignment, classId, index, onDelete, onPu
 
                 {/* Grading */}
                 {assignment.graded && (
-                  <div className="space-y-1">
+                  <div className="space-y-1 flex flex-col">
                     <span className="text-xs text-muted-foreground">Grading</span>
                     <span className="text-sm font-medium">
                       {assignment.maxGrade} pts

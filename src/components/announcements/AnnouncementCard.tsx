@@ -1,3 +1,5 @@
+// @todo: refactor this damn file
+
 "use client";
 
 import { useState, useRef, useMemo, useCallback, memo } from "react";
@@ -59,7 +61,10 @@ import { FileHandlers } from "@/lib/types/file";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { FilePreviewModal } from "@/components/modals";
-import { baseFileHandler } from "@/lib/fileHandler";
+import { baseFileHandler } from "@/lib/file/fileHandler";
+import Attachment from "../Attachment";
+import { transformFileToFileItem } from "@/lib/file/file";
+import AttachmentPreview from "../AttachmentPreview";
 
 type Announcement = RouterOutputs['class']['get']['class']['announcements'][number];
 
@@ -153,10 +158,6 @@ export const AnnouncementCard = memo(function AnnouncementCard({ announcement, c
   const [uploadProgress, setUploadProgress] = useState(0);
   const [uploadStatus, setUploadStatus] = useState("");
   const fileInputRef = useRef<HTMLInputElement>(null);
-
-  // File preview state
-  const [previewFile, setPreviewFile] = useState<FileItem | null>(null);
-  const [isPreviewOpen, setIsPreviewOpen] = useState(false);
 
   // Get signed URL mutation for file preview
   const getSignedUrlMutation = trpc.file.getSignedUrl.useMutation();
@@ -586,10 +587,6 @@ export const AnnouncementCard = memo(function AnnouncementCard({ announcement, c
   }, []);
 
   // File handlers - memoized to prevent recreation
-  const handleFilePreview = useCallback((file: FileItem) => {
-    setPreviewFile(file);
-    setIsPreviewOpen(true);
-  }, []);
 
   const fileHandlers: FileHandlers = useMemo(() => ({
     ...baseFileHandler,
@@ -597,9 +594,7 @@ export const AnnouncementCard = memo(function AnnouncementCard({ announcement, c
     onRename: async () => {},
     onDelete: async () => {},
     onMove: async () => {},
-    onPreview: handleFilePreview,
-    onFileClick: handleFilePreview,
-  }), [handleFilePreview]);
+  }), []);
   
   // Get comment count - prioritize from announcement data, fallback to loaded comments or count query
   // Try multiple possible locations for the count - memoized
@@ -716,7 +711,7 @@ export const AnnouncementCard = memo(function AnnouncementCard({ announcement, c
                   <div className="space-y-2">
                     <p className="text-xs font-medium text-muted-foreground">Existing Attachments</p>
                     <div className="space-y-1">
-                      {attachments.map((attachment: any) => (
+                      {/* {attachments.map((attachment: any) => (
                           <div key={attachment.id} className="flex items-center gap-2 p-2 bg-muted/50 rounded-md text-xs">
                             <Paperclip className="h-3 w-3 text-muted-foreground flex-shrink-0" />
                             <span className="flex-1 truncate">{attachment.name}</span>
@@ -729,7 +724,10 @@ export const AnnouncementCard = memo(function AnnouncementCard({ announcement, c
                               <X className="h-3 w-3" />
                             </Button>
                           </div>
-                        ))}
+                        ))} */}
+                      {convertAttachmentsToFileItems(attachments).map((fileItem) => (
+                        <AttachmentPreview key={fileItem.id} fileItem={fileItem} onRemove={() => {removeAttachment(fileItem.id)}} />
+                      ))}
                     </div>
                   </div>
                 )}
@@ -838,14 +836,7 @@ export const AnnouncementCard = memo(function AnnouncementCard({ announcement, c
                 <DndProvider backend={HTML5Backend}>
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
                     {fileItems.map((fileItem) => (
-                      <DraggableFileItem
-                        key={fileItem.id}
-                        item={fileItem}
-                        classId={classId}
-                        readonly={true}
-                        handlers={fileHandlers}
-                        getFileIcon={getFileIcon}
-                      />
+                      <Attachment key={fileItem.id} fileItem={fileItem} />
                     ))}
                   </div>
                 </DndProvider>
@@ -1087,30 +1078,6 @@ export const AnnouncementCard = memo(function AnnouncementCard({ announcement, c
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
-
-      {/* File Preview Modal */}
-      <FilePreviewModal
-        file={previewFile}
-        isOpen={isPreviewOpen}
-        onClose={() => setIsPreviewOpen(false)}
-        onAction={async (action: string, item: FileItem) => {
-          switch (action) {
-            case "download":
-              await fileHandlers.onDownload(item);
-              break;
-            case "share":
-              await fileHandlers.onShare(item);
-              break;
-            case "preview":
-              fileHandlers.onPreview?.(item);
-              break;
-          }
-        }}
-        getPreviewUrl={async (fileId: string) => {
-          const result = await getSignedUrlMutation.mutateAsync({ fileId });
-          return result.url;
-        }}
-      />
     </>
   );
 });

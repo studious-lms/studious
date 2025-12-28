@@ -18,10 +18,11 @@ import {
   Download,
   Eye,
   GripVertical,
-  Star
 } from "lucide-react";
-import { TableFileComponentProps } from "@/lib/types/file";
+import { BaseFileComponentProps } from "@/lib/types/file";
 import { MoveItemDropdown } from "@/components/MoveItemDropdown";
+import { formatDate, getFileIcon, getFilePreviewHandlers } from "@/lib/file/file";
+import { FilePreviewModal } from "@/components/modals/FilePreviewModal";
 
 export function DraggableTableRow({ 
   item, 
@@ -29,12 +30,9 @@ export function DraggableTableRow({
   currentFolderId,
   readonly = false,
   handlers,
-  getFolderColor,
-  getFileIcon,
-  formatDate
-}: TableFileComponentProps) {
+}: BaseFileComponentProps) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-
+  const [previewOpen, setPreviewOpen] = useState(false);
   const handleAction = async (action: string, e?: React.MouseEvent) => {
     e?.stopPropagation();
     setDropdownOpen(false);
@@ -53,16 +51,6 @@ export function DraggableTableRow({
           break;
         case "delete":
           await handlers.onDelete(item);
-          break;
-        case "star":
-          if (handlers.onStar) {
-            await handlers.onStar(item);
-          }
-          break;
-        case "preview":
-          if (handlers.onPreview) {
-            handlers.onPreview(item);
-          }
           break;
       }
     } catch (error) {
@@ -116,8 +104,8 @@ export function DraggableTableRow({
       onDoubleClick={() => {
         if (item.type === "folder") {
           handlers.onFolderClick(item.name);
-        } else if (item.type === "file" && handlers.onFileClick) {
-          handlers.onFileClick(item);
+        } else if (item.type === "file") {
+          setPreviewOpen(true);
         }
       }}
     >
@@ -138,16 +126,13 @@ export function DraggableTableRow({
             {item.type === "folder" ? (
               <Folder 
                 className="h-5 w-5 fill-current" 
-                style={{ color: item.color || getFolderColor(item.id) }} 
+                style={{ color: item.color }} 
               />
             ) : (
               getFileIcon(item.fileType!)
             )}
             <span className="font-medium flex items-center space-x-1">
               {item.name}
-              {item.starred && (
-                <Star className="h-3 w-3 text-yellow-500 fill-current" />
-              )}
             </span>
           </div>
           
@@ -188,7 +173,7 @@ export function DraggableTableRow({
                   <Download className="mr-2 h-4 w-4" />
                   Download
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={(e) => handleAction("preview", e)}>
+                <DropdownMenuItem onClick={(e) => setPreviewOpen(true)}>
                   <Eye className="mr-2 h-4 w-4" />
                   Preview
                 </DropdownMenuItem>
@@ -217,12 +202,6 @@ export function DraggableTableRow({
                     }
                   }}
                 />
-                {handlers.onStar && (
-                  <DropdownMenuItem onClick={(e) => handleAction("star", e)}>
-                    <Star className="mr-2 h-4 w-4" />
-                    {item.starred ? "Remove star" : "Add star"}
-                  </DropdownMenuItem>
-                )}
                 <DropdownMenuSeparator />
                 <DropdownMenuItem 
                   onClick={(e) => handleAction("delete", e)}
@@ -235,6 +214,14 @@ export function DraggableTableRow({
             )}
           </DropdownMenuContent>
         </DropdownMenu>
+        {previewOpen && (
+          <FilePreviewModal
+            file={item}
+            isOpen={previewOpen}
+            onClose={() => setPreviewOpen(false)}
+            onAction={getFilePreviewHandlers}
+          />
+        )}
       </TableCell>
     </TableRow>
   );

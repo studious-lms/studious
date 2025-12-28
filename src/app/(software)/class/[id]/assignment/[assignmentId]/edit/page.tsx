@@ -29,12 +29,6 @@ import {
   Search,
   FileText,
   Image as ImageIcon,
-  FileVideo,
-  Music,
-  Archive,
-  FileSpreadsheet,
-  Presentation,
-  File,
   ClipboardCheck,
   ClipboardList,
   Target,
@@ -50,10 +44,10 @@ import { toast } from "sonner";
 import { DraggableFileItem } from "@/components/DraggableFileItem";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-import { FilePreviewModal } from "@/components/modals";
 import { FileItem, FileHandlers } from "@/lib/types/file";
-import { baseFileHandler } from "@/lib/fileHandler";
+import { baseFileHandler } from "@/lib/file/fileHandler";
 import { fixUploadUrl } from "@/lib/directUpload";
+import AttachmentPreview from "@/components/AttachmentPreview";
 
 type Assignment = RouterOutputs['assignment']['get'];
 type AssignmentUpdateInput = RouterInputs['assignment']['update'];
@@ -139,10 +133,6 @@ export default function AssignmentEditPage() {
     { label: t('types.other'), value: "OTHER", icon: <FileText className="h-4 w-4" /> }
   ];
 
-  // File preview state
-  const [previewFile, setPreviewFile] = useState<FileItem | null>(null);
-  const [isPreviewOpen, setIsPreviewOpen] = useState(false);
-
   // Upload progress state
   const [isUploading, setIsUploading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
@@ -151,7 +141,6 @@ export default function AssignmentEditPage() {
   const [totalFiles, setTotalFiles] = useState(0);
 
   // Mutations
-  const getSignedUrlMutation = trpc.file.getSignedUrl.useMutation();
   const getAssignmentUploadUrls = trpc.assignment.getAssignmentUploadUrls.useMutation();
   const confirmAssignmentUpload = trpc.assignment.confirmAssignmentUpload.useMutation();
 
@@ -412,21 +401,6 @@ export default function AssignmentEditPage() {
     return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
   };
 
-  const getFileIcon = (fileType: string, size: "sm" | "lg" = "sm") => {
-    const iconSize = size === "sm" ? "h-4 w-4" : "h-8 w-8";
-    switch (fileType) {
-      case "pdf": return <FileText className={`${iconSize} text-red-500`} />;
-      case "docx": return <FileText className={`${iconSize} text-blue-500`} />;
-      case "pptx": return <Presentation className={`${iconSize} text-orange-500`} />;
-      case "xlsx": return <FileSpreadsheet className={`${iconSize} text-green-500`} />;
-      case "mp4": return <FileVideo className={`${iconSize} text-purple-500`} />;
-      case "mp3": return <Music className={`${iconSize} text-pink-500`} />;
-      case "zip": return <Archive className={`${iconSize} text-gray-500`} />;
-      case "jpg": case "png": case "gif": return <ImageIcon className={`${iconSize} text-emerald-500`} />;
-      default: return <File className={`${iconSize} text-slate-500`} />;
-    }
-  };
-
   const convertAttachmentsToFileItems = (attachments: Assignment['attachments']) => {
     return attachments.map((attachment: Assignment['attachments'][number]) => ({
       id: attachment.id,
@@ -442,14 +416,6 @@ export default function AssignmentEditPage() {
     ...baseFileHandler,
     onDelete: async (item: FileItem) => removeAttachment(item.id),
     onMove: async () => {},
-    onPreview: (file: FileItem) => {
-      setPreviewFile(file);
-      setIsPreviewOpen(true);
-    },
-    onFileClick: (file: FileItem) => {
-      setPreviewFile(file);
-      setIsPreviewOpen(true);
-    }
   };
 
   if (isLoading) {
@@ -964,15 +930,15 @@ export default function AssignmentEditPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 {assignment.attachments.length > 0 ? (
-                    <div className="grid grid-cols-2 gap-3">
+                    <div className="flex flex-col gap-2">
                       {convertAttachmentsToFileItems(assignment.attachments).map((fileItem: FileItem) => (
-                        <DraggableFileItem
+                        <AttachmentPreview
                           key={fileItem.id}
-                          item={fileItem}
-                          classId={classId}
-                          readonly={false}
-                          handlers={fileHandlers}
-                          getFileIcon={getFileIcon}
+                          fileItem={fileItem}
+                          onRemove={() => removeAttachment(fileItem.id)}
+                          // classId={classId}
+                          // readonly={false}
+                          // handlers={fileHandlers}
                         />
                       ))}
                     </div>
@@ -1083,25 +1049,6 @@ export default function AssignmentEditPage() {
           </div>
         </div>
         </div>
-
-        {/* File Preview Modal */}
-        <FilePreviewModal
-          file={previewFile}
-          isOpen={isPreviewOpen}
-          onClose={() => setIsPreviewOpen(false)}
-          onAction={async (action: string, item: FileItem) => {
-            switch (action) {
-              case "download": await fileHandlers.onDownload(item); break;
-              case "share": await fileHandlers.onShare(item); break;
-              case "delete": await fileHandlers.onDelete(item); break;
-              case "preview": fileHandlers.onPreview?.(item); break;
-            }
-          }}
-          getPreviewUrl={async (fileId: string) => {
-            const result = await getSignedUrlMutation.mutateAsync({ fileId });
-            return result.url;
-          }}
-        />
       </PageLayout>
     </DndProvider>
   );

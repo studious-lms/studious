@@ -260,8 +260,6 @@ export default function Assignments() {
   };
   
 
-  console.log(classData?.class?.assignments);
-
   // Initialize unified mixed list (all assignments + sections sorted by unified order)
   useEffect(() => {
     if (classData?.class) {
@@ -653,11 +651,11 @@ export default function Assignments() {
       <PageLayout>
         <div className="flex items-center justify-between mb-6 space-y-4 flex-wrap">
           <div>
-            <h1 className="text-2xl font-bold">{t('assignments')}</h1>
+            <h1 className="text-xl sm:text-2xl font-bold">{t('assignments')}</h1>
             <p className="text-muted-foreground">{t('manageAndTrack')}</p>
           </div>
           
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center sm:space-x-2 gap-2 flex-wrap">
             {/* <Button variant="outline" size="sm">
               <Filter className="h-4 w-4 mr-2" />
               {t('filters')}
