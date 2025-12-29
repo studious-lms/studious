@@ -14,3 +14,5 @@ export { CreateFolderModal } from './CreateFolderModal';
 export { CreateSectionModal, SectionModal } from './CreateSectionModal';
 export { AILabModal } from './AILabModal';
 export { ExportAttendanceModal } from './ExportAttendanceModal';
+export { AttachEventsToAssignmentModal } from './AttachEventsToAssignmentModal';
+export { AttachAssignmentsToEventModal } from './AttachAssignmentsToEventModal';

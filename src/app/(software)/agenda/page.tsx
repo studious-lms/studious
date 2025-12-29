@@ -17,9 +17,11 @@ import {
   CalendarYearView,
   type CalendarEvent,
 } from "@/components/ui/full-calendar";
-import { trpc } from "@/lib/trpc";
+import { RouterOutputs, trpc } from "@/lib/trpc";
 import { useEffect, useState, useMemo } from "react";
 import { useTranslations } from 'next-intl';
+
+type Event = RouterOutputs["event"]["get"]['event'];
 
 export default function Agenda() {
   const t = useTranslations('agenda');
@@ -131,7 +133,7 @@ export default function Agenda() {
             onOpenChange={setPreviewModalOpen}
             event={
               (events?.events?.class?.find(event => event.id === selectedEvent) || 
-               events?.events?.personal?.find(event => event.id === selectedEvent)) as any
+               events?.events?.personal?.find(event => event.id === selectedEvent)) as Event
             }
           />
         )}

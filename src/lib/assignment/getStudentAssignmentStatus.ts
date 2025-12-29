@@ -28,6 +28,17 @@ export const getStudentAssignmentStatus = (assignment: AssignmentGetOutput): Sta
     return result;
 }
 
+export const getAssignmentStatus = (assignment: AssignmentGetOutput): Status[] => {
+    const result: Status[] = [];
+
+    if (assignment.submissions?.every(submission => submission.returned)) {
+        result.push("Graded");
+    } else {
+        result.push("Pending");
+    }
+    return result;
+}
+
 export const getStatusColor = (status: Status) => {
     switch (status) {
         case "Late": 

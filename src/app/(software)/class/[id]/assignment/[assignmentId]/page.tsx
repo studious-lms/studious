@@ -21,6 +21,7 @@ import {
   Clock,
   XCircle,
   CheckCircle2,
+  Dot,
 } from "lucide-react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -462,6 +463,25 @@ export default function AssignmentDetailPage() {
               <p className="whitespace-pre-wrap text-foreground leading-relaxed">{assignment.instructions}</p>
             </div>
           </div>
+
+          <div className="space-y-3">
+            <h2 className="text-sm font-medium text-muted-foreground">Event Attached</h2>
+            {assignment.eventAttached && <div className="p-3 rounded-lg border bg-muted/30">
+              <div className="flex items-center mb-2 gap-2">
+                <span className="h-2 w-2 rounded-full" style={{ backgroundColor: assignment.eventAttached.color }} />
+                <h4 className="font-medium text-sm">{assignment.eventAttached.name}</h4>
+              </div>
+              <p className="text-xs text-muted-foreground">
+                {format(new Date(assignment.eventAttached.startTime), 'MMM d, yyyy \'at\' h:mm a')}
+              </p>
+              {assignment.eventAttached.location && (
+                <p className="text-xs text-muted-foreground mt-1">
+                  📍 {assignment.eventAttached.location}
+                </p>
+              )}
+            </div>}
+          </div>
+
 
           {/* AI Policy */}
           <AIPolicyDisplay level={assignment.aiPolicyLevel} />

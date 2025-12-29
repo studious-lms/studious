@@ -6,9 +6,10 @@ import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, D
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Download, Users } from "lucide-react";
+import { Download, Users, SearchX } from "lucide-react";
 import { toast } from "sonner";
 import { RouterOutputs } from "@/lib/trpc";
+import { EmptyState } from "@/components/ui/empty-state";
 
 type Student = RouterOutputs["class"]["get"]["class"]["students"][number];
 type AttendanceRecord = RouterOutputs["attendance"]["get"][number];
@@ -227,9 +228,12 @@ export function ExportAttendanceModal({
           {/* Student List */}
           <div className="flex-1 overflow-y-auto space-y-2">
             {filteredStudents.length === 0 ? (
-              <div className="text-center text-muted-foreground py-8">
-                No students found
-              </div>
+              <EmptyState
+                icon={SearchX}
+                title="No students found"
+                description="Try adjusting your search query"
+                className="py-6"
+              />
             ) : (
               filteredStudents.map((student) => {
                 const isSelected = selectedStudentIds.has(student.id);

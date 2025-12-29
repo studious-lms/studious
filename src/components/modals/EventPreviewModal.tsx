@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { format } from "date-fns";
 import { 
   Dialog, 
@@ -18,11 +19,21 @@ import {
   School,
   User,
   Edit,
-  Trash2
+  Trash2,
+  X,
+  Plus,
+  ExternalLink,
+  Loader2
 } from "lucide-react";
-import type { RouterOutputs } from "@/lib/trpc";
+import { trpc, type RouterOutputs } from "@/lib/trpc";
+import { useRouter } from "next/navigation";
+import { getStudentAssignmentStatus, getStatusColor } from "@/lib/assignment/getStudentAssignmentStatus";
+import { EmptyState } from "@/components/ui/empty-state";
+import { RootState } from "@/store/store";
+import { useSelector } from "react-redux";
+import { toast } from "sonner";
+import { AttachAssignmentsToEventModal } from "./AttachAssignmentsToEventModal";
 
-type AttendanceRecord = RouterOutputs["attendance"]["get"][number];
 type Event = RouterOutputs["event"]["get"]['event'];
 
 interface EventPreviewModalProps {
@@ -32,6 +43,7 @@ interface EventPreviewModalProps {
   onEdit?: (event: Event) => void;
   onDelete?: (event: Event) => void;
   showActions?: boolean; // Whether to show edit/delete buttons
+  onRefresh?: () => void; // Callback to refresh event data
 }
 
 export function EventPreviewModal({
@@ -40,15 +52,48 @@ export function EventPreviewModal({
   event,
   onEdit,
   onDelete,
-  showActions = false
+  showActions = false,
+  onRefresh
 }: EventPreviewModalProps) {
+  const router = useRouter();
+  const appState = useSelector((state: RootState) => state.app);
+  const [attachModalOpen, setAttachModalOpen] = useState(false);
+  const [detachingAssignmentId, setDetachingAssignmentId] = useState<string | null>(null);
+
+  const { data: classData, isLoading: isClassLoading } = trpc.class.get.useQuery({ classId: event?.classId as string }, {
+    enabled: !!event?.classId,
+  });
+
+  const utils = trpc.useUtils();
+
+  // Detach event mutation
+  const detachEventMutation = trpc.assignment.detachEvent.useMutation({
+    onSuccess: () => {
+      toast.success("Assignment detached from event");
+      setDetachingAssignmentId(null);
+      onRefresh?.();
+      utils.event.get.invalidate({ id: event?.id });
+    },
+    onError: (error) => {
+      toast.error(error.message || "Failed to detach assignment");
+      setDetachingAssignmentId(null);
+    },
+  });
+
+  const isTeacherInClass = classData?.class?.teachers.some(teacher => teacher.id === appState.user.id);
+
+  const handleDetachAssignment = (assignmentId: string, classId: string) => {
+    setDetachingAssignmentId(assignmentId);
+    detachEventMutation.mutate({ assignmentId, classId });
+  };
+
   if (!event) return null;
 
   const startDate = new Date(event.startTime);
   const endDate = new Date(event.endTime);
   const isMultiDay = format(startDate, 'yyyy-MM-dd') !== format(endDate, 'yyyy-MM-dd');
   const duration = Math.round((endDate.getTime() - startDate.getTime()) / (1000 * 60)); // Duration in minutes
-
+    
   const formatDuration = (minutes: number): string => {
     if (minutes < 60) return `${minutes}m`;
     const hours = Math.floor(minutes / 60);
@@ -159,6 +204,101 @@ export function EventPreviewModal({
             </>
           )}
 
+          {/* Assignments Section */}
+          <Separator />
+          <div className="space-y-3">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <FileText className="h-4 w-4 text-muted-foreground" />
+                <span className="text-sm font-medium">Linked Assignments</span>
+                {event.assignmentsAttached && event.assignmentsAttached.length > 0 && (
+                  <Badge variant="secondary" className="text-xs">
+                    {event.assignmentsAttached.length}
+                  </Badge>
+                )}
+              </div>
+              {isTeacherInClass && event.classId && (
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="h-7 text-xs"
+                  onClick={() => setAttachModalOpen(true)}
+                >
+                  <Plus className="h-3 w-3 mr-1" />
+                  Attach
+                </Button>
+              )}
+            </div>
+            
+            {event.assignmentsAttached && event.assignmentsAttached.length > 0 ? (
+              <div className="space-y-2">
+                {event.assignmentsAttached.map((assignment) => (
+                  <div
+                    key={assignment.id}
+                    className="group flex items-center gap-3 p-3 rounded-lg border bg-muted/30 hover:bg-muted/50 transition-colors"
+                  >
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span 
+                          className="text-sm font-medium hover:underline cursor-pointer truncate"
+                          onClick={() => router.push(`/class/${assignment.classId}/assignment/${assignment.id}`)}
+                        >
+                          {assignment.title}
+                        </span>
+                        {!isTeacherInClass && !isClassLoading && (
+                          <>
+                            {getStudentAssignmentStatus(assignment).map((status) => (
+                              <Badge key={status} className={`${getStatusColor(status)} text-xs`}>
+                                {status}
+                              </Badge>
+                            ))}
+                          </>
+                        )}
+                      </div>
+                      <div className="flex items-center gap-2 mt-1 text-xs text-muted-foreground">
+                        <Calendar className="h-3 w-3" />
+                        <span>Due {format(new Date(assignment.dueDate), 'MMM d, yyyy \'at\' h:mm a')}</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        className="h-7 w-7 opacity-0 group-hover:opacity-100 transition-opacity"
+                        onClick={() => router.push(`/class/${assignment.classId}/assignment/${assignment.id}`)}
+                      >
+                        <ExternalLink className="h-3.5 w-3.5" />
+                      </Button>
+                      {isTeacherInClass && (
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          className="h-7 w-7 opacity-0 group-hover:opacity-100 transition-opacity text-destructive hover:text-destructive"
+                          onClick={() => handleDetachAssignment(assignment.id, assignment.classId)}
+                          disabled={detachingAssignmentId === assignment.id}
+                        >
+                          {detachingAssignmentId === assignment.id ? (
+                            <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                          ) : (
+                            <X className="h-3.5 w-3.5" />
+                          )}
+                        </Button>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <EmptyState
+                icon={FileText}
+                title="No assignments linked"
+                description="Link assignments to this event to show them here"
+                className="py-6"
+              />
+            )}
+          </div>
+        
+
           {/* Actions */}
           {showActions && (onEdit || onDelete) && (
             <>
@@ -195,6 +335,20 @@ export function EventPreviewModal({
           )}
         </div>
       </DialogContent>
+
+      {/* Attach Assignments Modal */}
+      {event.classId && (
+        <AttachAssignmentsToEventModal
+          open={attachModalOpen}
+          onOpenChange={setAttachModalOpen}
+          eventId={event.id}
+          classId={event.classId}
+          onAttached={() => {
+            onRefresh?.();
+            utils.event.get.invalidate({ id: event.id });
+          }}
+        />
+      )}
     </Dialog>
   );
 }
