@@ -58,9 +58,9 @@ export default function Profile() {
   const tMessages = useTranslations('profile.messages');
   const tCommon = useTranslations('common');
 
-  const dispatch  = useDispatch();
+  const dispatch = useDispatch();
   const appState = useSelector((state: RootState) => state.app);
-  
+
   const [isEditing, setIsEditing] = useState(false);
   const [pendingProfilePicture, setPendingProfilePicture] = useState<{
     name: string;
@@ -171,10 +171,10 @@ export default function Profile() {
       }
 
       await updateProfileMutation.mutateAsync(updateData);
-      
+
       // Invalidate and refetch the profile query to update the UI immediately
       await utils.user.getProfile.invalidate();
-      
+
       toast.success(tMessages('profileUpdated'));
       setIsEditing(false);
       setPendingProfilePicture(null);
@@ -227,7 +227,7 @@ export default function Profile() {
           title={t('title')}
           description={t('description')}
         />
-        
+
         <div className="space-y-6">
           <Card>
             <CardHeader>
@@ -269,238 +269,233 @@ export default function Profile() {
   }
 
   return (
-    <PageLayout>
-      <PageHeader
-        title={t('title')}
-        description={t('description')}
-      >
-        {!isEditing ? (
-          <Button onClick={() => setIsEditing(true)} className="flex items-center space-x-2">
-            <Edit className="h-4 w-4" />
-            <span>{t('editProfile')}</span>
-          </Button>
-        ) : (
-          <div className="flex items-center space-x-2">
-            <Button
-              variant="outline"
-              onClick={handleCancel}
-              className="flex items-center space-x-2"
-            >
-              <X className="h-4 w-4" />
-              <span>{tCommon('cancel')}</span>
-            </Button>
-            <Button
-              onClick={form.handleSubmit(handleSave)}
-              disabled={
-                form.formState.isSubmitting ||
-                updateProfileMutation.isPending ||
-                getUploadUrlMutation.isPending
-              }
-              className="flex items-center space-x-2"
-            >
-              <Save className="h-4 w-4" />
-              <span>{t('saveChanges')}</span>
-            </Button>
-          </div>
-        )}
-      </PageHeader>
+    <PageLayout
+      className="!max-w-4xl mx-auto">
 
       <div className="space-y-6">
         {/* Profile Header */}
-        <Card>
-          <CardHeader>
-            <div className="flex items-center space-x-4">
-              <div className="relative">
-                <AvatarSelector
-                  currentAvatar={
-                    pendingProfilePicture 
-                      ? (profilePicturePreviewUrl ?? undefined)
-                      : pendingDicebearAvatar 
-                        ? pendingDicebearAvatar
-                        : profile?.profile?.profilePicture || appState.user.profilePicture
-                  }
-                  onAvatarSelect={handleAvatarSelect}
-                  disabled={!isEditing}
-                  size="lg"
-                />
-                {(pendingProfilePicture || pendingDicebearAvatar) && (
-                  <div className="absolute -top-1 -right-1 bg-primary text-primary-foreground rounded-full w-6 h-6 flex items-center justify-center text-xs">
-                    ✓
-                  </div>
-                )}
-              </div>
-              <div className="space-y-2">
-                <div className="flex items-center space-x-2">
-                  <h2 className="text-2xl font-bold">
-                    {profile?.profile?.displayName || profile?.username}
-                  </h2>
-                  {/* <Badge variant="secondary" className="flex items-center space-x-1">
-                    <GraduationCap className="h-3 w-3" />
-                    <span>{t('student')}</span>
-                  </Badge> */}
+        <Card className="pb-4">
+          <CardHeader className="flex items-center flex-row space-x-4">
+            <div className="relative">
+              <AvatarSelector
+                currentAvatar={
+                  pendingProfilePicture
+                    ? (profilePicturePreviewUrl ?? undefined)
+                    : pendingDicebearAvatar
+                      ? pendingDicebearAvatar
+                      : profile?.profile?.profilePicture || appState.user.profilePicture
+                }
+                onAvatarSelect={handleAvatarSelect}
+                disabled={!isEditing}
+                size="lg"
+              />
+              {(pendingProfilePicture || pendingDicebearAvatar) && (
+                <div className="absolute -top-1 -right-1 bg-primary text-primary-foreground rounded-full w-6 h-6 flex items-center justify-center text-xs">
+                  ✓
                 </div>
-                <p className="text-muted-foreground">@{profile?.username}</p>
-                {profile?.profile?.bio && (
-                  <p className="text-sm">{profile?.profile?.bio}</p>
-                )}
+              )}
+            </div>
+            <div className="space-y-2">
+              <div className="flex items-center space-x-2">
+                <h2 className="text-2xl font-bold flex flex-row items-center space-x-2">
+                  <span>{profile?.profile?.displayName || profile?.username}</span>
+                  {!isEditing ? (
+                    <Button
+                    size="sm"
+                    variant="ghost"
+                    onClick={() => setIsEditing(true)} className="flex items-center space-x-2">
+                      <Edit className="h-4 w-4" />
+                      <span>{t('editProfile')}</span>
+                    </Button>
+                  ) : (
+                    <div className="flex items-center space-x-2">
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={handleCancel}
+                        className="flex items-center space-x-2"
+                      >
+                        <X className="h-4 w-4" />
+                        <span>{tCommon('cancel')}</span>
+                      </Button>
+                      <Button
+                        size="sm"
+                        onClick={form.handleSubmit(handleSave)}
+                        disabled={
+                          form.formState.isSubmitting ||
+                          updateProfileMutation.isPending ||
+                          getUploadUrlMutation.isPending
+                        }
+                        className="flex items-center space-x-2"
+                      >
+                        <Save className="h-4 w-4" />
+                        <span>{t('saveChanges')}</span>
+                      </Button>
+                    </div>
+                  )}
+                </h2>
               </div>
+              <p className="text-muted-foreground">@{profile?.username}</p>
+              {profile?.profile?.bio && (
+                <p className="text-sm">{profile?.profile?.bio}</p>
+              )}
             </div>
           </CardHeader>
         </Card>
 
         {/* Profile Information */}
-        <Card>
-          <CardHeader>
+        <div className="flex items-center space-x-2 mt-8">
+          <div className="flex flex-col space-y-2">
             <CardTitle className="flex items-center space-x-2">
               <span>{tPersonal('title')}</span>
             </CardTitle>
             <CardDescription>
               {tPersonal('description')}
             </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Form {...form}>
-              <form className="space-y-6" onSubmit={form.handleSubmit(handleSave)}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <FormField
-                    control={form.control}
-                    name="displayName"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>{tPersonal('displayName')}</FormLabel>
-                        <FormControl>
-                          <Input
-                            {...field}
-                            placeholder={tPersonal('displayNamePlaceholder')}
-                            disabled={!isEditing}
-                          />
-                        </FormControl>
-                        <FormDescription>
-                          {tPersonal('displayNameDescription')}
-                        </FormDescription>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-
-                  <FormField
-                    control={form.control}
-                    name="location"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>{tPersonal('location')}</FormLabel>
-                        <FormControl>
-                          <Input
-                            {...field}
-                            placeholder={tPersonal('locationPlaceholder')}
-                            disabled={!isEditing}
-                          />
-                        </FormControl>
-                        <FormDescription>
-                          {tPersonal('locationDescription')}
-                        </FormDescription>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-
+          </div>
+        </div>
+        <div>
+          <Form {...form}>
+            <form className="space-y-6" onSubmit={form.handleSubmit(handleSave)}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <FormField
                   control={form.control}
-                  name="bio"
+                  name="displayName"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>{tPersonal('bio')}</FormLabel>
-                      <FormControl>
-                        <Textarea
-                          {...field}
-                          placeholder={tPersonal('bioPlaceholder')}
-                          className="min-h-[100px]"
-                          disabled={!isEditing}
-                        />
-                      </FormControl>
-                      <FormDescription>
-                        {tPersonal('bioDescription')}
-                      </FormDescription>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="website"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>{tPersonal('website')}</FormLabel>
+                      <FormLabel>{tPersonal('displayName')}</FormLabel>
                       <FormControl>
                         <Input
                           {...field}
-                          placeholder={tPersonal('websitePlaceholder')}
+                          placeholder={tPersonal('displayNamePlaceholder')}
                           disabled={!isEditing}
                         />
                       </FormControl>
                       <FormDescription>
-                        {tPersonal('websiteDescription')}
+                        {tPersonal('displayNameDescription')}
                       </FormDescription>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
-                
-                {/* Hidden submit to allow Enter key to submit from inputs */}
-                <button type="submit" className="hidden" aria-hidden />
-              </form>
-            </Form>
-          </CardContent>
-        </Card>
 
-        {/* Account Information */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center space-x-2">
-              <span>{tAccount('title')}</span>
-            </CardTitle>
-            <CardDescription>
-              {tAccount('description')}
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <Label className="text-sm font-medium text-muted-foreground">{tAccount('username')}</Label>
-                <div className="p-3 bg-muted/50 rounded-md">
-                  <span className="text-sm font-medium">{profile?.username || "N/A"}</span>
-                </div>
-                <p className="text-xs text-muted-foreground">
-                  {tAccount('usernameNote')}
-                </p>
+                <FormField
+                  control={form.control}
+                  name="location"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>{tPersonal('location')}</FormLabel>
+                      <FormControl>
+                        <Input
+                          {...field}
+                          placeholder={tPersonal('locationPlaceholder')}
+                          disabled={!isEditing}
+                        />
+                      </FormControl>
+                      <FormDescription>
+                        {tPersonal('locationDescription')}
+                      </FormDescription>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
               </div>
 
-              <div className="space-y-2">
-                <Label className="text-sm font-medium text-muted-foreground">{tAccount('email')}</Label>
-                <div className="p-3 bg-muted/50 rounded-md">
-                  <span className="text-sm font-medium">user@example.com</span>
-                </div>
-                <p className="text-xs text-muted-foreground">
-                  {tAccount('emailNote')}
-                </p>
+              <FormField
+                control={form.control}
+                name="bio"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{tPersonal('bio')}</FormLabel>
+                    <FormControl>
+                      <Textarea
+                        {...field}
+                        placeholder={tPersonal('bioPlaceholder')}
+                        className="min-h-[100px]"
+                        disabled={!isEditing}
+                      />
+                    </FormControl>
+                    <FormDescription>
+                      {tPersonal('bioDescription')}
+                    </FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="website"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{tPersonal('website')}</FormLabel>
+                    <FormControl>
+                      <Input
+                        {...field}
+                        placeholder={tPersonal('websitePlaceholder')}
+                        disabled={!isEditing}
+                      />
+                    </FormControl>
+                    <FormDescription>
+                      {tPersonal('websiteDescription')}
+                    </FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              {/* Hidden submit to allow Enter key to submit from inputs */}
+              <button type="submit" className="hidden" aria-hidden />
+            </form>
+          </Form>
+        </div>
+      </div>
+
+      {/* Account Information */}
+      <div className="mt-8">
+        <div className="flex flex-col space-y-2 mb-2">
+          <CardTitle className="flex items-center space-x-2">
+            <span>{tAccount('title')}</span>
+          </CardTitle>
+          <CardDescription>
+            {tAccount('description')}
+          </CardDescription>
+        </div>
+        <div className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="space-y-2">
+              <Label className="text-sm font-medium text-muted-foreground">{tAccount('username')}</Label>
+              <div className="p-3 bg-muted/50 rounded-md">
+                <span className="text-sm font-medium">{profile?.username || "N/A"}</span>
               </div>
+              <p className="text-xs text-muted-foreground">
+                {tAccount('usernameNote')}
+              </p>
             </div>
-
-            <Separator />
 
             <div className="space-y-2">
-              <Label className="text-sm font-medium text-muted-foreground">{tAccount('memberSince')}</Label>
-              <div className="flex items-center space-x-2 p-3 bg-muted/50 rounded-md">
-                <Calendar className="h-4 w-4 text-muted-foreground" />
-                <span className="text-sm font-medium">
-                  {new Date().toLocaleDateString()}
-                </span>
+              <Label className="text-sm font-medium text-muted-foreground">{tAccount('email')}</Label>
+              <div className="p-3 bg-muted/50 rounded-md">
+                <span className="text-sm font-medium">user@example.com</span>
               </div>
+              <p className="text-xs text-muted-foreground">
+                {tAccount('emailNote')}
+              </p>
             </div>
-          </CardContent>
-        </Card>
+          </div>
+
+          <Separator />
+
+          <div className="space-y-2">
+            <Label className="text-sm font-medium text-muted-foreground">{tAccount('memberSince')}</Label>
+            <div className="flex items-center space-x-2 p-3 bg-muted/50 rounded-md">
+              <Calendar className="h-4 w-4 text-muted-foreground" />
+              <span className="text-sm font-medium">
+                {new Date().toLocaleDateString()}
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
     </PageLayout>
   );

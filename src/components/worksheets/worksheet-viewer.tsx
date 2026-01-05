@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { RouterOutputs, trpc } from "@/lib/trpc";
 import { RootState } from "@/store/store";
 import { WorksheetQuestionViewer } from "./worksheet-question-viewer";
+import { isQuestionAnswerable } from "@/lib/worksheet-validation";
 
 interface WorksheetViewerProps {
   worksheetId: string;
@@ -37,7 +38,11 @@ export function WorksheetViewer({
     }
   );
 
-  const questions = useMemo(() => worksheet?.questions || [], [worksheet?.questions]);
+  // Filter out invalid/draft questions that aren't answerable
+  const questions = useMemo(() => {
+    const allQuestions = worksheet?.questions || [];
+    return allQuestions.filter(q => isQuestionAnswerable(q));
+  }, [worksheet?.questions]);
 
   // Initialize answers from student responses if in submission mode
   const initializeAnswers = useCallback(() => {
@@ -85,16 +90,16 @@ export function WorksheetViewer({
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-6 mb-8">
       {/* Questions */}
-      <div className="space-y-4">
+      <div className="space-y-16">
         {questions.map((question, index) => {
           const answer = submissionId ? (answers[question.id] || 'No answer provided') : null;
 
           return (
             <WorksheetQuestionViewer
               key={question.id}
-                      question={question}
+              question={question}
               index={index}
               answer={answer}
               showAnswers={showAnswers}
@@ -103,7 +108,7 @@ export function WorksheetViewer({
               
               submissionId={submissionId}
                   // @ts-expect-error - worksheetResponse is typed as RouterOutputs['worksheet']['getWorksheetSubmission'], issues with JsonValue.
-                      worksheetResponse={worksheetResponse as WorksheetSubmissionResponse}
+              worksheetResponse={worksheetResponse as WorksheetSubmissionResponse}
               worksheetId={worksheetId}
               onChangeComment={() => {
                 refetchWorksheetResponse();

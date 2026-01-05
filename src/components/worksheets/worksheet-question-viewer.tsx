@@ -1,13 +1,20 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import {
+    Sheet,
+    SheetContent,
+    SheetHeader,
+    SheetTitle,
+    SheetDescription,
+} from "@/components/ui/sheet";
 import {
     CheckCircle,
     FileText,
@@ -17,7 +24,8 @@ import {
     XCircle,
     Send,
     Loader2,
-    MessageCircle
+    MessageCircle,
+    ClipboardCheck
 } from "lucide-react";
 import { RouterOutputs, trpc } from "@/lib/trpc";
 import { toast } from "sonner";
@@ -60,7 +68,8 @@ export function WorksheetQuestionViewer({
     onChangeComment
 }: WorksheetQuestionViewerProps) {
     // Initialize feedback state from worksheetResponse
-    const [isActive, setIsActive] = useState(false);
+    const [isCommentsOpen, setIsCommentsOpen] = useState(false);
+    const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
     const [isAddingComment, setIsAddingComment] = useState(false);
     const addCommentMutation = trpc.worksheet.addComment.useMutation({
         onSuccess: () => {
@@ -289,7 +298,7 @@ export function WorksheetQuestionViewer({
 
     return (
         <div className="relative">
-            <Card className="relative">
+            <div className="relative">
                 {showAnswers && isCorrect !== null && (
                     <div className="absolute top-4 right-4">
                         {isCorrect ? (
@@ -305,8 +314,7 @@ export function WorksheetQuestionViewer({
                         )}
                     </div>
                 )}
-                <CardHeader>
-                    <div className="flex items-start justify-between gap-4 pr-20">
+                    <div className="flex items-start justify-between gap-4 mb-4">
                         <div className="flex-1">
                             <div className="flex items-center gap-2 mb-2">
                                 <Badge variant="outline" className="text-xs">
@@ -318,15 +326,13 @@ export function WorksheetQuestionViewer({
                                         : `${question.points} ${question.points === 1 ? 'point' : 'points'}`}
                                 </Badge>
                             </div>
-                            <CardTitle className="text-lg">
-                                Question {index + 1}
+                            <CardTitle className="text-lg flex flex-row items-center gap-2">
+                                <span>Question {index + 1}</span>
                             </CardTitle>
                         </div>
                     </div>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                    <div>
-                        <p className="text-base text-foreground whitespace-pre-wrap">
+                    <div className="mb-4">
+                        <p className="text-foreground whitespace-pre-wrap">
                             {question.question}
                         </p>
                     </div>
@@ -463,6 +469,22 @@ export function WorksheetQuestionViewer({
                             )}
                         </div>
                     )}
+                        <div className="flex flex-row items-center border-border border p-1 rounded-lg mt-4">
+                            <Button variant="ghost" size="sm" onClick={() => setIsCommentsOpen(true)}>
+                                <MessageCircle className="h-2 w-2" />
+                                Comments
+                                <Badge className="text-xs bg-destructive text-destructive-foreground">{comments && comments.length > 0 ? comments.length : 0}</Badge>
+                            </Button>
+                            {(showFeedback || isTeacher) && submissionId && (
+                                <Button variant="ghost" size="sm" onClick={() => setIsFeedbackOpen(true)}>
+                                    <ClipboardCheck className="h-2 w-2" />
+                                    Feedback
+                                    {feedback && feedback.points !== null && (
+                                        <Badge variant="secondary" className="text-xs">{feedback.points}/{question.points || 0}</Badge>
+                                    )}
+                                </Button>
+                            )}
+                            </div>
 
                     {/* Markscheme (always shown in viewer) */}
                     {question.markScheme && question.markScheme.length > 0 && (
@@ -481,124 +503,138 @@ export function WorksheetQuestionViewer({
                         </div>
                     )}
 
-                    {/* Teacher Feedback Section */}
-                    {(showFeedback || isTeacher) && submissionId && (
-                        <div className="mt-6 pt-6 space-y-4 bg-muted/60 p-4 rounded-lg">
-                            <div className="flex items-center justify-between mb-2">
-                                <h3 className="text-sm font-semibold">Teacher Feedback</h3>
-                                {feedback && feedback.isCorrect !== null && (
-                                    <Badge variant="outline" className="text-xs">
-                                        {feedback.isCorrect ? (
-                                            <span className="text-green-600 flex items-center gap-1"><CheckCircle2 className="h-3 w-3 mr-1" /> Correct</span>
-                                        ) : (
-                                            <span className="text-red-600 flex items-center gap-1"><XCircle className="h-3 w-3 mr-1" /> Incorrect</span>
-                                        )}
-                                    </Badge>
-                                )}
-                            </div>
+            </div>
 
-                            {isTeacher ? (
-                                <WorksheetTeacherFeedback
-                                    question={question}
-                                    questionFeedback={feedback}
-                                    worksheetResponse={worksheetResponse}
-                                    onFeedbackChange={(questionId, field, value) => handleGradeChange(field, value)}
-                                    onSave={() => handleSaveFeedback()}
-                                    isSaving={gradeAnswerMutation.isPending}
+            {/* Comments Sheet */}
+            <Sheet open={isCommentsOpen} onOpenChange={setIsCommentsOpen}>
+                <SheetContent side="right" className="w-full sm:max-w-md overflow-y-auto">
+                    <SheetHeader>
+                        <SheetTitle className="flex items-center gap-2">
+                            Comments & Feedback
+                        </SheetTitle>
+                    </SheetHeader>
+                    <div className="mt-6 space-y-4">
+                        <div className="flex items-center gap-2">
+                            <Input 
+                                type="text" 
+                                placeholder="Add a comment" 
+                                value={newComment} 
+                                onChange={(e) => setNewComment(e.target.value)} 
+                                className="flex-1"
+                                onKeyDown={(e) => e.key === 'Enter' && handleAddComment()}
+                            />
+                            <Button variant="default" size="icon" onClick={handleAddComment} disabled={isAddingComment}>
+                                {isAddingComment ? (
+                                    <Loader2 className="h-4 w-4 flex-shrink-0 animate-spin" />
+                                ) : (
+                                    <Send className="h-4 w-4 flex-shrink-0" />
+                                )}
+                            </Button>
+                        </div>
+                        <div className="space-y-3">
+                            {comments && comments.length > 0 && comments.map((comment: any) => (
+                                <Comment key={comment.id} comment={comment} />
+                            ))}
+                            {(!comments || comments.length === 0) && (
+                                <EmptyState
+                                    icon={MessageCircle}
+                                    title="No comments yet"
+                                    description="Be the first to comment!"
                                 />
-                            ) : (
-                                <div className="space-y-3">
-                                    {/* Read-only feedback display for students */}
-                                    {feedback && (
-                                        <>
-                                            {feedback.points !== null && feedback.points !== undefined && (
-                                                <div className="flex items-center justify-between">
-                                                    <span className="text-sm font-medium">Points Awarded:</span>
-                                                    <span className="text-lg font-bold">
-                                                        {feedback.points} / {question.points || 0}
-                                                    </span>
-                                                </div>
-                                            )}
-                                            {feedback.feedback && (
-                                                <div className="pt-2 border-t">
-                                                    <p className="text-sm font-medium mb-2">Feedback:</p>
-                                                    <p className="text-sm text-muted-foreground whitespace-pre-wrap">
-                                                        {feedback.feedback}
-                                                    </p>
-                                                </div>
-                                            )}
-                                            {question.markScheme && question.markScheme.length > 0 && feedback.markschemeState && (
-                                                <div className="pt-2 border-t">
-                                                    <p className="text-sm font-medium mb-2">Markscheme Items Achieved:</p>
-                                                    <div className="space-y-2">
-                                                        {question.markScheme.map((item: any, itemIndex: number) => {
-                                                            console.log('test');
-                                                            const itemId = item.id;
-                                                            const key = `item-${itemId}`;
-                                                            const isChecked = feedback.markschemeState?.[key] || false;
-                                                            return isChecked ? (
-                                                                <div key={itemId || itemIndex} className="flex items-start gap-2 text-sm">
-                                                                    <CheckCircle2 className="h-4 w-4 text-green-600 mt-0.5" />
-                                                                    <div className="flex-1">
-                                                                        <div className="flex items-center gap-2">
-                                                                            <Badge variant="secondary" className="text-xs">
-                                                                                {item.points || 0} {(item.points || 0) === 1 ? 'pt' : 'pts'}
-                                                                            </Badge>
-                                                                            <span>{item.description || item.text || `Item ${itemIndex + 1}`}</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            ) : null;
-                                                        })}
-                                                    </div>
-                                                </div>
-                                            )}
-                                        </>
-                                    )}
-                                    {!feedback || (feedback.points === null && !feedback.feedback && !feedback.markschemeState) && (
-                                        <p className="text-sm text-muted-foreground">No feedback provided yet.</p>
-                                    )}
-                                </div>
                             )}
                         </div>
-                    )}
-                </CardContent>
-            </Card>
-            {(showFeedback || isTeacher) && (<Button variant="outline" onClick={() => setIsActive(!isActive)} className="absolute left-[87%] top-12 z-50">
-                <MessageCircle className="h-4 w-4" />
-                {comments && comments.length > 0 ? comments.length : 0}
-            </Button>)}
-            {isActive && (
-            <Card className="absolute left-full ml-5 top-0 w-96 z-50">
-                <CardHeader>
-                    <CardTitle className="text-sm font-semibold">Comments</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                    <div className="flex items-center gap-2">
-
-                        <Input type="text" placeholder="Add a comment" value={newComment} onChange={(e) => setNewComment(e.target.value)} className="flex-1" />
-                        <Button variant="default" size="icon" onClick={handleAddComment} disabled={isAddingComment}>
-                            {isAddingComment ? (
-                                <Loader2 className="h-4 w-4 flex-shrink-0 animate-spin" />
-                            ) : (
-                                <Send className="h-4 w-4 flex-shrink-0" />
-                            )}
-                        </Button>
                     </div>
-                    {comments && comments.length > 0 && comments.map((comment: any) => (
-                        <Comment key={comment.id} comment={comment} />
-                    ))}
-                    {!comments || comments.length === 0 && (
-                        <EmptyState
-                            icon={MessageCircle}
-                            title="No comments yet"
-                            description="Be the first to comment!"
-                        />
-                    )}
-                </CardContent>
-            </Card>
-            )}
+                </SheetContent>
+            </Sheet>
+
+            {/* Teacher Feedback Sheet */}
+            <Sheet open={isFeedbackOpen} onOpenChange={setIsFeedbackOpen}>
+                <SheetContent side="right" className="w-full sm:max-w-lg overflow-y-auto">
+                    <SheetHeader>
+                        <SheetTitle className="flex items-center gap-2">
+                            Teacher Feedback
+                            {feedback && feedback.isCorrect !== null && (
+                                <Badge variant="outline" className="text-xs ml-2">
+                                    {feedback.isCorrect ? (
+                                        <span className="text-green-600 flex items-center gap-1"><CheckCircle2 className="h-3 w-3 mr-1" /> Correct</span>
+                                    ) : (
+                                        <span className="text-red-600 flex items-center gap-1"><XCircle className="h-3 w-3 mr-1" /> Incorrect</span>
+                                    )}
+                                </Badge>
+                            )}
+                        </SheetTitle>
+                        <SheetDescription>
+                            Question {index + 1}: {question.question?.substring(0, 50)}{question.question?.length > 50 ? '...' : ''}
+                        </SheetDescription>
+                    </SheetHeader>
+                    <div className="mt-6 space-y-4">
+                        {isTeacher ? (
+                            <WorksheetTeacherFeedback
+                                question={question}
+                                questionFeedback={feedback}
+                                worksheetResponse={worksheetResponse}
+                                onFeedbackChange={(questionId, field, value) => handleGradeChange(field, value)}
+                                onSave={() => handleSaveFeedback()}
+                                isSaving={gradeAnswerMutation.isPending}
+                            />
+                        ) : (
+                            <div className="space-y-4">
+                                {/* Read-only feedback display for students */}
+                                {feedback && (
+                                    <>
+                                        {feedback.points !== null && feedback.points !== undefined && (
+                                            <div className="flex items-center justify-between p-4 rounded-lg bg-muted/60">
+                                                <span className="text-sm font-medium">Points Awarded:</span>
+                                                <span className="text-xl font-bold">
+                                                    {feedback.points} / {question.points || 0}
+                                                </span>
+                                            </div>
+                                        )}
+                                        {feedback.feedback && (
+                                            <div className="p-4 rounded-lg border">
+                                                <p className="text-sm font-medium mb-2">Feedback:</p>
+                                                <p className="text-sm text-muted-foreground whitespace-pre-wrap">
+                                                    {feedback.feedback}
+                                                </p>
+                                            </div>
+                                        )}
+                                        {question.markScheme && question.markScheme.length > 0 && feedback.markschemeState && (
+                                            <div className="p-4 rounded-lg border">
+                                                <p className="text-sm font-medium mb-3">Markscheme Items Achieved:</p>
+                                                <div className="space-y-2">
+                                                    {question.markScheme.map((item: any, itemIndex: number) => {
+                                                        const itemId = item.id;
+                                                        const key = `item-${itemId}`;
+                                                        const isChecked = feedback.markschemeState?.[key] || false;
+                                                        return isChecked ? (
+                                                            <div key={itemId || itemIndex} className="flex items-start gap-2 text-sm">
+                                                                <CheckCircle2 className="h-4 w-4 text-green-600 mt-0.5" />
+                                                                <Badge variant="secondary" className="text-xs shrink-0 whitespace-nowrap">
+                                                                    {item.points || 0} {(item.points || 0) === 1 ? 'pt' : 'pts'}
+                                                                </Badge>
+                                                                <span>{item.text}</span>
+                                                            </div>
+                                                        ) : null;
+                                                    })}
+                                                </div>
+                                            </div>
+                                        )}
+                                    </>
+                                )}
+                                {(!feedback || (feedback.points === null && !feedback.feedback && !feedback.markschemeState)) && (
+                                    <EmptyState
+                                        icon={ClipboardCheck}
+                                        title="No feedback yet"
+                                        description="Your teacher hasn't provided feedback for this question yet."
+                                    />
+                                )}
+                            </div>
+                        )}
+                    </div>
+                </SheetContent>
+            </Sheet>
         </div>
     );
 }
+
 

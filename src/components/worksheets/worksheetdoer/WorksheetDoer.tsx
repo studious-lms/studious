@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
@@ -19,6 +19,7 @@ import {
   ToggleLeft,
 } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
+import { isQuestionAnswerable } from "@/lib/worksheet-validation";
 
 interface WorksheetDoerProps {
   onSubmit?: (answers: Record<string, any>) => void;
@@ -51,7 +52,11 @@ export function WorksheetDoer({
     worksheetId: worksheetId!,
   });
 
-  const questions = worksheet?.questions || [];
+  // Filter out invalid/draft questions that aren't answerable
+  const questions = useMemo(() => {
+    const allQuestions = worksheet?.questions || [];
+    return allQuestions.filter(q => isQuestionAnswerable(q));
+  }, [worksheet?.questions]);
 
   // Get the worksheet response ID (first one from the array)
   const worksheetResponseId = worksheetResponse?.id;
@@ -151,10 +156,8 @@ export function WorksheetDoer({
 
   return (
     <div className="space-y-4">
-      {/* Header with progress */}
-
       {/* Questions */}
-      <div className="space-y-4">
+      <div className="space-y-12">
         {questions.map((question, index) => {
           const answer = answers[question.id];
           const isAnswered = answer !== undefined && answer !== null && answer !== "";

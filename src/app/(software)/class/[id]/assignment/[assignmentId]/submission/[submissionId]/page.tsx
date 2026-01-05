@@ -611,7 +611,6 @@ export default function SubmissionDetailPage() {
                       icon={FileText}
                       title="No files submitted"
                   description="The student hasn't submitted any files."
-                  className="border rounded-lg border-dashed"
                     />
                   )}
             </div>

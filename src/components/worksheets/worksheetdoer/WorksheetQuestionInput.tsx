@@ -9,10 +9,6 @@ import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { 
-  CheckCircle,
-  FileText,
-  Calculator,
-  ToggleLeft,
   CheckCircle2
 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
@@ -107,8 +103,7 @@ export function WorksheetQuestionInput({
   }, [question.id, onAnswerChange]);
 
   return (
-    <Card key={question.id} className="relative">
-      <CardHeader>
+      <div>
         <div className="flex items-start justify-between gap-4">
           <div className="flex-1">
             <div className="flex items-center gap-2 mb-2">
@@ -139,9 +134,7 @@ export function WorksheetQuestionInput({
             </CardTitle>
           </div>
         </div>
-      </CardHeader>
-      <CardContent className="space-y-3">
-        <div>
+        <div className="mb-4">
           <p className="text-base text-foreground whitespace-pre-wrap">
             {question.question}
           </p>
@@ -246,8 +239,7 @@ export function WorksheetQuestionInput({
             </div>
           </div>
         )}
-      </CardContent>
-    </Card>
+    </div>
   );
 }
 

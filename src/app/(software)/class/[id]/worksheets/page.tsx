@@ -4,36 +4,21 @@ import { useState, useMemo } from "react";
 import { useTranslations } from "next-intl";
 import { useParams, useRouter } from "next/navigation";
 import { PageLayout } from "@/components/ui/page-layout";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
 import { EmptyState } from "@/components/ui/empty-state";
 import { Skeleton } from "@/components/ui/skeleton";
 import { 
-  Plus, 
   Search, 
   FileText,
-  Eye,
-  Edit,
-  Trash2,
-  Clock,
-  MoreHorizontal,
-  ChevronRight,
-  HelpCircle,
   Layers
 } from "lucide-react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { RouterOutputs, trpc } from "@/lib/trpc";
+import { trpc } from "@/lib/trpc";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { toast } from "sonner";
 import WorksheetCard from "@/components/WorksheetCard";
 import ResponsivePageHeader from "@/components/ResponsiveClassPageHeader";
+import { CreateWorksheetModal } from "@/components/modals/CreateWorksheetModal";
 
 // Loading skeleton
 function WorksheetsSkeleton() {
@@ -126,10 +111,7 @@ export default function Worksheets() {
           <ResponsivePageHeader title={t('title')} description={t('subtitle')} />
           
           {isTeacher && (
-            <Button onClick={() => router.push(`/class/${classId}/worksheets/create`)}>
-              <Plus className="h-4 w-4 mr-2" />
-              {t('actions.create')}
-            </Button>
+            <CreateWorksheetModal classId={classId as string} />
           )}
         </div>
 

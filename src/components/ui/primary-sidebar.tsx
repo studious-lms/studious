@@ -451,17 +451,12 @@ export function PrimarySidebar({ isAuthenticated = false, user }: PrimarySidebar
                   </p>
                 </div>
               </div>
-              <DropdownMenuSeparator />
               <div className="p-1">
                 <DropdownMenuItem asChild>
                   <Link href="/profile" className="flex items-center cursor-pointer">
                     <User className="mr-3 h-4 w-4" />
                     <span>{t('profile')}</span>
                   </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer">
-                  <Settings className="mr-3 h-4 w-4" />
-                  <span>{t('accountSettings')}</span>
                 </DropdownMenuItem>
               </div>
               <DropdownMenuSeparator />

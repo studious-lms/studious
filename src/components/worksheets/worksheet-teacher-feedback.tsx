@@ -78,8 +78,8 @@ export function WorksheetTeacherFeedback({
                   htmlFor={`markscheme-${question.id}-${itemId}`}
                   className="flex-1 cursor-pointer space-y-1"
                 >
-                  <div className="flex items-center gap-2">
-                    <Badge variant="secondary" className="text-xs">
+                  <div className="flex items-start gap-2">
+                    <Badge variant="secondary" className="text-xs text-nowrap">
                       {item.points || 0} {(item.points || 0) === 1 ? 'pt' : 'pts'}
                     </Badge>
                     <span className="text-sm font-medium">

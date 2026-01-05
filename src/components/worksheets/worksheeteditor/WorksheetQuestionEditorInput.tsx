@@ -31,7 +31,7 @@ export function WorksheetQuestionEditorInput({
   return (
     <>
       {/* Multiple Choice Options */}
-      {question.type === "multiple_choice" && (
+      {question.type === "MULTIPLE_CHOICE" && (
         <div className="space-y-3">
           <div className="flex items-center justify-between">
             <Label className="text-sm font-medium">
@@ -77,23 +77,23 @@ export function WorksheetQuestionEditorInput({
       )}
 
       {/* True/False */}
-      {question.type === "true_false" && (
+      {question.type === "TRUE_FALSE" && (
         <div className="space-y-2">
           <Label className="text-sm font-medium">
             Correct Answer <span className="text-destructive">*</span>
           </Label>
           <div className="flex gap-3">
             <Button
-              variant={question.correctAnswer === true ? "default" : "outline"}
+              variant={question.answer === "true" ? "default" : "outline"}
               className="flex-1"
-              onClick={() => onUpdate({ correctAnswer: true })}
+              onClick={() => onUpdate({ answer: "true" })}
             >
               {t('create.questions.true')}
             </Button>
             <Button
-              variant={question.correctAnswer === false ? "default" : "outline"}
+              variant={question.answer === "false" ? "default" : "outline"}
               className="flex-1"
-              onClick={() => onUpdate({ correctAnswer: false })}
+              onClick={() => onUpdate({ answer: "false" })}
             >
               {t('create.questions.false')}
             </Button>
@@ -102,28 +102,28 @@ export function WorksheetQuestionEditorInput({
       )}
 
       {/* Math Expression */}
-      {question.type === "math" && (
+      {question.type === "MATH_EXPRESSION" && (
         <div className="space-y-1">
           <Label className="text-sm font-medium">
             Expected Math Expression
           </Label>
           <Input
-            value={question.mathExpression || ""}
-            onChange={(e) => onUpdate({ mathExpression: e.target.value })}
+            value={question.answer || ""}
+            onChange={(e) => onUpdate({ answer: e.target.value })}
             placeholder={t('create.questions.mathExpressionPlaceholder')}
           />
         </div>
       )}
 
       {/* Long Form */}
-      {question.type === "long_form" && (
+      {question.type === "LONG_ANSWER" && (
         <div className="space-y-1">
           <Label className="text-sm font-medium">
             Sample Answer (Optional)
           </Label>
           <Textarea
-            value={question.sampleAnswer || ""}
-            onChange={(e) => onUpdate({ sampleAnswer: e.target.value })}
+            value={question.answer || ""}
+            onChange={(e) => onUpdate({ answer: e.target.value })}
             placeholder={t('create.questions.sampleAnswerPlaceholder')}
             rows={4}
           />

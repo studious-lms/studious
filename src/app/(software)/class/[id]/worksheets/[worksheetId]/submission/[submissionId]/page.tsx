@@ -1,5 +1,6 @@
 "use client";
 
+import { useMemo } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
@@ -36,7 +37,40 @@ export default function WorksheetSubmissionPage() {
     retry: false,
   });
 
+  // Fetch worksheet response for grading info
+  const { data: worksheetResponse } = trpc.worksheet.getWorksheetSubmission.useQuery(
+    {
+      worksheetId,
+      submissionId,
+    },
+    {
+      enabled: !!submissionId,
+    }
+  );
+
   const isLoading = isWorksheetLoading || isSubmissionLoading;
+
+  // Calculate total points
+  const totalPoints = useMemo(() => {
+    return (worksheet?.questions || []).reduce((sum, q) => sum + (q.points || 0), 0);
+  }, [worksheet?.questions]);
+
+  // Calculate earned points from feedback
+  const earnedPoints = useMemo(() => {
+    if (!worksheetResponse?.responses) return null;
+    
+    let total = 0;
+    let hasAnyFeedback = false;
+    
+    worksheetResponse.responses.forEach((response) => {
+      if (response.points !== null && response.points !== undefined) {
+        total += response.points;
+        hasAnyFeedback = true;
+      }
+    });
+    
+    return hasAnyFeedback ? total : null;
+  }, [worksheetResponse?.responses]);
 
   // Determine if the worksheet should be readonly
   // Students: readonly if submitted, Teachers: always view mode
@@ -52,7 +86,7 @@ export default function WorksheetSubmissionPage() {
   // Loading skeleton
   if (isLoading) {
     return (
-      <div className="flex flex-col h-[calc(100vh-3rem)] gap-4 px-4 pt-4">
+      <div className="flex flex-col mx-auto max-w-3xl gap-4 px-4 pt-4">
         {/* Header Card Skeleton */}
         <Card className="flex-shrink-0">
           <CardContent className="p-4">
@@ -91,8 +125,7 @@ export default function WorksheetSubmissionPage() {
   return (
     <div className="flex flex-col h-[calc(100vh-3rem)] gap-4 px-4 pt-4">
       {/* Header Card */}
-      <Card className="flex-shrink-0 w-full max-w-[55rem] mx-auto">
-        <CardContent className="p-4">
+      <div className="mx-auto w-full max-w-3xl border-b pb-8 mb-8">
           <div className="flex flex-col gap-4">
             {/* Breadcrumb Navigation */}
             <div className="flex items-center gap-2">
@@ -123,6 +156,17 @@ export default function WorksheetSubmissionPage() {
                   {worksheet?.questions?.length || 0} questions
                 </span>
               </div>
+              {totalPoints > 0 && (
+                <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-muted/60">
+                  <span className="text-muted-foreground">
+                    {earnedPoints !== null ? (
+                      <><span className="font-medium text-foreground">{earnedPoints}</span> / {totalPoints} pts</>
+                    ) : (
+                      <>— / {totalPoints} pts</>
+                    )}
+                  </span>
+                </div>
+              )}
               <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-muted/60">
                 <Sparkles className="h-3 w-3 text-muted-foreground" />
                 <span className="text-muted-foreground">
@@ -131,11 +175,10 @@ export default function WorksheetSubmissionPage() {
               </div>
             </div>
           </div>
-        </CardContent>
-      </Card>
+      </div>
 
       {/* Worksheet Content */}
-      <div className="flex-shrink-0 w-full max-w-[55rem] mx-auto">
+      <div className="flex-shrink-0 w-full max-w-3xl mx-auto">
           {isReadonly ? (
             <WorksheetViewer
               submissionId={submissionId}
