@@ -13,7 +13,10 @@
     "schoolProgram": "Schulprogramm",
     "about": "Um",
     "press": "Drücken",
-    "signIn": "Anmelden"
+    "signIn": "Anmelden",
+    "lightMode": "Hellmodus",
+    "darkMode": "Dunkelmodus",
+    "languageSelector": "Sprachauswahl"
   },
   "classSidebar": {
     "overview": "Überblick",

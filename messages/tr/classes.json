@@ -1,23 +1,23 @@
 {
   "classes": {
     "title": "Sınıflar",
-    "description": "Öğretiminizi ve kayıtlı sınıflarınızı yönetin",
-    "joinClass": "Sınıfa Katıl",
+    "description": "Öğretim faaliyetlerinizi ve kayıtlı derslerinizi yönetin.",
+    "joinClass": "Derse Katıl",
     "createClass": "Sınıf Oluştur",
     "searchPlaceholder": "Sınıfları ara...",
     "teaching": "Öğretim",
     "enrolled": "Kayıtlı",
-    "noClassesFound": "Sınıf bulunamadı",
-    "noTeachingClassesFound": "\"{query}\" ile eşleşen öğretim dersi bulunamadı",
-    "noEnrolledClassesFound": "\"{query}\" ile eşleşen kayıtlı sınıf bulunamadı",
-    "noClassesYet": "Henüz ders yok",
+    "noClassesFound": "Hiçbir ders bulunamadı.",
+    "noTeachingClassesFound": "\"{query}\" ile eşleşen hiçbir öğretim sınıfı bulunamadı.",
+    "noEnrolledClassesFound": "\"{query}\" ile eşleşen kayıtlı ders bulunamadı.",
+    "noClassesYet": "Henüz ders yok.",
     "noClassesYetDesc": "Ödevleri, notları ve öğrenci etkileşimlerini yönetmeye başlamak için ilk sınıfınızı oluşturun.",
     "noEnrolledClasses": "Kayıtlı ders yok",
-    "noEnrolledClassesDesc": "Öğretmeninizin sağladığı davet kodunu veya bağlantıyı kullanarak bir sınıfa katılın.",
-    "classDeleted": "Sınıf başarıyla silindi",
-    "classDeleteFailed": "Sınıf silinemedi",
-    "failedToLoad": "Sınıflar yüklenemedi",
-    "classLeft": "Sınıftan başarıyla ayrıldınız",
-    "classLeaveFailed": "Sınıftan ayrılma başarısız"
+    "noEnrolledClassesDesc": "Öğretmeniniz tarafından verilen davet kodu veya bağlantıyı kullanarak bir derse katılın.",
+    "classDeleted": "Sınıf başarıyla silindi.",
+    "classDeleteFailed": "Sınıf silme işlemi başarısız oldu.",
+    "failedToLoad": "Sınıflar yüklenemedi.",
+    "classLeft": "Dersi başarıyla tamamladım.",
+    "classLeaveFailed": "Dersten çıkmayı başaramadı."
   }
 }

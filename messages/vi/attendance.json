@@ -1,11 +1,23 @@
 {
   "attendance": {
-    "title": "Sự kiện lớp học & Điểm danh",
-    "subtitle": "Theo dõi sự tham dự của sinh viên cho mỗi sự kiện",
+    "title": "Các sự kiện và điểm danh của lớp học",
+    "subtitle": "Theo dõi sự có mặt của học sinh cho mỗi sự kiện.",
     "saving": {
       "auto": "Tự động lưu...",
-      "unsaved": "Những thay đổi chưa lưu",
+      "unsaved": "Thay đổi chưa được lưu",
       "saving": "Đang lưu..."
+    },
+    "eventDetail": {
+      "title": "Chi tiết sự kiện",
+      "basicInfo": "Thông tin cơ bản",
+      "description": "Quản lý thông tin sự kiện và điểm danh học sinh.",
+      "address": "Địa chỉ",
+      "date": "Ngày",
+      "time": "Thời gian",
+      "notFound": {
+        "title": "Sự kiện không được tìm thấy",
+        "description": "Sự kiện này có thể đã bị xóa hoặc bạn không có quyền truy cập."
+      }
     },
     "table": {
       "date": "Ngày",
@@ -15,31 +27,33 @@
       "actions": "Hành động"
     },
     "actions": {
+      "back": "Mặt sau",
+      "export": "Xuất khẩu",
       "viewDetails": "Xem chi tiết",
       "editEvent": "Chỉnh sửa sự kiện",
       "deleteEvent": "Xóa sự kiện",
       "createEvent": "Tạo sự kiện",
       "saveAttendance": "Lưu điểm danh",
-      "markAllPresent": "Đánh dấu tất cả hiện diện",
-      "markAllAbsent": "Đánh dấu tất cả vắng mặt"
+      "markAllPresent": "Đánh dấu tất cả những người có mặt",
+      "markAllAbsent": "Đánh dấu tất cả người vắng mặt"
     },
     "allEvents": {
       "title": "Tất cả sự kiện",
-      "description": "Lịch sử đầy đủ các sự kiện lớp học và hồ sơ điểm danh",
+      "description": "Lịch sử đầy đủ các sự kiện của lớp và hồ sơ điểm danh.",
       "searchPlaceholder": "Tìm kiếm sự kiện...",
       "empty": {
-        "title": "Không tìm thấy sự kiện nào",
-        "description": "Tạo sự kiện đầu tiên của bạn để bắt đầu theo dõi lượng người tham dự"
+        "title": "Không tìm thấy sự kiện nào.",
+        "description": "Tạo sự kiện đầu tiên để bắt đầu theo dõi số người tham dự."
       }
     },
     "eventsList": {
       "pickDate": "Chọn ngày",
-      "untitled": "Sự kiện chưa có tiêu đề",
+      "untitled": "Sự kiện không tên",
       "empty": {
-        "noEventsOnDate": "Không có sự kiện nào vào ngày này",
-        "noEventsOnDateDescription": "Không có sự kiện nào được lên lịch cho {date}. Hãy thử chọn ngày khác hoặc tạo sự kiện mới.",
-        "noEvents": "Không tìm thấy sự kiện nào",
-        "noEventsDescription": "Tạo sự kiện đầu tiên của bạn để bắt đầu theo dõi lượng người tham dự",
+        "noEventsOnDate": "Không có sự kiện nào vào ngày này.",
+        "noEventsOnDateDescription": "Không có sự kiện nào được lên lịch cho {date}. Hãy thử chọn một ngày khác hoặc tạo một sự kiện mới.",
+        "noEvents": "Không tìm thấy sự kiện nào.",
+        "noEventsDescription": "Tạo sự kiện đầu tiên để bắt đầu theo dõi số người tham dự.",
         "createForDate": "Tạo sự kiện cho ngày này",
         "createFirst": "Tạo sự kiện đầu tiên"
       }
@@ -52,46 +66,46 @@
     },
     "roster": {
       "title": "Danh sách sinh viên",
-      "description": "Nhấp vào các nút trạng thái để đánh dấu điểm danh cho từng học sinh",
+      "description": "Nhấp vào các nút trạng thái để đánh dấu điểm danh cho từng học sinh.",
       "empty": {
-        "title": "Không có học sinh nào đăng ký",
-        "description": "Học sinh sẽ xuất hiện ở đây khi họ tham gia lớp học"
+        "title": "Không có sinh viên nào đăng ký",
+        "description": "Sinh viên sẽ xuất hiện ở đây khi họ tham gia lớp học."
       }
     },
     "prompt": {
       "title": "Chọn một sự kiện",
-      "description": "Chọn một sự kiện ở trên để xem và quản lý điểm danh của học sinh"
+      "description": "Chọn một sự kiện ở trên để xem và quản lý việc điểm danh học sinh."
     },
     "status": {
       "present": "Hiện tại",
       "late": "Muộn",
       "absent": "Vắng mặt",
-      "notTaken": "Không được lấy"
+      "notTaken": "Chưa chụp"
     },
     "student": {
-      "title": "Sự tham dự của tôi",
-      "subtitle": "Theo dõi sự tham dự của bạn trong {className}",
+      "title": "Sự có mặt của tôi",
+      "subtitle": "Theo dõi điểm danh của bạn cho {className}",
       "attendanceRate": "Tỷ lệ tham dự",
-      "history": "Lịch sử tham dự",
+      "history": "Lịch sử điểm danh",
       "event": "Sự kiện",
       "status": "Trạng thái",
       "searchPlaceholder": "Tìm kiếm sự kiện...",
       "empty": {
-        "title": "Không có hồ sơ tham dự",
-        "description": "Sự tham dự của bạn sẽ xuất hiện ở đây sau khi sự kiện được tạo và điểm danh"
+        "title": "Không có hồ sơ điểm danh",
+        "description": "Sự hiện diện của bạn sẽ được hiển thị ở đây sau khi sự kiện được tạo và điểm danh xong."
       }
     },
     "deleteDialog": {
       "title": "Xóa sự kiện",
-      "description": "Bạn có chắc chắn muốn xóa \"{eventName}\" không? Hành động này không thể hoàn tác và sẽ xóa tất cả hồ sơ chấm công liên quan.",
+      "description": "Bạn có chắc chắn muốn xóa \"{eventName}\" không? Hành động này không thể hoàn tác và sẽ xóa tất cả các bản ghi điểm danh liên quan.",
       "deleting": "Đang xóa...",
       "deleteButton": "Xóa sự kiện"
     },
     "toast": {
-      "attendanceSaved": "Điểm danh đã được lưu thành công",
-      "attendanceSaveFailed": "Không lưu được điểm danh",
-      "eventDeleted": "Sự kiện đã xóa thành công",
-      "eventDeleteFailed": "Không xóa được sự kiện"
+      "attendanceSaved": "Thông tin điểm danh đã được lưu thành công.",
+      "attendanceSaveFailed": "Không thể lưu điểm danh",
+      "eventDeleted": "Sự kiện đã được xóa thành công",
+      "eventDeleteFailed": "Không thể xóa sự kiện"
     }
   }
 }

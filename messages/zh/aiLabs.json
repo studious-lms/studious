@@ -6,10 +6,20 @@
     "createNew": "创建新内容",
     "aiGenerated": "人工智能生成",
     "deleteConfirm": "您确定要删除此人工智能实验室吗？此操作无法撤销。",
+    "stats": {
+      "drafts": "草稿",
+      "draftsDesc": "内容正在制作中",
+      "chats": "AI猫",
+      "chatsDesc": "积极对话",
+      "messages": "消息",
+      "messagesDesc": "人工智能交互总量",
+      "generated": "生成",
+      "generatedDesc": "创建的总内容量"
+    },
     "widgets": {
       "assignment": {
         "title": "任务",
-        "description": "创建借助人工智能辅助的交互式作业"
+        "description": "借助人工智能创建交互式作业"
       },
       "quiz": {
         "title": "测验",

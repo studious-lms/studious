@@ -2,19 +2,24 @@
   "members": {
     "title": "สมาชิก",
     "counts": {
-      "totalMembers": "สมาชิก {count} คน"
+      "totalMembers": "{count} สมาชิก"
+    },
+    "stats": {
+      "totalMembers": "จำนวนสมาชิกทั้งหมด",
+      "teachers": "ครู",
+      "students": "นักเรียน"
     },
     "actions": {
       "inviteMember": "เชิญสมาชิก",
       "copy": "สำเนา",
-      "regenerate": "สร้างขึ้นใหม่",
+      "regenerate": "สร้างใหม่",
       "message": "ข้อความ",
       "viewProfile": "ดูโปรไฟล์",
       "viewGrades": "ดูเกรด",
       "makeTeacher": "สร้างครู",
       "makeStudent": "สร้างนักเรียน",
       "removeFromClass": "ลบออกจากชั้นเรียน",
-      "removeAccess": "ลบการเข้าถึง",
+      "removeAccess": "ลบสิทธิ์การเข้าถึง",
       "tryAgain": "ลองอีกครั้ง"
     },
     "labels": {
@@ -23,8 +28,8 @@
       "you": "คุณ"
     },
     "invite": {
-      "title": "รหัสเชิญเข้าชั้นเรียน",
-      "description": "แบ่งปันรหัสนี้กับนักเรียนเพื่อเข้าร่วมชั้นเรียน"
+      "title": "รหัสเชิญเข้าเรียน",
+      "description": "แชร์รหัสนี้ให้นักเรียนเพื่อเข้าร่วมชั้นเรียน"
     },
     "search": {
       "placeholder": "ค้นหาสมาชิก..."
@@ -36,14 +41,14 @@
     "students": {
       "empty": {
         "title": "ไม่พบนักเรียน",
-        "matchNone": "ไม่มีนักเรียนที่ตรงกับ \"{query}\"",
+        "matchNone": "ไม่มีนักเรียนคนไหนตรงกับ \"{query}\"",
         "noStudents": "ยังไม่มีนักเรียนเข้าร่วมชั้นเรียนนี้"
       }
     },
     "teachers": {
       "empty": {
         "title": "ไม่พบครู",
-        "matchNone": "ไม่มีครูที่ตรงกัน \"{query}\"",
+        "matchNone": "ไม่มีครูคนไหนตรงกับ \"{query}\"",
         "noTeachers": "ไม่มีการเพิ่มครูเพิ่มเติม"
       }
     },
@@ -51,12 +56,12 @@
       "inviteRegenerated": "สร้างรหัสเชิญใหม่สำเร็จแล้ว",
       "copied": "คัดลอกรหัสเชิญไปยังคลิปบอร์ดแล้ว",
       "roleChanged": "บทบาทเปลี่ยนเป็น {role}",
-      "memberRemoved": "สมาชิกถูกลบออกสำเร็จแล้ว"
+      "memberRemoved": "ลบสมาชิกออกเรียบร้อยแล้ว"
     },
     "errors": {
       "regenerateFailed": "ไม่สามารถสร้างรหัสเชิญใหม่ได้",
       "changeRoleFailed": "ไม่สามารถเปลี่ยนบทบาทได้",
-      "removeFailed": "ไม่สามารถลบสมาชิกได้",
+      "removeFailed": "ไม่สามารถลบสมาชิกออกได้",
       "failedToLoad": "ไม่สามารถโหลดสมาชิกได้"
     },
     "profile": {

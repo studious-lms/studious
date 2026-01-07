@@ -1,5 +1,6 @@
 {
   "common": {
+    "upload": "Wgrywać",
     "save": "Ratować",
     "cancel": "Anulować",
     "delete": "Usuwać",
@@ -250,8 +251,8 @@
     "futureDevelopments": {
       "title": "Przyszłe wydarzenia",
       "subtitle": "Nasza mapa drogowa transformacji edukacji",
-      "cas": {
-        "title": "Perspektywa CAS",
+      "sustainable": {
+        "title": "Zrównoważona Perspektywa",
         "description": "Wspieranie niedofinansowanych szkół poprzez darowizny i materiały, dzięki czemu wysokiej jakości edukacja jest dostępna dla wszystkich."
       },
       "features": {
@@ -381,7 +382,7 @@
         },
         "changesToTerms": {
           "title": "14. Zmiany Warunków",
-          "content": "Zastrzegamy sobie prawo do zmiany niniejszych Warunków w dowolnym momencie. Powiadomimy użytkowników o istotnych zmianach, publikując zaktualizowane Warunki na naszej stronie internetowej i aktualizując datę „Ostatniej aktualizacji”. Dalsze korzystanie z Usługi po wprowadzeniu takich zmian oznacza akceptację zmienionych Warunków."
+          "content": "Zastrzegamy sobie prawo do zmiany niniejszych Warunków w dowolnym momencie. O istotnych zmianach powiadomimy użytkowników, publikując zaktualizowane Warunki na naszej stronie internetowej i aktualizując datę „Ostatniej aktualizacji”. Dalsze korzystanie z Usługi po wprowadzeniu takich zmian oznacza akceptację zmienionych Warunków."
         },
         "contactUs": {
           "title": "15. Skontaktuj się z nami",
@@ -1349,9 +1350,9 @@
         "disclosureRequirements": "Wymagania dotyczące ujawniania informacji",
         "level1": {
           "title": "Praca samodzielna poziomu 1 (bez sztucznej inteligencji)",
-          "description": "Brak. Podstawowe sprawdzanie pisowni i gramatyki jest dopuszczalne.",
+          "description": "Brak. Podstawowe funkcje sprawdzania pisowni i gramatyki są dopuszczalne.",
           "useCases": "Polegaj całkowicie na własnej wiedzy, rozumowaniu i wysiłku.",
-          "studentResponsibilities": "Brak. Podstawowe sprawdzanie pisowni i gramatyki jest dopuszczalne.",
+          "studentResponsibilities": "Brak. Podstawowe funkcje sprawdzania pisowni i gramatyki są dopuszczalne.",
           "disclosureRequirements": "Ujawnianie informacji o sztucznej inteligencji nie jest wymagane (użycie sztucznej inteligencji jest zabronione)."
         },
         "level2": {

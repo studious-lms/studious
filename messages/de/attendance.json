@@ -7,6 +7,18 @@
       "unsaved": "Nicht gespeicherte Änderungen",
       "saving": "Speichern..."
     },
+    "eventDetail": {
+      "title": "Veranstaltungsdetails",
+      "basicInfo": "Grundlegende Informationen",
+      "description": "Veranstaltungsdetails und Anwesenheitskontrolle der Studierenden verwalten",
+      "address": "Adresse",
+      "date": "Datum",
+      "time": "Zeit",
+      "notFound": {
+        "title": "Ereignis nicht gefunden",
+        "description": "Diese Veranstaltung wurde möglicherweise gelöscht oder Sie haben keinen Zugriff darauf."
+      }
+    },
     "table": {
       "date": "Datum",
       "eventName": "Veranstaltungsname",
@@ -15,6 +27,8 @@
       "actions": "Aktionen"
     },
     "actions": {
+      "back": "Zurück",
+      "export": "Export",
       "viewDetails": "Details anzeigen",
       "editEvent": "Ereignis bearbeiten",
       "deleteEvent": "Löschereignis",

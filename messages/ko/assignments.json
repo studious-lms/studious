@@ -3,40 +3,41 @@
     "title": "과제 세부 정보",
     "description": "설명",
     "instructions": "지침",
-    "dueDate": "두 날짜",
-    "maxPoints": "최대 포인트",
+    "dueDate": "두 번의 데이트",
+    "maxPoints": "최대 점수",
     "submissions": "제출물",
     "submitted": "제출된",
     "notSubmitted": "제출되지 않음",
-    "graded": "등급",
+    "graded": "등급이 매겨짐",
     "pending": "보류 중",
     "late": "늦은",
-    "onTime": "정시에",
-    "attachments": "첨부 파일",
+    "onTime": "정시",
+    "attachments": "첨부파일",
     "rubric": "표제",
     "gradingBoundary": "등급 경계",
     "submissionDetails": "제출 세부 정보",
-    "submittedBy": "제출자",
+    "submittedBy": "제출자:",
     "submittedAt": "제출됨",
     "grade": "등급",
     "feedback": "피드백",
     "files": "파일",
-    "noFiles": "첨부된 파일이 없습니다",
-    "noSubmissions": "아직 제출된 내용이 없습니다",
-    "noSubmissionsDescription": "학생들이 작업을 제출하면 제출물이 여기에 표시됩니다.",
+    "noFiles": "첨부 파일이 없습니다.",
+    "noSubmissions": "아직 제출된 내용이 없습니다.",
+    "noSubmissionsDescription": "학생들이 과제를 제출하면 여기에 제출물이 표시됩니다.",
     "actions": {
-      "edit": "과제 편집",
-      "delete": "할당 삭제",
-      "viewSubmission": "제출 보기",
+      "edit": "과제 수정",
+      "delete": "과제 삭제",
+      "viewSubmission": "제출물 보기",
       "gradeSubmission": "등급",
+      "back": "뒤쪽에",
       "downloadAll": "모두 다운로드",
-      "exportGrades": "등급 내보내기"
+      "exportGrades": "수출 등급"
     },
     "stats": {
-      "totalSubmissions": "총 제출 수",
-      "averageGrade": "평균 성적",
+      "totalSubmissions": "총 제출 건수",
+      "averageGrade": "평균 학점",
       "submissionRate": "제출률",
-      "gradedCount": "등급"
+      "gradedCount": "등급이 매겨짐"
     },
     "table": {
       "student": "학생",
@@ -46,8 +47,8 @@
       "actions": "행위"
     },
     "toasts": {
-      "gradeUpdated": "등급이 성공적으로 업데이트되었습니다.",
-      "deleted": "할당이 삭제되었습니다",
+      "gradeUpdated": "성적이 성공적으로 업데이트되었습니다.",
+      "deleted": "과제가 삭제되었습니다",
       "error": "오류가 발생했습니다"
     }
   }

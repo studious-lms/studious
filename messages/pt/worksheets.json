@@ -31,7 +31,9 @@
       "detach": "Detalhes"
     },
     "search": {
-      "placeholder": "Pesquisar planilhas..."
+      "placeholder": "Pesquisar planilhas...",
+      "noResults": "Nenhuma planilha encontrada",
+      "noResultsDesc": "Tente um termo de pesquisa diferente ou limpe sua pesquisa."
     },
     "empty": {
       "title": "Nenhuma planilha encontrada",

@@ -4,15 +4,20 @@
     "counts": {
       "totalMembers": "{count} thành viên"
     },
+    "stats": {
+      "totalMembers": "Tổng số thành viên",
+      "teachers": "Giáo viên",
+      "students": "Sinh viên"
+    },
     "actions": {
       "inviteMember": "Mời thành viên",
       "copy": "Sao chép",
       "regenerate": "Tái tạo",
       "message": "Tin nhắn",
       "viewProfile": "Xem hồ sơ",
-      "viewGrades": "Xem Điểm",
-      "makeTeacher": "Làm giáo viên",
-      "makeStudent": "Làm cho sinh viên",
+      "viewGrades": "Xem điểm số",
+      "makeTeacher": "Tạo giáo viên",
+      "makeStudent": "Giúp học sinh",
       "removeFromClass": "Xóa khỏi lớp",
       "removeAccess": "Xóa quyền truy cập",
       "tryAgain": "Thử lại"
@@ -23,48 +28,48 @@
       "you": "Bạn"
     },
     "invite": {
-      "title": "Mã mời lớp học",
-      "description": "Chia sẻ mã này với học sinh để tham gia lớp học"
+      "title": "Mã mời tham gia lớp học",
+      "description": "Hãy chia sẻ mã này với học sinh để các em tham gia lớp học."
     },
     "search": {
       "placeholder": "Tìm kiếm thành viên..."
     },
     "tabs": {
-      "students": "Học sinh",
+      "students": "Sinh viên",
       "teachers": "Giáo viên"
     },
     "students": {
       "empty": {
-        "title": "Không tìm thấy học sinh nào",
+        "title": "Không tìm thấy học sinh nào.",
         "matchNone": "Không có học sinh nào khớp với \"{query}\"",
-        "noStudents": "Chưa có học viên nào tham gia lớp này"
+        "noStudents": "Hiện chưa có học sinh nào tham gia lớp học này."
       }
     },
     "teachers": {
       "empty": {
-        "title": "Không tìm thấy giáo viên",
+        "title": "Không tìm thấy giáo viên nào.",
         "matchNone": "Không có giáo viên nào khớp với \"{query}\"",
-        "noTeachers": "Không có giáo viên bổ sung nào được thêm vào"
+        "noTeachers": "Không có giáo viên nào được bổ sung."
       }
     },
     "toasts": {
       "inviteRegenerated": "Mã mời đã được tạo lại thành công",
-      "copied": "Mã mời đã được sao chép vào bảng tạm",
+      "copied": "Mã mời đã được sao chép vào clipboard",
       "roleChanged": "Vai trò đã thay đổi thành {role}",
-      "memberRemoved": "Đã xóa thành viên thành công"
+      "memberRemoved": "Thành viên đã được xóa thành công."
     },
     "errors": {
-      "regenerateFailed": "Không thể tạo lại mã mời",
+      "regenerateFailed": "Không thể tạo lại mã mời.",
       "changeRoleFailed": "Không thể thay đổi vai trò",
-      "removeFailed": "Không xóa được thành viên",
-      "failedToLoad": "Không tải được thành viên"
+      "removeFailed": "Không thể xóa thành viên",
+      "failedToLoad": "Không thể tải thành viên"
     },
     "profile": {
-      "title": "Hồ sơ Người dùng",
+      "title": "Hồ sơ người dùng",
       "description": "Xem thông tin hồ sơ thành viên",
-      "information": "Thông tin Hồ sơ",
+      "information": "Thông tin hồ sơ",
       "location": "Vị trí",
-      "website": "Trang Web"
+      "website": "Trang web"
     }
   }
 }

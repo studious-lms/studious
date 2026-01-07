@@ -7,6 +7,13 @@
     "post": "Posta",
     "posting": "Publicerar...",
     "noPosts": "Inga inlägg ännu",
-    "createFirstPost": "Skapa första inlägget"
+    "noPostsDescription": "Dela meddelanden, uppgifter och uppdateringar med din klass.",
+    "createFirstPost": "Skapa första inlägget",
+    "messages": {
+      "uploadFailed": "Misslyckades med att skapa meddelandet, filuppladdningen misslyckades",
+      "createFailed": "Misslyckades med att skapa meddelandet",
+      "createSuccess": "Meddelandet skapades",
+      "creating": "Skapar meddelande..."
+    }
   }
 }

@@ -7,6 +7,13 @@
     "post": "Publicar",
     "posting": "Publicando...",
     "noPosts": "Ainda não há publicações.",
-    "createFirstPost": "Criar primeira publicação"
+    "noPostsDescription": "Compartilhe avisos, tarefas e atualizações com sua turma.",
+    "createFirstPost": "Criar primeira publicação",
+    "messages": {
+      "uploadFailed": "Falha ao criar o anúncio, falha no upload do arquivo",
+      "createFailed": "Falha ao criar o anúncio",
+      "createSuccess": "Anúncio criado com sucesso",
+      "creating": "Criando anúncio..."
+    }
   }
 }

@@ -77,44 +77,52 @@ export default function Agenda() {
 
       <Calendar events={formattedEvents}>
         <div className="h-[calc(100vh-200px)] flex flex-col">
-          <div className="flex items-center gap-2 mb-6">
-            <CalendarViewTrigger className="aria-[current=true]:bg-accent" view="day">
-              {tViews('day')}
-            </CalendarViewTrigger>
-            <CalendarViewTrigger view="week" className="aria-[current=true]:bg-accent">
-              {tViews('week')}
-            </CalendarViewTrigger>
-            <CalendarViewTrigger view="month" className="aria-[current=true]:bg-accent">
-              {tViews('month')}
-            </CalendarViewTrigger>
-            <CalendarViewTrigger view="year" className="aria-[current=true]:bg-accent">
-              {tViews('year')}
-            </CalendarViewTrigger>
+          <div className="flex flex-col gap-3 mb-6 sm:flex-row sm:flex-wrap sm:items-center sm:gap-2">
+            {/* View toggles */}
+            <div className="flex items-center gap-1 overflow-x-auto">
+              <CalendarViewTrigger className="aria-[current=true]:bg-accent text-xs sm:text-sm" view="day">
+                {tViews('day')}
+              </CalendarViewTrigger>
+              <CalendarViewTrigger view="week" className="hidden sm:inline-flex aria-[current=true]:bg-accent text-xs sm:text-sm">
+                {tViews('week')}
+              </CalendarViewTrigger>
+              <CalendarViewTrigger view="month" className="aria-[current=true]:bg-accent text-xs sm:text-sm">
+                {tViews('month')}
+              </CalendarViewTrigger>
+              <CalendarViewTrigger view="year" className="hidden sm:inline-flex aria-[current=true]:bg-accent text-xs sm:text-sm">
+                {tViews('year')}
+              </CalendarViewTrigger>
+            </div>
 
-            <span className="flex-1" />
+            <span className="hidden sm:block sm:flex-1" />
 
-            <CalendarCurrentDate />
+            {/* Navigation controls */}
+            <div className="flex items-center justify-between gap-2 sm:justify-end">
+              <CalendarCurrentDate />
 
-            <CalendarPrevTrigger>
-              <ChevronLeft size={20} />
-              <span className="sr-only">{t('previous')}</span>
-            </CalendarPrevTrigger>
+              <div className="flex items-center gap-1">
+                <CalendarPrevTrigger>
+                  <ChevronLeft size={20} />
+                  <span className="sr-only">{t('previous')}</span>
+                </CalendarPrevTrigger>
 
-            <CalendarTodayTrigger>{t('today')}</CalendarTodayTrigger>
+                <CalendarTodayTrigger className="text-xs sm:text-sm">{t('today')}</CalendarTodayTrigger>
 
-            <CalendarNextTrigger>
-              <ChevronRight size={20} />
-              <span className="sr-only">{t('next')}</span>
-            </CalendarNextTrigger>
+                <CalendarNextTrigger>
+                  <ChevronRight size={20} />
+                  <span className="sr-only">{t('next')}</span>
+                </CalendarNextTrigger>
+              </div>
 
-            <CreateEventButton onEventCreated={() => {
-              refetch();
-            }}>
-              <Button size="sm">
-                <Plus className="h-4 w-4 mr-2" />
-                {t('addEvent')}
-              </Button>
-            </CreateEventButton>
+              <CreateEventButton onEventCreated={() => {
+                refetch();
+              }}>
+                <Button size="sm" className="text-xs sm:text-sm">
+                  <Plus className="h-4 w-4 sm:mr-2" />
+                  <span className="hidden sm:inline">{t('addEvent')}</span>
+                </Button>
+              </CreateEventButton>
+            </div>
           </div>
 
           <div className="flex-1 overflow-auto relative">

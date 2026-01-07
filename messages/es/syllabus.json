@@ -13,9 +13,13 @@
     },
     "stats": {
       "totalAssignments": "Asignaciones totales",
+      "totalAssignmentsDesc": "Todo el trabajo del curso",
       "completionRate": "Tasa de finalización",
+      "completionRateDesc": "Calificado vs. total",
       "totalPoints": "Puntos totales",
-      "upcoming": "Próximamente"
+      "totalPointsDesc": "Máximo alcanzable",
+      "upcoming": "Próximamente",
+      "upcomingDesc": "Tareas pendientes"
     },
     "overview": {
       "title": "Descripción del curso",
@@ -40,12 +44,12 @@
       "dueDate": "Dos citas",
       "points": "Agujas",
       "weight": "Peso",
-      "status": "Estado",
-      "pts": "puntos"
+      "pts": "puntos",
+      "type": "Tipo"
     },
     "status": {
       "graded": "Calificado",
-      "pending": "Pendiente"
+      "ungraded": "Sin calificar"
     },
     "courseInfo": {
       "title": "Información del curso",

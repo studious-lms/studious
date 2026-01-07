@@ -31,7 +31,9 @@
       "detach": "Detalii"
     },
     "search": {
-      "placeholder": "Căutați foi de lucru..."
+      "placeholder": "Căutați foi de lucru...",
+      "noResults": "Nu au fost găsite foi de lucru",
+      "noResultsDesc": "Încercați un alt termen de căutare sau ștergeți căutarea."
     },
     "empty": {
       "title": "Nu au fost găsite foi de lucru",

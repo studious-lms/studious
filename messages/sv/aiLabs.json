@@ -6,6 +6,16 @@
     "createNew": "Skapa nytt innehåll",
     "aiGenerated": "AI-genererad",
     "deleteConfirm": "Är du säker på att du vill ta bort detta AI-labb? Den här åtgärden kan inte ångras.",
+    "stats": {
+      "drafts": "Utkast",
+      "draftsDesc": "Innehåll pågår",
+      "chats": "AI-katter",
+      "chatsDesc": "Aktiva konversationer",
+      "messages": "Meddelanden",
+      "messagesDesc": "Totalt antal AI-interaktioner",
+      "generated": "Genererad",
+      "generatedDesc": "Totalt skapat innehåll"
+    },
     "widgets": {
       "assignment": {
         "title": "Uppdrag",
@@ -20,7 +30,7 @@
         "description": "Skapa övningsblad och arbetsblad"
       },
       "lessonPlan": {
-        "title": "Lektionsplan",
+        "title": "Lektionsplanering",
         "description": "Utforma omfattande lektionsplaner"
       },
       "rubric": {

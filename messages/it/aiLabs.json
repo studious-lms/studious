@@ -6,9 +6,19 @@
     "createNew": "Crea nuovi contenuti",
     "aiGenerated": "Generato dall'IA",
     "deleteConfirm": "Vuoi davvero eliminare questo laboratorio di intelligenza artificiale? Questa azione non può essere annullata.",
+    "stats": {
+      "drafts": "Bozze",
+      "draftsDesc": "Contenuto in corso",
+      "chats": "Gatti AI",
+      "chatsDesc": "Conversazioni attive",
+      "messages": "Messaggi",
+      "messagesDesc": "Interazioni totali dell'IA",
+      "generated": "Generato",
+      "generatedDesc": "Contenuto totale creato"
+    },
     "widgets": {
       "assignment": {
-        "title": "Assegnazione",
+        "title": "Incarico",
         "description": "Crea compiti interattivi con l'assistenza dell'intelligenza artificiale"
       },
       "quiz": {

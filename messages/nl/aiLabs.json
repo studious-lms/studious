@@ -1,72 +1,82 @@
 {
   "aiLabs": {
-    "title": "AI-labs",
-    "subtitle": "Creëer educatieve content met AI-ondersteuning",
-    "aiPowered": "AI-aangedreven",
+    "title": "AI-laboratoria",
+    "subtitle": "Maak educatieve content met behulp van AI.",
+    "aiPowered": "Aangedreven door AI",
     "createNew": "Nieuwe inhoud maken",
-    "aiGenerated": "AI gegenereerd",
-    "deleteConfirm": "Weet u zeker dat u dit AI Lab wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt.",
+    "aiGenerated": "AI-gegenereerd",
+    "deleteConfirm": "Weet je zeker dat je dit AI-lab wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt.",
+    "stats": {
+      "drafts": "Ontwerpen",
+      "draftsDesc": "Inhoud wordt nog verwerkt",
+      "chats": "AI-katten",
+      "chatsDesc": "Actieve gesprekken",
+      "messages": "Berichten",
+      "messagesDesc": "Totaal aantal AI-interacties",
+      "generated": "gegenereerd",
+      "generatedDesc": "Totale inhoud gecreëerd"
+    },
     "widgets": {
       "assignment": {
         "title": "Opdracht",
-        "description": "Interactieve opdrachten maken met AI-assistentie"
+        "description": "Maak interactieve opdrachten met behulp van AI."
       },
       "quiz": {
         "title": "Quiz",
-        "description": "Genereer quizzen met verschillende vraagtypen"
+        "description": "Maak quizzen met verschillende soorten vragen."
       },
       "worksheet": {
         "title": "Werkblad",
-        "description": "Maak oefenbladen en oefeningen"
+        "description": "Maak oefenbladen en -oefeningen."
       },
       "lessonPlan": {
         "title": "Lesplan",
-        "description": "Ontwerp uitgebreide lesplannen"
+        "description": "Ontwerp uitgebreide lesplannen."
       },
       "rubric": {
         "title": "Rubriek",
-        "description": "Maak gedetailleerde beoordelingsrubrieken"
+        "description": "Stel gedetailleerde beoordelingscriteria op."
       }
     },
     "tabs": {
-      "drafts": "Ontwerplabs",
+      "drafts": "Ontwerplaboratoria",
       "chats": "AI-katten"
     },
     "drafts": {
-      "title": "Ontwerplabs ({count})",
+      "title": "Conceptlaboratoria ({count})",
       "empty": {
-        "title": "Nog geen laboratoriumontwerpen",
-        "description": "Maak uw eerste door AI gegenereerde educatieve content met behulp van de bovenstaande widgets."
+        "title": "Nog geen labconcepten beschikbaar",
+        "description": "Maak je eerste door AI gegenereerde educatieve content met behulp van de widgets hierboven."
       }
     },
     "chats": {
-      "title": "AI-labs ({count})",
+      "title": "AI Labs ({count})",
       "active": "Actief",
       "messageCount": "{count} berichten",
       "createdBy": "Gemaakt door {name}",
       "empty": {
         "title": "Nog geen AI Labs",
-        "description": "Richt uw eerste AI Lab op en ga met AI samenwerken aan educatieve content."
+        "description": "Maak je eerste AI-lab aan om te beginnen met samenwerken met AI aan educatieve content."
       }
     },
     "toast": {
-      "labCreated": "AI Lab succesvol aangemaakt!",
-      "labCreateFailed": "Het is niet gelukt om AI Lab te maken:",
+      "labCreated": "AI-lab succesvol opgezet!",
+      "labCreateFailed": "Het is niet gelukt om een AI-lab aan te maken:",
       "labDeleted": "AI Lab succesvol verwijderd!",
       "labDeleteFailed": "Het verwijderen van AI Lab is mislukt:"
     }
   },
   "aiLabChat": {
     "backButton": "Terug naar AI Labs",
-    "loading": "Bezig met laden...",
+    "loading": "Laden...",
     "aiThinking": "AI-denken...",
     "getAIHelp": "Krijg AI-hulp",
     "notFound": {
       "title": "Labchat niet gevonden",
-      "description": "Dit AI Lab is mogelijk verwijderd of u heeft er geen toegang toe."
+      "description": "Dit AI-lab is mogelijk verwijderd of u hebt er geen toegang toe."
     },
     "toast": {
-      "messageFailed": "Bericht kon niet worden verzonden:"
+      "messageFailed": "Bericht verzenden mislukt:"
     }
   }
 }

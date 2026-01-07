@@ -4,9 +4,9 @@
     "subtitle": "Urus fail dan sumber kelas",
     "actions": {
       "newFolder": "Folder Baharu",
-      "upload": "Muat naik",
+      "upload": "Muat Naik",
       "uploadFiles": "Muat Naik Fail",
-      "createFolder": "Buat Folder",
+      "createFolder": "Cipta Folder",
       "download": "Muat turun",
       "share": "Kongsi",
       "delete": "Padam",
@@ -14,22 +14,22 @@
       "sort": "Isih"
     },
     "toasts": {
-      "folderCreated": "Folder berjaya dibuat",
+      "folderCreated": "Folder berjaya dicipta",
       "folderDeleted": "Folder berjaya dipadamkan",
       "folderRenamed": "Folder berjaya dinamakan semula",
       "folderMoved": "Folder berjaya dialihkan",
       "filesUploaded": "Fail berjaya dimuat naik",
-      "fileDeleted": "Fail berjaya dipadamkan",
+      "fileDeleted": "Fail berjaya dipadam",
       "fileRenamed": "Fail berjaya dinamakan semula",
-      "fileMoved": "Fail berjaya dialihkan",
-      "downloadStarted": "Muat turun bermula",
-      "shareCopied": "Kongsi pautan disalin"
+      "fileMoved": "Fail berjaya dipindahkan",
+      "downloadStarted": "Muat turun dimulakan",
+      "shareCopied": "Pautan kongsi disalin"
     },
     "errors": {
-      "teacherOnly": "Hanya guru boleh mengubah suai fail.",
+      "teacherOnly": "Hanya guru sahaja yang boleh mengubah suai fail.",
       "downloadFailed": "Muat turun gagal",
-      "shareFailed": "Kongsi gagal",
-      "failedToLoad": "Gagal memuatkan fail. Sila cuba lagi kemudian."
+      "shareFailed": "Perkongsian gagal",
+      "failedToLoad": "Gagal memuatkan fail. Sila cuba lagi nanti."
     },
     "breadcrumbs": {
       "classFiles": "Fail Kelas"
@@ -43,7 +43,7 @@
       "documents": "Dokumen",
       "images": "Imej",
       "videos": "Video",
-      "presentations": "Persembahan"
+      "presentations": "Pembentangan"
     },
     "sort": {
       "name": "Nama",
@@ -58,20 +58,20 @@
     },
     "empty": {
       "title": "Folder ini kosong",
-      "description": "Muat naik fail atau cipta folder untuk mula menyusun bahan kelas anda.",
+      "description": "Muat naik fail atau buat folder untuk mula mengatur bahan kelas anda.",
       "searchTitle": "Tiada fail ditemui",
-      "searchDescription": "Tiada fail sepadan dengan \"{query}\". Cuba istilah carian yang berbeza."
+      "searchDescription": "Tiada fail yang sepadan dengan \"{query}\". Cuba istilah carian yang berbeza."
     }
   },
   "folderView": {
     "subtitle": "Kandungan folder",
     "notFound": {
       "title": "Folder Tidak Ditemui",
-      "description": "Folder yang diminta tidak ditemui.",
+      "description": "Folder yang diminta tidak dapat ditemui.",
       "backButton": "Kembali ke Fail"
     },
     "error": {
-      "loadFailed": "Gagal memuatkan kandungan folder. Sila cuba lagi kemudian."
+      "loadFailed": "Gagal memuatkan kandungan folder. Sila cuba lagi nanti."
     },
     "breadcrumbs": {
       "classFiles": "Fail Kelas"
@@ -86,7 +86,7 @@
       "documents": "Dokumen",
       "images": "Imej",
       "videos": "Video",
-      "presentations": "Persembahan"
+      "presentations": "Pembentangan"
     },
     "sort": {
       "label": "Isih",
@@ -102,28 +102,28 @@
     },
     "empty": {
       "noFilesFound": "Tiada fail ditemui",
-      "noFilesFoundDescription": "Tiada fail sepadan dengan \"{query}\". Cuba istilah carian yang berbeza.",
+      "noFilesFoundDescription": "Tiada fail yang sepadan dengan \"{query}\". Cuba istilah carian yang berbeza.",
       "folderEmpty": "Folder ini kosong",
-      "folderEmptyDescription": "Muat naik fail atau buat folder untuk menyusun bahan anda."
+      "folderEmptyDescription": "Muat naik fail atau cipta folder untuk menyusun bahan anda."
     },
     "actions": {
       "newFolder": "Folder Baharu",
       "uploadFiles": "Muat Naik Fail",
-      "createFolder": "Buat Folder"
+      "createFolder": "Cipta Folder"
     },
     "toast": {
-      "folderCreated": "Folder berjaya dibuat",
+      "folderCreated": "Folder berjaya dicipta",
       "folderDeleted": "Folder berjaya dipadamkan",
       "folderRenamed": "Folder berjaya dinamakan semula",
       "folderMoved": "Folder berjaya dialihkan",
       "filesUploaded": "Fail berjaya dimuat naik",
-      "fileDeleted": "Fail berjaya dipadamkan",
+      "fileDeleted": "Fail berjaya dipadam",
       "fileRenamed": "Fail berjaya dinamakan semula",
-      "fileMoved": "Fail berjaya dialihkan",
-      "downloadStarted": "Muat turun bermula",
+      "fileMoved": "Fail berjaya dipindahkan",
+      "downloadStarted": "Muat turun dimulakan",
       "downloadFailed": "Muat turun gagal",
-      "shareLinkCopied": "Kongsi pautan disalin",
-      "shareFailed": "Kongsi gagal",
+      "shareLinkCopied": "Pautan kongsi disalin",
+      "shareFailed": "Perkongsian gagal",
       "permissionDenied": "Kebenaran ditolak"
     }
   }

@@ -7,6 +7,13 @@
     "post": "Post",
     "posting": "Veröffentlichung...",
     "noPosts": "Noch keine Beiträge",
-    "createFirstPost": "Ersten Beitrag erstellen"
+    "noPostsDescription": "Teilen Sie Ankündigungen, Aufgaben und Aktualisierungen mit Ihrer Klasse.",
+    "createFirstPost": "Ersten Beitrag erstellen",
+    "messages": {
+      "uploadFailed": "Ankündigung konnte nicht erstellt werden, Dateiupload fehlgeschlagen",
+      "createFailed": "Ankündigung konnte nicht erstellt werden",
+      "createSuccess": "Ankündigung erfolgreich erstellt",
+      "creating": "Ankündigung wird erstellt..."
+    }
   }
 }

@@ -1,7 +1,7 @@
 {
   "settings": {
     "title": "Pengaturan Kelas",
-    "subtitle": "Konfigurasikan detail dan preferensi kelas",
+    "subtitle": "Konfigurasi detail dan preferensi kelas.",
     "labels": {
       "unsavedChanges": "Perubahan yang belum disimpan"
     },
@@ -18,11 +18,11 @@
       },
       "theme": {
         "title": "Tema Kelas",
-        "description": "Pilih warna tema untuk kelas ini"
+        "description": "Pilih warna tema untuk kelas ini."
       },
       "danger": {
         "title": "Zona Bahaya",
-        "description": "Setelah Anda menghapus kelas, Anda tidak dapat kembali. Ini akan menghapus semua tugas, nilai, catatan kehadiran, dan mengeluarkan semua siswa dari kelas secara permanen."
+        "description": "Setelah Anda menghapus kelas, tidak ada jalan kembali. Ini akan menghapus secara permanen semua tugas, nilai, catatan kehadiran, dan mengeluarkan semua siswa dari kelas tersebut."
       }
     },
     "fields": {
@@ -31,7 +31,7 @@
       "subject": "Subjek"
     },
     "placeholders": {
-      "className": "misalnya, Fisika Lanjutan",
+      "className": "misalnya, Fisika Tingkat Lanjut",
       "section": "misalnya, AP-101",
       "subject": "misalnya, Fisika"
     },
@@ -42,22 +42,22 @@
       },
       "deleted": {
         "title": "Kelas Dihapus",
-        "description": "Kelas telah dihapus secara permanen."
+        "description": "Kelas tersebut telah dihapus secara permanen."
       }
     },
     "errors": {
       "updateFailed": {
         "title": "Pembaruan Gagal",
-        "description": "Gagal menyimpan pengaturan kelas. Silakan coba lagi."
+        "description": "Pengaturan kelas gagal disimpan. Silakan coba lagi."
       }
     },
     "confirm": {
       "title": "Apakah Anda benar-benar yakin?",
-      "description": "Tindakan ini tidak dapat dibatalkan. Ini akan menghapus kelas \"{name}\" secara permanen dan menghapus semua data terkait, termasuk:",
+      "description": "Tindakan ini tidak dapat dibatalkan. Ini akan menghapus kelas \"{name}\" secara permanen dan menghapus semua data terkait termasuk:",
       "items": {
-        "assignments": "Semua tugas dan penyerahan",
+        "assignments": "Semua tugas dan pengumpulan",
         "records": "Semua nilai dan catatan kehadiran",
-        "students": "Semua siswa akan dikeluarkan dari kelas",
+        "students": "Semua siswa akan dikeluarkan dari kelas.",
         "events": "Semua acara dan pengumuman kelas"
       },
       "confirmDelete": "Ya, hapus kelas"

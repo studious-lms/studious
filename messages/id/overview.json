@@ -3,10 +3,17 @@
     "assignments": "Tugas",
     "students": "siswa",
     "attendance": "Kehadiran",
-    "attachFile": "Lampirkan berkas",
+    "attachFile": "Lampirkan file",
     "post": "Pos",
-    "posting": "Memposting...",
+    "posting": "Sedang memposting...",
     "noPosts": "Belum ada postingan",
-    "createFirstPost": "Buat postingan pertama"
+    "noPostsDescription": "Bagikan pengumuman, tugas, dan informasi terbaru kepada kelas Anda.",
+    "createFirstPost": "Buat postingan pertama",
+    "messages": {
+      "uploadFailed": "Gagal membuat pengumuman, unggahan file gagal",
+      "createFailed": "Gagal membuat pengumuman",
+      "createSuccess": "Pengumuman berhasil dibuat.",
+      "creating": "Membuat pengumuman..."
+    }
   }
 }

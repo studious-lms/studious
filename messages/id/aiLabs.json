@@ -1,42 +1,52 @@
 {
   "aiLabs": {
     "title": "Laboratorium AI",
-    "subtitle": "Buat konten pendidikan dengan bantuan AI",
-    "aiPowered": "Didukung AI",
+    "subtitle": "Buat konten pendidikan dengan bantuan AI.",
+    "aiPowered": "Didukung oleh AI",
     "createNew": "Buat Konten Baru",
     "aiGenerated": "Dihasilkan oleh AI",
-    "deleteConfirm": "Yakin ingin menghapus AI Lab ini? Tindakan ini tidak dapat dibatalkan.",
+    "deleteConfirm": "Apakah Anda yakin ingin menghapus AI Lab ini? Tindakan ini tidak dapat dibatalkan.",
+    "stats": {
+      "drafts": "Draf",
+      "draftsDesc": "Konten sedang dalam proses pengerjaan.",
+      "chats": "Kucing AI",
+      "chatsDesc": "Percakapan aktif",
+      "messages": "Pesan",
+      "messagesDesc": "Interaksi AI secara keseluruhan",
+      "generated": "Dihasilkan",
+      "generatedDesc": "Total konten yang dibuat"
+    },
     "widgets": {
       "assignment": {
         "title": "Penugasan",
-        "description": "Buat tugas interaktif dengan bantuan AI"
+        "description": "Buat tugas interaktif dengan bantuan AI."
       },
       "quiz": {
         "title": "Kuis",
-        "description": "Hasilkan kuis dengan berbagai jenis pertanyaan"
+        "description": "Buat kuis dengan berbagai jenis pertanyaan."
       },
       "worksheet": {
-        "title": "Lembar kerja",
-        "description": "Membangun lembar kerja dan latihan praktik"
+        "title": "Lembar Kerja",
+        "description": "Buat lembar kerja dan latihan praktik."
       },
       "lessonPlan": {
         "title": "Rencana Pelajaran",
-        "description": "Merancang rencana pelajaran yang komprehensif"
+        "description": "Rancang rencana pembelajaran yang komprehensif."
       },
       "rubric": {
         "title": "Rubrik",
-        "description": "Buat rubrik penilaian terperinci"
+        "description": "Buat rubrik penilaian yang terperinci."
       }
     },
     "tabs": {
-      "drafts": "Draf Lab",
+      "drafts": "Laboratorium Draf",
       "chats": "Kucing AI"
     },
     "drafts": {
-      "title": "Draf Lab ({count})",
+      "title": "Laboratorium Draf ({count})",
       "empty": {
-        "title": "Belum ada draf lab",
-        "description": "Buat konten pendidikan pertama Anda yang dihasilkan AI menggunakan widget di atas."
+        "title": "Belum ada draf laboratorium",
+        "description": "Buat konten pendidikan pertama Anda yang dihasilkan oleh AI menggunakan widget di atas."
       }
     },
     "chats": {
@@ -45,28 +55,28 @@
       "messageCount": "{count} pesan",
       "createdBy": "Dibuat oleh {name}",
       "empty": {
-        "title": "Belum ada Lab AI",
-        "description": "Buat Lab AI pertama Anda untuk mulai berkolaborasi dengan AI pada konten pendidikan."
+        "title": "Belum ada AI Labs",
+        "description": "Buat Lab AI pertama Anda untuk mulai berkolaborasi dengan AI dalam konten pendidikan."
       }
     },
     "toast": {
-      "labCreated": "AI Lab berhasil dibuat!",
+      "labCreated": "Lab AI berhasil dibuat!",
       "labCreateFailed": "Gagal membuat Lab AI:",
       "labDeleted": "AI Lab berhasil dihapus!",
       "labDeleteFailed": "Gagal menghapus AI Lab:"
     }
   },
   "aiLabChat": {
-    "backButton": "Kembali ke AI Labs",
+    "backButton": "Kembali ke Lab AI",
     "loading": "Memuat...",
-    "aiThinking": "Berpikir AI...",
+    "aiThinking": "AI Berpikir...",
     "getAIHelp": "Dapatkan Bantuan AI",
     "notFound": {
       "title": "Obrolan Lab Tidak Ditemukan",
       "description": "Lab AI ini mungkin telah dihapus atau Anda tidak memiliki akses ke sana."
     },
     "toast": {
-      "messageFailed": "Gagal mengirim pesan:"
+      "messageFailed": "Pesan gagal terkirim:"
     }
   }
 }

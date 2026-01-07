@@ -32,6 +32,7 @@ import { toast } from "sonner";
 import { WorksheetTeacherFeedback } from "./worksheet-teacher-feedback";
 import Comment from "../comments/Comment";
 import { EmptyState } from "../ui/empty-state";
+import StatusIndicator from "./status-indicator";
 
 interface WorksheetQuestionViewerProps {
     question: any;
@@ -40,6 +41,7 @@ interface WorksheetQuestionViewerProps {
     showAnswers: boolean;
     showFeedback?: boolean;
     isTeacher: boolean;
+    status: "CANCELLED" | "PENDING" | "COMPLETED" | "NOT_STARTED" | "FAILED";
     submissionId?: string;
     worksheetResponse?: RouterOutputs['worksheet']['getWorksheetSubmission'];
     worksheetId: string;
@@ -62,6 +64,7 @@ export function WorksheetQuestionViewer({
     showAnswers,
     showFeedback = false,
     isTeacher,
+    status,
     submissionId,
     worksheetResponse,
     worksheetId,
@@ -293,6 +296,13 @@ export function WorksheetQuestionViewer({
 
     const comments = worksheetResponse?.responses?.find((r) => r.questionId === question.id)?.comments;
 
+    const [updatedStatus, setUpdatedStatus] = useState(status);
+
+    useEffect(() => {
+        if (status !== updatedStatus) {
+            setUpdatedStatus(status);
+        }
+    }, [status]);
 
     const [newComment, setNewComment] = useState("");
 
@@ -316,7 +326,7 @@ export function WorksheetQuestionViewer({
                 )}
                     <div className="flex items-start justify-between gap-4 mb-4">
                         <div className="flex-1">
-                            <div className="flex items-center gap-2 mb-2">
+                            <div className="flex items-center gap-2 mb-4">
                                 <Badge variant="outline" className="text-xs">
                                     {getQuestionTypeIcon(question.type)}
                                     <span className="ml-1">{getQuestionTypeLabel(question.type)}</span>
@@ -469,12 +479,26 @@ export function WorksheetQuestionViewer({
                             )}
                         </div>
                     )}
-                        <div className="flex flex-row items-center border-border border p-1 rounded-lg mt-4">
-                            <Button variant="ghost" size="sm" onClick={() => setIsCommentsOpen(true)}>
-                                <MessageCircle className="h-2 w-2" />
-                                Comments
-                                <Badge className="text-xs bg-destructive text-destructive-foreground">{comments && comments.length > 0 ? comments.length : 0}</Badge>
-                            </Button>
+
+                    {/* AI Feedback Status */}
+                    {isTeacher && submissionId && question.type !== "MULTIPLE_CHOICE" && (
+                        <div className="mt-4">
+                            <StatusIndicator
+                                status={updatedStatus}
+                                progressId={worksheetResponse?.responses.find((r) => r.questionId === question.id)?.id || ''}
+                                worksheetId={worksheetId}
+                                submissionId={submissionId}
+                                onStatusChange={() => onChangeComment('')}
+                            />
+                        </div>
+                    )}
+
+                    <div className="flex flex-row items-center border-border border p-1 rounded-lg mt-4">
+                        <Button variant="ghost" size="sm" onClick={() => setIsCommentsOpen(true)}>
+                            <MessageCircle className="h-2 w-2" />
+                            Comments
+                            <Badge className="text-xs bg-destructive text-destructive-foreground">{comments && comments.length > 0 ? comments.length : 0}</Badge>
+                        </Button>
                             {(showFeedback || isTeacher) && submissionId && (
                                 <Button variant="ghost" size="sm" onClick={() => setIsFeedbackOpen(true)}>
                                     <ClipboardCheck className="h-2 w-2" />

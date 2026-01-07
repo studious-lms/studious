@@ -11,25 +11,30 @@
     "rename": "नाम बदलें"
   },
   "uploadFiles": {
+    "progress": {
+      "uploadingFiles": "फाइलें अपलोड हो रही हैं...",
+      "uploadingFile": "अपलोड हो रहा है {name}...",
+      "completed": "पुरा होना।"
+    },
     "title": "फाइलें अपलोड करें",
     "noFilesSelected": "कोई फ़ाइल चयनित नहीं",
-    "classIdMissing": "कक्षा आईडी गायब है",
-    "folderIdMissing": "फ़ोल्डर आईडी गुम है। कृपया फ़ोल्डर लोड होने तक प्रतीक्षा करें।",
+    "classIdMissing": "क्लास आईडी गायब है",
+    "folderIdMissing": "फ़ोल्डर आईडी उपलब्ध नहीं है। कृपया फ़ोल्डर लोड होने तक प्रतीक्षा करें।",
     "preparing": "अपलोड की तैयारी हो रही है...",
-    "gettingUrls": "अपलोड URL प्राप्त हो रहे हैं...",
+    "gettingUrls": "अपलोड यूआरएल प्राप्त किए जा रहे हैं...",
     "uploadingFile": "अपलोड हो रहा है {name}...",
-    "confirming": "पुष्टि {name}...",
-    "finalizing": "अंतिम रूप दिया जा रहा है...",
-    "success": "फ़ाइलें सफलतापूर्वक अपलोड हो गईं!",
-    "error": "फ़ाइलें अपलोड करने में विफल. कृपया पुनः प्रयास करें.",
-    "errorFile": "{name} अपलोड करने में विफल",
+    "confirming": "पुष्टि करना {name}...",
+    "finalizing": "अंतिम चरण में...",
+    "success": "फाइलें सफलतापूर्वक अपलोड हो गईं!",
+    "error": "फाइलें अपलोड करने में विफल रहे। कृपया पुनः प्रयास करें।",
+    "errorFile": "अपलोड करने में विफल {name}",
     "errorMessage": "अपलोड विफल: {message}",
-    "dropZone": "फ़ाइलें यहां डालें या ब्राउज़ करने के लिए क्लिक करें",
+    "dropZone": "फ़ाइलें यहाँ ड्रॉप करें या ब्राउज़ करने के लिए क्लिक करें",
     "dropZoneHint": "छवियों, दस्तावेज़ों, वीडियो और अन्य के लिए समर्थन",
     "selectedFiles": "चयनित फ़ाइलें ({count})",
-    "filesUploaded": "{uploaded} में से {total} फ़ाइलें अपलोड की गईं",
+    "filesUploaded": "अपलोड की गई फ़ाइलों में से {uploaded} फ़ाइलें {total}",
     "uploadingTo": "अपलोड किया जा रहा है:",
-    "homeDirectory": "होम निर्देशिका",
+    "homeDirectory": "होम डायरेक्टरी",
     "status": {
       "pending": "लंबित",
       "uploading": "अपलोड हो रहा है",
@@ -37,54 +42,54 @@
       "error": "गलती"
     },
     "cancel": "रद्द करना",
-    "upload": "{count} फ़ाइल(फ़ाइलें) अपलोड करें",
+    "upload": "{count} फ़ाइलें अपलोड करें",
     "uploading": "अपलोड हो रहा है..."
   },
   "rubric": {
-    "title": "रूब्रिक बनाएँ",
-    "titleEdit": "रूब्रिक संपादित करें",
+    "title": "मूल्यांकन मानदंड बनाएं",
+    "titleEdit": "संपादन मूल्यांकन",
     "selectTemplate": "टेम्पलेट चुनें",
     "startFromScratch": "शून्य से शुरू करें",
-    "editRubric": "रूब्रिक संपादित करें",
-    "noTemplateSelected": "एक टेम्पलेट चुनें या एक कस्टम रूब्रिक बनाएँ",
-    "name": "रूब्रिक का नाम",
-    "placeholder": "रूब्रिक का नाम दर्ज करें",
+    "editRubric": "संपादन मूल्यांकन",
+    "noTemplateSelected": "कोई टेम्पलेट चुनें या अपनी आवश्यकतानुसार मूल्यांकन मानदंड बनाएं",
+    "name": "मूल्यांकन मानदंड का नाम",
+    "placeholder": "विषय का नाम दर्ज करें",
     "cancel": "रद्द करना",
-    "create": "रूब्रिक बनाएँ",
-    "update": "रूब्रिक अपडेट करें",
-    "creating": "बनाना...",
-    "updating": "अद्यतन हो रहा है...",
-    "created": "रूब्रिक सफलतापूर्वक बनाया गया",
-    "updated": "रूब्रिक सफलतापूर्वक अपडेट किया गया",
-    "createFailed": "रूब्रिक बनाने में विफल",
-    "updateFailed": "रूब्रिक अपडेट करने में विफल",
-    "errorNameRequired": "कृपया नाम और कम से कम एक मानदंड प्रदान करें"
+    "create": "मूल्यांकन मानदंड बनाएं",
+    "update": "मूल्यांकन मानदंड को अद्यतन करें",
+    "creating": "सृजन...",
+    "updating": "अपडेट हो रहा है...",
+    "created": "मूल्यांकन मानदंड सफलतापूर्वक तैयार हो गया",
+    "updated": "मूल्यांकन मानदंड सफलतापूर्वक अपडेट हो गया",
+    "createFailed": "मूल्यांकन मानदंड बनाने में विफल",
+    "updateFailed": "मूल्यांकन मानदंड को अपडेट करने में विफल",
+    "errorNameRequired": "कृपया एक नाम और कम से कम एक मानदंड प्रदान करें।"
   },
   "gradingBoundaries": {
-    "title": "ग्रेड सीमा बनाएँ",
+    "title": "ग्रेड सीमा बनाएं",
     "titleEdit": "ग्रेड सीमा संपादित करें",
     "selectTemplate": "टेम्पलेट चुनें",
     "editGradingScale": "ग्रेडिंग स्केल संपादित करें",
-    "noTemplateSelected": "एक टेम्पलेट चुनें या कस्टम सीमाएँ बनाएँ",
+    "noTemplateSelected": "कोई टेम्पलेट चुनें या अपनी इच्छानुसार सीमाएँ बनाएँ",
     "cancel": "रद्द करना",
     "create": "बनाएं",
     "update": "अद्यतन",
-    "creating": "बनाना...",
-    "updating": "अद्यतन हो रहा है...",
+    "creating": "सृजन...",
+    "updating": "अपडेट हो रहा है...",
     "created": "ग्रेडिंग सीमा सफलतापूर्वक बनाई गई",
-    "updated": "ग्रेडिंग सीमा सफलतापूर्वक अपडेट की गई",
+    "updated": "ग्रेडिंग सीमा सफलतापूर्वक अपडेट हो गई है",
     "createFailed": "ग्रेडिंग सीमा बनाने में विफल",
-    "updateFailed": "ग्रेडिंग सीमा अपडेट करने में विफल"
+    "updateFailed": "ग्रेडिंग सीमा को अपडेट करने में विफलता"
   },
   "directUpload": {
     "title": "फाइलें अपलोड करें",
     "description": "अपलोड करने के लिए फ़ाइलें चुनें",
     "selectFiles": "फ़ाइलें चुनें",
     "selectedFiles": "चयनित फ़ाइलें ({count})",
-    "maxFiles": "अधिकतम {max} फ़ाइलें. स्वीकृत प्रकार: {types}",
+    "maxFiles": "अधिकतम {max} फ़ाइलें। स्वीकृत प्रकार: {types}",
     "allFiles": "सभी फाइलें",
     "progressUploaded": "{progress}% अपलोड किया गया",
-    "noFilesSelected": "कोई फ़ाइल चयनित नहीं",
+    "noFilesSelected": "कोई फ़ाइल चयनित नहीं है",
     "maxFilesExceeded": "अधिकतम {max} फ़ाइलें अनुमत हैं",
     "uploadFailed": "अपलोड विफल: {error}",
     "uploadFailedGeneric": "अपलोड विफल",
@@ -101,7 +106,7 @@
   },
   "notifications": {
     "title": "सूचनाएं",
-    "subtitle": "अपनी कक्षाओं और असाइनमेंट के बारे में अपडेट रहें",
+    "subtitle": "अपनी कक्षाओं और असाइनमेंट के बारे में नवीनतम जानकारी रखें।",
     "filters": {
       "label": "फ़िल्टर:",
       "all": "सभी ({count})",
@@ -117,22 +122,27 @@
     },
     "empty": {
       "all": {
-        "title": "अभी तक कोई सूचना नहीं",
-        "description": "जब आपको सूचनाएं प्राप्त होंगी, तो वे यहां दिखाई देंगी."
+        "title": "अभी तक कोई सूचना नहीं मिली है",
+        "description": "जब आपको सूचनाएं प्राप्त होंगी, तो वे यहां दिखाई देंगी।"
       }
     }
   },
   "chat": {
     "landing": {
       "pleaseSignIn": "कृपया जारी रखने के लिए साइन इन करें",
-      "signInRequired": "इस पृष्ठ तक पहुँचने के लिए साइन इन आवश्यक है",
+      "signInRequired": "इस पेज तक पहुंचने के लिए लॉग इन करना आवश्यक है",
       "title": "बात करना",
-      "description": "चैटिंग शुरू करने के लिए साइडबार से कोई वार्तालाप चुनें."
+      "description": "बातचीत शुरू करने के लिए साइडबार से कोई बातचीत चुनें।"
     },
     "page": {
+      "notFound": {
+        "title": "बातचीत नहीं मिली",
+        "description": "यह बातचीत मौजूद नहीं है या आपके पास इस तक पहुंच नहीं है।",
+        "backToChat": "चैट पर वापस जाएँ"
+      },
       "header": {
         "members": "सदस्यों",
-        "markMentionsRead": "मार्क ने पढ़ा उल्लेख किया"
+        "markMentionsRead": "मार्क ने पढ़ने का जिक्र किया"
       },
       "input": {
         "placeholderPrefix": "संदेश"
@@ -141,11 +151,11 @@
     },
     "conversationList": {
       "title": "प्रत्यक्ष संदेश",
-      "searchPlaceholder": "बातचीत ढूंढें या शुरू करें",
-      "noConversations": "अभी तक कोई बातचीत नहीं",
-      "noConversationsDescription": "किसी के साथ चैट करना शुरू करें",
+      "searchPlaceholder": "बातचीत शुरू करें या खोजें",
+      "noConversations": "अभी तक कोई बातचीत नहीं हुई है",
+      "noConversationsDescription": "किसी से बातचीत शुरू करें",
       "noSearchResults": "कोई बातचीत नहीं मिली",
-      "noSearchResultsDescription": "विभिन्न खोज शब्द आज़माएँ",
+      "noSearchResultsDescription": "अलग-अलग खोज शब्दों का प्रयोग करें",
       "unnamedGroup": "अनाम समूह",
       "unknownUser": "अज्ञात उपयोगकर्ता"
     },
@@ -154,13 +164,13 @@
       "noMessagesDescription": "यह आपकी बातचीत की शुरुआत है"
     },
     "messageInput": {
-      "placeholder": "संदेश लिखें..."
+      "placeholder": "एक संदेश टाइप करें..."
     },
     "messageEdit": {
       "placeholder": "अपना संदेश संपादित करें...",
-      "hint": "सहेजने के लिए Enter दबाएँ • रद्द करने के लिए Escape दबाएँ",
+      "hint": "सेव करने के लिए Enter दबाएँ • रद्द करने के लिए Escape दबाएँ",
       "save": "बचाना",
-      "saving": "बचत...",
+      "saving": "सहेजा जा रहा है...",
       "cancel": "रद्द करना"
     },
     "messageActions": {
@@ -170,11 +180,11 @@
       "deleteConfirmDescription": "क्या आप वाकई इस संदेश को हटाना चाहते हैं? यह कार्रवाई पूर्ववत नहीं की जा सकती।",
       "cancel": "रद्द करना",
       "delete": "मिटाना",
-      "deleting": "हटा रहा है..."
+      "deleting": "हटा रहा हूँ..."
     },
     "createConversation": {
       "title": "एक बातचीत शुरू",
-      "description": "प्रत्यक्ष संदेश या समूह वार्तालाप बनाएँ",
+      "description": "डायरेक्ट मैसेज या ग्रुप बातचीत शुरू करें",
       "direct": "सीधा संदेश",
       "group": "समूह बातचीत",
       "dmLabel": "संदेश भेजने के लिए उपयोगकर्ता नाम दर्ज करें",
@@ -187,7 +197,7 @@
       "selectedMembers": "चयनित सदस्य ({count})",
       "cancel": "रद्द करना",
       "create": "बनाएं",
-      "creating": "बनाना..."
+      "creating": "सृजन..."
     }
   },
   "avatarSelector": {
@@ -198,89 +208,89 @@
     "titleCreate": "नया अनुभाग बनाएँ",
     "titleEdit": "अनुभाग का संपादन",
     "name": "अनुभाग का नाम *",
-    "placeholder": "उदाहरण के लिए, टर्म 1, यूनिट 2, अध्याय 5",
-    "helper": "अनुभाग असाइनमेंट को समूहों या समयावधियों में व्यवस्थित करने में मदद करते हैं।",
-    "color": "अनुभाग का रंग",
+    "placeholder": "उदाहरण के लिए, सत्र 1, इकाई 2, अध्याय 5",
+    "helper": "अनुभाग असाइनमेंट को समूहों या समय अवधियों में व्यवस्थित करने में मदद करते हैं।",
+    "color": "अनुभाग रंग",
     "cancel": "रद्द करना",
     "create": "अनुभाग बनाएँ",
-    "update": "अद्यतन अनुभाग",
-    "creating": "बनाना...",
-    "updating": "अद्यतन हो रहा है...",
-    "created": "अनुभाग \"{name}\" सफलतापूर्वक बनाया गया.",
-    "updated": "अनुभाग \"{name}\" सफलतापूर्वक अद्यतन किया गया.",
-    "errorEmpty": "कृपया अनुभाग का नाम दर्ज करें.",
+    "update": "अनुभाग अपडेट करें",
+    "creating": "सृजन...",
+    "updating": "अपडेट हो रहा है...",
+    "created": "सेक्शन \"{name}\" सफलतापूर्वक बनाया गया।",
+    "updated": "अनुभाग \"{name}\" सफलतापूर्वक अपडेट किया गया।",
+    "errorEmpty": "कृपया अनुभाग का नाम दर्ज करें।",
     "errorCreate": "अनुभाग बनाने में विफल",
-    "errorUpdate": "अनुभाग अपडेट करने में विफल"
+    "errorUpdate": "अनुभाग को अपडेट करने में विफल"
   },
   "universalEvent": {
-    "titleCreate": "नया ईवेंट बनाएँ",
-    "titleEdit": "ईवेंट संपादित करें",
+    "titleCreate": "नया इवेंट बनाएं",
+    "titleEdit": "इवेंट संपादित करें",
     "classEvent": "कक्षा कार्यक्रम",
     "personalEvent": "व्यक्तिगत घटना",
-    "isClassEvent": "यह एक क्लास इवेंट है",
-    "selectClass": "कक्षा चुनें *",
-    "chooseClass": "एक वर्ग चुनें",
-    "noTeacherClasses": "आपके पास ऐसी कोई कक्षा नहीं है जहाँ आप शिक्षक हों।",
+    "isClassEvent": "यह कक्षा का कार्यक्रम है",
+    "selectClass": "कक्षा का चयन करें *",
+    "chooseClass": "एक कक्षा चुनें",
+    "noTeacherClasses": "आपके पास ऐसी कोई कक्षा नहीं है जिसमें आप शिक्षक हों।",
     "eventName": "घटना नाम *",
-    "eventNamePlaceholder": "ईवेंट का नाम दर्ज करें",
-    "startDateTime": "प्रारंभ दिनांक और समय *",
-    "endDateTime": "समाप्ति तिथि और समय *",
-    "pickDate": "तिथि चुनें",
+    "eventNamePlaceholder": "इवेंट का नाम दर्ज करें",
+    "startDateTime": "प्रारंभ तिथि और समय *",
+    "endDateTime": "समाप्ति तिथि एवं समय *",
+    "pickDate": "चयन तिथि",
     "location": "जगह",
-    "locationPlaceholder": "इवेंट स्थान दर्ज करें",
-    "eventColor": "इवेंट का रंग",
-    "eventColorDescription": "इस इवेंट के लिए एक रंग चुनें",
+    "locationPlaceholder": "कार्यक्रम का स्थान दर्ज करें",
+    "eventColor": "घटना का रंग",
+    "eventColorDescription": "इस आयोजन के लिए एक रंग चुनें",
     "remarks": "टिप्पणी",
-    "remarksPlaceholder": "कार्यक्रम के बारे में अतिरिक्त नोट्स या टिप्पणियाँ",
+    "remarksPlaceholder": "घटना के बारे में अतिरिक्त टिप्पणियाँ या सुझाव",
     "cancel": "रद्द करना",
     "updateEvent": "इवेंट अपडेट करें",
-    "createEvent": "ईवेंट बनाएँ",
-    "createClassEvent": "कक्षा ईवेंट बनाएँ",
-    "createPersonalEvent": "व्यक्तिगत ईवेंट बनाएँ",
-    "updating": "अद्यतन हो रहा है...",
-    "creating": "बनाना...",
+    "createEvent": "इवेंट बनाएं",
+    "createClassEvent": "क्लास इवेंट बनाएं",
+    "createPersonalEvent": "व्यक्तिगत कार्यक्रम बनाएं",
+    "updating": "अपडेट हो रहा है...",
+    "creating": "सृजन...",
     "addEvent": "कार्यक्रम जोड़ें",
     "eventCreated": "{type} सफलतापूर्वक बनाया गया",
-    "eventUpdated": "ईवेंट सफलतापूर्वक अपडेट किया गया",
+    "eventUpdated": "इवेंट सफलतापूर्वक अपडेट हो गया",
     "errorRequired": "कृपया सभी अपेक्षित फ़ील्ड को भरें",
-    "errorSelectClass": "कृपया कक्षा कार्यक्रम के लिए एक कक्षा का चयन करें",
-    "errorCreate": "ईवेंट बनाने में विफल",
-    "errorUpdate": "ईवेंट अपडेट करने में विफल"
+    "errorSelectClass": "कृपया कक्षा कार्यक्रम के लिए एक कक्षा का चयन करें।",
+    "errorCreate": "इवेंट बनाने में विफल",
+    "errorUpdate": "इवेंट को अपडेट करने में विफल"
   },
   "classEvent": {
-    "titleCreate": "नया क्लास ईवेंट बनाएँ",
-    "titleEdit": "कक्षा ईवेंट संपादित करें",
+    "titleCreate": "नया क्लास इवेंट बनाएं",
+    "titleEdit": "क्लास इवेंट संपादित करें",
     "eventName": "घटना नाम *",
-    "eventNamePlaceholder": "ईवेंट का नाम दर्ज करें",
-    "startDateTime": "प्रारंभ दिनांक और समय *",
-    "endDateTime": "समाप्ति तिथि और समय *",
-    "pickDate": "तिथि चुनें",
+    "eventNamePlaceholder": "इवेंट का नाम दर्ज करें",
+    "startDateTime": "प्रारंभ तिथि और समय *",
+    "endDateTime": "समाप्ति तिथि एवं समय *",
+    "pickDate": "चयन तिथि",
     "location": "जगह",
-    "locationPlaceholder": "इवेंट स्थान दर्ज करें",
-    "eventColor": "इवेंट का रंग",
-    "eventColorDescription": "इस इवेंट के लिए एक रंग चुनें",
+    "locationPlaceholder": "कार्यक्रम का स्थान दर्ज करें",
+    "eventColor": "घटना का रंग",
+    "eventColorDescription": "इस आयोजन के लिए एक रंग चुनें",
     "remarks": "टिप्पणी",
-    "remarksPlaceholder": "कार्यक्रम के बारे में अतिरिक्त नोट्स या टिप्पणियाँ",
+    "remarksPlaceholder": "घटना के बारे में अतिरिक्त टिप्पणियाँ या सुझाव",
     "cancel": "रद्द करना",
     "updateEvent": "इवेंट अपडेट करें",
-    "createEvent": "ईवेंट बनाएँ",
-    "updating": "अद्यतन हो रहा है...",
-    "creating": "बनाना...",
-    "addClassEvent": "कक्षा ईवेंट जोड़ें",
-    "eventCreated": "ईवेंट सफलतापूर्वक बनाया गया",
-    "eventUpdated": "ईवेंट सफलतापूर्वक अपडेट किया गया",
+    "createEvent": "इवेंट बनाएं",
+    "updating": "अपडेट हो रहा है...",
+    "creating": "सृजन...",
+    "addClassEvent": "क्लास इवेंट जोड़ें",
+    "eventCreated": "इवेंट सफलतापूर्वक बनाया गया",
+    "eventUpdated": "इवेंट सफलतापूर्वक अपडेट हो गया",
     "errorRequired": "कृपया सभी अपेक्षित फ़ील्ड को भरें",
-    "errorCreate": "ईवेंट बनाने में विफल",
-    "errorUpdate": "ईवेंट अपडेट करने में विफल"
+    "errorCreate": "इवेंट बनाने में विफल",
+    "errorUpdate": "इवेंट को अपडेट करने में विफल"
   },
   "aiLab": {
     "title": "{type} बनाएँ",
-    "aiPowered": "AI संचालित",
-    "description": "हमारे AI को आपके लिए बेहतर सामग्री बनाने में सहायता करने के लिए कुछ बुनियादी जानकारी प्रदान करें।",
+    "aiPowered": "एआई द्वारा संचालित",
+    "description": "हमारे एआई को आपके लिए बेहतर सामग्री बनाने में मदद करने के लिए कुछ बुनियादी जानकारी प्रदान करें।",
     "titleField": "शीर्षक *",
     "titlePlaceholder": "{type} शीर्षक दर्ज करें",
     "subject": "विषय *",
-    "selectSubject": "विषय चुनें",
+    "selectSubject": "विषय का चयन करें",
     "subjects": {
       "mathematics": "अंक शास्त्र",
       "science": "विज्ञान",
@@ -294,7 +304,7 @@
       "other": "अन्य"
     },
     "gradeLevel": "क्रम स्तर *",
-    "selectGrade": "ग्रेड स्तर चुनें",
+    "selectGrade": "कक्षा स्तर का चयन करें",
     "grades": {
       "35": "3-5",
       "68": "6-8",
@@ -313,11 +323,11 @@
       "2hours": "2 घंटे"
     },
     "descriptionField": "विवरण",
-    "descriptionPlaceholder": "वर्णन करें कि इस {type} में क्या शामिल होना चाहिए...",
+    "descriptionPlaceholder": "इस {type} में क्या शामिल होना चाहिए, इसका वर्णन करें...",
     "requirements": "विशेष ज़रूरतें",
-    "requirementsPlaceholder": "कोई विशिष्ट आवश्यकताएं, सीखने के उद्देश्य, या बाधाएं...",
+    "requirementsPlaceholder": "कोई विशिष्ट आवश्यकताएं, सीखने के उद्देश्य या सीमाएं...",
     "cancel": "रद्द करना",
     "createLab": "एआई लैब बनाएं",
-    "creatingLab": "लैब बनाना..."
+    "creatingLab": "प्रयोगशाला का निर्माण..."
   }
 }

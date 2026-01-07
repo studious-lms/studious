@@ -42,7 +42,7 @@
       },
       "deleted": {
         "title": "Klasse gelöscht",
-        "description": "Der Kurs wurde endgültig gelöscht."
+        "description": "Die Klasse wurde endgültig gelöscht."
       }
     },
     "errors": {

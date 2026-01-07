@@ -13,7 +13,10 @@
     "schoolProgram": "Program școlar",
     "about": "Despre",
     "press": "Presa",
-    "signIn": "Conectare"
+    "signIn": "Conectare",
+    "lightMode": "Mod luminos",
+    "darkMode": "Mod întunecat",
+    "languageSelector": "Selector de limbă"
   },
   "classSidebar": {
     "overview": "Prezentare generală",

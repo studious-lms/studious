@@ -13,9 +13,13 @@
     },
     "stats": {
       "totalAssignments": "Total sarcini",
+      "totalAssignmentsDesc": "Toate lucrările de curs",
       "completionRate": "Rata de finalizare",
+      "completionRateDesc": "Notat vs. total",
       "totalPoints": "Total puncte",
-      "upcoming": "Viitoare"
+      "totalPointsDesc": "Maxim realizabil",
+      "upcoming": "Viitoare",
+      "upcomingDesc": "Teme scadente"
     },
     "overview": {
       "title": "Prezentare generală a cursului",
@@ -40,12 +44,12 @@
       "dueDate": "Două întâlniri",
       "points": "Puncte",
       "weight": "Greutate",
-      "status": "Stare",
-      "pts": "puncte"
+      "pts": "puncte",
+      "type": "Tip"
     },
     "status": {
       "graded": "Gradat",
-      "pending": "În așteptare"
+      "ungraded": "Neclasificat"
     },
     "courseInfo": {
       "title": "Informații despre curs",

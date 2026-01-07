@@ -1,23 +1,23 @@
 {
   "home": {
     "welcomeBack": "Welkom terug, {name}!",
-    "subtitle": "Dit is wat er vandaag met jullie lessen gebeurt.",
+    "subtitle": "Hieronder vind je een overzicht van wat er vandaag met je lessen gebeurt.",
     "stats": {
       "totalClasses": "Totaal aantal klassen",
       "teachingEnrolled": "{teaching} lesgeven, {enrolled} ingeschreven",
-      "dueToday": "Vandaag te betalen",
+      "dueToday": "Vandaag inleveren",
       "dueTodayDesc": "Opdrachten die vandaag ingeleverd moeten worden",
-      "upcoming": "Aankomende",
-      "upcomingDesc": "Opdrachten die eraan komen",
+      "upcoming": "Aanstaande",
+      "upcomingDesc": "Aankomende opdrachten",
       "thisWeek": "Deze week",
-      "totalAssignments": "Totaal opdrachten"
+      "totalAssignments": "Totaal aantal opdrachten"
     },
     "upcomingAssignments": {
       "title": "Aankomende opdrachten",
       "subtitle": "Uw volgende deadlines",
-      "allCaughtUp": "Alles bij!",
-      "noUpcoming": "Momenteel geen opdrachten in de toekomst.",
-      "viewAgenda": "Bekijk Agenda",
+      "allCaughtUp": "Alles weer ingehaald!",
+      "noUpcoming": "Momenteel geen opdrachten gepland.",
+      "viewAgenda": "Agenda bekijken",
       "dueToday": "Vandaag inleveren",
       "dueTomorrow": "Morgen inleveren",
       "due": "Twee {dates}",
@@ -28,16 +28,16 @@
       "title": "Recente meldingen",
       "subtitle": "Laatste updates",
       "noNew": "Geen nieuwe meldingen",
-      "viewAll": "Bekijk alle meldingen"
+      "viewAll": "Alle meldingen bekijken"
     },
     "classes": {
       "title": "Mijn lessen",
-      "subtitle": "Snelle toegang tot uw lessen",
+      "subtitle": "Snel toegang tot je lessen",
       "teaching": "Onderwijs",
       "enrolled": "Ingeschreven",
       "due": "vanwege",
       "noClasses": "Nog geen lessen",
-      "browseClasses": "Blader door klassen",
+      "browseClasses": "Cursussen bekijken",
       "viewAllClasses": "Bekijk alle lessen"
     }
   }

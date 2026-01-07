@@ -1,17 +1,17 @@
 {
   "classGrades": {
     "title": "성적",
-    "subtitle": "학생 성적 보기 및 관리",
+    "subtitle": "학생 성적을 확인하고 관리하세요.",
     "columns": {
       "assignment": "과제",
-      "maxPoints": "최대 포인트",
+      "maxPoints": "최대 점수",
       "weight": "무게",
-      "graded": "등급",
-      "dueDate": "두 날짜",
+      "graded": "등급이 매겨짐",
+      "dueDate": "두 번의 데이트",
       "actions": "행위",
       "student": "학생",
-      "overallGrade": "전체 등급",
-      "assignmentsCompleted": "완료된 과제",
+      "overallGrade": "종합 점수",
+      "assignmentsCompleted": "과제 완료",
       "trend": "경향"
     },
     "labels": {
@@ -25,7 +25,7 @@
       "preview": "시사",
       "edit": "편집하다",
       "delete": "삭제",
-      "createNew": "새로 만들기"
+      "createNew": "새 항목 생성"
     },
     "overview": {
       "title": "수업 개요",
@@ -37,8 +37,8 @@
     "assignmentManagement": {
       "title": "과제 관리",
       "empty": {
-        "title": "과제를 찾을 수 없습니다",
-        "description": "성적과 설정을 관리하기 위한 과제 생성"
+        "title": "과제를 찾을 수 없습니다.",
+        "description": "과제를 생성하여 성적 및 설정을 관리하세요."
       },
       "searchPlaceholder": "과제 검색..."
     },
@@ -47,53 +47,53 @@
       "viewAll": "모든 학생 보기",
       "empty": {
         "title": "등록된 학생이 없습니다",
-        "description": "학생들은 수업에 참여하면 여기에 나타납니다."
+        "description": "학생들이 수업에 참여하게 되면 여기에 표시됩니다."
       },
-      "searchPlaceholder": "학생 검색..."
+      "searchPlaceholder": "학생들을 검색하세요..."
     },
     "gradeBoundaries": {
-      "title": "등급 경계",
+      "title": "학년 경계",
       "untitled": "제목 없는 등급 경계",
       "empty": {
-        "title": "등급 경계가 생성되지 않았습니다.",
-        "description": "등급 범위를 정의하기 위해 등급 경계를 만듭니다."
+        "title": "학년 구분 없음",
+        "description": "성적 범위를 정의하기 위해 성적 평가 기준을 만드세요."
       },
-      "previewTitle": "등급 경계 미리보기",
+      "previewTitle": "성적 평가 기준 미리보기",
       "details": {
         "title": "등급 경계 세부 정보",
         "name": "이름",
-        "noneDefined": "등급 경계가 정의되지 않았습니다."
+        "noneDefined": "등급 기준이 정해지지 않았습니다."
       }
     },
     "rubrics": {
-      "title": "루브릭",
+      "title": "채점 기준표",
       "untitled": "제목 없는 루브릭",
       "empty": {
-        "title": "생성된 루브릭이 없습니다",
-        "description": "평가 기준을 정의하기 위한 기준을 만듭니다."
+        "title": "채점 기준표가 생성되지 않았습니다.",
+        "description": "평가 기준을 정의하는 루브릭을 작성하세요."
       },
-      "previewTitle": "루브릭 미리보기",
+      "previewTitle": "평가 기준표 미리보기",
       "details": {
-        "title": "루브릭 세부 정보",
+        "title": "평가 기준 세부 사항",
         "name": "이름",
         "category": "범주",
         "description": "설명",
         "custom": "관습",
-        "noDescription": "설명이 제공되지 않았습니다",
-        "noCriteria": "이 기준에서 기준을 찾을 수 없습니다."
+        "noDescription": "설명 없음",
+        "noCriteria": "이 평가 기준표에는 적합한 기준이 없습니다."
       }
     },
     "confirm": {
-      "deleteRubric": "이 마크스킴을 삭제하시겠습니까?",
-      "deleteGradingBoundary": "이 등급 경계를 삭제하시겠습니까?"
+      "deleteRubric": "이 채점 기준표를 정말로 삭제하시겠습니까?",
+      "deleteGradingBoundary": "이 등급 경계를 정말로 삭제하시겠습니까?"
     }
   },
   "studentGrades": {
-    "title": "모든 학생 학년",
-    "allStudents": "이 수업의 모든 학생의 성적을 보고 관리합니다.",
+    "title": "모든 학생 성적",
+    "allStudents": "이 수업의 모든 학생의 성적을 확인하고 관리하세요.",
     "students": "재학생",
-    "noGrades": "학생이 없습니다",
-    "noGradesDescription": "아직 이 수업에 등록된 학생이 없습니다. 학생이 수업에 참여하면 여기에 표시됩니다.",
+    "noGrades": "학생을 찾을 수 없습니다.",
+    "noGradesDescription": "아직 이 수업에 등록된 학생이 없습니다. 학생들이 등록하면 여기에 표시됩니다.",
     "table": {
       "student": "학생",
       "actions": "행위"
@@ -105,19 +105,19 @@
   "individualGrades": {
     "myGrades": "내 성적",
     "studentGrades": "성적",
-    "viewYourGrades": "성적과 진도를 확인하세요",
+    "viewYourGrades": "성적 및 진행 상황을 확인하세요",
     "individualManagement": "개별 학생 성적 관리",
     "export": "내보내다",
     "back": "뒤쪽에",
-    "yourPerformance": "귀하의 성과",
-    "trackProgress": "학업 진도를 추적하세요",
-    "overallGrade": "전체 등급",
+    "yourPerformance": "당신의 공연",
+    "trackProgress": "학업 진행 상황을 추적하세요",
+    "overallGrade": "종합 점수",
     "completed": "완전한",
     "trend": "경향",
-    "yourGrades": "당신의 성적",
+    "yourGrades": "성적",
     "assignments": "과제",
     "studentNotFound": "학생을 찾을 수 없습니다",
-    "goBack": "돌아가기",
+    "goBack": "뒤로 가기",
     "grade": "등급",
     "table": {
       "assignment": "과제",
@@ -128,12 +128,12 @@
       "submitted": "제출된"
     },
     "status": {
-      "graded": "등급",
+      "graded": "등급이 매겨짐",
       "pending": "보류 중"
     },
     "empty": {
-      "title": "과제를 찾을 수 없습니다",
-      "description": "이 학생에게는 표시할 과제가 없습니다."
+      "title": "과제를 찾을 수 없습니다.",
+      "description": "이 학생은 표시할 과제가 없습니다."
     },
     "searchPlaceholder": "과제 검색..."
   }

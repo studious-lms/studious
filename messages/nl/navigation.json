@@ -1,19 +1,22 @@
 {
   "navigation": {
     "home": "Thuis",
-    "classes": "Klassen",
+    "classes": "Lessen",
     "agenda": "Agenda",
     "chat": "Chat",
     "notifications": "Meldingen",
     "profile": "Profiel",
     "settings": "Instellingen",
-    "signOut": "Afmelden",
+    "signOut": "Uitloggen",
     "accountSettings": "Accountinstellingen",
     "pricing": "Prijzen",
     "schoolProgram": "Schoolprogramma",
     "about": "Over",
     "press": "Pers",
-    "signIn": "Aanmelden"
+    "signIn": "Inloggen",
+    "lightMode": "Lichtmodus",
+    "darkMode": "Donkere modus",
+    "languageSelector": "Taalkiezer"
   },
   "classSidebar": {
     "overview": "Overzicht",
@@ -21,24 +24,24 @@
     "grades": "Cijfers",
     "files": "Bestanden",
     "attendance": "Aanwezigheid",
-    "aiLabs": "AI-labs",
+    "aiLabs": "AI-laboratoria",
     "members": "Leden",
     "syllabus": "Leerplan",
     "settings": "Instellingen",
     "worksheets": "Werkbladen",
     "classNavigation": "Klasnavigatie",
-    "switchClass": "Schakelklasse",
-    "classInviteCode": "Klasuitnodigingscode",
+    "switchClass": "Switch Class",
+    "classInviteCode": "Uitnodigingscode voor de les",
     "copyCode": "Kopieer code",
-    "regenerateCode": "Code regenereren",
+    "regenerateCode": "Code opnieuw genereren",
     "toast": {
-      "inviteCodeRegenerated": "Uitnodigingscode succesvol opnieuw gegenereerd",
-      "inviteCodeRegenerateFailed": "Het is niet gelukt om de uitnodigingscode opnieuw te genereren",
-      "inviteCodeCopied": "Uitnodigingscode gekopieerd naar klembord"
+      "inviteCodeRegenerated": "De uitnodigingscode is succesvol opnieuw gegenereerd.",
+      "inviteCodeRegenerateFailed": "Het opnieuw genereren van de uitnodigingscode is mislukt.",
+      "inviteCodeCopied": "De uitnodigingscode is naar het klembord gekopieerd."
     }
   },
   "footer": {
-    "productDescription": "Modern leermanagement voor de volgende generatie onderwijs.",
+    "productDescription": "Modern leerbeheer voor de volgende generatie onderwijs.",
     "product": "Product",
     "features": "Functies",
     "pricing": "Prijzen",
@@ -49,7 +52,7 @@
     "press": "Pers",
     "contact": "Contact",
     "privacyPolicy": "Privacybeleid",
-    "termsOfService": "Servicevoorwaarden",
+    "termsOfService": "Gebruiksvoorwaarden",
     "copyright": "© 2025 Studious LMS. Alle rechten voorbehouden."
   }
 }

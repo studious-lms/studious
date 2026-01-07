@@ -13,9 +13,13 @@
     },
     "stats": {
       "totalAssignments": "Assegnazioni totali",
+      "totalAssignmentsDesc": "Tutti i lavori del corso",
       "completionRate": "Tasso di completamento",
+      "completionRateDesc": "Classificato vs totale",
       "totalPoints": "Punti totali",
-      "upcoming": "Prossimamente"
+      "totalPointsDesc": "Massimo raggiungibile",
+      "upcoming": "Prossimamente",
+      "upcomingDesc": "Incarichi dovuti"
     },
     "overview": {
       "title": "Panoramica del corso",
@@ -36,16 +40,16 @@
       }
     },
     "table": {
-      "assignment": "Assegnazione",
+      "assignment": "Incarico",
       "dueDate": "Due Date",
       "points": "Punti",
       "weight": "Peso",
-      "status": "Stato",
-      "pts": "punti"
+      "pts": "punti",
+      "type": "Tipo"
     },
     "status": {
       "graded": "Classificato",
-      "pending": "In attesa di"
+      "ungraded": "Non classificato"
     },
     "courseInfo": {
       "title": "Informazioni sul corso",

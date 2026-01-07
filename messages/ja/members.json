@@ -4,6 +4,11 @@
     "counts": {
       "totalMembers": "{count} 人のメンバー"
     },
+    "stats": {
+      "totalMembers": "総会員数",
+      "teachers": "教師",
+      "students": "学生"
+    },
     "actions": {
       "inviteMember": "メンバーを招待",
       "copy": "コピー",
@@ -61,10 +66,10 @@
     },
     "profile": {
       "title": "ユーザープロフィール",
-      "description": "メンバーのプロフィール情報を表示",
+      "description": "メンバープロフィール情報を見る",
       "information": "プロフィール情報",
-      "location": "場所",
-      "website": "ウェブサイト"
+      "location": "位置",
+      "website": "Webサイト"
     }
   }
 }

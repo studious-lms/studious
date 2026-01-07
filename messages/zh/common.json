@@ -1,5 +1,6 @@
 {
   "common": {
+    "upload": "上传",
     "save": "节省",
     "cancel": "取消",
     "delete": "删除",
@@ -54,7 +55,7 @@
       "password": "密码",
       "confirmPassword": "确认密码",
       "usernamePlaceholder": "请输入您的用户名",
-      "emailPlaceholder": "请输入您的电子邮件地址",
+      "emailPlaceholder": "请输入您的邮箱",
       "passwordPlaceholder": "创建密码",
       "confirmPasswordPlaceholder": "确认密码",
       "agreeToTerms": "我同意",
@@ -154,7 +155,7 @@
       "subtitle": "管理现代学习体验所需的一切",
       "ai": {
         "title": "人工智能助手",
-        "description": "有助于生成学习资料、总结内容并辅助评分"
+        "description": "有助于生成学习资料、总结内容并辅助评分。"
       },
       "classManagement": {
         "title": "班级管理",
@@ -250,8 +251,8 @@
     "futureDevelopments": {
       "title": "未来发展",
       "subtitle": "我们改革教育的路线图",
-      "cas": {
-        "title": "CAS视角",
+      "sustainable": {
+        "title": "可持续发展视角",
         "description": "通过捐赠和物资支持资金不足的学校，使所有人都能获得优质教育。"
       },
       "features": {
@@ -478,7 +479,7 @@
       "placeholder": "例如，EXA2025-...",
       "help": "提交申请后，您将通过电子邮件收到您的申请编号。",
       "results": {
-        "found": "找到应用程序",
+        "found": "已找到应用程序",
         "school": "学校：",
         "location": "地点：",
         "submitted": "已提交：",
@@ -527,7 +528,7 @@
         "item2": "我们的团队将在 5-7 个工作日内审核您的申请。",
         "item3": "一旦做出决定，我们将通过电子邮件通知您。"
       },
-      "backToProgram": "返回节目",
+      "backToProgram": "返回节目单",
       "returnHome": "回家"
     }
   },
@@ -1096,7 +1097,7 @@
     "pricingSchoolPerk1": "学生人数不限",
     "pricingSchoolPerk2": "无限课程",
     "pricingSchoolPerk3": "所有核心功能",
-    "pricingSchoolPerk4": "人工智能助手（无限次查询）",
+    "pricingSchoolPerk4": "AI助手（无限次查询）",
     "pricingSchoolPerk5": "优先获得 Studious CMS 测试版访问权限",
     "pricingSchoolPerk6": "API 访问",
     "pricingSchoolLink": "开始使用"
@@ -1116,7 +1117,7 @@
       "sizes": {
         "tiny": "1-30名学生（一对一教师授课）",
         "small": "31-100名学生（小型学校）",
-        "medium": "101-500名学生（中等学校）",
+        "medium": "101-500名学生（中等规模学校）",
         "large": "学生人数 501-1000 人（大型学校）",
         "institution": "1001+名学生（机构）"
       },
@@ -1126,7 +1127,7 @@
         "done": "完毕"
       },
       "success": {
-        "title": "你上榜了！",
+        "title": "你上名单了！",
         "description": "准备就绪后，我们会向您发送一封电子邮件至 {email}。"
       },
       "toasts": {
@@ -1156,7 +1157,7 @@
       },
       "toasts": {
         "success": "你已成功加入课程。",
-        "errorInvalid": "邀请码无效或未找到课程。",
+        "errorInvalid": "邀请码无效或找不到课程。",
         "errorEmpty": "请输入有效的邀请码。"
       }
     },
@@ -1293,7 +1294,7 @@
       },
       "files": {
         "uploadButton": "上传文件",
-        "dropZone": "将文件拖放到此处或点击上传",
+        "dropZone": "将文件拖放到这里或点击上传",
         "dropZoneHint": "支持所有文件类型 • 每个文件最大 50MB",
         "filesUploaded": "已上传 {uploaded} 个文件（共 {total} 个）"
       },

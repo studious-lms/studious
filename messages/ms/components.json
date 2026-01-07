@@ -3,7 +3,7 @@
     "editFolder": "Edit folder",
     "renameFile": "Namakan semula fail",
     "name": "Nama",
-    "placeholder": "Masukkan {type} nama",
+    "placeholder": "Masukkan nama {type}",
     "folderColor": "Warna Folder",
     "folderColorDescription": "Pilih warna untuk folder ini",
     "cancel": "Batal",
@@ -11,9 +11,14 @@
     "rename": "Namakan semula"
   },
   "uploadFiles": {
+    "progress": {
+      "uploadingFiles": "Memuat naik fail...",
+      "uploadingFile": "Memuat naik {name}...",
+      "completed": "Selesai"
+    },
     "title": "Muat Naik Fail",
     "noFilesSelected": "Tiada Fail Dipilih",
-    "classIdMissing": "ID kelas tiada",
+    "classIdMissing": "ID Kelas tiada",
     "folderIdMissing": "ID folder tiada. Sila tunggu sehingga folder dimuatkan.",
     "preparing": "Menyediakan muat naik...",
     "gettingUrls": "Mendapatkan URL muat naik...",
@@ -24,56 +29,56 @@
     "error": "Gagal memuat naik fail. Sila cuba lagi.",
     "errorFile": "Gagal memuat naik {name}",
     "errorMessage": "Muat naik gagal: {message}",
-    "dropZone": "Lepaskan fail di sini atau klik untuk menyemak imbas",
+    "dropZone": "Letakkan fail di sini atau klik untuk menyemak imbas",
     "dropZoneHint": "Sokongan untuk imej, dokumen, video dan banyak lagi",
     "selectedFiles": "Fail Terpilih ({count})",
-    "filesUploaded": "{uploaded} daripada {total} fail dimuat naik",
+    "filesUploaded": "{uploaded} daripada {total} fail yang dimuat naik",
     "uploadingTo": "Memuat naik ke:",
-    "homeDirectory": "Direktori Laman Utama",
+    "homeDirectory": "Direktori Utama",
     "status": {
       "pending": "Belum selesai",
       "uploading": "Memuat naik",
       "completed": "Selesai",
-      "error": "ralat"
+      "error": "Ralat"
     },
     "cancel": "Batal",
-    "upload": "Muat naik {count} Fail",
+    "upload": "Muat Naik Fail {count}",
     "uploading": "Memuat naik..."
   },
   "rubric": {
-    "title": "Buat Rubrik",
+    "title": "Cipta Rubrik",
     "titleEdit": "Edit Rubrik",
     "selectTemplate": "Pilih Templat",
-    "startFromScratch": "Bermula dari Gores",
+    "startFromScratch": "Mula dari Awal",
     "editRubric": "Edit Rubrik",
-    "noTemplateSelected": "Pilih templat atau buat rubrik tersuai",
+    "noTemplateSelected": "Pilih templat atau cipta rubrik tersuai",
     "name": "Nama Rubrik",
     "placeholder": "Masukkan nama rubrik",
     "cancel": "Batal",
-    "create": "Buat Rubrik",
-    "update": "Kemas kini Rubrik",
+    "create": "Cipta Rubrik",
+    "update": "Kemas Kini Rubrik",
     "creating": "Mencipta...",
     "updating": "Mengemas kini...",
-    "created": "Rubrik berjaya dibuat",
+    "created": "Rubrik berjaya dicipta",
     "updated": "Rubrik berjaya dikemas kini",
-    "createFailed": "Gagal membuat rubrik",
+    "createFailed": "Gagal mencipta rubrik",
     "updateFailed": "Gagal mengemas kini rubrik",
     "errorNameRequired": "Sila berikan nama dan sekurang-kurangnya satu kriteria"
   },
   "gradingBoundaries": {
-    "title": "Buat Sempadan Gred",
+    "title": "Cipta Sempadan Gred",
     "titleEdit": "Edit Sempadan Gred",
     "selectTemplate": "Pilih Templat",
     "editGradingScale": "Edit Skala Penggredan",
-    "noTemplateSelected": "Pilih templat atau buat sempadan tersuai",
+    "noTemplateSelected": "Pilih templat atau cipta sempadan tersuai",
     "cancel": "Batal",
-    "create": "Buat",
+    "create": "Cipta",
     "update": "Kemas kini",
     "creating": "Mencipta...",
     "updating": "Mengemas kini...",
-    "created": "Sempadan penggredan berjaya dibuat",
+    "created": "Sempadan penggredan berjaya dicipta",
     "updated": "Sempadan penggredan berjaya dikemas kini",
-    "createFailed": "Gagal membuat sempadan penggredan",
+    "createFailed": "Gagal mencipta sempadan penggredan",
     "updateFailed": "Gagal mengemas kini sempadan penggredan"
   },
   "directUpload": {
@@ -81,31 +86,31 @@
     "description": "Pilih fail untuk dimuat naik",
     "selectFiles": "Pilih Fail",
     "selectedFiles": "Fail Terpilih ({count})",
-    "maxFiles": "Maksimum {max} fail. Jenis yang diterima: {types}",
+    "maxFiles": "Fail {max} maksimum. Jenis yang diterima: {types}",
     "allFiles": "Semua fail",
     "progressUploaded": "{progress}% dimuat naik",
     "noFilesSelected": "Tiada fail dipilih",
-    "maxFilesExceeded": "Maksimum {max} fail dibenarkan",
+    "maxFilesExceeded": "Fail {max} maksimum yang dibenarkan",
     "uploadFailed": "Muat naik gagal: {error}",
     "uploadFailedGeneric": "Muat naik gagal",
     "status": {
       "pending": "Belum selesai",
       "uploading": "Memuat naik",
       "completed": "Selesai",
-      "failed": "gagal"
+      "failed": "Gagal"
     },
     "cancel": "Batal",
-    "upload": "Muat naik {count} fail",
-    "uploadPlural": "Muat naik {count} fail",
+    "upload": "Muat naik fail {count}",
+    "uploadPlural": "Muat naik fail {count}",
     "uploading": "Memuat naik..."
   },
   "notifications": {
     "title": "Pemberitahuan",
-    "subtitle": "Ikuti perkembangan kelas dan tugasan anda",
+    "subtitle": "Kekal mengikuti perkembangan kelas dan tugasan anda",
     "filters": {
       "label": "Penapis:",
       "all": "Semua ({count})",
-      "unread": "Belum dibaca ({count})",
+      "unread": "Belum Dibaca ({count})",
       "read": "Baca ({count})"
     },
     "badge": {
@@ -113,7 +118,7 @@
     },
     "actions": {
       "viewAll": "Lihat Semua Pemberitahuan",
-      "markAsRead": "Tandai sebagai Dibaca"
+      "markAsRead": "Tandakan sebagai Dibaca"
     },
     "empty": {
       "all": {
@@ -127,12 +132,17 @@
       "pleaseSignIn": "Sila log masuk untuk meneruskan",
       "signInRequired": "Log masuk diperlukan untuk mengakses halaman ini",
       "title": "Sembang",
-      "description": "Pilih perbualan dari bar sisi untuk mula bersembang."
+      "description": "Pilih perbualan daripada bar sisi untuk mula bersembang."
     },
     "page": {
+      "notFound": {
+        "title": "Perbualan Tidak Ditemui",
+        "description": "Perbualan ini tidak wujud atau anda tidak mempunyai akses kepadanya.",
+        "backToChat": "Kembali ke Sembang"
+      },
       "header": {
-        "members": "ahli",
-        "markMentionsRead": "Mark menyebut baca"
+        "members": "Ahli",
+        "markMentionsRead": "Mark menyebut telah dibaca"
       },
       "input": {
         "placeholderPrefix": "Mesej"
@@ -146,12 +156,12 @@
       "noConversationsDescription": "Mula bersembang dengan seseorang",
       "noSearchResults": "Tiada perbualan ditemui",
       "noSearchResultsDescription": "Cuba istilah carian yang berbeza",
-      "unnamedGroup": "Kumpulan Tanpa Nama",
+      "unnamedGroup": "Kumpulan Tidak Bernama",
       "unknownUser": "Pengguna Tidak Diketahui"
     },
     "messageList": {
       "noMessagesTitle": "Tiada mesej lagi",
-      "noMessagesDescription": "Ini adalah permulaan perbualan anda"
+      "noMessagesDescription": "Ini permulaan perbualan anda"
     },
     "messageInput": {
       "placeholder": "Taip mesej..."
@@ -159,7 +169,7 @@
     "messageEdit": {
       "placeholder": "Edit mesej anda...",
       "hint": "Tekan Enter untuk menyimpan • Escape untuk membatalkan",
-      "save": "Jimat",
+      "save": "Simpan",
       "saving": "Menyimpan...",
       "cancel": "Batal"
     },
@@ -170,11 +180,11 @@
       "deleteConfirmDescription": "Adakah anda pasti mahu memadamkan mesej ini? Tindakan ini tidak boleh dibuat asal.",
       "cancel": "Batal",
       "delete": "Padam",
-      "deleting": "Memadamkan..."
+      "deleting": "Memadam..."
     },
     "createConversation": {
       "title": "Mulakan perbualan",
-      "description": "Buat mesej langsung atau perbualan kumpulan",
+      "description": "Cipta mesej langsung atau perbualan kumpulan",
       "direct": "Mesej Langsung",
       "group": "Sembang Kumpulan",
       "dmLabel": "Masukkan nama pengguna untuk mesej",
@@ -183,10 +193,10 @@
       "groupNamePlaceholder": "Masukkan nama kumpulan...",
       "addMembersLabel": "Tambah ahli mengikut nama pengguna",
       "addButton": "Tambah",
-      "selectedUser": "Pengguna terpilih:",
+      "selectedUser": "Pengguna yang dipilih:",
       "selectedMembers": "Ahli terpilih ({count})",
       "cancel": "Batal",
-      "create": "Buat",
+      "create": "Cipta",
       "creating": "Mencipta..."
     }
   },
@@ -194,97 +204,97 @@
     "changeProfilePicture": "Tukar gambar profil"
   },
   "createSection": {
-    "buttonLabel": "Bahagian Baru",
-    "titleCreate": "Buat Bahagian Baharu",
-    "titleEdit": "Edit Bahagian",
-    "name": "Nama Bahagian *",
+    "buttonLabel": "Bahagian Baharu",
+    "titleCreate": "Cipta Bahagian Baharu",
+    "titleEdit": "Bahagian Edit",
+    "name": "Nama Seksyen *",
     "placeholder": "cth., Penggal 1, Unit 2, Bab 5",
-    "helper": "Bahagian membantu menyusun tugasan ke dalam kumpulan atau tempoh masa.",
+    "helper": "Bahagian membantu menyusun tugasan kepada kumpulan atau tempoh masa.",
     "color": "Warna Bahagian",
     "cancel": "Batal",
-    "create": "Buat Bahagian",
-    "update": "Bahagian Kemas Kini",
+    "create": "Cipta Bahagian",
+    "update": "Seksyen Kemas Kini",
     "creating": "Mencipta...",
     "updating": "Mengemas kini...",
-    "created": "Bahagian \"{name}\" berjaya dibuat.",
+    "created": "Bahagian \"{name}\" berjaya dicipta.",
     "updated": "Bahagian \"{name}\" berjaya dikemas kini.",
     "errorEmpty": "Sila masukkan nama bahagian.",
-    "errorCreate": "Gagal membuat bahagian",
+    "errorCreate": "Gagal mencipta bahagian",
     "errorUpdate": "Gagal mengemas kini bahagian"
   },
   "universalEvent": {
-    "titleCreate": "Buat Acara Baharu",
+    "titleCreate": "Cipta Acara Baharu",
     "titleEdit": "Edit Acara",
     "classEvent": "Acara Kelas",
     "personalEvent": "Acara Peribadi",
     "isClassEvent": "Ini adalah acara kelas",
     "selectClass": "Pilih Kelas *",
     "chooseClass": "Pilih kelas",
-    "noTeacherClasses": "Anda tidak mempunyai sebarang kelas di mana anda seorang guru.",
+    "noTeacherClasses": "Anda tiada kelas di mana anda seorang guru.",
     "eventName": "Nama Acara *",
     "eventNamePlaceholder": "Masukkan nama acara",
     "startDateTime": "Tarikh & Masa Mula *",
     "endDateTime": "Tarikh & Masa Tamat *",
-    "pickDate": "Pilih tarikh",
+    "pickDate": "Tarikh pilih",
     "location": "Lokasi",
     "locationPlaceholder": "Masukkan lokasi acara",
     "eventColor": "Warna Acara",
     "eventColorDescription": "Pilih warna untuk acara ini",
-    "remarks": "Teguran",
-    "remarksPlaceholder": "Nota atau teguran tambahan tentang acara tersebut",
+    "remarks": "Catatan",
+    "remarksPlaceholder": "Nota atau komen tambahan tentang acara tersebut",
     "cancel": "Batal",
-    "updateEvent": "Kemas kini Acara",
-    "createEvent": "Buat Acara",
-    "createClassEvent": "Buat Acara Kelas",
-    "createPersonalEvent": "Buat Acara Peribadi",
+    "updateEvent": "Kemas Kini Acara",
+    "createEvent": "Cipta Acara",
+    "createClassEvent": "Cipta Acara Kelas",
+    "createPersonalEvent": "Cipta Acara Peribadi",
     "updating": "Mengemas kini...",
     "creating": "Mencipta...",
     "addEvent": "Tambah Acara",
-    "eventCreated": "{type} berjaya dibuat",
+    "eventCreated": "{type} berjaya dicipta",
     "eventUpdated": "Acara berjaya dikemas kini",
-    "errorRequired": "Sila isi semua medan yang diperlukan",
+    "errorRequired": "Sila isi semua ruangan yang diperlukan",
     "errorSelectClass": "Sila pilih kelas untuk acara kelas",
-    "errorCreate": "Gagal membuat acara",
+    "errorCreate": "Gagal mencipta acara",
     "errorUpdate": "Gagal mengemas kini acara"
   },
   "classEvent": {
-    "titleCreate": "Buat Acara Kelas Baharu",
+    "titleCreate": "Cipta Acara Kelas Baharu",
     "titleEdit": "Edit Acara Kelas",
     "eventName": "Nama Acara *",
     "eventNamePlaceholder": "Masukkan nama acara",
     "startDateTime": "Tarikh & Masa Mula *",
     "endDateTime": "Tarikh & Masa Tamat *",
-    "pickDate": "Pilih tarikh",
+    "pickDate": "Tarikh pilih",
     "location": "Lokasi",
     "locationPlaceholder": "Masukkan lokasi acara",
     "eventColor": "Warna Acara",
     "eventColorDescription": "Pilih warna untuk acara ini",
-    "remarks": "Teguran",
-    "remarksPlaceholder": "Nota atau teguran tambahan tentang acara tersebut",
+    "remarks": "Catatan",
+    "remarksPlaceholder": "Nota atau komen tambahan tentang acara tersebut",
     "cancel": "Batal",
-    "updateEvent": "Kemas kini Acara",
-    "createEvent": "Buat Acara",
+    "updateEvent": "Kemas Kini Acara",
+    "createEvent": "Cipta Acara",
     "updating": "Mengemas kini...",
     "creating": "Mencipta...",
     "addClassEvent": "Tambah Acara Kelas",
-    "eventCreated": "Acara berjaya dibuat",
+    "eventCreated": "Acara berjaya dicipta",
     "eventUpdated": "Acara berjaya dikemas kini",
-    "errorRequired": "Sila isi semua medan yang diperlukan",
-    "errorCreate": "Gagal membuat acara",
+    "errorRequired": "Sila isi semua ruangan yang diperlukan",
+    "errorCreate": "Gagal mencipta acara",
     "errorUpdate": "Gagal mengemas kini acara"
   },
   "aiLab": {
-    "title": "Buat {type}",
-    "aiPowered": "Dikuasakan AI",
-    "description": "Sediakan beberapa maklumat asas untuk membantu AI kami mencipta kandungan yang lebih baik untuk anda.",
+    "title": "Cipta {type}",
+    "aiPowered": "Dikuasakan oleh AI",
+    "description": "Berikan beberapa maklumat asas untuk membantu AI kami mencipta kandungan yang lebih baik untuk anda.",
     "titleField": "Tajuk *",
-    "titlePlaceholder": "Masukkan {type} tajuk",
+    "titlePlaceholder": "Masukkan tajuk {type}",
     "subject": "Subjek *",
     "selectSubject": "Pilih subjek",
     "subjects": {
       "mathematics": "Matematik",
       "science": "Sains",
-      "english": "Inggeris",
+      "english": "Bahasa Inggeris",
       "history": "Sejarah",
       "geography": "Geografi",
       "chemistry": "Kimia",
@@ -293,7 +303,7 @@
       "computerScience": "Sains Komputer",
       "other": "Lain-lain"
     },
-    "gradeLevel": "Peringkat Gred *",
+    "gradeLevel": "Tahap Gred *",
     "selectGrade": "Pilih tahap gred",
     "grades": {
       "35": "3-5",
@@ -313,11 +323,11 @@
       "2hours": "2 jam"
     },
     "descriptionField": "Penerangan",
-    "descriptionPlaceholder": "Terangkan perkara yang perlu {type} ini meliputi...",
+    "descriptionPlaceholder": "Huraikan apa yang perlu diliputi oleh {type} ini...",
     "requirements": "Keperluan Khas",
-    "requirementsPlaceholder": "Sebarang keperluan khusus, objektif pembelajaran atau kekangan...",
+    "requirementsPlaceholder": "Sebarang keperluan, objektif pembelajaran atau kekangan tertentu...",
     "cancel": "Batal",
-    "createLab": "Buat AI Lab",
+    "createLab": "Cipta Makmal AI",
     "creatingLab": "Mencipta Makmal..."
   }
 }

@@ -1,5 +1,6 @@
 {
   "common": {
+    "upload": "Încărcare",
     "save": "Salva",
     "cancel": "Anula",
     "delete": "Şterge",
@@ -12,7 +13,7 @@
     "search": "Căutare",
     "filter": "Filtra",
     "sort": "Sorta",
-    "viewAll": "Vezi toate",
+    "viewAll": "Vezi tot",
     "noData": "Nu sunt disponibile date",
     "export": "Export",
     "openMenu": "Deschide meniul"
@@ -90,7 +91,7 @@
       "successMessage": "Adresa ta de e-mail a fost verificată. Acum te poți conecta la contul tău.",
       "errorTitle": "Verificare eșuată",
       "errorMessage": "Linkul de verificare este invalid sau a expirat. Solicitați o nouă adresă de e-mail de verificare.",
-      "invalidToken": "Jeton de verificare nevalid"
+      "invalidToken": "Token de verificare nevalid"
     },
     "forgotPassword": {
       "title": "Resetează-ți parola",
@@ -250,8 +251,8 @@
     "futureDevelopments": {
       "title": "Dezvoltări viitoare",
       "subtitle": "Foaia noastră de parcurs pentru transformarea educației",
-      "cas": {
-        "title": "Perspectiva CAS",
+      "sustainable": {
+        "title": "Perspectivă sustenabilă",
         "description": "Sprijinirea școlilor subfinanțate prin donații și materiale, făcând educația de calitate accesibilă tuturor."
       },
       "features": {
@@ -1130,7 +1131,7 @@
         "description": "Îți vom trimite un e-mail la adresa {email} când vom fi gata pentru tine."
       },
       "toasts": {
-        "success": "Înscris cu succes pe lista de așteptare!"
+        "success": "Te-ai înscris cu succes pe lista de așteptare!"
       }
     },
     "joinClass": {
@@ -1293,7 +1294,7 @@
       },
       "files": {
         "uploadButton": "Încărcați fișiere",
-        "dropZone": "Plasați fișierele aici sau faceți clic pentru a încărca",
+        "dropZone": "Plasați fișierele aici sau faceți clic pentru a le încărca",
         "dropZoneHint": "Acceptă toate tipurile de fișiere • Maxim 50 MB per fișier",
         "filesUploaded": "{uploaded} din {total} fișiere încărcate"
       },

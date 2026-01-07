@@ -6,6 +6,16 @@
     "createNew": "Creați conținut nou",
     "aiGenerated": "Generat de inteligența artificială",
     "deleteConfirm": "Sigur vrei să ștergi acest laborator de inteligență artificială? Această acțiune nu poate fi anulată.",
+    "stats": {
+      "drafts": "Schițe",
+      "draftsDesc": "Conținut în curs de elaborare",
+      "chats": "Pisici cu inteligență artificială",
+      "chatsDesc": "Conversații active",
+      "messages": "Mesaje",
+      "messagesDesc": "Interacțiuni totale cu inteligența artificială",
+      "generated": "Generat",
+      "generatedDesc": "Conținut total creat"
+    },
     "widgets": {
       "assignment": {
         "title": "Sarcină",
@@ -30,7 +40,7 @@
     },
     "tabs": {
       "drafts": "Laboratoare de schițe",
-      "chats": "AI Cats"
+      "chats": "Pisici cu inteligență artificială"
     },
     "drafts": {
       "title": "Laboratoare preliminare ({count})",

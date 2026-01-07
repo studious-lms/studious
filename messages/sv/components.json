@@ -11,6 +11,11 @@
     "rename": "Döpa om"
   },
   "uploadFiles": {
+    "progress": {
+      "uploadingFiles": "Laddar upp filer...",
+      "uploadingFile": "Laddar upp {name}...",
+      "completed": "Avslutad"
+    },
     "title": "Ladda upp filer",
     "noFilesSelected": "Inga filer valda",
     "classIdMissing": "Klass-ID saknas",
@@ -55,7 +60,7 @@
     "creating": "Skapande...",
     "updating": "Uppdaterar...",
     "created": "Matris skapad",
-    "updated": "Matris uppdaterad",
+    "updated": "Matrisen har uppdaterats",
     "createFailed": "Misslyckades med att skapa bedömningsmatris",
     "updateFailed": "Misslyckades med att uppdatera bedömningsmatrisen",
     "errorNameRequired": "Ange ett namn och minst ett kriterium"
@@ -130,6 +135,11 @@
       "description": "Välj en konversation från sidofältet för att börja chatta."
     },
     "page": {
+      "notFound": {
+        "title": "Konversationen hittades inte",
+        "description": "Den här konversationen finns inte, eller så har du inte åtkomst till den.",
+        "backToChat": "Tillbaka till chatten"
+      },
       "header": {
         "members": "Medlemmar",
         "markMentionsRead": "Mark nämner läsning"
@@ -241,7 +251,7 @@
     "creating": "Skapande...",
     "addEvent": "Lägg till händelse",
     "eventCreated": "{type} skapades",
-    "eventUpdated": "Händelsen har uppdaterats",
+    "eventUpdated": "Händelsen uppdaterades",
     "errorRequired": "Vänligen fyll i alla obligatoriska fält",
     "errorSelectClass": "Välj en klass för klassevenemanget",
     "errorCreate": "Misslyckades med att skapa händelsen",
@@ -268,7 +278,7 @@
     "creating": "Skapande...",
     "addClassEvent": "Lägg till klasshändelse",
     "eventCreated": "Händelsen skapades",
-    "eventUpdated": "Händelsen har uppdaterats",
+    "eventUpdated": "Händelsen uppdaterades",
     "errorRequired": "Vänligen fyll i alla obligatoriska fält",
     "errorCreate": "Misslyckades med att skapa händelsen",
     "errorUpdate": "Misslyckades med att uppdatera händelsen"
@@ -278,7 +288,7 @@
     "aiPowered": "AI-driven",
     "description": "Ge oss lite grundläggande information som hjälper vår AI att skapa bättre innehåll åt dig.",
     "titleField": "Titel *",
-    "titlePlaceholder": "Ange titeln {type}",
+    "titlePlaceholder": "Ange {type} titel",
     "subject": "Ämne *",
     "selectSubject": "Välj ämne",
     "subjects": {

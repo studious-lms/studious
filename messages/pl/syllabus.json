@@ -13,9 +13,13 @@
     },
     "stats": {
       "totalAssignments": "Łączna liczba zadań",
+      "totalAssignmentsDesc": "Wszystkie prace kursowe",
       "completionRate": "Wskaźnik ukończenia",
+      "completionRateDesc": "Ocenione a całkowite",
       "totalPoints": "Suma punktów",
-      "upcoming": "Nadchodzące"
+      "totalPointsDesc": "Maksymalnie osiągalny",
+      "upcoming": "Nadchodzące",
+      "upcomingDesc": "Terminy wykonania zadań"
     },
     "overview": {
       "title": "Przegląd kursu",
@@ -40,12 +44,12 @@
       "dueDate": "Dwie daty",
       "points": "Zwrotnica",
       "weight": "Waga",
-      "status": "Status",
-      "pts": "punkty"
+      "pts": "punkty",
+      "type": "Typ"
     },
     "status": {
       "graded": "Oceniony",
-      "pending": "Aż do"
+      "ungraded": "Nieklasyfikowane"
     },
     "courseInfo": {
       "title": "Informacje o kursie",

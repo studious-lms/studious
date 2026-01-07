@@ -1,22 +1,22 @@
 {
   "home": {
     "welcomeBack": "Selamat datang kembali, {name}!",
-    "subtitle": "Inilah yang terjadi dengan kelas Anda hari ini.",
+    "subtitle": "Berikut adalah jadwal kelas Anda hari ini.",
     "stats": {
       "totalClasses": "Jumlah Kelas",
-      "teachingEnrolled": "{teaching} mengajar, {enrolled} terdaftar",
+      "teachingEnrolled": "{teaching} pengajaran, {enrolled} terdaftar",
       "dueToday": "Jatuh Tempo Hari Ini",
-      "dueTodayDesc": "Tugas jatuh tempo hari ini",
+      "dueTodayDesc": "Tugas dikumpulkan hari ini",
       "upcoming": "Mendatang",
-      "upcomingDesc": "Tugas yang akan datang",
+      "upcomingDesc": "Tugas-tugas yang akan datang",
       "thisWeek": "Minggu Ini",
-      "totalAssignments": "Jumlah tugas"
+      "totalAssignments": "Jumlah tugas total"
     },
     "upcomingAssignments": {
       "title": "Tugas Mendatang",
       "subtitle": "Batas waktu Anda berikutnya",
-      "allCaughtUp": "Semuanya tertangkap!",
-      "noUpcoming": "Tidak ada tugas yang akan datang saat ini.",
+      "allCaughtUp": "Semua sudah teratasi!",
+      "noUpcoming": "Saat ini tidak ada tugas yang akan datang.",
       "viewAgenda": "Lihat Agenda",
       "dueToday": "Jatuh tempo hari ini",
       "dueTomorrow": "Jatuh tempo besok",
@@ -25,8 +25,8 @@
       "viewAllAssignments": "Lihat Semua Tugas"
     },
     "notifications": {
-      "title": "Notifikasi Terbaru",
-      "subtitle": "Pembaruan terkini",
+      "title": "Pemberitahuan Terbaru",
+      "subtitle": "Pembaruan terbaru",
       "noNew": "Tidak ada notifikasi baru",
       "viewAll": "Lihat Semua Notifikasi"
     },

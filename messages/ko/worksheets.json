@@ -1,14 +1,14 @@
 {
   "worksheets": {
     "title": "워크시트",
-    "subtitle": "연습 문제지 관리 및 배포",
+    "subtitle": "연습 문제지를 관리하고 배포합니다.",
     "list": {
       "title": "모든 워크시트"
     },
     "columns": {
       "title": "제목",
       "questionCount": "질문 수",
-      "lastUpdated": "마지막 업데이트",
+      "lastUpdated": "최종 업데이트",
       "actions": "행위"
     },
     "status": {
@@ -27,18 +27,20 @@
       "save": "구하다",
       "cancel": "취소",
       "select": "선택하다",
-      "attachMarkscheme": "마크스킴 첨부",
+      "attachMarkscheme": "채점 기준표를 첨부하세요.",
       "detach": "세부"
     },
     "search": {
-      "placeholder": "워크시트 검색..."
+      "placeholder": "워크시트를 검색하세요...",
+      "noResults": "워크시트를 찾을 수 없습니다.",
+      "noResultsDesc": "다른 검색어를 사용하거나 검색 조건을 삭제해 보세요."
     },
     "empty": {
-      "title": "워크시트를 찾을 수 없습니다",
-      "description": "첫 번째 워크시트를 만들어 시작하거나 검색을 사용하여 기존 워크시트를 찾아보세요."
+      "title": "워크시트를 찾을 수 없습니다.",
+      "description": "첫 번째 워크시트를 만들어 시작하거나 검색 기능을 사용하여 기존 워크시트를 찾아보세요."
     },
     "confirm": {
-      "delete": "이 워크시트를 삭제하시겠습니까? 이 작업은 실행 취소할 수 없습니다."
+      "delete": "이 워크시트를 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다."
     },
     "toasts": {
       "created": "워크시트가 성공적으로 생성되었습니다.",
@@ -48,7 +50,7 @@
     },
     "create": {
       "title": "워크시트 만들기",
-      "subtitle": "여러 질문 유형으로 새 워크시트 만들기",
+      "subtitle": "다양한 유형의 문제가 포함된 새 워크시트를 만드세요.",
       "worksheetInfo": "워크시트 정보",
       "actions": {
         "save": "구하다",
@@ -59,15 +61,15 @@
         "title": "제목",
         "titlePlaceholder": "워크시트 제목을 입력하세요",
         "description": "설명",
-        "descriptionPlaceholder": "워크시트 설명 입력(선택 사항)",
-        "dueDate": "두 날짜",
+        "descriptionPlaceholder": "워크시트 설명을 입력하세요(선택 사항).",
+        "dueDate": "두 번의 데이트",
         "totalQuestions": "총 질문 수"
       },
       "questions": {
         "title": "질문",
         "addQuestion": "질문 추가",
-        "noQuestions": "아직 질문이 추가되지 않았습니다",
-        "addFirstQuestion": "위의 드롭다운을 사용하여 첫 번째 질문을 추가하세요.",
+        "noQuestions": "아직 질문이 추가되지 않았습니다.",
+        "addFirstQuestion": "위의 드롭다운 메뉴를 사용하여 첫 번째 질문을 추가하세요.",
         "questionNumber": "질문 {number}",
         "points": "전철기",
         "questionText": "질문 텍스트",
@@ -78,37 +80,37 @@
         "correctAnswer": "정답",
         "true": "진실",
         "false": "거짓",
-        "mathExpression": "예상되는 수학 표현식",
-        "mathExpressionPlaceholder": "예를 들어, x^2 + 5x + 6 = 0",
+        "mathExpression": "예상 수학 표현",
+        "mathExpressionPlaceholder": "예: x² + 5x + 6 = 0",
         "sampleAnswer": "샘플 답변",
-        "sampleAnswerPlaceholder": "예시 답변이나 설명을 입력하세요",
+        "sampleAnswerPlaceholder": "샘플 답변 또는 설명을 입력하세요.",
         "markscheme": "마케팅 계획",
-        "markschemeAttached": "상표권 등록증 첨부"
+        "markschemeAttached": "채점 기준표가 첨부되어 있습니다."
       },
       "questionTypes": {
         "multipleChoice": "객관식",
-        "longForm": "긴 형식의 답변",
-        "math": "수학 답안",
+        "longForm": "자세한 답변",
+        "math": "수학 답",
         "trueFalse": "참/거짓"
       },
       "markschemeDialog": {
-        "title": "마크스킴 선택",
-        "noMarkschemes": "사용 가능한 성적표가 없습니다. 먼저 성적 섹션에서 성적표를 만드세요.",
-        "untitled": "제목 없는 마크스킴",
+        "title": "채점 기준표를 선택하세요",
+        "noMarkschemes": "사용 가능한 채점 기준표가 없습니다. 먼저 성적 섹션에서 채점 기준표를 만드세요.",
+        "untitled": "제목 없는 채점 기준표",
         "custom": "관습"
       },
       "errors": {
-        "titleRequired": "제목이 필요합니다",
-        "atLeastOneQuestion": "최소한 하나의 질문을 추가해 주세요",
-        "questionTextRequired": "모든 질문에는 텍스트가 있어야 합니다.",
-        "multipleChoiceOptions": "객관식 문제에는 최소 2개의 옵션이 필요합니다.",
-        "multipleChoiceCorrectAnswer": "객관식 문제에는 적어도 하나의 정답이 필요합니다.",
-        "teacherOnly": "교사만 워크시트를 만들 수 있습니다."
+        "titleRequired": "제목을 입력해야 합니다.",
+        "atLeastOneQuestion": "질문을 최소 하나 이상 추가해 주세요.",
+        "questionTextRequired": "모든 질문에는 텍스트가 포함되어야 합니다.",
+        "multipleChoiceOptions": "객관식 문제는 최소 2개 이상의 보기가 필요합니다.",
+        "multipleChoiceCorrectAnswer": "객관식 문제는 최소 하나 이상의 정답이 필요합니다.",
+        "teacherOnly": "교사만이 학습지를 만들 수 있습니다."
       },
       "toasts": {
         "created": "워크시트가 성공적으로 생성되었습니다.",
-        "markschemeAttached": "Markscheme이 성공적으로 첨부되었습니다.",
-        "markschemeDetached": "Markscheme이 성공적으로 분리되었습니다.",
+        "markschemeAttached": "채점 기준표가 성공적으로 첨부되었습니다.",
+        "markschemeDetached": "채점 기준표가 성공적으로 분리되었습니다.",
         "updated": "워크시트가 성공적으로 업데이트되었습니다.",
         "saving": "절약...",
         "saved": "저장됨"

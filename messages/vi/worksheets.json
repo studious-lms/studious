@@ -1,7 +1,7 @@
 {
   "worksheets": {
     "title": "Phiếu bài tập",
-    "subtitle": "Quản lý và phân phối các bài tập thực hành",
+    "subtitle": "Quản lý và phân phát phiếu bài tập thực hành.",
     "list": {
       "title": "Tất cả các bài tập"
     },
@@ -27,29 +27,31 @@
       "save": "Cứu",
       "cancel": "Hủy bỏ",
       "select": "Lựa chọn",
-      "attachMarkscheme": "Đính kèm Markscheme",
+      "attachMarkscheme": "Đính kèm bảng điểm",
       "detach": "Chi tiết"
     },
     "search": {
-      "placeholder": "Tìm kiếm bài tập..."
+      "placeholder": "Tìm kiếm bảng tính...",
+      "noResults": "Không tìm thấy bài tập nào.",
+      "noResultsDesc": "Hãy thử dùng từ khóa tìm kiếm khác hoặc xóa bộ nhớ cache tìm kiếm."
     },
     "empty": {
-      "title": "Không tìm thấy bài tập nào",
-      "description": "Bắt đầu bằng cách tạo bảng tính đầu tiên của bạn hoặc sử dụng chức năng tìm kiếm để tìm các bảng tính hiện có."
+      "title": "Không tìm thấy bài tập nào.",
+      "description": "Hãy bắt đầu bằng cách tạo bảng tính đầu tiên của bạn hoặc sử dụng chức năng tìm kiếm để tìm các bảng tính đã có sẵn."
     },
     "confirm": {
-      "delete": "Bạn có chắc chắn muốn xóa bảng tính này không? Thao tác này không thể hoàn tác."
+      "delete": "Bạn có chắc chắn muốn xóa trang tính này không? Thao tác này không thể hoàn tác."
     },
     "toasts": {
-      "created": "Đã tạo bảng tính thành công",
-      "updated": "Đã cập nhật bảng tính thành công",
-      "deleted": "Đã xóa bảng tính thành công",
+      "created": "Bảng tính đã được tạo thành công",
+      "updated": "Bảng tính đã được cập nhật thành công",
+      "deleted": "Bảng tính đã được xóa thành công",
       "error": "Đã xảy ra lỗi"
     },
     "create": {
       "title": "Tạo bảng tính",
-      "subtitle": "Xây dựng một bảng tính mới với nhiều loại câu hỏi",
-      "worksheetInfo": "Thông tin bài tập",
+      "subtitle": "Tạo một bảng tính mới với nhiều loại câu hỏi khác nhau.",
+      "worksheetInfo": "Thông tin bảng tính",
       "actions": {
         "save": "Cứu",
         "cancel": "Hủy bỏ",
@@ -57,59 +59,59 @@
       },
       "fields": {
         "title": "Tiêu đề",
-        "titlePlaceholder": "Nhập tiêu đề bảng tính",
+        "titlePlaceholder": "Nhập tiêu đề trang tính",
         "description": "Sự miêu tả",
-        "descriptionPlaceholder": "Nhập mô tả bảng tính (tùy chọn)",
-        "dueDate": "Hai Ngày",
+        "descriptionPlaceholder": "Nhập mô tả bài tập (tùy chọn)",
+        "dueDate": "Hai cuộc hẹn",
         "totalQuestions": "Tổng số câu hỏi"
       },
       "questions": {
         "title": "Câu hỏi",
         "addQuestion": "Thêm câu hỏi",
-        "noQuestions": "Chưa có câu hỏi nào được thêm vào",
-        "addFirstQuestion": "Sử dụng menu thả xuống ở trên để thêm câu hỏi đầu tiên của bạn",
+        "noQuestions": "Chưa có câu hỏi nào được thêm vào.",
+        "addFirstQuestion": "Sử dụng menu thả xuống phía trên để thêm câu hỏi đầu tiên của bạn.",
         "questionNumber": "Câu hỏi {number}",
         "points": "Điểm",
         "questionText": "Văn bản câu hỏi",
-        "questionTextPlaceholder": "Nhập câu hỏi của bạn ở đây",
+        "questionTextPlaceholder": "Nhập câu hỏi của bạn tại đây",
         "options": "Tùy chọn",
         "optionPlaceholder": "Tùy chọn {number}",
         "addOption": "Thêm tùy chọn",
         "correctAnswer": "Câu trả lời đúng",
         "true": "ĐÚNG VẬY",
         "false": "SAI",
-        "mathExpression": "Biểu thức toán học mong đợi",
-        "mathExpressionPlaceholder": "ví dụ, x^2 + 5x + 6 = 0",
+        "mathExpression": "Biểu thức toán học dự kiến",
+        "mathExpressionPlaceholder": "Ví dụ: x^2 + 5x + 6 = 0",
         "sampleAnswer": "Câu trả lời mẫu",
-        "sampleAnswerPlaceholder": "Nhập câu trả lời mẫu hoặc lời giải thích",
+        "sampleAnswerPlaceholder": "Nhập câu trả lời hoặc giải thích mẫu.",
         "markscheme": "Kế hoạch tiếp thị",
-        "markschemeAttached": "Đính kèm chương trình đánh dấu"
+        "markschemeAttached": "Đính kèm bảng điểm."
       },
       "questionTypes": {
         "multipleChoice": "Trắc nghiệm",
         "longForm": "Câu trả lời dạng dài",
-        "math": "Đáp án Toán",
+        "math": "Câu trả lời toán học",
         "trueFalse": "Đúng/Sai"
       },
       "markschemeDialog": {
-        "title": "Chọn Markscheme",
-        "noMarkschemes": "Không có bảng điểm nào khả dụng. Trước tiên, hãy tạo một bảng điểm trong phần Điểm.",
-        "untitled": "Kế hoạch đánh dấu không có tiêu đề",
+        "title": "Chọn thang điểm",
+        "noMarkschemes": "Hiện chưa có thang điểm đánh giá. Vui lòng tạo thang điểm trong mục Điểm trước.",
+        "untitled": "Bảng điểm không tiêu đề",
         "custom": "Phong tục"
       },
       "errors": {
         "titleRequired": "Tiêu đề là bắt buộc",
         "atLeastOneQuestion": "Vui lòng thêm ít nhất một câu hỏi",
-        "questionTextRequired": "Tất cả các câu hỏi phải có văn bản",
-        "multipleChoiceOptions": "Câu hỏi trắc nghiệm cần ít nhất 2 lựa chọn",
-        "multipleChoiceCorrectAnswer": "Câu hỏi trắc nghiệm cần ít nhất một câu trả lời đúng",
-        "teacherOnly": "Chỉ giáo viên mới có thể tạo bảng tính"
+        "questionTextRequired": "Tất cả các câu hỏi phải có văn bản.",
+        "multipleChoiceOptions": "Câu hỏi trắc nghiệm cần có ít nhất 2 lựa chọn.",
+        "multipleChoiceCorrectAnswer": "Câu hỏi trắc nghiệm cần có ít nhất một đáp án đúng.",
+        "teacherOnly": "Chỉ giáo viên mới được phép tạo phiếu bài tập."
       },
       "toasts": {
-        "created": "Đã tạo bảng tính thành công",
-        "markschemeAttached": "Markscheme đã được đính kèm thành công",
-        "markschemeDetached": "Markscheme đã tách thành công",
-        "updated": "Đã cập nhật bảng tính thành công",
+        "created": "Bảng tính đã được tạo thành công",
+        "markschemeAttached": "Đã đính kèm bảng điểm thành công.",
+        "markschemeDetached": "Đã tách bảng điểm thành công",
+        "updated": "Bảng tính đã được cập nhật thành công",
         "saving": "Đang lưu...",
         "saved": "Đã lưu"
       }

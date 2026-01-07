@@ -1,5 +1,6 @@
 {
   "common": {
+    "upload": "Uploaden",
     "save": "Redden",
     "cancel": "Annuleren",
     "delete": "Verwijderen",
@@ -8,11 +9,11 @@
     "close": "Dichtbij",
     "back": "Rug",
     "next": "Volgende",
-    "loading": "Bezig met laden...",
+    "loading": "Laden...",
     "search": "Zoekopdracht",
     "filter": "Filter",
     "sort": "Soort",
-    "viewAll": "Bekijk alles",
+    "viewAll": "Alles bekijken",
     "noData": "Geen gegevens beschikbaar",
     "export": "Exporteren",
     "openMenu": "Open menu"
@@ -26,7 +27,7 @@
     "lastWeek": "Vorige week"
   },
   "errors": {
-    "somethingWentWrong": "Er is iets misgegaan",
+    "somethingWentWrong": "Er is iets misgegaan.",
     "tryAgain": "Probeer het opnieuw",
     "pageNotFound": "Pagina niet gevonden",
     "unauthorized": "Ongeautoriseerde toegang"
@@ -34,20 +35,20 @@
   "auth": {
     "login": {
       "title": "Welkom terug",
-      "subtitle": "Meld u aan bij uw Studious-account",
+      "subtitle": "Meld u aan bij uw Studious-account.",
       "username": "Gebruikersnaam",
       "password": "Wachtwoord",
       "forgotPassword": "Wachtwoord vergeten?",
-      "signIn": "Aanmelden",
+      "signIn": "Inloggen",
       "signingIn": "Aanmelden...",
-      "noAccount": "Heeft u nog geen account?",
+      "noAccount": "Nog geen account?",
       "signUp": "Aanmelden",
       "successMessage": "Succesvol ingelogd",
       "cancel": "Annuleren"
     },
     "signup": {
       "title": "Maak uw account aan",
-      "subtitle": "Sluit je aan bij Studious en begin met leren",
+      "subtitle": "Word lid van Studious en begin met leren!",
       "signUp": "Aanmelden",
       "username": "Gebruikersnaam",
       "email": "E-mail",
@@ -56,20 +57,20 @@
       "usernamePlaceholder": "Voer uw gebruikersnaam in",
       "emailPlaceholder": "Voer uw e-mailadres in",
       "passwordPlaceholder": "Maak een wachtwoord aan",
-      "confirmPasswordPlaceholder": "Bevestig uw wachtwoord",
+      "confirmPasswordPlaceholder": "Bevestig je wachtwoord",
       "agreeToTerms": "Ik ga akkoord met de",
-      "termsOfService": "Servicevoorwaarden",
+      "termsOfService": "Gebruiksvoorwaarden",
       "and": "En",
       "privacyPolicy": "Privacybeleid",
       "createAccount": "Account aanmaken",
-      "creatingAccount": "Account aanmaken...",
-      "alreadyHaveAccount": "Heeft u al een account?",
-      "signIn": "Aanmelden",
-      "passwordMismatch": "Wachtwoorden komen niet overeen",
-      "passwordTooShort": "Het wachtwoord moet minimaal 6 tekens lang zijn",
-      "termsRequired": "U moet akkoord gaan met de voorwaarden",
-      "verificationEmailSent": "Verificatie-e-mail verzonden!",
-      "signUpFailed": "Account aanmaken mislukt. Probeer het opnieuw."
+      "creatingAccount": "Een account aanmaken...",
+      "alreadyHaveAccount": "Heb je al een account?",
+      "signIn": "Inloggen",
+      "passwordMismatch": "De wachtwoorden komen niet overeen.",
+      "passwordTooShort": "Het wachtwoord moet minimaal 6 tekens lang zijn.",
+      "termsRequired": "U moet akkoord gaan met de voorwaarden.",
+      "verificationEmailSent": "Verificatiemail verzonden!",
+      "signUpFailed": "Het aanmaken van een account is mislukt. Probeer het opnieuw."
     },
     "verification": {
       "notVerified": "Account niet geverifieerd",
@@ -77,197 +78,197 @@
       "emailSentTo": "Verificatie-e-mail verzonden naar:",
       "resendEmail": "Verificatie-e-mail opnieuw verzenden",
       "backToSignIn": "Terug naar Aanmelden",
-      "emailSent": "Verificatie-e-mail verzonden!",
-      "checkInbox": "Controleer uw inbox en spamfolder.",
+      "emailSent": "Verificatiemail verzonden!",
+      "checkInbox": "Controleer uw inbox en spammap.",
       "enterEmail": "Voer uw e-mailadres in",
       "sending": "Verzenden...",
       "sendEmail": "E-mail verzenden",
-      "title": "Verifieer uw e-mailadres",
-      "subtitle": "Klik op de onderstaande knop om uw e-mailadres te verifiëren",
-      "verifying": "Verifiëren...",
+      "title": "Verifieer je e-mailadres",
+      "subtitle": "Klik op de onderstaande knop om uw e-mailadres te verifiëren.",
+      "verifying": "Bezig met controleren...",
       "verifyEmail": "E-mailadres verifiëren",
-      "successTitle": "E-mail succesvol geverifieerd",
+      "successTitle": "E-mailadres succesvol geverifieerd",
       "successMessage": "Je e-mailadres is geverifieerd. Je kunt nu inloggen op je account.",
       "errorTitle": "Verificatie mislukt",
-      "errorMessage": "De verificatielink is ongeldig of verlopen. Vraag een nieuwe verificatiemail aan.",
+      "errorMessage": "De verificatielink is ongeldig of verlopen. Vraag een nieuwe verificatie-e-mail aan.",
       "invalidToken": "Ongeldig verificatietoken"
     },
     "forgotPassword": {
-      "title": "Uw wachtwoord opnieuw instellen",
-      "subtitle": "Vul uw e-mailadres in en wij sturen u een link om uw wachtwoord opnieuw in te stellen",
+      "title": "Stel uw wachtwoord opnieuw in",
+      "subtitle": "Voer uw e-mailadres in en wij sturen u een link om uw wachtwoord opnieuw in te stellen.",
       "email": "E-mail",
       "emailPlaceholder": "Voer uw e-mailadres in",
       "sendResetLink": "Resetlink verzenden",
       "sending": "Verzenden...",
       "backToSignIn": "Terug naar Aanmelden",
-      "successTitle": "Controleer uw e-mail",
-      "successMessage": "Als er al een account met dat e-mailadres bestaat, hebben we u een link gestuurd om uw wachtwoord opnieuw in te stellen.",
-      "checkInbox": "Controleer uw inbox en spamfolder voor de resetlink.",
-      "errorMessage": "Resetlink verzenden mislukt. Probeer het opnieuw.",
-      "invalidEmail": "Voer een geldig e-mailadres in"
+      "successTitle": "Controleer je e-mail",
+      "successMessage": "Als er een account bestaat met dat e-mailadres, hebben we je een link gestuurd om je wachtwoord opnieuw in te stellen.",
+      "checkInbox": "Controleer je inbox en spammap voor de resetlink.",
+      "errorMessage": "Het is niet gelukt om de resetlink te verzenden. Probeer het opnieuw.",
+      "invalidEmail": "Voer een geldig e-mailadres in."
     },
     "resetPassword": {
-      "title": "Uw wachtwoord opnieuw instellen",
-      "subtitle": "Voer hieronder uw nieuwe wachtwoord in",
+      "title": "Stel uw wachtwoord opnieuw in",
+      "subtitle": "Voer hieronder uw nieuwe wachtwoord in.",
       "password": "Nieuw wachtwoord",
       "passwordPlaceholder": "Voer uw nieuwe wachtwoord in",
       "confirmPassword": "Bevestig wachtwoord",
-      "confirmPasswordPlaceholder": "Bevestig uw nieuwe wachtwoord",
+      "confirmPasswordPlaceholder": "Bevestig je nieuwe wachtwoord",
       "resetPassword": "Wachtwoord opnieuw instellen",
       "resetting": "Opnieuw instellen...",
-      "passwordTooShort": "Het wachtwoord moet minimaal 6 tekens lang zijn",
-      "passwordsDoNotMatch": "Wachtwoorden komen niet overeen",
-      "successTitle": "Wachtwoord opnieuw instellen succesvol",
+      "passwordTooShort": "Het wachtwoord moet minimaal 6 tekens lang zijn.",
+      "passwordsDoNotMatch": "De wachtwoorden komen niet overeen.",
+      "successTitle": "Wachtwoordherstel succesvol voltooid",
       "successMessage": "Je wachtwoord is succesvol gereset. Je kunt nu inloggen met je nieuwe wachtwoord.",
       "backToSignIn": "Terug naar Aanmelden"
     }
   },
   "marketing": {
     "navbar": {
-      "requestEarlyAccess": "Vroegtijdige toegang aanvragen",
-      "lightMode": "Overschakelen naar de lichtmodus",
-      "darkMode": "Overschakelen naar donkere modus",
+      "requestEarlyAccess": "Vraag vroegtijdige toegang aan",
+      "lightMode": "Schakel over naar de lichte modus",
+      "darkMode": "Schakel over naar de donkere modus",
       "languageSelector": "Selecteer taal"
     },
     "hero": {
       "badge": "Modern leerplatform",
-      "title1": "Naadloos, zonder afleiding",
+      "title1": "Naadloos en zonder afleiding.",
       "title2": "leren voor moderne scholen",
-      "subtitle": "Studious LMS integreert AI, realtimekalenders en klassencommunicatie in één samenhangend platform, ontworpen om docenten te helpen lesgeven en leerlingen te laten floreren.",
-      "requestEarlyAccess": "Vroegtijdige toegang aanvragen",
-      "watchDemo": "Bekijk demo",
+      "subtitle": "Studious LMS integreert AI, realtime agenda's en klassencommunicatie in één samenhangend platform – ontworpen om docenten te helpen lesgeven en studenten te laten excelleren.",
+      "requestEarlyAccess": "Vraag vroegtijdige toegang aan",
+      "watchDemo": "Bekijk de demo",
       "altDashboard": "Platformdashboard"
     },
     "problem": {
-      "title": "Traditionele schoolportalen zijn gefragmenteerd en verouderd",
-      "issue1": "Leraren verspillen tijd met het schakelen tussen meerdere hulpmiddelen",
-      "issue2": "Studenten hebben moeite met organisatie en deadlines",
-      "issue3": "AI is nog steeds onvoldoende geïntegreerd in de daadwerkelijke schoolworkflows"
+      "title": "Traditionele schoolportalen zijn gefragmenteerd en verouderd.",
+      "issue1": "Leraren verspillen tijd met het schakelen tussen verschillende tools.",
+      "issue2": "Studenten hebben moeite met organiseren en deadlines halen.",
+      "issue3": "Kunstmatige intelligentie is nog steeds onvoldoende geïntegreerd in de daadwerkelijke werkprocessen op scholen."
     },
     "response": {
-      "title1": "Studious LMS verenigt onderwijs, leren,",
-      "title2": "en communicatie in één werkruimte",
-      "subtitle": "Het is gebouwd met geavanceerde frameworks en een op de mens gericht ontwerp, en is schaalbaar voor scholen van elke omvang."
+      "title1": "Studious LMS verenigt lesgeven, leren,",
+      "title2": "en communicatie in één enkele werkruimte",
+      "subtitle": "Gebouwd met geavanceerde frameworks en een mensgerichte ontwerpbenadering, is het geschikt voor scholen van elke omvang."
     },
     "features": {
       "title": "Belangrijkste kenmerken",
-      "subtitle": "Alles wat u nodig hebt om moderne leerervaringen te beheren",
+      "subtitle": "Alles wat je nodig hebt om moderne leerervaringen te beheren",
       "ai": {
         "title": "AI-assistent",
-        "description": "Helpt bij het genereren van studiemateriaal, het samenvatten van inhoud en het beoordelen"
+        "description": "Helpt bij het samenstellen van studiemateriaal, het samenvatten van de inhoud en het nakijken van opdrachten."
       },
       "classManagement": {
-        "title": "Klassenmanagement",
-        "description": "Organiseer moeiteloos lessen, opdrachten en aanwezigheid"
+        "title": "Klasmanagement",
+        "description": "Organiseer lessen, opdrachten en aanwezigheid moeiteloos."
       },
       "assignments": {
         "title": "Opdrachten",
-        "description": "Efficiënt inzendingen van studenten maken, verzamelen en beoordelen"
+        "description": "Studentenopdrachten efficiënt aanmaken, verzamelen en beoordelen."
       },
       "calendar": {
         "title": "Kalender",
-        "description": "Realtime synchronisatie met opdrachten, lessen en evenementen"
+        "description": "Realtime synchronisatie met opdrachten, lessen en evenementen."
       },
       "analytics": {
-        "title": "Analyse",
-        "description": "Bekijk inzichten over prestaties, deelname en betrokkenheid"
+        "title": "Analyses",
+        "description": "Bekijk inzichten in prestaties, deelname en betrokkenheid."
       },
       "communication": {
         "title": "Mededeling",
-        "description": "Ingebouwde berichten en aankondigingen voor uniforme samenwerking"
+        "description": "Ingebouwde berichten- en aankondigingsfuncties voor uniforme samenwerking."
       }
     },
     "quote": {
-      "text": "Elke functie in Studious is ontworpen om de wrijving te verminderen, niet om deze toe te voegen."
+      "text": "Elke functie in Studious is ontworpen om wrijving te verminderen, niet om die te vergroten."
     },
     "pricing": {
-      "title": "Kies het juiste plan voor uw instelling",
-      "subtitle": "Eenvoudige, transparante prijzen zonder verborgen kosten. Alle abonnementen bevatten basisfuncties met schaalbare opties.",
+      "title": "Kies het juiste plan voor uw instelling.",
+      "subtitle": "Eenvoudige, transparante prijsstelling zonder verborgen kosten. Alle abonnementen bevatten de basisfuncties met schaalbare opties.",
       "starter": {
         "title": "Starter",
         "price": "Vrij",
         "note": "Beta-toegang inbegrepen",
-        "description": "Perfect voor kleine klassen en pilotprogramma's",
+        "description": "Perfect voor kleine klassen en pilotprogramma's.",
         "perk1": "Maximaal 30 studenten",
-        "perk2": "Onbeperkte lessen",
-        "perk3": "Kernfuncties (opdrachten, agenda, cijfers)",
-        "perk4": "AI-assistent (5 chats/maand)",
-        "perk5": "Gemeenschapsondersteuning",
-        "perk6": "5 GB opslag",
-        "button": "Gratis aan de slag"
+        "perk2": "Onbeperkt aantal lessen",
+        "perk3": "Kernfuncties (opdrachten, kalender, cijfers)",
+        "perk4": "AI-assistent (5 chats per maand)",
+        "perk5": "Gemeenschapssteun",
+        "perk6": "5 GB opslagruimte",
+        "button": "Begin gratis"
       },
       "school": {
         "title": "School",
         "price": "$5",
         "priceUnit": "/gebruiker/maand",
-        "note": "Jaarlijks gefactureerd of $ 6/maand",
-        "description": "Voor scholen met maximaal 1.000 leerlingen",
+        "note": "Jaarlijks gefactureerd of $6 per maand.",
+        "description": "Voor scholen met maximaal 1.000 leerlingen.",
         "perk1": "Onbeperkt aantal studenten",
-        "perk2": "Onbeperkte lessen",
+        "perk2": "Onbeperkt aantal lessen",
         "perk3": "Alle kernfuncties",
         "perk4": "AI-assistent (onbeperkt aantal zoekopdrachten)",
-        "perk5": "Eerste in de rij voor toegang tot de bètaversie van Studious CMS",
+        "perk5": "Krijg als eerste toegang tot de bètaversie van Studious CMS.",
         "button": "Aan de slag"
       },
       "institution": {
         "title": "Instelling",
         "price": "Aangepast",
-        "note": "Op maat gemaakt voor uw behoeften",
-        "description": "Voor grote scholen en universiteiten (1.000+ studenten)",
-        "perk1": "Alles in School-plan",
+        "note": "Afgestemd op uw behoeften",
+        "description": "Voor grote scholen en universiteiten (1000+ leerlingen)",
+        "perk1": "Alles in het schoolplan",
         "perk2": "24/7 prioriteitsondersteuning",
         "perk3": "Onbeperkte opslag",
-        "perk4": "Aangepaste training en onboarding",
+        "perk4": "Training en onboarding op maat",
         "perk5": "Lagere kosten per gebruiker",
-        "button": "Neem contact op met Verkoop"
+        "button": "Neem contact op met de verkoopafdeling."
       },
       "mostPopular": "Meest populair",
-      "earlyBird": "🎉 Early adopters ontvangen 2 maanden gratis op jaarabonnementen + speciale onboarding-ondersteuning"
+      "earlyBird": "🎉 Vroege gebruikers ontvangen 2 maanden gratis bij jaarabonnementen + persoonlijke ondersteuning bij de onboarding."
     },
     "schoolProgram": {
       "badge": "Maatschappelijke impact",
-      "title": "Studieus School Ontwikkelingsprogramma",
-      "subtitle": "Wij geloven dat elke leerling recht heeft op toegang tot moderne leermiddelen, ongeacht de economische situatie van zijn of haar school.",
+      "title": "Ontwikkelingsprogramma voor een studieuze school",
+      "subtitle": "Wij zijn van mening dat elke leerling recht heeft op toegang tot moderne leermiddelen, ongeacht de economische situatie van de school.",
       "feature1Title": "100% gratis toegang",
-      "feature1Description": "Volledige platformtoegang met alle functies voor gekwalificeerde scholen",
+      "feature1Description": "Volledige platformtoegang met alle functies voor in aanmerking komende scholen.",
       "feature2Title": "Toegewijde ondersteuning",
-      "feature2Description": "Prioriteit bij het onboarden en trainen van docenten en personeel",
-      "feature3Title": "Onderwijsbronnen",
-      "feature3Description": "Gratis lesmateriaal en curriculumondersteuning",
+      "feature2Description": "Prioritaire onboarding en training voor docenten en personeel.",
+      "feature3Title": "Educatieve hulpmiddelen",
+      "feature3Description": "Gratis lesmateriaal en ondersteuning bij het curriculum.",
       "applyNow": "Solliciteer nu",
       "learnMore": "Meer informatie",
-      "eligibilityTitle": "Programma-geschiktheid",
+      "eligibilityTitle": "Programma-eligibiliteit",
       "qualifyingTitle": "Kwalificerende scholen:",
       "qualify1": "Openbare scholen in achtergestelde gemeenschappen",
       "qualify2": "Geregistreerde non-profit onderwijsinstellingen",
       "qualify3": "Scholen in ontwikkelingsregio's",
-      "qualify4": "Scholen met titel I (VS) of gelijkwaardig",
+      "qualify4": "Title I-scholen (VS) of gelijkwaardige scholen",
       "commitmentTitle": "Onze belofte:",
-      "commitment": "10% van onze betalende klanten is voorstander van gratis toegang voor scholen in nood.",
-      "launchTitle": "Programma lancering:",
-      "launch": "Januari 2026 • Aanmeldingen nu geopend"
+      "commitment": "10% van onze betalende klanten steunt gratis toegang voor scholen die dat nodig hebben.",
+      "launchTitle": "Programma-lancering:",
+      "launch": "Januari 2026 • Aanmelden is nu mogelijk"
     },
     "futureDevelopments": {
       "title": "Toekomstige ontwikkelingen",
-      "subtitle": "Onze routekaart voor de transformatie van onderwijs",
-      "cas": {
-        "title": "CAS-perspectief",
-        "description": "Ondersteuning van ondergefinancierde scholen door middel van donaties en materialen, zodat kwalitatief goed onderwijs voor iedereen toegankelijk wordt."
+      "subtitle": "Onze routekaart voor de transformatie van het onderwijs",
+      "sustainable": {
+        "title": "Duurzaam perspectief",
+        "description": "Het ondersteunen van ondergefinancierde scholen door middel van donaties en materialen, waardoor kwalitatief goed onderwijs voor iedereen toegankelijk wordt."
       },
       "features": {
         "title": "Kenmerken Perspectief",
-        "description": "Uitbreiding van de ondersteuning voor AI-studenten en het bouwen van API-integraties voor diverse onderwijssystemen wereldwijd."
+        "description": "Het uitbreiden van AI-ondersteuning voor studenten en het bouwen van API-integraties voor diverse onderwijssystemen wereldwijd."
       },
       "launch": {
-        "title": "Lanceringsperspectief",
-        "description": "Presentaties op scholen, universiteiten en conferenties om de leerervaring opnieuw vorm te geven."
+        "title": "Lanceringperspectief",
+        "description": "Presentaties geven op scholen, universiteiten en conferenties om de leerervaring te vernieuwen."
       }
     },
     "cta": {
-      "title": "Bent u klaar om de manier waarop uw school leert en onderwijst opnieuw te definiëren?",
-      "subtitle": "Sluit je aan bij de toekomst van onderwijs met Studious LMS",
+      "title": "Ben je klaar om de manier waarop jouw school leert en lesgeeft opnieuw te definiëren?",
+      "subtitle": "Sluit je aan bij de toekomst van het onderwijs met Studious LMS.",
       "requestAccess": "Toegang aanvragen",
-      "partnerWithUs": "Werk samen met ons",
+      "partnerWithUs": "Werk met ons samen",
       "tagline": "Studious LMS — Modern leren, vereenvoudigd."
     },
     "privacyPolicy": {
@@ -276,47 +277,47 @@
       "sections": {
         "introduction": {
           "title": "1. Inleiding",
-          "content": "Studious LMS ('wij', 'ons' of 'onze') zet zich in voor de bescherming van uw privacy. Dit privacybeleid legt uit hoe wij uw gegevens verzamelen, gebruiken, openbaar maken en beschermen wanneer u ons leermanagementsysteem en gerelateerde diensten (gezamenlijk de 'Service') gebruikt. Lees dit privacybeleid aandachtig door. Door onze Service te gebruiken, stemt u in met het verzamelen en gebruiken van gegevens in overeenstemming met dit beleid."
+          "content": "Studious LMS ('wij', 'ons' of 'onze') hecht veel waarde aan de bescherming van uw privacy. Dit privacybeleid legt uit hoe wij uw gegevens verzamelen, gebruiken, openbaar maken en beveiligen wanneer u gebruikmaakt van ons leerbeheersysteem en de bijbehorende diensten (gezamenlijk de 'Dienst'). Lees dit privacybeleid aandachtig door. Door gebruik te maken van onze Dienst gaat u akkoord met het verzamelen en gebruiken van gegevens in overeenstemming met dit beleid."
         },
         "informationWeCollect": {
           "title": "2. Informatie die we verzamelen",
-          "content": "We verzamelen informatie die u rechtstreeks aan ons verstrekt, waaronder:\n\n• Accountgegevens: Gebruikersnaam, e-mailadres, wachtwoord en profielgegevens\n• Onderwijsgegevens: Cursusinschrijvingen, opdrachten, cijfers, aanwezigheidsgegevens en academische voortgang\n• Communicatiegegevens: Berichten, aankondigingen en andere communicatie binnen het platform\n• Gebruiksgegevens: Informatie over hoe u met onze Service omgaat, inclusief bezochte pagina's en gebruikte functies\n• Apparaatgegevens: IP-adres, browsertype, apparaat-ID's en besturingssysteem\n• Cookies en trackingtechnologieën: We gebruiken cookies en vergelijkbare technologieën om uw ervaring te verbeteren en gebruikspatronen te analyseren"
+          "content": "We verzamelen informatie die u rechtstreeks aan ons verstrekt, waaronder:\n\n• Accountgegevens: Gebruikersnaam, e-mailadres, wachtwoord en profielinformatie\n• Onderwijsgegevens: Inschrijvingen voor lessen, opdrachten, cijfers, aanwezigheidsregistratie en studievoortgang\n• Communicatiegegevens: Berichten, aankondigingen en andere communicatie binnen het platform\n• Gebruiksgegevens: Informatie over hoe u onze service gebruikt, inclusief bezochte pagina's en gebruikte functies\n• Apparaatgegevens: IP-adres, browsertype, apparaat-ID's en besturingssysteem\n• Cookies en trackingtechnologieën: We gebruiken cookies en vergelijkbare technologieën om uw ervaring te verbeteren en gebruikspatronen te analyseren"
         },
         "howWeUseInformation": {
           "title": "3. Hoe wij uw gegevens gebruiken",
-          "content": "We gebruiken de informatie die we verzamelen om:\n\n• Onze Service te leveren, te onderhouden en te verbeteren\n• Transacties te verwerken en uw account te beheren\n• De communicatie tussen docenten, studenten en beheerders te vergemakkelijken\n• Educatieve content, opdrachten en cijfers te genereren en te beheren\n• Belangrijke meldingen over uw account en de Service te verzenden\n• Gebruikspatronen te analyseren om de gebruikerservaring te verbeteren\n• Beveiliging te waarborgen en fraude te voorkomen\n• Te voldoen aan wettelijke verplichtingen en onze rechten te beschermen"
+          "content": "We gebruiken de informatie die we verzamelen om:\n\n• Onze service te leveren, te onderhouden en te verbeteren\n• Transacties te verwerken en uw account te beheren\n• De communicatie tussen docenten, leerlingen en beheerders te faciliteren\n• Educatieve inhoud, opdrachten en cijfers te genereren en te beheren\n• Belangrijke meldingen over uw account en de service te verzenden\n• Gebruikspatronen te analyseren om de gebruikerservaring te verbeteren\n• De beveiliging te waarborgen en fraude te voorkomen\n• Te voldoen aan wettelijke verplichtingen en onze rechten te beschermen"
         },
         "informationSharing": {
-          "title": "4. Informatiedeling en openbaarmaking",
-          "content": "Wij verkopen uw persoonsgegevens niet. Wij kunnen uw gegevens delen in de volgende omstandigheden:\n\n• Met onderwijsinstellingen: Informatie kan worden gedeeld met uw school of onderwijsinstelling voor educatieve doeleinden.\n• Met dienstverleners: Wij kunnen informatie delen met externe dienstverleners die ons helpen bij de uitvoering van onze dienst.\n• Voor wettelijke naleving: Wij kunnen informatie vrijgeven indien wettelijk vereist of om onze rechten en veiligheid te beschermen.\n• Met uw toestemming: Wij kunnen informatie delen met uw uitdrukkelijke toestemming.\n• In geval van een fusie: Informatie kan worden overgedragen in verband met een zakelijke transactie."
+          "title": "4. Informatie delen en openbaar maken",
+          "content": "Wij verkopen uw persoonlijke gegevens niet. We kunnen uw gegevens in de volgende gevallen delen:\n\n• Met onderwijsinstellingen: Gegevens kunnen worden gedeeld met uw school of onderwijsinstelling voor onderwijsdoeleinden.\n• Met dienstverleners: We kunnen gegevens delen met externe dienstverleners die ons helpen bij de werking van onze dienst.\n• Voor wettelijke naleving: We kunnen gegevens openbaar maken indien dit wettelijk verplicht is of om onze rechten en veiligheid te beschermen.\n• Met uw toestemming: We kunnen gegevens delen met uw uitdrukkelijke toestemming.\n• In geval van een fusie: Gegevens kunnen worden overgedragen in verband met een zakelijke transactie."
         },
         "dataSecurity": {
           "title": "5. Gegevensbeveiliging",
-          "content": "Wij implementeren passende technische en organisatorische beveiligingsmaatregelen om uw persoonsgegevens te beschermen tegen ongeautoriseerde toegang, wijziging, openbaarmaking of vernietiging. Geen enkele methode van overdracht via internet of elektronische opslag is echter 100% veilig. Hoewel wij ernaar streven om commercieel aanvaardbare middelen te gebruiken om uw gegevens te beschermen, kunnen wij geen absolute veiligheid garanderen."
+          "content": "Wij implementeren passende technische en organisatorische beveiligingsmaatregelen om uw persoonlijke gegevens te beschermen tegen ongeautoriseerde toegang, wijziging, openbaarmaking of vernietiging. Geen enkele methode voor gegevensoverdracht via internet of elektronische opslag is echter 100% veilig. Hoewel we ernaar streven commercieel aanvaardbare middelen te gebruiken om uw gegevens te beschermen, kunnen we absolute veiligheid niet garanderen."
         },
         "dataRetention": {
-          "title": "6. Gegevensretentie",
-          "content": "Wij bewaren uw persoonsgegevens zo lang als nodig is om onze Dienst te leveren en de in dit Privacybeleid beschreven doeleinden te vervullen, tenzij een langere bewaartermijn wettelijk vereist of toegestaan is. Wanneer we uw gegevens niet langer nodig hebben, zullen we deze veilig verwijderen of anonimiseren."
+          "title": "6. Gegevensbewaring",
+          "content": "Wij bewaren uw persoonsgegevens zo lang als nodig is om onze dienstverlening te leveren en de doeleinden te bereiken die in dit privacybeleid worden beschreven, tenzij een langere bewaartermijn wettelijk vereist of toegestaan is. Wanneer wij uw gegevens niet langer nodig hebben, zullen wij deze op een veilige manier verwijderen of anonimiseren."
         },
         "yourRights": {
           "title": "7. Uw rechten",
-          "content": "Afhankelijk van uw locatie heeft u mogelijk bepaalde rechten met betrekking tot uw persoonsgegevens, waaronder:\n\n• Toegang: Verzoek om toegang tot uw persoonsgegevens\n• Correctie: Verzoek om correctie van onjuiste informatie\n• Verwijdering: Verzoek om verwijdering van uw persoonsgegevens\n• Overdraagbaarheid: Verzoek om overdracht van uw gegevens\n• Bezwaar: Bezwaar maken tegen bepaalde verwerkingsactiviteiten\n• Intrekking van toestemming: Toestemming intrekken wanneer de verwerking is gebaseerd op toestemming\n\nOm deze rechten uit te oefenen, kunt u contact met ons opnemen via de informatie in het gedeelte 'Contact'."
+          "content": "Afhankelijk van uw locatie heeft u mogelijk bepaalde rechten met betrekking tot uw persoonsgegevens, waaronder:\n\n• Inzage: Verzoek om inzage in uw persoonsgegevens\n• Correctie: Verzoek om correctie van onjuiste gegevens\n• Verwijdering: Verzoek om verwijdering van uw persoonsgegevens\n• Overdraagbaarheid: Verzoek om overdracht van uw gegevens\n• Bezwaar: Bezwaar maken tegen bepaalde verwerkingsactiviteiten\n• Intrekking van toestemming: Uw toestemming intrekken wanneer de verwerking is gebaseerd op toestemming\n\nOm deze rechten uit te oefenen, kunt u contact met ons opnemen via de contactgegevens in het gedeelte 'Contact'."
         },
         "childrenPrivacy": {
           "title": "8. Privacy van kinderen",
-          "content": "Onze dienst is bedoeld voor educatief gebruik en kan worden gebruikt door studenten jonger dan 18 jaar. Wij houden ons aan de toepasselijke wetgeving met betrekking tot de privacy van kinderen, waaronder de Family Educational Rights and Privacy Act (FERPA) in de Verenigde Staten. Wij verzamelen niet bewust persoonsgegevens van kinderen zonder de juiste toestemming van ouders of onderwijsinstellingen. Als u denkt dat wij op ongepaste wijze informatie van een kind hebben verzameld, neem dan onmiddellijk contact met ons op."
+          "content": "Onze dienst is bedoeld voor educatief gebruik en mag worden gebruikt door studenten jonger dan 18 jaar. We voldoen aan de geldende wetgeving met betrekking tot de privacy van kinderen, waaronder de Family Educational Rights and Privacy Act (FERPA) in de Verenigde Staten. We verzamelen niet bewust persoonlijke gegevens van kinderen zonder de juiste toestemming van ouders of onderwijsinstellingen. Als u van mening bent dat we op ongepaste wijze gegevens van een kind hebben verzameld, neem dan onmiddellijk contact met ons op."
         },
         "internationalTransfers": {
-          "title": "9. Internationale gegevensoverdrachten",
-          "content": "Uw gegevens kunnen worden overgedragen naar en verwerkt in andere landen dan uw land van verblijf. Deze landen kunnen andere wetgeving inzake gegevensbescherming hebben dan uw land. Door onze Service te gebruiken, stemt u in met de overdracht van uw gegevens naar deze landen."
+          "title": "9. Internationale gegevensoverdracht",
+          "content": "Uw gegevens kunnen worden overgedragen naar en verwerkt in landen buiten uw woonland. Deze landen kunnen andere wetten inzake gegevensbescherming hebben dan uw eigen land. Door gebruik te maken van onze dienst, stemt u in met de overdracht van uw gegevens naar deze landen."
         },
         "changesToPolicy": {
           "title": "10. Wijzigingen in dit privacybeleid",
-          "content": "We kunnen dit privacybeleid van tijd tot tijd bijwerken. We zullen u op de hoogte stellen van eventuele wijzigingen door het nieuwe privacybeleid op deze pagina te plaatsen en de datum 'Laatst bijgewerkt' aan te passen. U wordt geadviseerd dit privacybeleid regelmatig te controleren op eventuele wijzigingen."
+          "content": "We kunnen dit privacybeleid van tijd tot tijd bijwerken. We zullen u op de hoogte stellen van eventuele wijzigingen door het nieuwe privacybeleid op deze pagina te publiceren en de datum 'Laatst bijgewerkt' bij te werken. We raden u aan dit privacybeleid regelmatig te raadplegen voor eventuele wijzigingen."
         },
         "contactUs": {
           "title": "11. Neem contact met ons op",
-          "content": "Als u vragen heeft over dit privacybeleid of onze privacyprocedures, kunt u contact met ons opnemen via:\n\nE-mail: privacy@studious.sh\n\nWe zullen uw vraag binnen een redelijke termijn beantwoorden."
+          "content": "Heeft u vragen over dit privacybeleid of onze privacywerkwijzen? Neem dan contact met ons op via:\n\nE-mail: privacy@studious.sh\n\nWij zullen uw vraag binnen een redelijke termijn beantwoorden."
         }
       },
       "goToTop": "Ga naar boven",
@@ -324,68 +325,68 @@
       "backToTop": "Terug naar boven"
     },
     "termsOfService": {
-      "title": "Servicevoorwaarden",
+      "title": "Gebruiksvoorwaarden",
       "lastUpdated": "Laatst bijgewerkt: november 2025",
       "sections": {
         "acceptance": {
           "title": "1. Aanvaarding van de voorwaarden",
-          "content": "Door Studious LMS ('de Service') te openen of te gebruiken, gaat u akkoord met deze Servicevoorwaarden ('Voorwaarden'). Indien u niet akkoord gaat met deze Voorwaarden, mag u de Service niet openen of gebruiken. Deze Voorwaarden zijn van toepassing op alle gebruikers van de Service, waaronder studenten, docenten, beheerders en onderwijsinstellingen."
+          "content": "Door Studious LMS ('de Dienst') te openen of te gebruiken, gaat u akkoord met deze Gebruiksvoorwaarden ('Voorwaarden'). Indien u niet akkoord gaat met deze Voorwaarden, mag u de Dienst niet openen of gebruiken. Deze Voorwaarden zijn van toepassing op alle gebruikers van de Dienst, inclusief studenten, docenten, beheerders en onderwijsinstellingen."
         },
         "descriptionOfService": {
-          "title": "2. Omschrijving van de dienst",
-          "content": "Studious LMS is een leermanagementsysteem dat onderwijsinstellingen, docenten en studenten tools biedt voor het beheren van lessen, opdrachten, cijfers, aanwezigheid, communicatie en andere educatieve activiteiten. De service omvat webgebaseerde en mobiele applicaties, AI-gestuurde functies en gerelateerde diensten."
+          "title": "2. Beschrijving van de dienstverlening",
+          "content": "Studious LMS is een leerbeheersysteem dat onderwijsinstellingen, docenten en studenten tools biedt voor het beheren van lessen, opdrachten, cijfers, aanwezigheid, communicatie en andere onderwijsactiviteiten. De dienst omvat webgebaseerde en mobiele applicaties, AI-gestuurde functies en aanverwante services."
         },
         "userAccounts": {
           "title": "3. Gebruikersaccounts",
-          "content": "Om de Service te gebruiken, moet u een account aanmaken en nauwkeurige, actuele en volledige informatie verstrekken. U bent verantwoordelijk voor de vertrouwelijkheid van uw accountgegevens en voor alle activiteiten die onder uw account plaatsvinden. U stemt ermee in om:\n\n• Een sterk, uniek wachtwoord te gebruiken\n• Uw accountgegevens niet met anderen te delen\n• Ons onmiddellijk op de hoogte te stellen van ongeautoriseerde toegang\n• Uw accountgegevens correct te beheren\n• Verantwoordelijk te zijn voor alle activiteiten onder uw account"
+          "content": "Om de Service te gebruiken, moet u een account aanmaken en accurate, actuele en volledige informatie verstrekken. U bent verantwoordelijk voor het geheimhouden van uw accountgegevens en voor alle activiteiten die onder uw account plaatsvinden. U stemt ermee in om:\n\n• Een sterk, uniek wachtwoord te gebruiken\n• Uw accountgegevens niet met anderen te delen\n• Ons onmiddellijk op de hoogte te stellen van ongeautoriseerde toegang\n• Uw accountgegevens accuraat te houden\n• Verantwoordelijk te zijn voor alle activiteiten onder uw account"
         },
         "acceptableUse": {
-          "title": "4. Beleid voor acceptabel gebruik",
-          "content": "U stemt ermee in de Service uitsluitend te gebruiken voor rechtmatige doeleinden en in overeenstemming met deze Voorwaarden. U stemt ermee in om NIET:\n\n• Toepasselijke wet- en regelgeving te schenden\n• Intellectuele-eigendomsrechten te schenden\n• Schadelijke, aanstootgevende of ongepaste content te verzenden\n• Andere gebruikers lastig te vallen, te misbruiken of te schaden\n• Te proberen ongeautoriseerde toegang tot de Service te verkrijgen\n• De Service of servers te verstoren of te verstoren\n• Geautomatiseerde systemen te gebruiken om zonder toestemming toegang te krijgen tot de Service\n• Zich voor te doen als een andere persoon of entiteit\n• Persoonsgegevens van andere gebruikers te verzamelen of op te slaan zonder toestemming"
+          "title": "4. Beleid voor aanvaardbaar gebruik",
+          "content": "U stemt ermee in de Service alleen te gebruiken voor wettige doeleinden en in overeenstemming met deze Voorwaarden. U stemt ermee in NIET:\n\n• Toepasselijke wetten of voorschriften te overtreden\n• Intellectuele eigendomsrechten te schenden\n• Schadelijke, aanstootgevende of ongepaste inhoud te verzenden\n• Andere gebruikers te lasten, te misbruiken of te schaden\n• Te proberen ongeautoriseerde toegang tot de Service te verkrijgen\n• De Service of servers te verstoren of te belemmeren\n• Geautomatiseerde systemen te gebruiken om zonder toestemming toegang tot de Service te verkrijgen\n• Zich voor te doen als een andere persoon of entiteit\n• Persoonsgegevens van andere gebruikers te verzamelen of op te slaan zonder toestemming"
         },
         "educationalContent": {
           "title": "5. Educatieve inhoud en intellectueel eigendom",
-          "content": "Met de Service kunnen gebruikers educatieve content creëren, uploaden en delen. U behoudt het eigendom van de content die u creëert, maar door de Service te gebruiken, verleent u ons een licentie om uw content te gebruiken, op te slaan en weer te geven zoals nodig is om de Service te leveren. U bent er zelf verantwoordelijk voor dat u het recht hebt om de content die u uploadt te gebruiken en te delen. Wij respecteren intellectuele-eigendomsrechten en zullen reageren op geldige meldingen van inbreuk op het auteursrecht."
+          "content": "De dienst stelt gebruikers in staat educatieve content te creëren, uploaden en delen. U behoudt het eigendom van de content die u creëert, maar door gebruik te maken van de dienst verleent u ons een licentie om uw content te gebruiken, op te slaan en weer te geven voor zover nodig om de dienst te kunnen leveren. U bent zelf verantwoordelijk voor het controleren of u het recht hebt om de content die u uploadt te gebruiken en te delen. Wij respecteren intellectuele eigendomsrechten en zullen reageren op geldige meldingen van inbreuk op het auteursrecht."
         },
         "aiFeatures": {
-          "title": "6. AI-aangedreven functies",
-          "content": "Onze service omvat AI-gestuurde functies zoals beoordelingshulp, contentgeneratie en educatieve ondersteuning. Deze functies worden 'as is' aangeboden en dienen als aanvullende tools. Gebruikers zijn verantwoordelijk voor het beoordelen en valideren van door AI gegenereerde content. Wij garanderen niet de juistheid, volledigheid of geschiktheid van door AI gegenereerde content."
+          "title": "6. AI-gestuurde functies",
+          "content": "Onze dienst omvat AI-gestuurde functies zoals beoordelingsondersteuning, contentgeneratie en educatieve ondersteuning. Deze functies worden 'as is' aangeboden en dienen als aanvullende hulpmiddelen te worden gebruikt. Gebruikers zijn zelf verantwoordelijk voor het controleren en valideren van door AI gegenereerde content. Wij garanderen niet de nauwkeurigheid, volledigheid of geschiktheid van door AI gegenereerde content."
         },
         "privacy": {
           "title": "7. Privacy",
-          "content": "Uw gebruik van de Service wordt ook beheerst door ons Privacybeleid, waarin wordt uitgelegd hoe wij uw gegevens verzamelen, gebruiken en beschermen. Door de Service te gebruiken, stemt u in met het verzamelen en gebruiken van gegevens zoals beschreven in ons Privacybeleid."
+          "content": "Uw gebruik van de Service is tevens onderworpen aan ons Privacybeleid, waarin wordt uitgelegd hoe wij uw gegevens verzamelen, gebruiken en beschermen. Door de Service te gebruiken, stemt u in met het verzamelen en gebruiken van gegevens zoals beschreven in ons Privacybeleid."
         },
         "feesAndPayment": {
           "title": "8. Kosten en betaling",
-          "content": "Voor sommige functies van de Service kan betaling vereist zijn. Als u een abonnement of betaalde functies aanschaft:\n\n• De kosten zijn zoals vermeld op het moment van aankoop\n• Betalingen worden verwerkt via beveiligde externe betalingsverwerkers\n• Abonnementen worden automatisch verlengd, tenzij ze worden geannuleerd\n• Terugbetalingen zijn onderworpen aan ons restitutiebeleid\n• We behouden ons het recht voor om prijzen met voorafgaande kennisgeving te wijzigen"
+          "content": "Voor sommige onderdelen van de Service is mogelijk een betaling vereist. Als u een abonnement of betaalde functies aanschaft:\n\n• De kosten zijn zoals vermeld op het moment van aankoop\n• Betalingen worden verwerkt via beveiligde externe betalingsverwerkers\n• Abonnementen worden automatisch verlengd, tenzij ze worden opgezegd\n• Terugbetalingen zijn onderworpen aan ons terugbetalingsbeleid\n• Wij behouden ons het recht voor om prijzen te wijzigen na kennisgeving"
         },
         "termination": {
           "title": "9. Beëindiging",
-          "content": "Wij kunnen uw account en toegang tot de Dienst onmiddellijk en zonder voorafgaande kennisgeving beëindigen of opschorten voor gedrag waarvan wij van mening zijn dat het in strijd is met deze Voorwaarden of schadelijk is voor andere gebruikers, ons of derden. U kunt uw account te allen tijde beëindigen door contact met ons op te nemen. Na beëindiging vervalt uw recht om de Dienst te gebruiken onmiddellijk."
+          "content": "Wij kunnen uw account en toegang tot de Service onmiddellijk en zonder voorafgaande kennisgeving beëindigen of opschorten indien wij van mening zijn dat uw gedrag in strijd is met deze Voorwaarden of schadelijk is voor andere gebruikers, ons of derden. U kunt uw account op elk gewenst moment beëindigen door contact met ons op te nemen. Bij beëindiging vervalt uw recht om de Service te gebruiken onmiddellijk."
         },
         "disclaimers": {
-          "title": "10. Vrijwaringen",
-          "content": "DE SERVICE WORDT GELEVERD 'ZOALS DEZE IS' EN 'ZOALS BESCHIKBAAR', ZONDER ENIGE GARANTIE, EXPLICIET OF IMPLICIET. WIJ GARANDEREN NIET DAT DE SERVICE ONONDERBROKEN, VEILIG OF VRIJ VAN FOUTEN ZAL ZIJN. WIJ WIJZEN ALLE GARANTIES AF, MET INBEGRIP VAN GARANTIES VAN VERKOOPBAARHEID, GESCHIKTHEID VOOR EEN BEPAALD DOEL EN NIET-INBREUK."
+          "title": "10. Disclaimer",
+          "content": "DEZE DIENST WORDT GELEVERD 'ZOALS HIJ IS' EN 'ZOALS BESCHIKBAAR' ZONDER ENIGE GARANTIES, EXPLICIET OF IMPLICIET. WIJ GARANDEREN NIET DAT DE DIENST ONONDERBROKEN, VEILIG OF FOUTLOOS ZAL ZIJN. WIJ WIJZEN ALLE GARANTIES AF, INCLUSIEF GARANTIES VAN VERKOOPBAARHEID, GESCHIKTHEID VOOR EEN BEPAALD DOEL EN NIET-INBREUK."
         },
         "limitationOfLiability": {
           "title": "11. Beperking van aansprakelijkheid",
-          "content": "VOOR ZOVER MAXIMAAL TOEGESTAAN DOOR DE WET, ZIJN WIJ NIET AANSPRAKELIJK VOOR ENIGE INDIRECTE, INCIDENTELE, SPECIALE, GEVOLG- OF STRAFRECHTELIJKE SCHADE, OF ENIG VERLIES VAN WINST OF INKOMSTEN, HETZIJ DIRECT OF INDIRECT, OF ENIG VERLIES VAN GEGEVENS, GEBRUIK, GOODWILL OF ANDERE IMMATERIËLE VERLIEZEN ALS GEVOLG VAN UW GEBRUIK VAN DE SERVICE."
+          "content": "Voor zover wettelijk toegestaan, zijn wij niet aansprakelijk voor enige indirecte, incidentele, speciale, gevolg- of punitieve schade, of voor enig verlies van winst of inkomsten, ongeacht of dit direct of indirect is geleden, of voor enig verlies van gegevens, gebruik, goodwill of andere immateriële verliezen voortvloeiend uit uw gebruik van de dienst."
         },
         "indemnification": {
           "title": "12. Schadeloosstelling",
-          "content": "U stemt ermee in om Studious LMS en haar functionarissen, directeuren, werknemers en agenten te vrijwaren, te verdedigen en schadeloos te stellen tegen alle claims, aansprakelijkheden, schade, verliezen en kosten die voortvloeien uit of op enigerlei wijze verband houden met uw toegang tot of gebruik van de Service, uw schending van deze Voorwaarden of uw inbreuk op de rechten van een ander."
+          "content": "U stemt ermee in Studious LMS en haar functionarissen, directeuren, werknemers en vertegenwoordigers te vrijwaren, te verdedigen en schadeloos te stellen tegen alle vorderingen, aansprakelijkheden, schade, verliezen en kosten die voortvloeien uit of op enigerlei wijze verband houden met uw toegang tot of gebruik van de Dienst, uw schending van deze Voorwaarden of uw inbreuk op de rechten van een ander."
         },
         "governingLaw": {
           "title": "13. Toepasselijk recht",
-          "content": "Deze Voorwaarden worden beheerst door en geïnterpreteerd in overeenstemming met de wetten van het rechtsgebied waarin Studious LMS actief is, zonder rekening te houden met de bepalingen inzake wetsconflicten. Alle geschillen die voortvloeien uit deze Voorwaarden of de Service zullen worden beslecht door de bevoegde rechtbanken van dat rechtsgebied."
+          "content": "Deze voorwaarden worden beheerst door en uitgelegd in overeenstemming met de wetten van het rechtsgebied waarin Studious LMS actief is, zonder rekening te houden met de bepalingen inzake conflicten tussen wetten. Eventuele geschillen die voortvloeien uit deze voorwaarden of de dienst zullen worden beslecht door de bevoegde rechtbanken van dat rechtsgebied."
         },
         "changesToTerms": {
           "title": "14. Wijzigingen in de voorwaarden",
-          "content": "Wij behouden ons het recht voor deze Voorwaarden te allen tijde te wijzigen. Wij zullen gebruikers op de hoogte stellen van materiële wijzigingen door de bijgewerkte Voorwaarden op onze website te plaatsen en de datum 'Laatst bijgewerkt' aan te passen. Uw voortgezette gebruik van de Dienst na dergelijke wijzigingen houdt in dat u akkoord gaat met de gewijzigde Voorwaarden."
+          "content": "Wij behouden ons het recht voor om deze voorwaarden op elk moment te wijzigen. We zullen gebruikers op de hoogte stellen van belangrijke wijzigingen door de bijgewerkte voorwaarden op onze website te plaatsen en de datum 'Laatst bijgewerkt' aan te passen. Uw voortgezet gebruik van de dienst na dergelijke wijzigingen houdt in dat u de gewijzigde voorwaarden accepteert."
         },
         "contactUs": {
           "title": "15. Neem contact met ons op",
-          "content": "Als u vragen heeft over deze Servicevoorwaarden, kunt u contact met ons opnemen via:\n\nE-mail: legal@studious.sh\n\nWe zullen binnen een redelijke termijn op uw vraag reageren."
+          "content": "Heeft u vragen over deze Servicevoorwaarden? Neem dan contact met ons op via:\n\nE-mail: legal@studious.sh\n\nWij zullen uw vraag binnen een redelijke termijn beantwoorden."
         }
       },
       "goToTop": "Ga naar boven",
@@ -399,11 +400,11 @@
   },
   "press": {
     "badge": "Pers & Media",
-    "title": "Studerend in het nieuws",
-    "subtitle": "Mediabronnen, merkactiva en bedrijfsinformatie voor journalisten en contentmakers",
+    "title": "Studieus in het nieuws",
+    "subtitle": "Mediaresources, merkmateriaal en bedrijfsinformatie voor journalisten en contentmakers.",
     "factsheet": {
-      "title": "Bedrijfsinformatieblad",
-      "subtitle": "Snelle feiten over Studious LMS",
+      "title": "Bedrijfsfactsheet",
+      "subtitle": "Korte feiten over Studious LMS",
       "companyInfo": "Bedrijfsinformatie",
       "founded": "Opgericht",
       "hq": "Hoofdkwartier",
@@ -411,7 +412,7 @@
       "website": "Website",
       "status": "Status",
       "currentStatus": "Huidige status",
-      "launchDate": "Lanceerdatum",
+      "launchDate": "Lanceringsdatum",
       "currentPhase": "Huidige fase",
       "targetMarkets": "Doelmarkten",
       "teamSize": "Teamgrootte",
@@ -420,65 +421,65 @@
     "contact": {
       "title": "Persvragen",
       "subtitle": "Voor persvragen, interviews en mediaverzoeken",
-      "sl": "Wij reageren doorgaans binnen 24 uur",
+      "sl": "We reageren doorgaans binnen 24 uur.",
       "general": "Voor algemene vragen en ondersteuning"
     }
   },
   "program": {
     "hero": {
-      "badge": "Sociaal Impact Initiatief",
-      "title": "Studieus School Ontwikkelingsprogramma",
-      "subtitle": "Het bieden van gratis toegang tot moderne leertechnologie voor scholen zonder financiële middelen"
+      "badge": "Initiatief voor maatschappelijke impact",
+      "title": "Ontwikkelingsprogramma voor een studieuze school",
+      "subtitle": "Het gratis beschikbaar stellen van moderne leermiddelen aan scholen zonder financiële middelen."
     },
     "commitment": {
-      "revenue": "Toegewezen inkomsten",
-      "cohort": "Eerste cohortlancering",
+      "revenue": "Toegezegde inkomsten",
+      "cohort": "Lancering van de eerste cohort",
       "free": "Gratis toegang"
     },
     "about": {
       "mission": {
         "title": "Onze missie",
-        "body1": "Het Studious School Development Program is bedoeld om kansarme scholen te ondersteunen door hen gratis en onbeperkte toegang te bieden tot ons leermanagementplatform. We erkennen dat technologie een dominante factor is op de arbeidsmarkt van de toekomst, maar veel onderwijsinstellingen hebben geen toegang tot dergelijke middelen. Via dit programma bieden we moderne leermanagementtechnologie aan scholen die deze het hardst nodig hebben."
+        "body1": "Het Studious School Development Program heeft als doel kansarme scholen te ondersteunen door hen gratis en onbeperkte toegang te bieden tot ons leerplatform. We erkennen dat technologie een dominante factor is in de toekomstige beroepsbevolking, maar veel onderwijsinstellingen hebben geen toegang tot dergelijke middelen. Via dit programma brengen we moderne leerplatformtechnologie naar scholen die dit het hardst nodig hebben."
       },
       "aims": {
-        "title": "Doelstellingen van het programma",
-        "body1": "Door uitgebreide gesprekken met docenten en onderwijsprofessionals hebben we aanzienlijke tekortkomingen in de digitale leerinfrastructuur van veel scholen geïdentificeerd. Veel leermanagementsystemen op de markt bieden geen samenhangende, intuïtieve gebruikerservaring en scholen in achterstandswijken kunnen zich vaak geen toegang tot moderne onderwijstechnologie veroorloven.",
-        "body2": "Ons programma pakt deze uitdagingen direct aan. De inkomsten uit onze betaalde institutionele abonnementen stellen ons in staat om kansarme scholen uitgebreide toegang te bieden tot Studious LMS en bijbehorende educatieve tools. Dit duurzame model stelt ons in staat de digitale kloof te dichten en tegelijkertijd ons platform continu te verbeteren voor alle gebruikers."
+        "title": "Programma-doelstellingen",
+        "body1": "Door uitgebreide gesprekken met leerkrachten en onderwijsprofessionals hebben we aanzienlijke tekortkomingen vastgesteld in de digitale leerinfrastructuur die voor veel scholen beschikbaar is. Veel leerbeheersystemen op de markt missen een samenhangende, intuïtieve gebruikerservaring, en scholen in achterstandsgebieden kunnen zich vaak geen toegang tot moderne onderwijstechnologie veroorloven.",
+        "body2": "Ons programma pakt deze uitdagingen direct aan. De inkomsten uit onze betaalde abonnementen voor instellingen stellen ons in staat om scholen in achtergestelde gebieden uitgebreide toegang te bieden tot Studious LMS en aanverwante educatieve tools. Dit duurzame model stelt ons in staat de digitale kloof te overbruggen en tegelijkertijd ons platform continu te verbeteren voor alle gebruikers."
       },
       "receive": {
         "title": "Wat u ontvangt",
-        "body1": "Scholen die tot het programma worden toegelaten, ontvangen de volledige Studious-platformervaring – geen beperkte of uitgeklede versie. Dit omvat onbeperkte accounts voor studenten en docenten, alle premiumfuncties (AI-assistent, geavanceerde analyses, realtime samenwerking), prioritaire technische ondersteuning, toegewijde onboardingspecialisten, doorlopende trainingsbronnen en toegang tot alle toekomstige updates en verbeteringen.",
-        "body2": "Naast de software zelf bieden we uitgebreide ondersteuning om ervoor te zorgen dat uw school de voordelen van het platform optimaal kan benutten. Ons team werkt rechtstreeks samen met uw beheerders en docenten om het systeem aan te passen aan uw specifieke behoeften, biedt praktische training en blijft beschikbaar voor voortdurende ondersteuning tijdens uw traject."
+        "body1": "Scholen die tot het programma worden toegelaten, krijgen de volledige Studious-platformervaring – geen beperkte of uitgeklede versie. Dit omvat onbeperkte leerling- en docentaccounts, alle premiumfuncties (AI-assistent, geavanceerde analyses, realtime samenwerking), prioritaire technische ondersteuning, toegewijde onboarding-specialisten, doorlopende trainingsbronnen en toegang tot alle toekomstige updates en verbeteringen.",
+        "body2": "Naast de software zelf bieden we uitgebreide ondersteuning om ervoor te zorgen dat uw school de voordelen van het platform optimaal kan benutten. Ons team werkt rechtstreeks samen met uw beheerders en docenten om het systeem aan te passen aan uw specifieke behoeften, biedt praktische training en staat gedurende het hele traject klaar om u te helpen."
       },
       "qualifies": {
         "title": "Wie komt in aanmerking?",
-        "body1": "We geven prioriteit aan scholen die leerlingen bedienen die het meest baat zouden hebben bij verbeterde onderwijstechnologie. Dit omvat openbare scholen in achtergestelde of economisch achtergestelde gemeenschappen, geregistreerde non-profit onderwijsinstellingen die financiële beperkingen aantonen, scholen in ontwikkelingsregio's of -landen, Amerikaanse Title I-scholen en hun internationale equivalenten, en elke onderwijsinstelling die een reële financiële behoefte kan aantonen en zich inzet voor het verbeteren van de leerresultaten.",
-        "body2": "We beoordelen elke aanvraag individueel en houden daarbij niet alleen rekening met financiële gegevens, maar ook met de missie van uw school, de doelgroep die u bedient en uw plannen om Studious te gebruiken om het onderwijs te verbeteren. Ons doel is om samen te werken met scholen die echt profiteren van ons platform en het effectief inzetten om de leerervaring van leerlingen te verbeteren."
+        "body1": "We geven prioriteit aan scholen die leerlingen bedienen die het meest baat zouden hebben bij verbeterde onderwijstechnologie. Dit omvat openbare scholen in achtergestelde of economisch zwakke gemeenschappen, geregistreerde non-profit onderwijsinstellingen die financiële beperkingen aantonen, scholen in ontwikkelingsregio's of -landen, Amerikaanse Title I-scholen en hun internationale equivalenten, en elke onderwijsinstelling die een aantoonbare financiële behoefte kan aantonen in combinatie met een commitment aan het verbeteren van de leerresultaten.",
+        "body2": "We beoordelen elke aanvraag individueel, waarbij we niet alleen rekening houden met financiële aspecten, maar ook met de missie van uw school, de doelgroep die u bedient en uw plannen om Studious in te zetten ter verbetering van het onderwijs. Ons doel is om samen te werken met scholen die daadwerkelijk baat hebben bij ons platform en het effectief kunnen inzetten om de leerervaringen van leerlingen te verbeteren."
       },
       "impact": {
         "title": "Onze visie op impact",
-        "body1": "Door scholen gratis toegang te bieden tot moderne leermanagementtechnologie, willen we een van de belangrijkste belemmeringen wegnemen waarmee onderwijsinstellingen in achterstandswijken te maken hebben. Onze aanpak gaat verder dan alleen software: we streven ernaar uitgebreide ondersteuning te bieden, inclusief trainingsmateriaal, onboarding-ondersteuning en toegang tot educatieve tools zoals e-books en digitaal schrijfmateriaal.",
-        "body2": "Het School Development Program start eind november tot medio december 2025 met onze eerste lichting partnerscholen. Naarmate Studious groeit, groeit ook onze capaciteit om meer scholen te ondersteunen. Alle inkomsten uit onze betaalde institutionele abonnementen worden geherinvesteerd in het verbeteren van de toegang voor scholen in nood, waardoor een duurzaam model voor onderwijsgelijkheid ontstaat dat in de loop der tijd sterker wordt."
+        "body1": "Door scholen gratis toegang te bieden tot moderne leermanagementtechnologie, willen we een van de belangrijkste obstakels wegnemen waarmee onderwijsinstellingen in achterstandsgebieden te maken hebben. Onze aanpak gaat verder dan alleen software: we zetten ons in voor uitgebreide ondersteuning, waaronder trainingsmateriaal, hulp bij de implementatie en toegang tot educatieve hulpmiddelen zoals e-boeken en digitaal lesmateriaal.",
+        "body2": "Het Schoolontwikkelingsprogramma start eind november/midden december 2025 met onze eerste groep partnerscholen. Naarmate Studious groeit, groeit ook onze capaciteit om meer scholen te ondersteunen. Alle inkomsten uit onze betaalde abonnementen voor instellingen worden opnieuw geïnvesteerd in het vergroten van de toegang voor scholen die dat nodig hebben, waardoor een duurzaam model voor gelijke onderwijskansen ontstaat dat in de loop der tijd sterker wordt."
       }
     },
     "cta": {
       "apply": {
-        "title": "Aanmelden voor het programma",
-        "description": "Klaar om Studious naar jouw school te halen? Vul ons aanmeldformulier in en we beoordelen het binnen 5-7 werkdagen.",
+        "title": "Meld je aan voor het programma.",
+        "description": "Klaar om Studious naar jouw school te halen? Vul ons aanmeldingsformulier in en we beoordelen het binnen 5-7 werkdagen.",
         "item1": "Duurt ongeveer 10-15 minuten",
-        "item2": "Geen aanvraagkosten vereist",
-        "item3": "Reactie binnen 5-7 werkdagen",
-        "button": "Start applicatie"
+        "item2": "Geen aanmeldingskosten vereist",
+        "item3": "U ontvangt binnen 5-7 werkdagen een reactie.",
+        "button": "Start de applicatie"
       }
     },
     "status": {
-      "title": "Controleer de status van de aanvraag",
-      "description": "Al aangemeld? Voer uw aanvraag-ID in om de status van uw aanvraag te controleren.",
+      "title": "Controleer de status van uw aanvraag",
+      "description": "Heeft u zich al aangemeld? Voer uw aanmeldingsnummer in om de status van uw aanmelding te controleren.",
       "inputLabel": "Applicatie-ID",
       "placeholder": "bijv. EXA2025-...",
-      "help": "Nadat u uw aanvraag heeft ingediend, heeft u uw aanvraag-ID per e-mail ontvangen.",
+      "help": "Na het indienen van je aanvraag heb je je aanvraag-ID per e-mail ontvangen.",
       "results": {
-        "found": "Toepassing gevonden",
+        "found": "Applicatie gevonden",
         "school": "School:",
         "location": "Locatie:",
         "submitted": "Ingediend:",
@@ -491,21 +492,21 @@
       "cards": {
         "approved": {
           "title": "🎉 Gefeliciteerd! Je aanvraag is goedgekeurd.",
-          "body": "Controleer uw e-mail voor de volgende stappen om uw account in te stellen."
+          "body": "Controleer je e-mail voor de volgende stappen om je account in te stellen."
         },
         "underReview": {
           "title": "⏳ Uw aanvraag wordt momenteel beoordeeld.",
-          "body": "Zodra de beoordeling is voltooid, nemen we per e-mail contact met u op."
+          "body": "We nemen per e-mail contact met u op zodra de beoordeling is afgerond."
         },
         "pending": {
           "title": "📋 Uw aanvraag is ontvangen.",
-          "body": "Ons team gaat binnenkort met de beoordeling beginnen. Verwachte beoordelingstijd: 5-7 werkdagen."
+          "body": "Ons team zal het binnenkort gaan beoordelen. Verwachte beoordelingstijd: 5-7 werkdagen."
         }
       }
     },
     "contact": {
-      "title": "Heeft u vragen?",
-      "subtitle": "Ons team staat voor u klaar om u te helpen bij het aanvraagproces",
+      "title": "Heb je vragen?",
+      "subtitle": "Ons team staat klaar om u te helpen bij de sollicitatieprocedure.",
       "button": "Stuur ons een e-mail: impact@studious.sh"
     }
   },
@@ -514,27 +515,27 @@
       "submitted": "Aanvraag succesvol ingediend!"
     },
     "errors": {
-      "submitFailed": "Aanvraag kon niet worden ingediend: {message}"
+      "submitFailed": "Aanvraag ingediend: {message}"
     },
     "success": {
       "title": "Aanvraag ingediend!",
-      "subtitle": "Bedankt voor uw aanmelding voor het Studious School Development Program",
+      "subtitle": "Bedankt voor je aanmelding voor het Studious School Development Program.",
       "applicationId": "Uw applicatie-ID",
-      "saveId": "Bewaar deze ID om de status van uw aanvraag te controleren",
+      "saveId": "Bewaar deze ID om de status van je aanvraag te controleren.",
       "nextSteps": {
-        "title": "Wat gebeurt er nu?",
+        "title": "Wat gebeurt er vervolgens?",
         "item1": "Je ontvangt een bevestigingsmail op {email}",
-        "item2": "Ons team zal uw aanvraag binnen 5-7 werkdagen beoordelen",
-        "item3": "We zullen u per e-mail op de hoogte stellen zodra er een beslissing is genomen"
+        "item2": "Ons team zal uw aanvraag binnen 5-7 werkdagen beoordelen.",
+        "item3": "We zullen u per e-mail op de hoogte stellen zodra er een beslissing is genomen."
       },
-      "backToProgram": "Terug naar programma",
-      "returnHome": "Terug naar huis"
+      "backToProgram": "Terug naar het programma",
+      "returnHome": "Terug naar de homepage"
     }
   },
   "agenda": {
     "title": "Agenda",
-    "description": "Bekijk uw schema en komende evenementen met uitgebreide kalenderweergaven",
-    "addEvent": "Gebeurtenis toevoegen",
+    "description": "Bekijk uw agenda en aankomende evenementen met behulp van de uitgebreide kalenderweergaven.",
+    "addEvent": "Evenement toevoegen",
     "untitledEvent": "Naamloos evenement",
     "today": "Vandaag",
     "previous": "Vorig",
@@ -550,7 +551,7 @@
     "landing": {
       "description": "Selecteer een gesprek in de zijbalk om te beginnen met chatten.",
       "pleaseSignIn": "Meld u aan",
-      "signInRequired": "U moet zijn aangemeld om toegang te krijgen tot de chat.",
+      "signInRequired": "Je moet ingelogd zijn om toegang te krijgen tot de chat.",
       "title": "Welkom bij Chat"
     },
     "page": {
@@ -560,11 +561,11 @@
       "notFound": {
         "title": "Gesprek niet gevonden",
         "description": "Dit gesprek bestaat niet of je hebt er geen toegang toe.",
-        "backToChat": "Terug naar Chat"
+        "backToChat": "Terug naar de chat"
       },
       "header": {
         "members": "leden",
-        "markMentionsRead": "Mark vermeldt lezen"
+        "markMentionsRead": "Mark noemt lezen"
       },
       "input": {
         "placeholderPrefix": "Bericht"
@@ -574,20 +575,20 @@
   },
   "notifications": {
     "title": "Meldingen",
-    "subtitle": "Blijf op de hoogte van je lessen en opdrachten",
+    "subtitle": "Blijf op de hoogte van je lessen en opdrachten.",
     "badge": {
       "unread": "{count} ongelezen"
     },
     "filters": {
       "label": "Filter:",
-      "all": "Allemaal ({count})",
+      "all": "Alle ({count})",
       "unread": "Ongelezen ({count})",
       "read": "Lees ({count})"
     },
     "empty": {
       "unread": {
         "title": "Geen ongelezen meldingen",
-        "description": "Helemaal bij! Je hebt geen ongelezen meldingen."
+        "description": "Alles bijgewerkt! Je hebt geen ongelezen meldingen meer."
       },
       "read": {
         "title": "Geen leesmeldingen",
@@ -595,12 +596,12 @@
       },
       "all": {
         "title": "Nog geen meldingen",
-        "description": "Wanneer u meldingen ontvangt, worden deze hier weergegeven."
+        "description": "Wanneer u meldingen ontvangt, verschijnen deze hier."
       }
     },
     "actions": {
       "marking": "Markeren...",
-      "markAsRead": "Markeren als gelezen"
+      "markAsRead": "Markeer als gelezen"
     },
     "toasts": {
       "markedAsRead": "Melding gemarkeerd als gelezen"
@@ -611,23 +612,23 @@
   },
   "profile": {
     "title": "Profiel",
-    "description": "Beheer uw persoonlijke gegevens en profielinstellingen",
+    "description": "Beheer je persoonlijke gegevens en profielinstellingen.",
     "editProfile": "Profiel bewerken",
     "saveChanges": "Wijzigingen opslaan",
     "cancel": "Annuleren",
     "student": "Student",
     "personalInformation": {
       "title": "Persoonlijke gegevens",
-      "description": "Werk uw persoonlijke gegevens en profielinformatie bij",
+      "description": "Werk je persoonlijke gegevens en profielinformatie bij.",
       "displayName": "Weergavenaam",
       "displayNamePlaceholder": "Voer uw weergavenaam in",
-      "displayNameDescription": "Zo zal uw naam voor anderen verschijnen",
+      "displayNameDescription": "Zo zal uw naam er voor anderen uitzien.",
       "location": "Locatie",
       "locationPlaceholder": "Voer uw locatie in",
       "locationDescription": "Uw stad, staat of land",
       "bio": "Was",
-      "bioPlaceholder": "Vertel ons iets over jezelf...",
-      "bioDescription": "Een korte beschrijving van uzelf (maximaal 500 tekens)",
+      "bioPlaceholder": "Vertel eens iets over jezelf...",
+      "bioDescription": "Een korte beschrijving van jezelf (max. 500 tekens)",
       "website": "Website",
       "websitePlaceholder": "https://uw-website.com",
       "websiteDescription": "Uw persoonlijke website of portfolio"
@@ -636,18 +637,18 @@
       "title": "Accountgegevens",
       "description": "Uw accountgegevens en inloggegevens",
       "username": "Gebruikersnaam",
-      "usernameNote": "Gebruikersnaam kan niet worden gewijzigd",
+      "usernameNote": "De gebruikersnaam kan niet worden gewijzigd.",
       "email": "E-mail",
-      "emailNote": "E-mail wordt beheerd in Accountinstellingen",
+      "emailNote": "E-mail wordt beheerd in de accountinstellingen.",
       "memberSince": "Lid sinds"
     },
     "messages": {
       "profileUpdated": "Profiel succesvol bijgewerkt",
       "profileUpdateFailed": "Profiel bijwerken mislukt",
-      "profilePictureSelected": "Profielfoto geselecteerd. Klik op 'Wijzigingen opslaan' om bij te werken.",
+      "profilePictureSelected": "Profielafbeelding geselecteerd. Klik op 'Wijzigingen opslaan' om bij te werken.",
       "avatarSelected": "Avatar geselecteerd. Klik op 'Wijzigingen opslaan' om bij te werken.",
-      "profilePictureUploadFailed": "Het uploaden van een profielfoto is mislukt",
-      "profilePictureSelectFailed": "Het is niet gelukt om een profielfoto te selecteren",
+      "profilePictureUploadFailed": "Het uploaden van de profielfoto is mislukt.",
+      "profilePictureSelectFailed": "Het selecteren van een profielfoto is mislukt.",
       "failedToLoadProfile": "Profiel laden mislukt. Probeer het opnieuw."
     }
   },
@@ -655,24 +656,24 @@
     "assignments": "Opdrachten",
     "students": "studenten",
     "attendance": "Aanwezigheid",
-    "attachFile": "Bestand bijvoegen",
+    "attachFile": "Voeg een bestand toe",
     "post": "Na",
     "posting": "Bericht plaatsen...",
     "noPosts": "Nog geen berichten",
-    "createFirstPost": "Eerste bericht maken",
+    "createFirstPost": "Maak je eerste bericht aan",
     "grades": {
       "title": "Cijfers",
-      "subtitle": "Bekijk en beheer de cijfers van studenten",
+      "subtitle": "Bekijk en beheer de cijfers van studenten.",
       "columns": {
         "assignment": "Opdracht",
         "maxPoints": "Maximale punten",
         "weight": "Gewicht",
-        "graded": "Gegradeerd",
-        "dueDate": "Twee data",
+        "graded": "Beoordeeld",
+        "dueDate": "Twee afspraakjes",
         "actions": "Acties",
         "student": "Student",
-        "overallGrade": "Algemene beoordeling",
-        "assignmentsCompleted": "Opdrachten voltooid",
+        "overallGrade": "Eindcijfer",
+        "assignmentsCompleted": "Voltooide opdrachten",
         "trend": "Trend"
       },
       "labels": {
@@ -683,13 +684,13 @@
         "viewGrades": "Bekijk cijfers",
         "saving": "Besparing...",
         "saveChanges": "Wijzigingen opslaan",
-        "preview": "Voorvertoning",
+        "preview": "Voorbeeld",
         "edit": "Bewerking",
         "delete": "Verwijderen",
-        "createNew": "Nieuw maken"
+        "createNew": "Nieuw aanmaken"
       },
       "overview": {
-        "title": "Klassenoverzicht",
+        "title": "Cursusoverzicht",
         "classAverage": "Klasgemiddelde",
         "totalStudents": "Totaal aantal studenten",
         "assignments": "Opdrachten",
@@ -699,7 +700,7 @@
         "title": "Opdrachtbeheer",
         "empty": {
           "title": "Geen opdrachten gevonden",
-          "description": "Maak opdrachten aan om cijfers en instellingen te beheren"
+          "description": "Maak opdrachten aan om cijfers en instellingen te beheren."
         },
         "searchPlaceholder": "Zoekopdrachten..."
       },
@@ -708,45 +709,45 @@
         "viewAll": "Bekijk alle studenten",
         "empty": {
           "title": "Geen studenten ingeschreven",
-          "description": "Studenten verschijnen hier zodra ze de klas binnenkomen"
+          "description": "Studenten verschijnen hier zodra ze zich voor de les aanmelden."
         },
         "searchPlaceholder": "Zoek studenten..."
       },
       "gradeBoundaries": {
-        "title": "Graadgrenzen",
-        "untitled": "Ongetitelde beoordelingsgrens",
+        "title": "Grenswaarden",
+        "untitled": "Naamloze grens voor nivellering",
         "empty": {
-          "title": "Er zijn geen cijfergrenzen gemaakt",
-          "description": "Maak beoordelingsgrenzen om cijferbereiken te definiëren"
+          "title": "Geen niveaugrenzen gecreëerd",
+          "description": "Stel beoordelingsgrenzen vast om cijferbereiken te definiëren."
         },
         "previewTitle": "Voorbeeld van beoordelingsgrenzen",
         "details": {
-          "title": "Details van de grenswaarde",
+          "title": "Details van de afbakening van het terrein",
           "name": "Naam",
-          "noneDefined": "Geen beoordelingsgrenzen gedefinieerd"
+          "noneDefined": "Er zijn geen beoordelingsgrenzen vastgesteld."
         }
       },
       "rubrics": {
-        "title": "Rubrieken",
-        "untitled": "Rubriek zonder titel",
+        "title": "Beoordelingscriteria",
+        "untitled": "Naamloze beoordelingscriteria",
         "empty": {
-          "title": "Geen rubrieken aangemaakt",
-          "description": "Maak rubrieken om beoordelingscriteria te definiëren"
+          "title": "Er zijn geen beoordelingscriteria aangemaakt.",
+          "description": "Stel beoordelingscriteria op om de criteria voor de evaluatie vast te leggen."
         },
-        "previewTitle": "Rubriekvoorbeeld",
+        "previewTitle": "Voorbeeld van de beoordelingscriteria",
         "details": {
-          "title": "Rubriekdetails",
+          "title": "Details van de beoordelingscriteria",
           "name": "Naam",
           "category": "Categorie",
           "description": "Beschrijving",
           "custom": "Aangepast",
-          "noDescription": "Geen beschrijving verstrekt",
-          "noCriteria": "Er zijn geen criteria gevonden in deze rubriek"
+          "noDescription": "Geen beschrijving beschikbaar",
+          "noCriteria": "Er zijn geen criteria gevonden in deze rubriek."
         }
       },
       "confirm": {
-        "deleteRubric": "Weet u zeker dat u dit markschema wilt verwijderen?",
-        "deleteGradingBoundary": "Weet u zeker dat u deze beoordelingsgrens wilt verwijderen?"
+        "deleteRubric": "Weet je zeker dat je dit beoordelingsschema wilt verwijderen?",
+        "deleteGradingBoundary": "Weet je zeker dat je deze beoordelingsgrens wilt verwijderen?"
       }
     },
     "members": {
@@ -755,14 +756,14 @@
         "totalMembers": "{count} leden"
       },
       "actions": {
-        "inviteMember": "Lid uitnodigen",
+        "inviteMember": "Nodig een lid uit",
         "copy": "Kopiëren",
         "regenerate": "Regenereren",
         "message": "Bericht",
-        "viewProfile": "Bekijk profiel",
+        "viewProfile": "Profiel bekijken",
         "viewGrades": "Bekijk cijfers",
         "makeTeacher": "Maak leraar",
-        "makeStudent": "Maak student",
+        "makeStudent": "Maak van de student",
         "removeFromClass": "Verwijderen uit de klas",
         "removeAccess": "Toegang verwijderen",
         "tryAgain": "Probeer het opnieuw"
@@ -773,8 +774,8 @@
         "you": "Jij"
       },
       "invite": {
-        "title": "Klasuitnodigingscode",
-        "description": "Deel deze code met studenten om deel te nemen aan de les"
+        "title": "Uitnodigingscode voor de les",
+        "description": "Deel deze code met de leerlingen zodat ze zich kunnen aanmelden voor de les."
       },
       "search": {
         "placeholder": "Zoek leden..."
@@ -786,33 +787,33 @@
       "students": {
         "empty": {
           "title": "Geen studenten gevonden",
-          "matchNone": "Er zijn geen studenten die overeenkomen met \"{query}\"",
-          "noStudents": "Er zijn nog geen studenten bij deze klas gekomen"
+          "matchNone": "Geen studenten komen overeen met \"{query}\"",
+          "noStudents": "Er hebben zich nog geen studenten voor deze klas aangemeld."
         }
       },
       "teachers": {
         "empty": {
           "title": "Geen leraren gevonden",
-          "matchNone": "Er zijn geen docenten die overeenkomen met \"{query}\"",
-          "noTeachers": "Er zijn geen extra docenten toegevoegd"
+          "matchNone": "Geen leraren komen overeen met \"{query}\"",
+          "noTeachers": "Er zijn geen extra docenten toegevoegd."
         }
       },
       "toasts": {
-        "inviteRegenerated": "Uitnodigingscode succesvol opnieuw gegenereerd",
-        "copied": "Uitnodigingscode gekopieerd naar klembord",
+        "inviteRegenerated": "De uitnodigingscode is succesvol opnieuw gegenereerd.",
+        "copied": "De uitnodigingscode is naar het klembord gekopieerd.",
         "roleChanged": "Rol gewijzigd naar {role}",
         "memberRemoved": "Lid succesvol verwijderd"
       },
       "errors": {
-        "regenerateFailed": "Het is niet gelukt om de uitnodigingscode opnieuw te genereren",
-        "changeRoleFailed": "Het is niet gelukt om de rol te veranderen",
-        "removeFailed": "Lid verwijderen mislukt",
-        "failedToLoad": "Het laden van leden is mislukt"
+        "regenerateFailed": "Het opnieuw genereren van de uitnodigingscode is mislukt.",
+        "changeRoleFailed": "Het is niet gelukt om van rol te wisselen.",
+        "removeFailed": "Het verwijderen van het lid is mislukt.",
+        "failedToLoad": "Leden laden mislukt"
       }
     },
     "files": {
       "title": "Bestanden",
-      "subtitle": "Beheer klasbestanden en bronnen",
+      "subtitle": "Beheer lesbestanden en -bronnen.",
       "actions": {
         "newFolder": "Nieuwe map",
         "upload": "Uploaden",
@@ -834,16 +835,16 @@
         "fileRenamed": "Bestand succesvol hernoemd",
         "fileMoved": "Bestand succesvol verplaatst",
         "downloadStarted": "Download gestart",
-        "shareCopied": "Link delen gekopieerd"
+        "shareCopied": "Deellink gekopieerd"
       },
       "errors": {
         "teacherOnly": "Alleen docenten kunnen bestanden wijzigen.",
-        "downloadFailed": "Downloaden mislukt",
+        "downloadFailed": "Download mislukt",
         "shareFailed": "Delen mislukt",
         "failedToLoad": "Bestanden laden mislukt. Probeer het later opnieuw."
       },
       "breadcrumbs": {
-        "classFiles": "Klassebestanden"
+        "classFiles": "Klasbestanden"
       },
       "search": {
         "placeholder": "Zoeken in bestanden"
@@ -868,15 +869,15 @@
         "fileSize": "Bestandsgrootte"
       },
       "empty": {
-        "title": "Deze map is leeg",
-        "description": "Upload bestanden of maak mappen om te beginnen met het organiseren van uw lesmateriaal.",
+        "title": "Deze map is leeg.",
+        "description": "Upload bestanden of maak mappen aan om te beginnen met het organiseren van je lesmateriaal.",
         "searchTitle": "Geen bestanden gevonden",
-        "searchDescription": "Er zijn geen bestanden die overeenkomen met \"{query}\". Probeer een andere zoekterm."
+        "searchDescription": "Er zijn geen bestanden gevonden die overeenkomen met \"{query}\". Probeer een andere zoekterm."
       }
     },
     "settings": {
       "title": "Klasinstellingen",
-      "subtitle": "Klasdetails en voorkeuren configureren",
+      "subtitle": "Configureer klasdetails en voorkeuren",
       "labels": {
         "unsavedChanges": "Niet-opgeslagen wijzigingen"
       },
@@ -893,31 +894,31 @@
         },
         "theme": {
           "title": "Klasthema",
-          "description": "Kies een thema kleur voor deze klas"
+          "description": "Kies een themakleur voor deze les."
         },
         "danger": {
           "title": "Gevarenzone",
-          "description": "Zodra je een klas verwijdert, is er geen weg meer terug. Hiermee worden alle opdrachten, cijfers en presentielijsten permanent verwijderd en worden alle studenten uit de klas verwijderd."
+          "description": "Als je een klas eenmaal hebt verwijderd, is er geen weg terug. Hierdoor worden alle opdrachten, cijfers, aanwezigheidsregistraties en alle studenten die aan de klas deelnemen permanent verwijderd."
         }
       },
       "fields": {
-        "className": "Klassenaam",
+        "className": "Klasnaam",
         "section": "Sectie",
         "subject": "Onderwerp"
       },
       "placeholders": {
-        "className": "bijvoorbeeld geavanceerde natuurkunde",
-        "section": "bijvoorbeeld AP-101",
-        "subject": "bijvoorbeeld natuurkunde"
+        "className": "bijv. Geavanceerde Natuurkunde",
+        "section": "bijv. AP-101",
+        "subject": "bijv. Natuurkunde"
       },
       "toasts": {
         "updated": {
-          "title": "Klasse bijgewerkt",
-          "description": "De klasse-instellingen zijn succesvol opgeslagen."
+          "title": "Les bijgewerkt",
+          "description": "De klasinstellingen zijn succesvol opgeslagen."
         },
         "deleted": {
           "title": "Klasse verwijderd",
-          "description": "De klas is permanent verwijderd."
+          "description": "De les is definitief verwijderd."
         }
       },
       "errors": {
@@ -928,12 +929,12 @@
       },
       "confirm": {
         "title": "Weet je het absoluut zeker?",
-        "description": "Deze actie kan niet ongedaan worden gemaakt. Hiermee wordt de klasse \"{name}\" permanent verwijderd en worden alle bijbehorende gegevens verwijderd, waaronder:",
+        "description": "Deze actie kan niet ongedaan worden gemaakt. Hiermee wordt de klasse \"{name}\" permanent verwijderd, inclusief alle bijbehorende gegevens, waaronder:",
         "items": {
           "assignments": "Alle opdrachten en inzendingen",
-          "records": "Alle cijfers en aanwezigheidsgegevens",
-          "students": "Alle studenten worden uit de klas verwijderd",
-          "events": "Alle klassenevenementen en aankondigingen"
+          "records": "Alle cijfers en aanwezigheidsregistraties",
+          "students": "Alle leerlingen worden uit de klas verwijderd.",
+          "events": "Alle klasgebeurtenissen en aankondigingen"
         },
         "confirmDelete": "Ja, klasse verwijderen"
       }
@@ -944,25 +945,25 @@
       "actions": {
         "saveChanges": "Wijzigingen opslaan",
         "cancel": "Annuleren",
-        "edit": "Syllabus bewerken"
+        "edit": "Bewerk het lesprogramma"
       },
       "errors": {
-        "failedToLoad": "Het is niet gelukt om de syllabus te laden",
+        "failedToLoad": "Het laden van het lesprogramma is mislukt.",
         "tryLater": "Probeer het later opnieuw."
       },
       "stats": {
         "totalAssignments": "Totaal aantal opdrachten",
         "completionRate": "Voltooiingspercentage",
         "totalPoints": "Totaal aantal punten",
-        "upcoming": "Aankomende"
+        "upcoming": "Aanstaande"
       },
       "overview": {
         "title": "Cursusoverzicht",
-        "placeholder": "Vul een cursusoverzicht, doelstellingen en andere belangrijke informatie in...",
-        "helper": "Voer uw cursusgegevens, leerdoelen, beleid en andere belangrijke details in.",
+        "placeholder": "Vul hier het cursusoverzicht, de doelstellingen en andere belangrijke informatie in...",
+        "helper": "Vul hier uw cursusinformatie, leerdoelen, beleid en andere belangrijke details in.",
         "empty": {
-          "title": "Nog geen syllabusinhoud",
-          "description": "Klik op 'Syllabus bewerken' om cursusinformatie, leerdoelen, beleid en meer toe te voegen."
+          "title": "Er is nog geen lesprogramma-inhoud beschikbaar.",
+          "description": "Klik op 'Lesrooster bewerken' om cursusinformatie, leerdoelen, beleidsregels en meer toe te voegen."
         }
       },
       "assignments": {
@@ -970,27 +971,27 @@
         "gradedCount": "{graded} van {total} beoordeeld",
         "totalPoints": "{total} totaal aantal punten",
         "empty": {
-          "title": "Nog geen opdrachten",
-          "description": "Zodra u opdrachten hebt gemaakt, worden deze hier weergegeven."
+          "title": "Nog geen opdrachten.",
+          "description": "Opdrachten verschijnen hier zodra ze zijn aangemaakt."
         }
       },
       "table": {
         "assignment": "Opdracht",
-        "dueDate": "Twee data",
+        "dueDate": "Twee afspraakjes",
         "points": "Punten",
         "weight": "Gewicht",
         "status": "Status",
         "pts": "punten"
       },
       "status": {
-        "graded": "Gegradeerd",
+        "graded": "Beoordeeld",
         "pending": "In behandeling"
       },
       "courseInfo": {
         "title": "Cursusinformatie",
         "basic": {
           "title": "Basisgegevens",
-          "className": "Klassenaam",
+          "className": "Klasnaam",
           "section": "Sectie",
           "subject": "Onderwerp"
         },
@@ -1004,7 +1005,7 @@
     }
   },
   "assignment": {
-    "dueDate": "Twee data",
+    "dueDate": "Twee afspraakjes",
     "submit": "Indienen",
     "grade": "Cijfer",
     "feedback": "Feedback",
@@ -1014,19 +1015,19 @@
     "assignment": "Opdracht",
     "assignments": "Opdrachten",
     "newAssignment": "Nieuwe opdracht",
-    "createAssignment": "Opdracht maken",
-    "viewAssignment": "Bekijk opdracht",
+    "createAssignment": "Opdracht aanmaken",
+    "viewAssignment": "Opdracht bekijken",
     "allAssignments": "Alle opdrachten",
     "searchAssignments": "Zoekopdrachten...",
     "noAssignmentsFound": "Geen opdrachten gevonden",
-    "createFirstAssignment": "Maak je eerste opdracht om te beginnen",
+    "createFirstAssignment": "Maak je eerste opdracht aan om te beginnen.",
     "newSection": "Nieuwe sectie",
     "pts": "punten",
     "overdue": "(Verlopen)",
-    "assignmentDrop": "Laat de opdracht hier vallen om naar het hoogste niveau te gaan",
-    "sectionDeletionConfirmation": "Weet u zeker dat u deze sectie wilt verwijderen? Alle opdrachten worden naar het hoogste niveau verplaatst.",
-    "assignmentDeletionConfirmation": "Weet u zeker dat u deze toewijzing wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt.",
-    "manageAndTrack": "Beheer en volg klasopdrachten",
+    "assignmentDrop": "Laat hier je opdracht achter om naar het hoogste niveau te gaan.",
+    "sectionDeletionConfirmation": "Weet je zeker dat je dit gedeelte wilt verwijderen? Alle opdrachten worden naar het hoogste niveau verplaatst.",
+    "assignmentDeletionConfirmation": "Weet je zeker dat je deze opdracht wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt.",
+    "manageAndTrack": "Beheer en volg de opdrachten voor de lessen.",
     "filters": "Filters"
   },
   "pagination": {
@@ -1038,87 +1039,87 @@
   },
   "about": {
     "titleStatement1": "Ons verhaal",
-    "titleStatement2": "Gebouwd uit frustratie,",
-    "titleStatement3": "opnieuw uitgevonden met AI",
-    "titleStatement4": "Na jarenlang te hebben geworsteld met verouderde, gefragmenteerde schoolportalen, besloten we het leermanagementsysteem te bouwen waar we altijd al van hadden gedroomd.",
-    "problemParagraph1": "Studious begon in 2023",
-    "problemParagraph2": "toen een groep studenten en docenten bij elkaar kwamen met een gedeelde frustratie: bestaande schoolportalen waren onhandig, traag en gebouwd voor een ander tijdperk van onderwijs.",
-    "problemDetailParagraph": "We moesten met meerdere platforms jongleren: één voor cijfers, één voor opdrachten en één voor communicatie. Docenten besteedden meer tijd aan het worstelen met software dan aan lesgeven. Studenten misten deadlines omdat meldingen verstopt zaten in verouderde interfaces.",
-    "betterWay": "Wij wisten dat er een betere manier moest zijn.",
-    "solutionParagraph1": "Geïnspireerd door moderne hulpmiddelen voor samenwerking zoals Linear en Notion, zijn we aan de slag gegaan met het creëren van een leermanagementsysteem dat aanvoelde als",
-    "solutionParagraph2": "snel, intuïtief en prettig in gebruik.",
-    "solutionParagraph3": "Een systeem waarin AI niet als gimmick wordt ingezet, maar als een echte productiviteitsverhoger voor zowel docenten als studenten.",
-    "launchParagraph": "Na twee jaar ontwikkeling hebben we Studious officieel gelanceerd op 17 oktober 2025. We bevinden ons nu in de vroege toegangsfase en zijn klaar om scholen wereldwijd te helpen hun leerervaring te transformeren.",
+    "titleStatement2": "Ontstaan uit frustratie,",
+    "titleStatement3": "Opnieuw vormgegeven met AI",
+    "titleStatement4": "Na jarenlang geworsteld te hebben met verouderde, gefragmenteerde schoolportalen, besloten we om het leerbeheersysteem te bouwen dat we altijd al hadden willen hebben.",
+    "problemParagraph1": "Studious is in 2023 opgericht.",
+    "problemParagraph2": "Toen een groep studenten en docenten samenkwamen met een gedeelde frustratie: de bestaande schoolportalen waren onhandig, traag en gebouwd voor een ander tijdperk van onderwijs.",
+    "problemDetailParagraph": "We moesten constant met meerdere platforms tegelijk werken: een voor cijfers, een ander voor opdrachten en een derde voor communicatie. Docenten besteedden meer tijd aan het worstelen met de software dan aan lesgeven. Studenten misten deadlines omdat meldingen verborgen zaten in verouderde interfaces.",
+    "betterWay": "We wisten dat er een betere manier moest zijn.",
+    "solutionParagraph1": "Geïnspireerd door moderne samenwerkingstools zoals Linear en Notion, wilden we een leerbeheersysteem creëren dat aanvoelde als...",
+    "solutionParagraph2": "Snel, intuïtief en prettig in gebruik.",
+    "solutionParagraph3": "Een aanpak waarbij AI niet als een trucje werd gebruikt, maar als een echte productiviteitsverhoger voor zowel docenten als studenten.",
+    "launchParagraph": "Na twee jaar ontwikkeling hebben we Studious officieel gelanceerd op 17 oktober 2025. We bevinden ons nu in de early access-fase en zijn klaar om scholen wereldwijd te helpen hun leerervaring te transformeren.",
     "journey1": "Onze reis",
-    "journey2": "Twee jaar bouwen, leren en groeien",
+    "journey2": "Twee jaar lang bouwen, leren en groeien.",
     "journeyBeginningDate": "2023",
     "journeyBeginning1": "Het begin",
-    "journeyBeginning2": "Eerste prototype ontwikkeld. Kernfuncties: klassenbeheer, opdrachten en agenda-integratie.",
+    "journeyBeginning2": "Eerste prototype ontwikkeld. Kernfuncties: klassenbeheer, opdrachten en kalenderintegratie.",
     "journeyBetaLaunchDate": "31 oktober 2025",
-    "journeyBetaLaunch1": "Openbare bètalancering",
-    "journeyBetaLaunch2": "Officiële publieke bètatestlancering van Studious LMS. Scholen wereldwijd krijgen er al vroeg toegang toe, met volledige platformmogelijkheden.",
+    "journeyBetaLaunch1": "Lancering van de openbare bèta",
+    "journeyBetaLaunch2": "Officiële lancering van de publieke bètatest van Studious LMS. Scholen wereldwijd krijgen nu vroegtijdig toegang tot alle mogelijkheden van het platform.",
     "journeyPilotSchoolsDate": "November 2025",
-    "journeyPilotSchools1": "Pilot Schools Programma",
-    "journeyPilotSchools2": "Het opzetten van partnerschappen met pilotscholen om feedback uit de praktijk te verzamelen en het platform te verfijnen op basis van uiteenlopende onderwijsbehoeften.",
+    "journeyPilotSchools1": "Proefschoolprogramma",
+    "journeyPilotSchools2": "Het opzetten van samenwerkingsverbanden met pilotscholen om feedback uit de praktijk te verzamelen en het platform te verfijnen op basis van uiteenlopende onderwijsbehoeften.",
     "journeyBetaCompleteDate": "December 2025",
     "journeyBetaComplete1": "Beta voltooid",
-    "journeyBetaComplete2": "Overgang van bèta naar volledige productieversie. Platformstabilisatie met alle kernfuncties volledig getest en geoptimaliseerd.",
+    "journeyBetaComplete2": "Overgang van bèta naar volledige productierelease. Stabilisatie van het platform met alle kernfuncties volledig getest en geoptimaliseerd.",
     "journeySDPDate": "Januari 2026",
-    "journeySDP1": "Lancering van het School Development Program",
-    "journeySDP2": "Bekendmaking van de eerste lichting scholen die zijn toegelaten tot het Studious School Development Program, waarmee gratis toegang wordt verleend aan in aanmerking komende instellingen.",
-    "missionStatement1": "Onze missie is eenvoudig",
-    "missionStatement2": "Om een leermanagementsysteem te bouwen dat wij – als studenten, docenten en levenslang lerenden – elke dag willen gebruiken.",
-    "joinAppeal1": "Ga met ons mee op deze reis",
-    "joinAppeal2": "Maak deel uit van de toekomst van het onderwijs",
-    "requestEarlyAccess": "Vroegtijdige toegang aanvragen",
-    "pressKit": "Perskit"
+    "journeySDP1": "Lancering van het schoolontwikkelingsprogramma",
+    "journeySDP2": "We maken de eerste groep scholen bekend die zijn toegelaten tot het Studious School Development Program, waarmee gekwalificeerde instellingen gratis toegang krijgen.",
+    "missionStatement1": "Onze missie is eenvoudig.",
+    "missionStatement2": "Het doel is om een leerbeheersysteem te bouwen dat wij – als studenten, docenten en levenslange leerlingen – elke dag zouden willen gebruiken.",
+    "joinAppeal1": "Ga met ons mee op deze reis.",
+    "joinAppeal2": "Draag bij aan de toekomst van het onderwijs.",
+    "requestEarlyAccess": "Vraag vroegtijdige toegang aan",
+    "pressKit": "Persmap"
   },
   "pricing": {
-    "pricingStatement1": "Transparante prijzen",
-    "pricingStatement2": "Kies het juiste plan voor uw instelling",
-    "pricingStatement3": "Eenvoudige, transparante prijzen zonder verborgen kosten. Alle abonnementen bevatten basisfuncties met schaalbare opties.",
+    "pricingStatement1": "Transparante prijsstelling",
+    "pricingStatement2": "Kies het juiste plan voor uw instelling.",
+    "pricingStatement3": "Eenvoudige, transparante prijsstelling zonder verborgen kosten. Alle abonnementen bevatten de basisfuncties met schaalbare opties.",
     "mostPopular": "Meest populair",
     "priceUnit": "/gebruiker/maand",
     "pricingStarterTitle": "Starter",
     "pricingStarterPrice": "Vrij",
     "pricingStarterNote": "Beta-toegang inbegrepen",
-    "pricingStarterDescription": "Perfect voor kleine klassen en pilotprogramma's",
+    "pricingStarterDescription": "Perfect voor kleine klassen en pilotprogramma's.",
     "pricingStarterPerk1": "Maximaal 30 studenten",
-    "pricingStarterPerk2": "Onbeperkte lessen",
-    "pricingStarterPerk3": "Kernfuncties (opdrachten, agenda, cijfers)",
-    "pricingStarterPerk4": "AI-assistent (5 chats/maand)",
-    "pricingStarterPerk5": "Gemeenschapsondersteuning",
-    "pricingStarterPerk6": "5 GB opslag",
-    "pricingStarterLink": "Gratis aan de slag",
+    "pricingStarterPerk2": "Onbeperkt aantal lessen",
+    "pricingStarterPerk3": "Kernfuncties (opdrachten, kalender, cijfers)",
+    "pricingStarterPerk4": "AI-assistent (5 chats per maand)",
+    "pricingStarterPerk5": "Gemeenschapssteun",
+    "pricingStarterPerk6": "5 GB opslagruimte",
+    "pricingStarterLink": "Begin gratis",
     "pricingSchoolTitle": "School",
-    "pricingSchoolPriceNote": "Jaarlijks gefactureerd of $ 6/maand",
-    "pricingSchoolNote": "Voor scholen met maximaal 1.000 leerlingen",
+    "pricingSchoolPriceNote": "Jaarlijks gefactureerd of $6 per maand.",
+    "pricingSchoolNote": "Voor scholen met maximaal 1.000 leerlingen.",
     "pricingSchoolPerk1": "Onbeperkt aantal studenten",
-    "pricingSchoolPerk2": "Onbeperkte lessen",
+    "pricingSchoolPerk2": "Onbeperkt aantal lessen",
     "pricingSchoolPerk3": "Alle kernfuncties",
     "pricingSchoolPerk4": "AI-assistent (onbeperkt aantal zoekopdrachten)",
-    "pricingSchoolPerk5": "Eerste in de rij voor toegang tot de bètaversie van Studious CMS",
+    "pricingSchoolPerk5": "Krijg als eerste toegang tot de bètaversie van Studious CMS.",
     "pricingSchoolPerk6": "API-toegang",
     "pricingSchoolLink": "Aan de slag"
   },
   "components": {
     "earlyAccess": {
-      "title": "Vroegtijdige toegang aanvragen",
-      "description": "Sluit je aan bij de wachtlijst en wees een van de eersten die Studious LMS ervaart",
+      "title": "Vraag vroegtijdige toegang aan",
+      "description": "Schrijf je in op de wachtlijst en behoor tot de eersten die Studious LMS ervaren.",
       "fields": {
         "email": "E-mailadres *",
-        "institutionSize": "Grootte van de instelling *"
+        "institutionSize": "Instellingsgrootte *"
       },
       "placeholders": {
         "email": "jij@school.edu",
         "institutionSize": "Selecteer de grootte van de instelling"
       },
       "sizes": {
-        "tiny": "1-30 studenten (individuele docent)",
+        "tiny": "1-30 leerlingen (individuele docent)",
         "small": "31-100 leerlingen (kleine school)",
-        "medium": "101-500 studenten (middelbare school)",
-        "large": "501-1.000 studenten (grote school)",
-        "institution": "1.001+ studenten (instelling)"
+        "medium": "101-500 leerlingen (middelgrote school)",
+        "large": "501-1.000 leerlingen (grote school)",
+        "institution": "1.001+ studenten (Instelling)"
       },
       "actions": {
         "submit": "Toegang aanvragen",
@@ -1127,44 +1128,44 @@
       },
       "success": {
         "title": "Je staat op de lijst!",
-        "description": "Zodra we klaar voor u zijn, sturen we u een e-mail op {email}"
+        "description": "We sturen je een e-mail naar {email} wanneer we klaar zijn voor je."
       },
       "toasts": {
-        "success": "Met succes toegevoegd aan de wachtlijst!"
+        "success": "Ik ben succesvol toegevoegd aan de wachtlijst!"
       }
     },
     "joinClass": {
       "title": "Doe mee aan een les",
-      "buttonLabel": "Doe mee met de les",
+      "buttonLabel": "Word lid van de klas",
       "fields": {
-        "inviteCode": "Klasuitnodigingscode"
+        "inviteCode": "Uitnodigingscode voor de les"
       },
       "placeholders": {
-        "inviteCode": "bijvoorbeeld MATH101-2025"
+        "inviteCode": "bijv. MATH101-2025"
       },
-      "help": "Voer de uitnodigingscode in die u van uw docent heeft gekregen",
+      "help": "Voer de uitnodigingscode in die je van je docent hebt gekregen.",
       "howTo": {
-        "title": "Hoe krijg je een uitnodigingscode:",
-        "item1": "Vraag je docent om de uitnodigingscode voor de klas",
-        "item2": "Controleer uw e-mail voor instructies over inschrijving voor de cursus",
-        "item3": "Zoek de code op uw syllabus of cursusmateriaal"
+        "title": "Hoe ontvang je een uitnodigingscode?",
+        "item1": "Vraag je docent om de uitnodigingscode voor de les.",
+        "item2": "Controleer je e-mail voor instructies over het inschrijven voor de cursus.",
+        "item3": "Zoek de code op in je syllabus of cursusmateriaal."
       },
       "actions": {
         "cancel": "Annuleren",
-        "join": "Doe mee met de les",
-        "joining": "Lid worden..."
+        "join": "Word lid van de klas",
+        "joining": "Deelnemen..."
       },
       "toasts": {
-        "success": "U bent succesvol bij de les aangekomen.",
+        "success": "Je bent succesvol toegelaten tot de cursus.",
         "errorInvalid": "Ongeldige uitnodigingscode of klas niet gevonden.",
         "errorEmpty": "Voer een geldige uitnodigingscode in."
       }
     },
     "createClass": {
-      "title": "Nieuwe klasse maken",
+      "title": "Nieuwe klasse aanmaken",
       "buttonLabel": "Klasse maken",
       "fields": {
-        "title": "Klassetitel *",
+        "title": "Klastitel *",
         "section": "Sectie *",
         "subject": "Onderwerp *",
         "semester": "Semester",
@@ -1174,24 +1175,24 @@
         "description": "Beschrijving"
       },
       "placeholders": {
-        "title": "bijvoorbeeld geavanceerde natuurkunde",
-        "section": "bijvoorbeeld AP-101",
-        "subject": "bijvoorbeeld natuurkunde",
+        "title": "bijv. Geavanceerde Natuurkunde",
+        "section": "bijv. AP-101",
+        "subject": "bijv. Natuurkunde",
         "semester": "bijv. voorjaar 2025",
         "credits": "bijv. 3",
         "meetingTime": "bijv. ma-wo-vr 10:00-11:00 uur",
-        "location": "bijv. kamer 205, wetenschapsgebouw",
-        "description": "Beschrijf de inhoud en doelstellingen van de les."
+        "location": "bijv. Kamer 205, Wetenschapsgebouw",
+        "description": "Beschrijf de inhoud en doelstellingen van de cursus..."
       },
       "actions": {
         "cancel": "Annuleren",
         "create": "Klasse maken",
-        "creating": "Creëren..."
+        "creating": "Aan het creëren..."
       },
       "toasts": {
         "success": "Klasse {name} is succesvol aangemaakt.",
         "errorRequired": "Vul alle verplichte velden in.",
-        "errorFailed": "Het aanmaken van de klas is mislukt. Probeer het later opnieuw."
+        "errorFailed": "Het is niet gelukt om de klasse aan te maken. Probeer het later opnieuw."
       }
     },
     "createFolder": {
@@ -1203,42 +1204,42 @@
         "color": "Mapkleur"
       },
       "placeholders": {
-        "name": "Voer mapnaam in",
-        "description": "Voeg een beschrijving voor deze map toe..."
+        "name": "Voer de mapnaam in",
+        "description": "Voeg een beschrijving toe voor deze map..."
       },
       "help": {
-        "name": "Kies een beschrijvende naam voor uw map",
+        "name": "Kies een beschrijvende naam voor je map.",
         "description": "{count}/500 tekens"
       },
       "actions": {
         "cancel": "Annuleren",
         "create": "Map maken",
-        "update": "Map bijwerken",
-        "creating": "Creëren...",
-        "updating": "Bijwerken..."
+        "update": "Update-map",
+        "creating": "Aan het creëren...",
+        "updating": "Bezig met bijwerken..."
       },
       "toasts": {
-        "errorRequired": "Mapnaam is vereist",
-        "errorInvalidChars": "Mapnaam bevat ongeldige tekens",
-        "errorTooLong": "Mapnaam is te lang (maximaal 255 tekens)"
+        "errorRequired": "Mapnaam is verplicht",
+        "errorInvalidChars": "De mapnaam bevat ongeldige tekens.",
+        "errorTooLong": "De mapnaam is te lang (maximaal 255 tekens)."
       }
     },
     "createAssignment": {
-      "title": "Nieuwe opdracht maken",
-      "buttonLabel": "Opdracht maken",
+      "title": "Nieuwe opdracht aanmaken",
+      "buttonLabel": "Opdracht aanmaken",
       "sections": {
         "details": "Opdrachtdetails",
         "configuration": "Configuratie",
-        "grading": "Beoordeling en beoordeling",
-        "deliverables": "Leveringen",
+        "grading": "Beoordeling en evaluatie",
+        "deliverables": "Resultaten",
         "aiPolicy": "AI-beleid",
         "attachments": "Bijlagen"
       },
       "fields": {
         "title": "Titel *",
         "instructions": "Instructies *",
-        "dueDate": "Twee data",
-        "type": "Opdrachttype",
+        "dueDate": "Twee afspraakjes",
+        "type": "Type opdracht",
         "students": "Studenten",
         "section": "Sectie",
         "rubric": "Rubriek",
@@ -1248,14 +1249,14 @@
         "sectionColor": "Sectiekleur"
       },
       "placeholders": {
-        "title": "bijv. Hoofdstuk 5 Quiz, Natuurkunde Lab Rapport",
-        "instructions": "Geef studenten duidelijke instructies...",
+        "title": "bijv. Quiz hoofdstuk 5, verslag natuurkundepracticum",
+        "instructions": "Geef duidelijke instructies aan de leerlingen...",
         "maxPoints": "100",
         "weight": "1.0",
-        "chooseSection": "Sectie kiezen",
-        "chooseRubric": "Rubriek kiezen",
-        "chooseGradeScale": "Kies een cijferschaal",
-        "newSectionName": "Voer een sectienaam in..."
+        "chooseSection": "Kies sectie",
+        "chooseRubric": "Kies beoordelingscriteria",
+        "chooseGradeScale": "Kies een beoordelingsschaal",
+        "newSectionName": "Voer de sectienaam in..."
       },
       "types": {
         "homework": "Huiswerk",
@@ -1271,51 +1272,51 @@
       "options": {
         "graded": {
           "label": "Beoordeelde opdracht",
-          "description": "Opnemen in cijferlijst"
+          "description": "Opnemen in het cijferboek"
         },
         "draft": {
           "label": "Opslaan als concept",
-          "description": "Verbergen voor studenten"
+          "description": "Verberg je voor studenten"
         }
       },
       "section": {
         "none": "Geen sectie",
-        "createNew": "Nieuwe sectie maken"
+        "createNew": "Nieuwe sectie aanmaken"
       },
       "rubric": {
-        "none": "Geen rubriek",
-        "untitled": "Rubriek zonder titel",
-        "autoCalculate": "Punten worden automatisch berekend op basis van de geselecteerde rubriek"
+        "none": "Geen beoordelingscriteria",
+        "untitled": "Naamloze beoordelingscriteria",
+        "autoCalculate": "De punten worden automatisch berekend op basis van de geselecteerde rubriek."
       },
       "gradeScale": {
         "default": "Standaardschaal",
-        "untitled": "Ongetitelde schaal"
+        "untitled": "Naamloze schaal"
       },
       "files": {
         "uploadButton": "Bestanden uploaden",
-        "dropZone": "Zet bestanden hier neer of klik om te uploaden",
+        "dropZone": "Sleep bestanden hierheen of klik om te uploaden",
         "dropZoneHint": "Ondersteunt alle bestandstypen • Maximaal 50 MB per bestand",
         "filesUploaded": "{uploaded} van {total} bestanden geüpload"
       },
       "status": {
-        "creating": "Opdracht maken...",
-        "settingUp": "Toewijzingsdetails instellen...",
-        "preparing": "Bestandsuploads voorbereiden...",
+        "creating": "Opdracht aanmaken...",
+        "settingUp": "De details van de opdracht instellen...",
+        "preparing": "Bestanden worden voorbereid voor het uploaden...",
         "uploading": "Bestanden uploaden naar cloudopslag...",
-        "processing": "Verwerken van geüploade bestanden...",
+        "processing": "Geüploade bestanden worden verwerkt...",
         "finalizing": "Opdracht afronden...",
         "assigning": "Toewijzen aan studenten...",
         "almostDone": "Bijna klaar...",
-        "uploadingFile": "Uploaden {name}...",
-        "creatingProgress": "Opdracht maken",
+        "uploadingFile": "Bezig met uploaden {name}...",
+        "creatingProgress": "Opdracht aanmaken",
         "draftStatus": "Wordt opgeslagen als concept",
         "publishedStatus": "Wordt gepubliceerd voor studenten"
       },
       "actions": {
         "cancel": "Annuleren",
-        "create": "Opdracht maken",
+        "create": "Opdracht aanmaken",
         "saveDraft": "Concept opslaan",
-        "creating": "Creëren...",
+        "creating": "Aan het creëren...",
         "add": "Toevoegen"
       },
       "students": {
@@ -1325,62 +1326,62 @@
       "deliverables": {
         "fileUpload": {
           "label": "Bestand uploaden",
-          "description": "Studenten kunnen PDF-, afbeelding- en videobestanden uploaden."
+          "description": "Studenten kunnen PDF-, afbeeldings- en videobestanden uploaden."
         },
         "extendedResponse": {
           "label": "Uitgebreide reactie",
-          "description": "Studenten mogen langere antwoorden typen."
+          "description": "Leerlingen mogen uitgebreide antwoorden typen."
         },
         "worksheetSubmission": {
-          "label": "Werkblad inleveren",
-          "description": "Studenten kunnen werkbladen inleveren voor geïntegreerde beoordeling.",
+          "label": "Werkblad indienen",
+          "description": "Leerlingen kunnen werkbladen inleveren voor geïntegreerde beoordeling.",
           "searchPlaceholder": "Zoek hier naar werkbladen...",
           "found": "{count} gevonden",
           "noResults": "Geen werkbladen gevonden"
         },
         "aiGrading": {
-          "label": "Beoordelen en feedback geven met AI",
-          "description": "Geef voorlopige en directe beoordelingen en feedback met AI."
+          "label": "Beoordeling en feedback met AI",
+          "description": "Geef direct en in eerste instantie een beoordeling en feedback met behulp van AI."
         }
       },
       "aiPolicy": {
         "useCases": "Gebruiksscenario's",
-        "studentResponsibilities": "Verantwoordelijkheden van studenten",
+        "studentResponsibilities": "Verantwoordelijkheden van de student",
         "disclosureRequirements": "Openbaarmakingsvereisten",
         "level1": {
-          "title": "Niveau 1 Zelfstandig Werk (Geen AI)",
-          "description": "Geen. Basis spelling- en grammaticacontrole is acceptabel.",
-          "useCases": "Vertrouw volledig op persoonlijke kennis, redenering en inspanning.",
-          "studentResponsibilities": "Geen. Basis spelling- en grammaticacontrole is acceptabel.",
-          "disclosureRequirements": "Er is geen openbaarmaking van AI nodig (AI-gebruik is verboden)."
+          "title": "Niveau 1 Onafhankelijk werk (geen AI)",
+          "description": "Geen. Eenvoudige spelling- en grammaticacontroleprogramma's zijn acceptabel.",
+          "useCases": "Vertrouw volledig op eigen kennis, redenering en inspanning.",
+          "studentResponsibilities": "Geen. Eenvoudige spelling- en grammaticacontroleprogramma's zijn acceptabel.",
+          "disclosureRequirements": "Geen melding van AI-gebruik vereist (AI-gebruik verboden)."
         },
         "level2": {
-          "title": "Idee-exploratie niveau 2",
-          "description": "Vraag AI om ideeën uit te leggen, leesstukken samen te vatten, te brainstormen over aanpakken of de basisgrammatica en duidelijkheid te controleren.",
-          "useCases": "Vraag AI om ideeën uit te leggen, leesstukken samen te vatten, te brainstormen over aanpakken of de basisgrammatica en duidelijkheid te controleren.",
-          "studentResponsibilities": "Evalueer AI-resultaten kritisch. Zorg ervoor dat het werk uw eigen redenering en begrip weerspiegelt.",
-          "disclosureRequirements": "Geef kort aan hoe AI wordt gebruikt (bijv. 'ChatGPT gebruikt om de structuur van het essay te schetsen')."
+          "title": "Niveau 2 Ideeënverkenning",
+          "description": "Vraag AI om ideeën uit te leggen, teksten samen te vatten, ideeën te bedenken of de basisgrammatica en duidelijkheid te controleren.",
+          "useCases": "Vraag AI om ideeën uit te leggen, teksten samen te vatten, ideeën te bedenken of de basisgrammatica en duidelijkheid te controleren.",
+          "studentResponsibilities": "Evalueer de output van AI kritisch; zorg ervoor dat het werk je eigen redenering en begrip weerspiegelt.",
+          "disclosureRequirements": "Geef een korte toelichting op het gebruik van AI (bijv. \"ChatGPT gebruikt om de structuur van het essay te schetsen\")."
         },
         "level3": {
-          "title": "Ondersteuning voor bewerking op niveau 3",
-          "description": "Zorg ervoor dat alle ideeën, structuren en inhoud van uzelf zijn. Bekijk AI-suggesties zorgvuldig.",
-          "useCases": "Vraag AI om de grammatica, interpunctie, zinsbouw en leesbaarheid te verbeteren.",
-          "studentResponsibilities": "Zorg ervoor dat alle ideeën, structuren en inhoud van uzelf zijn. Bekijk AI-suggesties zorgvuldig.",
-          "disclosureRequirements": "Geef kort aan hoe AI wordt gebruikt (bijv. 'ChatGPT gebruikt voor grammaticale en duidelijke bewerkingen')."
+          "title": "Bewerkingsondersteuning niveau 3",
+          "description": "Zorg ervoor dat alle ideeën, structuur en inhoud van jouzelf zijn; bekijk de suggesties van de AI zorgvuldig.",
+          "useCases": "Vraag AI om de grammatica, interpunctie, formulering en leesbaarheid te verbeteren.",
+          "studentResponsibilities": "Zorg ervoor dat alle ideeën, structuur en inhoud van jouzelf zijn; bekijk de suggesties van de AI zorgvuldig.",
+          "disclosureRequirements": "Vermeld kort het gebruik van AI (bijv. \"ChatGPT gebruikt voor grammatica- en duidelijkheidscorrecties\")."
         },
         "level4": {
           "title": "Co-creatie niveau 4",
-          "description": "Gebruik AI om creatieve content te bedenken, ontwerpen, coderen, analyseren, simuleren of genereren, terwijl u tegelijkertijd toezicht houdt.",
-          "useCases": "Gebruik AI om creatieve content te bedenken, ontwerpen, coderen, analyseren, simuleren of genereren, terwijl u tegelijkertijd toezicht houdt.",
-          "studentResponsibilities": "Beoordeel AI-resultaten kritisch; herzie en pas ze aan om originaliteit en gefundeerde redeneringen te garanderen.",
-          "disclosureRequirements": "Dien een gedetailleerde openbaarmaking in over de bijdragen van AI en uw herzieningen."
+          "description": "Gebruik AI voor het opstellen, ontwerpen, coderen, analyseren, simuleren of genereren van creatieve content, met behoud van overzicht.",
+          "useCases": "Gebruik AI voor het opstellen, ontwerpen, coderen, analyseren, simuleren of genereren van creatieve content, met behoud van overzicht.",
+          "studentResponsibilities": "Beoordeel de output van AI kritisch; herzie en pas deze aan om originaliteit en een degelijke redenering te waarborgen.",
+          "disclosureRequirements": "Dien een gedetailleerde toelichting in over de bijdragen van AI en uw herzieningen."
         },
         "level5": {
           "title": "Co-innovatie niveau 5",
-          "description": "Gebruik AI voor het genereren van content, het uitvoeren van analyses, het bouwen van modellen, creatief schrijven, vertalen of visualiseren van data, met expliciet menselijk auteurschap en reflectie.",
-          "useCases": "Gebruik AI voor het genereren van content, het uitvoeren van analyses, het bouwen van modellen, creatief schrijven, vertalen of visualiseren van data, met expliciet menselijk auteurschap en reflectie.",
-          "studentResponsibilities": "Integreer AI op ethische en doelgerichte wijze; rechtvaardig de rol ervan in het bevorderen van leren of creativiteit.",
-          "disclosureRequirements": "Geef een duidelijke erkenning van alle AI-bijdragen en menselijke revisies."
+          "description": "Gebruik AI voor het genereren van content, het uitvoeren van analyses, het bouwen van modellen, creatief schrijven, vertalen of datavisualisatie, met expliciete menselijke tussenkomst en reflectie.",
+          "useCases": "Gebruik AI voor het genereren van content, het uitvoeren van analyses, het bouwen van modellen, creatief schrijven, vertalen of datavisualisatie, met expliciete menselijke tussenkomst en reflectie.",
+          "studentResponsibilities": "Integreer AI op een ethische en doelgerichte manier; onderbouw de rol ervan bij het bevorderen van leren of creativiteit.",
+          "disclosureRequirements": "Vermeld duidelijk alle bijdragen van AI en alle menselijke revisies."
         }
       },
       "toasts": {
@@ -1388,13 +1389,13 @@
         "successDraft": "Opdracht succesvol opgeslagen als concept.",
         "errorRequired": "Vul alle verplichte velden in.",
         "errorFailed": "Het aanmaken van de opdracht is mislukt. Probeer het opnieuw.",
-        "errorUploadFailed": "Uploaden van {name} mislukt",
-        "sectionCreated": "Sectie \"{name}\" is succesvol aangemaakt."
+        "errorUploadFailed": "Uploaden mislukt {name}",
+        "sectionCreated": "Sectie \"{name}\" succesvol aangemaakt."
       }
     },
     "createAnnouncement": {
-      "title": "Aankondiging maken",
-      "buttonLabel": "Post aankondiging",
+      "title": "Maak een aankondiging aan",
+      "buttonLabel": "Bericht aankondiging",
       "fields": {
         "title": "Titel van de aankondiging *",
         "content": "Inhoud *",
@@ -1404,9 +1405,9 @@
         "publishTime": "Publicatietijd"
       },
       "placeholders": {
-        "title": "bijv. labrapport inleveren op vrijdag",
+        "title": "Bijvoorbeeld: Labverslag moet vrijdag ingeleverd worden.",
         "content": "Schrijf hier de inhoud van uw aankondiging...",
-        "publishDate": "Onmiddellijk publiceren indien leeg"
+        "publishDate": "Direct publiceren indien leeg"
       },
       "priority": {
         "low": "Laag",
@@ -1417,32 +1418,32 @@
       "sections": {
         "settings": "Instellingen",
         "notifications": "Meldingen",
-        "schedule": "Planning publiceren (optioneel)"
+        "schedule": "Publicatie inplannen (optioneel)"
       },
       "settings": {
         "pinned": {
-          "label": "Vastpinnen bovenaan",
-          "description": "Houd deze aankondiging bovenaan de lijst"
+          "label": "Vastzetten bovenaan",
+          "description": "Zorg dat deze aankondiging bovenaan de lijst blijft staan."
         },
         "urgent": {
           "label": "Markeer als urgent",
-          "description": "Accentueer met urgente styling"
+          "description": "Benadruk met een urgente styling"
         }
       },
       "notifications": {
         "email": {
           "label": "E-mailmelding verzenden",
-          "description": "Studenten via e-mail op de hoogte stellen"
+          "description": "Breng studenten via e-mail op de hoogte."
         },
         "push": {
-          "label": "Stuur pushmelding",
-          "description": "Melding via mobiele app verzenden"
+          "label": "Pushmelding verzenden",
+          "description": "Melding verzenden via mobiele app"
         }
       },
       "actions": {
         "cancel": "Annuleren",
         "publishNow": "Nu publiceren",
-        "schedule": "Aankondiging van het schema"
+        "schedule": "Aankondiging van het programma"
       },
       "toasts": {
         "success": "Aankondiging gemaakt",

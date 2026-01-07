@@ -31,7 +31,9 @@
       "detach": "Details"
     },
     "search": {
-      "placeholder": "Arbeitsblätter suchen..."
+      "placeholder": "Arbeitsblätter suchen...",
+      "noResults": "Keine Arbeitsblätter gefunden",
+      "noResultsDesc": "Versuchen Sie einen anderen Suchbegriff oder löschen Sie Ihre Suche."
     },
     "empty": {
       "title": "Keine Arbeitsblätter gefunden",

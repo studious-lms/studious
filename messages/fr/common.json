@@ -1,5 +1,6 @@
 {
   "common": {
+    "upload": "Télécharger",
     "save": "Sauvegarder",
     "cancel": "Annuler",
     "delete": "Supprimer",
@@ -250,8 +251,8 @@
     "futureDevelopments": {
       "title": "Développements futurs",
       "subtitle": "Notre feuille de route pour transformer l'éducation",
-      "cas": {
-        "title": "Perspective CAS",
+      "sustainable": {
+        "title": "Perspective durable",
         "description": "Soutenir les écoles sous-financées par des dons et du matériel, afin de rendre l'éducation de qualité accessible à tous."
       },
       "features": {
@@ -1013,7 +1014,7 @@
     "closed": "Fermé",
     "assignment": "Affectation",
     "assignments": "Devoirs",
-    "newAssignment": "Nouvelle mission",
+    "newAssignment": "Nouvelle affectation",
     "createAssignment": "Créer un devoir",
     "viewAssignment": "Voir le devoir",
     "allAssignments": "Tous les devoirs",
@@ -1045,7 +1046,7 @@
     "problemParagraph2": "lorsqu'un groupe d'élèves et d'enseignants s'est réuni autour d'une frustration commune : les portails scolaires existants étaient lourds, lents et conçus pour une autre époque de l'éducation.",
     "problemDetailParagraph": "Nous nous sommes retrouvés à jongler avec plusieurs plateformes : une pour les notes, une autre pour les devoirs, une troisième pour la communication. Les enseignants passaient plus de temps à se battre avec les logiciels qu’à enseigner. Les élèves ont manqué des échéances car les notifications étaient noyées dans des interfaces obsolètes.",
     "betterWay": "Nous savions qu'il devait y avoir une meilleure solution.",
-    "solutionParagraph1": "S'inspirant d'outils de collaboration modernes comme Linear et Notion, nous avons entrepris de créer un système de gestion de l'apprentissage qui soit agréable à utiliser.",
+    "solutionParagraph1": "S'inspirant d'outils de collaboration modernes comme Linear et Notion, nous avons entrepris de créer un système de gestion de l'apprentissage qui soit convivial et intuitif.",
     "solutionParagraph2": "Rapide, intuitif et agréable à utiliser.",
     "solutionParagraph3": "Une entreprise qui intègre l'IA non pas comme un gadget, mais comme un véritable multiplicateur de productivité pour les enseignants et les élèves.",
     "launchParagraph": "Après deux ans de développement, nous avons officiellement lancé Studious le 17 octobre 2025. Nous sommes désormais en accès anticipé, prêts à aider les écoles du monde entier à transformer leur expérience d'apprentissage.",
@@ -1127,7 +1128,7 @@
       },
       "success": {
         "title": "Vous êtes sur la liste !",
-        "description": "Nous vous enverrons un e-mail à {email} lorsque nous serons prêts pour vous."
+        "description": "Nous vous enverrons un courriel à {email} lorsque nous serons prêts pour vous."
       },
       "toasts": {
         "success": "Inscription réussie sur la liste d'attente !"
@@ -1146,7 +1147,7 @@
       "howTo": {
         "title": "Comment obtenir un code d'invitation :",
         "item1": "Demandez à votre professeur le code d'invitation à la classe",
-        "item2": "Consultez votre messagerie pour les instructions d'inscription aux cours.",
+        "item2": "Consultez votre messagerie pour les instructions d'inscription au cours.",
         "item3": "Recherchez le code dans votre programme de cours ou vos supports de cours."
       },
       "actions": {

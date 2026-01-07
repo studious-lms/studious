@@ -1,7 +1,7 @@
 {
   "home": {
     "welcomeBack": "おかえりなさい、{name}さん！",
-    "subtitle": "今日の授業の様子をお伝えします。",
+    "subtitle": "今日の授業の様子をお知らせします。",
     "stats": {
       "totalClasses": "合計クラス数",
       "teachingEnrolled": "{teaching}人の教員、{enrolled}人の登録者",

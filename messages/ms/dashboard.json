@@ -5,11 +5,11 @@
     "stats": {
       "totalClasses": "Jumlah Kelas",
       "teachingEnrolled": "{teaching} mengajar, {enrolled} mendaftar",
-      "dueToday": "Diperuntukkan Hari Ini",
-      "dueTodayDesc": "Tugasan perlu dibayar hari ini",
+      "dueToday": "Tarikh Luput Hari Ini",
+      "dueTodayDesc": "Tugasan yang perlu dihantar hari ini",
       "upcoming": "Akan datang",
       "upcomingDesc": "Tugasan akan datang",
-      "thisWeek": "Minggu ini",
+      "thisWeek": "Minggu Ini",
       "totalAssignments": "Jumlah tugasan"
     },
     "upcomingAssignments": {
@@ -18,10 +18,10 @@
       "allCaughtUp": "Semua terperangkap!",
       "noUpcoming": "Tiada tugasan akan datang buat masa ini.",
       "viewAgenda": "Lihat Agenda",
-      "dueToday": "Diperuntukkan hari ini",
-      "dueTomorrow": "Esok kena bayar",
+      "dueToday": "Tarikh akhir hari ini",
+      "dueTomorrow": "Tarikh akhir esok",
       "due": "Dua {dates}",
-      "teaching": "Mengajar",
+      "teaching": "Pengajaran",
       "viewAllAssignments": "Lihat Semua Tugasan"
     },
     "notifications": {
@@ -32,12 +32,12 @@
     },
     "classes": {
       "title": "Kelas Saya",
-      "subtitle": "Akses cepat ke kelas anda",
-      "teaching": "Mengajar",
-      "enrolled": "Didaftarkan",
-      "due": "kena bayar",
+      "subtitle": "Akses pantas ke kelas anda",
+      "teaching": "Pengajaran",
+      "enrolled": "Mendaftar",
+      "due": "sepatutnya",
       "noClasses": "Tiada kelas lagi",
-      "browseClasses": "Semak imbas Kelas",
+      "browseClasses": "Layari Kelas",
       "viewAllClasses": "Lihat Semua Kelas"
     }
   }

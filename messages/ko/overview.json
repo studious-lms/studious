@@ -3,10 +3,17 @@
     "assignments": "과제",
     "students": "재학생",
     "attendance": "출석",
-    "attachFile": "파일 첨부",
+    "attachFile": "파일을 첨부합니다",
     "post": "우편",
     "posting": "전기...",
     "noPosts": "아직 게시물이 없습니다",
-    "createFirstPost": "첫 번째 게시물을 작성하세요"
+    "noPostsDescription": "수업 관련 공지사항, 과제, 업데이트 사항을 공유하세요.",
+    "createFirstPost": "첫 번째 게시물을 작성하세요",
+    "messages": {
+      "uploadFailed": "공지 생성 실패, 파일 업로드 실패",
+      "createFailed": "공지 생성에 실패했습니다",
+      "createSuccess": "공지사항이 성공적으로 생성되었습니다.",
+      "creating": "공지사항을 작성하는 중..."
+    }
   }
 }

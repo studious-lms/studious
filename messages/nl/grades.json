@@ -1,17 +1,17 @@
 {
   "classGrades": {
     "title": "Cijfers",
-    "subtitle": "Bekijk en beheer studentencijfers",
+    "subtitle": "Bekijk en beheer de cijfers van studenten.",
     "columns": {
       "assignment": "Opdracht",
       "maxPoints": "Maximale punten",
       "weight": "Gewicht",
-      "graded": "Gegradeerd",
-      "dueDate": "Twee data",
+      "graded": "Beoordeeld",
+      "dueDate": "Twee afspraakjes",
       "actions": "Acties",
       "student": "Student",
-      "overallGrade": "Algemene beoordeling",
-      "assignmentsCompleted": "Opdrachten voltooid",
+      "overallGrade": "Eindcijfer",
+      "assignmentsCompleted": "Voltooide opdrachten",
       "trend": "Trend"
     },
     "labels": {
@@ -22,13 +22,13 @@
       "viewGrades": "Bekijk cijfers",
       "saving": "Besparing...",
       "saveChanges": "Wijzigingen opslaan",
-      "preview": "Voorvertoning",
+      "preview": "Voorbeeld",
       "edit": "Bewerking",
       "delete": "Verwijderen",
-      "createNew": "Nieuw maken"
+      "createNew": "Nieuw aanmaken"
     },
     "overview": {
-      "title": "Klassenoverzicht",
+      "title": "Cursusoverzicht",
       "classAverage": "Klasgemiddelde",
       "totalStudents": "Totaal aantal studenten",
       "assignments": "Opdrachten",
@@ -38,7 +38,7 @@
       "title": "Opdrachtbeheer",
       "empty": {
         "title": "Geen opdrachten gevonden",
-        "description": "Maak opdrachten aan om cijfers en instellingen te beheren"
+        "description": "Maak opdrachten aan om cijfers en instellingen te beheren."
       },
       "searchPlaceholder": "Zoekopdrachten..."
     },
@@ -47,50 +47,50 @@
       "viewAll": "Bekijk alle studenten",
       "empty": {
         "title": "Geen studenten ingeschreven",
-        "description": "Studenten verschijnen hier zodra ze de klas binnenkomen"
+        "description": "Studenten verschijnen hier zodra ze zich voor de les aanmelden."
       },
       "searchPlaceholder": "Zoek studenten..."
     },
     "gradeBoundaries": {
-      "title": "Graadgrenzen",
-      "untitled": "Ongetitelde beoordelingsgrens",
+      "title": "Grenswaarden",
+      "untitled": "Naamloze grens voor nivellering",
       "empty": {
-        "title": "Er zijn geen cijfergrenzen gemaakt",
-        "description": "Maak beoordelingsgrenzen om cijferbereiken te definiëren"
+        "title": "Geen niveaugrenzen gecreëerd",
+        "description": "Stel beoordelingsgrenzen vast om cijferbereiken te definiëren."
       },
       "previewTitle": "Voorbeeld van beoordelingsgrenzen",
       "details": {
-        "title": "Details van de grenswaarde",
+        "title": "Details van de afbakening van het terrein",
         "name": "Naam",
-        "noneDefined": "Geen beoordelingsgrenzen gedefinieerd"
+        "noneDefined": "Er zijn geen beoordelingsgrenzen vastgesteld."
       }
     },
     "rubrics": {
-      "title": "Rubrieken",
-      "untitled": "Rubriek zonder titel",
+      "title": "Beoordelingscriteria",
+      "untitled": "Naamloze beoordelingscriteria",
       "empty": {
-        "title": "Geen rubrieken aangemaakt",
-        "description": "Maak rubrieken om beoordelingscriteria te definiëren"
+        "title": "Er zijn geen beoordelingscriteria aangemaakt.",
+        "description": "Stel beoordelingscriteria op om de criteria voor de evaluatie vast te leggen."
       },
-      "previewTitle": "Rubriekvoorbeeld",
+      "previewTitle": "Voorbeeld van de beoordelingscriteria",
       "details": {
-        "title": "Rubriekdetails",
+        "title": "Details van de beoordelingscriteria",
         "name": "Naam",
         "category": "Categorie",
         "description": "Beschrijving",
         "custom": "Aangepast",
-        "noDescription": "Geen beschrijving verstrekt",
-        "noCriteria": "Er zijn geen criteria gevonden in deze rubriek"
+        "noDescription": "Geen beschrijving beschikbaar",
+        "noCriteria": "Er zijn geen criteria gevonden in deze rubriek."
       }
     },
     "confirm": {
-      "deleteRubric": "Weet u zeker dat u dit markschema wilt verwijderen?",
-      "deleteGradingBoundary": "Weet u zeker dat u deze beoordelingsgrens wilt verwijderen?"
+      "deleteRubric": "Weet je zeker dat je dit beoordelingsschema wilt verwijderen?",
+      "deleteGradingBoundary": "Weet je zeker dat je deze beoordelingsgrens wilt verwijderen?"
     }
   },
   "studentGrades": {
-    "title": "Alle leerlingniveaus",
-    "allStudents": "Bekijk en beheer de cijfers van alle studenten in deze klas",
+    "title": "Alle leerlingcijfers",
+    "allStudents": "Bekijk en beheer de cijfers van alle leerlingen in deze klas.",
     "students": "Studenten",
     "noGrades": "Geen studenten gevonden",
     "noGradesDescription": "Er zijn nog geen studenten ingeschreven voor deze cursus. Studenten verschijnen hier zodra ze zich aanmelden.",
@@ -106,17 +106,17 @@
     "myGrades": "Mijn cijfers",
     "studentGrades": "Cijfers",
     "viewYourGrades": "Bekijk je cijfers en voortgang",
-    "individualManagement": "Individueel cijferbeheer voor studenten",
+    "individualManagement": "Individueel cijferbeheer voor leerlingen",
     "export": "Exporteren",
     "back": "Rug",
-    "yourPerformance": "Uw prestaties",
-    "trackProgress": "Volg uw academische voortgang",
-    "overallGrade": "Algemene beoordeling",
+    "yourPerformance": "Jouw prestatie",
+    "trackProgress": "Volg je academische voortgang.",
+    "overallGrade": "Eindcijfer",
     "completed": "Voltooid",
     "trend": "Trend",
     "yourGrades": "Jouw cijfers",
     "assignments": "Opdrachten",
-    "studentNotFound": "Student niet gevonden",
+    "studentNotFound": "Leerling niet gevonden",
     "goBack": "Ga terug",
     "grade": "Cijfer",
     "table": {
@@ -128,12 +128,12 @@
       "submitted": "Ingediend"
     },
     "status": {
-      "graded": "Gegradeerd",
+      "graded": "Beoordeeld",
       "pending": "In behandeling"
     },
     "empty": {
       "title": "Geen opdrachten gevonden",
-      "description": "Deze student heeft geen opdrachten om weer te geven"
+      "description": "Deze student heeft geen opdrachten om weer te geven."
     },
     "searchPlaceholder": "Zoekopdrachten..."
   }

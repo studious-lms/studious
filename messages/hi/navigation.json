@@ -13,7 +13,10 @@
     "schoolProgram": "स्कूल कार्यक्रम",
     "about": "के बारे में",
     "press": "प्रेस",
-    "signIn": "दाखिल करना"
+    "signIn": "दाखिल करना",
+    "lightMode": "लाइट मोड",
+    "darkMode": "डार्क मोड",
+    "languageSelector": "भाषा चयनकर्ता"
   },
   "classSidebar": {
     "overview": "अवलोकन",
@@ -28,13 +31,13 @@
     "worksheets": "कार्यपत्रक",
     "classNavigation": "कक्षा नेविगेशन",
     "switchClass": "स्विच क्लास",
-    "classInviteCode": "कक्षा आमंत्रण कोड",
+    "classInviteCode": "क्लास इनवाइट कोड",
     "copyCode": "कोड कॉपी करें",
-    "regenerateCode": "कोड पुन: उत्पन्न करें",
+    "regenerateCode": "कोड को पुनः उत्पन्न करें",
     "toast": {
-      "inviteCodeRegenerated": "आमंत्रण कोड सफलतापूर्वक पुनः जनरेट किया गया",
-      "inviteCodeRegenerateFailed": "आमंत्रण कोड पुनः जनरेट करने में विफल",
-      "inviteCodeCopied": "आमंत्रण कोड क्लिपबोर्ड पर कॉपी किया गया"
+      "inviteCodeRegenerated": "आमंत्रण कोड सफलतापूर्वक पुनः उत्पन्न हो गया।",
+      "inviteCodeRegenerateFailed": "आमंत्रण कोड को पुनः उत्पन्न करने में विफल।",
+      "inviteCodeCopied": "आमंत्रण कोड क्लिपबोर्ड पर कॉपी हो गया है"
     }
   },
   "footer": {
@@ -50,6 +53,6 @@
     "contact": "संपर्क",
     "privacyPolicy": "गोपनीयता नीति",
     "termsOfService": "सेवा की शर्तें",
-    "copyright": "© 2025 स्टूडियोस एलएमएस। सर्वाधिकार सुरक्षित।"
+    "copyright": "© 2025 स्टुडियस एलएमएस। सर्वाधिकार सुरक्षित।"
   }
 }

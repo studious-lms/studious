@@ -17,7 +17,7 @@
     "classDeleted": "Klassen har raderats",
     "classDeleteFailed": "Misslyckades med att ta bort klassen",
     "failedToLoad": "Misslyckades med att ladda klasser",
-    "classLeft": "Du har lämnat klassen",
-    "classLeaveFailed": "Kunde inte lämna klassen"
+    "classLeft": "Har lämnat klassen",
+    "classLeaveFailed": "Misslyckades med att lämna lektionen"
   }
 }

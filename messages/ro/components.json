@@ -11,6 +11,11 @@
     "rename": "Redenumire"
   },
   "uploadFiles": {
+    "progress": {
+      "uploadingFiles": "Se încarcă fișierele...",
+      "uploadingFile": "Se încarcă {name}...",
+      "completed": "Finalizat"
+    },
     "title": "Încărcați fișiere",
     "noFilesSelected": "Niciun fișier selectat",
     "classIdMissing": "ID-ul clasei lipsește",
@@ -117,7 +122,7 @@
     },
     "empty": {
       "all": {
-        "title": "Nicio notificare încă",
+        "title": "Încă nu există notificări",
         "description": "Când primiți notificări, acestea vor apărea aici."
       }
     }
@@ -130,6 +135,11 @@
       "description": "Selectați o conversație din bara laterală pentru a începe discuția."
     },
     "page": {
+      "notFound": {
+        "title": "Conversație negăsită",
+        "description": "Această conversație nu există sau nu aveți acces la ea.",
+        "backToChat": "Înapoi la Chat"
+      },
       "header": {
         "members": "Membri",
         "markMentionsRead": "Marcu menționează că a citit"

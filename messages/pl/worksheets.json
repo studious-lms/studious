@@ -31,7 +31,9 @@
       "detach": "Bliższe dane"
     },
     "search": {
-      "placeholder": "Wyszukaj arkusze..."
+      "placeholder": "Wyszukaj arkusze...",
+      "noResults": "Nie znaleziono arkuszy roboczych",
+      "noResultsDesc": "Spróbuj użyć innego terminu wyszukiwania lub wyczyść wyszukiwanie."
     },
     "empty": {
       "title": "Nie znaleziono arkuszy roboczych",

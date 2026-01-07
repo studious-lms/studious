@@ -13,7 +13,10 @@
     "schoolProgram": "학교 프로그램",
     "about": "에 대한",
     "press": "누르다",
-    "signIn": "로그인"
+    "signIn": "로그인",
+    "lightMode": "라이트 모드",
+    "darkMode": "다크 모드",
+    "languageSelector": "언어 선택기"
   },
   "classSidebar": {
     "overview": "개요",
@@ -23,7 +26,7 @@
     "attendance": "출석",
     "aiLabs": "AI 랩",
     "members": "회원들",
-    "syllabus": "교과과정",
+    "syllabus": "강의계획서",
     "settings": "설정",
     "worksheets": "워크시트",
     "classNavigation": "클래스 탐색",
@@ -33,12 +36,12 @@
     "regenerateCode": "코드 재생성",
     "toast": {
       "inviteCodeRegenerated": "초대 코드가 성공적으로 재생성되었습니다.",
-      "inviteCodeRegenerateFailed": "초대 코드를 다시 생성하지 못했습니다.",
+      "inviteCodeRegenerateFailed": "초대 코드 재생성에 실패했습니다.",
       "inviteCodeCopied": "초대 코드가 클립보드에 복사되었습니다."
     }
   },
   "footer": {
-    "productDescription": "차세대 교육을 위한 현대적인 학습 관리.",
+    "productDescription": "차세대 교육을 위한 현대적인 학습 관리 시스템.",
     "product": "제품",
     "features": "특징",
     "pricing": "가격",

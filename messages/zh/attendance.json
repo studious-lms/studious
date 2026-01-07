@@ -7,6 +7,18 @@
       "unsaved": "未保存的更改",
       "saving": "保存..."
     },
+    "eventDetail": {
+      "title": "活动详情",
+      "basicInfo": "基本信息",
+      "description": "处理活动细节和学生出勤情况",
+      "address": "地址",
+      "date": "日期",
+      "time": "时间",
+      "notFound": {
+        "title": "未找到事件",
+        "description": "此活动可能已被删除或您无权访问。"
+      }
+    },
     "table": {
       "date": "日期",
       "eventName": "事件名称",
@@ -15,6 +27,8 @@
       "actions": "行动"
     },
     "actions": {
+      "back": "后退",
+      "export": "出口",
       "viewDetails": "查看详情",
       "editEvent": "编辑事件",
       "deleteEvent": "删除事件",

@@ -31,7 +31,9 @@
       "detach": "詳細"
     },
     "search": {
-      "placeholder": "ワークシートを検索..."
+      "placeholder": "ワークシートを検索...",
+      "noResults": "ワークシートが見つかりません",
+      "noResultsDesc": "別の検索語を試すか、検索をクリアしてください。"
     },
     "empty": {
       "title": "ワークシートが見つかりません",

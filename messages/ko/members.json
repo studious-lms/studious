@@ -2,19 +2,24 @@
   "members": {
     "title": "회원들",
     "counts": {
-      "totalMembers": "{count}명의 회원"
+      "totalMembers": "{count} 멤버"
+    },
+    "stats": {
+      "totalMembers": "총 회원 수",
+      "teachers": "선생님들",
+      "students": "재학생"
     },
     "actions": {
       "inviteMember": "회원 초대",
       "copy": "복사",
-      "regenerate": "재생하다",
+      "regenerate": "재생",
       "message": "메시지",
       "viewProfile": "프로필 보기",
       "viewGrades": "성적 보기",
       "makeTeacher": "선생님 만들기",
-      "makeStudent": "학생 만들기",
+      "makeStudent": "학생을 만드세요",
       "removeFromClass": "클래스에서 제거",
-      "removeAccess": "액세스 제거",
+      "removeAccess": "접근 권한 제거",
       "tryAgain": "다시 시도하세요"
     },
     "labels": {
@@ -24,40 +29,40 @@
     },
     "invite": {
       "title": "수업 초대 코드",
-      "description": "이 코드를 학생들과 공유하여 수업에 참여하세요."
+      "description": "수업 참여를 위해 이 코드를 학생들과 공유하세요."
     },
     "search": {
       "placeholder": "회원 검색..."
     },
     "tabs": {
       "students": "재학생",
-      "teachers": "교사들"
+      "teachers": "선생님들"
     },
     "students": {
       "empty": {
-        "title": "학생이 없습니다",
-        "matchNone": "\"{query}\"에 일치하는 학생이 없습니다.",
-        "noStudents": "아직 이 수업에 참여한 학생이 없습니다."
+        "title": "학생을 찾을 수 없습니다.",
+        "matchNone": "일치하는 학생이 없습니다 \"{query}\"",
+        "noStudents": "아직 이 수업에 등록한 학생이 없습니다."
       }
     },
     "teachers": {
       "empty": {
-        "title": "선생님을 찾을 수 없습니다",
-        "matchNone": "\"{query}\"에 일치하는 교사가 없습니다.",
-        "noTeachers": "추가된 교사가 없습니다."
+        "title": "교사를 찾을 수 없습니다.",
+        "matchNone": "교사 중 일치하는 사람이 없습니다\"{query}\"",
+        "noTeachers": "추가 교사는 배치되지 않았습니다."
       }
     },
     "toasts": {
       "inviteRegenerated": "초대 코드가 성공적으로 재생성되었습니다.",
       "copied": "초대 코드가 클립보드에 복사되었습니다.",
       "roleChanged": "역할이 {role}으로 변경되었습니다.",
-      "memberRemoved": "회원이 성공적으로 제거되었습니다."
+      "memberRemoved": "회원이 성공적으로 삭제되었습니다."
     },
     "errors": {
-      "regenerateFailed": "초대 코드를 다시 생성하지 못했습니다.",
+      "regenerateFailed": "초대 코드 재생성에 실패했습니다.",
       "changeRoleFailed": "역할 변경에 실패했습니다",
-      "removeFailed": "회원 삭제에 실패했습니다",
-      "failedToLoad": "멤버를 불러오지 못했습니다."
+      "removeFailed": "멤버 삭제에 실패했습니다",
+      "failedToLoad": "멤버를 불러오는 데 실패했습니다."
     },
     "profile": {
       "title": "사용자 프로필",

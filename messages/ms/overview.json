@@ -5,8 +5,15 @@
     "attendance": "Kehadiran",
     "attachFile": "Lampirkan fail",
     "post": "Pos",
-    "posting": "Menyiarkan...",
+    "posting": "Mengepos...",
     "noPosts": "Tiada siaran lagi",
-    "createFirstPost": "Buat catatan pertama"
+    "noPostsDescription": "Kongsikan pengumuman, tugasan dan kemas kini dengan kelas anda.",
+    "createFirstPost": "Cipta catatan pertama",
+    "messages": {
+      "uploadFailed": "Gagal membuat pengumuman, muat naik fail gagal",
+      "createFailed": "Gagal membuat pengumuman",
+      "createSuccess": "Pengumuman berjaya dibuat",
+      "creating": "Mencipta pengumuman..."
+    }
   }
 }

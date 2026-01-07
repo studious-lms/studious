@@ -1,5 +1,6 @@
 {
   "common": {
+    "upload": "Carregar",
     "save": "Salvar",
     "cancel": "Cancelar",
     "delete": "Excluir",
@@ -250,8 +251,8 @@
     "futureDevelopments": {
       "title": "Desenvolvimentos Futuros",
       "subtitle": "Nosso roteiro para transformar a educação",
-      "cas": {
-        "title": "Perspectiva da CAS",
+      "sustainable": {
+        "title": "Perspectiva Sustentável",
         "description": "Apoiar escolas com poucos recursos por meio de doações e materiais, tornando a educação de qualidade acessível a todos."
       },
       "features": {
@@ -716,7 +717,7 @@
         "title": "Limites de nível",
         "untitled": "Limite de classificação sem título",
         "empty": {
-          "title": "Não foram criados limites de nota.",
+          "title": "Não foram criados limites de classificação por nível.",
           "description": "Criar limites de avaliação para definir as faixas de notas."
         },
         "previewTitle": "Prévia dos Limites de Avaliação",

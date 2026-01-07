@@ -1,9 +1,10 @@
 {
   "common": {
+    "upload": "Mengunggah",
     "save": "Menyimpan",
     "cancel": "Membatalkan",
     "delete": "Menghapus",
-    "edit": "Sunting",
+    "edit": "Edit",
     "submit": "Kirim",
     "close": "Menutup",
     "back": "Kembali",
@@ -13,7 +14,7 @@
     "filter": "Menyaring",
     "sort": "Menyortir",
     "viewAll": "Lihat Semua",
-    "noData": "Tidak ada data tersedia",
+    "noData": "Tidak ada data yang tersedia",
     "export": "Ekspor",
     "openMenu": "Buka menu"
   },
@@ -26,7 +27,7 @@
     "lastWeek": "Minggu lalu"
   },
   "errors": {
-    "somethingWentWrong": "Ada yang salah",
+    "somethingWentWrong": "Terjadi kesalahan.",
     "tryAgain": "Coba lagi",
     "pageNotFound": "Halaman tidak ditemukan",
     "unauthorized": "Akses tidak sah"
@@ -39,7 +40,7 @@
       "password": "Kata sandi",
       "forgotPassword": "Lupa kata sandi?",
       "signIn": "Masuk",
-      "signingIn": "Masuk...",
+      "signingIn": "Sedang masuk...",
       "noAccount": "Belum punya akun?",
       "signUp": "Mendaftar",
       "successMessage": "Berhasil masuk",
@@ -47,7 +48,7 @@
     },
     "signup": {
       "title": "Buat akun Anda",
-      "subtitle": "Bergabunglah dengan Studious dan mulai belajar",
+      "subtitle": "Bergabunglah dengan Studious dan mulailah belajar.",
       "signUp": "Mendaftar",
       "username": "Nama belakang",
       "email": "E-mail",
@@ -57,7 +58,7 @@
       "emailPlaceholder": "Masukkan email Anda",
       "passwordPlaceholder": "Buat kata sandi",
       "confirmPasswordPlaceholder": "Konfirmasikan kata sandi Anda",
-      "agreeToTerms": "Saya setuju dengan",
+      "agreeToTerms": "Saya setuju dengan hal tersebut.",
       "termsOfService": "Ketentuan Layanan",
       "and": "Dan",
       "privacyPolicy": "Kebijakan Privasi",
@@ -66,60 +67,60 @@
       "alreadyHaveAccount": "Sudah punya akun?",
       "signIn": "Masuk",
       "passwordMismatch": "Kata sandi tidak cocok",
-      "passwordTooShort": "Kata sandi harus minimal 6 karakter",
-      "termsRequired": "Anda harus menyetujui persyaratannya",
+      "passwordTooShort": "Kata sandi harus minimal 6 karakter.",
+      "termsRequired": "Anda harus menyetujui persyaratannya.",
       "verificationEmailSent": "Email verifikasi telah terkirim!",
-      "signUpFailed": "Gagal membuat akun. Silakan coba lagi."
+      "signUpFailed": "Pembuatan akun gagal. Silakan coba lagi."
     },
     "verification": {
-      "notVerified": "Akun Belum Diverifikasi",
+      "notVerified": "Akun Belum Terverifikasi",
       "message": "Akun Anda perlu diverifikasi sebelum Anda dapat masuk. Silakan periksa email Anda untuk tautan verifikasi.",
-      "emailSentTo": "Email verifikasi dikirim ke:",
+      "emailSentTo": "Email verifikasi telah dikirim ke:",
       "resendEmail": "Kirim Ulang Email Verifikasi",
-      "backToSignIn": "Kembali ke Masuk",
+      "backToSignIn": "Kembali ke Halaman Masuk",
       "emailSent": "Email verifikasi telah terkirim!",
       "checkInbox": "Silakan periksa kotak masuk dan folder spam Anda.",
       "enterEmail": "Masukkan alamat email Anda",
       "sending": "Mengirim...",
       "sendEmail": "Kirim Email",
       "title": "Verifikasi Email Anda",
-      "subtitle": "Klik tombol di bawah ini untuk memverifikasi alamat email Anda",
+      "subtitle": "Klik tombol di bawah ini untuk memverifikasi alamat email Anda.",
       "verifying": "Memverifikasi...",
       "verifyEmail": "Verifikasi Email",
-      "successTitle": "Email Terverifikasi Berhasil",
+      "successTitle": "Email berhasil diverifikasi.",
       "successMessage": "Email Anda telah diverifikasi. Anda sekarang dapat masuk ke akun Anda.",
       "errorTitle": "Verifikasi Gagal",
       "errorMessage": "Tautan verifikasi tidak valid atau telah kedaluwarsa. Silakan minta email verifikasi baru.",
       "invalidToken": "Token verifikasi tidak valid"
     },
     "forgotPassword": {
-      "title": "Setel Ulang Kata Sandi Anda",
-      "subtitle": "Masukkan alamat email Anda dan kami akan mengirimkan tautan untuk mengatur ulang kata sandi Anda",
+      "title": "Atur Ulang Kata Sandi Anda",
+      "subtitle": "Masukkan alamat email Anda dan kami akan mengirimkan tautan untuk mengatur ulang kata sandi Anda.",
       "email": "E-mail",
       "emailPlaceholder": "Masukkan alamat email Anda",
       "sendResetLink": "Kirim Tautan Reset",
       "sending": "Mengirim...",
-      "backToSignIn": "Kembali ke Masuk",
+      "backToSignIn": "Kembali ke Halaman Masuk",
       "successTitle": "Periksa Email Anda",
-      "successMessage": "Jika ada akun dengan email tersebut, kami telah mengirimi Anda tautan untuk mengatur ulang kata sandi.",
+      "successMessage": "Jika akun dengan alamat email tersebut sudah ada, kami telah mengirimkan tautan pengaturan ulang kata sandi kepada Anda.",
       "checkInbox": "Silakan periksa kotak masuk dan folder spam Anda untuk tautan pengaturan ulang.",
-      "errorMessage": "Gagal mengirim tautan reset. Silakan coba lagi.",
-      "invalidEmail": "Silakan masukkan alamat email yang valid"
+      "errorMessage": "Gagal mengirim tautan pengaturan ulang. Silakan coba lagi.",
+      "invalidEmail": "Silakan masukkan alamat email yang valid."
     },
     "resetPassword": {
-      "title": "Setel Ulang Kata Sandi Anda",
+      "title": "Atur Ulang Kata Sandi Anda",
       "subtitle": "Masukkan kata sandi baru Anda di bawah ini",
       "password": "Kata Sandi Baru",
       "passwordPlaceholder": "Masukkan kata sandi baru Anda",
       "confirmPassword": "Konfirmasi Kata Sandi",
       "confirmPasswordPlaceholder": "Konfirmasikan kata sandi baru Anda",
-      "resetPassword": "Setel Ulang Kata Sandi",
+      "resetPassword": "Atur Ulang Kata Sandi",
       "resetting": "Mengatur ulang...",
-      "passwordTooShort": "Kata sandi harus minimal 6 karakter",
+      "passwordTooShort": "Kata sandi harus minimal 6 karakter.",
       "passwordsDoNotMatch": "Kata sandi tidak cocok",
       "successTitle": "Reset Kata Sandi Berhasil",
       "successMessage": "Kata sandi Anda telah berhasil direset. Anda sekarang dapat masuk dengan kata sandi baru Anda.",
-      "backToSignIn": "Kembali ke Masuk"
+      "backToSignIn": "Kembali ke Halaman Masuk"
     }
   },
   "marketing": {
@@ -131,65 +132,65 @@
     },
     "hero": {
       "badge": "Platform Pembelajaran Modern",
-      "title1": "Lancar dan bebas gangguan",
+      "title1": "Lancar, tanpa gangguan",
       "title2": "pembelajaran untuk sekolah modern",
-      "subtitle": "Studious LMS mengintegrasikan AI, kalender waktu nyata, dan komunikasi kelas menjadi satu platform yang kohesif — yang dirancang untuk membantu guru mengajar dan siswa berkembang.",
+      "subtitle": "Studious LMS mengintegrasikan AI, kalender waktu nyata, dan komunikasi kelas ke dalam satu platform yang terpadu — dirancang untuk membantu guru mengajar dan siswa berkembang.",
       "requestEarlyAccess": "Minta Akses Awal",
       "watchDemo": "Tonton Demo",
       "altDashboard": "Dasbor Platform"
     },
     "problem": {
-      "title": "Portal sekolah tradisional terfragmentasi dan ketinggalan zaman",
-      "issue1": "Guru membuang-buang waktu untuk beralih di antara beberapa alat",
-      "issue2": "Siswa berjuang dengan organisasi dan tenggat waktu",
-      "issue3": "AI masih kurang terintegrasi dalam alur kerja sekolah yang sebenarnya"
+      "title": "Portal sekolah tradisional bersifat terfragmentasi dan ketinggalan zaman.",
+      "issue1": "Guru membuang waktu dengan beralih antara berbagai alat.",
+      "issue2": "Siswa kesulitan dalam hal pengaturan dan tenggat waktu.",
+      "issue3": "AI masih kurang terintegrasi dalam alur kerja sekolah yang sebenarnya."
     },
     "response": {
-      "title1": "LMS Studious menyatukan pengajaran, pembelajaran,",
-      "title2": "dan komunikasi ke dalam satu ruang kerja",
-      "subtitle": "Dibangun dengan kerangka kerja mutakhir dan desain yang berpusat pada manusia, sistem ini dirancang untuk diterapkan di sekolah dengan ukuran berapa pun."
+      "title1": "Studious LMS menyatukan pengajaran, pembelajaran,",
+      "title2": "dan komunikasi ke dalam satu ruang kerja.",
+      "subtitle": "Dibangun dengan kerangka kerja mutakhir dan desain yang berpusat pada manusia, sistem ini dirancang untuk dapat diterapkan di sekolah dengan ukuran apa pun."
     },
     "features": {
       "title": "Fitur Utama",
-      "subtitle": "Segala yang Anda butuhkan untuk mengelola pengalaman belajar modern",
+      "subtitle": "Semua yang Anda butuhkan untuk mengelola pengalaman pembelajaran modern.",
       "ai": {
         "title": "Asisten AI",
-        "description": "Membantu membuat materi belajar, meringkas konten, dan membantu penilaian"
+        "description": "Membantu menghasilkan materi pembelajaran, meringkas konten, dan membantu dalam penilaian."
       },
       "classManagement": {
         "title": "Manajemen Kelas",
-        "description": "Atur kelas, tugas, dan kehadiran dengan mudah"
+        "description": "Atur kelas, tugas, dan kehadiran dengan mudah."
       },
       "assignments": {
         "title": "Tugas",
-        "description": "Buat, kumpulkan, dan nilai kiriman siswa secara efisien"
+        "description": "Membuat, mengumpulkan, dan menilai tugas siswa secara efisien."
       },
       "calendar": {
         "title": "Kalender",
-        "description": "Sinkronisasi waktu nyata dengan tugas, pelajaran, dan acara"
+        "description": "Sinkronisasi waktu nyata dengan tugas, pelajaran, dan acara."
       },
       "analytics": {
-        "title": "Analitik",
-        "description": "Lihat wawasan tentang kinerja, partisipasi, dan keterlibatan"
+        "title": "Analisis",
+        "description": "Lihat wawasan tentang kinerja, partisipasi, dan keterlibatan."
       },
       "communication": {
         "title": "Komunikasi",
-        "description": "Pesan dan pengumuman terintegrasi untuk kolaborasi terpadu"
+        "description": "Fitur perpesanan dan pengumuman bawaan untuk kolaborasi terpadu."
       }
     },
     "quote": {
-      "text": "Setiap fitur di Studious dibuat untuk mengurangi hambatan — bukan menambahnya."
+      "text": "Setiap fitur di Studious dirancang untuk mengurangi hambatan — bukan menambahnya."
     },
     "pricing": {
-      "title": "Pilih paket yang tepat untuk institusi Anda",
-      "subtitle": "Harga yang sederhana dan transparan tanpa biaya tersembunyi. Semua paket mencakup fitur-fitur inti dengan opsi yang dapat disesuaikan.",
+      "title": "Pilih paket yang tepat untuk institusi Anda.",
+      "subtitle": "Harga yang sederhana dan transparan tanpa biaya tersembunyi. Semua paket mencakup fitur inti dengan opsi yang dapat ditingkatkan.",
       "starter": {
         "title": "Starter",
         "price": "Bebas",
         "note": "Akses beta disertakan",
-        "description": "Sempurna untuk kelas kecil & program percontohan",
+        "description": "Sangat cocok untuk kelas kecil & program percontohan",
         "perk1": "Hingga 30 siswa",
-        "perk2": "Kelas tak terbatas",
+        "perk2": "Kelas tanpa batas",
         "perk3": "Fitur inti (tugas, kalender, nilai)",
         "perk4": "Asisten AI (5 obrolan/bulan)",
         "perk5": "Dukungan komunitas",
@@ -201,62 +202,62 @@
         "price": "$5",
         "priceUnit": "/pengguna/bulan",
         "note": "Ditagih setiap tahun atau $6/bulan",
-        "description": "Untuk sekolah dengan jumlah siswa hingga 1.000 siswa",
-        "perk1": "Siswa tak terbatas",
-        "perk2": "Kelas tak terbatas",
+        "description": "Untuk sekolah dengan jumlah siswa hingga 1.000 orang.",
+        "perk1": "Jumlah siswa tidak terbatas",
+        "perk2": "Kelas tanpa batas",
         "perk3": "Semua fitur inti",
         "perk4": "Asisten AI (pertanyaan tak terbatas)",
-        "perk5": "Yang pertama dalam antrean untuk akses beta Studious CMS",
-        "button": "Memulai"
+        "perk5": "Prioritas pertama untuk akses beta Studious CMS",
+        "button": "Mulai"
       },
       "institution": {
         "title": "Lembaga",
         "price": "Kebiasaan",
         "note": "Disesuaikan dengan kebutuhan Anda",
-        "description": "Untuk sekolah & universitas besar (1.000+ siswa)",
-        "perk1": "Rencana Segalanya di Sekolah",
+        "description": "Untuk sekolah dan universitas besar (1.000+ siswa)",
+        "perk1": "Semua hal dalam rencana Sekolah",
         "perk2": "Dukungan prioritas 24/7",
         "perk3": "Penyimpanan tak terbatas",
-        "perk4": "Pelatihan & orientasi khusus",
-        "perk5": "Biaya per pengguna lebih murah",
-        "button": "Hubungi Penjualan"
+        "perk4": "Pelatihan dan orientasi khusus",
+        "perk5": "Biaya per pengguna yang lebih murah",
+        "button": "Hubungi Bagian Penjualan"
       },
       "mostPopular": "Paling Populer",
-      "earlyBird": "🎉 Pengguna awal mendapatkan 2 bulan gratis untuk paket tahunan + dukungan orientasi khusus"
+      "earlyBird": "🎉 Pengguna awal mendapatkan 2 bulan gratis untuk paket tahunan + dukungan onboarding khusus"
     },
     "schoolProgram": {
       "badge": "Dampak Sosial",
-      "title": "Program Pengembangan Sekolah Studious",
-      "subtitle": "Kami percaya setiap siswa berhak mendapatkan akses ke alat bantu pembelajaran modern, terlepas dari situasi ekonomi sekolah mereka.",
+      "title": "Program Pengembangan Sekolah yang Rajin Belajar",
+      "subtitle": "Kami percaya setiap siswa berhak mendapatkan akses ke perangkat pembelajaran modern, terlepas dari kondisi ekonomi sekolah mereka.",
       "feature1Title": "Akses 100% Gratis",
-      "feature1Description": "Akses platform penuh dengan semua fitur untuk sekolah yang memenuhi syarat",
+      "feature1Description": "Akses platform penuh dengan semua fitur untuk sekolah yang memenuhi syarat.",
       "feature2Title": "Dukungan Khusus",
-      "feature2Description": "Prioritas orientasi dan pelatihan bagi guru dan staf",
+      "feature2Description": "Prioritas orientasi dan pelatihan bagi guru dan staf.",
       "feature3Title": "Sumber Daya Pendidikan",
-      "feature3Description": "Materi pengajaran gratis dan dukungan kurikulum",
-      "applyNow": "Lamaran Sekarang",
-      "learnMore": "Pelajari Lebih Lanjut",
-      "eligibilityTitle": "Kelayakan Program",
+      "feature3Description": "Materi pengajaran gratis dan dukungan kurikulum.",
+      "applyNow": "Daftar Sekarang",
+      "learnMore": "Pelajari Selengkapnya",
+      "eligibilityTitle": "Persyaratan Program",
       "qualifyingTitle": "Sekolah yang Memenuhi Syarat:",
-      "qualify1": "Sekolah negeri di komunitas kurang terlayani",
+      "qualify1": "Sekolah negeri di komunitas yang kurang mampu",
       "qualify2": "Lembaga pendidikan nirlaba terdaftar",
-      "qualify3": "Sekolah di wilayah berkembang",
-      "qualify4": "Sekolah Judul I (AS) atau setara",
+      "qualify3": "Sekolah-sekolah di wilayah berkembang",
+      "qualify4": "Sekolah Title I (AS) atau yang setara",
       "commitmentTitle": "Komitmen Kami:",
-      "commitment": "10% pelanggan berbayar kami mendukung akses gratis bagi sekolah yang membutuhkan.",
+      "commitment": "10% dari pelanggan berbayar kami mendukung akses gratis untuk sekolah-sekolah yang membutuhkan.",
       "launchTitle": "Peluncuran Program:",
-      "launch": "Januari 2026 • Pendaftaran sudah dibuka"
+      "launch": "Januari 2026 • Pendaftaran kini dibuka"
     },
     "futureDevelopments": {
       "title": "Perkembangan Masa Depan",
-      "subtitle": "Peta jalan kami untuk transformasi pendidikan",
-      "cas": {
-        "title": "Perspektif CAS",
-        "description": "Mendukung sekolah-sekolah yang kekurangan dana melalui sumbangan dan materi, menjadikan pendidikan bermutu dapat diakses oleh semua orang."
+      "subtitle": "Peta jalan kami untuk mentransformasi pendidikan",
+      "sustainable": {
+        "title": "Perspektif Berkelanjutan",
+        "description": "Mendukung sekolah-sekolah yang kekurangan dana melalui donasi dan materi, sehingga pendidikan berkualitas dapat diakses oleh semua."
       },
       "features": {
         "title": "Fitur Perspektif",
-        "description": "Memperluas dukungan siswa AI dan membangun integrasi API untuk berbagai sistem pendidikan di seluruh dunia."
+        "description": "Memperluas dukungan AI bagi siswa dan membangun integrasi API untuk beragam sistem pendidikan di seluruh dunia."
       },
       "launch": {
         "title": "Perspektif Peluncuran",
@@ -264,11 +265,11 @@
       }
     },
     "cta": {
-      "title": "Siap untuk mendefinisikan ulang cara sekolah Anda belajar dan mengajar?",
-      "subtitle": "Bergabunglah dengan masa depan pendidikan dengan Studious LMS",
+      "title": "Siap mendefinisikan ulang bagaimana sekolah Anda belajar dan mengajar?",
+      "subtitle": "Bergabunglah dengan masa depan pendidikan bersama Studious LMS.",
       "requestAccess": "Minta Akses",
       "partnerWithUs": "Bermitra dengan Kami",
-      "tagline": "Studious LMS — Pembelajaran Modern, Sederhana."
+      "tagline": "Studious LMS — Pembelajaran Modern, Disederhanakan."
     },
     "privacyPolicy": {
       "title": "Kebijakan Privasi",
@@ -276,50 +277,50 @@
       "sections": {
         "introduction": {
           "title": "1. Pendahuluan",
-          "content": "Studious LMS ('kami') berkomitmen untuk melindungi privasi Anda. Kebijakan Privasi ini menjelaskan cara kami mengumpulkan, menggunakan, mengungkapkan, dan melindungi informasi Anda saat Anda menggunakan sistem manajemen pembelajaran dan layanan terkait kami (secara kolektif, 'Layanan'). Harap baca Kebijakan Privasi ini dengan saksama. Dengan menggunakan Layanan kami, Anda menyetujui pengumpulan dan penggunaan informasi sesuai dengan kebijakan ini."
+          "content": "Studious LMS ('kami', 'milik kami', atau 'kita') berkomitmen untuk melindungi privasi Anda. Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, mengungkapkan, dan melindungi informasi Anda saat Anda menggunakan sistem manajemen pembelajaran dan layanan terkait kami (secara kolektif, 'Layanan'). Harap baca Kebijakan Privasi ini dengan saksama. Dengan menggunakan Layanan kami, Anda menyetujui pengumpulan dan penggunaan informasi sesuai dengan kebijakan ini."
         },
         "informationWeCollect": {
           "title": "2. Informasi yang Kami Kumpulkan",
-          "content": "Kami mengumpulkan informasi yang Anda berikan langsung kepada kami, termasuk:\n\n• Informasi Akun: Nama pengguna, alamat email, kata sandi, dan informasi profil\n• Data Pendidikan: Pendaftaran kelas, tugas, nilai, catatan kehadiran, dan kemajuan akademik\n• Data Komunikasi: Pesan, pengumuman, dan komunikasi lainnya dalam platform\n• Data Penggunaan: Informasi tentang bagaimana Anda berinteraksi dengan Layanan kami, termasuk halaman yang dikunjungi dan fitur yang digunakan\n• Informasi Perangkat: Alamat IP, jenis peramban, pengenal perangkat, dan sistem operasi\n• Kuki dan Teknologi Pelacakan: Kami menggunakan kuki dan teknologi serupa untuk meningkatkan pengalaman Anda dan menganalisis pola penggunaan"
+          "content": "Kami mengumpulkan informasi yang Anda berikan langsung kepada kami, termasuk:\n\n• Informasi Akun: Nama pengguna, alamat email, kata sandi, dan informasi profil\n• Data Pendidikan: Pendaftaran kelas, tugas, nilai, catatan kehadiran, dan kemajuan akademik\n• Data Komunikasi: Pesan, pengumuman, dan komunikasi lain di dalam platform\n• Data Penggunaan: Informasi tentang bagaimana Anda berinteraksi dengan Layanan kami, termasuk halaman yang dikunjungi dan fitur yang digunakan\n• Informasi Perangkat: Alamat IP, jenis peramban, pengenal perangkat, dan sistem operasi\n• Cookie dan Teknologi Pelacakan: Kami menggunakan cookie dan teknologi serupa untuk meningkatkan pengalaman Anda dan menganalisis pola penggunaan"
         },
         "howWeUseInformation": {
           "title": "3. Bagaimana Kami Menggunakan Informasi Anda",
-          "content": "Kami menggunakan informasi yang kami kumpulkan untuk:\n\n• Menyediakan, memelihara, dan meningkatkan Layanan kami\n• Memproses transaksi dan mengelola akun Anda\n• Memfasilitasi komunikasi antara pengajar, siswa, dan administrator\n• Membuat dan mengelola konten pendidikan, tugas, dan nilai\n• Mengirim notifikasi penting tentang akun Anda dan Layanan\n• Menganalisis pola penggunaan untuk meningkatkan pengalaman pengguna\n• Memastikan keamanan dan mencegah penipuan\n• Mematuhi kewajiban hukum dan melindungi hak-hak kami"
+          "content": "Kami menggunakan informasi yang kami kumpulkan untuk:\n\n• Menyediakan, memelihara, dan meningkatkan Layanan kami\n• Memproses transaksi dan mengelola akun Anda\n• Memfasilitasi komunikasi antara guru, siswa, dan administrator\n• Membuat dan mengelola konten pendidikan, tugas, dan nilai\n• Mengirimkan pemberitahuan penting tentang akun Anda dan Layanan\n• Menganalisis pola penggunaan untuk meningkatkan pengalaman pengguna\n• Memastikan keamanan dan mencegah penipuan\n• Mematuhi kewajiban hukum dan melindungi hak-hak kami"
         },
         "informationSharing": {
-          "title": "4. Pembagian dan Pengungkapan Informasi",
-          "content": "Kami tidak menjual informasi pribadi Anda. Kami dapat membagikan informasi Anda dalam situasi berikut:\n\n• Dengan Lembaga Pendidikan: Informasi dapat dibagikan dengan sekolah atau lembaga pendidikan Anda untuk tujuan pendidikan\n• Dengan Penyedia Layanan: Kami dapat membagikan informasi dengan penyedia layanan pihak ketiga yang membantu dalam pengoperasian Layanan kami\n• Untuk Kepatuhan Hukum: Kami dapat mengungkapkan informasi jika diwajibkan oleh hukum atau untuk melindungi hak dan keamanan kami\n• Dengan Persetujuan Anda: Kami dapat membagikan informasi dengan persetujuan tegas Anda\n• Dalam Kasus Penggabungan: Informasi dapat ditransfer sehubungan dengan transaksi bisnis"
+          "title": "4. Berbagi dan Pengungkapan Informasi",
+          "content": "Kami tidak menjual informasi pribadi Anda. Kami dapat membagikan informasi Anda dalam keadaan berikut:\n\n• Dengan Lembaga Pendidikan: Informasi dapat dibagikan dengan sekolah atau lembaga pendidikan Anda untuk tujuan pendidikan\n• Dengan Penyedia Layanan: Kami dapat membagikan informasi dengan penyedia layanan pihak ketiga yang membantu dalam pengoperasian Layanan kami\n• Untuk Kepatuhan Hukum: Kami dapat mengungkapkan informasi jika diwajibkan oleh hukum atau untuk melindungi hak dan keselamatan kami\n• Dengan Persetujuan Anda: Kami dapat membagikan informasi dengan persetujuan eksplisit Anda\n• Dalam Kasus Penggabungan: Informasi dapat ditransfer sehubungan dengan transaksi bisnis"
         },
         "dataSecurity": {
           "title": "5. Keamanan Data",
-          "content": "Kami menerapkan langkah-langkah keamanan teknis dan organisasional yang tepat untuk melindungi informasi pribadi Anda dari akses, perubahan, pengungkapan, atau penghancuran yang tidak sah. Namun, tidak ada metode transmisi melalui internet atau penyimpanan elektronik yang 100% aman. Meskipun kami berupaya menggunakan cara-cara yang dapat diterima secara komersial untuk melindungi informasi Anda, kami tidak dapat menjamin keamanan mutlak."
+          "content": "Kami menerapkan langkah-langkah keamanan teknis dan organisasi yang tepat untuk melindungi informasi pribadi Anda dari akses, perubahan, pengungkapan, atau penghancuran yang tidak sah. Namun, tidak ada metode transmisi melalui Internet atau penyimpanan elektronik yang 100% aman. Meskipun kami berupaya menggunakan cara-cara yang dapat diterima secara komersial untuk melindungi informasi Anda, kami tidak dapat menjamin keamanan absolut."
         },
         "dataRetention": {
           "title": "6. Retensi Data",
-          "content": "Kami menyimpan informasi pribadi Anda selama diperlukan untuk menyediakan Layanan kami dan memenuhi tujuan yang diuraikan dalam Kebijakan Privasi ini, kecuali jika periode penyimpanan yang lebih lama diwajibkan atau diizinkan oleh hukum. Ketika kami tidak lagi membutuhkan informasi Anda, kami akan menghapusnya dengan aman atau menganonimkannya."
+          "content": "Kami menyimpan informasi pribadi Anda selama diperlukan untuk menyediakan Layanan kami dan memenuhi tujuan yang diuraikan dalam Kebijakan Privasi ini, kecuali jika periode penyimpanan yang lebih lama diperlukan atau diizinkan oleh hukum. Ketika kami tidak lagi membutuhkan informasi Anda, kami akan menghapus atau menganonimkannya secara aman."
         },
         "yourRights": {
           "title": "7. Hak Anda",
-          "content": "Tergantung pada lokasi Anda, Anda mungkin memiliki hak tertentu terkait informasi pribadi Anda, termasuk:\n\n• Akses: Meminta akses ke informasi pribadi Anda\n• Koreksi: Meminta koreksi atas informasi yang tidak akurat\n• Penghapusan: Meminta penghapusan informasi pribadi Anda\n• Portabilitas: Meminta transfer data Anda\n• Keberatan: Menolak aktivitas pemrosesan tertentu\n• Penarikan Persetujuan: Menarik persetujuan jika pemrosesan didasarkan pada persetujuan\n\nUntuk menggunakan hak-hak ini, silakan hubungi kami menggunakan informasi yang tersedia di bagian 'Hubungi Kami'."
+          "content": "Tergantung pada lokasi Anda, Anda mungkin memiliki hak-hak tertentu terkait informasi pribadi Anda, termasuk:\n\n• Akses: Meminta akses ke informasi pribadi Anda\n• Koreksi: Meminta koreksi atas informasi yang tidak akurat\n• Penghapusan: Meminta penghapusan informasi pribadi Anda\n• Portabilitas: Meminta transfer data Anda\n• Keberatan: Menolak aktivitas pemrosesan tertentu\n• Penarikan Persetujuan: Menarik persetujuan jika pemrosesan didasarkan pada persetujuan\n\nUntuk menggunakan hak-hak ini, silakan hubungi kami menggunakan informasi yang tertera di bagian 'Hubungi Kami'."
         },
         "childrenPrivacy": {
-          "title": "8. Privasi Anak",
-          "content": "Layanan kami dirancang untuk keperluan pendidikan dan dapat digunakan oleh siswa di bawah usia 18 tahun. Kami mematuhi hukum yang berlaku terkait privasi anak, termasuk Undang-Undang Hak Pendidikan dan Privasi Keluarga (FERPA) di Amerika Serikat. Kami tidak dengan sengaja mengumpulkan informasi pribadi dari anak-anak tanpa persetujuan yang sesuai dari orang tua atau lembaga pendidikan. Jika Anda yakin kami telah mengumpulkan informasi dari seorang anak secara tidak pantas, harap segera hubungi kami."
+          "title": "8. Privasi Anak-Anak",
+          "content": "Layanan kami dirancang untuk penggunaan pendidikan dan dapat digunakan oleh siswa di bawah usia 18 tahun. Kami mematuhi hukum yang berlaku mengenai privasi anak-anak, termasuk Undang-Undang Hak dan Privasi Pendidikan Keluarga (FERPA) di Amerika Serikat. Kami tidak dengan sengaja mengumpulkan informasi pribadi dari anak-anak tanpa persetujuan yang sesuai dari orang tua atau lembaga pendidikan. Jika Anda yakin kami telah mengumpulkan informasi dari seorang anak secara tidak pantas, silakan hubungi kami segera."
         },
         "internationalTransfers": {
           "title": "9. Transfer Data Internasional",
-          "content": "Informasi Anda dapat ditransfer dan diproses di negara selain negara tempat tinggal Anda. Negara-negara ini mungkin memiliki undang-undang perlindungan data yang berbeda dengan negara Anda. Dengan menggunakan Layanan kami, Anda menyetujui transfer informasi Anda ke negara-negara ini."
+          "content": "Informasi Anda dapat ditransfer ke dan diproses di negara-negara selain negara tempat tinggal Anda. Negara-negara ini mungkin memiliki undang-undang perlindungan data yang berbeda dari undang-undang di negara Anda. Dengan menggunakan Layanan kami, Anda menyetujui transfer informasi Anda ke negara-negara tersebut."
         },
         "changesToPolicy": {
           "title": "10. Perubahan pada Kebijakan Privasi Ini",
-          "content": "Kami dapat memperbarui Kebijakan Privasi ini sewaktu-waktu. Kami akan memberi tahu Anda tentang perubahan apa pun dengan memposting Kebijakan Privasi baru di halaman ini dan memperbarui tanggal 'Terakhir Diperbarui'. Anda disarankan untuk meninjau Kebijakan Privasi ini secara berkala untuk mengetahui perubahan apa pun."
+          "content": "Kami dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu. Kami akan memberi tahu Anda tentang perubahan apa pun dengan memposting Kebijakan Privasi baru di halaman ini dan memperbarui tanggal 'Terakhir Diperbarui'. Anda disarankan untuk meninjau Kebijakan Privasi ini secara berkala untuk mengetahui perubahan apa pun."
         },
         "contactUs": {
           "title": "11. Hubungi Kami",
           "content": "Jika Anda memiliki pertanyaan tentang Kebijakan Privasi ini atau praktik privasi kami, silakan hubungi kami di:\n\nEmail: privacy@studious.sh\n\nKami akan menanggapi pertanyaan Anda dalam jangka waktu yang wajar."
         }
       },
-      "goToTop": "Ke Atas",
+      "goToTop": "Kembali ke Atas",
       "tableOfContents": "Daftar isi",
       "backToTop": "Kembali ke Atas"
     },
@@ -328,67 +329,67 @@
       "lastUpdated": "Terakhir Diperbarui: November 2025",
       "sections": {
         "acceptance": {
-          "title": "1. Penerimaan Ketentuan",
-          "content": "Dengan mengakses atau menggunakan Studious LMS (\"Layanan\"), Anda setuju untuk terikat oleh Ketentuan Layanan ini (\"Ketentuan\"). Jika Anda tidak menyetujui Ketentuan ini, Anda tidak boleh mengakses atau menggunakan Layanan. Ketentuan ini berlaku untuk semua pengguna Layanan, termasuk siswa, guru, administrator, dan institusi pendidikan."
+          "title": "1. Penerimaan Syarat dan Ketentuan",
+          "content": "Dengan mengakses atau menggunakan Studious LMS ('Layanan'), Anda setuju untuk terikat oleh Ketentuan Layanan ini ('Ketentuan'). Jika Anda tidak setuju dengan Ketentuan ini, Anda tidak boleh mengakses atau menggunakan Layanan. Ketentuan ini berlaku untuk semua pengguna Layanan, termasuk siswa, guru, administrator, dan lembaga pendidikan."
         },
         "descriptionOfService": {
           "title": "2. Deskripsi Layanan",
-          "content": "Studious LMS adalah sistem manajemen pembelajaran yang menyediakan alat bagi institusi pendidikan, guru, dan siswa untuk mengelola kelas, tugas, nilai, kehadiran, komunikasi, dan aktivitas pendidikan lainnya. Layanan ini mencakup aplikasi berbasis web dan seluler, fitur-fitur berbasis AI, dan layanan terkait."
+          "content": "Studious LMS adalah sistem manajemen pembelajaran yang menyediakan alat bagi lembaga pendidikan, guru, dan siswa untuk mengelola kelas, tugas, nilai, kehadiran, komunikasi, dan aktivitas pendidikan lainnya. Layanan ini mencakup aplikasi berbasis web dan seluler, fitur berbasis AI, dan layanan terkait."
         },
         "userAccounts": {
           "title": "3. Akun Pengguna",
-          "content": "Untuk menggunakan Layanan, Anda harus membuat akun dan memberikan informasi yang akurat, terkini, dan lengkap. Anda bertanggung jawab untuk menjaga kerahasiaan kredensial akun Anda dan semua aktivitas yang terjadi dalam akun Anda. Anda setuju untuk:\n\n• Menggunakan kata sandi yang kuat dan unik\n• Tidak membagikan kredensial akun Anda dengan orang lain\n• Segera memberi tahu kami jika ada akses yang tidak sah\n• Menjaga keakuratan informasi akun\n• Bertanggung jawab atas semua aktivitas dalam akun Anda"
+          "content": "Untuk menggunakan Layanan, Anda harus membuat akun dan memberikan informasi yang akurat, terkini, dan lengkap. Anda bertanggung jawab untuk menjaga kerahasiaan kredensial akun Anda dan untuk semua aktivitas yang terjadi di bawah akun Anda. Anda setuju untuk:\n\n• Menggunakan kata sandi yang kuat dan unik\n• Tidak membagikan kredensial akun Anda kepada orang lain\n• Segera memberi tahu kami jika terjadi akses tidak sah\n• Memelihara informasi akun yang akurat\n• Bertanggung jawab atas semua aktivitas di bawah akun Anda"
         },
         "acceptableUse": {
           "title": "4. Kebijakan Penggunaan yang Dapat Diterima",
-          "content": "Anda setuju untuk menggunakan Layanan hanya untuk tujuan yang sah dan sesuai dengan Ketentuan ini. Anda setuju untuk TIDAK:\n\n• Melanggar hukum atau peraturan yang berlaku\n• Melanggar hak kekayaan intelektual\n• Mengirimkan konten yang berbahaya, menyinggung, atau tidak pantas\n• Melecehkan, menyalahgunakan, atau merugikan pengguna lain\n• Mencoba mendapatkan akses tidak sah ke Layanan\n• Mengganggu atau mengacaukan Layanan atau server\n• Menggunakan sistem otomatis untuk mengakses Layanan tanpa izin\n• Meniru identitas orang atau entitas lain\n• Mengumpulkan atau menyimpan data pribadi pengguna lain tanpa izin"
+          "content": "Anda setuju untuk menggunakan Layanan hanya untuk tujuan yang sah dan sesuai dengan Syarat dan Ketentuan ini. Anda setuju untuk TIDAK:\n\n• Melanggar hukum atau peraturan yang berlaku\n• Melanggar hak kekayaan intelektual\n• Mengirimkan konten yang berbahaya, menyinggung, atau tidak pantas\n• Mengganggu, menyalahgunakan, atau merugikan pengguna lain\n• Berupaya memperoleh akses tanpa izin ke Layanan\n• Mengganggu atau merusak Layanan atau server\n• Menggunakan sistem otomatis untuk mengakses Layanan tanpa izin\n• Menyamar sebagai orang atau entitas apa pun\n• Mengumpulkan atau menyimpan data pribadi tentang pengguna lain tanpa persetujuan"
         },
         "educationalContent": {
-          "title": "5. Konten Pendidikan dan Kekayaan Intelektual",
-          "content": "Layanan ini memungkinkan pengguna untuk membuat, mengunggah, dan membagikan konten edukasi. Anda tetap memiliki hak kepemilikan atas konten yang Anda buat, tetapi dengan menggunakan Layanan ini, Anda memberi kami lisensi untuk menggunakan, menyimpan, dan menampilkan konten Anda sebagaimana diperlukan untuk menyediakan Layanan. Anda bertanggung jawab untuk memastikan Anda memiliki hak untuk menggunakan dan membagikan konten apa pun yang Anda unggah. Kami menghormati hak kekayaan intelektual dan akan menanggapi pemberitahuan pelanggaran hak cipta yang sah."
+          "title": "5. Konten Pendidikan dan Hak Kekayaan Intelektual",
+          "content": "Layanan ini memungkinkan pengguna untuk membuat, mengunggah, dan berbagi konten pendidikan. Anda tetap memiliki kepemilikan atas konten yang Anda buat, tetapi dengan menggunakan Layanan ini, Anda memberi kami lisensi untuk menggunakan, menyimpan, dan menampilkan konten Anda sebagaimana diperlukan untuk menyediakan Layanan. Anda bertanggung jawab untuk memastikan bahwa Anda memiliki hak untuk menggunakan dan berbagi konten apa pun yang Anda unggah. Kami menghormati hak kekayaan intelektual dan akan menanggapi pemberitahuan pelanggaran hak cipta yang sah."
         },
         "aiFeatures": {
-          "title": "6. Fitur Bertenaga AI",
-          "content": "Layanan kami mencakup fitur-fitur berbasis AI seperti bantuan penilaian, pembuatan konten, dan dukungan pendidikan. Fitur-fitur ini disediakan 'apa adanya' dan harus digunakan sebagai alat tambahan. Pengguna bertanggung jawab untuk meninjau dan memvalidasi konten yang dihasilkan AI. Kami tidak menjamin keakuratan, kelengkapan, atau kesesuaian konten yang dihasilkan AI."
+          "title": "6. Fitur yang Didukung AI",
+          "content": "Layanan kami mencakup fitur-fitur berbasis AI seperti bantuan penilaian, pembuatan konten, dan dukungan pendidikan. Fitur-fitur ini disediakan 'sebagaimana adanya' dan harus digunakan sebagai alat pelengkap. Pengguna bertanggung jawab untuk meninjau dan memvalidasi konten yang dihasilkan AI. Kami tidak menjamin keakuratan, kelengkapan, atau kesesuaian konten yang dihasilkan AI."
         },
         "privacy": {
           "title": "7. Privasi",
-          "content": "Penggunaan Layanan oleh Anda juga diatur oleh Kebijakan Privasi kami, yang menjelaskan cara kami mengumpulkan, menggunakan, dan melindungi informasi Anda. Dengan menggunakan Layanan, Anda menyetujui pengumpulan dan penggunaan informasi sebagaimana dijelaskan dalam Kebijakan Privasi kami."
+          "content": "Penggunaan Layanan oleh Anda juga diatur oleh Kebijakan Privasi kami, yang menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi Anda. Dengan menggunakan Layanan, Anda menyetujui pengumpulan dan penggunaan informasi sebagaimana dijelaskan dalam Kebijakan Privasi kami."
         },
         "feesAndPayment": {
           "title": "8. Biaya dan Pembayaran",
-          "content": "Beberapa fitur Layanan mungkin memerlukan pembayaran. Jika Anda membeli langganan atau fitur berbayar:\n\n• Biaya berlaku seperti yang tertera pada saat pembelian\n• Pembayaran diproses melalui pemroses pembayaran pihak ketiga yang aman\n• Langganan diperpanjang secara otomatis kecuali dibatalkan\n• Pengembalian dana tunduk pada kebijakan pengembalian dana kami\n• Kami berhak mengubah harga dengan pemberitahuan sebelumnya"
+          "content": "Beberapa fitur Layanan mungkin memerlukan pembayaran. Jika Anda membeli langganan atau fitur berbayar:\n\n• Biaya sesuai dengan yang tertera pada saat pembelian\n• Pembayaran diproses melalui penyedia layanan pembayaran pihak ketiga yang aman\n• Langganan diperpanjang secara otomatis kecuali dibatalkan\n• Pengembalian dana tunduk pada kebijakan pengembalian dana kami\n• Kami berhak untuk mengubah harga dengan pemberitahuan sebelumnya"
         },
         "termination": {
-          "title": "9. Pemutusan",
-          "content": "Kami dapat segera menghentikan atau menangguhkan akun dan akses Anda ke Layanan, tanpa pemberitahuan sebelumnya, atas perilaku yang kami yakini melanggar Ketentuan ini atau merugikan pengguna lain, kami, atau pihak ketiga. Anda dapat menghentikan akun Anda kapan saja dengan menghubungi kami. Setelah penghentian, hak Anda untuk menggunakan Layanan akan segera berakhir."
+          "title": "9. Pemutusan Hubungan Kerja",
+          "content": "Kami dapat mengakhiri atau menangguhkan akun Anda dan akses ke Layanan segera, tanpa pemberitahuan sebelumnya, atas perilaku yang kami yakini melanggar Ketentuan ini atau merugikan pengguna lain, kami, atau pihak ketiga. Anda dapat mengakhiri akun Anda kapan saja dengan menghubungi kami. Setelah pengakhiran, hak Anda untuk menggunakan Layanan akan segera berakhir."
         },
         "disclaimers": {
-          "title": "10. Penyangkalan",
-          "content": "LAYANAN INI DISEDIAKAN 'SEBAGAIMANA ADANYA' DAN 'SEBAGAIMANA TERSEDIA' TANPA JAMINAN APA PUN, BAIK TERSURAT MAUPUN TERSIRAT. KAMI TIDAK MENJAMIN BAHWA LAYANAN INI AKAN BEBAS GANGGUAN, AMAN, ATAU TANPA KESALAHAN. KAMI MENYANGKAL SEMUA JAMINAN, TERMASUK JAMINAN ATAS KELAYAKAN UNTUK DIPERDAGANGKAN, KESESUAIAN UNTUK TUJUAN TERTENTU, DAN TANPA PELANGGARAN."
+          "title": "10. Penafian",
+          "content": "LAYANAN INI DISEDIAKAN 'SEBAGAIMANA ADANYA' DAN 'SEBAGAIMANA TERSEDIA' TANPA JAMINAN APA PUN, BAIK TERSURAT MAUPUN TERSIRAT. KAMI TIDAK MENJAMIN BAHWA LAYANAN AKAN BERJALAN TANPA GANGGUAN, AMAN, ATAU BEBAS KESALAHAN. KAMI MENOLAK SEMUA JAMINAN, TERMASUK JAMINAN KELAYAKAN DAGANG, KESESUAIAN UNTUK TUJUAN TERTENTU, DAN NON-PELANGGARAN."
         },
         "limitationOfLiability": {
           "title": "11. Batasan Tanggung Jawab",
-          "content": "HINGGA BATAS MAKSIMUM YANG DIIZINKAN OLEH HUKUM, KAMI TIDAK AKAN BERTANGGUNG JAWAB ATAS SEGALA KERUGIAN TIDAK LANGSUNG, INSIDENTAL, KHUSUS, KONSEKUENSIAL, ATAU HUKUMAN, ATAU SEGALA HILANGNYA KEUNTUNGAN ATAU PENDAPATAN, BAIK YANG TIMBUL SECARA LANGSUNG ATAU TIDAK LANGSUNG, ATAU SEGALA HILANGNYA DATA, PENGGUNAAN, GOODWILL, ATAU KERUGIAN TIDAK BERWUJUD LAINNYA YANG TIMBUL DARI PENGGUNAAN LAYANAN OLEH ANDA."
+          "content": "SEJAUH DIIZINKAN OLEH HUKUM, KAMI TIDAK BERTANGGUNG JAWAB ATAS KERUGIAN TIDAK LANGSUNG, INSIDENTAL, KHUSUS, KONSEKUENSIAL, ATAU HUKUMAN, ATAU KEHILANGAN KEUNTUNGAN ATAU PENDAPATAN, BAIK YANG TERJADI SECARA LANGSUNG MAUPUN TIDAK LANGSUNG, ATAU KEHILANGAN DATA, PENGGUNAAN, NAMA BAIK, ATAU KERUGIAN TIDAK BERWUJUD LAINNYA YANG TIMBUL AKIBAT PENGGUNAAN LAYANAN OLEH ANDA."
         },
         "indemnification": {
           "title": "12. Ganti Rugi",
-          "content": "Anda setuju untuk mengganti rugi, membela, dan membebaskan Studious LMS dan para pejabat, direktur, karyawan, dan agennya dari dan terhadap segala klaim, tanggung jawab, kerusakan, kerugian, dan biaya yang timbul dari atau dengan cara apa pun terkait dengan akses atau penggunaan Layanan oleh Anda, pelanggaran Anda terhadap Ketentuan ini, atau pelanggaran Anda terhadap hak apa pun milik orang lain."
+          "content": "Anda setuju untuk mengganti kerugian, membela, dan membebaskan Studious LMS dan para pejabat, direktur, karyawan, dan agennya dari dan terhadap setiap klaim, kewajiban, kerusakan, kerugian, dan pengeluaran yang timbul dari atau terkait dengan akses atau penggunaan Anda terhadap Layanan, pelanggaran Anda terhadap Syarat dan Ketentuan ini, atau pelanggaran Anda terhadap hak orang lain."
         },
         "governingLaw": {
-          "title": "13. Hukum yang Mengatur",
-          "content": "Ketentuan ini diatur dan ditafsirkan sesuai dengan hukum di yurisdiksi tempat Studious LMS beroperasi, tanpa memperhatikan ketentuan hukum yang bertentangan. Segala perselisihan yang timbul dari Ketentuan ini atau Layanan akan diselesaikan di pengadilan yang berwenang di yurisdiksi tersebut."
+          "title": "13. Hukum yang Berlaku",
+          "content": "Syarat dan Ketentuan ini akan diatur dan ditafsirkan sesuai dengan hukum yurisdiksi tempat Studious LMS beroperasi, tanpa memperhatikan ketentuan konflik hukumnya. Setiap perselisihan yang timbul dari Syarat dan Ketentuan ini atau Layanan akan diselesaikan di pengadilan yang berwenang di yurisdiksi tersebut."
         },
         "changesToTerms": {
           "title": "14. Perubahan Ketentuan",
-          "content": "Kami berhak mengubah Ketentuan ini kapan saja. Kami akan memberi tahu pengguna tentang perubahan materi dengan memposting Ketentuan yang diperbarui di situs web kami dan memperbarui tanggal 'Terakhir Diperbarui'. Penggunaan Layanan Anda yang berkelanjutan setelah perubahan tersebut merupakan penerimaan atas Ketentuan yang telah diubah."
+          "content": "Kami berhak untuk mengubah Ketentuan ini kapan saja. Kami akan memberi tahu pengguna tentang perubahan penting dengan memposting Ketentuan yang diperbarui di situs web kami dan memperbarui tanggal 'Terakhir Diperbarui'. Penggunaan Layanan Anda secara berkelanjutan setelah perubahan tersebut merupakan penerimaan atas Ketentuan yang telah dimodifikasi."
         },
         "contactUs": {
           "title": "15. Hubungi Kami",
           "content": "Jika Anda memiliki pertanyaan tentang Ketentuan Layanan ini, silakan hubungi kami di:\n\nEmail: legal@studious.sh\n\nKami akan menanggapi pertanyaan Anda dalam jangka waktu yang wajar."
         }
       },
-      "goToTop": "Ke Atas",
+      "goToTop": "Kembali ke Atas",
       "tableOfContents": "Daftar isi",
       "backToTop": "Kembali ke Atas"
     },
@@ -399,8 +400,8 @@
   },
   "press": {
     "badge": "Pers & Media",
-    "title": "Rajin dalam berita",
-    "subtitle": "Sumber daya media, aset merek, dan informasi perusahaan untuk jurnalis dan pembuat konten",
+    "title": "Rajin belajar dalam berita",
+    "subtitle": "Sumber daya media, aset merek, dan informasi perusahaan untuk jurnalis dan pembuat konten.",
     "factsheet": {
       "title": "Lembar Fakta Perusahaan",
       "subtitle": "Fakta singkat tentang Studious LMS",
@@ -415,73 +416,73 @@
       "currentPhase": "Fase Saat Ini",
       "targetMarkets": "Pasar Sasaran",
       "teamSize": "Ukuran Tim",
-      "devHqs": "Kantor Pusat Pengembangan"
+      "devHqs": "Markas Pengembangan"
     },
     "contact": {
       "title": "Pertanyaan Pers",
       "subtitle": "Untuk pertanyaan pers, wawancara, dan permintaan media",
-      "sl": "Kami biasanya merespons dalam waktu 24 jam",
+      "sl": "Kami biasanya merespons dalam waktu 24 jam.",
       "general": "Untuk pertanyaan umum dan dukungan"
     }
   },
   "program": {
     "hero": {
       "badge": "Inisiatif Dampak Sosial",
-      "title": "Program Pengembangan Sekolah Studious",
-      "subtitle": "Memberikan akses gratis terhadap teknologi pembelajaran modern bagi sekolah-sekolah yang tidak memiliki kemampuan ekonomi"
+      "title": "Program Pengembangan Sekolah yang Rajin Belajar",
+      "subtitle": "Memberikan akses gratis ke teknologi pembelajaran modern bagi sekolah-sekolah yang kurang mampu secara ekonomi."
     },
     "commitment": {
-      "revenue": "Pendapatan yang Dikomitmenkan",
+      "revenue": "Pendapatan yang Dijanjikan",
       "cohort": "Peluncuran Kelompok Pertama",
       "free": "Akses Gratis"
     },
     "about": {
       "mission": {
         "title": "Misi Kami",
-        "body1": "Program Pengembangan Sekolah Studious bertujuan untuk mendukung sekolah-sekolah kurang mampu dengan menyediakan akses gratis dan tak terbatas ke platform manajemen pembelajaran kami. Kami menyadari bahwa teknologi merupakan faktor dominan dalam tenaga kerja masa depan, namun banyak institusi pendidikan tidak memiliki akses ke sumber daya tersebut. Melalui program ini, kami menghadirkan teknologi manajemen pembelajaran modern ke sekolah-sekolah yang paling membutuhkannya."
+        "body1": "Program Pengembangan Sekolah Studious bertujuan untuk mendukung sekolah-sekolah kurang mampu dengan menyediakan akses gratis dan tak terbatas ke platform manajemen pembelajaran kami. Kami menyadari bahwa teknologi merupakan faktor dominan dalam angkatan kerja masa depan, namun banyak lembaga pendidikan yang kekurangan akses terhadap sumber daya tersebut. Melalui program ini, kami menghadirkan teknologi manajemen pembelajaran modern ke sekolah-sekolah yang paling membutuhkannya."
       },
       "aims": {
         "title": "Tujuan Program",
-        "body1": "Melalui diskusi mendalam dengan para guru dan profesional pendidikan, kami telah mengidentifikasi kesenjangan signifikan dalam infrastruktur pembelajaran digital yang tersedia di banyak sekolah. Banyak sistem manajemen pembelajaran di pasaran tidak memiliki pengalaman pengguna yang kohesif dan intuitif, dan sekolah-sekolah di daerah tertinggal seringkali tidak mampu mengakses teknologi pendidikan modern.",
-        "body2": "Program kami langsung mengatasi tantangan-tantangan ini. Pendapatan dari langganan institusi berbayar kami memungkinkan kami menyediakan akses komprehensif ke Studious LMS dan perangkat pendidikan terkait bagi sekolah-sekolah kurang mampu. Model berkelanjutan ini memungkinkan kami menjembatani kesenjangan digital sekaligus terus meningkatkan platform kami untuk semua pengguna."
+        "body1": "Melalui percakapan ekstensif dengan para guru dan profesional pendidikan, kami telah mengidentifikasi kesenjangan signifikan dalam infrastruktur pembelajaran digital yang tersedia bagi banyak sekolah. Banyak sistem manajemen pembelajaran di pasaran kurang memiliki pengalaman pengguna yang kohesif dan intuitif, dan sekolah-sekolah di daerah kurang mampu seringkali tidak mampu mengakses teknologi pendidikan modern.",
+        "body2": "Program kami secara langsung mengatasi tantangan-tantangan ini. Pendapatan dari langganan institusional berbayar kami memungkinkan kami untuk menyediakan akses komprehensif ke Studious LMS dan alat-alat pendidikan terkait bagi sekolah-sekolah yang kurang mampu. Model berkelanjutan ini memungkinkan kami untuk menjembatani kesenjangan digital sambil terus meningkatkan platform kami untuk semua pengguna."
       },
       "receive": {
         "title": "Apa yang Akan Anda Terima",
-        "body1": "Sekolah yang diterima dalam program ini akan mendapatkan pengalaman platform Studious yang lengkap—bukan versi terbatas atau terbatas. Ini mencakup akun siswa dan guru tanpa batas, semua fitur premium (asisten AI, analitik tingkat lanjut, kolaborasi real-time), dukungan teknis prioritas, spesialis orientasi khusus, sumber daya pelatihan berkelanjutan, dan akses ke semua pembaruan dan peningkatan di masa mendatang.",
-        "body2": "Selain perangkat lunaknya sendiri, kami menyediakan dukungan komprehensif untuk memastikan sekolah Anda dapat memaksimalkan manfaat platform ini. Tim kami akan bekerja sama langsung dengan administrator dan guru Anda untuk menyesuaikan sistem dengan kebutuhan spesifik Anda, memberikan pelatihan langsung, dan selalu siap memberikan bantuan berkelanjutan selama Anda menjalani proses pembelajaran."
+        "body1": "Sekolah yang diterima dalam program ini akan mendapatkan pengalaman platform Studious secara penuh—bukan versi terbatas atau yang disederhanakan. Ini termasuk akun siswa dan guru tanpa batas, semua fitur premium (asisten AI, analitik canggih, kolaborasi waktu nyata), dukungan teknis prioritas, spesialis onboarding khusus, sumber daya pelatihan berkelanjutan, dan akses ke semua pembaruan dan peningkatan di masa mendatang.",
+        "body2": "Selain perangkat lunak itu sendiri, kami menyediakan dukungan komprehensif untuk memastikan sekolah Anda dapat memaksimalkan manfaat platform ini. Tim kami akan bekerja langsung dengan administrator dan guru Anda untuk menyesuaikan sistem dengan kebutuhan spesifik Anda, memberikan pelatihan langsung, dan selalu siap membantu selama proses implementasi."
       },
       "qualifies": {
         "title": "Siapa yang Memenuhi Syarat",
-        "body1": "Kami memprioritaskan sekolah-sekolah yang melayani siswa yang paling diuntungkan dari peningkatan teknologi pendidikan. Ini termasuk sekolah negeri di komunitas yang kurang terlayani atau kurang mampu secara ekonomi, lembaga pendidikan nirlaba terdaftar yang menunjukkan kendala keuangan, sekolah-sekolah di wilayah atau negara berkembang, sekolah-sekolah Title I di AS dan setara internasionalnya, dan lembaga pendidikan mana pun yang dapat menunjukkan kebutuhan keuangan yang nyata sekaligus berkomitmen untuk meningkatkan hasil belajar siswa.",
-        "body2": "Kami mengevaluasi setiap aplikasi secara individual, tidak hanya mempertimbangkan metrik keuangan tetapi juga misi sekolah Anda, populasi yang Anda layani, dan rencana Anda untuk menggunakan Studious guna meningkatkan pendidikan. Tujuan kami adalah bermitra dengan sekolah-sekolah yang benar-benar akan mendapatkan manfaat dari dan memanfaatkan platform kami secara efektif untuk meningkatkan pengalaman belajar siswa."
+        "body1": "Kami memprioritaskan sekolah-sekolah yang melayani siswa yang paling diuntungkan dari peningkatan teknologi pendidikan. Ini termasuk sekolah negeri di komunitas yang kurang terlayani atau kurang mampu secara ekonomi, lembaga pendidikan nirlaba terdaftar yang menunjukkan keterbatasan keuangan, sekolah di wilayah atau negara berkembang, sekolah Title I AS dan padanannya di tingkat internasional, serta lembaga pendidikan mana pun yang dapat menunjukkan kebutuhan keuangan yang nyata bersamaan dengan komitmen untuk meningkatkan hasil belajar siswa.",
+        "body2": "Kami mengevaluasi setiap aplikasi secara individual, mempertimbangkan tidak hanya metrik keuangan tetapi juga misi sekolah Anda, populasi yang Anda layani, dan rencana Anda untuk menggunakan Studious guna meningkatkan pendidikan. Tujuan kami adalah bermitra dengan sekolah-sekolah yang benar-benar akan mendapatkan manfaat dan secara efektif memanfaatkan platform kami untuk meningkatkan pengalaman belajar siswa."
       },
       "impact": {
-        "title": "Visi Kami untuk Dampak",
-        "body1": "Dengan menyediakan akses gratis ke teknologi manajemen pembelajaran modern bagi sekolah, kami bertujuan untuk menghilangkan salah satu hambatan utama yang dihadapi lembaga pendidikan di daerah tertinggal. Pendekatan kami lebih dari sekadar perangkat lunak—kami berkomitmen untuk menyediakan dukungan komprehensif termasuk sumber daya pelatihan, bantuan orientasi, dan akses ke perangkat pendidikan seperti e-book dan materi alat tulis digital.",
-        "body2": "Program Pengembangan Sekolah diluncurkan pada akhir November hingga pertengahan Desember 2025, dengan kelompok sekolah mitra pertama kami. Seiring berkembangnya Studious, kapasitas kami untuk mendukung lebih banyak sekolah pun meningkat. Semua pendapatan yang dihasilkan dari langganan institusi berbayar kami diinvestasikan kembali untuk memperluas akses bagi sekolah-sekolah yang membutuhkan, menciptakan model berkelanjutan untuk pemerataan pendidikan yang semakin kuat seiring waktu."
+        "title": "Visi Kami untuk Memberikan Dampak",
+        "body1": "Dengan menyediakan akses gratis ke teknologi manajemen pembelajaran modern bagi sekolah-sekolah, kami bertujuan untuk menghilangkan salah satu hambatan utama yang dihadapi lembaga pendidikan di daerah-daerah yang kurang beruntung. Pendekatan kami melampaui sekadar perangkat lunak—kami berkomitmen untuk memberikan dukungan komprehensif termasuk sumber daya pelatihan, bantuan orientasi, dan akses ke alat-alat pendidikan seperti e-book dan materi alat tulis digital.",
+        "body2": "Program Pengembangan Sekolah diluncurkan pada akhir November hingga pertengahan Desember 2025, dengan kelompok pertama sekolah mitra kami. Seiring pertumbuhan Studious, kapasitas kami untuk mendukung lebih banyak sekolah juga meningkat. Semua pendapatan yang dihasilkan dari langganan institusional berbayar kami diinvestasikan kembali untuk memperluas akses bagi sekolah-sekolah yang membutuhkan, menciptakan model berkelanjutan untuk kesetaraan pendidikan yang semakin kuat dari waktu ke waktu."
       }
     },
     "cta": {
       "apply": {
         "title": "Daftar ke Program",
-        "description": "Siap menghadirkan Studious ke sekolah Anda? Isi formulir aplikasi kami dan kami akan meninjaunya dalam 5-7 hari kerja.",
-        "item1": "Membutuhkan waktu sekitar 10-15 menit",
-        "item2": "Tidak diperlukan biaya pendaftaran",
-        "item3": "Respon dalam 5-7 hari kerja",
+        "description": "Siap membawa Studious ke sekolah Anda? Isi formulir aplikasi kami dan kami akan meninjaunya dalam 5-7 hari kerja.",
+        "item1": "Membutuhkan waktu sekitar 10-15 menit.",
+        "item2": "Tidak ada biaya pendaftaran yang diperlukan.",
+        "item3": "Balasan dalam 5-7 hari kerja",
         "button": "Mulai Aplikasi"
       }
     },
     "status": {
       "title": "Periksa Status Aplikasi",
-      "description": "Sudah mendaftar? Masukkan ID aplikasi Anda untuk memeriksa status aplikasi Anda.",
+      "description": "Sudah mendaftar? Masukkan ID pendaftaran Anda untuk memeriksa status pendaftaran Anda.",
       "inputLabel": "ID Aplikasi",
       "placeholder": "misalnya, EXA2025-...",
-      "help": "Anda menerima ID aplikasi melalui email setelah mengirimkan aplikasi Anda.",
+      "help": "Anda menerima ID aplikasi Anda melalui email setelah mengirimkan aplikasi Anda.",
       "results": {
         "found": "Aplikasi Ditemukan",
         "school": "Sekolah:",
         "location": "Lokasi:",
-        "submitted": "Diserahkan:",
+        "submitted": "Dikirimkan:",
         "contact": "Kontak:",
         "notFound": {
           "title": "Aplikasi tidak ditemukan",
@@ -490,50 +491,50 @@
       },
       "cards": {
         "approved": {
-          "title": "Selamat! Aplikasi Anda telah disetujui.",
+          "title": "🎉 Selamat! Permohonan Anda telah disetujui.",
           "body": "Periksa email Anda untuk langkah selanjutnya dalam menyiapkan akun Anda."
         },
         "underReview": {
-          "title": "⏳ Aplikasi Anda saat ini sedang ditinjau.",
+          "title": "⏳ Permohonan Anda saat ini sedang ditinjau.",
           "body": "Kami akan menghubungi Anda melalui email setelah peninjauan selesai."
         },
         "pending": {
-          "title": "📋 Aplikasi Anda telah diterima.",
-          "body": "Tim kami akan segera meninjaunya. Perkiraan waktu peninjauan: 5-7 hari kerja."
+          "title": "📋 Lamaran Anda telah diterima.",
+          "body": "Tim kami akan segera mulai meninjaunya. Perkiraan waktu peninjauan: 5-7 hari kerja."
         }
       }
     },
     "contact": {
-      "title": "Ada Pertanyaan?",
-      "subtitle": "Tim kami siap membantu Anda melalui proses aplikasi",
-      "button": "Email Kami: impact@studious.sh"
+      "title": "Ada pertanyaan?",
+      "subtitle": "Tim kami siap membantu Anda melalui proses pendaftaran.",
+      "button": "Hubungi kami melalui email: impact@studios.sh"
     }
   },
   "apply": {
     "toasts": {
-      "submitted": "Aplikasi berhasil dikirimkan!"
+      "submitted": "Permohonan berhasil diajukan!"
     },
     "errors": {
-      "submitFailed": "Gagal mengirimkan aplikasi: {message}"
+      "submitFailed": "Aplikasi gagal dikirim: {message}"
     },
     "success": {
-      "title": "Aplikasi Dikirim!",
-      "subtitle": "Terima kasih telah mendaftar ke Program Pengembangan Sekolah Studious",
+      "title": "Permohonan telah diajukan!",
+      "subtitle": "Terima kasih telah mendaftar ke Program Pengembangan Sekolah yang Rajin Belajar.",
       "applicationId": "ID Aplikasi Anda",
-      "saveId": "Simpan ID ini untuk memeriksa status aplikasi Anda",
+      "saveId": "Simpan ID ini untuk memeriksa status aplikasi Anda.",
       "nextSteps": {
         "title": "Apa yang Terjadi Selanjutnya?",
         "item1": "Anda akan menerima email konfirmasi di {email}",
-        "item2": "Tim kami akan meninjau aplikasi Anda dalam 5-7 hari kerja",
-        "item3": "Kami akan memberi tahu Anda melalui email setelah keputusan dibuat"
+        "item2": "Tim kami akan meninjau lamaran Anda dalam waktu 5-7 hari kerja.",
+        "item3": "Kami akan memberi tahu Anda melalui email setelah keputusan dibuat."
       },
       "backToProgram": "Kembali ke Program",
-      "returnHome": "Kembali ke Rumah"
+      "returnHome": "Kembali ke Beranda"
     }
   },
   "agenda": {
     "title": "Agenda",
-    "description": "Lihat jadwal dan acara mendatang Anda dengan tampilan kalender yang komprehensif",
+    "description": "Lihat jadwal dan acara mendatang Anda dengan tampilan kalender yang komprehensif.",
     "addEvent": "Tambahkan Acara",
     "untitledEvent": "Acara Tanpa Judul",
     "today": "Hari ini",
@@ -548,18 +549,18 @@
   },
   "chat": {
     "landing": {
-      "description": "Pilih percakapan dari bilah sisi untuk memulai mengobrol.",
+      "description": "Pilih percakapan dari bilah sisi untuk memulai obrolan.",
       "pleaseSignIn": "Silakan masuk",
       "signInRequired": "Anda perlu masuk untuk mengakses obrolan.",
-      "title": "Selamat datang di Obrolan"
+      "title": "Selamat datang di Chat"
     },
     "page": {
       "unknown": "Tidak dikenal",
-      "unnamedGroup": "Grup Tanpa Nama",
+      "unnamedGroup": "Kelompok Tak Bernama",
       "unknownUser": "Pengguna Tidak Dikenal",
       "notFound": {
         "title": "Percakapan Tidak Ditemukan",
-        "description": "Percakapan ini tidak ada atau Anda tidak memiliki akses ke sana.",
+        "description": "Percakapan ini tidak ada atau Anda tidak memiliki akses ke percakapan tersebut.",
         "backToChat": "Kembali ke Obrolan"
       },
       "header": {
@@ -569,12 +570,12 @@
       "input": {
         "placeholderPrefix": "Pesan"
       },
-      "loading": "Memuat percakapan..."
+      "loading": "Sedang memuat percakapan..."
     }
   },
   "notifications": {
     "title": "Pemberitahuan",
-    "subtitle": "Tetap mengikuti perkembangan kelas dan tugas Anda",
+    "subtitle": "Ikuti terus perkembangan kelas dan tugas-tugas Anda.",
     "badge": {
       "unread": "{count} belum dibaca"
     },
@@ -586,16 +587,16 @@
     },
     "empty": {
       "unread": {
-        "title": "Tidak ada notifikasi yang belum dibaca",
-        "description": "Sudah selesai! Tidak ada notifikasi yang belum dibaca."
+        "title": "Tidak ada notifikasi yang belum dibaca.",
+        "description": "Semua sudah terbaca! Anda tidak memiliki notifikasi yang belum dibaca."
       },
       "read": {
-        "title": "Tidak ada notifikasi pembacaan",
-        "description": "Belum ada pemberitahuan yang ditandai sebagai telah dibaca."
+        "title": "Tidak ada notifikasi dibaca",
+        "description": "Belum ada notifikasi yang ditandai sebagai sudah dibaca."
       },
       "all": {
         "title": "Belum ada notifikasi",
-        "description": "Saat Anda menerima pemberitahuan, pemberitahuan tersebut akan muncul di sini."
+        "description": "Saat Anda menerima notifikasi, notifikasi tersebut akan muncul di sini."
       }
     },
     "actions": {
@@ -603,7 +604,7 @@
       "markAsRead": "Tandai sebagai Sudah Dibaca"
     },
     "toasts": {
-      "markedAsRead": "Notifikasi ditandai sebagai telah dibaca"
+      "markedAsRead": "Pemberitahuan ditandai sebagai telah dibaca"
     },
     "meta": {
       "from": "dari"
@@ -611,17 +612,17 @@
   },
   "profile": {
     "title": "Profil",
-    "description": "Kelola informasi pribadi dan pengaturan profil Anda",
+    "description": "Kelola informasi pribadi dan pengaturan profil Anda.",
     "editProfile": "Edit Profil",
     "saveChanges": "Simpan Perubahan",
     "cancel": "Membatalkan",
     "student": "Murid",
     "personalInformation": {
       "title": "Informasi Pribadi",
-      "description": "Perbarui detail pribadi dan informasi profil Anda",
+      "description": "Perbarui detail pribadi dan informasi profil Anda.",
       "displayName": "Nama Tampilan",
       "displayNamePlaceholder": "Masukkan nama tampilan Anda",
-      "displayNameDescription": "Beginilah nama Anda akan terlihat oleh orang lain",
+      "displayNameDescription": "Beginilah tampilan nama Anda bagi orang lain.",
       "location": "Lokasi",
       "locationPlaceholder": "Masukkan lokasi Anda",
       "locationDescription": "Kota, negara bagian, atau negara Anda",
@@ -629,7 +630,7 @@
       "bioPlaceholder": "Ceritakan tentang diri Anda...",
       "bioDescription": "Deskripsi singkat tentang diri Anda (maksimal 500 karakter)",
       "website": "Situs web",
-      "websitePlaceholder": "https://situs-web-anda.com",
+      "websitePlaceholder": "https://your-website.com",
       "websiteDescription": "Situs web atau portofolio pribadi Anda"
     },
     "accountInformation": {
@@ -638,14 +639,14 @@
       "username": "Nama belakang",
       "usernameNote": "Nama pengguna tidak dapat diubah",
       "email": "E-mail",
-      "emailNote": "Email dikelola di Pengaturan Akun",
+      "emailNote": "Pengaturan email dapat dilakukan di Pengaturan Akun.",
       "memberSince": "Anggota Sejak"
     },
     "messages": {
-      "profileUpdated": "Profil berhasil diperbarui",
+      "profileUpdated": "Profil berhasil diperbarui.",
       "profileUpdateFailed": "Gagal memperbarui profil",
-      "profilePictureSelected": "Foto profil telah dipilih. Klik \"Simpan Perubahan\" untuk memperbarui.",
-      "avatarSelected": "Avatar dipilih. Klik 'Simpan Perubahan' untuk memperbarui.",
+      "profilePictureSelected": "Gambar profil telah dipilih. Klik 'Simpan Perubahan' untuk memperbarui.",
+      "avatarSelected": "Avatar telah dipilih. Klik 'Simpan Perubahan' untuk memperbarui.",
       "profilePictureUploadFailed": "Gagal mengunggah gambar profil",
       "profilePictureSelectFailed": "Gagal memilih gambar profil",
       "failedToLoadProfile": "Gagal memuat profil. Silakan coba lagi."
@@ -655,9 +656,9 @@
     "assignments": "Tugas",
     "students": "siswa",
     "attendance": "Kehadiran",
-    "attachFile": "Lampirkan berkas",
+    "attachFile": "Lampirkan file",
     "post": "Pos",
-    "posting": "Memposting...",
+    "posting": "Sedang memposting...",
     "noPosts": "Belum ada postingan",
     "createFirstPost": "Buat postingan pertama",
     "grades": {
@@ -668,11 +669,11 @@
         "maxPoints": "Poin Maksimum",
         "weight": "Berat",
         "graded": "Bertingkat",
-        "dueDate": "Dua Tanggal",
+        "dueDate": "Dua Kencan",
         "actions": "Tindakan",
         "student": "Murid",
         "overallGrade": "Nilai Keseluruhan",
-        "assignmentsCompleted": "Tugas Selesai",
+        "assignmentsCompleted": "Tugas yang Telah Selesai",
         "trend": "Kecenderungan"
       },
       "labels": {
@@ -684,54 +685,54 @@
         "saving": "Penghematan...",
         "saveChanges": "Simpan Perubahan",
         "preview": "Pratinjau",
-        "edit": "Sunting",
+        "edit": "Edit",
         "delete": "Menghapus",
         "createNew": "Buat Baru"
       },
       "overview": {
-        "title": "Ikhtisar Kelas",
+        "title": "Gambaran Umum Kelas",
         "classAverage": "Rata-rata Kelas",
         "totalStudents": "Jumlah Siswa",
         "assignments": "Tugas",
         "submissionRate": "Tingkat Pengajuan"
       },
       "assignmentManagement": {
-        "title": "Manajemen Tugas",
+        "title": "Manajemen Penugasan",
         "empty": {
           "title": "Tidak ada tugas yang ditemukan",
-          "description": "Buat tugas untuk mengelola nilai dan pengaturan"
+          "description": "Buat tugas untuk mengelola nilai dan pengaturan."
         },
-        "searchPlaceholder": "Pencarian tugas..."
+        "searchPlaceholder": "Tugas pencarian..."
       },
       "students": {
         "title": "Siswa",
         "viewAll": "Lihat Semua Siswa",
         "empty": {
           "title": "Tidak ada siswa yang terdaftar",
-          "description": "Siswa akan muncul di sini setelah mereka bergabung dengan kelas"
+          "description": "Nama siswa akan muncul di sini setelah mereka bergabung dengan kelas."
         },
         "searchPlaceholder": "Cari siswa..."
       },
       "gradeBoundaries": {
-        "title": "Batasan Nilai",
+        "title": "Batas Kelas",
         "untitled": "Batas Penilaian Tanpa Judul",
         "empty": {
-          "title": "Tidak ada batas nilai yang dibuat",
-          "description": "Buat batasan penilaian untuk menentukan rentang nilai"
+          "title": "Tidak ada batasan nilai yang dibuat.",
+          "description": "Buat batasan penilaian untuk menentukan rentang nilai."
         },
         "previewTitle": "Pratinjau Batas Penilaian",
         "details": {
-          "title": "Detail Batas Penilaian",
+          "title": "Rincian Batas Penilaian",
           "name": "Nama",
-          "noneDefined": "Tidak ada batasan penilaian yang ditentukan"
+          "noneDefined": "Tidak ada batasan penilaian yang ditentukan."
         }
       },
       "rubrics": {
         "title": "Rubrik",
         "untitled": "Rubrik Tanpa Judul",
         "empty": {
-          "title": "Tidak ada rubrik yang dibuat",
-          "description": "Buat rubrik untuk menentukan kriteria penilaian"
+          "title": "Tidak ada rubrik yang dibuat.",
+          "description": "Buat rubrik untuk menentukan kriteria penilaian."
         },
         "previewTitle": "Pratinjau Rubrik",
         "details": {
@@ -741,12 +742,12 @@
           "description": "Keterangan",
           "custom": "Kebiasaan",
           "noDescription": "Tidak ada deskripsi yang diberikan",
-          "noCriteria": "Tidak ada kriteria yang ditemukan dalam rubrik ini"
+          "noCriteria": "Tidak ditemukan kriteria dalam rubrik ini."
         }
       },
       "confirm": {
-        "deleteRubric": "Apakah Anda yakin ingin menghapus markscheme ini?",
-        "deleteGradingBoundary": "Apakah Anda yakin ingin menghapus batasan penilaian ini?"
+        "deleteRubric": "Apakah Anda yakin ingin menghapus skema penilaian ini?",
+        "deleteGradingBoundary": "Apakah Anda yakin ingin menghapus batas penilaian ini?"
       }
     },
     "members": {
@@ -762,8 +763,8 @@
         "viewProfile": "Lihat Profil",
         "viewGrades": "Lihat Nilai",
         "makeTeacher": "Jadikan Guru",
-        "makeStudent": "Jadikan Siswa",
-        "removeFromClass": "Hapus dari Kelas",
+        "makeStudent": "Membuat Siswa",
+        "removeFromClass": "Dihapus dari Kelas",
         "removeAccess": "Hapus Akses",
         "tryAgain": "Coba Lagi"
       },
@@ -774,7 +775,7 @@
       },
       "invite": {
         "title": "Kode Undangan Kelas",
-        "description": "Bagikan kode ini dengan siswa untuk bergabung dengan kelas"
+        "description": "Bagikan kode ini kepada siswa agar mereka dapat bergabung dengan kelas."
       },
       "search": {
         "placeholder": "Cari anggota..."
@@ -785,23 +786,23 @@
       },
       "students": {
         "empty": {
-          "title": "Tidak ada siswa yang ditemukan",
+          "title": "Tidak ada siswa yang ditemukan.",
           "matchNone": "Tidak ada siswa yang cocok dengan \"{query}\"",
-          "noStudents": "Belum ada siswa yang bergabung dengan kelas ini"
+          "noStudents": "Belum ada siswa yang bergabung di kelas ini."
         }
       },
       "teachers": {
         "empty": {
-          "title": "Tidak ada guru yang ditemukan",
+          "title": "Tidak ada guru yang ditemukan.",
           "matchNone": "Tidak ada guru yang cocok dengan \"{query}\"",
-          "noTeachers": "Tidak ada guru tambahan yang ditambahkan"
+          "noTeachers": "Tidak ada penambahan guru."
         }
       },
       "toasts": {
-        "inviteRegenerated": "Kode undangan berhasil dibuat ulang",
+        "inviteRegenerated": "Kode undangan berhasil dibuat ulang.",
         "copied": "Kode undangan disalin ke papan klip",
-        "roleChanged": "Peran berubah menjadi {role}",
-        "memberRemoved": "Anggota berhasil dihapus"
+        "roleChanged": "Peran diubah menjadi {role}",
+        "memberRemoved": "Anggota berhasil dihapus."
       },
       "errors": {
         "regenerateFailed": "Gagal membuat ulang kode undangan",
@@ -812,7 +813,7 @@
     },
     "files": {
       "title": "Berkas",
-      "subtitle": "Kelola file dan sumber daya kelas",
+      "subtitle": "Kelola berkas dan sumber daya kelas.",
       "actions": {
         "newFolder": "Folder Baru",
         "upload": "Mengunggah",
@@ -825,32 +826,32 @@
         "sort": "Menyortir"
       },
       "toasts": {
-        "folderCreated": "Folder berhasil dibuat",
-        "folderDeleted": "Folder berhasil dihapus",
-        "folderRenamed": "Folder berhasil diganti nama",
-        "folderMoved": "Folder berhasil dipindahkan",
-        "filesUploaded": "File berhasil diunggah",
-        "fileDeleted": "File berhasil dihapus",
-        "fileRenamed": "File berhasil diganti nama",
-        "fileMoved": "File berhasil dipindahkan",
-        "downloadStarted": "Unduhan dimulai",
-        "shareCopied": "Bagikan tautan disalin"
+        "folderCreated": "Folder berhasil dibuat.",
+        "folderDeleted": "Folder berhasil dihapus.",
+        "folderRenamed": "Folder berhasil diganti namanya.",
+        "folderMoved": "Folder berhasil dipindahkan.",
+        "filesUploaded": "File berhasil diunggah.",
+        "fileDeleted": "File berhasil dihapus.",
+        "fileRenamed": "File berhasil diganti namanya.",
+        "fileMoved": "Berkas berhasil dipindahkan.",
+        "downloadStarted": "Pengunduhan dimulai",
+        "shareCopied": "Tautan yang dibagikan telah disalin."
       },
       "errors": {
-        "teacherOnly": "Hanya guru yang dapat mengubah berkas.",
-        "downloadFailed": "Unduhan gagal",
+        "teacherOnly": "Hanya guru yang dapat memodifikasi file.",
+        "downloadFailed": "Pengunduhan gagal",
         "shareFailed": "Berbagi gagal",
-        "failedToLoad": "Gagal memuat berkas. Silakan coba lagi nanti."
+        "failedToLoad": "Gagal memuat file. Silakan coba lagi nanti."
       },
       "breadcrumbs": {
-        "classFiles": "File Kelas"
+        "classFiles": "Berkas Kelas"
       },
       "search": {
-        "placeholder": "Cari dalam file"
+        "placeholder": "Cari di dalam file"
       },
       "selected": "{count} dipilih",
       "filters": {
-        "fileType": "Jenis Berkas",
+        "fileType": "Jenis File",
         "documents": "Dokumen",
         "images": "Gambar",
         "videos": "Video",
@@ -859,24 +860,24 @@
       "sort": {
         "name": "Nama",
         "lastModified": "Terakhir diubah",
-        "fileSize": "Ukuran berkas"
+        "fileSize": "Ukuran file"
       },
       "table": {
         "name": "Nama",
         "owner": "Pemilik",
         "lastModified": "Terakhir diubah",
-        "fileSize": "Ukuran berkas"
+        "fileSize": "Ukuran file"
       },
       "empty": {
         "title": "Folder ini kosong",
         "description": "Unggah file atau buat folder untuk mulai mengatur materi kelas Anda.",
-        "searchTitle": "Tidak ada file yang ditemukan",
-        "searchDescription": "Tidak ada file yang cocok dengan \"{query}\". Coba istilah pencarian lain."
+        "searchTitle": "Tidak ada berkas yang ditemukan.",
+        "searchDescription": "Tidak ada berkas yang cocok dengan \"{query}\". Coba istilah pencarian lain."
       }
     },
     "settings": {
       "title": "Pengaturan Kelas",
-      "subtitle": "Konfigurasikan detail dan preferensi kelas",
+      "subtitle": "Konfigurasi detail dan preferensi kelas.",
       "labels": {
         "unsavedChanges": "Perubahan yang belum disimpan"
       },
@@ -893,11 +894,11 @@
         },
         "theme": {
           "title": "Tema Kelas",
-          "description": "Pilih warna tema untuk kelas ini"
+          "description": "Pilih warna tema untuk kelas ini."
         },
         "danger": {
           "title": "Zona Bahaya",
-          "description": "Setelah Anda menghapus kelas, Anda tidak dapat kembali. Ini akan menghapus semua tugas, nilai, catatan kehadiran, dan mengeluarkan semua siswa dari kelas secara permanen."
+          "description": "Setelah Anda menghapus kelas, tidak ada jalan kembali. Ini akan menghapus secara permanen semua tugas, nilai, catatan kehadiran, dan mengeluarkan semua siswa dari kelas tersebut."
         }
       },
       "fields": {
@@ -906,7 +907,7 @@
         "subject": "Subjek"
       },
       "placeholders": {
-        "className": "misalnya, Fisika Lanjutan",
+        "className": "misalnya, Fisika Tingkat Lanjut",
         "section": "misalnya, AP-101",
         "subject": "misalnya, Fisika"
       },
@@ -917,22 +918,22 @@
         },
         "deleted": {
           "title": "Kelas Dihapus",
-          "description": "Kelas telah dihapus secara permanen."
+          "description": "Kelas tersebut telah dihapus secara permanen."
         }
       },
       "errors": {
         "updateFailed": {
           "title": "Pembaruan Gagal",
-          "description": "Gagal menyimpan pengaturan kelas. Silakan coba lagi."
+          "description": "Pengaturan kelas gagal disimpan. Silakan coba lagi."
         }
       },
       "confirm": {
         "title": "Apakah Anda benar-benar yakin?",
-        "description": "Tindakan ini tidak dapat dibatalkan. Ini akan menghapus kelas \"{name}\" secara permanen dan menghapus semua data terkait, termasuk:",
+        "description": "Tindakan ini tidak dapat dibatalkan. Ini akan menghapus kelas \"{name}\" secara permanen dan menghapus semua data terkait termasuk:",
         "items": {
-          "assignments": "Semua tugas dan penyerahan",
+          "assignments": "Semua tugas dan pengumpulan",
           "records": "Semua nilai dan catatan kehadiran",
-          "students": "Semua siswa akan dikeluarkan dari kelas",
+          "students": "Semua siswa akan dikeluarkan dari kelas.",
           "events": "Semua acara dan pengumuman kelas"
         },
         "confirmDelete": "Ya, hapus kelas"
@@ -940,14 +941,14 @@
     },
     "syllabus": {
       "title": "Silabus",
-      "subtitle": "Ikhtisar kursus dan informasi akademis",
+      "subtitle": "Gambaran umum kursus dan informasi akademik",
       "actions": {
         "saveChanges": "Simpan Perubahan",
         "cancel": "Membatalkan",
         "edit": "Edit Silabus"
       },
       "errors": {
-        "failedToLoad": "Gagal memuat silabus",
+        "failedToLoad": "Silabus gagal dimuat",
         "tryLater": "Silakan coba lagi nanti."
       },
       "stats": {
@@ -957,16 +958,16 @@
         "upcoming": "Mendatang"
       },
       "overview": {
-        "title": "Ikhtisar Kursus",
-        "placeholder": "Masukkan ikhtisar kursus, tujuan, dan informasi penting lainnya...",
-        "helper": "Masukkan informasi kursus, tujuan pembelajaran, kebijakan, dan detail penting lainnya.",
+        "title": "Gambaran Umum Kursus",
+        "placeholder": "Masukkan ringkasan kursus, tujuan, dan informasi penting lainnya...",
+        "helper": "Masukkan informasi kursus Anda, tujuan pembelajaran, kebijakan, dan detail penting lainnya.",
         "empty": {
-          "title": "Belum ada konten silabus",
-          "description": "Klik 'Edit Silabus' untuk menambahkan informasi kursus, tujuan pembelajaran, kebijakan, dan banyak lagi."
+          "title": "Belum ada isi silabus.",
+          "description": "Klik 'Edit Silabus' untuk menambahkan informasi kursus, tujuan pembelajaran, kebijakan, dan lainnya."
         }
       },
       "assignments": {
-        "title": "Tugas Kursus",
+        "title": "Tugas Kuliah",
         "gradedCount": "{graded} dari {total} dinilai",
         "totalPoints": "{total} total poin",
         "empty": {
@@ -976,7 +977,7 @@
       },
       "table": {
         "assignment": "Penugasan",
-        "dueDate": "Dua Tanggal",
+        "dueDate": "Dua Kencan",
         "points": "Poin",
         "weight": "Berat",
         "status": "Status",
@@ -1004,7 +1005,7 @@
     }
   },
   "assignment": {
-    "dueDate": "Dua Tanggal",
+    "dueDate": "Dua Kencan",
     "submit": "Kirim",
     "grade": "Nilai",
     "feedback": "Masukan",
@@ -1017,74 +1018,74 @@
     "createAssignment": "Buat Tugas",
     "viewAssignment": "Lihat Tugas",
     "allAssignments": "Semua Tugas",
-    "searchAssignments": "Pencarian tugas...",
+    "searchAssignments": "Tugas pencarian...",
     "noAssignmentsFound": "Tidak ada tugas yang ditemukan",
-    "createFirstAssignment": "Buat tugas pertama Anda untuk memulai",
+    "createFirstAssignment": "Buat tugas pertama Anda untuk memulai.",
     "newSection": "Bagian Baru",
     "pts": "poin",
     "overdue": "(Terlambat)",
-    "assignmentDrop": "Hapus tugas di sini untuk pindah ke tingkat atas",
-    "sectionDeletionConfirmation": "Yakin ingin menghapus bagian ini? Semua tugas akan dipindahkan ke tingkat teratas.",
-    "assignmentDeletionConfirmation": "Yakin ingin menghapus tugas ini? Tindakan ini tidak dapat dibatalkan.",
-    "manageAndTrack": "Kelola dan lacak tugas kelas",
+    "assignmentDrop": "Batalkan penugasan di sini untuk pindah ke tingkat atas.",
+    "sectionDeletionConfirmation": "Apakah Anda yakin ingin menghapus bagian ini? Semua tugas akan dipindahkan ke tingkat atas.",
+    "assignmentDeletionConfirmation": "Apakah Anda yakin ingin menghapus tugas ini? Tindakan ini tidak dapat dibatalkan.",
+    "manageAndTrack": "Mengelola dan melacak tugas kelas",
     "filters": "Filter"
   },
   "pagination": {
     "previous": "Sebelumnya",
     "next": "Berikutnya",
-    "goToPreviousPage": "Buka halaman sebelumnya",
-    "goToNextPage": "Buka halaman berikutnya",
-    "morePages": "Lebih banyak halaman"
+    "goToPreviousPage": "Kembali ke halaman sebelumnya",
+    "goToNextPage": "Lanjut ke halaman berikutnya",
+    "morePages": "Halaman lainnya"
   },
   "about": {
-    "titleStatement1": "Cerita Kami",
-    "titleStatement2": "Dibangun dari frustrasi,",
-    "titleStatement3": "dibayangkan kembali dengan AI",
-    "titleStatement4": "Setelah bertahun-tahun berjuang dengan portal sekolah yang ketinggalan zaman dan terfragmentasi, kami memutuskan untuk membangun sistem manajemen pembelajaran yang selalu kami inginkan.",
-    "problemParagraph1": "Studious dimulai pada tahun 2023",
-    "problemParagraph2": "ketika sekelompok siswa dan pendidik berkumpul dengan rasa frustrasi yang sama: portal sekolah yang ada kikuk, lambat, dan dibangun untuk era pendidikan yang berbeda.",
-    "problemDetailParagraph": "Kami mendapati diri kami harus menggunakan beberapa platform sekaligus — satu untuk nilai, satu untuk tugas, dan satu lagi untuk komunikasi. Guru menghabiskan lebih banyak waktu berkutat dengan perangkat lunak daripada mengajar. Siswa melewatkan tenggat waktu karena notifikasi tertimbun di antarmuka yang ketinggalan zaman.",
+    "titleStatement1": "Kisah Kami",
+    "titleStatement2": "Tercipta dari rasa frustrasi,",
+    "titleStatement3": "ditata ulang dengan AI",
+    "titleStatement4": "Setelah bertahun-tahun berjuang dengan portal sekolah yang ketinggalan zaman dan terfragmentasi, kami memutuskan untuk membangun sistem manajemen pembelajaran yang selalu kami impikan.",
+    "problemParagraph1": "Studious dimulai pada tahun 2023.",
+    "problemParagraph2": "Ketika sekelompok siswa dan pendidik berkumpul dengan rasa frustrasi yang sama: portal sekolah yang ada saat itu kaku, lambat, dan dibangun untuk era pendidikan yang berbeda.",
+    "problemDetailParagraph": "Kami mendapati diri kami harus mengelola berbagai platform — satu untuk nilai, satu lagi untuk tugas, dan yang ketiga untuk komunikasi. Guru menghabiskan lebih banyak waktu bergelut dengan perangkat lunak daripada mengajar. Siswa melewatkan tenggat waktu karena pemberitahuan terkubur dalam antarmuka yang ketinggalan zaman.",
     "betterWay": "Kami tahu pasti ada cara yang lebih baik.",
-    "solutionParagraph1": "Mengambil inspirasi dari alat kolaborasi modern seperti Linear dan Notion, kami mulai membuat sistem manajemen pembelajaran yang terasa",
-    "solutionParagraph2": "cepat, intuitif, dan menyenangkan untuk digunakan.",
-    "solutionParagraph3": "Yang mengintegrasikan AI bukan sebagai gimmick, tetapi sebagai pengganda produktivitas sejati bagi guru dan siswa.",
-    "launchParagraph": "Setelah dua tahun pengembangan, kami resmi meluncurkan Studious pada 17 Oktober 2025. Kini, kami berada dalam tahap akses awal, siap membantu sekolah-sekolah di seluruh dunia mentransformasi pengalaman belajar mereka.",
-    "journey1": "Perjalanan Kami",
+    "solutionParagraph1": "Terinspirasi oleh alat kolaborasi modern seperti Linear dan Notion, kami berupaya menciptakan sistem manajemen pembelajaran yang terasa",
+    "solutionParagraph2": "Cepat, intuitif, dan menyenangkan untuk digunakan.",
+    "solutionParagraph3": "Sebuah sistem yang mengintegrasikan AI bukan sebagai gimmick, tetapi sebagai pengganda produktivitas sejati bagi guru dan siswa.",
+    "launchParagraph": "Setelah dua tahun pengembangan, kami secara resmi meluncurkan Studious pada 17 Oktober 2025. Saat ini kami berada dalam tahap akses awal, siap membantu sekolah-sekolah di seluruh dunia mengubah pengalaman belajar mereka.",
+    "journey1": "Perjalanan Kita",
     "journey2": "Dua tahun membangun, belajar, dan berkembang",
-    "journeyBeginningDate": "tahun 2023",
+    "journeyBeginningDate": "Tahun 2023",
     "journeyBeginning1": "Awal mula",
     "journeyBeginning2": "Prototipe pertama telah dikembangkan. Fitur inti: manajemen kelas, tugas, dan integrasi kalender.",
     "journeyBetaLaunchDate": "31 Oktober 2025",
     "journeyBetaLaunch1": "Peluncuran Beta Publik",
-    "journeyBetaLaunch2": "Peluncuran uji beta publik resmi Studious LMS. Membuka akses awal ke sekolah-sekolah di seluruh dunia dengan kemampuan platform yang lengkap.",
+    "journeyBetaLaunch2": "Peluncuran resmi uji beta publik Studious LMS. Membuka akses awal untuk sekolah-sekolah di seluruh dunia dengan kemampuan platform penuh.",
     "journeyPilotSchoolsDate": "November 2025",
-    "journeyPilotSchools1": "Program Sekolah Pilot",
-    "journeyPilotSchools2": "Meluncurkan kemitraan dengan sekolah percontohan untuk mengumpulkan umpan balik dunia nyata dan menyempurnakan platform berdasarkan beragam kebutuhan pendidikan.",
+    "journeyPilotSchools1": "Program Sekolah Percontohan",
+    "journeyPilotSchools2": "Membangun kemitraan dengan sekolah-sekolah percontohan untuk mengumpulkan umpan balik dari dunia nyata dan menyempurnakan platform berdasarkan beragam kebutuhan pendidikan.",
     "journeyBetaCompleteDate": "Desember 2025",
-    "journeyBetaComplete1": "Beta Lengkap",
-    "journeyBetaComplete2": "Transisi dari beta ke rilis produksi penuh. Stabilisasi platform dengan semua fitur inti telah diuji dan dioptimalkan sepenuhnya.",
+    "journeyBetaComplete1": "Beta Selesai",
+    "journeyBetaComplete2": "Transisi dari versi beta ke rilis produksi penuh. Stabilisasi platform dengan semua fitur inti yang telah diuji dan dioptimalkan sepenuhnya.",
     "journeySDPDate": "Januari 2026",
     "journeySDP1": "Peluncuran Program Pengembangan Sekolah",
-    "journeySDP2": "Mengumumkan kelompok sekolah pertama yang diterima dalam Program Pengembangan Sekolah Studious, menyediakan akses gratis ke lembaga yang memenuhi syarat.",
-    "missionStatement1": "Misi kami sederhana",
-    "missionStatement2": "Untuk membangun sistem manajemen pembelajaran yang kita—sebagai siswa, guru, dan pembelajar seumur hidup—ingin gunakan setiap hari.",
-    "joinAppeal1": "Bergabunglah dengan kami dalam perjalanan ini",
-    "joinAppeal2": "Jadilah bagian dari masa depan pendidikan",
+    "journeySDP2": "Mengumumkan kelompok pertama sekolah yang diterima dalam Program Pengembangan Sekolah yang Rajin Belajar, yang memberikan akses gratis kepada lembaga-lembaga yang memenuhi syarat.",
+    "missionStatement1": "Misi kami sederhana.",
+    "missionStatement2": "Untuk membangun sistem manajemen pembelajaran yang ingin kita gunakan setiap hari—sebagai siswa, guru, dan pembelajar sepanjang hayat.",
+    "joinAppeal1": "Bergabunglah bersama kami dalam perjalanan ini.",
+    "joinAppeal2": "Jadilah bagian dari masa depan pendidikan.",
     "requestEarlyAccess": "Minta Akses Awal",
-    "pressKit": "Perlengkapan Pers"
+    "pressKit": "Paket Pers"
   },
   "pricing": {
-    "pricingStatement1": "Harga Transparan",
-    "pricingStatement2": "Pilih paket yang tepat untuk institusi Anda",
-    "pricingStatement3": "Harga yang sederhana dan transparan tanpa biaya tersembunyi. Semua paket mencakup fitur-fitur inti dengan opsi yang dapat disesuaikan.",
+    "pricingStatement1": "Penetapan Harga Transparan",
+    "pricingStatement2": "Pilih paket yang tepat untuk institusi Anda.",
+    "pricingStatement3": "Harga yang sederhana dan transparan tanpa biaya tersembunyi. Semua paket mencakup fitur inti dengan opsi yang dapat ditingkatkan.",
     "mostPopular": "Paling Populer",
     "priceUnit": "/pengguna/bulan",
     "pricingStarterTitle": "Starter",
     "pricingStarterPrice": "Bebas",
     "pricingStarterNote": "Akses beta disertakan",
-    "pricingStarterDescription": "Sempurna untuk kelas kecil & program percontohan",
+    "pricingStarterDescription": "Sangat cocok untuk kelas kecil & program percontohan",
     "pricingStarterPerk1": "Hingga 30 siswa",
-    "pricingStarterPerk2": "Kelas tak terbatas",
+    "pricingStarterPerk2": "Kelas tanpa batas",
     "pricingStarterPerk3": "Fitur inti (tugas, kalender, nilai)",
     "pricingStarterPerk4": "Asisten AI (5 obrolan/bulan)",
     "pricingStarterPerk5": "Dukungan komunitas",
@@ -1092,29 +1093,29 @@
     "pricingStarterLink": "Mulai Gratis",
     "pricingSchoolTitle": "Sekolah",
     "pricingSchoolPriceNote": "Ditagih setiap tahun atau $6/bulan",
-    "pricingSchoolNote": "Untuk sekolah dengan jumlah siswa hingga 1.000 siswa",
-    "pricingSchoolPerk1": "Siswa tak terbatas",
-    "pricingSchoolPerk2": "Kelas tak terbatas",
+    "pricingSchoolNote": "Untuk sekolah dengan jumlah siswa hingga 1.000 orang.",
+    "pricingSchoolPerk1": "Jumlah siswa tidak terbatas",
+    "pricingSchoolPerk2": "Kelas tanpa batas",
     "pricingSchoolPerk3": "Semua fitur inti",
     "pricingSchoolPerk4": "Asisten AI (pertanyaan tak terbatas)",
-    "pricingSchoolPerk5": "Yang pertama dalam antrean untuk akses beta Studious CMS",
+    "pricingSchoolPerk5": "Prioritas pertama untuk akses beta Studious CMS",
     "pricingSchoolPerk6": "Akses API",
-    "pricingSchoolLink": "Memulai"
+    "pricingSchoolLink": "Mulai"
   },
   "components": {
     "earlyAccess": {
       "title": "Minta Akses Awal",
-      "description": "Bergabunglah dalam daftar tunggu dan jadilah salah satu yang pertama merasakan Studious LMS",
+      "description": "Bergabunglah dalam daftar tunggu dan jadilah salah satu yang pertama merasakan Studious LMS.",
       "fields": {
         "email": "Alamat Email *",
-        "institutionSize": "Ukuran Lembaga *"
+        "institutionSize": "Ukuran Institusi *"
       },
       "placeholders": {
-        "email": "kamu@sekolah.edu",
+        "email": "Anda@sekolah.edu",
         "institutionSize": "Pilih ukuran institusi"
       },
       "sizes": {
-        "tiny": "1-30 siswa (Guru Individu)",
+        "tiny": "1-30 siswa (Guru Individual)",
         "small": "31-100 siswa (Sekolah Kecil)",
         "medium": "101-500 siswa (Sekolah Menengah)",
         "large": "501-1.000 siswa (Sekolah Besar)",
@@ -1126,8 +1127,8 @@
         "done": "Selesai"
       },
       "success": {
-        "title": "Anda ada dalam daftar!",
-        "description": "Kami akan mengirimkan email kepada Anda di {email} saat kami siap menerima Anda."
+        "title": "Anda sudah terdaftar!",
+        "description": "Kami akan mengirimkan email kepada Anda di {email} ketika kami siap untuk Anda."
       },
       "toasts": {
         "success": "Berhasil bergabung dalam daftar tunggu!"
@@ -1135,27 +1136,27 @@
     },
     "joinClass": {
       "title": "Bergabunglah dengan Kelas",
-      "buttonLabel": "Bergabunglah dengan Kelas",
+      "buttonLabel": "Gabung Kelas",
       "fields": {
         "inviteCode": "Kode Undangan Kelas"
       },
       "placeholders": {
-        "inviteCode": "misalnya, MATEMATIKA101-2025"
+        "inviteCode": "misalnya, MATH101-2025"
       },
-      "help": "Masukkan kode undangan yang diberikan oleh guru Anda",
+      "help": "Masukkan kode undangan yang diberikan oleh guru Anda.",
       "howTo": {
         "title": "Cara mendapatkan kode undangan:",
-        "item1": "Minta kode undangan kelas kepada guru Anda",
-        "item2": "Periksa email Anda untuk petunjuk pendaftaran kelas",
-        "item3": "Cari kode pada silabus atau materi kursus Anda"
+        "item1": "Mintalah kode undangan kelas kepada guru Anda.",
+        "item2": "Periksa email Anda untuk petunjuk pendaftaran kelas.",
+        "item3": "Cari kode tersebut di silabus atau materi kuliah Anda."
       },
       "actions": {
         "cancel": "Membatalkan",
-        "join": "Bergabunglah dengan Kelas",
+        "join": "Gabung Kelas",
         "joining": "Bergabung..."
       },
       "toasts": {
-        "success": "Anda telah berhasil bergabung dalam kelas.",
+        "success": "Anda telah berhasil bergabung dengan kelas.",
         "errorInvalid": "Kode undangan tidak valid atau kelas tidak ditemukan.",
         "errorEmpty": "Silakan masukkan kode undangan yang valid."
       }
@@ -1174,12 +1175,12 @@
         "description": "Keterangan"
       },
       "placeholders": {
-        "title": "misalnya, Fisika Lanjutan",
+        "title": "misalnya, Fisika Tingkat Lanjut",
         "section": "misalnya, AP-101",
         "subject": "misalnya, Fisika",
         "semester": "misalnya, Musim Semi 2025",
         "credits": "misalnya, 3",
-        "meetingTime": "misalnya, MWF 10:00-11:00 AM",
+        "meetingTime": "misalnya, Senin, Rabu, Jumat 10:00-11:00 pagi",
         "location": "misalnya, Ruang 205, Gedung Sains",
         "description": "Jelaskan isi dan tujuan kelas..."
       },
@@ -1190,13 +1191,13 @@
       },
       "toasts": {
         "success": "Kelas {name} telah berhasil dibuat.",
-        "errorRequired": "Harap isi semua kolom yang diperlukan.",
-        "errorFailed": "Gagal membuat kelas. Silakan coba lagi nanti."
+        "errorRequired": "Mohon isi semua kolom yang wajib diisi.",
+        "errorFailed": "Pembuatan kelas gagal. Silakan coba lagi nanti."
       }
     },
     "createFolder": {
       "titleCreate": "Buat Folder Baru",
-      "titleEdit": "Sunting Folder",
+      "titleEdit": "Edit Folder",
       "fields": {
         "name": "Nama Folder *",
         "description": "Deskripsi (Opsional)",
@@ -1207,7 +1208,7 @@
         "description": "Tambahkan deskripsi untuk folder ini..."
       },
       "help": {
-        "name": "Pilih nama deskriptif untuk folder Anda",
+        "name": "Pilih nama yang deskriptif untuk folder Anda.",
         "description": "{count}/500 karakter"
       },
       "actions": {
@@ -1215,21 +1216,21 @@
         "create": "Buat Folder",
         "update": "Perbarui Folder",
         "creating": "Membuat...",
-        "updating": "Memperbarui..."
+        "updating": "Sedang memperbarui..."
       },
       "toasts": {
-        "errorRequired": "Nama folder diperlukan",
-        "errorInvalidChars": "Nama folder mengandung karakter yang tidak valid",
-        "errorTooLong": "Nama folder terlalu panjang (maks. 255 karakter)"
+        "errorRequired": "Nama folder wajib diisi.",
+        "errorInvalidChars": "Nama folder berisi karakter yang tidak valid.",
+        "errorTooLong": "Nama folder terlalu panjang (maksimal 255 karakter)"
       }
     },
     "createAssignment": {
       "title": "Buat Tugas Baru",
       "buttonLabel": "Buat Tugas",
       "sections": {
-        "details": "Detail Tugas",
+        "details": "Rincian Tugas",
         "configuration": "Konfigurasi",
-        "grading": "Penilaian & Pemeringkatan",
+        "grading": "Penilaian dan Evaluasi",
         "deliverables": "Hasil yang diharapkan",
         "aiPolicy": "Kebijakan AI",
         "attachments": "Lampiran"
@@ -1237,7 +1238,7 @@
       "fields": {
         "title": "Judul *",
         "instructions": "Instruksi *",
-        "dueDate": "Dua Tanggal",
+        "dueDate": "Dua Kencan",
         "type": "Jenis Tugas",
         "students": "Siswa",
         "section": "Bagian",
@@ -1245,11 +1246,11 @@
         "gradeScale": "Skala Nilai",
         "maxPoints": "Poin Maksimum",
         "weight": "Berat (%)",
-        "sectionColor": "Bagian Warna"
+        "sectionColor": "Warna Bagian"
       },
       "placeholders": {
-        "title": "misalnya, Kuis Bab 5, Laporan Praktikum Fisika",
-        "instructions": "Berikan instruksi yang jelas bagi siswa...",
+        "title": "Contoh: Kuis Bab 5, Laporan Praktikum Fisika",
+        "instructions": "Berikan instruksi yang jelas kepada siswa...",
         "maxPoints": "100",
         "weight": "1.0",
         "chooseSection": "Pilih bagian",
@@ -1271,11 +1272,11 @@
       "options": {
         "graded": {
           "label": "Tugas yang Dinilai",
-          "description": "Sertakan dalam buku nilai"
+          "description": "Sertakan dalam buku nilai."
         },
         "draft": {
           "label": "Simpan sebagai Draf",
-          "description": "Sembunyi dari siswa"
+          "description": "Bersembunyi dari siswa"
         }
       },
       "section": {
@@ -1285,7 +1286,7 @@
       "rubric": {
         "none": "Tidak ada rubrik",
         "untitled": "Rubrik Tanpa Judul",
-        "autoCalculate": "Poin akan dihitung secara otomatis dari rubrik yang dipilih"
+        "autoCalculate": "Poin akan dihitung secara otomatis berdasarkan rubrik yang dipilih."
       },
       "gradeScale": {
         "default": "Skala default",
@@ -1293,23 +1294,23 @@
       },
       "files": {
         "uploadButton": "Unggah File",
-        "dropZone": "Letakkan file di sini atau klik untuk mengunggah",
+        "dropZone": "Seret file ke sini atau klik untuk mengunggah",
         "dropZoneHint": "Mendukung semua jenis file • Maksimal 50MB per file",
-        "filesUploaded": "{uploaded} dari {total} file diunggah"
+        "filesUploaded": "{uploaded} dari {total} berkas diunggah"
       },
       "status": {
         "creating": "Membuat tugas...",
-        "settingUp": "Menyiapkan detail penugasan...",
-        "preparing": "Mempersiapkan unggahan berkas...",
+        "settingUp": "Menyiapkan detail tugas...",
+        "preparing": "Mempersiapkan unggahan file...",
         "uploading": "Mengunggah file ke penyimpanan cloud...",
-        "processing": "Memproses berkas yang diunggah...",
+        "processing": "Memproses file yang diunggah...",
         "finalizing": "Menyelesaikan tugas...",
-        "assigning": "Menugaskan kepada siswa...",
+        "assigning": "Memberikan tugas kepada siswa...",
         "almostDone": "Hampir selesai...",
         "uploadingFile": "Mengunggah {name}...",
         "creatingProgress": "Membuat Tugas",
-        "draftStatus": "Akan disimpan sebagai draft",
-        "publishedStatus": "Akan dipublikasikan kepada siswa"
+        "draftStatus": "Akan disimpan sebagai draf",
+        "publishedStatus": "Akan dipublikasikan untuk siswa"
       },
       "actions": {
         "cancel": "Membatalkan",
@@ -1324,19 +1325,19 @@
       },
       "deliverables": {
         "fileUpload": {
-          "label": "Unggah Berkas",
+          "label": "Unggahan Berkas",
           "description": "Siswa dapat mengunggah file PDF, Gambar, dan Video."
         },
         "extendedResponse": {
-          "label": "Respons yang diperluas",
-          "description": "Siswa dapat mengetik jawaban yang panjang."
+          "label": "Jawaban panjang",
+          "description": "Siswa diperbolehkan mengetikkan jawaban panjang."
         },
         "worksheetSubmission": {
-          "label": "Penyerahan Lembar Kerja",
-          "description": "Siswa dapat menyerahkan lembar kerja untuk penilaian terpadu.",
+          "label": "Pengajuan Lembar Kerja",
+          "description": "Siswa diperbolehkan mengirimkan lembar kerja untuk penilaian terpadu.",
           "searchPlaceholder": "Cari lembar kerja di sini...",
           "found": "{count} ditemukan",
-          "noResults": "Tidak ada lembar kerja yang ditemukan"
+          "noResults": "Tidak ditemukan lembar kerja."
         },
         "aiGrading": {
           "label": "Nilai dan umpan balik dengan AI",
@@ -1348,64 +1349,64 @@
         "studentResponsibilities": "Tanggung Jawab Siswa",
         "disclosureRequirements": "Persyaratan Pengungkapan",
         "level1": {
-          "title": "Pekerjaan Mandiri Level 1 (Tanpa AI)",
+          "title": "Level 1 Kerja Mandiri (Tanpa AI)",
           "description": "Tidak ada. Pemeriksa ejaan dan tata bahasa dasar dapat diterima.",
           "useCases": "Mengandalkan sepenuhnya pada pengetahuan, penalaran, dan usaha pribadi.",
           "studentResponsibilities": "Tidak ada. Pemeriksa ejaan dan tata bahasa dasar dapat diterima.",
           "disclosureRequirements": "Tidak diperlukan pengungkapan AI (penggunaan AI dilarang)."
         },
         "level2": {
-          "title": "Eksplorasi Ide Level 2",
-          "description": "Minta AI untuk menjelaskan ide, meringkas bacaan, melakukan curah pendapat mengenai pendekatan, atau memeriksa tata bahasa dasar dan kejelasan.",
-          "useCases": "Minta AI untuk menjelaskan ide, meringkas bacaan, melakukan curah pendapat mengenai pendekatan, atau memeriksa tata bahasa dasar dan kejelasan.",
-          "studentResponsibilities": "Evaluasi keluaran AI secara kritis; pastikan pekerjaan tersebut mencerminkan alasan dan pemahaman Anda sendiri.",
-          "disclosureRequirements": "Catat secara singkat penggunaan AI (misalnya, \"Menggunakan ChatGPT untuk menguraikan struktur esai\")."
+          "title": "Eksplorasi Ide Tingkat 2",
+          "description": "Minta AI untuk menjelaskan ide, meringkas bacaan, bertukar pikiran tentang pendekatan, atau memeriksa tata bahasa dan kejelasan dasar.",
+          "useCases": "Minta AI untuk menjelaskan ide, meringkas bacaan, bertukar pikiran tentang pendekatan, atau memeriksa tata bahasa dan kejelasan dasar.",
+          "studentResponsibilities": "Evaluasilah hasil keluaran AI secara kritis; pastikan karya tersebut mencerminkan penalaran dan pemahaman Anda sendiri.",
+          "disclosureRequirements": "Sebutkan secara singkat penggunaan AI (misalnya, \"Menggunakan ChatGPT untuk membuat kerangka struktur esai\")."
         },
         "level3": {
-          "title": "Dukungan Pengeditan Level 3",
+          "title": "Dukungan Penyuntingan Level 3",
           "description": "Pastikan semua ide, struktur, dan konten adalah milik Anda sendiri; tinjau saran AI dengan cermat.",
-          "useCases": "Minta AI untuk meningkatkan tata bahasa, tanda baca, frasa, dan keterbacaan.",
+          "useCases": "Minta AI untuk memperbaiki tata bahasa, tanda baca, susunan kalimat, dan keterbacaan.",
           "studentResponsibilities": "Pastikan semua ide, struktur, dan konten adalah milik Anda sendiri; tinjau saran AI dengan cermat.",
-          "disclosureRequirements": "Catat secara singkat penggunaan AI (misalnya, \"Menggunakan ChatGPT untuk pengeditan tata bahasa dan kejelasan\")."
+          "disclosureRequirements": "Sebutkan secara singkat penggunaan AI (misalnya, \"Menggunakan ChatGPT untuk pengeditan tata bahasa dan kejelasan\")."
         },
         "level4": {
-          "title": "Kreasi Bersama Tingkat 4",
-          "description": "Gunakan AI untuk menyusun, mendesain, membuat kode, menganalisis, mensimulasikan, atau menghasilkan konten kreatif sambil tetap menjaga pengawasan.",
-          "useCases": "Gunakan AI untuk menyusun, mendesain, membuat kode, menganalisis, mensimulasikan, atau menghasilkan konten kreatif sambil tetap menjaga pengawasan.",
-          "studentResponsibilities": "Menilai keluaran AI secara kritis; merevisi dan menyesuaikan untuk memastikan orisinalitas dan penalaran yang masuk akal.",
+          "title": "Kolaborasi Tingkat 4",
+          "description": "Gunakan AI untuk membuat draf, mendesain, membuat kode, menganalisis, mensimulasikan, atau menghasilkan konten kreatif sambil tetap melakukan pengawasan.",
+          "useCases": "Gunakan AI untuk membuat draf, mendesain, membuat kode, menganalisis, mensimulasikan, atau menghasilkan konten kreatif sambil tetap melakukan pengawasan.",
+          "studentResponsibilities": "Lakukan penilaian kritis terhadap hasil keluaran AI; revisi dan adaptasi untuk memastikan orisinalitas dan penalaran yang tepat.",
           "disclosureRequirements": "Kirimkan pengungkapan terperinci tentang kontribusi AI dan revisi Anda."
         },
         "level5": {
-          "title": "Ko-Inovasi Tingkat 5",
+          "title": "Inovasi Bersama Tingkat 5",
           "description": "Gunakan AI untuk menghasilkan konten, menjalankan analisis, membangun model, penulisan kreatif, penerjemahan, atau visualisasi data, dengan kepengarangan dan refleksi manusia yang eksplisit.",
           "useCases": "Gunakan AI untuk menghasilkan konten, menjalankan analisis, membangun model, penulisan kreatif, penerjemahan, atau visualisasi data, dengan kepengarangan dan refleksi manusia yang eksplisit.",
-          "studentResponsibilities": "Integrasikan AI secara etis dan terarah; jelaskan perannya dalam memajukan pembelajaran atau kreativitas.",
+          "studentResponsibilities": "Integrasikan AI secara etis dan bertujuan; berikan justifikasi untuk perannya dalam memajukan pembelajaran atau kreativitas.",
           "disclosureRequirements": "Berikan pengakuan yang jelas atas semua kontribusi AI dan revisi manusia."
         }
       },
       "toasts": {
         "successCreated": "Tugas berhasil dibuat.",
         "successDraft": "Tugas berhasil disimpan sebagai draf.",
-        "errorRequired": "Harap isi semua kolom yang diperlukan.",
-        "errorFailed": "Gagal membuat tugas. Silakan coba lagi.",
+        "errorRequired": "Mohon isi semua kolom yang wajib diisi.",
+        "errorFailed": "Pembuatan tugas gagal. Silakan coba lagi.",
         "errorUploadFailed": "Gagal mengunggah {name}",
         "sectionCreated": "Bagian \"{name}\" berhasil dibuat."
       }
     },
     "createAnnouncement": {
       "title": "Buat Pengumuman",
-      "buttonLabel": "Pengumuman Pos",
+      "buttonLabel": "Pengumuman Postingan",
       "fields": {
         "title": "Judul Pengumuman *",
         "content": "Isi *",
         "priority": "Tingkat Prioritas",
         "expiryDate": "Tanggal Kedaluwarsa (Opsional)",
-        "publishDate": "Tanggal Terbit",
+        "publishDate": "Tanggal Publikasi",
         "publishTime": "Waktu Publikasi"
       },
       "placeholders": {
-        "title": "misalnya, laporan lab jatuh tempo hari jumat",
-        "content": "Tulis konten pengumuman Anda di sini...",
+        "title": "Contoh: Laporan praktikum harus dikumpulkan hari Jumat.",
+        "content": "Tulis isi pengumuman Anda di sini...",
         "publishDate": "Publikasikan segera jika kosong"
       },
       "priority": {
@@ -1417,26 +1418,26 @@
       "sections": {
         "settings": "Pengaturan",
         "notifications": "Pemberitahuan",
-        "schedule": "Jadwal Penerbitan (Opsional)"
+        "schedule": "Penerbitan Jadwal (Opsional)"
       },
       "settings": {
         "pinned": {
           "label": "Sematkan ke atas",
-          "description": "Simpan pengumuman ini di bagian atas daftar"
+          "description": "Pertahankan pengumuman ini di bagian atas daftar."
         },
         "urgent": {
           "label": "Tandai sebagai mendesak",
-          "description": "Sorot dengan gaya yang mendesak"
+          "description": "Tonjolkan dengan penataan gaya yang mendesak."
         }
       },
       "notifications": {
         "email": {
-          "label": "Kirim pemberitahuan email",
-          "description": "Beritahu siswa melalui email"
+          "label": "Kirim notifikasi email",
+          "description": "Beri tahu siswa melalui email."
         },
         "push": {
-          "label": "Kirim pemberitahuan push",
-          "description": "Kirim pemberitahuan aplikasi seluler"
+          "label": "Kirim notifikasi push",
+          "description": "Kirim notifikasi aplikasi seluler"
         }
       },
       "actions": {
@@ -1446,7 +1447,7 @@
       },
       "toasts": {
         "success": "Pengumuman Dibuat",
-        "errorRequired": "Harap isi semua kolom yang diperlukan."
+        "errorRequired": "Mohon isi semua kolom yang wajib diisi."
       }
     }
   }

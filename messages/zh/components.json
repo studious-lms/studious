@@ -11,6 +11,11 @@
     "rename": "重命名"
   },
   "uploadFiles": {
+    "progress": {
+      "uploadingFiles": "正在上传文件……",
+      "uploadingFile": "正在上传 {name}...",
+      "completed": "完全的"
+    },
     "title": "上传文件",
     "noFilesSelected": "未选择任何文件。",
     "classIdMissing": "缺少类 ID",
@@ -130,6 +135,11 @@
       "description": "从侧边栏选择一个对话即可开始聊天。"
     },
     "page": {
+      "notFound": {
+        "title": "未找到对话",
+        "description": "这段对话不存在，或者您没有权限查看。",
+        "backToChat": "返回聊天室"
+      },
       "header": {
         "members": "成员",
         "markMentionsRead": "马克提到阅读"

@@ -7,6 +7,18 @@
       "unsaved": "Osparade ändringar",
       "saving": "Sparande..."
     },
+    "eventDetail": {
+      "title": "Händelsedetaljer",
+      "basicInfo": "Grundläggande information",
+      "description": "Hantera evenemangsdetaljer och studentnärvaro",
+      "address": "Adress",
+      "date": "Datum",
+      "time": "Tid",
+      "notFound": {
+        "title": "Händelsen hittades inte",
+        "description": "Den här händelsen kan ha raderats eller så har du inte åtkomst till den."
+      }
+    },
     "table": {
       "date": "Datum",
       "eventName": "Händelsenamn",
@@ -15,6 +27,8 @@
       "actions": "Åtgärder"
     },
     "actions": {
+      "back": "Tillbaka",
+      "export": "Exportera",
       "viewDetails": "Visa detaljer",
       "editEvent": "Redigera händelse",
       "deleteEvent": "Ta bort händelse",

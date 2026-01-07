@@ -4,8 +4,13 @@
     "counts": {
       "totalMembers": "{count} membri"
     },
+    "stats": {
+      "totalMembers": "Totale membri",
+      "teachers": "Insegnanti",
+      "students": "studenti"
+    },
     "actions": {
-      "inviteMember": "Invita membro",
+      "inviteMember": "Invita un membro",
       "copy": "Copia",
       "regenerate": "Rigenerare",
       "message": "Messaggio",
@@ -60,11 +65,11 @@
       "failedToLoad": "Impossibile caricare i membri"
     },
     "profile": {
-      "title": "Profilo Utente",
+      "title": "Profilo utente",
       "description": "Visualizza le informazioni del profilo del membro",
-      "information": "Informazioni Profilo",
+      "information": "Informazioni sul profilo",
       "location": "Posizione",
-      "website": "Sito Web"
+      "website": "Sito web"
     }
   }
 }

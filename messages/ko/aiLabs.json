@@ -1,31 +1,41 @@
 {
   "aiLabs": {
     "title": "AI 랩",
-    "subtitle": "AI 지원을 통한 교육 콘텐츠 제작",
+    "subtitle": "AI의 도움을 받아 교육 콘텐츠를 제작하세요.",
     "aiPowered": "AI 기반",
-    "createNew": "새로운 콘텐츠 만들기",
-    "aiGenerated": "AI 생성",
-    "deleteConfirm": "이 AI 랩을 삭제하시겠습니까? 이 작업은 실행 취소할 수 없습니다.",
+    "createNew": "새 콘텐츠 만들기",
+    "aiGenerated": "AI가 생성함",
+    "deleteConfirm": "이 AI 연구소를 정말로 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.",
+    "stats": {
+      "drafts": "체커",
+      "draftsDesc": "콘텐츠 제작 중",
+      "chats": "AI 고양이",
+      "chatsDesc": "활발한 대화",
+      "messages": "메시지",
+      "messagesDesc": "전체 AI 상호작용",
+      "generated": "생성됨",
+      "generatedDesc": "생성된 총 콘텐츠 수"
+    },
     "widgets": {
       "assignment": {
         "title": "과제",
-        "description": "AI 지원을 통해 대화형 과제 만들기"
+        "description": "AI의 도움을 받아 상호작용적인 과제를 만들어 보세요."
       },
       "quiz": {
         "title": "놀리다",
-        "description": "다양한 질문 유형으로 퀴즈 생성"
+        "description": "다양한 유형의 문제로 퀴즈를 생성하세요"
       },
       "worksheet": {
         "title": "워크시트",
-        "description": "연습 문제지와 연습문제를 작성하세요"
+        "description": "연습 문제 및 과제를 만들어 보세요."
       },
       "lessonPlan": {
-        "title": "수업 계획",
-        "description": "포괄적인 수업 계획을 설계하세요"
+        "title": "수업 계획서",
+        "description": "종합적인 수업 계획을 세우세요"
       },
       "rubric": {
         "title": "표제",
-        "description": "자세한 평가 기준을 만듭니다."
+        "description": "상세한 채점 기준표를 작성하세요"
       }
     },
     "tabs": {
@@ -33,40 +43,40 @@
       "chats": "AI 고양이"
     },
     "drafts": {
-      "title": "드래프트 랩스 ({count})",
+      "title": "초안 연구소({count})",
       "empty": {
-        "title": "아직 실험실 초안이 없습니다",
-        "description": "위의 위젯을 사용하여 최초의 AI 생성 교육 콘텐츠를 만들어 보세요."
+        "title": "아직 실험 초안이 없습니다.",
+        "description": "위 위젯을 사용하여 AI가 생성한 첫 번째 교육 콘텐츠를 만들어 보세요."
       }
     },
     "chats": {
-      "title": "AI 랩스 ({count})",
+      "title": "AI 연구소({count})",
       "active": "활동적인",
-      "messageCount": "{count}개의 메시지",
-      "createdBy": "{name}님이 생성함",
+      "messageCount": "{count} 메시지",
+      "createdBy": "{name}님이 제작했습니다.",
       "empty": {
-        "title": "아직 AI 랩이 없습니다",
-        "description": "교육 콘텐츠 분야에서 AI와 협업을 시작하려면 첫 번째 AI 랩을 만들어 보세요."
+        "title": "아직 AI 연구소는 없습니다.",
+        "description": "AI 연구소를 처음 설립하여 교육 콘텐츠 제작에 AI와 협업해 보세요."
       }
     },
     "toast": {
-      "labCreated": "AI 랩이 성공적으로 생성되었습니다!",
-      "labCreateFailed": "AI 랩을 생성하지 못했습니다:",
+      "labCreated": "AI 연구실이 성공적으로 생성되었습니다!",
+      "labCreateFailed": "AI 연구소 생성에 실패했습니다:",
       "labDeleted": "AI Lab이 성공적으로 삭제되었습니다!",
-      "labDeleteFailed": "AI Lab을 삭제하지 못했습니다:"
+      "labDeleteFailed": "AI 연구소 삭제에 실패했습니다:"
     }
   },
   "aiLabChat": {
-    "backButton": "AI 랩으로 돌아가기",
-    "loading": "로딩중...",
-    "aiThinking": "AI가 생각하는...",
+    "backButton": "AI 연구실로 돌아가기",
+    "loading": "로딩 중...",
+    "aiThinking": "AI 사고방식...",
     "getAIHelp": "AI 도움말 받기",
     "notFound": {
-      "title": "랩 채팅을 찾을 수 없습니다",
-      "description": "이 AI 랩은 삭제되었거나 액세스할 수 없습니다."
+      "title": "연구실 채팅을 찾을 수 없습니다.",
+      "description": "이 AI 연구실이 삭제되었거나 접근 권한이 없을 수 있습니다."
     },
     "toast": {
-      "messageFailed": "메시지를 보내지 못했습니다:"
+      "messageFailed": "메시지 전송에 실패했습니다:"
     }
   }
 }

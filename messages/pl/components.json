@@ -11,6 +11,11 @@
     "rename": "Przemianować"
   },
   "uploadFiles": {
+    "progress": {
+      "uploadingFiles": "Przesyłanie plików...",
+      "uploadingFile": "Przesyłanie {name}...",
+      "completed": "Zakończony"
+    },
     "title": "Prześlij pliki",
     "noFilesSelected": "Nie wybrano plików",
     "classIdMissing": "Brak identyfikatora klasy",
@@ -130,6 +135,11 @@
       "description": "Aby rozpocząć czat, wybierz konwersację z paska bocznego."
     },
     "page": {
+      "notFound": {
+        "title": "Nie znaleziono rozmowy",
+        "description": "Ta konwersacja nie istnieje lub nie masz do niej dostępu.",
+        "backToChat": "Powrót do czatu"
+      },
       "header": {
         "members": "Członkowie",
         "markMentionsRead": "Marek wspomina o czytaniu"

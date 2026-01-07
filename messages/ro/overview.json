@@ -7,6 +7,13 @@
     "post": "Post",
     "posting": "Se postează...",
     "noPosts": "Nicio postare încă",
-    "createFirstPost": "Creează prima postare"
+    "noPostsDescription": "Distribuiți anunțuri, teme și actualizări cu clasa dvs.",
+    "createFirstPost": "Creează prima postare",
+    "messages": {
+      "uploadFailed": "Anunțul nu a putut fi creat, încărcarea fișierului a eșuat.",
+      "createFailed": "Nu s-a putut crea anunțul",
+      "createSuccess": "Anunțul a fost creat cu succes",
+      "creating": "Se creează anunțul..."
+    }
   }
 }

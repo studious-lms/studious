@@ -17,7 +17,7 @@
     "classDeleted": "Clase eliminada exitosamente",
     "classDeleteFailed": "No se pudo eliminar la clase",
     "failedToLoad": "No se pudieron cargar las clases",
-    "classLeft": "Has abandonado la clase exitosamente",
-    "classLeaveFailed": "No se pudo abandonar la clase"
+    "classLeft": "Salió exitosamente de la clase",
+    "classLeaveFailed": "No pude salir de clase"
   }
 }

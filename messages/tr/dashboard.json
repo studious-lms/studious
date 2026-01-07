@@ -1,24 +1,24 @@
 {
   "home": {
-    "welcomeBack": "Tekrar hoş geldin, {name}!",
-    "subtitle": "İşte bugün derslerinizde neler oluyor.",
+    "welcomeBack": "Tekrar hoş geldiniz, {name}!",
+    "subtitle": "Bugünkü derslerinizde neler olacağı aşağıda açıklanmıştır.",
     "stats": {
-      "totalClasses": "Toplam Sınıflar",
+      "totalClasses": "Toplam Ders Sayısı",
       "teachingEnrolled": "{teaching} öğretim, {enrolled} kayıtlı",
-      "dueToday": "Bugün Son Ödeme Tarihi",
-      "dueTodayDesc": "Bugün teslim edilmesi gereken ödevler",
-      "upcoming": "Yaklaşan",
-      "upcomingDesc": "Yakında ödevler var",
+      "dueToday": "Bugün teslim edilecek",
+      "dueTodayDesc": "Ödevler bugün teslim edilecek.",
+      "upcoming": "Yakında",
+      "upcomingDesc": "Yaklaşan görevler",
       "thisWeek": "Bu hafta",
-      "totalAssignments": "Toplam ödevler"
+      "totalAssignments": "Toplam atamalar"
     },
     "upcomingAssignments": {
       "title": "Yaklaşan Görevler",
-      "subtitle": "Bir sonraki son tarihleriniz",
-      "allCaughtUp": "Hepsi yakalandı!",
-      "noUpcoming": "Şu anda yaklaşan bir ödev yok.",
+      "subtitle": "Bir sonraki son teslim tarihleriniz",
+      "allCaughtUp": "Her şey tamamlandı!",
+      "noUpcoming": "Şu an için planlanmış bir görevim yok.",
       "viewAgenda": "Gündemi Görüntüle",
-      "dueToday": "Bugün vadesi doldu",
+      "dueToday": "Bugün teslim edilecek",
       "dueTomorrow": "Yarın teslim edilecek",
       "due": "İki {dates}",
       "teaching": "Öğretim",
@@ -26,8 +26,8 @@
     },
     "notifications": {
       "title": "Son Bildirimler",
-      "subtitle": "Son güncellemeler",
-      "noNew": "Yeni bildirim yok",
+      "subtitle": "En son güncellemeler",
+      "noNew": "Yeni bildirim yok.",
       "viewAll": "Tüm Bildirimleri Görüntüle"
     },
     "classes": {
@@ -36,9 +36,9 @@
       "teaching": "Öğretim",
       "enrolled": "Kayıtlı",
       "due": "vadesi dolmuş",
-      "noClasses": "Henüz ders yok",
-      "browseClasses": "Sınıflara Göz Atın",
-      "viewAllClasses": "Tüm Sınıfları Görüntüle"
+      "noClasses": "Henüz ders yok.",
+      "browseClasses": "Derslere Göz Atın",
+      "viewAllClasses": "Tüm Dersleri Görüntüle"
     }
   }
 }

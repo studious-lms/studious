@@ -1,5 +1,6 @@
 {
   "common": {
+    "upload": "Caricamento",
     "save": "Salva",
     "cancel": "Cancellare",
     "delete": "Eliminare",
@@ -250,8 +251,8 @@
     "futureDevelopments": {
       "title": "Sviluppi futuri",
       "subtitle": "La nostra tabella di marcia per trasformare l'istruzione",
-      "cas": {
-        "title": "Prospettiva CAS",
+      "sustainable": {
+        "title": "Prospettiva sostenibile",
         "description": "Sostenere le scuole sottofinanziate attraverso donazioni e materiali, rendendo l'istruzione di qualità accessibile a tutti."
       },
       "features": {
@@ -664,7 +665,7 @@
       "title": "Gradi",
       "subtitle": "Visualizza e gestisci i voti degli studenti",
       "columns": {
-        "assignment": "Assegnazione",
+        "assignment": "Incarico",
         "maxPoints": "Punti massimi",
         "weight": "Peso",
         "graded": "Classificato",
@@ -755,7 +756,7 @@
         "totalMembers": "{count} membri"
       },
       "actions": {
-        "inviteMember": "Invita membro",
+        "inviteMember": "Invita un membro",
         "copy": "Copia",
         "regenerate": "Rigenerare",
         "message": "Messaggio",
@@ -975,7 +976,7 @@
         }
       },
       "table": {
-        "assignment": "Assegnazione",
+        "assignment": "Incarico",
         "dueDate": "Due Date",
         "points": "Punti",
         "weight": "Peso",
@@ -1011,7 +1012,7 @@
     "submissions": "Invii",
     "open": "Aprire",
     "closed": "Chiuso",
-    "assignment": "Assegnazione",
+    "assignment": "Incarico",
     "assignments": "Incarichi",
     "newAssignment": "Nuovo incarico",
     "createAssignment": "Crea assegnazione",

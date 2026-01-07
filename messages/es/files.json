@@ -23,7 +23,7 @@
       "fileRenamed": "Archivo renombrado exitosamente",
       "fileMoved": "Archivo movido exitosamente",
       "downloadStarted": "Descarga iniciada",
-      "shareCopied": "Compartir enlace copiado"
+      "shareCopied": "Enlace compartido copiado"
     },
     "errors": {
       "teacherOnly": "Sólo los profesores pueden modificar los archivos.",
@@ -122,7 +122,7 @@
       "fileMoved": "Archivo movido exitosamente",
       "downloadStarted": "Descarga iniciada",
       "downloadFailed": "Descarga fallida",
-      "shareLinkCopied": "Compartir enlace copiado",
+      "shareLinkCopied": "Enlace compartido copiado",
       "shareFailed": "Error al compartir",
       "permissionDenied": "Permiso denegado"
     }

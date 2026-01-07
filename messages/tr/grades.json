@@ -1,26 +1,26 @@
 {
   "classGrades": {
     "title": "Notlar",
-    "subtitle": "Öğrenci notlarını görüntüleyin ve yönetin",
+    "subtitle": "Öğrenci notlarını görüntüleyin ve yönetin.",
     "columns": {
       "assignment": "Atama",
       "maxPoints": "Maksimum Puan",
       "weight": "Ağırlık",
       "graded": "Derecelendirilmiş",
-      "dueDate": "İki Tarih",
+      "dueDate": "İki Randevu",
       "actions": "Eylemler",
       "student": "Öğrenci",
       "overallGrade": "Genel Not",
-      "assignmentsCompleted": "Tamamlanan Ödevler",
+      "assignmentsCompleted": "Tamamlanan Görevler",
       "trend": "Trend"
     },
     "labels": {
-      "rubric": "Rubrik"
+      "rubric": "Değerlendirme Kriterleri"
     },
     "actions": {
       "manage": "Üstesinden gelmek",
       "viewGrades": "Notları Görüntüle",
-      "saving": "Kaydediliyor...",
+      "saving": "Tasarruf...",
       "saveChanges": "Değişiklikleri Kaydet",
       "preview": "Önizleme",
       "edit": "Düzenlemek",
@@ -28,17 +28,17 @@
       "createNew": "Yeni Oluştur"
     },
     "overview": {
-      "title": "Sınıf Genel Bakışı",
+      "title": "Dersin Genel Bakışı",
       "classAverage": "Sınıf Ortalaması",
       "totalStudents": "Toplam Öğrenci Sayısı",
       "assignments": "Atamalar",
-      "submissionRate": "Teslim Oranı"
+      "submissionRate": "Gönderim Oranı"
     },
     "assignmentManagement": {
       "title": "Görev Yönetimi",
       "empty": {
-        "title": "Hiçbir ödev bulunamadı",
-        "description": "Notları ve ayarları yönetmek için ödevler oluşturun"
+        "title": "Hiçbir görev bulunamadı.",
+        "description": "Notları ve ayarları yönetmek için ödevler oluşturun."
       },
       "searchPlaceholder": "Arama görevleri..."
     },
@@ -46,8 +46,8 @@
       "title": "Öğrenciler",
       "viewAll": "Tüm Öğrencileri Görüntüle",
       "empty": {
-        "title": "Kayıtlı öğrenci yok",
-        "description": "Öğrenciler sınıfa katıldığında burada görünecekler"
+        "title": "Kayıtlı öğrenci yok.",
+        "description": "Öğrenciler derse katıldıktan sonra burada görüneceklerdir."
       },
       "searchPlaceholder": "Öğrencileri ara..."
     },
@@ -55,45 +55,45 @@
       "title": "Sınıf Sınırları",
       "untitled": "Başlıksız Derecelendirme Sınırı",
       "empty": {
-        "title": "Hiçbir sınıf sınırı oluşturulmadı",
-        "description": "Not aralıklarını tanımlamak için notlandırma sınırları oluşturun"
+        "title": "Sınıf sınırları oluşturulmadı.",
+        "description": "Not aralıklarını tanımlamak için notlandırma sınırları oluşturun."
       },
-      "previewTitle": "Sınıflandırma Sınırları Önizlemesi",
+      "previewTitle": "Derecelendirme Sınırları Önizlemesi",
       "details": {
-        "title": "Sınıflandırma Sınırı Ayrıntıları",
+        "title": "Tesviye Sınır Detayları",
         "name": "İsim",
-        "noneDefined": "Sınıflandırma sınırları tanımlanmadı"
+        "noneDefined": "Tanımlanmış derecelendirme sınırları yok."
       }
     },
     "rubrics": {
-      "title": "Rubrikler",
-      "untitled": "Başlıksız Rubrik",
+      "title": "Değerlendirme Kriterleri",
+      "untitled": "Başlıksız Değerlendirme Kriterleri",
       "empty": {
-        "title": "Hiçbir rubrik oluşturulmadı",
-        "description": "Değerlendirme kriterlerini tanımlamak için ölçütler oluşturun"
+        "title": "Hiçbir değerlendirme kriteri oluşturulmadı.",
+        "description": "Değerlendirme kriterlerini tanımlamak için değerlendirme ölçütleri oluşturun."
       },
-      "previewTitle": "Rubrik Önizlemesi",
+      "previewTitle": "Değerlendirme Kriterleri Önizlemesi",
       "details": {
-        "title": "Rubrik Ayrıntıları",
+        "title": "Değerlendirme Kriterleri Detayları",
         "name": "İsim",
         "category": "Kategori",
         "description": "Tanım",
         "custom": "Gelenek",
-        "noDescription": "Hiçbir açıklama sağlanmadı",
-        "noCriteria": "Bu başlıkta hiçbir kriter bulunamadı"
+        "noDescription": "Açıklama verilmedi.",
+        "noCriteria": "Bu değerlendirme tablosunda hiçbir kriter bulunamadı."
       }
     },
     "confirm": {
-      "deleteRubric": "Bu notlandırma şemasını silmek istediğinizden emin misiniz?",
+      "deleteRubric": "Bu puanlama şemasını silmek istediğinizden emin misiniz?",
       "deleteGradingBoundary": "Bu notlandırma sınırını silmek istediğinizden emin misiniz?"
     }
   },
   "studentGrades": {
     "title": "Tüm Öğrenci Notları",
-    "allStudents": "Bu sınıftaki tüm öğrencilerin notlarını görüntüleyin ve yönetin",
+    "allStudents": "Bu sınıftaki tüm öğrencilerin notlarını görüntüleyin ve yönetin.",
     "students": "Öğrenciler",
-    "noGrades": "Hiçbir öğrenci bulunamadı",
-    "noGradesDescription": "Bu sınıfa henüz kayıtlı öğrenci yok. Öğrenciler katıldıktan sonra burada görünecekler.",
+    "noGrades": "Öğrenci bulunamadı.",
+    "noGradesDescription": "Bu sınıfa henüz öğrenci kayıtlı değil. Öğrenciler kayıt olduktan sonra burada görünecekler.",
     "table": {
       "student": "Öğrenci",
       "actions": "Eylemler"
@@ -105,7 +105,7 @@
   "individualGrades": {
     "myGrades": "Notlarım",
     "studentGrades": "Notlar",
-    "viewYourGrades": "Notlarınızı ve ilerlemenizi görüntüleyin",
+    "viewYourGrades": "Notlarınızı ve ilerlemenizi görüntüleyin.",
     "individualManagement": "Bireysel öğrenci not yönetimi",
     "export": "İhracat",
     "back": "Geri",
@@ -116,7 +116,7 @@
     "trend": "Trend",
     "yourGrades": "Notlarınız",
     "assignments": "Atamalar",
-    "studentNotFound": "Öğrenci bulunamadı",
+    "studentNotFound": "Öğrenci bulunamadı.",
     "goBack": "Geri gitmek",
     "grade": "Seviye",
     "table": {
@@ -125,15 +125,15 @@
       "total": "Toplam",
       "percentage": "%",
       "status": "Durum",
-      "submitted": "Sunuldu"
+      "submitted": "Gönderildi"
     },
     "status": {
       "graded": "Derecelendirilmiş",
       "pending": "Askıda olması"
     },
     "empty": {
-      "title": "Hiçbir ödev bulunamadı",
-      "description": "Bu öğrencinin görüntülenecek ödevi yok"
+      "title": "Hiçbir görev bulunamadı.",
+      "description": "Bu öğrencinin gösterebileceği hiçbir ödevi yok."
     },
     "searchPlaceholder": "Arama görevleri..."
   }

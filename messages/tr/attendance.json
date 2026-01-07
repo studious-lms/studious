@@ -1,11 +1,23 @@
 {
   "attendance": {
-    "title": "Sınıf Etkinlikleri ve Katılım",
-    "subtitle": "Her etkinlik için öğrenci katılımını takip edin",
+    "title": "Ders Etkinlikleri ve Devam Durumu",
+    "subtitle": "Her etkinlik için öğrenci katılımını takip edin.",
     "saving": {
-      "auto": "Otomatik kaydediliyor...",
+      "auto": "Otomatik kaydetme...",
       "unsaved": "Kaydedilmemiş değişiklikler",
-      "saving": "Kaydediliyor..."
+      "saving": "Tasarruf..."
+    },
+    "eventDetail": {
+      "title": "Etkinlik Detayları",
+      "basicInfo": "Temel Bilgiler",
+      "description": "Etkinlik detaylarını ve öğrenci katılımını yönetin.",
+      "address": "Adres",
+      "date": "Tarih",
+      "time": "Zaman",
+      "notFound": {
+        "title": "Etkinlik Bulunamadı",
+        "description": "Bu etkinlik silinmiş olabilir veya ona erişiminiz olmayabilir."
+      }
     },
     "table": {
       "date": "Tarih",
@@ -15,52 +27,54 @@
       "actions": "Eylemler"
     },
     "actions": {
+      "back": "Geri",
+      "export": "İhracat",
       "viewDetails": "Ayrıntıları Görüntüle",
       "editEvent": "Etkinliği Düzenle",
       "deleteEvent": "Etkinliği Sil",
       "createEvent": "Etkinlik Oluştur",
       "saveAttendance": "Katılımı Kaydet",
-      "markAllPresent": "Tümünü Mevcut Olarak İşaretle",
-      "markAllAbsent": "Tüm Yokları İşaretle"
+      "markAllPresent": "Mevcut Olanları İşaretle",
+      "markAllAbsent": "Devamsızların tümünü işaretle"
     },
     "allEvents": {
       "title": "Tüm Etkinlikler",
-      "description": "Sınıf etkinliklerinin ve katılım kayıtlarının tam geçmişi",
-      "searchPlaceholder": "Etkinlikleri ara...",
+      "description": "Ders etkinliklerinin ve devam kayıtlarının eksiksiz geçmişi",
+      "searchPlaceholder": "Arama etkinlikleri...",
       "empty": {
-        "title": "Hiçbir etkinlik bulunamadı",
-        "description": "Katılımı takip etmeye başlamak için ilk etkinliğinizi oluşturun"
+        "title": "Hiçbir etkinlik bulunamadı.",
+        "description": "Katılım takibine başlamak için ilk etkinliğinizi oluşturun."
       }
     },
     "eventsList": {
-      "pickDate": "Tarih seç",
+      "pickDate": "Tarih seçin",
       "untitled": "Başlıksız Etkinlik",
       "empty": {
-        "noEventsOnDate": "Bu tarihte etkinlik yok",
+        "noEventsOnDate": "Bu tarihte hiçbir etkinlik yok.",
         "noEventsOnDateDescription": "{date} için planlanmış etkinlik yok. Farklı bir tarih seçmeyi veya yeni bir etkinlik oluşturmayı deneyin.",
-        "noEvents": "Hiçbir etkinlik bulunamadı",
-        "noEventsDescription": "Katılımı takip etmeye başlamak için ilk etkinliğinizi oluşturun",
+        "noEvents": "Hiçbir etkinlik bulunamadı.",
+        "noEventsDescription": "Katılım takibine başlamak için ilk etkinliğinizi oluşturun.",
         "createForDate": "Bu Tarih İçin Etkinlik Oluştur",
         "createFirst": "İlk Etkinliği Oluştur"
       }
     },
     "summary": {
       "title": "Etkinlik Özeti",
-      "selectedEvent": "Seçili Etkinlik",
+      "selectedEvent": "Seçilen Etkinlik",
       "total": "Toplam",
       "attendanceRate": "Katılım Oranı"
     },
     "roster": {
       "title": "Öğrenci Listesi",
-      "description": "Her öğrencinin katılımını işaretlemek için durum düğmelerine tıklayın",
+      "description": "Her öğrencinin devam durumunu işaretlemek için durum düğmelerine tıklayın.",
       "empty": {
-        "title": "Kayıtlı öğrenci yok",
-        "description": "Öğrenciler sınıfa katıldığında burada görünecekler"
+        "title": "Kayıtlı öğrenci yok.",
+        "description": "Öğrenciler derse katıldıktan sonra burada görüneceklerdir."
       }
     },
     "prompt": {
-      "title": "Bir Etkinlik Seçin",
-      "description": "Öğrenci katılımını görüntülemek ve yönetmek için yukarıdan bir etkinlik seçin"
+      "title": "Bir etkinlik seçin",
+      "description": "Öğrenci katılımını görüntülemek ve yönetmek için yukarıdaki etkinliklerden birini seçin."
     },
     "status": {
       "present": "Sunmak",
@@ -75,23 +89,23 @@
       "history": "Katılım Geçmişi",
       "event": "Etkinlik",
       "status": "Durum",
-      "searchPlaceholder": "Etkinlikleri ara...",
+      "searchPlaceholder": "Arama etkinlikleri...",
       "empty": {
-        "title": "Katılım Kaydı Yok",
-        "description": "Etkinlikler oluşturulduktan ve katılım alındıktan sonra katılımınız burada görünecektir"
+        "title": "Devamsızlık Kaydı Yok",
+        "description": "Etkinlikler oluşturulduktan ve katılım kayıtları alındıktan sonra katılımınız burada görünecektir."
       }
     },
     "deleteDialog": {
       "title": "Etkinliği Sil",
-      "description": "\"{eventName}\" öğesini silmek istediğinizden emin misiniz? Bu işlem geri alınamaz ve ilişkili tüm katılım kayıtlarını silecektir.",
+      "description": "\"{eventName}\" öğesini silmek istediğinizden emin misiniz? Bu işlem geri alınamaz ve ilgili tüm katılım kayıtlarını silecektir.",
       "deleting": "Siliniyor...",
       "deleteButton": "Etkinliği Sil"
     },
     "toast": {
-      "attendanceSaved": "Katılım başarıyla kaydedildi",
-      "attendanceSaveFailed": "Katılım kaydedilemedi",
-      "eventDeleted": "Etkinlik başarıyla silindi",
-      "eventDeleteFailed": "Etkinlik silinemedi"
+      "attendanceSaved": "Katılım bilgileri başarıyla kaydedildi.",
+      "attendanceSaveFailed": "Katılımı kaydetmeyi başaramadı.",
+      "eventDeleted": "Etkinlik başarıyla silindi.",
+      "eventDeleteFailed": "Etkinlik silme işlemi başarısız oldu."
     }
   }
 }

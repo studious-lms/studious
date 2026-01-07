@@ -1,7 +1,7 @@
 {
   "classes": {
     "title": "Zajęcia",
-    "description": "Zarządzaj swoją działalnością dydaktyczną i zapisanymi zajęciami",
+    "description": "Zarządzaj swoimi zajęciami i zapisanymi klasami",
     "joinClass": "Dołącz do klasy",
     "createClass": "Utwórz klasę",
     "searchPlaceholder": "Wyszukaj klasy...",
@@ -17,7 +17,7 @@
     "classDeleted": "Klasa została pomyślnie usunięta",
     "classDeleteFailed": "Nie udało się usunąć klasy",
     "failedToLoad": "Nie udało się załadować klas",
-    "classLeft": "Pomyślnie opuszczono klasę",
-    "classLeaveFailed": "Nie udało się opuścić klasy"
+    "classLeft": "Pomyślnie opuściłeś klasę",
+    "classLeaveFailed": "Nie udało się opuścić zajęć"
   }
 }

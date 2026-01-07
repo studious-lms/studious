@@ -13,9 +13,13 @@
     },
     "stats": {
       "totalAssignments": "Total des affectations",
+      "totalAssignmentsDesc": "Tous les travaux de cours",
       "completionRate": "Taux d'achèvement",
+      "completionRateDesc": "Noté vs total",
       "totalPoints": "Total des points",
-      "upcoming": "Prochain"
+      "totalPointsDesc": "Maximum réalisable",
+      "upcoming": "Prochain",
+      "upcomingDesc": "devoirs à rendre"
     },
     "overview": {
       "title": "Aperçu du cours",
@@ -40,12 +44,12 @@
       "dueDate": "Deux rendez-vous",
       "points": "Points",
       "weight": "Poids",
-      "status": "Statut",
-      "pts": "points"
+      "pts": "points",
+      "type": "Taper"
     },
     "status": {
       "graded": "Noté",
-      "pending": "En attente"
+      "ungraded": "Non noté"
     },
     "courseInfo": {
       "title": "Informations sur le cours",

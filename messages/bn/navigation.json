@@ -13,7 +13,10 @@
     "schoolProgram": "স্কুল প্রোগ্রাম",
     "about": "সম্পর্কে",
     "press": "প্রেস",
-    "signIn": "লগ ইন"
+    "signIn": "লগ ইন",
+    "lightMode": "হালকা মোড",
+    "darkMode": "ডার্ক মোড",
+    "languageSelector": "ভাষা নির্বাচক"
   },
   "classSidebar": {
     "overview": "সংক্ষিপ্ত বিবরণ",

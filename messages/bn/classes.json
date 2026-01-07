@@ -17,7 +17,7 @@
     "classDeleted": "ক্লাসটি সফলভাবে মুছে ফেলা হয়েছে",
     "classDeleteFailed": "ক্লাস মুছে ফেলা যায়নি",
     "failedToLoad": "ক্লাস লোড করা যায়নি",
-    "classLeft": "সফলভাবে ক্লাস ছেড়ে দিয়েছেন",
-    "classLeaveFailed": "ক্লাস ছাড়তে ব্যর্থ"
+    "classLeft": "ক্লাস থেকে বেরিয়ে আসা হয়েছে",
+    "classLeaveFailed": "ক্লাস ছেড়ে যেতে ব্যর্থ"
   }
 }

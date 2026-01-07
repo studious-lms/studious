@@ -1,7 +1,7 @@
 {
   "classFiles": {
     "title": "Bestanden",
-    "subtitle": "Beheer klasbestanden en bronnen",
+    "subtitle": "Beheer lesbestanden en -bronnen.",
     "actions": {
       "newFolder": "Nieuwe map",
       "upload": "Uploaden",
@@ -23,16 +23,16 @@
       "fileRenamed": "Bestand succesvol hernoemd",
       "fileMoved": "Bestand succesvol verplaatst",
       "downloadStarted": "Download gestart",
-      "shareCopied": "Link delen gekopieerd"
+      "shareCopied": "Deellink gekopieerd"
     },
     "errors": {
       "teacherOnly": "Alleen docenten kunnen bestanden wijzigen.",
-      "downloadFailed": "Downloaden mislukt",
+      "downloadFailed": "Download mislukt",
       "shareFailed": "Delen mislukt",
       "failedToLoad": "Bestanden laden mislukt. Probeer het later opnieuw."
     },
     "breadcrumbs": {
-      "classFiles": "Klassebestanden"
+      "classFiles": "Klasbestanden"
     },
     "search": {
       "placeholder": "Zoeken in bestanden"
@@ -57,24 +57,24 @@
       "fileSize": "Bestandsgrootte"
     },
     "empty": {
-      "title": "Deze map is leeg",
-      "description": "Upload bestanden of maak mappen om te beginnen met het organiseren van uw lesmateriaal.",
+      "title": "Deze map is leeg.",
+      "description": "Upload bestanden of maak mappen aan om te beginnen met het organiseren van je lesmateriaal.",
       "searchTitle": "Geen bestanden gevonden",
-      "searchDescription": "Er zijn geen bestanden die overeenkomen met \"{query}\". Probeer een andere zoekterm."
+      "searchDescription": "Er zijn geen bestanden gevonden die overeenkomen met \"{query}\". Probeer een andere zoekterm."
     }
   },
   "folderView": {
-    "subtitle": "Inhoud van de map",
+    "subtitle": "Mapinhoud",
     "notFound": {
       "title": "Map niet gevonden",
-      "description": "De gevraagde map kon niet gevonden worden.",
+      "description": "De gevraagde map kon niet worden gevonden.",
       "backButton": "Terug naar bestanden"
     },
     "error": {
       "loadFailed": "Het laden van de mapinhoud is mislukt. Probeer het later opnieuw."
     },
     "breadcrumbs": {
-      "classFiles": "Klassebestanden"
+      "classFiles": "Klasbestanden"
     },
     "search": {
       "placeholder": "Zoeken in map",
@@ -102,9 +102,9 @@
     },
     "empty": {
       "noFilesFound": "Geen bestanden gevonden",
-      "noFilesFoundDescription": "Er zijn geen bestanden die overeenkomen met \"{query}\". Probeer een andere zoekterm.",
-      "folderEmpty": "Deze map is leeg",
-      "folderEmptyDescription": "Upload bestanden of maak mappen om uw materialen te ordenen."
+      "noFilesFoundDescription": "Er zijn geen bestanden gevonden die overeenkomen met \"{query}\". Probeer een andere zoekterm.",
+      "folderEmpty": "Deze map is leeg.",
+      "folderEmptyDescription": "Upload bestanden of maak mappen aan om uw materiaal te ordenen."
     },
     "actions": {
       "newFolder": "Nieuwe map",
@@ -121,10 +121,10 @@
       "fileRenamed": "Bestand succesvol hernoemd",
       "fileMoved": "Bestand succesvol verplaatst",
       "downloadStarted": "Download gestart",
-      "downloadFailed": "Downloaden mislukt",
-      "shareLinkCopied": "Link delen gekopieerd",
+      "downloadFailed": "Download mislukt",
+      "shareLinkCopied": "Deellink gekopieerd",
       "shareFailed": "Delen mislukt",
-      "permissionDenied": "Toestemming geweigerd"
+      "permissionDenied": "Toegang geweigerd"
     }
   }
 }

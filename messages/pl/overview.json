@@ -7,6 +7,13 @@
     "post": "Post",
     "posting": "Mianowanie...",
     "noPosts": "Brak postów",
-    "createFirstPost": "Utwórz pierwszy post"
+    "noPostsDescription": "Udostępniaj ogłoszenia, zadania i aktualizacje swojej klasie.",
+    "createFirstPost": "Utwórz pierwszy post",
+    "messages": {
+      "uploadFailed": "Nie udało się utworzyć ogłoszenia, przesłanie pliku nie powiodło się",
+      "createFailed": "Nie udało się utworzyć ogłoszenia",
+      "createSuccess": "Ogłoszenie zostało pomyślnie utworzone",
+      "creating": "Tworzenie ogłoszenia..."
+    }
   }
 }

@@ -7,4 +7,5 @@ export { MessageEdit } from './MessageEdit';
 export { AIMarkdown } from './AIMarkdown';
 export { AISuggestedContent } from './AISuggestedContent';
 export { CreateConversationModal } from './CreateConversationModal';
+export { ChatSettingsModal } from './ChatSettingsModal';
 export * from './ChatSkeletons';

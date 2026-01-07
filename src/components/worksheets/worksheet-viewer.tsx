@@ -6,6 +6,8 @@ import { RouterOutputs, trpc } from "@/lib/trpc";
 import { RootState } from "@/store/store";
 import { WorksheetQuestionViewer } from "./worksheet-question-viewer";
 import { isQuestionAnswerable } from "@/lib/worksheet-validation";
+import useWorksheetSubmission from "@/hooks/useWorksheetSubmission";
+import { useParams } from "next/navigation";
 
 interface WorksheetViewerProps {
   worksheetId: string;
@@ -22,22 +24,9 @@ export function WorksheetViewer({
   const appState = useSelector((state: RootState) => state.app);
   const isTeacher = appState.user.teacher;
 
-  // Fetch worksheet
-  const { data: worksheet, isLoading: worksheetLoading } = trpc.worksheet.getWorksheet.useQuery({
-    worksheetId,
-  });
+  const { id: classId } = useParams();
 
-  // Fetch student responses if submissionId is provided
-  const { data: worksheetResponse, refetch: refetchWorksheetResponse } = trpc.worksheet.getWorksheetSubmission.useQuery(
-    {
-      worksheetId,
-      submissionId: submissionId!,
-    },
-    {
-      enabled: !!submissionId,
-    }
-  );
-
+  const { worksheet, worksheetResponse, generatingResponsesList, refetchWorksheet, refetchWorksheetResponse, isLoading } = useWorksheetSubmission(classId as string, worksheetId, submissionId as string);
   // Filter out invalid/draft questions that aren't answerable
   const questions = useMemo(() => {
     const allQuestions = worksheet?.questions || [];
@@ -73,7 +62,8 @@ export function WorksheetViewer({
     setAnswers(initializeAnswers());
   }, [initializeAnswers]);
 
-  if (worksheetLoading) {
+
+  if (isLoading) {
     return (
       <div className="p-4 border rounded-lg">
         <p className="text-sm text-muted-foreground">Loading worksheet...</p>
@@ -105,9 +95,10 @@ export function WorksheetViewer({
               showAnswers={showAnswers}
               showFeedback={showFeedback}
               isTeacher={isTeacher}
-              
+              // @todo: refactor this thing~ its complicated asf
+              status={generatingResponsesList.find(item => item.id === worksheetResponse?.responses.find(r => r.questionId === question.id)?.id)?.state || "NOT_STARTED"}
               submissionId={submissionId}
-                  // @ts-expect-error - worksheetResponse is typed as RouterOutputs['worksheet']['getWorksheetSubmission'], issues with JsonValue.
+              // @ts-expect-error - worksheetResponse is typed as RouterOutputs['worksheet']['getWorksheetSubmission'], issues with JsonValue.
               worksheetResponse={worksheetResponse as WorksheetSubmissionResponse}
               worksheetId={worksheetId}
               onChangeComment={() => {

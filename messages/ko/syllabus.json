@@ -1,54 +1,58 @@
 {
   "syllabus": {
-    "title": "교과과정",
-    "subtitle": "과정 개요 및 학업 정보",
+    "title": "강의계획서",
+    "subtitle": "강좌 개요 및 학업 정보",
     "actions": {
       "saveChanges": "변경 사항 저장",
       "cancel": "취소",
-      "edit": "교과과정 편집"
+      "edit": "강의계획서 수정"
     },
     "errors": {
-      "failedToLoad": "교과과정을 로드하는 데 실패했습니다.",
+      "failedToLoad": "강의계획서를 불러오는 데 실패했습니다.",
       "tryLater": "나중에 다시 시도해 주세요."
     },
     "stats": {
-      "totalAssignments": "총 과제",
+      "totalAssignments": "총 과제 수",
+      "totalAssignmentsDesc": "모든 수업 과제",
       "completionRate": "완료율",
+      "completionRateDesc": "등급별 vs 총점",
       "totalPoints": "총점",
-      "upcoming": "다가오는"
+      "totalPointsDesc": "최대 달성 가능",
+      "upcoming": "다가오는",
+      "upcomingDesc": "기한 내 과제"
     },
     "overview": {
-      "title": "과정 개요",
-      "placeholder": "과정 개요, 목표 및 기타 중요 정보를 입력하세요...",
-      "helper": "과정 정보, 학습 목표, 정책 및 기타 중요한 세부 정보를 입력하세요.",
+      "title": "강좌 개요",
+      "placeholder": "강좌 개요, 목표 및 기타 중요 정보를 입력하세요...",
+      "helper": "강좌 정보, 학습 목표, 정책 및 기타 중요한 세부 정보를 입력하십시오.",
       "empty": {
-        "title": "아직 교과과정 내용이 없습니다",
-        "description": "'교과과정 편집'을 클릭하여 과정 정보, 학습 목표, 정책 등을 추가하세요."
+        "title": "아직 강의 계획서 내용이 없습니다.",
+        "description": "'강의계획서 편집'을 클릭하여 강좌 정보, 학습 목표, 정책 등을 추가하세요."
       }
     },
     "assignments": {
-      "title": "과정 과제",
-      "gradedCount": "{graded}개의 채점된 과제",
-      "totalPoints": "총 {total}점",
+      "title": "과제",
+      "gradedCount": "{graded} 채점된 과제",
+      "totalPoints": "{total} 총점",
       "empty": {
         "title": "아직 과제가 없습니다",
-        "description": "과제가 생성되면 여기에 표시됩니다."
+        "description": "과제는 생성되는 즉시 여기에 표시됩니다."
       }
     },
     "table": {
       "assignment": "과제",
-      "dueDate": "두 날짜",
+      "dueDate": "두 번의 데이트",
       "points": "전철기",
       "weight": "무게",
-      "status": "상태",
-      "pts": "포인트"
+      "pts": "점",
+      "type": "유형"
     },
     "status": {
-      "graded": "등급",
-      "pending": "보류 중"
+      "graded": "등급이 매겨짐",
+      "ungraded": "등급 없음"
     },
     "courseInfo": {
-      "title": "과정 정보",
+      "title": "강좌 정보",
       "basic": {
         "title": "기본 정보",
         "className": "클래스 이름",
@@ -56,9 +60,9 @@
         "subject": "주제"
       },
       "stats": {
-        "title": "과정 통계",
-        "totalAssignments": "총 과제",
-        "gradedAssignments": "채점 과제",
+        "title": "강좌 통계",
+        "totalAssignments": "총 과제 수",
+        "gradedAssignments": "평가 대상 과제",
         "totalPoints": "총점"
       }
     }

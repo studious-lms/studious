@@ -3,52 +3,53 @@
     "title": "Görev Ayrıntıları",
     "description": "Tanım",
     "instructions": "Talimatlar",
-    "dueDate": "İki Tarih",
+    "dueDate": "İki Randevu",
     "maxPoints": "Maksimum Puan",
-    "submissions": "Gönderimler",
-    "submitted": "Sunuldu",
+    "submissions": "Gönderiler",
+    "submitted": "Gönderildi",
     "notSubmitted": "Gönderilmedi",
     "graded": "Derecelendirilmiş",
     "pending": "Askıda olması",
     "late": "Geç",
     "onTime": "Zamanında",
     "attachments": "Ekler",
-    "rubric": "Rubrik",
-    "gradingBoundary": "Sınıflandırma Sınırı",
+    "rubric": "Değerlendirme Kriterleri",
+    "gradingBoundary": "Tesviye Sınırı",
     "submissionDetails": "Gönderim Ayrıntıları",
     "submittedBy": "Gönderen",
-    "submittedAt": "Gönderildi",
+    "submittedAt": "Gönderildiği yer",
     "grade": "Seviye",
     "feedback": "Geri bildirim",
     "files": "Dosyalar",
-    "noFiles": "Ekli dosya yok",
-    "noSubmissions": "Henüz gönderim yapılmadı",
-    "noSubmissionsDescription": "Öğrenciler çalışmalarını gönderdiğinde gönderiler burada görünecektir",
+    "noFiles": "Ekli dosya yok.",
+    "noSubmissions": "Henüz hiçbir başvuru yapılmadı.",
+    "noSubmissionsDescription": "Öğrenciler çalışmalarını gönderdikten sonra, gönderiler burada görünecektir.",
     "actions": {
       "edit": "Ödevi Düzenle",
       "delete": "Atamayı Sil",
-      "viewSubmission": "Gönderimi Görüntüle",
+      "viewSubmission": "Gönderiyi Görüntüle",
       "gradeSubmission": "Seviye",
+      "back": "Geri",
       "downloadAll": "Tümünü İndir",
-      "exportGrades": "İhracat Notları"
+      "exportGrades": "İhracat Kaliteleri"
     },
     "stats": {
       "totalSubmissions": "Toplam Gönderimler",
       "averageGrade": "Ortalama Not",
-      "submissionRate": "Teslim Oranı",
+      "submissionRate": "Gönderim Oranı",
       "gradedCount": "Derecelendirilmiş"
     },
     "table": {
       "student": "Öğrenci",
       "status": "Durum",
       "grade": "Seviye",
-      "submittedAt": "Sunuldu",
+      "submittedAt": "Gönderildi",
       "actions": "Eylemler"
     },
     "toasts": {
-      "gradeUpdated": "Not başarıyla güncellendi",
-      "deleted": "Ödev silindi",
-      "error": "Bir hata oluştu"
+      "gradeUpdated": "Not güncellemesi başarıyla tamamlandı.",
+      "deleted": "Atama silindi",
+      "error": "Bir hata oluştu."
     }
   }
 }

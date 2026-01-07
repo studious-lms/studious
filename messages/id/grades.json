@@ -7,11 +7,11 @@
       "maxPoints": "Poin Maksimum",
       "weight": "Berat",
       "graded": "Bertingkat",
-      "dueDate": "Dua Tanggal",
+      "dueDate": "Dua Kencan",
       "actions": "Tindakan",
       "student": "Murid",
       "overallGrade": "Nilai Keseluruhan",
-      "assignmentsCompleted": "Tugas Selesai",
+      "assignmentsCompleted": "Tugas yang Telah Selesai",
       "trend": "Kecenderungan"
     },
     "labels": {
@@ -23,54 +23,54 @@
       "saving": "Penghematan...",
       "saveChanges": "Simpan Perubahan",
       "preview": "Pratinjau",
-      "edit": "Sunting",
+      "edit": "Edit",
       "delete": "Menghapus",
       "createNew": "Buat Baru"
     },
     "overview": {
-      "title": "Ikhtisar Kelas",
+      "title": "Gambaran Umum Kelas",
       "classAverage": "Rata-rata Kelas",
       "totalStudents": "Jumlah Siswa",
       "assignments": "Tugas",
       "submissionRate": "Tingkat Pengajuan"
     },
     "assignmentManagement": {
-      "title": "Manajemen Tugas",
+      "title": "Manajemen Penugasan",
       "empty": {
         "title": "Tidak ada tugas yang ditemukan",
-        "description": "Buat tugas untuk mengelola nilai dan pengaturan"
+        "description": "Buat tugas untuk mengelola nilai dan pengaturan."
       },
-      "searchPlaceholder": "Pencarian tugas..."
+      "searchPlaceholder": "Tugas pencarian..."
     },
     "students": {
       "title": "Siswa",
       "viewAll": "Lihat Semua Siswa",
       "empty": {
         "title": "Tidak ada siswa yang terdaftar",
-        "description": "Siswa akan muncul di sini setelah mereka bergabung dengan kelas"
+        "description": "Nama siswa akan muncul di sini setelah mereka bergabung dengan kelas."
       },
       "searchPlaceholder": "Cari siswa..."
     },
     "gradeBoundaries": {
-      "title": "Batasan Nilai",
+      "title": "Batas Kelas",
       "untitled": "Batas Penilaian Tanpa Judul",
       "empty": {
-        "title": "Tidak ada batas nilai yang dibuat",
-        "description": "Buat batasan penilaian untuk menentukan rentang nilai"
+        "title": "Tidak ada batasan nilai yang dibuat.",
+        "description": "Buat batasan penilaian untuk menentukan rentang nilai."
       },
       "previewTitle": "Pratinjau Batas Penilaian",
       "details": {
-        "title": "Detail Batas Penilaian",
+        "title": "Rincian Batas Penilaian",
         "name": "Nama",
-        "noneDefined": "Tidak ada batasan penilaian yang ditentukan"
+        "noneDefined": "Tidak ada batasan penilaian yang ditentukan."
       }
     },
     "rubrics": {
       "title": "Rubrik",
       "untitled": "Rubrik Tanpa Judul",
       "empty": {
-        "title": "Tidak ada rubrik yang dibuat",
-        "description": "Buat rubrik untuk menentukan kriteria penilaian"
+        "title": "Tidak ada rubrik yang dibuat.",
+        "description": "Buat rubrik untuk menentukan kriteria penilaian."
       },
       "previewTitle": "Pratinjau Rubrik",
       "details": {
@@ -80,20 +80,20 @@
         "description": "Keterangan",
         "custom": "Kebiasaan",
         "noDescription": "Tidak ada deskripsi yang diberikan",
-        "noCriteria": "Tidak ada kriteria yang ditemukan dalam rubrik ini"
+        "noCriteria": "Tidak ditemukan kriteria dalam rubrik ini."
       }
     },
     "confirm": {
-      "deleteRubric": "Apakah Anda yakin ingin menghapus markscheme ini?",
-      "deleteGradingBoundary": "Apakah Anda yakin ingin menghapus batasan penilaian ini?"
+      "deleteRubric": "Apakah Anda yakin ingin menghapus skema penilaian ini?",
+      "deleteGradingBoundary": "Apakah Anda yakin ingin menghapus batas penilaian ini?"
     }
   },
   "studentGrades": {
-    "title": "Semua Nilai Siswa",
-    "allStudents": "Lihat dan kelola nilai untuk semua siswa di kelas ini",
+    "title": "Semua Tingkat Kelas Siswa",
+    "allStudents": "Lihat dan kelola nilai untuk semua siswa di kelas ini.",
     "students": "Siswa",
-    "noGrades": "Tidak ada siswa yang ditemukan",
-    "noGradesDescription": "Belum ada siswa yang terdaftar di kelas ini. Siswa akan muncul di sini setelah bergabung.",
+    "noGrades": "Tidak ada siswa yang ditemukan.",
+    "noGradesDescription": "Belum ada siswa yang terdaftar di kelas ini. Siswa akan muncul di sini setelah mereka bergabung.",
     "table": {
       "student": "Murid",
       "actions": "Tindakan"
@@ -106,11 +106,11 @@
     "myGrades": "Nilai Saya",
     "studentGrades": "Nilai",
     "viewYourGrades": "Lihat nilai dan kemajuan Anda",
-    "individualManagement": "Manajemen nilai siswa individu",
+    "individualManagement": "Pengelolaan nilai siswa secara individual",
     "export": "Ekspor",
     "back": "Kembali",
-    "yourPerformance": "Performa Anda",
-    "trackProgress": "Lacak kemajuan akademis Anda",
+    "yourPerformance": "Penampilan Anda",
+    "trackProgress": "Pantau kemajuan akademik Anda",
     "overallGrade": "Nilai Keseluruhan",
     "completed": "Selesai",
     "trend": "Kecenderungan",
@@ -133,8 +133,8 @@
     },
     "empty": {
       "title": "Tidak ada tugas yang ditemukan",
-      "description": "Siswa ini tidak memiliki tugas untuk ditampilkan"
+      "description": "Siswa ini tidak memiliki tugas yang dapat ditampilkan."
     },
-    "searchPlaceholder": "Pencarian tugas..."
+    "searchPlaceholder": "Tugas pencarian..."
   }
 }

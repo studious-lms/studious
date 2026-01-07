@@ -7,6 +7,13 @@
     "post": "役職",
     "posting": "投稿中...",
     "noPosts": "まだ投稿はありません",
-    "createFirstPost": "最初の投稿を作成する"
+    "noPostsDescription": "お知らせ、課題、最新情報をクラスで共有します。",
+    "createFirstPost": "最初の投稿を作成する",
+    "messages": {
+      "uploadFailed": "アナウンスの作成に失敗しました。ファイルのアップロードに失敗しました",
+      "createFailed": "お知らせを作成できませんでした",
+      "createSuccess": "お知らせが正常に作成されました",
+      "creating": "お知らせを作成しています..."
+    }
   }
 }

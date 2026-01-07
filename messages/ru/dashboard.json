@@ -1,27 +1,27 @@
 {
   "home": {
-    "welcomeBack": "Добро пожаловать обратно, {name}!",
-    "subtitle": "Вот что происходит с вашими занятиями сегодня.",
+    "welcomeBack": "С возвращением, {name}!",
+    "subtitle": "Вот что сегодня происходит на ваших занятиях.",
     "stats": {
       "totalClasses": "Всего классов",
-      "teachingEnrolled": "{teaching} преподает, {enrolled} зачислен",
-      "dueToday": "Сдать сегодня",
-      "dueTodayDesc": "Задания, которые нужно сдать сегодня",
+      "teachingEnrolled": "{teaching} преподавание, {enrolled} зачислены",
+      "dueToday": "Срок сдачи: сегодня",
+      "dueTodayDesc": "Задания, которые нужно сдать сегодня.",
       "upcoming": "Предстоящие",
-      "upcomingDesc": "Приближающиеся задания",
+      "upcomingDesc": "Предстоящие задания",
       "thisWeek": "На этой неделе",
-      "totalAssignments": "Всего заданий"
+      "totalAssignments": "Общее количество заданий"
     },
     "upcomingAssignments": {
       "title": "Предстоящие задания",
       "subtitle": "Ваши следующие сроки",
-      "allCaughtUp": "Все догнали!",
-      "noUpcoming": "На данный момент предстоящих заданий нет.",
+      "allCaughtUp": "Все в курсе!",
+      "noUpcoming": "В данный момент нет запланированных заданий.",
       "viewAgenda": "Просмотреть повестку дня",
-      "dueToday": "Срок сдачи сегодня",
-      "dueTomorrow": "Завтра",
+      "dueToday": "Срок оплаты: сегодня",
+      "dueTomorrow": "Срок сдачи — завтра.",
       "due": "Два {dates}",
-      "teaching": "Обучение",
+      "teaching": "Преподавание",
       "viewAllAssignments": "Просмотреть все задания"
     },
     "notifications": {
@@ -33,12 +33,12 @@
     "classes": {
       "title": "Мои занятия",
       "subtitle": "Быстрый доступ к вашим занятиям",
-      "teaching": "Обучение",
+      "teaching": "Преподавание",
       "enrolled": "Зачислен",
       "due": "должный",
-      "noClasses": "Пока нет занятий",
-      "browseClasses": "Просмотр классов",
-      "viewAllClasses": "Просмотреть все классы"
+      "noClasses": "Занятий пока нет.",
+      "browseClasses": "Просмотреть курсы",
+      "viewAllClasses": "Просмотреть все занятия"
     }
   }
 }

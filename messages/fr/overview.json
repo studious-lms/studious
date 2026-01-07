@@ -7,6 +7,13 @@
     "post": "Poste",
     "posting": "Affectation...",
     "noPosts": "Aucun message pour l'instant",
-    "createFirstPost": "Créer un premier message"
+    "noPostsDescription": "Partagez les annonces, les devoirs et les mises à jour avec votre classe.",
+    "createFirstPost": "Créer un premier message",
+    "messages": {
+      "uploadFailed": "Échec de la création de l'annonce, échec du chargement du fichier",
+      "createFailed": "Impossible de créer l'annonce",
+      "createSuccess": "Annonce créée avec succès",
+      "creating": "Création de l'annonce..."
+    }
   }
 }

@@ -4,6 +4,11 @@
     "counts": {
       "totalMembers": "{count} membri"
     },
+    "stats": {
+      "totalMembers": "Total membri",
+      "teachers": "Profesori",
+      "students": "Studenți"
+    },
     "actions": {
       "inviteMember": "Invită membru",
       "copy": "Copie",
@@ -60,11 +65,11 @@
       "failedToLoad": "Nu s-au putut încărca membrii"
     },
     "profile": {
-      "title": "Profil Utilizator",
-      "description": "Vizualizați informațiile profilului membrului",
-      "information": "Informații Profil",
-      "location": "Locație",
-      "website": "Site Web"
+      "title": "Profil utilizator",
+      "description": "Vizualizați informațiile din profilul membrului",
+      "information": "Informații despre profil",
+      "location": "Locaţie",
+      "website": "Site web"
     }
   }
 }

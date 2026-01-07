@@ -1,29 +1,33 @@
 {
   "syllabus": {
-    "title": "Müfredat",
-    "subtitle": "Ders genel bakışı ve akademik bilgiler",
+    "title": "Ders Programı",
+    "subtitle": "Dersin genel bakışı ve akademik bilgiler",
     "actions": {
       "saveChanges": "Değişiklikleri Kaydet",
       "cancel": "İptal etmek",
-      "edit": "Müfredatı Düzenle"
+      "edit": "Ders Programını Düzenle"
     },
     "errors": {
-      "failedToLoad": "Müfredat yüklenemedi",
+      "failedToLoad": "Ders programı yüklenemedi.",
       "tryLater": "Lütfen daha sonra tekrar deneyin."
     },
     "stats": {
-      "totalAssignments": "Toplam Ödevler",
-      "completionRate": "Tamamlanma Oranı",
+      "totalAssignments": "Toplam Atamalar",
+      "totalAssignmentsDesc": "Tüm ders çalışmaları",
+      "completionRate": "Tamamlama Oranı",
+      "completionRateDesc": "Notlandırılmış vs toplam",
       "totalPoints": "Toplam Puan",
-      "upcoming": "Yaklaşan"
+      "totalPointsDesc": "Ulaşılabilir maksimum",
+      "upcoming": "Yakında",
+      "upcomingDesc": "Ödevlerin teslim tarihi"
     },
     "overview": {
-      "title": "Kurs Genel Bakışı",
-      "placeholder": "Dersin genel görünümünü, hedeflerini ve diğer önemli bilgileri girin...",
-      "helper": "Ders bilgilerinizi, öğrenme hedeflerinizi, politikalarınızı ve diğer önemli ayrıntıları girin.",
+      "title": "Dersin Genel Bakışı",
+      "placeholder": "Dersin genel içeriği, hedefleri ve diğer önemli bilgileri girin...",
+      "helper": "Ders bilgilerini, öğrenme hedeflerini, politikaları ve diğer önemli ayrıntıları girin.",
       "empty": {
-        "title": "Henüz müfredat içeriği yok",
-        "description": "Ders bilgilerini, öğrenme hedeflerini, politikaları ve daha fazlasını eklemek için 'Müfredatı Düzenle'ye tıklayın."
+        "title": "Henüz ders içeriği yok.",
+        "description": "Ders bilgileri, öğrenme hedefleri, politikalar ve daha fazlasını eklemek için 'Ders Programını Düzenle'ye tıklayın."
       }
     },
     "assignments": {
@@ -31,21 +35,21 @@
       "gradedCount": "{graded} notlandırılmış ödevler",
       "totalPoints": "{total} toplam puan",
       "empty": {
-        "title": "Henüz ödev yok",
-        "description": "Ödevler oluşturulduktan sonra burada görünecektir."
+        "title": "Henüz hiçbir görevlendirme yok.",
+        "description": "Görevler oluşturulduktan sonra burada görünecektir."
       }
     },
     "table": {
       "assignment": "Atama",
-      "dueDate": "İki Tarih",
+      "dueDate": "İki Randevu",
       "points": "Puanlar",
       "weight": "Ağırlık",
-      "status": "Durum",
-      "pts": "puanlar"
+      "pts": "puan",
+      "type": "Tip"
     },
     "status": {
       "graded": "Derecelendirilmiş",
-      "pending": "Askıda olması"
+      "ungraded": "Derecelendirilmemiş"
     },
     "courseInfo": {
       "title": "Kurs Bilgileri",
@@ -57,7 +61,7 @@
       },
       "stats": {
         "title": "Ders İstatistikleri",
-        "totalAssignments": "Toplam Ödevler",
+        "totalAssignments": "Toplam Atamalar",
         "gradedAssignments": "Notlandırılmış Ödevler",
         "totalPoints": "Toplam Puan"
       }

@@ -13,7 +13,10 @@
     "schoolProgram": "Okul Programı",
     "about": "Hakkında",
     "press": "Basmak",
-    "signIn": "Giriş Yap"
+    "signIn": "Giriş Yap",
+    "lightMode": "Açık Mod",
+    "darkMode": "Karanlık Mod",
+    "languageSelector": "Dil Seçici"
   },
   "classSidebar": {
     "overview": "Genel Bakış",
@@ -23,22 +26,22 @@
     "attendance": "Katılım",
     "aiLabs": "AI Labs",
     "members": "Üyeler",
-    "syllabus": "Müfredat",
+    "syllabus": "Ders Programı",
     "settings": "Ayarlar",
     "worksheets": "Çalışma sayfaları",
-    "classNavigation": "Sınıf Gezintisi",
-    "switchClass": "Anahtar Sınıfı",
-    "classInviteCode": "Sınıf Davetiye Kodu",
+    "classNavigation": "Sınıf Navigasyonu",
+    "switchClass": "Sınıfı Değiştir",
+    "classInviteCode": "Ders Davet Kodu",
     "copyCode": "Kodu kopyala",
     "regenerateCode": "Kodu yeniden oluştur",
     "toast": {
-      "inviteCodeRegenerated": "Davet kodu başarıyla yeniden oluşturuldu",
-      "inviteCodeRegenerateFailed": "Davet kodu yeniden oluşturulamadı",
-      "inviteCodeCopied": "Davet kodu panoya kopyalandı"
+      "inviteCodeRegenerated": "Davet kodu başarıyla yeniden oluşturuldu.",
+      "inviteCodeRegenerateFailed": "Davetiye kodunu yeniden oluşturma başarısız oldu.",
+      "inviteCodeCopied": "Davet kodu panoya kopyalandı."
     }
   },
   "footer": {
-    "productDescription": "Gelecek nesil eğitim için modern öğrenme yönetimi.",
+    "productDescription": "Yeni nesil eğitim için modern öğrenme yönetim sistemi.",
     "product": "Ürün",
     "features": "Özellikler",
     "pricing": "Fiyatlandırma",

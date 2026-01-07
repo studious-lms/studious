@@ -11,6 +11,11 @@
     "rename": "Rebaptiser"
   },
   "uploadFiles": {
+    "progress": {
+      "uploadingFiles": "Téléchargement des fichiers...",
+      "uploadingFile": "Téléchargement en cours {name}...",
+      "completed": "Complété"
+    },
     "title": "Téléverser des fichiers",
     "noFilesSelected": "Aucun fichier sélectionné",
     "classIdMissing": "L'identifiant de classe est manquant.",
@@ -51,7 +56,7 @@
     "placeholder": "Saisir le nom de la rubrique",
     "cancel": "Annuler",
     "create": "Créer une grille d'évaluation",
-    "update": "Rubrique de mise à jour",
+    "update": "Mise à jour de la grille d'évaluation",
     "creating": "Création...",
     "updating": "Mise à jour en cours...",
     "created": "Rubrique créée avec succès",
@@ -130,6 +135,11 @@
       "description": "Sélectionnez une conversation dans la barre latérale pour commencer à discuter."
     },
     "page": {
+      "notFound": {
+        "title": "Conversation introuvable",
+        "description": "Cette conversation n'existe pas ou vous n'y avez pas accès.",
+        "backToChat": "Retour à la discussion"
+      },
       "header": {
         "members": "Membres",
         "markMentionsRead": "Mark mentionne la lecture"
@@ -145,7 +155,7 @@
       "noConversations": "Aucune conversation pour l'instant",
       "noConversationsDescription": "Commencez à discuter avec quelqu'un",
       "noSearchResults": "Aucune conversation trouvée",
-      "noSearchResultsDescription": "Essayez d'autres termes de recherche",
+      "noSearchResultsDescription": "Essayez différents termes de recherche",
       "unnamedGroup": "Groupe non identifié",
       "unknownUser": "Utilisateur inconnu"
     },

@@ -1,7 +1,7 @@
 {
   "worksheets": {
-    "title": "Lembar kerja",
-    "subtitle": "Mengelola dan mendistribusikan lembar kerja praktik",
+    "title": "Lembar Kerja",
+    "subtitle": "Mengelola dan mendistribusikan lembar kerja latihan.",
     "list": {
       "title": "Semua Lembar Kerja"
     },
@@ -19,7 +19,7 @@
     "actions": {
       "create": "Buat Lembar Kerja",
       "view": "Melihat",
-      "edit": "Sunting",
+      "edit": "Edit",
       "delete": "Menghapus",
       "download": "Unduh",
       "share": "Membagikan",
@@ -27,28 +27,30 @@
       "save": "Menyimpan",
       "cancel": "Membatalkan",
       "select": "Memilih",
-      "attachMarkscheme": "Lampirkan Markscheme",
-      "detach": "Rincian"
+      "attachMarkscheme": "Lampirkan Skema Penilaian",
+      "detach": "Detail"
     },
     "search": {
-      "placeholder": "Cari lembar kerja..."
+      "placeholder": "Cari lembar kerja...",
+      "noResults": "Tidak ditemukan lembar kerja.",
+      "noResultsDesc": "Coba kata kunci pencarian lain atau hapus pencarian Anda."
     },
     "empty": {
-      "title": "Tidak ada lembar kerja yang ditemukan",
-      "description": "Mulailah dengan membuat lembar kerja pertama Anda atau gunakan pencarian untuk menemukan lembar kerja yang sudah ada."
+      "title": "Tidak ditemukan lembar kerja.",
+      "description": "Mulailah dengan membuat lembar kerja pertama Anda atau gunakan fitur pencarian untuk menemukan lembar kerja yang sudah ada."
     },
     "confirm": {
-      "delete": "Yakin ingin menghapus lembar kerja ini? Tindakan ini tidak dapat dibatalkan."
+      "delete": "Apakah Anda yakin ingin menghapus lembar kerja ini? Tindakan ini tidak dapat dibatalkan."
     },
     "toasts": {
-      "created": "Lembar kerja berhasil dibuat",
-      "updated": "Lembar kerja berhasil diperbarui",
-      "deleted": "Lembar kerja berhasil dihapus",
+      "created": "Lembar kerja berhasil dibuat.",
+      "updated": "Lembar kerja berhasil diperbarui.",
+      "deleted": "Lembar kerja berhasil dihapus.",
       "error": "Terjadi kesalahan"
     },
     "create": {
       "title": "Buat Lembar Kerja",
-      "subtitle": "Buat lembar kerja baru dengan beberapa jenis pertanyaan",
+      "subtitle": "Buat lembar kerja baru dengan berbagai jenis pertanyaan.",
       "worksheetInfo": "Informasi Lembar Kerja",
       "actions": {
         "save": "Menyimpan",
@@ -60,56 +62,56 @@
         "titlePlaceholder": "Masukkan judul lembar kerja",
         "description": "Keterangan",
         "descriptionPlaceholder": "Masukkan deskripsi lembar kerja (opsional)",
-        "dueDate": "Dua Tanggal",
+        "dueDate": "Dua Kencan",
         "totalQuestions": "Jumlah Pertanyaan"
       },
       "questions": {
         "title": "Pertanyaan",
         "addQuestion": "Tambahkan Pertanyaan",
         "noQuestions": "Belum ada pertanyaan yang ditambahkan",
-        "addFirstQuestion": "Gunakan dropdown di atas untuk menambahkan pertanyaan pertama Anda",
+        "addFirstQuestion": "Gunakan menu tarik-turun di atas untuk menambahkan pertanyaan pertama Anda.",
         "questionNumber": "Pertanyaan {number}",
         "points": "Poin",
         "questionText": "Teks Pertanyaan",
-        "questionTextPlaceholder": "Masukkan pertanyaan Anda di sini",
-        "options": "Pilihan",
+        "questionTextPlaceholder": "Masukkan pertanyaan Anda di sini.",
+        "options": "Opsi",
         "optionPlaceholder": "Opsi {number}",
         "addOption": "Tambahkan Opsi",
         "correctAnswer": "Jawaban yang Benar",
         "true": "BENAR",
         "false": "PALSU",
         "mathExpression": "Ekspresi Matematika yang Diharapkan",
-        "mathExpressionPlaceholder": "misalnya, x^2 + 5x + 6 = 0",
+        "mathExpressionPlaceholder": "Contoh: x^2 + 5x + 6 = 0",
         "sampleAnswer": "Contoh Jawaban",
-        "sampleAnswerPlaceholder": "Masukkan contoh jawaban atau penjelasan",
+        "sampleAnswerPlaceholder": "Masukkan contoh jawaban atau penjelasan.",
         "markscheme": "Skema pemasaran",
-        "markschemeAttached": "Skema Merek Terlampir"
+        "markschemeAttached": "Skema Penilaian Terlampir"
       },
       "questionTypes": {
         "multipleChoice": "Pilihan Ganda",
-        "longForm": "Jawaban Bentuk Panjang",
+        "longForm": "Jawaban Panjang",
         "math": "Jawaban Matematika",
         "trueFalse": "Benar/Salah"
       },
       "markschemeDialog": {
-        "title": "Pilih Markscheme",
-        "noMarkschemes": "Tidak ada skema nilai yang tersedia. Buat skema nilai di bagian Nilai terlebih dahulu.",
-        "untitled": "Skema Merek Tanpa Judul",
+        "title": "Pilih Skema Penilaian",
+        "noMarkschemes": "Tidak ada skema penilaian yang tersedia. Buat terlebih dahulu di bagian Nilai.",
+        "untitled": "Skema Penilaian Tanpa Judul",
         "custom": "Kebiasaan"
       },
       "errors": {
-        "titleRequired": "Judul diperlukan",
-        "atLeastOneQuestion": "Mohon tambahkan setidaknya satu pertanyaan",
-        "questionTextRequired": "Semua pertanyaan harus memiliki teks",
-        "multipleChoiceOptions": "Pertanyaan pilihan ganda memerlukan setidaknya 2 pilihan",
-        "multipleChoiceCorrectAnswer": "Pertanyaan pilihan ganda membutuhkan setidaknya satu jawaban yang benar",
-        "teacherOnly": "Hanya guru yang dapat membuat lembar kerja"
+        "titleRequired": "Judul wajib diisi",
+        "atLeastOneQuestion": "Silakan tambahkan setidaknya satu pertanyaan.",
+        "questionTextRequired": "Semua pertanyaan harus disertai teks.",
+        "multipleChoiceOptions": "Soal pilihan ganda membutuhkan minimal 2 pilihan jawaban.",
+        "multipleChoiceCorrectAnswer": "Soal pilihan ganda membutuhkan setidaknya satu jawaban yang benar.",
+        "teacherOnly": "Hanya guru yang dapat membuat lembar kerja."
       },
       "toasts": {
-        "created": "Lembar kerja berhasil dibuat",
-        "markschemeAttached": "Markscheme berhasil dilampirkan",
-        "markschemeDetached": "Markscheme berhasil dilepaskan",
-        "updated": "Lembar kerja berhasil diperbarui",
+        "created": "Lembar kerja berhasil dibuat.",
+        "markschemeAttached": "Skema penilaian berhasil dilampirkan.",
+        "markschemeDetached": "Skema penilaian berhasil dilepas.",
+        "updated": "Lembar kerja berhasil diperbarui.",
         "saving": "Penghematan...",
         "saved": "Tersimpan"
       }

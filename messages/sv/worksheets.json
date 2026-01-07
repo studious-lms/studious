@@ -31,7 +31,9 @@
       "detach": "Detaljer"
     },
     "search": {
-      "placeholder": "Sök i arbetsblad..."
+      "placeholder": "Sök i arbetsblad...",
+      "noResults": "Inga arbetsblad hittades",
+      "noResultsDesc": "Försök med ett annat sökord eller rensa din sökning."
     },
     "empty": {
       "title": "Inga arbetsblad hittades",
@@ -94,7 +96,7 @@
       "markschemeDialog": {
         "title": "Välj märkningsschema",
         "noMarkschemes": "Inga bedömningssystem tillgängliga. Skapa ett i avsnittet Betyg först.",
-        "untitled": "Namnlöst märkesschema",
+        "untitled": "Namnlöst märkningsschema",
         "custom": "Beställnings"
       },
       "errors": {

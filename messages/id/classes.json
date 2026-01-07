@@ -1,23 +1,23 @@
 {
   "classes": {
     "title": "Kelas",
-    "description": "Kelola pengajaran dan kelas terdaftar Anda",
-    "joinClass": "Bergabunglah dengan Kelas",
+    "description": "Kelola pengajaran dan kelas yang Anda ikuti.",
+    "joinClass": "Gabung Kelas",
     "createClass": "Buat Kelas",
     "searchPlaceholder": "Cari kelas...",
     "teaching": "Pengajaran",
     "enrolled": "Terdaftar",
     "noClassesFound": "Tidak ada kelas yang ditemukan",
     "noTeachingClassesFound": "Tidak ditemukan kelas pengajaran yang cocok dengan \"{query}\"",
-    "noEnrolledClassesFound": "Tidak ada kelas terdaftar yang ditemukan yang cocok dengan \"{query}\"",
+    "noEnrolledClassesFound": "Tidak ditemukan kelas terdaftar yang cocok dengan \"{query}\"",
     "noClassesYet": "Belum ada kelas",
     "noClassesYetDesc": "Buat kelas pertama Anda untuk mulai mengelola tugas, nilai, dan interaksi siswa.",
     "noEnrolledClasses": "Tidak ada kelas yang terdaftar",
-    "noEnrolledClassesDesc": "Bergabunglah dengan kelas menggunakan kode undangan atau tautan yang disediakan oleh guru Anda.",
-    "classDeleted": "Kelas berhasil dihapus",
+    "noEnrolledClassesDesc": "Bergabunglah dengan kelas menggunakan kode undangan atau tautan yang diberikan oleh guru Anda.",
+    "classDeleted": "Kelas berhasil dihapus.",
     "classDeleteFailed": "Gagal menghapus kelas",
-    "failedToLoad": "Gagal memuat kelas",
-    "classLeft": "Berhasil keluar dari kelas",
-    "classLeaveFailed": "Gagal keluar dari kelas"
+    "failedToLoad": "Gagal memuat kelas.",
+    "classLeft": "Berhasil meninggalkan kelas.",
+    "classLeaveFailed": "Gagal meninggalkan kelas"
   }
 }

@@ -1,43 +1,43 @@
 {
   "home": {
-    "welcomeBack": "환영합니다, {name}!",
-    "subtitle": "오늘 수업에서 어떤 일이 일어날지 알려드리겠습니다.",
+    "welcomeBack": "{name}님, 다시 오신 것을 환영합니다!",
+    "subtitle": "오늘 수업 일정은 다음과 같습니다.",
     "stats": {
       "totalClasses": "총 수업 수",
-      "teachingEnrolled": "{teaching} 교육, {enrolled} 등록",
+      "teachingEnrolled": "{teaching} 교육, {enrolled} 등록됨",
       "dueToday": "오늘 마감",
-      "dueTodayDesc": "오늘 마감인 과제",
+      "dueTodayDesc": "오늘 제출해야 하는 과제",
       "upcoming": "다가오는",
-      "upcomingDesc": "앞으로의 과제",
+      "upcomingDesc": "곧 과제가 나올 예정입니다",
       "thisWeek": "이번 주",
-      "totalAssignments": "총 과제"
+      "totalAssignments": "총 과제 수"
     },
     "upcomingAssignments": {
-      "title": "다가오는 과제",
+      "title": "향후 과제",
       "subtitle": "다음 마감일",
-      "allCaughtUp": "모두 따라잡았어요!",
-      "noUpcoming": "현재 진행 중인 과제가 없습니다.",
+      "allCaughtUp": "다 따라잡았어요!",
+      "noUpcoming": "현재 예정된 업무가 없습니다.",
       "viewAgenda": "일정 보기",
       "dueToday": "오늘 마감",
       "dueTomorrow": "내일 마감",
-      "due": "두 {dates}",
+      "due": "두 개 {dates}",
       "teaching": "가르침",
       "viewAllAssignments": "모든 과제 보기"
     },
     "notifications": {
       "title": "최근 알림",
       "subtitle": "최신 업데이트",
-      "noNew": "새로운 알림이 없습니다",
+      "noNew": "새로운 알림이 없습니다.",
       "viewAll": "모든 알림 보기"
     },
     "classes": {
-      "title": "내 수업",
-      "subtitle": "수업에 빠르게 접근하세요",
+      "title": "내 수업들",
+      "subtitle": "수업에 빠르게 접속하세요",
       "teaching": "가르침",
       "enrolled": "등록됨",
       "due": "~로 인한",
       "noClasses": "아직 수업이 없습니다",
-      "browseClasses": "수업 찾아보기",
+      "browseClasses": "강좌 찾아보기",
       "viewAllClasses": "모든 수업 보기"
     }
   }

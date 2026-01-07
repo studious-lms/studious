@@ -1,23 +1,23 @@
 {
   "home": {
-    "welcomeBack": "आपका स्वागत है, {name}!",
-    "subtitle": "आज आपकी कक्षाओं में क्या हो रहा है, यहां बताया गया है।",
+    "welcomeBack": "आपका फिर से स्वागत है, {name}!",
+    "subtitle": "आज आपकी कक्षाओं में क्या-क्या हो रहा है, यह यहाँ बताया गया है।",
     "stats": {
-      "totalClasses": "कुल कक्षाएं",
+      "totalClasses": "कुल कक्षाएँ",
       "teachingEnrolled": "{teaching} शिक्षण, {enrolled} नामांकित",
       "dueToday": "आज देय",
-      "dueTodayDesc": "आज जमा करने हैं असाइनमेंट",
+      "dueTodayDesc": "आज असाइनमेंट जमा करने हैं",
       "upcoming": "आगामी",
-      "upcomingDesc": "आने वाले कार्य",
+      "upcomingDesc": "आगामी कार्य",
       "thisWeek": "इस सप्ताह",
       "totalAssignments": "कुल असाइनमेंट"
     },
     "upcomingAssignments": {
-      "title": "आगामी असाइनमेंट",
-      "subtitle": "आपकी अगली समय सीमाएँ",
+      "title": "आगामी कार्य",
+      "subtitle": "आपकी अगली समयसीमाएँ",
       "allCaughtUp": "सारी जानकारी प्राप्त!",
       "noUpcoming": "फिलहाल कोई आगामी कार्य नहीं है।",
-      "viewAgenda": "एजेंडा देखें",
+      "viewAgenda": "कार्यसूची देखें",
       "dueToday": "आज देय",
       "dueTomorrow": "कल देय",
       "due": "दो {dates}",
@@ -32,12 +32,12 @@
     },
     "classes": {
       "title": "मेरी कक्षाएँ",
-      "subtitle": "अपनी कक्षाओं तक त्वरित पहुँच",
+      "subtitle": "अपनी कक्षाओं तक त्वरित पहुंच",
       "teaching": "शिक्षण",
       "enrolled": "दाखिला लिया",
       "due": "देय",
-      "noClasses": "अभी तक कोई कक्षा नहीं",
-      "browseClasses": "कक्षाएं ब्राउज़ करें",
+      "noClasses": "अभी कोई क्लास नहीं है",
+      "browseClasses": "कक्षाओं को ब्राउज़ करें",
       "viewAllClasses": "सभी कक्षाएं देखें"
     }
   }

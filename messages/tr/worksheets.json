@@ -1,7 +1,7 @@
 {
   "worksheets": {
     "title": "Çalışma sayfaları",
-    "subtitle": "Uygulama çalışma sayfalarını yönetin ve dağıtın",
+    "subtitle": "Alıştırma çalışma sayfalarını yönetin ve dağıtın.",
     "list": {
       "title": "Tüm Çalışma Sayfaları"
     },
@@ -13,7 +13,7 @@
     },
     "status": {
       "draft": "Taslak",
-      "published": "Yayımlandı",
+      "published": "Yayınlandı",
       "archived": "Arşivlendi"
     },
     "actions": {
@@ -27,28 +27,30 @@
       "save": "Kaydetmek",
       "cancel": "İptal etmek",
       "select": "Seçme",
-      "attachMarkscheme": "Markscheme'i ekle",
+      "attachMarkscheme": "Puanlama şemasını ekleyin.",
       "detach": "Detaylar"
     },
     "search": {
-      "placeholder": "Çalışma kağıtlarını ara..."
+      "placeholder": "Arama çalışma sayfaları...",
+      "noResults": "Çalışma sayfası bulunamadı.",
+      "noResultsDesc": "Farklı bir arama terimi deneyin veya aramanızı temizleyin."
     },
     "empty": {
-      "title": "Hiçbir çalışma sayfası bulunamadı",
-      "description": "İlk çalışma sayfanızı oluşturarak başlayın veya mevcut olanları bulmak için aramayı kullanın."
+      "title": "Çalışma sayfası bulunamadı.",
+      "description": "İlk çalışma sayfanızı oluşturarak başlayın veya mevcut olanları bulmak için arama özelliğini kullanın."
     },
     "confirm": {
       "delete": "Bu çalışma sayfasını silmek istediğinizden emin misiniz? Bu işlem geri alınamaz."
     },
     "toasts": {
-      "created": "Çalışma sayfası başarıyla oluşturuldu",
-      "updated": "Çalışma sayfası başarıyla güncellendi",
-      "deleted": "Çalışma sayfası başarıyla silindi",
-      "error": "Bir hata oluştu"
+      "created": "Çalışma sayfası başarıyla oluşturuldu.",
+      "updated": "Çalışma sayfası başarıyla güncellendi.",
+      "deleted": "Çalışma sayfası başarıyla silindi.",
+      "error": "Bir hata oluştu."
     },
     "create": {
       "title": "Çalışma Sayfası Oluştur",
-      "subtitle": "Birden fazla soru türü içeren yeni bir çalışma sayfası oluşturun",
+      "subtitle": "Birden fazla soru türü içeren yeni bir çalışma sayfası oluşturun.",
       "worksheetInfo": "Çalışma Sayfası Bilgileri",
       "actions": {
         "save": "Kaydetmek",
@@ -59,58 +61,58 @@
         "title": "Başlık",
         "titlePlaceholder": "Çalışma sayfası başlığını girin",
         "description": "Tanım",
-        "descriptionPlaceholder": "Çalışma sayfası açıklamasını girin (isteğe bağlı)",
-        "dueDate": "İki Tarih",
-        "totalQuestions": "Toplam Soru Sayısı"
+        "descriptionPlaceholder": "Çalışma sayfası açıklaması girin (isteğe bağlı).",
+        "dueDate": "İki Randevu",
+        "totalQuestions": "Toplam Sorular"
       },
       "questions": {
         "title": "Sorular",
         "addQuestion": "Soru Ekle",
-        "noQuestions": "Henüz soru eklenmedi",
-        "addFirstQuestion": "İlk sorunuzu eklemek için yukarıdaki açılır menüyü kullanın",
+        "noQuestions": "Henüz soru eklenmedi.",
+        "addFirstQuestion": "Yukarıdaki açılır menüyü kullanarak ilk sorunuzu ekleyin.",
         "questionNumber": "Soru {number}",
         "points": "Puanlar",
         "questionText": "Soru Metni",
-        "questionTextPlaceholder": "Sorunuzu buraya girin",
+        "questionTextPlaceholder": "Sorunuzu buraya yazın.",
         "options": "Seçenekler",
         "optionPlaceholder": "Seçenek {number}",
         "addOption": "Seçenek Ekle",
         "correctAnswer": "Doğru Cevap",
         "true": "Doğru",
         "false": "YANLIŞ",
-        "mathExpression": "Beklenen Matematik İfadesi",
-        "mathExpressionPlaceholder": "örneğin, x^2 + 5x + 6 = 0",
+        "mathExpression": "Beklenen Matematiksel İfade",
+        "mathExpressionPlaceholder": "Örneğin, x² + 5x + 6 = 0",
         "sampleAnswer": "Örnek Cevap",
-        "sampleAnswerPlaceholder": "Örnek bir cevap veya açıklama girin",
-        "markscheme": "Pazarlama şeması",
-        "markschemeAttached": "Markscheme Ekli"
+        "sampleAnswerPlaceholder": "Örnek bir cevap veya açıklama girin.",
+        "markscheme": "Pazarlama planı",
+        "markschemeAttached": "Puanlama şeması ektedir."
       },
       "questionTypes": {
         "multipleChoice": "Çoktan Seçmeli",
-        "longForm": "Uzun Form Cevabı",
+        "longForm": "Uzun Cevap",
         "math": "Matematik Cevabı",
         "trueFalse": "Doğru/Yanlış"
       },
       "markschemeDialog": {
-        "title": "Markscheme'i Seçin",
-        "noMarkschemes": "Notlandırma şeması mevcut değil. Önce Notlar bölümünde bir tane oluşturun.",
-        "untitled": "Başlıksız Markscheme",
+        "title": "Puanlama şemasını seçin",
+        "noMarkschemes": "Hiçbir değerlendirme şeması mevcut değil. Öncelikle Notlar bölümünde bir tane oluşturun.",
+        "untitled": "Başlıksız Puanlama Şeması",
         "custom": "Gelenek"
       },
       "errors": {
-        "titleRequired": "Başlık gereklidir",
-        "atLeastOneQuestion": "Lütfen en az bir soru ekleyin",
-        "questionTextRequired": "Tüm sorularda metin bulunmalıdır",
-        "multipleChoiceOptions": "Çoktan seçmeli sorularda en az 2 seçenek olması gerekir",
-        "multipleChoiceCorrectAnswer": "Çoktan seçmeli soruların en az bir doğru cevabı olması gerekir",
-        "teacherOnly": "Yalnızca öğretmenler çalışma sayfaları oluşturabilir"
+        "titleRequired": "Başlık gereklidir.",
+        "atLeastOneQuestion": "Lütfen en az bir soru ekleyin.",
+        "questionTextRequired": "Tüm sorular metin içermelidir.",
+        "multipleChoiceOptions": "Çoktan seçmeli sorular en az 2 seçenek içermelidir.",
+        "multipleChoiceCorrectAnswer": "Çoktan seçmeli soruların en az bir doğru cevabı olmalıdır.",
+        "teacherOnly": "Çalışma sayfalarını yalnızca öğretmenler oluşturabilir."
       },
       "toasts": {
-        "created": "Çalışma sayfası başarıyla oluşturuldu",
-        "markschemeAttached": "Markscheme başarıyla eklendi",
-        "markschemeDetached": "Markscheme başarıyla ayrıldı",
-        "updated": "Çalışma sayfası başarıyla güncellendi",
-        "saving": "Kaydediliyor...",
+        "created": "Çalışma sayfası başarıyla oluşturuldu.",
+        "markschemeAttached": "Puanlama şeması başarıyla eklendi.",
+        "markschemeDetached": "Puanlama şeması başarıyla ayrıldı.",
+        "updated": "Çalışma sayfası başarıyla güncellendi.",
+        "saving": "Tasarruf...",
         "saved": "Kaydedildi"
       }
     }

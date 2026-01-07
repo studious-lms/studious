@@ -4,6 +4,11 @@
     "counts": {
       "totalMembers": "{count} miembros"
     },
+    "stats": {
+      "totalMembers": "Total de miembros",
+      "teachers": "Profesores",
+      "students": "Estudiantes"
+    },
     "actions": {
       "inviteMember": "Invitar a un miembro",
       "copy": "Copiar",
@@ -60,11 +65,11 @@
       "failedToLoad": "No se pudieron cargar los miembros"
     },
     "profile": {
-      "title": "Perfil de Usuario",
+      "title": "Perfil de usuario",
       "description": "Ver información del perfil del miembro",
-      "information": "Información del Perfil",
+      "information": "Información del perfil",
       "location": "Ubicación",
-      "website": "Sitio Web"
+      "website": "Sitio web"
     }
   }
 }

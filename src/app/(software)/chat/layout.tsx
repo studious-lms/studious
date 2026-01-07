@@ -61,10 +61,19 @@ export default function ChatLayout({
     return children; // Let individual pages handle auth
   }
 
+  // On mobile, show sidebar only when no conversation is selected
+  const showSidebarOnMobile = !currentConversationId;
+
   return (
     <div className="h-screen bg-background flex overflow-hidden">
       {/* Conversation List Sidebar */}
-      <div className="w-80 bg-sidebar-background border-r border-sidebar-border">
+      <div className={`
+        ${showSidebarOnMobile ? 'flex' : 'hidden'} 
+        md:flex
+        w-full md:w-80 
+        bg-sidebar-background border-r border-sidebar-border
+        flex-shrink-0
+      `}>
         <ConversationList
           conversations={conversations}
           selectedConversationId={currentConversationId || ''}
@@ -76,7 +85,11 @@ export default function ChatLayout({
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 bg-background">
+      <div className={`
+        ${showSidebarOnMobile ? 'hidden' : 'flex'} 
+        md:flex
+        flex-1 flex-col bg-background
+      `}>
         {children}
       </div>
 

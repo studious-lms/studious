@@ -31,7 +31,9 @@
       "detach": "Dettagli"
     },
     "search": {
-      "placeholder": "Cerca fogli di lavoro..."
+      "placeholder": "Cerca fogli di lavoro...",
+      "noResults": "Nessun foglio di lavoro trovato",
+      "noResultsDesc": "Prova un termine di ricerca diverso o cancella la ricerca."
     },
     "empty": {
       "title": "Nessun foglio di lavoro trovato",

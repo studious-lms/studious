@@ -31,7 +31,9 @@
       "detach": "Detalles"
     },
     "search": {
-      "placeholder": "Buscar hojas de trabajo..."
+      "placeholder": "Buscar hojas de trabajo...",
+      "noResults": "No se encontraron hojas de trabajo",
+      "noResultsDesc": "Pruebe con un término de búsqueda diferente o borre su búsqueda."
     },
     "empty": {
       "title": "No se encontraron hojas de trabajo",

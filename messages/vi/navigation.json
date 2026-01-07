@@ -10,39 +10,42 @@
     "signOut": "Đăng xuất",
     "accountSettings": "Cài đặt tài khoản",
     "pricing": "Giá cả",
-    "schoolProgram": "Chương trình học",
+    "schoolProgram": "Chương trình của trường",
     "about": "Về",
     "press": "Nhấn",
-    "signIn": "Đăng nhập"
+    "signIn": "Đăng nhập",
+    "lightMode": "Chế độ sáng",
+    "darkMode": "Chế độ tối",
+    "languageSelector": "Bộ chọn ngôn ngữ"
   },
   "classSidebar": {
     "overview": "Tổng quan",
     "assignments": "Bài tập",
     "grades": "Điểm số",
-    "files": "Tập tin",
+    "files": "Tệp",
     "attendance": "Sự tham dự",
     "aiLabs": "Phòng thí nghiệm AI",
     "members": "Thành viên",
-    "syllabus": "Giáo trình",
+    "syllabus": "Chương trình học",
     "settings": "Cài đặt",
     "worksheets": "Phiếu bài tập",
     "classNavigation": "Điều hướng lớp",
     "switchClass": "Chuyển lớp",
-    "classInviteCode": "Mã mời lớp học",
+    "classInviteCode": "Mã mời tham gia lớp học",
     "copyCode": "Sao chép mã",
     "regenerateCode": "Tạo lại mã",
     "toast": {
       "inviteCodeRegenerated": "Mã mời đã được tạo lại thành công",
-      "inviteCodeRegenerateFailed": "Không thể tạo lại mã mời",
-      "inviteCodeCopied": "Mã mời đã được sao chép vào bảng tạm"
+      "inviteCodeRegenerateFailed": "Không thể tạo lại mã mời.",
+      "inviteCodeCopied": "Mã mời đã được sao chép vào clipboard"
     }
   },
   "footer": {
-    "productDescription": "Quản lý học tập hiện đại cho thế hệ giáo dục tiếp theo.",
+    "productDescription": "Hệ thống quản lý học tập hiện đại dành cho thế hệ giáo dục tương lai.",
     "product": "Sản phẩm",
     "features": "Đặc trưng",
     "pricing": "Giá cả",
-    "schoolProgram": "Chương trình học",
+    "schoolProgram": "Chương trình của trường",
     "company": "Công ty",
     "about": "Về",
     "team": "Đội",
@@ -50,6 +53,6 @@
     "contact": "Liên hệ",
     "privacyPolicy": "Chính sách bảo mật",
     "termsOfService": "Điều khoản dịch vụ",
-    "copyright": "© 2025 Studious LMS. Bảo lưu mọi quyền."
+    "copyright": "© 2025 Studious LMS. Mọi quyền được bảo lưu."
   }
 }

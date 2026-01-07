@@ -7,6 +7,18 @@
       "unsaved": "Modificări nesalvate",
       "saving": "Economisire..."
     },
+    "eventDetail": {
+      "title": "Detalii eveniment",
+      "basicInfo": "Informații de bază",
+      "description": "Gestionarea detaliilor evenimentului și a prezenței studenților",
+      "address": "Adresa",
+      "date": "Data",
+      "time": "Timp",
+      "notFound": {
+        "title": "Eveniment negăsit",
+        "description": "Este posibil ca acest eveniment să fi fost șters sau să nu aveți acces la el."
+      }
+    },
     "table": {
       "date": "Data",
       "eventName": "Numele evenimentului",
@@ -15,6 +27,8 @@
       "actions": "Acțiuni"
     },
     "actions": {
+      "back": "Spate",
+      "export": "Export",
       "viewDetails": "Vedeți detaliile",
       "editEvent": "Editați evenimentul",
       "deleteEvent": "Șterge evenimentul",

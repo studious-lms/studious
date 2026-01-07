@@ -1,35 +1,40 @@
 {
   "rename": {
-    "editFolder": "Sunting folder",
-    "renameFile": "Ganti nama berkas",
+    "editFolder": "Edit folder",
+    "renameFile": "Ganti nama file",
     "name": "Nama",
-    "placeholder": "Masukkan nama {type}",
+    "placeholder": "Masukkan {type} nama",
     "folderColor": "Warna Folder",
-    "folderColorDescription": "Pilih warna untuk folder ini",
+    "folderColorDescription": "Pilih warna untuk folder ini.",
     "cancel": "Membatalkan",
     "saveChanges": "Simpan Perubahan",
     "rename": "Ganti nama"
   },
   "uploadFiles": {
+    "progress": {
+      "uploadingFiles": "Mengunggah file...",
+      "uploadingFile": "Mengunggah {name}...",
+      "completed": "Selesai"
+    },
     "title": "Unggah File",
-    "noFilesSelected": "Tidak Ada File yang Dipilih",
-    "classIdMissing": "ID Kelas tidak ada",
-    "folderIdMissing": "ID folder tidak ditemukan. Harap tunggu hingga folder dimuat.",
-    "preparing": "Mempersiapkan pengunggahan...",
+    "noFilesSelected": "Tidak ada berkas yang dipilih",
+    "classIdMissing": "ID kelas hilang",
+    "folderIdMissing": "ID folder tidak ditemukan. Mohon tunggu hingga folder dimuat.",
+    "preparing": "Mempersiapkan unggahan...",
     "gettingUrls": "Mendapatkan URL unggahan...",
     "uploadingFile": "Mengunggah {name}...",
-    "confirming": "Konfirmasi {name}...",
+    "confirming": "Mengkonfirmasi {name}...",
     "finalizing": "Menyelesaikan...",
     "success": "File berhasil diunggah!",
-    "error": "Gagal mengunggah berkas. Silakan coba lagi.",
+    "error": "Gagal mengunggah file. Silakan coba lagi.",
     "errorFile": "Gagal mengunggah {name}",
-    "errorMessage": "Pengunggahan gagal: {message}",
-    "dropZone": "Letakkan file di sini atau klik untuk menelusuri",
-    "dropZoneHint": "Dukungan untuk gambar, dokumen, video, dan lainnya",
+    "errorMessage": "Unggahan gagal: {message}",
+    "dropZone": "Seret file ke sini atau klik untuk menelusuri.",
+    "dropZoneHint": "Dukungan untuk gambar, dokumen, video, dan lainnya.",
     "selectedFiles": "File yang Dipilih ({count})",
-    "filesUploaded": "{uploaded} dari {total} file diunggah",
+    "filesUploaded": "{uploaded} dari {total} berkas diunggah",
     "uploadingTo": "Mengunggah ke:",
-    "homeDirectory": "Direktori Beranda",
+    "homeDirectory": "Direktori Utama",
     "status": {
       "pending": "Tertunda",
       "uploading": "Mengunggah",
@@ -37,57 +42,57 @@
       "error": "Kesalahan"
     },
     "cancel": "Membatalkan",
-    "upload": "Unggah {count} File",
-    "uploading": "Mengunggah..."
+    "upload": "Unggah {count} File(s)",
+    "uploading": "Sedang mengunggah..."
   },
   "rubric": {
     "title": "Buat Rubrik",
     "titleEdit": "Edit Rubrik",
-    "selectTemplate": "Pilih Template",
+    "selectTemplate": "Pilih Templat",
     "startFromScratch": "Mulai dari Awal",
     "editRubric": "Edit Rubrik",
-    "noTemplateSelected": "Pilih templat atau buat rubrik khusus",
+    "noTemplateSelected": "Pilih templat atau buat rubrik khusus.",
     "name": "Nama Rubrik",
     "placeholder": "Masukkan nama rubrik",
     "cancel": "Membatalkan",
     "create": "Buat Rubrik",
     "update": "Perbarui Rubrik",
     "creating": "Membuat...",
-    "updating": "Memperbarui...",
-    "created": "Rubrik berhasil dibuat",
-    "updated": "Rubrik berhasil diperbarui",
+    "updating": "Sedang memperbarui...",
+    "created": "Rubrik berhasil dibuat.",
+    "updated": "Rubrik berhasil diperbarui.",
     "createFailed": "Gagal membuat rubrik",
     "updateFailed": "Gagal memperbarui rubrik",
-    "errorNameRequired": "Harap berikan nama dan setidaknya satu kriteria"
+    "errorNameRequired": "Mohon berikan nama dan setidaknya satu kriteria."
   },
   "gradingBoundaries": {
-    "title": "Buat Batasan Nilai",
-    "titleEdit": "Edit Batas Nilai",
-    "selectTemplate": "Pilih Template",
+    "title": "Buat Batas Kelas",
+    "titleEdit": "Edit Batas Kelas",
+    "selectTemplate": "Pilih Templat",
     "editGradingScale": "Edit Skala Penilaian",
-    "noTemplateSelected": "Pilih templat atau buat batasan khusus",
+    "noTemplateSelected": "Pilih templat atau buat batasan khusus.",
     "cancel": "Membatalkan",
     "create": "Membuat",
     "update": "Memperbarui",
     "creating": "Membuat...",
-    "updating": "Memperbarui...",
-    "created": "Batasan penilaian berhasil dibuat",
-    "updated": "Batasan penilaian berhasil diperbarui",
-    "createFailed": "Gagal membuat batas pemeringkatan",
+    "updating": "Sedang memperbarui...",
+    "created": "Batas wilayah penilaian berhasil dibuat.",
+    "updated": "Batas penilaian berhasil diperbarui.",
+    "createFailed": "Gagal membuat batas penilaian",
     "updateFailed": "Gagal memperbarui batas penilaian"
   },
   "directUpload": {
     "title": "Unggah File",
-    "description": "Pilih file untuk diunggah",
+    "description": "Pilih file yang akan diunggah",
     "selectFiles": "Pilih File",
     "selectedFiles": "File yang Dipilih ({count})",
-    "maxFiles": "Maksimum {max} file. Jenis yang diterima: {types}",
-    "allFiles": "Semua berkas",
+    "maxFiles": "Maksimum {max} berkas. Tipe yang diterima: {types}",
+    "allFiles": "Semua file",
     "progressUploaded": "{progress}% diunggah",
     "noFilesSelected": "Tidak ada file yang dipilih",
-    "maxFilesExceeded": "Maksimum {max} file yang diizinkan",
-    "uploadFailed": "Pengunggahan gagal: {error}",
-    "uploadFailedGeneric": "Pengunggahan gagal",
+    "maxFilesExceeded": "Jumlah maksimum {max} berkas yang diizinkan",
+    "uploadFailed": "Unggahan gagal: {error}",
+    "uploadFailedGeneric": "Unggahan gagal",
     "status": {
       "pending": "Tertunda",
       "uploading": "Mengunggah",
@@ -95,13 +100,13 @@
       "failed": "Gagal"
     },
     "cancel": "Membatalkan",
-    "upload": "Unggah file {count}",
-    "uploadPlural": "Unggah file {count}",
-    "uploading": "Mengunggah..."
+    "upload": "Unggah {count} berkas",
+    "uploadPlural": "Unggah {count} berkas",
+    "uploading": "Sedang mengunggah..."
   },
   "notifications": {
     "title": "Pemberitahuan",
-    "subtitle": "Tetap mengikuti perkembangan kelas dan tugas Anda",
+    "subtitle": "Ikuti terus perkembangan kelas dan tugas-tugas Anda.",
     "filters": {
       "label": "Menyaring:",
       "all": "Semua ({count})",
@@ -118,18 +123,23 @@
     "empty": {
       "all": {
         "title": "Belum ada notifikasi",
-        "description": "Saat Anda menerima pemberitahuan, pemberitahuan tersebut akan muncul di sini."
+        "description": "Saat Anda menerima notifikasi, notifikasi tersebut akan muncul di sini."
       }
     }
   },
   "chat": {
     "landing": {
       "pleaseSignIn": "Silakan masuk untuk melanjutkan",
-      "signInRequired": "Diperlukan masuk untuk mengakses halaman ini",
+      "signInRequired": "Anda perlu masuk untuk mengakses halaman ini.",
       "title": "Mengobrol",
-      "description": "Pilih percakapan dari bilah sisi untuk memulai mengobrol."
+      "description": "Pilih percakapan dari bilah sisi untuk memulai obrolan."
     },
     "page": {
+      "notFound": {
+        "title": "Percakapan Tidak Ditemukan",
+        "description": "Percakapan ini tidak ada atau Anda tidak memiliki akses ke percakapan tersebut.",
+        "backToChat": "Kembali ke Obrolan"
+      },
       "header": {
         "members": "Anggota",
         "markMentionsRead": "Mark menyebutkan membaca"
@@ -137,28 +147,28 @@
       "input": {
         "placeholderPrefix": "Pesan"
       },
-      "loading": "Memuat percakapan..."
+      "loading": "Sedang memuat percakapan..."
     },
     "conversationList": {
       "title": "Pesan Langsung",
-      "searchPlaceholder": "Temukan atau mulai percakapan",
+      "searchPlaceholder": "Temukan atau mulai percakapan.",
       "noConversations": "Belum ada percakapan",
-      "noConversationsDescription": "Mulai mengobrol dengan seseorang",
-      "noSearchResults": "Tidak ada percakapan yang ditemukan",
-      "noSearchResultsDescription": "Coba istilah pencarian yang berbeda",
-      "unnamedGroup": "Grup Tanpa Nama",
+      "noConversationsDescription": "Mulailah mengobrol dengan seseorang",
+      "noSearchResults": "Tidak ditemukan percakapan.",
+      "noSearchResultsDescription": "Coba kata kunci pencarian yang berbeda",
+      "unnamedGroup": "Kelompok Tak Bernama",
       "unknownUser": "Pengguna Tidak Dikenal"
     },
     "messageList": {
       "noMessagesTitle": "Belum ada pesan",
-      "noMessagesDescription": "Ini adalah awal percakapan Anda"
+      "noMessagesDescription": "Ini adalah awal dari percakapan Anda."
     },
     "messageInput": {
       "placeholder": "Ketik pesan..."
     },
     "messageEdit": {
       "placeholder": "Edit pesan Anda...",
-      "hint": "Tekan Enter untuk menyimpan • Escape untuk membatalkan",
+      "hint": "Tekan Enter untuk menyimpan • Tekan Escape untuk membatalkan",
       "save": "Menyimpan",
       "saving": "Penghematan...",
       "cancel": "Membatalkan"
@@ -167,14 +177,14 @@
       "editMessage": "Edit pesan",
       "deleteMessage": "Hapus pesan",
       "deleteConfirmTitle": "Hapus Pesan",
-      "deleteConfirmDescription": "Yakin ingin menghapus pesan ini? Tindakan ini tidak dapat dibatalkan.",
+      "deleteConfirmDescription": "Apakah Anda yakin ingin menghapus pesan ini? Tindakan ini tidak dapat dibatalkan.",
       "cancel": "Membatalkan",
       "delete": "Menghapus",
       "deleting": "Menghapus..."
     },
     "createConversation": {
-      "title": "Memulai percakapan",
-      "description": "Buat pesan langsung atau percakapan grup",
+      "title": "Mulailah percakapan",
+      "description": "Buat pesan langsung atau percakapan grup.",
       "direct": "Pesan Langsung",
       "group": "Obrolan Grup",
       "dmLabel": "Masukkan nama pengguna untuk mengirim pesan",
@@ -183,7 +193,7 @@
       "groupNamePlaceholder": "Masukkan nama grup...",
       "addMembersLabel": "Tambahkan anggota berdasarkan nama pengguna",
       "addButton": "Menambahkan",
-      "selectedUser": "Pengguna yang dipilih:",
+      "selectedUser": "Pengguna terpilih:",
       "selectedMembers": "Anggota terpilih ({count})",
       "cancel": "Membatalkan",
       "create": "Membuat",
@@ -198,14 +208,14 @@
     "titleCreate": "Buat Bagian Baru",
     "titleEdit": "Edit Bagian",
     "name": "Nama Bagian *",
-    "placeholder": "misalnya, Semester 1, Unit 2, Bab 5",
-    "helper": "Bagian membantu mengatur tugas ke dalam kelompok atau periode waktu.",
-    "color": "Bagian Warna",
+    "placeholder": "Contoh: Semester 1, Unit 2, Bab 5",
+    "helper": "Bagian-bagian ini membantu mengorganisir tugas ke dalam kelompok atau periode waktu.",
+    "color": "Warna Bagian",
     "cancel": "Membatalkan",
     "create": "Buat Bagian",
     "update": "Bagian Pembaruan",
     "creating": "Membuat...",
-    "updating": "Memperbarui...",
+    "updating": "Sedang memperbarui...",
     "created": "Bagian \"{name}\" berhasil dibuat.",
     "updated": "Bagian \"{name}\" berhasil diperbarui.",
     "errorEmpty": "Silakan masukkan nama bagian.",
@@ -217,10 +227,10 @@
     "titleEdit": "Edit Acara",
     "classEvent": "Acara Kelas",
     "personalEvent": "Acara Pribadi",
-    "isClassEvent": "Ini adalah acara kelas",
+    "isClassEvent": "Ini adalah acara kelas.",
     "selectClass": "Pilih Kelas *",
     "chooseClass": "Pilih kelas",
-    "noTeacherClasses": "Anda tidak memiliki kelas di mana Anda menjadi guru.",
+    "noTeacherClasses": "Anda tidak memiliki kelas di mana Anda berperan sebagai guru.",
     "eventName": "Nama Acara *",
     "eventNamePlaceholder": "Masukkan nama acara",
     "startDateTime": "Tanggal & Waktu Mulai *",
@@ -231,19 +241,19 @@
     "eventColor": "Warna Acara",
     "eventColorDescription": "Pilih warna untuk acara ini",
     "remarks": "Perkataan",
-    "remarksPlaceholder": "Catatan atau keterangan tambahan tentang acara tersebut",
+    "remarksPlaceholder": "Catatan atau komentar tambahan tentang acara tersebut",
     "cancel": "Membatalkan",
-    "updateEvent": "Perbarui Acara",
+    "updateEvent": "Pembaruan Acara",
     "createEvent": "Buat Acara",
     "createClassEvent": "Buat Acara Kelas",
     "createPersonalEvent": "Buat Acara Pribadi",
-    "updating": "Memperbarui...",
+    "updating": "Sedang memperbarui...",
     "creating": "Membuat...",
     "addEvent": "Tambahkan Acara",
     "eventCreated": "{type} berhasil dibuat",
-    "eventUpdated": "Acara berhasil diperbarui",
-    "errorRequired": "Harap isi semua kolom yang diperlukan",
-    "errorSelectClass": "Silakan pilih kelas untuk acara kelas",
+    "eventUpdated": "Acara berhasil diperbarui.",
+    "errorRequired": "Mohon isi semua kolom yang wajib diisi.",
+    "errorSelectClass": "Silakan pilih kelas untuk acara kelas.",
     "errorCreate": "Gagal membuat acara",
     "errorUpdate": "Gagal memperbarui acara"
   },
@@ -260,27 +270,27 @@
     "eventColor": "Warna Acara",
     "eventColorDescription": "Pilih warna untuk acara ini",
     "remarks": "Perkataan",
-    "remarksPlaceholder": "Catatan atau keterangan tambahan tentang acara tersebut",
+    "remarksPlaceholder": "Catatan atau komentar tambahan tentang acara tersebut",
     "cancel": "Membatalkan",
-    "updateEvent": "Perbarui Acara",
+    "updateEvent": "Pembaruan Acara",
     "createEvent": "Buat Acara",
-    "updating": "Memperbarui...",
+    "updating": "Sedang memperbarui...",
     "creating": "Membuat...",
     "addClassEvent": "Tambahkan Acara Kelas",
-    "eventCreated": "Acara berhasil dibuat",
-    "eventUpdated": "Acara berhasil diperbarui",
-    "errorRequired": "Harap isi semua kolom yang diperlukan",
+    "eventCreated": "Acara berhasil dibuat.",
+    "eventUpdated": "Acara berhasil diperbarui.",
+    "errorRequired": "Mohon isi semua kolom yang wajib diisi.",
     "errorCreate": "Gagal membuat acara",
     "errorUpdate": "Gagal memperbarui acara"
   },
   "aiLab": {
     "title": "Buat {type}",
-    "aiPowered": "Didukung AI",
+    "aiPowered": "Didukung oleh AI",
     "description": "Berikan beberapa informasi dasar untuk membantu AI kami membuat konten yang lebih baik untuk Anda.",
     "titleField": "Judul *",
-    "titlePlaceholder": "Masukkan judul {type}",
+    "titlePlaceholder": "Masukkan {type} judul",
     "subject": "Subjek *",
-    "selectSubject": "Pilih subjek",
+    "selectSubject": "Pilih mata pelajaran",
     "subjects": {
       "mathematics": "Matematika",
       "science": "Sains",
@@ -313,11 +323,11 @@
       "2hours": "2 jam"
     },
     "descriptionField": "Keterangan",
-    "descriptionPlaceholder": "Jelaskan apa yang seharusnya dicakup oleh {type} ini...",
+    "descriptionPlaceholder": "Jelaskan apa yang harus dicakup oleh {type} ini...",
     "requirements": "Persyaratan Khusus",
-    "requirementsPlaceholder": "Persyaratan khusus, tujuan pembelajaran, atau kendala apa pun...",
+    "requirementsPlaceholder": "Persyaratan khusus, tujuan pembelajaran, atau batasan apa pun...",
     "cancel": "Membatalkan",
-    "createLab": "Buat Lab AI",
+    "createLab": "Buat Laboratorium AI",
     "creatingLab": "Membuat Lab..."
   }
 }

@@ -1,42 +1,52 @@
 {
   "aiLabs": {
     "title": "Phòng thí nghiệm AI",
-    "subtitle": "Tạo nội dung giáo dục với sự hỗ trợ của AI",
+    "subtitle": "Tạo nội dung giáo dục với sự hỗ trợ của trí tuệ nhân tạo.",
     "aiPowered": "Được hỗ trợ bởi AI",
     "createNew": "Tạo nội dung mới",
-    "aiGenerated": "AI tạo ra",
-    "deleteConfirm": "Bạn có chắc chắn muốn xóa AI Lab này không? Thao tác này không thể hoàn tác.",
+    "aiGenerated": "Được tạo bởi AI",
+    "deleteConfirm": "Bạn có chắc chắn muốn xóa Phòng thí nghiệm AI này không? Hành động này không thể hoàn tác.",
+    "stats": {
+      "drafts": "Bản nháp",
+      "draftsDesc": "Nội dung đang được cập nhật",
+      "chats": "Mèo AI",
+      "chatsDesc": "Cuộc trò chuyện tích cực",
+      "messages": "Tin nhắn",
+      "messagesDesc": "Tổng số tương tác AI",
+      "generated": "Được tạo ra",
+      "generatedDesc": "Tổng nội dung đã tạo"
+    },
     "widgets": {
       "assignment": {
         "title": "Phân công",
-        "description": "Tạo bài tập tương tác với sự hỗ trợ của AI"
+        "description": "Tạo bài tập tương tác với sự hỗ trợ của trí tuệ nhân tạo."
       },
       "quiz": {
-        "title": "Bài kiểm tra",
-        "description": "Tạo các câu đố với nhiều loại câu hỏi khác nhau"
+        "title": "Trắc nghiệm",
+        "description": "Tạo bài kiểm tra trắc nghiệm với nhiều loại câu hỏi khác nhau."
       },
       "worksheet": {
         "title": "Phiếu bài tập",
-        "description": "Xây dựng các bài tập và phiếu bài tập thực hành"
+        "description": "Xây dựng các bài tập và phiếu bài tập thực hành."
       },
       "lessonPlan": {
         "title": "Kế hoạch bài học",
-        "description": "Thiết kế kế hoạch bài học toàn diện"
+        "description": "Thiết kế giáo án toàn diện"
       },
       "rubric": {
-        "title": "Tiêu chí",
-        "description": "Tạo bảng chấm điểm chi tiết"
+        "title": "Tiêu chí đánh giá",
+        "description": "Xây dựng bảng tiêu chí chấm điểm chi tiết."
       }
     },
     "tabs": {
-      "drafts": "Phòng thí nghiệm bản thảo",
+      "drafts": "Phòng thí nghiệm dự thảo",
       "chats": "Mèo AI"
     },
     "drafts": {
-      "title": "Phòng thí nghiệm bản thảo ({count})",
+      "title": "Bản nháp Labs ({count})",
       "empty": {
-        "title": "Chưa có bản thảo phòng thí nghiệm nào",
-        "description": "Tạo nội dung giáo dục đầu tiên được tạo bằng AI bằng cách sử dụng các tiện ích ở trên."
+        "title": "Chưa có bản nháp nào từ phòng thí nghiệm.",
+        "description": "Tạo nội dung giáo dục đầu tiên do AI tạo ra bằng cách sử dụng các tiện ích ở trên."
       }
     },
     "chats": {
@@ -45,28 +55,28 @@
       "messageCount": "{count} tin nhắn",
       "createdBy": "Được tạo bởi {name}",
       "empty": {
-        "title": "Chưa có phòng thí nghiệm AI nào",
-        "description": "Tạo Phòng thí nghiệm AI đầu tiên của bạn để bắt đầu hợp tác với AI về nội dung giáo dục."
+        "title": "Chưa có phòng thí nghiệm AI nào.",
+        "description": "Hãy tạo phòng thí nghiệm AI đầu tiên của bạn để bắt đầu hợp tác với AI trong việc tạo nội dung giáo dục."
       }
     },
     "toast": {
       "labCreated": "Phòng thí nghiệm AI đã được tạo thành công!",
-      "labCreateFailed": "Không tạo được AI Lab:",
+      "labCreateFailed": "Không thể tạo Phòng thí nghiệm AI:",
       "labDeleted": "AI Lab đã được xóa thành công!",
-      "labDeleteFailed": "Không xóa được AI Lab:"
+      "labDeleteFailed": "Không thể xóa AI Lab:"
     }
   },
   "aiLabChat": {
-    "backButton": "Quay lại Phòng thí nghiệm AI",
+    "backButton": "Trở lại Phòng thí nghiệm AI",
     "loading": "Đang tải...",
-    "aiThinking": "Suy nghĩ của AI...",
-    "getAIHelp": "Nhận trợ giúp AI",
+    "aiThinking": "Tư duy AI...",
+    "getAIHelp": "Nhận trợ giúp từ AI",
     "notFound": {
-      "title": "Không tìm thấy phòng thí nghiệm trò chuyện",
+      "title": "Không tìm thấy trò chuyện trong phòng thí nghiệm.",
       "description": "Phòng thí nghiệm AI này có thể đã bị xóa hoặc bạn không có quyền truy cập vào nó."
     },
     "toast": {
-      "messageFailed": "Không gửi được tin nhắn:"
+      "messageFailed": "Gửi tin nhắn không thành công:"
     }
   }
 }

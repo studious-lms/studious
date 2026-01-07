@@ -6,6 +6,16 @@
     "createNew": "新しいコンテンツを作成する",
     "aiGenerated": "AI生成",
     "deleteConfirm": "この AI ラボを削除してもよろしいですか? この操作は元に戻せません。",
+    "stats": {
+      "drafts": "ドラフト",
+      "draftsDesc": "コンテンツ進行中",
+      "chats": "AI猫",
+      "chatsDesc": "活発な会話",
+      "messages": "メッセージ",
+      "messagesDesc": "AIインタラクション合計",
+      "generated": "生成された",
+      "generatedDesc": "作成されたコンテンツの合計"
+    },
     "widgets": {
       "assignment": {
         "title": "割り当て",

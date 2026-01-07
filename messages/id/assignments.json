@@ -1,13 +1,13 @@
 {
   "assignmentDetail": {
-    "title": "Detail Tugas",
+    "title": "Rincian Tugas",
     "description": "Keterangan",
     "instructions": "Instruksi",
-    "dueDate": "Dua Tanggal",
+    "dueDate": "Dua Kencan",
     "maxPoints": "Poin Maksimum",
     "submissions": "Pengajuan",
     "submitted": "Dikirimkan",
-    "notSubmitted": "Belum Dikirim",
+    "notSubmitted": "Tidak Dikirim",
     "graded": "Bertingkat",
     "pending": "Tertunda",
     "late": "Terlambat",
@@ -16,25 +16,26 @@
     "rubric": "Rubrik",
     "gradingBoundary": "Batas Penilaian",
     "submissionDetails": "Detail Pengajuan",
-    "submittedBy": "Dikirimkan oleh",
-    "submittedAt": "Dikirimkan di",
+    "submittedBy": "Dikirim oleh",
+    "submittedAt": "Dikirimkan pada",
     "grade": "Nilai",
     "feedback": "Masukan",
     "files": "Berkas",
     "noFiles": "Tidak ada file terlampir",
-    "noSubmissions": "Belum ada kiriman",
-    "noSubmissionsDescription": "Pengiriman akan muncul di sini setelah siswa mengirimkan tugasnya",
+    "noSubmissions": "Belum ada pengajuan",
+    "noSubmissionsDescription": "Kiriman akan muncul di sini setelah mahasiswa mengirimkan karya mereka.",
     "actions": {
       "edit": "Edit Tugas",
       "delete": "Hapus Tugas",
       "viewSubmission": "Lihat Pengajuan",
       "gradeSubmission": "Nilai",
+      "back": "Kembali",
       "downloadAll": "Unduh Semua",
-      "exportGrades": "Nilai Ekspor"
+      "exportGrades": "Kelas Ekspor"
     },
     "stats": {
-      "totalSubmissions": "Total Pengajuan",
-      "averageGrade": "Nilai Rata-rata",
+      "totalSubmissions": "Jumlah Pengajuan Total",
+      "averageGrade": "Nilai Rata-Rata",
       "submissionRate": "Tingkat Pengajuan",
       "gradedCount": "Bertingkat"
     },
@@ -46,7 +47,7 @@
       "actions": "Tindakan"
     },
     "toasts": {
-      "gradeUpdated": "Nilai berhasil diperbarui",
+      "gradeUpdated": "Nilai berhasil diperbarui.",
       "deleted": "Tugas dihapus",
       "error": "Terjadi kesalahan"
     }

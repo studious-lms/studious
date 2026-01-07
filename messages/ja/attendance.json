@@ -7,6 +7,18 @@
       "unsaved": "保存されていない変更",
       "saving": "保存中..."
     },
+    "eventDetail": {
+      "title": "イベントの詳細",
+      "basicInfo": "基本情報",
+      "description": "イベントの詳細と学生の出席を管理する",
+      "address": "住所",
+      "date": "日付",
+      "time": "時間",
+      "notFound": {
+        "title": "イベントが見つかりません",
+        "description": "このイベントは削除されたか、アクセスできない可能性があります。"
+      }
+    },
     "table": {
       "date": "日付",
       "eventName": "イベント名",
@@ -15,6 +27,8 @@
       "actions": "アクション"
     },
     "actions": {
+      "back": "戻る",
+      "export": "輸出",
       "viewDetails": "詳細を表示",
       "editEvent": "イベントを編集",
       "deleteEvent": "イベントを削除",

@@ -29,6 +29,7 @@
       "delete": "Aufgabe löschen",
       "viewSubmission": "Einreichung ansehen",
       "gradeSubmission": "Grad",
+      "back": "Zurück",
       "downloadAll": "Alle herunterladen",
       "exportGrades": "Exportqualitäten"
     },

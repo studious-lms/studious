@@ -1,33 +1,37 @@
 {
   "syllabus": {
     "title": "Silabus",
-    "subtitle": "Ikhtisar kursus dan informasi akademis",
+    "subtitle": "Gambaran umum kursus dan informasi akademik",
     "actions": {
       "saveChanges": "Simpan Perubahan",
       "cancel": "Membatalkan",
       "edit": "Edit Silabus"
     },
     "errors": {
-      "failedToLoad": "Gagal memuat silabus",
+      "failedToLoad": "Silabus gagal dimuat",
       "tryLater": "Silakan coba lagi nanti."
     },
     "stats": {
       "totalAssignments": "Total Tugas",
+      "totalAssignmentsDesc": "Semua tugas kuliah",
       "completionRate": "Tingkat Penyelesaian",
+      "completionRateDesc": "Nilai vs total",
       "totalPoints": "Total Poin",
-      "upcoming": "Mendatang"
+      "totalPointsDesc": "Maksimum yang dapat dicapai",
+      "upcoming": "Mendatang",
+      "upcomingDesc": "Tugas yang harus diselesaikan"
     },
     "overview": {
-      "title": "Ikhtisar Kursus",
-      "placeholder": "Masukkan ikhtisar kursus, tujuan, dan informasi penting lainnya...",
-      "helper": "Masukkan informasi kursus, tujuan pembelajaran, kebijakan, dan detail penting lainnya.",
+      "title": "Gambaran Umum Kursus",
+      "placeholder": "Masukkan ringkasan kursus, tujuan, dan informasi penting lainnya...",
+      "helper": "Masukkan informasi kursus Anda, tujuan pembelajaran, kebijakan, dan detail penting lainnya.",
       "empty": {
-        "title": "Belum ada konten silabus",
-        "description": "Klik 'Edit Silabus' untuk menambahkan informasi kursus, tujuan pembelajaran, kebijakan, dan banyak lagi."
+        "title": "Belum ada isi silabus.",
+        "description": "Klik 'Edit Silabus' untuk menambahkan informasi kursus, tujuan pembelajaran, kebijakan, dan lainnya."
       }
     },
     "assignments": {
-      "title": "Tugas Kursus",
+      "title": "Tugas Kuliah",
       "gradedCount": "{graded} tugas yang dinilai",
       "totalPoints": "{total} total poin",
       "empty": {
@@ -37,15 +41,15 @@
     },
     "table": {
       "assignment": "Penugasan",
-      "dueDate": "Dua Tanggal",
+      "dueDate": "Dua Kencan",
       "points": "Poin",
       "weight": "Berat",
-      "status": "Status",
-      "pts": "poin"
+      "pts": "poin",
+      "type": "Jenis"
     },
     "status": {
       "graded": "Bertingkat",
-      "pending": "Tertunda"
+      "ungraded": "Tidak dinilai"
     },
     "courseInfo": {
       "title": "Informasi Kursus",

@@ -7,6 +7,13 @@
     "post": "Inviare",
     "posting": "Pubblicazione in corso...",
     "noPosts": "Nessun post ancora",
-    "createFirstPost": "Crea il primo post"
+    "noPostsDescription": "Condividi annunci, compiti e aggiornamenti con la tua classe.",
+    "createFirstPost": "Crea il primo post",
+    "messages": {
+      "uploadFailed": "Impossibile creare l'annuncio, caricamento del file non riuscito",
+      "createFailed": "Impossibile creare l'annuncio",
+      "createSuccess": "Annuncio creato con successo",
+      "creating": "Creazione dell'annuncio..."
+    }
   }
 }

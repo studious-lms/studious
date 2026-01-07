@@ -18,6 +18,6 @@
     "classDeleteFailed": "クラスの削除に失敗しました",
     "failedToLoad": "クラスの読み込みに失敗しました",
     "classLeft": "クラスを退出しました",
-    "classLeaveFailed": "クラスの退出に失敗しました"
+    "classLeaveFailed": "授業を抜け出せなかった"
   }
 }

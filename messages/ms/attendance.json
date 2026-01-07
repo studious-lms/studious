@@ -1,24 +1,38 @@
 {
   "attendance": {
     "title": "Acara & Kehadiran Kelas",
-    "subtitle": "Mengesan kehadiran pelajar untuk setiap acara",
+    "subtitle": "Jejaki kehadiran pelajar untuk setiap acara",
     "saving": {
-      "auto": "Simpanan automatik...",
+      "auto": "Penjimatan automatik...",
       "unsaved": "Perubahan yang tidak disimpan",
       "saving": "Menyimpan..."
     },
+    "eventDetail": {
+      "title": "Butiran Acara",
+      "basicInfo": "Maklumat Asas",
+      "description": "Mengendalikan butiran acara dan kehadiran pelajar",
+      "address": "Alamat",
+      "date": "Tarikh",
+      "time": "Masa",
+      "notFound": {
+        "title": "Acara Tidak Ditemui",
+        "description": "Acara ini mungkin telah dipadamkan atau anda tidak mempunyai akses kepadanya."
+      }
+    },
     "table": {
-      "date": "tarikh",
+      "date": "Tarikh",
       "eventName": "Nama Acara",
       "attendanceRate": "Kadar Kehadiran",
       "attendance": "Kehadiran",
       "actions": "Tindakan"
     },
     "actions": {
+      "back": "Kembali",
+      "export": "Eksport",
       "viewDetails": "Lihat Butiran",
       "editEvent": "Edit Acara",
-      "deleteEvent": "Padamkan Acara",
-      "createEvent": "Buat Acara",
+      "deleteEvent": "Padam Acara",
+      "createEvent": "Cipta Acara",
       "saveAttendance": "Simpan Kehadiran",
       "markAllPresent": "Tandakan Semua Hadir",
       "markAllAbsent": "Tandakan Semua Tidak Hadir"
@@ -29,30 +43,30 @@
       "searchPlaceholder": "Cari acara...",
       "empty": {
         "title": "Tiada acara ditemui",
-        "description": "Buat acara pertama anda untuk mula menjejaki kehadiran"
+        "description": "Cipta acara pertama anda untuk mula menjejaki kehadiran"
       }
     },
     "eventsList": {
-      "pickDate": "Pilih tarikh",
-      "untitled": "Peristiwa Tanpa Judul",
+      "pickDate": "Tarikh pilih",
+      "untitled": "Acara Tanpa Tajuk",
       "empty": {
         "noEventsOnDate": "Tiada acara pada tarikh ini",
-        "noEventsOnDateDescription": "Tiada acara dijadualkan untuk {date}. Cuba pilih tarikh lain atau buat acara baharu.",
+        "noEventsOnDateDescription": "Tiada acara dijadualkan untuk {date}. Cuba pilih tarikh lain atau cipta acara baharu.",
         "noEvents": "Tiada acara ditemui",
-        "noEventsDescription": "Buat acara pertama anda untuk mula menjejaki kehadiran",
-        "createForDate": "Buat Acara untuk Tarikh Ini",
-        "createFirst": "Buat Acara Pertama"
+        "noEventsDescription": "Cipta acara pertama anda untuk mula menjejaki kehadiran",
+        "createForDate": "Cipta Acara untuk Tarikh Ini",
+        "createFirst": "Cipta Acara Pertama"
       }
     },
     "summary": {
-      "title": "Ringkasan Peristiwa",
+      "title": "Ringkasan Acara",
       "selectedEvent": "Acara Terpilih",
       "total": "Jumlah",
       "attendanceRate": "Kadar Kehadiran"
     },
     "roster": {
       "title": "Senarai Pelajar",
-      "description": "Klik butang status untuk menandakan kehadiran bagi setiap pelajar",
+      "description": "Klik butang status untuk menandakan kehadiran setiap pelajar",
       "empty": {
         "title": "Tiada pelajar yang mendaftar",
         "description": "Pelajar akan muncul di sini sebaik sahaja mereka menyertai kelas"
@@ -64,16 +78,16 @@
     },
     "status": {
       "present": "Hadir",
-      "late": "lewat",
-      "absent": "tidak hadir",
+      "late": "Lewat",
+      "absent": "Tidak hadir",
       "notTaken": "Tidak Diambil"
     },
     "student": {
-      "title": "Kehadiran saya",
+      "title": "Kehadiran Saya",
       "subtitle": "Jejaki kehadiran anda untuk {className}",
       "attendanceRate": "Kadar Kehadiran",
       "history": "Sejarah Kehadiran",
-      "event": "Peristiwa",
+      "event": "Acara",
       "status": "Status",
       "searchPlaceholder": "Cari acara...",
       "empty": {
@@ -82,10 +96,10 @@
       }
     },
     "deleteDialog": {
-      "title": "Padamkan Acara",
-      "description": "Adakah anda pasti mahu memadamkan \"{eventName}\"? Tindakan ini tidak boleh dibuat asal dan akan mengalih keluar semua rekod kehadiran yang berkaitan.",
-      "deleting": "Memadamkan...",
-      "deleteButton": "Padamkan Acara"
+      "title": "Padam Acara",
+      "description": "Adakah anda pasti mahu memadam \"{eventName}\"? Tindakan ini tidak boleh dibuat asal dan akan mengalih keluar semua rekod kehadiran yang berkaitan.",
+      "deleting": "Memadam...",
+      "deleteButton": "Padam Acara"
     },
     "toast": {
       "attendanceSaved": "Kehadiran berjaya disimpan",

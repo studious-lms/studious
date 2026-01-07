@@ -4,15 +4,20 @@
     "counts": {
       "totalMembers": "{count} leden"
     },
+    "stats": {
+      "totalMembers": "Totaal aantal leden",
+      "teachers": "Leraren",
+      "students": "Studenten"
+    },
     "actions": {
-      "inviteMember": "Lid uitnodigen",
+      "inviteMember": "Nodig een lid uit",
       "copy": "Kopiëren",
       "regenerate": "Regenereren",
       "message": "Bericht",
-      "viewProfile": "Bekijk profiel",
+      "viewProfile": "Profiel bekijken",
       "viewGrades": "Bekijk cijfers",
       "makeTeacher": "Maak leraar",
-      "makeStudent": "Maak student",
+      "makeStudent": "Maak van de student",
       "removeFromClass": "Verwijderen uit de klas",
       "removeAccess": "Toegang verwijderen",
       "tryAgain": "Probeer het opnieuw"
@@ -23,8 +28,8 @@
       "you": "Jij"
     },
     "invite": {
-      "title": "Klasuitnodigingscode",
-      "description": "Deel deze code met studenten om deel te nemen aan de les"
+      "title": "Uitnodigingscode voor de les",
+      "description": "Deel deze code met de leerlingen zodat ze zich kunnen aanmelden voor de les."
     },
     "search": {
       "placeholder": "Zoek leden..."
@@ -36,32 +41,32 @@
     "students": {
       "empty": {
         "title": "Geen studenten gevonden",
-        "matchNone": "Er zijn geen studenten die overeenkomen met \"{query}\"",
-        "noStudents": "Er zijn nog geen studenten bij deze klas gekomen"
+        "matchNone": "Geen studenten komen overeen met \"{query}\"",
+        "noStudents": "Er hebben zich nog geen studenten voor deze klas aangemeld."
       }
     },
     "teachers": {
       "empty": {
         "title": "Geen leraren gevonden",
-        "matchNone": "Er zijn geen docenten die overeenkomen met \"{query}\"",
-        "noTeachers": "Er zijn geen extra docenten toegevoegd"
+        "matchNone": "Geen leraren komen overeen met \"{query}\"",
+        "noTeachers": "Er zijn geen extra docenten toegevoegd."
       }
     },
     "toasts": {
-      "inviteRegenerated": "Uitnodigingscode succesvol opnieuw gegenereerd",
-      "copied": "Uitnodigingscode gekopieerd naar klembord",
+      "inviteRegenerated": "De uitnodigingscode is succesvol opnieuw gegenereerd.",
+      "copied": "De uitnodigingscode is naar het klembord gekopieerd.",
       "roleChanged": "Rol gewijzigd naar {role}",
       "memberRemoved": "Lid succesvol verwijderd"
     },
     "errors": {
-      "regenerateFailed": "Het is niet gelukt om de uitnodigingscode opnieuw te genereren",
-      "changeRoleFailed": "Het is niet gelukt om de rol te veranderen",
-      "removeFailed": "Lid verwijderen mislukt",
-      "failedToLoad": "Het laden van leden is mislukt"
+      "regenerateFailed": "Het opnieuw genereren van de uitnodigingscode is mislukt.",
+      "changeRoleFailed": "Het is niet gelukt om van rol te wisselen.",
+      "removeFailed": "Het verwijderen van het lid is mislukt.",
+      "failedToLoad": "Leden laden mislukt"
     },
     "profile": {
       "title": "Gebruikersprofiel",
-      "description": "Bekijk lid profielinformatie",
+      "description": "Bekijk de profielinformatie van het lid.",
       "information": "Profielinformatie",
       "location": "Locatie",
       "website": "Website"

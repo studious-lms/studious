@@ -1,7 +1,7 @@
 {
   "settings": {
     "title": "Klasinstellingen",
-    "subtitle": "Klasdetails en voorkeuren configureren",
+    "subtitle": "Configureer klasdetails en voorkeuren",
     "labels": {
       "unsavedChanges": "Niet-opgeslagen wijzigingen"
     },
@@ -18,31 +18,31 @@
       },
       "theme": {
         "title": "Klasthema",
-        "description": "Kies een thema kleur voor deze klas"
+        "description": "Kies een themakleur voor deze les."
       },
       "danger": {
         "title": "Gevarenzone",
-        "description": "Zodra je een klas verwijdert, is er geen weg meer terug. Hiermee worden alle opdrachten, cijfers en presentielijsten permanent verwijderd en worden alle studenten uit de klas verwijderd."
+        "description": "Als je een klas eenmaal hebt verwijderd, is er geen weg terug. Hierdoor worden alle opdrachten, cijfers, aanwezigheidsregistraties en alle studenten die aan de klas deelnemen permanent verwijderd."
       }
     },
     "fields": {
-      "className": "Klassenaam",
+      "className": "Klasnaam",
       "section": "Sectie",
       "subject": "Onderwerp"
     },
     "placeholders": {
-      "className": "bijvoorbeeld geavanceerde natuurkunde",
-      "section": "bijvoorbeeld AP-101",
-      "subject": "bijvoorbeeld natuurkunde"
+      "className": "bijv. Geavanceerde Natuurkunde",
+      "section": "bijv. AP-101",
+      "subject": "bijv. Natuurkunde"
     },
     "toasts": {
       "updated": {
-        "title": "Klasse bijgewerkt",
-        "description": "De klasse-instellingen zijn succesvol opgeslagen."
+        "title": "Les bijgewerkt",
+        "description": "De klasinstellingen zijn succesvol opgeslagen."
       },
       "deleted": {
         "title": "Klasse verwijderd",
-        "description": "De klas is permanent verwijderd."
+        "description": "De les is definitief verwijderd."
       }
     },
     "errors": {
@@ -53,12 +53,12 @@
     },
     "confirm": {
       "title": "Weet je het absoluut zeker?",
-      "description": "Deze actie kan niet ongedaan worden gemaakt. Hiermee wordt de klasse \"{name}\" permanent verwijderd en worden alle bijbehorende gegevens verwijderd, waaronder:",
+      "description": "Deze actie kan niet ongedaan worden gemaakt. Hiermee wordt de klasse \"{name}\" permanent verwijderd, inclusief alle bijbehorende gegevens, waaronder:",
       "items": {
         "assignments": "Alle opdrachten en inzendingen",
-        "records": "Alle cijfers en aanwezigheidsgegevens",
-        "students": "Alle studenten worden uit de klas verwijderd",
-        "events": "Alle klassenevenementen en aankondigingen"
+        "records": "Alle cijfers en aanwezigheidsregistraties",
+        "students": "Alle leerlingen worden uit de klas verwijderd.",
+        "events": "Alle klasgebeurtenissen en aankondigingen"
       },
       "confirmDelete": "Ja, klasse verwijderen"
     }

@@ -1,5 +1,6 @@
 {
   "common": {
+    "upload": "Tải lên",
     "save": "Cứu",
     "cancel": "Hủy bỏ",
     "delete": "Xóa bỏ",
@@ -13,7 +14,7 @@
     "filter": "Lọc",
     "sort": "Loại",
     "viewAll": "Xem tất cả",
-    "noData": "Không có dữ liệu có sẵn",
+    "noData": "Không có dữ liệu nào khả dụng.",
     "export": "Xuất khẩu",
     "openMenu": "Mở menu"
   },
@@ -26,14 +27,14 @@
     "lastWeek": "Tuần trước"
   },
   "errors": {
-    "somethingWentWrong": "Có gì đó không ổn",
-    "tryAgain": "Thử lại",
+    "somethingWentWrong": "Đã xảy ra lỗi",
+    "tryAgain": "Hãy thử lại",
     "pageNotFound": "Không tìm thấy trang",
     "unauthorized": "Truy cập trái phép"
   },
   "auth": {
     "login": {
-      "title": "Chào mừng trở lại",
+      "title": "Chào mừng trở lại!",
       "subtitle": "Đăng nhập vào tài khoản Studious của bạn",
       "username": "Tên người dùng",
       "password": "Mật khẩu",
@@ -42,12 +43,12 @@
       "signingIn": "Đang đăng nhập...",
       "noAccount": "Bạn chưa có tài khoản?",
       "signUp": "Đăng ký",
-      "successMessage": "Đã đăng nhập thành công",
+      "successMessage": "Đăng nhập thành công",
       "cancel": "Hủy bỏ"
     },
     "signup": {
       "title": "Tạo tài khoản của bạn",
-      "subtitle": "Tham gia Studious và bắt đầu học",
+      "subtitle": "Hãy tham gia Studious và bắt đầu học tập!",
       "signUp": "Đăng ký",
       "username": "Tên người dùng",
       "email": "E-mail",
@@ -63,48 +64,48 @@
       "privacyPolicy": "Chính sách bảo mật",
       "createAccount": "Tạo tài khoản",
       "creatingAccount": "Đang tạo tài khoản...",
-      "alreadyHaveAccount": "Bạn đã có tài khoản?",
+      "alreadyHaveAccount": "Bạn đã có tài khoản chưa?",
       "signIn": "Đăng nhập",
       "passwordMismatch": "Mật khẩu không khớp",
-      "passwordTooShort": "Mật khẩu phải dài ít nhất 6 ký tự",
+      "passwordTooShort": "Mật khẩu phải có ít nhất 6 ký tự.",
       "termsRequired": "Bạn phải đồng ý với các điều khoản",
-      "verificationEmailSent": "Đã gửi email xác minh!",
-      "signUpFailed": "Không tạo được tài khoản. Vui lòng thử lại."
+      "verificationEmailSent": "Email xác nhận đã được gửi!",
+      "signUpFailed": "Tạo tài khoản không thành công. Vui lòng thử lại."
     },
     "verification": {
       "notVerified": "Tài khoản chưa được xác minh",
-      "message": "Tài khoản của bạn cần được xác minh trước khi có thể đăng nhập. Vui lòng kiểm tra email để biết liên kết xác minh.",
-      "emailSentTo": "Email xác minh đã được gửi tới:",
+      "message": "Tài khoản của bạn cần được xác minh trước khi bạn có thể đăng nhập. Vui lòng kiểm tra email của bạn để tìm liên kết xác minh.",
+      "emailSentTo": "Email xác nhận đã được gửi đến:",
       "resendEmail": "Gửi lại email xác minh",
-      "backToSignIn": "Quay lại Đăng nhập",
-      "emailSent": "Đã gửi email xác minh!",
-      "checkInbox": "Vui lòng kiểm tra hộp thư đến và thư mục thư rác.",
+      "backToSignIn": "Quay lại trang Đăng nhập",
+      "emailSent": "Email xác nhận đã được gửi!",
+      "checkInbox": "Vui lòng kiểm tra hộp thư đến và thư mục thư rác của bạn.",
       "enterEmail": "Nhập địa chỉ email của bạn",
       "sending": "Đang gửi...",
-      "sendEmail": "Gửi Email",
-      "title": "Xác minh Email của bạn",
-      "subtitle": "Nhấp vào nút bên dưới để xác minh địa chỉ email của bạn",
+      "sendEmail": "Gửi email",
+      "title": "Xác minh email của bạn",
+      "subtitle": "Nhấp vào nút bên dưới để xác minh địa chỉ email của bạn.",
       "verifying": "Đang xác minh...",
-      "verifyEmail": "Xác minh Email",
-      "successTitle": "Email đã được xác minh thành công",
-      "successMessage": "Email của bạn đã được xác minh. Bây giờ bạn có thể đăng nhập vào tài khoản của mình.",
-      "errorTitle": "Xác minh không thành công",
+      "verifyEmail": "Xác minh email",
+      "successTitle": "Email đã được xác minh thành công.",
+      "successMessage": "Email của bạn đã được xác minh. Giờ bạn có thể đăng nhập vào tài khoản của mình.",
+      "errorTitle": "Xác minh thất bại",
       "errorMessage": "Liên kết xác minh không hợp lệ hoặc đã hết hạn. Vui lòng yêu cầu email xác minh mới.",
-      "invalidToken": "Mã thông báo xác minh không hợp lệ"
+      "invalidToken": "Mã xác minh không hợp lệ"
     },
     "forgotPassword": {
       "title": "Đặt lại mật khẩu của bạn",
-      "subtitle": "Nhập địa chỉ email của bạn và chúng tôi sẽ gửi cho bạn một liên kết để đặt lại mật khẩu",
+      "subtitle": "Nhập địa chỉ email của bạn và chúng tôi sẽ gửi cho bạn một đường dẫn để đặt lại mật khẩu.",
       "email": "E-mail",
       "emailPlaceholder": "Nhập địa chỉ email của bạn",
       "sendResetLink": "Gửi liên kết đặt lại",
       "sending": "Đang gửi...",
-      "backToSignIn": "Quay lại Đăng nhập",
+      "backToSignIn": "Quay lại trang Đăng nhập",
       "successTitle": "Kiểm tra email của bạn",
-      "successMessage": "Nếu có tài khoản nào đó sử dụng email đó, chúng tôi đã gửi cho bạn liên kết đặt lại mật khẩu.",
-      "checkInbox": "Vui lòng kiểm tra hộp thư đến và thư mục thư rác để tìm liên kết đặt lại.",
-      "errorMessage": "Không gửi được liên kết đặt lại. Vui lòng thử lại.",
-      "invalidEmail": "Vui lòng nhập địa chỉ email hợp lệ"
+      "successMessage": "Nếu bạn đã có tài khoản với địa chỉ email đó, chúng tôi đã gửi cho bạn đường dẫn đặt lại mật khẩu.",
+      "checkInbox": "Vui lòng kiểm tra hộp thư đến và thư mục thư rác để tìm liên kết đặt lại mật khẩu.",
+      "errorMessage": "Không thể gửi liên kết đặt lại. Vui lòng thử lại.",
+      "invalidEmail": "Vui lòng nhập địa chỉ email hợp lệ."
     },
     "resetPassword": {
       "title": "Đặt lại mật khẩu của bạn",
@@ -114,12 +115,12 @@
       "confirmPassword": "Xác nhận mật khẩu",
       "confirmPasswordPlaceholder": "Xác nhận mật khẩu mới của bạn",
       "resetPassword": "Đặt lại mật khẩu",
-      "resetting": "Đang đặt lại...",
-      "passwordTooShort": "Mật khẩu phải dài ít nhất 6 ký tự",
+      "resetting": "Đang thiết lập lại...",
+      "passwordTooShort": "Mật khẩu phải có ít nhất 6 ký tự.",
       "passwordsDoNotMatch": "Mật khẩu không khớp",
       "successTitle": "Đặt lại mật khẩu thành công",
-      "successMessage": "Mật khẩu của bạn đã được đặt lại thành công. Bây giờ bạn có thể đăng nhập bằng mật khẩu mới.",
-      "backToSignIn": "Quay lại Đăng nhập"
+      "successMessage": "Mật khẩu của bạn đã được đặt lại thành công. Giờ bạn có thể đăng nhập bằng mật khẩu mới.",
+      "backToSignIn": "Quay lại trang Đăng nhập"
     }
   },
   "marketing": {
@@ -131,69 +132,69 @@
     },
     "hero": {
       "badge": "Nền tảng học tập hiện đại",
-      "title1": "Liền mạch, không bị phân tâm",
+      "title1": "Mượt mà, không gây xao nhãng",
       "title2": "học tập cho các trường học hiện đại",
-      "subtitle": "Studious LMS tích hợp AI, lịch thời gian thực và giao tiếp lớp học thành một nền tảng gắn kết — được thiết kế để giúp giáo viên giảng dạy và học sinh phát triển.",
+      "subtitle": "Studious LMS tích hợp trí tuệ nhân tạo, lịch thời gian thực và giao tiếp lớp học vào một nền tảng thống nhất — được thiết kế để giúp giáo viên giảng dạy và học sinh phát triển.",
       "requestEarlyAccess": "Yêu cầu quyền truy cập sớm",
       "watchDemo": "Xem bản demo",
       "altDashboard": "Bảng điều khiển nền tảng"
     },
     "problem": {
-      "title": "Cổng thông tin trường học truyền thống bị phân mảnh và lỗi thời",
-      "issue1": "Giáo viên tốn thời gian chuyển đổi giữa nhiều công cụ",
-      "issue2": "Sinh viên gặp khó khăn trong việc tổ chức và thời hạn",
-      "issue3": "AI vẫn chưa được tích hợp đầy đủ vào quy trình làm việc thực tế của trường học"
+      "title": "Các cổng thông tin trường học truyền thống bị phân mảnh và lỗi thời.",
+      "issue1": "Giáo viên lãng phí thời gian khi phải chuyển đổi giữa nhiều công cụ khác nhau.",
+      "issue2": "Sinh viên gặp khó khăn trong việc sắp xếp công việc và tuân thủ thời hạn.",
+      "issue3": "Trí tuệ nhân tạo vẫn chưa được tích hợp đầy đủ vào quy trình làm việc thực tế của trường học."
     },
     "response": {
-      "title1": "LMS học tập thống nhất việc giảng dạy, học tập,",
+      "title1": "Studious LMS tích hợp việc giảng dạy, học tập,",
       "title2": "và giao tiếp vào một không gian làm việc duy nhất",
-      "subtitle": "Được xây dựng với khuôn khổ tiên tiến và thiết kế lấy con người làm trung tâm, giải pháp này có thể áp dụng cho mọi trường học ở mọi quy mô."
+      "subtitle": "Được xây dựng dựa trên các công nghệ tiên tiến và thiết kế lấy con người làm trung tâm, hệ thống này có khả năng mở rộng quy mô cho các trường học thuộc mọi quy mô."
     },
     "features": {
       "title": "Các tính năng chính",
       "subtitle": "Mọi thứ bạn cần để quản lý trải nghiệm học tập hiện đại",
       "ai": {
         "title": "Trợ lý AI",
-        "description": "Giúp tạo tài liệu học tập, tóm tắt nội dung và hỗ trợ chấm điểm"
+        "description": "Giúp tạo tài liệu học tập, tóm tắt nội dung và hỗ trợ chấm điểm."
       },
       "classManagement": {
         "title": "Quản lý lớp học",
-        "description": "Tổ chức lớp học, bài tập và điểm danh một cách dễ dàng"
+        "description": "Quản lý lớp học, bài tập và điểm danh một cách dễ dàng"
       },
       "assignments": {
         "title": "Bài tập",
-        "description": "Tạo, thu thập và chấm điểm bài nộp của sinh viên một cách hiệu quả"
+        "description": "Tạo, thu thập và chấm điểm bài nộp của sinh viên một cách hiệu quả."
       },
       "calendar": {
         "title": "Lịch",
-        "description": "Đồng bộ hóa thời gian thực với bài tập, bài học và sự kiện"
+        "description": "Đồng bộ hóa theo thời gian thực với bài tập, bài học và sự kiện."
       },
       "analytics": {
         "title": "Phân tích",
-        "description": "Xem thông tin chi tiết về hiệu suất, sự tham gia và mức độ tương tác"
+        "description": "Xem thông tin chi tiết về hiệu suất, sự tham gia và mức độ tương tác."
       },
       "communication": {
         "title": "Giao tiếp",
-        "description": "Nhắn tin và thông báo tích hợp cho sự cộng tác thống nhất"
+        "description": "Tích hợp chức năng nhắn tin và thông báo để hợp tác thống nhất."
       }
     },
     "quote": {
-      "text": "Mọi tính năng trong Studious đều được xây dựng để giảm thiểu ma sát chứ không phải tăng thêm ma sát."
+      "text": "Mọi tính năng trong Studious đều được xây dựng để giảm thiểu khó khăn, chứ không phải tạo thêm khó khăn."
     },
     "pricing": {
-      "title": "Chọn gói phù hợp cho tổ chức của bạn",
-      "subtitle": "Giá cả đơn giản, minh bạch, không có phí ẩn. Tất cả các gói đều bao gồm các tính năng cốt lõi với các tùy chọn có thể mở rộng.",
+      "title": "Chọn gói dịch vụ phù hợp với tổ chức của bạn.",
+      "subtitle": "Giá cả đơn giản, minh bạch, không có phí ẩn. Tất cả các gói đều bao gồm các tính năng cốt lõi với các tùy chọn mở rộng.",
       "starter": {
-        "title": "Người khởi xướng",
+        "title": "Người mới bắt đầu",
         "price": "Miễn phí",
-        "note": "Đã bao gồm quyền truy cập Beta",
-        "description": "Hoàn hảo cho các lớp học nhỏ và chương trình thí điểm",
-        "perk1": "Tối đa 30 học sinh",
+        "note": "Bao gồm quyền truy cập bản beta.",
+        "description": "Phù hợp cho các lớp học nhỏ và các chương trình thí điểm.",
+        "perk1": "Tối đa 30 sinh viên",
         "perk2": "Lớp học không giới hạn",
-        "perk3": "Các tính năng cốt lõi (bài tập, lịch, điểm)",
+        "perk3": "Các tính năng chính (bài tập, lịch, điểm số)",
         "perk4": "Trợ lý AI (5 cuộc trò chuyện/tháng)",
         "perk5": "Hỗ trợ cộng đồng",
-        "perk6": "Dung lượng lưu trữ 5GB",
+        "perk6": "Bộ nhớ 5GB",
         "button": "Bắt đầu miễn phí"
       },
       "school": {
@@ -201,74 +202,74 @@
         "price": "5 đô la",
         "priceUnit": "/người dùng/tháng",
         "note": "Thanh toán hàng năm hoặc 6 đô la/tháng",
-        "description": "Dành cho các trường có tới 1.000 học sinh",
-        "perk1": "Số lượng học viên không giới hạn",
+        "description": "Dành cho các trường có tối đa 1.000 học sinh.",
+        "perk1": "Số lượng sinh viên không giới hạn",
         "perk2": "Lớp học không giới hạn",
         "perk3": "Tất cả các tính năng cốt lõi",
         "perk4": "Trợ lý AI (truy vấn không giới hạn)",
-        "perk5": "Người đầu tiên được truy cập bản beta của Studious CMS",
+        "perk5": "Ưu tiên người đầu tiên được truy cập bản beta của Studious CMS.",
         "button": "Bắt đầu"
       },
       "institution": {
         "title": "Tổ chức",
         "price": "Phong tục",
-        "note": "Phù hợp với nhu cầu của bạn",
-        "description": "Dành cho các trường học và trường đại học lớn (trên 1.000 sinh viên)",
-        "perk1": "Mọi thứ trong kế hoạch của trường",
+        "note": "Được thiết kế riêng theo nhu cầu của bạn",
+        "description": "Dành cho các trường học và đại học quy mô lớn (từ 1.000 học sinh trở lên)",
+        "perk1": "Kế hoạch mọi thứ trong trường học",
         "perk2": "Hỗ trợ ưu tiên 24/7",
-        "perk3": "Lưu trữ không giới hạn",
-        "perk4": "Đào tạo và hướng dẫn tùy chỉnh",
-        "perk5": "Chi phí cho mỗi người dùng rẻ hơn",
-        "button": "Liên hệ bán hàng"
+        "perk3": "Dung lượng lưu trữ không giới hạn",
+        "perk4": "Đào tạo và hướng dẫn hội nhập theo yêu cầu",
+        "perk5": "Chi phí trên mỗi người dùng thấp hơn",
+        "button": "Liên hệ bộ phận bán hàng"
       },
       "mostPopular": "Phổ biến nhất",
-      "earlyBird": "🎉 Người dùng đầu tiên sẽ được tặng 2 tháng miễn phí khi đăng ký gói hàng năm + hỗ trợ hướng dẫn sử dụng chuyên dụng"
+      "earlyBird": "🎉 Khách hàng đăng ký sớm sẽ nhận được 2 tháng miễn phí cho gói hàng năm + hỗ trợ hướng dẫn sử dụng chuyên biệt."
     },
     "schoolProgram": {
       "badge": "Tác động xã hội",
-      "title": "Chương trình Phát triển Trường học Hiếu học",
-      "subtitle": "Chúng tôi tin rằng mọi học sinh đều xứng đáng được tiếp cận với các công cụ học tập hiện đại, bất kể tình hình kinh tế của trường.",
-      "feature1Title": "Truy cập miễn phí 100%",
-      "feature1Description": "Truy cập toàn bộ nền tảng với tất cả các tính năng dành cho các trường đủ điều kiện",
+      "title": "Chương trình phát triển học sinh chăm chỉ",
+      "subtitle": "Chúng tôi tin rằng mọi học sinh đều xứng đáng được tiếp cận với các công cụ học tập hiện đại, bất kể tình hình kinh tế của trường học như thế nào.",
+      "feature1Title": "Truy cập hoàn toàn miễn phí",
+      "feature1Description": "Các trường đủ điều kiện được truy cập đầy đủ nền tảng với tất cả các tính năng.",
       "feature2Title": "Hỗ trợ chuyên dụng",
-      "feature2Description": "Ưu tiên tuyển dụng và đào tạo cho giáo viên và nhân viên",
-      "feature3Title": "Tài nguyên giáo dục",
-      "feature3Description": "Tài liệu giảng dạy miễn phí và hỗ trợ chương trình giảng dạy",
-      "applyNow": "Nộp đơn ngay",
+      "feature2Description": "Ưu tiên quy trình tiếp nhận và đào tạo cho giáo viên và nhân viên.",
+      "feature3Title": "Tài liệu giáo dục",
+      "feature3Description": "Tài liệu giảng dạy và hỗ trợ chương trình học miễn phí",
+      "applyNow": "Đăng ký ngay",
       "learnMore": "Tìm hiểu thêm",
       "eligibilityTitle": "Điều kiện tham gia chương trình",
       "qualifyingTitle": "Các trường đủ điều kiện:",
-      "qualify1": "Trường công lập ở các cộng đồng khó khăn",
+      "qualify1": "Trường công lập tại các cộng đồng thiếu nguồn lực",
       "qualify2": "Các tổ chức giáo dục phi lợi nhuận đã đăng ký",
-      "qualify3": "Trường học ở các khu vực đang phát triển",
-      "qualify4": "Trường học theo Tiêu đề I (Hoa Kỳ) hoặc tương đương",
+      "qualify3": "Các trường học ở các vùng đang phát triển",
+      "qualify4": "Các trường thuộc chương trình Title I (Hoa Kỳ) hoặc tương đương",
       "commitmentTitle": "Cam kết của chúng tôi:",
-      "commitment": "10% khách hàng trả phí của chúng tôi ủng hộ quyền truy cập miễn phí cho các trường học có nhu cầu.",
-      "launchTitle": "Ra mắt chương trình:",
-      "launch": "Tháng 1 năm 2026 • Hiện đang mở đơn đăng ký"
+      "commitment": "10% khách hàng trả phí của chúng tôi ủng hộ việc cung cấp quyền truy cập miễn phí cho các trường học có hoàn cảnh khó khăn.",
+      "launchTitle": "Khởi động chương trình:",
+      "launch": "Tháng 1 năm 2026 • Hiện đã mở đơn đăng ký"
     },
     "futureDevelopments": {
       "title": "Những phát triển trong tương lai",
-      "subtitle": "Lộ trình chuyển đổi giáo dục của chúng tôi",
-      "cas": {
-        "title": "Quan điểm CAS",
-        "description": "Hỗ trợ các trường học thiếu kinh phí thông qua các khoản quyên góp và vật liệu, giúp mọi người đều có thể tiếp cận được nền giáo dục chất lượng."
+      "subtitle": "Lộ trình của chúng tôi để chuyển đổi giáo dục",
+      "sustainable": {
+        "title": "Quan điểm bền vững",
+        "description": "Hỗ trợ các trường học thiếu kinh phí thông qua quyên góp và cung cấp vật phẩm, giúp mọi người đều có thể tiếp cận nền giáo dục chất lượng."
       },
       "features": {
-        "title": "Tính năng Góc nhìn",
-        "description": "Mở rộng hỗ trợ sinh viên AI và xây dựng tích hợp API cho nhiều hệ thống giáo dục khác nhau trên toàn thế giới."
+        "title": "Góc nhìn đặc điểm",
+        "description": "Mở rộng hỗ trợ học sinh bằng trí tuệ nhân tạo và xây dựng các tích hợp API cho các hệ thống giáo dục đa dạng trên toàn thế giới."
       },
       "launch": {
-        "title": "Góc nhìn ra mắt",
-        "description": "Các bài thuyết trình tại trường học, trường đại học và hội nghị để định hình lại trải nghiệm học tập."
+        "title": "Góc nhìn khởi động",
+        "description": "Thuyết trình tại các trường học, đại học và hội nghị nhằm định hình lại trải nghiệm học tập."
       }
     },
     "cta": {
-      "title": "Bạn đã sẵn sàng để định nghĩa lại cách học và cách giảng dạy ở trường chưa?",
-      "subtitle": "Tham gia vào tương lai của giáo dục với Studious LMS",
-      "requestAccess": "Yêu cầu truy cập",
+      "title": "Bạn đã sẵn sàng định nghĩa lại cách trường học của bạn học tập và giảng dạy chưa?",
+      "subtitle": "Hãy cùng Studious LMS kiến tạo tương lai của nền giáo dục!",
+      "requestAccess": "Yêu cầu quyền truy cập",
       "partnerWithUs": "Hợp tác với chúng tôi",
-      "tagline": "Studious LMS — Học tập hiện đại, đơn giản."
+      "tagline": "Studious LMS — Học tập hiện đại, đơn giản hóa."
     },
     "privacyPolicy": {
       "title": "Chính sách bảo mật",
@@ -276,47 +277,47 @@
       "sections": {
         "introduction": {
           "title": "1. Giới thiệu",
-          "content": "Studious LMS ('chúng tôi', 'của chúng tôi' hoặc 'chúng tôi') cam kết bảo vệ quyền riêng tư của bạn. Chính sách Quyền riêng tư này giải thích cách chúng tôi thu thập, sử dụng, tiết lộ và bảo vệ thông tin của bạn khi bạn sử dụng hệ thống quản lý học tập và các dịch vụ liên quan của chúng tôi (gọi chung là 'Dịch vụ'). Vui lòng đọc kỹ Chính sách Quyền riêng tư này. Bằng việc sử dụng Dịch vụ của chúng tôi, bạn đồng ý với việc thu thập và sử dụng thông tin theo chính sách này."
+          "content": "Studious LMS ('chúng tôi') cam kết bảo vệ quyền riêng tư của bạn. Chính sách bảo mật này giải thích cách chúng tôi thu thập, sử dụng, tiết lộ và bảo vệ thông tin của bạn khi bạn sử dụng hệ thống quản lý học tập và các dịch vụ liên quan của chúng tôi (gọi chung là 'Dịch vụ'). Vui lòng đọc kỹ Chính sách bảo mật này. Bằng cách sử dụng Dịch vụ của chúng tôi, bạn đồng ý với việc thu thập và sử dụng thông tin theo chính sách này."
         },
         "informationWeCollect": {
           "title": "2. Thông tin chúng tôi thu thập",
-          "content": "Chúng tôi thu thập thông tin bạn cung cấp trực tiếp cho chúng tôi, bao gồm:\n\n• Thông tin Tài khoản: Tên người dùng, địa chỉ email, mật khẩu và thông tin hồ sơ\n• Dữ liệu Giáo dục: Đăng ký lớp học, bài tập, điểm số, hồ sơ điểm danh và tiến độ học tập\n• Dữ liệu Truyền thông: Tin nhắn, thông báo và các thông tin liên lạc khác trong nền tảng\n• Dữ liệu Sử dụng: Thông tin về cách bạn tương tác với Dịch vụ của chúng tôi, bao gồm các trang đã truy cập và các tính năng đã sử dụng\n• Thông tin Thiết bị: Địa chỉ IP, loại trình duyệt, mã định danh thiết bị và hệ điều hành\n• Cookie và Công nghệ Theo dõi: Chúng tôi sử dụng cookie và các công nghệ tương tự để nâng cao trải nghiệm của bạn và phân tích các mô hình sử dụng"
+          "content": "Chúng tôi thu thập thông tin mà bạn cung cấp trực tiếp cho chúng tôi, bao gồm:\n\n• Thông tin tài khoản: Tên người dùng, địa chỉ email, mật khẩu và thông tin hồ sơ\n• Dữ liệu giáo dục: Đăng ký lớp học, bài tập, điểm số, hồ sơ điểm danh và tiến độ học tập\n• Dữ liệu liên lạc: Tin nhắn, thông báo và các thông tin liên lạc khác trong nền tảng\n• Dữ liệu sử dụng: Thông tin về cách bạn tương tác với Dịch vụ của chúng tôi, bao gồm các trang đã truy cập và các tính năng đã sử dụng\n• Thông tin thiết bị: Địa chỉ IP, loại trình duyệt, mã định danh thiết bị và hệ điều hành\n• Cookie và công nghệ theo dõi: Chúng tôi sử dụng cookie và các công nghệ tương tự để nâng cao trải nghiệm của bạn và phân tích các mẫu sử dụng."
         },
         "howWeUseInformation": {
           "title": "3. Cách chúng tôi sử dụng thông tin của bạn",
-          "content": "Chúng tôi sử dụng thông tin thu thập được để:\n\n• Cung cấp, duy trì và cải thiện Dịch vụ của chúng tôi\n• Xử lý giao dịch và quản lý tài khoản của bạn\n• Tạo điều kiện thuận lợi cho việc giao tiếp giữa giáo viên, học sinh và quản trị viên\n• Tạo và quản lý nội dung giáo dục, bài tập và điểm số\n• Gửi thông báo quan trọng về tài khoản và Dịch vụ của bạn\n• Phân tích các mô hình sử dụng để cải thiện trải nghiệm người dùng\n• Đảm bảo an ninh và ngăn chặn gian lận\n• Tuân thủ các nghĩa vụ pháp lý và bảo vệ quyền lợi của chúng tôi"
+          "content": "Chúng tôi sử dụng thông tin thu thập được để:\n\n• Cung cấp, duy trì và cải thiện Dịch vụ của chúng tôi\n• Xử lý giao dịch và quản lý tài khoản của bạn\n• Tạo điều kiện thuận lợi cho việc liên lạc giữa giáo viên, học sinh và quản trị viên\n• Tạo và quản lý nội dung giáo dục, bài tập và điểm số\n• Gửi thông báo quan trọng về tài khoản và Dịch vụ của bạn\n• Phân tích mô hình sử dụng để cải thiện trải nghiệm người dùng\n• Đảm bảo an ninh và ngăn chặn gian lận\n• Tuân thủ các nghĩa vụ pháp lý và bảo vệ quyền của chúng tôi"
         },
         "informationSharing": {
-          "title": "4. Chia sẻ và tiết lộ thông tin",
-          "content": "Chúng tôi không bán thông tin cá nhân của bạn. Chúng tôi có thể chia sẻ thông tin của bạn trong các trường hợp sau:\n\n• Với các Cơ sở Giáo dục: Thông tin có thể được chia sẻ với trường học hoặc cơ sở giáo dục của bạn cho mục đích giáo dục.\n• Với các Nhà cung cấp Dịch vụ: Chúng tôi có thể chia sẻ thông tin với các nhà cung cấp dịch vụ bên thứ ba hỗ trợ vận hành Dịch vụ của chúng tôi.\n• Để tuân thủ pháp luật: Chúng tôi có thể tiết lộ thông tin nếu pháp luật yêu cầu hoặc để bảo vệ quyền và sự an toàn của chúng tôi.\n• Với sự đồng ý của bạn: Chúng tôi có thể chia sẻ thông tin với sự đồng ý rõ ràng của bạn.\n• Trong trường hợp Sáp nhập: Thông tin có thể được chuyển giao liên quan đến giao dịch kinh doanh."
+          "title": "4. Chia sẻ và công bố thông tin",
+          "content": "Chúng tôi không bán thông tin cá nhân của bạn. Chúng tôi có thể chia sẻ thông tin của bạn trong các trường hợp sau:\n\n• Với các Tổ chức Giáo dục: Thông tin có thể được chia sẻ với trường học hoặc tổ chức giáo dục của bạn cho mục đích giáo dục.\n• Với các Nhà cung cấp Dịch vụ: Chúng tôi có thể chia sẻ thông tin với các nhà cung cấp dịch vụ bên thứ ba hỗ trợ vận hành Dịch vụ của chúng tôi.\n• Để Tuân thủ Pháp luật: Chúng tôi có thể tiết lộ thông tin nếu pháp luật yêu cầu hoặc để bảo vệ quyền và sự an toàn của chúng tôi.\n• Với Sự Đồng ý của Bạn: Chúng tôi có thể chia sẻ thông tin với sự đồng ý rõ ràng của bạn.\n• Trong Trường hợp Sáp nhập: Thông tin có thể được chuyển giao liên quan đến giao dịch kinh doanh."
         },
         "dataSecurity": {
           "title": "5. Bảo mật dữ liệu",
-          "content": "Chúng tôi triển khai các biện pháp bảo mật kỹ thuật và tổ chức phù hợp để bảo vệ thông tin cá nhân của bạn khỏi việc truy cập, thay đổi, tiết lộ hoặc phá hủy trái phép. Tuy nhiên, không có phương thức truyền tải nào qua Internet hoặc lưu trữ điện tử là an toàn 100%. Mặc dù chúng tôi nỗ lực sử dụng các phương tiện được chấp nhận về mặt thương mại để bảo vệ thông tin của bạn, chúng tôi không thể đảm bảo an toàn tuyệt đối."
+          "content": "Chúng tôi áp dụng các biện pháp bảo mật kỹ thuật và tổ chức phù hợp để bảo vệ thông tin cá nhân của bạn khỏi sự truy cập trái phép, sửa đổi, tiết lộ hoặc phá hủy. Tuy nhiên, không có phương pháp truyền tải qua Internet hoặc lưu trữ điện tử nào an toàn 100%. Mặc dù chúng tôi nỗ lực sử dụng các phương tiện được chấp nhận rộng rãi trong thương mại để bảo vệ thông tin của bạn, chúng tôi không thể đảm bảo an ninh tuyệt đối."
         },
         "dataRetention": {
-          "title": "6. Lưu giữ dữ liệu",
-          "content": "Chúng tôi lưu giữ thông tin cá nhân của bạn trong thời gian cần thiết để cung cấp Dịch vụ và thực hiện các mục đích được nêu trong Chính sách Quyền riêng tư này, trừ khi pháp luật yêu cầu hoặc cho phép thời gian lưu giữ dài hơn. Khi chúng tôi không còn cần thông tin của bạn nữa, chúng tôi sẽ xóa hoặc ẩn danh thông tin đó một cách an toàn."
+          "title": "6. Lưu trữ dữ liệu",
+          "content": "Chúng tôi lưu giữ thông tin cá nhân của bạn trong thời gian cần thiết để cung cấp Dịch vụ và thực hiện các mục đích được nêu trong Chính sách Bảo mật này, trừ khi luật pháp yêu cầu hoặc cho phép thời gian lưu giữ lâu hơn. Khi chúng tôi không còn cần thông tin của bạn, chúng tôi sẽ xóa hoặc ẩn danh thông tin đó một cách an toàn."
         },
         "yourRights": {
           "title": "7. Quyền của bạn",
-          "content": "Tùy thuộc vào vị trí của bạn, bạn có thể có một số quyền nhất định liên quan đến thông tin cá nhân của mình, bao gồm:\n\n• Truy cập: Yêu cầu truy cập thông tin cá nhân của bạn\n• Chỉnh sửa: Yêu cầu chỉnh sửa thông tin không chính xác\n• Xóa: Yêu cầu xóa thông tin cá nhân của bạn\n• Khả năng di chuyển: Yêu cầu chuyển dữ liệu của bạn\n• Phản đối: Phản đối một số hoạt động xử lý\n• Rút lại sự đồng ý: Rút lại sự đồng ý khi việc xử lý dựa trên sự đồng ý\n\nĐể thực hiện các quyền này, vui lòng liên hệ với chúng tôi bằng thông tin được cung cấp trong phần 'Liên hệ với chúng tôi'."
+          "content": "Tùy thuộc vào vị trí của bạn, bạn có thể có một số quyền nhất định liên quan đến thông tin cá nhân của mình, bao gồm:\n\n• Truy cập: Yêu cầu truy cập thông tin cá nhân của bạn\n• Chỉnh sửa: Yêu cầu chỉnh sửa thông tin không chính xác\n• Xóa: Yêu cầu xóa thông tin cá nhân của bạn\n• Chuyển dữ liệu: Yêu cầu chuyển dữ liệu của bạn\n• Phản đối: Phản đối một số hoạt động xử lý nhất định\n• Thu hồi sự đồng ý: Thu hồi sự đồng ý khi việc xử lý dựa trên sự đồng ý\n\nĐể thực hiện các quyền này, vui lòng liên hệ với chúng tôi bằng thông tin được cung cấp trong phần 'Liên hệ với chúng tôi'."
         },
         "childrenPrivacy": {
           "title": "8. Quyền riêng tư của trẻ em",
-          "content": "Dịch vụ của chúng tôi được thiết kế cho mục đích giáo dục và có thể được sử dụng bởi học sinh dưới 18 tuổi. Chúng tôi tuân thủ luật pháp hiện hành liên quan đến quyền riêng tư của trẻ em, bao gồm Đạo luật Quyền Giáo dục và Quyền Riêng tư Gia đình (FERPA) tại Hoa Kỳ. Chúng tôi không cố ý thu thập thông tin cá nhân từ trẻ em mà không có sự đồng ý thích hợp từ phụ huynh hoặc các cơ sở giáo dục. Nếu bạn tin rằng chúng tôi đã thu thập thông tin từ trẻ em một cách không phù hợp, vui lòng liên hệ với chúng tôi ngay lập tức."
+          "content": "Dịch vụ của chúng tôi được thiết kế cho mục đích giáo dục và có thể được sử dụng bởi học sinh dưới 18 tuổi. Chúng tôi tuân thủ các luật hiện hành về quyền riêng tư của trẻ em, bao gồm Đạo luật về Quyền Giáo dục và Quyền Riêng tư của Gia đình (FERPA) tại Hoa Kỳ. Chúng tôi không cố ý thu thập thông tin cá nhân từ trẻ em mà không có sự đồng ý thích hợp từ cha mẹ hoặc các cơ sở giáo dục. Nếu bạn cho rằng chúng tôi đã thu thập thông tin từ trẻ em một cách không phù hợp, vui lòng liên hệ với chúng tôi ngay lập tức."
         },
         "internationalTransfers": {
           "title": "9. Chuyển dữ liệu quốc tế",
-          "content": "Thông tin của bạn có thể được chuyển đến và xử lý tại các quốc gia khác ngoài quốc gia cư trú của bạn. Các quốc gia này có thể có luật bảo vệ dữ liệu khác với quốc gia của bạn. Bằng cách sử dụng Dịch vụ của chúng tôi, bạn đồng ý cho phép chúng tôi chuyển thông tin của bạn đến các quốc gia này."
+          "content": "Thông tin của bạn có thể được chuyển giao và xử lý tại các quốc gia khác ngoài quốc gia bạn cư trú. Các quốc gia này có thể có luật bảo vệ dữ liệu khác với luật ở quốc gia của bạn. Bằng cách sử dụng Dịch vụ của chúng tôi, bạn đồng ý với việc chuyển giao thông tin của mình đến các quốc gia này."
         },
         "changesToPolicy": {
-          "title": "10. Những thay đổi đối với Chính sách bảo mật này",
-          "content": "Chúng tôi có thể cập nhật Chính sách Quyền riêng tư này theo thời gian. Chúng tôi sẽ thông báo cho bạn về bất kỳ thay đổi nào bằng cách đăng Chính sách Quyền riêng tư mới trên trang này và cập nhật ngày \"Cập nhật lần cuối\". Bạn nên xem lại Chính sách Quyền riêng tư này thường xuyên để biết bất kỳ thay đổi nào."
+          "title": "10. Những thay đổi đối với Chính sách Bảo mật này",
+          "content": "Chúng tôi có thể cập nhật Chính sách Bảo mật này theo thời gian. Chúng tôi sẽ thông báo cho bạn về bất kỳ thay đổi nào bằng cách đăng tải Chính sách Bảo mật mới trên trang này và cập nhật ngày \"Cập nhật lần cuối\". Bạn nên xem lại Chính sách Bảo mật này định kỳ để biết bất kỳ thay đổi nào."
         },
         "contactUs": {
           "title": "11. Liên hệ với chúng tôi",
-          "content": "Nếu bạn có bất kỳ câu hỏi nào về Chính sách Quyền riêng tư này hoặc các hoạt động bảo mật của chúng tôi, vui lòng liên hệ với chúng tôi theo địa chỉ:\n\nEmail: privacy@studious.sh\n\nChúng tôi sẽ phản hồi yêu cầu của bạn trong thời gian hợp lý."
+          "content": "Nếu bạn có bất kỳ câu hỏi nào về Chính sách Bảo mật này hoặc các hoạt động bảo mật của chúng tôi, vui lòng liên hệ với chúng tôi theo địa chỉ:\n\nEmail: privacy@studious.sh\n\nChúng tôi sẽ trả lời yêu cầu của bạn trong thời gian hợp lý."
         }
       },
       "goToTop": "Lên đầu trang",
@@ -328,64 +329,64 @@
       "lastUpdated": "Cập nhật lần cuối: Tháng 11 năm 2025",
       "sections": {
         "acceptance": {
-          "title": "1. Chấp nhận các điều khoản",
-          "content": "Bằng việc truy cập hoặc sử dụng Studious LMS ('Dịch vụ'), bạn đồng ý chịu ràng buộc bởi các Điều khoản Dịch vụ này ('Điều khoản'). Nếu bạn không đồng ý với các Điều khoản này, bạn không được phép truy cập hoặc sử dụng Dịch vụ. Các Điều khoản này áp dụng cho tất cả người dùng Dịch vụ, bao gồm học sinh, giáo viên, quản trị viên và các tổ chức giáo dục."
+          "title": "1. Chấp nhận các Điều khoản",
+          "content": "Bằng cách truy cập hoặc sử dụng Studious LMS ('Dịch vụ'), bạn đồng ý chịu ràng buộc bởi các Điều khoản Dịch vụ này ('Điều khoản'). Nếu bạn không đồng ý với các Điều khoản này, bạn không được phép truy cập hoặc sử dụng Dịch vụ. Các Điều khoản này áp dụng cho tất cả người dùng Dịch vụ, bao gồm sinh viên, giáo viên, quản trị viên và các tổ chức giáo dục."
         },
         "descriptionOfService": {
           "title": "2. Mô tả dịch vụ",
-          "content": "Studious LMS là hệ thống quản lý học tập cung cấp cho các cơ sở giáo dục, giáo viên và học sinh các công cụ để quản lý lớp học, bài tập, điểm số, điểm danh, giao tiếp và các hoạt động giáo dục khác. Dịch vụ này bao gồm các ứng dụng web và di động, các tính năng hỗ trợ AI và các dịch vụ liên quan."
+          "content": "Studious LMS là một hệ thống quản lý học tập cung cấp cho các cơ sở giáo dục, giáo viên và sinh viên các công cụ để quản lý lớp học, bài tập, điểm số, điểm danh, liên lạc và các hoạt động giáo dục khác. Dịch vụ này bao gồm các ứng dụng web và di động, các tính năng hỗ trợ trí tuệ nhân tạo (AI) và các dịch vụ liên quan."
         },
         "userAccounts": {
           "title": "3. Tài khoản người dùng",
-          "content": "Để sử dụng Dịch vụ, bạn phải tạo tài khoản và cung cấp thông tin chính xác, cập nhật và đầy đủ. Bạn có trách nhiệm bảo mật thông tin đăng nhập tài khoản và mọi hoạt động diễn ra trong tài khoản của bạn. Bạn đồng ý:\n\n• Sử dụng mật khẩu mạnh và duy nhất\n• Không chia sẻ thông tin đăng nhập tài khoản của bạn với người khác\n• Thông báo ngay cho chúng tôi về bất kỳ truy cập trái phép nào\n• Duy trì thông tin tài khoản chính xác\n• Chịu trách nhiệm cho mọi hoạt động trong tài khoản của bạn"
+          "content": "Để sử dụng Dịch vụ, bạn phải tạo tài khoản và cung cấp thông tin chính xác, cập nhật và đầy đủ. Bạn chịu trách nhiệm bảo mật thông tin đăng nhập tài khoản của mình và chịu trách nhiệm cho tất cả các hoạt động diễn ra dưới tài khoản của bạn. Bạn đồng ý:\n\n• Sử dụng mật khẩu mạnh và độc đáo\n• Không chia sẻ thông tin đăng nhập tài khoản của bạn với người khác\n• Thông báo ngay cho chúng tôi về bất kỳ truy cập trái phép nào\n• Duy trì thông tin tài khoản chính xác\n• Chịu trách nhiệm cho tất cả các hoạt động dưới tài khoản của bạn"
         },
         "acceptableUse": {
-          "title": "4. Chính sách sử dụng được chấp nhận",
-          "content": "Bạn đồng ý chỉ sử dụng Dịch vụ cho các mục đích hợp pháp và tuân thủ các Điều khoản này. Bạn đồng ý KHÔNG:\n\n• Vi phạm bất kỳ luật hoặc quy định hiện hành nào\n• Xâm phạm quyền sở hữu trí tuệ\n• Truyền tải nội dung độc hại, phản cảm hoặc không phù hợp\n• Quấy rối, lạm dụng hoặc gây hại cho người dùng khác\n• Cố gắng truy cập trái phép vào Dịch vụ\n• Can thiệp hoặc làm gián đoạn Dịch vụ hoặc máy chủ\n• Sử dụng hệ thống tự động để truy cập Dịch vụ mà không được phép\n• Mạo danh bất kỳ cá nhân hoặc tổ chức nào\n• Thu thập hoặc lưu trữ dữ liệu cá nhân của người dùng khác mà không có sự đồng ý"
+          "title": "4. Chính sách sử dụng hợp lý",
+          "content": "Bạn đồng ý chỉ sử dụng Dịch vụ cho các mục đích hợp pháp và tuân theo các Điều khoản này. Bạn đồng ý KHÔNG:\n\n• Vi phạm bất kỳ luật hoặc quy định hiện hành nào\n• Xâm phạm quyền sở hữu trí tuệ\n• Truyền tải nội dung có hại, xúc phạm hoặc không phù hợp\n• Quấy rối, lạm dụng hoặc gây hại cho người dùng khác\n• Cố gắng truy cập trái phép vào Dịch vụ\n• Can thiệp hoặc làm gián đoạn Dịch vụ hoặc máy chủ\n• Sử dụng hệ thống tự động để truy cập Dịch vụ mà không được phép\n• Mạo danh bất kỳ cá nhân hoặc tổ chức nào\n• Thu thập hoặc lưu trữ dữ liệu cá nhân về người dùng khác mà không có sự đồng ý"
         },
         "educationalContent": {
-          "title": "5. Nội dung giáo dục và sở hữu trí tuệ",
-          "content": "Dịch vụ cho phép người dùng tạo, tải lên và chia sẻ nội dung giáo dục. Bạn vẫn giữ quyền sở hữu nội dung bạn tạo ra, nhưng bằng cách sử dụng Dịch vụ, bạn cấp cho chúng tôi giấy phép sử dụng, lưu trữ và hiển thị nội dung của bạn khi cần thiết để cung cấp Dịch vụ. Bạn có trách nhiệm đảm bảo rằng bạn có quyền sử dụng và chia sẻ bất kỳ nội dung nào bạn tải lên. Chúng tôi tôn trọng quyền sở hữu trí tuệ và sẽ phản hồi các thông báo vi phạm bản quyền hợp lệ."
+          "title": "5. Nội dung giáo dục và quyền sở hữu trí tuệ",
+          "content": "Dịch vụ này cho phép người dùng tạo, tải lên và chia sẻ nội dung giáo dục. Bạn vẫn giữ quyền sở hữu nội dung mình tạo ra, nhưng bằng cách sử dụng Dịch vụ, bạn cấp cho chúng tôi giấy phép sử dụng, lưu trữ và hiển thị nội dung của bạn khi cần thiết để cung cấp Dịch vụ. Bạn chịu trách nhiệm đảm bảo mình có quyền sử dụng và chia sẻ bất kỳ nội dung nào bạn tải lên. Chúng tôi tôn trọng quyền sở hữu trí tuệ và sẽ phản hồi các thông báo vi phạm bản quyền hợp lệ."
         },
         "aiFeatures": {
-          "title": "6. Các tính năng hỗ trợ AI",
-          "content": "Dịch vụ của chúng tôi bao gồm các tính năng hỗ trợ AI như hỗ trợ chấm điểm, tạo nội dung và hỗ trợ giáo dục. Các tính năng này được cung cấp \"nguyên trạng\" và nên được sử dụng như các công cụ bổ sung. Người dùng có trách nhiệm xem xét và xác thực nội dung do AI tạo ra. Chúng tôi không đảm bảo tính chính xác, đầy đủ hoặc phù hợp của nội dung do AI tạo ra."
+          "title": "6. Các tính năng được hỗ trợ bởi trí tuệ nhân tạo",
+          "content": "Dịch vụ của chúng tôi bao gồm các tính năng được hỗ trợ bởi trí tuệ nhân tạo (AI) như hỗ trợ chấm điểm, tạo nội dung và hỗ trợ giáo dục. Các tính năng này được cung cấp \"nguyên trạng\" và nên được sử dụng như các công cụ bổ trợ. Người dùng chịu trách nhiệm xem xét và xác nhận nội dung do AI tạo ra. Chúng tôi không đảm bảo tính chính xác, đầy đủ hoặc phù hợp của nội dung do AI tạo ra."
         },
         "privacy": {
           "title": "7. Quyền riêng tư",
-          "content": "Việc bạn sử dụng Dịch vụ cũng được điều chỉnh bởi Chính sách Quyền riêng tư của chúng tôi, trong đó giải thích cách chúng tôi thu thập, sử dụng và bảo vệ thông tin của bạn. Bằng việc sử dụng Dịch vụ, bạn đồng ý với việc thu thập và sử dụng thông tin như được mô tả trong Chính sách Quyền riêng tư của chúng tôi."
+          "content": "Việc bạn sử dụng Dịch vụ cũng tuân theo Chính sách Bảo mật của chúng tôi, trong đó giải thích cách chúng tôi thu thập, sử dụng và bảo vệ thông tin của bạn. Bằng cách sử dụng Dịch vụ, bạn đồng ý với việc thu thập và sử dụng thông tin như được mô tả trong Chính sách Bảo mật của chúng tôi."
         },
         "feesAndPayment": {
-          "title": "8. Phí và Thanh toán",
-          "content": "Một số tính năng của Dịch vụ có thể yêu cầu thanh toán. Nếu bạn mua gói đăng ký hoặc các tính năng trả phí:\n\n• Phí được tính theo giá niêm yết tại thời điểm mua hàng\n• Thanh toán được xử lý thông qua bộ xử lý thanh toán của bên thứ ba an toàn\n• Đăng ký tự động gia hạn trừ khi bị hủy\n• Việc hoàn tiền tuân theo chính sách hoàn tiền của chúng tôi\n• Chúng tôi có quyền thay đổi giá sau khi thông báo"
+          "title": "8. Lệ phí và Thanh toán",
+          "content": "Một số tính năng của Dịch vụ có thể yêu cầu thanh toán. Nếu bạn mua gói đăng ký hoặc các tính năng trả phí:\n\n• Phí được nêu rõ tại thời điểm mua hàng\n• Thanh toán được xử lý thông qua các bộ xử lý thanh toán bên thứ ba an toàn\n• Gói đăng ký tự động gia hạn trừ khi bị hủy\n• Việc hoàn tiền tuân theo chính sách hoàn tiền của chúng tôi\n• Chúng tôi có quyền thay đổi giá cả mà không cần thông báo trước"
         },
         "termination": {
           "title": "9. Chấm dứt",
-          "content": "Chúng tôi có thể chấm dứt hoặc tạm ngừng tài khoản và quyền truy cập Dịch vụ của bạn ngay lập tức, mà không cần thông báo trước, đối với hành vi mà chúng tôi tin rằng vi phạm các Điều khoản này hoặc gây hại cho người dùng khác, chúng tôi hoặc bên thứ ba. Bạn có thể chấm dứt tài khoản của mình bất cứ lúc nào bằng cách liên hệ với chúng tôi. Sau khi chấm dứt, quyền sử dụng Dịch vụ của bạn sẽ chấm dứt ngay lập tức."
+          "content": "Chúng tôi có thể chấm dứt hoặc tạm ngừng tài khoản và quyền truy cập Dịch vụ của bạn ngay lập tức, mà không cần thông báo trước, nếu bạn có hành vi mà chúng tôi cho rằng vi phạm các Điều khoản này hoặc gây hại cho người dùng khác, chúng tôi hoặc bên thứ ba. Bạn có thể chấm dứt tài khoản của mình bất cứ lúc nào bằng cách liên hệ với chúng tôi. Sau khi chấm dứt, quyền sử dụng Dịch vụ của bạn sẽ chấm dứt ngay lập tức."
         },
         "disclaimers": {
           "title": "10. Tuyên bố miễn trừ trách nhiệm",
-          "content": "DỊCH VỤ ĐƯỢC CUNG CẤP 'NGUYÊN TRẠNG' VÀ 'CÓ SẴN' KHÔNG CÓ BẤT KỲ BẢO ĐẢM NÀO, DÙ RÕ RÀNG HAY NGỤ Ý. CHÚNG TÔI KHÔNG BẢO ĐẢM RẰNG DỊCH VỤ SẼ KHÔNG BỊ GIÁN ĐOẠN, AN TOÀN HOẶC KHÔNG CÓ LỖI. CHÚNG TÔI TỪ CHỐI MỌI BẢO ĐẢM, BAO GỒM BẢO ĐẢM VỀ KHẢ NĂNG THƯƠNG MẠI, SỰ PHÙ HỢP CHO MỘT MỤC ĐÍCH CỤ THỂ VÀ KHÔNG VI PHẠM."
+          "content": "DỊCH VỤ ĐƯỢC CUNG CẤP \"NGUYÊN TRẠNG\" VÀ \"SẴN CÓ\" MÀ KHÔNG CÓ BẤT KỲ BẢO ĐẢM NÀO, DÙ RÕ RÀNG HAY NGẦM HIỂU. CHÚNG TÔI KHÔNG BẢO ĐẢM RẰNG DỊCH VỤ SẼ KHÔNG BỊ GIÁN ĐOẠN, AN TOÀN HOẶC KHÔNG CÓ LỖI. CHÚNG TÔI TỪ CHỐI TẤT CẢ CÁC BẢO ĐẢM, BAO GỒM CÁC BẢO ĐẢM VỀ KHẢ NĂNG THƯƠNG MẠI, SỰ PHÙ HỢP CHO MỤC ĐÍCH CỤ THỂ VÀ KHÔNG VI PHẠM BẢN QUYỀN."
         },
         "limitationOfLiability": {
           "title": "11. Giới hạn trách nhiệm",
-          "content": "Ở PHẠM VI TỐI ĐA ĐƯỢC PHÁP LUẬT CHO PHÉP, CHÚNG TÔI SẼ KHÔNG CHỊU TRÁCH NHIỆM ĐỐI VỚI BẤT KỲ THIỆT HẠI GIÁN TIẾP, NGẪU NHIÊN, ĐẶC BIỆT, HẬU QUẢ HOẶC TRỪNG PHẠT NÀO, HOẶC BẤT KỲ MẤT LỢI NHUẬN HOẶC DOANH THU NÀO, CHO DÙ PHÁT SINH TRỰC TIẾP HAY GIÁN TIẾP, HOẶC BẤT KỲ MẤT DỮ LIỆU, VIỆC SỬ DỤNG, THIỆN CHÍ HOẶC CÁC MẤT MÁT VÔ HÌNH KHÁC PHÁT SINH TỪ VIỆC BẠN SỬ DỤNG DỊCH VỤ."
+          "content": "TRONG PHẠM VI TỐI ĐA CHO PHÉP THEO LUẬT, CHÚNG TÔI SẼ KHÔNG CHỊU TRÁCH NHIỆM ĐỐI VỚI BẤT KỲ THIỆT HẠI GIÁN TIẾP, NGẪN NHIÊN, ĐẶC BIỆT, HẬU QUẢ HOẶC THIỆT HẠI MANG TÍNH CHẾ TÀI NÀO, HOẶC BẤT KỲ MẤT LỢI NHUẬN HOẶC DOANH THU NÀO, CHO DÙ PHÁT SINH TRỰC TIẾP HAY GIÁN TIẾP, HOẶC BẤT KỲ MẤT MÁT DỮ LIỆU, QUYỀN SỬ DỤNG, UY TÍN HOẶC CÁC TỔN THẤT VÔ HÌNH KHÁC PHÁT SINH TỪ VIỆC BẠN SỬ DỤNG DỊCH VỤ."
         },
         "indemnification": {
           "title": "12. Bồi thường",
-          "content": "Bạn đồng ý bồi thường, bảo vệ và giữ cho Studious LMS cùng các cán bộ, giám đốc, nhân viên và đại lý của Studious LMS không phải chịu bất kỳ khiếu nại, trách nhiệm pháp lý, thiệt hại, mất mát và chi phí nào phát sinh từ hoặc liên quan đến việc bạn truy cập hoặc sử dụng Dịch vụ, việc bạn vi phạm các Điều khoản này hoặc việc bạn xâm phạm bất kỳ quyền nào của người khác."
+          "content": "Bạn đồng ý bồi thường, bảo vệ và giữ cho Studious LMS cùng các cán bộ, giám đốc, nhân viên và đại lý của họ không bị tổn hại trước bất kỳ khiếu nại, trách nhiệm pháp lý, thiệt hại, tổn thất và chi phí nào phát sinh từ hoặc có liên quan đến việc bạn truy cập hoặc sử dụng Dịch vụ, việc bạn vi phạm các Điều khoản này hoặc việc bạn xâm phạm bất kỳ quyền nào của người khác."
         },
         "governingLaw": {
           "title": "13. Luật điều chỉnh",
-          "content": "Các Điều khoản này sẽ được điều chỉnh và diễn giải theo luật pháp của khu vực pháp lý nơi Studious LMS hoạt động, bất kể các điều khoản xung đột pháp luật. Mọi tranh chấp phát sinh từ các Điều khoản này hoặc Dịch vụ sẽ được giải quyết tại tòa án có thẩm quyền của khu vực pháp lý đó."
+          "content": "Các Điều khoản này sẽ được điều chỉnh và giải thích theo luật của khu vực pháp lý nơi Studious LMS hoạt động, mà không xét đến các điều khoản xung đột pháp luật. Bất kỳ tranh chấp nào phát sinh từ các Điều khoản này hoặc Dịch vụ sẽ được giải quyết tại các tòa án có thẩm quyền của khu vực pháp lý đó."
         },
         "changesToTerms": {
           "title": "14. Thay đổi Điều khoản",
-          "content": "Chúng tôi có quyền sửa đổi các Điều khoản này bất cứ lúc nào. Chúng tôi sẽ thông báo cho người dùng về những thay đổi quan trọng bằng cách đăng Điều khoản đã cập nhật trên trang web của chúng tôi và cập nhật ngày \"Cập nhật lần cuối\". Việc bạn tiếp tục sử dụng Dịch vụ sau những thay đổi đó đồng nghĩa với việc bạn chấp nhận các Điều khoản đã sửa đổi."
+          "content": "Chúng tôi có quyền sửa đổi các Điều khoản này bất cứ lúc nào. Chúng tôi sẽ thông báo cho người dùng về những thay đổi quan trọng bằng cách đăng tải các Điều khoản đã cập nhật trên trang web của chúng tôi và cập nhật ngày \"Cập nhật lần cuối\". Việc bạn tiếp tục sử dụng Dịch vụ sau những thay đổi đó đồng nghĩa với việc bạn chấp nhận các Điều khoản đã sửa đổi."
         },
         "contactUs": {
           "title": "15. Liên hệ với chúng tôi",
-          "content": "Nếu bạn có bất kỳ thắc mắc nào về Điều khoản Dịch vụ này, vui lòng liên hệ với chúng tôi theo địa chỉ:\n\nEmail: legal@studious.sh\n\nChúng tôi sẽ phản hồi yêu cầu của bạn trong thời gian hợp lý."
+          "content": "Nếu bạn có bất kỳ câu hỏi nào về Điều khoản dịch vụ này, vui lòng liên hệ với chúng tôi theo địa chỉ:\n\nEmail: legal@studious.sh\n\nChúng tôi sẽ phản hồi yêu cầu của bạn trong thời gian hợp lý."
         }
       },
       "goToTop": "Lên đầu trang",
@@ -399,10 +400,10 @@
   },
   "press": {
     "badge": "Báo chí & Truyền thông",
-    "title": "Học tập trong tin tức",
-    "subtitle": "Tài nguyên truyền thông, tài sản thương hiệu và thông tin công ty dành cho các nhà báo và người sáng tạo nội dung",
+    "title": "Những người chăm chỉ trên báo chí",
+    "subtitle": "Tài liệu truyền thông, hình ảnh thương hiệu và thông tin công ty dành cho nhà báo và người sáng tạo nội dung.",
     "factsheet": {
-      "title": "Bảng thông tin công ty",
+      "title": "Thông tin tóm tắt về công ty",
       "subtitle": "Thông tin nhanh về Studious LMS",
       "companyInfo": "Thông tin công ty",
       "founded": "Được thành lập",
@@ -414,128 +415,128 @@
       "launchDate": "Ngày ra mắt",
       "currentPhase": "Giai đoạn hiện tại",
       "targetMarkets": "Thị trường mục tiêu",
-      "teamSize": "Quy mô nhóm",
+      "teamSize": "Số lượng thành viên trong nhóm",
       "devHqs": "Trụ sở phát triển"
     },
     "contact": {
       "title": "Yêu cầu báo chí",
-      "subtitle": "Đối với các yêu cầu của báo chí, phỏng vấn và yêu cầu của phương tiện truyền thông",
-      "sl": "Chúng tôi thường trả lời trong vòng 24 giờ",
-      "general": "Để được hỗ trợ và giải đáp thắc mắc chung"
+      "subtitle": "Mọi thắc mắc về báo chí, phỏng vấn và yêu cầu truyền thông, vui lòng liên hệ.",
+      "sl": "Chúng tôi thường trả lời trong vòng 24 giờ.",
+      "general": "Mọi thắc mắc và yêu cầu hỗ trợ chung vui lòng liên hệ."
     }
   },
   "program": {
     "hero": {
       "badge": "Sáng kiến tác động xã hội",
-      "title": "Chương trình phát triển trường học hiếu học",
-      "subtitle": "Cung cấp quyền truy cập miễn phí vào công nghệ học tập hiện đại cho các trường học không có điều kiện kinh tế"
+      "title": "Chương trình phát triển học sinh chăm chỉ",
+      "subtitle": "Cung cấp quyền truy cập miễn phí vào công nghệ giáo dục hiện đại cho các trường học không có nguồn lực kinh tế."
     },
     "commitment": {
       "revenue": "Doanh thu cam kết",
-      "cohort": "Ra mắt nhóm đầu tiên",
+      "cohort": "Khởi động đợt đầu tiên",
       "free": "Truy cập miễn phí"
     },
     "about": {
       "mission": {
         "title": "Sứ mệnh của chúng tôi",
-        "body1": "Chương trình Phát triển Trường Học Năng Động (Schoolus School Development Program) nhằm hỗ trợ các trường học khó khăn bằng cách cung cấp cho họ quyền truy cập miễn phí, không giới hạn vào nền tảng quản lý học tập của chúng tôi. Chúng tôi nhận thấy công nghệ là yếu tố then chốt trong lực lượng lao động tương lai, nhưng nhiều cơ sở giáo dục lại thiếu nguồn lực này. Thông qua chương trình này, chúng tôi mang công nghệ quản lý học tập hiện đại đến những trường học đang cần nhất."
+        "body1": "Chương trình Phát triển Trường học Chăm chỉ hướng đến hỗ trợ các trường học có hoàn cảnh khó khăn bằng cách cung cấp cho họ quyền truy cập miễn phí, không giới hạn vào nền tảng quản lý học tập của chúng tôi. Chúng tôi nhận thức rằng công nghệ là yếu tố chủ đạo trong lực lượng lao động tương lai, nhưng nhiều cơ sở giáo dục lại thiếu các nguồn lực này. Thông qua chương trình này, chúng tôi mang công nghệ quản lý học tập hiện đại đến những trường học cần nó nhất."
       },
       "aims": {
-        "title": "Mục tiêu của chương trình",
-        "body1": "Qua nhiều cuộc trao đổi sâu rộng với giáo viên và chuyên gia giáo dục, chúng tôi đã xác định được những khoảng trống đáng kể trong cơ sở hạ tầng học tập kỹ thuật số hiện có tại nhiều trường học. Nhiều hệ thống quản lý học tập trên thị trường thiếu trải nghiệm người dùng trực quan, gắn kết, và các trường học ở những khu vực khó khăn thường không đủ khả năng tiếp cận công nghệ giáo dục hiện đại.",
-        "body2": "Chương trình của chúng tôi giải quyết trực tiếp những thách thức này. Doanh thu từ các gói đăng ký trả phí của chúng tôi cho phép chúng tôi cung cấp cho các trường học có hoàn cảnh khó khăn quyền truy cập toàn diện vào Studious LMS và các công cụ giáo dục liên quan. Mô hình bền vững này cho phép chúng tôi thu hẹp khoảng cách kỹ thuật số, đồng thời liên tục cải thiện nền tảng của mình cho tất cả người dùng."
+        "title": "Mục tiêu chương trình",
+        "body1": "Qua các cuộc trò chuyện sâu rộng với giáo viên và các chuyên gia giáo dục, chúng tôi đã xác định được những thiếu sót đáng kể trong cơ sở hạ tầng học tập kỹ thuật số hiện có tại nhiều trường học. Nhiều hệ thống quản lý học tập trên thị trường thiếu trải nghiệm người dùng liền mạch và trực quan, và các trường học ở những khu vực khó khăn thường không đủ khả năng tiếp cận công nghệ giáo dục hiện đại.",
+        "body2": "Chương trình của chúng tôi giải quyết trực tiếp những thách thức này. Doanh thu từ các gói đăng ký trả phí dành cho các tổ chức cho phép chúng tôi cung cấp cho các trường học có hoàn cảnh khó khăn quyền truy cập toàn diện vào hệ thống quản lý học tập Studious LMS và các công cụ giáo dục liên quan. Mô hình bền vững này cho phép chúng tôi thu hẹp khoảng cách kỹ thuật số đồng thời liên tục cải thiện nền tảng của mình cho tất cả người dùng."
       },
       "receive": {
         "title": "Những gì bạn sẽ nhận được",
-        "body1": "Các trường được chấp nhận tham gia chương trình sẽ được trải nghiệm toàn bộ nền tảng Studious—không phải phiên bản giới hạn hay rút gọn. Điều này bao gồm tài khoản học sinh và giáo viên không giới hạn, tất cả các tính năng cao cấp (trợ lý AI, phân tích nâng cao, cộng tác thời gian thực), hỗ trợ kỹ thuật ưu tiên, chuyên gia hướng dẫn tận tâm, tài nguyên đào tạo liên tục và quyền truy cập vào tất cả các bản cập nhật và cải tiến trong tương lai.",
-        "body2": "Không chỉ cung cấp phần mềm, chúng tôi còn cung cấp hỗ trợ toàn diện để đảm bảo trường học của bạn có thể tối đa hóa lợi ích của nền tảng. Đội ngũ của chúng tôi sẽ làm việc trực tiếp với ban quản lý và giáo viên để tùy chỉnh hệ thống cho phù hợp với nhu cầu cụ thể của bạn, cung cấp đào tạo thực hành và luôn sẵn sàng hỗ trợ bạn trong suốt quá trình sử dụng."
+        "body1": "Các trường được chấp nhận vào chương trình sẽ được trải nghiệm đầy đủ nền tảng Studious – chứ không phải phiên bản giới hạn hay rút gọn. Điều này bao gồm số lượng tài khoản học sinh và giáo viên không giới hạn, tất cả các tính năng cao cấp (trợ lý AI, phân tích nâng cao, cộng tác thời gian thực), hỗ trợ kỹ thuật ưu tiên, chuyên gia hướng dẫn sử dụng tận tâm, tài nguyên đào tạo liên tục và quyền truy cập vào tất cả các bản cập nhật và cải tiến trong tương lai.",
+        "body2": "Ngoài phần mềm, chúng tôi còn cung cấp hỗ trợ toàn diện để đảm bảo trường học của bạn có thể tối đa hóa lợi ích của nền tảng. Nhóm của chúng tôi sẽ làm việc trực tiếp với ban quản lý và giáo viên để tùy chỉnh hệ thống cho phù hợp với nhu cầu cụ thể của bạn, cung cấp đào tạo thực hành và luôn sẵn sàng hỗ trợ trong suốt quá trình sử dụng."
       },
       "qualifies": {
         "title": "Ai đủ điều kiện",
-        "body1": "Chúng tôi ưu tiên các trường phục vụ học sinh có thể hưởng lợi nhiều nhất từ công nghệ giáo dục tiên tiến. Điều này bao gồm các trường công lập ở những cộng đồng khó khăn về kinh tế hoặc thiếu thốn, các tổ chức giáo dục phi lợi nhuận đã đăng ký nhưng gặp khó khăn về tài chính, các trường học ở các khu vực hoặc quốc gia đang phát triển, các trường thuộc Chương trình Tiêu đề I của Hoa Kỳ và các trường quốc tế tương đương, và bất kỳ tổ chức giáo dục nào có thể chứng minh được nhu cầu tài chính thực sự cùng với cam kết cải thiện kết quả học tập của học sinh.",
-        "body2": "Chúng tôi đánh giá từng ứng dụng một cách riêng biệt, không chỉ dựa trên các chỉ số tài chính mà còn xem xét sứ mệnh của trường bạn, đối tượng học sinh bạn phục vụ và kế hoạch sử dụng Studious để nâng cao chất lượng giáo dục. Mục tiêu của chúng tôi là hợp tác với các trường học thực sự hưởng lợi và sử dụng hiệu quả nền tảng của chúng tôi để cải thiện trải nghiệm học tập của học sinh."
+        "body1": "Chúng tôi ưu tiên các trường phục vụ những học sinh sẽ được hưởng lợi nhiều nhất từ việc cải thiện công nghệ giáo dục. Điều này bao gồm các trường công lập ở các cộng đồng thiếu nguồn lực hoặc có hoàn cảnh kinh tế khó khăn, các tổ chức giáo dục phi lợi nhuận đã đăng ký nhưng gặp khó khăn về tài chính, các trường ở các khu vực hoặc quốc gia đang phát triển, các trường thuộc chương trình Title I của Hoa Kỳ và các trường tương đương quốc tế, và bất kỳ tổ chức giáo dục nào có thể chứng minh nhu cầu tài chính thực sự cùng với cam kết cải thiện kết quả học tập của học sinh.",
+        "body2": "Chúng tôi đánh giá từng đơn đăng ký một cách riêng lẻ, không chỉ dựa trên các chỉ số tài chính mà còn cả sứ mệnh của trường bạn, đối tượng học sinh mà trường phục vụ và kế hoạch sử dụng Studious để nâng cao chất lượng giáo dục. Mục tiêu của chúng tôi là hợp tác với những trường học thực sự được hưởng lợi và sử dụng hiệu quả nền tảng của chúng tôi để cải thiện trải nghiệm học tập của học sinh."
       },
       "impact": {
         "title": "Tầm nhìn của chúng tôi về tác động",
-        "body1": "Bằng cách cung cấp cho các trường học quyền truy cập miễn phí vào công nghệ quản lý học tập hiện đại, chúng tôi mong muốn xóa bỏ một trong những rào cản chính mà các cơ sở giáo dục ở những khu vực khó khăn đang phải đối mặt. Phương pháp của chúng tôi không chỉ dừng lại ở phần mềm—chúng tôi cam kết cung cấp hỗ trợ toàn diện, bao gồm tài nguyên đào tạo, hỗ trợ hội nhập và quyền truy cập vào các công cụ giáo dục như sách điện tử và tài liệu văn phòng phẩm kỹ thuật số.",
-        "body2": "Chương trình Phát triển Trường học sẽ ra mắt vào cuối tháng 11 đến giữa tháng 12 năm 2025, với nhóm trường đối tác đầu tiên của chúng tôi. Khi Studious phát triển, năng lực hỗ trợ nhiều trường học hơn của chúng tôi cũng tăng lên. Toàn bộ doanh thu từ các gói đăng ký trả phí của chúng tôi sẽ được tái đầu tư vào việc mở rộng khả năng tiếp cận cho các trường học đang gặp khó khăn, tạo ra một mô hình bền vững cho công bằng giáo dục và được củng cố theo thời gian."
+        "body1": "Bằng cách cung cấp cho các trường học quyền truy cập miễn phí vào công nghệ quản lý học tập hiện đại, chúng tôi hướng đến việc loại bỏ một trong những rào cản chính mà các cơ sở giáo dục ở những khu vực kém phát triển đang phải đối mặt. Cách tiếp cận của chúng tôi không chỉ dừng lại ở phần mềm—chúng tôi cam kết cung cấp hỗ trợ toàn diện bao gồm tài nguyên đào tạo, hỗ trợ làm quen và quyền truy cập vào các công cụ giáo dục như sách điện tử và tài liệu văn phòng phẩm kỹ thuật số.",
+        "body2": "Chương trình Phát triển Trường học sẽ khởi động vào cuối tháng 11 đến giữa tháng 12 năm 2025, với nhóm các trường đối tác đầu tiên. Khi Studious phát triển, khả năng hỗ trợ nhiều trường học hơn của chúng tôi cũng tăng lên. Tất cả doanh thu thu được từ các gói đăng ký dành cho các tổ chức có trả phí đều được tái đầu tư vào việc mở rộng khả năng tiếp cận cho các trường học có nhu cầu, tạo ra một mô hình bền vững về bình đẳng giáo dục ngày càng được củng cố theo thời gian."
       }
     },
     "cta": {
       "apply": {
-        "title": "Áp dụng cho Chương trình",
-        "description": "Bạn đã sẵn sàng đưa Studious đến trường chưa? Hãy điền vào mẫu đăng ký của chúng tôi và chúng tôi sẽ xem xét trong vòng 5-7 ngày làm việc.",
-        "item1": "Mất khoảng 10-15 phút",
-        "item2": "Không cần phí nộp đơn",
-        "item3": "Phản hồi trong vòng 5-7 ngày làm việc",
+        "title": "Đăng ký tham gia chương trình",
+        "description": "Bạn đã sẵn sàng mang Studious đến trường mình chưa? Hãy điền vào mẫu đơn đăng ký của chúng tôi và chúng tôi sẽ xem xét trong vòng 5-7 ngày làm việc.",
+        "item1": "Mất khoảng 10-15 phút.",
+        "item2": "Không thu phí đăng ký.",
+        "item3": "Sẽ phản hồi trong vòng 5-7 ngày làm việc.",
         "button": "Bắt đầu ứng dụng"
       }
     },
     "status": {
       "title": "Kiểm tra trạng thái ứng dụng",
-      "description": "Bạn đã nộp đơn chưa? Nhập ID đơn đăng ký của bạn để kiểm tra trạng thái đơn đăng ký.",
-      "inputLabel": "ID ứng dụng",
+      "description": "Đã nộp đơn? Nhập mã số đơn đăng ký của bạn để kiểm tra trạng thái đơn đăng ký.",
+      "inputLabel": "Mã số đơn đăng ký",
       "placeholder": "ví dụ: EXA2025-...",
-      "help": "Bạn đã nhận được ID ứng dụng qua email sau khi nộp đơn.",
+      "help": "Bạn đã nhận được mã số hồ sơ ứng tuyển qua email sau khi nộp hồ sơ.",
       "results": {
         "found": "Đã tìm thấy ứng dụng",
         "school": "Trường học:",
         "location": "Vị trí:",
-        "submitted": "Đã nộp:",
+        "submitted": "Đã gửi:",
         "contact": "Liên hệ:",
         "notFound": {
           "title": "Không tìm thấy ứng dụng",
-          "body": "Vui lòng kiểm tra ID ứng dụng của bạn và thử lại. Nếu bạn vẫn gặp sự cố, vui lòng liên hệ với chúng tôi theo địa chỉ email impact@studious.sh"
+          "body": "Vui lòng kiểm tra mã số ứng dụng của bạn và thử lại. Nếu vẫn gặp sự cố, vui lòng liên hệ với chúng tôi qua địa chỉ impact@studious.sh"
         }
       },
       "cards": {
         "approved": {
-          "title": "🎉 Xin chúc mừng! Đơn đăng ký của bạn đã được chấp thuận.",
-          "body": "Kiểm tra email của bạn để biết các bước tiếp theo để thiết lập tài khoản."
+          "title": "🎉 Chúc mừng! Hồ sơ của bạn đã được chấp thuận.",
+          "body": "Kiểm tra email của bạn để biết các bước tiếp theo thiết lập tài khoản."
         },
         "underReview": {
-          "title": "⏳ Đơn đăng ký của bạn hiện đang được xem xét.",
-          "body": "Chúng tôi sẽ liên hệ với bạn qua email sau khi hoàn tất đánh giá."
+          "title": "⏳ Hồ sơ ứng tuyển của bạn hiện đang được xem xét.",
+          "body": "Chúng tôi sẽ liên hệ với bạn qua email sau khi quá trình xem xét hoàn tất."
         },
         "pending": {
-          "title": "📋 Đơn đăng ký của bạn đã được nhận.",
-          "body": "Nhóm của chúng tôi sẽ sớm bắt đầu xem xét. Thời gian xem xét dự kiến: 5-7 ngày làm việc."
+          "title": "📋 Chúng tôi đã nhận được đơn đăng ký của bạn.",
+          "body": "Nhóm của chúng tôi sẽ bắt đầu xem xét sớm. Thời gian xem xét dự kiến: 5-7 ngày làm việc."
         }
       }
     },
     "contact": {
-      "title": "Bạn có thắc mắc không?",
-      "subtitle": "Đội ngũ của chúng tôi ở đây để giúp bạn trong suốt quá trình nộp đơn",
-      "button": "Gửi email cho chúng tôi: impact@studious.sh"
+      "title": "Bạn có thắc mắc gì không?",
+      "subtitle": "Đội ngũ của chúng tôi luôn sẵn sàng hỗ trợ bạn trong suốt quá trình nộp đơn.",
+      "button": "Liên hệ với chúng tôi qua email: impact@studious.sh"
     }
   },
   "apply": {
     "toasts": {
-      "submitted": "Đã nộp đơn thành công!"
+      "submitted": "Hồ sơ đăng ký đã được gửi thành công!"
     },
     "errors": {
-      "submitFailed": "Không nộp được đơn: {message}"
+      "submitFailed": "Không thể nộp đơn: {message}"
     },
     "success": {
       "title": "Đã nộp đơn!",
-      "subtitle": "Cảm ơn bạn đã nộp đơn vào Chương trình Phát triển Trường học Năng khiếu",
-      "applicationId": "ID ứng dụng của bạn",
-      "saveId": "Lưu ID này để kiểm tra trạng thái đơn đăng ký của bạn",
+      "subtitle": "Cảm ơn bạn đã đăng ký tham gia Chương trình Phát triển Học sinh Chăm chỉ.",
+      "applicationId": "Mã số đơn đăng ký của bạn",
+      "saveId": "Lưu lại ID này để kiểm tra trạng thái hồ sơ của bạn.",
       "nextSteps": {
-        "title": "Chuyện gì xảy ra tiếp theo?",
+        "title": "Điều gì sẽ xảy ra tiếp theo?",
         "item1": "Bạn sẽ nhận được email xác nhận tại {email}",
-        "item2": "Nhóm của chúng tôi sẽ xem xét đơn đăng ký của bạn trong vòng 5-7 ngày làm việc",
-        "item3": "Chúng tôi sẽ thông báo cho bạn qua email khi có quyết định"
+        "item2": "Đội ngũ của chúng tôi sẽ xem xét đơn đăng ký của bạn trong vòng 5-7 ngày làm việc.",
+        "item3": "Chúng tôi sẽ thông báo cho bạn qua email ngay khi có quyết định."
       },
-      "backToProgram": "Quay lại chương trình",
-      "returnHome": "Trở về nhà"
+      "backToProgram": "Trở lại chương trình",
+      "returnHome": "Trở về trang chủ"
     }
   },
   "agenda": {
     "title": "Chương trình nghị sự",
-    "description": "Xem lịch trình và các sự kiện sắp tới của bạn với chế độ xem lịch toàn diện",
+    "description": "Xem lịch trình và các sự kiện sắp tới của bạn với chế độ xem lịch toàn diện.",
     "addEvent": "Thêm sự kiện",
-    "untitledEvent": "Sự kiện chưa có tiêu đề",
+    "untitledEvent": "Sự kiện không tên",
     "today": "Hôm nay",
     "previous": "Trước",
     "next": "Kế tiếp",
@@ -548,33 +549,33 @@
   },
   "chat": {
     "landing": {
-      "description": "Chọn một cuộc trò chuyện từ thanh bên để bắt đầu trò chuyện.",
+      "description": "Chọn một cuộc trò chuyện từ thanh bên để bắt đầu.",
       "pleaseSignIn": "Vui lòng đăng nhập",
-      "signInRequired": "Bạn cần phải đăng nhập để có thể trò chuyện.",
-      "title": "Chào mừng đến với Chat"
+      "signInRequired": "Bạn cần đăng nhập để truy cập vào phần trò chuyện.",
+      "title": "Chào mừng bạn đến với Chat"
     },
     "page": {
       "unknown": "Không rõ",
       "unnamedGroup": "Nhóm không tên",
       "unknownUser": "Người dùng không xác định",
       "notFound": {
-        "title": "Không tìm thấy cuộc trò chuyện",
-        "description": "Cuộc trò chuyện này không tồn tại hoặc bạn không thể truy cập vào nó.",
+        "title": "Không tìm thấy cuộc hội thoại",
+        "description": "Cuộc trò chuyện này không tồn tại hoặc bạn không có quyền truy cập vào nó.",
         "backToChat": "Quay lại trò chuyện"
       },
       "header": {
-        "members": "các thành viên",
-        "markMentionsRead": "Mark đề cập đến việc đọc"
+        "members": "thành viên",
+        "markMentionsRead": "Mark nhắc đến việc đọc"
       },
       "input": {
         "placeholderPrefix": "Tin nhắn"
       },
-      "loading": "Đang tải cuộc trò chuyện..."
+      "loading": "Đang tải cuộc hội thoại..."
     }
   },
   "notifications": {
     "title": "Thông báo",
-    "subtitle": "Cập nhật thông tin về các lớp học và bài tập của bạn",
+    "subtitle": "Hãy luôn theo sát lịch học và bài tập của bạn.",
     "badge": {
       "unread": "{count} chưa đọc"
     },
@@ -587,7 +588,7 @@
     "empty": {
       "unread": {
         "title": "Không có thông báo chưa đọc",
-        "description": "Đã cập nhật xong! Bạn không có thông báo nào chưa đọc."
+        "description": "Đã đọc hết! Bạn không còn thông báo nào chưa đọc."
       },
       "read": {
         "title": "Không có thông báo đã đọc",
@@ -595,7 +596,7 @@
       },
       "all": {
         "title": "Chưa có thông báo nào",
-        "description": "Khi bạn nhận được thông báo, chúng sẽ xuất hiện ở đây."
+        "description": "Khi bạn nhận được thông báo, chúng sẽ hiển thị ở đây."
       }
     },
     "actions": {
@@ -603,7 +604,7 @@
       "markAsRead": "Đánh dấu là đã đọc"
     },
     "toasts": {
-      "markedAsRead": "Thông báo được đánh dấu là đã đọc"
+      "markedAsRead": "Thông báo đã được đánh dấu là đã đọc"
     },
     "meta": {
       "from": "từ"
@@ -621,54 +622,54 @@
       "description": "Cập nhật thông tin cá nhân và thông tin hồ sơ của bạn",
       "displayName": "Tên hiển thị",
       "displayNamePlaceholder": "Nhập tên hiển thị của bạn",
-      "displayNameDescription": "Đây là cách tên của bạn sẽ xuất hiện với người khác",
+      "displayNameDescription": "Đây là cách tên của bạn sẽ hiển thị cho người khác.",
       "location": "Vị trí",
       "locationPlaceholder": "Nhập vị trí của bạn",
       "locationDescription": "Thành phố, tiểu bang hoặc quốc gia của bạn",
       "bio": "Đã từng là",
-      "bioPlaceholder": "Hãy kể cho chúng tôi về bạn...",
-      "bioDescription": "Một mô tả ngắn gọn về bản thân bạn (tối đa 500 ký tự)",
+      "bioPlaceholder": "Hãy kể cho chúng tôi về bản thân bạn...",
+      "bioDescription": "Mô tả ngắn gọn về bản thân (tối đa 500 ký tự)",
       "website": "Trang web",
       "websitePlaceholder": "https://your-website.com",
       "websiteDescription": "Trang web cá nhân hoặc danh mục đầu tư của bạn"
     },
     "accountInformation": {
       "title": "Thông tin tài khoản",
-      "description": "Chi tiết tài khoản và thông tin đăng nhập của bạn",
+      "description": "Thông tin tài khoản và thông tin đăng nhập của bạn",
       "username": "Tên người dùng",
       "usernameNote": "Tên người dùng không thể thay đổi",
       "email": "E-mail",
-      "emailNote": "Email được quản lý trong Cài đặt tài khoản",
+      "emailNote": "Email được quản lý trong Cài đặt tài khoản.",
       "memberSince": "Thành viên từ"
     },
     "messages": {
-      "profileUpdated": "Hồ sơ đã được cập nhật thành công",
-      "profileUpdateFailed": "Không cập nhật được hồ sơ",
-      "profilePictureSelected": "Đã chọn ảnh đại diện. Nhấp vào 'Lưu thay đổi' để cập nhật.",
-      "avatarSelected": "Đã chọn ảnh đại diện. Nhấp vào 'Lưu thay đổi' để cập nhật.",
-      "profilePictureUploadFailed": "Không tải được ảnh đại diện",
-      "profilePictureSelectFailed": "Không chọn được ảnh đại diện",
-      "failedToLoadProfile": "Không tải được hồ sơ. Vui lòng thử lại."
+      "profileUpdated": "Hồ sơ đã được cập nhật thành công.",
+      "profileUpdateFailed": "Không thể cập nhật hồ sơ",
+      "profilePictureSelected": "Ảnh đại diện đã được chọn. Nhấp vào 'Lưu thay đổi' để cập nhật.",
+      "avatarSelected": "Ảnh đại diện đã được chọn. Nhấp vào 'Lưu thay đổi' để cập nhật.",
+      "profilePictureUploadFailed": "Không thể tải ảnh đại diện lên",
+      "profilePictureSelectFailed": "Không thể chọn ảnh đại diện",
+      "failedToLoadProfile": "Không thể tải hồ sơ. Vui lòng thử lại."
     }
   },
   "class": {
     "assignments": "Bài tập",
-    "students": "sinh viên",
+    "students": "học sinh",
     "attendance": "Sự tham dự",
-    "attachFile": "Đính kèm tập tin",
+    "attachFile": "Đính kèm tệp",
     "post": "Bưu kiện",
     "posting": "Đang đăng...",
-    "noPosts": "Chưa có bài viết nào",
+    "noPosts": "Chưa có bài đăng nào",
     "createFirstPost": "Tạo bài đăng đầu tiên",
     "grades": {
       "title": "Điểm số",
-      "subtitle": "Xem và quản lý điểm của học sinh",
+      "subtitle": "Xem và quản lý điểm số của học sinh",
       "columns": {
         "assignment": "Phân công",
         "maxPoints": "Điểm tối đa",
         "weight": "Cân nặng",
-        "graded": "Đã phân loại",
-        "dueDate": "Hai Ngày",
+        "graded": "Đã chấm điểm",
+        "dueDate": "Hai cuộc hẹn",
         "actions": "Hành động",
         "student": "Học sinh",
         "overallGrade": "Điểm tổng thể",
@@ -676,11 +677,11 @@
         "trend": "Xu hướng"
       },
       "labels": {
-        "rubric": "Tiêu chí"
+        "rubric": "Tiêu chí đánh giá"
       },
       "actions": {
         "manage": "Quản lý",
-        "viewGrades": "Xem Điểm",
+        "viewGrades": "Xem điểm số",
         "saving": "Đang lưu...",
         "saveChanges": "Lưu thay đổi",
         "preview": "Xem trước",
@@ -690,62 +691,62 @@
       },
       "overview": {
         "title": "Tổng quan về lớp học",
-        "classAverage": "Lớp trung bình",
-        "totalStudents": "Tổng số học sinh",
+        "classAverage": "Điểm trung bình của lớp",
+        "totalStudents": "Tổng số sinh viên",
         "assignments": "Bài tập",
         "submissionRate": "Tỷ lệ nộp bài"
       },
       "assignmentManagement": {
-        "title": "Quản lý bài tập",
+        "title": "Quản lý nhiệm vụ",
         "empty": {
-          "title": "Không tìm thấy bài tập nào",
-          "description": "Tạo bài tập để quản lý điểm và cài đặt"
+          "title": "Không tìm thấy bài tập nào.",
+          "description": "Tạo bài tập để quản lý điểm số và cài đặt."
         },
-        "searchPlaceholder": "Tìm kiếm bài tập..."
+        "searchPlaceholder": "Nhiệm vụ tìm kiếm..."
       },
       "students": {
-        "title": "Học sinh",
-        "viewAll": "Xem tất cả học sinh",
+        "title": "Sinh viên",
+        "viewAll": "Xem tất cả sinh viên",
         "empty": {
-          "title": "Không có học sinh nào đăng ký",
-          "description": "Học sinh sẽ xuất hiện ở đây khi họ tham gia lớp học"
+          "title": "Không có sinh viên nào đăng ký",
+          "description": "Sinh viên sẽ xuất hiện ở đây khi họ tham gia lớp học."
         },
-        "searchPlaceholder": "Tìm kiếm học sinh..."
+        "searchPlaceholder": "Tìm kiếm sinh viên..."
       },
       "gradeBoundaries": {
-        "title": "Ranh giới lớp",
-        "untitled": "Ranh giới chấm điểm chưa có tiêu đề",
+        "title": "Giới hạn điểm",
+        "untitled": "Ranh giới chấm điểm không có tiêu đề",
         "empty": {
-          "title": "Không có ranh giới lớp nào được tạo ra",
-          "description": "Tạo ranh giới phân loại để xác định phạm vi phân loại"
+          "title": "Không có ranh giới điểm số nào được thiết lập.",
+          "description": "Tạo ranh giới chấm điểm để xác định phạm vi điểm số."
         },
         "previewTitle": "Xem trước ranh giới chấm điểm",
         "details": {
           "title": "Chi tiết ranh giới phân loại",
           "name": "Tên",
-          "noneDefined": "Không có ranh giới phân loại được xác định"
+          "noneDefined": "Không có ranh giới chấm điểm nào được xác định."
         }
       },
       "rubrics": {
-        "title": "Tiêu chí chấm điểm",
-        "untitled": "Tiêu đề chưa có tiêu đề",
+        "title": "Tiêu chí đánh giá",
+        "untitled": "Mục không có tiêu đề",
         "empty": {
-          "title": "Không có tiêu chí nào được tạo",
-          "description": "Tạo tiêu chí đánh giá để xác định tiêu chí đánh giá"
+          "title": "Không có tiêu chí đánh giá nào được tạo ra.",
+          "description": "Xây dựng bảng tiêu chí đánh giá để xác định các tiêu chí đánh giá."
         },
-        "previewTitle": "Xem trước tiêu chí",
+        "previewTitle": "Xem trước bảng tiêu chí đánh giá",
         "details": {
-          "title": "Chi tiết tiêu chí",
+          "title": "Chi tiết tiêu chí đánh giá",
           "name": "Tên",
           "category": "Loại",
           "description": "Sự miêu tả",
           "custom": "Phong tục",
-          "noDescription": "Không có mô tả nào được cung cấp",
-          "noCriteria": "Không tìm thấy tiêu chí nào trong tiêu chí này"
+          "noDescription": "Không có mô tả nào được cung cấp.",
+          "noCriteria": "Không tìm thấy tiêu chí nào trong bảng đánh giá này."
         }
       },
       "confirm": {
-        "deleteRubric": "Bạn có chắc chắn muốn xóa markscheme này không?",
+        "deleteRubric": "Bạn có chắc chắn muốn xóa bảng điểm này không?",
         "deleteGradingBoundary": "Bạn có chắc chắn muốn xóa ranh giới chấm điểm này không?"
       }
     },
@@ -760,9 +761,9 @@
         "regenerate": "Tái tạo",
         "message": "Tin nhắn",
         "viewProfile": "Xem hồ sơ",
-        "viewGrades": "Xem Điểm",
-        "makeTeacher": "Làm giáo viên",
-        "makeStudent": "Làm cho sinh viên",
+        "viewGrades": "Xem điểm số",
+        "makeTeacher": "Tạo giáo viên",
+        "makeStudent": "Giúp học sinh",
         "removeFromClass": "Xóa khỏi lớp",
         "removeAccess": "Xóa quyền truy cập",
         "tryAgain": "Thử lại"
@@ -773,50 +774,50 @@
         "you": "Bạn"
       },
       "invite": {
-        "title": "Mã mời lớp học",
-        "description": "Chia sẻ mã này với học sinh để tham gia lớp học"
+        "title": "Mã mời tham gia lớp học",
+        "description": "Hãy chia sẻ mã này với học sinh để các em tham gia lớp học."
       },
       "search": {
         "placeholder": "Tìm kiếm thành viên..."
       },
       "tabs": {
-        "students": "Học sinh",
+        "students": "Sinh viên",
         "teachers": "Giáo viên"
       },
       "students": {
         "empty": {
-          "title": "Không tìm thấy học sinh nào",
+          "title": "Không tìm thấy học sinh nào.",
           "matchNone": "Không có học sinh nào khớp với \"{query}\"",
-          "noStudents": "Chưa có học viên nào tham gia lớp này"
+          "noStudents": "Hiện chưa có học sinh nào tham gia lớp học này."
         }
       },
       "teachers": {
         "empty": {
-          "title": "Không tìm thấy giáo viên",
+          "title": "Không tìm thấy giáo viên nào.",
           "matchNone": "Không có giáo viên nào khớp với \"{query}\"",
-          "noTeachers": "Không có giáo viên bổ sung nào được thêm vào"
+          "noTeachers": "Không có giáo viên nào được bổ sung."
         }
       },
       "toasts": {
         "inviteRegenerated": "Mã mời đã được tạo lại thành công",
-        "copied": "Mã mời đã được sao chép vào bảng tạm",
+        "copied": "Mã mời đã được sao chép vào clipboard",
         "roleChanged": "Vai trò đã thay đổi thành {role}",
-        "memberRemoved": "Đã xóa thành viên thành công"
+        "memberRemoved": "Thành viên đã được xóa thành công."
       },
       "errors": {
-        "regenerateFailed": "Không thể tạo lại mã mời",
+        "regenerateFailed": "Không thể tạo lại mã mời.",
         "changeRoleFailed": "Không thể thay đổi vai trò",
-        "removeFailed": "Không xóa được thành viên",
-        "failedToLoad": "Không tải được thành viên"
+        "removeFailed": "Không thể xóa thành viên",
+        "failedToLoad": "Không thể tải thành viên"
       }
     },
     "files": {
-      "title": "Tập tin",
-      "subtitle": "Quản lý các tệp và tài nguyên lớp học",
+      "title": "Tệp tin",
+      "subtitle": "Quản lý hồ sơ và tài nguyên lớp học.",
       "actions": {
         "newFolder": "Thư mục mới",
         "upload": "Tải lên",
-        "uploadFiles": "Tải lên tập tin",
+        "uploadFiles": "Tải lên tệp",
         "createFolder": "Tạo thư mục",
         "download": "Tải xuống",
         "share": "Chia sẻ",
@@ -828,29 +829,29 @@
         "folderCreated": "Thư mục đã được tạo thành công",
         "folderDeleted": "Thư mục đã được xóa thành công",
         "folderRenamed": "Đã đổi tên thư mục thành công",
-        "folderMoved": "Thư mục đã được di chuyển thành công",
-        "filesUploaded": "Đã tải tệp lên thành công",
-        "fileDeleted": "Đã xóa tập tin thành công",
-        "fileRenamed": "Đã đổi tên tệp thành công",
-        "fileMoved": "Tệp đã được di chuyển thành công",
-        "downloadStarted": "Đã bắt đầu tải xuống",
+        "folderMoved": "Thư mục đã được di chuyển thành công.",
+        "filesUploaded": "Tệp đã được tải lên thành công.",
+        "fileDeleted": "Tệp đã được xóa thành công",
+        "fileRenamed": "Tệp đã được đổi tên thành công.",
+        "fileMoved": "Tệp đã được chuyển thành công.",
+        "downloadStarted": "Quá trình tải xuống đã bắt đầu",
         "shareCopied": "Đã sao chép liên kết chia sẻ"
       },
       "errors": {
         "teacherOnly": "Chỉ giáo viên mới có thể chỉnh sửa tập tin.",
-        "downloadFailed": "Tải xuống không thành công",
-        "shareFailed": "Chia sẻ không thành công",
-        "failedToLoad": "Không tải được tệp. Vui lòng thử lại sau."
+        "downloadFailed": "Tải xuống thất bại",
+        "shareFailed": "Chia sẻ thất bại",
+        "failedToLoad": "Không thể tải tệp. Vui lòng thử lại sau."
       },
       "breadcrumbs": {
-        "classFiles": "Tệp lớp"
+        "classFiles": "Hồ sơ lớp học"
       },
       "search": {
-        "placeholder": "Tìm kiếm trong các tập tin"
+        "placeholder": "Tìm kiếm trong tệp"
       },
       "selected": "{count} đã chọn",
       "filters": {
-        "fileType": "Loại tập tin",
+        "fileType": "Loại tệp",
         "documents": "Tài liệu",
         "images": "Hình ảnh",
         "videos": "Video",
@@ -859,18 +860,18 @@
       "sort": {
         "name": "Tên",
         "lastModified": "Lần sửa đổi cuối cùng",
-        "fileSize": "Kích thước tập tin"
+        "fileSize": "Kích thước tệp"
       },
       "table": {
         "name": "Tên",
         "owner": "Người sở hữu",
         "lastModified": "Lần sửa đổi cuối cùng",
-        "fileSize": "Kích thước tập tin"
+        "fileSize": "Kích thước tệp"
       },
       "empty": {
         "title": "Thư mục này trống",
-        "description": "Tải lên tệp hoặc tạo thư mục để bắt đầu sắp xếp tài liệu lớp học của bạn.",
-        "searchTitle": "Không tìm thấy tập tin",
+        "description": "Tải lên tập tin hoặc tạo thư mục để bắt đầu sắp xếp tài liệu học tập của bạn.",
+        "searchTitle": "Không tìm thấy tệp nào",
         "searchDescription": "Không có tệp nào khớp với \"{query}\". Hãy thử một thuật ngữ tìm kiếm khác."
       }
     },
@@ -878,7 +879,7 @@
       "title": "Cài đặt lớp học",
       "subtitle": "Cấu hình chi tiết và tùy chọn lớp học",
       "labels": {
-        "unsavedChanges": "Những thay đổi chưa lưu"
+        "unsavedChanges": "Thay đổi chưa được lưu"
       },
       "actions": {
         "saving": "Đang lưu...",
@@ -892,12 +893,12 @@
           "title": "Thông tin cơ bản"
         },
         "theme": {
-          "title": "Chủ đề lớp học",
-          "description": "Chọn màu chủ đề cho lớp này"
+          "title": "Chủ đề của lớp học",
+          "description": "Hãy chọn một màu chủ đề cho lớp học này."
         },
         "danger": {
           "title": "Khu vực nguy hiểm",
-          "description": "Một khi bạn đã xóa một lớp học, bạn sẽ không thể quay lại lớp cũ. Thao tác này sẽ xóa vĩnh viễn tất cả bài tập, điểm số, hồ sơ điểm danh và xóa tất cả học sinh khỏi lớp học."
+          "description": "Một khi bạn xóa một lớp học, sẽ không thể khôi phục lại được. Thao tác này sẽ xóa vĩnh viễn tất cả bài tập, điểm số, hồ sơ điểm danh và loại bỏ tất cả học sinh khỏi lớp học."
         }
       },
       "fields": {
@@ -906,9 +907,9 @@
         "subject": "Chủ thể"
       },
       "placeholders": {
-        "className": "ví dụ, Vật lý nâng cao",
-        "section": "ví dụ, AP-101",
-        "subject": "ví dụ, Vật lý"
+        "className": "Ví dụ: Vật lý nâng cao",
+        "section": "ví dụ: AP-101",
+        "subject": "Ví dụ: Vật lý"
       },
       "toasts": {
         "updated": {
@@ -916,38 +917,38 @@
           "description": "Cài đặt lớp học đã được lưu thành công."
         },
         "deleted": {
-          "title": "Lớp đã xóa",
+          "title": "Lớp đã bị xóa",
           "description": "Lớp học đã bị xóa vĩnh viễn."
         }
       },
       "errors": {
         "updateFailed": {
-          "title": "Cập nhật không thành công",
-          "description": "Không lưu được cài đặt lớp học. Vui lòng thử lại."
+          "title": "Cập nhật thất bại",
+          "description": "Không thể lưu cài đặt lớp học. Vui lòng thử lại."
         }
       },
       "confirm": {
-        "title": "Bạn có chắc chắn không?",
-        "description": "Không thể hoàn tác hành động này. Thao tác này sẽ xóa vĩnh viễn lớp \"{name}\" và xóa tất cả dữ liệu liên quan, bao gồm:",
+        "title": "Bạn hoàn toàn chắc chắn chứ?",
+        "description": "Thao tác này không thể hoàn tác. Thao tác này sẽ xóa vĩnh viễn lớp \"{name}\" và loại bỏ tất cả dữ liệu liên quan, bao gồm:",
         "items": {
-          "assignments": "Tất cả các bài tập và bài nộp",
-          "records": "Tất cả các điểm số và hồ sơ điểm danh",
-          "students": "Tất cả học sinh sẽ bị đuổi khỏi lớp",
-          "events": "Tất cả các sự kiện và thông báo của lớp"
+          "assignments": "Tất cả bài tập và bài nộp",
+          "records": "Tất cả điểm số và hồ sơ điểm danh",
+          "students": "Tất cả học sinh sẽ bị đuổi khỏi lớp.",
+          "events": "Tất cả các sự kiện và thông báo của lớp học"
         },
-        "confirmDelete": "Có, xóa lớp"
+        "confirmDelete": "Vâng, hãy xóa lớp"
       }
     },
     "syllabus": {
-      "title": "Giáo trình",
-      "subtitle": "Tổng quan về khóa học và thông tin học thuật",
+      "title": "Chương trình học",
+      "subtitle": "Tổng quan khóa học và thông tin học thuật",
       "actions": {
         "saveChanges": "Lưu thay đổi",
         "cancel": "Hủy bỏ",
         "edit": "Chỉnh sửa giáo trình"
       },
       "errors": {
-        "failedToLoad": "Không tải được giáo trình",
+        "failedToLoad": "Không thể tải giáo trình",
         "tryLater": "Vui lòng thử lại sau."
       },
       "stats": {
@@ -957,33 +958,33 @@
         "upcoming": "Sắp tới"
       },
       "overview": {
-        "title": "Tổng quan về khóa học",
-        "placeholder": "Nhập thông tin tổng quan về khóa học, mục tiêu và các thông tin quan trọng khác...",
-        "helper": "Nhập thông tin khóa học, mục tiêu học tập, chính sách và các thông tin quan trọng khác.",
+        "title": "Tổng quan khóa học",
+        "placeholder": "Nhập tổng quan khóa học, mục tiêu và các thông tin quan trọng khác...",
+        "helper": "Nhập thông tin khóa học, mục tiêu học tập, chính sách và các chi tiết quan trọng khác.",
         "empty": {
-          "title": "Chưa có nội dung giáo trình",
-          "description": "Nhấp vào 'Chỉnh sửa giáo trình' để thêm thông tin khóa học, mục tiêu học tập, chính sách, v.v."
+          "title": "Chưa có nội dung giáo trình nào.",
+          "description": "Nhấp vào 'Chỉnh sửa giáo trình' để thêm thông tin khóa học, mục tiêu học tập, chính sách và nhiều nội dung khác."
         }
       },
       "assignments": {
-        "title": "Bài tập khóa học",
-        "gradedCount": "{graded} của {total} được xếp hạng",
-        "totalPoints": "{total} tổng số điểm",
+        "title": "Bài tập môn học",
+        "gradedCount": "{graded} của {total} được chấm điểm",
+        "totalPoints": "{total} tổng điểm",
         "empty": {
           "title": "Chưa có bài tập nào",
-          "description": "Bài tập sẽ xuất hiện ở đây sau khi được tạo."
+          "description": "Các bài tập sẽ hiển thị ở đây sau khi được tạo."
         }
       },
       "table": {
         "assignment": "Phân công",
-        "dueDate": "Hai Ngày",
+        "dueDate": "Hai cuộc hẹn",
         "points": "Điểm",
         "weight": "Cân nặng",
         "status": "Trạng thái",
         "pts": "điểm"
       },
       "status": {
-        "graded": "Đã phân loại",
+        "graded": "Đã chấm điểm",
         "pending": "Chưa giải quyết"
       },
       "courseInfo": {
@@ -1004,26 +1005,26 @@
     }
   },
   "assignment": {
-    "dueDate": "Hai Ngày",
+    "dueDate": "Hai cuộc hẹn",
     "submit": "Nộp",
     "grade": "Cấp",
     "feedback": "Nhận xét",
-    "submissions": "Đệ trình",
+    "submissions": "Bài nộp",
     "open": "Mở",
-    "closed": "Đã đóng",
+    "closed": "Đóng cửa",
     "assignment": "Phân công",
     "assignments": "Bài tập",
     "newAssignment": "Nhiệm vụ mới",
     "createAssignment": "Tạo bài tập",
     "viewAssignment": "Xem bài tập",
     "allAssignments": "Tất cả các bài tập",
-    "searchAssignments": "Tìm kiếm bài tập...",
-    "noAssignmentsFound": "Không tìm thấy bài tập nào",
-    "createFirstAssignment": "Tạo bài tập đầu tiên của bạn để bắt đầu",
+    "searchAssignments": "Nhiệm vụ tìm kiếm...",
+    "noAssignmentsFound": "Không tìm thấy bài tập nào.",
+    "createFirstAssignment": "Hãy tạo bài tập đầu tiên của bạn để bắt đầu.",
     "newSection": "Phần mới",
     "pts": "điểm",
     "overdue": "(Quá hạn)",
-    "assignmentDrop": "Thả bài tập ở đây để chuyển lên cấp cao nhất",
+    "assignmentDrop": "Thả bài tập vào đây để chuyển lên cấp cao nhất",
     "sectionDeletionConfirmation": "Bạn có chắc chắn muốn xóa phần này không? Tất cả bài tập sẽ được chuyển lên cấp cao nhất.",
     "assignmentDeletionConfirmation": "Bạn có chắc chắn muốn xóa bài tập này không? Thao tác này không thể hoàn tác.",
     "manageAndTrack": "Quản lý và theo dõi bài tập trên lớp",
@@ -1033,78 +1034,78 @@
     "previous": "Trước",
     "next": "Kế tiếp",
     "goToPreviousPage": "Quay lại trang trước",
-    "goToNextPage": "Đi đến trang tiếp theo",
+    "goToNextPage": "Chuyển sang trang tiếp theo",
     "morePages": "Thêm trang"
   },
   "about": {
     "titleStatement1": "Câu chuyện của chúng tôi",
-    "titleStatement2": "Được xây dựng từ sự thất vọng,",
-    "titleStatement3": "được tái hiện bằng AI",
-    "titleStatement4": "Sau nhiều năm vật lộn với các cổng thông tin trường học lỗi thời và rời rạc, chúng tôi quyết định xây dựng hệ thống quản lý học tập mà chúng tôi luôn mong muốn có.",
-    "problemParagraph1": "Studious bắt đầu vào năm 2023",
-    "problemParagraph2": "khi một nhóm học sinh và nhà giáo dục cùng nhau giải quyết một vấn đề chung: các cổng thông tin trường học hiện tại cồng kềnh, chậm và được xây dựng cho một kỷ nguyên giáo dục khác.",
-    "problemDetailParagraph": "Chúng tôi thấy mình đang phải xoay sở với nhiều nền tảng khác nhau — một nền tảng cho điểm số, một nền tảng cho bài tập, một nền tảng thứ ba cho giao tiếp. Giáo viên dành nhiều thời gian vật lộn với phần mềm hơn là giảng dạy. Học sinh bị trễ hạn vì thông báo bị chôn vùi trong các giao diện lỗi thời.",
-    "betterWay": "Chúng tôi biết phải có cách nào đó tốt hơn.",
-    "solutionParagraph1": "Lấy cảm hứng từ các công cụ cộng tác hiện đại như Linear và Notion, chúng tôi bắt đầu tạo ra một hệ thống quản lý học tập có cảm giác",
-    "solutionParagraph2": "nhanh chóng, trực quan và thú vị khi sử dụng.",
-    "solutionParagraph3": "Một công nghệ tích hợp AI không phải là một chiêu trò quảng cáo mà là một công cụ tăng năng suất thực sự cho cả giáo viên và học sinh.",
+    "titleStatement2": "Được hình thành từ sự thất vọng,",
+    "titleStatement3": "được tái hiện với trí tuệ nhân tạo",
+    "titleStatement4": "Sau nhiều năm vật lộn với các cổng thông tin trường học lỗi thời và rời rạc, chúng tôi quyết định xây dựng hệ thống quản lý học tập mà chúng tôi luôn mong muốn có được.",
+    "problemParagraph1": "Studious bắt đầu vào năm 2023.",
+    "problemParagraph2": "Khi một nhóm học sinh và giáo viên cùng nhau bày tỏ sự thất vọng chung: các cổng thông tin trường học hiện tại cồng kềnh, chậm chạp và được xây dựng cho một thời đại giáo dục khác.",
+    "problemDetailParagraph": "Chúng tôi phải xoay xở với nhiều nền tảng khác nhau — một nền tảng để chấm điểm, một nền tảng khác để giao tiếp, và một nền tảng thứ ba. Giáo viên dành nhiều thời gian vật lộn với phần mềm hơn là giảng dạy. Học sinh bỏ lỡ hạn chót vì các thông báo bị ẩn trong giao diện lỗi thời.",
+    "betterWay": "Chúng tôi biết chắc chắn phải có một cách tốt hơn.",
+    "solutionParagraph1": "Lấy cảm hứng từ các công cụ cộng tác hiện đại như Linear và Notion, chúng tôi đã bắt đầu tạo ra một hệ thống quản lý học tập mang lại cảm giác",
+    "solutionParagraph2": "Nhanh chóng, trực quan và dễ sử dụng.",
+    "solutionParagraph3": "Một mô hình tích hợp trí tuệ nhân tạo không chỉ như một chiêu trò, mà là một yếu tố nhân rộng năng suất thực sự cho cả giáo viên và học sinh.",
     "launchParagraph": "Sau hai năm phát triển, chúng tôi chính thức ra mắt Studious vào ngày 17 tháng 10 năm 2025. Hiện tại, chúng tôi đang trong giai đoạn truy cập sớm, sẵn sàng giúp các trường học trên toàn thế giới chuyển đổi trải nghiệm học tập của họ.",
     "journey1": "Hành trình của chúng tôi",
     "journey2": "Hai năm xây dựng, học hỏi và phát triển",
     "journeyBeginningDate": "2023",
-    "journeyBeginning1": "Sự khởi đầu",
-    "journeyBeginning2": "Nguyên mẫu đầu tiên được phát triển. Các tính năng cốt lõi: quản lý lớp học, bài tập và tích hợp lịch.",
+    "journeyBeginning1": "Sự Khởi Đầu",
+    "journeyBeginning2": "Nguyên mẫu đầu tiên đã được phát triển. Các tính năng chính: quản lý lớp học, bài tập và tích hợp lịch.",
     "journeyBetaLaunchDate": "Ngày 31 tháng 10 năm 2025",
-    "journeyBetaLaunch1": "Ra mắt bản Beta công khai",
-    "journeyBetaLaunch2": "Ra mắt bản thử nghiệm beta công khai chính thức của Studious LMS. Mở quyền truy cập sớm cho các trường học trên toàn thế giới với đầy đủ tính năng của nền tảng.",
+    "journeyBetaLaunch1": "Ra mắt phiên bản Beta công khai",
+    "journeyBetaLaunch2": "Chính thức ra mắt phiên bản thử nghiệm beta công khai của Studious LMS. Mở quyền truy cập sớm cho các trường học trên toàn thế giới với đầy đủ các tính năng của nền tảng.",
     "journeyPilotSchoolsDate": "Tháng 11 năm 2025",
-    "journeyPilotSchools1": "Chương trình Trường học Thí điểm",
-    "journeyPilotSchools2": "Triển khai quan hệ đối tác với các trường thí điểm để thu thập phản hồi thực tế và tinh chỉnh nền tảng dựa trên các nhu cầu giáo dục đa dạng.",
+    "journeyPilotSchools1": "Chương trình Trường thí điểm",
+    "journeyPilotSchools2": "Thiết lập quan hệ đối tác với các trường thí điểm để thu thập phản hồi thực tế và hoàn thiện nền tảng dựa trên nhu cầu giáo dục đa dạng.",
     "journeyBetaCompleteDate": "Tháng 12 năm 2025",
-    "journeyBetaComplete1": "Bản beta hoàn chỉnh",
-    "journeyBetaComplete2": "Chuyển đổi từ phiên bản beta sang phiên bản chính thức. Ổn định nền tảng với tất cả các tính năng cốt lõi được kiểm tra và tối ưu hóa đầy đủ.",
+    "journeyBetaComplete1": "Phiên bản Beta hoàn tất",
+    "journeyBetaComplete2": "Chuyển đổi từ phiên bản beta sang phiên bản chính thức. Ổn định nền tảng với tất cả các tính năng cốt lõi đã được kiểm tra và tối ưu hóa đầy đủ.",
     "journeySDPDate": "Tháng 1 năm 2026",
-    "journeySDP1": "Ra mắt Chương trình Phát triển Trường học",
-    "journeySDP2": "Công bố nhóm trường đầu tiên được chấp nhận vào Chương trình Phát triển Trường học năng khiếu, cung cấp quyền tiếp cận miễn phí vào các cơ sở giáo dục đủ điều kiện.",
-    "missionStatement1": "Sứ mệnh của chúng tôi rất đơn giản",
-    "missionStatement2": "Xây dựng hệ thống quản lý học tập mà chúng ta - với tư cách là học sinh, giáo viên và người học suốt đời - muốn sử dụng hàng ngày.",
-    "joinAppeal1": "Hãy tham gia cùng chúng tôi trong hành trình này",
-    "joinAppeal2": "Hãy là một phần của tương lai giáo dục",
+    "journeySDP1": "Khởi động chương trình phát triển trường học",
+    "journeySDP2": "Thông báo về nhóm trường đầu tiên được chấp nhận vào Chương trình Phát triển Trường học Chuyên cần, cung cấp quyền truy cập miễn phí cho các trường đủ điều kiện.",
+    "missionStatement1": "Sứ mệnh của chúng tôi rất đơn giản.",
+    "missionStatement2": "Xây dựng hệ thống quản lý học tập mà chúng ta—với tư cách là sinh viên, giáo viên và người học suốt đời—muốn sử dụng mỗi ngày.",
+    "joinAppeal1": "Hãy cùng tham gia hành trình này với chúng tôi",
+    "joinAppeal2": "Hãy cùng kiến tạo tương lai của giáo dục!",
     "requestEarlyAccess": "Yêu cầu quyền truy cập sớm",
     "pressKit": "Bộ tài liệu báo chí"
   },
   "pricing": {
-    "pricingStatement1": "Giá minh bạch",
-    "pricingStatement2": "Chọn gói phù hợp cho tổ chức của bạn",
-    "pricingStatement3": "Giá cả đơn giản, minh bạch, không có phí ẩn. Tất cả các gói đều bao gồm các tính năng cốt lõi với các tùy chọn có thể mở rộng.",
+    "pricingStatement1": "Giá cả minh bạch",
+    "pricingStatement2": "Chọn gói dịch vụ phù hợp với tổ chức của bạn.",
+    "pricingStatement3": "Giá cả đơn giản, minh bạch, không có phí ẩn. Tất cả các gói đều bao gồm các tính năng cốt lõi với các tùy chọn mở rộng.",
     "mostPopular": "Phổ biến nhất",
     "priceUnit": "/người dùng/tháng",
-    "pricingStarterTitle": "Người khởi xướng",
+    "pricingStarterTitle": "Người mới bắt đầu",
     "pricingStarterPrice": "Miễn phí",
-    "pricingStarterNote": "Đã bao gồm quyền truy cập Beta",
-    "pricingStarterDescription": "Hoàn hảo cho các lớp học nhỏ và chương trình thí điểm",
+    "pricingStarterNote": "Bao gồm quyền truy cập bản beta.",
+    "pricingStarterDescription": "Phù hợp cho các lớp học nhỏ và các chương trình thí điểm.",
     "pricingStarterPerk1": "Tối đa 30 sinh viên",
     "pricingStarterPerk2": "Lớp học không giới hạn",
-    "pricingStarterPerk3": "Các tính năng cốt lõi (bài tập, lịch, điểm)",
+    "pricingStarterPerk3": "Các tính năng chính (bài tập, lịch, điểm số)",
     "pricingStarterPerk4": "Trợ lý AI (5 cuộc trò chuyện/tháng)",
     "pricingStarterPerk5": "Hỗ trợ cộng đồng",
-    "pricingStarterPerk6": "Dung lượng lưu trữ 5GB",
+    "pricingStarterPerk6": "Bộ nhớ 5GB",
     "pricingStarterLink": "Bắt đầu miễn phí",
     "pricingSchoolTitle": "Trường học",
     "pricingSchoolPriceNote": "Thanh toán hàng năm hoặc 6 đô la/tháng",
-    "pricingSchoolNote": "Dành cho các trường có tới 1.000 học sinh",
-    "pricingSchoolPerk1": "Số lượng học viên không giới hạn",
+    "pricingSchoolNote": "Dành cho các trường có tối đa 1.000 học sinh.",
+    "pricingSchoolPerk1": "Số lượng sinh viên không giới hạn",
     "pricingSchoolPerk2": "Lớp học không giới hạn",
     "pricingSchoolPerk3": "Tất cả các tính năng cốt lõi",
     "pricingSchoolPerk4": "Trợ lý AI (truy vấn không giới hạn)",
-    "pricingSchoolPerk5": "Người đầu tiên được truy cập bản beta của Studious CMS",
+    "pricingSchoolPerk5": "Ưu tiên người đầu tiên được truy cập bản beta của Studious CMS.",
     "pricingSchoolPerk6": "Truy cập API",
     "pricingSchoolLink": "Bắt đầu"
   },
   "components": {
     "earlyAccess": {
       "title": "Yêu cầu quyền truy cập sớm",
-      "description": "Tham gia danh sách chờ và là một trong những người đầu tiên trải nghiệm Studious LMS",
+      "description": "Hãy đăng ký vào danh sách chờ và trở thành một trong những người đầu tiên trải nghiệm Studious LMS.",
       "fields": {
         "email": "Địa chỉ email *",
         "institutionSize": "Quy mô tổ chức *"
@@ -1114,49 +1115,49 @@
         "institutionSize": "Chọn quy mô tổ chức"
       },
       "sizes": {
-        "tiny": "1-30 học sinh (Giáo viên cá nhân)",
+        "tiny": "1-30 học sinh (Giáo viên dạy kèm riêng)",
         "small": "31-100 học sinh (Trường nhỏ)",
-        "medium": "101-500 học sinh (Trường trung học)",
+        "medium": "101-500 học sinh (Trường cỡ trung bình)",
         "large": "501-1.000 học sinh (Trường lớn)",
-        "institution": "1.001+ sinh viên (Trường)"
+        "institution": "Hơn 1.001 sinh viên (Trường)"
       },
       "actions": {
-        "submit": "Yêu cầu truy cập",
+        "submit": "Yêu cầu quyền truy cập",
         "submitting": "Đang gửi...",
         "done": "Xong"
       },
       "success": {
-        "title": "Bạn đã có tên trong danh sách!",
-        "description": "Chúng tôi sẽ gửi email cho bạn theo địa chỉ {email} khi chúng tôi sẵn sàng."
+        "title": "Bạn có tên trong danh sách!",
+        "description": "Chúng tôi sẽ gửi email cho bạn tại {email} khi chúng tôi sẵn sàng."
       },
       "toasts": {
-        "success": "Đã tham gia danh sách chờ thành công!"
+        "success": "Đã đăng ký vào danh sách chờ thành công!"
       }
     },
     "joinClass": {
       "title": "Tham gia một lớp học",
       "buttonLabel": "Tham gia lớp học",
       "fields": {
-        "inviteCode": "Mã mời lớp học"
+        "inviteCode": "Mã mời tham gia lớp học"
       },
       "placeholders": {
-        "inviteCode": "ví dụ, MATH101-2025"
+        "inviteCode": "ví dụ: MATH101-2025"
       },
-      "help": "Nhập mã mời do giáo viên của bạn cung cấp",
+      "help": "Nhập mã mời do giáo viên của bạn cung cấp.",
       "howTo": {
         "title": "Cách nhận mã mời:",
-        "item1": "Hãy hỏi giáo viên của bạn về mã mời vào lớp",
-        "item2": "Kiểm tra email của bạn để biết hướng dẫn đăng ký lớp học",
-        "item3": "Tìm kiếm mã trên giáo trình hoặc tài liệu khóa học của bạn"
+        "item1": "Hãy hỏi giáo viên của bạn mã mời tham gia lớp học.",
+        "item2": "Kiểm tra email của bạn để xem hướng dẫn đăng ký lớp học.",
+        "item3": "Hãy tìm mã số này trong giáo trình hoặc tài liệu khóa học của bạn."
       },
       "actions": {
         "cancel": "Hủy bỏ",
         "join": "Tham gia lớp học",
-        "joining": "Đang tham gia..."
+        "joining": "Tham gia..."
       },
       "toasts": {
         "success": "Bạn đã tham gia lớp học thành công.",
-        "errorInvalid": "Không tìm thấy mã mời hoặc lớp học không hợp lệ.",
+        "errorInvalid": "Mã mời không hợp lệ hoặc không tìm thấy lớp học.",
         "errorEmpty": "Vui lòng nhập mã mời hợp lệ."
       }
     },
@@ -1164,24 +1165,24 @@
       "title": "Tạo lớp mới",
       "buttonLabel": "Tạo lớp",
       "fields": {
-        "title": "Tiêu đề lớp *",
+        "title": "Tên lớp *",
         "section": "Phần *",
         "subject": "Chủ thể *",
         "semester": "Học kỳ",
-        "credits": "Tín dụng",
-        "meetingTime": "Thời gian họp",
+        "credits": "Lời cảm ơn",
+        "meetingTime": "Thời gian gặp mặt",
         "location": "Vị trí",
         "description": "Sự miêu tả"
       },
       "placeholders": {
-        "title": "ví dụ, Vật lý nâng cao",
-        "section": "ví dụ, AP-101",
-        "subject": "ví dụ, Vật lý",
-        "semester": "ví dụ: Mùa xuân năm 2025",
+        "title": "Ví dụ: Vật lý nâng cao",
+        "section": "ví dụ: AP-101",
+        "subject": "Ví dụ: Vật lý",
+        "semester": "Ví dụ: Mùa xuân năm 2025",
         "credits": "ví dụ, 3",
-        "meetingTime": "ví dụ, Thứ Hai, Thứ Tư, Thứ Bảy ...",
-        "location": "ví dụ, Phòng 205, Tòa nhà Khoa học",
-        "description": "Mô tả nội dung và mục tiêu của lớp học..."
+        "meetingTime": "Ví dụ: Thứ Hai, Thứ Tư, Thứ Sáu, 10:00-11:00 sáng",
+        "location": "Ví dụ: Phòng 205, Tòa nhà Khoa học",
+        "description": "Mô tả nội dung và mục tiêu của khóa học..."
       },
       "actions": {
         "cancel": "Hủy bỏ",
@@ -1190,8 +1191,8 @@
       },
       "toasts": {
         "success": "Lớp {name} đã được tạo thành công.",
-        "errorRequired": "Vui lòng điền vào tất cả các trường bắt buộc.",
-        "errorFailed": "Không tạo được lớp. Vui lòng thử lại sau."
+        "errorRequired": "Vui lòng điền đầy đủ tất cả các trường bắt buộc.",
+        "errorFailed": "Không thể tạo lớp. Vui lòng thử lại sau."
       }
     },
     "createFolder": {
@@ -1207,8 +1208,8 @@
         "description": "Thêm mô tả cho thư mục này..."
       },
       "help": {
-        "name": "Chọn một tên mô tả cho thư mục của bạn",
-        "description": "{count}/500 ký tự"
+        "name": "Hãy chọn một cái tên mô tả cho thư mục của bạn.",
+        "description": "[+0]]/500 ký tự"
       },
       "actions": {
         "cancel": "Hủy bỏ",
@@ -1229,37 +1230,37 @@
       "sections": {
         "details": "Chi tiết bài tập",
         "configuration": "Cấu hình",
-        "grading": "Xếp loại và Đánh giá",
-        "deliverables": "Sản phẩm giao",
+        "grading": "Chấm điểm và đánh giá",
+        "deliverables": "Sản phẩm đầu ra",
         "aiPolicy": "Chính sách AI",
         "attachments": "Tệp đính kèm"
       },
       "fields": {
         "title": "Tiêu đề *",
         "instructions": "Hướng dẫn *",
-        "dueDate": "Hai Ngày",
+        "dueDate": "Hai cuộc hẹn",
         "type": "Loại bài tập",
-        "students": "Học sinh",
+        "students": "Sinh viên",
         "section": "Phần",
-        "rubric": "Tiêu chí",
+        "rubric": "Tiêu chí đánh giá",
         "gradeScale": "Thang điểm",
         "maxPoints": "Điểm tối đa",
         "weight": "Cân nặng (%)",
-        "sectionColor": "Phần màu"
+        "sectionColor": "Màu phần"
       },
       "placeholders": {
-        "title": "ví dụ, Bài kiểm tra Chương 5, Báo cáo thí nghiệm Vật lý",
+        "title": "Ví dụ: Bài kiểm tra chương 5, Báo cáo thí nghiệm Vật lý",
         "instructions": "Cung cấp hướng dẫn rõ ràng cho học sinh...",
         "maxPoints": "100",
         "weight": "1.0",
-        "chooseSection": "Chọn phần",
-        "chooseRubric": "Chọn tiêu chí",
+        "chooseSection": "Chọn mục",
+        "chooseRubric": "Chọn tiêu chí đánh giá",
         "chooseGradeScale": "Chọn thang điểm",
         "newSectionName": "Nhập tên phần..."
       },
       "types": {
         "homework": "Bài tập về nhà",
-        "quiz": "Bài kiểm tra",
+        "quiz": "Trắc nghiệm",
         "test": "Bài kiểm tra",
         "project": "Dự án",
         "essay": "Tiểu luận",
@@ -1275,41 +1276,41 @@
         },
         "draft": {
           "label": "Lưu dưới dạng bản nháp",
-          "description": "Ẩn khỏi học sinh"
+          "description": "Trốn tránh học sinh"
         }
       },
       "section": {
-        "none": "Không có phần",
+        "none": "Không có phần nào",
         "createNew": "Tạo phần mới"
       },
       "rubric": {
-        "none": "Không có tiêu chí",
-        "untitled": "Tiêu đề chưa có tiêu đề",
-        "autoCalculate": "Điểm sẽ được tính tự động từ thang điểm đã chọn"
+        "none": "Không có tiêu đề",
+        "untitled": "Mục không có tiêu đề",
+        "autoCalculate": "Điểm sẽ được tính toán tự động dựa trên tiêu chí đánh giá đã chọn."
       },
       "gradeScale": {
-        "default": "Tỷ lệ mặc định",
-        "untitled": "Thang đo không có tiêu đề"
+        "default": "Thang đo mặc định",
+        "untitled": "Thang đo không tên"
       },
       "files": {
-        "uploadButton": "Tải lên tập tin",
-        "dropZone": "Thả tập tin vào đây hoặc nhấp để tải lên",
-        "dropZoneHint": "Hỗ trợ tất cả các loại tệp • Tối đa 50MB cho mỗi tệp",
+        "uploadButton": "Tải lên tệp",
+        "dropZone": "Kéo thả tệp vào đây hoặc nhấp để tải lên.",
+        "dropZoneHint": "Hỗ trợ tất cả các loại tệp • Dung lượng tối đa 50MB mỗi tệp",
         "filesUploaded": "{uploaded} trong số {total} tệp đã tải lên"
       },
       "status": {
-        "creating": "Tạo bài tập...",
-        "settingUp": "Đang thiết lập chi tiết nhiệm vụ...",
-        "preparing": "Đang chuẩn bị tải tệp lên...",
-        "uploading": "Đang tải tệp lên bộ nhớ đám mây...",
+        "creating": "Đang tạo bài tập...",
+        "settingUp": "Đang thiết lập chi tiết bài tập...",
+        "preparing": "Đang chuẩn bị tải lên tập tin...",
+        "uploading": "Đang tải tập tin lên bộ nhớ đám mây...",
         "processing": "Đang xử lý các tập tin đã tải lên...",
-        "finalizing": "Đang hoàn thiện bài tập...",
-        "assigning": "Đang giao cho học sinh...",
+        "finalizing": "Hoàn thành bài tập...",
+        "assigning": "Phân công cho sinh viên...",
         "almostDone": "Gần xong rồi...",
         "uploadingFile": "Đang tải lên {name}...",
         "creatingProgress": "Tạo bài tập",
         "draftStatus": "Sẽ được lưu dưới dạng bản nháp",
-        "publishedStatus": "Sẽ được công bố cho sinh viên"
+        "publishedStatus": "Sẽ được xuất bản cho sinh viên"
       },
       "actions": {
         "cancel": "Hủy bỏ",
@@ -1320,74 +1321,74 @@
       },
       "students": {
         "all": "Tất cả",
-        "selectPlaceholder": "Chọn học sinh..."
+        "selectPlaceholder": "Chọn sinh viên..."
       },
       "deliverables": {
         "fileUpload": {
-          "label": "Tải tệp lên",
-          "description": "Học sinh có thể tải lên các tệp PDF, Hình ảnh và Video."
+          "label": "Tải lên tệp",
+          "description": "Sinh viên có thể tải lên các tệp PDF, hình ảnh và video."
         },
         "extendedResponse": {
           "label": "Phản hồi mở rộng",
-          "description": "Học sinh có thể nhập câu trả lời dài."
+          "description": "Sinh viên có thể nhập câu trả lời dài."
         },
         "worksheetSubmission": {
           "label": "Nộp bài tập",
-          "description": "Học sinh có thể nộp bài tập để chấm điểm tích hợp.",
+          "description": "Sinh viên có thể nộp bài tập để được chấm điểm tích hợp.",
           "searchPlaceholder": "Tìm kiếm bài tập ở đây...",
           "found": "{count} đã tìm thấy",
-          "noResults": "Không tìm thấy bài tập nào"
+          "noResults": "Không tìm thấy bài tập nào."
         },
         "aiGrading": {
           "label": "Đánh giá và phản hồi bằng AI",
-          "description": "Cung cấp điểm số và phản hồi sơ bộ và tức thời bằng AI."
+          "description": "Cung cấp đánh giá và phản hồi sơ bộ và tức thì bằng trí tuệ nhân tạo."
         }
       },
       "aiPolicy": {
         "useCases": "Các trường hợp sử dụng",
         "studentResponsibilities": "Trách nhiệm của sinh viên",
-        "disclosureRequirements": "Yêu cầu tiết lộ",
+        "disclosureRequirements": "Yêu cầu công bố thông tin",
         "level1": {
-          "title": "Công việc độc lập cấp độ 1 (Không có AI)",
-          "description": "Không có. Có thể chấp nhận trình kiểm tra chính tả và ngữ pháp cơ bản.",
+          "title": "Bài tập độc lập cấp độ 1 (Không sử dụng AI)",
+          "description": "Không có. Các công cụ kiểm tra chính tả và ngữ pháp cơ bản là được chấp nhận.",
           "useCases": "Hoàn toàn dựa vào kiến thức, lý luận và nỗ lực cá nhân.",
-          "studentResponsibilities": "Không có. Có thể chấp nhận trình kiểm tra chính tả và ngữ pháp cơ bản.",
-          "disclosureRequirements": "Không cần tiết lộ AI (cấm sử dụng AI)."
+          "studentResponsibilities": "Không có. Các công cụ kiểm tra chính tả và ngữ pháp cơ bản là được chấp nhận.",
+          "disclosureRequirements": "Không cần tiết lộ thông tin về AI (việc sử dụng AI bị cấm)."
         },
         "level2": {
           "title": "Khám phá ý tưởng cấp độ 2",
-          "description": "Yêu cầu AI giải thích ý tưởng, tóm tắt bài đọc, đưa ra ý tưởng tiếp cận hoặc kiểm tra ngữ pháp cơ bản và tính rõ ràng.",
-          "useCases": "Yêu cầu AI giải thích ý tưởng, tóm tắt bài đọc, đưa ra ý tưởng tiếp cận hoặc kiểm tra ngữ pháp cơ bản và tính rõ ràng.",
-          "studentResponsibilities": "Đánh giá đầu ra của AI một cách nghiêm túc; đảm bảo công việc phản ánh lý luận và hiểu biết của riêng bạn.",
-          "disclosureRequirements": "Ghi chú ngắn gọn về việc sử dụng AI (ví dụ: \"Sử dụng ChatGPT để phác thảo cấu trúc bài luận\")."
+          "description": "Hãy yêu cầu AI giải thích ý tưởng, tóm tắt bài đọc, động não tìm cách tiếp cận hoặc kiểm tra ngữ pháp và sự mạch lạc cơ bản.",
+          "useCases": "Hãy yêu cầu AI giải thích ý tưởng, tóm tắt bài đọc, động não tìm cách tiếp cận hoặc kiểm tra ngữ pháp và sự mạch lạc cơ bản.",
+          "studentResponsibilities": "Đánh giá kết quả đầu ra của AI một cách nghiêm túc; đảm bảo rằng kết quả phản ánh lý luận và sự hiểu biết của chính bạn.",
+          "disclosureRequirements": "Ghi chú ngắn gọn về việc sử dụng AI (ví dụ: \"Đã sử dụng ChatGPT để phác thảo cấu trúc bài luận\")."
         },
         "level3": {
           "title": "Hỗ trợ chỉnh sửa cấp độ 3",
-          "description": "Đảm bảo mọi ý tưởng, cấu trúc và nội dung đều là của riêng bạn; xem xét kỹ lưỡng các đề xuất về AI.",
-          "useCases": "Yêu cầu AI cải thiện ngữ pháp, dấu câu, cách diễn đạt và khả năng đọc.",
-          "studentResponsibilities": "Đảm bảo mọi ý tưởng, cấu trúc và nội dung đều là của riêng bạn; xem xét kỹ lưỡng các đề xuất về AI.",
-          "disclosureRequirements": "Ghi chú ngắn gọn về việc sử dụng AI (ví dụ: \"Sử dụng ChatGPT để chỉnh sửa ngữ pháp và độ rõ ràng\")."
+          "description": "Hãy đảm bảo tất cả ý tưởng, cấu trúc và nội dung đều là của bạn; xem xét kỹ các đề xuất của AI.",
+          "useCases": "Hãy yêu cầu trí tuệ nhân tạo cải thiện ngữ pháp, dấu câu, cách diễn đạt và khả năng đọc hiểu.",
+          "studentResponsibilities": "Hãy đảm bảo tất cả ý tưởng, cấu trúc và nội dung đều là của bạn; xem xét kỹ các đề xuất của AI.",
+          "disclosureRequirements": "Ghi chú ngắn gọn về việc sử dụng AI (ví dụ: \"Đã sử dụng ChatGPT để chỉnh sửa ngữ pháp và độ rõ ràng\")."
         },
         "level4": {
           "title": "Đồng sáng tạo cấp độ 4",
-          "description": "Sử dụng AI để soạn thảo, thiết kế, mã hóa, phân tích, mô phỏng hoặc tạo nội dung sáng tạo trong khi vẫn duy trì giám sát.",
-          "useCases": "Sử dụng AI để soạn thảo, thiết kế, mã hóa, phân tích, mô phỏng hoặc tạo nội dung sáng tạo trong khi vẫn duy trì giám sát.",
-          "studentResponsibilities": "Đánh giá một cách phê phán các kết quả đầu ra của AI; sửa đổi và điều chỉnh để đảm bảo tính độc đáo và lý luận hợp lý.",
-          "disclosureRequirements": "Gửi thông tin chi tiết về những đóng góp của AI và bản sửa đổi của bạn."
+          "description": "Sử dụng trí tuệ nhân tạo (AI) để soạn thảo, thiết kế, lập trình, phân tích, mô phỏng hoặc tạo ra nội dung sáng tạo trong khi vẫn duy trì sự giám sát.",
+          "useCases": "Sử dụng trí tuệ nhân tạo (AI) để soạn thảo, thiết kế, lập trình, phân tích, mô phỏng hoặc tạo ra nội dung sáng tạo trong khi vẫn duy trì sự giám sát.",
+          "studentResponsibilities": "Đánh giá nghiêm túc các sản phẩm đầu ra của AI; chỉnh sửa và điều chỉnh để đảm bảo tính độc đáo và lập luận hợp lý.",
+          "disclosureRequirements": "Hãy gửi bản khai báo chi tiết về những đóng góp của AI và những chỉnh sửa của bạn."
         },
         "level5": {
-          "title": "Đồng sáng tạo cấp độ 5",
-          "description": "Sử dụng AI để tạo nội dung, chạy phân tích, xây dựng mô hình, viết sáng tạo, dịch thuật hoặc trực quan hóa dữ liệu, với sự phản ánh và tác giả rõ ràng của con người.",
-          "useCases": "Sử dụng AI để tạo nội dung, chạy phân tích, xây dựng mô hình, viết sáng tạo, dịch thuật hoặc trực quan hóa dữ liệu, với sự phản ánh và tác giả rõ ràng của con người.",
-          "studentResponsibilities": "Tích hợp AI một cách có đạo đức và có mục đích; chứng minh vai trò của AI trong việc thúc đẩy việc học hoặc sáng tạo.",
-          "disclosureRequirements": "Cung cấp lời xác nhận rõ ràng về mọi đóng góp của AI và bản sửa đổi của con người."
+          "title": "Sáng tạo hợp tác cấp độ 5",
+          "description": "Sử dụng AI để tạo nội dung, thực hiện phân tích, xây dựng mô hình, viết sáng tạo, dịch thuật hoặc trực quan hóa dữ liệu, với sự đóng góp và phản biện rõ ràng của con người.",
+          "useCases": "Sử dụng AI để tạo nội dung, thực hiện phân tích, xây dựng mô hình, viết sáng tạo, dịch thuật hoặc trực quan hóa dữ liệu, với sự đóng góp và phản biện rõ ràng của con người.",
+          "studentResponsibilities": "Tích hợp trí tuệ nhân tạo một cách có đạo đức và có mục đích; chứng minh vai trò của nó trong việc thúc đẩy học tập hoặc sáng tạo.",
+          "disclosureRequirements": "Cung cấp lời cảm ơn rõ ràng về tất cả các đóng góp của trí tuệ nhân tạo và các chỉnh sửa của con người."
         }
       },
       "toasts": {
         "successCreated": "Bài tập đã được tạo thành công.",
-        "successDraft": "Bài tập đã được lưu thành bản nháp.",
-        "errorRequired": "Vui lòng điền vào tất cả các trường bắt buộc.",
-        "errorFailed": "Không tạo được bài tập. Vui lòng thử lại.",
+        "successDraft": "Bài tập đã được lưu thành công dưới dạng bản nháp.",
+        "errorRequired": "Vui lòng điền đầy đủ tất cả các trường bắt buộc.",
+        "errorFailed": "Không thể tạo bài tập. Vui lòng thử lại.",
         "errorUploadFailed": "Không thể tải lên {name}",
         "sectionCreated": "Phần \"{name}\" đã được tạo thành công."
       }
@@ -1401,12 +1402,12 @@
         "priority": "Mức độ ưu tiên",
         "expiryDate": "Ngày hết hạn (Tùy chọn)",
         "publishDate": "Ngày xuất bản",
-        "publishTime": "Thời gian xuất bản"
+        "publishTime": "Thời gian đăng tải"
       },
       "placeholders": {
-        "title": "ví dụ, báo cáo phòng thí nghiệm phải nộp vào thứ sáu",
-        "content": "Viết nội dung thông báo của bạn ở đây...",
-        "publishDate": "Xuất bản ngay lập tức nếu trống"
+        "title": "Ví dụ: Báo cáo thí nghiệm hạn nộp vào thứ Sáu",
+        "content": "Hãy viết nội dung thông báo của bạn tại đây...",
+        "publishDate": "Đăng tải ngay lập tức nếu trống"
       },
       "priority": {
         "low": "Thấp",
@@ -1422,17 +1423,17 @@
       "settings": {
         "pinned": {
           "label": "Ghim lên đầu trang",
-          "description": "Giữ thông báo này ở đầu danh sách"
+          "description": "Hãy luôn để thông báo này ở đầu danh sách."
         },
         "urgent": {
           "label": "Đánh dấu là khẩn cấp",
-          "description": "Làm nổi bật với phong cách khẩn cấp"
+          "description": "Nổi bật với phong cách khẩn cấp"
         }
       },
       "notifications": {
         "email": {
           "label": "Gửi thông báo qua email",
-          "description": "Thông báo cho sinh viên qua email"
+          "description": "Thông báo cho sinh viên qua email."
         },
         "push": {
           "label": "Gửi thông báo đẩy",
@@ -1441,12 +1442,12 @@
       },
       "actions": {
         "cancel": "Hủy bỏ",
-        "publishNow": "Xuất bản ngay",
+        "publishNow": "Đăng tải ngay",
         "schedule": "Thông báo lịch trình"
       },
       "toasts": {
         "success": "Thông báo đã được tạo",
-        "errorRequired": "Vui lòng điền vào tất cả các trường bắt buộc."
+        "errorRequired": "Vui lòng điền đầy đủ tất cả các trường bắt buộc."
       }
     }
   }

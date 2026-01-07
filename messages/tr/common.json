@@ -1,5 +1,6 @@
 {
   "common": {
+    "upload": "Yüklemek",
     "save": "Kaydetmek",
     "cancel": "İptal etmek",
     "delete": "Silmek",
@@ -10,10 +11,10 @@
     "next": "Sonraki",
     "loading": "Yükleniyor...",
     "search": "Aramak",
-    "filter": "Filtre",
+    "filter": "Filtrele",
     "sort": "Düzenlemek",
     "viewAll": "Tümünü Görüntüle",
-    "noData": "Veri mevcut değil",
+    "noData": "Veri mevcut değil.",
     "export": "İhracat",
     "openMenu": "Menüyü aç"
   },
@@ -26,15 +27,15 @@
     "lastWeek": "Geçen hafta"
   },
   "errors": {
-    "somethingWentWrong": "Bir şeyler ters gitti",
+    "somethingWentWrong": "Bir şeyler ters gitti.",
     "tryAgain": "Tekrar deneyin",
-    "pageNotFound": "Sayfa bulunamadı",
+    "pageNotFound": "Sayfa bulunamadı.",
     "unauthorized": "Yetkisiz erişim"
   },
   "auth": {
     "login": {
       "title": "Tekrar hoşgeldiniz",
-      "subtitle": "Studious hesabınıza giriş yapın",
+      "subtitle": "Studious hesabınıza giriş yapın.",
       "username": "Kullanıcı adı",
       "password": "Şifre",
       "forgotPassword": "Parolanızı mı unuttunuz?",
@@ -42,7 +43,7 @@
       "signingIn": "Giriş yapılıyor...",
       "noAccount": "Hesabınız yok mu?",
       "signUp": "Üye olmak",
-      "successMessage": "Başarıyla giriş yapıldı",
+      "successMessage": "Başarıyla giriş yapıldı.",
       "cancel": "İptal etmek"
     },
     "signup": {
@@ -54,142 +55,142 @@
       "password": "Şifre",
       "confirmPassword": "Şifreyi Onayla",
       "usernamePlaceholder": "Kullanıcı adınızı girin",
-      "emailPlaceholder": "E-postanızı girin",
+      "emailPlaceholder": "E-posta adresinizi girin",
       "passwordPlaceholder": "Bir şifre oluşturun",
       "confirmPasswordPlaceholder": "Şifrenizi onaylayın",
-      "agreeToTerms": "Kabul ediyorum",
+      "agreeToTerms": "Kabul ediyorum.",
       "termsOfService": "Hizmet Şartları",
       "and": "Ve",
       "privacyPolicy": "Gizlilik Politikası",
       "createAccount": "Hesap oluşturmak",
       "creatingAccount": "Hesap oluşturuluyor...",
-      "alreadyHaveAccount": "Zaten bir hesabınız var mı?",
+      "alreadyHaveAccount": "Zaten hesabınız var mı?",
       "signIn": "Giriş yap",
-      "passwordMismatch": "Şifreler eşleşmiyor",
-      "passwordTooShort": "Şifre en az 6 karakter uzunluğunda olmalıdır",
-      "termsRequired": "Şartları kabul etmelisiniz",
+      "passwordMismatch": "Şifreler eşleşmiyor.",
+      "passwordTooShort": "Parola en az 6 karakter uzunluğunda olmalıdır.",
+      "termsRequired": "Şartları kabul etmelisiniz.",
       "verificationEmailSent": "Doğrulama e-postası gönderildi!",
-      "signUpFailed": "Hesap oluşturulamadı. Lütfen tekrar deneyin."
+      "signUpFailed": "Hesap oluşturma başarısız oldu. Lütfen tekrar deneyin."
     },
     "verification": {
       "notVerified": "Hesap Doğrulanmadı",
       "message": "Giriş yapabilmeniz için hesabınızın doğrulanması gerekiyor. Lütfen doğrulama bağlantısı için e-postanızı kontrol edin.",
       "emailSentTo": "Doğrulama e-postası şu adrese gönderildi:",
       "resendEmail": "Doğrulama E-postasını Yeniden Gönder",
-      "backToSignIn": "Oturum Açmaya Geri Dön",
+      "backToSignIn": "Giriş sayfasına geri dön",
       "emailSent": "Doğrulama e-postası gönderildi!",
       "checkInbox": "Lütfen gelen kutunuzu ve spam klasörünüzü kontrol edin.",
       "enterEmail": "E-posta adresinizi girin",
       "sending": "Gönderiliyor...",
       "sendEmail": "E-posta gönder",
       "title": "E-postanızı Doğrulayın",
-      "subtitle": "E-posta adresinizi doğrulamak için aşağıdaki butona tıklayın",
+      "subtitle": "E-posta adresinizi doğrulamak için aşağıdaki düğmeye tıklayın.",
       "verifying": "Doğrulanıyor...",
       "verifyEmail": "E-postayı Doğrula",
-      "successTitle": "E-posta Başarıyla Doğrulandı",
-      "successMessage": "E-postanız doğrulandı. Artık hesabınıza giriş yapabilirsiniz.",
+      "successTitle": "E-posta başarıyla doğrulandı.",
+      "successMessage": "E-posta adresiniz doğrulandı. Artık hesabınıza giriş yapabilirsiniz.",
       "errorTitle": "Doğrulama Başarısız Oldu",
-      "errorMessage": "Doğrulama bağlantısı geçersiz veya süresi dolmuş. Lütfen yeni bir doğrulama e-postası talep edin.",
+      "errorMessage": "Doğrulama bağlantısı geçersiz veya süresi dolmuş. Lütfen yeni bir doğrulama e-postası isteyin.",
       "invalidToken": "Geçersiz doğrulama belirteci"
     },
     "forgotPassword": {
-      "title": "Şifrenizi Sıfırlayın",
-      "subtitle": "E-posta adresinizi girin, size şifrenizi sıfırlamanız için bir bağlantı gönderelim",
+      "title": "Parolanızı Sıfırlayın",
+      "subtitle": "E-posta adresinizi girin, size şifrenizi sıfırlamak için bir bağlantı göndereceğiz.",
       "email": "E-posta",
       "emailPlaceholder": "E-posta adresinizi girin",
       "sendResetLink": "Sıfırlama Bağlantısını Gönder",
       "sending": "Gönderiliyor...",
-      "backToSignIn": "Oturum Açmaya Geri Dön",
-      "successTitle": "E-postanızı Kontrol Edin",
-      "successMessage": "Eğer bu e-postayla bir hesabınız varsa, size bir şifre sıfırlama bağlantısı gönderdik.",
+      "backToSignIn": "Giriş sayfasına geri dön",
+      "successTitle": "E-postanızı kontrol edin",
+      "successMessage": "Eğer bu e-posta adresiyle kayıtlı bir hesap varsa, size bir şifre sıfırlama bağlantısı gönderdik.",
       "checkInbox": "Lütfen sıfırlama bağlantısı için gelen kutunuzu ve spam klasörünüzü kontrol edin.",
       "errorMessage": "Sıfırlama bağlantısı gönderilemedi. Lütfen tekrar deneyin.",
       "invalidEmail": "Geçerli bir e"
     },
     "resetPassword": {
-      "title": "Şifrenizi Sıfırlayın",
-      "subtitle": "Yeni şifrenizi aşağıya girin",
+      "title": "Parolanızı Sıfırlayın",
+      "subtitle": "Yeni şifrenizi aşağıya girin.",
       "password": "Yeni Şifre",
       "passwordPlaceholder": "Yeni şifrenizi girin",
       "confirmPassword": "Şifreyi Onayla",
-      "confirmPasswordPlaceholder": "Yeni şifrenizi onaylayın",
+      "confirmPasswordPlaceholder": "Yeni şifrenizi onaylayın.",
       "resetPassword": "Şifreyi Sıfırla",
       "resetting": "Sıfırlanıyor...",
-      "passwordTooShort": "Şifre en az 6 karakter uzunluğunda olmalıdır",
-      "passwordsDoNotMatch": "Şifreler eşleşmiyor",
+      "passwordTooShort": "Parola en az 6 karakter uzunluğunda olmalıdır.",
+      "passwordsDoNotMatch": "Şifreler eşleşmiyor.",
       "successTitle": "Şifre Sıfırlama Başarılı",
-      "successMessage": "Şifreniz başarıyla sıfırlandı. Artık yeni şifrenizle oturum açabilirsiniz.",
-      "backToSignIn": "Oturum Açmaya Geri Dön"
+      "successMessage": "Parolanız başarıyla sıfırlandı. Artık yeni parolanızla giriş yapabilirsiniz.",
+      "backToSignIn": "Giriş sayfasına geri dön"
     }
   },
   "marketing": {
     "navbar": {
-      "requestEarlyAccess": "Erken Erişim Talebinde Bulunun",
+      "requestEarlyAccess": "Erken Erişim Talebi",
       "lightMode": "Açık moda geç",
       "darkMode": "Karanlık moda geç",
       "languageSelector": "Dil seçin"
     },
     "hero": {
       "badge": "Modern Öğrenme Platformu",
-      "title1": "Kusursuz, dikkat dağıtıcı olmayan",
+      "title1": "Sorunsuz, dikkat dağıtmayan",
       "title2": "modern okullar için öğrenme",
-      "subtitle": "Studious LMS, yapay zekayı, gerçek zamanlı takvimleri ve sınıf iletişimini tek bir uyumlu platformda bir araya getirerek öğretmenlerin ders vermesine ve öğrencilerin başarılı olmasına yardımcı olmak üzere tasarlanmıştır.",
-      "requestEarlyAccess": "Erken Erişim Talebinde Bulunun",
-      "watchDemo": "Demoyu İzle",
-      "altDashboard": "Platform Pano"
+      "subtitle": "Studious LMS, yapay zekayı, gerçek zamanlı takvimleri ve sınıf içi iletişimi tek bir bütünleşik platformda birleştirerek öğretmenlerin ders vermesine ve öğrencilerin başarılı olmasına yardımcı olmak üzere tasarlanmıştır.",
+      "requestEarlyAccess": "Erken Erişim Talebi",
+      "watchDemo": "Demo İzle",
+      "altDashboard": "Platform Kontrol Paneli"
     },
     "problem": {
-      "title": "Geleneksel okul portalları parçalanmış ve güncelliğini yitirmiştir",
-      "issue1": "Öğretmenler birden fazla araç arasında geçiş yaparak zaman kaybediyor",
-      "issue2": "Öğrenciler organizasyon ve son tarihlerle mücadele ediyor",
-      "issue3": "Yapay zeka gerçek okul iş akışlarına yeterince entegre edilmiyor"
+      "title": "Geleneksel okul portalları parçalı ve güncelliğini yitirmiş durumda.",
+      "issue1": "Öğretmenler birden fazla araç arasında geçiş yaparak zaman kaybediyor.",
+      "issue2": "Öğrenciler organizasyon ve son teslim tarihleri konusunda zorluk yaşıyorlar.",
+      "issue3": "Yapay zekâ, okulların fiili iş akışlarına yeterince entegre olmamış durumda."
     },
     "response": {
-      "title1": "Çalışkan LMS, öğretmeyi, öğrenmeyi ve",
-      "title2": "ve iletişimi tek bir çalışma alanına",
-      "subtitle": "Son teknoloji çerçeveler ve insan odaklı tasarımla geliştirilen bu sistem, her büyüklükteki okulda ölçeklenebilecek şekilde tasarlandı."
+      "title1": "Studious LMS, öğretmeyi, öğrenmeyi ve",
+      "title2": "ve iletişimi tek bir çalışma alanına entegre etmek.",
+      "subtitle": "Son teknoloji ürünü çerçeveler ve insan odaklı tasarımla inşa edilen bu sistem, her büyüklükteki okula uyacak şekilde ölçeklenebilir şekilde tasarlanmıştır."
     },
     "features": {
-      "title": "Temel Özellikler",
-      "subtitle": "Modern öğrenme deneyimlerini yönetmek için ihtiyacınız olan her şey",
+      "title": "Başlıca Özellikler",
+      "subtitle": "Modern öğrenme deneyimlerini yönetmek için ihtiyacınız olan her şey.",
       "ai": {
         "title": "Yapay Zeka Asistanı",
-        "description": "Çalışma materyallerinin oluşturulmasına, içeriğin özetlenmesine ve notlandırmaya yardımcı olur"
+        "description": "Çalışma materyallerinin oluşturulmasına, içeriğin özetlenmesine ve notlandırmaya yardımcı olur."
       },
       "classManagement": {
         "title": "Sınıf Yönetimi",
-        "description": "Dersleri, ödevleri ve katılımı zahmetsizce organize edin"
+        "description": "Dersleri, ödevleri ve yoklamaları zahmetsizce düzenleyin."
       },
       "assignments": {
         "title": "Atamalar",
-        "description": "Öğrenci gönderilerini verimli bir şekilde oluşturun, toplayın ve notlandırın"
+        "description": "Öğrenci ödevlerini verimli bir şekilde oluşturun, toplayın ve değerlendirin."
       },
       "calendar": {
         "title": "Takvim",
-        "description": "Ödevler, dersler ve etkinliklerle gerçek zamanlı senkronizasyon"
+        "description": "Ödevler, dersler ve etkinliklerle gerçek zamanlı senkronizasyon."
       },
       "analytics": {
         "title": "Analitik",
-        "description": "Performans, katılım ve etkileşime ilişkin içgörüleri görüntüleyin"
+        "description": "Performans, katılım ve etkileşimle ilgili bilgilere göz atın."
       },
       "communication": {
         "title": "İletişim",
-        "description": "Birleşik iş birliği için yerleşik mesajlaşma ve duyurular"
+        "description": "Birleşik işbirliği için entegre mesajlaşma ve duyuru sistemi."
       }
     },
     "quote": {
-      "text": "Studious'taki her özellik sürtünmeyi azaltmak için tasarlanmıştır; sürtünmeyi artırmak için değil."
+      "text": "Studious'taki her özellik, sürtünmeyi azaltmak için tasarlandı, artırmak için değil."
     },
     "pricing": {
-      "title": "Kurumunuz için doğru planı seçin",
-      "subtitle": "Gizli ücretler olmadan basit ve şeffaf fiyatlandırma. Tüm planlar, ölçeklenebilir seçeneklerle temel özellikleri içerir.",
+      "title": "Kurumunuz için doğru planı seçin.",
+      "subtitle": "Basit, şeffaf fiyatlandırma, gizli ücret yok. Tüm planlar, ölçeklenebilir seçeneklerle birlikte temel özellikleri içerir.",
       "starter": {
         "title": "Başlangıç",
         "price": "Özgür",
-        "note": "Beta erişimi dahildir",
-        "description": "Küçük sınıflar ve pilot programlar için mükemmel",
-        "perk1": "30 öğrenciye kadar",
-        "perk2": "Sınırsız sınıflar",
+        "note": "Beta erişimi dahildir.",
+        "description": "Küçük sınıflar ve pilot programlar için mükemmel.",
+        "perk1": "En fazla 30 öğrenci",
+        "perk2": "Sınırsız ders",
         "perk3": "Temel özellikler (ödevler, takvim, notlar)",
         "perk4": "Yapay zeka asistanı (ayda 5 sohbet)",
         "perk5": "Topluluk desteği",
@@ -200,75 +201,75 @@
         "title": "Okul",
         "price": "5 dolar",
         "priceUnit": "/kullanıcı/ay",
-        "note": "Yıllık veya aylık 6$ faturalandırılır",
+        "note": "Yıllık veya aylık 6$ olarak faturalandırılır.",
         "description": "1.000'e kadar öğrencisi olan okullar için",
         "perk1": "Sınırsız öğrenci",
-        "perk2": "Sınırsız sınıflar",
+        "perk2": "Sınırsız ders",
         "perk3": "Tüm temel özellikler",
         "perk4": "Yapay zeka asistanı (sınırsız sorgu)",
-        "perk5": "Studious CMS beta erişimi için ilk sırada",
+        "perk5": "Studious CMS beta erişimi için öncelikli sıra",
         "button": "Başlayın"
       },
       "institution": {
         "title": "Kurum",
         "price": "Gelenek",
-        "note": "İhtiyaçlarınıza göre uyarlanmış",
-        "description": "Büyük okullar ve üniversiteler için (1.000+ öğrenci)",
+        "note": "İhtiyaçlarınıza göre uyarlanmıştır",
+        "description": "Büyük okullar ve üniversiteler için (1.000'den fazla öğrenci)",
         "perk1": "Okul planındaki her şey",
         "perk2": "7/24 öncelikli destek",
-        "perk3": "Sınırsız depolama",
-        "perk4": "Özel eğitim ve oryantasyon",
-        "perk5": "Kullanıcı başına daha ucuz harcamalar",
-        "button": "Satış Ekibiyle İletişime Geçin"
+        "perk3": "Sınırsız depolama alanı",
+        "perk4": "Özel eğitim ve işe alım",
+        "perk5": "Kullanıcı başına daha düşük giderler",
+        "button": "Satış Temsilcisiyle İletişime Geçin"
       },
       "mostPopular": "En Popüler",
-      "earlyBird": "🎉 Erken benimseyenler yıllık planlarda 2 ay ücretsiz + özel oryantasyon desteği alırlar"
+      "earlyBird": "🎉 Erken kayıt yaptıranlar yıllık planlarda 2 ay ücretsiz kullanım hakkı ve özel başlangıç desteği alıyor."
     },
     "schoolProgram": {
       "badge": "Sosyal Etki",
       "title": "Çalışkan Okul Geliştirme Programı",
-      "subtitle": "Okulun ekonomik durumu ne olursa olsun, her öğrencinin modern öğrenme araçlarına erişmeyi hak ettiğine inanıyoruz.",
+      "subtitle": "Okulun ekonomik durumundan bağımsız olarak her öğrencinin modern öğrenme araçlarına erişmeyi hak ettiğine inanıyoruz.",
       "feature1Title": "%100 Ücretsiz Erişim",
-      "feature1Description": "Nitelikli okullar için tüm özelliklere sahip tam platform erişimi",
+      "feature1Description": "Nitelikli okullar için tüm özelliklere sahip tam platform erişimi.",
       "feature2Title": "Özel Destek",
-      "feature2Description": "Öğretmenler ve personel için öncelikli oryantasyon ve eğitim",
+      "feature2Description": "Öğretmenler ve personel için öncelikli oryantasyon ve eğitim.",
       "feature3Title": "Eğitim Kaynakları",
       "feature3Description": "Ücretsiz öğretim materyalleri ve müfredat desteği",
-      "applyNow": "Hemen Başvurun",
+      "applyNow": "Şimdi Başvurun",
       "learnMore": "Daha fazla bilgi edin",
       "eligibilityTitle": "Program Uygunluğu",
       "qualifyingTitle": "Nitelikli Okullar:",
-      "qualify1": "Hizmet yetersizliği çeken topluluklardaki devlet okulları",
-      "qualify2": "Kayıtlı kâr amacı gütmeyen eğitim kurumları",
+      "qualify1": "dezavantajlı topluluklardaki devlet okulları",
+      "qualify2": "Kayıtlı kar amacı gütmeyen eğitim kurumları",
       "qualify3": "Gelişmekte olan bölgelerdeki okullar",
-      "qualify4": "Başlık I okulları (ABD) veya eşdeğeri",
+      "qualify4": "Title I okulları (ABD) veya eşdeğerleri",
       "commitmentTitle": "Taahhüdümüz:",
-      "commitment": "Ücretli müşterilerimizin %10'u ihtiyaç sahibi okullara ücretsiz erişim sağlanmasını destekliyor.",
-      "launchTitle": "Programın Lansmanı:",
-      "launch": "Ocak 2026 • Başvurular açıldı"
+      "commitment": "Ödeme yapan müşterilerimizin %10'u, ihtiyaç sahibi okullar için ücretsiz erişimi destekliyor.",
+      "launchTitle": "Programın Başlangıcı:",
+      "launch": "Ocak 2026 • Başvurular başladı"
     },
     "futureDevelopments": {
-      "title": "Gelecekteki Gelişmeler",
+      "title": "Gelecek Gelişmeler",
       "subtitle": "Eğitimi dönüştürme yol haritamız",
-      "cas": {
-        "title": "CAS Perspektifi",
-        "description": "Bağışlar ve materyallerle yetersiz fonlanan okullara destek olmak, kaliteli eğitimi herkes için erişilebilir kılmak."
+      "sustainable": {
+        "title": "Sürdürülebilir Bakış Açısı",
+        "description": "Maddi imkanları yetersiz okullara bağış ve malzeme desteği sağlayarak, kaliteli eğitimi herkesin erişimine sunmak."
       },
       "features": {
-        "title": "Özellikler Perspektif",
-        "description": "Dünya çapında çeşitli eğitim sistemleri için AI öğrenci desteğini genişletmek ve API entegrasyonları oluşturmak."
+        "title": "Özellikler Perspektifi",
+        "description": "Yapay zekâ destekli öğrenci hizmetlerini genişletmek ve dünya çapındaki çeşitli eğitim sistemleri için API entegrasyonları oluşturmak."
       },
       "launch": {
         "title": "Lansman Perspektifi",
-        "description": "Öğrenme deneyimini yeniden şekillendirmek için okullarda, üniversitelerde ve konferanslarda sunumlar."
+        "description": "Okullarda, üniversitelerde ve konferanslarda yapılan sunumlar, öğrenme deneyimini yeniden şekillendiriyor."
       }
     },
     "cta": {
       "title": "Okulunuzun öğrenme ve öğretme biçimini yeniden tanımlamaya hazır mısınız?",
-      "subtitle": "Studious LMS ile eğitimin geleceğine katılın",
-      "requestAccess": "Erişim Talebinde Bulunun",
+      "subtitle": "Studious LMS ile eğitimin geleceğine katılın.",
+      "requestAccess": "Erişim Talebi",
       "partnerWithUs": "Bizimle Ortak Olun",
-      "tagline": "Çalışkan Öğrenme Yönetim Sistemi (LMS) — Modern Öğrenme, Basitleştirildi."
+      "tagline": "Studious LMS — Modern Öğrenme, Basitleştirildi."
     },
     "privacyPolicy": {
       "title": "Gizlilik Politikası",
@@ -276,52 +277,52 @@
       "sections": {
         "introduction": {
           "title": "1. Giriş",
-          "content": "Studious LMS ('biz', 'bizim' veya 'bize'), gizliliğinizi korumayı taahhüt eder. Bu Gizlilik Politikası, öğrenme yönetim sistemimizi ve ilgili hizmetleri (toplu olarak 'Hizmet') kullandığınızda bilgilerinizi nasıl topladığımızı, kullandığımızı, ifşa ettiğimizi ve koruduğumuzu açıklamaktadır. Lütfen bu Gizlilik Politikasını dikkatlice okuyun. Hizmetimizi kullanarak, bilgilerin bu politikaya uygun olarak toplanmasını ve kullanılmasını kabul etmiş olursunuz."
+          "content": "Studious LMS ('biz', 'bizim' veya 'bize'), gizliliğinizi korumaya kararlıdır. Bu Gizlilik Politikası, öğrenme yönetim sistemimizi ve ilgili hizmetlerimizi (topluca 'Hizmet') kullandığınızda bilgilerinizi nasıl topladığımızı, kullandığımızı, ifşa ettiğimizi ve koruduğumuzu açıklamaktadır. Lütfen bu Gizlilik Politikasını dikkatlice okuyun. Hizmetimizi kullanarak, bu politikaya uygun olarak bilgilerin toplanmasına ve kullanılmasına同意 etmiş olursunuz."
         },
         "informationWeCollect": {
           "title": "2. Topladığımız Bilgiler",
-          "content": "Doğrudan bize sağladığınız bilgileri topluyoruz. Bunlara şunlar dahildir:\n\n• Hesap Bilgileri: Kullanıcı adı, e-posta adresi, şifre ve profil bilgileri\n• Eğitim Verileri: Sınıf kayıtları, ödevler, notlar, devam kayıtları ve akademik ilerleme\n• İletişim Verileri: Platform içindeki mesajlar, duyurular ve diğer iletişimler\n• Kullanım Verileri: Ziyaret edilen sayfalar ve kullanılan özellikler dahil olmak üzere Hizmetimizle nasıl etkileşim kurduğunuza ilişkin bilgiler\n• Cihaz Bilgileri: IP adresi, tarayıcı türü, cihaz tanımlayıcıları ve işletim sistemi\n• Çerezler ve İzleme Teknolojileri: Deneyiminizi geliştirmek ve kullanım kalıplarını analiz etmek için çerezler ve benzer teknolojiler kullanıyoruz"
+          "content": "Doğrudan bize sağladığınız bilgileri toplarız, bunlar şunları içerir:\n\n• Hesap Bilgileri: Kullanıcı adı, e-posta adresi, şifre ve profil bilgileri\n• Eğitim Verileri: Ders kayıtları, ödevler, notlar, devamsızlık kayıtları ve akademik ilerleme\n• İletişim Verileri: Platform içindeki mesajlar, duyurular ve diğer iletişimler\n• Kullanım Verileri: Ziyaret edilen sayfalar ve kullanılan özellikler de dahil olmak üzere Hizmetimizle nasıl etkileşim kurduğunuza dair bilgiler\n• Cihaz Bilgileri: IP adresi, tarayıcı türü, cihaz tanımlayıcıları ve işletim sistemi\n• Çerezler ve İzleme Teknolojileri: Deneyiminizi geliştirmek ve kullanım kalıplarını analiz etmek için çerezler ve benzer teknolojiler kullanıyoruz."
         },
         "howWeUseInformation": {
-          "title": "3. Bilgilerinizi Nasıl Kullanıyoruz?",
-          "content": "Topladığımız bilgileri şu amaçlarla kullanıyoruz:\n\n• Hizmetimizi sağlamak, sürdürmek ve iyileştirmek\n• İşlemleri gerçekleştirmek ve hesabınızı yönetmek\n• Öğretmenler, öğrenciler ve yöneticiler arasındaki iletişimi kolaylaştırmak\n• Eğitim içeriği, ödevler ve notlar oluşturmak ve yönetmek\n• Hesabınız ve Hizmet hakkında önemli bildirimler göndermek\n• Kullanıcı deneyimini iyileştirmek için kullanım modellerini analiz etmek\n• Güvenliği sağlamak ve dolandırıcılığı önlemek\n• Yasal yükümlülüklere uymak ve haklarımızı korumak"
+          "title": "3. Bilgilerinizi Nasıl Kullanıyoruz",
+          "content": "Topladığımız bilgileri şu amaçlarla kullanıyoruz:\n\n• Hizmetimizi sağlamak, sürdürmek ve geliştirmek\n• İşlemleri işlemek ve hesabınızı yönetmek\n• Öğretmenler, öğrenciler ve yöneticiler arasında iletişimi kolaylaştırmak\n• Eğitim içeriği, ödevler ve notlar oluşturmak ve yönetmek\n• Hesabınız ve Hizmetimiz hakkında önemli bildirimler göndermek\n• Kullanıcı deneyimini iyileştirmek için kullanım kalıplarını analiz etmek\n• Güvenliği sağlamak ve dolandırıcılığı önlemek\n• Yasal yükümlülüklere uymak ve haklarımızı korumak"
         },
         "informationSharing": {
-          "title": "4. Bilgi Paylaşımı ve Açıklaması",
-          "content": "Kişisel bilgilerinizi satmıyoruz. Bilgilerinizi aşağıdaki durumlarda paylaşabiliriz:\n\n• Eğitim Kurumlarıyla: Bilgiler, eğitim amaçlı olarak okulunuz veya eğitim kurumunuzla paylaşılabilir.\n• Hizmet Sağlayıcılarıyla: Hizmetimizin yürütülmesine yardımcı olan üçüncü taraf hizmet sağlayıcılarıyla bilgi paylaşabiliriz.\n• Yasal Uyumluluk İçin: Yasalarca gerekli olması veya haklarımızı ve güvenliğimizi korumak için bilgileri ifşa edebiliriz.\n• İzninizle: Açık izninizle bilgi paylaşabiliriz.\n• Birleşme Durumunda: Bilgiler, bir ticari işlemle bağlantılı olarak aktarılabilir."
+          "title": "4. Bilgi Paylaşımı ve Açıklama",
+          "content": "Kişisel bilgilerinizi satmıyoruz. Bilgilerinizi aşağıdaki durumlarda paylaşabiliriz:\n\n• Eğitim Kurumlarıyla: Bilgiler, eğitim amaçlı olarak okulunuz veya eğitim kurumunuzla paylaşılabilir.\n• Hizmet Sağlayıcılarla: Hizmetimizin işletilmesinde yardımcı olan üçüncü taraf hizmet sağlayıcılarla bilgileri paylaşabiliriz.\n• Yasal Uyumluluk İçin: Yasa gereği veya haklarımızı ve güvenliğimizi korumak için bilgileri açıklayabiliriz.\n• Onayınızla: Açık onayınızla bilgileri paylaşabiliriz.\n• Birleşme Durumunda: Bilgiler, bir ticari işlemle bağlantılı olarak devredilebilir."
         },
         "dataSecurity": {
           "title": "5. Veri Güvenliği",
-          "content": "Kişisel bilgilerinizi yetkisiz erişime, değişikliğe, ifşaya veya imhaya karşı korumak için uygun teknik ve organizasyonel güvenlik önlemlerini uyguluyoruz. Ancak, internet üzerinden hiçbir aktarım veya elektronik depolama yöntemi %100 güvenli değildir. Bilgilerinizi korumak için ticari olarak kabul edilebilir yöntemler kullanmaya çalışsak da, mutlak güvenliği garanti edemeyiz."
+          "content": "Kişisel bilgilerinizi yetkisiz erişime, değişikliğe, ifşaya veya yok edilmeye karşı korumak için uygun teknik ve organizasyonel güvenlik önlemleri uyguluyoruz. Bununla birlikte, internet üzerinden iletim veya elektronik depolama yöntemlerinin hiçbirisi %100 güvenli değildir. Bilgilerinizi korumak için ticari olarak kabul edilebilir yöntemler kullanmaya çalışsak da, mutlak güvenliği garanti edemeyiz."
         },
         "dataRetention": {
           "title": "6. Veri Saklama",
-          "content": "Kişisel bilgilerinizi, Hizmetimizi sunmak ve bu Gizlilik Politikası'nda belirtilen amaçları yerine getirmek için gerekli olduğu sürece saklarız; ancak yasalarca daha uzun bir saklama süresi gerekli veya izin verilen durumlar söz konusu olduğunda, bilgilerinizi güvenli bir şekilde siler veya anonimleştiririz."
+          "content": "Kişisel bilgilerinizi, hizmetimizi sağlamak ve bu Gizlilik Politikası'nda belirtilen amaçları yerine getirmek için gerekli olduğu sürece saklarız; ancak yasa gereği veya yasa tarafından izin verildiği takdirde daha uzun bir saklama süresi gerekebilir. Bilgilerinize artık ihtiyacımız kalmadığında, bunları güvenli bir şekilde sileriz veya anonimleştiririz."
         },
         "yourRights": {
           "title": "7. Haklarınız",
-          "content": "Bulunduğunuz yere bağlı olarak, kişisel bilgilerinizle ilgili olarak aşağıdakiler de dahil olmak üzere belirli haklara sahip olabilirsiniz:\n\n• Erişim: Kişisel bilgilerinize erişim talebinde bulunma\n• Düzeltme: Yanlış bilgilerin düzeltilmesini talep etme\n• Silme: Kişisel bilgilerinizin silinmesini talep etme\n• Taşınabilirlik: Verilerinizin aktarılmasını talep etme\n• İtiraz: Belirli işleme faaliyetlerine itiraz etme\n• Onayı Geri Çekme: İşlemenin onaya dayalı olduğu durumlarda onayı geri çekme\n\nBu hakları kullanmak için lütfen \"Bize Ulaşın\" bölümünde verilen bilgileri kullanarak bizimle iletişime geçin."
+          "content": "Bulunduğunuz yere bağlı olarak, kişisel bilgilerinizle ilgili belirli haklara sahip olabilirsiniz, bunlar şunları içerebilir:\n\n• Erişim: Kişisel bilgilerinize erişim talebinde bulunma\n• Düzeltme: Yanlış bilgilerin düzeltilmesini talep etme\n• Silme: Kişisel bilgilerinizin silinmesini talep etme\n• Taşınabilirlik: Verilerinizin aktarılmasını talep etme\n• İtiraz: Belirli işleme faaliyetlerine itiraz etme\n• Onay Geri Çekme: İşleme, onaya dayalıysa onayı geri çekme\n\nBu hakları kullanmak için lütfen 'Bize Ulaşın' bölümünde verilen bilgileri kullanarak bizimle iletişime geçin."
         },
         "childrenPrivacy": {
           "title": "8. Çocukların Gizliliği",
-          "content": "Hizmetimiz eğitim amaçlı tasarlanmıştır ve 18 yaşın altındaki öğrenciler tarafından kullanılabilir. Amerika Birleşik Devletleri'ndeki Aile Eğitim Hakları ve Gizlilik Yasası (FERPA) da dahil olmak üzere çocukların gizliliğiyle ilgili yürürlükteki yasalara uyuyoruz. Ebeveynlerden veya eğitim kurumlarından uygun izin alınmadan çocuklardan bilerek kişisel bilgi toplamıyoruz. Bir çocuktan uygunsuz bir şekilde bilgi topladığımızı düşünüyorsanız, lütfen hemen bizimle iletişime geçin."
+          "content": "Hizmetimiz eğitim amaçlı tasarlanmıştır ve 18 yaşın altındaki öğrenciler tarafından kullanılabilir. Amerika Birleşik Devletleri'ndeki Aile Eğitim Hakları ve Gizlilik Yasası (FERPA) dahil olmak üzere, çocukların gizliliğine ilişkin geçerli yasalara uyuyoruz. Ebeveynlerden veya eğitim kurumlarından uygun izin alınmadan çocuklardan bilerek kişisel bilgi toplamıyoruz. Bir çocuktan uygunsuz şekilde bilgi topladığımızı düşünüyorsanız, lütfen hemen bizimle iletişime geçin."
         },
         "internationalTransfers": {
           "title": "9. Uluslararası Veri Transferleri",
-          "content": "Bilgileriniz, ikamet ettiğiniz ülke dışındaki ülkelere aktarılabilir ve bu ülkelerde işlenebilir. Bu ülkelerin veri koruma yasaları, ülkenizdekilerden farklı olabilir. Hizmetimizi kullanarak, bilgilerinizin bu ülkelere aktarılmasına izin vermiş olursunuz."
+          "content": "Bilgileriniz, ikamet ettiğiniz ülke dışındaki ülkelere aktarılabilir ve bu ülkelerde işlenebilir. Bu ülkelerin veri koruma yasaları, ülkenizdeki yasalardan farklı olabilir. Hizmetimizi kullanarak, bilgilerinizin bu ülkelere aktarılmasına onay vermiş olursunuz."
         },
         "changesToPolicy": {
-          "title": "10. Bu Gizlilik Politikasındaki Değişiklikler",
-          "content": "Bu Gizlilik Politikası'nı zaman zaman güncelleyebiliriz. Yeni Gizlilik Politikası'nı bu sayfada yayınlayarak ve \"Son Güncelleme\" tarihini güncelleyerek herhangi bir değişiklik olması durumunda sizi bilgilendireceğiz. Herhangi bir değişiklik olup olmadığını görmek için bu Gizlilik Politikası'nı düzenli olarak incelemeniz önerilir."
+          "title": "10. Bu Gizlilik Politikasında Değişiklikler",
+          "content": "Bu Gizlilik Politikasını zaman zaman güncelleyebiliriz. Herhangi bir değişiklik olduğunda, yeni Gizlilik Politikasını bu sayfada yayınlayarak ve 'Son Güncelleme' tarihini güncelleyerek sizi bilgilendireceğiz. Herhangi bir değişiklik için bu Gizlilik Politikasını periyodik olarak gözden geçirmeniz önerilir."
         },
         "contactUs": {
           "title": "11. Bize Ulaşın",
-          "content": "Bu Gizlilik Politikası veya gizlilik uygulamalarımız hakkında herhangi bir sorunuz varsa, lütfen bizimle şu adresten iletişime geçin:\n\nE-posta: privacy@studious.sh\n\nSorunuza makul bir süre içinde yanıt vereceğiz."
+          "content": "Bu Gizlilik Politikası veya gizlilik uygulamalarımız hakkında herhangi bir sorunuz varsa, lütfen aşağıdaki adresten bizimle iletişime geçin:\n\nE-posta: privacy@studious.sh\n\nSorunuza makul bir süre içinde yanıt vereceğiz."
         }
       },
-      "goToTop": "Başa Dön",
+      "goToTop": "En Üste Git",
       "tableOfContents": "İçindekiler",
-      "backToTop": "Başa Dön"
+      "backToTop": "Sayfanın başına dön"
     },
     "termsOfService": {
       "title": "Hizmet Şartları",
@@ -329,68 +330,68 @@
       "sections": {
         "acceptance": {
           "title": "1. Şartların Kabulü",
-          "content": "Studious LMS'ye ('Hizmet') erişerek veya kullanarak, bu Hizmet Şartları'na ('Şartlar') bağlı kalmayı kabul etmiş olursunuz. Bu Şartları kabul etmiyorsanız, Hizmete erişemez veya Hizmeti kullanamazsınız. Bu Şartlar, öğrenciler, öğretmenler, yöneticiler ve eğitim kurumları dahil olmak üzere Hizmetin tüm kullanıcıları için geçerlidir."
+          "content": "Studious LMS'ye ('Hizmet') erişerek veya kullanarak, bu Hizmet Şartlarına ('Şartlar') bağlı kalmayı kabul edersiniz. Bu Şartları kabul etmiyorsanız, Hizmete erişemez veya kullanamazsınız. Bu Şartlar, öğrenciler, öğretmenler, yöneticiler ve eğitim kurumları dahil olmak üzere Hizmetin tüm kullanıcıları için geçerlidir."
         },
         "descriptionOfService": {
           "title": "2. Hizmetin Tanımı",
-          "content": "Studious LMS, eğitim kurumlarına, öğretmenlere ve öğrencilere dersleri, ödevleri, notları, devamsızlıkları, iletişimi ve diğer eğitim faaliyetlerini yönetmeleri için araçlar sağlayan bir öğrenme yönetim sistemidir. Hizmet, web tabanlı ve mobil uygulamaları, yapay zeka destekli özellikleri ve ilgili hizmetleri içerir."
+          "content": "Studious LMS, eğitim kurumlarına, öğretmenlere ve öğrencilere dersleri, ödevleri, notları, devamsızlığı, iletişimi ve diğer eğitim faaliyetlerini yönetmek için araçlar sağlayan bir öğrenme yönetim sistemidir. Hizmet, web tabanlı ve mobil uygulamaları, yapay zeka destekli özellikleri ve ilgili hizmetleri içerir."
         },
         "userAccounts": {
           "title": "3. Kullanıcı Hesapları",
-          "content": "Hizmeti kullanmak için bir hesap oluşturmanız ve doğru, güncel ve eksiksiz bilgiler sağlamanız gerekmektedir. Hesap bilgilerinizin ve hesabınız altında gerçekleşen tüm faaliyetlerin gizliliğini korumaktan siz sorumlusunuz. Şunları kabul edersiniz:\n\n• Güçlü ve benzersiz bir parola kullanın\n• Hesap bilgilerinizi başkalarıyla paylaşmayın\n• Yetkisiz erişim durumunda bizi derhal bilgilendirin\n• Doğru hesap bilgilerini koruyun\n• Hesabınız altındaki tüm faaliyetlerden sorumlu olun"
+          "content": "Hizmeti kullanmak için bir hesap oluşturmanız ve doğru, güncel ve eksiksiz bilgiler sağlamanız gerekmektedir. Hesap bilgilerinizin gizliliğini korumaktan ve hesabınız altında gerçekleşen tüm faaliyetlerden siz sorumlusunuz. Şunları kabul ediyorsunuz:\n\n• Güçlü, benzersiz bir parola kullanmak\n• Hesap bilgilerinizi başkalarıyla paylaşmamak\n• Yetkisiz erişim durumunda bizi derhal bilgilendirmek\n• Doğru hesap bilgilerini korumak\n• Hesabınız altındaki tüm faaliyetlerden sorumlu olmak"
         },
         "acceptableUse": {
           "title": "4. Kabul Edilebilir Kullanım Politikası",
-          "content": "Hizmeti yalnızca yasal amaçlar için ve bu Şartlar'a uygun olarak kullanmayı kabul edersiniz. Aşağıdakileri YAPMAMAYI kabul edersiniz:\n\n• Geçerli yasa veya yönetmelikleri ihlal etmek\n• Fikri mülkiyet haklarını ihlal etmek\n• Zararlı, saldırgan veya uygunsuz içerik iletmek\n• Diğer kullanıcıları taciz etmek, kötüye kullanmak veya onlara zarar vermek\n• Hizmete yetkisiz erişim sağlamaya çalışmak\n• Hizmete veya sunuculara müdahale etmek veya bunları kesintiye uğratmak\n• İzinsiz olarak Hizmete erişmek için otomatik sistemler kullanmak\n• Herhangi bir kişi veya kuruluşu taklit etmek\n• İzinsiz olarak diğer kullanıcılar hakkında kişisel veri toplamak veya saklamak"
+          "content": "Hizmeti yalnızca yasal amaçlar için ve bu Şartlara uygun olarak kullanmayı kabul edersiniz. Şunları YAPMAMAYI kabul edersiniz:\n\n• Geçerli herhangi bir yasa veya yönetmeliği ihlal etmek\n• Fikri mülkiyet haklarını ihlal etmek\n• Zararlı, saldırgan veya uygunsuz içerik iletmek\n• Diğer kullanıcılara taciz etmek, kötüye kullanmak veya zarar vermek\n• Hizmete yetkisiz erişim sağlamaya çalışmak\n• Hizmete veya sunuculara müdahale etmek veya bunları bozmak\n• İzin almadan Hizmete erişmek için otomatik sistemler kullanmak\n• Herhangi bir kişi veya kuruluşu taklit etmek\n• Diğer kullanıcılar hakkında kişisel verileri izinsiz toplamak veya saklamak"
         },
         "educationalContent": {
           "title": "5. Eğitim İçeriği ve Fikri Mülkiyet",
-          "content": "Hizmet, kullanıcıların eğitim içeriği oluşturmasına, yüklemesine ve paylaşmasına olanak tanır. Oluşturduğunuz içeriğin mülkiyeti size aittir; ancak Hizmeti kullanarak, Hizmeti sağlamak için gerekli olduğu şekilde içeriğinizi kullanma, saklama ve görüntüleme lisansı vermiş olursunuz. Yüklediğiniz her türlü içeriği kullanma ve paylaşma hakkına sahip olduğunuzdan emin olmak sizin sorumluluğunuzdadır. Fikri mülkiyet haklarına saygı duyuyoruz ve geçerli telif hakkı ihlali bildirimlerine yanıt veriyoruz."
+          "content": "Bu Hizmet, kullanıcıların eğitim içerikleri oluşturmasına, yüklemesine ve paylaşmasına olanak tanır. Oluşturduğunuz içeriğin mülkiyeti size aittir, ancak Hizmeti kullanarak, Hizmeti sağlamak için gerekli olduğu şekilde içeriğinizi kullanma, saklama ve görüntüleme lisansını bize vermiş olursunuz. Yüklediğiniz herhangi bir içeriği kullanma ve paylaşma hakkına sahip olduğunuzdan emin olmak sizin sorumluluğunuzdadır. Fikri mülkiyet haklarına saygı duyuyoruz ve geçerli telif hakkı ihlali bildirimlerine yanıt vereceğiz."
         },
         "aiFeatures": {
           "title": "6. Yapay Zeka Destekli Özellikler",
-          "content": "Hizmetimiz, notlandırma yardımı, içerik oluşturma ve eğitim desteği gibi yapay zeka destekli özellikler içerir. Bu özellikler \"olduğu gibi\" sağlanır ve tamamlayıcı araçlar olarak kullanılmalıdır. Yapay zeka tarafından oluşturulan içeriği incelemek ve doğrulamak kullanıcıların sorumluluğundadır. Yapay zeka tarafından oluşturulan içeriğin doğruluğunu, eksiksizliğini veya uygunluğunu garanti etmiyoruz."
+          "content": "Hizmetimiz, notlandırma yardımı, içerik oluşturma ve eğitim desteği gibi yapay zeka destekli özellikler içermektedir. Bu özellikler \"olduğu gibi\" sağlanır ve tamamlayıcı araçlar olarak kullanılmalıdır. Kullanıcılar, yapay zeka tarafından oluşturulan içeriği incelemek ve doğrulamakla sorumludur. Yapay zeka tarafından oluşturulan içeriğin doğruluğunu, eksiksizliğini veya uygunluğunu garanti etmiyoruz."
         },
         "privacy": {
           "title": "7. Gizlilik",
-          "content": "Hizmeti kullanımınız, bilgilerinizi nasıl topladığımızı, kullandığımızı ve koruduğumuzu açıklayan Gizlilik Politikamız tarafından da yönetilir. Hizmeti kullanarak, Gizlilik Politikamızda açıklandığı şekilde bilgilerin toplanmasına ve kullanılmasına izin vermiş olursunuz."
+          "content": "Hizmeti kullanımınız, bilgilerinizi nasıl topladığımızı, kullandığımızı ve koruduğumuzu açıklayan Gizlilik Politikamız tarafından da yönetilmektedir. Hizmeti kullanarak, Gizlilik Politikamızda açıklanan şekilde bilgilerin toplanmasına ve kullanılmasına onay vermiş olursunuz."
         },
         "feesAndPayment": {
           "title": "8. Ücretler ve Ödeme",
-          "content": "Hizmetin bazı özellikleri ödeme gerektirebilir. Abonelik veya ücretli özellikler satın alırsanız:\n\n• Ücretler, satın alma sırasında belirtildiği gibidir.\n• Ödemeler, güvenli üçüncü taraf ödeme işlemcileri aracılığıyla işlenir.\n• Abonelikler iptal edilmediği sürece otomatik olarak yenilenir.\n• İadeler, iade politikamıza tabidir.\n• Fiyatlandırmayı bildirimde bulunarak değiştirme hakkımız saklıdır."
+          "content": "Hizmetin bazı özellikleri ücretli olabilir. Abonelik veya ücretli özellikler satın alırsanız:\n\n• Ücretler satın alma anında belirtildiği gibidir.\n• Ödemeler güvenli üçüncü taraf ödeme işlemcileri aracılığıyla işlenir.\n• Abonelikler iptal edilmediği sürece otomatik olarak yenilenir.\n• Geri ödemeler geri ödeme politikamıza tabidir.\n• Fiyatlandırmayı önceden bildirimde bulunarak değiştirme hakkımızı saklı tutarız."
         },
         "termination": {
           "title": "9. Fesih",
-          "content": "Bu Şartları ihlal ettiğine veya diğer kullanıcılara, bize veya üçüncü taraflara zarar verdiğine inandığımız davranışlar nedeniyle, hesabınızı ve Hizmete erişiminizi önceden bildirimde bulunmaksızın derhal sonlandırabilir veya askıya alabiliriz. Hesabınızı istediğiniz zaman bizimle iletişime geçerek sonlandırabilirsiniz. Hesabınızın feshedilmesi durumunda, Hizmeti kullanma hakkınız derhal sona erecektir."
+          "content": "Bu Şartları ihlal ettiğinize veya diğer kullanıcılara, bize veya üçüncü şahıslara zarar verdiğinize inandığımız davranışlar nedeniyle hesabınızı ve Hizmete erişiminizi önceden bildirimde bulunmaksızın derhal sonlandırabilir veya askıya alabiliriz. Hesabınızı istediğiniz zaman bizimle iletişime geçerek sonlandırabilirsiniz. Sonlandırma üzerine, Hizmeti kullanma hakkınız derhal sona erecektir."
         },
         "disclaimers": {
-          "title": "10. Sorumluluk Reddi Beyanları",
-          "content": "HİZMET, AÇIK VEYA ZIMNİ HİÇBİR GARANTİ OLMADAN \"OLDUĞU GİBİ\" VE \"MEVCUT OLDUĞU GİBİ\" SAĞLANMAKTADIR. HİZMETİN KESİNTİSİZ, GÜVENLİ VEYA HATASIZ OLACAĞINI GARANTİ ETMİYORUZ. SATILABİLİRLİK, BELİRLİ BİR AMACA UYGUNLUK VE İHLAL ETMEME GARANTİLERİ DAHİL OLMAK ÜZERE TÜM GARANTİLERİ REDDEDERİZ."
+          "title": "10. Yasal Uyarılar",
+          "content": "HİZMET, AÇIK VEYA ZIMNİ HİÇBİR GARANTİ VERİLMEKSİZİN, 'OLDUĞU GİBİ' VE 'MEVCUT OLDUĞU GİBİ' SAĞLANMAKTADIR. HİZMETİN KESİNTİSİZ, GÜVENLİ VEYA HATASIZ OLACAĞINI GARANTİ ETMİYORUZ. SATILABİLİRLİK, BELİRLİ BİR AMACA UYGUNLUK VE TELİF HAKKI İHLALİ OLMAMASI GARANTİLERİ DAHİL OLMAK ÜZERE TÜM GARANTİLERİ REDDEDİYORUZ."
         },
         "limitationOfLiability": {
           "title": "11. Sorumluluğun Sınırlandırılması",
-          "content": "YASALARIN İZİN VERDİĞİ AZAMİ ÖLÇÜDE, HİZMETİ KULLANIMINIZDAN KAYNAKLANAN HERHANGİ BİR DOLAYLI, ARIZİ, ÖZEL, SONUÇ OLARAK OLUŞAN VEYA CEZAİ ZARARDAN VEYA DOĞRUDAN VEYA DOLAYLI OLARAK MEYDANA GELEN HERHANGİ BİR KÂR VEYA GELİR KAYBINDAN VEYA HERHANGİ BİR VERİ, KULLANIM, ŞEREF VEYA DİĞER SOMUT OLMAYAN KAYIPLARDAN SORUMLU TUTULMAYACAĞIZ."
+          "content": "YASALARIN İZİN VERDİĞİ AZAMİ ÖLÇÜDE, HİZMETİ KULLANIMINIZDAN KAYNAKLANAN DOĞRUDAN VEYA DOLAYLI OLARAK ORTAYA ÇIKAN HERHANGİ BİR DOLAYLI, ARIZİ, ÖZEL, SONUÇSAL VEYA CEZAİ ZARARDAN, KAR VEYA GELİR KAYBINDAN VEYA VERİ KAYBINDAN, KULLANIM KAYBINDAN, İYİ NİYET KAYBINDAN VEYA DİĞER MADDİ OLMAYAN KAYIPLARDAN SORUMLU OLMAYACAĞIZ."
         },
         "indemnification": {
           "title": "12. Tazminat",
-          "content": "Hizmete erişiminiz veya Hizmeti kullanımınızdan, bu Şartları ihlal etmenizden veya başkasının haklarını ihlal etmenizden kaynaklanan veya herhangi bir şekilde bunlarla bağlantılı olan her türlü talep, yükümlülük, zarar, kayıp ve masraftan Studious LMS'yi ve yöneticilerini, müdürlerini, çalışanlarını ve temsilcilerini tazmin etmeyi, savunmayı ve zarar görmemelerini sağlamayı kabul edersiniz."
+          "content": "Hizmete erişiminiz veya kullanımınız, bu Şartları ihlal etmeniz veya başkasının haklarını ihlal etmenizden kaynaklanan veya bunlarla herhangi bir şekilde bağlantılı olan her türlü iddia, yükümlülük, zarar, kayıp ve masraftan Studious LMS'yi ve yöneticilerini, müdürlerini, çalışanlarını ve temsilcilerini tazmin etmeyi, savunmayı ve zararsız tutmayı kabul edersiniz."
         },
         "governingLaw": {
-          "title": "13. Geçerli Kanun",
-          "content": "Bu Şartlar, Studious LMS'nin faaliyet gösterdiği yargı bölgesinin kanunlarına tabi olacak ve bu kanunlara göre yorumlanacaktır; kanunlar ihtilafı hükümleri dikkate alınmayacaktır. Bu Şartlar veya Hizmet'ten kaynaklanan her türlü uyuşmazlık, ilgili yargı bölgesinin ilgili mahkemelerinde çözülecektir."
+          "title": "13. Uygulanacak Hukuk",
+          "content": "Bu Şartlar, kanunlar ihtilafı hükümlerine bakılmaksızın, Studious LMS'nin faaliyet gösterdiği yargı bölgesinin kanunlarına göre yönetilecek ve yorumlanacaktır. Bu Şartlardan veya Hizmetten kaynaklanan herhangi bir anlaşmazlık, söz konusu yargı bölgesinin yetkili mahkemelerinde çözülecektir."
         },
         "changesToTerms": {
           "title": "14. Şartlarda Değişiklikler",
-          "content": "Bu Şartları herhangi bir zamanda değiştirme hakkımızı saklı tutuyoruz. Güncellenen Şartları web sitemizde yayınlayarak ve \"Son Güncelleme\" tarihini güncelleyerek kullanıcıları önemli değişikliklerden haberdar edeceğiz. Bu tür değişikliklerden sonra Hizmeti kullanmaya devam etmeniz, değiştirilen Şartları kabul ettiğiniz anlamına gelir."
+          "content": "Bu Şartları herhangi bir zamanda değiştirme hakkımızı saklı tutuyoruz. Güncellenmiş Şartları web sitemizde yayınlayarak ve 'Son Güncelleme' tarihini güncelleyerek kullanıcıları önemli değişikliklerden haberdar edeceğiz. Bu değişikliklerden sonra Hizmeti kullanmaya devam etmeniz, değiştirilmiş Şartları kabul ettiğiniz anlamına gelir."
         },
         "contactUs": {
-          "title": "15. Bizimle İletişime Geçin",
-          "content": "Bu Hizmet Şartları hakkında herhangi bir sorunuz varsa, lütfen bizimle şu adresten iletişime geçin:\n\nE-posta: legal@studious.sh\n\nSorunuza makul bir süre içinde yanıt vereceğiz."
+          "title": "15. Bize Ulaşın",
+          "content": "Bu Hizmet Şartları ile ilgili herhangi bir sorunuz varsa, lütfen aşağıdaki adresten bizimle iletişime geçin:\n\nE-posta: legal@studious.sh\n\nSorunuza makul bir süre içinde yanıt vereceğiz."
         }
       },
-      "goToTop": "Başa Dön",
+      "goToTop": "En Üste Git",
       "tableOfContents": "İçindekiler",
-      "backToTop": "Başa Dön"
+      "backToTop": "Sayfanın başına dön"
     },
     "navbarPopup": {
       "goBack": "Geri gitmek",
@@ -399,14 +400,14 @@
   },
   "press": {
     "badge": "Basın ve Medya",
-    "title": "Haberlerde çalışkan",
-    "subtitle": "Gazeteciler ve içerik oluşturucular için medya kaynakları, marka varlıkları ve şirket bilgileri",
+    "title": "Haberlerde yer alan çalışkan öğrenci",
+    "subtitle": "Gazeteciler ve içerik oluşturucular için medya kaynakları, marka varlıkları ve şirket bilgileri.",
     "factsheet": {
       "title": "Şirket Bilgi Formu",
       "subtitle": "Studious LMS hakkında kısa bilgiler",
       "companyInfo": "Şirket Bilgileri",
       "founded": "Kurulan",
-      "hq": "Karargah",
+      "hq": "Merkez Ofis",
       "industry": "Sanayi",
       "website": "Web sitesi",
       "status": "Durum",
@@ -420,7 +421,7 @@
     "contact": {
       "title": "Basın Soruları",
       "subtitle": "Basın soruları, röportajlar ve medya talepleri için",
-      "sl": "Genellikle 24 saat içinde yanıt veriyoruz",
+      "sl": "Genellikle 24 saat içinde yanıt veriyoruz.",
       "general": "Genel sorular ve destek için"
     }
   },
@@ -428,64 +429,64 @@
     "hero": {
       "badge": "Sosyal Etki Girişimi",
       "title": "Çalışkan Okul Geliştirme Programı",
-      "subtitle": "Ekonomik imkânları olmayan okullara modern öğrenme teknolojilerine ücretsiz erişim sağlanması"
+      "subtitle": "Ekonomik imkanları yetersiz okullara modern öğrenme teknolojilerine ücretsiz erişim sağlamak."
     },
     "commitment": {
       "revenue": "Taahhüt Edilen Gelir",
-      "cohort": "İlk Grup Lansmanı",
+      "cohort": "İlk Dönem Lansmanı",
       "free": "Ücretsiz Erişim"
     },
     "about": {
       "mission": {
         "title": "Misyonumuz",
-        "body1": "Çalışkan Okul Gelişim Programı, öğrenim yönetimi platformumuza ücretsiz ve sınırsız erişim sağlayarak imkânları kısıtlı okullara destek olmayı amaçlamaktadır. Teknolojinin geleceğin işgücünde baskın bir faktör olduğunun farkındayız, ancak birçok eğitim kurumu bu tür kaynaklara erişimden yoksundur. Bu program aracılığıyla, en çok ihtiyaç duyan okullara modern öğrenim yönetimi teknolojisi sunuyoruz."
+        "body1": "Çalışkan Okul Geliştirme Programı, dezavantajlı okullara öğrenme yönetim platformumuza ücretsiz ve sınırsız erişim sağlayarak onları desteklemeyi amaçlamaktadır. Teknolojinin geleceğin iş gücünde baskın bir faktör olduğunun farkındayız, ancak birçok eğitim kurumu bu kaynaklara erişimden yoksun. Bu program aracılığıyla, en çok ihtiyaç duyan okullara modern öğrenme yönetim teknolojisini getiriyoruz."
       },
       "aims": {
         "title": "Programın Amaçları",
-        "body1": "Öğretmenler ve eğitim profesyonelleriyle yaptığımız kapsamlı görüşmeler sonucunda, birçok okulun kullanımına sunulan dijital öğrenme altyapısında önemli eksiklikler tespit ettik. Piyasadaki birçok öğrenme yönetim sistemi, tutarlı ve sezgisel bir kullanıcı deneyiminden yoksundur ve dezavantajlı bölgelerdeki okullar genellikle modern eğitim teknolojilerine erişim sağlayamamaktadır.",
-        "body2": "Programımız bu zorlukları doğrudan ele alıyor. Ücretli kurumsal aboneliklerimizden elde ettiğimiz gelir, dezavantajlı okullara Studious LMS ve ilgili eğitim araçlarına kapsamlı erişim sağlamamızı sağlıyor. Bu sürdürülebilir model, dijital uçurumu kapatmamıza ve platformumuzu tüm kullanıcılar için sürekli iyileştirmemize olanak tanıyor."
+        "body1": "Öğretmenler ve eğitim uzmanlarıyla yaptığımız kapsamlı görüşmeler sonucunda, birçok okulun erişebildiği dijital öğrenme altyapısında önemli eksiklikler tespit ettik. Piyasadaki birçok öğrenme yönetim sistemi, tutarlı ve sezgisel bir kullanıcı deneyiminden yoksun olup, dezavantajlı bölgelerdeki okullar genellikle modern eğitim teknolojisine erişim imkanına sahip olamıyor.",
+        "body2": "Programımız bu zorlukları doğrudan ele almaktadır. Ücretli kurumsal aboneliklerimizden elde edilen gelir, dezavantajlı okullara Studious LMS ve ilgili eğitim araçlarına kapsamlı erişim sağlamamızı mümkün kılmaktadır. Bu sürdürülebilir model, dijital uçurumu kapatmamıza ve platformumuzu tüm kullanıcılar için sürekli olarak geliştirmemize olanak tanır."
       },
       "receive": {
-        "title": "Alacağınız Şeyler",
-        "body1": "Programa kabul edilen okullar, sınırlı veya sadeleştirilmiş bir sürüm değil, tam Studious platform deneyimine sahip olurlar. Bu, sınırsız öğrenci ve öğretmen hesabı, tüm premium özellikler (yapay zeka asistanı, gelişmiş analizler, gerçek zamanlı iş birliği), öncelikli teknik destek, özel oryantasyon uzmanları, sürekli eğitim kaynakları ve gelecekteki tüm güncelleme ve iyileştirmelere erişim içerir.",
-        "body2": "Yazılımın ötesinde, okulunuzun platformun faydalarından en iyi şekilde yararlanabilmesi için kapsamlı destek sağlıyoruz. Ekibimiz, sistemi özel ihtiyaçlarınıza göre özelleştirmek, uygulamalı eğitim sağlamak ve yolculuğunuz boyunca sürekli destek sağlamak için yöneticileriniz ve öğretmenlerinizle doğrudan çalışacaktır."
+        "title": "Neler Alacaksınız?",
+        "body1": "Programa kabul edilen okullar, Studious platformunun tam sürümüne sahip olurlar; sınırlı veya basitleştirilmiş bir sürüme değil. Bu, sınırsız öğrenci ve öğretmen hesabı, tüm premium özellikler (yapay zeka asistanı, gelişmiş analizler, gerçek zamanlı iş birliği), öncelikli teknik destek, özel eğitim uzmanları, sürekli eğitim kaynakları ve gelecekteki tüm güncellemelere ve iyileştirmelere erişimi içerir.",
+        "body2": "Yazılımın kendisinin ötesinde, okulunuzun platformun avantajlarından en iyi şekilde yararlanabilmesi için kapsamlı destek sağlıyoruz. Ekibimiz, sisteminizi özel ihtiyaçlarınıza göre özelleştirmek, uygulamalı eğitim sağlamak ve yolculuğunuz boyunca sürekli yardım için hazır bulunmak üzere yöneticileriniz ve öğretmenlerinizle doğrudan çalışacaktır."
       },
       "qualifies": {
-        "title": "Kimler Uygun?",
-        "body1": "Gelişmiş eğitim teknolojilerinden en çok faydalanacak öğrencilere hizmet veren okullara öncelik veriyoruz. Bunlar arasında, yetersiz hizmet alan veya ekonomik olarak dezavantajlı topluluklardaki devlet okulları, mali kısıtlamalar gösteren kayıtlı kâr amacı gütmeyen eğitim kurumları, gelişmekte olan bölge veya ülkelerdeki okullar, ABD'deki Title I okulları ve uluslararası eşdeğerleri ve öğrenci sonuçlarını iyileştirme taahhüdünün yanı sıra gerçek bir mali ihtiyaç gösterebilen tüm eğitim kurumları yer almaktadır.",
-        "body2": "Her başvuruyu, yalnızca finansal ölçütleri değil, aynı zamanda okulunuzun misyonunu, hizmet verdiğiniz nüfusu ve Studious'u eğitimi geliştirmek için kullanma planlarınızı da göz önünde bulundurarak ayrı ayrı değerlendiriyoruz. Amacımız, platformumuzdan gerçekten faydalanacak ve öğrencilerin öğrenme deneyimlerini iyileştirmek için platformumuzu etkili bir şekilde kullanacak okullarla ortaklık kurmaktır."
+        "title": "Kimler Nitelikli?",
+        "body1": "Eğitim teknolojisindeki gelişmelerden en çok fayda sağlayacak öğrencilere hizmet veren okullara öncelik veriyoruz. Bu, dezavantajlı veya ekonomik olarak geri kalmış topluluklardaki devlet okullarını, mali kısıtlamalar gösteren kayıtlı kar amacı gütmeyen eğitim kurumlarını, gelişmekte olan bölgelerdeki veya ülkelerdeki okulları, ABD Title I okullarını ve bunların uluslararası eşdeğerlerini ve öğrenci sonuçlarını iyileştirme taahhüdünün yanı sıra gerçek bir mali ihtiyacı gösterebilen herhangi bir eğitim kurumunu içerir.",
+        "body2": "Her başvuruyu ayrı ayrı değerlendiriyoruz; sadece finansal ölçütleri değil, aynı zamanda okulunuzun misyonunu, hizmet verdiğiniz öğrenci kitlesini ve Studious'u eğitimde nasıl kullanmayı planladığınızı da dikkate alıyoruz. Amacımız, platformumuzdan gerçekten fayda sağlayacak ve öğrenci deneyimlerini iyileştirmek için etkili bir şekilde kullanacak okullarla ortaklık kurmaktır."
       },
       "impact": {
-        "title": "Etki Vizyonumuz",
-        "body1": "Okullara modern öğrenme yönetim teknolojilerine ücretsiz erişim sağlayarak, dezavantajlı bölgelerdeki eğitim kurumlarının karşılaştığı temel engellerden birini ortadan kaldırmayı hedefliyoruz. Yaklaşımımız yalnızca yazılımla sınırlı değil; eğitim kaynakları, oryantasyon desteği ve e-kitaplar ve dijital kırtasiye malzemeleri gibi eğitim araçlarına erişim de dahil olmak üzere kapsamlı destek sağlamaya kararlıyız.",
-        "body2": "Okul Geliştirme Programı, ilk ortak okul grubumuzla birlikte 2025 Kasım sonu ile Aralık ortası arasında başlayacak. Studious büyüdükçe, daha fazla okulu destekleme kapasitemiz de artacak. Ücretli kurumsal aboneliklerimizden elde edilen tüm gelir, ihtiyaç sahibi okullar için erişimi genişletmeye yeniden yatırılacak ve zamanla güçlenen sürdürülebilir bir eğitim eşitliği modeli oluşturulacak."
+        "title": "Etki Yaratma Vizyonumuz",
+        "body1": "Okullara modern öğrenme yönetim teknolojisine ücretsiz erişim sağlayarak, dezavantajlı bölgelerdeki eğitim kurumlarının karşılaştığı en önemli engellerden birini ortadan kaldırmayı hedefliyoruz. Yaklaşımımız sadece yazılımla sınırlı değil; eğitim kaynakları, entegrasyon desteği ve e-kitaplar ve dijital kırtasiye malzemeleri gibi eğitim araçlarına erişim de dahil olmak üzere kapsamlı destek sağlamayı taahhüt ediyoruz.",
+        "body2": "Okul Geliştirme Programı, ilk ortak okul grubumuzla birlikte 2025 yılının Kasım sonu ile Aralık ortası arasında başlatılacaktır. Studious büyüdükçe, daha fazla okula destek verme kapasitemiz de artmaktadır. Ücretli kurumsal aboneliklerimizden elde edilen tüm gelir, ihtiyaç sahibi okullar için erişimi genişletmeye yeniden yatırılarak, zamanla güçlenen sürdürülebilir bir eğitim eşitliği modeli oluşturulmaktadır."
       }
     },
     "cta": {
       "apply": {
         "title": "Programa Başvurun",
-        "description": "Studious'u okulunuza getirmeye hazır mısınız? Başvuru formumuzu doldurun, 5-7 iş günü içinde inceleyelim.",
-        "item1": "Yaklaşık 10-15 dakika sürer",
-        "item2": "Başvuru ücreti gerekmez",
-        "item3": "5-7 iş günü içinde yanıt",
-        "button": "Uygulamayı Başlat"
+        "description": "Studious'u okulunuza getirmeye hazır mısınız? Başvuru formumuzu doldurun, 5-7 iş günü içinde inceleyeceğiz.",
+        "item1": "Yaklaşık 10-15 dakika sürer.",
+        "item2": "Başvuru ücreti gerekmiyor.",
+        "item3": "5-7 iş günü içinde yanıt verilecektir.",
+        "button": "Başvuruyu Başlat"
       }
     },
     "status": {
-      "title": "Başvuru Durumunu Kontrol Edin",
-      "description": "Zaten başvuruda bulundunuz mu? Başvurunuzun durumunu kontrol etmek için başvuru kimliğinizi girin.",
-      "inputLabel": "Uygulama Kimliği",
-      "placeholder": "örneğin, EXA2025-...",
-      "help": "Başvurunuzu gönderdikten sonra başvuru numaranızı e-posta yoluyla aldınız.",
+      "title": "Başvuru Durumunu Kontrol Et",
+      "description": "Başvurunuzu zaten yaptınız mı? Başvurunuzun durumunu kontrol etmek için başvuru numaranızı girin.",
+      "inputLabel": "Başvuru Kimliği",
+      "placeholder": "Örneğin, EXA2025-...",
+      "help": "Başvurunuzu gönderdikten sonra başvuru kimlik numaranızı e-posta yoluyla aldınız.",
       "results": {
-        "found": "Uygulama Bulundu",
+        "found": "Başvuru Bulundu",
         "school": "Okul:",
         "location": "Konum:",
         "submitted": "Gönderildi:",
         "contact": "Temas etmek:",
         "notFound": {
-          "title": "Uygulama bulunamadı",
-          "body": "Lütfen uygulama kimliğinizi kontrol edip tekrar deneyin. Sorun yaşamaya devam ederseniz, impact@studious.sh adresinden bizimle iletişime geçin."
+          "title": "Uygulama bulunamadı.",
+          "body": "Lütfen başvuru kimliğinizi kontrol edin ve tekrar deneyin. Sorun yaşamaya devam ederseniz, impact@studious.sh adresinden bizimle iletişime geçin."
         }
       },
       "cards": {
@@ -494,46 +495,46 @@
           "body": "Hesabınızı kurmak için sonraki adımlar için e-postanızı kontrol edin."
         },
         "underReview": {
-          "title": "⏳ Başvurunuz şu anda inceleme aşamasındadır.",
-          "body": "İnceleme tamamlandıktan sonra sizinle e-posta yoluyla iletişime geçeceğiz."
+          "title": "⏳ Başvurunuz şu anda inceleniyor.",
+          "body": "İnceleme tamamlandığında sizinle e-posta yoluyla iletişime geçeceğiz."
         },
         "pending": {
           "title": "📋 Başvurunuz alındı.",
-          "body": "Ekibimiz yakında incelemeye başlayacak. Tahmini inceleme süresi: 5-7 iş günü."
+          "body": "Ekibimiz kısa süre içinde incelemeye başlayacaktır. Tahmini inceleme süresi: 5-7 iş günü."
         }
       }
     },
     "contact": {
       "title": "Sorularınız mı var?",
-      "subtitle": "Ekibimiz başvuru sürecinde size yardımcı olmak için burada",
+      "subtitle": "Ekibimiz başvuru sürecinde size yardımcı olmak için burada.",
       "button": "Bize e-posta gönderin: impact@studious.sh"
     }
   },
   "apply": {
     "toasts": {
-      "submitted": "Başvurunuz başarıyla iletildi!"
+      "submitted": "Başvuru başarıyla gönderildi!"
     },
     "errors": {
       "submitFailed": "Başvuru gönderilemedi: {message}"
     },
     "success": {
-      "title": "Başvurunuz Gönderildi!",
-      "subtitle": "Çalışkan Okul Geliştirme Programına başvurduğunuz için teşekkür ederiz",
-      "applicationId": "Uygulama Kimliğiniz",
-      "saveId": "Başvurunuzun durumunu kontrol etmek için bu kimliği kaydedin",
+      "title": "Başvuru Gönderildi!",
+      "subtitle": "Çalışkan Okul Geliştirme Programına başvurunuz için teşekkür ederiz.",
+      "applicationId": "Başvuru Kimliğiniz",
+      "saveId": "Başvuru durumunuzu kontrol etmek için bu kimliği kaydedin.",
       "nextSteps": {
-        "title": "Peki Bundan Sonra Ne Olacak?",
-        "item1": "{email} adresine bir onay e-postası alacaksınız",
-        "item2": "Ekibimiz başvurunuzu 5-7 iş günü içinde inceleyecektir",
-        "item3": "Bir karar verildiğinde sizi e-posta yoluyla bilgilendireceğiz"
+        "title": "Bundan sonra ne olacak?",
+        "item1": "{email} adresinde bir onay e-postası alacaksınız.",
+        "item2": "Ekibimiz başvurunuzu 5-7 iş günü içinde inceleyecektir.",
+        "item3": "Karar verildikten sonra sizi e-posta yoluyla bilgilendireceğiz."
       },
-      "backToProgram": "Programa Geri Dön",
-      "returnHome": "Eve Dönüş"
+      "backToProgram": "Programa geri dön",
+      "returnHome": "Ana Sayfaya Dön"
     }
   },
   "agenda": {
     "title": "Gündem",
-    "description": "Kapsamlı takvim görünümleriyle programınızı ve yaklaşan etkinliklerinizi görüntüleyin",
+    "description": "Kapsamlı takvim görünümleriyle programınızı ve yaklaşan etkinliklerinizi görüntüleyin.",
     "addEvent": "Etkinlik Ekle",
     "untitledEvent": "Başlıksız Etkinlik",
     "today": "Bugün",
@@ -548,23 +549,23 @@
   },
   "chat": {
     "landing": {
-      "description": "Sohbete başlamak için kenar çubuğundan bir konuşma seçin.",
+      "description": "Yan taraftaki menüden bir konuşma seçerek sohbete başlayabilirsiniz.",
       "pleaseSignIn": "Lütfen giriş yapın",
-      "signInRequired": "Sohbete erişmek için oturum açmanız gerekir.",
-      "title": "Sohbete Hoş Geldiniz"
+      "signInRequired": "Sohbete erişmek için oturum açmanız gerekiyor.",
+      "title": "Sohbete hoş geldiniz"
     },
     "page": {
-      "unknown": "Bilinmeyen",
+      "unknown": "Bilinmiyor",
       "unnamedGroup": "İsimsiz Grup",
       "unknownUser": "Bilinmeyen Kullanıcı",
       "notFound": {
-        "title": "Konuşma Bulunamadı",
-        "description": "Bu konuşma mevcut değil veya buna erişiminiz yok.",
-        "backToChat": "Sohbete Geri Dön"
+        "title": "Konuşma bulunamadı.",
+        "description": "Bu konuşma mevcut değil veya siz bu konuşmaya erişemiyorsunuz.",
+        "backToChat": "Sohbete geri dön"
       },
       "header": {
         "members": "üyeler",
-        "markMentionsRead": "Mark okunduğundan bahsediyor"
+        "markMentionsRead": "Mark okuduğunu belirtiyor."
       },
       "input": {
         "placeholderPrefix": "Mesaj"
@@ -574,7 +575,7 @@
   },
   "notifications": {
     "title": "Bildirimler",
-    "subtitle": "Dersleriniz ve ödevleriniz konusunda güncel kalın",
+    "subtitle": "Dersleriniz ve ödevlerinizle ilgili güncel bilgilere sahip olun.",
     "badge": {
       "unread": "{count} okunmamış"
     },
@@ -586,24 +587,24 @@
     },
     "empty": {
       "unread": {
-        "title": "Okunmamış bildirim yok",
-        "description": "Tamamdır! Okunmamış bildiriminiz yok."
+        "title": "Okunmamış bildirim yok.",
+        "description": "Tüm bildirimleriniz okundu! Hiçbir okunmamış bildiriminiz yok."
       },
       "read": {
-        "title": "Okunmamış bildirimler",
+        "title": "Okuma bildirimi yok.",
         "description": "Henüz hiçbir bildirim okundu olarak işaretlenmedi."
       },
       "all": {
-        "title": "Henüz bildirim yok",
-        "description": "Bildirim aldığınızda burada görünecektir."
+        "title": "Henüz hiçbir bildirim yok.",
+        "description": "Bildirimler aldığınızda, burada görüneceklerdir."
       }
     },
     "actions": {
-      "marking": "İşaretleniyor...",
-      "markAsRead": "Okundu Olarak İşaretle"
+      "marking": "İşaretleme...",
+      "markAsRead": "Okundu olarak işaretle"
     },
     "toasts": {
-      "markedAsRead": "Bildirim okundu olarak işaretlendi"
+      "markedAsRead": "Bildirim okundu olarak işaretlendi."
     },
     "meta": {
       "from": "itibaren"
@@ -611,43 +612,43 @@
   },
   "profile": {
     "title": "Profil",
-    "description": "Kişisel bilgilerinizi ve profil ayarlarınızı yönetin",
-    "editProfile": "Profili Düzenle",
+    "description": "Kişisel bilgilerinizi ve profil ayarlarınızı yönetin.",
+    "editProfile": "Profil Düzenle",
     "saveChanges": "Değişiklikleri Kaydet",
     "cancel": "İptal etmek",
     "student": "Öğrenci",
     "personalInformation": {
       "title": "Kişisel Bilgiler",
-      "description": "Kişisel bilgilerinizi ve profil bilgilerinizi güncelleyin",
+      "description": "Kişisel bilgilerinizi ve profil bilgilerinizi güncelleyin.",
       "displayName": "Ekran adı",
-      "displayNamePlaceholder": "Görüntü adınızı girin",
-      "displayNameDescription": "Adınız başkalarına bu şekilde görünecek",
+      "displayNamePlaceholder": "Görünen adınızı girin",
+      "displayNameDescription": "Adınız başkalarına bu şekilde görünecektir.",
       "location": "Konum",
       "locationPlaceholder": "Konumunuzu girin",
       "locationDescription": "Şehriniz, eyaletiniz veya ülkeniz",
-      "bio": "Oldu",
-      "bioPlaceholder": "Bize kendinizden bahseder misiniz?",
+      "bio": "Öyleydi",
+      "bioPlaceholder": "Bize kendinizden bahsedin...",
       "bioDescription": "Kendiniz hakkında kısa bir açıklama (en fazla 500 karakter)",
       "website": "Web sitesi",
-      "websitePlaceholder": "https://web-siteniz.com",
+      "websitePlaceholder": "https://your-website.com",
       "websiteDescription": "Kişisel web siteniz veya portföyünüz"
     },
     "accountInformation": {
       "title": "Hesap Bilgileri",
       "description": "Hesap bilgileriniz ve giriş bilgileriniz",
       "username": "Kullanıcı adı",
-      "usernameNote": "Kullanıcı adı değiştirilemez",
+      "usernameNote": "Kullanıcı adı değiştirilemez.",
       "email": "E-posta",
-      "emailNote": "E-posta, Hesap Ayarları'nda yönetilir",
-      "memberSince": "Üye Olduğu Tarih"
+      "emailNote": "E-posta, Hesap Ayarları'nda yönetilir.",
+      "memberSince": "Üyelik Tarihi: 1966"
     },
     "messages": {
-      "profileUpdated": "Profil başarıyla güncellendi",
-      "profileUpdateFailed": "Profil güncellenemedi",
+      "profileUpdated": "Profil başarıyla güncellendi.",
+      "profileUpdateFailed": "Profil güncellemesi başarısız oldu.",
       "profilePictureSelected": "Profil resmi seçildi. Güncellemek için 'Değişiklikleri Kaydet'e tıklayın.",
       "avatarSelected": "Avatar seçildi. Güncellemek için 'Değişiklikleri Kaydet'e tıklayın.",
-      "profilePictureUploadFailed": "Profil resmi yüklenemedi",
-      "profilePictureSelectFailed": "Profil resmi seçilemedi",
+      "profilePictureUploadFailed": "Profil resmi yüklenemedi.",
+      "profilePictureSelectFailed": "Profil resmi seçilemedi.",
       "failedToLoadProfile": "Profil yüklenemedi. Lütfen tekrar deneyin."
     }
   },
@@ -657,31 +658,31 @@
     "attendance": "Katılım",
     "attachFile": "Dosya ekle",
     "post": "Postalamak",
-    "posting": "Gönderiliyor...",
-    "noPosts": "Henüz gönderi yok",
+    "posting": "Yayınlanıyor...",
+    "noPosts": "Henüz hiçbir gönderi yok.",
     "createFirstPost": "İlk gönderiyi oluştur",
     "grades": {
       "title": "Notlar",
-      "subtitle": "Öğrenci notlarını görüntüleyin ve yönetin",
+      "subtitle": "Öğrenci notlarını görüntüleyin ve yönetin.",
       "columns": {
         "assignment": "Atama",
         "maxPoints": "Maksimum Puan",
         "weight": "Ağırlık",
         "graded": "Derecelendirilmiş",
-        "dueDate": "İki Tarih",
+        "dueDate": "İki Randevu",
         "actions": "Eylemler",
         "student": "Öğrenci",
         "overallGrade": "Genel Not",
-        "assignmentsCompleted": "Tamamlanan Ödevler",
+        "assignmentsCompleted": "Tamamlanan Görevler",
         "trend": "Trend"
       },
       "labels": {
-        "rubric": "Rubrik"
+        "rubric": "Değerlendirme Kriterleri"
       },
       "actions": {
         "manage": "Üstesinden gelmek",
         "viewGrades": "Notları Görüntüle",
-        "saving": "Kaydediliyor...",
+        "saving": "Tasarruf...",
         "saveChanges": "Değişiklikleri Kaydet",
         "preview": "Önizleme",
         "edit": "Düzenlemek",
@@ -689,17 +690,17 @@
         "createNew": "Yeni Oluştur"
       },
       "overview": {
-        "title": "Sınıf Genel Bakışı",
+        "title": "Dersin Genel Bakışı",
         "classAverage": "Sınıf Ortalaması",
-        "totalStudents": "Toplam Öğrenci Sayısı",
+        "totalStudents": "Toplam Öğrenci",
         "assignments": "Atamalar",
-        "submissionRate": "Teslim Oranı"
+        "submissionRate": "Gönderim Oranı"
       },
       "assignmentManagement": {
         "title": "Görev Yönetimi",
         "empty": {
-          "title": "Hiçbir ödev bulunamadı",
-          "description": "Notları ve ayarları yönetmek için ödevler oluşturun"
+          "title": "Hiçbir görev bulunamadı.",
+          "description": "Notları ve ayarları yönetmek için ödevler oluşturun."
         },
         "searchPlaceholder": "Arama görevleri..."
       },
@@ -707,8 +708,8 @@
         "title": "Öğrenciler",
         "viewAll": "Tüm Öğrencileri Görüntüle",
         "empty": {
-          "title": "Kayıtlı öğrenci yok",
-          "description": "Öğrenciler sınıfa katıldığında burada görünecekler"
+          "title": "Kayıtlı öğrenci yok.",
+          "description": "Öğrenciler derse katıldıktan sonra burada görüneceklerdir."
         },
         "searchPlaceholder": "Öğrencileri ara..."
       },
@@ -716,36 +717,36 @@
         "title": "Sınıf Sınırları",
         "untitled": "Başlıksız Derecelendirme Sınırı",
         "empty": {
-          "title": "Hiçbir sınıf sınırı oluşturulmadı",
-          "description": "Not aralıklarını tanımlamak için notlandırma sınırları oluşturun"
+          "title": "Sınıf sınırları oluşturulmadı.",
+          "description": "Not aralıklarını tanımlamak için notlandırma sınırları oluşturun."
         },
-        "previewTitle": "Sınıflandırma Sınırları Önizlemesi",
+        "previewTitle": "Derecelendirme Sınırları Önizlemesi",
         "details": {
-          "title": "Sınıflandırma Sınırı Ayrıntıları",
+          "title": "Tesviye Sınır Detayları",
           "name": "İsim",
-          "noneDefined": "Sınıflandırma sınırları tanımlanmadı"
+          "noneDefined": "Tanımlanmış derecelendirme sınırları yok."
         }
       },
       "rubrics": {
-        "title": "Rubrikler",
-        "untitled": "Başlıksız Rubrik",
+        "title": "Değerlendirme Kriterleri",
+        "untitled": "Başlıksız Değerlendirme Kriterleri",
         "empty": {
-          "title": "Hiçbir rubrik oluşturulmadı",
-          "description": "Değerlendirme kriterlerini tanımlamak için ölçütler oluşturun"
+          "title": "Hiçbir değerlendirme kriteri oluşturulmadı.",
+          "description": "Değerlendirme kriterlerini tanımlamak için değerlendirme ölçütleri oluşturun."
         },
-        "previewTitle": "Rubrik Önizlemesi",
+        "previewTitle": "Değerlendirme Kriterleri Önizlemesi",
         "details": {
-          "title": "Rubrik Ayrıntıları",
+          "title": "Değerlendirme Kriterleri Detayları",
           "name": "İsim",
           "category": "Kategori",
           "description": "Tanım",
           "custom": "Gelenek",
-          "noDescription": "Hiçbir açıklama sağlanmadı",
-          "noCriteria": "Bu başlıkta hiçbir kriter bulunamadı"
+          "noDescription": "Açıklama verilmedi.",
+          "noCriteria": "Bu değerlendirme tablosunda hiçbir kriter bulunamadı."
         }
       },
       "confirm": {
-        "deleteRubric": "Bu notlandırma şemasını silmek istediğinizden emin misiniz?",
+        "deleteRubric": "Bu puanlama şemasını silmek istediğinizden emin misiniz?",
         "deleteGradingBoundary": "Bu notlandırma sınırını silmek istediğinizden emin misiniz?"
       }
     },
@@ -755,13 +756,13 @@
         "totalMembers": "{count} üye"
       },
       "actions": {
-        "inviteMember": "Üye Davet Et",
+        "inviteMember": "Üyeyi Davet Et",
         "copy": "Kopyala",
-        "regenerate": "Yeniden oluşturmak",
+        "regenerate": "Yeniden oluştur",
         "message": "Mesaj",
         "viewProfile": "Profili Görüntüle",
         "viewGrades": "Notları Görüntüle",
-        "makeTeacher": "Öğretmen Yap",
+        "makeTeacher": "Öğretmeni yetiştirin",
         "makeStudent": "Öğrenci Yap",
         "removeFromClass": "Sınıftan Kaldır",
         "removeAccess": "Erişimi Kaldır",
@@ -773,8 +774,8 @@
         "you": "Sen"
       },
       "invite": {
-        "title": "Sınıf Davetiye Kodu",
-        "description": "Sınıfa katılmak için bu kodu öğrencilerle paylaşın"
+        "title": "Ders Davet Kodu",
+        "description": "Öğrencilerin derse katılabilmeleri için bu kodu onlarla paylaşın."
       },
       "search": {
         "placeholder": "Üyeleri ara..."
@@ -785,34 +786,34 @@
       },
       "students": {
         "empty": {
-          "title": "Hiçbir öğrenci bulunamadı",
-          "matchNone": "\"{query}\" ile eşleşen öğrenci bulunamadı",
-          "noStudents": "Bu sınıfa henüz hiçbir öğrenci katılmadı"
+          "title": "Öğrenci bulunamadı.",
+          "matchNone": "\"{query}\" ile eşleşen öğrenci yok.",
+          "noStudents": "Bu sınıfa henüz hiçbir öğrenci katılmadı."
         }
       },
       "teachers": {
         "empty": {
-          "title": "Öğretmen bulunamadı",
-          "matchNone": "\"{query}\" ile eşleşen öğretmen bulunamadı",
-          "noTeachers": "Ek öğretmen eklenmedi"
+          "title": "Öğretmen bulunamadı.",
+          "matchNone": "Hiçbir öğretmen \"{query}\" ile eşleşmiyor.",
+          "noTeachers": "Ek öğretmen atanmamıştır."
         }
       },
       "toasts": {
-        "inviteRegenerated": "Davet kodu başarıyla yeniden oluşturuldu",
-        "copied": "Davet kodu panoya kopyalandı",
-        "roleChanged": "Rol {role} olarak değiştirildi",
-        "memberRemoved": "Üye başarıyla kaldırıldı"
+        "inviteRegenerated": "Davet kodu başarıyla yeniden oluşturuldu.",
+        "copied": "Davet kodu panoya kopyalandı.",
+        "roleChanged": "Rol {role} olarak değiştirildi.",
+        "memberRemoved": "Üye başarıyla kaldırıldı."
       },
       "errors": {
-        "regenerateFailed": "Davet kodu yeniden oluşturulamadı",
-        "changeRoleFailed": "Rol değiştirilemedi",
-        "removeFailed": "Üye kaldırılamadı",
-        "failedToLoad": "Üyeler yüklenemedi"
+        "regenerateFailed": "Davetiye kodunu yeniden oluşturma başarısız oldu.",
+        "changeRoleFailed": "Rol değiştirmeyi başaramadı.",
+        "removeFailed": "Üyeyi kaldırma işlemi başarısız oldu.",
+        "failedToLoad": "Üyeler yüklenemedi."
       }
     },
     "files": {
       "title": "Dosyalar",
-      "subtitle": "Sınıf dosyalarını ve kaynaklarını yönetin",
+      "subtitle": "Sınıf dosyalarını ve kaynaklarını yönetin.",
       "actions": {
         "newFolder": "Yeni Klasör",
         "upload": "Yüklemek",
@@ -821,19 +822,19 @@
         "download": "İndirmek",
         "share": "Paylaşmak",
         "delete": "Silmek",
-        "filter": "Filtre",
+        "filter": "Filtrele",
         "sort": "Düzenlemek"
       },
       "toasts": {
-        "folderCreated": "Klasör başarıyla oluşturuldu",
-        "folderDeleted": "Klasör başarıyla silindi",
-        "folderRenamed": "Klasör başarıyla yeniden adlandırıldı",
-        "folderMoved": "Klasör başarıyla taşındı",
-        "filesUploaded": "Dosyalar başarıyla yüklendi",
-        "fileDeleted": "Dosya başarıyla silindi",
-        "fileRenamed": "Dosya başarıyla yeniden adlandırıldı",
-        "fileMoved": "Dosya başarıyla taşındı",
-        "downloadStarted": "İndirme başladı",
+        "folderCreated": "Klasör başarıyla oluşturuldu.",
+        "folderDeleted": "Klasör başarıyla silindi.",
+        "folderRenamed": "Klasör başarıyla yeniden adlandırıldı.",
+        "folderMoved": "Klasör başarıyla taşındı.",
+        "filesUploaded": "Dosyalar başarıyla yüklendi.",
+        "fileDeleted": "Dosya başarıyla silindi.",
+        "fileRenamed": "Dosya yeniden adlandırma işlemi başarıyla tamamlandı.",
+        "fileMoved": "Dosya başarıyla taşındı.",
+        "downloadStarted": "İndirme işlemi başladı",
         "shareCopied": "Paylaşım bağlantısı kopyalandı"
       },
       "errors": {
@@ -846,42 +847,42 @@
         "classFiles": "Sınıf Dosyaları"
       },
       "search": {
-        "placeholder": "Dosyalarda ara"
+        "placeholder": "Dosyalarda arama"
       },
       "selected": "{count} seçildi",
       "filters": {
         "fileType": "Dosya Türü",
         "documents": "Belgeler",
-        "images": "Görüntüler",
+        "images": "Görseller",
         "videos": "Videolar",
         "presentations": "Sunumlar"
       },
       "sort": {
         "name": "İsim",
-        "lastModified": "Son değiştirilme tarihi",
+        "lastModified": "Son güncelleme",
         "fileSize": "Dosya boyutu"
       },
       "table": {
         "name": "İsim",
         "owner": "Mal sahibi",
-        "lastModified": "Son değiştirilme tarihi",
+        "lastModified": "Son güncelleme",
         "fileSize": "Dosya boyutu"
       },
       "empty": {
-        "title": "Bu klasör boş",
-        "description": "Sınıf materyallerinizi düzenlemeye başlamak için dosyaları yükleyin veya klasörler oluşturun.",
-        "searchTitle": "Hiçbir dosya bulunamadı",
+        "title": "Bu klasör boş.",
+        "description": "Ders materyallerinizi düzenlemeye başlamak için dosyaları yükleyin veya klasörler oluşturun.",
+        "searchTitle": "Dosya bulunamadı.",
         "searchDescription": "\"{query}\" ile eşleşen dosya bulunamadı. Farklı bir arama terimi deneyin."
       }
     },
     "settings": {
       "title": "Sınıf Ayarları",
-      "subtitle": "Sınıf ayrıntılarını ve tercihlerini yapılandırın",
+      "subtitle": "Sınıf ayrıntılarını ve tercihlerini yapılandırın.",
       "labels": {
         "unsavedChanges": "Kaydedilmemiş değişiklikler"
       },
       "actions": {
-        "saving": "Kaydediliyor...",
+        "saving": "Tasarruf...",
         "saveChanges": "Değişiklikleri Kaydet",
         "deleting": "Siliniyor...",
         "deleteClass": "Sınıfı Sil",
@@ -893,11 +894,11 @@
         },
         "theme": {
           "title": "Sınıf Teması",
-          "description": "Bu sınıf için bir tema rengi seçin"
+          "description": "Bu ders için bir tema rengi seçin."
         },
         "danger": {
           "title": "Tehlike Bölgesi",
-          "description": "Bir dersi sildiğinizde geri dönüşü yoktur. Bu işlem, tüm ödevleri, notları, devam kayıtlarını kalıcı olarak siler ve tüm öğrencileri dersten çıkarır."
+          "description": "Bir sınıfı sildiğinizde geri dönüş yoktur. Bu işlem, tüm ödevleri, notları, devamsızlık kayıtlarını kalıcı olarak siler ve tüm öğrencileri sınıftan çıkarır."
         }
       },
       "fields": {
@@ -906,9 +907,9 @@
         "subject": "Ders"
       },
       "placeholders": {
-        "className": "örneğin, İleri Fizik",
-        "section": "örneğin, AP-101",
-        "subject": "örneğin, Fizik"
+        "className": "Örneğin, İleri Fizik",
+        "section": "Örneğin, AP-101",
+        "subject": "Örneğin, Fizik"
       },
       "toasts": {
         "updated": {
@@ -917,70 +918,70 @@
         },
         "deleted": {
           "title": "Sınıf Silindi",
-          "description": "Sınıf kalıcı olarak silindi."
+          "description": "Bu ders kalıcı olarak silindi."
         }
       },
       "errors": {
         "updateFailed": {
-          "title": "Güncelleme Başarısız Oldu",
+          "title": "Güncelleme Başarısız",
           "description": "Sınıf ayarları kaydedilemedi. Lütfen tekrar deneyin."
         }
       },
       "confirm": {
-        "title": "Kesinlikle emin misin?",
-        "description": "Bu işlem geri alınamaz. Bu işlem, \"{name}\" sınıfını kalıcı olarak silecek ve aşağıdakiler de dahil olmak üzere ilişkili tüm verileri kaldıracaktır:",
+        "title": "Emin misiniz?",
+        "description": "Bu işlem geri alınamaz. Bu, \"{name}\" sınıfını kalıcı olarak silecektir ve aşağıdakiler de dahil olmak üzere ilgili tüm verileri kaldıracaktır:",
         "items": {
           "assignments": "Tüm ödevler ve teslimler",
-          "records": "Tüm notlar ve katılım kayıtları",
-          "students": "Tüm öğrenciler sınıftan çıkarılacak",
+          "records": "Tüm notlar ve devamsızlık kayıtları",
+          "students": "Tüm öğrenciler sınıftan çıkarılacaktır.",
           "events": "Tüm sınıf etkinlikleri ve duyuruları"
         },
-        "confirmDelete": "Evet, sınıfı sil"
+        "confirmDelete": "Evet, sınıfı sil."
       }
     },
     "syllabus": {
-      "title": "Müfredat",
-      "subtitle": "Ders genel bakışı ve akademik bilgiler",
+      "title": "Ders Programı",
+      "subtitle": "Dersin genel bakışı ve akademik bilgiler",
       "actions": {
         "saveChanges": "Değişiklikleri Kaydet",
         "cancel": "İptal etmek",
-        "edit": "Müfredatı Düzenle"
+        "edit": "Ders Programını Düzenle"
       },
       "errors": {
-        "failedToLoad": "Müfredat yüklenemedi",
+        "failedToLoad": "Ders programı yüklenemedi.",
         "tryLater": "Lütfen daha sonra tekrar deneyin."
       },
       "stats": {
-        "totalAssignments": "Toplam Ödevler",
-        "completionRate": "Tamamlanma Oranı",
+        "totalAssignments": "Toplam Atamalar",
+        "completionRate": "Tamamlama Oranı",
         "totalPoints": "Toplam Puan",
-        "upcoming": "Yaklaşan"
+        "upcoming": "Yakında"
       },
       "overview": {
-        "title": "Kurs Genel Bakışı",
-        "placeholder": "Dersin genel görünümünü, hedeflerini ve diğer önemli bilgileri girin...",
-        "helper": "Ders bilgilerinizi, öğrenme hedeflerinizi, politikalarınızı ve diğer önemli ayrıntıları girin.",
+        "title": "Dersin Genel Bakışı",
+        "placeholder": "Dersin genel içeriği, hedefleri ve diğer önemli bilgileri girin...",
+        "helper": "Ders bilgilerini, öğrenme hedeflerini, politikaları ve diğer önemli ayrıntıları girin.",
         "empty": {
-          "title": "Henüz müfredat içeriği yok",
-          "description": "Ders bilgilerini, öğrenme hedeflerini, politikaları ve daha fazlasını eklemek için 'Müfredatı Düzenle'ye tıklayın."
+          "title": "Henüz ders içeriği yok.",
+          "description": "Ders bilgileri, öğrenme hedefleri, politikalar ve daha fazlasını eklemek için 'Ders Programını Düzenle'ye tıklayın."
         }
       },
       "assignments": {
         "title": "Ders Ödevleri",
-        "gradedCount": "{graded} / {total} derecelendirildi",
+        "gradedCount": "{graded} / {total} değerlendirildi",
         "totalPoints": "{total} toplam puan",
         "empty": {
-          "title": "Henüz ödev yok",
-          "description": "Ödevler oluşturulduktan sonra burada görünecektir."
+          "title": "Henüz hiçbir görevlendirme yok.",
+          "description": "Görevler oluşturulduktan sonra burada görünecektir."
         }
       },
       "table": {
         "assignment": "Atama",
-        "dueDate": "İki Tarih",
+        "dueDate": "İki Randevu",
         "points": "Puanlar",
         "weight": "Ağırlık",
         "status": "Durum",
-        "pts": "puanlar"
+        "pts": "puan"
       },
       "status": {
         "graded": "Derecelendirilmiş",
@@ -996,7 +997,7 @@
         },
         "stats": {
           "title": "Ders İstatistikleri",
-          "totalAssignments": "Toplam Ödevler",
+          "totalAssignments": "Toplam Atamalar",
           "gradedAssignments": "Notlandırılmış Ödevler",
           "totalPoints": "Toplam Puan"
         }
@@ -1004,11 +1005,11 @@
     }
   },
   "assignment": {
-    "dueDate": "İki Tarih",
+    "dueDate": "İki Randevu",
     "submit": "Göndermek",
     "grade": "Seviye",
     "feedback": "Geri bildirim",
-    "submissions": "Gönderimler",
+    "submissions": "Gönderiler",
     "open": "Açık",
     "closed": "Kapalı",
     "assignment": "Atama",
@@ -1018,15 +1019,15 @@
     "viewAssignment": "Ödevi Görüntüle",
     "allAssignments": "Tüm Ödevler",
     "searchAssignments": "Arama görevleri...",
-    "noAssignmentsFound": "Hiçbir ödev bulunamadı",
-    "createFirstAssignment": "Başlamak için ilk ödevini oluştur",
+    "noAssignmentsFound": "Hiçbir görev bulunamadı.",
+    "createFirstAssignment": "Başlamak için ilk ödevinizi oluşturun.",
     "newSection": "Yeni Bölüm",
-    "pts": "puanlar",
+    "pts": "puan",
     "overdue": "(Gecikmiş)",
-    "assignmentDrop": "En üst seviyeye geçmek için ödevi buraya bırakın",
-    "sectionDeletionConfirmation": "Bu bölümü silmek istediğinizden emin misiniz? Tüm ödevler en üst seviyeye taşınacak.",
+    "assignmentDrop": "Üst seviyeye geçmek için buradaki ödevi bırakın.",
+    "sectionDeletionConfirmation": "Bu bölümü silmek istediğinizden emin misiniz? Tüm ödevler en üst seviyeye taşınacaktır.",
     "assignmentDeletionConfirmation": "Bu ödevi silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
-    "manageAndTrack": "Sınıf ödevlerini yönetin ve takip edin",
+    "manageAndTrack": "Ders ödevlerini yönetin ve takip edin.",
     "filters": "Filtreler"
   },
   "pagination": {
@@ -1037,81 +1038,81 @@
     "morePages": "Daha fazla sayfa"
   },
   "about": {
-    "titleStatement1": "Hikayemiz",
-    "titleStatement2": "Hayal kırıklığından inşa edilmiş,",
-    "titleStatement3": "yapay zeka ile yeniden tasarlandı",
-    "titleStatement4": "Yıllarca güncelliğini yitirmiş, parçalanmış okul portallarıyla boğuştuktan sonra, her zaman sahip olmayı dilediğimiz öğrenme yönetim sistemini kurmaya karar verdik.",
-    "problemParagraph1": "Studious 2023'te başladı",
-    "problemParagraph2": "Bir grup öğrenci ve eğitimci ortak bir hayal kırıklığıyla bir araya geldiğinde: Mevcut okul portalları hantal, yavaştı ve farklı bir eğitim dönemi için tasarlanmıştı.",
-    "problemDetailParagraph": "Kendimizi birden fazla platform arasında mekik dokurken bulduk: biri notlar, diğeri ödevler, üçüncüsü de iletişim için. Öğretmenler, öğretmekten çok yazılımla boğuşmakla vakit geçiriyordu. Öğrenciler, bildirimler eski arayüzlerde kaybolduğu için teslim tarihlerini kaçırıyordu.",
-    "betterWay": "Daha iyi bir yolun olması gerektiğini biliyorduk.",
-    "solutionParagraph1": "Linear ve Notion gibi modern iş birliği araçlarından ilham alarak, kullanıcı dostu bir öğrenme yönetim sistemi yaratmaya koyulduk.",
-    "solutionParagraph2": "hızlı, sezgisel ve kullanımı keyifli.",
-    "solutionParagraph3": "Yapay zekayı bir hile olarak değil, hem öğretmenler hem de öğrenciler için gerçek bir üretkenlik çarpanı olarak entegre eden bir sistem.",
-    "launchParagraph": "İki yıllık geliştirme sürecinin ardından Studious'u 17 Ekim 2025'te resmen kullanıma sunduk. Şu anda erken erişim aşamasındayız ve dünya çapındaki okulların öğrenme deneyimlerini dönüştürmelerine yardımcı olmaya hazırız.",
+    "titleStatement1": "Bizim Hikayemiz",
+    "titleStatement2": "Hayal kırıklığından doğdu,",
+    "titleStatement3": "Yapay zekâ ile yeniden tasarlandı",
+    "titleStatement4": "Yıllarca eski ve parçalı okul portallarıyla boğuştuktan sonra, her zaman sahip olmayı dilediğimiz öğrenme yönetim sistemini kurmaya karar verdik.",
+    "problemParagraph1": "Studious 2023 yılında başladı.",
+    "problemParagraph2": "Bir grup öğrenci ve eğitimci, ortak bir hayal kırıklığıyla bir araya geldiğinde bu durum ortaya çıktı: mevcut okul portalları hantal, yavaş ve farklı bir eğitim çağı için tasarlanmıştı.",
+    "problemDetailParagraph": "Kendimizi birden fazla platformla uğraşırken bulduk; biri notlar için, diğeri ödevler için, üçüncüsü ise iletişim için. Öğretmenler ders vermekten çok yazılımlarla boğuşmakla vakit geçirdi. Öğrenciler, bildirimler eski arayüzlerde kaybolduğu için son teslim tarihlerini kaçırdı.",
+    "betterWay": "Daha iyi bir yol olması gerektiğini biliyorduk.",
+    "solutionParagraph1": "Linear ve Notion gibi modern iş birliği araçlarından ilham alarak, kullanımı kolay bir öğrenme yönetim sistemi oluşturmayı hedefledik.",
+    "solutionParagraph2": "Hızlı, sezgisel ve kullanımı keyifli.",
+    "solutionParagraph3": "Yapay zekayı bir pazarlama hilesi olarak değil, hem öğretmenler hem de öğrenciler için gerçek bir verimlilik çarpanı olarak entegre eden bir yaklaşım.",
+    "launchParagraph": "İki yıllık geliştirme sürecinin ardından, Studious'u 17 Ekim 2025'te resmen kullanıma sunduk. Şu anda erken erişim aşamasındayız ve dünya çapındaki okulların öğrenme deneyimlerini dönüştürmelerine yardımcı olmaya hazırız.",
     "journey1": "Yolculuğumuz",
-    "journey2": "İki yıllık inşa, öğrenme ve büyüme",
+    "journey2": "İki yıl süren inşa etme, öğrenme ve gelişme süreci.",
     "journeyBeginningDate": "2023",
     "journeyBeginning1": "Başlangıç",
     "journeyBeginning2": "İlk prototip geliştirildi. Temel özellikler: sınıf yönetimi, ödevler ve takvim entegrasyonu.",
     "journeyBetaLaunchDate": "31 Ekim 2025",
-    "journeyBetaLaunch1": "Genel Beta Lansmanı",
-    "journeyBetaLaunch2": "Studious LMS'nin resmi beta testi lansmanı yapıldı. Tüm platform özellikleriyle dünya çapındaki okullarda erken erişime açıldı.",
+    "journeyBetaLaunch1": "Herkese Açık Beta Sürümü",
+    "journeyBetaLaunch2": "Studious LMS'nin resmi halka açık beta test sürümü başlatıldı. Platformun tüm özellikleriyle dünya çapındaki okullara erken erişim imkanı sunuluyor.",
     "journeyPilotSchoolsDate": "Kasım 2025",
     "journeyPilotSchools1": "Pilot Okullar Programı",
-    "journeyPilotSchools2": "Gerçek dünyadan geri bildirim toplamak ve platformu çeşitli eğitim ihtiyaçlarına göre geliştirmek için pilot okullarla ortaklıklar başlatmak.",
+    "journeyPilotSchools2": "Pilot okullarla ortaklıklar kurarak gerçek dünya geri bildirimleri toplamak ve platformu çeşitli eğitim ihtiyaçlarına göre geliştirmek.",
     "journeyBetaCompleteDate": "Aralık 2025",
     "journeyBetaComplete1": "Beta Tamamlandı",
-    "journeyBetaComplete2": "Beta sürümünden tam üretim sürümüne geçiş. Tüm temel özelliklerin tamamen test edilip optimize edildiği platform stabilizasyonu.",
+    "journeyBetaComplete2": "Beta sürümünden tam üretim sürümüne geçiş. Tüm temel özelliklerin tamamen test edilip optimize edilmesiyle platformun istikrara kavuşması.",
     "journeySDPDate": "Ocak 2026",
-    "journeySDP1": "Okul Geliştirme Programı Lansmanı",
-    "journeySDP2": "Nitelikli kurumlara ücretsiz erişim sağlayan Çalışkan Okul Gelişim Programı'na kabul edilen ilk okul grubunu duyuruyoruz.",
-    "missionStatement1": "Misyonumuz basit",
-    "missionStatement2": "Öğrenciler, öğretmenler ve yaşam boyu öğrenenler olarak her gün kullanmak isteyeceğimiz öğrenme yönetim sistemini kurmak.",
-    "joinAppeal1": "Bu yolculuğa bize katılın",
-    "joinAppeal2": "Eğitimin geleceğinin bir parçası olun",
-    "requestEarlyAccess": "Erken Erişim Talebinde Bulunun",
+    "journeySDP1": "Okul Geliştirme Programı Başlatıldı",
+    "journeySDP2": "Çalışkan Okul Geliştirme Programına kabul edilen ilk okul grubunu duyuruyoruz; bu program, uygun niteliklere sahip kurumlara ücretsiz erişim imkanı sağlıyor.",
+    "missionStatement1": "Misyonumuz basit.",
+    "missionStatement2": "Öğrenciler, öğretmenler ve yaşam boyu öğrenenler olarak her gün kullanmak isteyeceğimiz bir öğrenme yönetim sistemi oluşturmak.",
+    "joinAppeal1": "Bu yolculukta bize katılın.",
+    "joinAppeal2": "Eğitimin geleceğinin bir parçası olun.",
+    "requestEarlyAccess": "Erken Erişim Talebi",
     "pressKit": "Basın Kiti"
   },
   "pricing": {
     "pricingStatement1": "Şeffaf Fiyatlandırma",
-    "pricingStatement2": "Kurumunuz için doğru planı seçin",
-    "pricingStatement3": "Gizli ücretler olmadan basit ve şeffaf fiyatlandırma. Tüm planlar, ölçeklenebilir seçeneklerle temel özellikleri içerir.",
+    "pricingStatement2": "Kurumunuz için doğru planı seçin.",
+    "pricingStatement3": "Basit, şeffaf fiyatlandırma, gizli ücret yok. Tüm planlar, ölçeklenebilir seçeneklerle birlikte temel özellikleri içerir.",
     "mostPopular": "En Popüler",
     "priceUnit": "/kullanıcı/ay",
     "pricingStarterTitle": "Başlangıç",
     "pricingStarterPrice": "Özgür",
-    "pricingStarterNote": "Beta erişimi dahildir",
-    "pricingStarterDescription": "Küçük sınıflar ve pilot programlar için mükemmel",
-    "pricingStarterPerk1": "30 öğrenciye kadar",
-    "pricingStarterPerk2": "Sınırsız sınıflar",
+    "pricingStarterNote": "Beta erişimi dahildir.",
+    "pricingStarterDescription": "Küçük sınıflar ve pilot programlar için mükemmel.",
+    "pricingStarterPerk1": "En fazla 30 öğrenci",
+    "pricingStarterPerk2": "Sınırsız ders",
     "pricingStarterPerk3": "Temel özellikler (ödevler, takvim, notlar)",
     "pricingStarterPerk4": "Yapay zeka asistanı (ayda 5 sohbet)",
     "pricingStarterPerk5": "Topluluk desteği",
     "pricingStarterPerk6": "5 GB depolama alanı",
     "pricingStarterLink": "Ücretsiz Başlayın",
     "pricingSchoolTitle": "Okul",
-    "pricingSchoolPriceNote": "Yıllık veya aylık 6$ faturalandırılır",
+    "pricingSchoolPriceNote": "Yıllık veya aylık 6$ olarak faturalandırılır.",
     "pricingSchoolNote": "1.000'e kadar öğrencisi olan okullar için",
     "pricingSchoolPerk1": "Sınırsız öğrenci",
-    "pricingSchoolPerk2": "Sınırsız sınıflar",
+    "pricingSchoolPerk2": "Sınırsız ders",
     "pricingSchoolPerk3": "Tüm temel özellikler",
     "pricingSchoolPerk4": "Yapay zeka asistanı (sınırsız sorgu)",
-    "pricingSchoolPerk5": "Studious CMS beta erişimi için ilk sırada",
+    "pricingSchoolPerk5": "Studious CMS beta erişimi için öncelikli sıra",
     "pricingSchoolPerk6": "API erişimi",
     "pricingSchoolLink": "Başlayın"
   },
   "components": {
     "earlyAccess": {
-      "title": "Erken Erişim Talebinde Bulunun",
-      "description": "Bekleme listesine katılın ve Studious LMS'yi deneyimleyen ilk kişilerden olun",
+      "title": "Erken Erişim Talebi",
+      "description": "Bekleme listesine katılın ve Studious LMS'yi ilk deneyimleyenler arasında yer alın.",
       "fields": {
         "email": "E-posta Adresi *",
-        "institutionSize": "Kurum Boyutu *"
+        "institutionSize": "Kurum Büyüklüğü *"
       },
       "placeholders": {
-        "email": "siz@okul.edu",
-        "institutionSize": "Kurum boyutunu seçin"
+        "email": "you@school.edu",
+        "institutionSize": "Kurum büyüklüğünü seçin"
       },
       "sizes": {
         "tiny": "1-30 öğrenci (Bireysel Öğretmen)",
@@ -1121,41 +1122,41 @@
         "institution": "1.001+ öğrenci (Kurum)"
       },
       "actions": {
-        "submit": "Erişim Talebinde Bulunun",
+        "submit": "Erişim Talebi",
         "submitting": "Gönderiliyor...",
         "done": "Tamamlamak"
       },
       "success": {
-        "title": "Listedesin!",
-        "description": "Hazır olduğumuzda {email} adresine bir e-posta göndereceğiz."
+        "title": "Listeye eklendiniz!",
+        "description": "Hazır olduğumuzda size {email} adresine bir e-posta göndereceğiz."
       },
       "toasts": {
-        "success": "Bekleme listesine başarıyla katıldınız!"
+        "success": "Bekleme listesine başarıyla katıldım!"
       }
     },
     "joinClass": {
-      "title": "Bir Sınıfa Katılın",
-      "buttonLabel": "Sınıfa Katıl",
+      "title": "Bir sınıfa katılın",
+      "buttonLabel": "Derse Katıl",
       "fields": {
-        "inviteCode": "Sınıf Davetiye Kodu"
+        "inviteCode": "Ders Davet Kodu"
       },
       "placeholders": {
-        "inviteCode": "örneğin, MATH101-2025"
+        "inviteCode": "Örneğin, MATH101-2025"
       },
-      "help": "Öğretmeninizin sağladığı davet kodunu girin",
+      "help": "Öğretmeniniz tarafından verilen davet kodunu girin.",
       "howTo": {
-        "title": "Davetiye kodu nasıl alınır:",
-        "item1": "Öğretmeninizden sınıf davet kodunu isteyin",
-        "item2": "Sınıf kayıt talimatları için e-postanızı kontrol edin",
-        "item3": "Müfredatınızda veya ders materyallerinizde kodu arayın"
+        "title": "Davet kodu nasıl alınır:",
+        "item1": "Öğretmeninizden ders davet kodunu isteyin.",
+        "item2": "Ders kayıt talimatları için e-postanızı kontrol edin.",
+        "item3": "Kodu ders programınızda veya ders materyallerinizde arayın."
       },
       "actions": {
         "cancel": "İptal etmek",
-        "join": "Sınıfa Katıl",
+        "join": "Derse Katıl",
         "joining": "Katılıyor..."
       },
       "toasts": {
-        "success": "Sınıfa başarıyla katıldınız.",
+        "success": "Derse başarıyla kaydoldunuz.",
         "errorInvalid": "Geçersiz davet kodu veya sınıf bulunamadı.",
         "errorEmpty": "Lütfen geçerli bir davet kodu girin."
       }
@@ -1164,7 +1165,7 @@
       "title": "Yeni Sınıf Oluştur",
       "buttonLabel": "Sınıf Oluştur",
       "fields": {
-        "title": "Sınıf Adı *",
+        "title": "Sınıf Başlığı *",
         "section": "Bölüm *",
         "subject": "Ders *",
         "semester": "Dönem",
@@ -1174,13 +1175,13 @@
         "description": "Tanım"
       },
       "placeholders": {
-        "title": "örneğin, İleri Fizik",
-        "section": "örneğin, AP-101",
-        "subject": "örneğin, Fizik",
-        "semester": "örneğin, İlkbahar 2025",
-        "credits": "örneğin, 3",
-        "meetingTime": "örneğin, Pazartesi-Çarşamba-Cuma 10:00-11:00",
-        "location": "örneğin, Oda 205, Bilim Binası",
+        "title": "Örneğin, İleri Fizik",
+        "section": "Örneğin, AP-101",
+        "subject": "Örneğin, Fizik",
+        "semester": "Örneğin, Bahar 2025",
+        "credits": "Örneğin, 3",
+        "meetingTime": "Örneğin, Pazartesi, Çarşamba, Cuma 10:00-11:00",
+        "location": "Örneğin, Fen Binası, Oda 205",
         "description": "Dersin içeriğini ve hedeflerini açıklayın..."
       },
       "actions": {
@@ -1189,8 +1190,8 @@
         "creating": "Oluşturuluyor..."
       },
       "toasts": {
-        "success": "Sınıf {name} başarıyla oluşturuldu.",
-        "errorRequired": "Lütfen gerekli alanları doldurunuz.",
+        "success": "{name} sınıfı başarıyla oluşturuldu.",
+        "errorRequired": "Lütfen gerekli tüm alanları doldurun.",
         "errorFailed": "Sınıf oluşturulamadı. Lütfen daha sonra tekrar deneyin."
       }
     },
@@ -1207,20 +1208,20 @@
         "description": "Bu klasör için bir açıklama ekleyin..."
       },
       "help": {
-        "name": "Klasörünüz için açıklayıcı bir ad seçin",
+        "name": "Klasörünüz için açıklayıcı bir ad seçin.",
         "description": "{count}/500 karakter"
       },
       "actions": {
         "cancel": "İptal etmek",
         "create": "Klasör Oluştur",
-        "update": "Klasörü Güncelle",
+        "update": "Güncelleme Klasörü",
         "creating": "Oluşturuluyor...",
         "updating": "Güncelleniyor..."
       },
       "toasts": {
-        "errorRequired": "Klasör adı gereklidir",
-        "errorInvalidChars": "Klasör adı geçersiz karakterler içeriyor",
-        "errorTooLong": "Klasör adı çok uzun (maksimum 255 karakter)"
+        "errorRequired": "Klasör adı zorunludur.",
+        "errorInvalidChars": "Klasör adı geçersiz karakterler içeriyor.",
+        "errorTooLong": "Klasör adı çok uzun (en fazla 255 karakter)"
       }
     },
     "createAssignment": {
@@ -1230,30 +1231,30 @@
         "details": "Görev Ayrıntıları",
         "configuration": "Yapılandırma",
         "grading": "Notlandırma ve Değerlendirme",
-        "deliverables": "Teslimatlar",
+        "deliverables": "Teslim Edilecekler",
         "aiPolicy": "Yapay Zeka Politikası",
         "attachments": "Ekler"
       },
       "fields": {
         "title": "Başlık *",
         "instructions": "Talimatlar *",
-        "dueDate": "İki Tarih",
-        "type": "Görev Türü",
+        "dueDate": "İki Randevu",
+        "type": "Atama Türü",
         "students": "Öğrenciler",
         "section": "Bölüm",
-        "rubric": "Rubrik",
+        "rubric": "Değerlendirme Kriterleri",
         "gradeScale": "Not Ölçeği",
         "maxPoints": "Maksimum Puan",
         "weight": "Ağırlık (%)",
         "sectionColor": "Bölüm Rengi"
       },
       "placeholders": {
-        "title": "örneğin, Bölüm 5 Sınavı, Fizik Laboratuvar Raporu",
+        "title": "Örnek: Bölüm 5 Sınavı, Fizik Laboratuvar Raporu",
         "instructions": "Öğrencilere net talimatlar verin...",
         "maxPoints": "100",
         "weight": "1.0",
         "chooseSection": "Bölüm seçin",
-        "chooseRubric": "Rubrik seçin",
+        "chooseRubric": "Değerlendirme ölçütünü seçin",
         "chooseGradeScale": "Not ölçeğini seçin",
         "newSectionName": "Bölüm adını girin..."
       },
@@ -1271,21 +1272,21 @@
       "options": {
         "graded": {
           "label": "Notlandırılmış Ödev",
-          "description": "Not defterine ekle"
+          "description": "Not defterine dahil et"
         },
         "draft": {
-          "label": "Taslak Olarak Kaydet",
+          "label": "Taslak olarak kaydet",
           "description": "Öğrencilerden saklan"
         }
       },
       "section": {
-        "none": "Hiçbir bölüm",
+        "none": "Bölüm yok",
         "createNew": "Yeni Bölüm Oluştur"
       },
       "rubric": {
-        "none": "Hiçbir rubrik yok",
-        "untitled": "Başlıksız Rubrik",
-        "autoCalculate": "Puanlar seçilen değerlendirme ölçütlerine göre otomatik olarak hesaplanacaktır"
+        "none": "Başlık yok",
+        "untitled": "Başlıksız Değerlendirme Kriterleri",
+        "autoCalculate": "Seçilen değerlendirme kriterlerine göre puanlar otomatik olarak hesaplanacaktır."
       },
       "gradeScale": {
         "default": "Varsayılan ölçek",
@@ -1293,23 +1294,23 @@
       },
       "files": {
         "uploadButton": "Dosyaları Yükle",
-        "dropZone": "Dosyaları buraya bırakın veya yüklemek için tıklayın",
+        "dropZone": "Dosyaları buraya sürükleyin veya yüklemek için tıklayın.",
         "dropZoneHint": "Tüm dosya türlerini destekler • Dosya başına maksimum 50 MB",
-        "filesUploaded": "{uploaded} / {total} dosya yüklendi"
+        "filesUploaded": "{total} dosyadan {uploaded}'ı yüklendi"
       },
       "status": {
         "creating": "Ödev oluşturuluyor...",
-        "settingUp": "Görev detayları ayarlanıyor...",
+        "settingUp": "Görev ayrıntıları ayarlanıyor...",
         "preparing": "Dosya yüklemeleri hazırlanıyor...",
-        "uploading": "Dosyalar bulut depolamaya yükleniyor...",
+        "uploading": "Dosyalar bulut depolama alanına yükleniyor...",
         "processing": "Yüklenen dosyalar işleniyor...",
-        "finalizing": "Ödev tamamlanıyor...",
-        "assigning": "Öğrencilere atanıyor...",
+        "finalizing": "Görevi tamamlıyorum...",
+        "assigning": "Öğrencilere ödev verme...",
         "almostDone": "Neredeyse bitti...",
-        "uploadingFile": "{name} yükleniyor...",
+        "uploadingFile": "{name} Yükleniyor...",
         "creatingProgress": "Ödev Oluşturma",
         "draftStatus": "Taslak olarak kaydedilecek",
-        "publishedStatus": "Öğrencilere yayınlanacak"
+        "publishedStatus": "Öğrencilere duyurulacaktır."
       },
       "actions": {
         "cancel": "İptal etmek",
@@ -1325,76 +1326,76 @@
       "deliverables": {
         "fileUpload": {
           "label": "Dosya Yükleme",
-          "description": "Öğrenciler PDF, Resim ve Video dosyalarını yükleyebilirler."
+          "description": "Öğrenciler PDF, resim ve video dosyaları yükleyebilirler."
         },
         "extendedResponse": {
           "label": "Genişletilmiş yanıt",
-          "description": "Öğrenciler uzun formdaki cevapları yazabilirler."
+          "description": "Öğrenciler uzun cevapları bilgisayarda yazabilirler."
         },
         "worksheetSubmission": {
           "label": "Çalışma Sayfası Gönderimi",
-          "description": "Öğrenciler bütünleşik notlandırma için çalışma kağıtları sunabilirler.",
-          "searchPlaceholder": "Çalışma kağıtlarını burada arayın...",
+          "description": "Öğrenciler, entegre değerlendirme için çalışma yapraklarını teslim edebilirler.",
+          "searchPlaceholder": "Çalışma sayfalarını burada arayabilirsiniz...",
           "found": "{count} bulundu",
-          "noResults": "Hiçbir çalışma sayfası bulunamadı"
+          "noResults": "Çalışma sayfası bulunamadı."
         },
         "aiGrading": {
-          "label": "Yapay zeka ile notlandırma ve geri bildirim",
-          "description": "Yapay zeka ile ön ve anında notlandırma ve geri bildirim sağlayın."
+          "label": "Yapay zekâ ile not verme ve geri bildirim",
+          "description": "Yapay zekâ ile ön değerlendirme ve anlık geri bildirim sağlayın."
         }
       },
       "aiPolicy": {
-        "useCases": "Kullanım Örnekleri",
+        "useCases": "Kullanım Senaryoları",
         "studentResponsibilities": "Öğrenci Sorumlulukları",
-        "disclosureRequirements": "Açıklama Gereksinimleri",
+        "disclosureRequirements": "Açıklama Gereklilikleri",
         "level1": {
           "title": "Seviye 1 Bağımsız Çalışma (Yapay Zeka Yok)",
-          "description": "Hiçbiri. Temel yazım ve dil bilgisi denetleyicileri kabul edilebilir.",
-          "useCases": "Tamamen kişisel bilgi, akıl yürütme ve çabaya güvenin.",
-          "studentResponsibilities": "Hiçbiri. Temel yazım ve dil bilgisi denetleyicileri kabul edilebilir.",
-          "disclosureRequirements": "Yapay zekanın ifşasına gerek yok (Yapay zeka kullanımı yasaktır)."
+          "description": "Hiçbiri. Temel yazım ve dilbilgisi denetleyicileri kabul edilebilir.",
+          "useCases": "Tamamen kişisel bilgiye, mantığa ve çabaya güvenin.",
+          "studentResponsibilities": "Hiçbiri. Temel yazım ve dilbilgisi denetleyicileri kabul edilebilir.",
+          "disclosureRequirements": "Yapay zekâ ile ilgili herhangi bir açıklama yapılması gerekmiyor (yapay zekâ kullanımı yasaktır)."
         },
         "level2": {
-          "title": "Seviye 2 Fikir Araştırması",
-          "description": "Yapay zekadan fikirleri açıklamasını, okumaları özetlemesini, yaklaşımlar üzerinde beyin fırtınası yapmasını veya temel dil bilgisi ve anlaşılırlığı kontrol etmesini isteyin.",
-          "useCases": "Yapay zekadan fikirleri açıklamasını, okumaları özetlemesini, yaklaşımlar üzerinde beyin fırtınası yapmasını veya temel dil bilgisi ve anlaşılırlığı kontrol etmesini isteyin.",
-          "studentResponsibilities": "Yapay zeka çıktılarını eleştirel bir şekilde değerlendirin; çalışmanın kendi akıl yürütmenizi ve anlayışınızı yansıttığından emin olun.",
-          "disclosureRequirements": "Yapay zeka kullanımını kısaca açıklayın (örneğin, \"Makale yapısını ana hatlarıyla belirtmek için ChatGPT kullanıldı\")."
+          "title": "Seviye 2 Fikir Keşfi",
+          "description": "Yapay zekâdan fikirleri açıklamasını, okuma parçalarını özetlemesini, yaklaşımlar üzerinde beyin fırtınası yapmasını veya temel dilbilgisi ve açıklık kurallarını kontrol etmesini isteyin.",
+          "useCases": "Yapay zekâdan fikirleri açıklamasını, okuma parçalarını özetlemesini, yaklaşımlar üzerinde beyin fırtınası yapmasını veya temel dilbilgisi ve açıklık kurallarını kontrol etmesini isteyin.",
+          "studentResponsibilities": "Yapay zekâ çıktılarını eleştirel bir şekilde değerlendirin; çalışmanın kendi muhakemenizi ve anlayışınızı yansıttığından emin olun.",
+          "disclosureRequirements": "Yapay zeka kullanımını kısaca belirtin (örneğin, \"Makale yapısını belirlemek için ChatGPT kullanıldı\")."
         },
         "level3": {
-          "title": "3. Seviye Düzenleme Desteği",
-          "description": "Tüm fikirlerin, yapıların ve içeriklerin size ait olduğundan emin olun; AI önerilerini dikkatlice inceleyin.",
-          "useCases": "Yapay zekadan dil bilgisi, noktalama, ifade ve okunabilirliği iyileştirmesini isteyin.",
-          "studentResponsibilities": "Tüm fikirlerin, yapıların ve içeriklerin size ait olduğundan emin olun; AI önerilerini dikkatlice inceleyin.",
-          "disclosureRequirements": "Yapay zeka kullanımını kısaca açıklayın (örneğin, \"Dil bilgisi ve anlaşılırlık düzenlemeleri için ChatGPT kullanıldı\")."
+          "title": "Seviye 3 Düzenleme Desteği",
+          "description": "Tüm fikirlerin, yapının ve içeriğin size ait olduğundan emin olun; yapay zeka önerilerini dikkatlice inceleyin.",
+          "useCases": "Yapay zekâdan dilbilgisi, noktalama işaretleri, ifade biçimi ve okunabilirliği iyileştirmesini isteyin.",
+          "studentResponsibilities": "Tüm fikirlerin, yapının ve içeriğin size ait olduğundan emin olun; yapay zeka önerilerini dikkatlice inceleyin.",
+          "disclosureRequirements": "Yapay zeka kullanımını kısaca belirtin (örneğin, \"Dilbilgisi ve açıklık düzenlemeleri için ChatGPT kullanıldı\")."
         },
         "level4": {
-          "title": "4. Seviye Ortak Yaratım",
-          "description": "Gözetimi sürdürürken yaratıcı içerik taslağı oluşturmak, tasarlamak, kodlamak, analiz etmek, simüle etmek veya üretmek için yapay zekayı kullanın.",
-          "useCases": "Gözetimi sürdürürken yaratıcı içerik taslağı oluşturmak, tasarlamak, kodlamak, analiz etmek, simüle etmek veya üretmek için yapay zekayı kullanın.",
-          "studentResponsibilities": "Yapay zeka çıktılarını eleştirel bir şekilde değerlendirin; özgünlüğü ve sağlam muhakemeyi sağlamak için gözden geçirin ve uyarlayın.",
-          "disclosureRequirements": "Yapay zekanın katkıları ve düzeltmeleriniz hakkında detaylı bir açıklama gönderin."
+          "title": "Seviye 4 Ortak Yaratım",
+          "description": "Yapay zekayı kullanarak taslak hazırlama, tasarım yapma, kodlama, analiz etme, simülasyon oluşturma veya yaratıcı içerik üretme süreçlerini denetleyin.",
+          "useCases": "Yapay zekayı kullanarak taslak hazırlama, tasarım yapma, kodlama, analiz etme, simülasyon oluşturma veya yaratıcı içerik üretme süreçlerini denetleyin.",
+          "studentResponsibilities": "Yapay zekâ çıktılarını eleştirel bir şekilde değerlendirin; özgünlüğü ve sağlam mantığı sağlamak için gözden geçirin ve uyarlayın.",
+          "disclosureRequirements": "Yapay zekanın katkıları ve yaptığınız revizyonlar hakkında ayrıntılı bir açıklama gönderin."
         },
         "level5": {
           "title": "Seviye 5 Ortak İnovasyon",
-          "description": "İçerik üretmek, analizler çalıştırmak, modeller oluşturmak, yaratıcı yazı yazmak, çeviri yapmak veya veri görselleştirmek için yapay zekayı, açıkça insan yazarlığı ve yansımasıyla kullanın.",
-          "useCases": "İçerik üretmek, analizler çalıştırmak, modeller oluşturmak, yaratıcı yazı yazmak, çeviri yapmak veya veri görselleştirmek için yapay zekayı, açıkça insan yazarlığı ve yansımasıyla kullanın.",
-          "studentResponsibilities": "Yapay zekayı etik ve amaçlı bir şekilde entegre edin; öğrenmeyi veya yaratıcılığı ilerletmedeki rolünü gerekçelendirin.",
-          "disclosureRequirements": "Tüm yapay zeka katkılarının ve insan kaynaklı düzeltmelerin açıkça kabul edildiğini belirtin."
+          "description": "Yapay zekayı, insan yazarlığı ve yansıtmasının açıkça gözetildiği içerik üretimi, analiz yürütme, model oluşturma, yaratıcı yazarlık, çeviri veya veri görselleştirme gibi alanlarda kullanın.",
+          "useCases": "Yapay zekayı, insan yazarlığı ve yansıtmasının açıkça gözetildiği içerik üretimi, analiz yürütme, model oluşturma, yaratıcı yazarlık, çeviri veya veri görselleştirme gibi alanlarda kullanın.",
+          "studentResponsibilities": "Yapay zekayı etik ve amaçlı bir şekilde entegre edin; öğrenme veya yaratıcılığı ilerletmedeki rolünü gerekçelendirin.",
+          "disclosureRequirements": "Tüm yapay zeka katkılarını ve insan düzeltmelerini açıkça belirtin."
         }
       },
       "toasts": {
         "successCreated": "Ödev başarıyla oluşturuldu.",
-        "successDraft": "Ödev taslak olarak başarıyla kaydedildi.",
-        "errorRequired": "Lütfen gerekli alanları doldurunuz.",
+        "successDraft": "Ödev başarıyla taslak olarak kaydedildi.",
+        "errorRequired": "Lütfen gerekli tüm alanları doldurun.",
         "errorFailed": "Ödev oluşturulamadı. Lütfen tekrar deneyin.",
-        "errorUploadFailed": "{name} yüklenemedi",
+        "errorUploadFailed": "Yükleme başarısız oldu {name}",
         "sectionCreated": "\"{name}\" bölümü başarıyla oluşturuldu."
       }
     },
     "createAnnouncement": {
       "title": "Duyuru Oluştur",
-      "buttonLabel": "Duyuru Gönderisi",
+      "buttonLabel": "İlan Sonrası",
       "fields": {
         "title": "Duyuru Başlığı *",
         "content": "İçerik *",
@@ -1404,8 +1405,8 @@
         "publishTime": "Yayın Zamanı"
       },
       "placeholders": {
-        "title": "örneğin, Laboratuvar raporunun Cuma günü teslim edilmesi gerekiyor",
-        "content": "Duyuru içeriğinizi buraya yazın...",
+        "title": "Örneğin, Laboratuvar raporu Cuma günü teslim edilecek.",
+        "content": "Duyuru metninizi buraya yazın...",
         "publishDate": "Boşsa hemen yayınla"
       },
       "priority": {
@@ -1417,25 +1418,25 @@
       "sections": {
         "settings": "Ayarlar",
         "notifications": "Bildirimler",
-        "schedule": "Program Yayınlama (İsteğe Bağlı)"
+        "schedule": "Yayın Takvimi (İsteğe Bağlı)"
       },
       "settings": {
         "pinned": {
-          "label": "Üste sabitle",
-          "description": "Bu duyuruyu listenin en üstünde tutun"
+          "label": "En üste sabitle",
+          "description": "Bu duyuruyu listenizin en üstünde tutun."
         },
         "urgent": {
           "label": "Acil olarak işaretle",
-          "description": "Acil stil ile vurgulayın"
+          "description": "Acil stil ile öne çıkarın"
         }
       },
       "notifications": {
         "email": {
           "label": "E-posta bildirimi gönder",
-          "description": "Öğrencileri e-posta yoluyla bilgilendirin"
+          "description": "Öğrencileri e-posta yoluyla bilgilendirin."
         },
         "push": {
-          "label": "Anında bildirim gönder",
+          "label": "Anlık bildirim gönder",
           "description": "Mobil uygulama bildirimi gönder"
         }
       },
@@ -1446,7 +1447,7 @@
       },
       "toasts": {
         "success": "Duyuru Oluşturuldu",
-        "errorRequired": "Lütfen gerekli alanları doldurunuz."
+        "errorRequired": "Lütfen gerekli tüm alanları doldurun."
       }
     }
   }

@@ -6,6 +6,16 @@
     "createNew": "Créer du nouveau contenu",
     "aiGenerated": "Généré par l'IA",
     "deleteConfirm": "Êtes-vous sûr de vouloir supprimer ce laboratoire d'IA ? Cette action est irréversible.",
+    "stats": {
+      "drafts": "Brouillons",
+      "draftsDesc": "Contenu en cours de rédaction",
+      "chats": "AI Chats",
+      "chatsDesc": "Conversations actives",
+      "messages": "Messages",
+      "messagesDesc": "Interactions totales avec l'IA",
+      "generated": "Généré",
+      "generatedDesc": "Contenu total créé"
+    },
     "widgets": {
       "assignment": {
         "title": "Affectation",
@@ -30,7 +40,7 @@
     },
     "tabs": {
       "drafts": "Laboratoires de brouillon",
-      "chats": "Chats IA"
+      "chats": "AI Chats"
     },
     "drafts": {
       "title": "Draft Labs ({count})",

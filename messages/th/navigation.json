@@ -9,11 +9,14 @@
     "settings": "การตั้งค่า",
     "signOut": "ออกจากระบบ",
     "accountSettings": "การตั้งค่าบัญชี",
-    "pricing": "การกำหนดราคา",
+    "pricing": "ราคา",
     "schoolProgram": "โครงการโรงเรียน",
     "about": "เกี่ยวกับ",
     "press": "กด",
-    "signIn": "เข้าสู่ระบบ"
+    "signIn": "เข้าสู่ระบบ",
+    "lightMode": "โหมดสว่าง",
+    "darkMode": "โหมดมืด",
+    "languageSelector": "ตัวเลือกภาษา"
   },
   "classSidebar": {
     "overview": "ภาพรวม",
@@ -25,11 +28,11 @@
     "members": "สมาชิก",
     "syllabus": "หลักสูตร",
     "settings": "การตั้งค่า",
-    "worksheets": "ใบงาน",
-    "classNavigation": "การนำทางชั้นเรียน",
+    "worksheets": "แบบฝึกหัด",
+    "classNavigation": "การนำทางในชั้นเรียน",
     "switchClass": "สวิตช์คลาส",
-    "classInviteCode": "รหัสเชิญเข้าชั้นเรียน",
-    "copyCode": "คัดลอกรหัส",
+    "classInviteCode": "รหัสเชิญเข้าเรียน",
+    "copyCode": "คัดลอกโค้ด",
     "regenerateCode": "สร้างโค้ดใหม่",
     "toast": {
       "inviteCodeRegenerated": "สร้างรหัสเชิญใหม่สำเร็จแล้ว",
@@ -38,10 +41,10 @@
     }
   },
   "footer": {
-    "productDescription": "การจัดการเรียนรู้สมัยใหม่เพื่อการศึกษาในยุคต่อไป",
+    "productDescription": "ระบบบริหารจัดการการเรียนรู้สมัยใหม่สำหรับวงการการศึกษายุคใหม่",
     "product": "ผลิตภัณฑ์",
     "features": "คุณสมบัติ",
-    "pricing": "การกำหนดราคา",
+    "pricing": "ราคา",
     "schoolProgram": "โครงการโรงเรียน",
     "company": "บริษัท",
     "about": "เกี่ยวกับ",
@@ -49,7 +52,7 @@
     "press": "กด",
     "contact": "ติดต่อ",
     "privacyPolicy": "นโยบายความเป็นส่วนตัว",
-    "termsOfService": "เงื่อนไขการบริการ",
-    "copyright": "© 2025 Studious LMS สงวนลิขสิทธิ์"
+    "termsOfService": "เงื่อนไขการให้บริการ",
+    "copyright": "© 2025 Studious LMS สงวนลิขสิทธิ์ทุกประการ"
   }
 }

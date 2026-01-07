@@ -7,6 +7,18 @@
       "unsaved": "Niezapisane zmiany",
       "saving": "Oszczędność..."
     },
+    "eventDetail": {
+      "title": "Szczegóły wydarzenia",
+      "basicInfo": "Informacje podstawowe",
+      "description": "Zarządzaj szczegółami wydarzenia i obecnością studentów",
+      "address": "Adres",
+      "date": "Data",
+      "time": "Czas",
+      "notFound": {
+        "title": "Wydarzenie nie znalezione",
+        "description": "To wydarzenie mogło zostać usunięte lub nie masz do niego dostępu."
+      }
+    },
     "table": {
       "date": "Data",
       "eventName": "Nazwa wydarzenia",
@@ -15,6 +27,8 @@
       "actions": "Akcje"
     },
     "actions": {
+      "back": "Z powrotem",
+      "export": "Eksport",
       "viewDetails": "Zobacz szczegóły",
       "editEvent": "Edytuj wydarzenie",
       "deleteEvent": "Usuń wydarzenie",
@@ -52,10 +66,10 @@
     },
     "roster": {
       "title": "Lista studentów",
-      "description": "Kliknij przyciski statusu, aby oznaczyć obecność każdego ucznia",
+      "description": "Kliknij przyciski statusu, aby zaznaczyć obecność każdego ucznia",
       "empty": {
         "title": "Brak zapisanych studentów",
-        "description": "Uczniowie pojawią się tutaj po dołączeniu do klasy"
+        "description": "Uczniowie będą tu wyświetlani po dołączeniu do klasy"
       }
     },
     "prompt": {

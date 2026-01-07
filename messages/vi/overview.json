@@ -1,12 +1,19 @@
 {
   "overview": {
     "assignments": "Bài tập",
-    "students": "sinh viên",
+    "students": "học sinh",
     "attendance": "Sự tham dự",
-    "attachFile": "Đính kèm tập tin",
+    "attachFile": "Đính kèm tệp",
     "post": "Bưu kiện",
     "posting": "Đang đăng...",
-    "noPosts": "Chưa có bài viết nào",
-    "createFirstPost": "Tạo bài đăng đầu tiên"
+    "noPosts": "Chưa có bài đăng nào",
+    "noPostsDescription": "Chia sẻ các thông báo, bài tập và cập nhật với cả lớp.",
+    "createFirstPost": "Tạo bài đăng đầu tiên",
+    "messages": {
+      "uploadFailed": "Không thể tạo thông báo, quá trình tải tệp thất bại.",
+      "createFailed": "Không thể tạo thông báo",
+      "createSuccess": "Thông báo đã được tạo thành công",
+      "creating": "Đang tạo thông báo..."
+    }
   }
 }

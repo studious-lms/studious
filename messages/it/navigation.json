@@ -13,7 +13,10 @@
     "schoolProgram": "Programma scolastico",
     "about": "Di",
     "press": "Premere",
-    "signIn": "Registrazione"
+    "signIn": "Registrazione",
+    "lightMode": "Modalità luce",
+    "darkMode": "Modalità scura",
+    "languageSelector": "Selettore di lingua"
   },
   "classSidebar": {
     "overview": "Panoramica",

@@ -26,16 +26,18 @@
       "back": "Rug",
       "save": "Redden",
       "cancel": "Annuleren",
-      "select": "Selecteer",
-      "attachMarkscheme": "Markschema bijvoegen",
+      "select": "Select",
+      "attachMarkscheme": "Voeg het beoordelingsschema toe",
       "detach": "Details"
     },
     "search": {
-      "placeholder": "Zoek werkbladen..."
+      "placeholder": "Werkbladen doorzoeken...",
+      "noResults": "Geen werkbladen gevonden",
+      "noResultsDesc": "Probeer een andere zoekterm of wis je zoekopdracht."
     },
     "empty": {
       "title": "Geen werkbladen gevonden",
-      "description": "Begin met het maken van uw eerste werkblad of gebruik de zoekfunctie om bestaande werkbladen te vinden."
+      "description": "Begin door je eerste werkblad te maken of gebruik de zoekfunctie om bestaande werkbladen te vinden."
     },
     "confirm": {
       "delete": "Weet u zeker dat u dit werkblad wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt."
@@ -44,71 +46,71 @@
       "created": "Werkblad succesvol aangemaakt",
       "updated": "Werkblad succesvol bijgewerkt",
       "deleted": "Werkblad succesvol verwijderd",
-      "error": "Er is een fout opgetreden"
+      "error": "Er is een fout opgetreden."
     },
     "create": {
       "title": "Werkblad maken",
-      "subtitle": "Maak een nieuw werkblad met meerdere vraagtypen",
+      "subtitle": "Maak een nieuw werkblad met meerdere vraagtypen.",
       "worksheetInfo": "Werkbladinformatie",
       "actions": {
         "save": "Redden",
         "cancel": "Annuleren",
-        "preview": "Voorvertoning"
+        "preview": "Voorbeeld"
       },
       "fields": {
         "title": "Titel",
-        "titlePlaceholder": "Voer de titel van het werkblad in",
+        "titlePlaceholder": "Voer de titel van het werkblad in.",
         "description": "Beschrijving",
         "descriptionPlaceholder": "Voer een beschrijving van het werkblad in (optioneel)",
-        "dueDate": "Twee data",
+        "dueDate": "Twee afspraakjes",
         "totalQuestions": "Totaal aantal vragen"
       },
       "questions": {
         "title": "Vragen",
         "addQuestion": "Vraag toevoegen",
-        "noQuestions": "Nog geen vragen toegevoegd",
-        "addFirstQuestion": "Gebruik de dropdown hierboven om uw eerste vraag toe te voegen",
+        "noQuestions": "Er zijn nog geen vragen toegevoegd.",
+        "addFirstQuestion": "Gebruik het keuzemenu hierboven om je eerste vraag toe te voegen.",
         "questionNumber": "Vraag {number}",
         "points": "Punten",
         "questionText": "Vraagtekst",
-        "questionTextPlaceholder": "Vul hier uw vraag in",
+        "questionTextPlaceholder": "Stel hier uw vraag.",
         "options": "Opties",
         "optionPlaceholder": "Optie {number}",
         "addOption": "Optie toevoegen",
-        "correctAnswer": "Juiste antwoord",
+        "correctAnswer": "Juist antwoord",
         "true": "WAAR",
         "false": "Onwaar",
         "mathExpression": "Verwachte wiskundige uitdrukking",
-        "mathExpressionPlaceholder": "bijvoorbeeld x^2 + 5x + 6 = 0",
+        "mathExpressionPlaceholder": "bijvoorbeeld x² + 5x + 6 = 0",
         "sampleAnswer": "Voorbeeldantwoord",
-        "sampleAnswerPlaceholder": "Voer een voorbeeldantwoord of -uitleg in",
+        "sampleAnswerPlaceholder": "Voer een voorbeeldantwoord of -uitleg in.",
         "markscheme": "Marketingplan",
-        "markschemeAttached": "Markschema bijgevoegd"
+        "markschemeAttached": "Bijgevoegd beoordelingsschema"
       },
       "questionTypes": {
-        "multipleChoice": "Meerkeuzevragen",
-        "longForm": "Lange vorm antwoord",
-        "math": "Wiskunde antwoord",
-        "trueFalse": "Waar/Niet waar"
+        "multipleChoice": "Meerkeuze",
+        "longForm": "Uitgebreid antwoord",
+        "math": "Wiskundig antwoord",
+        "trueFalse": "Waar/Onwaar"
       },
       "markschemeDialog": {
-        "title": "Selecteer Markschema",
+        "title": "Selecteer beoordelingsschema",
         "noMarkschemes": "Er zijn geen beoordelingsschema's beschikbaar. Maak er eerst een aan in het gedeelte 'Cijfers'.",
-        "untitled": "Ongetiteld Markscheme",
+        "untitled": "Naamloos beoordelingsschema",
         "custom": "Aangepast"
       },
       "errors": {
         "titleRequired": "Titel is vereist",
-        "atLeastOneQuestion": "Voeg minimaal één vraag toe",
-        "questionTextRequired": "Alle vragen moeten tekst bevatten",
-        "multipleChoiceOptions": "Meerkeuzevragen hebben minimaal 2 opties nodig",
-        "multipleChoiceCorrectAnswer": "Bij meerkeuzevragen is minimaal één correct antwoord vereist",
-        "teacherOnly": "Alleen docenten kunnen werkbladen maken"
+        "atLeastOneQuestion": "Voeg ten minste één vraag toe.",
+        "questionTextRequired": "Alle vragen moeten tekst bevatten.",
+        "multipleChoiceOptions": "Meerkeuzevragen moeten minimaal 2 antwoordopties bevatten.",
+        "multipleChoiceCorrectAnswer": "Bij meerkeuzevragen moet minstens één antwoord correct zijn.",
+        "teacherOnly": "Alleen docenten kunnen werkbladen maken."
       },
       "toasts": {
         "created": "Werkblad succesvol aangemaakt",
-        "markschemeAttached": "Markschema succesvol gekoppeld",
-        "markschemeDetached": "Markscheme succesvol losgemaakt",
+        "markschemeAttached": "Het beoordelingsschema is succesvol bijgevoegd.",
+        "markschemeDetached": "Markschema succesvol losgekoppeld",
         "updated": "Werkblad succesvol bijgewerkt",
         "saving": "Besparing...",
         "saved": "Opgeslagen"

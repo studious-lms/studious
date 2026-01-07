@@ -13,7 +13,10 @@
     "schoolProgram": "学校プログラム",
     "about": "について",
     "press": "プレス",
-    "signIn": "サインイン"
+    "signIn": "サインイン",
+    "lightMode": "ライトモード",
+    "darkMode": "ダークモード",
+    "languageSelector": "言語セレクター"
   },
   "classSidebar": {
     "overview": "概要",

@@ -4,14 +4,19 @@
     "counts": {
       "totalMembers": "{count} üye"
     },
+    "stats": {
+      "totalMembers": "Toplam Üye Sayısı",
+      "teachers": "Öğretmenler",
+      "students": "Öğrenciler"
+    },
     "actions": {
-      "inviteMember": "Üye Davet Et",
+      "inviteMember": "Üyeyi Davet Et",
       "copy": "Kopyala",
-      "regenerate": "Yeniden oluşturmak",
+      "regenerate": "Yeniden oluştur",
       "message": "Mesaj",
       "viewProfile": "Profili Görüntüle",
       "viewGrades": "Notları Görüntüle",
-      "makeTeacher": "Öğretmen Yap",
+      "makeTeacher": "Öğretmeni yetiştirin",
       "makeStudent": "Öğrenci Yap",
       "removeFromClass": "Sınıftan Kaldır",
       "removeAccess": "Erişimi Kaldır",
@@ -23,8 +28,8 @@
       "you": "Sen"
     },
     "invite": {
-      "title": "Sınıf Davetiye Kodu",
-      "description": "Sınıfa katılmak için bu kodu öğrencilerle paylaşın"
+      "title": "Ders Davet Kodu",
+      "description": "Öğrencilerin derse katılabilmeleri için bu kodu onlarla paylaşın."
     },
     "search": {
       "placeholder": "Üyeleri ara..."
@@ -35,36 +40,36 @@
     },
     "students": {
       "empty": {
-        "title": "Hiçbir öğrenci bulunamadı",
-        "matchNone": "\"{query}\" ile eşleşen öğrenci bulunamadı",
-        "noStudents": "Bu sınıfa henüz hiçbir öğrenci katılmadı"
+        "title": "Öğrenci bulunamadı.",
+        "matchNone": "\"{query}\" ile eşleşen öğrenci yok.",
+        "noStudents": "Bu sınıfa henüz hiçbir öğrenci katılmadı."
       }
     },
     "teachers": {
       "empty": {
-        "title": "Öğretmen bulunamadı",
-        "matchNone": "\"{query}\" ile eşleşen öğretmen bulunamadı",
-        "noTeachers": "Ek öğretmen eklenmedi"
+        "title": "Öğretmen bulunamadı.",
+        "matchNone": "Hiçbir öğretmen \"{query}\" ile eşleşmiyor.",
+        "noTeachers": "Ek öğretmen atanmamıştır."
       }
     },
     "toasts": {
-      "inviteRegenerated": "Davet kodu başarıyla yeniden oluşturuldu",
-      "copied": "Davet kodu panoya kopyalandı",
-      "roleChanged": "Rol {role} olarak değiştirildi",
-      "memberRemoved": "Üye başarıyla kaldırıldı"
+      "inviteRegenerated": "Davet kodu başarıyla yeniden oluşturuldu.",
+      "copied": "Davet kodu panoya kopyalandı.",
+      "roleChanged": "Rol {role} olarak değiştirildi.",
+      "memberRemoved": "Üye başarıyla kaldırıldı."
     },
     "errors": {
-      "regenerateFailed": "Davet kodu yeniden oluşturulamadı",
-      "changeRoleFailed": "Rol değiştirilemedi",
-      "removeFailed": "Üye kaldırılamadı",
-      "failedToLoad": "Üyeler yüklenemedi"
+      "regenerateFailed": "Davetiye kodunu yeniden oluşturma başarısız oldu.",
+      "changeRoleFailed": "Rol değiştirmeyi başaramadı.",
+      "removeFailed": "Üyeyi kaldırma işlemi başarısız oldu.",
+      "failedToLoad": "Üyeler yüklenemedi."
     },
     "profile": {
       "title": "Kullanıcı Profili",
       "description": "Üye profil bilgilerini görüntüle",
       "information": "Profil Bilgileri",
       "location": "Konum",
-      "website": "Web Sitesi"
+      "website": "Web sitesi"
     }
   }
 }

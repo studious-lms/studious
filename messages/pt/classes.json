@@ -17,7 +17,7 @@
     "classDeleted": "Aula excluída com sucesso",
     "classDeleteFailed": "Falha ao excluir a classe",
     "failedToLoad": "Falha ao carregar as classes",
-    "classLeft": "Saiu da turma com sucesso",
-    "classLeaveFailed": "Falha ao sair da turma"
+    "classLeft": "Saí da aula com sucesso.",
+    "classLeaveFailed": "Não saiu da sala de aula."
   }
 }

@@ -4,6 +4,11 @@
     "counts": {
       "totalMembers": "{count} 成员"
     },
+    "stats": {
+      "totalMembers": "总成员数",
+      "teachers": "教师",
+      "students": "学生"
+    },
     "actions": {
       "inviteMember": "邀请会员",
       "copy": "复制",
@@ -60,10 +65,10 @@
       "failedToLoad": "成员加载失败"
     },
     "profile": {
-      "title": "用户资料",
-      "description": "查看成员资料信息",
-      "information": "资料信息",
-      "location": "位置",
+      "title": "用户个人资料",
+      "description": "查看会员资料信息",
+      "information": "个人资料",
+      "location": "地点",
       "website": "网站"
     }
   }

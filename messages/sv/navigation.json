@@ -13,7 +13,10 @@
     "schoolProgram": "Skolprogram",
     "about": "Om",
     "press": "Trycka",
-    "signIn": "Logga in"
+    "signIn": "Logga in",
+    "lightMode": "Ljusläge",
+    "darkMode": "Mörkt läge",
+    "languageSelector": "Språkväljare"
   },
   "classSidebar": {
     "overview": "Översikt",

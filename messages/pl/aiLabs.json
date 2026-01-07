@@ -6,6 +6,16 @@
     "createNew": "Utwórz nową treść",
     "aiGenerated": "Wygenerowane przez sztuczną inteligencję",
     "deleteConfirm": "Czy na pewno chcesz usunąć to laboratorium AI? Tej czynności nie można cofnąć.",
+    "stats": {
+      "drafts": "Warcaby",
+      "draftsDesc": "Treść w trakcie tworzenia",
+      "chats": "Koty AI",
+      "chatsDesc": "Aktywne rozmowy",
+      "messages": "Wiadomości",
+      "messagesDesc": "Całkowite interakcje AI",
+      "generated": "Wygenerowano",
+      "generatedDesc": "Łączna liczba utworzonych treści"
+    },
     "widgets": {
       "assignment": {
         "title": "Zadanie",
@@ -57,7 +67,7 @@
     }
   },
   "aiLabChat": {
-    "backButton": "Powrót do AI Labs",
+    "backButton": "Powrót do laboratoriów AI",
     "loading": "Załadunek...",
     "aiThinking": "Myślenie AI...",
     "getAIHelp": "Uzyskaj pomoc AI",

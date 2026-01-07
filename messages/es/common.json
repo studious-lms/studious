@@ -1,5 +1,6 @@
 {
   "common": {
+    "upload": "Subir",
     "save": "Ahorrar",
     "cancel": "Cancelar",
     "delete": "Borrar",
@@ -250,8 +251,8 @@
     "futureDevelopments": {
       "title": "Desarrollos futuros",
       "subtitle": "Nuestra hoja de ruta para transformar la educación",
-      "cas": {
-        "title": "Perspectiva CAS",
+      "sustainable": {
+        "title": "Perspectiva sostenible",
         "description": "Apoyando a las escuelas con fondos insuficientes a través de donaciones y materiales, haciendo que la educación de calidad sea accesible para todos."
       },
       "features": {
@@ -260,7 +261,7 @@
       },
       "launch": {
         "title": "Perspectiva de lanzamiento",
-        "description": "Presentaciones en escuelas, universidades y conferencias para remodelar la experiencia de aprendizaje."
+        "description": "Presentaciones en escuelas, universidades y conferencias para reformular la experiencia de aprendizaje."
       }
     },
     "cta": {
@@ -587,7 +588,7 @@
     "empty": {
       "unread": {
         "title": "No hay notificaciones sin leer",
-        "description": "¡Ya estás al día! No tienes notificaciones sin leer."
+        "description": "¡Ya lo pusiste al día! No tienes notificaciones sin leer."
       },
       "read": {
         "title": "No hay notificaciones de lectura",
@@ -834,7 +835,7 @@
         "fileRenamed": "Archivo renombrado exitosamente",
         "fileMoved": "Archivo movido exitosamente",
         "downloadStarted": "Descarga iniciada",
-        "shareCopied": "Compartir enlace copiado"
+        "shareCopied": "Enlace compartido copiado"
       },
       "errors": {
         "teacherOnly": "Sólo los profesores pueden modificar los archivos.",
@@ -1065,7 +1066,7 @@
     "journeyBetaComplete2": "Transición de la versión beta a la versión de producción completa. Estabilización de la plataforma con todas las funciones principales completamente probadas y optimizadas.",
     "journeySDPDate": "Enero de 2026",
     "journeySDP1": "Lanzamiento del Programa de Desarrollo Escolar",
-    "journeySDP2": "Anunciamos la primera cohorte de escuelas aceptadas en el Programa de Desarrollo de Escuelas Estudiosas, que brinda acceso gratuito a las instituciones calificadas.",
+    "journeySDP2": "Anunciamos la primera cohorte de escuelas aceptadas en el Programa de Desarrollo Escolar Estudioso, que brinda acceso gratuito a las instituciones calificadas.",
     "missionStatement1": "Nuestra misión es simple",
     "missionStatement2": "Construir el sistema de gestión del aprendizaje que nosotros, como estudiantes, profesores y estudiantes de por vida, querríamos utilizar todos los días.",
     "joinAppeal1": "Únase a nosotros en este viaje",

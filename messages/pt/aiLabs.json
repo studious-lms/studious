@@ -6,6 +6,16 @@
     "createNew": "Criar novo conteúdo",
     "aiGenerated": "Gerado por IA",
     "deleteConfirm": "Tem certeza de que deseja excluir este Laboratório de IA? Esta ação não pode ser desfeita.",
+    "stats": {
+      "drafts": "Rascunhos",
+      "draftsDesc": "Conteúdo em andamento",
+      "chats": "Gatos com IA",
+      "chatsDesc": "Conversas ativas",
+      "messages": "Mensagens",
+      "messagesDesc": "Interações totais de IA",
+      "generated": "Gerado",
+      "generatedDesc": "Conteúdo total criado"
+    },
     "widgets": {
       "assignment": {
         "title": "Atribuição",

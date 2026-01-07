@@ -17,7 +17,7 @@
     "classDeleted": "已成功删除类",
     "classDeleteFailed": "删除类失败",
     "failedToLoad": "类加载失败",
-    "classLeft": "成功退出班级",
-    "classLeaveFailed": "退出班级失败"
+    "classLeft": "成功离开教室",
+    "classLeaveFailed": "未按时离开教室"
   }
 }

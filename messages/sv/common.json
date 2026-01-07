@@ -1,5 +1,6 @@
 {
   "common": {
+    "upload": "Ladda upp",
     "save": "Spara",
     "cancel": "Avboka",
     "delete": "Radera",
@@ -135,7 +136,7 @@
       "title2": "lärande för moderna skolor",
       "subtitle": "Studious LMS integrerar AI, realtidskalendrar och klasskommunikation i en sammanhängande plattform – utformad för att hjälpa lärare att undervisa och elever att blomstra.",
       "requestEarlyAccess": "Begär tidig åtkomst",
-      "watchDemo": "Titta på demo",
+      "watchDemo": "Titta på demon",
       "altDashboard": "Plattformsöversikt"
     },
     "problem": {
@@ -206,7 +207,7 @@
         "perk2": "Obegränsade klasser",
         "perk3": "Alla kärnfunktioner",
         "perk4": "AI-assistent (obegränsade frågor)",
-        "perk5": "Först i kön för betaåtkomst till Studious CMS",
+        "perk5": "Först i kön för betaversionen av Studious CMS",
         "button": "Kom igång"
       },
       "institution": {
@@ -250,8 +251,8 @@
     "futureDevelopments": {
       "title": "Framtida utveckling",
       "subtitle": "Vår färdplan för att omvandla utbildningen",
-      "cas": {
-        "title": "CAS-perspektiv",
+      "sustainable": {
+        "title": "Hållbart perspektiv",
         "description": "Stödja underfinansierade skolor genom donationer och material, vilket gör kvalitetsutbildning tillgänglig för alla."
       },
       "features": {
@@ -399,7 +400,7 @@
   },
   "press": {
     "badge": "Press och media",
-    "title": "Studig i nyheterna",
+    "title": "Studious i nyheterna",
     "subtitle": "Medieresurser, varumärkestillgångar och företagsinformation för journalister och innehållsskapare",
     "factsheet": {
       "title": "Företagsfaktablad",
@@ -1097,7 +1098,7 @@
     "pricingSchoolPerk2": "Obegränsade klasser",
     "pricingSchoolPerk3": "Alla kärnfunktioner",
     "pricingSchoolPerk4": "AI-assistent (obegränsade frågor)",
-    "pricingSchoolPerk5": "Först i kön för betaåtkomst till Studious CMS",
+    "pricingSchoolPerk5": "Först i kön för betaversionen av Studious CMS",
     "pricingSchoolPerk6": "API-åtkomst",
     "pricingSchoolLink": "Kom igång"
   },
@@ -1350,7 +1351,7 @@
         "level1": {
           "title": "Nivå 1 Självständigt arbete (Ingen AI)",
           "description": "Inga. Grundläggande stavnings- och grammatikkontroller är acceptabla.",
-          "useCases": "Förlita dig helt på personlig kunskap, resonemang och ansträngning.",
+          "useCases": "Lita helt på personlig kunskap, resonemang och ansträngning.",
           "studentResponsibilities": "Inga. Grundläggande stavnings- och grammatikkontroller är acceptabla.",
           "disclosureRequirements": "Ingen AI-upplysning krävs (AI-användning förbjuden)."
         },

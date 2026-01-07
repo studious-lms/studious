@@ -7,6 +7,18 @@
       "unsaved": "Modifications non enregistrées",
       "saving": "Économie..."
     },
+    "eventDetail": {
+      "title": "Détails de l'événement",
+      "basicInfo": "Informations de base",
+      "description": "Gérer les détails de l'événement et la présence des étudiants",
+      "address": "Adresse",
+      "date": "Date",
+      "time": "Temps",
+      "notFound": {
+        "title": "Événement introuvable",
+        "description": "Cet événement a peut-être été supprimé ou vous n'y avez pas accès."
+      }
+    },
     "table": {
       "date": "Date",
       "eventName": "Nom de l'événement",
@@ -15,6 +27,8 @@
       "actions": "Actes"
     },
     "actions": {
+      "back": "Dos",
+      "export": "Exporter",
       "viewDetails": "Voir les détails",
       "editEvent": "Modifier l'événement",
       "deleteEvent": "Supprimer l'événement",

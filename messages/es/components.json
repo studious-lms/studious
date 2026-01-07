@@ -11,6 +11,11 @@
     "rename": "Rebautizar"
   },
   "uploadFiles": {
+    "progress": {
+      "uploadingFiles": "Subiendo archivos...",
+      "uploadingFile": "Subiendo {name}...",
+      "completed": "Terminado"
+    },
     "title": "Subir archivos",
     "noFilesSelected": "No hay archivos seleccionados",
     "classIdMissing": "Falta el ID de la clase",
@@ -130,6 +135,11 @@
       "description": "Seleccione una conversación de la barra lateral para comenzar a chatear."
     },
     "page": {
+      "notFound": {
+        "title": "Conversación no encontrada",
+        "description": "Esta conversación no existe o no tienes acceso a ella.",
+        "backToChat": "Volver al chat"
+      },
       "header": {
         "members": "Miembros",
         "markMentionsRead": "Mark menciona haber leído"
@@ -256,7 +266,7 @@
     "endDateTime": "Fecha y hora de finalización *",
     "pickDate": "Fecha de selección",
     "location": "Ubicación",
-    "locationPlaceholder": "Ingrese la ubicación del evento",
+    "locationPlaceholder": "Introduzca la ubicación del evento",
     "eventColor": "Color del evento",
     "eventColorDescription": "Elige un color para este evento",
     "remarks": "Observaciones",

@@ -13,9 +13,13 @@
     },
     "stats": {
       "totalAssignments": "Totalt antal uppdrag",
+      "totalAssignmentsDesc": "Alla kursarbeten",
       "completionRate": "Färdigställandegrad",
+      "completionRateDesc": "Betygsatt kontra total",
       "totalPoints": "Totalt antal poäng",
-      "upcoming": "Kommande"
+      "totalPointsDesc": "Maximalt uppnåeligt",
+      "upcoming": "Kommande",
+      "upcomingDesc": "Förfallna uppgifter"
     },
     "overview": {
       "title": "Kursöversikt",
@@ -40,12 +44,12 @@
       "dueDate": "Två datum",
       "points": "Poäng",
       "weight": "Vikt",
-      "status": "Status",
-      "pts": "poäng"
+      "pts": "poäng",
+      "type": "Typ"
     },
     "status": {
       "graded": "Graderad",
-      "pending": "I avvaktan på"
+      "ungraded": "Obetygsatt"
     },
     "courseInfo": {
       "title": "Kursinformation",

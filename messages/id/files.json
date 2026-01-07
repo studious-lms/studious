@@ -1,7 +1,7 @@
 {
   "classFiles": {
     "title": "Berkas",
-    "subtitle": "Kelola file dan sumber daya kelas",
+    "subtitle": "Kelola berkas dan sumber daya kelas.",
     "actions": {
       "newFolder": "Folder Baru",
       "upload": "Mengunggah",
@@ -14,32 +14,32 @@
       "sort": "Menyortir"
     },
     "toasts": {
-      "folderCreated": "Folder berhasil dibuat",
-      "folderDeleted": "Folder berhasil dihapus",
-      "folderRenamed": "Folder berhasil diganti nama",
-      "folderMoved": "Folder berhasil dipindahkan",
-      "filesUploaded": "File berhasil diunggah",
-      "fileDeleted": "File berhasil dihapus",
-      "fileRenamed": "File berhasil diganti nama",
-      "fileMoved": "File berhasil dipindahkan",
-      "downloadStarted": "Unduhan dimulai",
-      "shareCopied": "Bagikan tautan disalin"
+      "folderCreated": "Folder berhasil dibuat.",
+      "folderDeleted": "Folder berhasil dihapus.",
+      "folderRenamed": "Folder berhasil diganti namanya.",
+      "folderMoved": "Folder berhasil dipindahkan.",
+      "filesUploaded": "File berhasil diunggah.",
+      "fileDeleted": "File berhasil dihapus.",
+      "fileRenamed": "File berhasil diganti namanya.",
+      "fileMoved": "Berkas berhasil dipindahkan.",
+      "downloadStarted": "Pengunduhan dimulai",
+      "shareCopied": "Tautan yang dibagikan telah disalin."
     },
     "errors": {
-      "teacherOnly": "Hanya guru yang dapat mengubah berkas.",
-      "downloadFailed": "Unduhan gagal",
+      "teacherOnly": "Hanya guru yang dapat memodifikasi file.",
+      "downloadFailed": "Pengunduhan gagal",
       "shareFailed": "Berbagi gagal",
-      "failedToLoad": "Gagal memuat berkas. Silakan coba lagi nanti."
+      "failedToLoad": "Gagal memuat file. Silakan coba lagi nanti."
     },
     "breadcrumbs": {
-      "classFiles": "File Kelas"
+      "classFiles": "Berkas Kelas"
     },
     "search": {
-      "placeholder": "Cari dalam file"
+      "placeholder": "Cari di dalam file"
     },
     "selected": "{count} dipilih",
     "filters": {
-      "fileType": "Jenis Berkas",
+      "fileType": "Jenis File",
       "documents": "Dokumen",
       "images": "Gambar",
       "videos": "Video",
@@ -48,19 +48,19 @@
     "sort": {
       "name": "Nama",
       "lastModified": "Terakhir diubah",
-      "fileSize": "Ukuran berkas"
+      "fileSize": "Ukuran file"
     },
     "table": {
       "name": "Nama",
       "owner": "Pemilik",
       "lastModified": "Terakhir diubah",
-      "fileSize": "Ukuran berkas"
+      "fileSize": "Ukuran file"
     },
     "empty": {
       "title": "Folder ini kosong",
       "description": "Unggah file atau buat folder untuk mulai mengatur materi kelas Anda.",
-      "searchTitle": "Tidak ada file yang ditemukan",
-      "searchDescription": "Tidak ada file yang cocok dengan \"{query}\". Coba istilah pencarian lain."
+      "searchTitle": "Tidak ada berkas yang ditemukan.",
+      "searchDescription": "Tidak ada berkas yang cocok dengan \"{query}\". Coba istilah pencarian lain."
     }
   },
   "folderView": {
@@ -74,15 +74,15 @@
       "loadFailed": "Gagal memuat isi folder. Silakan coba lagi nanti."
     },
     "breadcrumbs": {
-      "classFiles": "File Kelas"
+      "classFiles": "Berkas Kelas"
     },
     "search": {
-      "placeholder": "Cari di folder",
+      "placeholder": "Cari di dalam folder",
       "selected": "{count} dipilih"
     },
     "filters": {
       "label": "Menyaring",
-      "fileType": "Jenis Berkas",
+      "fileType": "Jenis File",
       "documents": "Dokumen",
       "images": "Gambar",
       "videos": "Video",
@@ -92,17 +92,17 @@
       "label": "Menyortir",
       "name": "Nama",
       "lastModified": "Terakhir diubah",
-      "fileSize": "Ukuran berkas"
+      "fileSize": "Ukuran file"
     },
     "table": {
       "name": "Nama",
       "owner": "Pemilik",
       "lastModified": "Terakhir diubah",
-      "fileSize": "Ukuran berkas"
+      "fileSize": "Ukuran file"
     },
     "empty": {
-      "noFilesFound": "Tidak ada file yang ditemukan",
-      "noFilesFoundDescription": "Tidak ada file yang cocok dengan \"{query}\". Coba istilah pencarian lain.",
+      "noFilesFound": "Tidak ada berkas yang ditemukan.",
+      "noFilesFoundDescription": "Tidak ada berkas yang cocok dengan \"{query}\". Coba istilah pencarian lain.",
       "folderEmpty": "Folder ini kosong",
       "folderEmptyDescription": "Unggah file atau buat folder untuk mengatur materi Anda."
     },
@@ -112,17 +112,17 @@
       "createFolder": "Buat Folder"
     },
     "toast": {
-      "folderCreated": "Folder berhasil dibuat",
-      "folderDeleted": "Folder berhasil dihapus",
-      "folderRenamed": "Folder berhasil diganti nama",
-      "folderMoved": "Folder berhasil dipindahkan",
-      "filesUploaded": "File berhasil diunggah",
-      "fileDeleted": "File berhasil dihapus",
-      "fileRenamed": "File berhasil diganti nama",
-      "fileMoved": "File berhasil dipindahkan",
-      "downloadStarted": "Unduhan dimulai",
-      "downloadFailed": "Unduhan gagal",
-      "shareLinkCopied": "Bagikan tautan disalin",
+      "folderCreated": "Folder berhasil dibuat.",
+      "folderDeleted": "Folder berhasil dihapus.",
+      "folderRenamed": "Folder berhasil diganti namanya.",
+      "folderMoved": "Folder berhasil dipindahkan.",
+      "filesUploaded": "File berhasil diunggah.",
+      "fileDeleted": "File berhasil dihapus.",
+      "fileRenamed": "File berhasil diganti namanya.",
+      "fileMoved": "Berkas berhasil dipindahkan.",
+      "downloadStarted": "Pengunduhan dimulai",
+      "downloadFailed": "Pengunduhan gagal",
+      "shareLinkCopied": "Tautan yang dibagikan telah disalin.",
       "shareFailed": "Berbagi gagal",
       "permissionDenied": "Izin ditolak"
     }

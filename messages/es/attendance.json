@@ -7,6 +7,18 @@
       "unsaved": "Cambios no guardados",
       "saving": "Ahorro..."
     },
+    "eventDetail": {
+      "title": "Detalles del evento",
+      "basicInfo": "Información básica",
+      "description": "Manejar los detalles del evento y la asistencia de los estudiantes.",
+      "address": "DIRECCIÓN",
+      "date": "Fecha",
+      "time": "Tiempo",
+      "notFound": {
+        "title": "Evento no encontrado",
+        "description": "Es posible que este evento haya sido eliminado o que no tengas acceso a él."
+      }
+    },
     "table": {
       "date": "Fecha",
       "eventName": "Nombre del evento",
@@ -15,6 +27,8 @@
       "actions": "Comportamiento"
     },
     "actions": {
+      "back": "Atrás",
+      "export": "Exportar",
       "viewDetails": "Ver detalles",
       "editEvent": "Editar evento",
       "deleteEvent": "Eliminar evento",

@@ -1,27 +1,27 @@
 {
   "home": {
     "welcomeBack": "Chào mừng trở lại, {name}!",
-    "subtitle": "Sau đây là những thông tin về lớp học của bạn hôm nay.",
+    "subtitle": "Dưới đây là lịch học của các bạn hôm nay.",
     "stats": {
-      "totalClasses": "Tổng số lớp học",
-      "teachingEnrolled": "{teaching} giảng dạy, {enrolled} ghi danh",
-      "dueToday": "Ngày đến hạn",
-      "dueTodayDesc": "Bài tập đến hạn hôm nay",
+      "totalClasses": "Tổng số lớp",
+      "teachingEnrolled": "{teaching} giảng dạy, {enrolled} đã đăng ký",
+      "dueToday": "Đến hạn hôm nay",
+      "dueTodayDesc": "Bài tập cần nộp hôm nay",
       "upcoming": "Sắp tới",
       "upcomingDesc": "Bài tập sắp tới",
       "thisWeek": "Tuần này",
       "totalAssignments": "Tổng số bài tập"
     },
     "upcomingAssignments": {
-      "title": "Nhiệm vụ sắp tới",
+      "title": "Các nhiệm vụ sắp tới",
       "subtitle": "Hạn chót tiếp theo của bạn",
-      "allCaughtUp": "Đã cập nhật đầy đủ!",
-      "noUpcoming": "Hiện tại không có bài tập nào sắp tới.",
-      "viewAgenda": "Xem Chương trình nghị sự",
-      "dueToday": "Ngày đến hạn",
-      "dueTomorrow": "Ngày mai đến hạn",
+      "allCaughtUp": "Đã cập nhật xong!",
+      "noUpcoming": "Hiện tại chưa có nhiệm vụ nào sắp tới.",
+      "viewAgenda": "Xem chương trình nghị sự",
+      "dueToday": "Đến hạn hôm nay",
+      "dueTomorrow": "Hạn chót ngày mai",
       "due": "Hai {dates}",
-      "teaching": "Giảng dạy",
+      "teaching": "Dạy học",
       "viewAllAssignments": "Xem tất cả bài tập"
     },
     "notifications": {
@@ -31,13 +31,13 @@
       "viewAll": "Xem tất cả thông báo"
     },
     "classes": {
-      "title": "Lớp học của tôi",
-      "subtitle": "Truy cập nhanh vào lớp học của bạn",
-      "teaching": "Giảng dạy",
+      "title": "Các lớp học của tôi",
+      "subtitle": "Truy cập nhanh vào các lớp học của bạn",
+      "teaching": "Dạy học",
       "enrolled": "Đã đăng ký",
       "due": "quá hạn",
       "noClasses": "Chưa có lớp học nào",
-      "browseClasses": "Duyệt các lớp học",
+      "browseClasses": "Xem các lớp học",
       "viewAllClasses": "Xem tất cả các lớp học"
     }
   }

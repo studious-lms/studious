@@ -13,9 +13,13 @@
     },
     "stats": {
       "totalAssignments": "Gesamtzuweisungen",
+      "totalAssignmentsDesc": "Alle Kursarbeiten",
       "completionRate": "Fertigstellungsrate",
+      "completionRateDesc": "Bewertet vs. Gesamt",
       "totalPoints": "Gesamtpunkte",
-      "upcoming": "Demnächst"
+      "totalPointsDesc": "Maximal erreichbar",
+      "upcoming": "Demnächst",
+      "upcomingDesc": "Abgabefristen"
     },
     "overview": {
       "title": "Kursübersicht",
@@ -40,12 +44,12 @@
       "dueDate": "Zwei Verabredungen",
       "points": "Punkte",
       "weight": "Gewicht",
-      "status": "Status",
-      "pts": "Punkte"
+      "pts": "Punkte",
+      "type": "Typ"
     },
     "status": {
       "graded": "Bewertet",
-      "pending": "Ausstehend"
+      "ungraded": "Nicht bewertet"
     },
     "courseInfo": {
       "title": "Kursinformationen",

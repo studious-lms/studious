@@ -4,6 +4,11 @@
     "counts": {
       "totalMembers": "{count} Mitglieder"
     },
+    "stats": {
+      "totalMembers": "Gesamtmitglieder",
+      "teachers": "Lehrer",
+      "students": "Studenten"
+    },
     "actions": {
       "inviteMember": "Mitglied einladen",
       "copy": "Kopie",
@@ -61,10 +66,10 @@
     },
     "profile": {
       "title": "Benutzerprofil",
-      "description": "Mitgliedsprofilinformationen anzeigen",
+      "description": "Mitgliederprofilinformationen anzeigen",
       "information": "Profilinformationen",
       "location": "Standort",
-      "website": "Website"
+      "website": "Webseite"
     }
   }
 }

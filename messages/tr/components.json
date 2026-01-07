@@ -5,103 +5,108 @@
     "name": "İsim",
     "placeholder": "{type} adını girin",
     "folderColor": "Klasör Rengi",
-    "folderColorDescription": "Bu klasör için bir renk seçin",
+    "folderColorDescription": "Bu klasör için bir renk seçin.",
     "cancel": "İptal etmek",
     "saveChanges": "Değişiklikleri Kaydet",
     "rename": "Yeniden isimlendirmek"
   },
   "uploadFiles": {
+    "progress": {
+      "uploadingFiles": "Dosyalar yükleniyor...",
+      "uploadingFile": "{name} Yükleniyor...",
+      "completed": "Tamamlanmış"
+    },
     "title": "Dosyaları Yükle",
-    "noFilesSelected": "Hiçbir Dosya Seçilmedi",
-    "classIdMissing": "Sınıf kimliği eksik",
+    "noFilesSelected": "Hiçbir dosya seçilmedi.",
+    "classIdMissing": "Sınıf kimliği eksik.",
     "folderIdMissing": "Klasör kimliği eksik. Lütfen klasörün yüklenmesini bekleyin.",
     "preparing": "Yükleme hazırlanıyor...",
     "gettingUrls": "Yükleme URL'leri alınıyor...",
-    "uploadingFile": "{name} yükleniyor...",
-    "confirming": "{name} onaylanıyor...",
-    "finalizing": "Tamamlanıyor...",
+    "uploadingFile": "{name} Yükleniyor...",
+    "confirming": "{name}'ı doğruluyor...",
+    "finalizing": "Son aşamaya geliniyor...",
     "success": "Dosyalar başarıyla yüklendi!",
     "error": "Dosyalar yüklenemedi. Lütfen tekrar deneyin.",
-    "errorFile": "{name} yüklenemedi",
+    "errorFile": "Yükleme başarısız oldu {name}",
     "errorMessage": "Yükleme başarısız oldu: {message}",
-    "dropZone": "Dosyaları buraya bırakın veya göz atmak için tıklayın",
-    "dropZoneHint": "Görüntüler, belgeler, videolar ve daha fazlası için destek",
-    "selectedFiles": "Seçili Dosyalar ({count})",
-    "filesUploaded": "{uploaded} / {total} dosya yüklendi",
-    "uploadingTo": "Şuraya yükleniyor:",
-    "homeDirectory": "Ana Dizin",
+    "dropZone": "Dosyaları buraya sürükleyin veya göz atmak için tıklayın.",
+    "dropZoneHint": "Görseller, belgeler, videolar ve daha fazlası için destek",
+    "selectedFiles": "Seçilen Dosyalar ({count})",
+    "filesUploaded": "{total} dosyadan {uploaded}'ı yüklendi",
+    "uploadingTo": "Yükleniyor:",
+    "homeDirectory": "Ana Sayfa Dizini",
     "status": {
       "pending": "Askıda olması",
-      "uploading": "Yükleme",
+      "uploading": "Yükleniyor",
       "completed": "Tamamlanmış",
       "error": "Hata"
     },
     "cancel": "İptal etmek",
-    "upload": "{count} Dosyayı Yükle",
+    "upload": "{count} Dosya Yükle",
     "uploading": "Yükleniyor..."
   },
   "rubric": {
-    "title": "Rubrik Oluştur",
-    "titleEdit": "Düzenleme Ölçütü",
-    "selectTemplate": "Şablon Seçin",
-    "startFromScratch": "Sıfırdan Başlayın",
-    "editRubric": "Düzenleme Ölçütü",
-    "noTemplateSelected": "Bir şablon seçin veya özel bir değerlendirme ölçütü oluşturun",
-    "name": "Rubrik Adı",
-    "placeholder": "Rubrik adını girin",
+    "title": "Değerlendirme Kriterleri Oluştur",
+    "titleEdit": "Değerlendirme Kriterlerini Düzenle",
+    "selectTemplate": "Şablon Seç",
+    "startFromScratch": "Sıfırdan Başla",
+    "editRubric": "Değerlendirme Kriterlerini Düzenle",
+    "noTemplateSelected": "Bir şablon seçin veya özel bir değerlendirme ölçütü oluşturun.",
+    "name": "Değerlendirme Kriteri Adı",
+    "placeholder": "Değerlendirme kriteri adını girin",
     "cancel": "İptal etmek",
-    "create": "Rubrik Oluştur",
-    "update": "Güncelleme Rubriği",
+    "create": "Değerlendirme Kriterleri Oluştur",
+    "update": "Değerlendirme Kriterlerini Güncelle",
     "creating": "Oluşturuluyor...",
     "updating": "Güncelleniyor...",
-    "created": "Rubrik başarıyla oluşturuldu",
-    "updated": "Rubrik başarıyla güncellendi",
-    "createFailed": "Rubrik oluşturulamadı",
-    "updateFailed": "Rubrik güncellenemedi",
-    "errorNameRequired": "Lütfen bir isim ve en az bir kriter belirtin"
+    "created": "Değerlendirme kriterleri başarıyla oluşturuldu.",
+    "updated": "Değerlendirme kriterleri başarıyla güncellendi.",
+    "createFailed": "Değerlendirme kriterleri oluşturulamadı.",
+    "updateFailed": "Değerlendirme kriterleri güncellenemedi.",
+    "errorNameRequired": "Lütfen bir isim ve en az bir kriter belirtin."
   },
   "gradingBoundaries": {
     "title": "Sınıf Sınırı Oluştur",
     "titleEdit": "Sınıf Sınırını Düzenle",
-    "selectTemplate": "Şablon Seçin",
-    "editGradingScale": "Notlandırma Ölçeğini Düzenle",
-    "noTemplateSelected": "Bir şablon seçin veya özel sınırlar oluşturun",
+    "selectTemplate": "Şablon Seç",
+    "editGradingScale": "Değerlendirme Ölçeğini Düzenle",
+    "noTemplateSelected": "Bir şablon seçin veya özel sınırlar oluşturun.",
     "cancel": "İptal etmek",
     "create": "Yaratmak",
     "update": "Güncelleme",
     "creating": "Oluşturuluyor...",
     "updating": "Güncelleniyor...",
-    "created": "Derecelendirme sınırı başarıyla oluşturuldu",
-    "updated": "Sınıflandırma sınırı başarıyla güncellendi",
-    "createFailed": "Sınıflandırma sınırı oluşturulamadı",
-    "updateFailed": "Sınıflandırma sınırı güncellenemedi"
+    "created": "Tesviye sınırı başarıyla oluşturuldu.",
+    "updated": "Eğim sınırı başarıyla güncellendi.",
+    "createFailed": "Tesviye sınırı oluşturulamadı.",
+    "updateFailed": "Derecelendirme sınırını güncelleme başarısız oldu."
   },
   "directUpload": {
     "title": "Dosyaları Yükle",
-    "description": "Yüklenecek dosyaları seçin",
-    "selectFiles": "Dosyaları Seçin",
-    "selectedFiles": "Seçili Dosyalar ({count})",
+    "description": "Yüklemek istediğiniz dosyaları seçin.",
+    "selectFiles": "Dosyaları Seç",
+    "selectedFiles": "Seçilen Dosyalar ({count})",
     "maxFiles": "Maksimum {max} dosya. Kabul edilen türler: {types}",
     "allFiles": "Tüm dosyalar",
     "progressUploaded": "{progress}% yüklendi",
-    "noFilesSelected": "Hiçbir dosya seçilmedi",
-    "maxFilesExceeded": "İzin verilen maksimum {max} dosya",
+    "noFilesSelected": "Hiçbir dosya seçilmedi.",
+    "maxFilesExceeded": "İzin verilen maksimum dosya sayısı: {max}",
     "uploadFailed": "Yükleme başarısız oldu: {error}",
     "uploadFailedGeneric": "Yükleme başarısız oldu",
     "status": {
       "pending": "Askıda olması",
-      "uploading": "Yükleme",
+      "uploading": "Yükleniyor",
       "completed": "Tamamlanmış",
       "failed": "Arızalı"
     },
     "cancel": "İptal etmek",
-    "upload": "{count} dosyasını yükle",
+    "upload": "{count} Dosya yükle",
     "uploadPlural": "{count} dosya yükle",
     "uploading": "Yükleniyor..."
   },
   "notifications": {
     "title": "Bildirimler",
-    "subtitle": "Dersleriniz ve ödevleriniz konusunda güncel kalın",
+    "subtitle": "Dersleriniz ve ödevlerinizle ilgili güncel bilgilere sahip olun.",
     "filters": {
       "label": "Filtre:",
       "all": "Tümü ({count})",
@@ -113,26 +118,31 @@
     },
     "actions": {
       "viewAll": "Tüm Bildirimleri Görüntüle",
-      "markAsRead": "Okundu Olarak İşaretle"
+      "markAsRead": "Okundu olarak işaretle"
     },
     "empty": {
       "all": {
-        "title": "Henüz bildirim yok",
-        "description": "Bildirim aldığınızda burada görünecektir."
+        "title": "Henüz hiçbir bildirim yok.",
+        "description": "Bildirimler aldığınızda, burada görüneceklerdir."
       }
     }
   },
   "chat": {
     "landing": {
-      "pleaseSignIn": "Devam etmek için lütfen oturum açın",
-      "signInRequired": "Bu sayfaya erişmek için oturum açmanız gerekiyor",
+      "pleaseSignIn": "Devam etmek için lütfen giriş yapın.",
+      "signInRequired": "Bu sayfaya erişmek için oturum açmanız gerekmektedir.",
       "title": "Sohbet",
-      "description": "Sohbete başlamak için kenar çubuğundan bir konuşma seçin."
+      "description": "Yan taraftaki menüden bir konuşma seçerek sohbete başlayabilirsiniz."
     },
     "page": {
+      "notFound": {
+        "title": "Konuşma bulunamadı.",
+        "description": "Bu konuşma mevcut değil veya siz bu konuşmaya erişemiyorsunuz.",
+        "backToChat": "Sohbete geri dön"
+      },
       "header": {
         "members": "Üyeler",
-        "markMentionsRead": "Mark okunduğundan bahsediyor"
+        "markMentionsRead": "Mark okuduğunu belirtiyor."
       },
       "input": {
         "placeholderPrefix": "Mesaj"
@@ -140,27 +150,27 @@
       "loading": "Konuşma yükleniyor..."
     },
     "conversationList": {
-      "title": "Doğrudan Mesajlar",
-      "searchPlaceholder": "Bir konuşma bulun veya başlatın",
-      "noConversations": "Henüz konuşma yok",
-      "noConversationsDescription": "Birisiyle sohbet etmeye başlayın",
-      "noSearchResults": "Hiçbir konuşma bulunamadı",
-      "noSearchResultsDescription": "Farklı arama terimlerini deneyin",
+      "title": "Direkt Mesajlar",
+      "searchPlaceholder": "Bir konuşma bulun veya başlatın.",
+      "noConversations": "Henüz hiçbir görüşme yapılmadı.",
+      "noConversationsDescription": "Birisiyle sohbet etmeye başlayın.",
+      "noSearchResults": "Hiçbir konuşma bulunamadı.",
+      "noSearchResultsDescription": "Farklı arama terimleri deneyin.",
       "unnamedGroup": "İsimsiz Grup",
       "unknownUser": "Bilinmeyen Kullanıcı"
     },
     "messageList": {
-      "noMessagesTitle": "Henüz mesaj yok",
-      "noMessagesDescription": "Bu konuşmanızın başlangıcıdır"
+      "noMessagesTitle": "Henüz mesaj yok.",
+      "noMessagesDescription": "Bu, konuşmanızın başlangıcıdır."
     },
     "messageInput": {
       "placeholder": "Bir mesaj yazın..."
     },
     "messageEdit": {
       "placeholder": "Mesajınızı düzenleyin...",
-      "hint": "Kaydetmek için Enter'a basın • İptal etmek için Escape'e basın",
+      "hint": "Kaydetmek için Enter tuşuna basın • İptal etmek için Escape tuşuna basın",
       "save": "Kaydetmek",
-      "saving": "Kaydediliyor...",
+      "saving": "Tasarruf...",
       "cancel": "İptal etmek"
     },
     "messageActions": {
@@ -174,17 +184,17 @@
     },
     "createConversation": {
       "title": "Bir konuşma başlatın",
-      "description": "Doğrudan mesaj veya grup sohbeti oluşturun",
+      "description": "Direkt mesaj veya grup sohbeti oluşturun",
       "direct": "Doğrudan Mesaj",
       "group": "Grup Sohbeti",
-      "dmLabel": "Mesaj göndermek için kullanıcı adını girin",
+      "dmLabel": "Mesaj göndermek için kullanıcı adınızı girin.",
       "searchPlaceholder": "Kullanıcı adınızı girin...",
       "groupNameLabel": "Grup adı",
       "groupNamePlaceholder": "Grup adını girin...",
       "addMembersLabel": "Kullanıcı adına göre üye ekle",
       "addButton": "Eklemek",
-      "selectedUser": "Seçili kullanıcı:",
-      "selectedMembers": "Seçilmiş üyeler ({count})",
+      "selectedUser": "Seçilen kullanıcı:",
+      "selectedMembers": "Seçilen üyeler ({count})",
       "cancel": "İptal etmek",
       "create": "Yaratmak",
       "creating": "Oluşturuluyor..."
@@ -196,10 +206,10 @@
   "createSection": {
     "buttonLabel": "Yeni Bölüm",
     "titleCreate": "Yeni Bölüm Oluştur",
-    "titleEdit": "Bölümü Düzenle",
+    "titleEdit": "Düzenleme Bölümü",
     "name": "Bölüm Adı *",
-    "placeholder": "örneğin, Dönem 1, Ünite 2, Bölüm 5",
-    "helper": "Bölümler, ödevleri gruplara veya zaman dilimlerine göre düzenlemeye yardımcı olur.",
+    "placeholder": "Örneğin, 1. Dönem, 2. Ünite, 5. Bölüm",
+    "helper": "Bölümler, ödevleri gruplara veya zaman dilimlerine ayırmaya yardımcı olur.",
     "color": "Bölüm Rengi",
     "cancel": "İptal etmek",
     "create": "Bölüm Oluştur",
@@ -209,43 +219,43 @@
     "created": "\"{name}\" bölümü başarıyla oluşturuldu.",
     "updated": "\"{name}\" bölümü başarıyla güncellendi.",
     "errorEmpty": "Lütfen bir bölüm adı girin.",
-    "errorCreate": "Bölüm oluşturulamadı",
-    "errorUpdate": "Bölüm güncellenemedi"
+    "errorCreate": "Bölüm oluşturulamadı.",
+    "errorUpdate": "Bölüm güncellenemedi."
   },
   "universalEvent": {
     "titleCreate": "Yeni Etkinlik Oluştur",
     "titleEdit": "Etkinliği Düzenle",
     "classEvent": "Sınıf Etkinliği",
     "personalEvent": "Kişisel Etkinlik",
-    "isClassEvent": "Bu bir sınıf etkinliğidir",
+    "isClassEvent": "Bu bir sınıf etkinliğidir.",
     "selectClass": "Sınıf Seçin *",
     "chooseClass": "Bir sınıf seçin",
-    "noTeacherClasses": "Öğretmen olduğunuz bir dersiniz yok.",
+    "noTeacherClasses": "Öğretmenlik yaptığınız hiçbir dersiniz yok.",
     "eventName": "Etkinlik Adı *",
     "eventNamePlaceholder": "Etkinlik adını girin",
     "startDateTime": "Başlangıç Tarihi ve Saati *",
     "endDateTime": "Bitiş Tarihi ve Saati *",
-    "pickDate": "Tarih seç",
+    "pickDate": "Tarih seçin",
     "location": "Konum",
-    "locationPlaceholder": "Etkinlik yerini girin",
+    "locationPlaceholder": "Etkinlik konumunu girin",
     "eventColor": "Etkinlik Rengi",
-    "eventColorDescription": "Bu etkinlik için bir renk seçin",
+    "eventColorDescription": "Bu etkinlik için bir renk seçin.",
     "remarks": "Notlar",
     "remarksPlaceholder": "Etkinlikle ilgili ek notlar veya açıklamalar",
     "cancel": "İptal etmek",
-    "updateEvent": "Güncelleme Etkinliği",
+    "updateEvent": "Etkinlik Güncellemesi",
     "createEvent": "Etkinlik Oluştur",
     "createClassEvent": "Sınıf Etkinliği Oluştur",
-    "createPersonalEvent": "Kişisel Etkinlik Oluşturun",
+    "createPersonalEvent": "Kişisel Etkinlik Oluştur",
     "updating": "Güncelleniyor...",
     "creating": "Oluşturuluyor...",
     "addEvent": "Etkinlik Ekle",
     "eventCreated": "{type} başarıyla oluşturuldu",
-    "eventUpdated": "Etkinlik başarıyla güncellendi",
-    "errorRequired": "Lütfen tüm gerekli alanları doldurun",
-    "errorSelectClass": "Lütfen sınıf etkinliği için bir sınıf seçin",
-    "errorCreate": "Etkinlik oluşturulamadı",
-    "errorUpdate": "Etkinlik güncellenemedi"
+    "eventUpdated": "Etkinlik başarıyla güncellendi.",
+    "errorRequired": "Lütfen gerekli tüm alanları doldurun.",
+    "errorSelectClass": "Lütfen sınıf etkinliği için bir sınıf seçin.",
+    "errorCreate": "Etkinlik oluşturulamadı.",
+    "errorUpdate": "Etkinlik güncellenemedi."
   },
   "classEvent": {
     "titleCreate": "Yeni Sınıf Etkinliği Oluştur",
@@ -254,33 +264,33 @@
     "eventNamePlaceholder": "Etkinlik adını girin",
     "startDateTime": "Başlangıç Tarihi ve Saati *",
     "endDateTime": "Bitiş Tarihi ve Saati *",
-    "pickDate": "Tarih seç",
+    "pickDate": "Tarih seçin",
     "location": "Konum",
-    "locationPlaceholder": "Etkinlik yerini girin",
+    "locationPlaceholder": "Etkinlik konumunu girin",
     "eventColor": "Etkinlik Rengi",
-    "eventColorDescription": "Bu etkinlik için bir renk seçin",
+    "eventColorDescription": "Bu etkinlik için bir renk seçin.",
     "remarks": "Notlar",
     "remarksPlaceholder": "Etkinlikle ilgili ek notlar veya açıklamalar",
     "cancel": "İptal etmek",
-    "updateEvent": "Güncelleme Etkinliği",
+    "updateEvent": "Etkinlik Güncellemesi",
     "createEvent": "Etkinlik Oluştur",
     "updating": "Güncelleniyor...",
     "creating": "Oluşturuluyor...",
     "addClassEvent": "Sınıf Etkinliği Ekle",
-    "eventCreated": "Etkinlik başarıyla oluşturuldu",
-    "eventUpdated": "Etkinlik başarıyla güncellendi",
-    "errorRequired": "Lütfen tüm gerekli alanları doldurun",
-    "errorCreate": "Etkinlik oluşturulamadı",
-    "errorUpdate": "Etkinlik güncellenemedi"
+    "eventCreated": "Etkinlik başarıyla oluşturuldu.",
+    "eventUpdated": "Etkinlik başarıyla güncellendi.",
+    "errorRequired": "Lütfen gerekli tüm alanları doldurun.",
+    "errorCreate": "Etkinlik oluşturulamadı.",
+    "errorUpdate": "Etkinlik güncellenemedi."
   },
   "aiLab": {
-    "title": "{type} oluştur",
+    "title": "{type} Oluştur",
     "aiPowered": "Yapay Zeka Destekli",
-    "description": "Yapay zekamızın sizin için daha iyi içerik oluşturmasına yardımcı olmak için bazı temel bilgiler sağlayın.",
+    "description": "Yapay zekâmızın sizin için daha iyi içerik oluşturmasına yardımcı olmak için lütfen bazı temel bilgiler verin.",
     "titleField": "Başlık *",
     "titlePlaceholder": "{type} başlığını girin",
     "subject": "Ders *",
-    "selectSubject": "Konuyu seçin",
+    "selectSubject": "Konu seçin",
     "subjects": {
       "mathematics": "Matematik",
       "science": "Bilim",
@@ -293,17 +303,17 @@
       "computerScience": "Bilgisayar Bilimi",
       "other": "Diğer"
     },
-    "gradeLevel": "Sınıf Düzeyi *",
+    "gradeLevel": "Sınıf Seviyesi *",
     "selectGrade": "Sınıf seviyesini seçin",
     "grades": {
       "35": "3-5",
       "68": "6-8",
       "912": "9-12",
       "k2": "K-2",
-      "college": "Kolej"
+      "college": "Üniversite"
     },
     "duration": "Süre",
-    "selectDuration": "Süreyi seçin",
+    "selectDuration": "Süre seçin",
     "durations": {
       "15min": "15 dakika",
       "30min": "30 dakika",
@@ -313,11 +323,11 @@
       "2hours": "2 saat"
     },
     "descriptionField": "Tanım",
-    "descriptionPlaceholder": "Bu {type}'ın neyi kapsaması gerektiğini açıklayın...",
+    "descriptionPlaceholder": "Bu {type}'ın neleri kapsaması gerektiğini açıklayın...",
     "requirements": "Özel Gereksinimler",
     "requirementsPlaceholder": "Herhangi bir özel gereksinim, öğrenme hedefi veya kısıtlama...",
     "cancel": "İptal etmek",
     "createLab": "Yapay Zeka Laboratuvarı Oluşturun",
-    "creatingLab": "Laboratuvar Oluşturuluyor..."
+    "creatingLab": "Laboratuvar Oluşturma..."
   }
 }

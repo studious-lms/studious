@@ -5,8 +5,15 @@
     "attendance": "Katılım",
     "attachFile": "Dosya ekle",
     "post": "Postalamak",
-    "posting": "Gönderiliyor...",
-    "noPosts": "Henüz gönderi yok",
-    "createFirstPost": "İlk gönderiyi oluştur"
+    "posting": "Yayınlanıyor...",
+    "noPosts": "Henüz hiçbir gönderi yok.",
+    "noPostsDescription": "Duyuruları, ödevleri ve güncellemeleri sınıfınızla paylaşın.",
+    "createFirstPost": "İlk gönderiyi oluştur",
+    "messages": {
+      "uploadFailed": "Duyuru oluşturulamadı, dosya yükleme başarısız oldu.",
+      "createFailed": "Duyuru oluşturulamadı.",
+      "createSuccess": "Duyuru başarıyla oluşturuldu.",
+      "creating": "Duyuru oluşturuluyor..."
+    }
   }
 }

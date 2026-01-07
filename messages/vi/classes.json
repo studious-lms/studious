@@ -1,23 +1,23 @@
 {
   "classes": {
     "title": "Các lớp học",
-    "description": "Quản lý việc giảng dạy và các lớp học đã đăng ký của bạn",
+    "description": "Quản lý việc giảng dạy và các lớp học đã đăng ký.",
     "joinClass": "Tham gia lớp học",
     "createClass": "Tạo lớp",
-    "searchPlaceholder": "Tìm kiếm lớp học...",
-    "teaching": "Giảng dạy",
+    "searchPlaceholder": "Tìm kiếm các lớp học...",
+    "teaching": "Dạy học",
     "enrolled": "Đã đăng ký",
-    "noClassesFound": "Không tìm thấy lớp học nào",
-    "noTeachingClassesFound": "Không tìm thấy lớp học nào khớp với \"{query}\"",
-    "noEnrolledClassesFound": "Không tìm thấy lớp học nào được ghi danh khớp với \"{query}\"",
+    "noClassesFound": "Không tìm thấy lớp nào",
+    "noTeachingClassesFound": "Không tìm thấy lớp học nào phù hợp với \"{query}\"",
+    "noEnrolledClassesFound": "Không tìm thấy lớp học nào đã đăng ký phù hợp với \"{query}\"",
     "noClassesYet": "Chưa có lớp học nào",
-    "noClassesYetDesc": "Tạo lớp học đầu tiên của bạn để bắt đầu quản lý bài tập, điểm số và tương tác với học sinh.",
-    "noEnrolledClasses": "Không có lớp học nào được ghi danh",
+    "noClassesYetDesc": "Hãy tạo lớp học đầu tiên để bắt đầu quản lý bài tập, điểm số và tương tác với học sinh.",
+    "noEnrolledClasses": "Không có lớp học nào được đăng ký.",
     "noEnrolledClassesDesc": "Tham gia lớp học bằng mã mời hoặc liên kết do giáo viên cung cấp.",
-    "classDeleted": "Lớp đã xóa thành công",
-    "classDeleteFailed": "Không xóa được lớp",
-    "failedToLoad": "Không tải được lớp học",
-    "classLeft": "Đã rời khỏi lớp thành công",
-    "classLeaveFailed": "Rời khỏi lớp thất bại"
+    "classDeleted": "Lớp đã được xóa thành công",
+    "classDeleteFailed": "Không thể xóa lớp",
+    "failedToLoad": "Không thể tải các lớp",
+    "classLeft": "Đã rời lớp thành công",
+    "classLeaveFailed": "Không rời khỏi lớp học"
   }
 }

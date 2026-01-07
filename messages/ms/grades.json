@@ -5,9 +5,9 @@
     "columns": {
       "assignment": "Tugasan",
       "maxPoints": "Mata Maks",
-      "weight": "Berat badan",
+      "weight": "Berat",
       "graded": "Digredkan",
-      "dueDate": "Dua Kurma",
+      "dueDate": "Dua Tarikh",
       "actions": "Tindakan",
       "student": "Pelajar",
       "overallGrade": "Gred Keseluruhan",
@@ -25,7 +25,7 @@
       "preview": "Pratonton",
       "edit": "Sunting",
       "delete": "Padam",
-      "createNew": "Buat Baharu"
+      "createNew": "Cipta Baharu"
     },
     "overview": {
       "title": "Gambaran Keseluruhan Kelas",
@@ -38,12 +38,12 @@
       "title": "Pengurusan Tugasan",
       "empty": {
         "title": "Tiada tugasan ditemui",
-        "description": "Buat tugasan untuk mengurus gred dan tetapan"
+        "description": "Cipta tugasan untuk mengurus gred dan tetapan"
       },
-      "searchPlaceholder": "Cari tugasan..."
+      "searchPlaceholder": "Tugasan carian..."
     },
     "students": {
-      "title": "pelajar",
+      "title": "Pelajar",
       "viewAll": "Lihat Semua Pelajar",
       "empty": {
         "title": "Tiada pelajar yang mendaftar",
@@ -55,45 +55,45 @@
       "title": "Sempadan Gred",
       "untitled": "Sempadan Penggredan Tanpa Tajuk",
       "empty": {
-        "title": "Tiada sempadan gred dibuat",
-        "description": "Buat sempadan penggredan untuk menentukan julat gred"
+        "title": "Tiada sempadan gred yang dicipta",
+        "description": "Cipta sempadan penggredan untuk menentukan julat gred"
       },
       "previewTitle": "Pratonton Sempadan Penggredan",
       "details": {
         "title": "Butiran Sempadan Penggredan",
         "name": "Nama",
-        "noneDefined": "Tiada sempadan penggredan ditentukan"
+        "noneDefined": "Tiada sempadan penggredan yang ditakrifkan"
       }
     },
     "rubrics": {
       "title": "Rubrik",
       "untitled": "Rubrik Tanpa Tajuk",
       "empty": {
-        "title": "Tiada rubrik dibuat",
-        "description": "Buat rubrik untuk menentukan kriteria penilaian"
+        "title": "Tiada rubrik dicipta",
+        "description": "Cipta rubrik untuk menentukan kriteria penilaian"
       },
       "previewTitle": "Pratonton Rubrik",
       "details": {
         "title": "Butiran Rubrik",
         "name": "Nama",
-        "category": "kategori",
+        "category": "Kategori",
         "description": "Penerangan",
-        "custom": "Adat",
+        "custom": "Tersuai",
         "noDescription": "Tiada penerangan diberikan",
         "noCriteria": "Tiada kriteria ditemui dalam rubrik ini"
       }
     },
     "confirm": {
-      "deleteRubric": "Adakah anda pasti mahu memadamkan skema tanda ini?",
+      "deleteRubric": "Adakah anda pasti mahu memadamkan skema pemarkahan ini?",
       "deleteGradingBoundary": "Adakah anda pasti mahu memadamkan sempadan penggredan ini?"
     }
   },
   "studentGrades": {
     "title": "Semua Gred Pelajar",
     "allStudents": "Lihat dan urus gred untuk semua pelajar dalam kelas ini",
-    "students": "pelajar",
+    "students": "Pelajar",
     "noGrades": "Tiada pelajar ditemui",
-    "noGradesDescription": "Belum ada pelajar yang mendaftar dalam kelas ini. Pelajar akan muncul di sini sebaik sahaja mereka menyertai.",
+    "noGradesDescription": "Tiada pelajar yang mendaftar dalam kelas ini lagi. Pelajar akan muncul di sini sebaik sahaja mereka menyertai.",
     "table": {
       "student": "Pelajar",
       "actions": "Tindakan"
@@ -103,12 +103,12 @@
     }
   },
   "individualGrades": {
-    "myGrades": "Gred saya",
+    "myGrades": "Gred Saya",
     "studentGrades": "Gred",
     "viewYourGrades": "Lihat gred dan kemajuan anda",
     "individualManagement": "Pengurusan gred pelajar individu",
     "export": "Eksport",
-    "back": "belakang",
+    "back": "Kembali",
     "yourPerformance": "Prestasi Anda",
     "trackProgress": "Jejaki kemajuan akademik anda",
     "overallGrade": "Gred Keseluruhan",
@@ -117,7 +117,7 @@
     "yourGrades": "Gred Anda",
     "assignments": "Tugasan",
     "studentNotFound": "Pelajar tidak ditemui",
-    "goBack": "Pergi Balik",
+    "goBack": "Kembali",
     "grade": "Gred",
     "table": {
       "assignment": "Tugasan",
@@ -125,7 +125,7 @@
       "total": "Jumlah",
       "percentage": "%",
       "status": "Status",
-      "submitted": "diserahkan"
+      "submitted": "Dihantar"
     },
     "status": {
       "graded": "Digredkan",
@@ -135,6 +135,6 @@
       "title": "Tiada tugasan ditemui",
       "description": "Pelajar ini tiada tugasan untuk dipaparkan"
     },
-    "searchPlaceholder": "Cari tugasan..."
+    "searchPlaceholder": "Tugasan carian..."
   }
 }

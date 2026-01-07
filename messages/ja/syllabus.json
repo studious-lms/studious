@@ -13,9 +13,13 @@
     },
     "stats": {
       "totalAssignments": "合計割り当て数",
+      "totalAssignmentsDesc": "すべてのコースワーク",
       "completionRate": "完了率",
+      "completionRateDesc": "採点 vs 合計",
       "totalPoints": "合計ポイント",
-      "upcoming": "今後の予定"
+      "totalPointsDesc": "達成可能な最大値",
+      "upcoming": "今後の予定",
+      "upcomingDesc": "期限が迫っている課題"
     },
     "overview": {
       "title": "コースの概要",
@@ -40,12 +44,12 @@
       "dueDate": "2つのデート",
       "points": "ポイント",
       "weight": "重さ",
-      "status": "状態",
-      "pts": "ポイント"
+      "pts": "ポイント",
+      "type": "タイプ"
     },
     "status": {
       "graded": "段階的",
-      "pending": "保留中"
+      "ungraded": "未評価"
     },
     "courseInfo": {
       "title": "コース情報",

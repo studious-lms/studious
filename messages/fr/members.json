@@ -4,6 +4,11 @@
     "counts": {
       "totalMembers": "{count} membres"
     },
+    "stats": {
+      "totalMembers": "Nombre total de membres",
+      "teachers": "Enseignants",
+      "students": "Étudiants"
+    },
     "actions": {
       "inviteMember": "Inviter un membre",
       "copy": "Copie",
@@ -60,11 +65,11 @@
       "failedToLoad": "Échec du chargement des membres"
     },
     "profile": {
-      "title": "Profil Utilisateur",
-      "description": "Voir les informations du profil du membre",
-      "information": "Informations du Profil",
-      "location": "Localisation",
-      "website": "Site Web"
+      "title": "Profil utilisateur",
+      "description": "Consulter les informations du profil du membre",
+      "information": "Informations de profil",
+      "location": "Emplacement",
+      "website": "Site web"
     }
   }
 }

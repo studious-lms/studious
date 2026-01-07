@@ -1,32 +1,32 @@
 {
   "home": {
     "welcomeBack": "ยินดีต้อนรับกลับมา {name}!",
-    "subtitle": "นี่คือสิ่งที่เกิดขึ้นกับชั้นเรียนของคุณวันนี้",
+    "subtitle": "นี่คือสิ่งที่เกิดขึ้นกับชั้นเรียนของคุณในวันนี้",
     "stats": {
       "totalClasses": "จำนวนชั้นเรียนทั้งหมด",
-      "teachingEnrolled": "{teaching} สอน, {enrolled} ลงทะเบียน",
+      "teachingEnrolled": "{teaching} การสอน, {enrolled} ลงทะเบียน",
       "dueToday": "ครบกำหนดวันนี้",
       "dueTodayDesc": "งานที่ต้องส่งวันนี้",
-      "upcoming": "กำลังจะมีขึ้น",
-      "upcomingDesc": "งานที่กำลังจะมาถึง",
+      "upcoming": "เร็วๆ นี้",
+      "upcomingDesc": "งานที่ได้รับมอบหมายกำลังจะมาถึง",
       "thisWeek": "สัปดาห์นี้",
       "totalAssignments": "งานทั้งหมด"
     },
     "upcomingAssignments": {
-      "title": "งานที่กำลังจะมาถึง",
-      "subtitle": "กำหนดส่งครั้งต่อไปของคุณ",
+      "title": "ภารกิจที่กำลังจะมาถึง",
+      "subtitle": "กำหนดส่งงานครั้งต่อไปของคุณ",
       "allCaughtUp": "ตามทันหมดแล้ว!",
-      "noUpcoming": "ไม่มีงานที่จะเกิดขึ้นในขณะนี้",
+      "noUpcoming": "ขณะนี้ยังไม่มีงานที่ได้รับมอบหมายในอนาคต",
       "viewAgenda": "ดูวาระการประชุม",
       "dueToday": "ครบกำหนดวันนี้",
       "dueTomorrow": "กำหนดส่งพรุ่งนี้",
       "due": "สอง {dates}",
       "teaching": "การสอน",
-      "viewAllAssignments": "ดูงานมอบหมายทั้งหมด"
+      "viewAllAssignments": "ดูงานที่ได้รับมอบหมายทั้งหมด"
     },
     "notifications": {
       "title": "การแจ้งเตือนล่าสุด",
-      "subtitle": "อัพเดทล่าสุด",
+      "subtitle": "อัปเดตล่าสุด",
       "noNew": "ไม่มีการแจ้งเตือนใหม่",
       "viewAll": "ดูการแจ้งเตือนทั้งหมด"
     },
@@ -36,9 +36,9 @@
       "teaching": "การสอน",
       "enrolled": "ลงทะเบียนแล้ว",
       "due": "เนื่องจาก",
-      "noClasses": "ยังไม่มีชั้นเรียน",
-      "browseClasses": "เรียกดูชั้นเรียน",
-      "viewAllClasses": "ดูชั้นเรียนทั้งหมด"
+      "noClasses": "ยังไม่มีการเรียนการสอน",
+      "browseClasses": "เรียกดูคลาสเรียน",
+      "viewAllClasses": "ดูคลาสเรียนทั้งหมด"
     }
   }
 }

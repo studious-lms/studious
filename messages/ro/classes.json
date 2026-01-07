@@ -17,7 +17,7 @@
     "classDeleted": "Cursul a fost șters cu succes",
     "classDeleteFailed": "Nu s-a putut șterge clasa",
     "failedToLoad": "Nu s-au putut încărca clasele",
-    "classLeft": "Ați părăsit clasa cu succes",
-    "classLeaveFailed": "Nu s-a putut părăsi clasa"
+    "classLeft": "A părăsit cu succes clasa",
+    "classLeaveFailed": "Nu am reușit să părăsesc clasa"
   }
 }

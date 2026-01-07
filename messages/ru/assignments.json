@@ -1,42 +1,43 @@
 {
   "assignmentDetail": {
-    "title": "Подробности задания",
+    "title": "Детали задания",
     "description": "Описание",
     "instructions": "Инструкции",
-    "dueDate": "Две даты",
-    "maxPoints": "Макс. баллы",
-    "submissions": "Подачи",
+    "dueDate": "Два свидания",
+    "maxPoints": "Максимальное количество баллов",
+    "submissions": "Заявки",
     "submitted": "Поданный",
     "notSubmitted": "Не отправлено",
-    "graded": "Оцененный",
+    "graded": "Оценочный",
     "pending": "В ожидании",
     "late": "Поздно",
     "onTime": "Вовремя",
     "attachments": "Вложения",
     "rubric": "Рубрика",
-    "gradingBoundary": "Граница градуировки",
-    "submissionDetails": "Подробности отправки",
-    "submittedBy": "Представлено",
-    "submittedAt": "Отправлено в",
+    "gradingBoundary": "Граница отметки",
+    "submissionDetails": "Информация о подаче заявки",
+    "submittedBy": "Прислано",
+    "submittedAt": "Представлено в",
     "grade": "Оценка",
     "feedback": "Обратная связь",
     "files": "Файлы",
-    "noFiles": "Файлы не прикреплены.",
-    "noSubmissions": "Пока нет заявок",
-    "noSubmissionsDescription": "Материалы будут появляться здесь после того, как студенты отправят свои работы.",
+    "noFiles": "Файлы не прикреплены",
+    "noSubmissions": "Пока нет заявок.",
+    "noSubmissionsDescription": "Работы студентов появятся здесь после того, как они их отправят.",
     "actions": {
       "edit": "Редактировать задание",
       "delete": "Удалить задание",
-      "viewSubmission": "Просмотреть подачу",
+      "viewSubmission": "Просмотреть отправленную заявку",
       "gradeSubmission": "Оценка",
+      "back": "Назад",
       "downloadAll": "Скачать все",
       "exportGrades": "Экспортные сорта"
     },
     "stats": {
-      "totalSubmissions": "Всего подано",
-      "averageGrade": "Средняя оценка",
-      "submissionRate": "Скорость отправки",
-      "gradedCount": "Оцененный"
+      "totalSubmissions": "Общее количество отправленных заявок",
+      "averageGrade": "Средний балл",
+      "submissionRate": "Показатель подачи заявок",
+      "gradedCount": "Оценочный"
     },
     "table": {
       "student": "Студент",
@@ -46,9 +47,9 @@
       "actions": "Действия"
     },
     "toasts": {
-      "gradeUpdated": "Оценка успешно обновлена",
+      "gradeUpdated": "Оценка успешно обновлена.",
       "deleted": "Задание удалено",
-      "error": "Произошла ошибка"
+      "error": "Произошла ошибка."
     }
   }
 }

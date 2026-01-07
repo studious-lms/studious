@@ -2,14 +2,24 @@
   "aiLabs": {
     "title": "Makmal AI",
     "subtitle": "Cipta kandungan pendidikan dengan bantuan AI",
-    "aiPowered": "Dikuasakan AI",
+    "aiPowered": "Dikuasakan oleh AI",
     "createNew": "Cipta Kandungan Baharu",
-    "aiGenerated": "AI Dijana",
-    "deleteConfirm": "Adakah anda pasti mahu memadamkan AI Lab ini? Tindakan ini tidak boleh dibuat asal.",
+    "aiGenerated": "AI Dihasilkan",
+    "deleteConfirm": "Adakah anda pasti mahu memadamkan Makmal AI ini? Tindakan ini tidak boleh dibuat asal.",
+    "stats": {
+      "drafts": "Draf",
+      "draftsDesc": "Kandungan sedang dijalankan",
+      "chats": "Kucing AI",
+      "chatsDesc": "Perbualan aktif",
+      "messages": "Mesej",
+      "messagesDesc": "Interaksi AI keseluruhan",
+      "generated": "Dihasilkan",
+      "generatedDesc": "Jumlah kandungan yang dicipta"
+    },
     "widgets": {
       "assignment": {
         "title": "Tugasan",
-        "description": "Buat tugasan interaktif dengan bantuan AI"
+        "description": "Cipta tugasan interaktif dengan bantuan AI"
       },
       "quiz": {
         "title": "Kuiz",
@@ -17,15 +27,15 @@
       },
       "worksheet": {
         "title": "Lembaran kerja",
-        "description": "Bina lembaran kerja latihan dan latihan"
+        "description": "Bina lembaran kerja dan latihan"
       },
       "lessonPlan": {
-        "title": "Rancangan Pengajaran",
-        "description": "Reka rancangan pengajaran yang komprehensif"
+        "title": "Rancangan Pelajaran",
+        "description": "Reka bentuk rancangan pengajaran yang komprehensif"
       },
       "rubric": {
         "title": "Rubrik",
-        "description": "Buat rubrik penggredan terperinci"
+        "description": "Cipta rubrik penggredan terperinci"
       }
     },
     "tabs": {
@@ -35,7 +45,7 @@
     "drafts": {
       "title": "Makmal Draf ({count})",
       "empty": {
-        "title": "Belum ada draf makmal",
+        "title": "Tiada draf makmal lagi",
         "description": "Cipta kandungan pendidikan janaan AI pertama anda menggunakan widget di atas."
       }
     },
@@ -46,27 +56,27 @@
       "createdBy": "Dicipta oleh {name}",
       "empty": {
         "title": "Tiada Makmal AI lagi",
-        "description": "Cipta Makmal AI pertama anda untuk mula bekerjasama dengan AI mengenai kandungan pendidikan."
+        "description": "Cipta Makmal AI pertama anda untuk mula bekerjasama dengan AI dalam kandungan pendidikan."
       }
     },
     "toast": {
-      "labCreated": "AI Lab berjaya dibuat!",
-      "labCreateFailed": "Gagal membuat AI Lab: ",
-      "labDeleted": "AI Lab berjaya dipadamkan!",
-      "labDeleteFailed": "Gagal memadamkan AI Lab: "
+      "labCreated": "Makmal AI berjaya dicipta!",
+      "labCreateFailed": "Gagal mencipta Makmal AI:",
+      "labDeleted": "Makmal AI berjaya dipadamkan!",
+      "labDeleteFailed": "Gagal memadam Makmal AI:"
     }
   },
   "aiLabChat": {
     "backButton": "Kembali ke Makmal AI",
     "loading": "Memuatkan...",
-    "aiThinking": "AI Berfikir...",
+    "aiThinking": "Pemikiran AI...",
     "getAIHelp": "Dapatkan Bantuan AI",
     "notFound": {
       "title": "Sembang Makmal Tidak Ditemui",
       "description": "Makmal AI ini mungkin telah dipadamkan atau anda tidak mempunyai akses kepadanya."
     },
     "toast": {
-      "messageFailed": "Gagal menghantar mesej: "
+      "messageFailed": "Gagal menghantar mesej:"
     }
   }
 }

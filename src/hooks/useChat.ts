@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { trpc } from '@/lib/trpc';
 import {
   subscribeToConversation,
@@ -136,6 +136,38 @@ export function useChat(currentUserId: string) {
       setSelectedConversationId(newConversation.id);
     },
   });
+
+  // These mutations may not exist yet in the backend - they're optional features
+  // Fallback implementations for when the API endpoints don't exist
+  const fallbackMutation = useMemo(() => ({
+    mutateAsync: async () => { throw new Error('Feature not yet implemented'); },
+    isPending: false,
+  }), []);
+
+  const addMemberMutationResult = trpc.conversation.addMember?.useMutation?.({
+    onSuccess: () => {
+      selectedConversationQuery.refetch();
+      conversationsQuery.refetch();
+    },
+  });
+  const addMemberMutation = addMemberMutationResult ?? fallbackMutation;
+
+  const removeMemberMutationResult = trpc.conversation.removeMember?.useMutation?.({
+    onSuccess: () => {
+      selectedConversationQuery.refetch();
+      conversationsQuery.refetch();
+    },
+  });
+  const removeMemberMutation = removeMemberMutationResult ?? fallbackMutation;
+
+  // @ts-expect-error - API endpoint may not exist yet
+  const hideConversationMutationResult = trpc.conversation.hide?.useMutation?.({
+    onSuccess: () => {
+      conversationsQuery.refetch();
+      setSelectedConversationId(null);
+    },
+  });
+  const hideConversationMutation = hideConversationMutationResult ?? fallbackMutation;
 
   // Helper to map real-time message data to our message format
   const mapToMessage = useCallback((data: NewMessageEvent): MessageListOutput['messages'][number] => ({
@@ -397,6 +429,29 @@ export function useChat(currentUserId: string) {
     });
   }, [deleteMessageMutation]);
 
+  const addMember = useCallback(async (username: string) => {
+    if (!selectedConversationId) return;
+    return await addMemberMutation.mutateAsync({
+      conversationId: selectedConversationId,
+      memberUsername: username,
+    });
+  }, [selectedConversationId, addMemberMutation]);
+
+  const removeMember = useCallback(async (userId: string) => {
+    if (!selectedConversationId) return;
+    return await removeMemberMutation.mutateAsync({
+      conversationId: selectedConversationId,
+      memberId: userId,
+    });
+  }, [selectedConversationId, removeMemberMutation]);
+
+  const hideConversation = useCallback(async () => {
+    if (!selectedConversationId) return;
+    return await hideConversationMutation.mutateAsync({
+      conversationId: selectedConversationId,
+    });
+  }, [selectedConversationId, hideConversationMutation]);
+
   return {
     // Data - filter out lab chat conversations (exclude conversations with labChatId)
     conversations: (conversationsQuery.data || []).filter(conversation => 
@@ -414,6 +469,9 @@ export function useChat(currentUserId: string) {
     isUpdatingMessage: updateMessageMutation.isPending,
     isDeletingMessage: deleteMessageMutation.isPending,
     isCreatingConversation: createConversationMutation.isPending,
+    isAddingMember: addMemberMutation.isPending,
+    isRemovingMember: removeMemberMutation.isPending,
+    isHidingConversation: hideConversationMutation.isPending,
 
     // Pagination
     hasMoreMessages: !!messagesData.nextCursor,
@@ -426,6 +484,9 @@ export function useChat(currentUserId: string) {
     selectConversation,
     createConversation,
     markMentionsAsRead,
+    addMember,
+    removeMember,
+    hideConversation,
 
     // Utilities
     refetchConversations: conversationsQuery.refetch,

@@ -4,6 +4,11 @@
     "counts": {
       "totalMembers": "{count} সদস্য"
     },
+    "stats": {
+      "totalMembers": "মোট সদস্য",
+      "teachers": "শিক্ষক",
+      "students": "ছাত্রছাত্রীরা"
+    },
     "actions": {
       "inviteMember": "সদস্যকে আমন্ত্রণ জানান",
       "copy": "কপি",
@@ -60,10 +65,10 @@
       "failedToLoad": "সদস্যদের লোড করা যায়নি"
     },
     "profile": {
-      "title": "ব্যবহারকারী প্রোফাইল",
+      "title": "ব্যবহারকারীর প্রোফাইল",
       "description": "সদস্য প্রোফাইল তথ্য দেখুন",
       "information": "প্রোফাইল তথ্য",
-      "location": "অবস্থান",
+      "location": "স্থান",
       "website": "ওয়েবসাইট"
     }
   }

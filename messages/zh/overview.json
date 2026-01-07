@@ -7,6 +7,13 @@
     "post": "邮政",
     "posting": "发布中……",
     "noPosts": "暂无帖子",
-    "createFirstPost": "创建第一篇帖子"
+    "noPostsDescription": "与班级分享通知、作业和最新信息。",
+    "createFirstPost": "创建第一篇帖子",
+    "messages": {
+      "uploadFailed": "创建公告失败，文件上传失败",
+      "createFailed": "创建公告失败",
+      "createSuccess": "公告创建成功",
+      "creating": "正在创建公告……"
+    }
   }
 }

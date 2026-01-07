@@ -1,7 +1,7 @@
 {
   "classFiles": {
     "title": "Dosyalar",
-    "subtitle": "Sınıf dosyalarını ve kaynaklarını yönetin",
+    "subtitle": "Sınıf dosyalarını ve kaynaklarını yönetin.",
     "actions": {
       "newFolder": "Yeni Klasör",
       "upload": "Yüklemek",
@@ -10,19 +10,19 @@
       "download": "İndirmek",
       "share": "Paylaşmak",
       "delete": "Silmek",
-      "filter": "Filtre",
+      "filter": "Filtrele",
       "sort": "Düzenlemek"
     },
     "toasts": {
-      "folderCreated": "Klasör başarıyla oluşturuldu",
-      "folderDeleted": "Klasör başarıyla silindi",
-      "folderRenamed": "Klasör başarıyla yeniden adlandırıldı",
-      "folderMoved": "Klasör başarıyla taşındı",
-      "filesUploaded": "Dosyalar başarıyla yüklendi",
-      "fileDeleted": "Dosya başarıyla silindi",
-      "fileRenamed": "Dosya başarıyla yeniden adlandırıldı",
-      "fileMoved": "Dosya başarıyla taşındı",
-      "downloadStarted": "İndirme başladı",
+      "folderCreated": "Klasör başarıyla oluşturuldu.",
+      "folderDeleted": "Klasör başarıyla silindi.",
+      "folderRenamed": "Klasörün yeniden adlandırılması başarıyla tamamlandı.",
+      "folderMoved": "Klasör başarıyla taşındı.",
+      "filesUploaded": "Dosyalar başarıyla yüklendi.",
+      "fileDeleted": "Dosya başarıyla silindi.",
+      "fileRenamed": "Dosya yeniden adlandırma işlemi başarıyla tamamlandı.",
+      "fileMoved": "Dosya başarıyla taşındı.",
+      "downloadStarted": "İndirme işlemi başladı",
       "shareCopied": "Paylaşım bağlantısı kopyalandı"
     },
     "errors": {
@@ -35,31 +35,31 @@
       "classFiles": "Sınıf Dosyaları"
     },
     "search": {
-      "placeholder": "Dosyalarda ara"
+      "placeholder": "Dosyalarda arama"
     },
     "selected": "{count} seçildi",
     "filters": {
       "fileType": "Dosya Türü",
       "documents": "Belgeler",
-      "images": "Görüntüler",
+      "images": "Görseller",
       "videos": "Videolar",
       "presentations": "Sunumlar"
     },
     "sort": {
       "name": "İsim",
-      "lastModified": "Son değiştirilme tarihi",
+      "lastModified": "Son güncelleme",
       "fileSize": "Dosya boyutu"
     },
     "table": {
       "name": "İsim",
       "owner": "Mal sahibi",
-      "lastModified": "Son değiştirilme tarihi",
+      "lastModified": "Son güncelleme",
       "fileSize": "Dosya boyutu"
     },
     "empty": {
-      "title": "Bu klasör boş",
-      "description": "Sınıf materyallerinizi düzenlemeye başlamak için dosyaları yükleyin veya klasörler oluşturun.",
-      "searchTitle": "Hiçbir dosya bulunamadı",
+      "title": "Bu klasör boş.",
+      "description": "Ders materyallerinizi düzenlemeye başlamak için dosyaları yükleyin veya klasörler oluşturun.",
+      "searchTitle": "Dosya bulunamadı.",
       "searchDescription": "\"{query}\" ile eşleşen dosya bulunamadı. Farklı bir arama terimi deneyin."
     }
   },
@@ -67,8 +67,8 @@
     "subtitle": "Klasör içeriği",
     "notFound": {
       "title": "Klasör Bulunamadı",
-      "description": "İstenilen klasör bulunamadı.",
-      "backButton": "Dosyalara Geri Dön"
+      "description": "İstenen klasör bulunamadı.",
+      "backButton": "Dosyalara geri dön"
     },
     "error": {
       "loadFailed": "Klasör içeriği yüklenemedi. Lütfen daha sonra tekrar deneyin."
@@ -81,30 +81,30 @@
       "selected": "{count} seçildi"
     },
     "filters": {
-      "label": "Filtre",
+      "label": "Filtrele",
       "fileType": "Dosya Türü",
       "documents": "Belgeler",
-      "images": "Görüntüler",
+      "images": "Görseller",
       "videos": "Videolar",
       "presentations": "Sunumlar"
     },
     "sort": {
       "label": "Düzenlemek",
       "name": "İsim",
-      "lastModified": "Son değiştirilme tarihi",
+      "lastModified": "Son güncelleme",
       "fileSize": "Dosya boyutu"
     },
     "table": {
       "name": "İsim",
       "owner": "Mal sahibi",
-      "lastModified": "Son değiştirilme tarihi",
+      "lastModified": "Son güncelleme",
       "fileSize": "Dosya boyutu"
     },
     "empty": {
-      "noFilesFound": "Hiçbir dosya bulunamadı",
+      "noFilesFound": "Dosya bulunamadı.",
       "noFilesFoundDescription": "\"{query}\" ile eşleşen dosya bulunamadı. Farklı bir arama terimi deneyin.",
-      "folderEmpty": "Bu klasör boş",
-      "folderEmptyDescription": "Dosyaları yükleyin veya materyallerinizi düzenlemek için klasörler oluşturun."
+      "folderEmpty": "Bu klasör boş.",
+      "folderEmptyDescription": "Dosyalarınızı yükleyin veya malzemelerinizi düzenlemek için klasörler oluşturun."
     },
     "actions": {
       "newFolder": "Yeni Klasör",
@@ -112,15 +112,15 @@
       "createFolder": "Klasör Oluştur"
     },
     "toast": {
-      "folderCreated": "Klasör başarıyla oluşturuldu",
-      "folderDeleted": "Klasör başarıyla silindi",
-      "folderRenamed": "Klasör başarıyla yeniden adlandırıldı",
-      "folderMoved": "Klasör başarıyla taşındı",
-      "filesUploaded": "Dosyalar başarıyla yüklendi",
-      "fileDeleted": "Dosya başarıyla silindi",
-      "fileRenamed": "Dosya başarıyla yeniden adlandırıldı",
-      "fileMoved": "Dosya başarıyla taşındı",
-      "downloadStarted": "İndirme başladı",
+      "folderCreated": "Klasör başarıyla oluşturuldu.",
+      "folderDeleted": "Klasör başarıyla silindi.",
+      "folderRenamed": "Klasörün yeniden adlandırılması başarıyla tamamlandı.",
+      "folderMoved": "Klasör başarıyla taşındı.",
+      "filesUploaded": "Dosyalar başarıyla yüklendi.",
+      "fileDeleted": "Dosya başarıyla silindi.",
+      "fileRenamed": "Dosya yeniden adlandırma işlemi başarıyla tamamlandı.",
+      "fileMoved": "Dosya başarıyla taşındı.",
+      "downloadStarted": "İndirme işlemi başladı",
       "downloadFailed": "İndirme başarısız oldu",
       "shareLinkCopied": "Paylaşım bağlantısı kopyalandı",
       "shareFailed": "Paylaşım başarısız oldu",

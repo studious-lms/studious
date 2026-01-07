@@ -11,6 +11,11 @@
     "rename": "Rinominare"
   },
   "uploadFiles": {
+    "progress": {
+      "uploadingFiles": "Caricamento dei file in corso...",
+      "uploadingFile": "Caricamento {name}...",
+      "completed": "Completato"
+    },
     "title": "Carica file",
     "noFilesSelected": "Nessun file selezionato",
     "classIdMissing": "ID classe mancante",
@@ -130,6 +135,11 @@
       "description": "Seleziona una conversazione dalla barra laterale per iniziare a chattare."
     },
     "page": {
+      "notFound": {
+        "title": "Conversazione non trovata",
+        "description": "Questa conversazione non esiste o non hai accesso ad essa.",
+        "backToChat": "Torna alla chat"
+      },
       "header": {
         "members": "Membri",
         "markMentionsRead": "Mark menziona letto"

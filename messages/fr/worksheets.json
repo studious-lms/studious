@@ -31,7 +31,9 @@
       "detach": "Détails"
     },
     "search": {
-      "placeholder": "Rechercher des feuilles de travail..."
+      "placeholder": "Rechercher des feuilles de travail...",
+      "noResults": "Aucune feuille de travail trouvée",
+      "noResultsDesc": "Essayez un autre terme de recherche ou effacez votre recherche."
     },
     "empty": {
       "title": "Aucune feuille de travail trouvée",

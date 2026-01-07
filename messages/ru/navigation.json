@@ -13,7 +13,10 @@
     "schoolProgram": "Школьная программа",
     "about": "О",
     "press": "Нажимать",
-    "signIn": "Войти"
+    "signIn": "Войти",
+    "lightMode": "Светлый режим",
+    "darkMode": "Темный режим",
+    "languageSelector": "Выбор языка"
   },
   "classSidebar": {
     "overview": "Обзор",
@@ -22,23 +25,23 @@
     "files": "Файлы",
     "attendance": "Посещаемость",
     "aiLabs": "Лаборатории искусственного интеллекта",
-    "members": "Участники",
+    "members": "Члены",
     "syllabus": "Учебный план",
     "settings": "Настройки",
     "worksheets": "Рабочие листы",
     "classNavigation": "Навигация по классам",
-    "switchClass": "Класс переключателя",
-    "classInviteCode": "Код приглашения класса",
+    "switchClass": "Переключить класс",
+    "classInviteCode": "Код приглашения на занятие",
     "copyCode": "Скопировать код",
-    "regenerateCode": "Регенерировать код",
+    "regenerateCode": "Сгенерировать код",
     "toast": {
-      "inviteCodeRegenerated": "Код приглашения успешно регенерирован",
-      "inviteCodeRegenerateFailed": "Не удалось повторно сгенерировать код приглашения",
-      "inviteCodeCopied": "Код приглашения скопирован в буфер обмена"
+      "inviteCodeRegenerated": "Код приглашения успешно сгенерирован заново.",
+      "inviteCodeRegenerateFailed": "Не удалось сгенерировать код приглашения заново.",
+      "inviteCodeCopied": "Код приглашения скопирован в буфер обмена."
     }
   },
   "footer": {
-    "productDescription": "Современное управление обучением для образования следующего поколения.",
+    "productDescription": "Современное управление обучением для образования нового поколения.",
     "product": "Продукт",
     "features": "Функции",
     "pricing": "Цены",
@@ -49,7 +52,7 @@
     "press": "Нажимать",
     "contact": "Контакт",
     "privacyPolicy": "политика конфиденциальности",
-    "termsOfService": "Условия обслуживания",
+    "termsOfService": "Условия предоставления услуг",
     "copyright": "© 2025 Studious LMS. Все права защищены."
   }
 }

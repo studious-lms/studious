@@ -1,33 +1,38 @@
 {
   "rename": {
-    "editFolder": "폴더 편집",
-    "renameFile": "파일 이름 바꾸기",
+    "editFolder": "편집 폴더",
+    "renameFile": "파일 이름 변경",
     "name": "이름",
     "placeholder": "{type} 이름을 입력하세요",
     "folderColor": "폴더 색상",
     "folderColorDescription": "이 폴더의 색상을 선택하세요",
     "cancel": "취소",
     "saveChanges": "변경 사항 저장",
-    "rename": "이름 바꾸기"
+    "rename": "이름 변경"
   },
   "uploadFiles": {
+    "progress": {
+      "uploadingFiles": "파일 업로드 중...",
+      "uploadingFile": "{name} 업로드 중...",
+      "completed": "완전한"
+    },
     "title": "파일 업로드",
     "noFilesSelected": "선택된 파일이 없습니다",
-    "classIdMissing": "클래스 ID가 없습니다",
+    "classIdMissing": "클래스 ID가 누락되었습니다.",
     "folderIdMissing": "폴더 ID가 없습니다. 폴더가 로드될 때까지 기다려 주세요.",
     "preparing": "업로드 준비 중...",
     "gettingUrls": "업로드 URL을 가져오는 중...",
     "uploadingFile": "{name} 업로드 중...",
-    "confirming": "{name}을(를) 확인합니다...",
+    "confirming": "{name}을 확인하는 중...",
     "finalizing": "마무리 중...",
-    "success": "파일이 성공적으로 업로드되었습니다!",
+    "success": "파일 업로드가 완료되었습니다!",
     "error": "파일 업로드에 실패했습니다. 다시 시도해 주세요.",
-    "errorFile": "{name} 업로드에 실패했습니다.",
+    "errorFile": "업로드 실패 {name}",
     "errorMessage": "업로드 실패: {message}",
-    "dropZone": "여기에 파일을 놓거나 클릭하여 찾아보세요",
-    "dropZoneHint": "이미지, 문서, 비디오 등에 대한 지원",
-    "selectedFiles": "선택한 파일 ({count})",
-    "filesUploaded": "{total}개 파일 중 {uploaded}개가 업로드되었습니다.",
+    "dropZone": "파일을 여기에 드롭하거나 클릭하여 찾아보세요.",
+    "dropZoneHint": "이미지, 문서, 비디오 등을 지원합니다.",
+    "selectedFiles": "선택된 파일({count})",
+    "filesUploaded": "{uploaded}개의 {total}개 파일이 업로드되었습니다.",
     "uploadingTo": "업로드 위치:",
     "homeDirectory": "홈 디렉토리",
     "status": {
@@ -37,35 +42,35 @@
       "error": "오류"
     },
     "cancel": "취소",
-    "upload": "{count}개의 파일을 업로드하세요",
+    "upload": "{count} 파일을 업로드하세요",
     "uploading": "업로드 중..."
   },
   "rubric": {
-    "title": "루브릭 만들기",
-    "titleEdit": "루브릭 편집",
-    "selectTemplate": "템플릿 선택",
-    "startFromScratch": "처음부터 시작하다",
-    "editRubric": "루브릭 편집",
-    "noTemplateSelected": "템플릿을 선택하거나 사용자 정의 기준을 만드세요",
-    "name": "루브릭 이름",
-    "placeholder": "루브릭 이름을 입력하세요",
+    "title": "채점 기준표 만들기",
+    "titleEdit": "편집 기준표",
+    "selectTemplate": "템플릿을 선택하세요",
+    "startFromScratch": "처음부터 시작하세요",
+    "editRubric": "편집 기준표",
+    "noTemplateSelected": "템플릿을 선택하거나 사용자 지정 평가표를 만드세요.",
+    "name": "평가 기준명",
+    "placeholder": "평가 기준 이름을 입력하세요",
     "cancel": "취소",
-    "create": "루브릭 만들기",
-    "update": "루브릭 업데이트",
+    "create": "채점 기준표 만들기",
+    "update": "업데이트 평가 기준",
     "creating": "생성 중...",
     "updating": "업데이트 중...",
-    "created": "루브릭이 성공적으로 생성되었습니다.",
-    "updated": "루브릭이 성공적으로 업데이트되었습니다.",
-    "createFailed": "루브릭을 생성하지 못했습니다.",
-    "updateFailed": "루브릭을 업데이트하지 못했습니다.",
-    "errorNameRequired": "이름과 최소 하나의 기준을 입력해 주세요."
+    "created": "평가 기준표가 성공적으로 생성되었습니다.",
+    "updated": "평가 기준표가 성공적으로 업데이트되었습니다.",
+    "createFailed": "채점 기준표 생성에 실패했습니다.",
+    "updateFailed": "평가 기준표 업데이트에 실패했습니다.",
+    "errorNameRequired": "이름과 최소 한 가지 기준을 제시해 주세요."
   },
   "gradingBoundaries": {
-    "title": "등급 경계 생성",
-    "titleEdit": "등급 경계 편집",
-    "selectTemplate": "템플릿 선택",
-    "editGradingScale": "등급 척도 편집",
-    "noTemplateSelected": "템플릿을 선택하거나 사용자 정의 경계를 만듭니다.",
+    "title": "학년 경계 생성",
+    "titleEdit": "성적 경계 편집",
+    "selectTemplate": "템플릿을 선택하세요",
+    "editGradingScale": "채점 척도 편집",
+    "noTemplateSelected": "템플릿을 선택하거나 사용자 지정 경계를 만드세요.",
     "cancel": "취소",
     "create": "만들다",
     "update": "업데이트",
@@ -73,21 +78,21 @@
     "updating": "업데이트 중...",
     "created": "등급 경계가 성공적으로 생성되었습니다.",
     "updated": "등급 경계가 성공적으로 업데이트되었습니다.",
-    "createFailed": "등급 경계를 생성하지 못했습니다.",
-    "updateFailed": "등급 경계를 업데이트하지 못했습니다."
+    "createFailed": "등급 경계를 생성하는 데 실패했습니다.",
+    "updateFailed": "등급 경계를 업데이트하는 데 실패했습니다."
   },
   "directUpload": {
     "title": "파일 업로드",
     "description": "업로드할 파일을 선택하세요",
     "selectFiles": "파일 선택",
-    "selectedFiles": "선택한 파일 ({count})",
-    "maxFiles": "최대 {max}개 파일. 허용되는 유형: {types}",
+    "selectedFiles": "선택된 파일({count})",
+    "maxFiles": "최대 {max}개 파일. 허용되는 파일 유형: {types}",
     "allFiles": "모든 파일",
     "progressUploaded": "{progress}% 업로드됨",
     "noFilesSelected": "선택된 파일이 없습니다",
-    "maxFilesExceeded": "최대 {max}개의 파일이 허용됩니다.",
+    "maxFilesExceeded": "최대 {max}개 파일 허용",
     "uploadFailed": "업로드 실패: {error}",
-    "uploadFailedGeneric": "업로드에 실패했습니다",
+    "uploadFailedGeneric": "업로드 실패",
     "status": {
       "pending": "보류 중",
       "uploading": "업로드 중",
@@ -95,18 +100,18 @@
       "failed": "실패한"
     },
     "cancel": "취소",
-    "upload": "{count} 파일 업로드",
-    "uploadPlural": "{count}개의 파일을 업로드하세요",
+    "upload": "{count} 파일을 업로드하세요",
+    "uploadPlural": "{count} 파일을 업로드하세요",
     "uploading": "업로드 중..."
   },
   "notifications": {
     "title": "알림",
-    "subtitle": "수업과 과제에 대한 최신 정보를 얻으세요",
+    "subtitle": "수업 및 과제 진행 상황을 꾸준히 확인하세요.",
     "filters": {
       "label": "필터:",
-      "all": "전체 ({count})",
-      "unread": "읽지 않음 ({count})",
-      "read": "읽기 ({count})"
+      "all": "모두 ({count})",
+      "unread": "읽지 않음({count})",
+      "read": "읽기({count})"
     },
     "badge": {
       "unread": "{count} 새로운"
@@ -117,74 +122,79 @@
     },
     "empty": {
       "all": {
-        "title": "아직 알림이 없습니다",
-        "description": "알림을 받으면 여기에 표시됩니다."
+        "title": "아직 알림이 없습니다.",
+        "description": "알림이 도착하면 여기에 표시됩니다."
       }
     }
   },
   "chat": {
     "landing": {
-      "pleaseSignIn": "계속하려면 로그인하세요",
-      "signInRequired": "이 페이지에 접근하려면 로그인이 필요합니다.",
+      "pleaseSignIn": "계속하려면 로그인하세요.",
+      "signInRequired": "이 페이지에 접속하려면 로그인이 필요합니다.",
       "title": "채팅",
       "description": "사이드바에서 대화를 선택하여 채팅을 시작하세요."
     },
     "page": {
+      "notFound": {
+        "title": "대화를 찾을 수 없습니다.",
+        "description": "이 대화는 존재하지 않거나 접근 권한이 없습니다.",
+        "backToChat": "채팅으로 돌아가기"
+      },
       "header": {
         "members": "회원들",
-        "markMentionsRead": "마크는 읽은 것을 언급합니다"
+        "markMentionsRead": "마크는 읽었다고 언급했습니다."
       },
       "input": {
         "placeholderPrefix": "메시지"
       },
-      "loading": "대화를 로딩 중입니다..."
+      "loading": "대화 불러오는 중..."
     },
     "conversationList": {
       "title": "다이렉트 메시지",
       "searchPlaceholder": "대화를 찾거나 시작하세요",
       "noConversations": "아직 대화가 없습니다",
       "noConversationsDescription": "누군가와 채팅을 시작하세요",
-      "noSearchResults": "대화가 없습니다",
-      "noSearchResultsDescription": "다른 검색어를 시도해 보세요",
+      "noSearchResults": "대화 내용이 없습니다.",
+      "noSearchResultsDescription": "다른 검색어를 사용해 보세요.",
       "unnamedGroup": "이름 없는 그룹",
       "unknownUser": "알 수 없는 사용자"
     },
     "messageList": {
-      "noMessagesTitle": "아직 메시지가 없습니다",
-      "noMessagesDescription": "이것은 당신의 대화의 시작입니다"
+      "noMessagesTitle": "아직 메시지가 없습니다.",
+      "noMessagesDescription": "이것이 당신들의 대화의 시작입니다."
     },
     "messageInput": {
       "placeholder": "메시지를 입력하세요..."
     },
     "messageEdit": {
-      "placeholder": "메시지를 편집하세요...",
-      "hint": "저장하려면 Enter를 누르세요 • 취소하려면 Esc를 누르세요",
+      "placeholder": "메시지를 수정하세요...",
+      "hint": "저장하려면 Enter 키를 누르세요. 취소하려면 Esc 키를 누르세요.",
       "save": "구하다",
       "saving": "절약...",
       "cancel": "취소"
     },
     "messageActions": {
-      "editMessage": "메시지 편집",
+      "editMessage": "메시지 수정",
       "deleteMessage": "메시지 삭제",
       "deleteConfirmTitle": "메시지 삭제",
-      "deleteConfirmDescription": "이 메시지를 삭제하시겠습니까? 이 작업은 취소할 수 없습니다.",
+      "deleteConfirmDescription": "이 메시지를 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.",
       "cancel": "취소",
       "delete": "삭제",
       "deleting": "삭제 중..."
     },
     "createConversation": {
       "title": "대화를 시작하세요",
-      "description": "직접 메시지 또는 그룹 대화를 만드세요",
+      "description": "다이렉트 메시지 또는 그룹 대화를 시작하세요",
       "direct": "다이렉트 메시지",
       "group": "그룹 채팅",
-      "dmLabel": "메시지를 보내려면 사용자 이름을 입력하세요",
+      "dmLabel": "메시지를 보낼 사용자 이름을 입력하세요",
       "searchPlaceholder": "사용자 이름을 입력하세요...",
       "groupNameLabel": "그룹 이름",
       "groupNamePlaceholder": "그룹 이름을 입력하세요...",
-      "addMembersLabel": "사용자 이름으로 멤버 추가",
+      "addMembersLabel": "사용자 이름으로 멤버를 추가하세요",
       "addButton": "추가하다",
       "selectedUser": "선택된 사용자:",
-      "selectedMembers": "선정된 회원 ({count})",
+      "selectedMembers": "선택된 멤버({count})",
       "cancel": "취소",
       "create": "만들다",
       "creating": "생성 중..."
@@ -196,91 +206,91 @@
   "createSection": {
     "buttonLabel": "새로운 섹션",
     "titleCreate": "새 섹션 만들기",
-    "titleEdit": "섹션 편집",
+    "titleEdit": "편집 섹션",
     "name": "섹션 이름 *",
     "placeholder": "예: 1학기, 2단원, 5장",
-    "helper": "섹션은 과제를 그룹이나 기간별로 구성하는 데 도움이 됩니다.",
+    "helper": "섹션은 과제를 그룹별 또는 기간별로 정리하는 데 도움이 됩니다.",
     "color": "섹션 색상",
     "cancel": "취소",
-    "create": "섹션 만들기",
+    "create": "섹션 생성",
     "update": "업데이트 섹션",
     "creating": "생성 중...",
     "updating": "업데이트 중...",
     "created": "섹션 \"{name}\"이 성공적으로 생성되었습니다.",
     "updated": "섹션 \"{name}\"이 성공적으로 업데이트되었습니다.",
-    "errorEmpty": "섹션 이름을 입력하세요.",
-    "errorCreate": "섹션을 만들지 못했습니다.",
-    "errorUpdate": "섹션을 업데이트하지 못했습니다."
+    "errorEmpty": "섹션 이름을 입력해 주세요.",
+    "errorCreate": "섹션을 생성하는 데 실패했습니다.",
+    "errorUpdate": "섹션 업데이트에 실패했습니다."
   },
   "universalEvent": {
-    "titleCreate": "새 이벤트 만들기",
+    "titleCreate": "새 이벤트 생성",
     "titleEdit": "이벤트 편집",
-    "classEvent": "수업 이벤트",
+    "classEvent": "학급 행사",
     "personalEvent": "개인 이벤트",
-    "isClassEvent": "이것은 수업 행사입니다",
-    "selectClass": "수업 선택 *",
+    "isClassEvent": "이것은 학급 행사입니다.",
+    "selectClass": "클래스 선택 *",
     "chooseClass": "수업을 선택하세요",
-    "noTeacherClasses": "당신이 교사로 활동하는 수업은 없습니다.",
+    "noTeacherClasses": "당신은 선생님 역할을 맡는 수업이 하나도 없습니다.",
     "eventName": "이벤트 이름 *",
     "eventNamePlaceholder": "이벤트 이름을 입력하세요",
     "startDateTime": "시작 날짜 및 시간 *",
     "endDateTime": "종료 날짜 및 시간 *",
     "pickDate": "날짜를 선택하세요",
     "location": "위치",
-    "locationPlaceholder": "이벤트 장소 입력",
+    "locationPlaceholder": "이벤트 장소를 입력하세요",
     "eventColor": "이벤트 색상",
-    "eventColorDescription": "이 이벤트에 대한 색상을 선택하세요",
+    "eventColorDescription": "이번 행사에 사용할 색상을 선택하세요",
     "remarks": "비고",
-    "remarksPlaceholder": "이벤트에 대한 추가 참고 사항 또는 설명",
+    "remarksPlaceholder": "이 행사에 대한 추가적인 참고 사항 또는 언급 사항",
     "cancel": "취소",
-    "updateEvent": "이벤트 업데이트",
-    "createEvent": "이벤트 만들기",
-    "createClassEvent": "클래스 이벤트 만들기",
-    "createPersonalEvent": "개인 이벤트 만들기",
+    "updateEvent": "업데이트 이벤트",
+    "createEvent": "이벤트 생성",
+    "createClassEvent": "클래스 이벤트 생성",
+    "createPersonalEvent": "개인 이벤트 생성",
     "updating": "업데이트 중...",
     "creating": "생성 중...",
     "addEvent": "이벤트 추가",
-    "eventCreated": "{type}이(가) 성공적으로 생성되었습니다.",
+    "eventCreated": "{type} 성공적으로 생성됨",
     "eventUpdated": "이벤트가 성공적으로 업데이트되었습니다.",
-    "errorRequired": "필수 입력란을 모두 작성해 주세요.",
-    "errorSelectClass": "수업 이벤트에 맞는 수업을 선택해주세요",
-    "errorCreate": "이벤트를 생성하지 못했습니다",
-    "errorUpdate": "이벤트 업데이트에 실패했습니다"
+    "errorRequired": "필수 입력 항목을 모두 입력해 주세요.",
+    "errorSelectClass": "수업 행사에 참여할 수업을 선택해 주세요.",
+    "errorCreate": "이벤트 생성에 실패했습니다.",
+    "errorUpdate": "이벤트 업데이트에 실패했습니다."
   },
   "classEvent": {
-    "titleCreate": "새로운 클래스 이벤트 만들기",
-    "titleEdit": "수업 이벤트 편집",
+    "titleCreate": "새 클래스 이벤트 생성",
+    "titleEdit": "클래스 이벤트 편집",
     "eventName": "이벤트 이름 *",
     "eventNamePlaceholder": "이벤트 이름을 입력하세요",
     "startDateTime": "시작 날짜 및 시간 *",
     "endDateTime": "종료 날짜 및 시간 *",
     "pickDate": "날짜를 선택하세요",
     "location": "위치",
-    "locationPlaceholder": "이벤트 장소 입력",
+    "locationPlaceholder": "행사 장소를 입력하세요",
     "eventColor": "이벤트 색상",
-    "eventColorDescription": "이 이벤트에 대한 색상을 선택하세요",
+    "eventColorDescription": "이번 행사에 사용할 색상을 선택하세요",
     "remarks": "비고",
-    "remarksPlaceholder": "이벤트에 대한 추가 참고 사항 또는 설명",
+    "remarksPlaceholder": "이 행사에 대한 추가적인 참고 사항 또는 언급 사항",
     "cancel": "취소",
-    "updateEvent": "이벤트 업데이트",
-    "createEvent": "이벤트 만들기",
+    "updateEvent": "업데이트 이벤트",
+    "createEvent": "이벤트 생성",
     "updating": "업데이트 중...",
     "creating": "생성 중...",
     "addClassEvent": "클래스 이벤트 추가",
-    "eventCreated": "이벤트가 성공적으로 생성되었습니다",
+    "eventCreated": "이벤트가 성공적으로 생성되었습니다.",
     "eventUpdated": "이벤트가 성공적으로 업데이트되었습니다.",
-    "errorRequired": "필수 입력란을 모두 작성해 주세요.",
-    "errorCreate": "이벤트를 생성하지 못했습니다",
-    "errorUpdate": "이벤트 업데이트에 실패했습니다"
+    "errorRequired": "필수 입력 항목을 모두 입력해 주세요.",
+    "errorCreate": "이벤트 생성에 실패했습니다.",
+    "errorUpdate": "이벤트 업데이트에 실패했습니다."
   },
   "aiLab": {
-    "title": "{type}을 생성합니다",
+    "title": "{type}을 생성하세요",
     "aiPowered": "AI 기반",
-    "description": "AI가 더 나은 콘텐츠를 만들 수 있도록 기본 정보를 제공해 주세요.",
+    "description": "AI가 더 나은 콘텐츠를 만들 수 있도록 몇 가지 기본 정보를 제공해 주세요.",
     "titleField": "제목 *",
     "titlePlaceholder": "{type} 제목을 입력하세요",
     "subject": "주제 *",
-    "selectSubject": "과목 선택",
+    "selectSubject": "주제를 선택하세요",
     "subjects": {
       "mathematics": "수학",
       "science": "과학",
@@ -299,7 +309,7 @@
       "35": "3-5",
       "68": "6-8",
       "912": "9-12",
-      "k2": "케이-2",
+      "k2": "K-2",
       "college": "대학"
     },
     "duration": "지속",
@@ -313,11 +323,11 @@
       "2hours": "2시간"
     },
     "descriptionField": "설명",
-    "descriptionPlaceholder": "이 {type}이 무엇을 다루어야 하는지 설명하세요...",
+    "descriptionPlaceholder": "이 {type}이 무엇을 포함해야 하는지 설명하십시오...",
     "requirements": "특별 요구 사항",
-    "requirementsPlaceholder": "특정 요구 사항, 학습 목표 또는 제약 사항이 있나요?",
+    "requirementsPlaceholder": "특정 요구 사항, 학습 목표 또는 제약 조건...",
     "cancel": "취소",
-    "createLab": "AI 랩 만들기",
-    "creatingLab": "랩을 만드는 중..."
+    "createLab": "AI 연구소 만들기",
+    "creatingLab": "연구실 만들기..."
   }
 }

@@ -1,51 +1,55 @@
 {
   "syllabus": {
-    "title": "Giáo trình",
-    "subtitle": "Tổng quan về khóa học và thông tin học thuật",
+    "title": "Chương trình học",
+    "subtitle": "Tổng quan khóa học và thông tin học thuật",
     "actions": {
       "saveChanges": "Lưu thay đổi",
       "cancel": "Hủy bỏ",
       "edit": "Chỉnh sửa giáo trình"
     },
     "errors": {
-      "failedToLoad": "Không tải được giáo trình",
+      "failedToLoad": "Không thể tải giáo trình",
       "tryLater": "Vui lòng thử lại sau."
     },
     "stats": {
       "totalAssignments": "Tổng số bài tập",
+      "totalAssignmentsDesc": "Tất cả bài tập khóa học",
       "completionRate": "Tỷ lệ hoàn thành",
+      "completionRateDesc": "Điểm số so với tổng số",
       "totalPoints": "Tổng điểm",
-      "upcoming": "Sắp tới"
+      "totalPointsDesc": "Mức tối đa có thể đạt được",
+      "upcoming": "Sắp tới",
+      "upcomingDesc": "Bài tập đến hạn"
     },
     "overview": {
-      "title": "Tổng quan về khóa học",
-      "placeholder": "Nhập thông tin tổng quan về khóa học, mục tiêu và các thông tin quan trọng khác...",
-      "helper": "Nhập thông tin khóa học, mục tiêu học tập, chính sách và các thông tin quan trọng khác.",
+      "title": "Tổng quan khóa học",
+      "placeholder": "Nhập tổng quan khóa học, mục tiêu và các thông tin quan trọng khác...",
+      "helper": "Nhập thông tin khóa học, mục tiêu học tập, chính sách và các chi tiết quan trọng khác.",
       "empty": {
-        "title": "Chưa có nội dung giáo trình",
-        "description": "Nhấp vào 'Chỉnh sửa giáo trình' để thêm thông tin khóa học, mục tiêu học tập, chính sách, v.v."
+        "title": "Chưa có nội dung giáo trình nào.",
+        "description": "Nhấp vào 'Chỉnh sửa giáo trình' để thêm thông tin khóa học, mục tiêu học tập, chính sách và nhiều nội dung khác."
       }
     },
     "assignments": {
-      "title": "Bài tập khóa học",
+      "title": "Bài tập môn học",
       "gradedCount": "{graded} bài tập được chấm điểm",
-      "totalPoints": "{total} tổng số điểm",
+      "totalPoints": "{total} tổng điểm",
       "empty": {
         "title": "Chưa có bài tập nào",
-        "description": "Bài tập sẽ xuất hiện ở đây sau khi được tạo."
+        "description": "Các bài tập sẽ hiển thị ở đây sau khi được tạo."
       }
     },
     "table": {
       "assignment": "Phân công",
-      "dueDate": "Hai Ngày",
+      "dueDate": "Hai cuộc hẹn",
       "points": "Điểm",
       "weight": "Cân nặng",
-      "status": "Trạng thái",
-      "pts": "điểm"
+      "pts": "điểm",
+      "type": "Kiểu"
     },
     "status": {
-      "graded": "Đã phân loại",
-      "pending": "Chưa giải quyết"
+      "graded": "Đã chấm điểm",
+      "ungraded": "Chưa được xếp hạng"
     },
     "courseInfo": {
       "title": "Thông tin khóa học",

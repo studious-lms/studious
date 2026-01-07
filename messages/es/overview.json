@@ -7,6 +7,13 @@
     "post": "Correo",
     "posting": "Destino...",
     "noPosts": "No hay publicaciones todavía",
-    "createFirstPost": "Crear la primera publicación"
+    "noPostsDescription": "Comparta anuncios, tareas y actualizaciones con su clase.",
+    "createFirstPost": "Crear la primera publicación",
+    "messages": {
+      "uploadFailed": "No se pudo crear el anuncio, falló la carga del archivo",
+      "createFailed": "No se pudo crear el anuncio",
+      "createSuccess": "Anuncio creado exitosamente",
+      "creating": "Creando anuncio..."
+    }
   }
 }

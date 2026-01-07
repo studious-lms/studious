@@ -1,41 +1,42 @@
 {
   "assignmentDetail": {
-    "title": "รายละเอียดการมอบหมาย",
+    "title": "รายละเอียดงานที่ได้รับมอบหมาย",
     "description": "คำอธิบาย",
     "instructions": "คำแนะนำ",
-    "dueDate": "สองวันที่",
+    "dueDate": "สองเดท",
     "maxPoints": "คะแนนสูงสุด",
     "submissions": "การส่งผลงาน",
     "submitted": "ส่งแล้ว",
-    "notSubmitted": "ไม่ได้ส่ง",
+    "notSubmitted": "ยังไม่ได้ส่ง",
     "graded": "เกรด",
     "pending": "รอดำเนินการ",
     "late": "ช้า",
     "onTime": "ตรงเวลา",
-    "attachments": "สิ่งที่แนบมา",
-    "rubric": "หัวข้อ",
+    "attachments": "เอกสารแนบ",
+    "rubric": "เกณฑ์การประเมิน",
     "gradingBoundary": "ขอบเขตการให้คะแนน",
-    "submissionDetails": "รายละเอียดการส่ง",
+    "submissionDetails": "รายละเอียดการส่งผลงาน",
     "submittedBy": "ส่งโดย",
-    "submittedAt": "ส่งที่",
+    "submittedAt": "ส่งเมื่อ",
     "grade": "ระดับ",
     "feedback": "ข้อเสนอแนะ",
     "files": "ไฟล์",
     "noFiles": "ไม่มีไฟล์แนบ",
     "noSubmissions": "ยังไม่มีการส่งผลงาน",
-    "noSubmissionsDescription": "การส่งงานจะปรากฏที่นี่เมื่อนักเรียนส่งงานของพวกเขา",
+    "noSubmissionsDescription": "ผลงานจะปรากฏที่นี่เมื่อนักเรียนส่งงานแล้ว",
     "actions": {
-      "edit": "แก้ไขงานมอบหมาย",
-      "delete": "ลบงานมอบหมาย",
-      "viewSubmission": "ดูการส่ง",
+      "edit": "แก้ไขการมอบหมายงาน",
+      "delete": "ลบการมอบหมาย",
+      "viewSubmission": "ดูรายละเอียดการส่งผลงาน",
       "gradeSubmission": "ระดับ",
+      "back": "กลับ",
       "downloadAll": "ดาวน์โหลดทั้งหมด",
       "exportGrades": "เกรดส่งออก"
     },
     "stats": {
-      "totalSubmissions": "ยอดรวมการส่ง",
+      "totalSubmissions": "จำนวนการส่งผลงานทั้งหมด",
       "averageGrade": "เกรดเฉลี่ย",
-      "submissionRate": "อัตราการส่ง",
+      "submissionRate": "อัตราการส่งข้อมูล",
       "gradedCount": "เกรด"
     },
     "table": {
@@ -46,8 +47,8 @@
       "actions": "การกระทำ"
     },
     "toasts": {
-      "gradeUpdated": "อัปเดตเกรดเรียบร้อยแล้ว",
-      "deleted": "ลบงานแล้ว",
+      "gradeUpdated": "เกรดได้รับการอัปเดตเรียบร้อยแล้ว",
+      "deleted": "งานที่มอบหมายถูกลบแล้ว",
       "error": "เกิดข้อผิดพลาด"
     }
   }

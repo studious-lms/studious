@@ -13,7 +13,10 @@
     "schoolProgram": "学校课程",
     "about": "关于",
     "press": "按",
-    "signIn": "登入"
+    "signIn": "登入",
+    "lightMode": "浅色模式",
+    "darkMode": "深色模式",
+    "languageSelector": "语言选择器"
   },
   "classSidebar": {
     "overview": "概述",

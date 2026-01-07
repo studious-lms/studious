@@ -1,11 +1,21 @@
 {
   "aiLabs": {
     "title": "AI Labs",
-    "subtitle": "Yapay zeka yardımıyla eğitim içeriği oluşturun",
+    "subtitle": "Yapay zeka desteğiyle eğitici içerik oluşturun.",
     "aiPowered": "Yapay Zeka Destekli",
     "createNew": "Yeni İçerik Oluştur",
-    "aiGenerated": "AI tarafından üretildi",
-    "deleteConfirm": "Bu AI Lab'ı silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
+    "aiGenerated": "Yapay Zeka Tarafından Üretildi",
+    "deleteConfirm": "Bu yapay zeka laboratuvarını silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
+    "stats": {
+      "drafts": "Taslaklar",
+      "draftsDesc": "İçerik oluşturulma aşamasında.",
+      "chats": "Yapay Zeka Kedileri",
+      "chatsDesc": "Aktif konuşmalar",
+      "messages": "Mesajlar",
+      "messagesDesc": "Toplam yapay zeka etkileşimleri",
+      "generated": "Oluşturuldu",
+      "generatedDesc": "Oluşturulan toplam içerik"
+    },
     "widgets": {
       "assignment": {
         "title": "Atama",
@@ -13,19 +23,19 @@
       },
       "quiz": {
         "title": "Sınav",
-        "description": "Çeşitli soru tipleriyle sınavlar oluşturun"
+        "description": "Çeşitli soru tipleriyle testler oluşturun."
       },
       "worksheet": {
         "title": "Çalışma sayfası",
-        "description": "Pratik çalışma kağıtları ve alıştırmalar oluşturun"
+        "description": "Alıştırma çalışma sayfaları ve egzersizler oluşturun."
       },
       "lessonPlan": {
         "title": "Ders Planı",
-        "description": "Kapsamlı ders planları tasarlayın"
+        "description": "Kapsamlı ders planları tasarlayın."
       },
       "rubric": {
-        "title": "Rubrik",
-        "description": "Ayrıntılı notlandırma ölçütleri oluşturun"
+        "title": "Değerlendirme Kriterleri",
+        "description": "Ayrıntılı değerlendirme kriterleri oluşturun."
       }
     },
     "tabs": {
@@ -35,7 +45,7 @@
     "drafts": {
       "title": "Taslak Laboratuvarları ({count})",
       "empty": {
-        "title": "Henüz laboratuvar taslağı yok",
+        "title": "Henüz laboratuvar taslağı yok.",
         "description": "Yukarıdaki araçları kullanarak ilk yapay zeka destekli eğitim içeriğinizi oluşturun."
       }
     },
@@ -45,25 +55,25 @@
       "messageCount": "{count} mesaj",
       "createdBy": "{name} tarafından oluşturuldu",
       "empty": {
-        "title": "Henüz AI Laboratuvarları yok",
-        "description": "Eğitim içerikleri üzerinde yapay zeka ile iş birliği yapmaya başlamak için ilk yapay zeka laboratuvarınızı oluşturun."
+        "title": "Henüz yapay zeka laboratuvarı yok.",
+        "description": "Eğitim içeriklerinde yapay zeka ile iş birliğine başlamak için ilk Yapay Zeka Laboratuvarınızı oluşturun."
       }
     },
     "toast": {
-      "labCreated": "AI Lab başarıyla oluşturuldu!",
-      "labCreateFailed": "AI Lab oluşturulamadı:",
-      "labDeleted": "AI Lab başarıyla silindi!",
-      "labDeleteFailed": "AI Lab silinemedi:"
+      "labCreated": "Yapay Zeka Laboratuvarı başarıyla kuruldu!",
+      "labCreateFailed": "Yapay Zeka Laboratuvarı kurulamadı:",
+      "labDeleted": "Yapay Zeka Laboratuvarı başarıyla silindi!",
+      "labDeleteFailed": "Yapay Zeka Laboratuvarı silinemedi:"
     }
   },
   "aiLabChat": {
-    "backButton": "AI Laboratuvarlarına Dönüş",
+    "backButton": "Yapay Zeka Laboratuvarlarına Geri Dön",
     "loading": "Yükleniyor...",
-    "aiThinking": "Yapay Zeka Düşünüyor...",
-    "getAIHelp": "Yapay Zeka Yardımı Alın",
+    "aiThinking": "Yapay Zeka Düşünme...",
+    "getAIHelp": "Yapay Zekadan Yardım Alın",
     "notFound": {
       "title": "Laboratuvar Sohbeti Bulunamadı",
-      "description": "Bu AI Lab silinmiş olabilir veya erişiminiz olmayabilir."
+      "description": "Bu Yapay Zeka Laboratuvarı silinmiş olabilir veya ona erişiminiz olmayabilir."
     },
     "toast": {
       "messageFailed": "Mesaj gönderilemedi:"

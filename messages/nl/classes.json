@@ -1,23 +1,23 @@
 {
   "classes": {
-    "title": "Klassen",
-    "description": "Beheer uw onderwijs- en ingeschreven klassen",
-    "joinClass": "Doe mee met de les",
+    "title": "Lessen",
+    "description": "Beheer je lessen en ingeschreven klassen.",
+    "joinClass": "Word lid van de klas",
     "createClass": "Klasse maken",
-    "searchPlaceholder": "Zoek klassen...",
+    "searchPlaceholder": "Zoek naar cursussen...",
     "teaching": "Onderwijs",
     "enrolled": "Ingeschreven",
     "noClassesFound": "Geen klassen gevonden",
-    "noTeachingClassesFound": "Er zijn geen lesklassen gevonden die overeenkomen met \"{query}\"",
-    "noEnrolledClassesFound": "Er zijn geen ingeschreven klassen gevonden die overeenkomen met \"{query}\"",
+    "noTeachingClassesFound": "Er zijn geen lesprogramma's gevonden die overeenkomen met \"{query}\"",
+    "noEnrolledClassesFound": "Er zijn geen ingeschreven lessen gevonden die overeenkomen met \"{query}\"",
     "noClassesYet": "Nog geen lessen",
-    "noClassesYetDesc": "Maak uw eerste klas aan en begin met het beheren van opdrachten, cijfers en studenteninteracties.",
-    "noEnrolledClasses": "Geen ingeschreven klassen",
-    "noEnrolledClassesDesc": "Neem deel aan een les met behulp van de uitnodigingscode of link die u van uw docent hebt ontvangen.",
+    "noClassesYetDesc": "Maak je eerste klas aan om opdrachten, cijfers en interacties met studenten te beheren.",
+    "noEnrolledClasses": "Geen ingeschreven lessen",
+    "noEnrolledClassesDesc": "Neem deel aan een les met behulp van een uitnodigingscode of -link die je van je docent hebt ontvangen.",
     "classDeleted": "Klasse succesvol verwijderd",
-    "classDeleteFailed": "Het is niet gelukt om de klas te verwijderen",
-    "failedToLoad": "Het laden van klassen is mislukt",
-    "classLeft": "Klas succesvol verlaten",
-    "classLeaveFailed": "Kan klas niet verlaten"
+    "classDeleteFailed": "Het verwijderen van de klasse is mislukt.",
+    "failedToLoad": "Het laden van de klassen is mislukt.",
+    "classLeft": "De klas succesvol verlaten.",
+    "classLeaveFailed": "Niet in staat gebleken de les te verlaten."
   }
 }

@@ -3,51 +3,52 @@
     "title": "Chi tiết bài tập",
     "description": "Sự miêu tả",
     "instructions": "Hướng dẫn",
-    "dueDate": "Hai Ngày",
+    "dueDate": "Hai cuộc hẹn",
     "maxPoints": "Điểm tối đa",
-    "submissions": "Đệ trình",
-    "submitted": "Đã nộp",
-    "notSubmitted": "Chưa nộp",
-    "graded": "Đã phân loại",
+    "submissions": "Bài nộp",
+    "submitted": "Đã gửi",
+    "notSubmitted": "Chưa gửi",
+    "graded": "Đã chấm điểm",
     "pending": "Chưa giải quyết",
     "late": "Muộn",
     "onTime": "Đúng giờ",
     "attachments": "Tệp đính kèm",
-    "rubric": "Tiêu chí",
+    "rubric": "Tiêu chí đánh giá",
     "gradingBoundary": "Ranh giới phân loại",
     "submissionDetails": "Chi tiết nộp bài",
-    "submittedBy": "Đã gửi bởi",
+    "submittedBy": "Được gửi bởi",
     "submittedAt": "Đã nộp tại",
     "grade": "Cấp",
     "feedback": "Nhận xét",
-    "files": "Tập tin",
-    "noFiles": "Không có tập tin đính kèm",
+    "files": "Tệp tin",
+    "noFiles": "Không có tệp đính kèm nào.",
     "noSubmissions": "Chưa có bài nộp nào",
-    "noSubmissionsDescription": "Bài nộp sẽ xuất hiện ở đây sau khi học sinh nộp bài làm của mình",
+    "noSubmissionsDescription": "Bài nộp sẽ hiển thị ở đây sau khi sinh viên nộp bài.",
     "actions": {
       "edit": "Chỉnh sửa bài tập",
       "delete": "Xóa bài tập",
       "viewSubmission": "Xem bài nộp",
       "gradeSubmission": "Cấp",
+      "back": "Mặt sau",
       "downloadAll": "Tải xuống tất cả",
-      "exportGrades": "Xuất khẩu các loại"
+      "exportGrades": "Loại xuất khẩu"
     },
     "stats": {
       "totalSubmissions": "Tổng số bài nộp",
       "averageGrade": "Điểm trung bình",
       "submissionRate": "Tỷ lệ nộp bài",
-      "gradedCount": "Đã phân loại"
+      "gradedCount": "Đã chấm điểm"
     },
     "table": {
       "student": "Học sinh",
       "status": "Trạng thái",
       "grade": "Cấp",
-      "submittedAt": "Đã nộp",
+      "submittedAt": "Đã gửi",
       "actions": "Hành động"
     },
     "toasts": {
-      "gradeUpdated": "Đã cập nhật điểm thành công",
-      "deleted": "Bài tập đã xóa",
+      "gradeUpdated": "Điểm số đã được cập nhật thành công.",
+      "deleted": "Bài tập đã bị xóa",
       "error": "Đã xảy ra lỗi"
     }
   }

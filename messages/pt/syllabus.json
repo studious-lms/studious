@@ -13,9 +13,13 @@
     },
     "stats": {
       "totalAssignments": "Total de atribuições",
+      "totalAssignmentsDesc": "Todo o trabalho do curso",
       "completionRate": "Taxa de conclusão",
+      "completionRateDesc": "Notado vs. total",
       "totalPoints": "Pontuação total",
-      "upcoming": "Por vir"
+      "totalPointsDesc": "Máximo alcançável",
+      "upcoming": "Por vir",
+      "upcomingDesc": "Tarefas a entregar"
     },
     "overview": {
       "title": "Visão geral do curso",
@@ -40,12 +44,12 @@
       "dueDate": "Dois encontros",
       "points": "Pontos",
       "weight": "Peso",
-      "status": "Status",
-      "pts": "pontos"
+      "pts": "pontos",
+      "type": "Tipo"
     },
     "status": {
       "graded": "Classificado",
-      "pending": "Pendente"
+      "ungraded": "Sem classificação"
     },
     "courseInfo": {
       "title": "Informações sobre o curso",

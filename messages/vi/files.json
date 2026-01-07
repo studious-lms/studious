@@ -1,11 +1,11 @@
 {
   "classFiles": {
-    "title": "Tập tin",
-    "subtitle": "Quản lý các tệp và tài nguyên lớp học",
+    "title": "Tệp",
+    "subtitle": "Quản lý hồ sơ và tài nguyên lớp học.",
     "actions": {
       "newFolder": "Thư mục mới",
       "upload": "Tải lên",
-      "uploadFiles": "Tải lên tập tin",
+      "uploadFiles": "Tải lên tệp",
       "createFolder": "Tạo thư mục",
       "download": "Tải xuống",
       "share": "Chia sẻ",
@@ -17,29 +17,29 @@
       "folderCreated": "Thư mục đã được tạo thành công",
       "folderDeleted": "Thư mục đã được xóa thành công",
       "folderRenamed": "Đã đổi tên thư mục thành công",
-      "folderMoved": "Thư mục đã được di chuyển thành công",
-      "filesUploaded": "Đã tải tệp lên thành công",
-      "fileDeleted": "Đã xóa tập tin thành công",
-      "fileRenamed": "Đã đổi tên tệp thành công",
-      "fileMoved": "Tệp đã được di chuyển thành công",
-      "downloadStarted": "Đã bắt đầu tải xuống",
+      "folderMoved": "Thư mục đã được di chuyển thành công.",
+      "filesUploaded": "Tệp đã được tải lên thành công.",
+      "fileDeleted": "Tệp đã được xóa thành công",
+      "fileRenamed": "Tệp đã được đổi tên thành công.",
+      "fileMoved": "Tệp đã được chuyển thành công.",
+      "downloadStarted": "Quá trình tải xuống đã bắt đầu",
       "shareCopied": "Đã sao chép liên kết chia sẻ"
     },
     "errors": {
       "teacherOnly": "Chỉ giáo viên mới có thể chỉnh sửa tập tin.",
-      "downloadFailed": "Tải xuống không thành công",
-      "shareFailed": "Chia sẻ không thành công",
-      "failedToLoad": "Không tải được tệp. Vui lòng thử lại sau."
+      "downloadFailed": "Tải xuống thất bại",
+      "shareFailed": "Chia sẻ thất bại",
+      "failedToLoad": "Không thể tải tệp. Vui lòng thử lại sau."
     },
     "breadcrumbs": {
-      "classFiles": "Tệp lớp"
+      "classFiles": "Hồ sơ lớp học"
     },
     "search": {
-      "placeholder": "Tìm kiếm trong các tập tin"
+      "placeholder": "Tìm kiếm trong tệp"
     },
     "selected": "{count} đã chọn",
     "filters": {
-      "fileType": "Loại tập tin",
+      "fileType": "Loại tệp",
       "documents": "Tài liệu",
       "images": "Hình ảnh",
       "videos": "Video",
@@ -48,18 +48,18 @@
     "sort": {
       "name": "Tên",
       "lastModified": "Lần sửa đổi cuối cùng",
-      "fileSize": "Kích thước tập tin"
+      "fileSize": "Kích thước tệp"
     },
     "table": {
       "name": "Tên",
       "owner": "Người sở hữu",
       "lastModified": "Lần sửa đổi cuối cùng",
-      "fileSize": "Kích thước tập tin"
+      "fileSize": "Kích thước tệp"
     },
     "empty": {
       "title": "Thư mục này trống",
-      "description": "Tải lên tệp hoặc tạo thư mục để bắt đầu sắp xếp tài liệu lớp học của bạn.",
-      "searchTitle": "Không tìm thấy tập tin",
+      "description": "Tải lên tập tin hoặc tạo thư mục để bắt đầu sắp xếp tài liệu học tập của bạn.",
+      "searchTitle": "Không tìm thấy tệp nào",
       "searchDescription": "Không có tệp nào khớp với \"{query}\". Hãy thử một thuật ngữ tìm kiếm khác."
     }
   },
@@ -71,10 +71,10 @@
       "backButton": "Quay lại Tệp"
     },
     "error": {
-      "loadFailed": "Không tải được nội dung thư mục. Vui lòng thử lại sau."
+      "loadFailed": "Không thể tải nội dung thư mục. Vui lòng thử lại sau."
     },
     "breadcrumbs": {
-      "classFiles": "Tệp lớp"
+      "classFiles": "Hồ sơ lớp học"
     },
     "search": {
       "placeholder": "Tìm kiếm trong thư mục",
@@ -82,7 +82,7 @@
     },
     "filters": {
       "label": "Lọc",
-      "fileType": "Loại tập tin",
+      "fileType": "Loại tệp",
       "documents": "Tài liệu",
       "images": "Hình ảnh",
       "videos": "Video",
@@ -92,39 +92,39 @@
       "label": "Loại",
       "name": "Tên",
       "lastModified": "Lần sửa đổi cuối cùng",
-      "fileSize": "Kích thước tập tin"
+      "fileSize": "Kích thước tệp"
     },
     "table": {
       "name": "Tên",
       "owner": "Người sở hữu",
       "lastModified": "Lần sửa đổi cuối cùng",
-      "fileSize": "Kích thước tập tin"
+      "fileSize": "Kích thước tệp"
     },
     "empty": {
-      "noFilesFound": "Không tìm thấy tập tin",
+      "noFilesFound": "Không tìm thấy tệp nào",
       "noFilesFoundDescription": "Không có tệp nào khớp với \"{query}\". Hãy thử một thuật ngữ tìm kiếm khác.",
       "folderEmpty": "Thư mục này trống",
       "folderEmptyDescription": "Tải lên tệp hoặc tạo thư mục để sắp xếp tài liệu của bạn."
     },
     "actions": {
       "newFolder": "Thư mục mới",
-      "uploadFiles": "Tải lên tập tin",
+      "uploadFiles": "Tải lên tệp",
       "createFolder": "Tạo thư mục"
     },
     "toast": {
       "folderCreated": "Thư mục đã được tạo thành công",
       "folderDeleted": "Thư mục đã được xóa thành công",
       "folderRenamed": "Đã đổi tên thư mục thành công",
-      "folderMoved": "Thư mục đã được di chuyển thành công",
-      "filesUploaded": "Đã tải tệp lên thành công",
-      "fileDeleted": "Đã xóa tập tin thành công",
-      "fileRenamed": "Đã đổi tên tệp thành công",
-      "fileMoved": "Tệp đã được di chuyển thành công",
-      "downloadStarted": "Đã bắt đầu tải xuống",
-      "downloadFailed": "Tải xuống không thành công",
+      "folderMoved": "Thư mục đã được di chuyển thành công.",
+      "filesUploaded": "Tệp đã được tải lên thành công.",
+      "fileDeleted": "Tệp đã được xóa thành công",
+      "fileRenamed": "Tệp đã được đổi tên thành công.",
+      "fileMoved": "Tệp đã được chuyển thành công.",
+      "downloadStarted": "Quá trình tải xuống đã bắt đầu",
+      "downloadFailed": "Tải xuống thất bại",
       "shareLinkCopied": "Đã sao chép liên kết chia sẻ",
-      "shareFailed": "Chia sẻ không thành công",
-      "permissionDenied": "Quyền bị từ chối"
+      "shareFailed": "Chia sẻ thất bại",
+      "permissionDenied": "Quyền truy cập bị từ chối"
     }
   }
 }

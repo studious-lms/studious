@@ -1,13 +1,13 @@
 {
   "classGrades": {
     "title": "Điểm số",
-    "subtitle": "Xem và quản lý điểm của học sinh",
+    "subtitle": "Xem và quản lý điểm số của học sinh",
     "columns": {
       "assignment": "Phân công",
       "maxPoints": "Điểm tối đa",
       "weight": "Cân nặng",
-      "graded": "Đã phân loại",
-      "dueDate": "Hai Ngày",
+      "graded": "Đã chấm điểm",
+      "dueDate": "Hai cuộc hẹn",
       "actions": "Hành động",
       "student": "Học sinh",
       "overallGrade": "Điểm tổng thể",
@@ -15,11 +15,11 @@
       "trend": "Xu hướng"
     },
     "labels": {
-      "rubric": "Tiêu chí"
+      "rubric": "Tiêu chí đánh giá"
     },
     "actions": {
       "manage": "Quản lý",
-      "viewGrades": "Xem Điểm",
+      "viewGrades": "Xem điểm số",
       "saving": "Đang lưu...",
       "saveChanges": "Lưu thay đổi",
       "preview": "Xem trước",
@@ -29,94 +29,94 @@
     },
     "overview": {
       "title": "Tổng quan về lớp học",
-      "classAverage": "Lớp trung bình",
-      "totalStudents": "Tổng số học sinh",
+      "classAverage": "Điểm trung bình của lớp",
+      "totalStudents": "Tổng số sinh viên",
       "assignments": "Bài tập",
       "submissionRate": "Tỷ lệ nộp bài"
     },
     "assignmentManagement": {
-      "title": "Quản lý bài tập",
+      "title": "Quản lý nhiệm vụ",
       "empty": {
-        "title": "Không tìm thấy bài tập nào",
-        "description": "Tạo bài tập để quản lý điểm và cài đặt"
+        "title": "Không tìm thấy bài tập nào.",
+        "description": "Tạo bài tập để quản lý điểm số và cài đặt."
       },
-      "searchPlaceholder": "Tìm kiếm bài tập..."
+      "searchPlaceholder": "Nhiệm vụ tìm kiếm..."
     },
     "students": {
-      "title": "Học sinh",
-      "viewAll": "Xem tất cả học sinh",
+      "title": "Sinh viên",
+      "viewAll": "Xem tất cả sinh viên",
       "empty": {
-        "title": "Không có học sinh nào đăng ký",
-        "description": "Học sinh sẽ xuất hiện ở đây khi họ tham gia lớp học"
+        "title": "Không có sinh viên nào đăng ký",
+        "description": "Sinh viên sẽ xuất hiện ở đây khi họ tham gia lớp học."
       },
-      "searchPlaceholder": "Tìm kiếm học sinh..."
+      "searchPlaceholder": "Tìm kiếm sinh viên..."
     },
     "gradeBoundaries": {
-      "title": "Ranh giới lớp",
-      "untitled": "Ranh giới chấm điểm chưa có tiêu đề",
+      "title": "Giới hạn điểm",
+      "untitled": "Ranh giới chấm điểm không có tiêu đề",
       "empty": {
-        "title": "Không có ranh giới lớp nào được tạo ra",
-        "description": "Tạo ranh giới phân loại để xác định phạm vi phân loại"
+        "title": "Không có ranh giới điểm số nào được thiết lập.",
+        "description": "Tạo ranh giới chấm điểm để xác định phạm vi điểm số."
       },
       "previewTitle": "Xem trước ranh giới chấm điểm",
       "details": {
         "title": "Chi tiết ranh giới phân loại",
         "name": "Tên",
-        "noneDefined": "Không có ranh giới phân loại được xác định"
+        "noneDefined": "Không có ranh giới chấm điểm nào được xác định."
       }
     },
     "rubrics": {
-      "title": "Tiêu chí chấm điểm",
-      "untitled": "Tiêu đề chưa có tiêu đề",
+      "title": "Tiêu chí đánh giá",
+      "untitled": "Mục không có tiêu đề",
       "empty": {
-        "title": "Không có tiêu chí nào được tạo",
-        "description": "Tạo tiêu chí đánh giá để xác định tiêu chí đánh giá"
+        "title": "Không có tiêu chí đánh giá nào được tạo ra.",
+        "description": "Xây dựng bảng tiêu chí đánh giá để xác định các tiêu chí đánh giá."
       },
-      "previewTitle": "Xem trước tiêu chí",
+      "previewTitle": "Xem trước bảng tiêu chí đánh giá",
       "details": {
-        "title": "Chi tiết tiêu chí",
+        "title": "Chi tiết tiêu chí đánh giá",
         "name": "Tên",
         "category": "Loại",
         "description": "Sự miêu tả",
         "custom": "Phong tục",
-        "noDescription": "Không có mô tả nào được cung cấp",
-        "noCriteria": "Không tìm thấy tiêu chí nào trong tiêu chí này"
+        "noDescription": "Không có mô tả nào được cung cấp.",
+        "noCriteria": "Không tìm thấy tiêu chí nào trong bảng đánh giá này."
       }
     },
     "confirm": {
-      "deleteRubric": "Bạn có chắc chắn muốn xóa markscheme này không?",
+      "deleteRubric": "Bạn có chắc chắn muốn xóa bảng điểm này không?",
       "deleteGradingBoundary": "Bạn có chắc chắn muốn xóa ranh giới chấm điểm này không?"
     }
   },
   "studentGrades": {
-    "title": "Tất cả các lớp của học sinh",
-    "allStudents": "Xem và quản lý điểm của tất cả học sinh trong lớp này",
-    "students": "Học sinh",
-    "noGrades": "Không tìm thấy học sinh nào",
-    "noGradesDescription": "Chưa có học viên nào đăng ký lớp này. Học viên sẽ được hiển thị ở đây khi tham gia.",
+    "title": "Tất cả các cấp học sinh",
+    "allStudents": "Xem và quản lý điểm số của tất cả học sinh trong lớp này.",
+    "students": "Sinh viên",
+    "noGrades": "Không tìm thấy học sinh nào.",
+    "noGradesDescription": "Hiện chưa có học sinh nào đăng ký lớp học này. Danh sách học sinh sẽ được cập nhật khi các em tham gia.",
     "table": {
       "student": "Học sinh",
       "actions": "Hành động"
     },
     "actions": {
-      "viewSubmission": "Xem Điểm"
+      "viewSubmission": "Xem điểm số"
     }
   },
   "individualGrades": {
-    "myGrades": "Điểm của tôi",
+    "myGrades": "Điểm số của tôi",
     "studentGrades": "Điểm số",
-    "viewYourGrades": "Xem điểm số và tiến độ của bạn",
-    "individualManagement": "Quản lý điểm của từng học sinh",
+    "viewYourGrades": "Xem điểm số và tiến độ học tập của bạn",
+    "individualManagement": "Quản lý điểm số cá nhân của sinh viên",
     "export": "Xuất khẩu",
     "back": "Mặt sau",
-    "yourPerformance": "Hiệu suất của bạn",
+    "yourPerformance": "Màn trình diễn của bạn",
     "trackProgress": "Theo dõi tiến độ học tập của bạn",
     "overallGrade": "Điểm tổng thể",
     "completed": "Hoàn thành",
     "trend": "Xu hướng",
-    "yourGrades": "Điểm của bạn",
+    "yourGrades": "Điểm số của bạn",
     "assignments": "Bài tập",
-    "studentNotFound": "Không tìm thấy học sinh",
+    "studentNotFound": "Không tìm thấy sinh viên",
     "goBack": "Quay lại",
     "grade": "Cấp",
     "table": {
@@ -125,16 +125,16 @@
       "total": "Tổng cộng",
       "percentage": "%",
       "status": "Trạng thái",
-      "submitted": "Đã nộp"
+      "submitted": "Đã gửi"
     },
     "status": {
-      "graded": "Đã phân loại",
+      "graded": "Đã chấm điểm",
       "pending": "Chưa giải quyết"
     },
     "empty": {
-      "title": "Không tìm thấy bài tập nào",
-      "description": "Học sinh này không có bài tập nào để hiển thị"
+      "title": "Không tìm thấy bài tập nào.",
+      "description": "Sinh viên này không có bài tập nào để hiển thị."
     },
-    "searchPlaceholder": "Tìm kiếm bài tập..."
+    "searchPlaceholder": "Nhiệm vụ tìm kiếm..."
   }
 }

@@ -1,6 +1,6 @@
 {
   "syllabus": {
-    "title": "Sukatan pelajaran",
+    "title": "Sukatan Pelajaran",
     "subtitle": "Gambaran keseluruhan kursus dan maklumat akademik",
     "actions": {
       "saveChanges": "Simpan Perubahan",
@@ -9,26 +9,30 @@
     },
     "errors": {
       "failedToLoad": "Gagal memuatkan sukatan pelajaran",
-      "tryLater": "Sila cuba lagi kemudian."
+      "tryLater": "Sila cuba lagi nanti."
     },
     "stats": {
       "totalAssignments": "Jumlah Tugasan",
+      "totalAssignmentsDesc": "Semua kerja kursus",
       "completionRate": "Kadar Penyiapan",
+      "completionRateDesc": "Digredkan vs jumlah",
       "totalPoints": "Jumlah Mata",
-      "upcoming": "Akan datang"
+      "totalPointsDesc": "Maksimum yang boleh dicapai",
+      "upcoming": "Akan datang",
+      "upcomingDesc": "Tugasan yang sepatutnya"
     },
     "overview": {
       "title": "Gambaran Keseluruhan Kursus",
       "placeholder": "Masukkan gambaran keseluruhan kursus, objektif dan maklumat penting lain...",
-      "helper": "Masukkan maklumat kursus anda, objektif pembelajaran, dasar dan butiran penting lain.",
+      "helper": "Masukkan maklumat kursus, objektif pembelajaran, dasar dan butiran penting yang lain.",
       "empty": {
-        "title": "Tiada kandungan silibus lagi",
+        "title": "Tiada kandungan sukatan pelajaran lagi",
         "description": "Klik 'Edit Sukatan Pelajaran' untuk menambah maklumat kursus, objektif pembelajaran, dasar dan banyak lagi."
       }
     },
     "assignments": {
       "title": "Tugasan Kursus",
-      "gradedCount": "{graded} tugasan digredkan",
+      "gradedCount": "{graded} tugasan yang dinilai",
       "totalPoints": "{total} jumlah mata",
       "empty": {
         "title": "Tiada tugasan lagi",
@@ -37,28 +41,28 @@
     },
     "table": {
       "assignment": "Tugasan",
-      "dueDate": "Dua Kurma",
-      "points": "mata",
-      "weight": "Berat badan",
-      "status": "Status",
-      "pts": "mata"
+      "dueDate": "Dua Tarikh",
+      "points": "Mata",
+      "weight": "Berat",
+      "pts": "mata",
+      "type": "Jenis"
     },
     "status": {
       "graded": "Digredkan",
-      "pending": "Belum selesai"
+      "ungraded": "Tidak dinilai"
     },
     "courseInfo": {
       "title": "Maklumat Kursus",
       "basic": {
         "title": "Maklumat Asas",
         "className": "Nama Kelas",
-        "section": "Bahagian",
+        "section": "Seksyen",
         "subject": "Subjek"
       },
       "stats": {
         "title": "Statistik Kursus",
         "totalAssignments": "Jumlah Tugasan",
-        "gradedAssignments": "Tugasan Berperingkat",
+        "gradedAssignments": "Tugasan Bergred",
         "totalPoints": "Jumlah Mata"
       }
     }

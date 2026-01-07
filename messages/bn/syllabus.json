@@ -13,9 +13,13 @@
     },
     "stats": {
       "totalAssignments": "মোট অ্যাসাইনমেন্ট",
+      "totalAssignmentsDesc": "সকল কোর্সের কাজ",
       "completionRate": "সমাপ্তির হার",
+      "completionRateDesc": "গ্রেডেড বনাম মোট",
       "totalPoints": "মোট পয়েন্ট",
-      "upcoming": "আসন্ন"
+      "totalPointsDesc": "সর্বোচ্চ অর্জনযোগ্য",
+      "upcoming": "আসন্ন",
+      "upcomingDesc": "নির্ধারিত অ্যাসাইনমেন্ট"
     },
     "overview": {
       "title": "কোর্সের সারসংক্ষেপ",
@@ -40,12 +44,12 @@
       "dueDate": "দুটি তারিখ",
       "points": "পয়েন্ট",
       "weight": "ওজন",
-      "status": "অবস্থা",
-      "pts": "পয়েন্ট"
+      "pts": "পয়েন্ট",
+      "type": "আদর্শ"
     },
     "status": {
       "graded": "গ্রেড করা হয়েছে",
-      "pending": "মুলতুবি"
+      "ungraded": "গ্রেডবিহীন"
     },
     "courseInfo": {
       "title": "কোর্সের তথ্য",

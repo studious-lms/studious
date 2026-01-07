@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { MessageSquare, Settings, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -10,12 +10,13 @@ import { RootState } from "@/store/store";
 import { useChat } from "@/hooks/useChat";
 import { 
   MessageList, 
-  MessageInput 
+  MessageInput,
+  ChatSettingsModal,
 } from "@/components/chat";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { ConversationPageSkeleton } from "@/components/chat/ChatSkeletons";
 import { useTranslations } from "next-intl";
 import UserProfilePicture, { GroupProfilePicture } from "@/components/UserProfilePicture";
+import { toast } from "sonner";
 
 export default function ConversationPage() {
   const t = useTranslations('chat.page');
@@ -27,9 +28,10 @@ export default function ConversationPage() {
   const user = appState.user;
   const conversationId = params.id as string;
   
+  const [showSettingsModal, setShowSettingsModal] = useState(false);
+
   // Always call hooks - useChat handles the case when user is not logged in
   const {
-    conversations,
     selectedConversation,
     messages,
     isLoadingMessages,
@@ -42,6 +44,9 @@ export default function ConversationPage() {
     markMentionsAsRead,
     isUpdatingMessage,
     isDeletingMessage,
+    addMember,
+    removeMember,
+    hideConversation,
   } = useChat(user.loggedIn ? user.id : "");
 
   // Auto-select the conversation when component mounts
@@ -61,6 +66,35 @@ export default function ConversationPage() {
     // For DMs, find the other user
     const otherMember = selectedConversation.members.find(member => member.userId !== user.id);
     return otherMember?.user.profile?.displayName || otherMember?.user.username || t('unknownUser');
+  };
+
+  const handleAddMember = async (username: string) => {
+    try {
+      await addMember(username);
+      toast.success(`Added @${username} to the group`);
+    } catch (error: any) {
+      toast.error(error?.message || 'Failed to add member');
+    }
+  };
+
+  const handleRemoveMember = async (userId: string) => {
+    try {
+      await removeMember(userId);
+      toast.success(`Removed @${userId} from the group`);
+    } catch (error: any) {
+      toast.error(error?.message || 'Failed to remove member');
+    }
+  };
+
+  const handleHideConversation = async () => {
+    try {
+      await hideConversation();
+      toast.success('Conversation hidden');
+      router.push('/chat');
+    } catch (error: any) {
+      toast.error(error?.message || 'Failed to hide conversation');
+      throw error;
+    }
   };
 
   if (isLoadingMessages && !selectedConversation) {
@@ -91,9 +125,19 @@ export default function ConversationPage() {
       {selectedConversation ? (
         <>
           {/* Chat Header */}
-          <div className="h-12 border-b border-border px-4 flex items-center justify-between bg-background flex-shrink-0">
-            <div className="flex items-center space-x-3">
-              <div className="flex items-center space-x-2">
+          <div className="h-12 border-b border-border px-2 sm:px-4 flex items-center justify-between bg-background flex-shrink-0">
+            <div className="flex items-center gap-2 min-w-0 flex-1">
+              {/* Back button - mobile only */}
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                className="md:hidden h-8 w-8 p-0 flex-shrink-0"
+                onClick={() => router.push('/chat')}
+              >
+                <ArrowLeft className="h-4 w-4" />
+              </Button>
+              
+              <div className="flex items-center gap-2 min-w-0">
                 {
                   selectedConversation.type === 'DM' ? (
                     <UserProfilePicture profilePicture={selectedConversation.members.find(m => m.userId !== user.id)?.user.profile?.profilePicture || ""} username={selectedConversation.members.find(m => m.userId !== user.id)?.user.username || "Unknown"} />
@@ -106,30 +150,46 @@ export default function ConversationPage() {
                   )
                 }
 
-                <span className="font-semibold text-foreground">
+                <span className="font-semibold text-foreground text-sm sm:text-base truncate">
                   {getConversationDisplayName()}
                 </span>
                 {selectedConversation.type === 'GROUP' && (
-                  <span className="text-sm text-muted-foreground">
+                  <span className="hidden sm:inline text-sm text-muted-foreground whitespace-nowrap">
                     ({selectedConversation.members.length} {t('header.members')})
                   </span>
                 )}
               </div>
             </div>
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
               <Button 
                 variant="ghost" 
                 size="sm"
                 onClick={markMentionsAsRead}
-                className="text-xs text-muted-foreground hover:text-foreground"
+                className="hidden sm:inline-flex text-xs text-muted-foreground hover:text-foreground"
               >
                 {t('header.markMentionsRead')}
               </Button>
-              <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                className="h-8 w-8 p-0"
+                onClick={() => setShowSettingsModal(true)}
+              >
                 <Settings className="h-4 w-4" />
               </Button>
             </div>
           </div>
+
+          {/* Settings Modal */}
+          <ChatSettingsModal
+            open={showSettingsModal}
+            onOpenChange={setShowSettingsModal}
+            conversation={selectedConversation}
+            currentUserId={user.id}
+            onAddMember={handleAddMember}
+            onRemoveMember={handleRemoveMember}
+            onHideConversation={handleHideConversation}
+          />
 
           {/* Messages */}
           <MessageList

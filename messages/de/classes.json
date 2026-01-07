@@ -17,7 +17,7 @@
     "classDeleted": "Klasse erfolgreich gelöscht",
     "classDeleteFailed": "Klasse konnte nicht gelöscht werden",
     "failedToLoad": "Klassen konnten nicht geladen werden",
-    "classLeft": "Kurs erfolgreich verlassen",
-    "classLeaveFailed": "Kurs konnte nicht verlassen werden"
+    "classLeft": "Die Klasse erfolgreich verlassen",
+    "classLeaveFailed": "Den Unterricht nicht verlassen haben"
   }
 }

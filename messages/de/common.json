@@ -1,5 +1,6 @@
 {
   "common": {
+    "upload": "Hochladen",
     "save": "Speichern",
     "cancel": "Stornieren",
     "delete": "Löschen",
@@ -34,7 +35,7 @@
   "auth": {
     "login": {
       "title": "Willkommen zurück",
-      "subtitle": "Melden Sie sich in Ihrem Studious-Konto an",
+      "subtitle": "Melden Sie sich in Ihrem Studious-Konto an.",
       "username": "Benutzername",
       "password": "Passwort",
       "forgotPassword": "Passwort vergessen?",
@@ -80,7 +81,7 @@
       "emailSent": "Bestätigungs-E-Mail versendet!",
       "checkInbox": "Bitte überprüfen Sie Ihren Posteingang und Ihren Spam-Ordner.",
       "enterEmail": "Geben Sie Ihre E-Mail-Adresse ein.",
-      "sending": "Wird gesendet...",
+      "sending": "Senden...",
       "sendEmail": "E-Mail senden",
       "title": "Bestätigen Sie Ihre E-Mail-Adresse",
       "subtitle": "Klicken Sie unten auf die Schaltfläche, um Ihre E-Mail-Adresse zu bestätigen.",
@@ -98,7 +99,7 @@
       "email": "E-Mail",
       "emailPlaceholder": "Geben Sie Ihre E-Mail-Adresse ein.",
       "sendResetLink": "Link zum Zurücksetzen senden",
-      "sending": "Wird gesendet...",
+      "sending": "Senden...",
       "backToSignIn": "Zurück zur Anmeldeseite",
       "successTitle": "Prüfen Sie Ihre E-Mails",
       "successMessage": "Falls mit dieser E-Mail-Adresse bereits ein Konto existiert, haben wir Ihnen einen Link zum Zurücksetzen Ihres Passworts gesendet.",
@@ -250,8 +251,8 @@
     "futureDevelopments": {
       "title": "Zukünftige Entwicklungen",
       "subtitle": "Unser Fahrplan zur Transformation der Bildung",
-      "cas": {
-        "title": "CAS-Perspektive",
+      "sustainable": {
+        "title": "Nachhaltige Perspektive",
         "description": "Wir unterstützen unterfinanzierte Schulen durch Spenden und Materialien und machen so hochwertige Bildung für alle zugänglich."
       },
       "features": {
@@ -917,7 +918,7 @@
         },
         "deleted": {
           "title": "Klasse gelöscht",
-          "description": "Der Kurs wurde endgültig gelöscht."
+          "description": "Die Klasse wurde endgültig gelöscht."
         }
       },
       "errors": {
@@ -1288,7 +1289,7 @@
         "autoCalculate": "Die Punkte werden automatisch anhand der ausgewählten Bewertungskriterien berechnet."
       },
       "gradeScale": {
-        "default": "Standardmaßstab",
+        "default": "Standardskalierung",
         "untitled": "Unbenannter Maßstab"
       },
       "files": {
@@ -1309,7 +1310,7 @@
         "uploadingFile": "Hochladen von {name}...",
         "creatingProgress": "Aufgabe erstellen",
         "draftStatus": "Wird als Entwurf gespeichert",
-        "publishedStatus": "Wird den Studierenden zugänglich gemacht."
+        "publishedStatus": "Wird den Studierenden zugänglich gemacht"
       },
       "actions": {
         "cancel": "Stornieren",
@@ -1370,17 +1371,17 @@
         },
         "level4": {
           "title": "Stufe 4 Co-Kreation",
-          "description": "Nutzen Sie KI, um kreative Inhalte zu entwerfen, zu gestalten, zu codieren, zu analysieren, zu simulieren oder zu generieren und behalten Sie dabei die Kontrolle.",
-          "useCases": "Nutzen Sie KI, um kreative Inhalte zu entwerfen, zu gestalten, zu codieren, zu analysieren, zu simulieren oder zu generieren und behalten Sie dabei die Kontrolle.",
+          "description": "Nutzen Sie KI, um kreative Inhalte zu entwerfen, zu programmieren, zu analysieren, zu simulieren oder zu generieren und behalten Sie dabei die Kontrolle.",
+          "useCases": "Nutzen Sie KI, um kreative Inhalte zu entwerfen, zu programmieren, zu analysieren, zu simulieren oder zu generieren und behalten Sie dabei die Kontrolle.",
           "studentResponsibilities": "KI-Ergebnisse kritisch bewerten; überarbeiten und anpassen, um Originalität und schlüssige Argumentation zu gewährleisten.",
-          "disclosureRequirements": "Reichen Sie eine detaillierte Offenlegung über die Beiträge der KI und Ihre Überarbeitungen ein."
+          "disclosureRequirements": "Reichen Sie eine detaillierte Offenlegung der Beiträge der KI und Ihrer Überarbeitungen ein."
         },
         "level5": {
           "title": "Stufe 5 Co-Innovation",
           "description": "KI wird zur Generierung von Inhalten, zur Durchführung von Analysen, zum Erstellen von Modellen, zum kreativen Schreiben, zur Übersetzung oder zur Datenvisualisierung eingesetzt, wobei die menschliche Autorschaft und Reflexion explizit berücksichtigt werden.",
           "useCases": "KI wird zur Generierung von Inhalten, zur Durchführung von Analysen, zum Erstellen von Modellen, zum kreativen Schreiben, zur Übersetzung oder zur Datenvisualisierung eingesetzt, wobei die menschliche Autorschaft und Reflexion explizit berücksichtigt werden.",
           "studentResponsibilities": "KI ethisch und zielgerichtet integrieren; ihre Rolle bei der Förderung von Lernen oder Kreativität begründen.",
-          "disclosureRequirements": "Alle Beiträge der KI und alle menschlichen Überarbeitungen müssen klar und deutlich angegeben werden."
+          "disclosureRequirements": "Alle Beiträge der KI und alle menschlichen Überarbeitungen müssen klar gekennzeichnet werden."
         }
       },
       "toasts": {

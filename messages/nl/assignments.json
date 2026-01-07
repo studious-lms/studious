@@ -3,19 +3,19 @@
     "title": "Opdrachtdetails",
     "description": "Beschrijving",
     "instructions": "Instructies",
-    "dueDate": "Twee data",
+    "dueDate": "Twee afspraakjes",
     "maxPoints": "Maximale punten",
     "submissions": "Inzendingen",
     "submitted": "Ingediend",
     "notSubmitted": "Niet ingediend",
-    "graded": "Gegradeerd",
+    "graded": "Beoordeeld",
     "pending": "In behandeling",
     "late": "Laat",
     "onTime": "Op tijd",
     "attachments": "Bijlagen",
     "rubric": "Rubriek",
-    "gradingBoundary": "Beoordelingsgrens",
-    "submissionDetails": "Inzendingdetails",
+    "gradingBoundary": "Grens van de gradering",
+    "submissionDetails": "Indieningsdetails",
     "submittedBy": "Ingezonden door",
     "submittedAt": "Ingediend bij",
     "grade": "Cijfer",
@@ -23,20 +23,21 @@
     "files": "Bestanden",
     "noFiles": "Geen bestanden bijgevoegd",
     "noSubmissions": "Nog geen inzendingen",
-    "noSubmissionsDescription": "Inzendingen zullen hier verschijnen zodra studenten hun werk hebben ingediend",
+    "noSubmissionsDescription": "Inzendingen verschijnen hier zodra studenten hun werk hebben ingediend.",
     "actions": {
       "edit": "Opdracht bewerken",
-      "delete": "Opdracht verwijderen",
-      "viewSubmission": "Bekijk inzending",
+      "delete": "Toewijzing verwijderen",
+      "viewSubmission": "Inzending bekijken",
       "gradeSubmission": "Cijfer",
+      "back": "Rug",
       "downloadAll": "Alles downloaden",
-      "exportGrades": "Exportcijfers"
+      "exportGrades": "Exportkwaliteiten"
     },
     "stats": {
       "totalSubmissions": "Totaal aantal inzendingen",
       "averageGrade": "Gemiddeld cijfer",
       "submissionRate": "Inzendingspercentage",
-      "gradedCount": "Gegradeerd"
+      "gradedCount": "Beoordeeld"
     },
     "table": {
       "student": "Student",
@@ -48,7 +49,7 @@
     "toasts": {
       "gradeUpdated": "Cijfer succesvol bijgewerkt",
       "deleted": "Opdracht verwijderd",
-      "error": "Er is een fout opgetreden"
+      "error": "Er is een fout opgetreden."
     }
   }
 }

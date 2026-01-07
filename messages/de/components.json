@@ -11,6 +11,11 @@
     "rename": "Umbenennen"
   },
   "uploadFiles": {
+    "progress": {
+      "uploadingFiles": "Dateien werden hochgeladen...",
+      "uploadingFile": "Hochladen von {name}...",
+      "completed": "Vollendet"
+    },
     "title": "Dateien hochladen",
     "noFilesSelected": "Keine Dateien ausgewählt",
     "classIdMissing": "Die Klassen-ID fehlt.",
@@ -130,6 +135,11 @@
       "description": "Wählen Sie in der Seitenleiste eine Konversation aus, um einen Chat zu starten."
     },
     "page": {
+      "notFound": {
+        "title": "Konversation nicht gefunden",
+        "description": "Dieses Gespräch existiert nicht oder Sie haben keinen Zugriff darauf.",
+        "backToChat": "Zurück zum Chat"
+      },
       "header": {
         "members": "Mitglieder",
         "markMentionsRead": "Mark erwähnt das Lesen"
