@@ -8,25 +8,22 @@ import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { useChat } from "@/hooks/useChat";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
-import { 
-  MessageList, 
-  MessageInput 
+import {
+  MessageList,
+  MessageInput
 } from "@/components/chat";
-import { 
-  ArrowLeft, 
-  Sparkles,
+import {
+  ArrowLeft,
+  Bot,
   BookOpen,
-  Calendar,
-  GraduationCap,
 } from "lucide-react";
 
 export default function NewtonTutorPage() {
   const params = useParams();
   const router = useRouter();
   const appState = useSelector((state: RootState) => state.app);
-  
+
   const classId = params.id as string;
   const assignmentId = params.assignmentId as string;
 
@@ -40,12 +37,11 @@ export default function NewtonTutorPage() {
   });
 
   // Get or create tutor conversation for this assignment
-  // This query automatically creates the conversation if it doesn't exist
   const { data: tutorConversation, isLoading: isLoadingConversation } = trpc.newtonChat.getTutorConversation.useQuery({
     assignmentId,
     classId,
   }, {
-    enabled: !!assignment, // Only run after assignment loads
+    enabled: !!assignment,
   });
 
   // Send message mutation
@@ -82,7 +78,7 @@ export default function NewtonTutorPage() {
         id: 'AI_ASSISTANT',
         username: 'Newton',
         profile: {
-          displayName: 'Newton Tutor',
+          displayName: 'Newton',
           profilePicture: "/ai-icon.png"
         }
       }
@@ -99,30 +95,20 @@ export default function NewtonTutorPage() {
     });
   };
 
+  const goBack = () => router.push(`/class/${classId}/assignment/${assignmentId}`);
+
   // Loading state
   if (isLoadingAssignment) {
     return (
       <div className="h-screen bg-background flex flex-col overflow-hidden">
-        <div className="px-6 py-3 border-b border-border bg-background flex-shrink-0">
-          <Button 
-            variant="ghost" 
-            size="sm"
-            onClick={() => router.push(`/class/${classId}/assignment/${assignmentId}`)}
-            className="flex items-center gap-2"
-          >
+        <div className="h-12 px-4 border-b border-border flex items-center gap-3 flex-shrink-0">
+          <button onClick={goBack} className="text-muted-foreground hover:text-foreground">
             <ArrowLeft className="h-4 w-4" />
-            Back to Assignment
-          </Button>
-        </div>
-        <div className="px-6 py-4 border-b border-border">
-          <Skeleton className="h-6 w-48 mb-2" />
-          <Skeleton className="h-4 w-64" />
+          </button>
+          <Skeleton className="h-4 w-32" />
         </div>
         <div className="flex-1 flex items-center justify-center">
-          <div className="text-center space-y-3">
-            <Sparkles className="h-8 w-8 mx-auto text-violet-500 animate-pulse" />
-            <p className="text-sm text-muted-foreground">Starting Newton Tutor...</p>
-          </div>
+          <p className="text-sm text-muted-foreground">Loading...</p>
         </div>
       </div>
     );
@@ -132,22 +118,14 @@ export default function NewtonTutorPage() {
   if (!assignment) {
     return (
       <div className="h-screen bg-background flex flex-col overflow-hidden">
-        <div className="px-6 py-3 border-b border-border bg-background flex-shrink-0">
-          <Button 
-            variant="ghost" 
-            size="sm"
-            onClick={() => router.push(`/class/${classId}/assignment/${assignmentId}`)}
-            className="flex items-center gap-2"
-          >
+        <div className="h-12 px-4 border-b border-border flex items-center gap-3 flex-shrink-0">
+          <button onClick={goBack} className="text-muted-foreground hover:text-foreground">
             <ArrowLeft className="h-4 w-4" />
-            Back to Assignment
-          </Button>
+          </button>
+          <span className="text-sm">Newton Tutor</span>
         </div>
         <div className="flex-1 flex items-center justify-center">
-          <div className="text-center space-y-2">
-            <h2 className="text-lg font-semibold text-muted-foreground">Assignment not found</h2>
-            <p className="text-sm text-muted-foreground">This assignment may have been deleted.</p>
-          </div>
+          <p className="text-sm text-muted-foreground">Assignment not found</p>
         </div>
       </div>
     );
@@ -155,94 +133,29 @@ export default function NewtonTutorPage() {
 
   return (
     <div className="h-screen bg-background flex flex-col overflow-hidden">
-      {/* Back Button */}
-      <div className="px-6 py-3 border-b border-border bg-background flex-shrink-0">
-        <Button 
-          variant="ghost" 
-          size="sm"
-          onClick={() => router.push(`/class/${classId}/assignment/${assignmentId}`)}
-          className="flex items-center gap-2"
-        >
+      {/* Header - Single row */}
+      <div className="h-12 px-4 border-b border-border flex items-center gap-3 flex-shrink-0">
+        <button onClick={goBack} className="text-muted-foreground hover:text-foreground">
           <ArrowLeft className="h-4 w-4" />
-          Back to Assignment
-        </Button>
-      </div>
-
-      {/* Header */}
-      <div className="px-6 py-4 border-b border-border bg-background flex-shrink-0">
-        <div className="flex items-start gap-4">
-          <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-violet-500 via-purple-500 to-fuchsia-500 flex items-center justify-center flex-shrink-0">
-            <Sparkles className="h-6 w-6 text-white" />
-          </div>
-          <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-2">
-              <h1 className="text-lg font-semibold">Newton Tutor</h1>
-              <Badge variant="secondary" className="bg-violet-500/10 text-violet-600 dark:text-violet-400 border-0">
-                AI Assistant
-              </Badge>
-            </div>
-            <div className="flex items-center gap-3 mt-1 text-sm text-muted-foreground">
-              <div className="flex items-center gap-1.5">
-                <BookOpen className="h-3.5 w-3.5" />
-                <span className="truncate">{assignment.title}</span>
-              </div>
-              {assignment.dueDate && (
-                <>
-                  <span>•</span>
-                  <div className="flex items-center gap-1.5">
-                    <Calendar className="h-3.5 w-3.5" />
-                    <span>Due {new Date(assignment.dueDate).toLocaleDateString()}</span>
-                  </div>
-                </>
-              )}
-              {assignment.maxGrade && (
-                <>
-                  <span>•</span>
-                  <div className="flex items-center gap-1.5">
-                    <GraduationCap className="h-3.5 w-3.5" />
-                    <span>{assignment.maxGrade} points</span>
-                  </div>
-                </>
-              )}
-            </div>
-          </div>
+        </button>
+        <div className="flex items-center gap-2 min-w-0">
+          <Bot className="h-4 w-4 text-primary flex-shrink-0" />
+          <span className="text-sm font-medium">Newton</span>
+          <span className="text-muted-foreground">·</span>
+          <span className="text-sm text-muted-foreground truncate">{assignment.title}</span>
         </div>
       </div>
 
       {/* Welcome message when no messages yet */}
       {chat.messages.length === 0 && !chat.isLoadingMessages && !isLoadingConversation && (
         <div className="flex-1 flex items-center justify-center p-6">
-          <div className="max-w-md text-center space-y-4">
-            <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-violet-500 via-purple-500 to-fuchsia-500 flex items-center justify-center mx-auto">
-              <Sparkles className="h-8 w-8 text-white" />
-            </div>
+          <div className="max-w-sm text-center space-y-4">
+            <Bot className="h-8 w-8 text-primary mx-auto" />
             <div>
-              <h2 className="text-xl font-semibold mb-2">Hi! I&apos;m Newton</h2>
-              <p className="text-muted-foreground">
-                I&apos;m your AI tutor for this assignment. I can help you understand concepts, 
-                give hints without spoiling answers, and guide you through problems. 
-                What would you like to learn?
+              <h2 className="text-base font-medium mb-1">Newton Tutor</h2>
+              <p className="text-sm text-muted-foreground">
+                I can help you understand concepts and guide you through problems without giving away answers.
               </p>
-            </div>
-            <div className="flex flex-wrap justify-center gap-2 pt-2">
-              <Button 
-                variant="outline" 
-                size="sm"
-                onClick={() => handleSendMessage("Can you explain the main concepts I need to understand for this assignment?", [])}
-                disabled={!tutorConversation}
-              >
-                <BookOpen className="h-3.5 w-3.5 mr-1.5" />
-                Explain concepts
-              </Button>
-              <Button 
-                variant="outline" 
-                size="sm"
-                onClick={() => handleSendMessage("I'm stuck. Can you give me a hint without giving away the answer?", [])}
-                disabled={!tutorConversation}
-              >
-                <Sparkles className="h-3.5 w-3.5 mr-1.5" />
-                Give me a hint
-              </Button>
             </div>
           </div>
         </div>
@@ -268,7 +181,7 @@ export default function NewtonTutorPage() {
       <div className="flex-shrink-0 border-t border-border">
         <MessageInput
           onSend={handleSendMessage}
-          placeholder="Ask Newton anything about this assignment..."
+          placeholder="Ask Newton anything..."
           conversationMembers={conversationMembers}
           currentUserId={appState.user.id}
           disabled={sendMessageMutation.isPending || chat.isSendingMessage || !tutorConversation}

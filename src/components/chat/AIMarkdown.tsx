@@ -1,10 +1,64 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
+import mermaid from 'mermaid';
 import { cn } from '@/lib/utils';
+
+// Initialize mermaid with theme settings
+mermaid.initialize({
+  startOnLoad: false,
+  theme: 'neutral',
+  securityLevel: 'loose',
+  fontFamily: 'inherit',
+});
+
+interface MermaidProps {
+  chart: string;
+}
+
+function Mermaid({ chart }: MermaidProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [svg, setSvg] = useState<string>('');
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const renderChart = async () => {
+      if (!containerRef.current) return;
+      
+      try {
+        const id = `mermaid-${Math.random().toString(36).substr(2, 9)}`;
+        const { svg } = await mermaid.render(id, chart);
+        setSvg(svg);
+        setError(null);
+      } catch (err) {
+        setError('Failed to render diagram');
+        console.error('Mermaid error:', err);
+      }
+    };
+
+    renderChart();
+  }, [chart]);
+
+  if (error) {
+    return (
+      <div className="my-3 p-3 rounded-md border border-border bg-muted/50 text-sm text-muted-foreground">
+        <p>{error}</p>
+        <pre className="mt-2 text-xs overflow-x-auto">{chart}</pre>
+      </div>
+    );
+  }
+
+  return (
+    <div 
+      ref={containerRef}
+      className="my-3 flex justify-center overflow-x-auto"
+      dangerouslySetInnerHTML={{ __html: svg }}
+    />
+  );
+}
 
 interface AIMarkdownProps {
   content: string;
@@ -45,16 +99,23 @@ export function AIMarkdown({ content, className }: AIMarkdownProps) {
             <li className="text-foreground">{children}</li>
           ),
           
-          // Customize code styles
+          // Customize code styles - handle mermaid blocks
           code: ({ inline, className, children, ...props }: any) => {
             const match = /language-(\w+)/.exec(className || '');
+            const language = match?.[1];
+            const codeContent = String(children).replace(/\n$/, '');
+            
+            // Render mermaid diagrams
+            if (language === 'mermaid') {
+              return <Mermaid chart={codeContent} />;
+            }
             
             if (!inline && match) {
               // Block code with syntax highlighting
               return (
                 <div className="my-3 rounded-md border border-border overflow-hidden">
                   <div className="bg-muted px-3 py-1 text-xs text-muted-foreground font-mono border-b border-border">
-                    {match[1]}
+                    {language}
                   </div>
                   <pre className="p-3 overflow-x-auto bg-background">
                     <code className={className} {...props}>
@@ -141,4 +202,3 @@ export function AIMarkdown({ content, className }: AIMarkdownProps) {
     </div>
   );
 }
-

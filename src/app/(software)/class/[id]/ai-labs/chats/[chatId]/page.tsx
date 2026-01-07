@@ -9,24 +9,22 @@ import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { useChat } from "@/hooks/useChat";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { 
-  MessageList, 
-  MessageInput 
+import {
+  MessageList,
+  MessageInput
 } from "@/components/chat";
-import { 
-  ArrowLeft, 
-  Wand2
+import {
+  ArrowLeft,
+  Bot,
+  Sparkles,
 } from "lucide-react";
-
-
 
 export default function AILabChatPage() {
   const t = useTranslations('aiLabChat');
   const params = useParams();
   const router = useRouter();
   const appState = useSelector((state: RootState) => state.app);
-  
+
   const classId = params.id as string;
   const labChatId = params.chatId as string;
 
@@ -38,11 +36,8 @@ export default function AILabChatPage() {
     labChatId
   });
 
-  // Send message mutation for lab chats (uses labChat.postToLabChat instead of regular message.send)
+  // Send message mutation
   const sendLabMessageMutation = trpc.labChat.postToLabChat.useMutation({
-    onSuccess: () => {
-      // Message will be updated via real-time events through useChat hook
-    },
     onError: (error) => {
       toast.error(t('toast.messageFailed') + error.message);
     }
@@ -55,20 +50,6 @@ export default function AILabChatPage() {
     }
   }, [labChat?.conversationId, chat.selectedConversationId, chat.selectConversation]);
 
-  console.log(chat.messages);
-  
-  // Parse lab chat context
-  const labContext = labChat ? (() => {
-    try {
-      return JSON.parse(labChat.context);
-    } catch {
-      return { topic: 'AI Lab', subject: 'General', difficulty: 'intermediate' };
-    }
-  })() : null;
-  
-  const [isGenerating, setIsGenerating] = useState(false);
-
-  // Mock conversation members for the chat components
   const conversationMembers = [
     {
       userId: appState.user.id,
@@ -88,7 +69,7 @@ export default function AILabChatPage() {
         username: 'AI Assistant',
         profile: {
           displayName: 'AI Assistant',
-          profilePicture: "/ai-icon.svg"
+          profilePicture: "/ai-icon.png"
         }
       }
     }
@@ -97,7 +78,6 @@ export default function AILabChatPage() {
   const handleSendMessage = (content: string, mentionedUserIds: string[]) => {
     if (!content.trim() || !labChatId) return;
 
-    // Use lab chat specific mutation instead of regular chat
     sendLabMessageMutation.mutate({
       labChatId,
       content,
@@ -105,26 +85,19 @@ export default function AILabChatPage() {
     });
   };
 
+  const goBack = () => router.push(`/class/${classId}/ai-labs`);
 
   if (isLoadingLabChat) {
     return (
       <div className="h-screen bg-background flex flex-col overflow-hidden">
-        <div className="px-6 py-3 border-b border-border bg-background flex-shrink-0">
-          <Button 
-            variant="ghost" 
-            size="sm"
-            onClick={() => router.push(`/class/${classId}/ai-labs`)}
-            className="flex items-center gap-2"
-          >
+        <div className="h-12 px-4 border-b border-border flex items-center gap-3 flex-shrink-0">
+          <button onClick={goBack} className="text-muted-foreground hover:text-foreground">
             <ArrowLeft className="h-4 w-4" />
-            Back to AI Labs
-          </Button>
+          </button>
+          <div className="h-4 w-32 bg-muted rounded" />
         </div>
         <div className="flex-1 flex items-center justify-center">
-          <div className="text-center space-y-2">
-            <div className="h-6 w-32 bg-muted rounded mx-auto" />
-            <div className="h-4 w-24 bg-muted rounded mx-auto" />
-          </div>
+          <p className="text-sm text-muted-foreground">Loading...</p>
         </div>
       </div>
     );
@@ -133,22 +106,14 @@ export default function AILabChatPage() {
   if (!labChat) {
     return (
       <div className="h-screen bg-background flex flex-col overflow-hidden">
-        <div className="px-6 py-3 border-b border-border bg-background flex-shrink-0">
-          <Button 
-            variant="ghost" 
-            size="sm"
-            onClick={() => router.push(`/class/${classId}/ai-labs`)}
-            className="flex items-center gap-2"
-          >
+        <div className="h-12 px-4 border-b border-border flex items-center gap-3 flex-shrink-0">
+          <button onClick={goBack} className="text-muted-foreground hover:text-foreground">
             <ArrowLeft className="h-4 w-4" />
-            {t('backButton')}
-          </Button>
+          </button>
+          <span className="text-sm">AI Lab</span>
         </div>
         <div className="flex-1 flex items-center justify-center">
-          <div className="text-center space-y-2">
-            <h2 className="text-lg font-semibold text-muted-foreground">{t('notFound.title')}</h2>
-            <p className="text-sm text-muted-foreground">{t('notFound.description')}</p>
-          </div>
+          <p className="text-sm text-muted-foreground">{t('notFound.title')}</p>
         </div>
       </div>
     );
@@ -156,50 +121,18 @@ export default function AILabChatPage() {
 
   return (
     <div className="h-screen bg-background flex flex-col overflow-hidden">
-      {/* Back Button */}
-      <div className="px-6 py-3 border-b border-border bg-background flex-shrink-0">
-        <Button 
-          variant="ghost" 
-          size="sm"
-          onClick={() => router.push(`/class/${classId}/ai-labs`)}
-          className="flex items-center gap-2"
-        >
+      {/* Header - Single row */}
+      <div className="h-12 px-4 border-b border-border flex items-center gap-3 flex-shrink-0">
+        <button onClick={goBack} className="text-muted-foreground hover:text-foreground">
           <ArrowLeft className="h-4 w-4" />
-          {t('backButton')}
-        </Button>
-      </div>
-
-      {/* Chat Header */}
-      <div className="px-6 py-4 border-b border-border bg-background flex-shrink-0">
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-lg font-semibold">{labChat?.title || t('loading')}</h1>
-            {labContext && (
-              <div className="flex items-center gap-2 text-sm text-muted-foreground mt-1">
-                <Badge variant="outline">{labContext.topic}</Badge>
-                <span>•</span>
-                <Badge variant="outline">{labContext.subject}</Badge>
-                <span>•</span>
-                <Badge variant="outline">{labContext.difficulty}</Badge>
-                {labContext.metadata?.gradeLevel && (
-                  <>
-                    <span>•</span>
-                    <Badge variant="outline">Grade {labContext.metadata.gradeLevel}</Badge>
-                  </>
-                )}
-              </div>
-            )}
-          </div>
-          <div className="flex items-center gap-2">
-            <Button 
-              onClick={() => setIsGenerating(!isGenerating)}
-              disabled={isGenerating}
-              className="bg-primary hover:bg-primary/90"
-            >
-              <Wand2 className="h-4 w-4 mr-2" />
-              {isGenerating ? t('aiThinking') : t('getAIHelp')}
-            </Button>
-          </div>
+        </button>
+        <div className="flex items-center gap-2 min-w-0">
+          <div className="flex items-center gap-2 min-w-0">
+          <Bot className="h-4 w-4 text-primary flex-shrink-0" />
+          <span className="text-sm font-medium">Newton</span>
+          <span className="text-muted-foreground">·</span>
+          <span className="text-sm text-muted-foreground truncate">{labChat.title}</span>
+        </div>
         </div>
       </div>
 
@@ -221,7 +154,7 @@ export default function AILabChatPage() {
       <div className="flex-shrink-0 border-t border-border">
         <MessageInput
           onSend={handleSendMessage}
-          placeholder="Ask the AI assistant anything..."
+          placeholder="Ask the AI..."
           conversationMembers={conversationMembers}
           currentUserId={appState.user.id}
           disabled={sendLabMessageMutation.isPending || chat.isSendingMessage}

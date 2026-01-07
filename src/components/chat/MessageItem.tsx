@@ -20,6 +20,7 @@ import { baseFileHandler } from "@/lib/file/fileHandler";
 import { useParams } from "next/navigation";
 import UserProfilePicture from "../UserProfilePicture";
 import { convertAttachmentsToFileItems } from "@/lib/file/file";
+import Attachment from "../Attachment";
 
 type Message = MessageListOutput['messages'][number];
 
@@ -264,13 +265,10 @@ export function MessageItem({
             <DndProvider backend={HTML5Backend}>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-3">
                 {convertAttachmentsToFileItems(message.attachments).map((fileItem) => (
-                  <DraggableFileItem
+                  <Attachment
                     key={fileItem.id}
-                    item={fileItem}
-                    classId=""
-                    readonly={true}
-                    handlers={fileHandlers}
-                  />
+                    fileItem={fileItem}
+                    />
                 ))}
               </div>
             </DndProvider>

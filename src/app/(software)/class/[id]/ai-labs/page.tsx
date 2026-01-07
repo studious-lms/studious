@@ -32,7 +32,8 @@ import {
   Eye,
   Clock,
   Trash2,
-  PenTool
+  PenTool,
+  Bot
 } from "lucide-react";
 import { formatDistanceToNow } from "date-fns";
 import ResponsivePageHeader from "@/components/ResponsiveClassPageHeader";
@@ -194,46 +195,10 @@ export default function ClassAILabs() {
           </div> */}
           <ResponsivePageHeader title={t('title')} description={t('subtitle')} />
 
-          {/* Stats Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <StatsCard
-              title={t('stats.drafts')}
-              value={totalDrafts}
-              icon={PenTool}
-              description={t('stats.draftsDesc')}
-              color="#4E81EE"
-            />
-            <StatsCard
-              title={t('stats.chats')}
-              value={totalChats}
-              icon={MessageSquare}
-              description={t('stats.chatsDesc')}
-              color="#A855F7"
-            />
-            <StatsCard
-              title={t('stats.messages')}
-              value={totalMessages}
-              icon={Brain}
-              description={t('stats.messagesDesc')}
-              color="#96C84D"
-            />
-            <StatsCard
-              title={t('stats.generated')}
-              value={totalDrafts + totalChats}
-              icon={Sparkles}
-              description={t('stats.generatedDesc')}
-              color="#FFB500"
-            />
-          </div>
-
           {/* Creation Widgets - Only show for teachers */}
           {!isStudent && (
-            <div className="space-y-4">
-              <div className="flex items-center gap-2">
-                <h2 className="text-xl font-semibold">{t('createNew')}</h2>
-              </div>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 pt-4">
+            <div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
                 {creationWidgets.map((widget) => {
                   const IconComponent = widget.icon;
                   return (
@@ -364,34 +329,16 @@ export default function ClassAILabs() {
               ) : (
                 <div className="space-y-6">
                   {/* All Lab Chats */}
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-2">
-                      <h3 className="text-lg font-semibold">{t('chats.title', { count: sortedChats.length })}</h3>
-                      <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
-                        <Brain className="h-3 w-3 mr-1" />
-                        {t('chats.active')}
-                      </Badge>
-                    </div>
+                  <div className="space-y-4 pt-4">
                     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                       {sortedChats.map((labChat) => {
                         return (
                           <Card 
                             key={labChat.id}
-                            className="cursor-pointer hover:shadow-lg transition-all duration-200 group"
-                            style={{ 
-                              backgroundColor: '#A855F715',
-                              borderColor: '#A855F730'
-                            }}
                             onClick={() => handleLabChatClick(labChat.id)}
                           >
-                            <CardContent className="p-5">
+                            <CardContent className="p-5 flex flex-row-reverse items-center justify-between">
                               <div className="flex items-start justify-between mb-3">
-                                <div 
-                                  className="p-2.5 rounded-xl group-hover:scale-105 transition-transform"
-                                  style={{ backgroundColor: '#A855F725' }}
-                                >
-                                  <Brain className="h-5 w-5" style={{ color: '#A855F7' }} />
-                                </div>
                                 <div className="flex items-center gap-1">
                                   <Button 
                                     variant="ghost" 
@@ -419,6 +366,7 @@ export default function ClassAILabs() {
                                   )}
                                 </div>
                               </div>
+                              <div>
                               
                               <h4 className="font-semibold text-base mb-2 line-clamp-1">{labChat.title}</h4>
                               
@@ -436,6 +384,7 @@ export default function ClassAILabs() {
                               <div className="flex items-center gap-1 text-xs text-muted-foreground mt-2">
                                 <Users className="h-3 w-3" />
                                 {labChat.createdBy.profile?.displayName || labChat.createdBy.username}
+                              </div>
                               </div>
                             </CardContent>
                           </Card>
